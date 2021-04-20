@@ -1,0 +1,24 @@
+---
+namespace: cisco
+name: ise
+version: 0.0.1
+readme: README.md
+authors:
+- Rafael Campos <rcampos@altus.cr>
+- William Astorga <wastorga@altus.cr>
+- Jose Bogarin <jbogarin@altus.cr>
+description: Ansible Modules for Cisco ISE
+license_file: 'LICENSE'
+tags:
+- cisco
+- ise
+- cloud
+- collection
+- networking
+- sdn
+dependencies:
+  ansible.utils: ">=2.0.0 3.0"
+repository: https://github.com/<tbd>/<tbd>
+documentation: https://developer.cisco.com/docs/identity-services-engine/3.0/
+homepage: https://github.com/<tbd>/<tbd>
+issues: https://github.com/<tbd>/<tbd>/issues
