@@ -15,7 +15,7 @@ options:
 requirements:
 seealso:
 # Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.module_name
+- module: cisco.ise.plugins.module_utils.definitions.trusted_certificate_import
 # Reference by Internet resource
 - name:
   description:

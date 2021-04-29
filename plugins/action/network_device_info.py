@@ -11,16 +11,22 @@ else:
     ANSIBLE_UTILS_IS_INSTALLED = True
 from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.ise.plugins.module_utils.ise import (
-    ISEModule,
+    ISESDK,
     ise_argument_spec,
 )
 
 # Get common arguements specification
 argument_spec = ise_argument_spec()
-# TODO: Add arguments specific for this module
-#argument_spect.update()
-# TODO: Add schema conditionals
-#required_if = None
+# Add arguments specific for this module
+argument_spec.update(dict(
+        id=dict(type="str"),
+        name=dict(type="str"),
+    ))
+
+required_if = []
+required_one_of = []
+mutually_exclusive = []
+required_together = []
 
 
 class ActionModule(ActionBase):
@@ -37,7 +43,12 @@ class ActionModule(ActionBase):
             data=self._task.args,
             schema=dict(argument_spec=argument_spec),
             schema_format="argspec",
-            schema_conditionals=dict(required_if=required_if),
+            schema_conditionals=dict(
+                required_if=required_if,
+                required_one_of=required_one_of,
+                mutually_exclusive=mutually_exclusive),
+                required_together=required_together,
+            )
             name=self._task.action,
         )
         valid, errors, self._task.args = aav.validate()
@@ -50,18 +61,30 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-        ise = ISEModule(
-            params=self._task.args,
-            verbosity=self._play_context.verbosity,
-        )
+        ise = ISESDK()
 
-        state = self._task.args.get("state")
+        id = self._task.args.get("id")
+        name = self._task.args.get("name")
+        response = None
+        if id:
+            response = ise.exec(
+                family="network_device",
+                function='networkdevice_by_id',
+                params={"id": id}
+            )
+        elif name:
+            response = ise.exec(
+                family="network_device",
+                function='networkdevice_by_name',
+                params={"name": name}
+            )
+        else:
+            response = ise.exec(
+                family="network_device",
+                function='networkdevice',
+                params=None
+            )
 
-        if state == "query":
-
-        elif state == "present":
-
-        elif state == "create":
-
+        self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result
