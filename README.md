@@ -21,7 +21,7 @@ sudo pip install ansible
 
 Cisco ISE SDK must be installed
 ```
-sudo pip install <tbd>
+sudo pip install isesdk
 ```
 
 Install the collection
@@ -32,11 +32,10 @@ ansible-galaxy collection install cisco.ise
 First, define a `credentials.yml` file where you specify your Cisco ISE credentials as ansible variables:
 ```
 ---
-ise_host: <A.B.C.D>
-ise_port: 443  # optional, defaults to 443
+ise_hostname: <A.B.C.D>
 ise_username: <username>
 ise_password: <password>
-ise_version: 2.1.1  # optional, defaults to 2.1.1
+ise_version: 3.1.0  # optional, defaults to 3.0.0
 ise_verify: False  # optional, defaults to True
 ```
 
@@ -47,15 +46,13 @@ Then, create a playbook `myplaybook.yml` referencing the variables in your crede
     - credentials.yml
   gather_facts: no
   tasks:
-  - name:
-    cisco.ise.<tbd>:
-      ise_host: "{{ise_host}}"
+  - name: Get network device by id
+    cisco.ise.network_device_info:
+      ise_hostname: "{{ise_host}}"
       ise_username: "{{ise_username}}"
       ise_password: "{{ise_password}}"
       ise_verify: "{{ise_verify}}"
-      state: present
-      description:
-      name:
+      id: "0667bc80-78a9-11eb-b987-005056aba98b"
 ```
 
 Execute the playbook:
