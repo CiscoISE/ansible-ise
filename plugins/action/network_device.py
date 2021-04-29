@@ -58,7 +58,8 @@ class NetworkDevice(object):
         self.existing_objects = self.get_objects()
 
     def get_objects(self):
-        return self.ise.exec(family="network_device", function="networkdevice", params=None)
+        result = self.ise.exec(family="network_device", function="networkdevice", params=None)
+        return result["SearchResult"]["resources"]
 
     def exists(self):
         result = False

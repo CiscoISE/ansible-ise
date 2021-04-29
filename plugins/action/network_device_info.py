@@ -65,26 +65,26 @@ class ActionModule(ActionBase):
 
         id = self._task.args.get("id")
         name = self._task.args.get("name")
-        response = None
+        result = None
         if id:
-            response = ise.exec(
+            result = ise.exec(
                 family="network_device",
                 function='networkdevice_by_id',
                 params={"id": id}
             )
         elif name:
-            response = ise.exec(
+            result = ise.exec(
                 family="network_device",
                 function='networkdevice_by_name',
                 params={"name": name}
             )
         else:
-            response = ise.exec(
+            result = ise.exec(
                 family="network_device",
                 function='networkdevice',
                 params=None
             )
-
+        response = result["SearchResult"]["resources"]
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result
