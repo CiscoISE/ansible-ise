@@ -4,77 +4,89 @@
   gather_facts: no
   tasks:
 
-  - name: Get all network devices
-    cisco.ise.network_device_info:
-      ise_hostname: "{{ise_host}}"
-      ise_username: "{{ise_username}}"
-      ise_password: "{{ise_password}}"
-      ise_verify: "{{ise_verify}}"
-    register: result
+  # - name: Get all network devices
+  #   cisco.ise.network_device_info:
+  #     ise_hostname: "{{ise_hostname}}"
+  #     ise_username: "{{ise_username}}"
+  #     ise_password: "{{ise_password}}"
+  #     ise_verify: "{{ise_verify}}"
+  #   register: result
 
-  - name: Get a network device by id
-    cisco.ise.network_device_info:
-      ise_hostname: "{{ise_host}}"
-      ise_username: "{{ise_username}}"
-      ise_password: "{{ise_password}}"
-      ise_verify: "{{ise_verify}}"
-      id: "0667bc80-78a9-11eb-b987-005056aba98b"
-    register: result
+  # - name: Get a network device by id
+  #   cisco.ise.network_device_info:
+  #     ise_hostname: "{{ise_hostname}}"
+  #     ise_username: "{{ise_username}}"
+  #     ise_password: "{{ise_password}}"
+  #     ise_verify: "{{ise_verify}}"
+  #     id: 0667bc80-78a9-11eb-b987-005056aba98b
+  #   register: result
 
-  - name: Get a network device by name
-    cisco.ise.network_device_info:
-      ise_hostname: "{{ise_host}}"
-      ise_username: "{{ise_username}}"
-      ise_password: "{{ise_password}}"
-      ise_verify: "{{ise_verify}}"
-      name: "ISE_EST_Local_Host"
-    register: result
+  # - name: Get a network device by name
+  #   cisco.ise.network_device_info:
+  #     ise_hostname: "{{ise_hostname}}"
+  #     ise_username: "{{ise_username}}"
+  #     ise_password: "{{ise_password}}"
+  #     ise_verify: "{{ise_verify}}"
+  #     name: Test_Device_7
+  #   register: result
 
-  - name: Create or update a network device
-    cisco.ise.network_device:
-      ise_hostname: "{{ise_host}}"
-      ise_username: "{{ise_username}}"
-      ise_password: "{{ise_password}}"
-      ise_verify: "{{ise_verify}}"
-      state: present
-      name: "Test Device"
-      description: "Test description"
-      authenticationSettings:
-        networkProtocol: "RADIUS"
-        radiusSharedSecret: "KMYCPD3QNKTP"
-        enableKeyWrap: False
-        dtlsRequired: False
-        enableMultiSecret: False
-      profileName: "Cisco"
-      coaPort: 0,
-      link:
-        rel: "self"
-        href: "https://ise.securitydemo.net:9060/ers/config/networkdevice/0667bc80-78a9-11eb-b987-005056aba98b"
-        type: "application/json"
-      NetworkDeviceIPList:
-      - ipaddress: "127.0.0.1"
-        mask: 32
-      NetworkDeviceGroupList:
-    register: result
+  # - name: Create or update a network device
+  #   cisco.ise.network_device:
+  #     ise_hostname: "{{ise_hostname}}"
+  #     ise_username: "{{ise_username}}"
+  #     ise_password: "{{ise_password}}"
+  #     ise_verify: "{{ise_verify}}"
+  #     state: present
+  #     name: Test_Device_7
+  #     dtlsDnsName: Test
+  #     description: Test description
+  #     authenticationSettings:
+  #       networkProtocol: RADIUS
+  #       radiusSharedSecret: KMYCPD3QNKTP
+  #       enableKeyWrap: False
+  #       dtlsRequired: False
+  #       enableMultiSecret: string
+  #     snmpsettings:
+  #       version: TWO_C
+  #       roCommunity: C1sco12345
+  #       authPassowrd: string
+  #       privacyPassowrd: string
+  #       pollingInterval: 28800
+  #       linkTrapQuery: true
+  #       macTrapQuery: true
+  #       originatingPolicyServicesNode: Auto
+  #     tacacsSettings:
+  #       sharedSecret: C1sco12345
+  #       connectModeOptions: "OFF"
+  #       previousSharedSecret:
+  #       previousSharedSecretExpiry: 0
+  #     profileName: Cisco
+  #     coaPort: 0
+  #     NetworkDeviceIPList:
+  #     - ipaddress: 1.1.1.8
+  #       mask: 32
+  #     NetworkDeviceGroupList:
+  #     - Location#All Locations
+  #     - IPSEC#Is IPSEC Device#No
+  #     - Device Type#All Device Types
+  #   register: result
 
-  - name: Delete a network device by id
-    cisco.ise.network_device:
-      ise_hostname: "{{ise_host}}"
-      ise_username: "{{ise_username}}"
-      ise_password: "{{ise_password}}"
-      ise_verify: "{{ise_verify}}"
-      state: absent
-      id: "0667bc80-78a9-11eb-b987-005056aba98b"
-    register: result
+  # - name: Delete a network device by id
+  #   cisco.ise.network_device:
+  #     ise_hostname: "{{ise_hostname}}"
+  #     ise_username: "{{ise_username}}"
+  #     ise_password: "{{ise_password}}"
+  #     ise_verify: "{{ise_verify}}"
+  #     state: absent
+  #     id: 970f2cb0-aa03-11eb-95af-f263cf05f605
+  #   register: result
 
   - name: Delete a network device by name
     cisco.ise.network_device:
-      ise_hostname: "{{ise_host}}"
+      ise_hostname: "{{ise_hostname}}"
       ise_username: "{{ise_username}}"
       ise_password: "{{ise_password}}"
       ise_verify: "{{ise_verify}}"
       state: absent
-      name: "Test Device"
+      name: Test_Device_7
     register: result
-
-

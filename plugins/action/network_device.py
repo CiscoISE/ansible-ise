@@ -24,9 +24,12 @@ argument_spec.update(dict(
         name=dict(type="str"),
         description=dict(type="str"),
         authenticationSettings=dict(type="dict"),
+        tacacsSettings=dict(type="dict"),
+        snmpsettings=dict(type="dict"),
+        dtlsDnsName=dict(type="str"),
         profileName=dict(type="str"),
         coaPort=dict(type="int"),
-        link=dict(type="dict"),
+        trustsecsettings=dict(type="dict"),
         NetworkDeviceIPList=dict(type="list"),
         NetworkDeviceGroupList=dict(type="list"),
     ))
@@ -43,23 +46,27 @@ required_together = []
 class NetworkDevice(object):
     def __init__(self, params, ise):
         self.ise = ise
-        new_object = dict(
-            id=params.get("id")
-            name=params.get("name")
-            description=params.get("description")
-            authenticationSettings=params.get("authenticationSettings")
-            profileName=params.get("profileName")
-            coaPort=params.get("coaPort")
-            link=params.get("coaPort")
-            NetworkDeviceIPList=params.get("NetworkDeviceIPList")
-            NetworkDeviceGroupList=params.get("NetworkDeviceGroupList")
+        self.new_object = dict(
+            id=params.get("id"),
+            name=params.get("name"),
+            description=params.get("description"),
+            authentication_settings=params.get("authenticationSettings"),
+            tacacs_settings=params.get("tacacsSettings"),
+            snmpsettings=params.get("snmpsettings"),
+            dtls_dns_name=params.get("dtlsDnsName"),
+            profile_name=params.get("profileName"),
+            coa_port=params.get("coaPort"),
+            trustsecsettings=params.get("trustsecsettings"),
+            network_device_iplist=params.get("NetworkDeviceIPList"),
+            network_device_group_list=params.get("NetworkDeviceGroupList"),
         )
-        self.new_object = new_object
         self.existing_objects = self.get_objects()
 
     def get_objects(self):
-        result = self.ise.exec(family="network_device", function="networkdevice", params=None)
-        return result["SearchResult"]["resources"]
+        return self.ise.exec(
+            family="network_device",
+            function="networkdevice"
+            )["SearchResult"]["resources"]
 
     def exists(self):
         result = False
@@ -75,10 +82,10 @@ class NetworkDevice(object):
         return result
 
     def create(self):
-        result = ise.exec(
+        result = self.ise.exec(
             family="network_device", 
-            function='create_networkdevice',
-            params=self.new_object),
+            function="create_networkdevice",
+            params=self.new_object,
         )
         return result
 
@@ -87,13 +94,13 @@ class NetworkDevice(object):
         name = self.new_object.get("name")
         result = None
         if id:
-            result = ise.exec(
+            result = self.ise.exec(
                 family="network_device",
                 function='update_networkdevice_by_id',
                 params=self.new_object
             )
         elif name:
-            result = ise.exec(
+            result = self.ise.exec(
                 family="network_device",
                 function='update_networkdevice_by_name',
                 params=self.new_object
@@ -105,13 +112,13 @@ class NetworkDevice(object):
         name = self.new_object.get("name")
         result = None
         if id:
-            result = ise.exec(
+            result = self.ise.exec(
                 family="network_device",
                 function='delete_networkdevice_by_id',
                 params=self.new_object
             )
         elif name:
-            result = ise.exec(
+            result = self.ise.exec(
                 family="network_device",
                 function='delete_networkdevice_by_name',
                 params=self.new_object
@@ -136,9 +143,9 @@ class ActionModule(ActionBase):
             schema_conditionals=dict(
                 required_if=required_if,
                 required_one_of=required_one_of,
-                mutually_exclusive=mutually_exclusive),
+                mutually_exclusive=mutually_exclusive,
                 required_together=required_together,
-            )
+            ),
             name=self._task.action,
         )
         valid, errors, self._task.args = aav.validate()
@@ -151,20 +158,31 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-        ise = ISESDK()
-        obj = NetworkDevice(self._task_args, ise)
+        ise = ISESDK(self._task.args)
+        obj = NetworkDevice(self._task.args, ise)
 
         state = self._task.args.get("state")
+
+        response = None
 
         if state == "present":
             if obj.exists():
                 response = obj.update()
+                ise.object_updated()
+                # TODO: 
+                # if not object_is_the_same:
+                #   response = obj.update()
+                #   ise.changed()  
             else:
                 response = obj.create()
+                ise.object_created()
 
         elif state == "absent":
             if obj.exists():
                 response = obj.delete()
+                ise.object_deleted()
+            else:
+                self._result.update(dict(result="Object not found."))
          
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())

@@ -8,9 +8,7 @@ except ImportError:
 else:
     ISE_SDK_IS_INSTALLED = True
 from ansible.module_utils.basic import AnsibleModule
-from ansible_collections.cisco.ise.plugins.module_utils.exceptions import (
-    
-)
+#from ansible_collections.cisco.ise.plugins.module_utils.exceptions import ()
 try:
     from ansible.errors import AnsibleActionFail
 except ImportError:
@@ -32,16 +30,16 @@ def ise_argument_spec():
 
 
 class ISESDK(object):
-    def __init__(self):
-        self.result = dict(changed=False)
+    def __init__(self, params):
+        self.result = dict(changed=False,result="")
         if ISE_SDK_IS_INSTALLED:
             self.api = api.IdentityServicesEngineAPI(
-                username=self.params.get("ise_username"),
-                password=self.params.get("ise_password"),
-                base_url="https://{ise_hostname}".format(ise_hostname=self.params.get("ise_hostname")),
-                verify=self.params.get("ise_verify"),
-                version=self.params.get("ise_version"),
-                wait_on_rate_limit=self.params.get("ise_wait_on_rate_limit"),
+                username=params.get("ise_username"),
+                password=params.get("ise_password"),
+                base_url="https://{ise_hostname}".format(ise_hostname=params.get("ise_hostname")),
+                verify=params.get("ise_verify"),
+                version=params.get("ise_version"),
+                wait_on_rate_limit=params.get("ise_wait_on_rate_limit"),
             )
         else:
             self.fail_json(msg="Cisco ISE Python SDK is not installed. Execute 'pip install isesdk'")
@@ -49,22 +47,37 @@ class ISESDK(object):
     def changed(self):
         self.result["changed"] = True
 
-    def exec(self, family, function, params):
+    def object_created(self):
+        self.changed()
+        self.result["result"] = "Object created"
+
+    def object_updated(self):
+        self.changed()
+        self.result["result"] = "Object updated"
+
+    def object_deleted(self):
+        self.changed()
+        self.result["result"] = "Object deleted"
+
+    def exec(self, family, function, params=None):
         try:
             family = getattr(self.api, family)
             func = getattr(family, function)
         except Exception as e:
             self.fail_json(msg=e)
 
-        try:
-            response = func(params)
-        except Exception as e:
-            self.fail_json(
-                msg=(
-                    "An error occured when executing operation."
-                    " The error was: {error}"
-                ).format(error=to_native(e))
-            )
+        #try:
+        if params:
+            response = func(**params)
+        else:
+            response = func()
+        # except Exception as e:
+        #     self.fail_json(
+        #         msg=(
+        #             "An error occured when executing operation."
+        #             " The error was: {error}"
+        #         ).format(error=e)
+        #     )
         return response
 
 
