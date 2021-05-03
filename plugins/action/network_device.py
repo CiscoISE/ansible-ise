@@ -60,25 +60,31 @@ class NetworkDevice(object):
             network_device_iplist=params.get("NetworkDeviceIPList"),
             network_device_group_list=params.get("NetworkDeviceGroupList"),
         )
-        self.existing_objects = self.get_objects()
 
-    def get_objects(self):
+    def get_objects(self, filter):
         return self.ise.exec(
             family="network_device",
-            function="networkdevice"
+            function="networkdevice",
+            params={"filter": filter}
             )["SearchResult"]["resources"]
+
+    def get_object_by_id(self, id):
+        return self.ise.exec(
+                family="network_device",
+                function='networkdevice_by_id',
+                params={"id": id}
+            )["NetworkDevice"]
 
     def exists(self):
         result = False
         id = self.new_object.get("id")
         name = self.new_object.get("name")
-        for obj in self.existing_objects:
-            if id:
-                if obj.get("id") == id:
-                    result = True
-            elif name:
-                if obj.get("name") == name:
-                    result = True
+        if id:
+            if self.get_object_by_id(id):
+                result = True
+        elif name:
+            if self.get_objects(filter="name.EQ.{}".format(name)):
+                result = True
         return result
 
     def create(self):
