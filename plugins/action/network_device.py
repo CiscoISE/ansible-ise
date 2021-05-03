@@ -61,11 +61,11 @@ class NetworkDevice(object):
             network_device_group_list=params.get("NetworkDeviceGroupList"),
         )
 
-    def get_objects(self, filter):
+    def get_object_by_name(self, name):
         return self.ise.exec(
             family="network_device",
             function="networkdevice",
-            params={"filter": filter}
+            params={"filter": "name.EQ.{}".format(name)}
             )["SearchResult"]["resources"]
 
     def get_object_by_id(self, id):
@@ -83,7 +83,7 @@ class NetworkDevice(object):
             if self.get_object_by_id(id):
                 result = True
         elif name:
-            if self.get_objects(filter="name.EQ.{}".format(name)):
+            if self.get_object_by_name(name):
                 result = True
         return result
 

@@ -2,7 +2,7 @@
 from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
 try:
-    from isesdk import api
+    from isesdk import api, exceptions
 except ImportError:
     ISE_SDK_IS_INSTALLED = False
 else:
@@ -66,20 +66,19 @@ class ISESDK(object):
         except Exception as e:
             self.fail_json(msg=e)
 
-        #try:
-        if params:
-            response = func(**params)
-        else:
-            response = func()
-        # except Exception as e:
-        #     self.fail_json(
-        #         msg=(
-        #             "An error occured when executing operation."
-        #             " The error was: {error}"
-        #         ).format(error=e)
-        #     )
+        try:
+            if params:
+                response = func(**params)
+            else:
+                response = func()
+        except exceptions.ApiError as e:
+            self.fail_json(
+                msg=(
+                    "An error occured when executing operation."
+                    " The error was: {error}"
+                ).format(error=e)
+            )
         return response
-
 
 
     def fail_json(self, msg, **kwargs):
