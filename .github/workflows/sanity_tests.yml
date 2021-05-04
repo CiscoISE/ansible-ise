@@ -21,11 +21,11 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
         with:
-          path: <tbd>/<tbd>
+          path: AltusConsulting/ise-ansible
       - name: Create directory
         run: mkdir -p ./ansible_collections/${{env.NAMESPACE}}
       - name: Move repository
-        run: mv ./<tbd>/<tbd> ./ansible_collections/${{env.NAMESPACE}}/${{env.COLLECTION_NAME}}
+        run: mv ./AltusConsulting/ise-ansible ./ansible_collections/${{env.NAMESPACE}}/${{env.COLLECTION_NAME}}
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
