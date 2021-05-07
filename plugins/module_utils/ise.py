@@ -2,7 +2,7 @@
 from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
 try:
-    from isesdk import api, exceptions
+    from ciscoisesdk import api, exceptions
 except ImportError:
     ISE_SDK_IS_INSTALLED = False
 else:
@@ -42,7 +42,7 @@ class ISESDK(object):
                 wait_on_rate_limit=params.get("ise_wait_on_rate_limit"),
             )
         else:
-            self.fail_json(msg="Cisco ISE Python SDK is not installed. Execute 'pip install isesdk'")
+            self.fail_json(msg="Cisco ISE Python SDK is not installed. Execute 'pip install ciscoisesdk'")
 
     def changed(self):
         self.result["changed"] = True

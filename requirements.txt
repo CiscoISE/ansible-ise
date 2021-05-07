@@ -1,1 +1,1 @@
-isesdk >= 1.0.0
+ciscoisesdk >= 1.0.0

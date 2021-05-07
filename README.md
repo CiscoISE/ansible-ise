@@ -21,7 +21,7 @@ sudo pip install ansible
 
 Cisco ISE SDK must be installed
 ```
-sudo pip install isesdk
+sudo pip install ciscoisesdk
 ```
 
 Install the collection
