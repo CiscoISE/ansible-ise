@@ -18,7 +18,7 @@ tags:
 - sdn
 dependencies:
   ansible.utils: ">=2.0.0 3.0"
-repository: https://github.com/<tbd>/<tbd>
+repository: https://github.com/CiscoISE/ansible-ise
 documentation: https://developer.cisco.com/docs/identity-services-engine/3.0/
-homepage: https://github.com/<tbd>/<tbd>
-issues: https://github.com/<tbd>/<tbd>/issues
+homepage: https://github.com/CiscoISE/ansible-ise
+issues: https://github.com/CiscoISE/ansible-ise/issues

@@ -2,7 +2,7 @@
 
 ## Ansible Modules for Cisco ISE
 
-The <tbd> project provides an Ansible collection for managing and automating your Cisco ISE environment. It consists of a set of modules and roles for performing tasks related to Cisco ISE.
+The ise-ansible project provides an Ansible collection for managing and automating your Cisco ISE environment. It consists of a set of modules and roles for performing tasks related to Cisco ISE.
 
 This collection has been tested and supports Cisco ISE 3.0.
 
@@ -10,7 +10,7 @@ This collection has been tested and supports Cisco ISE 3.0.
 
 ## Requirements
 - Ansible >= 2.9
-- [Cisco ISE SDK](https://github.com/<tbd>/<tbd>) v2.1.1 or newer
+- [Cisco ISE SDK](https://github.com/CiscoISE/ciscoisesdk) v2.1.1 or newer
 - Python >= 3.5, as the Cisco ISE SDK doesn't support Python version 2.x
 
 ## Install
@@ -65,14 +65,14 @@ In the `playbooks` directory you can find more examples and use cases.
 ## Update
 Getting the latest/nightly collection build
 
-Clone the <tbd> repository.
+Clone the ansible-ise repository.
 ```
-git clone https://github.com/<tbd>/<tbd>.git
+git clone https://github.com/CiscoISE/ansible-ise.git
 ```
 
-Go to the <tbd> directory
+Go to the ansible-ise directory
 ```
-cd <tbd>
+cd ansible-ise
 ```
 
 Pull the latest master from the repo
@@ -109,7 +109,7 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
 Ongoing development efforts and contributions to this collection are tracked as issues in this repository.
 
-We welcome community contributions to this collection. If you find problems, need an enhancement or need a new module, please open an issue or create a PR against the [Cisco ISE Ansible collection repository](https://github.com/<tbd>/<tbd>/issues).
+We welcome community contributions to this collection. If you find problems, need an enhancement or need a new module, please open an issue or create a PR against the [Cisco ISE Ansible collection repository](https://github.com/CiscoISE/ansible-ise/issues).
 
 ## Code of Conduct
 This collection follows the Ansible project's
