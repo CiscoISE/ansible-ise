@@ -69,20 +69,20 @@ class ActionModule(ActionBase):
         if id:
             response = ise.exec(
                 family="network_device",
-                function='networkdevice_by_id',
+                function='get_network_device_by_id',
                 params={"id": id}
-            )["NetworkDevice"]
+            ).response["NetworkDevice"]
         elif name:
             response = ise.exec(
                 family="network_device",
-                function='networkdevice_by_name',
+                function='get_network_device_by_name',
                 params={"name": name}
-            )["NetworkDevice"]
+            ).response["NetworkDevice"]
         else:
             response = ise.exec(
                 family="network_device",
-                function='networkdevice',
-            )["SearchResult"]["resources"]
+                function='get_all_network_device',
+            ).response["SearchResult"]["resources"]
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

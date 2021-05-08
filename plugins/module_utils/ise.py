@@ -59,6 +59,9 @@ class ISESDK(object):
         self.changed()
         self.result["result"] = "Object deleted"
 
+    def object_already_absent(self):
+        self.result["result"] = "Object already absent"
+
     def exec(self, family, function, params=None):
         try:
             family = getattr(self.api, family)

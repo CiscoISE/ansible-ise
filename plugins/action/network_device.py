@@ -64,16 +64,20 @@ class NetworkDevice(object):
     def get_object_by_name(self, name):
         return self.ise.exec(
             family="network_device",
-            function="networkdevice",
+            function="get_all_network_device",
             params={"filter": "name.EQ.{}".format(name)}
-            )["SearchResult"]["resources"]
+            ).response["SearchResult"]["resources"]
 
     def get_object_by_id(self, id):
-        return self.ise.exec(
-                family="network_device",
-                function='networkdevice_by_id',
-                params={"id": id}
-            )["NetworkDevice"]
+        try:
+            result = self.ise.exec(
+                    family="network_device",
+                    function='get_network_device_by_id',
+                    params={"id": id}
+                ).response["NetworkDevice"]
+        except Exception as e:
+            result = None
+        return result
 
     def exists(self):
         result = False
@@ -90,9 +94,9 @@ class NetworkDevice(object):
     def create(self):
         result = self.ise.exec(
             family="network_device", 
-            function="create_networkdevice",
+            function="create_network_device",
             params=self.new_object,
-        )
+        ).response
         return result
 
     def update(self):
@@ -102,15 +106,15 @@ class NetworkDevice(object):
         if id:
             result = self.ise.exec(
                 family="network_device",
-                function='update_networkdevice_by_id',
+                function='update_network_device_by_id',
                 params=self.new_object
-            )
+            ).response
         elif name:
             result = self.ise.exec(
                 family="network_device",
-                function='update_networkdevice_by_name',
+                function='update_network_device_by_name',
                 params=self.new_object
-            )
+            ).response
         return result
 
     def delete(self):
@@ -120,15 +124,15 @@ class NetworkDevice(object):
         if id:
             result = self.ise.exec(
                 family="network_device",
-                function='delete_networkdevice_by_id',
+                function='delete_network_device_by_id',
                 params=self.new_object
-            )
+            ).response
         elif name:
             result = self.ise.exec(
                 family="network_device",
                 function='delete_networkdevice_by_name',
                 params=self.new_object
-            )
+            ).response
         return result
 
 
@@ -175,10 +179,6 @@ class ActionModule(ActionBase):
             if obj.exists():
                 response = obj.update()
                 ise.object_updated()
-                # TODO: 
-                # if not object_is_the_same:
-                #   response = obj.update()
-                #   ise.changed()  
             else:
                 response = obj.create()
                 ise.object_created()
@@ -188,7 +188,7 @@ class ActionModule(ActionBase):
                 response = obj.delete()
                 ise.object_deleted()
             else:
-                self._result.update(dict(result="Object not found."))
+                ise.object_already_absent()
          
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
