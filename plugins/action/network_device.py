@@ -10,6 +10,7 @@ except ImportError:
 else:
     ANSIBLE_UTILS_IS_INSTALLED = True
 from ansible.errors import AnsibleActionFail
+from urllib.parse import quote
 from ansible_collections.cisco.ise.plugins.module_utils.ise import (
     ISESDK,
     ise_argument_spec,
@@ -65,7 +66,7 @@ class NetworkDevice(object):
         return self.ise.exec(
             family="network_device",
             function="get_all_network_device",
-            params={"filter": "name.EQ.{}".format(name)}
+            params={"filter": "name.EQ.{}".format(quote(name))}
             ).response["SearchResult"]["resources"]
 
     def get_object_by_id(self, id):
@@ -73,7 +74,7 @@ class NetworkDevice(object):
             result = self.ise.exec(
                     family="network_device",
                     function='get_network_device_by_id',
-                    params={"id": id}
+                    params={"id": quote(id)}
                 ).response["NetworkDevice"]
         except Exception as e:
             result = None
