@@ -5,11 +5,11 @@ __metaclass__ = type
 
 class AnsibleISEException(Exception):
     """Base class for all Ansible ISE package exceptions."""
-
     pass
 
 
-#class CustomException(AnsibleISeException):
-#    pass
+class InconsistentParameters(AnsibleISEException):
+    """Provided parameters are not consistent."""
+    pass
 
 
