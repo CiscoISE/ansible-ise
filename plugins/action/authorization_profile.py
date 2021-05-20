@@ -21,18 +21,33 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
         state = dict(type="str", default="present", choices=["present", "absent"]),
+        id=dict(type="str"),
         name=dict(type="str"),
         description=dict(type="str"),
-        authenticationSettings=dict(type="dict"),
-        tacacsSettings=dict(type="dict"),
-        snmpsettings=dict(type="dict"),
-        trustsecsettings=dict(type="dict"),
+        advancedAttributes=dict(type="list"),
+        accessType=dict(type="str"),
+        authzProfileType=dict(type="str"),
+        vlan=dict(type="dict"),
+        reauth=dict(type="dict"),
+        airespaceACL=dict(type="str"),
+        airespaceIPv6ACL=dict(type="str"),
+        webRedirection=dict(type="dict"),
+        acl=dict(type="str"),
+        trackMovement=dict(type="bool"),
+        serviceTemplate=dict(type="bool"),
+        easywiredSessionCandidate=dict(type="bool"),
+        daclName=dict(type="str"),
+        voiceDomainPermission=dict(type="bool"),
+        neat=dict(type="bool"),
+        webAuth=dict(type="bool"),
+        autoSmartPort=dict(type="str"),
+        interfaceTemplate=dict(type="str"),
+        ipv6ACLFilter=dict(type="str"),
+        avcProfile=dict(type="str"),
+        macSecPolicy=dict(type="str"),
+        asaVpn=dict(type="str"),
         profileName=dict(type="str"),
-        coaPort=dict(type="int"),
-        dtlsDnsName=dict(type="str"),
-        NetworkDeviceIPList=dict(type="list"),
-        NetworkDeviceGroupList=dict(type="list"),
-        id=dict(type="str"),
+        ipv6DaclName=dict(type="str"),
     ))
 
 required_if = [
@@ -44,32 +59,47 @@ mutually_exclusive = []
 required_together = []
 
 
-class NetworkDevice(object):
+class AuthorizationProfile(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
+            id=params.get("id"),
             name=params.get("name"),
             description=params.get("description"),
-            authentication_settings=params.get("authenticationSettings"),
-            tacacs_settings=params.get("tacacsSettings"),
-            snmpsettings=params.get("snmpsettings"),
-            trustsecsettings=params.get("trustsecsettings"),
+            advanced_attributes=params.get("advancedAttributes"),
+            access_type=params.get("accessType"),
+            authz_profile_type=params.get("authzProfileType"),
+            vlan=params.get("vlan"),
+            reauth=params.get("reauth"),
+            airespace_acl=params.get("airespaceACL"),
+            airespace_i_pv6_acl=params.get("airespaceIPv6ACL"),
+            web_redirection=params.get("webRedirection"),
+            acl=params.get("acl"),
+            track_movement=params.get("trackMovement"),
+            service_template=params.get("serviceTemplate"),
+            easywired_session_candidate=params.get("easywiredSessionCandidate"),
+            dacl_name=params.get("daclName"),
+            voice_domain_permission=params.get("voiceDomainPermission"),
+            neat=params.get("neat"),
+            web_auth=params.get("webAuth"),
+            auto_smart_port=params.get("autoSmartPort"),
+            interface_template=params.get("interfaceTemplate"),
+            ipv6_acl_filter=params.get("ipv6ACLFilter"),
+            avc_profile=params.get("avcProfile"),
+            mac_sec_policy=params.get("macSecPolicy"),
+            asa_vpn=params.get("asaVpn"),
             profile_name=params.get("profileName"),
-            coa_port=params.get("coaPort"),
-            dtls_dns_name=params.get("dtlsDnsName"),
-            network_device_iplist=params.get("NetworkDeviceIPList"),
-            network_device_group_list=params.get("NetworkDeviceGroupList"),
-            id=params.get("id"),
+            ipv6_dacl_name=params.get("ipv6DaclName"),
         )
 
 
     def get_object_by_name(self, name):
         try:
             result = self.ise.exec(
-                family="network_device",
-                function="get_network_device_by_name",
+                family="authorization_profile",
+                function="get_authorization_profile_by_name",
                 params={"name": quote(name)}
-                ).response['NetworkDevice']
+                ).response['AuthorizationProfile']
         except Exception as e:
             result = None
         return result
@@ -77,10 +107,10 @@ class NetworkDevice(object):
     def get_object_by_id(self, id):
         try:
             result = self.ise.exec(
-                family="network_device",
-                function="get_network_device_by_id",
+                family="authorization_profile",
+                function="get_authorization_profile_by_id",
                 params={"id": quote(id)}
-                ).response['NetworkDevice']
+                ).response['AuthorizationProfile']
         except Exception as e:
             result = None
         return result
@@ -99,8 +129,8 @@ class NetworkDevice(object):
 
     def create(self):
         result = self.ise.exec(
-            family="network_device",
-            function="create_network_device",
+            family="authorization_profile",
+            function="create_authorization_profile",
             params=self.new_object,
         ).response
         return result
@@ -109,36 +139,28 @@ class NetworkDevice(object):
         id = self.new_object.get("id")
         name = self.new_object.get("name")
         result = None
-        if id:
-            result = self.ise.exec(
-                family="network_device",
-                function="update_network_device_by_id",
-                params=self.new_object
-            ).response
-        elif name:
-            result = self.ise.exec(
-                family="network_device",
-                function="update_network_device_by_name",
-                params=self.new_object
-            ).response
+        if not id:
+            id_ = self.get_object_by_name(name).get("id")
+            self.new_object.update(dict(id=id_))
+        result = self.ise.exec(
+            family="authorization_profile",
+            function="update_authorization_profile_by_id",
+            params=self.new_object
+        ).response
         return result
 
     def delete(self):
         id = self.new_object.get("id")
         name = self.new_object.get("name")
         result = None
-        if id:
-            result = self.ise.exec(
-                family="network_device",
-                function="delete_network_device_by_id",
-                params=self.new_object
-            ).response
-        elif name:
-            result = self.ise.exec(
-                family="network_device",
-                function="delete_network_device_by_name",
-                params=self.new_object
-            ).response
+        if not id:
+            id_ = self.get_object_by_name(name).get("id")
+            self.new_object.update(dict(id=id_))
+        result = self.ise.exec(
+            family="authorization_profile",
+            function="delete_authorization_profile_by_id",
+            params=self.new_object
+        ).response
         return result
 
 class ActionModule(ActionBase):
@@ -174,7 +196,7 @@ class ActionModule(ActionBase):
         self._check_argspec()
 
         ise = ISESDK(self._task.args)
-        obj = NetworkDevice(self._task.args, ise)
+        obj = AuthorizationProfile(self._task.args, ise)
 
         state = self._task.args.get("state")
 

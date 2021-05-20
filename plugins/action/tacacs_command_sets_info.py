@@ -68,34 +68,27 @@ class ActionModule(ActionBase):
         name = self._task.args.get("name")
         if id:
             response = ise.exec(
-                family="network_device",
-                function='get_network_device_by_id',
+                family="tacacs_command_sets",
+                function='get_tacacs_command_sets_by_id',
                 params={"id": quote(id)}
-            ).response['NetworkDevice']
+            ).response['TacacsCommandSets']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result
         if name:
             response = ise.exec(
-                family="network_device",
-                function='get_network_device_by_name',
+                family="tacacs_command_sets",
+                function='get_tacacs_command_sets_by_name',
                 params={"name": quote(name)}
-            ).response['NetworkDevice']
+            ).response['TacacsCommandSets']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result
         if not name and not id:
-            response = []
-            generator = ise.exec(
-                family="network_device",
-                function='get_all_network_device_generator',
-            )
-            for item in generator:
-                tmp_response = item.response['SearchResult']['resources']
-                if isinstance(tmp_response, list):
-                    response += tmp_response
-                else:
-                    response.append(tmp_response)
+            response = ise.exec(
+                family="tacacs_command_sets",
+                function='get_all_tacacs_command_sets',
+            ).response['SearchResult']['resources']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

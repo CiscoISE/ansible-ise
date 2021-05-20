@@ -21,7 +21,6 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
         id=dict(type="str"),
-        name=dict(type="str"),
     ))
 
 required_if = []
@@ -68,27 +67,18 @@ class ActionModule(ActionBase):
         name = self._task.args.get("name")
         if id:
             response = ise.exec(
-                family="network_device",
-                function='get_network_device_by_id',
+                family="guest_smtp_notifications",
+                function='get_guest_smtp_notification_settings_by_id',
                 params={"id": quote(id)}
-            ).response['NetworkDevice']
-            self._result.update(dict(ise_response=response))
-            self._result.update(ise.exit_json())
-            return self._result
-        if name:
-            response = ise.exec(
-                family="network_device",
-                function='get_network_device_by_name',
-                params={"name": quote(name)}
-            ).response['NetworkDevice']
+            ).response['ERSGuestSmtpNotificationSettings']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result
         if not name and not id:
             response = []
             generator = ise.exec(
-                family="network_device",
-                function='get_all_network_device_generator',
+                family="guest_smtp_notifications",
+                function='get_all_guest_smtp_notification_settings_generator',
             )
             for item in generator:
                 tmp_response = item.response['SearchResult']['resources']

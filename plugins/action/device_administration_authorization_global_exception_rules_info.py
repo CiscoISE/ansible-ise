@@ -21,7 +21,6 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
         id=dict(type="str"),
-        name=dict(type="str"),
     ))
 
 required_if = []
@@ -68,34 +67,18 @@ class ActionModule(ActionBase):
         name = self._task.args.get("name")
         if id:
             response = ise.exec(
-                family="network_device",
-                function='get_network_device_by_id',
+                family="device_administration_authorization_global_exception_rules",
+                function='get_device_admin_policy_set_global_exception_by_id',
                 params={"id": quote(id)}
-            ).response['NetworkDevice']
-            self._result.update(dict(ise_response=response))
-            self._result.update(ise.exit_json())
-            return self._result
-        if name:
-            response = ise.exec(
-                family="network_device",
-                function='get_network_device_by_name',
-                params={"name": quote(name)}
-            ).response['NetworkDevice']
+            ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result
         if not name and not id:
-            response = []
-            generator = ise.exec(
-                family="network_device",
-                function='get_all_network_device_generator',
-            )
-            for item in generator:
-                tmp_response = item.response['SearchResult']['resources']
-                if isinstance(tmp_response, list):
-                    response += tmp_response
-                else:
-                    response.append(tmp_response)
+            response = ise.exec(
+                family="device_administration_authorization_global_exception_rules",
+                function='get_all_device_admin_policy_set_global_exception',
+            ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

@@ -15,92 +15,78 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
     ISESDK,
     ise_argument_spec,
 )
+from ansible_collections.cisco.ise.plugins.module_utils.exceptions import (
+    InconsistentParameters,
+)
 
 # Get common arguments specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
         state = dict(type="str", default="present", choices=["present", "absent"]),
-        name=dict(type="str"),
-        description=dict(type="str"),
-        authenticationSettings=dict(type="dict"),
-        tacacsSettings=dict(type="dict"),
-        snmpsettings=dict(type="dict"),
-        trustsecsettings=dict(type="dict"),
-        profileName=dict(type="str"),
-        coaPort=dict(type="int"),
-        dtlsDnsName=dict(type="str"),
-        NetworkDeviceIPList=dict(type="list"),
-        NetworkDeviceGroupList=dict(type="list"),
+        rule=dict(type="dict"),
+        profile=dict(type="list"),
+        securityGroup=dict(type="str"),
         id=dict(type="str"),
     ))
 
 required_if = [
-    ("state", "present", ("id", "name"), True),
-    ("state", "absent", ("id", "name"), True),
+    ("state", "present", ("id"), True),
+    ("state", "absent", ("id"), True),
 ]
 required_one_of = []
 mutually_exclusive = []
 required_together = []
 
 
-class NetworkDevice(object):
+class NetworkAccessAuthorizationGlobalExceptionRules(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            name=params.get("name"),
-            description=params.get("description"),
-            authentication_settings=params.get("authenticationSettings"),
-            tacacs_settings=params.get("tacacsSettings"),
-            snmpsettings=params.get("snmpsettings"),
-            trustsecsettings=params.get("trustsecsettings"),
-            profile_name=params.get("profileName"),
-            coa_port=params.get("coaPort"),
-            dtls_dns_name=params.get("dtlsDnsName"),
-            network_device_iplist=params.get("NetworkDeviceIPList"),
-            network_device_group_list=params.get("NetworkDeviceGroupList"),
+            rule=params.get("rule"),
+            profile=params.get("profile"),
+            security_group=params.get("securityGroup"),
             id=params.get("id"),
         )
 
 
     def get_object_by_name(self, name):
-        try:
-            result = self.ise.exec(
-                family="network_device",
-                function="get_network_device_by_name",
-                params={"name": quote(name)}
-                ).response['NetworkDevice']
-        except Exception as e:
-            result = None
+        # NOTICE: Does not have a get by name method or it is in another action
+        result = None
         return result
 
     def get_object_by_id(self, id):
         try:
             result = self.ise.exec(
-                family="network_device",
-                function="get_network_device_by_id",
+                family="network_access_authorization_global_exception_rules",
+                function="get_network_access_global_exception_rule_by_id",
                 params={"id": quote(id)}
-                ).response['NetworkDevice']
+                ).response
         except Exception as e:
             result = None
         return result
 
     def exists(self):
-        result = False
-        id = self.new_object.get("id")
+        id_exists = False
+        name_exists = False
+        o_id = self.new_object.get("id")
         name = self.new_object.get("name")
-        if id:
-            if self.get_object_by_id(id):
-                result = True
-        elif name:
+        if o_id:
+            if self.get_object_by_id(o_id):
+                id_exists = True
+        if name:
             if self.get_object_by_name(name):
-                result = True
-        return result
+                name_exists = True
+        if id_exists and name_exists:
+            _id = self.get_object_by_name(name).get("id")
+            if o_id != _id:
+                raise InconsistentParameters("The 'id' and 'name' params don't refer to the same object")
+        return id_exists or name_exists
 
     def create(self):
         result = self.ise.exec(
-            family="network_device",
-            function="create_network_device",
+            family="network_access_authorization_global_exception_rules",
+            function="create_network_access_global_exception_rule",
             params=self.new_object,
         ).response
         return result
@@ -109,36 +95,28 @@ class NetworkDevice(object):
         id = self.new_object.get("id")
         name = self.new_object.get("name")
         result = None
-        if id:
-            result = self.ise.exec(
-                family="network_device",
-                function="update_network_device_by_id",
-                params=self.new_object
-            ).response
-        elif name:
-            result = self.ise.exec(
-                family="network_device",
-                function="update_network_device_by_name",
-                params=self.new_object
-            ).response
+        if not id:
+            id_ = self.get_object_by_name(name).get("id")
+            self.new_object.update(dict(id=id_))
+        result = self.ise.exec(
+            family="network_access_authorization_global_exception_rules",
+            function="update_network_access_global_exception_rule_by_id",
+            params=self.new_object
+        ).response
         return result
 
     def delete(self):
         id = self.new_object.get("id")
         name = self.new_object.get("name")
         result = None
-        if id:
-            result = self.ise.exec(
-                family="network_device",
-                function="delete_network_device_by_id",
-                params=self.new_object
-            ).response
-        elif name:
-            result = self.ise.exec(
-                family="network_device",
-                function="delete_network_device_by_name",
-                params=self.new_object
-            ).response
+        if not id:
+            id_ = self.get_object_by_name(name).get("id")
+            self.new_object.update(dict(id=id_))
+        result = self.ise.exec(
+            family="network_access_authorization_global_exception_rules",
+            function="delete_network_access_global_exception_rule_by_id",
+            params=self.new_object
+        ).response
         return result
 
 class ActionModule(ActionBase):
@@ -174,7 +152,7 @@ class ActionModule(ActionBase):
         self._check_argspec()
 
         ise = ISESDK(self._task.args)
-        obj = NetworkDevice(self._task.args, ise)
+        obj = NetworkAccessAuthorizationGlobalExceptionRules(self._task.args, ise)
 
         state = self._task.args.get("state")
 

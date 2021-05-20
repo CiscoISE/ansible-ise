@@ -15,24 +15,33 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
     ISESDK,
     ise_argument_spec,
 )
+from ansible_collections.cisco.ise.plugins.module_utils.exceptions import (
+    InconsistentParameters,
+)
 
 # Get common arguments specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
         state = dict(type="str", default="present", choices=["present", "absent"]),
+        conditionType=dict(type="str"),
+        isNegate=dict(type="bool"),
         name=dict(type="str"),
-        description=dict(type="str"),
-        authenticationSettings=dict(type="dict"),
-        tacacsSettings=dict(type="dict"),
-        snmpsettings=dict(type="dict"),
-        trustsecsettings=dict(type="dict"),
-        profileName=dict(type="str"),
-        coaPort=dict(type="int"),
-        dtlsDnsName=dict(type="str"),
-        NetworkDeviceIPList=dict(type="list"),
-        NetworkDeviceGroupList=dict(type="list"),
         id=dict(type="str"),
+        description=dict(type="str"),
+        dictionaryName=dict(type="str"),
+        attributeName=dict(type="str"),
+        attributeId=dict(type="str"),
+        operator=dict(type="str"),
+        dictionaryValue=dict(type="str"),
+        attributeValue=dict(type="str"),
+        children=dict(type="list"),
+        hoursRange=dict(type="dict"),
+        hoursRangeException=dict(type="dict"),
+        weekDays=dict(type="list"),
+        weekDaysException=dict(type="list"),
+        datesRange=dict(type="dict"),
+        datesRangeException=dict(type="dict"),
     ))
 
 required_if = [
@@ -44,63 +53,68 @@ mutually_exclusive = []
 required_together = []
 
 
-class NetworkDevice(object):
+class NetworkAccessTimeDateConditions(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
+            condition_type=params.get("conditionType"),
+            is_negate=params.get("isNegate"),
             name=params.get("name"),
-            description=params.get("description"),
-            authentication_settings=params.get("authenticationSettings"),
-            tacacs_settings=params.get("tacacsSettings"),
-            snmpsettings=params.get("snmpsettings"),
-            trustsecsettings=params.get("trustsecsettings"),
-            profile_name=params.get("profileName"),
-            coa_port=params.get("coaPort"),
-            dtls_dns_name=params.get("dtlsDnsName"),
-            network_device_iplist=params.get("NetworkDeviceIPList"),
-            network_device_group_list=params.get("NetworkDeviceGroupList"),
             id=params.get("id"),
+            description=params.get("description"),
+            dictionary_name=params.get("dictionaryName"),
+            attribute_name=params.get("attributeName"),
+            attribute_id=params.get("attributeId"),
+            operator=params.get("operator"),
+            dictionary_value=params.get("dictionaryValue"),
+            attribute_value=params.get("attributeValue"),
+            children=params.get("children"),
+            hours_range=params.get("hoursRange"),
+            hours_range_exception=params.get("hoursRangeException"),
+            week_days=params.get("weekDays"),
+            week_days_exception=params.get("weekDaysException"),
+            dates_range=params.get("datesRange"),
+            dates_range_exception=params.get("datesRangeException"),
         )
 
 
     def get_object_by_name(self, name):
-        try:
-            result = self.ise.exec(
-                family="network_device",
-                function="get_network_device_by_name",
-                params={"name": quote(name)}
-                ).response['NetworkDevice']
-        except Exception as e:
-            result = None
+        # NOTICE: Does not have a get by name method or it is in another action
+        result = None
         return result
 
     def get_object_by_id(self, id):
         try:
             result = self.ise.exec(
-                family="network_device",
-                function="get_network_device_by_id",
+                family="network_access_time_date_conditions",
+                function="get_network_access_time_condition_by_id",
                 params={"id": quote(id)}
-                ).response['NetworkDevice']
+                ).response
         except Exception as e:
             result = None
         return result
 
     def exists(self):
-        result = False
-        id = self.new_object.get("id")
+        id_exists = False
+        name_exists = False
+        o_id = self.new_object.get("id")
         name = self.new_object.get("name")
-        if id:
-            if self.get_object_by_id(id):
-                result = True
-        elif name:
+        if o_id:
+            if self.get_object_by_id(o_id):
+                id_exists = True
+        if name:
             if self.get_object_by_name(name):
-                result = True
-        return result
+                name_exists = True
+        if id_exists and name_exists:
+            _id = self.get_object_by_name(name).get("id")
+            if o_id != _id:
+                raise InconsistentParameters("The 'id' and 'name' params don't refer to the same object")
+        return id_exists or name_exists
 
     def create(self):
         result = self.ise.exec(
-            family="network_device",
-            function="create_network_device",
+            family="network_access_time_date_conditions",
+            function="create_network_access_time_condition",
             params=self.new_object,
         ).response
         return result
@@ -109,36 +123,28 @@ class NetworkDevice(object):
         id = self.new_object.get("id")
         name = self.new_object.get("name")
         result = None
-        if id:
-            result = self.ise.exec(
-                family="network_device",
-                function="update_network_device_by_id",
-                params=self.new_object
-            ).response
-        elif name:
-            result = self.ise.exec(
-                family="network_device",
-                function="update_network_device_by_name",
-                params=self.new_object
-            ).response
+        if not id:
+            id_ = self.get_object_by_name(name).get("id")
+            self.new_object.update(dict(id=id_))
+        result = self.ise.exec(
+            family="network_access_time_date_conditions",
+            function="update_network_access_time_condition_by_id",
+            params=self.new_object
+        ).response
         return result
 
     def delete(self):
         id = self.new_object.get("id")
         name = self.new_object.get("name")
         result = None
-        if id:
-            result = self.ise.exec(
-                family="network_device",
-                function="delete_network_device_by_id",
-                params=self.new_object
-            ).response
-        elif name:
-            result = self.ise.exec(
-                family="network_device",
-                function="delete_network_device_by_name",
-                params=self.new_object
-            ).response
+        if not id:
+            id_ = self.get_object_by_name(name).get("id")
+            self.new_object.update(dict(id=id_))
+        result = self.ise.exec(
+            family="network_access_time_date_conditions",
+            function="delete_network_access_time_condition_by_id",
+            params=self.new_object
+        ).response
         return result
 
 class ActionModule(ActionBase):
@@ -174,7 +180,7 @@ class ActionModule(ActionBase):
         self._check_argspec()
 
         ise = ISESDK(self._task.args)
-        obj = NetworkDevice(self._task.args, ise)
+        obj = NetworkAccessTimeDateConditions(self._task.args, ise)
 
         state = self._task.args.get("state")
 

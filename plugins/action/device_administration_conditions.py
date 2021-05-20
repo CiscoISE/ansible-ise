@@ -21,18 +21,24 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
         state = dict(type="str", default="present", choices=["present", "absent"]),
+        conditionType=dict(type="str"),
+        isNegate=dict(type="bool"),
         name=dict(type="str"),
-        description=dict(type="str"),
-        authenticationSettings=dict(type="dict"),
-        tacacsSettings=dict(type="dict"),
-        snmpsettings=dict(type="dict"),
-        trustsecsettings=dict(type="dict"),
-        profileName=dict(type="str"),
-        coaPort=dict(type="int"),
-        dtlsDnsName=dict(type="str"),
-        NetworkDeviceIPList=dict(type="list"),
-        NetworkDeviceGroupList=dict(type="list"),
         id=dict(type="str"),
+        description=dict(type="str"),
+        dictionaryName=dict(type="str"),
+        attributeName=dict(type="str"),
+        attributeId=dict(type="str"),
+        operator=dict(type="str"),
+        dictionaryValue=dict(type="str"),
+        attributeValue=dict(type="str"),
+        children=dict(type="list"),
+        hoursRange=dict(type="dict"),
+        hoursRangeException=dict(type="dict"),
+        weekDays=dict(type="list"),
+        weekDaysException=dict(type="list"),
+        datesRange=dict(type="dict"),
+        datesRangeException=dict(type="dict"),
     ))
 
 required_if = [
@@ -44,32 +50,38 @@ mutually_exclusive = []
 required_together = []
 
 
-class NetworkDevice(object):
+class DeviceAdministrationConditions(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
+            condition_type=params.get("conditionType"),
+            is_negate=params.get("isNegate"),
             name=params.get("name"),
-            description=params.get("description"),
-            authentication_settings=params.get("authenticationSettings"),
-            tacacs_settings=params.get("tacacsSettings"),
-            snmpsettings=params.get("snmpsettings"),
-            trustsecsettings=params.get("trustsecsettings"),
-            profile_name=params.get("profileName"),
-            coa_port=params.get("coaPort"),
-            dtls_dns_name=params.get("dtlsDnsName"),
-            network_device_iplist=params.get("NetworkDeviceIPList"),
-            network_device_group_list=params.get("NetworkDeviceGroupList"),
             id=params.get("id"),
+            description=params.get("description"),
+            dictionary_name=params.get("dictionaryName"),
+            attribute_name=params.get("attributeName"),
+            attribute_id=params.get("attributeId"),
+            operator=params.get("operator"),
+            dictionary_value=params.get("dictionaryValue"),
+            attribute_value=params.get("attributeValue"),
+            children=params.get("children"),
+            hours_range=params.get("hoursRange"),
+            hours_range_exception=params.get("hoursRangeException"),
+            week_days=params.get("weekDays"),
+            week_days_exception=params.get("weekDaysException"),
+            dates_range=params.get("datesRange"),
+            dates_range_exception=params.get("datesRangeException"),
         )
 
 
     def get_object_by_name(self, name):
         try:
             result = self.ise.exec(
-                family="network_device",
-                function="get_network_device_by_name",
+                family="device_administration_conditions",
+                function="get_device_admin_condition_by_name",
                 params={"name": quote(name)}
-                ).response['NetworkDevice']
+                ).response
         except Exception as e:
             result = None
         return result
@@ -77,10 +89,10 @@ class NetworkDevice(object):
     def get_object_by_id(self, id):
         try:
             result = self.ise.exec(
-                family="network_device",
-                function="get_network_device_by_id",
+                family="device_administration_conditions",
+                function="get_device_admin_condition_by_id",
                 params={"id": quote(id)}
-                ).response['NetworkDevice']
+                ).response
         except Exception as e:
             result = None
         return result
@@ -99,8 +111,8 @@ class NetworkDevice(object):
 
     def create(self):
         result = self.ise.exec(
-            family="network_device",
-            function="create_network_device",
+            family="device_administration_conditions",
+            function="create_device_admin_condition",
             params=self.new_object,
         ).response
         return result
@@ -111,14 +123,14 @@ class NetworkDevice(object):
         result = None
         if id:
             result = self.ise.exec(
-                family="network_device",
-                function="update_network_device_by_id",
+                family="device_administration_conditions",
+                function="update_device_admin_condition_by_id",
                 params=self.new_object
             ).response
         elif name:
             result = self.ise.exec(
-                family="network_device",
-                function="update_network_device_by_name",
+                family="device_administration_conditions",
+                function="update_device_admin_condition_by_name",
                 params=self.new_object
             ).response
         return result
@@ -129,14 +141,14 @@ class NetworkDevice(object):
         result = None
         if id:
             result = self.ise.exec(
-                family="network_device",
-                function="delete_network_device_by_id",
+                family="device_administration_conditions",
+                function="delete_device_admin_condition_by_id",
                 params=self.new_object
             ).response
         elif name:
             result = self.ise.exec(
-                family="network_device",
-                function="delete_network_device_by_name",
+                family="device_administration_conditions",
+                function="delete_device_admin_condition_by_name",
                 params=self.new_object
             ).response
         return result
@@ -174,7 +186,7 @@ class ActionModule(ActionBase):
         self._check_argspec()
 
         ise = ISESDK(self._task.args)
-        obj = NetworkDevice(self._task.args, ise)
+        obj = DeviceAdministrationConditions(self._task.args, ise)
 
         state = self._task.args.get("state")
 

@@ -66,24 +66,36 @@ class ActionModule(ActionBase):
 
         id = self._task.args.get("id")
         name = self._task.args.get("name")
-        result = None
         if id:
             response = ise.exec(
                 family="network_device_group",
                 function='get_network_device_group_by_id',
                 params={"id": quote(id)}
-            ).response["NetworkDeviceGroup"]
-        elif name:
+            ).response['NetworkDeviceGroup']
+            self._result.update(dict(ise_response=response))
+            self._result.update(ise.exit_json())
+            return self._result
+        if name:
             response = ise.exec(
                 family="network_device_group",
                 function='get_network_device_group_by_name',
                 params={"name": quote(name)}
-            ).response["NetworkDeviceGroup"]
-        else:
-            response = ise.exec(
+            ).response['NetworkDeviceGroup']
+            self._result.update(dict(ise_response=response))
+            self._result.update(ise.exit_json())
+            return self._result
+        if not name and not id:
+            response = []
+            generator = ise.exec(
                 family="network_device_group",
-                function='get_all_network_device_group',
-            ).response["SearchResult"]["resources"]
-        self._result.update(dict(ise_response=response))
-        self._result.update(ise.exit_json())
-        return self._result
+                function='get_all_network_device_group_generator',
+            )
+            for item in generator:
+                tmp_response = item.response['SearchResult']['resources']
+                if isinstance(tmp_response, list):
+                    response += tmp_response
+                else:
+                    response.append(tmp_response)
+            self._result.update(dict(ise_response=response))
+            self._result.update(ise.exit_json())
+            return self._result

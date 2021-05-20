@@ -15,19 +15,16 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
     ISESDK,
     ise_argument_spec,
 )
-from ansible_collections.cisco.ise.plugins.module_utils.exceptions import (
-    InconsistentParameters,
-)
 
-# Get common arguements specification
+# Get common arguments specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
         state = dict(type="str", default="present", choices=["present", "absent"]),
-        id=dict(type="str"),
         name=dict(type="str"),
         description=dict(type="str"),
         othername=dict(type="str"),
+        id=dict(type="str"),
     ))
 
 required_if = [
@@ -43,13 +40,12 @@ class NetworkDeviceGroup(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            id=params.get("id"),
             name=params.get("name"),
             description=params.get("description"),
             othername=params.get("othername"),
+            id=params.get("id"),
         )
-        #self.object_by_name = self.get_object_by_name(name)
-        #self.object_by_id = self.get_object_by_id(id)
+
 
     def get_object_by_name(self, name):
         try:
@@ -57,7 +53,7 @@ class NetworkDeviceGroup(object):
                 family="network_device_group",
                 function="get_network_device_group_by_name",
                 params={"name": quote(name)}
-                ).response["NetworkDeviceGroup"]
+                ).response['NetworkDeviceGroup']
         except Exception as e:
             result = None
         return result
@@ -66,33 +62,28 @@ class NetworkDeviceGroup(object):
         try:
             result = self.ise.exec(
                 family="network_device_group",
-                function='get_network_device_group_by_id',
+                function="get_network_device_group_by_id",
                 params={"id": quote(id)}
-            ).response["NetworkDeviceGroup"]
+                ).response['NetworkDeviceGroup']
         except Exception as e:
             result = None
         return result
 
     def exists(self):
-        id_exists = False
-        name_exists = False
+        result = False
         id = self.new_object.get("id")
         name = self.new_object.get("name")
         if id:
             if self.get_object_by_id(id):
-                id_exists = True
-        if name:
+                result = True
+        elif name:
             if self.get_object_by_name(name):
-                name_exists = True
-        if id_exists and name_exists:
-            _id = self.get_object_by_name(name).get("id")
-            if id != id:
-                raise InconsistentParameters("The 'id' and 'name' params don't refer to the same object")
-        return id_exists or name_exists
+                result = True
+        return result
 
     def create(self):
         result = self.ise.exec(
-            family="network_device_group", 
+            family="network_device_group",
             function="create_network_device_group",
             params=self.new_object,
         ).response
@@ -103,30 +94,28 @@ class NetworkDeviceGroup(object):
         name = self.new_object.get("name")
         result = None
         if not id:
-            id = self.get_object_by_name(name).get("id")
-            self.new_object.update(dict(id=id))
+            id_ = self.get_object_by_name(name).get("id")
+            self.new_object.update(dict(id=id_))
         result = self.ise.exec(
             family="network_device_group",
-            function='update_network_device_group_by_id',
+            function="update_network_device_group_by_id",
             params=self.new_object
-        ).response            
+        ).response
         return result
 
-    # TODO: Add logic to the delete operation, similar to the update operation
     def delete(self):
         id = self.new_object.get("id")
         name = self.new_object.get("name")
         result = None
         if not id:
-            id = self.get_object_by_name(name).get("id")
-            self.new_object.update(dict(id=id))
+            id_ = self.get_object_by_name(name).get("id")
+            self.new_object.update(dict(id=id_))
         result = self.ise.exec(
             family="network_device_group",
-            function='delete_network_device_group_by_id',
+            function="delete_network_device_group_by_id",
             params=self.new_object
         ).response
         return result
-
 
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):

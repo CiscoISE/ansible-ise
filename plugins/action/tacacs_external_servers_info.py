@@ -68,27 +68,27 @@ class ActionModule(ActionBase):
         name = self._task.args.get("name")
         if id:
             response = ise.exec(
-                family="network_device",
-                function='get_network_device_by_id',
+                family="tacacs_external_servers",
+                function='get_tacacs_external_servers_by_id',
                 params={"id": quote(id)}
-            ).response['NetworkDevice']
+            ).response['TacacsExternalServer']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result
         if name:
             response = ise.exec(
-                family="network_device",
-                function='get_network_device_by_name',
+                family="tacacs_external_servers",
+                function='get_tacacs_external_servers_by_name',
                 params={"name": quote(name)}
-            ).response['NetworkDevice']
+            ).response['TacacsExternalServer']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result
         if not name and not id:
             response = []
             generator = ise.exec(
-                family="network_device",
-                function='get_all_network_device_generator',
+                family="tacacs_external_servers",
+                function='get_all_tacacs_external_servers_generator',
             )
             for item in generator:
                 tmp_response = item.response['SearchResult']['resources']

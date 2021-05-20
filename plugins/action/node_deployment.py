@@ -21,86 +21,75 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
         state = dict(type="str", default="present", choices=["present", "absent"]),
-        name=dict(type="str"),
-        description=dict(type="str"),
-        authenticationSettings=dict(type="dict"),
-        tacacsSettings=dict(type="dict"),
-        snmpsettings=dict(type="dict"),
-        trustsecsettings=dict(type="dict"),
-        profileName=dict(type="str"),
-        coaPort=dict(type="int"),
-        dtlsDnsName=dict(type="str"),
-        NetworkDeviceIPList=dict(type="list"),
-        NetworkDeviceGroupList=dict(type="list"),
-        id=dict(type="str"),
+        fdqn=dict(type="str"),
+        userName=dict(type="str"),
+        password=dict(type="str"),
+        administration=dict(type="dict"),
+        generalSettings=dict(type="dict"),
+        profileConfiguration=dict(type="dict"),
+        hostname=dict(type="str"),
     ))
 
 required_if = [
-    ("state", "present", ("id", "name"), True),
-    ("state", "absent", ("id", "name"), True),
+    ("state", "present", ("hostname"), True),
+    ("state", "absent", ("hostname"), True),
 ]
 required_one_of = []
 mutually_exclusive = []
 required_together = []
 
 
-class NetworkDevice(object):
+class NodeDeployment(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            name=params.get("name"),
-            description=params.get("description"),
-            authentication_settings=params.get("authenticationSettings"),
-            tacacs_settings=params.get("tacacsSettings"),
-            snmpsettings=params.get("snmpsettings"),
-            trustsecsettings=params.get("trustsecsettings"),
-            profile_name=params.get("profileName"),
-            coa_port=params.get("coaPort"),
-            dtls_dns_name=params.get("dtlsDnsName"),
-            network_device_iplist=params.get("NetworkDeviceIPList"),
-            network_device_group_list=params.get("NetworkDeviceGroupList"),
-            id=params.get("id"),
+            fdqn=params.get("fdqn"),
+            user_name=params.get("userName"),
+            password=params.get("password"),
+            administration=params.get("administration"),
+            general_settings=params.get("generalSettings"),
+            profile_configuration=params.get("profileConfiguration"),
+            hostname=params.get("hostname"),
         )
 
 
     def get_object_by_name(self, name):
         try:
             result = self.ise.exec(
-                family="network_device",
-                function="get_network_device_by_name",
+                family="node_deployment",
+                function="get_node_details",
                 params={"name": quote(name)}
-                ).response['NetworkDevice']
+                ).response
         except Exception as e:
             result = None
         return result
 
     def get_object_by_id(self, id):
-        try:
-            result = self.ise.exec(
-                family="network_device",
-                function="get_network_device_by_id",
-                params={"id": quote(id)}
-                ).response['NetworkDevice']
-        except Exception as e:
-            result = None
+        # NOTICE: Does not have a get by id method or it is in another action
+        result = None
         return result
 
     def exists(self):
-        result = False
-        id = self.new_object.get("id")
+        id_exists = False
+        name_exists = False
+        o_id = self.new_object.get("id")
         name = self.new_object.get("name")
-        if id:
-            if self.get_object_by_id(id):
-                result = True
-        elif name:
+        if o_id:
+            if self.get_object_by_id(o_id):
+                id_exists = True
+        if name:
             if self.get_object_by_name(name):
-                result = True
-        return result
+                name_exists = True
+        if id_exists and name_exists:
+            _id = self.get_object_by_name(name).get("id")
+            if o_id != _id:
+                raise InconsistentParameters("The 'id' and 'name' params don't refer to the same object")
+        return id_exists or name_exists
 
     def create(self):
         result = self.ise.exec(
-            family="network_device",
-            function="create_network_device",
+            family="node_deployment",
+            function="register_node",
             params=self.new_object,
         ).response
         return result
@@ -109,36 +98,28 @@ class NetworkDevice(object):
         id = self.new_object.get("id")
         name = self.new_object.get("name")
         result = None
-        if id:
-            result = self.ise.exec(
-                family="network_device",
-                function="update_network_device_by_id",
-                params=self.new_object
-            ).response
-        elif name:
-            result = self.ise.exec(
-                family="network_device",
-                function="update_network_device_by_name",
-                params=self.new_object
-            ).response
+        if not name:
+            name_ = self.get_object_by_id(id).get("name")
+            self.new_object.update(dict(name=name_))
+        result = self.ise.exec(
+            family="node_deployment",
+            function="update_node",
+            params=self.new_object
+        ).response
         return result
 
     def delete(self):
         id = self.new_object.get("id")
         name = self.new_object.get("name")
         result = None
-        if id:
-            result = self.ise.exec(
-                family="network_device",
-                function="delete_network_device_by_id",
-                params=self.new_object
-            ).response
-        elif name:
-            result = self.ise.exec(
-                family="network_device",
-                function="delete_network_device_by_name",
-                params=self.new_object
-            ).response
+        if not name:
+            name_ = self.get_object_by_id(id).get("name")
+            self.new_object.update(dict(name=name_))
+        result = self.ise.exec(
+            family="node_deployment",
+            function="delete_node",
+            params=self.new_object
+        ).response
         return result
 
 class ActionModule(ActionBase):
@@ -174,7 +155,7 @@ class ActionModule(ActionBase):
         self._check_argspec()
 
         ise = ISESDK(self._task.args)
-        obj = NetworkDevice(self._task.args, ise)
+        obj = NodeDeployment(self._task.args, ise)
 
         state = self._task.args.get("state")
 

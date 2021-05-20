@@ -68,34 +68,25 @@ class ActionModule(ActionBase):
         name = self._task.args.get("name")
         if id:
             response = ise.exec(
-                family="network_device",
-                function='get_network_device_by_id',
+                family="certificates",
+                function='get_system_certificate_by_id',
                 params={"id": quote(id)}
-            ).response['NetworkDevice']
+            ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result
         if name:
             response = ise.exec(
-                family="network_device",
-                function='get_network_device_by_name',
+                family="certificates",
+                function='get_all_system_certificates',
                 params={"name": quote(name)}
-            ).response['NetworkDevice']
+            ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result
         if not name and not id:
-            response = []
-            generator = ise.exec(
-                family="network_device",
-                function='get_all_network_device_generator',
-            )
-            for item in generator:
-                tmp_response = item.response['SearchResult']['resources']
-                if isinstance(tmp_response, list):
-                    response += tmp_response
-                else:
-                    response.append(tmp_response)
+            # NOTICE: Does not have a get all method or it is in another action
+            response = None
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

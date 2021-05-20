@@ -68,27 +68,27 @@ class ActionModule(ActionBase):
         name = self._task.args.get("name")
         if id:
             response = ise.exec(
-                family="network_device",
-                function='get_network_device_by_id',
+                family="authorization_profile",
+                function='get_authorization_profile_by_id',
                 params={"id": quote(id)}
-            ).response['NetworkDevice']
+            ).response['AuthorizationProfile']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result
         if name:
             response = ise.exec(
-                family="network_device",
-                function='get_network_device_by_name',
+                family="authorization_profile",
+                function='get_authorization_profile_by_name',
                 params={"name": quote(name)}
-            ).response['NetworkDevice']
+            ).response['AuthorizationProfile']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result
         if not name and not id:
             response = []
             generator = ise.exec(
-                family="network_device",
-                function='get_all_network_device_generator',
+                family="authorization_profile",
+                function='get_all_authorization_profiles_generator',
             )
             for item in generator:
                 tmp_response = item.response['SearchResult']['resources']
