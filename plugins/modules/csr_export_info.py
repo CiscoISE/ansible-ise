@@ -1,8 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# Copyright: (c) 2021, Rafael Campos <rcampos@altus.cr>
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# Copyright (c) 2021, Cisco Systems
+# MIT License (see LICENSE)
 
 DOCUMENTATION = r"""
 ---
@@ -15,11 +15,11 @@ author: Rafael Campos (@racampos)
 options:
   hostname:
     description:
-    -  hostname path parameter. The hostname to which the CSR belongs.
+    - Hostname path parameter. The hostname to which the CSR belongs.
     type: str
   id:
     description:
-    -  id path parameter. The ID of the CSR to be exported.
+    - Id path parameter. The ID of the CSR to be exported.
     type: str
 requirements:
 - ciscoisesdk

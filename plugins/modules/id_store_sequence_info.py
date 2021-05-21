@@ -1,8 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# Copyright: (c) 2021, Rafael Campos <rcampos@altus.cr>
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# Copyright (c) 2021, Cisco Systems
+# MIT License (see LICENSE)
 
 DOCUMENTATION = r"""
 ---
@@ -17,19 +17,19 @@ author: Rafael Campos (@racampos)
 options:
   page:
     description:
-    -  page query parameter. Page number
+    - Page query parameter. Page number.
     type: int
   size:
     description:
-    -  size query parameter. Number of objects returned per page
+    - Size query parameter. Number of objects returned per page.
     type: int
   id:
     description:
-    -  id path parameter.
+    - Id path parameter.
     type: str
   name:
     description:
-    -  name path parameter.
+    - Name path parameter.
     type: str
 requirements:
 - ciscoisesdk

@@ -1,8 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# Copyright: (c) 2021, Rafael Campos <rcampos@altus.cr>
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# Copyright (c) 2021, Cisco Systems
+# MIT License (see LICENSE)
 
 DOCUMENTATION = r"""
 ---
@@ -16,11 +16,11 @@ author: Rafael Campos (@racampos)
 options:
   policyId:
     description:
-    -  policyId path parameter. Policy id
+    - PolicyId path parameter. Policy id.
     type: str
   id:
     description:
-    -  id path parameter. Rule id
+    - Id path parameter. Rule id.
     type: str
 requirements:
 - ciscoisesdk

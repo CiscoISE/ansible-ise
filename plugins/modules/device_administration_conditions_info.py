@@ -1,8 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# Copyright: (c) 2021, Rafael Campos <rcampos@altus.cr>
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# Copyright (c) 2021, Cisco Systems
+# MIT License (see LICENSE)
 
 DOCUMENTATION = r"""
 ---
@@ -17,11 +17,11 @@ author: Rafael Campos (@racampos)
 options:
   id:
     description:
-    -  id path parameter. Condition id
+    - Id path parameter. Condition id.
     type: str
   name:
     description:
-    -  name path parameter. Condition name
+    - Name path parameter. Condition name.
     type: str
 requirements:
 - ciscoisesdk

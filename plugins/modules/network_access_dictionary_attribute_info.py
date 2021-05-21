@@ -1,8 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# Copyright: (c) 2021, Rafael Campos <rcampos@altus.cr>
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# Copyright (c) 2021, Cisco Systems
+# MIT License (see LICENSE)
 
 DOCUMENTATION = r"""
 ---
@@ -15,11 +15,11 @@ author: Rafael Campos (@racampos)
 options:
   name:
     description:
-    -  name path parameter. the dictionary attribute name
+    - Name path parameter. The dictionary attribute name.
     type: str
   dictionaryName:
     description:
-    -  dictionaryName path parameter. the name of the dictionary the dictionary attribute belongs to
+    - DictionaryName path parameter. The name of the dictionary the dictionary attribute belongs to.
     type: str
 requirements:
 - ciscoisesdk

@@ -1,8 +1,8 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-# Copyright: (c) 2021, Rafael Campos <rcampos@altus.cr>
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+# Copyright (c) 2021, Cisco Systems
+# MIT License (see LICENSE)
 
 DOCUMENTATION = r"""
 ---
@@ -16,50 +16,31 @@ author: Rafael Campos (@racampos)
 options:
   page:
     description:
-    -  page query parameter. Page number
+    - Page query parameter. Page number.
     type: int
   size:
     description:
-    -  size query parameter. Number of objects returned per page
+    - Size query parameter. Number of objects returned per page.
     type: int
   sort:
     description:
-    -  sort query parameter. sort type - asc or desc
+    - Sort query parameter. Sort type - asc or desc.
     type: str
   sortBy:
     description:
-    -  sortBy query parameter. sort column by which objects needs to be sorted
+    - SortBy query parameter. Sort column by which objects needs to be sorted.
     type: str
   filter:
     description:
-    -  filter query parameter. <br/>
-**Simple filtering** should be available through the filter query string parameter. The structure of a filter is
-a triplet of field operator and value separated with dots. More than one filter can be sent. The logical operator
-common to ALL filter criteria will be by default AND, and can be changed by using the "filterType=or" query
-string parameter. Each resource Data model description should specify if an attribute is a filtered field.
-<br/>
-
-              Operator    | Description <br/>
-              ------------|----------------- <br/>
-              EQ          | Equals <br/>
-              NEQ         | Not Equals <br/>
-              GT          | Greater Than <br/>
-              LT          | Less Then <br/>
-              STARTSW     | Starts With <br/>
-              NSTARTSW    | Not Starts With <br/>
-              ENDSW       | Ends With <br/>
-              NENDSW      | Not Ends With <br/>
-              CONTAINS	  | Contains <br/>
-              NCONTAINS	  | Not Contains <br/>
-
+    - Filter query parameter. <br/> **Simple filtering** should be available through the filter query string parameter. The structure of a filter is a triplet of field operator and value separated with dots. More than one filter can be sent. The logical operator common to ALL filter criteria will be by default AND, and can be changed by using the "filterType=or" query string parameter. Each resource Data model description should specify if an attribute is a filtered field. <br/> Operator | Description <br/> ------------|----------------- <br/> EQ | Equals <br/> NEQ | Not Equals <br/> GT | Greater Than <br/> LT | Less Then <br/> STARTSW | Starts With <br/> NSTARTSW | Not Starts With <br/> ENDSW | Ends With <br/> NENDSW | Not Ends With <br/> CONTAINS | Contains <br/> NCONTAINS | Not Contains <br/>.
     type: list
   filterType:
     description:
-    -  filterType query parameter. The logical operator common to ALL filter criteria will be by default AND, and can be changed by using the parameter
+    - FilterType query parameter. The logical operator common to ALL filter criteria will be by default AND, and can be changed by using the parameter.
     type: str
   id:
     description:
-    -  id path parameter. The id of the trust certificate
+    - Id path parameter. The id of the trust certificate.
     type: str
 requirements:
 - ciscoisesdk
