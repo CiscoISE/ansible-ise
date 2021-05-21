@@ -20,7 +20,7 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-        id=dict(type="str"),
+        node=dict(type="str"),
     ))
 
 required_if = []
@@ -63,13 +63,13 @@ class ActionModule(ActionBase):
 
         ise = ISESDK(params=self._task.args)
 
-        id = self._task.args.get("id")
+        id = self._task.args.get("node")
         name = self._task.args.get("name")
         if id:
             response = ise.exec(
                 family="replication_status",
                 function='get_node_replication_status',
-                params={"id": quote(id)}
+                params=self._task.args
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

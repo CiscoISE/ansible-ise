@@ -20,7 +20,7 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-        id=dict(type="str"),
+        bulkid=dict(type="str"),
     ))
 
 required_if = []
@@ -63,13 +63,13 @@ class ActionModule(ActionBase):
 
         ise = ISESDK(params=self._task.args)
 
-        id = self._task.args.get("id")
+        id = self._task.args.get("bulkid")
         name = self._task.args.get("name")
         if id:
             response = ise.exec(
                 family="sg_acl",
                 function='monitor_bulk_status_security_groups_acl',
-                params={"id": quote(id)}
+                params=self._task.args
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

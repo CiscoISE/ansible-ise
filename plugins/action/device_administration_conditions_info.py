@@ -70,7 +70,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="device_administration_conditions",
                 function='get_device_admin_condition_by_id',
-                params={"id": quote(id)}
+                params=self._task.args
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -79,7 +79,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="device_administration_conditions",
                 function='get_device_admin_condition_by_name',
-                params={"name": quote(name)}
+                params=self._task.args
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -88,6 +88,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="device_administration_conditions",
                 function='get_all_device_admin_conditions',
+                params=self._task.args,
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

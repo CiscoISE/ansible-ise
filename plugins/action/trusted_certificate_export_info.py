@@ -69,7 +69,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="certificates",
                 function='export_trusted_certificate',
-                params={"id": quote(id)}
+                params=self._task.args
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

@@ -69,7 +69,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="network_access_authorization_global_exception_rules",
                 function='get_network_access_global_exception_rule_by_id',
-                params={"id": quote(id)}
+                params=self._task.args
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -78,6 +78,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="network_access_authorization_global_exception_rules",
                 function='get_all_network_access_global_exception_rules',
+                params=self._task.args,
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

@@ -70,7 +70,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="tacacs_command_sets",
                 function='get_tacacs_command_sets_by_id',
-                params={"id": quote(id)}
+                params=self._task.args
             ).response['TacacsCommandSets']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -79,7 +79,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="tacacs_command_sets",
                 function='get_tacacs_command_sets_by_name',
-                params={"name": quote(name)}
+                params=self._task.args
             ).response['TacacsCommandSets']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -88,6 +88,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="tacacs_command_sets",
                 function='get_all_tacacs_command_sets',
+                params=self._task.args,
             ).response['SearchResult']['resources']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

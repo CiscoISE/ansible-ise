@@ -20,6 +20,7 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
+        hostname=dict(type="str"),
         id=dict(type="str"),
     ))
 
@@ -69,7 +70,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="certificates",
                 function='export_csr',
-                params={"id": quote(id)}
+                params=self._task.args
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

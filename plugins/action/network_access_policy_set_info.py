@@ -69,7 +69,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="network_access_policy_set",
                 function='get_network_access_policy_set_by_id',
-                params={"id": quote(id)}
+                params=self._task.args
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -78,6 +78,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="network_access_policy_set",
                 function='get_all_network_access_policy_sets',
+                params=self._task.args,
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

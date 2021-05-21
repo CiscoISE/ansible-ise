@@ -70,7 +70,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="anc_policy",
                 function='get_anc_policy_by_id',
-                params={"id": quote(id)}
+                params=self._task.args
             ).response['ErsAncPolicy']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -79,7 +79,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="anc_policy",
                 function='get_anc_policy_by_name',
-                params={"name": quote(name)}
+                params=self._task.args
             ).response['ErsAncPolicy']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -88,6 +88,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="anc_policy",
                 function='get_all_anc_policy',
+                params=self._task.args,
             ).response['SearchResult']['resources']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

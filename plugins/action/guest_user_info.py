@@ -20,6 +20,12 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
+        page=dict(type="int"),
+        size=dict(type="int"),
+        sortasc=dict(type="str"),
+        sortdec=dict(type="str"),
+        filter=dict(type="list"),
+        filterType=dict(type="str"),
         id=dict(type="str"),
         name=dict(type="str"),
     ))
@@ -70,7 +76,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="guest_user",
                 function='get_guest_user_by_id',
-                params={"id": quote(id)}
+                params=self._task.args
             ).response['GuestUser']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -79,7 +85,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="guest_user",
                 function='get_guest_user_by_name',
-                params={"name": quote(name)}
+                params=self._task.args
             ).response['GuestUser']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -89,6 +95,7 @@ class ActionModule(ActionBase):
             generator = ise.exec(
                 family="guest_user",
                 function='get_all_guest_users_generator',
+                params=self._task.args,
             )
             for item in generator:
                 tmp_response = item.response['SearchResult']['resources']

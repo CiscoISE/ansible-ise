@@ -69,7 +69,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="network_access_network_conditions",
                 function='get_network_access_network_condition_by_id',
-                params={"id": quote(id)}
+                params=self._task.args
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -78,6 +78,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="network_access_network_conditions",
                 function='get_all_network_access_network_conditions',
+                params=self._task.args,
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

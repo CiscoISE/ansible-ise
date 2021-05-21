@@ -20,7 +20,6 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-        id=dict(type="str"),
     ))
 
 required_if = []
@@ -69,6 +68,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="endpoint",
                 function='get_rejected_endpoints',
+                params=self._task.args,
             ).response['OperationResult']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

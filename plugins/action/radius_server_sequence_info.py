@@ -20,6 +20,8 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
+        page=dict(type="int"),
+        size=dict(type="int"),
         id=dict(type="str"),
     ))
 
@@ -69,7 +71,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="radius_server_sequence",
                 function='get_radius_server_sequence_by_id',
-                params={"id": quote(id)}
+                params=self._task.args
             ).response['RadiusServerSequence']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -79,6 +81,7 @@ class ActionModule(ActionBase):
             generator = ise.exec(
                 family="radius_server_sequence",
                 function='get_all_radius_server_sequence_generator',
+                params=self._task.args,
             )
             for item in generator:
                 tmp_response = item.response['SearchResult']['resources']

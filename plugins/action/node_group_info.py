@@ -20,8 +20,7 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-        id=dict(type="str"),
-        name=dict(type="str"),
+        node_group_name=dict(type="str"),
     ))
 
 required_if = []
@@ -65,12 +64,12 @@ class ActionModule(ActionBase):
         ise = ISESDK(params=self._task.args)
 
         id = self._task.args.get("id")
-        name = self._task.args.get("name")
+        name = self._task.args.get("node_group_name")
         if name:
             response = ise.exec(
                 family="node_group",
                 function='get_node_group',
-                params={"name": quote(name)}
+                params=self._task.args
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -79,6 +78,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="node_group",
                 function='get_node_groups',
+                params=self._task.args,
             ).response['response']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
