@@ -74,7 +74,7 @@ class ISESDK(object):
                 response = func(**params)
             else:
                 response = func()
-        except exceptions.ApiError as e:
+        except exceptions.ciscoisesdkException as e:
             self.fail_json(
                 msg=(
                     "An error occured when executing operation."
