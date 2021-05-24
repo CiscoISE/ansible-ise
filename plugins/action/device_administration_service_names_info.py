@@ -10,6 +10,7 @@ except ImportError:
 else:
     ANSIBLE_UTILS_IS_INSTALLED = True
 from ansible.errors import AnsibleActionFail
+from urllib.parse import quote
 from ansible_collections.cisco.ise.plugins.module_utils.ise import (
     ISESDK,
     ise_argument_spec,
@@ -19,15 +20,8 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-        name=dict(type="str"),
-        data=dict(type="str", required=True),
-        description=dict(type="str"),
-        validateCertificateExtensions=dict(type="bool"),
-        allowSHA1Certificates=dict(type="bool", required=True),
-        allowOutOfDateCert=dict(type="bool", required=True),
-        allowBasicConstraintCAFalse=dict(type="bool", required=True),
     ))
-# TODO: Add schema conditionals
+
 required_if = []
 required_one_of = []
 mutually_exclusive = []
@@ -48,7 +42,12 @@ class ActionModule(ActionBase):
             data=self._task.args,
             schema=dict(argument_spec=argument_spec),
             schema_format="argspec",
-            schema_conditionals=dict(required_if=required_if),
+            schema_conditionals=dict(
+                required_if=required_if,
+                required_one_of=required_one_of,
+                mutually_exclusive=mutually_exclusive,
+                required_together=required_together,
+            ),
             name=self._task.action,
         )
         valid, errors, self._task.args = aav.validate()
@@ -61,13 +60,16 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-        ise = ISESDK()
+        ise = ISESDK(params=self._task.args)
 
-        ise.exec(
-            famiy="certificates",
-            function="import_trust_cert",
-            params=self._task.args
-        )
-
-        self._result.update(ise.exit_json())
-        return self._result
+        id = self._task.args.get("id")
+        name = self._task.args.get("name")
+        if not name and not id:
+            response = ise.exec(
+                family="device_administration_service_names",
+                function='get_all_device_admin_service_names',
+                params=self._task.args,
+            ).response
+            self._result.update(dict(ise_response=response))
+            self._result.update(ise.exit_json())
+            return self._result

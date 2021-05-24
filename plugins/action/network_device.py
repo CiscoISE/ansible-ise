@@ -16,23 +16,23 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
     ise_argument_spec,
 )
 
-# Get common arguements specification
+# Get common arguments specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
         state = dict(type="str", default="present", choices=["present", "absent"]),
-        id=dict(type="str"),
         name=dict(type="str"),
         description=dict(type="str"),
         authenticationSettings=dict(type="dict"),
         tacacsSettings=dict(type="dict"),
         snmpsettings=dict(type="dict"),
-        dtlsDnsName=dict(type="str"),
+        trustsecsettings=dict(type="dict"),
         profileName=dict(type="str"),
         coaPort=dict(type="int"),
-        trustsecsettings=dict(type="dict"),
+        dtlsDnsName=dict(type="str"),
         NetworkDeviceIPList=dict(type="list"),
         NetworkDeviceGroupList=dict(type="list"),
+        id=dict(type="str"),
     ))
 
 required_if = [
@@ -48,34 +48,39 @@ class NetworkDevice(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            id=params.get("id"),
             name=params.get("name"),
             description=params.get("description"),
             authentication_settings=params.get("authenticationSettings"),
             tacacs_settings=params.get("tacacsSettings"),
             snmpsettings=params.get("snmpsettings"),
-            dtls_dns_name=params.get("dtlsDnsName"),
+            trustsecsettings=params.get("trustsecsettings"),
             profile_name=params.get("profileName"),
             coa_port=params.get("coaPort"),
-            trustsecsettings=params.get("trustsecsettings"),
+            dtls_dns_name=params.get("dtlsDnsName"),
             network_device_iplist=params.get("NetworkDeviceIPList"),
             network_device_group_list=params.get("NetworkDeviceGroupList"),
+            id=params.get("id"),
         )
 
+
     def get_object_by_name(self, name):
-        return self.ise.exec(
-            family="network_device",
-            function="get_all_network_device",
-            params={"filter": "name.EQ.{}".format(quote(name))}
-            ).response["SearchResult"]["resources"]
+        try:
+            result = self.ise.exec(
+                family="network_device",
+                function="get_network_device_by_name",
+                params={"name": quote(name)}
+                ).response['NetworkDevice']
+        except Exception as e:
+            result = None
+        return result
 
     def get_object_by_id(self, id):
         try:
             result = self.ise.exec(
-                    family="network_device",
-                    function='get_network_device_by_id',
-                    params={"id": quote(id)}
-                ).response["NetworkDevice"]
+                family="network_device",
+                function="get_network_device_by_id",
+                params={"id": quote(id)}
+                ).response['NetworkDevice']
         except Exception as e:
             result = None
         return result
@@ -94,7 +99,7 @@ class NetworkDevice(object):
 
     def create(self):
         result = self.ise.exec(
-            family="network_device", 
+            family="network_device",
             function="create_network_device",
             params=self.new_object,
         ).response
@@ -107,13 +112,13 @@ class NetworkDevice(object):
         if id:
             result = self.ise.exec(
                 family="network_device",
-                function='update_network_device_by_id',
+                function="update_network_device_by_id",
                 params=self.new_object
             ).response
         elif name:
             result = self.ise.exec(
                 family="network_device",
-                function='update_network_device_by_name',
+                function="update_network_device_by_name",
                 params=self.new_object
             ).response
         return result
@@ -125,17 +130,16 @@ class NetworkDevice(object):
         if id:
             result = self.ise.exec(
                 family="network_device",
-                function='delete_network_device_by_id',
+                function="delete_network_device_by_id",
                 params=self.new_object
             ).response
         elif name:
             result = self.ise.exec(
                 family="network_device",
-                function='delete_networkdevice_by_name',
+                function="delete_network_device_by_name",
                 params=self.new_object
             ).response
         return result
-
 
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
