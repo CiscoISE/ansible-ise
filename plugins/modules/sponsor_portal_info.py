@@ -47,10 +47,12 @@ EXAMPLES = r"""
     page: 1
     size: 20
   register: result
+
 - name: Get Sponsor Portal by id
   cisco.ise.sponsor_portal_info
     id: string
   register: result
+
 """
 
 RETURN = r"""

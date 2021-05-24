@@ -63,6 +63,7 @@ EXAMPLES = r"""
     hostName: string
     id: string
   register: result
+
 - name: Get System Certificate by name
   cisco.ise.system_certificate_info
     page: 1
@@ -73,6 +74,7 @@ EXAMPLES = r"""
     filterType: AND
     hostName: string
   register: result
+
 """
 
 RETURN = r"""

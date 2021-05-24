@@ -67,10 +67,12 @@ EXAMPLES = r"""
     sortasc: asc
     sortdec: string
   register: result
+
 - name: Get Sg Acl by id
   cisco.ise.sg_acl_info
     id: string
   register: result
+
 """
 
 RETURN = r"""

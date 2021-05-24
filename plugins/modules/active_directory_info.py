@@ -52,14 +52,17 @@ EXAMPLES = r"""
     page: 1
     size: 20
   register: result
+
 - name: Get Active Directory by id
   cisco.ise.active_directory_info
     id: string
   register: result
+
 - name: Get Active Directory by name
   cisco.ise.active_directory_info
     name: string
   register: result
+
 """
 
 RETURN = r"""

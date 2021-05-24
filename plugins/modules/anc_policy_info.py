@@ -42,14 +42,17 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
   register: result
+
 - name: Get Anc Policy by id
   cisco.ise.anc_policy_info
     id: string
   register: result
+
 - name: Get Anc Policy by name
   cisco.ise.anc_policy_info
     name: string
   register: result
+
 """
 
 RETURN = r"""

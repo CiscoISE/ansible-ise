@@ -341,6 +341,7 @@ EXAMPLES = r"""
         includeMacAddr: true
         includePolicyServer: true
         includeSupportInfoPage: true
+
 - name: Update by id
   cisco.ise.sponsor_portal:
     ise_hostname: "{{ise_hostname}}"
@@ -425,6 +426,7 @@ EXAMPLES = r"""
         includeMacAddr: true
         includePolicyServer: true
         includeSupportInfoPage: true
+
 - name: Delete by id
   cisco.ise.sponsor_portal:
     ise_hostname: "{{ise_hostname}}"
@@ -433,13 +435,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-- name: Ise request doc
-  cisco.ise.sponsor_portal:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+
 """
 
 RETURN = r"""
@@ -451,5 +447,4 @@ ise_response:
   - {}
   - {}
   - {}
-  - 
 """

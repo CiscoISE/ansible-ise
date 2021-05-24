@@ -33,6 +33,7 @@ EXAMPLES = r"""
   cisco.ise.node_replication_status_info
     node: string
   register: result
+
 """
 
 RETURN = r"""

@@ -207,6 +207,7 @@ EXAMPLES = r"""
       displayCertificatesRenewalMessages: true
       portalName: Sponsored Guest Portal (default)
       staticIPHostNameFQDN: 10.56.54.200
+
 - name: Update by id
   cisco.ise.authorization_profile:
     ise_hostname: "{{ise_hostname}}"
@@ -257,6 +258,7 @@ EXAMPLES = r"""
       displayCertificatesRenewalMessages: true
       portalName: Sponsored Guest Portal (default)
       staticIPHostNameFQDN: 10.56.54.200
+
 - name: Delete by id
   cisco.ise.authorization_profile:
     ise_hostname: "{{ise_hostname}}"
@@ -265,13 +267,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-- name: Ise request doc
-  cisco.ise.authorization_profile:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+
 """
 
 RETURN = r"""
@@ -283,5 +279,4 @@ ise_response:
   - {}
   - {}
   - {}
-  - 
 """

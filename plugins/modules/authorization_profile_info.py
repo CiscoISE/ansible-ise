@@ -52,14 +52,17 @@ EXAMPLES = r"""
     page: 1
     size: 20
   register: result
+
 - name: Get Authorization Profile by id
   cisco.ise.authorization_profile_info
     id: string
   register: result
+
 - name: Get Authorization Profile by name
   cisco.ise.authorization_profile_info
     name: string
   register: result
+
 """
 
 RETURN = r"""

@@ -78,6 +78,7 @@ EXAMPLES = r"""
       rootUrl: http://169.254.6.2:9601/azure
       usernameSuffix: '{{usernameSuffix}}'
     name: '{{name}}'
+
 - name: Update by id
   cisco.ise.rest_id_store:
     ise_hostname: "{{ise_hostname}}"
@@ -88,6 +89,7 @@ EXAMPLES = r"""
     description: my new description
     id: '{{id}}'
     name: ISE_AzureAD_ROPC
+
 - name: Delete by id
   cisco.ise.rest_id_store:
     ise_hostname: "{{ise_hostname}}"
@@ -96,6 +98,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
+
 - name: Update by name
   cisco.ise.rest_id_store:
     ise_hostname: "{{ise_hostname}}"
@@ -105,6 +108,7 @@ EXAMPLES = r"""
     state: present
     description: my new description
     name: string
+
 - name: Delete by name
   cisco.ise.rest_id_store:
     ise_hostname: "{{ise_hostname}}"
@@ -113,13 +117,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     name: string
-- name: Ise request doc
-  cisco.ise.rest_id_store:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+
 """
 
 RETURN = r"""
@@ -133,5 +131,4 @@ ise_response:
   - {}
   - {'ERSResponse': {'operation': 'string', 'messages': [{'title': 'string', 'type': 'string', 'code': 'string'}], 'link': {'rel': 'string', 'href': 'string', 'type': 'string'}}}
   - {}
-  - 
 """

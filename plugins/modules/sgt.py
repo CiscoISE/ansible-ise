@@ -55,6 +55,7 @@ EXAMPLES = r"""
     name: Printers
     propogateToApic: true
     value: 999
+
 - name: Update by id
   cisco.ise.sgt:
     ise_hostname: "{{ise_hostname}}"
@@ -68,6 +69,7 @@ EXAMPLES = r"""
     name: Printers
     propogateToApic: true
     value: 999
+
 - name: Delete by id
   cisco.ise.sgt:
     ise_hostname: "{{ise_hostname}}"
@@ -76,13 +78,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-- name: Ise request doc
-  cisco.ise.sgt:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+
 """
 
 RETURN = r"""
@@ -94,5 +90,4 @@ ise_response:
   - {}
   - {}
   - {}
-  - 
 """

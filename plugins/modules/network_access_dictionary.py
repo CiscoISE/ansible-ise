@@ -52,6 +52,7 @@ EXAMPLES = r"""
     id: string
     name: string
     version: string
+
 - name: Update by name
   cisco.ise.network_access_dictionary:
     ise_hostname: "{{ise_hostname}}"
@@ -64,6 +65,7 @@ EXAMPLES = r"""
     id: string
     name: string
     version: string
+
 - name: Delete by name
   cisco.ise.network_access_dictionary:
     ise_hostname: "{{ise_hostname}}"
@@ -72,13 +74,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     name: string
-- name: Ise request doc
-  cisco.ise.network_access_dictionary:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+
 """
 
 RETURN = r"""
@@ -90,5 +86,4 @@ ise_response:
   - {'id': 'string', 'name': 'string', 'description': 'string', 'version': 'string', 'dictionaryAttrType': 'string'}
   - {'id': 'string', 'name': 'string', 'description': 'string', 'version': 'string', 'dictionaryAttrType': 'string'}
   - {'id': 'string', 'name': 'string', 'description': 'string', 'version': 'string', 'dictionaryAttrType': 'string'}
-  - 
 """

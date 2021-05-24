@@ -124,6 +124,7 @@ EXAMPLES = r"""
     mac: 11:22:33:44:55:66
     name: MyEndpoint
     staticGroupAssignment: true
+
 - name: Update by id
   cisco.ise.endpoint:
     ise_hostname: "{{ise_hostname}}"
@@ -134,6 +135,7 @@ EXAMPLES = r"""
     description: a new description
     groupId: 3a1b38d0-8c00-11e6-996c-525400b48521
     id: string
+
 - name: Delete by id
   cisco.ise.endpoint:
     ise_hostname: "{{ise_hostname}}"
@@ -142,13 +144,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-- name: Ise request doc
-  cisco.ise.endpoint:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+
 """
 
 RETURN = r"""
@@ -160,5 +156,4 @@ ise_response:
   - {}
   - {}
   - {}
-  - 
 """

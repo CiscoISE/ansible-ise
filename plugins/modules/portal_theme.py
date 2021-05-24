@@ -43,6 +43,7 @@ EXAMPLES = r"""
     state: present
     name: New Theme
     themeData: Base64 encoded string of CSS file
+
 - name: Update by id
   cisco.ise.portal_theme:
     ise_hostname: "{{ise_hostname}}"
@@ -53,6 +54,7 @@ EXAMPLES = r"""
     id: 935e5e90-bd06-4cba-9465-e71c475bfe1d
     name: New Theme
     themeData: More Base64 encoded string of CSS file
+
 - name: Delete by id
   cisco.ise.portal_theme:
     ise_hostname: "{{ise_hostname}}"
@@ -61,13 +63,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-- name: Ise request doc
-  cisco.ise.portal_theme:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+
 """
 
 RETURN = r"""
@@ -79,5 +75,4 @@ ise_response:
   - {}
   - {}
   - {}
-  - 
 """

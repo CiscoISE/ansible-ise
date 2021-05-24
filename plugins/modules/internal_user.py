@@ -86,6 +86,7 @@ EXAMPLES = r"""
     description: '{{description}}'
     name: '{{username}}'
     password: '{{password}}'
+
 - name: Update by id
   cisco.ise.internal_user:
     ise_hostname: "{{ise_hostname}}"
@@ -95,6 +96,7 @@ EXAMPLES = r"""
     state: present
     description: New description
     id: string
+
 - name: Delete by id
   cisco.ise.internal_user:
     ise_hostname: "{{ise_hostname}}"
@@ -103,6 +105,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
+
 - name: Update by name
   cisco.ise.internal_user:
     ise_hostname: "{{ise_hostname}}"
@@ -112,6 +115,7 @@ EXAMPLES = r"""
     state: present
     name: string
     password: Ch@ngedP@55w0rd
+
 - name: Delete by name
   cisco.ise.internal_user:
     ise_hostname: "{{ise_hostname}}"
@@ -120,13 +124,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     name: string
-- name: Ise request doc
-  cisco.ise.internal_user:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+
 """
 
 RETURN = r"""
@@ -140,5 +138,4 @@ ise_response:
   - {}
   - {}
   - {}
-  - 
 """

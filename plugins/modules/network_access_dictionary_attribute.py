@@ -80,6 +80,7 @@ EXAMPLES = r"""
     id: string
     internalName: string
     name: string
+
 - name: Update by name
   cisco.ise.network_access_dictionary_attribute:
     ise_hostname: "{{ise_hostname}}"
@@ -98,6 +99,7 @@ EXAMPLES = r"""
     id: string
     internalName: string
     name: string
+
 - name: Delete by name
   cisco.ise.network_access_dictionary_attribute:
     ise_hostname: "{{ise_hostname}}"
@@ -107,13 +109,7 @@ EXAMPLES = r"""
     state: absent
     dictionaryName: string
     name: string
-- name: Ise request doc
-  cisco.ise.network_access_dictionary_attribute:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+
 """
 
 RETURN = r"""
@@ -125,5 +121,4 @@ ise_response:
   - {'id': 'string', 'directionType': 'string', 'name': 'string', 'description': 'string', 'internalName': 'string', 'dataType': 'string', 'dictionaryName': 'string', 'allowedValues': [{'key': 'string', 'value': 'string', 'isDefault': True}]}
   - {'id': 'string', 'directionType': 'string', 'name': 'string', 'description': 'string', 'internalName': 'string', 'dataType': 'string', 'dictionaryName': 'string', 'allowedValues': [{'key': 'string', 'value': 'string', 'isDefault': True}]}
   - {'id': 'string', 'directionType': 'string', 'name': 'string', 'description': 'string', 'internalName': 'string', 'dataType': 'string', 'dictionaryName': 'string', 'allowedValues': [{'key': 'string', 'value': 'string', 'isDefault': True}]}
-  - 
 """

@@ -70,6 +70,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     {}
+
 - name: Update by id
   cisco.ise.network_access_network_condition:
     ise_hostname: "{{ise_hostname}}"
@@ -91,6 +92,7 @@ EXAMPLES = r"""
     macAddrList:
     - string
     name: string
+
 - name: Delete by id
   cisco.ise.network_access_network_condition:
     ise_hostname: "{{ise_hostname}}"
@@ -99,13 +101,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-- name: Ise request doc
-  cisco.ise.network_access_network_condition:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+
 """
 
 RETURN = r"""
@@ -117,5 +113,4 @@ ise_response:
   - {'name': 'string', 'id': 'string', 'description': 'string', 'conditionType': 'string', 'ipAddrList': ['string'], 'macAddrList': ['string'], 'cliDnisList': ['string'], 'deviceList': ['string'], 'deviceGroupList': ['string']}
   - {'name': 'string', 'id': 'string', 'description': 'string', 'conditionType': 'string', 'ipAddrList': ['string'], 'macAddrList': ['string'], 'cliDnisList': ['string'], 'deviceList': ['string'], 'deviceGroupList': ['string']}
   - {'id': 'string'}
-  - 
 """

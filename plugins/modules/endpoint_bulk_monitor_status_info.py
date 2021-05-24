@@ -33,6 +33,7 @@ EXAMPLES = r"""
   cisco.ise.endpoint_bulk_monitor_status_info
     bulkid: string
   register: result
+
 """
 
 RETURN = r"""

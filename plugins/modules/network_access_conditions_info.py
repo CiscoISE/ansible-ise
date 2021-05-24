@@ -42,14 +42,17 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
   register: result
+
 - name: Get Network Access Conditions by id
   cisco.ise.network_access_conditions_info
     id: string
   register: result
+
 - name: Get Network Access Conditions by name
   cisco.ise.network_access_conditions_info
     name: string
   register: result
+
 """
 
 RETURN = r"""

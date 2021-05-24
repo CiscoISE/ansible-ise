@@ -42,11 +42,13 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     policyId: string
   register: result
+
 - name: Get Network Access Authorization Rules by id
   cisco.ise.network_access_authorization_rules_info
     policyId: string
     id: string
   register: result
+
 """
 
 RETURN = r"""

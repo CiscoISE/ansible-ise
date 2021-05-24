@@ -67,10 +67,12 @@ EXAMPLES = r"""
     filter: []
     filterType: AND
   register: result
+
 - name: Get Egress Matrix Cell by id
   cisco.ise.egress_matrix_cell_info
     id: string
   register: result
+
 """
 
 RETURN = r"""

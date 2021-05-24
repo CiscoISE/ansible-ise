@@ -67,10 +67,12 @@ EXAMPLES = r"""
     filter: []
     filterType: AND
   register: result
+
 - name: Get Guest Smtp Notification Settings by id
   cisco.ise.guest_smtp_notification_settings_info
     id: string
   register: result
+
 """
 
 RETURN = r"""

@@ -88,6 +88,7 @@ EXAMPLES = r"""
     retries: 3
     sharedSecret: sharedSecret
     timeout: 5
+
 - name: Update by id
   cisco.ise.external_radius_server:
     ise_hostname: "{{ise_hostname}}"
@@ -109,6 +110,7 @@ EXAMPLES = r"""
     retries: 3
     sharedSecret: sharedSecret
     timeout: 5
+
 - name: Delete by id
   cisco.ise.external_radius_server:
     ise_hostname: "{{ise_hostname}}"
@@ -117,13 +119,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-- name: Ise request doc
-  cisco.ise.external_radius_server:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+
 """
 
 RETURN = r"""
@@ -135,5 +131,4 @@ ise_response:
   - {}
   - {}
   - {}
-  - 
 """

@@ -63,6 +63,7 @@ EXAMPLES = r"""
       query-timeout: 0
       replication-attempts: 0
       replication-timeout: 0
+
 - name: Update by name
   cisco.ise.node_group:
     ise_hostname: "{{ise_hostname}}"
@@ -78,6 +79,7 @@ EXAMPLES = r"""
       replication-attempts: 0
       replication-timeout: 0
     node_group_name: string
+
 - name: Delete by name
   cisco.ise.node_group:
     ise_hostname: "{{ise_hostname}}"
@@ -86,13 +88,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     node_group_name: string
-- name: Ise request doc
-  cisco.ise.node_group:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+
 """
 
 RETURN = r"""
@@ -104,5 +100,4 @@ ise_response:
   - {'code': 0, 'message': 'string', 'rootCause': 'string'}
   - {'code': 0, 'message': 'string', 'rootCause': 'string'}
   - {'code': 0, 'message': 'string', 'rootCause': 'string'}
-  - 
 """

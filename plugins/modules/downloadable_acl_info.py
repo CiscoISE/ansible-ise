@@ -47,10 +47,12 @@ EXAMPLES = r"""
     page: 1
     size: 20
   register: result
+
 - name: Get Downloadable Acl by id
   cisco.ise.downloadable_acl_info
     id: string
   register: result
+
 """
 
 RETURN = r"""

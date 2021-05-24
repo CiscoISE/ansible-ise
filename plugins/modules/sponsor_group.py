@@ -169,6 +169,7 @@ EXAMPLES = r"""
       canViewGuestPasswords: true
       limitApprovalToSponsorsGuests: true
       requireSuspensionReason: true
+
 - name: Update by id
   cisco.ise.sponsor_group:
     ise_hostname: "{{ise_hostname}}"
@@ -211,6 +212,7 @@ EXAMPLES = r"""
       canViewGuestPasswords: true
       limitApprovalToSponsorsGuests: true
       requireSuspensionReason: true
+
 - name: Delete by id
   cisco.ise.sponsor_group:
     ise_hostname: "{{ise_hostname}}"
@@ -219,13 +221,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-- name: Ise request doc
-  cisco.ise.sponsor_group:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+
 """
 
 RETURN = r"""
@@ -237,5 +233,4 @@ ise_response:
   - {}
   - {}
   - {}
-  - 
 """

@@ -1350,6 +1350,7 @@ EXAMPLES = r"""
         includeMacAddr: true
         includePolicyServer: true
         includeSupportInfoPage: false
+
 - name: Update by id
   cisco.ise.self_registered_portal:
     ise_hostname: "{{ise_hostname}}"
@@ -1360,6 +1361,7 @@ EXAMPLES = r"""
     description: My SelfRegPortal
     id: 28771952-4a11-47da-8a12-e14569a0ac77
     name: My Self-Registered Guest Portal
+
 - name: Delete by id
   cisco.ise.self_registered_portal:
     ise_hostname: "{{ise_hostname}}"
@@ -1368,13 +1370,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-- name: Ise request doc
-  cisco.ise.self_registered_portal:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+
 """
 
 RETURN = r"""
@@ -1386,5 +1382,4 @@ ise_response:
   - {}
   - {'UpdatedFieldsList': {'updatedField': ['string']}}
   - {'ERSResponse': {'operation': 'string', 'messages': [{'title': 'string', 'type': 'string', 'code': 'string'}], 'link': {'rel': 'string', 'href': 'string', 'type': 'string'}}}
-  - 
 """

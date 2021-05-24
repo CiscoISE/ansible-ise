@@ -67,10 +67,12 @@ EXAMPLES = r"""
     filter: []
     filterType: AND
   register: result
+
 - name: Get Hotspot Portal by id
   cisco.ise.hotspot_portal_info
     id: string
   register: result
+
 """
 
 RETURN = r"""

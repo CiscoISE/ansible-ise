@@ -72,14 +72,17 @@ EXAMPLES = r"""
     filter: []
     filterType: AND
   register: result
+
 - name: Get Network Device Group by id
   cisco.ise.network_device_group_info
     id: string
   register: result
+
 - name: Get Network Device Group by name
   cisco.ise.network_device_group_info
     name: string
   register: result
+
 """
 
 RETURN = r"""

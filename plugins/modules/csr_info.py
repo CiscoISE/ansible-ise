@@ -71,11 +71,13 @@ EXAMPLES = r"""
     filter: []
     filterType: AND
   register: result
+
 - name: Get Csr by id
   cisco.ise.csr_info
     hostName: string
     id: string
   register: result
+
 """
 
 RETURN = r"""

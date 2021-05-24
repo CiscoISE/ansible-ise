@@ -52,14 +52,17 @@ EXAMPLES = r"""
     page: 1
     size: 20
   register: result
+
 - name: Get External Radius Server by id
   cisco.ise.external_radius_server_info
     id: string
   register: result
+
 - name: Get External Radius Server by name
   cisco.ise.external_radius_server_info
     name: string
   register: result
+
 """
 
 RETURN = r"""

@@ -33,6 +33,7 @@ EXAMPLES = r"""
   cisco.ise.trusted_certificate_export_info
     id: string
   register: result
+
 """
 
 RETURN = r"""

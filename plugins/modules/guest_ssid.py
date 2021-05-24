@@ -40,6 +40,7 @@ EXAMPLES = r"""
     state: present
     id: id
     name: ssid value
+
 - name: Update by id
   cisco.ise.guest_ssid:
     ise_hostname: "{{ise_hostname}}"
@@ -49,6 +50,7 @@ EXAMPLES = r"""
     state: present
     id: id
     name: ssid value
+
 - name: Delete by id
   cisco.ise.guest_ssid:
     ise_hostname: "{{ise_hostname}}"
@@ -57,13 +59,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-- name: Ise request doc
-  cisco.ise.guest_ssid:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+
 """
 
 RETURN = r"""
@@ -75,5 +71,4 @@ ise_response:
   - {}
   - {}
   - {}
-  - 
 """

@@ -37,10 +37,12 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
   register: result
+
 - name: Get Node Group by name
   cisco.ise.node_group_info
     node_group_name: string
   register: result
+
 """
 
 RETURN = r"""

@@ -67,10 +67,12 @@ EXAMPLES = r"""
     sortasc: asc
     sortdec: string
   register: result
+
 - name: Get Self Registered Portal by id
   cisco.ise.self_registered_portal_info
     id: string
   register: result
+
 """
 
 RETURN = r"""

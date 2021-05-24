@@ -47,6 +47,7 @@ EXAMPLES = r"""
     description: '...'
     name: Device Type#All Device Types#SDWAN
     othername: Device Type
+
 - name: Update by id
   cisco.ise.network_device_group:
     ise_hostname: "{{ise_hostname}}"
@@ -58,6 +59,7 @@ EXAMPLES = r"""
     id: string
     name: Device Type#All Device Types#SDWAN
     othername: Device Type
+
 - name: Delete by id
   cisco.ise.network_device_group:
     ise_hostname: "{{ise_hostname}}"
@@ -66,13 +68,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-- name: Ise request doc
-  cisco.ise.network_device_group:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+
 """
 
 RETURN = r"""
@@ -84,5 +80,4 @@ ise_response:
   - {}
   - {'UpdatedFieldsList': {'updatedField': [{'field': 'string', 'oldValue': 'string', 'newValue': 'string'}]}}
   - {}
-  - 
 """

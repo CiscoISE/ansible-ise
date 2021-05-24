@@ -70,6 +70,7 @@ EXAMPLES = r"""
     description: string
     name: string
     permitUnmatched: true
+
 - name: Update by id
   cisco.ise.tacacs_command_sets:
     ise_hostname: "{{ise_hostname}}"
@@ -86,6 +87,7 @@ EXAMPLES = r"""
     id: string
     name: string
     permitUnmatched: true
+
 - name: Delete by id
   cisco.ise.tacacs_command_sets:
     ise_hostname: "{{ise_hostname}}"
@@ -94,13 +96,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-- name: Ise request doc
-  cisco.ise.tacacs_command_sets:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+
 """
 
 RETURN = r"""
@@ -112,5 +108,4 @@ ise_response:
   - {}
   - {}
   - {}
-  - 
 """

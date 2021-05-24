@@ -52,14 +52,17 @@ EXAMPLES = r"""
     page: 1
     size: 20
   register: result
+
 - name: Get Tacacs External Servers by id
   cisco.ise.tacacs_external_servers_info
     id: string
   register: result
+
 - name: Get Tacacs External Servers by name
   cisco.ise.tacacs_external_servers_info
     name: string
   register: result
+
 """
 
 RETURN = r"""

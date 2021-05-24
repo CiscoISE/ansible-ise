@@ -48,6 +48,7 @@ EXAMPLES = r"""
     id: 1e2700a0-8c00-11e6-996c-525400b48521
     name: Cisco-Meraki-Device
     systemDefined: true
+
 - name: Update by id
   cisco.ise.identity_group:
     ise_hostname: "{{ise_hostname}}"
@@ -59,6 +60,7 @@ EXAMPLES = r"""
     id: 1e2700a0-8c00-11e6-996c-525400b48521
     name: Cisco-Meraki-Device
     systemDefined: true
+
 - name: Delete by id
   cisco.ise.identity_group:
     ise_hostname: "{{ise_hostname}}"
@@ -67,13 +69,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-- name: Ise request doc
-  cisco.ise.identity_group:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+
 """
 
 RETURN = r"""
@@ -85,5 +81,4 @@ ise_response:
   - {}
   - {}
   - {}
-  - 
 """

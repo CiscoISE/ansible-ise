@@ -32,6 +32,7 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
   register: result
+
 """
 
 RETURN = r"""

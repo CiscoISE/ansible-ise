@@ -67,10 +67,12 @@ EXAMPLES = r"""
     sortasc: asc
     sortdec: string
   register: result
+
 - name: Get Sms Provider by id
   cisco.ise.sms_provider_info
     id: string
   register: result
+
 """
 
 RETURN = r"""

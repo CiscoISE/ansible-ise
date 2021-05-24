@@ -208,6 +208,7 @@ EXAMPLES = r"""
       rank: 0
       state: string
     securityGroup: string
+
 - name: Update by id
   cisco.ise.network_access_authorization_exception_rules:
     ise_hostname: "{{ise_hostname}}"
@@ -259,6 +260,7 @@ EXAMPLES = r"""
       rank: 0
       state: string
     securityGroup: string
+
 - name: Delete by id
   cisco.ise.network_access_authorization_exception_rules:
     ise_hostname: "{{ise_hostname}}"
@@ -268,13 +270,7 @@ EXAMPLES = r"""
     state: absent
     id: string
     policyId: string
-- name: Ise request doc
-  cisco.ise.network_access_authorization_exception_rules:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+
 """
 
 RETURN = r"""
@@ -286,5 +282,4 @@ ise_response:
   - {'rule': {'id': 'string', 'name': 'string', 'description': 'string', 'hitCounts': 0, 'rank': 0, 'state': 'string', 'default': True, 'condition': {'conditionType': 'string', 'isNegate': True, 'name': 'string', 'id': 'string', 'description': 'string', 'dictionaryName': 'string', 'attributeName': 'string', 'attributeId': 'string', 'operator': 'string', 'dictionaryValue': 'string', 'attributeValue': 'string', 'children': [{'conditionType': 'string', 'isNegate': True}], 'hoursRange': {'startTime': 'string', 'endTime': 'string'}, 'hoursRangeException': {'startTime': 'string', 'endTime': 'string'}, 'weekDays': ['string'], 'weekDaysException': ['string'], 'datesRange': {'startDate': 'string', 'endDate': 'string'}, 'datesRangeException': {'startDate': 'string', 'endDate': 'string'}}}, 'profile': ['string'], 'securityGroup': 'string'}
   - {'rule': {'id': 'string', 'name': 'string', 'description': 'string', 'hitCounts': 0, 'rank': 0, 'state': 'string', 'default': True, 'condition': {'conditionType': 'string', 'isNegate': True, 'name': 'string', 'id': 'string', 'description': 'string', 'dictionaryName': 'string', 'attributeName': 'string', 'attributeId': 'string', 'operator': 'string', 'dictionaryValue': 'string', 'attributeValue': 'string', 'children': [{'conditionType': 'string', 'isNegate': True}], 'hoursRange': {'startTime': 'string', 'endTime': 'string'}, 'hoursRangeException': {'startTime': 'string', 'endTime': 'string'}, 'weekDays': ['string'], 'weekDaysException': ['string'], 'datesRange': {'startDate': 'string', 'endDate': 'string'}, 'datesRangeException': {'startDate': 'string', 'endDate': 'string'}}}, 'profile': ['string'], 'securityGroup': 'string'}
   - {'id': 'string'}
-  - 
 """

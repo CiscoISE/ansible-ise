@@ -52,14 +52,17 @@ EXAMPLES = r"""
     page: 1
     size: 20
   register: result
+
 - name: Get Tacacs Profile by id
   cisco.ise.tacacs_profile_info
     id: string
   register: result
+
 - name: Get Tacacs Profile by name
   cisco.ise.tacacs_profile_info
     name: string
   register: result
+
 """
 
 RETURN = r"""

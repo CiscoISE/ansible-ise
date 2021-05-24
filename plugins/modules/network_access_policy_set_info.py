@@ -37,10 +37,12 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
   register: result
+
 - name: Get Network Access Policy Set by id
   cisco.ise.network_access_policy_set_info
     id: string
   register: result
+
 """
 
 RETURN = r"""

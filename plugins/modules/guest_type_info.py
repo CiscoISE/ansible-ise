@@ -67,10 +67,12 @@ EXAMPLES = r"""
     filter: []
     filterType: AND
   register: result
+
 - name: Get Guest Type by id
   cisco.ise.guest_type_info
     id: string
   register: result
+
 """
 
 RETURN = r"""

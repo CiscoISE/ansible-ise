@@ -72,14 +72,17 @@ EXAMPLES = r"""
     filter: []
     filterType: AND
   register: result
+
 - name: Get Endpoint by id
   cisco.ise.endpoint_info
     id: string
   register: result
+
 - name: Get Endpoint by name
   cisco.ise.endpoint_info
     name: string
   register: result
+
 """
 
 RETURN = r"""

@@ -72,14 +72,17 @@ EXAMPLES = r"""
     sortasc: asc
     sortdec: string
   register: result
+
 - name: Get Rest Id Store by id
   cisco.ise.rest_id_store_info
     id: string
   register: result
+
 - name: Get Rest Id Store by name
   cisco.ise.rest_id_store_info
     name: string
   register: result
+
 """
 
 RETURN = r"""

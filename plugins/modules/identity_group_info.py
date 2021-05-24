@@ -72,14 +72,17 @@ EXAMPLES = r"""
     filter: []
     filterType: AND
   register: result
+
 - name: Get Identity Group by id
   cisco.ise.identity_group_info
     id: string
   register: result
+
 - name: Get Identity Group by name
   cisco.ise.identity_group_info
     name: string
   register: result
+
 """
 
 RETURN = r"""

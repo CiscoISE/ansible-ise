@@ -42,14 +42,17 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
   register: result
+
 - name: Get Tacacs Command Sets by id
   cisco.ise.tacacs_command_sets_info
     id: string
   register: result
+
 - name: Get Tacacs Command Sets by name
   cisco.ise.tacacs_command_sets_info
     name: string
   register: result
+
 """
 
 RETURN = r"""

@@ -67,10 +67,12 @@ EXAMPLES = r"""
     sortasc: asc
     sortdec: string
   register: result
+
 - name: Get Portal Global Setting by id
   cisco.ise.portal_global_setting_info
     id: string
   register: result
+
 """
 
 RETURN = r"""

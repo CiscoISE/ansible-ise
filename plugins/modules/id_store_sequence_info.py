@@ -52,14 +52,17 @@ EXAMPLES = r"""
     page: 1
     size: 20
   register: result
+
 - name: Get Id Store Sequence by id
   cisco.ise.id_store_sequence_info
     id: string
   register: result
+
 - name: Get Id Store Sequence by name
   cisco.ise.id_store_sequence_info
     name: string
   register: result
+
 """
 
 RETURN = r"""

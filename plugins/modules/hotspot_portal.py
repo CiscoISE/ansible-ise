@@ -343,6 +343,7 @@ EXAMPLES = r"""
         includeMacAddr: true
         includePolicyServer: true
         includeSupportInfoPage: false
+
 - name: Update by id
   cisco.ise.hotspot_portal:
     ise_hostname: "{{ise_hostname}}"
@@ -360,6 +361,7 @@ EXAMPLES = r"""
         - eth1
         - bond0
         httpsPort: 8443
+
 - name: Delete by id
   cisco.ise.hotspot_portal:
     ise_hostname: "{{ise_hostname}}"
@@ -368,13 +370,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-- name: Ise request doc
-  cisco.ise.hotspot_portal:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+
 """
 
 RETURN = r"""
@@ -386,5 +382,4 @@ ise_response:
   - {}
   - {}
   - {}
-  - 
 """

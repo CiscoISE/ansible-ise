@@ -159,6 +159,7 @@ EXAMPLES = r"""
     sponsorGroups:
     - Group1
     - Group2
+
 - name: Update by id
   cisco.ise.guest_type:
     ise_hostname: "{{ise_hostname}}"
@@ -199,6 +200,7 @@ EXAMPLES = r"""
     sponsorGroups:
     - Group1
     - Group2
+
 - name: Delete by id
   cisco.ise.guest_type:
     ise_hostname: "{{ise_hostname}}"
@@ -207,13 +209,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-- name: Ise request doc
-  cisco.ise.guest_type:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+
 """
 
 RETURN = r"""
@@ -225,5 +221,4 @@ ise_response:
   - {}
   - {}
   - {'GuestType': {'id': 'string', 'name': 'string', 'description': 'string', 'accessTime': {'fromFirstLogin': True, 'maxAccountDuration': 0, 'durationTimeUnit': 'string', 'defaultDuration': 0, 'allowAccessOnSpecificDaysTimes': True, 'dayTimeLimits': [{'startTime': 'string', 'endTime': 'string', 'days': ['string']}]}, 'loginOptions': {'limitSimultaneousLogins': True, 'maxSimultaneousLogins': 0, 'failureAction': 'string', 'maxRegisteredDevices': 0, 'identityGroupId': 'string', 'allowGuestPortalBypass': True}, 'expirationNotification': {'enableNotification': True, 'advanceNotificationDuration': 0, 'advanceNotificationUnits': 'string', 'sendEmailNotification': True, 'emailText': 'string', 'sendSmsNotification': True, 'smsText': 'string'}, 'sponsorGroups': ['string']}}
-  - 
 """

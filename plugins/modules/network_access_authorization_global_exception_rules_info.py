@@ -37,10 +37,12 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
   register: result
+
 - name: Get Network Access Authorization Global Exception Rules by id
   cisco.ise.network_access_authorization_global_exception_rules_info
     id: string
   register: result
+
 """
 
 RETURN = r"""

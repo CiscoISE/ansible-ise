@@ -63,6 +63,7 @@ EXAMPLES = r"""
     sharedSecret: string
     singleConnect: true
     timeout: 0
+
 - name: Update by id
   cisco.ise.tacacs_external_servers:
     ise_hostname: "{{ise_hostname}}"
@@ -78,6 +79,7 @@ EXAMPLES = r"""
     sharedSecret: string
     singleConnect: true
     timeout: 0
+
 - name: Delete by id
   cisco.ise.tacacs_external_servers:
     ise_hostname: "{{ise_hostname}}"
@@ -86,13 +88,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-- name: Ise request doc
-  cisco.ise.tacacs_external_servers:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+
 """
 
 RETURN = r"""
@@ -104,5 +100,4 @@ ise_response:
   - {}
   - {}
   - {}
-  - 
 """

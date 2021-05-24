@@ -124,6 +124,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     {}
+
 - name: Update by id
   cisco.ise.device_administration_conditions:
     ise_hostname: "{{ise_hostname}}"
@@ -161,6 +162,7 @@ EXAMPLES = r"""
     - string
     weekDaysException:
     - string
+
 - name: Delete by id
   cisco.ise.device_administration_conditions:
     ise_hostname: "{{ise_hostname}}"
@@ -169,6 +171,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
+
 - name: Delete by name
   cisco.ise.device_administration_conditions:
     ise_hostname: "{{ise_hostname}}"
@@ -177,6 +180,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     name: string
+
 - name: Update by name
   cisco.ise.device_administration_conditions:
     ise_hostname: "{{ise_hostname}}"
@@ -214,13 +218,7 @@ EXAMPLES = r"""
     - string
     weekDaysException:
     - string
-- name: Ise request doc
-  cisco.ise.device_administration_conditions:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+
 """
 
 RETURN = r"""
@@ -234,5 +232,4 @@ ise_response:
   - {'id': 'string'}
   - {'id': 'string'}
   - {'conditionType': 'string', 'isNegate': True, 'name': 'string', 'id': 'string', 'description': 'string', 'dictionaryName': 'string', 'attributeName': 'string', 'attributeId': 'string', 'operator': 'string', 'dictionaryValue': 'string', 'attributeValue': 'string', 'children': [{'conditionType': 'string', 'isNegate': True}], 'hoursRange': {'startTime': 'string', 'endTime': 'string'}, 'hoursRangeException': {'startTime': 'string', 'endTime': 'string'}, 'weekDays': ['string'], 'weekDaysException': ['string'], 'datesRange': {'startDate': 'string', 'endDate': 'string'}, 'datesRangeException': {'startDate': 'string', 'endDate': 'string'}}
-  - 
 """

@@ -47,10 +47,12 @@ EXAMPLES = r"""
     page: 1
     size: 20
   register: result
+
 - name: Get Filter Policy by id
   cisco.ise.filter_policy_info
     id: string
   register: result
+
 """
 
 RETURN = r"""

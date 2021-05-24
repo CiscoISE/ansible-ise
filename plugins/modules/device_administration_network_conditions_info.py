@@ -37,10 +37,12 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
   register: result
+
 - name: Get Device Administration Network Conditions by id
   cisco.ise.device_administration_network_conditions_info
     id: string
   register: result
+
 """
 
 RETURN = r"""

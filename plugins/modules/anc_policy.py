@@ -46,6 +46,7 @@ EXAMPLES = r"""
     actions:
     - QUARANTINE
     name: policy1
+
 - name: Update by id
   cisco.ise.anc_policy:
     ise_hostname: "{{ise_hostname}}"
@@ -57,6 +58,7 @@ EXAMPLES = r"""
     - QUARANTINE
     id: string
     name: policy1
+
 - name: Delete by id
   cisco.ise.anc_policy:
     ise_hostname: "{{ise_hostname}}"
@@ -65,13 +67,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-- name: Ise request doc
-  cisco.ise.anc_policy:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+
 """
 
 RETURN = r"""
@@ -83,5 +79,4 @@ ise_response:
   - {}
   - {'UpdatedFieldsList': {'updatedField': [{'field': 'string', 'oldValue': 'string', 'newValue': 'string'}]}}
   - {}
-  - 
 """

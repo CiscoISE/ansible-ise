@@ -38,6 +38,7 @@ EXAMPLES = r"""
     name: string
     dictionaryName: string
   register: result
+
 """
 
 RETURN = r"""

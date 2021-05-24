@@ -51,6 +51,7 @@ EXAMPLES = r"""
     daclType: IPV4
     description: MyDACL
     name: MyDACL6
+
 - name: Update by id
   cisco.ise.downloadable_acl:
     ise_hostname: "{{ise_hostname}}"
@@ -63,6 +64,7 @@ EXAMPLES = r"""
     description: MyDACL6
     id: string
     name: MyDACL6
+
 - name: Delete by id
   cisco.ise.downloadable_acl:
     ise_hostname: "{{ise_hostname}}"
@@ -71,13 +73,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-- name: Ise request doc
-  cisco.ise.downloadable_acl:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+
 """
 
 RETURN = r"""
@@ -89,5 +85,4 @@ ise_response:
   - {}
   - {}
   - {}
-  - 
 """

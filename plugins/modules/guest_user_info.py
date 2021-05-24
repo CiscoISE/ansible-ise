@@ -72,14 +72,17 @@ EXAMPLES = r"""
     filter: []
     filterType: AND
   register: result
+
 - name: Get Guest User by id
   cisco.ise.guest_user_info
     id: string
   register: result
+
 - name: Get Guest User by name
   cisco.ise.guest_user_info
     name: string
   register: result
+
 """
 
 RETURN = r"""

@@ -67,6 +67,7 @@ EXAMPLES = r"""
       - name: string
         type: string
         value: string
+
 - name: Update by id
   cisco.ise.tacacs_profile:
     ise_hostname: "{{ise_hostname}}"
@@ -82,6 +83,7 @@ EXAMPLES = r"""
       - name: string
         type: string
         value: string
+
 - name: Delete by id
   cisco.ise.tacacs_profile:
     ise_hostname: "{{ise_hostname}}"
@@ -90,13 +92,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-- name: Ise request doc
-  cisco.ise.tacacs_profile:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+
 """
 
 RETURN = r"""
@@ -108,5 +104,4 @@ ise_response:
   - {}
   - {}
   - {}
-  - 
 """

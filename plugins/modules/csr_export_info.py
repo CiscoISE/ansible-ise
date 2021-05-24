@@ -38,6 +38,7 @@ EXAMPLES = r"""
     hostname: string
     id: string
   register: result
+
 """
 
 RETURN = r"""

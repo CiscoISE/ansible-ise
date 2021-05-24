@@ -59,6 +59,7 @@ EXAMPLES = r"""
     - 1ebbc100-7a26-11e4-bc43-000c29ed7428
     - 2ebbc100-7a26-11e4-bc43-000c29ed7428
     sourceSgtId: 2ebbc200-7a26-11e4-bc43-000c29ed7428
+
 - name: Update by id
   cisco.ise.egress_matrix_cell:
     ise_hostname: "{{ise_hostname}}"
@@ -74,6 +75,7 @@ EXAMPLES = r"""
     - 1ebbc100-7a26-11e4-bc43-000c29ed7428
     - 2ebbc100-7a26-11e4-bc43-000c29ed7428
     sourceSgtId: 2ebbc200-7a26-11e4-bc43-000c29ed7428
+
 - name: Delete by id
   cisco.ise.egress_matrix_cell:
     ise_hostname: "{{ise_hostname}}"
@@ -82,13 +84,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-- name: Ise request doc
-  cisco.ise.egress_matrix_cell:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+
 """
 
 RETURN = r"""
@@ -100,5 +96,4 @@ ise_response:
   - {}
   - {}
   - {}
-  - 
 """

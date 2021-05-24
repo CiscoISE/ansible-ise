@@ -199,6 +199,7 @@ EXAMPLES = r"""
     tacacsSettings:
       connectModeOptions: false
       sharedSecret: C1sco12345
+
 - name: Update by id
   cisco.ise.network_device:
     ise_hostname: "{{ise_hostname}}"
@@ -222,6 +223,7 @@ EXAMPLES = r"""
     tacacsSettings:
       connectModeOptions: false
       sharedSecret: C1sco12345
+
 - name: Delete by id
   cisco.ise.network_device:
     ise_hostname: "{{ise_hostname}}"
@@ -230,6 +232,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
+
 - name: Update by name
   cisco.ise.network_device:
     ise_hostname: "{{ise_hostname}}"
@@ -252,6 +255,7 @@ EXAMPLES = r"""
     tacacsSettings:
       connectModeOptions: false
       sharedSecret: C1sco12345
+
 - name: Delete by name
   cisco.ise.network_device:
     ise_hostname: "{{ise_hostname}}"
@@ -260,13 +264,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     name: string
-- name: Ise request doc
-  cisco.ise.network_device:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+
 """
 
 RETURN = r"""
@@ -280,5 +278,4 @@ ise_response:
   - {}
   - {}
   - {}
-  - 
 """

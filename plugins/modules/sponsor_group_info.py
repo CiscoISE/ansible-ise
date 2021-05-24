@@ -67,10 +67,12 @@ EXAMPLES = r"""
     sortasc: asc
     sortdec: string
   register: result
+
 - name: Get Sponsor Group by id
   cisco.ise.sponsor_group_info
     id: string
   register: result
+
 """
 
 RETURN = r"""

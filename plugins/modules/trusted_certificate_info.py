@@ -67,10 +67,12 @@ EXAMPLES = r"""
     filter: []
     filterType: AND
   register: result
+
 - name: Get Trusted Certificate by id
   cisco.ise.trusted_certificate_info
     id: string
   register: result
+
 """
 
 RETURN = r"""

@@ -52,14 +52,17 @@ EXAMPLES = r"""
     page: 1
     size: 20
   register: result
+
 - name: Get Allowed Protocols by id
   cisco.ise.allowed_protocols_info
     id: string
   register: result
+
 - name: Get Allowed Protocols by name
   cisco.ise.allowed_protocols_info
     name: string
   register: result
+
 """
 
 RETURN = r"""

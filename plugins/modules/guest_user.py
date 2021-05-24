@@ -98,6 +98,7 @@ EXAMPLES = r"""
     guestType: Daily (default)
     portalId: bd48c1a1-9477-4746-8e40-e43d20c9f429
     reasonForVisit: ISE Guest Services
+
 - name: Update by id
   cisco.ise.guest_user:
     ise_hostname: "{{ise_hostname}}"
@@ -110,6 +111,7 @@ EXAMPLES = r"""
     guestType: Daily (default)
     id: 4cea2c31-605c-42d2-92d1-1e999b61aad0
     portalId: bd48c1a1-9477-4746-8e40-e43d20c9f429
+
 - name: Delete by id
   cisco.ise.guest_user:
     ise_hostname: "{{ise_hostname}}"
@@ -118,6 +120,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
+
 - name: Update by name
   cisco.ise.guest_user:
     ise_hostname: "{{ise_hostname}}"
@@ -131,6 +134,7 @@ EXAMPLES = r"""
     id: 4cea2c31-605c-42d2-92d1-1e999b61aad0
     name: string
     portalId: bd48c1a1-9477-4746-8e40-e43d20c9f429
+
 - name: Delete by name
   cisco.ise.guest_user:
     ise_hostname: "{{ise_hostname}}"
@@ -139,13 +143,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     name: string
-- name: Ise request doc
-  cisco.ise.guest_user:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+
 """
 
 RETURN = r"""
@@ -159,5 +157,4 @@ ise_response:
   - {}
   - {}
   - {}
-  - 
 """

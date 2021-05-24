@@ -33,6 +33,7 @@ EXAMPLES = r"""
   cisco.ise.network_access_dictionary_info
     name: string
   register: result
+
 """
 
 RETURN = r"""

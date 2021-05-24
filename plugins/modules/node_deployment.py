@@ -323,6 +323,7 @@ EXAMPLES = r"""
         macTrapQuery: true
         port: {}
     userName: string
+
 - name: Update by name
   cisco.ise.node_deployment:
     ise_hostname: "{{ise_hostname}}"
@@ -397,6 +398,7 @@ EXAMPLES = r"""
         linkTrapQuery: true
         macTrapQuery: true
         port: {}
+
 - name: Delete by name
   cisco.ise.node_deployment:
     ise_hostname: "{{ise_hostname}}"
@@ -405,13 +407,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     hostname: string
-- name: Ise request doc
-  cisco.ise.node_deployment:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+
 """
 
 RETURN = r"""
@@ -423,5 +419,4 @@ ise_response:
   - {'code': 0, 'message': 'string', 'rootCause': 'string'}
   - {'code': 0, 'message': 'string', 'rootCause': 'string'}
   - {'code': 0, 'message': 'string', 'rootCause': 'string'}
-  - 
 """
