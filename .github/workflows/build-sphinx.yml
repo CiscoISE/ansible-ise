@@ -1,0 +1,35 @@
+name: build-sphinx-to-gh-pages
+
+env:
+  GITHUB_ACTOR: wastorga
+  GITHUB_REPOSITORY: CiscoISE/ansible-ise.github.io
+  GITHUB_TOKEN: ${{ secrets.CREATE_DOC_SECRET }}
+
+on: 
+  push:
+    branches: [ docs-config ]
+
+
+jobs:
+
+  build_sphinx_job:
+    runs-on: ubuntu-latest
+    container: debian:buster-slim
+
+    steps:
+    
+      - name: Get prerequisites and clone repository
+        env:
+          GITHUB_TOKEN: ${{ secrets.CREATE_DOC_SECRET }}
+        run: |
+          set -x
+          apt-get update
+          apt-get install -y git
+          git clone "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" .
+        shell: bash
+
+      - name: Run build script for Sphinx pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.CREATE_DOC_SECRET }}
+        run: "docs/buildsite.sh"
+        shell: bash
