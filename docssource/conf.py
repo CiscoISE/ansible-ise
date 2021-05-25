@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
+from __future__ import (absolute_import, division, print_function)
+__metaclass__ = type
 
 # -- Project information -----------------------------------------------------
 import os
-from __future__ import (absolute_import, division, print_function)
-__metaclass__ = type
 
 project = u'ansible-ise'
 copyright = u'Copyright (c) 2021 Cisco and/or its affiliates.'
