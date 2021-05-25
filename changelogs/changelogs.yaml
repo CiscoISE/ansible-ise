@@ -3,3 +3,7 @@ releases:
     release_date: '2021-04-20'
     changes:
       release_summary: This is the initial beta release of the collection.
+  0.0.2:
+    release_date: '2021-05-25'
+    changes:
+      release_summary: Added all idempotent modules. Most modules are still untested against a live ISE.
