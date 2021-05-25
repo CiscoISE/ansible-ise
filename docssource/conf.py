@@ -2,6 +2,7 @@
 
 # -- Project information -----------------------------------------------------
 import os
+__metaclass__ = type
 
 project = u'ansible-ise'
 copyright = u'Copyright (c) 2021 Cisco and/or its affiliates.'
