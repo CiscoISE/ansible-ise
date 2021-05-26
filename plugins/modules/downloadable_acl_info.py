@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -49,7 +49,7 @@ EXAMPLES = r"""
   register: result
 
 - name: Get Downloadable Acl by id
-  cisco.ise.downloadable_acl_info
+  cisco.ise.downloadable_acl_info:
     id: string
   register: result
 
@@ -59,8 +59,14 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {'DownloadableAcl': {'name': 'string', 'description': 'string', 'dacl': 'string', 'daclType': 'string'}}
-  - {'SearchResult': {'total': 0, 'resources': [{'id': 'string', 'name': 'string', 'description': 'string', 'link': {'rel': 'string', 'href': 'string', 'type': 'string'}}]}}
+  type: dict
+  sample: >
+    {
+      "DownloadableAcl": {
+        "name": "string",
+        "description": "string",
+        "dacl": "string",
+        "daclType": "string"
+      }
+    }
 """

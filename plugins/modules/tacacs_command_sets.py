@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -14,21 +14,20 @@ version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
     commands:
+      description: Tacacs Command Sets's commands.
       suboptions:
         commandList:
           description: Tacacs Command Sets's commandList.
           suboptions:
-          - suboptions:
-              arguments:
-                description: Tacacs Command Sets's arguments.
-                type: str
-              command:
-                description: Tacacs Command Sets's command.
-                type: str
-              grant:
-                description: Tacacs Command Sets's grant.
-                type: str
-            type: dict
+            arguments:
+              description: Tacacs Command Sets's arguments.
+              type: str
+            command:
+              description: Tacacs Command Sets's command.
+              type: str
+            grant:
+              description: Tacacs Command Sets's grant.
+              type: str
           type: list
       type: dict
     description:
@@ -36,7 +35,7 @@ options:
       type: str
     id:
       description: Id path parameter.
-      type: string
+      type: str
     name:
       description: Tacacs Command Sets's name.
       type: str
@@ -103,9 +102,7 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {}
-  - {}
-  - {}
+  type: dict
+  sample: >
+    {}
 """

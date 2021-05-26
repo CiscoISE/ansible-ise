@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -39,7 +39,7 @@ EXAMPLES = r"""
   register: result
 
 - name: Get Device Administration Network Conditions by id
-  cisco.ise.device_administration_network_conditions_info
+  cisco.ise.device_administration_network_conditions_info:
     id: string
   register: result
 
@@ -49,8 +49,27 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {'name': 'string', 'id': 'string', 'description': 'string', 'conditionType': 'string', 'ipAddrList': ['string'], 'macAddrList': ['string'], 'cliDnisList': ['string'], 'deviceList': ['string'], 'deviceGroupList': ['string']}
-  - [{'name': 'string', 'id': 'string', 'description': 'string', 'conditionType': 'string'}]
+  type: dict
+  sample: >
+    {
+      "name": "string",
+      "id": "string",
+      "description": "string",
+      "conditionType": "string",
+      "ipAddrList": [
+        "string"
+      ],
+      "macAddrList": [
+        "string"
+      ],
+      "cliDnisList": [
+        "string"
+      ],
+      "deviceList": [
+        "string"
+      ],
+      "deviceGroupList": [
+        "string"
+      ]
+    }
 """

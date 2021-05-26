@@ -23,26 +23,26 @@ from ansible_collections.cisco.ise.plugins.module_utils.exceptions import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-        state = dict(type="str", default="present", choices=["present", "absent"]),
-        conditionType=dict(type="str"),
-        isNegate=dict(type="bool"),
-        name=dict(type="str"),
-        id=dict(type="str"),
-        description=dict(type="str"),
-        dictionaryName=dict(type="str"),
-        attributeName=dict(type="str"),
-        attributeId=dict(type="str"),
-        operator=dict(type="str"),
-        dictionaryValue=dict(type="str"),
-        attributeValue=dict(type="str"),
-        children=dict(type="list"),
-        hoursRange=dict(type="dict"),
-        hoursRangeException=dict(type="dict"),
-        weekDays=dict(type="list"),
-        weekDaysException=dict(type="list"),
-        datesRange=dict(type="dict"),
-        datesRangeException=dict(type="dict"),
-    ))
+    state=dict(type="str", default="present", choices=["present", "absent"]),
+    conditionType=dict(type="str"),
+    isNegate=dict(type="bool"),
+    name=dict(type="str"),
+    id=dict(type="str"),
+    description=dict(type="str"),
+    dictionaryName=dict(type="str"),
+    attributeName=dict(type="str"),
+    attributeId=dict(type="str"),
+    operator=dict(type="str"),
+    dictionaryValue=dict(type="str"),
+    attributeValue=dict(type="str"),
+    children=dict(type="list"),
+    hoursRange=dict(type="dict"),
+    hoursRangeException=dict(type="dict"),
+    weekDays=dict(type="list"),
+    weekDaysException=dict(type="list"),
+    datesRange=dict(type="dict"),
+    datesRangeException=dict(type="dict"),
+))
 
 required_if = [
     ("state", "present", ("id", "name"), True),
@@ -77,7 +77,6 @@ class NetworkAccessTimeDateConditions(object):
             dates_range_exception=params.get("datesRangeException"),
         )
 
-
     def get_object_by_name(self, name):
         # NOTICE: Does not have a get by name method or it is in another action
         result = None
@@ -89,7 +88,7 @@ class NetworkAccessTimeDateConditions(object):
                 family="network_access_time_date_conditions",
                 function="get_network_access_time_condition_by_id",
                 params={"id": quote(id)}
-                ).response
+            ).response
         except Exception as e:
             result = None
         return result
@@ -147,6 +146,7 @@ class NetworkAccessTimeDateConditions(object):
         ).response
         return result
 
+
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
@@ -200,7 +200,7 @@ class ActionModule(ActionBase):
                 ise.object_deleted()
             else:
                 ise.object_already_absent()
-         
+
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

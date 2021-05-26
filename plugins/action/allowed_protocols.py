@@ -20,33 +20,33 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-        state = dict(type="str", default="present", choices=["present", "absent"]),
-        name=dict(type="str"),
-        description=dict(type="str"),
-        eapTls=dict(type="dict"),
-        peap=dict(type="dict"),
-        eapFast=dict(type="dict"),
-        eapTtls=dict(type="dict"),
-        teap=dict(type="dict"),
-        processHostLookup=dict(type="bool"),
-        allowPapAscii=dict(type="bool"),
-        allowChap=dict(type="bool"),
-        allowMsChapV1=dict(type="bool"),
-        allowMsChapV2=dict(type="bool"),
-        allowEapMd5=dict(type="bool"),
-        allowLeap=dict(type="bool"),
-        allowEapTls=dict(type="bool"),
-        allowEapTtls=dict(type="bool"),
-        allowEapFast=dict(type="bool"),
-        allowPeap=dict(type="bool"),
-        allowTeap=dict(type="bool"),
-        allowPreferredEapProtocol=dict(type="bool"),
-        preferredEapProtocol=dict(type="str"),
-        eapTlsLBit=dict(type="bool"),
-        allowWeakCiphersForEap=dict(type="bool"),
-        requireMessageAuth=dict(type="bool"),
-        id=dict(type="str"),
-    ))
+    state=dict(type="str", default="present", choices=["present", "absent"]),
+    name=dict(type="str"),
+    description=dict(type="str"),
+    eapTls=dict(type="dict"),
+    peap=dict(type="dict"),
+    eapFast=dict(type="dict"),
+    eapTtls=dict(type="dict"),
+    teap=dict(type="dict"),
+    processHostLookup=dict(type="bool"),
+    allowPapAscii=dict(type="bool"),
+    allowChap=dict(type="bool"),
+    allowMsChapV1=dict(type="bool"),
+    allowMsChapV2=dict(type="bool"),
+    allowEapMd5=dict(type="bool"),
+    allowLeap=dict(type="bool"),
+    allowEapTls=dict(type="bool"),
+    allowEapTtls=dict(type="bool"),
+    allowEapFast=dict(type="bool"),
+    allowPeap=dict(type="bool"),
+    allowTeap=dict(type="bool"),
+    allowPreferredEapProtocol=dict(type="bool"),
+    preferredEapProtocol=dict(type="str"),
+    eapTlsLBit=dict(type="bool"),
+    allowWeakCiphersForEap=dict(type="bool"),
+    requireMessageAuth=dict(type="bool"),
+    id=dict(type="str"),
+))
 
 required_if = [
     ("state", "present", ("id", "name"), True),
@@ -88,14 +88,13 @@ class AllowedProtocols(object):
             id=params.get("id"),
         )
 
-
     def get_object_by_name(self, name):
         try:
             result = self.ise.exec(
                 family="allowed_protocols",
                 function="get_allowed_protocol_by_name",
                 params={"name": quote(name)}
-                ).response['AllowedProtocols']
+            ).response['AllowedProtocols']
         except Exception as e:
             result = None
         return result
@@ -106,7 +105,7 @@ class AllowedProtocols(object):
                 family="allowed_protocols",
                 function="get_allowed_protocol_by_id",
                 params={"id": quote(id)}
-                ).response['AllowedProtocols']
+            ).response['AllowedProtocols']
         except Exception as e:
             result = None
         return result
@@ -158,6 +157,7 @@ class AllowedProtocols(object):
             params=self.new_object
         ).response
         return result
+
 
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
@@ -212,7 +212,7 @@ class ActionModule(ActionBase):
                 ise.object_deleted()
             else:
                 ise.object_already_absent()
-         
+
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

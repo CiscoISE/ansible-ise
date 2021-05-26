@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -54,12 +54,12 @@ EXAMPLES = r"""
   register: result
 
 - name: Get Authorization Profile by id
-  cisco.ise.authorization_profile_info
+  cisco.ise.authorization_profile_info:
     id: string
   register: result
 
 - name: Get Authorization Profile by name
-  cisco.ise.authorization_profile_info
+  cisco.ise.authorization_profile_info:
     name: string
   register: result
 
@@ -69,8 +69,61 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {'AuthorizationProfile': {'id': 'string', 'name': 'string', 'description': 'string', 'advancedAttributes': [{'leftHandSideDictionaryAttribue': {'AdvancedAttributeValueType': 'string', 'dictionaryName': 'string', 'attributeName': 'string'}, 'rightHandSideAttribueValue': {'AdvancedAttributeValueType': 'string', 'value': 'string'}}], 'accessType': 'string', 'authzProfileType': 'string', 'vlan': {'nameID': 'string', 'tagID': 0}, 'reauth': {'timer': 0, 'connectivity': 'string'}, 'airespaceACL': 'string', 'airespaceIPv6ACL': 'string', 'webRedirection': {'WebRedirectionType': 'string', 'acl': 'string', 'portalName': 'string', 'staticIPHostNameFQDN': 'string', 'displayCertificatesRenewalMessages': True}, 'acl': 'string', 'trackMovement': True, 'serviceTemplate': True, 'easywiredSessionCandidate': True, 'daclName': 'string', 'voiceDomainPermission': True, 'neat': True, 'webAuth': True, 'autoSmartPort': 'string', 'interfaceTemplate': 'string', 'ipv6ACLFilter': 'string', 'avcProfile': 'string', 'macSecPolicy': 'string', 'asaVpn': 'string', 'profileName': 'string', 'ipv6DaclName': 'string'}}
-  - {'SearchResult': {'total': 0, 'resources': [{'id': 'string', 'name': 'string', 'description': 'string', 'link': {'rel': 'string', 'href': 'string', 'type': 'string'}}], 'nextPage': {'rel': 'string', 'href': 'string', 'type': 'string'}, 'previousPage': {'rel': 'string', 'href': 'string', 'type': 'string'}}}
+  type: dict
+  sample: >
+    {
+      "AuthorizationProfile": {
+        "id": "string",
+        "name": "string",
+        "description": "string",
+        "advancedAttributes": [
+          {
+            "leftHandSideDictionaryAttribue": {
+              "AdvancedAttributeValueType": "string",
+              "dictionaryName": "string",
+              "attributeName": "string"
+            },
+            "rightHandSideAttribueValue": {
+              "AdvancedAttributeValueType": "string",
+              "value": "string"
+            }
+          }
+        ],
+        "accessType": "string",
+        "authzProfileType": "string",
+        "vlan": {
+          "nameID": "string",
+          "tagID": 0
+        },
+        "reauth": {
+          "timer": 0,
+          "connectivity": "string"
+        },
+        "airespaceACL": "string",
+        "airespaceIPv6ACL": "string",
+        "webRedirection": {
+          "WebRedirectionType": "string",
+          "acl": "string",
+          "portalName": "string",
+          "staticIPHostNameFQDN": "string",
+          "displayCertificatesRenewalMessages": true
+        },
+        "acl": "string",
+        "trackMovement": true,
+        "serviceTemplate": true,
+        "easywiredSessionCandidate": true,
+        "daclName": "string",
+        "voiceDomainPermission": true,
+        "neat": true,
+        "webAuth": true,
+        "autoSmartPort": "string",
+        "interfaceTemplate": "string",
+        "ipv6ACLFilter": "string",
+        "avcProfile": "string",
+        "macSecPolicy": "string",
+        "asaVpn": "string",
+        "profileName": "string",
+        "ipv6DaclName": "string"
+      }
+    }
 """

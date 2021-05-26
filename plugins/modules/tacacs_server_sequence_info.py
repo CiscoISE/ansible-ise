@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -54,12 +54,12 @@ EXAMPLES = r"""
   register: result
 
 - name: Get Tacacs Server Sequence by id
-  cisco.ise.tacacs_server_sequence_info
+  cisco.ise.tacacs_server_sequence_info:
     id: string
   register: result
 
 - name: Get Tacacs Server Sequence by name
-  cisco.ise.tacacs_server_sequence_info
+  cisco.ise.tacacs_server_sequence_info:
     name: string
   register: result
 
@@ -69,8 +69,18 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {'TacacsServerSequence': {'name': 'string', 'serverList': 'string', 'localAccounting': True, 'remoteAccounting': True, 'prefixStrip': True, 'prefixDelimiter': 'string', 'suffixStrip': True, 'suffixDelimiter': 'string'}}
-  - {'SearchResult': {'total': 0, 'resources': [{'id': 'string', 'name': 'string', 'description': 'string', 'link': {'rel': 'string', 'href': 'string', 'type': 'string'}}], 'nextPage': {'rel': 'string', 'href': 'string', 'type': 'string'}, 'previousPage': {'rel': 'string', 'href': 'string', 'type': 'string'}}}
+  type: dict
+  sample: >
+    {
+      "TacacsServerSequence": {
+        "name": "string",
+        "serverList": "string",
+        "localAccounting": true,
+        "remoteAccounting": true,
+        "prefixStrip": true,
+        "prefixDelimiter": "string",
+        "suffixStrip": true,
+        "suffixDelimiter": "string"
+      }
+    }
 """

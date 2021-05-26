@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -44,12 +44,12 @@ EXAMPLES = r"""
   register: result
 
 - name: Get Tacacs Command Sets by id
-  cisco.ise.tacacs_command_sets_info
+  cisco.ise.tacacs_command_sets_info:
     id: string
   register: result
 
 - name: Get Tacacs Command Sets by name
-  cisco.ise.tacacs_command_sets_info
+  cisco.ise.tacacs_command_sets_info:
     name: string
   register: result
 
@@ -59,8 +59,22 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {'TacacsCommandSets': {'name': 'string', 'description': 'string', 'permitUnmatched': True, 'commands': {'commandList': [{'grant': 'string', 'command': 'string', 'arguments': 'string'}]}}}
-  - {'SearchResult': {'total': 0, 'resources': [{'id': 'string', 'name': 'string', 'description': 'string', 'link': {'rel': 'string', 'href': 'string', 'type': 'string'}}], 'nextPage': {'rel': 'string', 'href': 'string', 'type': 'string'}, 'previousPage': {'rel': 'string', 'href': 'string', 'type': 'string'}}}
+  type: dict
+  sample: >
+    {
+      "TacacsCommandSets": {
+        "name": "string",
+        "description": "string",
+        "permitUnmatched": true,
+        "commands": {
+          "commandList": [
+            {
+              "grant": "string",
+              "command": "string",
+              "arguments": "string"
+            }
+          ]
+        }
+      }
+    }
 """

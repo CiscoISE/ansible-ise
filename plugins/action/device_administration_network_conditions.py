@@ -23,17 +23,17 @@ from ansible_collections.cisco.ise.plugins.module_utils.exceptions import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-        state = dict(type="str", default="present", choices=["present", "absent"]),
-        name=dict(type="str"),
-        id=dict(type="str"),
-        description=dict(type="str"),
-        conditionType=dict(type="str"),
-        ipAddrList=dict(type="list"),
-        macAddrList=dict(type="list"),
-        cliDnisList=dict(type="list"),
-        deviceList=dict(type="list"),
-        deviceGroupList=dict(type="list"),
-    ))
+    state=dict(type="str", default="present", choices=["present", "absent"]),
+    name=dict(type="str"),
+    id=dict(type="str"),
+    description=dict(type="str"),
+    conditionType=dict(type="str"),
+    ipAddrList=dict(type="list"),
+    macAddrList=dict(type="list"),
+    cliDnisList=dict(type="list"),
+    deviceList=dict(type="list"),
+    deviceGroupList=dict(type="list"),
+))
 
 required_if = [
     ("state", "present", ("id", "name"), True),
@@ -59,7 +59,6 @@ class DeviceAdministrationNetworkConditions(object):
             device_group_list=params.get("deviceGroupList"),
         )
 
-
     def get_object_by_name(self, name):
         # NOTICE: Does not have a get by name method or it is in another action
         result = None
@@ -71,7 +70,7 @@ class DeviceAdministrationNetworkConditions(object):
                 family="device_administration_network_conditions",
                 function="get_device_admin_network_condition_by_id",
                 params={"id": quote(id)}
-                ).response
+            ).response
         except Exception as e:
             result = None
         return result
@@ -129,6 +128,7 @@ class DeviceAdministrationNetworkConditions(object):
         ).response
         return result
 
+
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
@@ -182,7 +182,7 @@ class ActionModule(ActionBase):
                 ise.object_deleted()
             else:
                 ise.object_already_absent()
-         
+
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

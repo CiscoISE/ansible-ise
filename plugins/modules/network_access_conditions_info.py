@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -44,12 +44,12 @@ EXAMPLES = r"""
   register: result
 
 - name: Get Network Access Conditions by id
-  cisco.ise.network_access_conditions_info
+  cisco.ise.network_access_conditions_info:
     id: string
   register: result
 
 - name: Get Network Access Conditions by name
-  cisco.ise.network_access_conditions_info
+  cisco.ise.network_access_conditions_info:
     name: string
   register: result
 
@@ -59,8 +59,47 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {'conditionType': 'string', 'isNegate': True, 'name': 'string', 'id': 'string', 'description': 'string', 'dictionaryName': 'string', 'attributeName': 'string', 'attributeId': 'string', 'operator': 'string', 'dictionaryValue': 'string', 'attributeValue': 'string', 'children': [{'conditionType': 'string', 'isNegate': True}], 'hoursRange': {'startTime': 'string', 'endTime': 'string'}, 'hoursRangeException': {'startTime': 'string', 'endTime': 'string'}, 'weekDays': ['string'], 'weekDaysException': ['string'], 'datesRange': {'startDate': 'string', 'endDate': 'string'}, 'datesRangeException': {'startDate': 'string', 'endDate': 'string'}}
-  - [{'conditionType': 'string', 'isNegate': True}]
+  type: dict
+  sample: >
+    {
+      "conditionType": "string",
+      "isNegate": true,
+      "name": "string",
+      "id": "string",
+      "description": "string",
+      "dictionaryName": "string",
+      "attributeName": "string",
+      "attributeId": "string",
+      "operator": "string",
+      "dictionaryValue": "string",
+      "attributeValue": "string",
+      "children": [
+        {
+          "conditionType": "string",
+          "isNegate": true
+        }
+      ],
+      "hoursRange": {
+        "startTime": "string",
+        "endTime": "string"
+      },
+      "hoursRangeException": {
+        "startTime": "string",
+        "endTime": "string"
+      },
+      "weekDays": [
+        "string"
+      ],
+      "weekDaysException": [
+        "string"
+      ],
+      "datesRange": {
+        "startDate": "string",
+        "endDate": "string"
+      },
+      "datesRangeException": {
+        "startDate": "string",
+        "endDate": "string"
+      }
+    }
 """

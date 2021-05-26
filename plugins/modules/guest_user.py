@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -14,6 +14,7 @@ version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
     guestAccessInfo:
+      description: Guest User's guestAccessInfo.
       suboptions:
         fromDate:
           description: Guest User's fromDate.
@@ -29,6 +30,7 @@ options:
           type: int
       type: dict
     guestInfo:
+      description: Guest User's guestInfo.
       suboptions:
         emailAddress:
           description: Guest User's emailAddress.
@@ -57,7 +59,7 @@ options:
       type: str
     name:
       description: Name path parameter.
-      type: string
+      type: str
     portalId:
       description: Guest User's portalId.
       type: str
@@ -150,11 +152,7 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {}
-  - {}
-  - {}
-  - {}
-  - {}
+  type: dict
+  sample: >
+    {}
 """

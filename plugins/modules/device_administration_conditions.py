@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -25,19 +25,18 @@ options:
     children:
       description: Device Administration Conditions's children.
       suboptions:
-      - suboptions:
-          conditionType:
-            description: Device Administration Conditions's conditionType.
-            type: str
-          isNegate:
-            description: IsNegate flag.
-            type: bool
-        type: dict
+        conditionType:
+          description: Device Administration Conditions's conditionType.
+          type: str
+        isNegate:
+          description: IsNegate flag.
+          type: bool
       type: list
     conditionType:
       description: Device Administration Conditions's conditionType.
       type: str
     datesRange:
+      description: Device Administration Conditions's datesRange.
       suboptions:
         endDate:
           description: Device Administration Conditions's endDate.
@@ -47,6 +46,7 @@ options:
           type: str
       type: dict
     datesRangeException:
+      description: Device Administration Conditions's datesRangeException.
       suboptions:
         endDate:
           description: Device Administration Conditions's endDate.
@@ -65,6 +65,7 @@ options:
       description: Device Administration Conditions's dictionaryValue.
       type: str
     hoursRange:
+      description: Device Administration Conditions's hoursRange.
       suboptions:
         endTime:
           description: Device Administration Conditions's endTime.
@@ -74,6 +75,7 @@ options:
           type: str
       type: dict
     hoursRangeException:
+      description: Device Administration Conditions's hoursRangeException.
       suboptions:
         endTime:
           description: Device Administration Conditions's endTime.
@@ -96,13 +98,11 @@ options:
       type: str
     weekDays:
       description: Device Administration Conditions's weekDays.
-      elements:
-        type: str
+      elements: str
       type: list
     weekDaysException:
       description: Device Administration Conditions's weekDaysException.
-      elements:
-        type: str
+      elements: str
       type: list
 requirements:
 - ciscoisesdk
@@ -123,7 +123,6 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    {}
 
 - name: Update by id
   cisco.ise.device_administration_conditions:
@@ -225,11 +224,47 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {'conditionType': 'string', 'isNegate': True, 'name': 'string', 'id': 'string', 'description': 'string', 'dictionaryName': 'string', 'attributeName': 'string', 'attributeId': 'string', 'operator': 'string', 'dictionaryValue': 'string', 'attributeValue': 'string', 'children': [{'conditionType': 'string', 'isNegate': True}], 'hoursRange': {'startTime': 'string', 'endTime': 'string'}, 'hoursRangeException': {'startTime': 'string', 'endTime': 'string'}, 'weekDays': ['string'], 'weekDaysException': ['string'], 'datesRange': {'startDate': 'string', 'endDate': 'string'}, 'datesRangeException': {'startDate': 'string', 'endDate': 'string'}}
-  - {'conditionType': 'string', 'isNegate': True, 'name': 'string', 'id': 'string', 'description': 'string', 'dictionaryName': 'string', 'attributeName': 'string', 'attributeId': 'string', 'operator': 'string', 'dictionaryValue': 'string', 'attributeValue': 'string', 'children': [{'conditionType': 'string', 'isNegate': True}], 'hoursRange': {'startTime': 'string', 'endTime': 'string'}, 'hoursRangeException': {'startTime': 'string', 'endTime': 'string'}, 'weekDays': ['string'], 'weekDaysException': ['string'], 'datesRange': {'startDate': 'string', 'endDate': 'string'}, 'datesRangeException': {'startDate': 'string', 'endDate': 'string'}}
-  - {'id': 'string'}
-  - {'id': 'string'}
-  - {'conditionType': 'string', 'isNegate': True, 'name': 'string', 'id': 'string', 'description': 'string', 'dictionaryName': 'string', 'attributeName': 'string', 'attributeId': 'string', 'operator': 'string', 'dictionaryValue': 'string', 'attributeValue': 'string', 'children': [{'conditionType': 'string', 'isNegate': True}], 'hoursRange': {'startTime': 'string', 'endTime': 'string'}, 'hoursRangeException': {'startTime': 'string', 'endTime': 'string'}, 'weekDays': ['string'], 'weekDaysException': ['string'], 'datesRange': {'startDate': 'string', 'endDate': 'string'}, 'datesRangeException': {'startDate': 'string', 'endDate': 'string'}}
+  type: dict
+  sample: >
+    {
+      "conditionType": "string",
+      "isNegate": true,
+      "name": "string",
+      "id": "string",
+      "description": "string",
+      "dictionaryName": "string",
+      "attributeName": "string",
+      "attributeId": "string",
+      "operator": "string",
+      "dictionaryValue": "string",
+      "attributeValue": "string",
+      "children": [
+        {
+          "conditionType": "string",
+          "isNegate": true
+        }
+      ],
+      "hoursRange": {
+        "startTime": "string",
+        "endTime": "string"
+      },
+      "hoursRangeException": {
+        "startTime": "string",
+        "endTime": "string"
+      },
+      "weekDays": [
+        "string"
+      ],
+      "weekDaysException": [
+        "string"
+      ],
+      "datesRange": {
+        "startDate": "string",
+        "endDate": "string"
+      },
+      "datesRangeException": {
+        "startDate": "string",
+        "endDate": "string"
+      }
+    }
 """

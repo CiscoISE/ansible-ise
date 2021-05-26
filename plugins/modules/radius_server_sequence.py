@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -16,49 +16,44 @@ options:
     BeforeAcceptAttrManipulatorsList:
       description: Radius Server Sequence's BeforeAcceptAttrManipulatorsList.
       suboptions:
-      - suboptions:
-          action:
-            description: Radius Server Sequence's action.
-            type: str
-          attributeName:
-            description: Radius Server Sequence's attributeName.
-            type: str
-          changedVal:
-            description: Radius Server Sequence's changedVal.
-            type: str
-          dictionaryName:
-            description: Radius Server Sequence's dictionaryName.
-            type: str
-          value:
-            description: Radius Server Sequence's value.
-            type: str
-        type: dict
+        action:
+          description: Radius Server Sequence's action.
+          type: str
+        attributeName:
+          description: Radius Server Sequence's attributeName.
+          type: str
+        changedVal:
+          description: Radius Server Sequence's changedVal.
+          type: str
+        dictionaryName:
+          description: Radius Server Sequence's dictionaryName.
+          type: str
+        value:
+          description: Radius Server Sequence's value.
+          type: str
       type: list
     OnRequestAttrManipulatorList:
       description: Radius Server Sequence's OnRequestAttrManipulatorList.
       suboptions:
-      - suboptions:
-          action:
-            description: Radius Server Sequence's action.
-            type: str
-          attributeName:
-            description: Radius Server Sequence's attributeName.
-            type: str
-          changedVal:
-            description: Radius Server Sequence's changedVal.
-            type: str
-          dictionaryName:
-            description: Radius Server Sequence's dictionaryName.
-            type: str
-          value:
-            description: Radius Server Sequence's value.
-            type: str
-        type: dict
+        action:
+          description: Radius Server Sequence's action.
+          type: str
+        attributeName:
+          description: Radius Server Sequence's attributeName.
+          type: str
+        changedVal:
+          description: Radius Server Sequence's changedVal.
+          type: str
+        dictionaryName:
+          description: Radius Server Sequence's dictionaryName.
+          type: str
+        value:
+          description: Radius Server Sequence's value.
+          type: str
       type: list
     RadiusServerList:
       description: Radius Server Sequence's RadiusServerList.
-      elements:
-        type: str
+      elements: str
       type: list
     continueAuthorzPolicy:
       description: ContinueAuthorzPolicy flag.
@@ -213,9 +208,7 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {}
-  - {}
-  - {}
+  type: dict
+  sample: >
+    {}
 """

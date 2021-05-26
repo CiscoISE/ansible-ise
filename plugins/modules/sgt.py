@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -21,7 +21,7 @@ options:
       type: str
     id:
       description: Id path parameter.
-      type: string
+      type: str
     name:
       description: Sgt's name.
       type: str
@@ -85,9 +85,7 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {}
-  - {}
-  - {}
+  type: dict
+  sample: >
+    {}
 """

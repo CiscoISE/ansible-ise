@@ -20,22 +20,22 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-        state = dict(type="str", default="present", choices=["present", "absent"]),
-        id=dict(type="str"),
-        name=dict(type="str"),
-        description=dict(type="str"),
-        hostIP=dict(type="str"),
-        sharedSecret=dict(type="str"),
-        enableKeyWrap=dict(type="bool"),
-        encryptionKey=dict(type="str"),
-        authenticatorKey=dict(type="str"),
-        keyInputFormat=dict(type="str"),
-        authenticationPort=dict(type="int"),
-        accountingPort=dict(type="int"),
-        timeout=dict(type="int"),
-        retries=dict(type="int"),
-        proxyTimeout=dict(type="int"),
-    ))
+    state=dict(type="str", default="present", choices=["present", "absent"]),
+    id=dict(type="str"),
+    name=dict(type="str"),
+    description=dict(type="str"),
+    hostIP=dict(type="str"),
+    sharedSecret=dict(type="str"),
+    enableKeyWrap=dict(type="bool"),
+    encryptionKey=dict(type="str"),
+    authenticatorKey=dict(type="str"),
+    keyInputFormat=dict(type="str"),
+    authenticationPort=dict(type="int"),
+    accountingPort=dict(type="int"),
+    timeout=dict(type="int"),
+    retries=dict(type="int"),
+    proxyTimeout=dict(type="int"),
+))
 
 required_if = [
     ("state", "present", ("id", "name"), True),
@@ -66,14 +66,13 @@ class ExternalRadiusServer(object):
             proxy_timeout=params.get("proxyTimeout"),
         )
 
-
     def get_object_by_name(self, name):
         try:
             result = self.ise.exec(
                 family="external_radius_server",
                 function="get_external_radius_server_by_name",
                 params={"name": quote(name)}
-                ).response['ExternalRadiusServer']
+            ).response['ExternalRadiusServer']
         except Exception as e:
             result = None
         return result
@@ -84,7 +83,7 @@ class ExternalRadiusServer(object):
                 family="external_radius_server",
                 function="get_external_radius_server_by_id",
                 params={"id": quote(id)}
-                ).response['ExternalRadiusServer']
+            ).response['ExternalRadiusServer']
         except Exception as e:
             result = None
         return result
@@ -136,6 +135,7 @@ class ExternalRadiusServer(object):
             params=self.new_object
         ).response
         return result
+
 
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
@@ -190,7 +190,7 @@ class ActionModule(ActionBase):
                 ise.object_deleted()
             else:
                 ise.object_already_absent()
-         
+
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

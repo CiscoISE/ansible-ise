@@ -20,16 +20,16 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-        state = dict(type="str", default="present", choices=["present", "absent"]),
-        name=dict(type="str"),
-        description=dict(type="str"),
-        hostIP=dict(type="str"),
-        connectionPort=dict(type="int"),
-        singleConnect=dict(type="bool"),
-        sharedSecret=dict(type="str"),
-        timeout=dict(type="int"),
-        id=dict(type="str"),
-    ))
+    state=dict(type="str", default="present", choices=["present", "absent"]),
+    name=dict(type="str"),
+    description=dict(type="str"),
+    hostIP=dict(type="str"),
+    connectionPort=dict(type="int"),
+    singleConnect=dict(type="bool"),
+    sharedSecret=dict(type="str"),
+    timeout=dict(type="int"),
+    id=dict(type="str"),
+))
 
 required_if = [
     ("state", "present", ("id", "name"), True),
@@ -54,14 +54,13 @@ class TacacsExternalServers(object):
             id=params.get("id"),
         )
 
-
     def get_object_by_name(self, name):
         try:
             result = self.ise.exec(
                 family="tacacs_external_servers",
                 function="get_tacacs_external_servers_by_name",
                 params={"name": quote(name)}
-                ).response['TacacsExternalServer']
+            ).response['TacacsExternalServer']
         except Exception as e:
             result = None
         return result
@@ -72,7 +71,7 @@ class TacacsExternalServers(object):
                 family="tacacs_external_servers",
                 function="get_tacacs_external_servers_by_id",
                 params={"id": quote(id)}
-                ).response['TacacsExternalServer']
+            ).response['TacacsExternalServer']
         except Exception as e:
             result = None
         return result
@@ -124,6 +123,7 @@ class TacacsExternalServers(object):
             params=self.new_object
         ).response
         return result
+
 
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
@@ -178,7 +178,7 @@ class ActionModule(ActionBase):
                 ise.object_deleted()
             else:
                 ise.object_already_absent()
-         
+
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

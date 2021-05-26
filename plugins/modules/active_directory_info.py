@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -54,12 +54,12 @@ EXAMPLES = r"""
   register: result
 
 - name: Get Active Directory by id
-  cisco.ise.active_directory_info
+  cisco.ise.active_directory_info:
     id: string
   register: result
 
 - name: Get Active Directory by name
-  cisco.ise.active_directory_info
+  cisco.ise.active_directory_info:
     name: string
   register: result
 
@@ -69,8 +69,64 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {'ERSActiveDirectory': {'name': 'string', 'description': 'string', 'domain': 'string', 'adgroups': {'groups': [{'name': 'string', 'sid': 'string', 'type': 'string'}]}, 'advancedSettings': {'enablePassChange': True, 'enableMachineAuth': True, 'enableMachineAccess': True, 'agingTime': 0, 'enableDialinPermissionCheck': True, 'enableCallbackForDialinClient': True, 'plaintextAuth': True, 'identityNotInAdBehaviour': 'string', 'unreachableDomainsBehaviour': 'string', 'enableRewrites': True, 'rewriteRules': [{'rowId': 0, 'rewriteMatch': 'string', 'rewriteResult': 'string'}], 'firstName': 'string', 'department': 'string', 'lastName': 'string', 'organizationalUnit': 'string', 'jobTitle': 'string', 'locality': 'string', 'email': 'string', 'stateOrProvince': 'string', 'telephone': 'string', 'country': 'string', 'streetAddress': 'string', 'schema': 'string'}, 'adAttributes': {'attributes': [{'name': 'string', 'type': 'string', 'defaultValue': 'string', 'internalName': 'string'}]}, 'adScopesNames': 'string'}}
-  - {'SearchResult': {'total': 0, 'resources': [{'id': 'string', 'name': 'string', 'description': 'string', 'link': {'rel': 'string', 'href': 'string', 'type': 'string'}}], 'nextPage': {'rel': 'string', 'href': 'string', 'type': 'string'}, 'previousPage': {'rel': 'string', 'href': 'string', 'type': 'string'}}}
+  type: dict
+  sample: >
+    {
+      "ERSActiveDirectory": {
+        "name": "string",
+        "description": "string",
+        "domain": "string",
+        "adgroups": {
+          "groups": [
+            {
+              "name": "string",
+              "sid": "string",
+              "type": "string"
+            }
+          ]
+        },
+        "advancedSettings": {
+          "enablePassChange": true,
+          "enableMachineAuth": true,
+          "enableMachineAccess": true,
+          "agingTime": 0,
+          "enableDialinPermissionCheck": true,
+          "enableCallbackForDialinClient": true,
+          "plaintextAuth": true,
+          "identityNotInAdBehaviour": "string",
+          "unreachableDomainsBehaviour": "string",
+          "enableRewrites": true,
+          "rewriteRules": [
+            {
+              "rowId": 0,
+              "rewriteMatch": "string",
+              "rewriteResult": "string"
+            }
+          ],
+          "firstName": "string",
+          "department": "string",
+          "lastName": "string",
+          "organizationalUnit": "string",
+          "jobTitle": "string",
+          "locality": "string",
+          "email": "string",
+          "stateOrProvince": "string",
+          "telephone": "string",
+          "country": "string",
+          "streetAddress": "string",
+          "schema": "string"
+        },
+        "adAttributes": {
+          "attributes": [
+            {
+              "name": "string",
+              "type": "string",
+              "defaultValue": "string",
+              "internalName": "string"
+            }
+          ]
+        },
+        "adScopesNames": "string"
+      }
+    }
 """

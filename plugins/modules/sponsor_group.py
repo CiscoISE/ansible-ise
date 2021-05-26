@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -17,6 +17,7 @@ options:
       description: AutoNotification flag.
       type: bool
     createPermissions:
+      description: Sponsor Group's createPermissions.
       suboptions:
         canCreateRandomAccounts:
           description: CanCreateRandomAccounts flag.
@@ -48,8 +49,7 @@ options:
       type: str
     guestTypes:
       description: Sponsor Group's guestTypes.
-      elements:
-        type: str
+      elements: str
       type: list
     id:
       description: Sponsor Group's id.
@@ -62,21 +62,20 @@ options:
       type: bool
     locations:
       description: Sponsor Group's locations.
-      elements:
-        type: str
+      elements: str
       type: list
     managePermission:
       description: Sponsor Group's managePermission.
       type: str
     memberGroups:
       description: Sponsor Group's memberGroups.
-      elements:
-        type: str
+      elements: str
       type: list
     name:
       description: Sponsor Group's name.
       type: str
     otherPermissions:
+      description: Sponsor Group's otherPermissions.
       suboptions:
         canAccessViaRest:
           description: CanAccessViaRest flag.
@@ -228,9 +227,7 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {}
-  - {}
-  - {}
+  type: dict
+  sample: >
+    {}
 """

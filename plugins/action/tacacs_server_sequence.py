@@ -20,17 +20,17 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-        state = dict(type="str", default="present", choices=["present", "absent"]),
-        name=dict(type="str"),
-        serverList=dict(type="str"),
-        localAccounting=dict(type="bool"),
-        remoteAccounting=dict(type="bool"),
-        prefixStrip=dict(type="bool"),
-        prefixDelimiter=dict(type="str"),
-        suffixStrip=dict(type="bool"),
-        suffixDelimiter=dict(type="str"),
-        id=dict(type="str"),
-    ))
+    state=dict(type="str", default="present", choices=["present", "absent"]),
+    name=dict(type="str"),
+    serverList=dict(type="str"),
+    localAccounting=dict(type="bool"),
+    remoteAccounting=dict(type="bool"),
+    prefixStrip=dict(type="bool"),
+    prefixDelimiter=dict(type="str"),
+    suffixStrip=dict(type="bool"),
+    suffixDelimiter=dict(type="str"),
+    id=dict(type="str"),
+))
 
 required_if = [
     ("state", "present", ("id", "name"), True),
@@ -56,14 +56,13 @@ class TacacsServerSequence(object):
             id=params.get("id"),
         )
 
-
     def get_object_by_name(self, name):
         try:
             result = self.ise.exec(
                 family="tacacs_server_sequence",
                 function="get_tacacs_server_sequence_by_name",
                 params={"name": quote(name)}
-                ).response['TacacsServerSequence']
+            ).response['TacacsServerSequence']
         except Exception as e:
             result = None
         return result
@@ -74,7 +73,7 @@ class TacacsServerSequence(object):
                 family="tacacs_server_sequence",
                 function="get_tacacs_server_sequence_by_id",
                 params={"id": quote(id)}
-                ).response['TacacsServerSequence']
+            ).response['TacacsServerSequence']
         except Exception as e:
             result = None
         return result
@@ -126,6 +125,7 @@ class TacacsServerSequence(object):
             params=self.new_object
         ).response
         return result
+
 
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
@@ -180,7 +180,7 @@ class ActionModule(ActionBase):
                 ise.object_deleted()
             else:
                 ise.object_already_absent()
-         
+
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

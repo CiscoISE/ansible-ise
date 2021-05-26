@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -23,21 +23,20 @@ options:
       description: Tacacs Profile's name.
       type: str
     sessionAttributes:
+      description: Tacacs Profile's sessionAttributes.
       suboptions:
         sessionAttributeList:
           description: Tacacs Profile's sessionAttributeList.
           suboptions:
-          - suboptions:
-              name:
-                description: Tacacs Profile's name.
-                type: str
-              type:
-                description: Tacacs Profile's type.
-                type: str
-              value:
-                description: Tacacs Profile's value.
-                type: str
-            type: dict
+            name:
+              description: Tacacs Profile's name.
+              type: str
+            type:
+              description: Tacacs Profile's type.
+              type: str
+            value:
+              description: Tacacs Profile's value.
+              type: str
           type: list
       type: dict
 requirements:
@@ -99,9 +98,7 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {}
-  - {}
-  - {}
+  type: dict
+  sample: >
+    {}
 """

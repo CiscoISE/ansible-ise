@@ -23,23 +23,23 @@ from ansible_collections.cisco.ise.plugins.module_utils.exceptions import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-        state = dict(type="str", default="present", choices=["present", "absent"]),
-        id=dict(type="str"),
-        name=dict(type="str"),
-        description=dict(type="str"),
-        stripPrefix=dict(type="bool"),
-        stripSuffix=dict(type="bool"),
-        prefixSeparator=dict(type="str"),
-        suffixSeparator=dict(type="str"),
-        remoteAccounting=dict(type="bool"),
-        localAccounting=dict(type="bool"),
-        useAttrSetOnRequest=dict(type="bool"),
-        useAttrSetBeforeAcc=dict(type="bool"),
-        continueAuthorzPolicy=dict(type="bool"),
-        RadiusServerList=dict(type="list"),
-        OnRequestAttrManipulatorList=dict(type="list"),
-        BeforeAcceptAttrManipulatorsList=dict(type="list"),
-    ))
+    state=dict(type="str", default="present", choices=["present", "absent"]),
+    id=dict(type="str"),
+    name=dict(type="str"),
+    description=dict(type="str"),
+    stripPrefix=dict(type="bool"),
+    stripSuffix=dict(type="bool"),
+    prefixSeparator=dict(type="str"),
+    suffixSeparator=dict(type="str"),
+    remoteAccounting=dict(type="bool"),
+    localAccounting=dict(type="bool"),
+    useAttrSetOnRequest=dict(type="bool"),
+    useAttrSetBeforeAcc=dict(type="bool"),
+    continueAuthorzPolicy=dict(type="bool"),
+    RadiusServerList=dict(type="list"),
+    OnRequestAttrManipulatorList=dict(type="list"),
+    BeforeAcceptAttrManipulatorsList=dict(type="list"),
+))
 
 required_if = [
     ("state", "present", ("id", "name"), True),
@@ -71,7 +71,6 @@ class RadiusServerSequence(object):
             before_accept_attr_manipulators_list=params.get("BeforeAcceptAttrManipulatorsList"),
         )
 
-
     def get_object_by_name(self, name):
         # NOTICE: Does not have a get by name method or it is in another action
         result = None
@@ -83,7 +82,7 @@ class RadiusServerSequence(object):
                 family="radius_server_sequence",
                 function="get_radius_server_sequence_by_id",
                 params={"id": quote(id)}
-                ).response['RadiusServerSequence']
+            ).response['RadiusServerSequence']
         except Exception as e:
             result = None
         return result
@@ -141,6 +140,7 @@ class RadiusServerSequence(object):
         ).response
         return result
 
+
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
@@ -194,7 +194,7 @@ class ActionModule(ActionBase):
                 ise.object_deleted()
             else:
                 ise.object_already_absent()
-         
+
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

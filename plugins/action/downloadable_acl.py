@@ -23,13 +23,13 @@ from ansible_collections.cisco.ise.plugins.module_utils.exceptions import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-        state = dict(type="str", default="present", choices=["present", "absent"]),
-        name=dict(type="str"),
-        description=dict(type="str"),
-        dacl=dict(type="str"),
-        daclType=dict(type="str"),
-        id=dict(type="str"),
-    ))
+    state=dict(type="str", default="present", choices=["present", "absent"]),
+    name=dict(type="str"),
+    description=dict(type="str"),
+    dacl=dict(type="str"),
+    daclType=dict(type="str"),
+    id=dict(type="str"),
+))
 
 required_if = [
     ("state", "present", ("id", "name"), True),
@@ -51,7 +51,6 @@ class DownloadableAcl(object):
             id=params.get("id"),
         )
 
-
     def get_object_by_name(self, name):
         # NOTICE: Does not have a get by name method or it is in another action
         result = None
@@ -63,7 +62,7 @@ class DownloadableAcl(object):
                 family="downloadable_acl",
                 function="get_downloadable_acl_by_id",
                 params={"id": quote(id)}
-                ).response['DownloadableAcl']
+            ).response['DownloadableAcl']
         except Exception as e:
             result = None
         return result
@@ -121,6 +120,7 @@ class DownloadableAcl(object):
         ).response
         return result
 
+
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
@@ -174,7 +174,7 @@ class ActionModule(ActionBase):
                 ise.object_deleted()
             else:
                 ise.object_already_absent()
-         
+
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

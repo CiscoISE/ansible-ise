@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -49,7 +49,7 @@ EXAMPLES = r"""
   register: result
 
 - name: Get Sponsor Portal by id
-  cisco.ise.sponsor_portal_info
+  cisco.ise.sponsor_portal_info:
     id: string
   register: result
 
@@ -59,8 +59,108 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {'SponsorPortal': {'id': 'string', 'name': 'string', 'description': 'string', 'portalType': 'string', 'settings': {'portalSettings': {'httpsPort': 0, 'allowedInterfaces': ['string'], 'certificateGroupTag': 'string', 'fqdn': 'string', 'authenticationMethod': 'string', 'idleTimeout': 0, 'displayLang': 'string', 'fallbackLanguage': 'string', 'alwaysUsedLanguage': 'string', 'availableSsids': ['string']}, 'loginPageSettings': {'requireAccessCode': True, 'maxFailedAttemptsBeforeRateLimit': 0, 'timeBetweenLoginsDuringRateLimit': 0, 'includeAup': True, 'aupDisplay': 'string', 'requireAupAcceptance': True, 'requireAupScrolling': True, 'allowGuestToCreateAccounts': True, 'allowGuestToChangePassword': True, 'allowAlternateGuestPortal': True, 'allowGuestToUseSocialAccounts': True, 'allowShowGuestForm': True, 'socialConfigs': []}, 'aupSettings': {'includeAup': True, 'useDiffAupForEmployees': True, 'skipAupForEmployees': True, 'requireAccessCode': True, 'requireScrolling': True, 'displayFrequency': 'string'}, 'sponsorChangePasswordSettings': {'allowSponsorToChangePwd': True}, 'postLoginBannerSettings': {'includePostAccessBanner': True}, 'supportInfoSettings': {'includeSupportInfoPage': True, 'includeMacAddr': True, 'includeIpAddress': True, 'includeBrowserUserAgent': True, 'includePolicyServer': True, 'includeFailureCode': True, 'emptyFieldDisplay': 'string'}}, 'customizations': {'portalTheme': {'id': 'string', 'name': 'string', 'themeData': 'string'}, 'portalTweakSettings': {'bannerColor': 'string', 'bannerTextColor': 'string', 'pageBackgroundColor': 'string', 'pageLabelAndTextColor': 'string'}, 'language': {'viewLanguage': 'string'}, 'globalCustomizations': {'mobileLogoImage': {'data': 'string'}, 'desktopLogoImage': {'data': 'string'}, 'bannerImage': {'data': 'string'}, 'bannerTitle': 'string', 'contactText': 'string', 'footerElement': 'string'}, 'pageCustomizations': {'data': [{'key': 'string', 'value': 'string'}]}}}}
-  - {'SearchResult': {'total': 0, 'resources': [{'id': 'string', 'name': 'string', 'description': 'string', 'link': {'rel': 'string', 'href': 'string', 'type': 'string'}}], 'nextPage': {'rel': 'string', 'href': 'string', 'type': 'string'}, 'previousPage': {'rel': 'string', 'href': 'string', 'type': 'string'}}}
+  type: dict
+  sample: >
+    {
+      "SponsorPortal": {
+        "id": "string",
+        "name": "string",
+        "description": "string",
+        "portalType": "string",
+        "settings": {
+          "portalSettings": {
+            "httpsPort": 0,
+            "allowedInterfaces": [
+              "string"
+            ],
+            "certificateGroupTag": "string",
+            "fqdn": "string",
+            "authenticationMethod": "string",
+            "idleTimeout": 0,
+            "displayLang": "string",
+            "fallbackLanguage": "string",
+            "alwaysUsedLanguage": "string",
+            "availableSsids": [
+              "string"
+            ]
+          },
+          "loginPageSettings": {
+            "requireAccessCode": true,
+            "maxFailedAttemptsBeforeRateLimit": 0,
+            "timeBetweenLoginsDuringRateLimit": 0,
+            "includeAup": true,
+            "aupDisplay": "string",
+            "requireAupAcceptance": true,
+            "requireAupScrolling": true,
+            "allowGuestToCreateAccounts": true,
+            "allowGuestToChangePassword": true,
+            "allowAlternateGuestPortal": true,
+            "allowGuestToUseSocialAccounts": true,
+            "allowShowGuestForm": true,
+            "socialConfigs": []
+          },
+          "aupSettings": {
+            "includeAup": true,
+            "useDiffAupForEmployees": true,
+            "skipAupForEmployees": true,
+            "requireAccessCode": true,
+            "requireScrolling": true,
+            "displayFrequency": "string"
+          },
+          "sponsorChangePasswordSettings": {
+            "allowSponsorToChangePwd": true
+          },
+          "postLoginBannerSettings": {
+            "includePostAccessBanner": true
+          },
+          "supportInfoSettings": {
+            "includeSupportInfoPage": true,
+            "includeMacAddr": true,
+            "includeIpAddress": true,
+            "includeBrowserUserAgent": true,
+            "includePolicyServer": true,
+            "includeFailureCode": true,
+            "emptyFieldDisplay": "string"
+          }
+        },
+        "customizations": {
+          "portalTheme": {
+            "id": "string",
+            "name": "string",
+            "themeData": "string"
+          },
+          "portalTweakSettings": {
+            "bannerColor": "string",
+            "bannerTextColor": "string",
+            "pageBackgroundColor": "string",
+            "pageLabelAndTextColor": "string"
+          },
+          "language": {
+            "viewLanguage": "string"
+          },
+          "globalCustomizations": {
+            "mobileLogoImage": {
+              "data": "string"
+            },
+            "desktopLogoImage": {
+              "data": "string"
+            },
+            "bannerImage": {
+              "data": "string"
+            },
+            "bannerTitle": "string",
+            "contactText": "string",
+            "footerElement": "string"
+          },
+          "pageCustomizations": {
+            "data": [
+              {
+                "key": "string",
+                "value": "string"
+              }
+            ]
+          }
+        }
+      }
+    }
 """

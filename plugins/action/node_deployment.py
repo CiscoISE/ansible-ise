@@ -15,20 +15,23 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
     ISESDK,
     ise_argument_spec,
 )
+from ansible_collections.cisco.ise.plugins.module_utils.exceptions import (
+    InconsistentParameters,
+)
 
 # Get common arguments specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-        state = dict(type="str", default="present", choices=["present", "absent"]),
-        fdqn=dict(type="str"),
-        userName=dict(type="str"),
-        password=dict(type="str"),
-        administration=dict(type="dict"),
-        generalSettings=dict(type="dict"),
-        profileConfiguration=dict(type="dict"),
-        hostname=dict(type="str"),
-    ))
+    state=dict(type="str", default="present", choices=["present", "absent"]),
+    fdqn=dict(type="str"),
+    userName=dict(type="str"),
+    password=dict(type="str"),
+    administration=dict(type="dict"),
+    generalSettings=dict(type="dict"),
+    profileConfiguration=dict(type="dict"),
+    hostname=dict(type="str"),
+))
 
 required_if = [
     ("state", "present", ("hostname"), True),
@@ -52,14 +55,13 @@ class NodeDeployment(object):
             hostname=params.get("hostname"),
         )
 
-
     def get_object_by_name(self, name):
         try:
             result = self.ise.exec(
                 family="node_deployment",
                 function="get_node_details",
                 params={"name": quote(name)}
-                ).response
+            ).response
         except Exception as e:
             result = None
         return result
@@ -122,6 +124,7 @@ class NodeDeployment(object):
         ).response
         return result
 
+
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
@@ -175,7 +178,7 @@ class ActionModule(ActionBase):
                 ise.object_deleted()
             else:
                 ise.object_already_absent()
-         
+
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

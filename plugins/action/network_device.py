@@ -20,20 +20,20 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-        state = dict(type="str", default="present", choices=["present", "absent"]),
-        name=dict(type="str"),
-        description=dict(type="str"),
-        authenticationSettings=dict(type="dict"),
-        tacacsSettings=dict(type="dict"),
-        snmpsettings=dict(type="dict"),
-        trustsecsettings=dict(type="dict"),
-        profileName=dict(type="str"),
-        coaPort=dict(type="int"),
-        dtlsDnsName=dict(type="str"),
-        NetworkDeviceIPList=dict(type="list"),
-        NetworkDeviceGroupList=dict(type="list"),
-        id=dict(type="str"),
-    ))
+    state=dict(type="str", default="present", choices=["present", "absent"]),
+    name=dict(type="str"),
+    description=dict(type="str"),
+    authenticationSettings=dict(type="dict"),
+    tacacsSettings=dict(type="dict"),
+    snmpsettings=dict(type="dict"),
+    trustsecsettings=dict(type="dict"),
+    profileName=dict(type="str"),
+    coaPort=dict(type="int"),
+    dtlsDnsName=dict(type="str"),
+    NetworkDeviceIPList=dict(type="list"),
+    NetworkDeviceGroupList=dict(type="list"),
+    id=dict(type="str"),
+))
 
 required_if = [
     ("state", "present", ("id", "name"), True),
@@ -62,14 +62,13 @@ class NetworkDevice(object):
             id=params.get("id"),
         )
 
-
     def get_object_by_name(self, name):
         try:
             result = self.ise.exec(
                 family="network_device",
                 function="get_network_device_by_name",
                 params={"name": quote(name)}
-                ).response['NetworkDevice']
+            ).response['NetworkDevice']
         except Exception as e:
             result = None
         return result
@@ -80,7 +79,7 @@ class NetworkDevice(object):
                 family="network_device",
                 function="get_network_device_by_id",
                 params={"id": quote(id)}
-                ).response['NetworkDevice']
+            ).response['NetworkDevice']
         except Exception as e:
             result = None
         return result
@@ -141,6 +140,7 @@ class NetworkDevice(object):
             ).response
         return result
 
+
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
@@ -194,7 +194,7 @@ class ActionModule(ActionBase):
                 ise.object_deleted()
             else:
                 ise.object_already_absent()
-         
+
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -14,10 +14,13 @@ version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
     customizations:
+      description: Sponsor Portal's customizations.
       suboptions:
         globalCustomizations:
+          description: Sponsor Portal's globalCustomizations.
           suboptions:
             bannerImage:
+              description: Sponsor Portal's bannerImage.
               suboptions:
                 data:
                   description: Sponsor Portal's data.
@@ -30,6 +33,7 @@ options:
               description: Sponsor Portal's contactText.
               type: str
             desktopLogoImage:
+              description: Sponsor Portal's desktopLogoImage.
               suboptions:
                 data:
                   description: Sponsor Portal's data.
@@ -39,6 +43,7 @@ options:
               description: Sponsor Portal's footerElement.
               type: str
             mobileLogoImage:
+              description: Sponsor Portal's mobileLogoImage.
               suboptions:
                 data:
                   description: Sponsor Portal's data.
@@ -46,27 +51,28 @@ options:
               type: dict
           type: dict
         language:
+          description: Sponsor Portal's language.
           suboptions:
             viewLanguage:
               description: Sponsor Portal's viewLanguage.
               type: str
           type: dict
         pageCustomizations:
+          description: Sponsor Portal's pageCustomizations.
           suboptions:
             data:
               description: Sponsor Portal's data.
               suboptions:
-              - suboptions:
-                  key:
-                    description: Sponsor Portal's key.
-                    type: str
-                  value:
-                    description: Sponsor Portal's value.
-                    type: str
-                type: dict
+                key:
+                  description: Sponsor Portal's key.
+                  type: str
+                value:
+                  description: Sponsor Portal's value.
+                  type: str
               type: list
           type: dict
         portalTheme:
+          description: Sponsor Portal's portalTheme.
           suboptions:
             id:
               description: Sponsor Portal's id.
@@ -79,6 +85,7 @@ options:
               type: str
           type: dict
         portalTweakSettings:
+          description: Sponsor Portal's portalTweakSettings.
           suboptions:
             bannerColor:
               description: Sponsor Portal's bannerColor.
@@ -107,8 +114,10 @@ options:
       description: Sponsor Portal's portalType.
       type: str
     settings:
+      description: Sponsor Portal's settings.
       suboptions:
         aupSettings:
+          description: Sponsor Portal's aupSettings.
           suboptions:
             displayFrequency:
               description: Sponsor Portal's displayFrequency.
@@ -130,6 +139,7 @@ options:
               type: bool
           type: dict
         loginPageSettings:
+          description: Sponsor Portal's loginPageSettings.
           suboptions:
             allowAlternateGuestPortal:
               description: AllowAlternateGuestPortal flag.
@@ -172,11 +182,11 @@ options:
               type: int
           type: dict
         portalSettings:
+          description: Sponsor Portal's portalSettings.
           suboptions:
             allowedInterfaces:
               description: Sponsor Portal's allowedInterfaces.
-              elements:
-                type: str
+              elements: str
               type: list
             alwaysUsedLanguage:
               description: Sponsor Portal's alwaysUsedLanguage.
@@ -186,8 +196,7 @@ options:
               type: str
             availableSsids:
               description: Sponsor Portal's availableSsids.
-              elements:
-                type: str
+              elements: str
               type: list
             certificateGroupTag:
               description: Sponsor Portal's certificateGroupTag.
@@ -209,18 +218,21 @@ options:
               type: int
           type: dict
         postLoginBannerSettings:
+          description: Sponsor Portal's postLoginBannerSettings.
           suboptions:
             includePostAccessBanner:
               description: IncludePostAccessBanner flag.
               type: bool
           type: dict
         sponsorChangePasswordSettings:
+          description: Sponsor Portal's sponsorChangePasswordSettings.
           suboptions:
             allowSponsorToChangePwd:
               description: AllowSponsorToChangePwd flag.
               type: bool
           type: dict
         supportInfoSettings:
+          description: Sponsor Portal's supportInfoSettings.
           suboptions:
             emptyFieldDisplay:
               description: Sponsor Portal's emptyFieldDisplay.
@@ -442,9 +454,7 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {}
-  - {}
-  - {}
+  type: dict
+  sample: >
+    {}
 """

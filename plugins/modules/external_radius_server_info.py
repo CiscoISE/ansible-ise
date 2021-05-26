@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -54,12 +54,12 @@ EXAMPLES = r"""
   register: result
 
 - name: Get External Radius Server by id
-  cisco.ise.external_radius_server_info
+  cisco.ise.external_radius_server_info:
     id: string
   register: result
 
 - name: Get External Radius Server by name
-  cisco.ise.external_radius_server_info
+  cisco.ise.external_radius_server_info:
     name: string
   register: result
 
@@ -69,8 +69,24 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {'ExternalRadiusServer': {'id': 'string', 'name': 'string', 'description': 'string', 'hostIP': 'string', 'sharedSecret': 'string', 'enableKeyWrap': True, 'encryptionKey': 'string', 'authenticatorKey': 'string', 'keyInputFormat': 'string', 'authenticationPort': 0, 'accountingPort': 0, 'timeout': 0, 'retries': 0, 'proxyTimeout': 0}}
-  - {'SearchResult': {'total': 0, 'resources': [{'id': 'string', 'name': 'string', 'description': 'string', 'link': {'rel': 'string', 'href': 'string', 'type': 'string'}}], 'nextPage': {'rel': 'string', 'href': 'string', 'type': 'string'}, 'previousPage': {'rel': 'string', 'href': 'string', 'type': 'string'}}}
+  type: dict
+  sample: >
+    {
+      "ExternalRadiusServer": {
+        "id": "string",
+        "name": "string",
+        "description": "string",
+        "hostIP": "string",
+        "sharedSecret": "string",
+        "enableKeyWrap": true,
+        "encryptionKey": "string",
+        "authenticatorKey": "string",
+        "keyInputFormat": "string",
+        "authenticationPort": 0,
+        "accountingPort": 0,
+        "timeout": 0,
+        "retries": 0,
+        "proxyTimeout": 0
+      }
+    }
 """

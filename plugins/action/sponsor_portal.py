@@ -23,14 +23,14 @@ from ansible_collections.cisco.ise.plugins.module_utils.exceptions import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-        state = dict(type="str", default="present", choices=["present", "absent"]),
-        id=dict(type="str"),
-        name=dict(type="str"),
-        description=dict(type="str"),
-        portalType=dict(type="str"),
-        settings=dict(type="dict"),
-        customizations=dict(type="dict"),
-    ))
+    state=dict(type="str", default="present", choices=["present", "absent"]),
+    id=dict(type="str"),
+    name=dict(type="str"),
+    description=dict(type="str"),
+    portalType=dict(type="str"),
+    settings=dict(type="dict"),
+    customizations=dict(type="dict"),
+))
 
 required_if = [
     ("state", "present", ("id", "name"), True),
@@ -53,7 +53,6 @@ class SponsorPortal(object):
             customizations=params.get("customizations"),
         )
 
-
     def get_object_by_name(self, name):
         # NOTICE: Does not have a get by name method or it is in another action
         result = None
@@ -65,7 +64,7 @@ class SponsorPortal(object):
                 family="sponsor_portal",
                 function="get_sponsor_portal_by_id",
                 params={"id": quote(id)}
-                ).response['SponsorPortal']
+            ).response['SponsorPortal']
         except Exception as e:
             result = None
         return result
@@ -123,6 +122,7 @@ class SponsorPortal(object):
         ).response
         return result
 
+
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
@@ -176,7 +176,7 @@ class ActionModule(ActionBase):
                 ise.object_deleted()
             else:
                 ise.object_already_absent()
-         
+
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

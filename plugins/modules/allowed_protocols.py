@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -56,6 +56,7 @@ options:
       description: Allowed Protocols's description.
       type: str
     eapFast:
+      description: Allowed Protocols's eapFast.
       suboptions:
         allowEapFastEapGtc:
           description: AllowEapFastEapGtc flag.
@@ -110,6 +111,7 @@ options:
           type: int
       type: dict
     eapTls:
+      description: Allowed Protocols's eapTls.
       suboptions:
         allowEapTlsAuthOfExpiredCerts:
           description: AllowEapTlsAuthOfExpiredCerts flag.
@@ -122,6 +124,7 @@ options:
       description: EapTlsLBit flag.
       type: bool
     eapTtls:
+      description: Allowed Protocols's eapTtls.
       suboptions:
         eapTtlsChap:
           description: EapTtlsChap flag.
@@ -150,11 +153,12 @@ options:
       type: dict
     id:
       description: Id path parameter.
-      type: string
+      type: str
     name:
       description: Allowed Protocols's name.
       type: str
     peap:
+      description: Allowed Protocols's peap.
       suboptions:
         allowPeapEapGtc:
           description: AllowPeapEapGtc flag.
@@ -191,6 +195,7 @@ options:
       description: RequireMessageAuth flag.
       type: bool
     teap:
+      description: Allowed Protocols's teap.
       suboptions:
         acceptClientCertDuringTunnelEst:
           description: AcceptClientCertDuringTunnelEst flag.
@@ -395,9 +400,7 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {}
-  - {}
-  - {}
+  type: dict
+  sample: >
+    {}
 """

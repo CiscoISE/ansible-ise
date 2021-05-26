@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -15,8 +15,7 @@ author: Rafael Campos (@racampos)
 options:
     cliDnisList:
       description: Network Access Network Condition's cliDnisList.
-      elements:
-        type: str
+      elements: str
       type: list
     conditionType:
       description: Network Access Network Condition's conditionType.
@@ -26,26 +25,22 @@ options:
       type: str
     deviceGroupList:
       description: Network Access Network Condition's deviceGroupList.
-      elements:
-        type: str
+      elements: str
       type: list
     deviceList:
       description: Network Access Network Condition's deviceList.
-      elements:
-        type: str
+      elements: str
       type: list
     id:
       description: Network Access Network Condition's id.
       type: str
     ipAddrList:
       description: Network Access Network Condition's ipAddrList.
-      elements:
-        type: str
+      elements: str
       type: list
     macAddrList:
       description: Network Access Network Condition's macAddrList.
-      elements:
-        type: str
+      elements: str
       type: list
     name:
       description: Network Access Network Condition's name.
@@ -69,7 +64,6 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    {}
 
 - name: Update by id
   cisco.ise.network_access_network_condition:
@@ -108,9 +102,27 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {'name': 'string', 'id': 'string', 'description': 'string', 'conditionType': 'string', 'ipAddrList': ['string'], 'macAddrList': ['string'], 'cliDnisList': ['string'], 'deviceList': ['string'], 'deviceGroupList': ['string']}
-  - {'name': 'string', 'id': 'string', 'description': 'string', 'conditionType': 'string', 'ipAddrList': ['string'], 'macAddrList': ['string'], 'cliDnisList': ['string'], 'deviceList': ['string'], 'deviceGroupList': ['string']}
-  - {'id': 'string'}
+  type: dict
+  sample: >
+    {
+      "name": "string",
+      "id": "string",
+      "description": "string",
+      "conditionType": "string",
+      "ipAddrList": [
+        "string"
+      ],
+      "macAddrList": [
+        "string"
+      ],
+      "cliDnisList": [
+        "string"
+      ],
+      "deviceList": [
+        "string"
+      ],
+      "deviceGroupList": [
+        "string"
+      ]
+    }
 """

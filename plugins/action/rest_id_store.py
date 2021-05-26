@@ -20,12 +20,12 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-        state = dict(type="str", default="present", choices=["present", "absent"]),
-        name=dict(type="str"),
-        description=dict(type="str"),
-        ersRestIDStoreAttributes=dict(type="dict"),
-        id=dict(type="str"),
-    ))
+    state=dict(type="str", default="present", choices=["present", "absent"]),
+    name=dict(type="str"),
+    description=dict(type="str"),
+    ersRestIDStoreAttributes=dict(type="dict"),
+    id=dict(type="str"),
+))
 
 required_if = [
     ("state", "present", ("id", "name"), True),
@@ -46,14 +46,13 @@ class RestIdStore(object):
             id=params.get("id"),
         )
 
-
     def get_object_by_name(self, name):
         try:
             result = self.ise.exec(
                 family="restid_store",
                 function="get_rest_id_store_by_name",
                 params={"name": quote(name)}
-                ).response['ERSRestIDStore']
+            ).response['ERSRestIDStore']
         except Exception as e:
             result = None
         return result
@@ -64,7 +63,7 @@ class RestIdStore(object):
                 family="restid_store",
                 function="get_rest_id_store_by_id",
                 params={"id": quote(id)}
-                ).response['ERSRestIDStore']
+            ).response['ERSRestIDStore']
         except Exception as e:
             result = None
         return result
@@ -125,6 +124,7 @@ class RestIdStore(object):
             ).response
         return result
 
+
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
@@ -178,7 +178,7 @@ class ActionModule(ActionBase):
                 ise.object_deleted()
             else:
                 ise.object_already_absent()
-         
+
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

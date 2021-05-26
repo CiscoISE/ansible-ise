@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -54,12 +54,12 @@ EXAMPLES = r"""
   register: result
 
 - name: Get Allowed Protocols by id
-  cisco.ise.allowed_protocols_info
+  cisco.ise.allowed_protocols_info:
     id: string
   register: result
 
 - name: Get Allowed Protocols by name
-  cisco.ise.allowed_protocols_info
+  cisco.ise.allowed_protocols_info:
     name: string
   register: result
 
@@ -69,8 +69,82 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {'AllowedProtocols': {'name': 'string', 'description': 'string', 'eapTls': {'allowEapTlsAuthOfExpiredCerts': True, 'eapTlsEnableStatelessSessionResume': True}, 'peap': {'allowPeapEapMsChapV2': True, 'allowPeapEapMsChapV2PwdChange': True, 'allowPeapEapMsChapV2PwdChangeRetries': 0, 'allowPeapEapGtc': True, 'allowPeapEapTls': True, 'allowPeapEapTlsAuthOfExpiredCerts': True, 'requireCryptobinding': True, 'allowPeapV0': True}, 'eapFast': {'allowEapFastEapMsChapV2': True, 'allowEapFastEapMsChapV2PwdChange': True, 'allowEapFastEapMsChapV2PwdChangeRetries': 0, 'allowEapFastEapGtc': True, 'allowEapFastEapGtcPwdChange': True, 'allowEapFastEapGtcPwdChangeRetries': 0, 'allowEapFastEapTls': True, 'allowEapFastEapTlsAuthOfExpiredCerts': True, 'eapFastUsePacs': True, 'eapFastUsePacsTunnelPacTtl': 0, 'eapFastUsePacsTunnelPacTtlUnits': 'string', 'eapFastUsePacsUseProactivePacUpdatePrecentage': 0, 'eapFastUsePacsAllowAnonymProvisioning': True, 'eapFastUsePacsAllowAuthenProvisioning': True, 'eapFastUsePacsAllowMachineAuthentication': True, 'eapFastUsePacsStatelessSessionResume': True, 'eapFastEnableEAPChaining': True}, 'eapTtls': {'eapTtlsPapAscii': True, 'eapTtlsChap': True, 'eapTtlsMsChapV1': True, 'eapTtlsMsChapV2': True, 'eapTtlsEapMd5': True, 'eapTtlsEapMsChapV2': True, 'eapTtlsEapMsChapV2PwdChange': True, 'eapTtlsEapMsChapV2PwdChangeRetries': 0}, 'teap': {'allowTeapEapMsChapV2': True, 'allowTeapEapMsChapV2PwdChange': True, 'allowTeapEapMsChapV2PwdChangeRetries': 0, 'allowTeapEapTls': True, 'allowTeapEapTlsAuthOfExpiredCerts': True, 'acceptClientCertDuringTunnelEst': True, 'requestBasicPwdAuth': True, 'enableEapChaining': True}, 'processHostLookup': True, 'allowPapAscii': True, 'allowChap': True, 'allowMsChapV1': True, 'allowMsChapV2': True, 'allowEapMd5': True, 'allowLeap': True, 'allowEapTls': True, 'allowEapTtls': True, 'allowEapFast': True, 'allowPeap': True, 'allowTeap': True, 'allowPreferredEapProtocol': True, 'preferredEapProtocol': 'string', 'eapTlsLBit': True, 'allowWeakCiphersForEap': True, 'requireMessageAuth': True}}
-  - {'SearchResult': {'total': 0, 'resources': [{'id': 'string', 'name': 'string', 'description': 'string', 'link': {'rel': 'string', 'href': 'string', 'type': 'string'}}], 'nextPage': {'rel': 'string', 'href': 'string', 'type': 'string'}, 'previousPage': {'rel': 'string', 'href': 'string', 'type': 'string'}}}
+  type: dict
+  sample: >
+    {
+      "AllowedProtocols": {
+        "name": "string",
+        "description": "string",
+        "eapTls": {
+          "allowEapTlsAuthOfExpiredCerts": true,
+          "eapTlsEnableStatelessSessionResume": true
+        },
+        "peap": {
+          "allowPeapEapMsChapV2": true,
+          "allowPeapEapMsChapV2PwdChange": true,
+          "allowPeapEapMsChapV2PwdChangeRetries": 0,
+          "allowPeapEapGtc": true,
+          "allowPeapEapTls": true,
+          "allowPeapEapTlsAuthOfExpiredCerts": true,
+          "requireCryptobinding": true,
+          "allowPeapV0": true
+        },
+        "eapFast": {
+          "allowEapFastEapMsChapV2": true,
+          "allowEapFastEapMsChapV2PwdChange": true,
+          "allowEapFastEapMsChapV2PwdChangeRetries": 0,
+          "allowEapFastEapGtc": true,
+          "allowEapFastEapGtcPwdChange": true,
+          "allowEapFastEapGtcPwdChangeRetries": 0,
+          "allowEapFastEapTls": true,
+          "allowEapFastEapTlsAuthOfExpiredCerts": true,
+          "eapFastUsePacs": true,
+          "eapFastUsePacsTunnelPacTtl": 0,
+          "eapFastUsePacsTunnelPacTtlUnits": "string",
+          "eapFastUsePacsUseProactivePacUpdatePrecentage": 0,
+          "eapFastUsePacsAllowAnonymProvisioning": true,
+          "eapFastUsePacsAllowAuthenProvisioning": true,
+          "eapFastUsePacsAllowMachineAuthentication": true,
+          "eapFastUsePacsStatelessSessionResume": true,
+          "eapFastEnableEAPChaining": true
+        },
+        "eapTtls": {
+          "eapTtlsPapAscii": true,
+          "eapTtlsChap": true,
+          "eapTtlsMsChapV1": true,
+          "eapTtlsMsChapV2": true,
+          "eapTtlsEapMd5": true,
+          "eapTtlsEapMsChapV2": true,
+          "eapTtlsEapMsChapV2PwdChange": true,
+          "eapTtlsEapMsChapV2PwdChangeRetries": 0
+        },
+        "teap": {
+          "allowTeapEapMsChapV2": true,
+          "allowTeapEapMsChapV2PwdChange": true,
+          "allowTeapEapMsChapV2PwdChangeRetries": 0,
+          "allowTeapEapTls": true,
+          "allowTeapEapTlsAuthOfExpiredCerts": true,
+          "acceptClientCertDuringTunnelEst": true,
+          "requestBasicPwdAuth": true,
+          "enableEapChaining": true
+        },
+        "processHostLookup": true,
+        "allowPapAscii": true,
+        "allowChap": true,
+        "allowMsChapV1": true,
+        "allowMsChapV2": true,
+        "allowEapMd5": true,
+        "allowLeap": true,
+        "allowEapTls": true,
+        "allowEapTtls": true,
+        "allowEapFast": true,
+        "allowPeap": true,
+        "allowTeap": true,
+        "allowPreferredEapProtocol": true,
+        "preferredEapProtocol": "string",
+        "eapTlsLBit": true,
+        "allowWeakCiphersForEap": true,
+        "requireMessageAuth": true
+      }
+    }
 """

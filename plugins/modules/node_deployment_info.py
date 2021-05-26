@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -39,7 +39,7 @@ EXAMPLES = r"""
   register: result
 
 - name: Get Node Deployment by name
-  cisco.ise.node_deployment_info
+  cisco.ise.node_deployment_info:
     hostname: string
   register: result
 
@@ -49,8 +49,101 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {'response': {'hostname': 'string', 'fqdn': 'string', 'ipAddress': 'string', 'nodeType': 'string', 'administration': {'isEnabled': True, 'role': 'string'}, 'generalSettings': {'monitoring': {'isEnabled': True, 'role': 'string', 'otherMonitoringNode': 'string', 'isMntDedicated': True, 'policyservice': {'enabled': True, 'sessionService': {'isEnabled': True, 'nodegroup': 'string'}, 'enableProfilingService': True, 'enableNACService': True, 'sxpservice': {'isEnabled': True, 'userInterface': 'string'}, 'enableDeviceAdminService': True, 'enablePassiveIdentityService': True}, 'enablePXGrid': True}}, 'profilingConfiguration': {'netflow': {'enabled': True, 'interface': 'string', 'port': {}, 'description': 'string'}, 'dhcp': {'enabled': True, 'interface': 'string', 'port': {}, 'description': 'string'}, 'dhcpSpan': {'enabled': True, 'interface': 'string', 'description': 'string'}, 'http': {'enabled': True, 'interface': 'string', 'description': 'string'}, 'radius': {'enabled': True, 'description': 'string'}, 'nmap': {'enabled': True, 'description': 'string'}, 'dns': {'enabled': True, 'description': 'string'}, 'snmpQuery': {'enabled': True, 'description': 'string', 'retries': 0, 'timeout': 0, 'eventTimeout': 0}, 'snmpTrap': {'linkTrapQuery': True, 'macTrapQuery': True, 'interface': 'string', 'port': {}, 'description': 'string'}, 'activeDirectory': {'enabled': True, 'daysBeforeRescan': 0, 'description': 'string'}, 'pxgrid': {'enabled': True, 'description': 'string'}}}}
-  - {'response': [{'hostname': 'string', 'personaType': ['string'], 'roles': ['string'], 'services': ['string'], 'nodeStatus': 'string'}]}
+  type: dict
+  sample: >
+    {
+      "response": {
+        "hostname": "string",
+        "fqdn": "string",
+        "ipAddress": "string",
+        "nodeType": "string",
+        "administration": {
+          "isEnabled": true,
+          "role": "string"
+        },
+        "generalSettings": {
+          "monitoring": {
+            "isEnabled": true,
+            "role": "string",
+            "otherMonitoringNode": "string",
+            "isMntDedicated": true,
+            "policyservice": {
+              "enabled": true,
+              "sessionService": {
+                "isEnabled": true,
+                "nodegroup": "string"
+              },
+              "enableProfilingService": true,
+              "enableNACService": true,
+              "sxpservice": {
+                "isEnabled": true,
+                "userInterface": "string"
+              },
+              "enableDeviceAdminService": true,
+              "enablePassiveIdentityService": true
+            },
+            "enablePXGrid": true
+          }
+        },
+        "profilingConfiguration": {
+          "netflow": {
+            "enabled": true,
+            "interface": "string",
+            "port": {},
+            "description": "string"
+          },
+          "dhcp": {
+            "enabled": true,
+            "interface": "string",
+            "port": {},
+            "description": "string"
+          },
+          "dhcpSpan": {
+            "enabled": true,
+            "interface": "string",
+            "description": "string"
+          },
+          "http": {
+            "enabled": true,
+            "interface": "string",
+            "description": "string"
+          },
+          "radius": {
+            "enabled": true,
+            "description": "string"
+          },
+          "nmap": {
+            "enabled": true,
+            "description": "string"
+          },
+          "dns": {
+            "enabled": true,
+            "description": "string"
+          },
+          "snmpQuery": {
+            "enabled": true,
+            "description": "string",
+            "retries": 0,
+            "timeout": 0,
+            "eventTimeout": 0
+          },
+          "snmpTrap": {
+            "linkTrapQuery": true,
+            "macTrapQuery": true,
+            "interface": "string",
+            "port": {},
+            "description": "string"
+          },
+          "activeDirectory": {
+            "enabled": true,
+            "daysBeforeRescan": 0,
+            "description": "string"
+          },
+          "pxgrid": {
+            "enabled": true,
+            "description": "string"
+          }
+        }
+      }
+    }
 """

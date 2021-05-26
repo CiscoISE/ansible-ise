@@ -20,35 +20,35 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-        state = dict(type="str", default="present", choices=["present", "absent"]),
-        id=dict(type="str"),
-        name=dict(type="str"),
-        description=dict(type="str"),
-        advancedAttributes=dict(type="list"),
-        accessType=dict(type="str"),
-        authzProfileType=dict(type="str"),
-        vlan=dict(type="dict"),
-        reauth=dict(type="dict"),
-        airespaceACL=dict(type="str"),
-        airespaceIPv6ACL=dict(type="str"),
-        webRedirection=dict(type="dict"),
-        acl=dict(type="str"),
-        trackMovement=dict(type="bool"),
-        serviceTemplate=dict(type="bool"),
-        easywiredSessionCandidate=dict(type="bool"),
-        daclName=dict(type="str"),
-        voiceDomainPermission=dict(type="bool"),
-        neat=dict(type="bool"),
-        webAuth=dict(type="bool"),
-        autoSmartPort=dict(type="str"),
-        interfaceTemplate=dict(type="str"),
-        ipv6ACLFilter=dict(type="str"),
-        avcProfile=dict(type="str"),
-        macSecPolicy=dict(type="str"),
-        asaVpn=dict(type="str"),
-        profileName=dict(type="str"),
-        ipv6DaclName=dict(type="str"),
-    ))
+    state=dict(type="str", default="present", choices=["present", "absent"]),
+    id=dict(type="str"),
+    name=dict(type="str"),
+    description=dict(type="str"),
+    advancedAttributes=dict(type="list"),
+    accessType=dict(type="str"),
+    authzProfileType=dict(type="str"),
+    vlan=dict(type="dict"),
+    reauth=dict(type="dict"),
+    airespaceACL=dict(type="str"),
+    airespaceIPv6ACL=dict(type="str"),
+    webRedirection=dict(type="dict"),
+    acl=dict(type="str"),
+    trackMovement=dict(type="bool"),
+    serviceTemplate=dict(type="bool"),
+    easywiredSessionCandidate=dict(type="bool"),
+    daclName=dict(type="str"),
+    voiceDomainPermission=dict(type="bool"),
+    neat=dict(type="bool"),
+    webAuth=dict(type="bool"),
+    autoSmartPort=dict(type="str"),
+    interfaceTemplate=dict(type="str"),
+    ipv6ACLFilter=dict(type="str"),
+    avcProfile=dict(type="str"),
+    macSecPolicy=dict(type="str"),
+    asaVpn=dict(type="str"),
+    profileName=dict(type="str"),
+    ipv6DaclName=dict(type="str"),
+))
 
 required_if = [
     ("state", "present", ("id", "name"), True),
@@ -92,14 +92,13 @@ class AuthorizationProfile(object):
             ipv6_dacl_name=params.get("ipv6DaclName"),
         )
 
-
     def get_object_by_name(self, name):
         try:
             result = self.ise.exec(
                 family="authorization_profile",
                 function="get_authorization_profile_by_name",
                 params={"name": quote(name)}
-                ).response['AuthorizationProfile']
+            ).response['AuthorizationProfile']
         except Exception as e:
             result = None
         return result
@@ -110,7 +109,7 @@ class AuthorizationProfile(object):
                 family="authorization_profile",
                 function="get_authorization_profile_by_id",
                 params={"id": quote(id)}
-                ).response['AuthorizationProfile']
+            ).response['AuthorizationProfile']
         except Exception as e:
             result = None
         return result
@@ -162,6 +161,7 @@ class AuthorizationProfile(object):
             params=self.new_object
         ).response
         return result
+
 
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
@@ -216,7 +216,7 @@ class ActionModule(ActionBase):
                 ise.object_deleted()
             else:
                 ise.object_already_absent()
-         
+
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

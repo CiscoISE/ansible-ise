@@ -11,5 +11,3 @@ class AnsibleISEException(Exception):
 class InconsistentParameters(AnsibleISEException):
     """Provided parameters are not consistent."""
     pass
-
-

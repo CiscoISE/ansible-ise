@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -49,7 +49,7 @@ EXAMPLES = r"""
   register: result
 
 - name: Get Radius Server Sequence by id
-  cisco.ise.radius_server_sequence_info
+  cisco.ise.radius_server_sequence_info:
     id: string
   register: result
 
@@ -59,8 +59,43 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {'RadiusServerSequence': {'id': 'string', 'name': 'string', 'description': 'string', 'stripPrefix': True, 'stripSuffix': True, 'prefixSeparator': 'string', 'suffixSeparator': 'string', 'remoteAccounting': True, 'localAccounting': True, 'useAttrSetOnRequest': True, 'useAttrSetBeforeAcc': True, 'continueAuthorzPolicy': True, 'RadiusServerList': ['string'], 'OnRequestAttrManipulatorList': [{'action': 'string', 'dictionaryName': 'string', 'attributeName': 'string', 'value': 'string', 'changedVal': 'string'}], 'BeforeAcceptAttrManipulatorsList': [{'action': 'string', 'dictionaryName': 'string', 'attributeName': 'string', 'value': 'string', 'changedVal': 'string'}]}}
-  - {'SearchResult': {'total': 0, 'resources': [{'id': 'string', 'name': 'string', 'description': 'string', 'link': {'rel': 'string', 'href': 'string', 'type': 'string'}}], 'nextPage': {'rel': 'string', 'href': 'string', 'type': 'string'}, 'previousPage': {'rel': 'string', 'href': 'string', 'type': 'string'}}}
+  type: dict
+  sample: >
+    {
+      "RadiusServerSequence": {
+        "id": "string",
+        "name": "string",
+        "description": "string",
+        "stripPrefix": true,
+        "stripSuffix": true,
+        "prefixSeparator": "string",
+        "suffixSeparator": "string",
+        "remoteAccounting": true,
+        "localAccounting": true,
+        "useAttrSetOnRequest": true,
+        "useAttrSetBeforeAcc": true,
+        "continueAuthorzPolicy": true,
+        "RadiusServerList": [
+          "string"
+        ],
+        "OnRequestAttrManipulatorList": [
+          {
+            "action": "string",
+            "dictionaryName": "string",
+            "attributeName": "string",
+            "value": "string",
+            "changedVal": "string"
+          }
+        ],
+        "BeforeAcceptAttrManipulatorsList": [
+          {
+            "action": "string",
+            "dictionaryName": "string",
+            "attributeName": "string",
+            "value": "string",
+            "changedVal": "string"
+          }
+        ]
+      }
+    }
 """

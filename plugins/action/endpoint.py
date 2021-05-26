@@ -20,21 +20,21 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-        state = dict(type="str", default="present", choices=["present", "absent"]),
-        id=dict(type="str"),
-        name=dict(type="str"),
-        description=dict(type="str"),
-        mac=dict(type="str"),
-        profileId=dict(type="str"),
-        staticProfileAssignment=dict(type="bool"),
-        groupId=dict(type="str"),
-        staticGroupAssignment=dict(type="bool"),
-        portalUser=dict(type="str"),
-        identityStore=dict(type="str"),
-        identityStoreId=dict(type="str"),
-        customAttributes=dict(type="dict"),
-        mdmAttributes=dict(type="dict"),
-    ))
+    state=dict(type="str", default="present", choices=["present", "absent"]),
+    id=dict(type="str"),
+    name=dict(type="str"),
+    description=dict(type="str"),
+    mac=dict(type="str"),
+    profileId=dict(type="str"),
+    staticProfileAssignment=dict(type="bool"),
+    groupId=dict(type="str"),
+    staticGroupAssignment=dict(type="bool"),
+    portalUser=dict(type="str"),
+    identityStore=dict(type="str"),
+    identityStoreId=dict(type="str"),
+    customAttributes=dict(type="dict"),
+    mdmAttributes=dict(type="dict"),
+))
 
 required_if = [
     ("state", "present", ("id", "name"), True),
@@ -64,14 +64,13 @@ class Endpoint(object):
             mdm_attributes=params.get("mdmAttributes"),
         )
 
-
     def get_object_by_name(self, name):
         try:
             result = self.ise.exec(
                 family="endpoint",
                 function="get_endpoint_by_name",
                 params={"name": quote(name)}
-                ).response['ERSEndPoint']
+            ).response['ERSEndPoint']
         except Exception as e:
             result = None
         return result
@@ -82,7 +81,7 @@ class Endpoint(object):
                 family="endpoint",
                 function="get_endpoint_by_id",
                 params={"id": quote(id)}
-                ).response['ERSEndPoint']
+            ).response['ERSEndPoint']
         except Exception as e:
             result = None
         return result
@@ -134,6 +133,7 @@ class Endpoint(object):
             params=self.new_object
         ).response
         return result
+
 
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
@@ -188,7 +188,7 @@ class ActionModule(ActionBase):
                 ise.object_deleted()
             else:
                 ise.object_already_absent()
-         
+
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

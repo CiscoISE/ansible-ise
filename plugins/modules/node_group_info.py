@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -39,7 +39,7 @@ EXAMPLES = r"""
   register: result
 
 - name: Get Node Group by name
-  cisco.ise.node_group_info
+  cisco.ise.node_group_info:
     node_group_name: string
   register: result
 
@@ -49,8 +49,17 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {'name': 'string', 'description': 'string', 'mar-cache': {'enabled': True, 'replication-timeout': 0, 'replication-attempts': 0, 'query-timeout': 0, 'query-attempts': 0}}
-  - {'response': [{'name': 'string', 'description': 'string', 'mar-cache': {'enabled': True, 'replication-timeout': 0, 'replication-attempts': 0, 'query-timeout': 0, 'query-attempts': 0}}]}
+  type: dict
+  sample: >
+    {
+      "name": "string",
+      "description": "string",
+      "mar-cache": {
+        "enabled": true,
+        "replication-timeout": 0,
+        "replication-attempts": 0,
+        "query-timeout": 0,
+        "query-attempts": 0
+      }
+    }
 """

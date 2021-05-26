@@ -23,15 +23,15 @@ from ansible_collections.cisco.ise.plugins.module_utils.exceptions import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-        state = dict(type="str", default="present", choices=["present", "absent"]),
-        rule=dict(type="dict"),
-        identitySourceId=dict(type="str"),
-        ifAuthFail=dict(type="str"),
-        ifUserNotFound=dict(type="str"),
-        ifProcessFail=dict(type="str"),
-        policyId=dict(type="str"),
-        id=dict(type="str"),
-    ))
+    state=dict(type="str", default="present", choices=["present", "absent"]),
+    rule=dict(type="dict"),
+    identitySourceId=dict(type="str"),
+    ifAuthFail=dict(type="str"),
+    ifUserNotFound=dict(type="str"),
+    ifProcessFail=dict(type="str"),
+    policyId=dict(type="str"),
+    id=dict(type="str"),
+))
 
 required_if = [
     ("state", "present", ("id", "policyId"), True),
@@ -55,7 +55,6 @@ class NetworkAccessAuthenticationRules(object):
             id=params.get("id"),
         )
 
-
     def get_object_by_name(self, name):
         # NOTICE: Does not have a get by name method or it is in another action
         result = None
@@ -67,7 +66,7 @@ class NetworkAccessAuthenticationRules(object):
                 family="network_access_authentication_rules",
                 function="get_network_access_authentication_rule_by_id",
                 params={"id": quote(id)}
-                ).response
+            ).response
         except Exception as e:
             result = None
         return result
@@ -125,6 +124,7 @@ class NetworkAccessAuthenticationRules(object):
         ).response
         return result
 
+
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
@@ -178,7 +178,7 @@ class ActionModule(ActionBase):
                 ise.object_deleted()
             else:
                 ise.object_already_absent()
-         
+
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

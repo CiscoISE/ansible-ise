@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -16,18 +16,16 @@ options:
     allowedValues:
       description: All of the allowed values for the dictionary attribute.
       suboptions:
-      - suboptions:
-          isDefault:
-            description: True if this key value is the default between the allowed values
-              of the dictionary attribute.
-            type: bool
-          key:
-            description: Network Access Dictionary Attribute's key.
-            type: str
-          value:
-            description: Network Access Dictionary Attribute's value.
-            type: str
-        type: dict
+        isDefault:
+          description: True if this key value is the default between the allowed values
+            of the dictionary attribute.
+          type: bool
+        key:
+          description: Network Access Dictionary Attribute's key.
+          type: str
+        value:
+          description: Network Access Dictionary Attribute's value.
+          type: str
       type: list
     dataType:
       description: The data type for the dictionary attribute.
@@ -116,9 +114,22 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {'id': 'string', 'directionType': 'string', 'name': 'string', 'description': 'string', 'internalName': 'string', 'dataType': 'string', 'dictionaryName': 'string', 'allowedValues': [{'key': 'string', 'value': 'string', 'isDefault': True}]}
-  - {'id': 'string', 'directionType': 'string', 'name': 'string', 'description': 'string', 'internalName': 'string', 'dataType': 'string', 'dictionaryName': 'string', 'allowedValues': [{'key': 'string', 'value': 'string', 'isDefault': True}]}
-  - {'id': 'string', 'directionType': 'string', 'name': 'string', 'description': 'string', 'internalName': 'string', 'dataType': 'string', 'dictionaryName': 'string', 'allowedValues': [{'key': 'string', 'value': 'string', 'isDefault': True}]}
+  type: dict
+  sample: >
+    {
+      "id": "string",
+      "directionType": "string",
+      "name": "string",
+      "description": "string",
+      "internalName": "string",
+      "dataType": "string",
+      "dictionaryName": "string",
+      "allowedValues": [
+        {
+          "key": "string",
+          "value": "string",
+          "isDefault": true
+        }
+      ]
+    }
 """

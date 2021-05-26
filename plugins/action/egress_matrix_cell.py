@@ -23,14 +23,14 @@ from ansible_collections.cisco.ise.plugins.module_utils.exceptions import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-        state = dict(type="str", default="present", choices=["present", "absent"]),
-        sourceSgtId=dict(type="str"),
-        destinationSgtId=dict(type="str"),
-        matrixCellStatus=dict(type="str"),
-        defaultRule=dict(type="str"),
-        sgacls=dict(type="list"),
-        id=dict(type="str"),
-    ))
+    state=dict(type="str", default="present", choices=["present", "absent"]),
+    sourceSgtId=dict(type="str"),
+    destinationSgtId=dict(type="str"),
+    matrixCellStatus=dict(type="str"),
+    defaultRule=dict(type="str"),
+    sgacls=dict(type="list"),
+    id=dict(type="str"),
+))
 
 required_if = [
     ("state", "present", ("id"), True),
@@ -53,7 +53,6 @@ class EgressMatrixCell(object):
             id=params.get("id"),
         )
 
-
     def get_object_by_name(self, name):
         # NOTICE: Get does not support filter by name
         result = None
@@ -65,7 +64,7 @@ class EgressMatrixCell(object):
                 family="egress_matrix_cell",
                 function="get_egress_matrix_cell_by_id",
                 params={"id": quote(id)}
-                ).response
+            ).response
         except Exception as e:
             result = None
         return result
@@ -123,6 +122,7 @@ class EgressMatrixCell(object):
         ).response
         return result
 
+
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
@@ -176,7 +176,7 @@ class ActionModule(ActionBase):
                 ise.object_deleted()
             else:
                 ise.object_already_absent()
-         
+
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

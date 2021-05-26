@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -17,18 +17,17 @@ options:
       description: Rest Id Store's description.
       type: str
     ersRestIDStoreAttributes:
+      description: Rest Id Store's ersRestIDStoreAttributes.
       suboptions:
         headers:
           description: Rest Id Store's headers.
           suboptions:
-          - suboptions:
-              key:
-                description: Rest Id Store's key.
-                type: str
-              value:
-                description: Rest Id Store's value.
-                type: str
-            type: dict
+            key:
+              description: Rest Id Store's key.
+              type: str
+            value:
+              description: Rest Id Store's value.
+              type: str
           type: list
         predefined:
           description: Rest Id Store's predefined.
@@ -42,7 +41,7 @@ options:
       type: dict
     id:
       description: Id path parameter.
-      type: string
+      type: str
     name:
       description: Rest Id Store's name.
       type: str
@@ -124,11 +123,23 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {}
-  - {'ERSResponse': {'operation': 'string', 'messages': [{'title': 'string', 'type': 'string', 'code': 'string'}], 'link': {'rel': 'string', 'href': 'string', 'type': 'string'}}}
-  - {}
-  - {'ERSResponse': {'operation': 'string', 'messages': [{'title': 'string', 'type': 'string', 'code': 'string'}], 'link': {'rel': 'string', 'href': 'string', 'type': 'string'}}}
-  - {}
+  type: dict
+  sample: >
+    {
+      "ERSResponse": {
+        "operation": "string",
+        "messages": [
+          {
+            "title": "string",
+            "type": "string",
+            "code": "string"
+          }
+        ],
+        "link": {
+          "rel": "string",
+          "href": "string",
+          "type": "string"
+        }
+      }
+    }
 """

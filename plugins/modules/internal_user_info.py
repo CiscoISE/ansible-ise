@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -33,11 +33,21 @@ options:
     type: str
   filter:
     description:
-    - Filter query parameter. <br/> **Simple filtering** should be available through the filter query string parameter. The structure of a filter is a triplet of field operator and value separated with dots. More than one filter can be sent. The logical operator common to ALL filter criteria will be by default AND, and can be changed by using the "filterType=or" query string parameter. Each resource Data model description should specify if an attribute is a filtered field. <br/> Operator | Description <br/> ------------|----------------- <br/> EQ | Equals <br/> NEQ | Not Equals <br/> GT | Greater Than <br/> LT | Less Then <br/> STARTSW | Starts With <br/> NSTARTSW | Not Starts With <br/> ENDSW | Ends With <br/> NENDSW | Not Ends With <br/> CONTAINS | Contains <br/> NCONTAINS | Not Contains <br/>.
+    - >
+      Filter query parameter. <br/> **Simple filtering** should be available through the filter query string
+      parameter. The structure of a filter is a triplet of field operator and value separated with dots. More than
+      one filter can be sent. The logical operator common to ALL filter criteria will be by default AND, and can
+      be changed by using the "filterType=or" query string parameter. Each resource Data model description should
+      specify if an attribute is a filtered field. <br/> Operator | Description <br/>
+      ------------|----------------- <br/> EQ | Equals <br/> NEQ | Not Equals <br/> GT | Greater Than <br/> LT |
+      Less Then <br/> STARTSW | Starts With <br/> NSTARTSW | Not Starts With <br/> ENDSW | Ends With <br/> NENDSW
+      | Not Ends With <br/> CONTAINS | Contains <br/> NCONTAINS | Not Contains <br/>.
     type: list
   filterType:
     description:
-    - FilterType query parameter. The logical operator common to ALL filter criteria will be by default AND, and can be changed by using the parameter.
+    - >
+      FilterType query parameter. The logical operator common to ALL filter criteria will be by default AND, and
+      can be changed by using the parameter.
     type: str
   id:
     description:
@@ -74,12 +84,12 @@ EXAMPLES = r"""
   register: result
 
 - name: Get Internal User by id
-  cisco.ise.internal_user_info
+  cisco.ise.internal_user_info:
     id: string
   register: result
 
 - name: Get Internal User by name
-  cisco.ise.internal_user_info
+  cisco.ise.internal_user_info:
     name: string
   register: result
 
@@ -89,8 +99,30 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {'InternalUser': {'id': 'string', 'name': 'string', 'description': 'string', 'enabled': True, 'password': 'string', 'changePassword': True, 'expiryDateEnabled': True, 'enablePassword': 'string', 'customAttributes': {'Created': 'string', 'Department': 'string', 'Expired': 'string', 'Country': 'string'}, 'passwordIDStore': 'string', 'link': {'rel': 'string', 'href': 'string', 'type': 'string'}}}
-  - {'SearchResult': {'total': 0, 'resources': [{'id': 'string', 'name': 'string', 'description': 'string', 'link': {'rel': 'string', 'href': 'string', 'type': 'string'}}], 'nextPage': {'rel': 'string', 'href': 'string', 'type': 'string'}, 'previousPage': {'rel': 'string', 'href': 'string', 'type': 'string'}}}
+  type: dict
+  sample: >
+    {
+      "InternalUser": {
+        "id": "string",
+        "name": "string",
+        "description": "string",
+        "enabled": true,
+        "password": "string",
+        "changePassword": true,
+        "expiryDateEnabled": true,
+        "enablePassword": "string",
+        "customAttributes": {
+          "Created": "string",
+          "Department": "string",
+          "Expired": "string",
+          "Country": "string"
+        },
+        "passwordIDStore": "string",
+        "link": {
+          "rel": "string",
+          "href": "string",
+          "type": "string"
+        }
+      }
+    }
 """

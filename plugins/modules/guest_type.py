@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -14,6 +14,7 @@ version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
     accessTime:
+      description: Guest Type's accessTime.
       suboptions:
         allowAccessOnSpecificDaysTimes:
           description: AllowAccessOnSpecificDaysTimes flag.
@@ -21,19 +22,16 @@ options:
         dayTimeLimits:
           description: Guest Type's dayTimeLimits.
           suboptions:
-          - suboptions:
-              days:
-                description: Guest Type's days.
-                elements:
-                  type: str
-                type: list
-              endTime:
-                description: Guest Type's endTime.
-                type: str
-              startTime:
-                description: Guest Type's startTime.
-                type: str
-            type: dict
+            days:
+              description: Guest Type's days.
+              elements: str
+              type: list
+            endTime:
+              description: Guest Type's endTime.
+              type: str
+            startTime:
+              description: Guest Type's startTime.
+              type: str
           type: list
         defaultDuration:
           description: Guest Type's defaultDuration.
@@ -52,6 +50,7 @@ options:
       description: Guest Type's description.
       type: str
     expirationNotification:
+      description: Guest Type's expirationNotification.
       suboptions:
         advanceNotificationDuration:
           description: Guest Type's advanceNotificationDuration.
@@ -79,6 +78,7 @@ options:
       description: Guest Type's id.
       type: str
     loginOptions:
+      description: Guest Type's loginOptions.
       suboptions:
         allowGuestPortalBypass:
           description: AllowGuestPortalBypass flag.
@@ -104,8 +104,7 @@ options:
       type: str
     sponsorGroups:
       description: Guest Type's sponsorGroups.
-      elements:
-        type: str
+      elements: str
       type: list
 requirements:
 - ciscoisesdk
@@ -216,9 +215,49 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {}
-  - {}
-  - {'GuestType': {'id': 'string', 'name': 'string', 'description': 'string', 'accessTime': {'fromFirstLogin': True, 'maxAccountDuration': 0, 'durationTimeUnit': 'string', 'defaultDuration': 0, 'allowAccessOnSpecificDaysTimes': True, 'dayTimeLimits': [{'startTime': 'string', 'endTime': 'string', 'days': ['string']}]}, 'loginOptions': {'limitSimultaneousLogins': True, 'maxSimultaneousLogins': 0, 'failureAction': 'string', 'maxRegisteredDevices': 0, 'identityGroupId': 'string', 'allowGuestPortalBypass': True}, 'expirationNotification': {'enableNotification': True, 'advanceNotificationDuration': 0, 'advanceNotificationUnits': 'string', 'sendEmailNotification': True, 'emailText': 'string', 'sendSmsNotification': True, 'smsText': 'string'}, 'sponsorGroups': ['string']}}
+  type: dict
+  sample: >
+    {
+      "GuestType": {
+        "id": "string",
+        "name": "string",
+        "description": "string",
+        "accessTime": {
+          "fromFirstLogin": true,
+          "maxAccountDuration": 0,
+          "durationTimeUnit": "string",
+          "defaultDuration": 0,
+          "allowAccessOnSpecificDaysTimes": true,
+          "dayTimeLimits": [
+            {
+              "startTime": "string",
+              "endTime": "string",
+              "days": [
+                "string"
+              ]
+            }
+          ]
+        },
+        "loginOptions": {
+          "limitSimultaneousLogins": true,
+          "maxSimultaneousLogins": 0,
+          "failureAction": "string",
+          "maxRegisteredDevices": 0,
+          "identityGroupId": "string",
+          "allowGuestPortalBypass": true
+        },
+        "expirationNotification": {
+          "enableNotification": true,
+          "advanceNotificationDuration": 0,
+          "advanceNotificationUnits": "string",
+          "sendEmailNotification": true,
+          "emailText": "string",
+          "sendSmsNotification": true,
+          "smsText": "string"
+        },
+        "sponsorGroups": [
+          "string"
+        ]
+      }
+    }
 """

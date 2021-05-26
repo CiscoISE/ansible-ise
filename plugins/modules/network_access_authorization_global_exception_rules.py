@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -15,15 +15,16 @@ author: Rafael Campos (@racampos)
 options:
     id:
       description: Id path parameter. Rule id.
-      type: string
+      type: str
     profile:
       description: The authorization profile/s.
-      elements:
-        type: str
+      elements: str
       type: list
     rule:
+      description: Common attributes in rule authentication/authorization.
       suboptions:
         condition:
+          description: Network Access Authorization Global Exception Rules's condition.
           suboptions:
             attributeId:
               description: Network Access Authorization Global Exception Rules's attributeId.
@@ -37,20 +38,18 @@ options:
             children:
               description: Network Access Authorization Global Exception Rules's children.
               suboptions:
-              - suboptions:
-                  conditionType:
-                    description: Network Access Authorization Global Exception Rules's
-                      conditionType.
-                    type: str
-                  isNegate:
-                    description: IsNegate flag.
-                    type: bool
-                type: dict
+                conditionType:
+                  description: Network Access Authorization Global Exception Rules's conditionType.
+                  type: str
+                isNegate:
+                  description: IsNegate flag.
+                  type: bool
               type: list
             conditionType:
               description: Network Access Authorization Global Exception Rules's conditionType.
               type: str
             datesRange:
+              description: Network Access Authorization Global Exception Rules's datesRange.
               suboptions:
                 endDate:
                   description: Network Access Authorization Global Exception Rules's endDate.
@@ -60,6 +59,7 @@ options:
                   type: str
               type: dict
             datesRangeException:
+              description: Network Access Authorization Global Exception Rules's datesRangeException.
               suboptions:
                 endDate:
                   description: Network Access Authorization Global Exception Rules's endDate.
@@ -78,6 +78,7 @@ options:
               description: Network Access Authorization Global Exception Rules's dictionaryValue.
               type: str
             hoursRange:
+              description: Network Access Authorization Global Exception Rules's hoursRange.
               suboptions:
                 endTime:
                   description: Network Access Authorization Global Exception Rules's endTime.
@@ -87,6 +88,7 @@ options:
                   type: str
               type: dict
             hoursRangeException:
+              description: Network Access Authorization Global Exception Rules's hoursRangeException.
               suboptions:
                 endTime:
                   description: Network Access Authorization Global Exception Rules's endTime.
@@ -109,13 +111,11 @@ options:
               type: str
             weekDays:
               description: Network Access Authorization Global Exception Rules's weekDays.
-              elements:
-                type: str
+              elements: str
               type: list
             weekDaysException:
               description: Network Access Authorization Global Exception Rules's weekDaysException.
-              elements:
-                type: str
+              elements: str
               type: list
           type: dict
         default:
@@ -273,9 +273,62 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {'rule': {'id': 'string', 'name': 'string', 'description': 'string', 'hitCounts': 0, 'rank': 0, 'state': 'string', 'default': True, 'condition': {'conditionType': 'string', 'isNegate': True, 'name': 'string', 'id': 'string', 'description': 'string', 'dictionaryName': 'string', 'attributeName': 'string', 'attributeId': 'string', 'operator': 'string', 'dictionaryValue': 'string', 'attributeValue': 'string', 'children': [{'conditionType': 'string', 'isNegate': True}], 'hoursRange': {'startTime': 'string', 'endTime': 'string'}, 'hoursRangeException': {'startTime': 'string', 'endTime': 'string'}, 'weekDays': ['string'], 'weekDaysException': ['string'], 'datesRange': {'startDate': 'string', 'endDate': 'string'}, 'datesRangeException': {'startDate': 'string', 'endDate': 'string'}}}, 'profile': ['string'], 'securityGroup': 'string'}
-  - {'rule': {'id': 'string', 'name': 'string', 'description': 'string', 'hitCounts': 0, 'rank': 0, 'state': 'string', 'default': True, 'condition': {'conditionType': 'string', 'isNegate': True, 'name': 'string', 'id': 'string', 'description': 'string', 'dictionaryName': 'string', 'attributeName': 'string', 'attributeId': 'string', 'operator': 'string', 'dictionaryValue': 'string', 'attributeValue': 'string', 'children': [{'conditionType': 'string', 'isNegate': True}], 'hoursRange': {'startTime': 'string', 'endTime': 'string'}, 'hoursRangeException': {'startTime': 'string', 'endTime': 'string'}, 'weekDays': ['string'], 'weekDaysException': ['string'], 'datesRange': {'startDate': 'string', 'endDate': 'string'}, 'datesRangeException': {'startDate': 'string', 'endDate': 'string'}}}, 'profile': ['string'], 'securityGroup': 'string'}
-  - {'id': 'string'}
+  type: dict
+  sample: >
+    {
+      "rule": {
+        "id": "string",
+        "name": "string",
+        "description": "string",
+        "hitCounts": 0,
+        "rank": 0,
+        "state": "string",
+        "default": true,
+        "condition": {
+          "conditionType": "string",
+          "isNegate": true,
+          "name": "string",
+          "id": "string",
+          "description": "string",
+          "dictionaryName": "string",
+          "attributeName": "string",
+          "attributeId": "string",
+          "operator": "string",
+          "dictionaryValue": "string",
+          "attributeValue": "string",
+          "children": [
+            {
+              "conditionType": "string",
+              "isNegate": true
+            }
+          ],
+          "hoursRange": {
+            "startTime": "string",
+            "endTime": "string"
+          },
+          "hoursRangeException": {
+            "startTime": "string",
+            "endTime": "string"
+          },
+          "weekDays": [
+            "string"
+          ],
+          "weekDaysException": [
+            "string"
+          ],
+          "datesRange": {
+            "startDate": "string",
+            "endDate": "string"
+          },
+          "datesRangeException": {
+            "startDate": "string",
+            "endDate": "string"
+          }
+        }
+      },
+      "profile": [
+        "string"
+      ],
+      "securityGroup": "string"
+    }
 """

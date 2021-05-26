@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -24,11 +24,21 @@ options:
     type: int
   filter:
     description:
-    - Filter query parameter. <br/> **Simple filtering** should be available through the filter query string parameter. The structure of a filter is a triplet of field operator and value separated with dots. More than one filter can be sent. The logical operator common to ALL filter criteria will be by default AND, and can be changed by using the "filterType=or" query string parameter. Each resource Data model description should specify if an attribute is a filtered field. <br/> Operator | Description <br/> ------------|----------------- <br/> EQ | Equals <br/> NEQ | Not Equals <br/> GT | Greater Than <br/> LT | Less Then <br/> STARTSW | Starts With <br/> NSTARTSW | Not Starts With <br/> ENDSW | Ends With <br/> NENDSW | Not Ends With <br/> CONTAINS | Contains <br/> NCONTAINS | Not Contains <br/>.
+    - >
+      Filter query parameter. <br/> **Simple filtering** should be available through the filter query string
+      parameter. The structure of a filter is a triplet of field operator and value separated with dots. More than
+      one filter can be sent. The logical operator common to ALL filter criteria will be by default AND, and can
+      be changed by using the "filterType=or" query string parameter. Each resource Data model description should
+      specify if an attribute is a filtered field. <br/> Operator | Description <br/>
+      ------------|----------------- <br/> EQ | Equals <br/> NEQ | Not Equals <br/> GT | Greater Than <br/> LT |
+      Less Then <br/> STARTSW | Starts With <br/> NSTARTSW | Not Starts With <br/> ENDSW | Ends With <br/> NENDSW
+      | Not Ends With <br/> CONTAINS | Contains <br/> NCONTAINS | Not Contains <br/>.
     type: list
   filterType:
     description:
-    - FilterType query parameter. The logical operator common to ALL filter criteria will be by default AND, and can be changed by using the parameter.
+    - >
+      FilterType query parameter. The logical operator common to ALL filter criteria will be by default AND, and
+      can be changed by using the parameter.
     type: str
   sortasc:
     description:
@@ -69,7 +79,7 @@ EXAMPLES = r"""
   register: result
 
 - name: Get Sponsored Guest Portal by id
-  cisco.ise.sponsored_guest_portal_info
+  cisco.ise.sponsored_guest_portal_info:
     id: string
   register: result
 
@@ -79,8 +89,114 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {'SponsoredGuestPortal': {'id': 'string', 'name': 'string', 'description': 'string', 'portalType': 'string', 'settings': {'portalSettings': {'httpsPort': 0, 'allowedInterfaces': ['string'], 'certificateGroupTag': 'string', 'authenticationMethod': 'string', 'assignedGuestTypeForEmployee': 'string', 'displayLang': 'string', 'fallbackLanguage': 'string', 'alwaysUsedLanguage': 'string', 'availableSsids': []}, 'loginPageSettings': {'requireAccessCode': True, 'accessCode': 'string', 'maxFailedAttemptsBeforeRateLimit': 0, 'timeBetweenLoginsDuringRateLimit': 0, 'includeAup': True, 'aupDisplay': 'string', 'requireAupAcceptance': True, 'requireAupScrolling': True, 'allowGuestToCreateAccounts': True, 'allowGuestToChangePassword': True, 'allowAlternateGuestPortal': True, 'allowGuestToUseSocialAccounts': True, 'allowShowGuestForm': True, 'socialConfigs': []}, 'aupSettings': {'includeAup': True, 'useDiffAupForEmployees': True, 'skipAupForEmployees': True, 'requireAccessCode': True, 'requireScrolling': True, 'displayFrequency': 'string'}, 'guestChangePasswordSettings': {'allowChangePasswdAtFirstLogin': True}, 'guestDeviceRegistrationSettings': {'autoRegisterGuestDevices': True, 'allowGuestsToRegisterDevices': True}, 'postLoginBannerSettings': {'includePostAccessBanner': True}, 'authSuccessSettings': {'successRedirect': 'string', 'redirectUrl': 'string'}, 'supportInfoSettings': {'includeSupportInfoPage': True, 'includeMacAddr': True, 'includeIpAddress': True, 'includeBrowserUserAgent': True, 'includePolicyServer': True, 'includeFailureCode': True, 'emptyFieldDisplay': 'string'}}, 'customizations': {'portalTheme': {'id': 'string', 'name': 'string', 'themeData': 'string'}, 'portalTweakSettings': {'bannerColor': 'string', 'bannerTextColor': 'string', 'pageBackgroundColor': 'string', 'pageLabelAndTextColor': 'string'}, 'language': {'viewLanguage': 'string'}, 'globalCustomizations': {'mobileLogoImage': {'data': 'string'}, 'desktopLogoImage': {'data': 'string'}, 'bannerImage': {'data': 'string'}, 'bannerTitle': 'string', 'contactText': 'string', 'footerElement': 'string'}, 'pageCustomizations': {'data': [{'key': 'string', 'value': 'string'}]}}}}
-  - {'SearchResult': {'total': 0, 'resources': [{'id': 'string', 'name': 'string', 'description': 'string', 'link': {'rel': 'string', 'href': 'string', 'type': 'string'}}]}}
+  type: dict
+  sample: >
+    {
+      "SponsoredGuestPortal": {
+        "id": "string",
+        "name": "string",
+        "description": "string",
+        "portalType": "string",
+        "settings": {
+          "portalSettings": {
+            "httpsPort": 0,
+            "allowedInterfaces": [
+              "string"
+            ],
+            "certificateGroupTag": "string",
+            "authenticationMethod": "string",
+            "assignedGuestTypeForEmployee": "string",
+            "displayLang": "string",
+            "fallbackLanguage": "string",
+            "alwaysUsedLanguage": "string",
+            "availableSsids": []
+          },
+          "loginPageSettings": {
+            "requireAccessCode": true,
+            "accessCode": "string",
+            "maxFailedAttemptsBeforeRateLimit": 0,
+            "timeBetweenLoginsDuringRateLimit": 0,
+            "includeAup": true,
+            "aupDisplay": "string",
+            "requireAupAcceptance": true,
+            "requireAupScrolling": true,
+            "allowGuestToCreateAccounts": true,
+            "allowGuestToChangePassword": true,
+            "allowAlternateGuestPortal": true,
+            "allowGuestToUseSocialAccounts": true,
+            "allowShowGuestForm": true,
+            "socialConfigs": []
+          },
+          "aupSettings": {
+            "includeAup": true,
+            "useDiffAupForEmployees": true,
+            "skipAupForEmployees": true,
+            "requireAccessCode": true,
+            "requireScrolling": true,
+            "displayFrequency": "string"
+          },
+          "guestChangePasswordSettings": {
+            "allowChangePasswdAtFirstLogin": true
+          },
+          "guestDeviceRegistrationSettings": {
+            "autoRegisterGuestDevices": true,
+            "allowGuestsToRegisterDevices": true
+          },
+          "postLoginBannerSettings": {
+            "includePostAccessBanner": true
+          },
+          "authSuccessSettings": {
+            "successRedirect": "string",
+            "redirectUrl": "string"
+          },
+          "supportInfoSettings": {
+            "includeSupportInfoPage": true,
+            "includeMacAddr": true,
+            "includeIpAddress": true,
+            "includeBrowserUserAgent": true,
+            "includePolicyServer": true,
+            "includeFailureCode": true,
+            "emptyFieldDisplay": "string"
+          }
+        },
+        "customizations": {
+          "portalTheme": {
+            "id": "string",
+            "name": "string",
+            "themeData": "string"
+          },
+          "portalTweakSettings": {
+            "bannerColor": "string",
+            "bannerTextColor": "string",
+            "pageBackgroundColor": "string",
+            "pageLabelAndTextColor": "string"
+          },
+          "language": {
+            "viewLanguage": "string"
+          },
+          "globalCustomizations": {
+            "mobileLogoImage": {
+              "data": "string"
+            },
+            "desktopLogoImage": {
+              "data": "string"
+            },
+            "bannerImage": {
+              "data": "string"
+            },
+            "bannerTitle": "string",
+            "contactText": "string",
+            "footerElement": "string"
+          },
+          "pageCustomizations": {
+            "data": [
+              {
+                "key": "string",
+                "value": "string"
+              }
+            ]
+          }
+        }
+      }
+    }
 """

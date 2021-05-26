@@ -20,23 +20,23 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-        state = dict(type="str", default="present", choices=["present", "absent"]),
-        id=dict(type="str"),
-        name=dict(type="str"),
-        description=dict(type="str"),
-        enabled=dict(type="bool"),
-        email=dict(type="str"),
-        password=dict(type="str"),
-        firstName=dict(type="str"),
-        lastName=dict(type="str"),
-        changePassword=dict(type="bool"),
-        identityGroups=dict(type="str"),
-        expiryDateEnabled=dict(type="bool"),
-        expiryDate=dict(type="str"),
-        enablePassword=dict(type="str"),
-        customAttributes=dict(type="dict"),
-        passwordIDStore=dict(type="str"),
-    ))
+    state=dict(type="str", default="present", choices=["present", "absent"]),
+    id=dict(type="str"),
+    name=dict(type="str"),
+    description=dict(type="str"),
+    enabled=dict(type="bool"),
+    email=dict(type="str"),
+    password=dict(type="str"),
+    firstName=dict(type="str"),
+    lastName=dict(type="str"),
+    changePassword=dict(type="bool"),
+    identityGroups=dict(type="str"),
+    expiryDateEnabled=dict(type="bool"),
+    expiryDate=dict(type="str"),
+    enablePassword=dict(type="str"),
+    customAttributes=dict(type="dict"),
+    passwordIDStore=dict(type="str"),
+))
 
 required_if = [
     ("state", "present", ("id", "name"), True),
@@ -68,14 +68,13 @@ class InternalUser(object):
             password_idstore=params.get("passwordIDStore"),
         )
 
-
     def get_object_by_name(self, name):
         try:
             result = self.ise.exec(
                 family="internal_user",
                 function="get_internal_user_by_name",
                 params={"name": quote(name)}
-                ).response['InternalUser']
+            ).response['InternalUser']
         except Exception as e:
             result = None
         return result
@@ -86,7 +85,7 @@ class InternalUser(object):
                 family="internal_user",
                 function="internaluser_by_id",
                 params={"id": quote(id)}
-                ).response['InternalUser']
+            ).response['InternalUser']
         except Exception as e:
             result = None
         return result
@@ -147,6 +146,7 @@ class InternalUser(object):
             ).response
         return result
 
+
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
@@ -200,7 +200,7 @@ class ActionModule(ActionBase):
                 ise.object_deleted()
             else:
                 ise.object_already_absent()
-         
+
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

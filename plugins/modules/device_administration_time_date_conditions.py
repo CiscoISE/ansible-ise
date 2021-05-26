@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -25,19 +25,22 @@ options:
     children:
       description: Device Administration Time Date Conditions's children.
       suboptions:
-      - suboptions:
-          conditionType:
-            description: Device Administration Time Date Conditions's conditionType.
-            type: str
-          isNegate:
-            description: IsNegate flag.
-            type: bool
-        type: dict
+        conditionType:
+          description: Device Administration Time Date Conditions's conditionType.
+          type: str
+        isNegate:
+          description: IsNegate flag.
+          type: bool
       type: list
     conditionType:
       description: Device Administration Time Date Conditions's conditionType.
       type: str
     datesRange:
+      description: <p>Defines for which date/s TimeAndDate condition will be matched or
+        NOT matched if used in exceptionDates prooperty<br> Options are - Date range,
+        for specific date, the same date should be used for start/end date <br> Default
+        - no specific dates<br> In order to reset the dates to have no specific dates
+        Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)</p>.
       suboptions:
         endDate:
           description: Device Administration Time Date Conditions's endDate.
@@ -47,6 +50,11 @@ options:
           type: str
       type: dict
     datesRangeException:
+      description: <p>Defines for which date/s TimeAndDate condition will be matched or
+        NOT matched if used in exceptionDates prooperty<br> Options are - Date range,
+        for specific date, the same date should be used for start/end date <br> Default
+        - no specific dates<br> In order to reset the dates to have no specific dates
+        Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)</p>.
       suboptions:
         endDate:
           description: Device Administration Time Date Conditions's endDate.
@@ -65,6 +73,9 @@ options:
       description: Device Administration Time Date Conditions's dictionaryValue.
       type: str
     hoursRange:
+      description: <p>Defines for which hours a TimeAndDate condition will be matched
+        or not matched if used in exceptionHours property<br> Time foramt - hh mm ( h
+        = hour , mm = minutes ) <br> Default - All Day </p>.
       suboptions:
         endTime:
           description: Device Administration Time Date Conditions's endTime.
@@ -74,6 +85,9 @@ options:
           type: str
       type: dict
     hoursRangeException:
+      description: <p>Defines for which hours a TimeAndDate condition will be matched
+        or not matched if used in exceptionHours property<br> Time foramt - hh mm ( h
+        = hour , mm = minutes ) <br> Default - All Day </p>.
       suboptions:
         endTime:
           description: Device Administration Time Date Conditions's endTime.
@@ -97,14 +111,12 @@ options:
     weekDays:
       description: <p>Defines for which days this condition will be matched<br> Days format
         - Arrays of WeekDay enums <br> Default - List of All week days</p>.
-      elements:
-        type: str
+      elements: str
       type: list
     weekDaysException:
       description: <p>Defines for which days this condition will NOT be matched<br> Days
         format - Arrays of WeekDay enums <br> Default - Not enabled</p>.
-      elements:
-        type: str
+      elements: str
       type: list
 requirements:
 - ciscoisesdk
@@ -125,7 +137,6 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    {}
 
 - name: Update by id
   cisco.ise.device_administration_time_date_conditions:
@@ -180,9 +191,47 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {'conditionType': 'string', 'isNegate': True, 'name': 'string', 'id': 'string', 'description': 'string', 'dictionaryName': 'string', 'attributeName': 'string', 'attributeId': 'string', 'operator': 'string', 'dictionaryValue': 'string', 'attributeValue': 'string', 'children': [{'conditionType': 'string', 'isNegate': True}], 'hoursRange': {'startTime': 'string', 'endTime': 'string'}, 'hoursRangeException': {'startTime': 'string', 'endTime': 'string'}, 'weekDays': ['string'], 'weekDaysException': ['string'], 'datesRange': {'startDate': 'string', 'endDate': 'string'}, 'datesRangeException': {'startDate': 'string', 'endDate': 'string'}}
-  - {'conditionType': 'string', 'isNegate': True, 'name': 'string', 'id': 'string', 'description': 'string', 'dictionaryName': 'string', 'attributeName': 'string', 'attributeId': 'string', 'operator': 'string', 'dictionaryValue': 'string', 'attributeValue': 'string', 'children': [{'conditionType': 'string', 'isNegate': True}], 'hoursRange': {'startTime': 'string', 'endTime': 'string'}, 'hoursRangeException': {'startTime': 'string', 'endTime': 'string'}, 'weekDays': ['string'], 'weekDaysException': ['string'], 'datesRange': {'startDate': 'string', 'endDate': 'string'}, 'datesRangeException': {'startDate': 'string', 'endDate': 'string'}}
-  - {'id': 'string'}
+  type: dict
+  sample: >
+    {
+      "conditionType": "string",
+      "isNegate": true,
+      "name": "string",
+      "id": "string",
+      "description": "string",
+      "dictionaryName": "string",
+      "attributeName": "string",
+      "attributeId": "string",
+      "operator": "string",
+      "dictionaryValue": "string",
+      "attributeValue": "string",
+      "children": [
+        {
+          "conditionType": "string",
+          "isNegate": true
+        }
+      ],
+      "hoursRange": {
+        "startTime": "string",
+        "endTime": "string"
+      },
+      "hoursRangeException": {
+        "startTime": "string",
+        "endTime": "string"
+      },
+      "weekDays": [
+        "string"
+      ],
+      "weekDaysException": [
+        "string"
+      ],
+      "datesRange": {
+        "startDate": "string",
+        "endDate": "string"
+      },
+      "datesRangeException": {
+        "startDate": "string",
+        "endDate": "string"
+      }
+    }
 """

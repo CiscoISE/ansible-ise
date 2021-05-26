@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -15,22 +15,20 @@ author: Rafael Campos (@racampos)
 options:
     NetworkDeviceGroupList:
       description: Network Device's NetworkDeviceGroupList.
-      elements:
-        type: str
+      elements: str
       type: list
     NetworkDeviceIPList:
       description: Network Device's NetworkDeviceIPList.
       suboptions:
-      - suboptions:
-          ipaddress:
-            description: Network Device's ipaddress.
-            type: str
-          mask:
-            description: Network Device's mask.
-            type: int
-        type: dict
+        ipaddress:
+          description: Network Device's ipaddress.
+          type: str
+        mask:
+          description: Network Device's mask.
+          type: int
       type: list
     authenticationSettings:
+      description: Network Device's authenticationSettings.
       suboptions:
         dtlsRequired:
           description: DtlsRequired flag.
@@ -68,7 +66,7 @@ options:
       type: str
     id:
       description: Id path parameter.
-      type: string
+      type: str
     name:
       description: Network Device's name.
       type: str
@@ -76,6 +74,7 @@ options:
       description: Network Device's profileName.
       type: str
     snmpsettings:
+      description: Network Device's snmpsettings.
       suboptions:
         authPassowrd:
           description: Network Device's authPassowrd.
@@ -103,6 +102,7 @@ options:
           type: str
       type: dict
     tacacsSettings:
+      description: Network Device's tacacsSettings.
       suboptions:
         connectModeOptions:
           description: Network Device's connectModeOptions.
@@ -112,8 +112,10 @@ options:
           type: str
       type: dict
     trustsecsettings:
+      description: Network Device's trustsecsettings.
       suboptions:
         deviceAuthenticationSettings:
+          description: Network Device's deviceAuthenticationSettings.
           suboptions:
             sgaDeviceId:
               description: Network Device's sgaDeviceId.
@@ -123,6 +125,7 @@ options:
               type: str
           type: dict
         deviceConfigurationDeployment:
+          description: Network Device's deviceConfigurationDeployment.
           suboptions:
             enableModePassword:
               description: Network Device's enableModePassword.
@@ -138,6 +141,7 @@ options:
           description: Network Device's pushIdSupport.
           type: str
         sgaNotificationAndUpdates:
+          description: Network Device's sgaNotificationAndUpdates.
           suboptions:
             coaSourceHost:
               description: Network Device's coaSourceHost.
@@ -271,11 +275,7 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {}
-  - {}
-  - {}
-  - {}
-  - {}
+  type: dict
+  sample: >
+    {}
 """

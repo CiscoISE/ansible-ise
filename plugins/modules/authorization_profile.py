@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -22,29 +22,29 @@ options:
     advancedAttributes:
       description: Authorization Profile's advancedAttributes.
       suboptions:
-      - suboptions:
-          leftHandSideDictionaryAttribue:
-            suboptions:
-              AdvancedAttributeValueType:
-                description: Authorization Profile's AdvancedAttributeValueType.
-                type: str
-              attributeName:
-                description: Authorization Profile's attributeName.
-                type: str
-              dictionaryName:
-                description: Authorization Profile's dictionaryName.
-                type: str
-            type: dict
-          rightHandSideAttribueValue:
-            suboptions:
-              AdvancedAttributeValueType:
-                description: Authorization Profile's AdvancedAttributeValueType.
-                type: str
-              value:
-                description: Authorization Profile's value.
-                type: str
-            type: dict
-        type: dict
+        leftHandSideDictionaryAttribue:
+          description: Authorization Profile's leftHandSideDictionaryAttribue.
+          suboptions:
+            AdvancedAttributeValueType:
+              description: Authorization Profile's AdvancedAttributeValueType.
+              type: str
+            attributeName:
+              description: Authorization Profile's attributeName.
+              type: str
+            dictionaryName:
+              description: Authorization Profile's dictionaryName.
+              type: str
+          type: dict
+        rightHandSideAttribueValue:
+          description: Authorization Profile's rightHandSideAttribueValue.
+          suboptions:
+            AdvancedAttributeValueType:
+              description: Authorization Profile's AdvancedAttributeValueType.
+              type: str
+            value:
+              description: Authorization Profile's value.
+              type: str
+          type: dict
       type: list
     airespaceACL:
       description: Authorization Profile's airespaceACL.
@@ -98,6 +98,7 @@ options:
       description: Authorization Profile's profileName.
       type: str
     reauth:
+      description: Authorization Profile's reauth.
       suboptions:
         connectivity:
           description: Authorization Profile's connectivity.
@@ -113,6 +114,7 @@ options:
       description: TrackMovement flag.
       type: bool
     vlan:
+      description: Authorization Profile's vlan.
       suboptions:
         nameID:
           description: Authorization Profile's nameID.
@@ -128,6 +130,7 @@ options:
       description: WebAuth flag.
       type: bool
     webRedirection:
+      description: Authorization Profile's webRedirection.
       suboptions:
         WebRedirectionType:
           description: Authorization Profile's WebRedirectionType.
@@ -274,9 +277,7 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {}
-  - {}
-  - {}
+  type: dict
+  sample: >
+    {}
 """

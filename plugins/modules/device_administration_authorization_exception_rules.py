@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -16,22 +16,23 @@ options:
     commands:
       description: Command sets enforce the specified list of commands that can be executed
         by a device administrator.
-      elements:
-        type: str
+      elements: str
       type: list
     id:
       description: Id path parameter. Rule id.
-      type: string
+      type: str
     policyId:
       description: PolicyId path parameter. Policy id.
-      type: string
+      type: str
     profile:
       description: Device admin profiles control the initial login session of the device
         administrator.
       type: str
     rule:
+      description: Common attributes in rule authentication/authorization.
       suboptions:
         condition:
+          description: Device Administration Authorization Exception Rules's condition.
           suboptions:
             attributeId:
               description: Device Administration Authorization Exception Rules's attributeId.
@@ -45,20 +46,18 @@ options:
             children:
               description: Device Administration Authorization Exception Rules's children.
               suboptions:
-              - suboptions:
-                  conditionType:
-                    description: Device Administration Authorization Exception Rules's
-                      conditionType.
-                    type: str
-                  isNegate:
-                    description: IsNegate flag.
-                    type: bool
-                type: dict
+                conditionType:
+                  description: Device Administration Authorization Exception Rules's conditionType.
+                  type: str
+                isNegate:
+                  description: IsNegate flag.
+                  type: bool
               type: list
             conditionType:
               description: Device Administration Authorization Exception Rules's conditionType.
               type: str
             datesRange:
+              description: Device Administration Authorization Exception Rules's datesRange.
               suboptions:
                 endDate:
                   description: Device Administration Authorization Exception Rules's endDate.
@@ -68,6 +67,7 @@ options:
                   type: str
               type: dict
             datesRangeException:
+              description: Device Administration Authorization Exception Rules's datesRangeException.
               suboptions:
                 endDate:
                   description: Device Administration Authorization Exception Rules's endDate.
@@ -86,6 +86,7 @@ options:
               description: Device Administration Authorization Exception Rules's dictionaryValue.
               type: str
             hoursRange:
+              description: Device Administration Authorization Exception Rules's hoursRange.
               suboptions:
                 endTime:
                   description: Device Administration Authorization Exception Rules's endTime.
@@ -95,6 +96,7 @@ options:
                   type: str
               type: dict
             hoursRangeException:
+              description: Device Administration Authorization Exception Rules's hoursRangeException.
               suboptions:
                 endTime:
                   description: Device Administration Authorization Exception Rules's endTime.
@@ -117,13 +119,11 @@ options:
               type: str
             weekDays:
               description: Device Administration Authorization Exception Rules's weekDays.
-              elements:
-                type: str
+              elements: str
               type: list
             weekDaysException:
               description: Device Administration Authorization Exception Rules's weekDaysException.
-              elements:
-                type: str
+              elements: str
               type: list
           type: dict
         default:
@@ -280,9 +280,62 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {'rule': {'id': 'string', 'name': 'string', 'description': 'string', 'hitCounts': 0, 'rank': 0, 'state': 'string', 'default': True, 'condition': {'conditionType': 'string', 'isNegate': True, 'name': 'string', 'id': 'string', 'description': 'string', 'dictionaryName': 'string', 'attributeName': 'string', 'attributeId': 'string', 'operator': 'string', 'dictionaryValue': 'string', 'attributeValue': 'string', 'children': [{'conditionType': 'string', 'isNegate': True}], 'hoursRange': {'startTime': 'string', 'endTime': 'string'}, 'hoursRangeException': {'startTime': 'string', 'endTime': 'string'}, 'weekDays': ['string'], 'weekDaysException': ['string'], 'datesRange': {'startDate': 'string', 'endDate': 'string'}, 'datesRangeException': {'startDate': 'string', 'endDate': 'string'}}}, 'commands': ['string'], 'profile': 'string'}
-  - {'rule': {'id': 'string', 'name': 'string', 'description': 'string', 'hitCounts': 0, 'rank': 0, 'state': 'string', 'default': True, 'condition': {'conditionType': 'string', 'isNegate': True, 'name': 'string', 'id': 'string', 'description': 'string', 'dictionaryName': 'string', 'attributeName': 'string', 'attributeId': 'string', 'operator': 'string', 'dictionaryValue': 'string', 'attributeValue': 'string', 'children': [{'conditionType': 'string', 'isNegate': True}], 'hoursRange': {'startTime': 'string', 'endTime': 'string'}, 'hoursRangeException': {'startTime': 'string', 'endTime': 'string'}, 'weekDays': ['string'], 'weekDaysException': ['string'], 'datesRange': {'startDate': 'string', 'endDate': 'string'}, 'datesRangeException': {'startDate': 'string', 'endDate': 'string'}}}, 'commands': ['string'], 'profile': 'string'}
-  - {'id': 'string'}
+  type: dict
+  sample: >
+    {
+      "rule": {
+        "id": "string",
+        "name": "string",
+        "description": "string",
+        "hitCounts": 0,
+        "rank": 0,
+        "state": "string",
+        "default": true,
+        "condition": {
+          "conditionType": "string",
+          "isNegate": true,
+          "name": "string",
+          "id": "string",
+          "description": "string",
+          "dictionaryName": "string",
+          "attributeName": "string",
+          "attributeId": "string",
+          "operator": "string",
+          "dictionaryValue": "string",
+          "attributeValue": "string",
+          "children": [
+            {
+              "conditionType": "string",
+              "isNegate": true
+            }
+          ],
+          "hoursRange": {
+            "startTime": "string",
+            "endTime": "string"
+          },
+          "hoursRangeException": {
+            "startTime": "string",
+            "endTime": "string"
+          },
+          "weekDays": [
+            "string"
+          ],
+          "weekDaysException": [
+            "string"
+          ],
+          "datesRange": {
+            "startDate": "string",
+            "endDate": "string"
+          },
+          "datesRangeException": {
+            "startDate": "string",
+            "endDate": "string"
+          }
+        }
+      },
+      "commands": [
+        "string"
+      ],
+      "profile": "string"
+    }
 """

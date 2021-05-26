@@ -8,7 +8,7 @@ except ImportError:
 else:
     ISE_SDK_IS_INSTALLED = True
 from ansible.module_utils.basic import AnsibleModule
-#from ansible_collections.cisco.ise.plugins.module_utils.exceptions import ()
+
 try:
     from ansible.errors import AnsibleActionFail
 except ImportError:
@@ -24,14 +24,14 @@ def ise_argument_spec():
         ise_password=dict(type="str", required=True, no_log=True),
         ise_verify=dict(type="bool", default=True),
         ise_version=dict(type="str", default="3.0.0"),
-        ise_wait_on_rate_limit=dict(type="bool", default=True), # TODO: verify what the true default value should be 
+        ise_wait_on_rate_limit=dict(type="bool", default=True),  # TODO: verify what the true default value should be
     )
     return argument_spec
 
 
 class ISESDK(object):
     def __init__(self, params):
-        self.result = dict(changed=False,result="")
+        self.result = dict(changed=False, result="")
         if ISE_SDK_IS_INSTALLED:
             self.api = api.IdentityServicesEngineAPI(
                 username=params.get("ise_username"),
@@ -82,7 +82,6 @@ class ISESDK(object):
                 ).format(error=e)
             )
         return response
-
 
     def fail_json(self, msg, **kwargs):
         self.result.update(**kwargs)

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # Copyright (c) 2021, Cisco Systems
-# MIT License (see LICENSE)
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
 ---
@@ -32,11 +32,21 @@ options:
     type: str
   filter:
     description:
-    - Filter query parameter. <br/> **Simple filtering** should be available through the filter query string parameter. The structure of a filter is a triplet of field operator and value separated with dots. More than one filter can be sent. The logical operator common to ALL filter criteria will be by default AND, and can be changed by using the "filterType=or" query string parameter. Each resource Data model description should specify if an attribute is a filtered field. <br/> Operator | Description <br/> ------------|----------------- <br/> EQ | Equals <br/> NEQ | Not Equals <br/> GT | Greater Than <br/> LT | Less Then <br/> STARTSW | Starts With <br/> NSTARTSW | Not Starts With <br/> ENDSW | Ends With <br/> NENDSW | Not Ends With <br/> CONTAINS | Contains <br/> NCONTAINS | Not Contains <br/>.
+    - >
+      Filter query parameter. <br/> **Simple filtering** should be available through the filter query string
+      parameter. The structure of a filter is a triplet of field operator and value separated with dots. More than
+      one filter can be sent. The logical operator common to ALL filter criteria will be by default AND, and can
+      be changed by using the "filterType=or" query string parameter. Each resource Data model description should
+      specify if an attribute is a filtered field. <br/> Operator | Description <br/>
+      ------------|----------------- <br/> EQ | Equals <br/> NEQ | Not Equals <br/> GT | Greater Than <br/> LT |
+      Less Then <br/> STARTSW | Starts With <br/> NSTARTSW | Not Starts With <br/> ENDSW | Ends With <br/> NENDSW
+      | Not Ends With <br/> CONTAINS | Contains <br/> NCONTAINS | Not Contains <br/>.
     type: list
   filterType:
     description:
-    - FilterType query parameter. The logical operator common to ALL filter criteria will be by default AND, and can be changed by using the parameter.
+    - >
+      FilterType query parameter. The logical operator common to ALL filter criteria will be by default AND, and
+      can be changed by using the parameter.
     type: str
   hostName:
     description:
@@ -73,7 +83,7 @@ EXAMPLES = r"""
   register: result
 
 - name: Get Csr by id
-  cisco.ise.csr_info
+  cisco.ise.csr_info:
     hostName: string
     id: string
   register: result
@@ -84,8 +94,10 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: complex
-  sample:
-  - {'response': {}, 'version': 'string'}
-  - {'response': [{'id': 'string', 'hostName': 'string', 'subject': 'string', 'keySize': 'string', 'timeStamp': 'string', 'friendlyName': 'string', 'usedFor': 'string', 'groupTag': 'string', 'signatureAlgorithm': 'string', 'link': {'rel': 'string', 'href': 'string', 'type': 'string'}}], 'nextPage': {'rel': 'string', 'href': 'string', 'type': 'string'}, 'previousPage': {'rel': 'string', 'href': 'string', 'type': 'string'}, 'version': 'string'}
+  type: dict
+  sample: >
+    {
+      "response": {},
+      "version": "string"
+    }
 """
