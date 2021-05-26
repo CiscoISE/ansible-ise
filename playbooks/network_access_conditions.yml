@@ -74,4 +74,3 @@
   #     state: absent
   #     name: "My New Condition"
   #   register: result
-

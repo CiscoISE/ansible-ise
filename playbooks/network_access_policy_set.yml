@@ -59,4 +59,3 @@
   #     state: absent
   #     id: 4f83e8c4-978e-4767-a218-9d5472d4dcc7
   #   register: result
-
