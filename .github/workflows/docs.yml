@@ -47,4 +47,3 @@ jobs:
           git commit -m "update docs for $(basename ${GITHUB_REF})" || true
       - name: push docs
         run: git push origin gh-pages --force
-
