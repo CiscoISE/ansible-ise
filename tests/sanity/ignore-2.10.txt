@@ -13,7 +13,6 @@ plugins/action/authorization_profile_info.py compile-2.6!skip # Python 2.6 is no
 plugins/action/backup_last_status_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/csr_export_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/csr_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
-plugins/action/deployment.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/device_administration_authentication_rules.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/device_administration_authentication_rules_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/device_administration_authorization_exception_rules.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
@@ -147,10 +146,6 @@ plugins/action/tacacs_server_sequence.py compile-2.6!skip # Python 2.6 is not su
 plugins/action/tacacs_server_sequence_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/trusted_certificate_export_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/trusted_certificate_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
-
-
-
-
 plugins/action/active_directory_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/allowed_protocols.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/allowed_protocols_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
@@ -162,7 +157,6 @@ plugins/action/authorization_profile_info.py compile-2.7!skip # Python 2.7 is no
 plugins/action/backup_last_status_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/csr_export_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/csr_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
-plugins/action/deployment.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/device_administration_authentication_rules.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/device_administration_authentication_rules_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/device_administration_authorization_exception_rules.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
