@@ -1,0 +1,50 @@
+name: docs
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: configure git
+        run: |
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@bots.github.com"
+          git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/*
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.7"
+      - name: Restore pip cache
+        uses: actions/cache@v2.1.5
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+      - name: Install libyaml-dev for PyYAML
+        run: sudo apt-get install -y libyaml-dev
+      - name: Install Ansible
+        run: pip install --upgrade git+https://github.com/ansible/ansible.git@stable-2.11
+      - name: Install dependencies
+        run: make doc-setup
+      - name: Build docs
+        run: make doc
+      - name: commit docs
+        run: |
+          git checkout gh-pages --force
+          mv docs/_build/html $(basename ${GITHUB_REF})
+          git show origin/main:docs/_gh_include/header.inc > index.html
+          (echo main) | xargs -I@@ -n1 echo '<div class="col-md-4 center"><a href="@@/" class="btn-doc btn"><i class="fa fa-newspaper-o"></i><p>@@</p></a></div>' >> index.html
+          git show origin/main:docs/_gh_include/footer.inc >> index.html
+          touch .nojekyll
+          rm README.md
+          git add .
+          git commit -m "update docs for $(basename ${GITHUB_REF})" || true
+      - name: push docs
+        run: git push origin gh-pages --force
+
