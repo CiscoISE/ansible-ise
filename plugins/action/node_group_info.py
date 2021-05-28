@@ -57,8 +57,6 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            description=params.get("description"),
-            mar_cache=params.get("mar_cache"),
             node_group_name=params.get("node_group_name"),
         )
         return new_object

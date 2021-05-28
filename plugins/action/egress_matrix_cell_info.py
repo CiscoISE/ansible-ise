@@ -63,11 +63,12 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            source_sgt_id=params.get("sourceSgtId"),
-            destination_sgt_id=params.get("destinationSgtId"),
-            matrix_cell_status=params.get("matrixCellStatus"),
-            default_rule=params.get("defaultRule"),
-            sgacls=params.get("sgacls"),
+            page=params.get("page"),
+            size=params.get("size"),
+            sortasc=params.get("sortasc"),
+            sortdec=params.get("sortdec"),
+            filter=params.get("filter"),
+            filter_type=params.get("filterType"),
             id=params.get("id"),
         )
         return new_object

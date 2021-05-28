@@ -59,21 +59,9 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
+            page=params.get("page"),
+            size=params.get("size"),
             id=params.get("id"),
-            name=params.get("name"),
-            description=params.get("description"),
-            strip_prefix=params.get("stripPrefix"),
-            strip_suffix=params.get("stripSuffix"),
-            prefix_separator=params.get("prefixSeparator"),
-            suffix_separator=params.get("suffixSeparator"),
-            remote_accounting=params.get("remoteAccounting"),
-            local_accounting=params.get("localAccounting"),
-            use_attr_set_on_request=params.get("useAttrSetOnRequest"),
-            use_attr_set_before_acc=params.get("useAttrSetBeforeAcc"),
-            continue_authorz_policy=params.get("continueAuthorzPolicy"),
-            radius_server_list=params.get("RadiusServerList"),
-            on_request_attr_manipulator_list=params.get("OnRequestAttrManipulatorList"),
-            before_accept_attr_manipulators_list=params.get("BeforeAcceptAttrManipulatorsList"),
         )
         return new_object
 

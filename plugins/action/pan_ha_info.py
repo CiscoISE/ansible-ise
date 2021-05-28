@@ -56,11 +56,6 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            is_enabled=params.get("isEnabled"),
-            primary_health_check_node=params.get("primaryHealthCheckNode"),
-            secondary_health_check_node=params.get("secondaryHealthCheckNode"),
-            polling_interval=params.get("pollingInterval"),
-            failed_attempts=params.get("failedAttempts"),
         )
         return new_object
 

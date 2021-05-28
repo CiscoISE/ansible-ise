@@ -58,24 +58,8 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            condition_type=params.get("conditionType"),
-            is_negate=params.get("isNegate"),
-            name=params.get("name"),
             id=params.get("id"),
-            description=params.get("description"),
-            dictionary_name=params.get("dictionaryName"),
-            attribute_name=params.get("attributeName"),
-            attribute_id=params.get("attributeId"),
-            operator=params.get("operator"),
-            dictionary_value=params.get("dictionaryValue"),
-            attribute_value=params.get("attributeValue"),
-            children=params.get("children"),
-            hours_range=params.get("hoursRange"),
-            hours_range_exception=params.get("hoursRangeException"),
-            week_days=params.get("weekDays"),
-            week_days_exception=params.get("weekDaysException"),
-            dates_range=params.get("datesRange"),
-            dates_range_exception=params.get("datesRangeException"),
+            name=params.get("name"),
         )
         return new_object
 

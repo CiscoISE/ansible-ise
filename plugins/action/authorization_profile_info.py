@@ -60,33 +60,10 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
+            page=params.get("page"),
+            size=params.get("size"),
             id=params.get("id"),
             name=params.get("name"),
-            description=params.get("description"),
-            advanced_attributes=params.get("advancedAttributes"),
-            access_type=params.get("accessType"),
-            authz_profile_type=params.get("authzProfileType"),
-            vlan=params.get("vlan"),
-            reauth=params.get("reauth"),
-            airespace_acl=params.get("airespaceACL"),
-            airespace_i_pv6_acl=params.get("airespaceIPv6ACL"),
-            web_redirection=params.get("webRedirection"),
-            acl=params.get("acl"),
-            track_movement=params.get("trackMovement"),
-            service_template=params.get("serviceTemplate"),
-            easywired_session_candidate=params.get("easywiredSessionCandidate"),
-            dacl_name=params.get("daclName"),
-            voice_domain_permission=params.get("voiceDomainPermission"),
-            neat=params.get("neat"),
-            web_auth=params.get("webAuth"),
-            auto_smart_port=params.get("autoSmartPort"),
-            interface_template=params.get("interfaceTemplate"),
-            ipv6_acl_filter=params.get("ipv6ACLFilter"),
-            avc_profile=params.get("avcProfile"),
-            mac_sec_policy=params.get("macSecPolicy"),
-            asa_vpn=params.get("asaVpn"),
-            profile_name=params.get("profileName"),
-            ipv6_dacl_name=params.get("ipv6DaclName"),
         )
         return new_object
 

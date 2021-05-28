@@ -57,6 +57,7 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
+            bulkid=params.get("bulkid"),
         )
         return new_object
 

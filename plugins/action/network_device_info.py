@@ -64,18 +64,14 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            name=params.get("name"),
-            description=params.get("description"),
-            authentication_settings=params.get("authenticationSettings"),
-            tacacs_settings=params.get("tacacsSettings"),
-            snmpsettings=params.get("snmpsettings"),
-            trustsecsettings=params.get("trustsecsettings"),
-            profile_name=params.get("profileName"),
-            coa_port=params.get("coaPort"),
-            dtls_dns_name=params.get("dtlsDnsName"),
-            network_device_iplist=params.get("NetworkDeviceIPList"),
-            network_device_group_list=params.get("NetworkDeviceGroupList"),
+            page=params.get("page"),
+            size=params.get("size"),
+            sortasc=params.get("sortasc"),
+            sortdec=params.get("sortdec"),
+            filter=params.get("filter"),
+            filter_type=params.get("filterType"),
             id=params.get("id"),
+            name=params.get("name"),
         )
         return new_object
 

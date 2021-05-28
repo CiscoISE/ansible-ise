@@ -57,9 +57,6 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            rule=params.get("rule"),
-            commands=params.get("commands"),
-            profile=params.get("profile"),
             id=params.get("id"),
         )
         return new_object

@@ -60,14 +60,10 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            name=params.get("name"),
-            description=params.get("description"),
-            host_ip=params.get("hostIP"),
-            connection_port=params.get("connectionPort"),
-            single_connect=params.get("singleConnect"),
-            shared_secret=params.get("sharedSecret"),
-            timeout=params.get("timeout"),
+            page=params.get("page"),
+            size=params.get("size"),
             id=params.get("id"),
+            name=params.get("name"),
         )
         return new_object
 

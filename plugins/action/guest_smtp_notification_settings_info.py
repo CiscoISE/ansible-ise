@@ -63,16 +63,12 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            smtp_server=params.get("smtpServer"),
-            notification_enabled=params.get("notificationEnabled"),
-            use_default_from_address=params.get("useDefaultFromAddress"),
-            default_from_address=params.get("defaultFromAddress"),
-            smtp_port=params.get("smtpPort"),
-            connection_timeout=params.get("connectionTimeout"),
-            use_tlsor_ssl_encryption=params.get("useTLSorSSLEncryption"),
-            use_password_authentication=params.get("usePasswordAuthentication"),
-            user_name=params.get("userName"),
-            password=params.get("password"),
+            page=params.get("page"),
+            size=params.get("size"),
+            sortasc=params.get("sortasc"),
+            sortdec=params.get("sortdec"),
+            filter=params.get("filter"),
+            filter_type=params.get("filterType"),
             id=params.get("id"),
         )
         return new_object

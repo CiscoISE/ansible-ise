@@ -64,10 +64,14 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
+            page=params.get("page"),
+            size=params.get("size"),
+            sortasc=params.get("sortasc"),
+            sortdec=params.get("sortdec"),
+            filter=params.get("filter"),
+            filter_type=params.get("filterType"),
             id=params.get("id"),
             name=params.get("name"),
-            description=params.get("description"),
-            system_defined=params.get("systemDefined"),
         )
         return new_object
 

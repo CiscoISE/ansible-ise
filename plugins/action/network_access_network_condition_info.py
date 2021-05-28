@@ -57,15 +57,7 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            name=params.get("name"),
             id=params.get("id"),
-            description=params.get("description"),
-            condition_type=params.get("conditionType"),
-            ip_addr_list=params.get("ipAddrList"),
-            mac_addr_list=params.get("macAddrList"),
-            cli_dnis_list=params.get("cliDnisList"),
-            device_list=params.get("deviceList"),
-            device_group_list=params.get("deviceGroupList"),
         )
         return new_object
 

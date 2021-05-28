@@ -64,21 +64,14 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
+            page=params.get("page"),
+            size=params.get("size"),
+            sortasc=params.get("sortasc"),
+            sortdec=params.get("sortdec"),
+            filter=params.get("filter"),
+            filter_type=params.get("filterType"),
             id=params.get("id"),
             name=params.get("name"),
-            description=params.get("description"),
-            enabled=params.get("enabled"),
-            email=params.get("email"),
-            password=params.get("password"),
-            first_name=params.get("firstName"),
-            last_name=params.get("lastName"),
-            change_password=params.get("changePassword"),
-            identity_groups=params.get("identityGroups"),
-            expiry_date_enabled=params.get("expiryDateEnabled"),
-            expiry_date=params.get("expiryDate"),
-            enable_password=params.get("enablePassword"),
-            custom_attributes=params.get("customAttributes"),
-            password_idstore=params.get("passwordIDStore"),
         )
         return new_object
 

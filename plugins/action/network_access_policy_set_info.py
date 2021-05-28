@@ -58,15 +58,6 @@ class ActionModule(ActionBase):
     def get_object(self, params):
         new_object = dict(
             id=params.get("id"),
-            name=params.get("name"),
-            description=params.get("description"),
-            hit_counts=params.get("hitCounts"),
-            rank=params.get("rank"),
-            state=params.get("state_"),
-            default=params.get("default"),
-            condition=params.get("condition"),
-            service_name=params.get("serviceName"),
-            is_proxy=params.get("isProxy"),
         )
         return new_object
 

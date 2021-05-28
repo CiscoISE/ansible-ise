@@ -63,11 +63,12 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            name=params.get("name"),
-            description=params.get("description"),
-            value=params.get("value"),
-            generation_id=params.get("generationId"),
-            propogate_to_apic=params.get("propogateToApic"),
+            page=params.get("page"),
+            size=params.get("size"),
+            filter=params.get("filter"),
+            filter_type=params.get("filterType"),
+            sortasc=params.get("sortasc"),
+            sortdec=params.get("sortdec"),
             id=params.get("id"),
         )
         return new_object

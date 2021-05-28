@@ -64,22 +64,14 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            name=params.get("name"),
-            description=params.get("description"),
-            admin=params.get("admin"),
-            eap=params.get("eap"),
-            radius=params.get("radius"),
-            pxgrid=params.get("pxgrid"),
-            saml=params.get("saml"),
-            portal=params.get("portal"),
-            ims=params.get("ims"),
-            portal_group_tag=params.get("portalGroupTag"),
-            allow_replacement_of_portal_group_tag=params.get("allowReplacementOfPortalGroupTag"),
-            renew_self_signed_certificate=params.get("renewSelfSignedCertificate"),
-            expiration_ttl_period=params.get("expirationTTLPeriod"),
-            expiration_ttl_units=params.get("expirationTTLUnits"),
-            id=params.get("id"),
             host_name=params.get("hostName"),
+            page=params.get("page"),
+            size=params.get("size"),
+            sort=params.get("sort"),
+            sort_by=params.get("sortBy"),
+            filter=params.get("filter"),
+            filter_type=params.get("filterType"),
+            id=params.get("id"),
         )
         return new_object
 

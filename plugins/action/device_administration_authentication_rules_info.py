@@ -58,11 +58,6 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            rule=params.get("rule"),
-            identity_source_id=params.get("identitySourceId"),
-            if_auth_fail=params.get("ifAuthFail"),
-            if_user_not_found=params.get("ifUserNotFound"),
-            if_process_fail=params.get("ifProcessFail"),
             policy_id=params.get("policyId"),
             id=params.get("id"),
         )

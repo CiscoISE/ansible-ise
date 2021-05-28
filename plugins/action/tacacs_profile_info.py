@@ -60,10 +60,10 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
+            page=params.get("page"),
+            size=params.get("size"),
             id=params.get("id"),
             name=params.get("name"),
-            description=params.get("description"),
-            session_attributes=params.get("sessionAttributes"),
         )
         return new_object
 

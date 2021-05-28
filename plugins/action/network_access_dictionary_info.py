@@ -57,11 +57,7 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            id=params.get("id"),
             name=params.get("name"),
-            description=params.get("description"),
-            version=params.get("version"),
-            dictionary_attr_type=params.get("dictionaryAttrType"),
         )
         return new_object
 

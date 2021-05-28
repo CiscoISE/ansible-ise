@@ -57,12 +57,6 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            fdqn=params.get("fdqn"),
-            user_name=params.get("userName"),
-            password=params.get("password"),
-            administration=params.get("administration"),
-            general_settings=params.get("generalSettings"),
-            profile_configuration=params.get("profileConfiguration"),
             hostname=params.get("hostname"),
         )
         return new_object

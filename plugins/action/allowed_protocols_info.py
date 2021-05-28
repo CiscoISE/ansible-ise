@@ -60,31 +60,10 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            name=params.get("name"),
-            description=params.get("description"),
-            eap_tls=params.get("eapTls"),
-            peap=params.get("peap"),
-            eap_fast=params.get("eapFast"),
-            eap_ttls=params.get("eapTtls"),
-            teap=params.get("teap"),
-            process_host_lookup=params.get("processHostLookup"),
-            allow_pap_ascii=params.get("allowPapAscii"),
-            allow_chap=params.get("allowChap"),
-            allow_ms_chap_v1=params.get("allowMsChapV1"),
-            allow_ms_chap_v2=params.get("allowMsChapV2"),
-            allow_eap_md5=params.get("allowEapMd5"),
-            allow_leap=params.get("allowLeap"),
-            allow_eap_tls=params.get("allowEapTls"),
-            allow_eap_ttls=params.get("allowEapTtls"),
-            allow_eap_fast=params.get("allowEapFast"),
-            allow_peap=params.get("allowPeap"),
-            allow_teap=params.get("allowTeap"),
-            allow_preferred_eap_protocol=params.get("allowPreferredEapProtocol"),
-            preferred_eap_protocol=params.get("preferredEapProtocol"),
-            eap_tls_l_bit=params.get("eapTlsLBit"),
-            allow_weak_ciphers_for_eap=params.get("allowWeakCiphersForEap"),
-            require_message_auth=params.get("requireMessageAuth"),
+            page=params.get("page"),
+            size=params.get("size"),
             id=params.get("id"),
+            name=params.get("name"),
         )
         return new_object
 

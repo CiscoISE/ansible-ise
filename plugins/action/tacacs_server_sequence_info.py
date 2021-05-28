@@ -60,15 +60,10 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            name=params.get("name"),
-            server_list=params.get("serverList"),
-            local_accounting=params.get("localAccounting"),
-            remote_accounting=params.get("remoteAccounting"),
-            prefix_strip=params.get("prefixStrip"),
-            prefix_delimiter=params.get("prefixDelimiter"),
-            suffix_strip=params.get("suffixStrip"),
-            suffix_delimiter=params.get("suffixDelimiter"),
+            page=params.get("page"),
+            size=params.get("size"),
             id=params.get("id"),
+            name=params.get("name"),
         )
         return new_object
 

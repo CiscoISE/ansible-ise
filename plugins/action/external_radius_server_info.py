@@ -60,20 +60,10 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
+            page=params.get("page"),
+            size=params.get("size"),
             id=params.get("id"),
             name=params.get("name"),
-            description=params.get("description"),
-            host_ip=params.get("hostIP"),
-            shared_secret=params.get("sharedSecret"),
-            enable_key_wrap=params.get("enableKeyWrap"),
-            encryption_key=params.get("encryptionKey"),
-            authenticator_key=params.get("authenticatorKey"),
-            key_input_format=params.get("keyInputFormat"),
-            authentication_port=params.get("authenticationPort"),
-            accounting_port=params.get("accountingPort"),
-            timeout=params.get("timeout"),
-            retries=params.get("retries"),
-            proxy_timeout=params.get("proxyTimeout"),
         )
         return new_object
 

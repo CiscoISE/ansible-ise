@@ -58,6 +58,8 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
+            hostname=params.get("hostname"),
+            id=params.get("id"),
         )
         return new_object
 
