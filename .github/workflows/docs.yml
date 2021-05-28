@@ -41,16 +41,15 @@ jobs:
         run: make doc
       - name: commit docs
         run: |
-          docroot=`mktemp -d`
           git show origin/main:docs/_gh_include/header.inc > index.html
           (echo main) | xargs -I@@ -n1 echo '<div class="col-md-4 center"><a href="@@/" class="btn-doc btn"><i class="fa fa-newspaper-o"></i><p>@@</p></a></div>' >> index.html
           git show origin/main:docs/_gh_include/footer.inc >> index.html
           docroot=`mktemp -d`
-          cp -a . "${docroot}/"
+          cp -R . "${docroot}/"
           cd "${docroot}/"
           rm -rf $(basename ${GITHUB_REF}) 2> /dev/null
           mkdir -p $(basename ${GITHUB_REF})
-          cp "docs/_build/html/" $(basename ${GITHUB_REF})
+          cp -R "docs/_build/html/" $(basename ${GITHUB_REF})
           git init
           git remote add deploy "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git checkout -b gh-pages
