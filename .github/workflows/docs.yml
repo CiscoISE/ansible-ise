@@ -1,5 +1,10 @@
 name: docs
 
+env:
+  GITHUB_ACTOR: wastorga
+  GITHUB_REPOSITORY: CiscoISE/ansible-ise.github.io
+  GITHUB_TOKEN: ${{ secrets.CREATE_DOC_SECRET }}
+
 on:
   push:
     branches:
@@ -36,14 +41,20 @@ jobs:
         run: make doc
       - name: commit docs
         run: |
-          git checkout gh-pages --force
-          mv docs/_build/html $(basename ${GITHUB_REF})
+          docroot=`mktemp -d`
           git show origin/main:docs/_gh_include/header.inc > index.html
           (echo main) | xargs -I@@ -n1 echo '<div class="col-md-4 center"><a href="@@/" class="btn-doc btn"><i class="fa fa-newspaper-o"></i><p>@@</p></a></div>' >> index.html
           git show origin/main:docs/_gh_include/footer.inc >> index.html
+          docroot=`mktemp -d`
+          cp -a . "${docroot}/"
+          cd "${docroot}/"
+          git init
+          git remote add deploy "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git checkout -b gh-pages
           touch .nojekyll
-          rm README.md
+          rm README.md 2> /dev/null
           git add .
-          git commit -m "update docs for $(basename ${GITHUB_REF})" || true
-      - name: push docs
-        run: git push origin gh-pages --force
+          msg="Updating docs $(basename ${GITHUB_REF}) by ${GITHUB_ACTOR}"
+          git commit -am "${msg}"
+          git push deploy gh-pages --force
+          cd -
