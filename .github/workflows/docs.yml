@@ -42,7 +42,7 @@ jobs:
       - name: commit docs
         run: |
           git show origin/main:docs/_gh_include/header.inc > index.html
-          (echo main) | xargs -I@@ -n1 echo '<div class="col-md-4 center"><a href="@@/" class="btn-doc btn"><i class="fa fa-newspaper-o"></i><p>@@</p></a></div>' >> index.html
+          (echo main) | xargs -I@@ -n1 echo '<div class="col-md-4 center"><a href="@@/html" class="btn-doc btn"><i class="fa fa-newspaper-o"></i><p>@@</p></a></div>' >> index.html
           git show origin/main:docs/_gh_include/footer.inc >> index.html
           docroot=`mktemp -d`
           cp -R . "${docroot}/"
