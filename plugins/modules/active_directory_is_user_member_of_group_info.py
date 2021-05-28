@@ -9,9 +9,24 @@ DOCUMENTATION = r"""
 module: active_directory_is_user_member_of_group_info
 short_description: Information module for Active Directory Is User Member Of Group
 description:
+- Get all Active Directory Is User Member Of Group.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
-options: {}
+options:
+  id:
+    description:
+    - Id path parameter.
+    type: str
+  additionalData:
+    description: Active Directory Is User Member Of Group's additionalData.
+    suboptions:
+      name:
+        description: Active Directory Is User Member Of Group's name.
+        type: str
+      value:
+        description: Active Directory Is User Member Of Group's value.
+        type: str
+    type: list
 requirements:
 - ciscoisesdk
 seealso:
@@ -24,6 +39,20 @@ seealso:
 """
 
 EXAMPLES = r"""
+- name: Get all Active Directory Is User Member Of Group
+  cisco.ise.active_directory_is_user_member_of_group_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    id: string
+    additionalData:
+    - name: username
+      value: '{{username}}'
+    - name: groupsids
+      value: '{{group_sids}}'
+  register: result
+
 """
 
 RETURN = r"""
