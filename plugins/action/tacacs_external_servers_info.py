@@ -58,6 +58,19 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(params):
+        new_object = dict(
+            name=params.get("name"),
+            description=params.get("description"),
+            host_ip=params.get("hostIP"),
+            connection_port=params.get("connectionPort"),
+            single_connect=params.get("singleConnect"),
+            shared_secret=params.get("sharedSecret"),
+            timeout=params.get("timeout"),
+            id=params.get("id"),
+        )
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -72,7 +85,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="tacacs_external_servers",
                 function='get_tacacs_external_servers_by_id',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response['TacacsExternalServer']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -81,7 +94,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="tacacs_external_servers",
                 function='get_tacacs_external_servers_by_name',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response['TacacsExternalServer']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -91,7 +104,7 @@ class ActionModule(ActionBase):
             generator = ise.exec(
                 family="tacacs_external_servers",
                 function='get_all_tacacs_external_servers_generator',
-                params=self._task.args,
+                params=self.get_object(self._task.args),
             )
             for item in generator:
                 tmp_response = item.response['SearchResult']['resources']

@@ -55,6 +55,20 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(params):
+        new_object = dict(
+            name=params.get("name"),
+            id=params.get("id"),
+            description=params.get("description"),
+            condition_type=params.get("conditionType"),
+            ip_addr_list=params.get("ipAddrList"),
+            mac_addr_list=params.get("macAddrList"),
+            cli_dnis_list=params.get("cliDnisList"),
+            device_list=params.get("deviceList"),
+            device_group_list=params.get("deviceGroupList"),
+        )
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -69,7 +83,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="device_administration_network_conditions",
                 function='get_device_admin_network_condition_by_id',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -78,7 +92,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="device_administration_network_conditions",
                 function='get_all_device_admin_network_conditions',
-                params=self._task.args,
+                params=self.get_object(self._task.args),
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

@@ -61,6 +61,35 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(params):
+        new_object = dict(
+            name=params.get("name"),
+            status=params.get("status"),
+            description=params.get("description"),
+            enable_ocs_p_validation=params.get("enableOCSPValidation"),
+            selected_ocs_p_service=params.get("selectedOCSPService"),
+            reject_if_no_status_from_ocs_p=params.get("rejectIfNoStatusFromOCSP"),
+            reject_if_unreachable_from_ocs_p=params.get("rejectIfUnreachableFromOCSP"),
+            download_crl=params.get("downloadCRL"),
+            crl_distribution_url=params.get("crlDistributionUrl"),
+            automatic_crl_update=params.get("automaticCRLUpdate"),
+            automatic_crl_update_period=params.get("automaticCRLUpdatePeriod"),
+            automatic_crl_update_units=params.get("automaticCRLUpdateUnits"),
+            non_automatic_crl_update_period=params.get("nonAutomaticCRLUpdatePeriod"),
+            non_automatic_crl_update_units=params.get("nonAutomaticCRLUpdateUnits"),
+            crl_download_failure_retries=params.get("crlDownloadFailureRetries"),
+            crl_download_failure_retries_units=params.get("crlDownloadFailureRetriesUnits"),
+            enable_server_identity_check=params.get("enableServerIdentityCheck"),
+            authenticate_before_crl_received=params.get("authenticateBeforeCRLReceived"),
+            ignore_crl_expiration=params.get("ignoreCRLExpiration"),
+            trust_for_ise_auth=params.get("trustForIseAuth"),
+            trust_for_client_auth=params.get("trustForClientAuth"),
+            trust_for_cisco_services_auth=params.get("trustForCiscoServicesAuth"),
+            trust_for_certificate_based_admin_auth=params.get("trustForCertificateBasedAdminAuth"),
+            id=params.get("id"),
+        )
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -75,7 +104,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="certificates",
                 function='get_trusted_certificate_by_id',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -85,7 +114,7 @@ class ActionModule(ActionBase):
             generator = ise.exec(
                 family="certificates",
                 function='get_all_trusted_certificates_generator',
-                params=self._task.args,
+                params=self.get_object(self._task.args),
             )
             for item in generator:
                 tmp_response = item.response

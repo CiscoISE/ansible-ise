@@ -61,6 +61,13 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(params):
+        new_object = dict(
+            id=params.get("id"),
+            customization=params.get("customization"),
+        )
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -75,7 +82,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="portal_global_setting",
                 function='get_portal_global_setting_by_id',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response['PortalCustomizationGlobalSetting']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -85,7 +92,7 @@ class ActionModule(ActionBase):
             generator = ise.exec(
                 family="portal_global_setting",
                 function='get_all_portal_global_settings_generator',
-                params=self._task.args,
+                params=self.get_object(self._task.args),
             )
             for item in generator:
                 tmp_response = item.response['SearchResult']['resources']

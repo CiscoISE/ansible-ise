@@ -55,11 +55,19 @@ EXAMPLES = r"""
 
 - name: Get Allowed Protocols by id
   cisco.ise.allowed_protocols_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     id: string
   register: result
 
 - name: Get Allowed Protocols by name
   cisco.ise.allowed_protocols_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     name: string
   register: result
 

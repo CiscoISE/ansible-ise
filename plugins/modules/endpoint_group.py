@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: endpoint_group
 short_description: Resource module for Endpoint Group
 description:
-- Manage operations create, update, delete of the resource Endpoint Group.
+- Manage operations create, update and delete of the resource Endpoint Group.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

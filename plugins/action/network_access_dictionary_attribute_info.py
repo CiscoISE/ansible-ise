@@ -56,6 +56,19 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(params):
+        new_object = dict(
+            id=params.get("id"),
+            direction_type=params.get("directionType"),
+            name=params.get("name"),
+            description=params.get("description"),
+            internal_name=params.get("internalName"),
+            data_type=params.get("dataType"),
+            dictionary_name=params.get("dictionaryName"),
+            allowed_values=params.get("allowedValues"),
+        )
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -70,7 +83,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="network_access_dictionary_attribute",
                 function='get_network_access_dictionary_attribute_by_name',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

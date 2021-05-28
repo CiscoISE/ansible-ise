@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: tacacs_command_sets
 short_description: Resource module for Tacacs Command Sets
 description:
-- Manage operations create, update, delete of the resource Tacacs Command Sets.
+- Manage operations create, update and delete of the resource Tacacs Command Sets.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: internal_user
 short_description: Resource module for Internal User
 description:
-- Manage operations create, update, delete of the resource Internal User.
+- Manage operations create, update and delete of the resource Internal User.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

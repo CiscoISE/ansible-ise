@@ -55,6 +55,15 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(params):
+        new_object = dict(
+            rule=params.get("rule"),
+            profile=params.get("profile"),
+            security_group=params.get("securityGroup"),
+            id=params.get("id"),
+        )
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -69,7 +78,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="network_access_authorization_global_exception_rules",
                 function='get_network_access_global_exception_rule_by_id',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -78,7 +87,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="network_access_authorization_global_exception_rules",
                 function='get_all_network_access_global_exception_rules',
-                params=self._task.args,
+                params=self.get_object(self._task.args),
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

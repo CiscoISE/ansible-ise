@@ -55,11 +55,19 @@ EXAMPLES = r"""
 
 - name: Get External Radius Server by id
   cisco.ise.external_radius_server_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     id: string
   register: result
 
 - name: Get External Radius Server by name
   cisco.ise.external_radius_server_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     name: string
   register: result
 

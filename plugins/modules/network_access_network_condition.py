@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: network_access_network_condition
 short_description: Resource module for Network Access Network Condition
 description:
-- Manage operations create, update, delete of the resource Network Access Network Condition.
+- Manage operations create, update and delete of the resource Network Access Network Condition.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

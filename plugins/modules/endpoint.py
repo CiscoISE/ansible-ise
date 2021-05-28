@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: endpoint
 short_description: Resource module for Endpoint
 description:
-- Manage operations create, update, delete of the resource Endpoint.
+- Manage operations create, update and delete of the resource Endpoint.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

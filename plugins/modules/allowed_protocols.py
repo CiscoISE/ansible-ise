@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: allowed_protocols
 short_description: Resource module for Allowed Protocols
 description:
-- Manage operations create, update, delete of the resource Allowed Protocols.
+- Manage operations create, update and delete of the resource Allowed Protocols.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

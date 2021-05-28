@@ -55,6 +55,21 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(params):
+        new_object = dict(
+            id=params.get("id"),
+            name=params.get("name"),
+            description=params.get("description"),
+            hit_counts=params.get("hitCounts"),
+            rank=params.get("rank"),
+            state=params.get("state_"),
+            default=params.get("default"),
+            condition=params.get("condition"),
+            service_name=params.get("serviceName"),
+            is_proxy=params.get("isProxy"),
+        )
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -69,7 +84,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="device_administration_policy_set",
                 function='get_device_admin_policy_set_by_id',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -78,7 +93,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="device_administration_policy_set",
                 function='get_all_device_admin_policy_sets',
-                params=self._task.args,
+                params=self.get_object(self._task.args),
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

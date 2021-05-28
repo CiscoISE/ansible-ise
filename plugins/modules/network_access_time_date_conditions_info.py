@@ -40,6 +40,10 @@ EXAMPLES = r"""
 
 - name: Get Network Access Time Date Conditions by id
   cisco.ise.network_access_time_date_conditions_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     id: string
   register: result
 

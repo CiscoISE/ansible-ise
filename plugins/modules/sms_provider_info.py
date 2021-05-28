@@ -80,6 +80,10 @@ EXAMPLES = r"""
 
 - name: Get Sms Provider by id
   cisco.ise.sms_provider_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     id: string
   register: result
 
@@ -89,33 +93,19 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: dict
+  type: list
+  elements: dict
   sample: >
-    {
-      "SearchResult": {
-        "total": 0,
-        "resources": [
-          {
-            "id": "string",
-            "name": "string",
-            "description": "string",
-            "link": {
-              "rel": "string",
-              "href": "string",
-              "type": "string"
-            }
-          }
-        ],
-        "nextPage": {
-          "rel": "string",
-          "href": "string",
-          "type": "string"
-        },
-        "previousPage": {
+    [
+      {
+        "id": "string",
+        "name": "string",
+        "description": "string",
+        "link": {
           "rel": "string",
           "href": "string",
           "type": "string"
         }
       }
-    }
+    ]
 """

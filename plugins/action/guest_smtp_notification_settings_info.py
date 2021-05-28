@@ -61,6 +61,22 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(params):
+        new_object = dict(
+            smtp_server=params.get("smtpServer"),
+            notification_enabled=params.get("notificationEnabled"),
+            use_default_from_address=params.get("useDefaultFromAddress"),
+            default_from_address=params.get("defaultFromAddress"),
+            smtp_port=params.get("smtpPort"),
+            connection_timeout=params.get("connectionTimeout"),
+            use_tlsor_ssl_encryption=params.get("useTLSorSSLEncryption"),
+            use_password_authentication=params.get("usePasswordAuthentication"),
+            user_name=params.get("userName"),
+            password=params.get("password"),
+            id=params.get("id"),
+        )
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -75,7 +91,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="guest_smtp_notifications",
                 function='get_guest_smtp_notification_settings_by_id',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response['ERSGuestSmtpNotificationSettings']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -85,7 +101,7 @@ class ActionModule(ActionBase):
             generator = ise.exec(
                 family="guest_smtp_notifications",
                 function='get_all_guest_smtp_notification_settings_generator',
-                params=self._task.args,
+                params=self.get_object(self._task.args),
             )
             for item in generator:
                 tmp_response = item.response['SearchResult']['resources']

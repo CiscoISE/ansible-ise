@@ -61,6 +61,17 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(params):
+        new_object = dict(
+            source_sgt_id=params.get("sourceSgtId"),
+            destination_sgt_id=params.get("destinationSgtId"),
+            matrix_cell_status=params.get("matrixCellStatus"),
+            default_rule=params.get("defaultRule"),
+            sgacls=params.get("sgacls"),
+            id=params.get("id"),
+        )
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -75,7 +86,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="egress_matrix_cell",
                 function='get_egress_matrix_cell_by_id',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -85,7 +96,7 @@ class ActionModule(ActionBase):
             generator = ise.exec(
                 family="egress_matrix_cell",
                 function='get_all_egress_matrix_cell_generator',
-                params=self._task.args,
+                params=self.get_object(self._task.args),
             )
             for item in generator:
                 tmp_response = item.response['SearchResult']['resources']

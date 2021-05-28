@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: network_access_authorization_rules
 short_description: Resource module for Network Access Authorization Rules
 description:
-- Manage operations create, update, delete of the resource Network Access Authorization Rules.
+- Manage operations create, update and delete of the resource Network Access Authorization Rules.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

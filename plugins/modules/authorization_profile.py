@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: authorization_profile
 short_description: Resource module for Authorization Profile
 description:
-- Manage operations create, update, delete of the resource Authorization Profile.
+- Manage operations create, update and delete of the resource Authorization Profile.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

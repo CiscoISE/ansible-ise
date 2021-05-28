@@ -40,6 +40,10 @@ EXAMPLES = r"""
 
 - name: Get Node Group by name
   cisco.ise.node_group_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     node_group_name: string
   register: result
 

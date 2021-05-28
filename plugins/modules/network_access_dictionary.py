@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: network_access_dictionary
 short_description: Resource module for Network Access Dictionary
 description:
-- Manage operations create, update, delete of the resource Network Access Dictionary.
+- Manage operations create, update and delete of the resource Network Access Dictionary.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

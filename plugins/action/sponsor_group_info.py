@@ -61,6 +61,23 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(params):
+        new_object = dict(
+            id=params.get("id"),
+            name=params.get("name"),
+            description=params.get("description"),
+            is_enabled=params.get("isEnabled"),
+            is_default_group=params.get("isDefaultGroup"),
+            member_groups=params.get("memberGroups"),
+            guest_types=params.get("guestTypes"),
+            locations=params.get("locations"),
+            auto_notification=params.get("autoNotification"),
+            create_permissions=params.get("createPermissions"),
+            manage_permission=params.get("managePermission"),
+            other_permissions=params.get("otherPermissions"),
+        )
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -75,7 +92,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="sponsor_group",
                 function='get_sponsor_group_by_id',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response['SponsorGroup']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -85,7 +102,7 @@ class ActionModule(ActionBase):
             generator = ise.exec(
                 family="sponsor_group",
                 function='get_all_sponsor_group_generator',
-                params=self._task.args,
+                params=self.get_object(self._task.args),
             )
             for item in generator:
                 tmp_response = item.response['SearchResult']['resources']

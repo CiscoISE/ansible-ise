@@ -45,6 +45,10 @@ EXAMPLES = r"""
 
 - name: Get Network Access Authentication Rules by id
   cisco.ise.network_access_authentication_rules_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     policyId: string
     id: string
   register: result

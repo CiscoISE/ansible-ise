@@ -56,6 +56,16 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(params):
+        new_object = dict(
+            name=params.get("name"),
+            description=params.get("description"),
+            permit_unmatched=params.get("permitUnmatched"),
+            commands=params.get("commands"),
+            id=params.get("id"),
+        )
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -70,7 +80,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="tacacs_command_sets",
                 function='get_tacacs_command_sets_by_id',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response['TacacsCommandSets']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -79,7 +89,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="tacacs_command_sets",
                 function='get_tacacs_command_sets_by_name',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response['TacacsCommandSets']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -88,7 +98,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="tacacs_command_sets",
                 function='get_all_tacacs_command_sets',
-                params=self._task.args,
+                params=self.get_object(self._task.args),
             ).response['SearchResult']['resources']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

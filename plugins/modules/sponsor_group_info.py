@@ -80,6 +80,10 @@ EXAMPLES = r"""
 
 - name: Get Sponsor Group by id
   cisco.ise.sponsor_group_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     id: string
   register: result
 

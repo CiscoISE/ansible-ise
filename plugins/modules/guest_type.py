@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: guest_type
 short_description: Resource module for Guest Type
 description:
-- Manage operations create, update, delete of the resource Guest Type.
+- Manage operations create, update and delete of the resource Guest Type.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: tacacs_external_servers
 short_description: Resource module for Tacacs External Servers
 description:
-- Manage operations create, update, delete of the resource Tacacs External Servers.
+- Manage operations create, update and delete of the resource Tacacs External Servers.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: id_store_sequence
 short_description: Resource module for Id Store Sequence
 description:
-- Manage operations create, update, delete of the resource Id Store Sequence.
+- Manage operations create, update and delete of the resource Id Store Sequence.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

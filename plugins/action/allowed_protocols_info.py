@@ -58,6 +58,36 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(params):
+        new_object = dict(
+            name=params.get("name"),
+            description=params.get("description"),
+            eap_tls=params.get("eapTls"),
+            peap=params.get("peap"),
+            eap_fast=params.get("eapFast"),
+            eap_ttls=params.get("eapTtls"),
+            teap=params.get("teap"),
+            process_host_lookup=params.get("processHostLookup"),
+            allow_pap_ascii=params.get("allowPapAscii"),
+            allow_chap=params.get("allowChap"),
+            allow_ms_chap_v1=params.get("allowMsChapV1"),
+            allow_ms_chap_v2=params.get("allowMsChapV2"),
+            allow_eap_md5=params.get("allowEapMd5"),
+            allow_leap=params.get("allowLeap"),
+            allow_eap_tls=params.get("allowEapTls"),
+            allow_eap_ttls=params.get("allowEapTtls"),
+            allow_eap_fast=params.get("allowEapFast"),
+            allow_peap=params.get("allowPeap"),
+            allow_teap=params.get("allowTeap"),
+            allow_preferred_eap_protocol=params.get("allowPreferredEapProtocol"),
+            preferred_eap_protocol=params.get("preferredEapProtocol"),
+            eap_tls_l_bit=params.get("eapTlsLBit"),
+            allow_weak_ciphers_for_eap=params.get("allowWeakCiphersForEap"),
+            require_message_auth=params.get("requireMessageAuth"),
+            id=params.get("id"),
+        )
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -72,7 +102,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="allowed_protocols",
                 function='get_allowed_protocol_by_id',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response['AllowedProtocols']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -81,7 +111,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="allowed_protocols",
                 function='get_allowed_protocol_by_name',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response['AllowedProtocols']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -91,7 +121,7 @@ class ActionModule(ActionBase):
             generator = ise.exec(
                 family="allowed_protocols",
                 function='get_all_allowed_protocols_generator',
-                params=self._task.args,
+                params=self.get_object(self._task.args),
             )
             for item in generator:
                 tmp_response = item.response['SearchResult']['resources']

@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: anc_policy
 short_description: Resource module for Anc Policy
 description:
-- Manage operations create, update, delete of the resource Anc Policy.
+- Manage operations create, update and delete of the resource Anc Policy.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: device_administration_network_conditions
 short_description: Resource module for Device Administration Network Conditions
 description:
-- Manage operations create, update, delete of the resource Device Administration Network Conditions.
+- Manage operations create, update and delete of the resource Device Administration Network Conditions.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

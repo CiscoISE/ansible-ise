@@ -62,6 +62,24 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(params):
+        new_object = dict(
+            id=params.get("id"),
+            name=params.get("name"),
+            description=params.get("description"),
+            mac=params.get("mac"),
+            profile_id=params.get("profileId"),
+            static_profile_assignment=params.get("staticProfileAssignment"),
+            group_id=params.get("groupId"),
+            static_group_assignment=params.get("staticGroupAssignment"),
+            portal_user=params.get("portalUser"),
+            identity_store=params.get("identityStore"),
+            identity_store_id=params.get("identityStoreId"),
+            custom_attributes=params.get("customAttributes"),
+            mdm_attributes=params.get("mdmAttributes"),
+        )
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -76,7 +94,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="endpoint",
                 function='get_endpoint_by_id',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response['ERSEndPoint']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -85,7 +103,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="endpoint",
                 function='get_endpoint_by_name',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response['ERSEndPoint']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -95,7 +113,7 @@ class ActionModule(ActionBase):
             generator = ise.exec(
                 family="endpoint",
                 function='get_all_endpoints_generator',
-                params=self._task.args,
+                params=self.get_object(self._task.args),
             )
             for item in generator:
                 tmp_response = item.response['SearchResult']['resources']

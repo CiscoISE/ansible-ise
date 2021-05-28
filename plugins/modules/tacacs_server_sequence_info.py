@@ -55,11 +55,19 @@ EXAMPLES = r"""
 
 - name: Get Tacacs Server Sequence by id
   cisco.ise.tacacs_server_sequence_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     id: string
   register: result
 
 - name: Get Tacacs Server Sequence by name
   cisco.ise.tacacs_server_sequence_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     name: string
   register: result
 

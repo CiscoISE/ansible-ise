@@ -42,13 +42,11 @@ ise_response:
   type: dict
   sample: >
     {
-      "OperationResult": {
-        "resultValue": [
-          {
-            "value": "string",
-            "name": "string"
-          }
-        ]
-      }
+      "resultValue": [
+        {
+          "value": "string",
+          "name": "string"
+        }
+      ]
     }
 """

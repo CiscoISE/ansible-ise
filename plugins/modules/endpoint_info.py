@@ -85,11 +85,19 @@ EXAMPLES = r"""
 
 - name: Get Endpoint by id
   cisco.ise.endpoint_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     id: string
   register: result
 
 - name: Get Endpoint by name
   cisco.ise.endpoint_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     name: string
   register: result
 

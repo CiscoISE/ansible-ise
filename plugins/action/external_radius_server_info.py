@@ -58,6 +58,25 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(params):
+        new_object = dict(
+            id=params.get("id"),
+            name=params.get("name"),
+            description=params.get("description"),
+            host_ip=params.get("hostIP"),
+            shared_secret=params.get("sharedSecret"),
+            enable_key_wrap=params.get("enableKeyWrap"),
+            encryption_key=params.get("encryptionKey"),
+            authenticator_key=params.get("authenticatorKey"),
+            key_input_format=params.get("keyInputFormat"),
+            authentication_port=params.get("authenticationPort"),
+            accounting_port=params.get("accountingPort"),
+            timeout=params.get("timeout"),
+            retries=params.get("retries"),
+            proxy_timeout=params.get("proxyTimeout"),
+        )
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -72,7 +91,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="external_radius_server",
                 function='get_external_radius_server_by_id',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response['ExternalRadiusServer']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -81,7 +100,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="external_radius_server",
                 function='get_external_radius_server_by_name',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response['ExternalRadiusServer']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -91,7 +110,7 @@ class ActionModule(ActionBase):
             generator = ise.exec(
                 family="external_radius_server",
                 function='get_all_external_radius_server_generator',
-                params=self._task.args,
+                params=self.get_object(self._task.args),
             )
             for item in generator:
                 tmp_response = item.response['SearchResult']['resources']

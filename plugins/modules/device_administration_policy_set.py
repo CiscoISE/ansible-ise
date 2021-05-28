@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: device_administration_policy_set
 short_description: Resource module for Device Administration Policy Set
 description:
-- Manage operations create, update, delete of the resource Device Administration Policy Set.
+- Manage operations create, update and delete of the resource Device Administration Policy Set.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

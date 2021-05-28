@@ -85,11 +85,19 @@ EXAMPLES = r"""
 
 - name: Get Network Device by id
   cisco.ise.network_device_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     id: string
   register: result
 
 - name: Get Network Device by name
   cisco.ise.network_device_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     name: string
   register: result
 

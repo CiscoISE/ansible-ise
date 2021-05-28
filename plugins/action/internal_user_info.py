@@ -62,6 +62,26 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(params):
+        new_object = dict(
+            id=params.get("id"),
+            name=params.get("name"),
+            description=params.get("description"),
+            enabled=params.get("enabled"),
+            email=params.get("email"),
+            password=params.get("password"),
+            first_name=params.get("firstName"),
+            last_name=params.get("lastName"),
+            change_password=params.get("changePassword"),
+            identity_groups=params.get("identityGroups"),
+            expiry_date_enabled=params.get("expiryDateEnabled"),
+            expiry_date=params.get("expiryDate"),
+            enable_password=params.get("enablePassword"),
+            custom_attributes=params.get("customAttributes"),
+            password_idstore=params.get("passwordIDStore"),
+        )
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -76,7 +96,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="internal_user",
                 function='internaluser_by_id',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response['InternalUser']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -85,7 +105,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="internal_user",
                 function='get_internal_user_by_name',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response['InternalUser']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -95,7 +115,7 @@ class ActionModule(ActionBase):
             generator = ise.exec(
                 family="internal_user",
                 function='get_all_internal_user_generator',
-                params=self._task.args,
+                params=self.get_object(self._task.args),
             )
             for item in generator:
                 tmp_response = item.response['SearchResult']['resources']

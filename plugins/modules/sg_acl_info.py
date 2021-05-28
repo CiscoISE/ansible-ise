@@ -80,6 +80,10 @@ EXAMPLES = r"""
 
 - name: Get Sg Acl by id
   cisco.ise.sg_acl_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     id: string
   register: result
 

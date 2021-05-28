@@ -57,6 +57,26 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(params):
+        new_object = dict(
+            id=params.get("id"),
+            name=params.get("name"),
+            description=params.get("description"),
+            strip_prefix=params.get("stripPrefix"),
+            strip_suffix=params.get("stripSuffix"),
+            prefix_separator=params.get("prefixSeparator"),
+            suffix_separator=params.get("suffixSeparator"),
+            remote_accounting=params.get("remoteAccounting"),
+            local_accounting=params.get("localAccounting"),
+            use_attr_set_on_request=params.get("useAttrSetOnRequest"),
+            use_attr_set_before_acc=params.get("useAttrSetBeforeAcc"),
+            continue_authorz_policy=params.get("continueAuthorzPolicy"),
+            radius_server_list=params.get("RadiusServerList"),
+            on_request_attr_manipulator_list=params.get("OnRequestAttrManipulatorList"),
+            before_accept_attr_manipulators_list=params.get("BeforeAcceptAttrManipulatorsList"),
+        )
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -71,7 +91,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="radius_server_sequence",
                 function='get_radius_server_sequence_by_id',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response['RadiusServerSequence']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -81,7 +101,7 @@ class ActionModule(ActionBase):
             generator = ise.exec(
                 family="radius_server_sequence",
                 function='get_all_radius_server_sequence_generator',
-                params=self._task.args,
+                params=self.get_object(self._task.args),
             )
             for item in generator:
                 tmp_response = item.response['SearchResult']['resources']

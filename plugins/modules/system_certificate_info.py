@@ -70,12 +70,20 @@ seealso:
 EXAMPLES = r"""
 - name: Get System Certificate by id
   cisco.ise.system_certificate_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     hostName: string
     id: string
   register: result
 
 - name: Get System Certificate by name
   cisco.ise.system_certificate_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     page: 1
     size: 20
     sort: asc

@@ -62,6 +62,23 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(params):
+        new_object = dict(
+            name=params.get("name"),
+            description=params.get("description"),
+            authentication_settings=params.get("authenticationSettings"),
+            tacacs_settings=params.get("tacacsSettings"),
+            snmpsettings=params.get("snmpsettings"),
+            trustsecsettings=params.get("trustsecsettings"),
+            profile_name=params.get("profileName"),
+            coa_port=params.get("coaPort"),
+            dtls_dns_name=params.get("dtlsDnsName"),
+            network_device_iplist=params.get("NetworkDeviceIPList"),
+            network_device_group_list=params.get("NetworkDeviceGroupList"),
+            id=params.get("id"),
+        )
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -76,7 +93,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="network_device",
                 function='get_network_device_by_id',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response['NetworkDevice']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -85,7 +102,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="network_device",
                 function='get_network_device_by_name',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response['NetworkDevice']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -95,7 +112,7 @@ class ActionModule(ActionBase):
             generator = ise.exec(
                 family="network_device",
                 function='get_all_network_device_generator',
-                params=self._task.args,
+                params=self.get_object(self._task.args),
             )
             for item in generator:
                 tmp_response = item.response['SearchResult']['resources']

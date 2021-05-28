@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: sponsor_group
 short_description: Resource module for Sponsor Group
 description:
-- Manage operations create, update, delete of the resource Sponsor Group.
+- Manage operations create, update and delete of the resource Sponsor Group.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

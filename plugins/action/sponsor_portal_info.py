@@ -57,6 +57,17 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(params):
+        new_object = dict(
+            id=params.get("id"),
+            name=params.get("name"),
+            description=params.get("description"),
+            portal_type=params.get("portalType"),
+            settings=params.get("settings"),
+            customizations=params.get("customizations"),
+        )
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -71,7 +82,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="sponsor_portal",
                 function='get_sponsor_portal_by_id',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response['SponsorPortal']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -81,7 +92,7 @@ class ActionModule(ActionBase):
             generator = ise.exec(
                 family="sponsor_portal",
                 function='get_all_sponsor_portal_generator',
-                params=self._task.args,
+                params=self.get_object(self._task.args),
             )
             for item in generator:
                 tmp_response = item.response['SearchResult']['resources']

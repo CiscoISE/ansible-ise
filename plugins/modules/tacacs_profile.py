@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: tacacs_profile
 short_description: Resource module for Tacacs Profile
 description:
-- Manage operations create, update, delete of the resource Tacacs Profile.
+- Manage operations create, update and delete of the resource Tacacs Profile.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

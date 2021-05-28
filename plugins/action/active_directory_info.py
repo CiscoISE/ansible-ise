@@ -58,6 +58,19 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(params):
+        new_object = dict(
+            name=params.get("name"),
+            description=params.get("description"),
+            domain=params.get("domain"),
+            adgroups=params.get("adgroups"),
+            advanced_settings=params.get("advancedSettings"),
+            ad_attributes=params.get("adAttributes"),
+            ad_scopes_names=params.get("adScopesNames"),
+            id=params.get("id"),
+        )
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -72,7 +85,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="active_directory",
                 function='get_active_directory_by_id',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response['ERSActiveDirectory']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -81,7 +94,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="active_directory",
                 function='get_active_directory_by_name',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response['ERSActiveDirectory']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -91,7 +104,7 @@ class ActionModule(ActionBase):
             generator = ise.exec(
                 family="active_directory",
                 function='get_all_active_directory_generator',
-                params=self._task.args,
+                params=self.get_object(self._task.args),
             )
             for item in generator:
                 tmp_response = item.response['SearchResult']['resources']

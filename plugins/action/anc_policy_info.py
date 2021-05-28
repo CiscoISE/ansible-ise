@@ -56,6 +56,14 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(params):
+        new_object = dict(
+            name=params.get("name"),
+            actions=params.get("actions"),
+            id=params.get("id"),
+        )
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -70,7 +78,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="anc_policy",
                 function='get_anc_policy_by_id',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response['ErsAncPolicy']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -79,7 +87,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="anc_policy",
                 function='get_anc_policy_by_name',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response['ErsAncPolicy']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -88,7 +96,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="anc_policy",
                 function='get_all_anc_policy',
-                params=self._task.args,
+                params=self.get_object(self._task.args),
             ).response['SearchResult']['resources']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

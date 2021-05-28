@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: network_access_authentication_rules
 short_description: Resource module for Network Access Authentication Rules
 description:
-- Manage operations create, update, delete of the resource Network Access Authentication Rules.
+- Manage operations create, update and delete of the resource Network Access Authentication Rules.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

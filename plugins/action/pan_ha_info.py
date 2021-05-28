@@ -54,6 +54,16 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(params):
+        new_object = dict(
+            is_enabled=params.get("isEnabled"),
+            primary_health_check_node=params.get("primaryHealthCheckNode"),
+            secondary_health_check_node=params.get("secondaryHealthCheckNode"),
+            polling_interval=params.get("pollingInterval"),
+            failed_attempts=params.get("failedAttempts"),
+        )
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -68,7 +78,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="pan_ha",
                 function='get_pan_ha_status',
-                params=self._task.args,
+                params=self.get_object(self._task.args),
             ).response['response']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

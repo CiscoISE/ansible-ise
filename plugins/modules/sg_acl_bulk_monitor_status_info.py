@@ -31,6 +31,10 @@ seealso:
 EXAMPLES = r"""
 - name: Get Sg Acl Bulk Monitor Status by id
   cisco.ise.sg_acl_bulk_monitor_status_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     bulkid: string
   register: result
 

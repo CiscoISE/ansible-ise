@@ -57,6 +57,16 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(params):
+        new_object = dict(
+            subnet=params.get("subnet"),
+            domains=params.get("domains"),
+            sgt=params.get("sgt"),
+            vn=params.get("vn"),
+            id=params.get("id"),
+        )
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -71,7 +81,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="filter_policy",
                 function='get_filter_policy_by_id',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response['ERSFilterPolicy']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -81,7 +91,7 @@ class ActionModule(ActionBase):
             generator = ise.exec(
                 family="filter_policy",
                 function='get_filter_policy_generator',
-                params=self._task.args,
+                params=self.get_object(self._task.args),
             )
             for item in generator:
                 tmp_response = item.response['SearchResult']['resources']

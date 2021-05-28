@@ -85,11 +85,19 @@ EXAMPLES = r"""
 
 - name: Get Rest Id Store by id
   cisco.ise.rest_id_store_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     id: string
   register: result
 
 - name: Get Rest Id Store by name
   cisco.ise.rest_id_store_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     name: string
   register: result
 

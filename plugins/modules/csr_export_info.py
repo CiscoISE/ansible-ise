@@ -35,6 +35,10 @@ seealso:
 EXAMPLES = r"""
 - name: Get Csr Export by id
   cisco.ise.csr_export_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     hostname: string
     id: string
   register: result

@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: sponsor_portal
 short_description: Resource module for Sponsor Portal
 description:
-- Manage operations create, update, delete of the resource Sponsor Portal.
+- Manage operations create, update and delete of the resource Sponsor Portal.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

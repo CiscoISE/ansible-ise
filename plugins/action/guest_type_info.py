@@ -61,6 +61,18 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(params):
+        new_object = dict(
+            id=params.get("id"),
+            name=params.get("name"),
+            description=params.get("description"),
+            access_time=params.get("accessTime"),
+            login_options=params.get("loginOptions"),
+            expiration_notification=params.get("expirationNotification"),
+            sponsor_groups=params.get("sponsorGroups"),
+        )
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -75,7 +87,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="guest_type",
                 function='get_guest_type_by_id',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response['GuestType']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -85,7 +97,7 @@ class ActionModule(ActionBase):
             generator = ise.exec(
                 family="guest_type",
                 function='get_all_guest_type_generator',
-                params=self._task.args,
+                params=self.get_object(self._task.args),
             )
             for item in generator:
                 tmp_response = item.response['SearchResult']['resources']

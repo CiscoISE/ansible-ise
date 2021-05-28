@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: guest_user
 short_description: Resource module for Guest User
 description:
-- Manage operations create, update, delete of the resource Guest User.
+- Manage operations create, update and delete of the resource Guest User.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

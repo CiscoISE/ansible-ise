@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: radius_server_sequence
 short_description: Resource module for Radius Server Sequence
 description:
-- Manage operations create, update, delete of the resource Radius Server Sequence.
+- Manage operations create, update and delete of the resource Radius Server Sequence.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: hotspot_portal
 short_description: Resource module for Hotspot Portal
 description:
-- Manage operations create, update, delete of the resource Hotspot Portal.
+- Manage operations create, update and delete of the resource Hotspot Portal.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

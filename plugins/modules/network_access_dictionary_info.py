@@ -31,6 +31,10 @@ seealso:
 EXAMPLES = r"""
 - name: Get Network Access Dictionary by name
   cisco.ise.network_access_dictionary_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     name: string
   register: result
 

@@ -55,6 +55,18 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(params):
+        new_object = dict(
+            fdqn=params.get("fdqn"),
+            user_name=params.get("userName"),
+            password=params.get("password"),
+            administration=params.get("administration"),
+            general_settings=params.get("generalSettings"),
+            profile_configuration=params.get("profileConfiguration"),
+            hostname=params.get("hostname"),
+        )
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -69,7 +81,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="node_deployment",
                 function='get_node_details',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -78,7 +90,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="node_deployment",
                 function='get_all_nodes',
-                params=self._task.args,
+                params=self.get_object(self._task.args),
             ).response['response']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

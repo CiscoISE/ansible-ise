@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: network_access_policy_set
 short_description: Resource module for Network Access Policy Set
 description:
-- Manage operations create, update, delete of the resource Network Access Policy Set.
+- Manage operations create, update and delete of the resource Network Access Policy Set.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

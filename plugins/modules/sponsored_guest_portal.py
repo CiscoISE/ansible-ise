@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: sponsored_guest_portal
 short_description: Resource module for Sponsored Guest Portal
 description:
-- Manage operations create, update, delete of the resource Sponsored Guest Portal.
+- Manage operations create, update and delete of the resource Sponsored Guest Portal.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

@@ -45,6 +45,10 @@ EXAMPLES = r"""
 
 - name: Get Device Administration Authentication Rules by id
   cisco.ise.device_administration_authentication_rules_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     policyId: string
     id: string
   register: result

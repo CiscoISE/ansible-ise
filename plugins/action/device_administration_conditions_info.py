@@ -56,6 +56,29 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(params):
+        new_object = dict(
+            condition_type=params.get("conditionType"),
+            is_negate=params.get("isNegate"),
+            name=params.get("name"),
+            id=params.get("id"),
+            description=params.get("description"),
+            dictionary_name=params.get("dictionaryName"),
+            attribute_name=params.get("attributeName"),
+            attribute_id=params.get("attributeId"),
+            operator=params.get("operator"),
+            dictionary_value=params.get("dictionaryValue"),
+            attribute_value=params.get("attributeValue"),
+            children=params.get("children"),
+            hours_range=params.get("hoursRange"),
+            hours_range_exception=params.get("hoursRangeException"),
+            week_days=params.get("weekDays"),
+            week_days_exception=params.get("weekDaysException"),
+            dates_range=params.get("datesRange"),
+            dates_range_exception=params.get("datesRangeException"),
+        )
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -70,7 +93,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="device_administration_conditions",
                 function='get_device_admin_condition_by_id',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -79,7 +102,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="device_administration_conditions",
                 function='get_device_admin_condition_by_name',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -88,7 +111,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="device_administration_conditions",
                 function='get_all_device_admin_conditions',
-                params=self._task.args,
+                params=self.get_object(self._task.args),
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

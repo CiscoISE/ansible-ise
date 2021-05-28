@@ -56,6 +56,18 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(params):
+        new_object = dict(
+            rule=params.get("rule"),
+            identity_source_id=params.get("identitySourceId"),
+            if_auth_fail=params.get("ifAuthFail"),
+            if_user_not_found=params.get("ifUserNotFound"),
+            if_process_fail=params.get("ifProcessFail"),
+            policy_id=params.get("policyId"),
+            id=params.get("id"),
+        )
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -70,7 +82,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="device_administration_authentication_rules",
                 function='get_device_admin_authentication_rule_by_id',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -79,7 +91,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="device_administration_authentication_rules",
                 function='get_all_device_admin_authentication_rules',
-                params=self._task.args,
+                params=self.get_object(self._task.args),
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

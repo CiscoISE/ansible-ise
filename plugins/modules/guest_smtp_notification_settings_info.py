@@ -80,6 +80,10 @@ EXAMPLES = r"""
 
 - name: Get Guest Smtp Notification Settings by id
   cisco.ise.guest_smtp_notification_settings_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     id: string
   register: result
 

@@ -62,6 +62,27 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(params):
+        new_object = dict(
+            name=params.get("name"),
+            description=params.get("description"),
+            admin=params.get("admin"),
+            eap=params.get("eap"),
+            radius=params.get("radius"),
+            pxgrid=params.get("pxgrid"),
+            saml=params.get("saml"),
+            portal=params.get("portal"),
+            ims=params.get("ims"),
+            portal_group_tag=params.get("portalGroupTag"),
+            allow_replacement_of_portal_group_tag=params.get("allowReplacementOfPortalGroupTag"),
+            renew_self_signed_certificate=params.get("renewSelfSignedCertificate"),
+            expiration_ttl_period=params.get("expirationTTLPeriod"),
+            expiration_ttl_units=params.get("expirationTTLUnits"),
+            id=params.get("id"),
+            host_name=params.get("hostName"),
+        )
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -76,7 +97,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="certificates",
                 function='get_system_certificate_by_id',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -85,7 +106,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="certificates",
                 function='get_all_system_certificates',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

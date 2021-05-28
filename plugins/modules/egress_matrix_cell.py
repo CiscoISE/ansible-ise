@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: egress_matrix_cell
 short_description: Resource module for Egress Matrix Cell
 description:
-- Manage operations create, update, delete of the resource Egress Matrix Cell.
+- Manage operations create, update and delete of the resource Egress Matrix Cell.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

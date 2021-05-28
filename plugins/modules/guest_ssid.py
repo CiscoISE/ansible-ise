@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: guest_ssid
 short_description: Resource module for Guest Ssid
 description:
-- Manage operations create, update, delete of the resource Guest Ssid.
+- Manage operations create, update and delete of the resource Guest Ssid.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

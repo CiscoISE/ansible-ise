@@ -80,6 +80,10 @@ EXAMPLES = r"""
 
 - name: Get Egress Matrix Cell by id
   cisco.ise.egress_matrix_cell_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     id: string
   register: result
 

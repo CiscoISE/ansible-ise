@@ -31,6 +31,10 @@ seealso:
 EXAMPLES = r"""
 - name: Get Node Replication Status by id
   cisco.ise.node_replication_status_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     node: string
   register: result
 

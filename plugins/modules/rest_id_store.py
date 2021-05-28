@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: rest_id_store
 short_description: Resource module for Rest Id Store
 description:
-- Manage operations create, update, delete of the resource Rest Id Store.
+- Manage operations create, update and delete of the resource Rest Id Store.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

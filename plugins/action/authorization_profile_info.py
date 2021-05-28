@@ -58,6 +58,38 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(params):
+        new_object = dict(
+            id=params.get("id"),
+            name=params.get("name"),
+            description=params.get("description"),
+            advanced_attributes=params.get("advancedAttributes"),
+            access_type=params.get("accessType"),
+            authz_profile_type=params.get("authzProfileType"),
+            vlan=params.get("vlan"),
+            reauth=params.get("reauth"),
+            airespace_acl=params.get("airespaceACL"),
+            airespace_i_pv6_acl=params.get("airespaceIPv6ACL"),
+            web_redirection=params.get("webRedirection"),
+            acl=params.get("acl"),
+            track_movement=params.get("trackMovement"),
+            service_template=params.get("serviceTemplate"),
+            easywired_session_candidate=params.get("easywiredSessionCandidate"),
+            dacl_name=params.get("daclName"),
+            voice_domain_permission=params.get("voiceDomainPermission"),
+            neat=params.get("neat"),
+            web_auth=params.get("webAuth"),
+            auto_smart_port=params.get("autoSmartPort"),
+            interface_template=params.get("interfaceTemplate"),
+            ipv6_acl_filter=params.get("ipv6ACLFilter"),
+            avc_profile=params.get("avcProfile"),
+            mac_sec_policy=params.get("macSecPolicy"),
+            asa_vpn=params.get("asaVpn"),
+            profile_name=params.get("profileName"),
+            ipv6_dacl_name=params.get("ipv6DaclName"),
+        )
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -72,7 +104,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="authorization_profile",
                 function='get_authorization_profile_by_id',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response['AuthorizationProfile']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -81,7 +113,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="authorization_profile",
                 function='get_authorization_profile_by_name',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response['AuthorizationProfile']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -91,7 +123,7 @@ class ActionModule(ActionBase):
             generator = ise.exec(
                 family="authorization_profile",
                 function='get_all_authorization_profiles_generator',
-                params=self._task.args,
+                params=self.get_object(self._task.args),
             )
             for item in generator:
                 tmp_response = item.response['SearchResult']['resources']

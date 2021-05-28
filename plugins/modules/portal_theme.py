@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: portal_theme
 short_description: Resource module for Portal Theme
 description:
-- Manage operations create, update, delete of the resource Portal Theme.
+- Manage operations create, update and delete of the resource Portal Theme.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

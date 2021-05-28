@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: device_administration_authorization_exception_rules
 short_description: Resource module for Device Administration Authorization Exception Rules
 description:
-- Manage operations create, update, delete of the resource Device Administration Authorization Exception Rules.
+- Manage operations create, update and delete of the resource Device Administration Authorization Exception Rules.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

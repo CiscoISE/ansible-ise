@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: filter_policy
 short_description: Resource module for Filter Policy
 description:
-- Manage operations create, update, delete of the resource Filter Policy.
+- Manage operations create, update and delete of the resource Filter Policy.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

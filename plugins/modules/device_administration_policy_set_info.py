@@ -40,6 +40,10 @@ EXAMPLES = r"""
 
 - name: Get Device Administration Policy Set by id
   cisco.ise.device_administration_policy_set_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     id: string
   register: result
 

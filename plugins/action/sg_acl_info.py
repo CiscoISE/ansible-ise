@@ -61,6 +61,16 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(params):
+        new_object = dict(
+            id=params.get("id"),
+            name=params.get("name"),
+            description=params.get("description"),
+            ip_version=params.get("ipVersion"),
+            aclcontent=params.get("aclcontent"),
+        )
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -75,7 +85,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="sg_acl",
                 function='get_security_groups_acl_by_id',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response['Sgacl']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -85,7 +95,7 @@ class ActionModule(ActionBase):
             generator = ise.exec(
                 family="sg_acl",
                 function='get_all_security_groups_acl_generator',
-                params=self._task.args,
+                params=self.get_object(self._task.args),
             )
             for item in generator:
                 tmp_response = item.response['SearchResult']['resources']

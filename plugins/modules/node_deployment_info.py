@@ -40,6 +40,10 @@ EXAMPLES = r"""
 
 - name: Get Node Deployment by name
   cisco.ise.node_deployment_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     hostname: string
   register: result
 

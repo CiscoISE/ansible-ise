@@ -62,6 +62,31 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
+    def get_object(params):
+        new_object = dict(
+            hostnames=params.get("hostnames"),
+            allow_wild_card_cert=params.get("allowWildCardCert"),
+            subject_common_name=params.get("subjectCommonName"),
+            subject_org_unit=params.get("subjectOrgUnit"),
+            subject_org=params.get("subjectOrg"),
+            subject_city=params.get("subjectCity"),
+            subject_state=params.get("subjectState"),
+            subject_country=params.get("subjectCountry"),
+            san_dns=params.get("sanDNS"),
+            san_ip=params.get("sanIP"),
+            san_uri=params.get("sanURI"),
+            san_dir=params.get("sanDir"),
+            key_length=params.get("keyLength"),
+            key_type=params.get("keyType"),
+            digest_type=params.get("digestType"),
+            used_for=params.get("usedFor"),
+            certificate_policies=params.get("certificatePolicies"),
+            portal_group_tag=params.get("portalGroupTag"),
+            host_name=params.get("hostName"),
+            id=params.get("id"),
+        )
+        return new_object
+
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
         self._result = super(ActionModule, self).run(tmp, task_vars)
@@ -76,7 +101,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="certificates",
                 function='get_csr_by_id',
-                params=self._task.args
+                params=self.get_object(self._task.args)
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
@@ -86,7 +111,7 @@ class ActionModule(ActionBase):
             generator = ise.exec(
                 family="certificates",
                 function='get_csr_generator',
-                params=self._task.args,
+                params=self.get_object(self._task.args),
             )
             for item in generator:
                 tmp_response = item.response

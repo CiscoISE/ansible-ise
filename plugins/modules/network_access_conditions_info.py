@@ -45,11 +45,19 @@ EXAMPLES = r"""
 
 - name: Get Network Access Conditions by id
   cisco.ise.network_access_conditions_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     id: string
   register: result
 
 - name: Get Network Access Conditions by name
   cisco.ise.network_access_conditions_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
     name: string
   register: result
 

@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: network_access_time_date_conditions
 short_description: Resource module for Network Access Time Date Conditions
 description:
-- Manage operations create, update, delete of the resource Network Access Time Date Conditions.
+- Manage operations create, update and delete of the resource Network Access Time Date Conditions.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:

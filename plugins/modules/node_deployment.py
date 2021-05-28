@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: node_deployment
 short_description: Resource module for Node Deployment
 description:
-- Manage operations create, update, delete of the resource Node Deployment.
+- Manage operations create, update and delete of the resource Node Deployment.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
@@ -269,6 +269,78 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
+    administration:
+      isEnabled: true
+      role: string
+    fdqn: string
+    generalSettings:
+      monitoring:
+        enablePXGrid: true
+        isEnabled: true
+        isMntDedicated: true
+        otherMonitoringNode: string
+        policyservice:
+          enableDeviceAdminService: true
+          enableNACService: true
+          enablePassiveIdentityService: true
+          enableProfilingService: true
+          enabled: true
+          sessionService:
+            isEnabled: true
+            nodegroup: string
+          sxpservice:
+            isEnabled: true
+            userInterface: string
+        role: string
+    password: string
+    profileConfiguration:
+      activeDirectory:
+        daysBeforeRescan: 0
+        description: string
+        enabled: true
+      dhcp:
+        description: string
+        enabled: true
+        interface: string
+        port: {}
+      dhcpSpan:
+        description: string
+        enabled: true
+        interface: string
+      dns:
+        description: string
+        enabled: true
+      http:
+        description: string
+        enabled: true
+        interface: string
+      netflow:
+        description: string
+        enabled: true
+        interface: string
+        port: {}
+      nmap:
+        description: string
+        enabled: true
+      pxgrid:
+        description: string
+        enabled: true
+      radius:
+        description: string
+        enabled: true
+      snmpQuery:
+        description: string
+        enabled: true
+        eventTimeout: 0
+        retries: 0
+        timeout: 0
+      snmpTrap:
+        description: string
+        interface: string
+        linkTrapQuery: true
+        macTrapQuery: true
+        port: {}
+    userName: string
 
 - name: Update by name
   cisco.ise.node_deployment:
@@ -277,6 +349,73 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
+    generalSettings:
+      monitoring:
+        enablePXGrid: true
+        isEnabled: true
+        isMntDedicated: true
+        otherMonitoringNode: string
+        policyservice:
+          enableDeviceAdminService: true
+          enableNACService: true
+          enablePassiveIdentityService: true
+          enableProfilingService: true
+          enabled: true
+          sessionService:
+            isEnabled: true
+            nodegroup: string
+          sxpservice:
+            isEnabled: true
+            userInterface: string
+        role: string
+    hostname: string
+    profileConfiguration:
+      activeDirectory:
+        daysBeforeRescan: 0
+        description: string
+        enabled: true
+      dhcp:
+        description: string
+        enabled: true
+        interface: string
+        port: {}
+      dhcpSpan:
+        description: string
+        enabled: true
+        interface: string
+      dns:
+        description: string
+        enabled: true
+      http:
+        description: string
+        enabled: true
+        interface: string
+      netflow:
+        description: string
+        enabled: true
+        interface: string
+        port: {}
+      nmap:
+        description: string
+        enabled: true
+      pxgrid:
+        description: string
+        enabled: true
+      radius:
+        description: string
+        enabled: true
+      snmpQuery:
+        description: string
+        enabled: true
+        eventTimeout: 0
+        retries: 0
+        timeout: 0
+      snmpTrap:
+        description: string
+        interface: string
+        linkTrapQuery: true
+        macTrapQuery: true
+        port: {}
 
 - name: Delete by name
   cisco.ise.node_deployment:

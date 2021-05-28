@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: downloadable_acl
 short_description: Resource module for Downloadable Acl
 description:
-- Manage operations create, update, delete of the resource Downloadable Acl.
+- Manage operations create, update and delete of the resource Downloadable Acl.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
