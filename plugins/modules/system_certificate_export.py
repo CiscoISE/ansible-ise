@@ -43,7 +43,6 @@ EXAMPLES = r"""
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
-    state: present
     certificateID: string
     export: string
     id: string
