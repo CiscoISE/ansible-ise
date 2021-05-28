@@ -13,107 +13,107 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    autoNotification:
-      description: AutoNotification flag.
-      type: bool
-    createPermissions:
-      description: Sponsor Group's createPermissions.
-      suboptions:
-        canCreateRandomAccounts:
-          description: CanCreateRandomAccounts flag.
-          type: bool
-        canImportMultipleAccounts:
-          description: CanImportMultipleAccounts flag.
-          type: bool
-        canSetFutureStartDate:
-          description: CanSetFutureStartDate flag.
-          type: bool
-        canSpecifyUsernamePrefix:
-          description: CanSpecifyUsernamePrefix flag.
-          type: bool
-        defaultUsernamePrefix:
-          description: Sponsor Group's defaultUsernamePrefix.
-          type: str
-        importBatchSizeLimit:
-          description: Sponsor Group's importBatchSizeLimit.
-          type: int
-        randomBatchSizeLimit:
-          description: Sponsor Group's randomBatchSizeLimit.
-          type: int
-        startDateFutureLimitDays:
-          description: Sponsor Group's startDateFutureLimitDays.
-          type: int
-      type: dict
-    description:
-      description: Sponsor Group's description.
-      type: str
-    guestTypes:
-      description: Sponsor Group's guestTypes.
-      elements: str
-      type: list
-    id:
-      description: Sponsor Group's id.
-      type: str
-    isDefaultGroup:
-      description: IsDefaultGroup flag.
-      type: bool
-    isEnabled:
-      description: IsEnabled flag.
-      type: bool
-    locations:
-      description: Sponsor Group's locations.
-      elements: str
-      type: list
-    managePermission:
-      description: Sponsor Group's managePermission.
-      type: str
-    memberGroups:
-      description: Sponsor Group's memberGroups.
-      elements: str
-      type: list
-    name:
-      description: Sponsor Group's name.
-      type: str
-    otherPermissions:
-      description: Sponsor Group's otherPermissions.
-      suboptions:
-        canAccessViaRest:
-          description: CanAccessViaRest flag.
-          type: bool
-        canApproveSelfregGuests:
-          description: CanApproveSelfregGuests flag.
-          type: bool
-        canDeleteGuestAccounts:
-          description: CanDeleteGuestAccounts flag.
-          type: bool
-        canExtendGuestAccounts:
-          description: CanExtendGuestAccounts flag.
-          type: bool
-        canReinstateSuspendedAccounts:
-          description: CanReinstateSuspendedAccounts flag.
-          type: bool
-        canResetGuestPasswords:
-          description: CanResetGuestPasswords flag.
-          type: bool
-        canSendSmsNotifications:
-          description: CanSendSmsNotifications flag.
-          type: bool
-        canSuspendGuestAccounts:
-          description: CanSuspendGuestAccounts flag.
-          type: bool
-        canUpdateGuestContactInfo:
-          description: CanUpdateGuestContactInfo flag.
-          type: bool
-        canViewGuestPasswords:
-          description: CanViewGuestPasswords flag.
-          type: bool
-        limitApprovalToSponsorsGuests:
-          description: LimitApprovalToSponsorsGuests flag.
-          type: bool
-        requireSuspensionReason:
-          description: RequireSuspensionReason flag.
-          type: bool
-      type: dict
+  autoNotification:
+    description: AutoNotification flag.
+    type: bool
+  createPermissions:
+    description: Sponsor Group's createPermissions.
+    suboptions:
+      canCreateRandomAccounts:
+        description: CanCreateRandomAccounts flag.
+        type: bool
+      canImportMultipleAccounts:
+        description: CanImportMultipleAccounts flag.
+        type: bool
+      canSetFutureStartDate:
+        description: CanSetFutureStartDate flag.
+        type: bool
+      canSpecifyUsernamePrefix:
+        description: CanSpecifyUsernamePrefix flag.
+        type: bool
+      defaultUsernamePrefix:
+        description: Sponsor Group's defaultUsernamePrefix.
+        type: str
+      importBatchSizeLimit:
+        description: Sponsor Group's importBatchSizeLimit.
+        type: int
+      randomBatchSizeLimit:
+        description: Sponsor Group's randomBatchSizeLimit.
+        type: int
+      startDateFutureLimitDays:
+        description: Sponsor Group's startDateFutureLimitDays.
+        type: int
+    type: dict
+  description:
+    description: Sponsor Group's description.
+    type: str
+  guestTypes:
+    description: Sponsor Group's guestTypes.
+    elements: str
+    type: list
+  id:
+    description: Sponsor Group's id.
+    type: str
+  isDefaultGroup:
+    description: IsDefaultGroup flag.
+    type: bool
+  isEnabled:
+    description: IsEnabled flag.
+    type: bool
+  locations:
+    description: Sponsor Group's locations.
+    elements: str
+    type: list
+  managePermission:
+    description: Sponsor Group's managePermission.
+    type: str
+  memberGroups:
+    description: Sponsor Group's memberGroups.
+    elements: str
+    type: list
+  name:
+    description: Sponsor Group's name.
+    type: str
+  otherPermissions:
+    description: Sponsor Group's otherPermissions.
+    suboptions:
+      canAccessViaRest:
+        description: CanAccessViaRest flag.
+        type: bool
+      canApproveSelfregGuests:
+        description: CanApproveSelfregGuests flag.
+        type: bool
+      canDeleteGuestAccounts:
+        description: CanDeleteGuestAccounts flag.
+        type: bool
+      canExtendGuestAccounts:
+        description: CanExtendGuestAccounts flag.
+        type: bool
+      canReinstateSuspendedAccounts:
+        description: CanReinstateSuspendedAccounts flag.
+        type: bool
+      canResetGuestPasswords:
+        description: CanResetGuestPasswords flag.
+        type: bool
+      canSendSmsNotifications:
+        description: CanSendSmsNotifications flag.
+        type: bool
+      canSuspendGuestAccounts:
+        description: CanSuspendGuestAccounts flag.
+        type: bool
+      canUpdateGuestContactInfo:
+        description: CanUpdateGuestContactInfo flag.
+        type: bool
+      canViewGuestPasswords:
+        description: CanViewGuestPasswords flag.
+        type: bool
+      limitApprovalToSponsorsGuests:
+        description: LimitApprovalToSponsorsGuests flag.
+        type: bool
+      requireSuspensionReason:
+        description: RequireSuspensionReason flag.
+        type: bool
+    type: dict
 requirements:
 - ciscoisesdk
 seealso:

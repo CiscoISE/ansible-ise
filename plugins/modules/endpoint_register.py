@@ -13,96 +13,96 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    customAttributes:
-      description: Endpoint Register's customAttributes.
-      suboptions:
-        customAttributes:
-          description: Endpoint Register's customAttributes.
-          suboptions:
-            key1:
-              description: Endpoint Register's key1.
-              type: str
-            key2:
-              description: Endpoint Register's key2.
-              type: str
-          type: dict
-      type: dict
-    description:
-      description: Endpoint Register's description.
-      type: str
-    groupId:
-      description: Endpoint Register's groupId.
-      type: str
-    id:
-      description: Endpoint Register's id.
-      type: str
-    identityStore:
-      description: Endpoint Register's identityStore.
-      type: str
-    identityStoreId:
-      description: Endpoint Register's identityStoreId.
-      type: str
-    mac:
-      description: Endpoint Register's mac.
-      type: str
-    mdmAttributes:
-      description: Endpoint Register's mdmAttributes.
-      suboptions:
-        mdmComplianceStatus:
-          description: MdmComplianceStatus flag.
-          type: bool
-        mdmEncrypted:
-          description: MdmEncrypted flag.
-          type: bool
-        mdmEnrolled:
-          description: MdmEnrolled flag.
-          type: bool
-        mdmIMEI:
-          description: Endpoint Register's mdmIMEI.
-          type: str
-        mdmJailBroken:
-          description: MdmJailBroken flag.
-          type: bool
-        mdmManufacturer:
-          description: Endpoint Register's mdmManufacturer.
-          type: str
-        mdmModel:
-          description: Endpoint Register's mdmModel.
-          type: str
-        mdmOS:
-          description: Endpoint Register's mdmOS.
-          type: str
-        mdmPhoneNumber:
-          description: Endpoint Register's mdmPhoneNumber.
-          type: str
-        mdmPinlock:
-          description: MdmPinlock flag.
-          type: bool
-        mdmReachable:
-          description: MdmReachable flag.
-          type: bool
-        mdmSerial:
-          description: Endpoint Register's mdmSerial.
-          type: str
-        mdmServerName:
-          description: Endpoint Register's mdmServerName.
-          type: str
-      type: dict
-    name:
-      description: Endpoint Register's name.
-      type: str
-    portalUser:
-      description: Endpoint Register's portalUser.
-      type: str
-    profileId:
-      description: Endpoint Register's profileId.
-      type: str
-    staticGroupAssignment:
-      description: StaticGroupAssignment flag.
-      type: bool
-    staticProfileAssignment:
-      description: StaticProfileAssignment flag.
-      type: bool
+  customAttributes:
+    description: Endpoint Register's customAttributes.
+    suboptions:
+      customAttributes:
+        description: Endpoint Register's customAttributes.
+        suboptions:
+          key1:
+            description: Endpoint Register's key1.
+            type: str
+          key2:
+            description: Endpoint Register's key2.
+            type: str
+        type: dict
+    type: dict
+  description:
+    description: Endpoint Register's description.
+    type: str
+  groupId:
+    description: Endpoint Register's groupId.
+    type: str
+  id:
+    description: Endpoint Register's id.
+    type: str
+  identityStore:
+    description: Endpoint Register's identityStore.
+    type: str
+  identityStoreId:
+    description: Endpoint Register's identityStoreId.
+    type: str
+  mac:
+    description: Endpoint Register's mac.
+    type: str
+  mdmAttributes:
+    description: Endpoint Register's mdmAttributes.
+    suboptions:
+      mdmComplianceStatus:
+        description: MdmComplianceStatus flag.
+        type: bool
+      mdmEncrypted:
+        description: MdmEncrypted flag.
+        type: bool
+      mdmEnrolled:
+        description: MdmEnrolled flag.
+        type: bool
+      mdmIMEI:
+        description: Endpoint Register's mdmIMEI.
+        type: str
+      mdmJailBroken:
+        description: MdmJailBroken flag.
+        type: bool
+      mdmManufacturer:
+        description: Endpoint Register's mdmManufacturer.
+        type: str
+      mdmModel:
+        description: Endpoint Register's mdmModel.
+        type: str
+      mdmOS:
+        description: Endpoint Register's mdmOS.
+        type: str
+      mdmPhoneNumber:
+        description: Endpoint Register's mdmPhoneNumber.
+        type: str
+      mdmPinlock:
+        description: MdmPinlock flag.
+        type: bool
+      mdmReachable:
+        description: MdmReachable flag.
+        type: bool
+      mdmSerial:
+        description: Endpoint Register's mdmSerial.
+        type: str
+      mdmServerName:
+        description: Endpoint Register's mdmServerName.
+        type: str
+    type: dict
+  name:
+    description: Endpoint Register's name.
+    type: str
+  portalUser:
+    description: Endpoint Register's portalUser.
+    type: str
+  profileId:
+    description: Endpoint Register's profileId.
+    type: str
+  staticGroupAssignment:
+    description: StaticGroupAssignment flag.
+    type: bool
+  staticProfileAssignment:
+    description: StaticProfileAssignment flag.
+    type: bool
 requirements:
 - ciscoisesdk
 seealso:

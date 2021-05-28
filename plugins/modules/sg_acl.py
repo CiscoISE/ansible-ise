@@ -13,21 +13,21 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    aclcontent:
-      description: Sg Acl's aclcontent.
-      type: str
-    description:
-      description: Sg Acl's description.
-      type: str
-    id:
-      description: Sg Acl's id.
-      type: str
-    ipVersion:
-      description: Sg Acl's ipVersion.
-      type: str
-    name:
-      description: Sg Acl's name.
-      type: str
+  aclcontent:
+    description: Sg Acl's aclcontent.
+    type: str
+  description:
+    description: Sg Acl's description.
+    type: str
+  id:
+    description: Sg Acl's id.
+    type: str
+  ipVersion:
+    description: Sg Acl's ipVersion.
+    type: str
+  name:
+    description: Sg Acl's name.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:

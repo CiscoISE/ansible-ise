@@ -57,7 +57,7 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
-    def get_object(params):
+    def get_object(self, params):
         new_object = dict(
             subnet=params.get("subnet"),
             domains=params.get("domains"),

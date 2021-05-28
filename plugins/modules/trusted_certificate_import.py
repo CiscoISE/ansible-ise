@@ -13,39 +13,39 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    allowBasicConstraintCAFalse:
-      description: Allow Certificates with Basic Constraints CA Field as False (required).
-      type: bool
-    allowOutOfDateCert:
-      description: Allow out of date certificates (required).
-      type: bool
-    allowSHA1Certificates:
-      description: Allow SHA1 based certificates (required).
-      type: bool
-    data:
-      description: Certificate content (required).
-      type: str
-    description:
-      description: Description of the certificate.
-      type: str
-    name:
-      description: Name of the certificate.
-      type: str
-    trustForCertificateBasedAdminAuth:
-      description: Trust for Certificate based Admin authentication.
-      type: bool
-    trustForCiscoServicesAuth:
-      description: Trust for authentication of Cisco Services.
-      type: bool
-    trustForClientAuth:
-      description: Trust for client authentication and Syslog.
-      type: bool
-    trustForIseAuth:
-      description: Trust for authentication within ISE.
-      type: bool
-    validateCertificateExtensions:
-      description: Validate trust certificate extension.
-      type: bool
+  allowBasicConstraintCAFalse:
+    description: Allow Certificates with Basic Constraints CA Field as False (required).
+    type: bool
+  allowOutOfDateCert:
+    description: Allow out of date certificates (required).
+    type: bool
+  allowSHA1Certificates:
+    description: Allow SHA1 based certificates (required).
+    type: bool
+  data:
+    description: Certificate content (required).
+    type: str
+  description:
+    description: Description of the certificate.
+    type: str
+  name:
+    description: Name of the certificate.
+    type: str
+  trustForCertificateBasedAdminAuth:
+    description: Trust for Certificate based Admin authentication.
+    type: bool
+  trustForCiscoServicesAuth:
+    description: Trust for authentication of Cisco Services.
+    type: bool
+  trustForClientAuth:
+    description: Trust for client authentication and Syslog.
+    type: bool
+  trustForIseAuth:
+    description: Trust for authentication within ISE.
+    type: bool
+  validateCertificateExtensions:
+    description: Validate trust certificate extension.
+    type: bool
 requirements:
 - ciscoisesdk
 seealso:

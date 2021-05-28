@@ -13,18 +13,18 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    description:
-      description: Id Store Sequence's description.
-      type: str
-    id:
-      description: Id Store Sequence's id.
-      type: str
-    name:
-      description: Id Store Sequence's name.
-      type: str
-    parent:
-      description: Id Store Sequence's parent.
-      type: str
+  description:
+    description: Id Store Sequence's description.
+    type: str
+  id:
+    description: Id Store Sequence's id.
+    type: str
+  name:
+    description: Id Store Sequence's name.
+    type: str
+  parent:
+    description: Id Store Sequence's parent.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:

@@ -13,16 +13,16 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    actions:
-      description: Anc Policy's actions.
-      elements: str
-      type: list
-    id:
-      description: Id path parameter.
-      type: str
-    name:
-      description: Anc Policy's name.
-      type: str
+  actions:
+    description: Anc Policy's actions.
+    elements: str
+    type: list
+  id:
+    description: Id path parameter.
+    type: str
+  name:
+    description: Anc Policy's name.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:

@@ -13,9 +13,9 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    certType:
-      description: Renew Certificate's certType.
-      type: str
+  certType:
+    description: Renew Certificate's certType.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:

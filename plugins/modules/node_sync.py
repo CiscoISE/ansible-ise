@@ -13,9 +13,9 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    hostname:
-      description: Node Sync's hostname.
-      type: str
+  hostname:
+    description: Node Sync's hostname.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:

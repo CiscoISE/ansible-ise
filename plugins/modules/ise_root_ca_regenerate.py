@@ -13,10 +13,10 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    removeExistingISEIntermediateCSR:
-      description: Setting this attribute to true will remove existing ISE Intermediate
-        CSR.
-      type: bool
+  removeExistingISEIntermediateCSR:
+    description: Setting this attribute to true will remove existing ISE Intermediate
+      CSR.
+    type: bool
 requirements:
 - ciscoisesdk
 seealso:

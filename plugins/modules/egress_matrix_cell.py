@@ -13,25 +13,25 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    defaultRule:
-      description: Egress Matrix Cell's defaultRule.
-      type: str
-    destinationSgtId:
-      description: Egress Matrix Cell's destinationSgtId.
-      type: str
-    id:
-      description: Id path parameter.
-      type: str
-    matrixCellStatus:
-      description: Egress Matrix Cell's matrixCellStatus.
-      type: str
-    sgacls:
-      description: Egress Matrix Cell's sgacls.
-      elements: str
-      type: list
-    sourceSgtId:
-      description: Egress Matrix Cell's sourceSgtId.
-      type: str
+  defaultRule:
+    description: Egress Matrix Cell's defaultRule.
+    type: str
+  destinationSgtId:
+    description: Egress Matrix Cell's destinationSgtId.
+    type: str
+  id:
+    description: Id path parameter.
+    type: str
+  matrixCellStatus:
+    description: Egress Matrix Cell's matrixCellStatus.
+    type: str
+  sgacls:
+    description: Egress Matrix Cell's sgacls.
+    elements: str
+    type: list
+  sourceSgtId:
+    description: Egress Matrix Cell's sourceSgtId.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:

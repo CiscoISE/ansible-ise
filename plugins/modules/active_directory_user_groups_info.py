@@ -17,16 +17,16 @@ options:
     description:
     - Id path parameter.
     type: str
-    additionalData:
-      description: Active Directory Get User Groups's additionalData.
-      suboptions:
-        name:
-          description: Active Directory Get User Groups's name.
-          type: str
-        value:
-          description: Active Directory Get User Groups's value.
-          type: str
-      type: list
+  additionalData:
+    description: Active Directory Get User Groups's additionalData.
+    suboptions:
+      name:
+        description: Active Directory Get User Groups's name.
+        type: str
+      value:
+        description: Active Directory Get User Groups's value.
+        type: str
+    type: list
 requirements:
 - ciscoisesdk
 seealso:

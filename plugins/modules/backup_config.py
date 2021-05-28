@@ -13,19 +13,19 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    backupEncryptionKey:
-      description: The encyption key for the backed up file. Encryption key must satisfy
-        the following criteria - Contains at least one uppercase letter A-Z, Contains
-        at least one lowercase letter a-z, Contains at least one digit 0-9, Contain only
-        A-Za-z0-9_#, Has at least 8 characters, Has not more than 15 characters, Must
-        not contain 'CcIiSsCco', Must not begin with.
-      type: str
-    backupName:
-      description: The backup file will get saved with this name.
-      type: str
-    repositoryName:
-      description: Name of the repository where the generated backup file will get copied.
-      type: str
+  backupEncryptionKey:
+    description: The encyption key for the backed up file. Encryption key must satisfy
+      the following criteria - Contains at least one uppercase letter A-Z, Contains
+      at least one lowercase letter a-z, Contains at least one digit 0-9, Contain only
+      A-Za-z0-9_#, Has at least 8 characters, Has not more than 15 characters, Must
+      not contain 'CcIiSsCco', Must not begin with.
+    type: str
+  backupName:
+    description: The backup file will get saved with this name.
+    type: str
+  repositoryName:
+    description: Name of the repository where the generated backup file will get copied.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:

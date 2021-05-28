@@ -13,38 +13,38 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    description:
-      description: Rest Id Store's description.
-      type: str
-    ersRestIDStoreAttributes:
-      description: Rest Id Store's ersRestIDStoreAttributes.
-      suboptions:
-        headers:
-          description: Rest Id Store's headers.
-          suboptions:
-            key:
-              description: Rest Id Store's key.
-              type: str
-            value:
-              description: Rest Id Store's value.
-              type: str
-          type: list
-        predefined:
-          description: Rest Id Store's predefined.
-          type: str
-        rootUrl:
-          description: Rest Id Store's rootUrl.
-          type: str
-        usernameSuffix:
-          description: Rest Id Store's usernameSuffix.
-          type: str
-      type: dict
-    id:
-      description: Id path parameter.
-      type: str
-    name:
-      description: Rest Id Store's name.
-      type: str
+  description:
+    description: Rest Id Store's description.
+    type: str
+  ersRestIDStoreAttributes:
+    description: Rest Id Store's ersRestIDStoreAttributes.
+    suboptions:
+      headers:
+        description: Rest Id Store's headers.
+        suboptions:
+          key:
+            description: Rest Id Store's key.
+            type: str
+          value:
+            description: Rest Id Store's value.
+            type: str
+        type: list
+      predefined:
+        description: Rest Id Store's predefined.
+        type: str
+      rootUrl:
+        description: Rest Id Store's rootUrl.
+        type: str
+      usernameSuffix:
+        description: Rest Id Store's usernameSuffix.
+        type: str
+    type: dict
+  id:
+    description: Id path parameter.
+    type: str
+  name:
+    description: Rest Id Store's name.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:

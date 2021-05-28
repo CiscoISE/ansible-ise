@@ -13,58 +13,58 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    changePassword:
-      description: ChangePassword flag.
-      type: bool
-    customAttributes:
-      description: Internal User's customAttributes.
-      suboptions:
-        key1:
-          description: Internal User's key1.
-          type: str
-        key2:
-          description: Internal User's key2.
-          type: str
-      type: dict
-    description:
-      description: Internal User's description.
-      type: str
-    email:
-      description: Internal User's email.
-      type: str
-    enablePassword:
-      description: Internal User's enablePassword.
-      type: str
-    enabled:
-      description: Enabled flag.
-      type: bool
-    expiryDate:
-      description: Internal User's expiryDate.
-      type: str
-    expiryDateEnabled:
-      description: ExpiryDateEnabled flag.
-      type: bool
-    firstName:
-      description: Internal User's firstName.
-      type: str
-    id:
-      description: Internal User's id.
-      type: str
-    identityGroups:
-      description: Internal User's identityGroups.
-      type: str
-    lastName:
-      description: Internal User's lastName.
-      type: str
-    name:
-      description: Internal User's name.
-      type: str
-    password:
-      description: Internal User's password.
-      type: str
-    passwordIDStore:
-      description: Internal User's passwordIDStore.
-      type: str
+  changePassword:
+    description: ChangePassword flag.
+    type: bool
+  customAttributes:
+    description: Internal User's customAttributes.
+    suboptions:
+      key1:
+        description: Internal User's key1.
+        type: str
+      key2:
+        description: Internal User's key2.
+        type: str
+    type: dict
+  description:
+    description: Internal User's description.
+    type: str
+  email:
+    description: Internal User's email.
+    type: str
+  enablePassword:
+    description: Internal User's enablePassword.
+    type: str
+  enabled:
+    description: Enabled flag.
+    type: bool
+  expiryDate:
+    description: Internal User's expiryDate.
+    type: str
+  expiryDateEnabled:
+    description: ExpiryDateEnabled flag.
+    type: bool
+  firstName:
+    description: Internal User's firstName.
+    type: str
+  id:
+    description: Internal User's id.
+    type: str
+  identityGroups:
+    description: Internal User's identityGroups.
+    type: str
+  lastName:
+    description: Internal User's lastName.
+    type: str
+  name:
+    description: Internal User's name.
+    type: str
+  password:
+    description: Internal User's password.
+    type: str
+  passwordIDStore:
+    description: Internal User's passwordIDStore.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:

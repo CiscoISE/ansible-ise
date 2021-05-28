@@ -13,16 +13,16 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    additionalData:
-      description: Guest User Email's additionalData.
-      suboptions:
-        name:
-          description: Guest User Email's name.
-          type: str
-        value:
-          description: Guest User Email's value.
-          type: str
-      type: list
+  additionalData:
+    description: Guest User Email's additionalData.
+    suboptions:
+      name:
+        description: Guest User Email's name.
+        type: str
+      value:
+        description: Guest User Email's value.
+        type: str
+    type: list
 requirements:
 - ciscoisesdk
 seealso:

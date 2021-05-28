@@ -13,18 +13,18 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    description:
-      description: Active Directory Add Groups's description.
-      type: str
-    domain:
-      description: Active Directory Add Groups's domain.
-      type: str
-    id:
-      description: Active Directory Add Groups's id.
-      type: str
-    name:
-      description: Active Directory Add Groups's name.
-      type: str
+  description:
+    description: Active Directory Add Groups's description.
+    type: str
+  domain:
+    description: Active Directory Add Groups's domain.
+    type: str
+  id:
+    description: Active Directory Add Groups's id.
+    type: str
+  name:
+    description: Active Directory Add Groups's name.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:

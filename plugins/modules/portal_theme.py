@@ -13,15 +13,15 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    id:
-      description: Id path parameter.
-      type: str
-    name:
-      description: Portal Theme's name.
-      type: str
-    themeData:
-      description: Portal Theme's themeData.
-      type: str
+  id:
+    description: Id path parameter.
+    type: str
+  name:
+    description: Portal Theme's name.
+    type: str
+  themeData:
+    description: Portal Theme's themeData.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:

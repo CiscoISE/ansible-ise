@@ -13,32 +13,32 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    description:
-      description: Tacacs Profile's description.
-      type: str
-    id:
-      description: Tacacs Profile's id.
-      type: str
-    name:
-      description: Tacacs Profile's name.
-      type: str
-    sessionAttributes:
-      description: Tacacs Profile's sessionAttributes.
-      suboptions:
-        sessionAttributeList:
-          description: Tacacs Profile's sessionAttributeList.
-          suboptions:
-            name:
-              description: Tacacs Profile's name.
-              type: str
-            type:
-              description: Tacacs Profile's type.
-              type: str
-            value:
-              description: Tacacs Profile's value.
-              type: str
-          type: list
-      type: dict
+  description:
+    description: Tacacs Profile's description.
+    type: str
+  id:
+    description: Tacacs Profile's id.
+    type: str
+  name:
+    description: Tacacs Profile's name.
+    type: str
+  sessionAttributes:
+    description: Tacacs Profile's sessionAttributes.
+    suboptions:
+      sessionAttributeList:
+        description: Tacacs Profile's sessionAttributeList.
+        suboptions:
+          name:
+            description: Tacacs Profile's name.
+            type: str
+          type:
+            description: Tacacs Profile's type.
+            type: str
+          value:
+            description: Tacacs Profile's value.
+            type: str
+        type: list
+    type: dict
 requirements:
 - ciscoisesdk
 seealso:

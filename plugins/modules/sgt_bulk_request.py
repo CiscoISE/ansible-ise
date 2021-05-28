@@ -13,12 +13,12 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    operationType:
-      description: Sgt Bulk Request's operationType.
-      type: str
-    resourceMediaType:
-      description: Sgt Bulk Request's resourceMediaType.
-      type: str
+  operationType:
+    description: Sgt Bulk Request's operationType.
+    type: str
+  resourceMediaType:
+    description: Sgt Bulk Request's resourceMediaType.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:

@@ -58,7 +58,7 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
-    def get_object(params):
+    def get_object(self, params):
         new_object = dict(
             restore_file=params.get("restoreFile"),
             repository_name=params.get("repositoryName"),

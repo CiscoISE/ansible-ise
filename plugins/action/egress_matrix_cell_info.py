@@ -61,7 +61,7 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
-    def get_object(params):
+    def get_object(self, params):
         new_object = dict(
             source_sgt_id=params.get("sourceSgtId"),
             destination_sgt_id=params.get("destinationSgtId"),

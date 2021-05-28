@@ -13,35 +13,35 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    commands:
-      description: Tacacs Command Sets's commands.
-      suboptions:
-        commandList:
-          description: Tacacs Command Sets's commandList.
-          suboptions:
-            arguments:
-              description: Tacacs Command Sets's arguments.
-              type: str
-            command:
-              description: Tacacs Command Sets's command.
-              type: str
-            grant:
-              description: Tacacs Command Sets's grant.
-              type: str
-          type: list
-      type: dict
-    description:
-      description: Tacacs Command Sets's description.
-      type: str
-    id:
-      description: Id path parameter.
-      type: str
-    name:
-      description: Tacacs Command Sets's name.
-      type: str
-    permitUnmatched:
-      description: PermitUnmatched flag.
-      type: bool
+  commands:
+    description: Tacacs Command Sets's commands.
+    suboptions:
+      commandList:
+        description: Tacacs Command Sets's commandList.
+        suboptions:
+          arguments:
+            description: Tacacs Command Sets's arguments.
+            type: str
+          command:
+            description: Tacacs Command Sets's command.
+            type: str
+          grant:
+            description: Tacacs Command Sets's grant.
+            type: str
+        type: list
+    type: dict
+  description:
+    description: Tacacs Command Sets's description.
+    type: str
+  id:
+    description: Id path parameter.
+    type: str
+  name:
+    description: Tacacs Command Sets's name.
+    type: str
+  permitUnmatched:
+    description: PermitUnmatched flag.
+    type: bool
 requirements:
 - ciscoisesdk
 seealso:

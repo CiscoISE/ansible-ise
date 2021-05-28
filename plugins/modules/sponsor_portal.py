@@ -13,250 +13,250 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    customizations:
-      description: Sponsor Portal's customizations.
-      suboptions:
-        globalCustomizations:
-          description: Sponsor Portal's globalCustomizations.
-          suboptions:
-            bannerImage:
-              description: Sponsor Portal's bannerImage.
-              suboptions:
-                data:
-                  description: Sponsor Portal's data.
-                  type: str
-              type: dict
-            bannerTitle:
-              description: Sponsor Portal's bannerTitle.
-              type: str
-            contactText:
-              description: Sponsor Portal's contactText.
-              type: str
-            desktopLogoImage:
-              description: Sponsor Portal's desktopLogoImage.
-              suboptions:
-                data:
-                  description: Sponsor Portal's data.
-                  type: str
-              type: dict
-            footerElement:
-              description: Sponsor Portal's footerElement.
-              type: str
-            mobileLogoImage:
-              description: Sponsor Portal's mobileLogoImage.
-              suboptions:
-                data:
-                  description: Sponsor Portal's data.
-                  type: str
-              type: dict
-          type: dict
-        language:
-          description: Sponsor Portal's language.
-          suboptions:
-            viewLanguage:
-              description: Sponsor Portal's viewLanguage.
-              type: str
-          type: dict
-        pageCustomizations:
-          description: Sponsor Portal's pageCustomizations.
-          suboptions:
-            data:
-              description: Sponsor Portal's data.
-              suboptions:
-                key:
-                  description: Sponsor Portal's key.
-                  type: str
-                value:
-                  description: Sponsor Portal's value.
-                  type: str
-              type: list
-          type: dict
-        portalTheme:
-          description: Sponsor Portal's portalTheme.
-          suboptions:
-            id:
-              description: Sponsor Portal's id.
-              type: str
-            name:
-              description: Sponsor Portal's name.
-              type: str
-            themeData:
-              description: Sponsor Portal's themeData.
-              type: str
-          type: dict
-        portalTweakSettings:
-          description: Sponsor Portal's portalTweakSettings.
-          suboptions:
-            bannerColor:
-              description: Sponsor Portal's bannerColor.
-              type: str
-            bannerTextColor:
-              description: Sponsor Portal's bannerTextColor.
-              type: str
-            pageBackgroundColor:
-              description: Sponsor Portal's pageBackgroundColor.
-              type: str
-            pageLabelAndTextColor:
-              description: Sponsor Portal's pageLabelAndTextColor.
-              type: str
-          type: dict
-      type: dict
-    description:
-      description: Sponsor Portal's description.
-      type: str
-    id:
-      description: Sponsor Portal's id.
-      type: str
-    name:
-      description: Sponsor Portal's name.
-      type: str
-    portalType:
-      description: Sponsor Portal's portalType.
-      type: str
-    settings:
-      description: Sponsor Portal's settings.
-      suboptions:
-        aupSettings:
-          description: Sponsor Portal's aupSettings.
-          suboptions:
-            displayFrequency:
-              description: Sponsor Portal's displayFrequency.
-              type: str
-            includeAup:
-              description: IncludeAup flag.
-              type: bool
-            requireAccessCode:
-              description: RequireAccessCode flag.
-              type: bool
-            requireScrolling:
-              description: RequireScrolling flag.
-              type: bool
-            skipAupForEmployees:
-              description: SkipAupForEmployees flag.
-              type: bool
-            useDiffAupForEmployees:
-              description: UseDiffAupForEmployees flag.
-              type: bool
-          type: dict
-        loginPageSettings:
-          description: Sponsor Portal's loginPageSettings.
-          suboptions:
-            allowAlternateGuestPortal:
-              description: AllowAlternateGuestPortal flag.
-              type: bool
-            allowGuestToChangePassword:
-              description: AllowGuestToChangePassword flag.
-              type: bool
-            allowGuestToCreateAccounts:
-              description: AllowGuestToCreateAccounts flag.
-              type: bool
-            allowGuestToUseSocialAccounts:
-              description: AllowGuestToUseSocialAccounts flag.
-              type: bool
-            allowShowGuestForm:
-              description: AllowShowGuestForm flag.
-              type: bool
-            aupDisplay:
-              description: Sponsor Portal's aupDisplay.
-              type: str
-            includeAup:
-              description: IncludeAup flag.
-              type: bool
-            maxFailedAttemptsBeforeRateLimit:
-              description: Sponsor Portal's maxFailedAttemptsBeforeRateLimit.
-              type: int
-            requireAccessCode:
-              description: RequireAccessCode flag.
-              type: bool
-            requireAupAcceptance:
-              description: RequireAupAcceptance flag.
-              type: bool
-            requireAupScrolling:
-              description: RequireAupScrolling flag.
-              type: bool
-            socialConfigs:
-              description: Sponsor Portal's socialConfigs.
-              type: list
-            timeBetweenLoginsDuringRateLimit:
-              description: Sponsor Portal's timeBetweenLoginsDuringRateLimit.
-              type: int
-          type: dict
-        portalSettings:
-          description: Sponsor Portal's portalSettings.
-          suboptions:
-            allowedInterfaces:
-              description: Sponsor Portal's allowedInterfaces.
-              elements: str
-              type: list
-            alwaysUsedLanguage:
-              description: Sponsor Portal's alwaysUsedLanguage.
-              type: str
-            authenticationMethod:
-              description: Sponsor Portal's authenticationMethod.
-              type: str
-            availableSsids:
-              description: Sponsor Portal's availableSsids.
-              elements: str
-              type: list
-            certificateGroupTag:
-              description: Sponsor Portal's certificateGroupTag.
-              type: str
-            displayLang:
-              description: Sponsor Portal's displayLang.
-              type: str
-            fallbackLanguage:
-              description: Sponsor Portal's fallbackLanguage.
-              type: str
-            fqdn:
-              description: Sponsor Portal's fqdn.
-              type: str
-            httpsPort:
-              description: Sponsor Portal's httpsPort.
-              type: int
-            idleTimeout:
-              description: Sponsor Portal's idleTimeout.
-              type: int
-          type: dict
-        postLoginBannerSettings:
-          description: Sponsor Portal's postLoginBannerSettings.
-          suboptions:
-            includePostAccessBanner:
-              description: IncludePostAccessBanner flag.
-              type: bool
-          type: dict
-        sponsorChangePasswordSettings:
-          description: Sponsor Portal's sponsorChangePasswordSettings.
-          suboptions:
-            allowSponsorToChangePwd:
-              description: AllowSponsorToChangePwd flag.
-              type: bool
-          type: dict
-        supportInfoSettings:
-          description: Sponsor Portal's supportInfoSettings.
-          suboptions:
-            emptyFieldDisplay:
-              description: Sponsor Portal's emptyFieldDisplay.
-              type: str
-            includeBrowserUserAgent:
-              description: IncludeBrowserUserAgent flag.
-              type: bool
-            includeFailureCode:
-              description: IncludeFailureCode flag.
-              type: bool
-            includeIpAddress:
-              description: IncludeIpAddress flag.
-              type: bool
-            includeMacAddr:
-              description: IncludeMacAddr flag.
-              type: bool
-            includePolicyServer:
-              description: IncludePolicyServer flag.
-              type: bool
-            includeSupportInfoPage:
-              description: IncludeSupportInfoPage flag.
-              type: bool
-          type: dict
-      type: dict
+  customizations:
+    description: Sponsor Portal's customizations.
+    suboptions:
+      globalCustomizations:
+        description: Sponsor Portal's globalCustomizations.
+        suboptions:
+          bannerImage:
+            description: Sponsor Portal's bannerImage.
+            suboptions:
+              data:
+                description: Sponsor Portal's data.
+                type: str
+            type: dict
+          bannerTitle:
+            description: Sponsor Portal's bannerTitle.
+            type: str
+          contactText:
+            description: Sponsor Portal's contactText.
+            type: str
+          desktopLogoImage:
+            description: Sponsor Portal's desktopLogoImage.
+            suboptions:
+              data:
+                description: Sponsor Portal's data.
+                type: str
+            type: dict
+          footerElement:
+            description: Sponsor Portal's footerElement.
+            type: str
+          mobileLogoImage:
+            description: Sponsor Portal's mobileLogoImage.
+            suboptions:
+              data:
+                description: Sponsor Portal's data.
+                type: str
+            type: dict
+        type: dict
+      language:
+        description: Sponsor Portal's language.
+        suboptions:
+          viewLanguage:
+            description: Sponsor Portal's viewLanguage.
+            type: str
+        type: dict
+      pageCustomizations:
+        description: Sponsor Portal's pageCustomizations.
+        suboptions:
+          data:
+            description: Sponsor Portal's data.
+            suboptions:
+              key:
+                description: Sponsor Portal's key.
+                type: str
+              value:
+                description: Sponsor Portal's value.
+                type: str
+            type: list
+        type: dict
+      portalTheme:
+        description: Sponsor Portal's portalTheme.
+        suboptions:
+          id:
+            description: Sponsor Portal's id.
+            type: str
+          name:
+            description: Sponsor Portal's name.
+            type: str
+          themeData:
+            description: Sponsor Portal's themeData.
+            type: str
+        type: dict
+      portalTweakSettings:
+        description: Sponsor Portal's portalTweakSettings.
+        suboptions:
+          bannerColor:
+            description: Sponsor Portal's bannerColor.
+            type: str
+          bannerTextColor:
+            description: Sponsor Portal's bannerTextColor.
+            type: str
+          pageBackgroundColor:
+            description: Sponsor Portal's pageBackgroundColor.
+            type: str
+          pageLabelAndTextColor:
+            description: Sponsor Portal's pageLabelAndTextColor.
+            type: str
+        type: dict
+    type: dict
+  description:
+    description: Sponsor Portal's description.
+    type: str
+  id:
+    description: Sponsor Portal's id.
+    type: str
+  name:
+    description: Sponsor Portal's name.
+    type: str
+  portalType:
+    description: Sponsor Portal's portalType.
+    type: str
+  settings:
+    description: Sponsor Portal's settings.
+    suboptions:
+      aupSettings:
+        description: Sponsor Portal's aupSettings.
+        suboptions:
+          displayFrequency:
+            description: Sponsor Portal's displayFrequency.
+            type: str
+          includeAup:
+            description: IncludeAup flag.
+            type: bool
+          requireAccessCode:
+            description: RequireAccessCode flag.
+            type: bool
+          requireScrolling:
+            description: RequireScrolling flag.
+            type: bool
+          skipAupForEmployees:
+            description: SkipAupForEmployees flag.
+            type: bool
+          useDiffAupForEmployees:
+            description: UseDiffAupForEmployees flag.
+            type: bool
+        type: dict
+      loginPageSettings:
+        description: Sponsor Portal's loginPageSettings.
+        suboptions:
+          allowAlternateGuestPortal:
+            description: AllowAlternateGuestPortal flag.
+            type: bool
+          allowGuestToChangePassword:
+            description: AllowGuestToChangePassword flag.
+            type: bool
+          allowGuestToCreateAccounts:
+            description: AllowGuestToCreateAccounts flag.
+            type: bool
+          allowGuestToUseSocialAccounts:
+            description: AllowGuestToUseSocialAccounts flag.
+            type: bool
+          allowShowGuestForm:
+            description: AllowShowGuestForm flag.
+            type: bool
+          aupDisplay:
+            description: Sponsor Portal's aupDisplay.
+            type: str
+          includeAup:
+            description: IncludeAup flag.
+            type: bool
+          maxFailedAttemptsBeforeRateLimit:
+            description: Sponsor Portal's maxFailedAttemptsBeforeRateLimit.
+            type: int
+          requireAccessCode:
+            description: RequireAccessCode flag.
+            type: bool
+          requireAupAcceptance:
+            description: RequireAupAcceptance flag.
+            type: bool
+          requireAupScrolling:
+            description: RequireAupScrolling flag.
+            type: bool
+          socialConfigs:
+            description: Sponsor Portal's socialConfigs.
+            type: list
+          timeBetweenLoginsDuringRateLimit:
+            description: Sponsor Portal's timeBetweenLoginsDuringRateLimit.
+            type: int
+        type: dict
+      portalSettings:
+        description: Sponsor Portal's portalSettings.
+        suboptions:
+          allowedInterfaces:
+            description: Sponsor Portal's allowedInterfaces.
+            elements: str
+            type: list
+          alwaysUsedLanguage:
+            description: Sponsor Portal's alwaysUsedLanguage.
+            type: str
+          authenticationMethod:
+            description: Sponsor Portal's authenticationMethod.
+            type: str
+          availableSsids:
+            description: Sponsor Portal's availableSsids.
+            elements: str
+            type: list
+          certificateGroupTag:
+            description: Sponsor Portal's certificateGroupTag.
+            type: str
+          displayLang:
+            description: Sponsor Portal's displayLang.
+            type: str
+          fallbackLanguage:
+            description: Sponsor Portal's fallbackLanguage.
+            type: str
+          fqdn:
+            description: Sponsor Portal's fqdn.
+            type: str
+          httpsPort:
+            description: Sponsor Portal's httpsPort.
+            type: int
+          idleTimeout:
+            description: Sponsor Portal's idleTimeout.
+            type: int
+        type: dict
+      postLoginBannerSettings:
+        description: Sponsor Portal's postLoginBannerSettings.
+        suboptions:
+          includePostAccessBanner:
+            description: IncludePostAccessBanner flag.
+            type: bool
+        type: dict
+      sponsorChangePasswordSettings:
+        description: Sponsor Portal's sponsorChangePasswordSettings.
+        suboptions:
+          allowSponsorToChangePwd:
+            description: AllowSponsorToChangePwd flag.
+            type: bool
+        type: dict
+      supportInfoSettings:
+        description: Sponsor Portal's supportInfoSettings.
+        suboptions:
+          emptyFieldDisplay:
+            description: Sponsor Portal's emptyFieldDisplay.
+            type: str
+          includeBrowserUserAgent:
+            description: IncludeBrowserUserAgent flag.
+            type: bool
+          includeFailureCode:
+            description: IncludeFailureCode flag.
+            type: bool
+          includeIpAddress:
+            description: IncludeIpAddress flag.
+            type: bool
+          includeMacAddr:
+            description: IncludeMacAddr flag.
+            type: bool
+          includePolicyServer:
+            description: IncludePolicyServer flag.
+            type: bool
+          includeSupportInfoPage:
+            description: IncludeSupportInfoPage flag.
+            type: bool
+        type: dict
+    type: dict
 requirements:
 - ciscoisesdk
 seealso:

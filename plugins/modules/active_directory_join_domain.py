@@ -13,16 +13,16 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    additionalData:
-      description: Active Directory Join Domain's additionalData.
-      suboptions:
-        name:
-          description: Active Directory Join Domain's name.
-          type: str
-        value:
-          description: Active Directory Join Domain's value.
-          type: str
-      type: list
+  additionalData:
+    description: Active Directory Join Domain's additionalData.
+    suboptions:
+      name:
+        description: Active Directory Join Domain's name.
+        type: str
+      value:
+        description: Active Directory Join Domain's value.
+        type: str
+    type: list
 requirements:
 - ciscoisesdk
 seealso:

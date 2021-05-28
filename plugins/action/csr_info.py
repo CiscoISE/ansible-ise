@@ -62,7 +62,7 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
-    def get_object(params):
+    def get_object(self, params):
         new_object = dict(
             hostnames=params.get("hostnames"),
             allow_wild_card_cert=params.get("allowWildCardCert"),

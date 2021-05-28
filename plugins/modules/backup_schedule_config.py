@@ -13,36 +13,36 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    backupDescription:
-      description: Description of the backup.
-      type: str
-    backupEncryptionKey:
-      description: The encyption key for the backed up file. Encryption key must satisfy
-        the following criteria - Contains at least one uppercase letter A-Z, Contains
-        at least one lowercase letter a-z, Contains at least one digit 0-9, Contain only
-        A-Za-z0-9_#, Has at least 8 characters, Has not more than 15 characters, Must
-        not contain 'CcIiSsCco', Must not begin with.
-      type: str
-    backupName:
-      description: The backup file will get saved with this name.
-      type: str
-    endDate:
-      description: End date of the scheduled backup job. Allowed format YYYY-MM-DD. End
-        date is not required in case of ONE_TIME frequency.
-      type: str
-    frequency:
-      description: Frequency with which the backup will get scheduled in the ISE node.
-        Allowed values - ONE_TIME, DAILY, WEEKLY, MONTHLY.
-      type: str
-    repositoryName:
-      description: Name of the repository where the generated backup file will get copied.
-      type: str
-    startDate:
-      description: Start date for scheduling the backup job. Allowed format YYYY-MM-DD.
-      type: str
-    time:
-      description: Time at which backup job get scheduled. Example- 12 00 AM.
-      type: str
+  backupDescription:
+    description: Description of the backup.
+    type: str
+  backupEncryptionKey:
+    description: The encyption key for the backed up file. Encryption key must satisfy
+      the following criteria - Contains at least one uppercase letter A-Z, Contains
+      at least one lowercase letter a-z, Contains at least one digit 0-9, Contain only
+      A-Za-z0-9_#, Has at least 8 characters, Has not more than 15 characters, Must
+      not contain 'CcIiSsCco', Must not begin with.
+    type: str
+  backupName:
+    description: The backup file will get saved with this name.
+    type: str
+  endDate:
+    description: End date of the scheduled backup job. Allowed format YYYY-MM-DD. End
+      date is not required in case of ONE_TIME frequency.
+    type: str
+  frequency:
+    description: Frequency with which the backup will get scheduled in the ISE node.
+      Allowed values - ONE_TIME, DAILY, WEEKLY, MONTHLY.
+    type: str
+  repositoryName:
+    description: Name of the repository where the generated backup file will get copied.
+    type: str
+  startDate:
+    description: Start date for scheduling the backup job. Allowed format YYYY-MM-DD.
+    type: str
+  time:
+    description: Time at which backup job get scheduled. Example- 12 00 AM.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:

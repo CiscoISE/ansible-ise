@@ -13,9 +13,9 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    promotionType:
-      description: Node Promotion's promotionType.
-      type: str
+  promotionType:
+    description: Node Promotion's promotionType.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:

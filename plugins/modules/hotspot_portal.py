@@ -13,148 +13,148 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    customizations:
-      description: Hotspot Portal's customizations.
-      suboptions:
-        globalCustomizations:
-          description: Hotspot Portal's globalCustomizations.
-          suboptions:
-            bannerTitle:
-              description: Hotspot Portal's bannerTitle.
-              type: str
-            contactText:
-              description: Hotspot Portal's contactText.
-              type: str
-            footerElement:
-              description: Hotspot Portal's footerElement.
-              type: str
-          type: dict
-        language:
-          description: Hotspot Portal's language.
-          suboptions:
-            viewLanguage:
-              description: Hotspot Portal's viewLanguage.
-              type: str
-          type: dict
-        pageCustomizations:
-          description: Hotspot Portal's pageCustomizations.
-          suboptions:
-            data:
-              description: Hotspot Portal's data.
-              suboptions:
-                key:
-                  description: Hotspot Portal's key.
-                  type: str
-                value:
-                  description: Hotspot Portal's value.
-                  type: str
-              type: list
-          type: dict
-        portalTheme:
-          description: Hotspot Portal's portalTheme.
-          suboptions:
-            id:
-              description: Hotspot Portal's id.
-              type: str
-            name:
-              description: Hotspot Portal's name.
-              type: str
-          type: dict
-      type: dict
-    description:
-      description: Hotspot Portal's description.
-      type: str
-    id:
-      description: Hotspot Portal's id.
-      type: str
-    name:
-      description: Hotspot Portal's name.
-      type: str
-    portalType:
-      description: Hotspot Portal's portalType.
-      type: str
-    settings:
-      description: Hotspot Portal's settings.
-      suboptions:
-        aupSettings:
-          description: Hotspot Portal's aupSettings.
-          suboptions:
-            includeAup:
-              description: IncludeAup flag.
-              type: bool
-            requireScrolling:
-              description: RequireScrolling flag.
-              type: bool
-          type: dict
-        authSuccessSettings:
-          description: Hotspot Portal's authSuccessSettings.
-          suboptions:
-            successRedirect:
-              description: Hotspot Portal's successRedirect.
-              type: str
-          type: dict
-        portalSettings:
-          description: Hotspot Portal's portalSettings.
-          suboptions:
-            allowedInterfaces:
-              description: Hotspot Portal's allowedInterfaces.
-              elements: str
-              type: list
-            alwaysUsedLanguage:
-              description: Hotspot Portal's alwaysUsedLanguage.
-              type: str
-            certificateGroupTag:
-              description: Hotspot Portal's certificateGroupTag.
-              type: str
-            coaType:
-              description: Hotspot Portal's coaType.
-              type: str
-            displayLang:
-              description: Hotspot Portal's displayLang.
-              type: str
-            endpointIdentityGroup:
-              description: Hotspot Portal's endpointIdentityGroup.
-              type: str
-            fallbackLanguage:
-              description: Hotspot Portal's fallbackLanguage.
-              type: str
-            httpsPort:
-              description: Hotspot Portal's httpsPort.
-              type: int
-          type: dict
-        postAccessBannerSettings:
-          description: Hotspot Portal's postAccessBannerSettings.
-          suboptions:
-            includePostAccessBanner:
-              description: IncludePostAccessBanner flag.
-              type: bool
-          type: dict
-        supportInfoSettings:
-          description: Hotspot Portal's supportInfoSettings.
-          suboptions:
-            emptyFieldDisplay:
-              description: Hotspot Portal's emptyFieldDisplay.
-              type: str
-            includeBrowserUserAgent:
-              description: IncludeBrowserUserAgent flag.
-              type: bool
-            includeFailureCode:
-              description: IncludeFailureCode flag.
-              type: bool
-            includeIpAddress:
-              description: IncludeIpAddress flag.
-              type: bool
-            includeMacAddr:
-              description: IncludeMacAddr flag.
-              type: bool
-            includePolicyServer:
-              description: IncludePolicyServer flag.
-              type: bool
-            includeSupportInfoPage:
-              description: IncludeSupportInfoPage flag.
-              type: bool
-          type: dict
-      type: dict
+  customizations:
+    description: Hotspot Portal's customizations.
+    suboptions:
+      globalCustomizations:
+        description: Hotspot Portal's globalCustomizations.
+        suboptions:
+          bannerTitle:
+            description: Hotspot Portal's bannerTitle.
+            type: str
+          contactText:
+            description: Hotspot Portal's contactText.
+            type: str
+          footerElement:
+            description: Hotspot Portal's footerElement.
+            type: str
+        type: dict
+      language:
+        description: Hotspot Portal's language.
+        suboptions:
+          viewLanguage:
+            description: Hotspot Portal's viewLanguage.
+            type: str
+        type: dict
+      pageCustomizations:
+        description: Hotspot Portal's pageCustomizations.
+        suboptions:
+          data:
+            description: Hotspot Portal's data.
+            suboptions:
+              key:
+                description: Hotspot Portal's key.
+                type: str
+              value:
+                description: Hotspot Portal's value.
+                type: str
+            type: list
+        type: dict
+      portalTheme:
+        description: Hotspot Portal's portalTheme.
+        suboptions:
+          id:
+            description: Hotspot Portal's id.
+            type: str
+          name:
+            description: Hotspot Portal's name.
+            type: str
+        type: dict
+    type: dict
+  description:
+    description: Hotspot Portal's description.
+    type: str
+  id:
+    description: Hotspot Portal's id.
+    type: str
+  name:
+    description: Hotspot Portal's name.
+    type: str
+  portalType:
+    description: Hotspot Portal's portalType.
+    type: str
+  settings:
+    description: Hotspot Portal's settings.
+    suboptions:
+      aupSettings:
+        description: Hotspot Portal's aupSettings.
+        suboptions:
+          includeAup:
+            description: IncludeAup flag.
+            type: bool
+          requireScrolling:
+            description: RequireScrolling flag.
+            type: bool
+        type: dict
+      authSuccessSettings:
+        description: Hotspot Portal's authSuccessSettings.
+        suboptions:
+          successRedirect:
+            description: Hotspot Portal's successRedirect.
+            type: str
+        type: dict
+      portalSettings:
+        description: Hotspot Portal's portalSettings.
+        suboptions:
+          allowedInterfaces:
+            description: Hotspot Portal's allowedInterfaces.
+            elements: str
+            type: list
+          alwaysUsedLanguage:
+            description: Hotspot Portal's alwaysUsedLanguage.
+            type: str
+          certificateGroupTag:
+            description: Hotspot Portal's certificateGroupTag.
+            type: str
+          coaType:
+            description: Hotspot Portal's coaType.
+            type: str
+          displayLang:
+            description: Hotspot Portal's displayLang.
+            type: str
+          endpointIdentityGroup:
+            description: Hotspot Portal's endpointIdentityGroup.
+            type: str
+          fallbackLanguage:
+            description: Hotspot Portal's fallbackLanguage.
+            type: str
+          httpsPort:
+            description: Hotspot Portal's httpsPort.
+            type: int
+        type: dict
+      postAccessBannerSettings:
+        description: Hotspot Portal's postAccessBannerSettings.
+        suboptions:
+          includePostAccessBanner:
+            description: IncludePostAccessBanner flag.
+            type: bool
+        type: dict
+      supportInfoSettings:
+        description: Hotspot Portal's supportInfoSettings.
+        suboptions:
+          emptyFieldDisplay:
+            description: Hotspot Portal's emptyFieldDisplay.
+            type: str
+          includeBrowserUserAgent:
+            description: IncludeBrowserUserAgent flag.
+            type: bool
+          includeFailureCode:
+            description: IncludeFailureCode flag.
+            type: bool
+          includeIpAddress:
+            description: IncludeIpAddress flag.
+            type: bool
+          includeMacAddr:
+            description: IncludeMacAddr flag.
+            type: bool
+          includePolicyServer:
+            description: IncludePolicyServer flag.
+            type: bool
+          includeSupportInfoPage:
+            description: IncludeSupportInfoPage flag.
+            type: bool
+        type: dict
+    type: dict
 requirements:
 - ciscoisesdk
 seealso:

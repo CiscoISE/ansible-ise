@@ -13,132 +13,132 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    condition:
-      description: Device Administration Policy Set's condition.
-      suboptions:
-        attributeId:
-          description: Device Administration Policy Set's attributeId.
-          type: str
-        attributeName:
-          description: Device Administration Policy Set's attributeName.
-          type: str
-        attributeValue:
-          description: Device Administration Policy Set's attributeValue.
-          type: str
-        children:
-          description: Device Administration Policy Set's children.
-          suboptions:
-            conditionType:
-              description: Device Administration Policy Set's conditionType.
-              type: str
-            isNegate:
-              description: IsNegate flag.
-              type: bool
-          type: list
-        conditionType:
-          description: Device Administration Policy Set's conditionType.
-          type: str
-        datesRange:
-          description: Device Administration Policy Set's datesRange.
-          suboptions:
-            endDate:
-              description: Device Administration Policy Set's endDate.
-              type: str
-            startDate:
-              description: Device Administration Policy Set's startDate.
-              type: str
-          type: dict
-        datesRangeException:
-          description: Device Administration Policy Set's datesRangeException.
-          suboptions:
-            endDate:
-              description: Device Administration Policy Set's endDate.
-              type: str
-            startDate:
-              description: Device Administration Policy Set's startDate.
-              type: str
-          type: dict
-        description:
-          description: Device Administration Policy Set's description.
-          type: str
-        dictionaryName:
-          description: Device Administration Policy Set's dictionaryName.
-          type: str
-        dictionaryValue:
-          description: Device Administration Policy Set's dictionaryValue.
-          type: str
-        hoursRange:
-          description: Device Administration Policy Set's hoursRange.
-          suboptions:
-            endTime:
-              description: Device Administration Policy Set's endTime.
-              type: str
-            startTime:
-              description: Device Administration Policy Set's startTime.
-              type: str
-          type: dict
-        hoursRangeException:
-          description: Device Administration Policy Set's hoursRangeException.
-          suboptions:
-            endTime:
-              description: Device Administration Policy Set's endTime.
-              type: str
-            startTime:
-              description: Device Administration Policy Set's startTime.
-              type: str
-          type: dict
-        id:
-          description: Device Administration Policy Set's id.
-          type: str
-        isNegate:
-          description: IsNegate flag.
-          type: bool
-        name:
-          description: Device Administration Policy Set's name.
-          type: str
-        operator:
-          description: Device Administration Policy Set's operator.
-          type: str
-        weekDays:
-          description: Device Administration Policy Set's weekDays.
-          elements: str
-          type: list
-        weekDaysException:
-          description: Device Administration Policy Set's weekDaysException.
-          elements: str
-          type: list
-      type: dict
-    default:
-      description: Flag which indicates if this policy set is the default one.
-      type: bool
-    description:
-      description: The description for the policy set.
-      type: str
-    hitCounts:
-      description: The amount of times the policy was matched.
-      type: int
-    id:
-      description: Identifier for the policy set.
-      type: str
-    isProxy:
-      description: Flag which indicates if the policy set service is of type 'Proxy Sequence'
-        or 'Allowed Protocols'.
-      type: bool
-    name:
-      description: Given name for the policy set, Valid characters are alphanumerics,
-        underscore, hyphen, space, period, parentheses.
-      type: str
-    rank:
-      description: The rank(priority) in relation to other policy set. Lower rank is higher
-        priority.
-      type: int
-    serviceName:
-      description: Policy set service identifier - Allowed Protocols,Server Sequence..
-      type: str
-    state_:
-      description: The state that the policy set is in. A disabled policy set cannot be
-        matched.
-      type: str
+  condition:
+    description: Device Administration Policy Set's condition.
+    suboptions:
+      attributeId:
+        description: Device Administration Policy Set's attributeId.
+        type: str
+      attributeName:
+        description: Device Administration Policy Set's attributeName.
+        type: str
+      attributeValue:
+        description: Device Administration Policy Set's attributeValue.
+        type: str
+      children:
+        description: Device Administration Policy Set's children.
+        suboptions:
+          conditionType:
+            description: Device Administration Policy Set's conditionType.
+            type: str
+          isNegate:
+            description: IsNegate flag.
+            type: bool
+        type: list
+      conditionType:
+        description: Device Administration Policy Set's conditionType.
+        type: str
+      datesRange:
+        description: Device Administration Policy Set's datesRange.
+        suboptions:
+          endDate:
+            description: Device Administration Policy Set's endDate.
+            type: str
+          startDate:
+            description: Device Administration Policy Set's startDate.
+            type: str
+        type: dict
+      datesRangeException:
+        description: Device Administration Policy Set's datesRangeException.
+        suboptions:
+          endDate:
+            description: Device Administration Policy Set's endDate.
+            type: str
+          startDate:
+            description: Device Administration Policy Set's startDate.
+            type: str
+        type: dict
+      description:
+        description: Device Administration Policy Set's description.
+        type: str
+      dictionaryName:
+        description: Device Administration Policy Set's dictionaryName.
+        type: str
+      dictionaryValue:
+        description: Device Administration Policy Set's dictionaryValue.
+        type: str
+      hoursRange:
+        description: Device Administration Policy Set's hoursRange.
+        suboptions:
+          endTime:
+            description: Device Administration Policy Set's endTime.
+            type: str
+          startTime:
+            description: Device Administration Policy Set's startTime.
+            type: str
+        type: dict
+      hoursRangeException:
+        description: Device Administration Policy Set's hoursRangeException.
+        suboptions:
+          endTime:
+            description: Device Administration Policy Set's endTime.
+            type: str
+          startTime:
+            description: Device Administration Policy Set's startTime.
+            type: str
+        type: dict
+      id:
+        description: Device Administration Policy Set's id.
+        type: str
+      isNegate:
+        description: IsNegate flag.
+        type: bool
+      name:
+        description: Device Administration Policy Set's name.
+        type: str
+      operator:
+        description: Device Administration Policy Set's operator.
+        type: str
+      weekDays:
+        description: Device Administration Policy Set's weekDays.
+        elements: str
+        type: list
+      weekDaysException:
+        description: Device Administration Policy Set's weekDaysException.
+        elements: str
+        type: list
+    type: dict
+  default:
+    description: Flag which indicates if this policy set is the default one.
+    type: bool
+  description:
+    description: The description for the policy set.
+    type: str
+  hitCounts:
+    description: The amount of times the policy was matched.
+    type: int
+  id:
+    description: Identifier for the policy set.
+    type: str
+  isProxy:
+    description: Flag which indicates if the policy set service is of type 'Proxy Sequence'
+      or 'Allowed Protocols'.
+    type: bool
+  name:
+    description: Given name for the policy set, Valid characters are alphanumerics,
+      underscore, hyphen, space, period, parentheses.
+    type: str
+  rank:
+    description: The rank(priority) in relation to other policy set. Lower rank is higher
+      priority.
+    type: int
+  serviceName:
+    description: Policy set service identifier - Allowed Protocols,Server Sequence..
+    type: str
+  state_:
+    description: The state that the policy set is in. A disabled policy set cannot be
+      matched.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:

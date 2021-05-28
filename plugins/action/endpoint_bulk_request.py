@@ -56,7 +56,7 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
-    def get_object(params):
+    def get_object(self, params):
         new_object = dict(
             operation_type=params.get("operationType"),
             resource_media_type=params.get("resourceMediaType"),

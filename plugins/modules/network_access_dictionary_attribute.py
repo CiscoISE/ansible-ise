@@ -13,41 +13,41 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    allowedValues:
-      description: All of the allowed values for the dictionary attribute.
-      suboptions:
-        isDefault:
-          description: True if this key value is the default between the allowed values
-            of the dictionary attribute.
-          type: bool
-        key:
-          description: Network Access Dictionary Attribute's key.
-          type: str
-        value:
-          description: Network Access Dictionary Attribute's value.
-          type: str
-      type: list
-    dataType:
-      description: The data type for the dictionary attribute.
-      type: str
-    description:
-      description: The description of the Dictionary attribute.
-      type: str
-    dictionaryName:
-      description: The name of the dictionary which the dictionary attribute belongs to.
-      type: str
-    directionType:
-      description: The direction for the useage of the dictionary attribute.
-      type: str
-    id:
-      description: Identifier for the dictionary attribute.
-      type: str
-    internalName:
-      description: The internal name of the dictionary attribute.
-      type: str
-    name:
-      description: The dictionary attribute's name.
-      type: str
+  allowedValues:
+    description: All of the allowed values for the dictionary attribute.
+    suboptions:
+      isDefault:
+        description: True if this key value is the default between the allowed values
+          of the dictionary attribute.
+        type: bool
+      key:
+        description: Network Access Dictionary Attribute's key.
+        type: str
+      value:
+        description: Network Access Dictionary Attribute's value.
+        type: str
+    type: list
+  dataType:
+    description: The data type for the dictionary attribute.
+    type: str
+  description:
+    description: The description of the Dictionary attribute.
+    type: str
+  dictionaryName:
+    description: The name of the dictionary which the dictionary attribute belongs to.
+    type: str
+  directionType:
+    description: The direction for the useage of the dictionary attribute.
+    type: str
+  id:
+    description: Identifier for the dictionary attribute.
+    type: str
+  internalName:
+    description: The internal name of the dictionary attribute.
+    type: str
+  name:
+    description: The dictionary attribute's name.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:

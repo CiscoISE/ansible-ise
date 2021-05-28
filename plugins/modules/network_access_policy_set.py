@@ -13,132 +13,132 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    condition:
-      description: Network Access Policy Set's condition.
-      suboptions:
-        attributeId:
-          description: Network Access Policy Set's attributeId.
-          type: str
-        attributeName:
-          description: Network Access Policy Set's attributeName.
-          type: str
-        attributeValue:
-          description: Network Access Policy Set's attributeValue.
-          type: str
-        children:
-          description: Network Access Policy Set's children.
-          suboptions:
-            conditionType:
-              description: Network Access Policy Set's conditionType.
-              type: str
-            isNegate:
-              description: IsNegate flag.
-              type: bool
-          type: list
-        conditionType:
-          description: Network Access Policy Set's conditionType.
-          type: str
-        datesRange:
-          description: Network Access Policy Set's datesRange.
-          suboptions:
-            endDate:
-              description: Network Access Policy Set's endDate.
-              type: str
-            startDate:
-              description: Network Access Policy Set's startDate.
-              type: str
-          type: dict
-        datesRangeException:
-          description: Network Access Policy Set's datesRangeException.
-          suboptions:
-            endDate:
-              description: Network Access Policy Set's endDate.
-              type: str
-            startDate:
-              description: Network Access Policy Set's startDate.
-              type: str
-          type: dict
-        description:
-          description: Network Access Policy Set's description.
-          type: str
-        dictionaryName:
-          description: Network Access Policy Set's dictionaryName.
-          type: str
-        dictionaryValue:
-          description: Network Access Policy Set's dictionaryValue.
-          type: str
-        hoursRange:
-          description: Network Access Policy Set's hoursRange.
-          suboptions:
-            endTime:
-              description: Network Access Policy Set's endTime.
-              type: str
-            startTime:
-              description: Network Access Policy Set's startTime.
-              type: str
-          type: dict
-        hoursRangeException:
-          description: Network Access Policy Set's hoursRangeException.
-          suboptions:
-            endTime:
-              description: Network Access Policy Set's endTime.
-              type: str
-            startTime:
-              description: Network Access Policy Set's startTime.
-              type: str
-          type: dict
-        id:
-          description: Network Access Policy Set's id.
-          type: str
-        isNegate:
-          description: IsNegate flag.
-          type: bool
-        name:
-          description: Network Access Policy Set's name.
-          type: str
-        operator:
-          description: Network Access Policy Set's operator.
-          type: str
-        weekDays:
-          description: Network Access Policy Set's weekDays.
-          elements: str
-          type: list
-        weekDaysException:
-          description: Network Access Policy Set's weekDaysException.
-          elements: str
-          type: list
-      type: dict
-    default:
-      description: Flag which indicates if this policy set is the default one.
-      type: bool
-    description:
-      description: The description for the policy set.
-      type: str
-    hitCounts:
-      description: The amount of times the policy was matched.
-      type: int
-    id:
-      description: Identifier for the policy set.
-      type: str
-    isProxy:
-      description: Flag which indicates if the policy set service is of type 'Proxy Sequence'
-        or 'Allowed Protocols'.
-      type: bool
-    name:
-      description: Given name for the policy set, Valid characters are alphanumerics,
-        underscore, hyphen, space, period, parentheses.
-      type: str
-    rank:
-      description: The rank(priority) in relation to other policy set. Lower rank is higher
-        priority.
-      type: int
-    serviceName:
-      description: Policy set service identifier - Allowed Protocols,Server Sequence..
-      type: str
-    state_:
-      description: The state that the policy set is in. A disabled policy set cannot be
-        matched.
-      type: str
+  condition:
+    description: Network Access Policy Set's condition.
+    suboptions:
+      attributeId:
+        description: Network Access Policy Set's attributeId.
+        type: str
+      attributeName:
+        description: Network Access Policy Set's attributeName.
+        type: str
+      attributeValue:
+        description: Network Access Policy Set's attributeValue.
+        type: str
+      children:
+        description: Network Access Policy Set's children.
+        suboptions:
+          conditionType:
+            description: Network Access Policy Set's conditionType.
+            type: str
+          isNegate:
+            description: IsNegate flag.
+            type: bool
+        type: list
+      conditionType:
+        description: Network Access Policy Set's conditionType.
+        type: str
+      datesRange:
+        description: Network Access Policy Set's datesRange.
+        suboptions:
+          endDate:
+            description: Network Access Policy Set's endDate.
+            type: str
+          startDate:
+            description: Network Access Policy Set's startDate.
+            type: str
+        type: dict
+      datesRangeException:
+        description: Network Access Policy Set's datesRangeException.
+        suboptions:
+          endDate:
+            description: Network Access Policy Set's endDate.
+            type: str
+          startDate:
+            description: Network Access Policy Set's startDate.
+            type: str
+        type: dict
+      description:
+        description: Network Access Policy Set's description.
+        type: str
+      dictionaryName:
+        description: Network Access Policy Set's dictionaryName.
+        type: str
+      dictionaryValue:
+        description: Network Access Policy Set's dictionaryValue.
+        type: str
+      hoursRange:
+        description: Network Access Policy Set's hoursRange.
+        suboptions:
+          endTime:
+            description: Network Access Policy Set's endTime.
+            type: str
+          startTime:
+            description: Network Access Policy Set's startTime.
+            type: str
+        type: dict
+      hoursRangeException:
+        description: Network Access Policy Set's hoursRangeException.
+        suboptions:
+          endTime:
+            description: Network Access Policy Set's endTime.
+            type: str
+          startTime:
+            description: Network Access Policy Set's startTime.
+            type: str
+        type: dict
+      id:
+        description: Network Access Policy Set's id.
+        type: str
+      isNegate:
+        description: IsNegate flag.
+        type: bool
+      name:
+        description: Network Access Policy Set's name.
+        type: str
+      operator:
+        description: Network Access Policy Set's operator.
+        type: str
+      weekDays:
+        description: Network Access Policy Set's weekDays.
+        elements: str
+        type: list
+      weekDaysException:
+        description: Network Access Policy Set's weekDaysException.
+        elements: str
+        type: list
+    type: dict
+  default:
+    description: Flag which indicates if this policy set is the default one.
+    type: bool
+  description:
+    description: The description for the policy set.
+    type: str
+  hitCounts:
+    description: The amount of times the policy was matched.
+    type: int
+  id:
+    description: Identifier for the policy set.
+    type: str
+  isProxy:
+    description: Flag which indicates if the policy set service is of type 'Proxy Sequence'
+      or 'Allowed Protocols'.
+    type: bool
+  name:
+    description: Given name for the policy set, Valid characters are alphanumerics,
+      underscore, hyphen, space, period, parentheses.
+    type: str
+  rank:
+    description: The rank(priority) in relation to other policy set. Lower rank is higher
+      priority.
+    type: int
+  serviceName:
+    description: Policy set service identifier - Allowed Protocols,Server Sequence..
+    type: str
+  state_:
+    description: The state that the policy set is in. A disabled policy set cannot be
+      matched.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:

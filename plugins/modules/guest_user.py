@@ -13,59 +13,59 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    guestAccessInfo:
-      description: Guest User's guestAccessInfo.
-      suboptions:
-        fromDate:
-          description: Guest User's fromDate.
-          type: str
-        location:
-          description: Guest User's location.
-          type: str
-        toDate:
-          description: Guest User's toDate.
-          type: str
-        validDays:
-          description: Guest User's validDays.
-          type: int
-      type: dict
-    guestInfo:
-      description: Guest User's guestInfo.
-      suboptions:
-        emailAddress:
-          description: Guest User's emailAddress.
-          type: str
-        enabled:
-          description: Guest User's enabled.
-          type: str
-        firstName:
-          description: Guest User's firstName.
-          type: str
-        lastName:
-          description: Guest User's lastName.
-          type: str
-        password:
-          description: Guest User's password.
-          type: str
-        userName:
-          description: Guest User's userName.
-          type: str
-      type: dict
-    guestType:
-      description: Guest User's guestType.
-      type: str
-    id:
-      description: Guest User's id.
-      type: str
-    name:
-      description: Name path parameter.
-      type: str
-    portalId:
-      description: Guest User's portalId.
-      type: str
-    reasonForVisit:
-      description: Guest User's reasonForVisit.
-      type: str
+  guestAccessInfo:
+    description: Guest User's guestAccessInfo.
+    suboptions:
+      fromDate:
+        description: Guest User's fromDate.
+        type: str
+      location:
+        description: Guest User's location.
+        type: str
+      toDate:
+        description: Guest User's toDate.
+        type: str
+      validDays:
+        description: Guest User's validDays.
+        type: int
+    type: dict
+  guestInfo:
+    description: Guest User's guestInfo.
+    suboptions:
+      emailAddress:
+        description: Guest User's emailAddress.
+        type: str
+      enabled:
+        description: Guest User's enabled.
+        type: str
+      firstName:
+        description: Guest User's firstName.
+        type: str
+      lastName:
+        description: Guest User's lastName.
+        type: str
+      password:
+        description: Guest User's password.
+        type: str
+      userName:
+        description: Guest User's userName.
+        type: str
+    type: dict
+  guestType:
+    description: Guest User's guestType.
+    type: str
+  id:
+    description: Guest User's id.
+    type: str
+  name:
+    description: Name path parameter.
+    type: str
+  portalId:
+    description: Guest User's portalId.
+    type: str
+  reasonForVisit:
+    description: Guest User's reasonForVisit.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:

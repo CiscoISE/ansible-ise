@@ -13,141 +13,141 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    accessType:
-      description: Authorization Profile's accessType.
-      type: str
-    acl:
-      description: Authorization Profile's acl.
-      type: str
-    advancedAttributes:
-      description: Authorization Profile's advancedAttributes.
-      suboptions:
-        leftHandSideDictionaryAttribue:
-          description: Authorization Profile's leftHandSideDictionaryAttribue.
-          suboptions:
-            AdvancedAttributeValueType:
-              description: Authorization Profile's AdvancedAttributeValueType.
-              type: str
-            attributeName:
-              description: Authorization Profile's attributeName.
-              type: str
-            dictionaryName:
-              description: Authorization Profile's dictionaryName.
-              type: str
-          type: dict
-        rightHandSideAttribueValue:
-          description: Authorization Profile's rightHandSideAttribueValue.
-          suboptions:
-            AdvancedAttributeValueType:
-              description: Authorization Profile's AdvancedAttributeValueType.
-              type: str
-            value:
-              description: Authorization Profile's value.
-              type: str
-          type: dict
-      type: list
-    airespaceACL:
-      description: Authorization Profile's airespaceACL.
-      type: str
-    airespaceIPv6ACL:
-      description: Authorization Profile's airespaceIPv6ACL.
-      type: str
-    asaVpn:
-      description: Authorization Profile's asaVpn.
-      type: str
-    authzProfileType:
-      description: Authorization Profile's authzProfileType.
-      type: str
-    autoSmartPort:
-      description: Authorization Profile's autoSmartPort.
-      type: str
-    avcProfile:
-      description: Authorization Profile's avcProfile.
-      type: str
-    daclName:
-      description: Authorization Profile's daclName.
-      type: str
-    description:
-      description: Authorization Profile's description.
-      type: str
-    easywiredSessionCandidate:
-      description: EasywiredSessionCandidate flag.
-      type: bool
-    id:
-      description: Authorization Profile's id.
-      type: str
-    interfaceTemplate:
-      description: Authorization Profile's interfaceTemplate.
-      type: str
-    ipv6ACLFilter:
-      description: Authorization Profile's ipv6ACLFilter.
-      type: str
-    ipv6DaclName:
-      description: Authorization Profile's ipv6DaclName.
-      type: str
-    macSecPolicy:
-      description: Authorization Profile's macSecPolicy.
-      type: str
-    name:
-      description: Authorization Profile's name.
-      type: str
-    neat:
-      description: Neat flag.
-      type: bool
-    profileName:
-      description: Authorization Profile's profileName.
-      type: str
-    reauth:
-      description: Authorization Profile's reauth.
-      suboptions:
-        connectivity:
-          description: Authorization Profile's connectivity.
-          type: str
-        timer:
-          description: Authorization Profile's timer.
-          type: int
-      type: dict
-    serviceTemplate:
-      description: ServiceTemplate flag.
-      type: bool
-    trackMovement:
-      description: TrackMovement flag.
-      type: bool
-    vlan:
-      description: Authorization Profile's vlan.
-      suboptions:
-        nameID:
-          description: Authorization Profile's nameID.
-          type: str
-        tagID:
-          description: Authorization Profile's tagID.
-          type: int
-      type: dict
-    voiceDomainPermission:
-      description: VoiceDomainPermission flag.
-      type: bool
-    webAuth:
-      description: WebAuth flag.
-      type: bool
-    webRedirection:
-      description: Authorization Profile's webRedirection.
-      suboptions:
-        WebRedirectionType:
-          description: Authorization Profile's WebRedirectionType.
-          type: str
-        acl:
-          description: Authorization Profile's acl.
-          type: str
-        displayCertificatesRenewalMessages:
-          description: DisplayCertificatesRenewalMessages flag.
-          type: bool
-        portalName:
-          description: Authorization Profile's portalName.
-          type: str
-        staticIPHostNameFQDN:
-          description: Authorization Profile's staticIPHostNameFQDN.
-          type: str
-      type: dict
+  accessType:
+    description: Authorization Profile's accessType.
+    type: str
+  acl:
+    description: Authorization Profile's acl.
+    type: str
+  advancedAttributes:
+    description: Authorization Profile's advancedAttributes.
+    suboptions:
+      leftHandSideDictionaryAttribue:
+        description: Authorization Profile's leftHandSideDictionaryAttribue.
+        suboptions:
+          AdvancedAttributeValueType:
+            description: Authorization Profile's AdvancedAttributeValueType.
+            type: str
+          attributeName:
+            description: Authorization Profile's attributeName.
+            type: str
+          dictionaryName:
+            description: Authorization Profile's dictionaryName.
+            type: str
+        type: dict
+      rightHandSideAttribueValue:
+        description: Authorization Profile's rightHandSideAttribueValue.
+        suboptions:
+          AdvancedAttributeValueType:
+            description: Authorization Profile's AdvancedAttributeValueType.
+            type: str
+          value:
+            description: Authorization Profile's value.
+            type: str
+        type: dict
+    type: list
+  airespaceACL:
+    description: Authorization Profile's airespaceACL.
+    type: str
+  airespaceIPv6ACL:
+    description: Authorization Profile's airespaceIPv6ACL.
+    type: str
+  asaVpn:
+    description: Authorization Profile's asaVpn.
+    type: str
+  authzProfileType:
+    description: Authorization Profile's authzProfileType.
+    type: str
+  autoSmartPort:
+    description: Authorization Profile's autoSmartPort.
+    type: str
+  avcProfile:
+    description: Authorization Profile's avcProfile.
+    type: str
+  daclName:
+    description: Authorization Profile's daclName.
+    type: str
+  description:
+    description: Authorization Profile's description.
+    type: str
+  easywiredSessionCandidate:
+    description: EasywiredSessionCandidate flag.
+    type: bool
+  id:
+    description: Authorization Profile's id.
+    type: str
+  interfaceTemplate:
+    description: Authorization Profile's interfaceTemplate.
+    type: str
+  ipv6ACLFilter:
+    description: Authorization Profile's ipv6ACLFilter.
+    type: str
+  ipv6DaclName:
+    description: Authorization Profile's ipv6DaclName.
+    type: str
+  macSecPolicy:
+    description: Authorization Profile's macSecPolicy.
+    type: str
+  name:
+    description: Authorization Profile's name.
+    type: str
+  neat:
+    description: Neat flag.
+    type: bool
+  profileName:
+    description: Authorization Profile's profileName.
+    type: str
+  reauth:
+    description: Authorization Profile's reauth.
+    suboptions:
+      connectivity:
+        description: Authorization Profile's connectivity.
+        type: str
+      timer:
+        description: Authorization Profile's timer.
+        type: int
+    type: dict
+  serviceTemplate:
+    description: ServiceTemplate flag.
+    type: bool
+  trackMovement:
+    description: TrackMovement flag.
+    type: bool
+  vlan:
+    description: Authorization Profile's vlan.
+    suboptions:
+      nameID:
+        description: Authorization Profile's nameID.
+        type: str
+      tagID:
+        description: Authorization Profile's tagID.
+        type: int
+    type: dict
+  voiceDomainPermission:
+    description: VoiceDomainPermission flag.
+    type: bool
+  webAuth:
+    description: WebAuth flag.
+    type: bool
+  webRedirection:
+    description: Authorization Profile's webRedirection.
+    suboptions:
+      WebRedirectionType:
+        description: Authorization Profile's WebRedirectionType.
+        type: str
+      acl:
+        description: Authorization Profile's acl.
+        type: str
+      displayCertificatesRenewalMessages:
+        description: DisplayCertificatesRenewalMessages flag.
+        type: bool
+      portalName:
+        description: Authorization Profile's portalName.
+        type: str
+      staticIPHostNameFQDN:
+        description: Authorization Profile's staticIPHostNameFQDN.
+        type: str
+    type: dict
 requirements:
 - ciscoisesdk
 seealso:

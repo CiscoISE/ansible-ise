@@ -13,111 +13,111 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    attributeId:
-      description: Device Administration Time Date Conditions's attributeId.
-      type: str
-    attributeName:
-      description: Device Administration Time Date Conditions's attributeName.
-      type: str
-    attributeValue:
-      description: Device Administration Time Date Conditions's attributeValue.
-      type: str
-    children:
-      description: Device Administration Time Date Conditions's children.
-      suboptions:
-        conditionType:
-          description: Device Administration Time Date Conditions's conditionType.
-          type: str
-        isNegate:
-          description: IsNegate flag.
-          type: bool
-      type: list
-    conditionType:
-      description: Device Administration Time Date Conditions's conditionType.
-      type: str
-    datesRange:
-      description: <p>Defines for which date/s TimeAndDate condition will be matched or
-        NOT matched if used in exceptionDates prooperty<br> Options are - Date range,
-        for specific date, the same date should be used for start/end date <br> Default
-        - no specific dates<br> In order to reset the dates to have no specific dates
-        Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)</p>.
-      suboptions:
-        endDate:
-          description: Device Administration Time Date Conditions's endDate.
-          type: str
-        startDate:
-          description: Device Administration Time Date Conditions's startDate.
-          type: str
-      type: dict
-    datesRangeException:
-      description: <p>Defines for which date/s TimeAndDate condition will be matched or
-        NOT matched if used in exceptionDates prooperty<br> Options are - Date range,
-        for specific date, the same date should be used for start/end date <br> Default
-        - no specific dates<br> In order to reset the dates to have no specific dates
-        Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)</p>.
-      suboptions:
-        endDate:
-          description: Device Administration Time Date Conditions's endDate.
-          type: str
-        startDate:
-          description: Device Administration Time Date Conditions's startDate.
-          type: str
-      type: dict
-    description:
-      description: Condition description.
-      type: str
-    dictionaryName:
-      description: Device Administration Time Date Conditions's dictionaryName.
-      type: str
-    dictionaryValue:
-      description: Device Administration Time Date Conditions's dictionaryValue.
-      type: str
-    hoursRange:
-      description: <p>Defines for which hours a TimeAndDate condition will be matched
-        or not matched if used in exceptionHours property<br> Time foramt - hh mm ( h
-        = hour , mm = minutes ) <br> Default - All Day </p>.
-      suboptions:
-        endTime:
-          description: Device Administration Time Date Conditions's endTime.
-          type: str
-        startTime:
-          description: Device Administration Time Date Conditions's startTime.
-          type: str
-      type: dict
-    hoursRangeException:
-      description: <p>Defines for which hours a TimeAndDate condition will be matched
-        or not matched if used in exceptionHours property<br> Time foramt - hh mm ( h
-        = hour , mm = minutes ) <br> Default - All Day </p>.
-      suboptions:
-        endTime:
-          description: Device Administration Time Date Conditions's endTime.
-          type: str
-        startTime:
-          description: Device Administration Time Date Conditions's startTime.
-          type: str
-      type: dict
-    id:
-      description: Device Administration Time Date Conditions's id.
-      type: str
-    isNegate:
-      description: IsNegate flag.
-      type: bool
-    name:
-      description: Condition name.
-      type: str
-    operator:
-      description: Device Administration Time Date Conditions's operator.
-      type: str
-    weekDays:
-      description: <p>Defines for which days this condition will be matched<br> Days format
-        - Arrays of WeekDay enums <br> Default - List of All week days</p>.
-      elements: str
-      type: list
-    weekDaysException:
-      description: <p>Defines for which days this condition will NOT be matched<br> Days
-        format - Arrays of WeekDay enums <br> Default - Not enabled</p>.
-      elements: str
-      type: list
+  attributeId:
+    description: Device Administration Time Date Conditions's attributeId.
+    type: str
+  attributeName:
+    description: Device Administration Time Date Conditions's attributeName.
+    type: str
+  attributeValue:
+    description: Device Administration Time Date Conditions's attributeValue.
+    type: str
+  children:
+    description: Device Administration Time Date Conditions's children.
+    suboptions:
+      conditionType:
+        description: Device Administration Time Date Conditions's conditionType.
+        type: str
+      isNegate:
+        description: IsNegate flag.
+        type: bool
+    type: list
+  conditionType:
+    description: Device Administration Time Date Conditions's conditionType.
+    type: str
+  datesRange:
+    description: <p>Defines for which date/s TimeAndDate condition will be matched or
+      NOT matched if used in exceptionDates prooperty<br> Options are - Date range,
+      for specific date, the same date should be used for start/end date <br> Default
+      - no specific dates<br> In order to reset the dates to have no specific dates
+      Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)</p>.
+    suboptions:
+      endDate:
+        description: Device Administration Time Date Conditions's endDate.
+        type: str
+      startDate:
+        description: Device Administration Time Date Conditions's startDate.
+        type: str
+    type: dict
+  datesRangeException:
+    description: <p>Defines for which date/s TimeAndDate condition will be matched or
+      NOT matched if used in exceptionDates prooperty<br> Options are - Date range,
+      for specific date, the same date should be used for start/end date <br> Default
+      - no specific dates<br> In order to reset the dates to have no specific dates
+      Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)</p>.
+    suboptions:
+      endDate:
+        description: Device Administration Time Date Conditions's endDate.
+        type: str
+      startDate:
+        description: Device Administration Time Date Conditions's startDate.
+        type: str
+    type: dict
+  description:
+    description: Condition description.
+    type: str
+  dictionaryName:
+    description: Device Administration Time Date Conditions's dictionaryName.
+    type: str
+  dictionaryValue:
+    description: Device Administration Time Date Conditions's dictionaryValue.
+    type: str
+  hoursRange:
+    description: <p>Defines for which hours a TimeAndDate condition will be matched
+      or not matched if used in exceptionHours property<br> Time foramt - hh mm ( h
+      = hour , mm = minutes ) <br> Default - All Day </p>.
+    suboptions:
+      endTime:
+        description: Device Administration Time Date Conditions's endTime.
+        type: str
+      startTime:
+        description: Device Administration Time Date Conditions's startTime.
+        type: str
+    type: dict
+  hoursRangeException:
+    description: <p>Defines for which hours a TimeAndDate condition will be matched
+      or not matched if used in exceptionHours property<br> Time foramt - hh mm ( h
+      = hour , mm = minutes ) <br> Default - All Day </p>.
+    suboptions:
+      endTime:
+        description: Device Administration Time Date Conditions's endTime.
+        type: str
+      startTime:
+        description: Device Administration Time Date Conditions's startTime.
+        type: str
+    type: dict
+  id:
+    description: Device Administration Time Date Conditions's id.
+    type: str
+  isNegate:
+    description: IsNegate flag.
+    type: bool
+  name:
+    description: Condition name.
+    type: str
+  operator:
+    description: Device Administration Time Date Conditions's operator.
+    type: str
+  weekDays:
+    description: <p>Defines for which days this condition will be matched<br> Days format
+      - Arrays of WeekDay enums <br> Default - List of All week days</p>.
+    elements: str
+    type: list
+  weekDaysException:
+    description: <p>Defines for which days this condition will NOT be matched<br> Days
+      format - Arrays of WeekDay enums <br> Default - Not enabled</p>.
+    elements: str
+    type: list
 requirements:
 - ciscoisesdk
 seealso:

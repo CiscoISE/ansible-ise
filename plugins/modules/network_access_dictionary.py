@@ -13,21 +13,21 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    description:
-      description: The description of the Dictionary.
-      type: str
-    dictionaryAttrType:
-      description: The dictionary attribute type.
-      type: str
-    id:
-      description: Identifier for the dictionary.
-      type: str
-    name:
-      description: The dictionary name.
-      type: str
-    version:
-      description: The dictionary version.
-      type: str
+  description:
+    description: The description of the Dictionary.
+    type: str
+  dictionaryAttrType:
+    description: The dictionary attribute type.
+    type: str
+  id:
+    description: Identifier for the dictionary.
+    type: str
+  name:
+    description: The dictionary name.
+    type: str
+  version:
+    description: The dictionary version.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:

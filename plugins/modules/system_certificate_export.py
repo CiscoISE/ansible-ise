@@ -13,18 +13,18 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    certificateID:
-      description: System Certificate Export's certificateID.
-      type: str
-    export:
-      description: System Certificate Export's export.
-      type: str
-    id:
-      description: System Certificate Export's id.
-      type: str
-    password:
-      description: System Certificate Export's password.
-      type: str
+  certificateID:
+    description: System Certificate Export's certificateID.
+    type: str
+  export:
+    description: System Certificate Export's export.
+    type: str
+  id:
+    description: System Certificate Export's id.
+    type: str
+  password:
+    description: System Certificate Export's password.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:

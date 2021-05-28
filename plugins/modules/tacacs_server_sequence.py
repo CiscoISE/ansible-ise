@@ -13,33 +13,33 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    id:
-      description: Id path parameter.
-      type: str
-    localAccounting:
-      description: LocalAccounting flag.
-      type: bool
-    name:
-      description: Tacacs Server Sequence's name.
-      type: str
-    prefixDelimiter:
-      description: Tacacs Server Sequence's prefixDelimiter.
-      type: str
-    prefixStrip:
-      description: PrefixStrip flag.
-      type: bool
-    remoteAccounting:
-      description: RemoteAccounting flag.
-      type: bool
-    serverList:
-      description: Tacacs Server Sequence's serverList.
-      type: str
-    suffixDelimiter:
-      description: Tacacs Server Sequence's suffixDelimiter.
-      type: str
-    suffixStrip:
-      description: SuffixStrip flag.
-      type: bool
+  id:
+    description: Id path parameter.
+    type: str
+  localAccounting:
+    description: LocalAccounting flag.
+    type: bool
+  name:
+    description: Tacacs Server Sequence's name.
+    type: str
+  prefixDelimiter:
+    description: Tacacs Server Sequence's prefixDelimiter.
+    type: str
+  prefixStrip:
+    description: PrefixStrip flag.
+    type: bool
+  remoteAccounting:
+    description: RemoteAccounting flag.
+    type: bool
+  serverList:
+    description: Tacacs Server Sequence's serverList.
+    type: str
+  suffixDelimiter:
+    description: Tacacs Server Sequence's suffixDelimiter.
+    type: str
+  suffixStrip:
+    description: SuffixStrip flag.
+    type: bool
 requirements:
 - ciscoisesdk
 seealso:

@@ -55,7 +55,7 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
-    def get_object(params):
+    def get_object(self, params):
         new_object = dict(
             description=params.get("description"),
             mar_cache=params.get("mar_cache"),

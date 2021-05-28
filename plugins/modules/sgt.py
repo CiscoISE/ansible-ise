@@ -13,24 +13,24 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    description:
-      description: Sgt's description.
-      type: str
-    generationId:
-      description: Sgt's generationId.
-      type: str
-    id:
-      description: Id path parameter.
-      type: str
-    name:
-      description: Sgt's name.
-      type: str
-    propogateToApic:
-      description: PropogateToApic flag.
-      type: bool
-    value:
-      description: Sgt's value.
-      type: int
+  description:
+    description: Sgt's description.
+    type: str
+  generationId:
+    description: Sgt's generationId.
+    type: str
+  id:
+    description: Id path parameter.
+    type: str
+  name:
+    description: Sgt's name.
+    type: str
+  propogateToApic:
+    description: PropogateToApic flag.
+    type: bool
+  value:
+    description: Sgt's value.
+    type: int
 requirements:
 - ciscoisesdk
 seealso:

@@ -13,12 +13,12 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    operationType:
-      description: Anc Policy Bulk Request's operationType.
-      type: str
-    resourceMediaType:
-      description: Anc Policy Bulk Request's resourceMediaType.
-      type: str
+  operationType:
+    description: Anc Policy Bulk Request's operationType.
+    type: str
+  resourceMediaType:
+    description: Anc Policy Bulk Request's resourceMediaType.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:

@@ -13,12 +13,12 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    operationType:
-      description: Network Device Bulk Request's operationType.
-      type: str
-    resourceMediaType:
-      description: Network Device Bulk Request's resourceMediaType.
-      type: str
+  operationType:
+    description: Network Device Bulk Request's operationType.
+    type: str
+  resourceMediaType:
+    description: Network Device Bulk Request's resourceMediaType.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:

@@ -62,7 +62,7 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
-    def get_object(params):
+    def get_object(self, params):
         new_object = dict(
             guest_type=params.get("guestType"),
             reason_for_visit=params.get("reasonForVisit"),

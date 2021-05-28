@@ -54,7 +54,7 @@ class ActionModule(ActionBase):
         if not valid:
             raise AnsibleActionFail(errors)
 
-    def get_object(params):
+    def get_object(self, params):
         new_object = dict(
             is_enabled=params.get("isEnabled"),
             primary_health_check_node=params.get("primaryHealthCheckNode"),

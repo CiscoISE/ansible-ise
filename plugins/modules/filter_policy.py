@@ -13,21 +13,21 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    domains:
-      description: Filter Policy's domains.
-      type: str
-    id:
-      description: Id path parameter.
-      type: str
-    sgt:
-      description: Filter Policy's sgt.
-      type: str
-    subnet:
-      description: Filter Policy's subnet.
-      type: str
-    vn:
-      description: Filter Policy's vn.
-      type: str
+  domains:
+    description: Filter Policy's domains.
+    type: str
+  id:
+    description: Id path parameter.
+    type: str
+  sgt:
+    description: Filter Policy's sgt.
+    type: str
+  subnet:
+    description: Filter Policy's subnet.
+    type: str
+  vn:
+    description: Filter Policy's vn.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:

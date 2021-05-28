@@ -13,18 +13,18 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    description:
-      description: Endpoint Group's description.
-      type: str
-    id:
-      description: Endpoint Group's id.
-      type: str
-    name:
-      description: Endpoint Group's name.
-      type: str
-    systemDefined:
-      description: SystemDefined flag.
-      type: bool
+  description:
+    description: Endpoint Group's description.
+    type: str
+  id:
+    description: Endpoint Group's id.
+    type: str
+  name:
+    description: Endpoint Group's name.
+    type: str
+  systemDefined:
+    description: SystemDefined flag.
+    type: bool
 requirements:
 - ciscoisesdk
 seealso:

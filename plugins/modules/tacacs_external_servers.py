@@ -13,30 +13,30 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    connectionPort:
-      description: Tacacs External Servers's connectionPort.
-      type: int
-    description:
-      description: Tacacs External Servers's description.
-      type: str
-    hostIP:
-      description: Tacacs External Servers's hostIP.
-      type: str
-    id:
-      description: Id path parameter.
-      type: str
-    name:
-      description: Tacacs External Servers's name.
-      type: str
-    sharedSecret:
-      description: Tacacs External Servers's sharedSecret.
-      type: str
-    singleConnect:
-      description: SingleConnect flag.
-      type: bool
-    timeout:
-      description: Tacacs External Servers's timeout.
-      type: int
+  connectionPort:
+    description: Tacacs External Servers's connectionPort.
+    type: int
+  description:
+    description: Tacacs External Servers's description.
+    type: str
+  hostIP:
+    description: Tacacs External Servers's hostIP.
+    type: str
+  id:
+    description: Id path parameter.
+    type: str
+  name:
+    description: Tacacs External Servers's name.
+    type: str
+  sharedSecret:
+    description: Tacacs External Servers's sharedSecret.
+    type: str
+  singleConnect:
+    description: SingleConnect flag.
+    type: bool
+  timeout:
+    description: Tacacs External Servers's timeout.
+    type: int
 requirements:
 - ciscoisesdk
 seealso:

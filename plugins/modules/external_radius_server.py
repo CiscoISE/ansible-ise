@@ -13,48 +13,48 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    accountingPort:
-      description: External Radius Server's accountingPort.
-      type: int
-    authenticationPort:
-      description: External Radius Server's authenticationPort.
-      type: int
-    authenticatorKey:
-      description: External Radius Server's authenticatorKey.
-      type: str
-    description:
-      description: External Radius Server's description.
-      type: str
-    enableKeyWrap:
-      description: EnableKeyWrap flag.
-      type: bool
-    encryptionKey:
-      description: External Radius Server's encryptionKey.
-      type: str
-    hostIP:
-      description: External Radius Server's hostIP.
-      type: str
-    id:
-      description: External Radius Server's id.
-      type: str
-    keyInputFormat:
-      description: External Radius Server's keyInputFormat.
-      type: str
-    name:
-      description: External Radius Server's name.
-      type: str
-    proxyTimeout:
-      description: External Radius Server's proxyTimeout.
-      type: int
-    retries:
-      description: External Radius Server's retries.
-      type: int
-    sharedSecret:
-      description: External Radius Server's sharedSecret.
-      type: str
-    timeout:
-      description: External Radius Server's timeout.
-      type: int
+  accountingPort:
+    description: External Radius Server's accountingPort.
+    type: int
+  authenticationPort:
+    description: External Radius Server's authenticationPort.
+    type: int
+  authenticatorKey:
+    description: External Radius Server's authenticatorKey.
+    type: str
+  description:
+    description: External Radius Server's description.
+    type: str
+  enableKeyWrap:
+    description: EnableKeyWrap flag.
+    type: bool
+  encryptionKey:
+    description: External Radius Server's encryptionKey.
+    type: str
+  hostIP:
+    description: External Radius Server's hostIP.
+    type: str
+  id:
+    description: External Radius Server's id.
+    type: str
+  keyInputFormat:
+    description: External Radius Server's keyInputFormat.
+    type: str
+  name:
+    description: External Radius Server's name.
+    type: str
+  proxyTimeout:
+    description: External Radius Server's proxyTimeout.
+    type: int
+  retries:
+    description: External Radius Server's retries.
+    type: int
+  sharedSecret:
+    description: External Radius Server's sharedSecret.
+    type: str
+  timeout:
+    description: External Radius Server's timeout.
+    type: int
 requirements:
 - ciscoisesdk
 seealso:

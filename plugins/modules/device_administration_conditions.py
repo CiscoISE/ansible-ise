@@ -13,97 +13,97 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    attributeId:
-      description: Device Administration Conditions's attributeId.
-      type: str
-    attributeName:
-      description: Device Administration Conditions's attributeName.
-      type: str
-    attributeValue:
-      description: Device Administration Conditions's attributeValue.
-      type: str
-    children:
-      description: Device Administration Conditions's children.
-      suboptions:
-        conditionType:
-          description: Device Administration Conditions's conditionType.
-          type: str
-        isNegate:
-          description: IsNegate flag.
-          type: bool
-      type: list
-    conditionType:
-      description: Device Administration Conditions's conditionType.
-      type: str
-    datesRange:
-      description: Device Administration Conditions's datesRange.
-      suboptions:
-        endDate:
-          description: Device Administration Conditions's endDate.
-          type: str
-        startDate:
-          description: Device Administration Conditions's startDate.
-          type: str
-      type: dict
-    datesRangeException:
-      description: Device Administration Conditions's datesRangeException.
-      suboptions:
-        endDate:
-          description: Device Administration Conditions's endDate.
-          type: str
-        startDate:
-          description: Device Administration Conditions's startDate.
-          type: str
-      type: dict
-    description:
-      description: Device Administration Conditions's description.
-      type: str
-    dictionaryName:
-      description: Device Administration Conditions's dictionaryName.
-      type: str
-    dictionaryValue:
-      description: Device Administration Conditions's dictionaryValue.
-      type: str
-    hoursRange:
-      description: Device Administration Conditions's hoursRange.
-      suboptions:
-        endTime:
-          description: Device Administration Conditions's endTime.
-          type: str
-        startTime:
-          description: Device Administration Conditions's startTime.
-          type: str
-      type: dict
-    hoursRangeException:
-      description: Device Administration Conditions's hoursRangeException.
-      suboptions:
-        endTime:
-          description: Device Administration Conditions's endTime.
-          type: str
-        startTime:
-          description: Device Administration Conditions's startTime.
-          type: str
-      type: dict
-    id:
-      description: Device Administration Conditions's id.
-      type: str
-    isNegate:
-      description: IsNegate flag.
-      type: bool
-    name:
-      description: Device Administration Conditions's name.
-      type: str
-    operator:
-      description: Device Administration Conditions's operator.
-      type: str
-    weekDays:
-      description: Device Administration Conditions's weekDays.
-      elements: str
-      type: list
-    weekDaysException:
-      description: Device Administration Conditions's weekDaysException.
-      elements: str
-      type: list
+  attributeId:
+    description: Device Administration Conditions's attributeId.
+    type: str
+  attributeName:
+    description: Device Administration Conditions's attributeName.
+    type: str
+  attributeValue:
+    description: Device Administration Conditions's attributeValue.
+    type: str
+  children:
+    description: Device Administration Conditions's children.
+    suboptions:
+      conditionType:
+        description: Device Administration Conditions's conditionType.
+        type: str
+      isNegate:
+        description: IsNegate flag.
+        type: bool
+    type: list
+  conditionType:
+    description: Device Administration Conditions's conditionType.
+    type: str
+  datesRange:
+    description: Device Administration Conditions's datesRange.
+    suboptions:
+      endDate:
+        description: Device Administration Conditions's endDate.
+        type: str
+      startDate:
+        description: Device Administration Conditions's startDate.
+        type: str
+    type: dict
+  datesRangeException:
+    description: Device Administration Conditions's datesRangeException.
+    suboptions:
+      endDate:
+        description: Device Administration Conditions's endDate.
+        type: str
+      startDate:
+        description: Device Administration Conditions's startDate.
+        type: str
+    type: dict
+  description:
+    description: Device Administration Conditions's description.
+    type: str
+  dictionaryName:
+    description: Device Administration Conditions's dictionaryName.
+    type: str
+  dictionaryValue:
+    description: Device Administration Conditions's dictionaryValue.
+    type: str
+  hoursRange:
+    description: Device Administration Conditions's hoursRange.
+    suboptions:
+      endTime:
+        description: Device Administration Conditions's endTime.
+        type: str
+      startTime:
+        description: Device Administration Conditions's startTime.
+        type: str
+    type: dict
+  hoursRangeException:
+    description: Device Administration Conditions's hoursRangeException.
+    suboptions:
+      endTime:
+        description: Device Administration Conditions's endTime.
+        type: str
+      startTime:
+        description: Device Administration Conditions's startTime.
+        type: str
+    type: dict
+  id:
+    description: Device Administration Conditions's id.
+    type: str
+  isNegate:
+    description: IsNegate flag.
+    type: bool
+  name:
+    description: Device Administration Conditions's name.
+    type: str
+  operator:
+    description: Device Administration Conditions's operator.
+    type: str
+  weekDays:
+    description: Device Administration Conditions's weekDays.
+    elements: str
+    type: list
+  weekDaysException:
+    description: Device Administration Conditions's weekDaysException.
+    elements: str
+    type: list
 requirements:
 - ciscoisesdk
 seealso:

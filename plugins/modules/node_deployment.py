@@ -13,243 +13,243 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    administration:
-      description: Node Deployment's administration.
-      suboptions:
-        isEnabled:
-          description: IsEnabled flag.
-          type: bool
-        role:
-          description: Node Deployment's role.
-          type: str
-      type: dict
-    fdqn:
-      description: Node Deployment's fdqn.
-      type: str
-    generalSettings:
-      description: Node Deployment's generalSettings.
-      suboptions:
-        monitoring:
-          description: Node Deployment's monitoring.
-          suboptions:
-            enablePXGrid:
-              description: EnablePXGrid flag.
-              type: bool
-            isEnabled:
-              description: IsEnabled flag.
-              type: bool
-            isMntDedicated:
-              description: IsMntDedicated flag.
-              type: bool
-            otherMonitoringNode:
-              description: Node Deployment's otherMonitoringNode.
-              type: str
-            policyservice:
-              description: Node Deployment's policyservice.
-              suboptions:
-                enableDeviceAdminService:
-                  description: EnableDeviceAdminService flag.
-                  type: bool
-                enableNACService:
-                  description: EnableNACService flag.
-                  type: bool
-                enablePassiveIdentityService:
-                  description: EnablePassiveIdentityService flag.
-                  type: bool
-                enableProfilingService:
-                  description: EnableProfilingService flag.
-                  type: bool
-                enabled:
-                  description: Enabled flag.
-                  type: bool
-                sessionService:
-                  description: Node Deployment's sessionService.
-                  suboptions:
-                    isEnabled:
-                      description: IsEnabled flag.
-                      type: bool
-                    nodegroup:
-                      description: Node Deployment's nodegroup.
-                      type: str
-                  type: dict
-                sxpservice:
-                  description: Node Deployment's sxpservice.
-                  suboptions:
-                    isEnabled:
-                      description: IsEnabled flag.
-                      type: bool
-                    userInterface:
-                      description: Node Deployment's userInterface.
-                      type: str
-                  type: dict
-              type: dict
-            role:
-              description: Node Deployment's role.
-              type: str
-          type: dict
-      type: dict
-    hostname:
-      description: Hostname path parameter. Node name of the existing deployed node.
-      type: str
-    password:
-      description: Node Deployment's password.
-      type: str
-    profileConfiguration:
-      description: Node Deployment's profileConfiguration.
-      suboptions:
-        activeDirectory:
-          description: Node Deployment's activeDirectory.
-          suboptions:
-            daysBeforeRescan:
-              description: Node Deployment's daysBeforeRescan.
-              type: int
-            description:
-              description: Node Deployment's description.
-              type: str
-            enabled:
-              description: Enabled flag.
-              type: bool
-          type: dict
-        dhcp:
-          description: Node Deployment's dhcp.
-          suboptions:
-            description:
-              description: Node Deployment's description.
-              type: str
-            enabled:
-              description: Enabled flag.
-              type: bool
-            interface:
-              description: Node Deployment's interface.
-              type: str
-            port:
-              description: Node Deployment's port.
-              type: int
-          type: dict
-        dhcpSpan:
-          description: Node Deployment's dhcpSpan.
-          suboptions:
-            description:
-              description: Node Deployment's description.
-              type: str
-            enabled:
-              description: Enabled flag.
-              type: bool
-            interface:
-              description: Node Deployment's interface.
-              type: str
-          type: dict
-        dns:
-          description: Node Deployment's dns.
-          suboptions:
-            description:
-              description: Node Deployment's description.
-              type: str
-            enabled:
-              description: Enabled flag.
-              type: bool
-          type: dict
-        http:
-          description: Node Deployment's http.
-          suboptions:
-            description:
-              description: Node Deployment's description.
-              type: str
-            enabled:
-              description: Enabled flag.
-              type: bool
-            interface:
-              description: Node Deployment's interface.
-              type: str
-          type: dict
-        netflow:
-          description: Node Deployment's netflow.
-          suboptions:
-            description:
-              description: Node Deployment's description.
-              type: str
-            enabled:
-              description: Enabled flag.
-              type: bool
-            interface:
-              description: Node Deployment's interface.
-              type: str
-            port:
-              description: Node Deployment's port.
-              type: int
-          type: dict
-        nmap:
-          description: Node Deployment's nmap.
-          suboptions:
-            description:
-              description: Node Deployment's description.
-              type: str
-            enabled:
-              description: Enabled flag.
-              type: bool
-          type: dict
-        pxgrid:
-          description: Node Deployment's pxgrid.
-          suboptions:
-            description:
-              description: Node Deployment's description.
-              type: str
-            enabled:
-              description: Enabled flag.
-              type: bool
-          type: dict
-        radius:
-          description: Node Deployment's radius.
-          suboptions:
-            description:
-              description: Node Deployment's description.
-              type: str
-            enabled:
-              description: Enabled flag.
-              type: bool
-          type: dict
-        snmpQuery:
-          description: Node Deployment's snmpQuery.
-          suboptions:
-            description:
-              description: Node Deployment's description.
-              type: str
-            enabled:
-              description: Enabled flag.
-              type: bool
-            eventTimeout:
-              description: Node Deployment's eventTimeout.
-              type: int
-            retries:
-              description: Node Deployment's retries.
-              type: int
-            timeout:
-              description: Node Deployment's timeout.
-              type: int
-          type: dict
-        snmpTrap:
-          description: Node Deployment's snmpTrap.
-          suboptions:
-            description:
-              description: Node Deployment's description.
-              type: str
-            interface:
-              description: Node Deployment's interface.
-              type: str
-            linkTrapQuery:
-              description: LinkTrapQuery flag.
-              type: bool
-            macTrapQuery:
-              description: MacTrapQuery flag.
-              type: bool
-            port:
-              description: Node Deployment's port.
-              type: int
-          type: dict
-      type: dict
-    userName:
-      description: Node Deployment's userName.
-      type: str
+  administration:
+    description: Node Deployment's administration.
+    suboptions:
+      isEnabled:
+        description: IsEnabled flag.
+        type: bool
+      role:
+        description: Node Deployment's role.
+        type: str
+    type: dict
+  fdqn:
+    description: Node Deployment's fdqn.
+    type: str
+  generalSettings:
+    description: Node Deployment's generalSettings.
+    suboptions:
+      monitoring:
+        description: Node Deployment's monitoring.
+        suboptions:
+          enablePXGrid:
+            description: EnablePXGrid flag.
+            type: bool
+          isEnabled:
+            description: IsEnabled flag.
+            type: bool
+          isMntDedicated:
+            description: IsMntDedicated flag.
+            type: bool
+          otherMonitoringNode:
+            description: Node Deployment's otherMonitoringNode.
+            type: str
+          policyservice:
+            description: Node Deployment's policyservice.
+            suboptions:
+              enableDeviceAdminService:
+                description: EnableDeviceAdminService flag.
+                type: bool
+              enableNACService:
+                description: EnableNACService flag.
+                type: bool
+              enablePassiveIdentityService:
+                description: EnablePassiveIdentityService flag.
+                type: bool
+              enableProfilingService:
+                description: EnableProfilingService flag.
+                type: bool
+              enabled:
+                description: Enabled flag.
+                type: bool
+              sessionService:
+                description: Node Deployment's sessionService.
+                suboptions:
+                  isEnabled:
+                    description: IsEnabled flag.
+                    type: bool
+                  nodegroup:
+                    description: Node Deployment's nodegroup.
+                    type: str
+                type: dict
+              sxpservice:
+                description: Node Deployment's sxpservice.
+                suboptions:
+                  isEnabled:
+                    description: IsEnabled flag.
+                    type: bool
+                  userInterface:
+                    description: Node Deployment's userInterface.
+                    type: str
+                type: dict
+            type: dict
+          role:
+            description: Node Deployment's role.
+            type: str
+        type: dict
+    type: dict
+  hostname:
+    description: Hostname path parameter. Node name of the existing deployed node.
+    type: str
+  password:
+    description: Node Deployment's password.
+    type: str
+  profileConfiguration:
+    description: Node Deployment's profileConfiguration.
+    suboptions:
+      activeDirectory:
+        description: Node Deployment's activeDirectory.
+        suboptions:
+          daysBeforeRescan:
+            description: Node Deployment's daysBeforeRescan.
+            type: int
+          description:
+            description: Node Deployment's description.
+            type: str
+          enabled:
+            description: Enabled flag.
+            type: bool
+        type: dict
+      dhcp:
+        description: Node Deployment's dhcp.
+        suboptions:
+          description:
+            description: Node Deployment's description.
+            type: str
+          enabled:
+            description: Enabled flag.
+            type: bool
+          interface:
+            description: Node Deployment's interface.
+            type: str
+          port:
+            description: Node Deployment's port.
+            type: int
+        type: dict
+      dhcpSpan:
+        description: Node Deployment's dhcpSpan.
+        suboptions:
+          description:
+            description: Node Deployment's description.
+            type: str
+          enabled:
+            description: Enabled flag.
+            type: bool
+          interface:
+            description: Node Deployment's interface.
+            type: str
+        type: dict
+      dns:
+        description: Node Deployment's dns.
+        suboptions:
+          description:
+            description: Node Deployment's description.
+            type: str
+          enabled:
+            description: Enabled flag.
+            type: bool
+        type: dict
+      http:
+        description: Node Deployment's http.
+        suboptions:
+          description:
+            description: Node Deployment's description.
+            type: str
+          enabled:
+            description: Enabled flag.
+            type: bool
+          interface:
+            description: Node Deployment's interface.
+            type: str
+        type: dict
+      netflow:
+        description: Node Deployment's netflow.
+        suboptions:
+          description:
+            description: Node Deployment's description.
+            type: str
+          enabled:
+            description: Enabled flag.
+            type: bool
+          interface:
+            description: Node Deployment's interface.
+            type: str
+          port:
+            description: Node Deployment's port.
+            type: int
+        type: dict
+      nmap:
+        description: Node Deployment's nmap.
+        suboptions:
+          description:
+            description: Node Deployment's description.
+            type: str
+          enabled:
+            description: Enabled flag.
+            type: bool
+        type: dict
+      pxgrid:
+        description: Node Deployment's pxgrid.
+        suboptions:
+          description:
+            description: Node Deployment's description.
+            type: str
+          enabled:
+            description: Enabled flag.
+            type: bool
+        type: dict
+      radius:
+        description: Node Deployment's radius.
+        suboptions:
+          description:
+            description: Node Deployment's description.
+            type: str
+          enabled:
+            description: Enabled flag.
+            type: bool
+        type: dict
+      snmpQuery:
+        description: Node Deployment's snmpQuery.
+        suboptions:
+          description:
+            description: Node Deployment's description.
+            type: str
+          enabled:
+            description: Enabled flag.
+            type: bool
+          eventTimeout:
+            description: Node Deployment's eventTimeout.
+            type: int
+          retries:
+            description: Node Deployment's retries.
+            type: int
+          timeout:
+            description: Node Deployment's timeout.
+            type: int
+        type: dict
+      snmpTrap:
+        description: Node Deployment's snmpTrap.
+        suboptions:
+          description:
+            description: Node Deployment's description.
+            type: str
+          interface:
+            description: Node Deployment's interface.
+            type: str
+          linkTrapQuery:
+            description: LinkTrapQuery flag.
+            type: bool
+          macTrapQuery:
+            description: MacTrapQuery flag.
+            type: bool
+          port:
+            description: Node Deployment's port.
+            type: int
+        type: dict
+    type: dict
+  userName:
+    description: Node Deployment's userName.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:

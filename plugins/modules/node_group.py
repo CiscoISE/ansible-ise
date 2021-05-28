@@ -13,31 +13,31 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    description:
-      description: Node Group's description.
-      type: str
-    mar_cache:
-      description: Node Group's mar-cache.
-      suboptions:
-        enabled:
-          description: Enabled flag.
-          type: bool
-        query-attempts:
-          description: Node Group's query-attempts.
-          type: int
-        query-timeout:
-          description: Node Group's query-timeout.
-          type: int
-        replication-attempts:
-          description: Node Group's replication-attempts.
-          type: int
-        replication-timeout:
-          description: Node Group's replication-timeout.
-          type: int
-      type: dict
-    node_group_name:
-      description: Node-group-name path parameter. ID of the existing node group.
-      type: str
+  description:
+    description: Node Group's description.
+    type: str
+  mar_cache:
+    description: Node Group's mar-cache.
+    suboptions:
+      enabled:
+        description: Enabled flag.
+        type: bool
+      query-attempts:
+        description: Node Group's query-attempts.
+        type: int
+      query-timeout:
+        description: Node Group's query-timeout.
+        type: int
+      replication-attempts:
+        description: Node Group's replication-attempts.
+        type: int
+      replication-timeout:
+        description: Node Group's replication-timeout.
+        type: int
+    type: dict
+  node_group_name:
+    description: Node-group-name path parameter. ID of the existing node group.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:

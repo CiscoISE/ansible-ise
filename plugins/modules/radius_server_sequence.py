@@ -13,84 +13,84 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    BeforeAcceptAttrManipulatorsList:
-      description: Radius Server Sequence's BeforeAcceptAttrManipulatorsList.
-      suboptions:
-        action:
-          description: Radius Server Sequence's action.
-          type: str
-        attributeName:
-          description: Radius Server Sequence's attributeName.
-          type: str
-        changedVal:
-          description: Radius Server Sequence's changedVal.
-          type: str
-        dictionaryName:
-          description: Radius Server Sequence's dictionaryName.
-          type: str
-        value:
-          description: Radius Server Sequence's value.
-          type: str
-      type: list
-    OnRequestAttrManipulatorList:
-      description: Radius Server Sequence's OnRequestAttrManipulatorList.
-      suboptions:
-        action:
-          description: Radius Server Sequence's action.
-          type: str
-        attributeName:
-          description: Radius Server Sequence's attributeName.
-          type: str
-        changedVal:
-          description: Radius Server Sequence's changedVal.
-          type: str
-        dictionaryName:
-          description: Radius Server Sequence's dictionaryName.
-          type: str
-        value:
-          description: Radius Server Sequence's value.
-          type: str
-      type: list
-    RadiusServerList:
-      description: Radius Server Sequence's RadiusServerList.
-      elements: str
-      type: list
-    continueAuthorzPolicy:
-      description: ContinueAuthorzPolicy flag.
-      type: bool
-    description:
-      description: Radius Server Sequence's description.
-      type: str
-    id:
-      description: Radius Server Sequence's id.
-      type: str
-    localAccounting:
-      description: LocalAccounting flag.
-      type: bool
-    name:
-      description: Radius Server Sequence's name.
-      type: str
-    prefixSeparator:
-      description: Radius Server Sequence's prefixSeparator.
-      type: str
-    remoteAccounting:
-      description: RemoteAccounting flag.
-      type: bool
-    stripPrefix:
-      description: StripPrefix flag.
-      type: bool
-    stripSuffix:
-      description: StripSuffix flag.
-      type: bool
-    suffixSeparator:
-      description: Radius Server Sequence's suffixSeparator.
-      type: str
-    useAttrSetBeforeAcc:
-      description: UseAttrSetBeforeAcc flag.
-      type: bool
-    useAttrSetOnRequest:
-      description: UseAttrSetOnRequest flag.
-      type: bool
+  BeforeAcceptAttrManipulatorsList:
+    description: Radius Server Sequence's BeforeAcceptAttrManipulatorsList.
+    suboptions:
+      action:
+        description: Radius Server Sequence's action.
+        type: str
+      attributeName:
+        description: Radius Server Sequence's attributeName.
+        type: str
+      changedVal:
+        description: Radius Server Sequence's changedVal.
+        type: str
+      dictionaryName:
+        description: Radius Server Sequence's dictionaryName.
+        type: str
+      value:
+        description: Radius Server Sequence's value.
+        type: str
+    type: list
+  OnRequestAttrManipulatorList:
+    description: Radius Server Sequence's OnRequestAttrManipulatorList.
+    suboptions:
+      action:
+        description: Radius Server Sequence's action.
+        type: str
+      attributeName:
+        description: Radius Server Sequence's attributeName.
+        type: str
+      changedVal:
+        description: Radius Server Sequence's changedVal.
+        type: str
+      dictionaryName:
+        description: Radius Server Sequence's dictionaryName.
+        type: str
+      value:
+        description: Radius Server Sequence's value.
+        type: str
+    type: list
+  RadiusServerList:
+    description: Radius Server Sequence's RadiusServerList.
+    elements: str
+    type: list
+  continueAuthorzPolicy:
+    description: ContinueAuthorzPolicy flag.
+    type: bool
+  description:
+    description: Radius Server Sequence's description.
+    type: str
+  id:
+    description: Radius Server Sequence's id.
+    type: str
+  localAccounting:
+    description: LocalAccounting flag.
+    type: bool
+  name:
+    description: Radius Server Sequence's name.
+    type: str
+  prefixSeparator:
+    description: Radius Server Sequence's prefixSeparator.
+    type: str
+  remoteAccounting:
+    description: RemoteAccounting flag.
+    type: bool
+  stripPrefix:
+    description: StripPrefix flag.
+    type: bool
+  stripSuffix:
+    description: StripSuffix flag.
+    type: bool
+  suffixSeparator:
+    description: Radius Server Sequence's suffixSeparator.
+    type: str
+  useAttrSetBeforeAcc:
+    description: UseAttrSetBeforeAcc flag.
+    type: bool
+  useAttrSetOnRequest:
+    description: UseAttrSetOnRequest flag.
+    type: bool
 requirements:
 - ciscoisesdk
 seealso:

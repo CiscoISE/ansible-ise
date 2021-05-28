@@ -13,18 +13,18 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    description:
-      description: Network Device Group's description.
-      type: str
-    id:
-      description: Id path parameter.
-      type: str
-    name:
-      description: Network Device Group's name.
-      type: str
-    othername:
-      description: Network Device Group's othername.
-      type: str
+  description:
+    description: Network Device Group's description.
+    type: str
+  id:
+    description: Id path parameter.
+    type: str
+  name:
+    description: Network Device Group's name.
+    type: str
+  othername:
+    description: Network Device Group's othername.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:

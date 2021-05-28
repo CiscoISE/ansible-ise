@@ -13,12 +13,12 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    id:
-      description: Guest Ssid's id.
-      type: str
-    name:
-      description: Guest Ssid's name.
-      type: str
+  id:
+    description: Guest Ssid's id.
+    type: str
+  name:
+    description: Guest Ssid's name.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:

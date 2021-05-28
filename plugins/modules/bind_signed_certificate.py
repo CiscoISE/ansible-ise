@@ -13,57 +13,57 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    admin:
-      description: Use certificate to authenticate the ISE Admin Portal.
-      type: bool
-    allowExtendedValidity:
-      description: Allow import of certificates with validity greater than 398 days.
-      type: bool
-    allowOutOfDateCert:
-      description: Allow out of date certificates (required).
-      type: bool
-    allowReplacementOfCertificates:
-      description: Allow Replacement of certificates (required).
-      type: bool
-    allowReplacementOfPortalGroupTag:
-      description: Allow Replacement of Portal Group Tag (required).
-      type: bool
-    data:
-      description: Signed Certificate in escaped format.
-      type: str
-    eap:
-      description: Use certificate for EAP protocols that use SSL/TLS tunneling.
-      type: bool
-    hostName:
-      description: Name of Host whose CSR ID has been provided.
-      type: str
-    id:
-      description: ID of the generated CSR.
-      type: str
-    ims:
-      description: Use certificate for the ISE Messaging Service.
-      type: bool
-    name:
-      description: Friendly Name of the certificate.
-      type: str
-    portal:
-      description: Use for portal.
-      type: bool
-    portalGroupTag:
-      description: Set Group tag.
-      type: str
-    pxgrid:
-      description: Use certificate for the pxGrid Controller.
-      type: bool
-    radius:
-      description: Use certificate for the RADSec server.
-      type: bool
-    saml:
-      description: Use certificate for SAML Signing.
-      type: bool
-    validateCertificateExtensions:
-      description: Validate Certificate Extensions.
-      type: bool
+  admin:
+    description: Use certificate to authenticate the ISE Admin Portal.
+    type: bool
+  allowExtendedValidity:
+    description: Allow import of certificates with validity greater than 398 days.
+    type: bool
+  allowOutOfDateCert:
+    description: Allow out of date certificates (required).
+    type: bool
+  allowReplacementOfCertificates:
+    description: Allow Replacement of certificates (required).
+    type: bool
+  allowReplacementOfPortalGroupTag:
+    description: Allow Replacement of Portal Group Tag (required).
+    type: bool
+  data:
+    description: Signed Certificate in escaped format.
+    type: str
+  eap:
+    description: Use certificate for EAP protocols that use SSL/TLS tunneling.
+    type: bool
+  hostName:
+    description: Name of Host whose CSR ID has been provided.
+    type: str
+  id:
+    description: ID of the generated CSR.
+    type: str
+  ims:
+    description: Use certificate for the ISE Messaging Service.
+    type: bool
+  name:
+    description: Friendly Name of the certificate.
+    type: str
+  portal:
+    description: Use for portal.
+    type: bool
+  portalGroupTag:
+    description: Set Group tag.
+    type: str
+  pxgrid:
+    description: Use certificate for the pxGrid Controller.
+    type: bool
+  radius:
+    description: Use certificate for the RADSec server.
+    type: bool
+  saml:
+    description: Use certificate for SAML Signing.
+    type: bool
+  validateCertificateExtensions:
+    description: Validate Certificate Extensions.
+    type: bool
 requirements:
 - ciscoisesdk
 seealso:

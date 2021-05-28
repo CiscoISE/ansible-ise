@@ -17,16 +17,16 @@ options:
     description:
     - Id path parameter.
     type: str
-    additionalData:
-      description: Active Directory Get Groups By Domain's additionalData.
-      suboptions:
-        name:
-          description: Active Directory Get Groups By Domain's name.
-          type: str
-        value:
-          description: Active Directory Get Groups By Domain's value.
-          type: str
-      type: list
+  additionalData:
+    description: Active Directory Get Groups By Domain's additionalData.
+    suboptions:
+      name:
+        description: Active Directory Get Groups By Domain's name.
+        type: str
+      value:
+        description: Active Directory Get Groups By Domain's value.
+        type: str
+    type: list
 requirements:
 - ciscoisesdk
 seealso:

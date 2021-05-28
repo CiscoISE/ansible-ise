@@ -13,166 +13,166 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    commands:
-      description: Command sets enforce the specified list of commands that can be executed
-        by a device administrator.
-      elements: str
-      type: list
-    id:
-      description: Id path parameter. Rule id.
-      type: str
-    profile:
-      description: Device admin profiles control the initial login session of the device
-        administrator.
-      type: str
-    rule:
-      description: Common attributes in rule authentication/authorization.
-      suboptions:
-        condition:
-          description: Device Administration Authorization Global Exception Rules's condition.
-          suboptions:
-            attributeId:
-              description: Device Administration Authorization Global Exception Rules's
-                attributeId.
-              type: str
-            attributeName:
-              description: Device Administration Authorization Global Exception Rules's
-                attributeName.
-              type: str
-            attributeValue:
-              description: Device Administration Authorization Global Exception Rules's
-                attributeValue.
-              type: str
-            children:
-              description: Device Administration Authorization Global Exception Rules's
-                children.
-              suboptions:
-                conditionType:
-                  description: Device Administration Authorization Global Exception Rules's
-                    conditionType.
-                  type: str
-                isNegate:
-                  description: IsNegate flag.
-                  type: bool
-              type: list
-            conditionType:
-              description: Device Administration Authorization Global Exception Rules's
-                conditionType.
-              type: str
-            datesRange:
-              description: Device Administration Authorization Global Exception Rules's
-                datesRange.
-              suboptions:
-                endDate:
-                  description: Device Administration Authorization Global Exception Rules's
-                    endDate.
-                  type: str
-                startDate:
-                  description: Device Administration Authorization Global Exception Rules's
-                    startDate.
-                  type: str
-              type: dict
-            datesRangeException:
-              description: Device Administration Authorization Global Exception Rules's
-                datesRangeException.
-              suboptions:
-                endDate:
-                  description: Device Administration Authorization Global Exception Rules's
-                    endDate.
-                  type: str
-                startDate:
-                  description: Device Administration Authorization Global Exception Rules's
-                    startDate.
-                  type: str
-              type: dict
-            description:
-              description: Device Administration Authorization Global Exception Rules's
-                description.
-              type: str
-            dictionaryName:
-              description: Device Administration Authorization Global Exception Rules's
-                dictionaryName.
-              type: str
-            dictionaryValue:
-              description: Device Administration Authorization Global Exception Rules's
-                dictionaryValue.
-              type: str
-            hoursRange:
-              description: Device Administration Authorization Global Exception Rules's
-                hoursRange.
-              suboptions:
-                endTime:
-                  description: Device Administration Authorization Global Exception Rules's
-                    endTime.
-                  type: str
-                startTime:
-                  description: Device Administration Authorization Global Exception Rules's
-                    startTime.
-                  type: str
-              type: dict
-            hoursRangeException:
-              description: Device Administration Authorization Global Exception Rules's
-                hoursRangeException.
-              suboptions:
-                endTime:
-                  description: Device Administration Authorization Global Exception Rules's
-                    endTime.
-                  type: str
-                startTime:
-                  description: Device Administration Authorization Global Exception Rules's
-                    startTime.
-                  type: str
-              type: dict
-            id:
-              description: Device Administration Authorization Global Exception Rules's
-                id.
-              type: str
-            isNegate:
-              description: IsNegate flag.
-              type: bool
-            name:
-              description: Device Administration Authorization Global Exception Rules's
-                name.
-              type: str
-            operator:
-              description: Device Administration Authorization Global Exception Rules's
-                operator.
-              type: str
-            weekDays:
-              description: Device Administration Authorization Global Exception Rules's
-                weekDays.
-              elements: str
-              type: list
-            weekDaysException:
-              description: Device Administration Authorization Global Exception Rules's
-                weekDaysException.
-              elements: str
-              type: list
-          type: dict
-        default:
-          description: Indicates if this rule is the default one.
-          type: bool
-        description:
-          description: The description of the rule.
-          type: str
-        hitCounts:
-          description: The amount of times the rule was matched.
-          type: int
-        id:
-          description: The identifier of the rule.
-          type: str
-        name:
-          description: Rule name, Valid characters are alphanumerics, underscore, hyphen,
-            space, period, parentheses.
-          type: str
-        rank:
-          description: The rank(priority) in relation to other rules. Lower rank is higher
-            priority.
-          type: int
-        state:
-          description: The state that the rule is in. A disabled rule cannot be matched.
-          type: str
-      type: dict
+  commands:
+    description: Command sets enforce the specified list of commands that can be executed
+      by a device administrator.
+    elements: str
+    type: list
+  id:
+    description: Id path parameter. Rule id.
+    type: str
+  profile:
+    description: Device admin profiles control the initial login session of the device
+      administrator.
+    type: str
+  rule:
+    description: Common attributes in rule authentication/authorization.
+    suboptions:
+      condition:
+        description: Device Administration Authorization Global Exception Rules's condition.
+        suboptions:
+          attributeId:
+            description: Device Administration Authorization Global Exception Rules's
+              attributeId.
+            type: str
+          attributeName:
+            description: Device Administration Authorization Global Exception Rules's
+              attributeName.
+            type: str
+          attributeValue:
+            description: Device Administration Authorization Global Exception Rules's
+              attributeValue.
+            type: str
+          children:
+            description: Device Administration Authorization Global Exception Rules's
+              children.
+            suboptions:
+              conditionType:
+                description: Device Administration Authorization Global Exception Rules's
+                  conditionType.
+                type: str
+              isNegate:
+                description: IsNegate flag.
+                type: bool
+            type: list
+          conditionType:
+            description: Device Administration Authorization Global Exception Rules's
+              conditionType.
+            type: str
+          datesRange:
+            description: Device Administration Authorization Global Exception Rules's
+              datesRange.
+            suboptions:
+              endDate:
+                description: Device Administration Authorization Global Exception Rules's
+                  endDate.
+                type: str
+              startDate:
+                description: Device Administration Authorization Global Exception Rules's
+                  startDate.
+                type: str
+            type: dict
+          datesRangeException:
+            description: Device Administration Authorization Global Exception Rules's
+              datesRangeException.
+            suboptions:
+              endDate:
+                description: Device Administration Authorization Global Exception Rules's
+                  endDate.
+                type: str
+              startDate:
+                description: Device Administration Authorization Global Exception Rules's
+                  startDate.
+                type: str
+            type: dict
+          description:
+            description: Device Administration Authorization Global Exception Rules's
+              description.
+            type: str
+          dictionaryName:
+            description: Device Administration Authorization Global Exception Rules's
+              dictionaryName.
+            type: str
+          dictionaryValue:
+            description: Device Administration Authorization Global Exception Rules's
+              dictionaryValue.
+            type: str
+          hoursRange:
+            description: Device Administration Authorization Global Exception Rules's
+              hoursRange.
+            suboptions:
+              endTime:
+                description: Device Administration Authorization Global Exception Rules's
+                  endTime.
+                type: str
+              startTime:
+                description: Device Administration Authorization Global Exception Rules's
+                  startTime.
+                type: str
+            type: dict
+          hoursRangeException:
+            description: Device Administration Authorization Global Exception Rules's
+              hoursRangeException.
+            suboptions:
+              endTime:
+                description: Device Administration Authorization Global Exception Rules's
+                  endTime.
+                type: str
+              startTime:
+                description: Device Administration Authorization Global Exception Rules's
+                  startTime.
+                type: str
+            type: dict
+          id:
+            description: Device Administration Authorization Global Exception Rules's
+              id.
+            type: str
+          isNegate:
+            description: IsNegate flag.
+            type: bool
+          name:
+            description: Device Administration Authorization Global Exception Rules's
+              name.
+            type: str
+          operator:
+            description: Device Administration Authorization Global Exception Rules's
+              operator.
+            type: str
+          weekDays:
+            description: Device Administration Authorization Global Exception Rules's
+              weekDays.
+            elements: str
+            type: list
+          weekDaysException:
+            description: Device Administration Authorization Global Exception Rules's
+              weekDaysException.
+            elements: str
+            type: list
+        type: dict
+      default:
+        description: Indicates if this rule is the default one.
+        type: bool
+      description:
+        description: The description of the rule.
+        type: str
+      hitCounts:
+        description: The amount of times the rule was matched.
+        type: int
+      id:
+        description: The identifier of the rule.
+        type: str
+      name:
+        description: Rule name, Valid characters are alphanumerics, underscore, hyphen,
+          space, period, parentheses.
+        type: str
+      rank:
+        description: The rank(priority) in relation to other rules. Lower rank is higher
+          priority.
+        type: int
+      state:
+        description: The state that the rule is in. A disabled rule cannot be matched.
+        type: str
+    type: dict
 requirements:
 - ciscoisesdk
 seealso:

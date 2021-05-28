@@ -13,269 +13,269 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    customizations:
-      description: Sponsored Guest Portal's customizations.
-      suboptions:
-        globalCustomizations:
-          description: Sponsored Guest Portal's globalCustomizations.
-          suboptions:
-            bannerImage:
-              description: Sponsored Guest Portal's bannerImage.
-              suboptions:
-                data:
-                  description: Sponsored Guest Portal's data.
-                  type: str
-              type: dict
-            bannerTitle:
-              description: Sponsored Guest Portal's bannerTitle.
-              type: str
-            contactText:
-              description: Sponsored Guest Portal's contactText.
-              type: str
-            desktopLogoImage:
-              description: Sponsored Guest Portal's desktopLogoImage.
-              suboptions:
-                data:
-                  description: Sponsored Guest Portal's data.
-                  type: str
-              type: dict
-            footerElement:
-              description: Sponsored Guest Portal's footerElement.
-              type: str
-            mobileLogoImage:
-              description: Sponsored Guest Portal's mobileLogoImage.
-              suboptions:
-                data:
-                  description: Sponsored Guest Portal's data.
-                  type: str
-              type: dict
-          type: dict
-        language:
-          description: Sponsored Guest Portal's language.
-          suboptions:
-            viewLanguage:
-              description: Sponsored Guest Portal's viewLanguage.
-              type: str
-          type: dict
-        pageCustomizations:
-          description: Sponsored Guest Portal's pageCustomizations.
-          suboptions:
-            data:
-              description: Sponsored Guest Portal's data.
-              suboptions:
-                key:
-                  description: Sponsored Guest Portal's key.
-                  type: str
-                value:
-                  description: Sponsored Guest Portal's value.
-                  type: str
-              type: list
-          type: dict
-        portalTheme:
-          description: Sponsored Guest Portal's portalTheme.
-          suboptions:
-            id:
-              description: Sponsored Guest Portal's id.
-              type: str
-            name:
-              description: Sponsored Guest Portal's name.
-              type: str
-            themeData:
-              description: Sponsored Guest Portal's themeData.
-              type: str
-          type: dict
-        portalTweakSettings:
-          description: Sponsored Guest Portal's portalTweakSettings.
-          suboptions:
-            bannerColor:
-              description: Sponsored Guest Portal's bannerColor.
-              type: str
-            bannerTextColor:
-              description: Sponsored Guest Portal's bannerTextColor.
-              type: str
-            pageBackgroundColor:
-              description: Sponsored Guest Portal's pageBackgroundColor.
-              type: str
-            pageLabelAndTextColor:
-              description: Sponsored Guest Portal's pageLabelAndTextColor.
-              type: str
-          type: dict
-      type: dict
-    description:
-      description: Sponsored Guest Portal's description.
-      type: str
-    id:
-      description: Sponsored Guest Portal's id.
-      type: str
-    name:
-      description: Sponsored Guest Portal's name.
-      type: str
-    portalType:
-      description: Sponsored Guest Portal's portalType.
-      type: str
-    settings:
-      description: Sponsored Guest Portal's settings.
-      suboptions:
-        aupSettings:
-          description: Sponsored Guest Portal's aupSettings.
-          suboptions:
-            displayFrequency:
-              description: Sponsored Guest Portal's displayFrequency.
-              type: str
-            includeAup:
-              description: IncludeAup flag.
-              type: bool
-            requireAccessCode:
-              description: RequireAccessCode flag.
-              type: bool
-            requireScrolling:
-              description: RequireScrolling flag.
-              type: bool
-            skipAupForEmployees:
-              description: SkipAupForEmployees flag.
-              type: bool
-            useDiffAupForEmployees:
-              description: UseDiffAupForEmployees flag.
-              type: bool
-          type: dict
-        authSuccessSettings:
-          description: Sponsored Guest Portal's authSuccessSettings.
-          suboptions:
-            redirectUrl:
-              description: Sponsored Guest Portal's redirectUrl.
-              type: str
-            successRedirect:
-              description: Sponsored Guest Portal's successRedirect.
-              type: str
-          type: dict
-        guestChangePasswordSettings:
-          description: Sponsored Guest Portal's guestChangePasswordSettings.
-          suboptions:
-            allowChangePasswdAtFirstLogin:
-              description: AllowChangePasswdAtFirstLogin flag.
-              type: bool
-          type: dict
-        guestDeviceRegistrationSettings:
-          description: Sponsored Guest Portal's guestDeviceRegistrationSettings.
-          suboptions:
-            allowGuestsToRegisterDevices:
-              description: AllowGuestsToRegisterDevices flag.
-              type: bool
-            autoRegisterGuestDevices:
-              description: AutoRegisterGuestDevices flag.
-              type: bool
-          type: dict
-        loginPageSettings:
-          description: Sponsored Guest Portal's loginPageSettings.
-          suboptions:
-            accessCode:
-              description: Sponsored Guest Portal's accessCode.
-              type: str
-            allowAlternateGuestPortal:
-              description: AllowAlternateGuestPortal flag.
-              type: bool
-            allowGuestToChangePassword:
-              description: AllowGuestToChangePassword flag.
-              type: bool
-            allowGuestToCreateAccounts:
-              description: AllowGuestToCreateAccounts flag.
-              type: bool
-            allowGuestToUseSocialAccounts:
-              description: AllowGuestToUseSocialAccounts flag.
-              type: bool
-            allowShowGuestForm:
-              description: AllowShowGuestForm flag.
-              type: bool
-            aupDisplay:
-              description: Sponsored Guest Portal's aupDisplay.
-              type: str
-            includeAup:
-              description: IncludeAup flag.
-              type: bool
-            maxFailedAttemptsBeforeRateLimit:
-              description: Sponsored Guest Portal's maxFailedAttemptsBeforeRateLimit.
-              type: int
-            requireAccessCode:
-              description: RequireAccessCode flag.
-              type: bool
-            requireAupAcceptance:
-              description: RequireAupAcceptance flag.
-              type: bool
-            requireAupScrolling:
-              description: RequireAupScrolling flag.
-              type: bool
-            socialConfigs:
-              description: Sponsored Guest Portal's socialConfigs.
-              type: list
-            timeBetweenLoginsDuringRateLimit:
-              description: Sponsored Guest Portal's timeBetweenLoginsDuringRateLimit.
-              type: int
-          type: dict
-        portalSettings:
-          description: Sponsored Guest Portal's portalSettings.
-          suboptions:
-            allowedInterfaces:
-              description: Sponsored Guest Portal's allowedInterfaces.
-              elements: str
-              type: list
-            alwaysUsedLanguage:
-              description: Sponsored Guest Portal's alwaysUsedLanguage.
-              type: str
-            assignedGuestTypeForEmployee:
-              description: Sponsored Guest Portal's assignedGuestTypeForEmployee.
-              type: str
-            authenticationMethod:
-              description: Sponsored Guest Portal's authenticationMethod.
-              type: str
-            availableSsids:
-              description: Sponsored Guest Portal's availableSsids.
-              type: list
-            certificateGroupTag:
-              description: Sponsored Guest Portal's certificateGroupTag.
-              type: str
-            displayLang:
-              description: Sponsored Guest Portal's displayLang.
-              type: str
-            fallbackLanguage:
-              description: Sponsored Guest Portal's fallbackLanguage.
-              type: str
-            httpsPort:
-              description: Sponsored Guest Portal's httpsPort.
-              type: int
-          type: dict
-        postLoginBannerSettings:
-          description: Sponsored Guest Portal's postLoginBannerSettings.
-          suboptions:
-            includePostAccessBanner:
-              description: IncludePostAccessBanner flag.
-              type: bool
-          type: dict
-        supportInfoSettings:
-          description: Sponsored Guest Portal's supportInfoSettings.
-          suboptions:
-            emptyFieldDisplay:
-              description: Sponsored Guest Portal's emptyFieldDisplay.
-              type: str
-            includeBrowserUserAgent:
-              description: IncludeBrowserUserAgent flag.
-              type: bool
-            includeFailureCode:
-              description: IncludeFailureCode flag.
-              type: bool
-            includeIpAddress:
-              description: IncludeIpAddress flag.
-              type: bool
-            includeMacAddr:
-              description: IncludeMacAddr flag.
-              type: bool
-            includePolicyServer:
-              description: IncludePolicyServer flag.
-              type: bool
-            includeSupportInfoPage:
-              description: IncludeSupportInfoPage flag.
-              type: bool
-          type: dict
-      type: dict
+  customizations:
+    description: Sponsored Guest Portal's customizations.
+    suboptions:
+      globalCustomizations:
+        description: Sponsored Guest Portal's globalCustomizations.
+        suboptions:
+          bannerImage:
+            description: Sponsored Guest Portal's bannerImage.
+            suboptions:
+              data:
+                description: Sponsored Guest Portal's data.
+                type: str
+            type: dict
+          bannerTitle:
+            description: Sponsored Guest Portal's bannerTitle.
+            type: str
+          contactText:
+            description: Sponsored Guest Portal's contactText.
+            type: str
+          desktopLogoImage:
+            description: Sponsored Guest Portal's desktopLogoImage.
+            suboptions:
+              data:
+                description: Sponsored Guest Portal's data.
+                type: str
+            type: dict
+          footerElement:
+            description: Sponsored Guest Portal's footerElement.
+            type: str
+          mobileLogoImage:
+            description: Sponsored Guest Portal's mobileLogoImage.
+            suboptions:
+              data:
+                description: Sponsored Guest Portal's data.
+                type: str
+            type: dict
+        type: dict
+      language:
+        description: Sponsored Guest Portal's language.
+        suboptions:
+          viewLanguage:
+            description: Sponsored Guest Portal's viewLanguage.
+            type: str
+        type: dict
+      pageCustomizations:
+        description: Sponsored Guest Portal's pageCustomizations.
+        suboptions:
+          data:
+            description: Sponsored Guest Portal's data.
+            suboptions:
+              key:
+                description: Sponsored Guest Portal's key.
+                type: str
+              value:
+                description: Sponsored Guest Portal's value.
+                type: str
+            type: list
+        type: dict
+      portalTheme:
+        description: Sponsored Guest Portal's portalTheme.
+        suboptions:
+          id:
+            description: Sponsored Guest Portal's id.
+            type: str
+          name:
+            description: Sponsored Guest Portal's name.
+            type: str
+          themeData:
+            description: Sponsored Guest Portal's themeData.
+            type: str
+        type: dict
+      portalTweakSettings:
+        description: Sponsored Guest Portal's portalTweakSettings.
+        suboptions:
+          bannerColor:
+            description: Sponsored Guest Portal's bannerColor.
+            type: str
+          bannerTextColor:
+            description: Sponsored Guest Portal's bannerTextColor.
+            type: str
+          pageBackgroundColor:
+            description: Sponsored Guest Portal's pageBackgroundColor.
+            type: str
+          pageLabelAndTextColor:
+            description: Sponsored Guest Portal's pageLabelAndTextColor.
+            type: str
+        type: dict
+    type: dict
+  description:
+    description: Sponsored Guest Portal's description.
+    type: str
+  id:
+    description: Sponsored Guest Portal's id.
+    type: str
+  name:
+    description: Sponsored Guest Portal's name.
+    type: str
+  portalType:
+    description: Sponsored Guest Portal's portalType.
+    type: str
+  settings:
+    description: Sponsored Guest Portal's settings.
+    suboptions:
+      aupSettings:
+        description: Sponsored Guest Portal's aupSettings.
+        suboptions:
+          displayFrequency:
+            description: Sponsored Guest Portal's displayFrequency.
+            type: str
+          includeAup:
+            description: IncludeAup flag.
+            type: bool
+          requireAccessCode:
+            description: RequireAccessCode flag.
+            type: bool
+          requireScrolling:
+            description: RequireScrolling flag.
+            type: bool
+          skipAupForEmployees:
+            description: SkipAupForEmployees flag.
+            type: bool
+          useDiffAupForEmployees:
+            description: UseDiffAupForEmployees flag.
+            type: bool
+        type: dict
+      authSuccessSettings:
+        description: Sponsored Guest Portal's authSuccessSettings.
+        suboptions:
+          redirectUrl:
+            description: Sponsored Guest Portal's redirectUrl.
+            type: str
+          successRedirect:
+            description: Sponsored Guest Portal's successRedirect.
+            type: str
+        type: dict
+      guestChangePasswordSettings:
+        description: Sponsored Guest Portal's guestChangePasswordSettings.
+        suboptions:
+          allowChangePasswdAtFirstLogin:
+            description: AllowChangePasswdAtFirstLogin flag.
+            type: bool
+        type: dict
+      guestDeviceRegistrationSettings:
+        description: Sponsored Guest Portal's guestDeviceRegistrationSettings.
+        suboptions:
+          allowGuestsToRegisterDevices:
+            description: AllowGuestsToRegisterDevices flag.
+            type: bool
+          autoRegisterGuestDevices:
+            description: AutoRegisterGuestDevices flag.
+            type: bool
+        type: dict
+      loginPageSettings:
+        description: Sponsored Guest Portal's loginPageSettings.
+        suboptions:
+          accessCode:
+            description: Sponsored Guest Portal's accessCode.
+            type: str
+          allowAlternateGuestPortal:
+            description: AllowAlternateGuestPortal flag.
+            type: bool
+          allowGuestToChangePassword:
+            description: AllowGuestToChangePassword flag.
+            type: bool
+          allowGuestToCreateAccounts:
+            description: AllowGuestToCreateAccounts flag.
+            type: bool
+          allowGuestToUseSocialAccounts:
+            description: AllowGuestToUseSocialAccounts flag.
+            type: bool
+          allowShowGuestForm:
+            description: AllowShowGuestForm flag.
+            type: bool
+          aupDisplay:
+            description: Sponsored Guest Portal's aupDisplay.
+            type: str
+          includeAup:
+            description: IncludeAup flag.
+            type: bool
+          maxFailedAttemptsBeforeRateLimit:
+            description: Sponsored Guest Portal's maxFailedAttemptsBeforeRateLimit.
+            type: int
+          requireAccessCode:
+            description: RequireAccessCode flag.
+            type: bool
+          requireAupAcceptance:
+            description: RequireAupAcceptance flag.
+            type: bool
+          requireAupScrolling:
+            description: RequireAupScrolling flag.
+            type: bool
+          socialConfigs:
+            description: Sponsored Guest Portal's socialConfigs.
+            type: list
+          timeBetweenLoginsDuringRateLimit:
+            description: Sponsored Guest Portal's timeBetweenLoginsDuringRateLimit.
+            type: int
+        type: dict
+      portalSettings:
+        description: Sponsored Guest Portal's portalSettings.
+        suboptions:
+          allowedInterfaces:
+            description: Sponsored Guest Portal's allowedInterfaces.
+            elements: str
+            type: list
+          alwaysUsedLanguage:
+            description: Sponsored Guest Portal's alwaysUsedLanguage.
+            type: str
+          assignedGuestTypeForEmployee:
+            description: Sponsored Guest Portal's assignedGuestTypeForEmployee.
+            type: str
+          authenticationMethod:
+            description: Sponsored Guest Portal's authenticationMethod.
+            type: str
+          availableSsids:
+            description: Sponsored Guest Portal's availableSsids.
+            type: list
+          certificateGroupTag:
+            description: Sponsored Guest Portal's certificateGroupTag.
+            type: str
+          displayLang:
+            description: Sponsored Guest Portal's displayLang.
+            type: str
+          fallbackLanguage:
+            description: Sponsored Guest Portal's fallbackLanguage.
+            type: str
+          httpsPort:
+            description: Sponsored Guest Portal's httpsPort.
+            type: int
+        type: dict
+      postLoginBannerSettings:
+        description: Sponsored Guest Portal's postLoginBannerSettings.
+        suboptions:
+          includePostAccessBanner:
+            description: IncludePostAccessBanner flag.
+            type: bool
+        type: dict
+      supportInfoSettings:
+        description: Sponsored Guest Portal's supportInfoSettings.
+        suboptions:
+          emptyFieldDisplay:
+            description: Sponsored Guest Portal's emptyFieldDisplay.
+            type: str
+          includeBrowserUserAgent:
+            description: IncludeBrowserUserAgent flag.
+            type: bool
+          includeFailureCode:
+            description: IncludeFailureCode flag.
+            type: bool
+          includeIpAddress:
+            description: IncludeIpAddress flag.
+            type: bool
+          includeMacAddr:
+            description: IncludeMacAddr flag.
+            type: bool
+          includePolicyServer:
+            description: IncludePolicyServer flag.
+            type: bool
+          includeSupportInfoPage:
+            description: IncludeSupportInfoPage flag.
+            type: bool
+        type: dict
+    type: dict
 requirements:
 - ciscoisesdk
 seealso:

@@ -13,38 +13,38 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    cliDnisList:
-      description: Device Administration Network Conditions's cliDnisList.
-      elements: str
-      type: list
-    conditionType:
-      description: Device Administration Network Conditions's conditionType.
-      type: str
-    description:
-      description: Device Administration Network Conditions's description.
-      type: str
-    deviceGroupList:
-      description: Device Administration Network Conditions's deviceGroupList.
-      elements: str
-      type: list
-    deviceList:
-      description: Device Administration Network Conditions's deviceList.
-      elements: str
-      type: list
-    id:
-      description: Device Administration Network Conditions's id.
-      type: str
-    ipAddrList:
-      description: Device Administration Network Conditions's ipAddrList.
-      elements: str
-      type: list
-    macAddrList:
-      description: Device Administration Network Conditions's macAddrList.
-      elements: str
-      type: list
-    name:
-      description: Device Administration Network Conditions's name.
-      type: str
+  cliDnisList:
+    description: Device Administration Network Conditions's cliDnisList.
+    elements: str
+    type: list
+  conditionType:
+    description: Device Administration Network Conditions's conditionType.
+    type: str
+  description:
+    description: Device Administration Network Conditions's description.
+    type: str
+  deviceGroupList:
+    description: Device Administration Network Conditions's deviceGroupList.
+    elements: str
+    type: list
+  deviceList:
+    description: Device Administration Network Conditions's deviceList.
+    elements: str
+    type: list
+  id:
+    description: Device Administration Network Conditions's id.
+    type: str
+  ipAddrList:
+    description: Device Administration Network Conditions's ipAddrList.
+    elements: str
+    type: list
+  macAddrList:
+    description: Device Administration Network Conditions's macAddrList.
+    elements: str
+    type: list
+  name:
+    description: Device Administration Network Conditions's name.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:

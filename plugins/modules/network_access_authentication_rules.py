@@ -13,147 +13,147 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    id:
-      description: Id path parameter. Rule id.
-      type: str
-    identitySourceId:
-      description: Identity source id from the identity stores.
-      type: str
-    ifAuthFail:
-      description: Action to perform when authentication fails such as Bad credentials,
-        disabled user and so on.
-      type: str
-    ifProcessFail:
-      description: Action to perform when ISE is uanble to access the identity database.
-      type: str
-    ifUserNotFound:
-      description: Action to perform when user is not found in any of identity stores.
-      type: str
-    policyId:
-      description: PolicyId path parameter. Policy id.
-      type: str
-    rule:
-      description: Common attributes in rule authentication/authorization.
-      suboptions:
-        condition:
-          description: Network Access Authentication Rules's condition.
-          suboptions:
-            attributeId:
-              description: Network Access Authentication Rules's attributeId.
-              type: str
-            attributeName:
-              description: Network Access Authentication Rules's attributeName.
-              type: str
-            attributeValue:
-              description: Network Access Authentication Rules's attributeValue.
-              type: str
-            children:
-              description: Network Access Authentication Rules's children.
-              suboptions:
-                conditionType:
-                  description: Network Access Authentication Rules's conditionType.
-                  type: str
-                isNegate:
-                  description: IsNegate flag.
-                  type: bool
-              type: list
-            conditionType:
-              description: Network Access Authentication Rules's conditionType.
-              type: str
-            datesRange:
-              description: Network Access Authentication Rules's datesRange.
-              suboptions:
-                endDate:
-                  description: Network Access Authentication Rules's endDate.
-                  type: str
-                startDate:
-                  description: Network Access Authentication Rules's startDate.
-                  type: str
-              type: dict
-            datesRangeException:
-              description: Network Access Authentication Rules's datesRangeException.
-              suboptions:
-                endDate:
-                  description: Network Access Authentication Rules's endDate.
-                  type: str
-                startDate:
-                  description: Network Access Authentication Rules's startDate.
-                  type: str
-              type: dict
-            description:
-              description: Network Access Authentication Rules's description.
-              type: str
-            dictionaryName:
-              description: Network Access Authentication Rules's dictionaryName.
-              type: str
-            dictionaryValue:
-              description: Network Access Authentication Rules's dictionaryValue.
-              type: str
-            hoursRange:
-              description: Network Access Authentication Rules's hoursRange.
-              suboptions:
-                endTime:
-                  description: Network Access Authentication Rules's endTime.
-                  type: str
-                startTime:
-                  description: Network Access Authentication Rules's startTime.
-                  type: str
-              type: dict
-            hoursRangeException:
-              description: Network Access Authentication Rules's hoursRangeException.
-              suboptions:
-                endTime:
-                  description: Network Access Authentication Rules's endTime.
-                  type: str
-                startTime:
-                  description: Network Access Authentication Rules's startTime.
-                  type: str
-              type: dict
-            id:
-              description: Network Access Authentication Rules's id.
-              type: str
-            isNegate:
-              description: IsNegate flag.
-              type: bool
-            name:
-              description: Network Access Authentication Rules's name.
-              type: str
-            operator:
-              description: Network Access Authentication Rules's operator.
-              type: str
-            weekDays:
-              description: Network Access Authentication Rules's weekDays.
-              elements: str
-              type: list
-            weekDaysException:
-              description: Network Access Authentication Rules's weekDaysException.
-              elements: str
-              type: list
-          type: dict
-        default:
-          description: Indicates if this rule is the default one.
-          type: bool
-        description:
-          description: The description of the rule.
-          type: str
-        hitCounts:
-          description: The amount of times the rule was matched.
-          type: int
-        id:
-          description: The identifier of the rule.
-          type: str
-        name:
-          description: Rule name, Valid characters are alphanumerics, underscore, hyphen,
-            space, period, parentheses.
-          type: str
-        rank:
-          description: The rank(priority) in relation to other rules. Lower rank is higher
-            priority.
-          type: int
-        state:
-          description: The state that the rule is in. A disabled rule cannot be matched.
-          type: str
-      type: dict
+  id:
+    description: Id path parameter. Rule id.
+    type: str
+  identitySourceId:
+    description: Identity source id from the identity stores.
+    type: str
+  ifAuthFail:
+    description: Action to perform when authentication fails such as Bad credentials,
+      disabled user and so on.
+    type: str
+  ifProcessFail:
+    description: Action to perform when ISE is uanble to access the identity database.
+    type: str
+  ifUserNotFound:
+    description: Action to perform when user is not found in any of identity stores.
+    type: str
+  policyId:
+    description: PolicyId path parameter. Policy id.
+    type: str
+  rule:
+    description: Common attributes in rule authentication/authorization.
+    suboptions:
+      condition:
+        description: Network Access Authentication Rules's condition.
+        suboptions:
+          attributeId:
+            description: Network Access Authentication Rules's attributeId.
+            type: str
+          attributeName:
+            description: Network Access Authentication Rules's attributeName.
+            type: str
+          attributeValue:
+            description: Network Access Authentication Rules's attributeValue.
+            type: str
+          children:
+            description: Network Access Authentication Rules's children.
+            suboptions:
+              conditionType:
+                description: Network Access Authentication Rules's conditionType.
+                type: str
+              isNegate:
+                description: IsNegate flag.
+                type: bool
+            type: list
+          conditionType:
+            description: Network Access Authentication Rules's conditionType.
+            type: str
+          datesRange:
+            description: Network Access Authentication Rules's datesRange.
+            suboptions:
+              endDate:
+                description: Network Access Authentication Rules's endDate.
+                type: str
+              startDate:
+                description: Network Access Authentication Rules's startDate.
+                type: str
+            type: dict
+          datesRangeException:
+            description: Network Access Authentication Rules's datesRangeException.
+            suboptions:
+              endDate:
+                description: Network Access Authentication Rules's endDate.
+                type: str
+              startDate:
+                description: Network Access Authentication Rules's startDate.
+                type: str
+            type: dict
+          description:
+            description: Network Access Authentication Rules's description.
+            type: str
+          dictionaryName:
+            description: Network Access Authentication Rules's dictionaryName.
+            type: str
+          dictionaryValue:
+            description: Network Access Authentication Rules's dictionaryValue.
+            type: str
+          hoursRange:
+            description: Network Access Authentication Rules's hoursRange.
+            suboptions:
+              endTime:
+                description: Network Access Authentication Rules's endTime.
+                type: str
+              startTime:
+                description: Network Access Authentication Rules's startTime.
+                type: str
+            type: dict
+          hoursRangeException:
+            description: Network Access Authentication Rules's hoursRangeException.
+            suboptions:
+              endTime:
+                description: Network Access Authentication Rules's endTime.
+                type: str
+              startTime:
+                description: Network Access Authentication Rules's startTime.
+                type: str
+            type: dict
+          id:
+            description: Network Access Authentication Rules's id.
+            type: str
+          isNegate:
+            description: IsNegate flag.
+            type: bool
+          name:
+            description: Network Access Authentication Rules's name.
+            type: str
+          operator:
+            description: Network Access Authentication Rules's operator.
+            type: str
+          weekDays:
+            description: Network Access Authentication Rules's weekDays.
+            elements: str
+            type: list
+          weekDaysException:
+            description: Network Access Authentication Rules's weekDaysException.
+            elements: str
+            type: list
+        type: dict
+      default:
+        description: Indicates if this rule is the default one.
+        type: bool
+      description:
+        description: The description of the rule.
+        type: str
+      hitCounts:
+        description: The amount of times the rule was matched.
+        type: int
+      id:
+        description: The identifier of the rule.
+        type: str
+      name:
+        description: Rule name, Valid characters are alphanumerics, underscore, hyphen,
+          space, period, parentheses.
+        type: str
+      rank:
+        description: The rank(priority) in relation to other rules. Lower rank is higher
+          priority.
+        type: int
+      state:
+        description: The state that the rule is in. A disabled rule cannot be matched.
+        type: str
+    type: dict
 requirements:
 - ciscoisesdk
 seealso:

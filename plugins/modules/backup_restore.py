@@ -13,18 +13,18 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    backupEncryptionKey:
-      description: The encryption key which was provided at the time of taking backup.
-      type: str
-    repositoryName:
-      description: Name of the configred repository where the backup file exists.
-      type: str
-    restoreFile:
-      description: Name of the backup file to be restored on ISE node.
-      type: str
-    restoreIncludeAdeos:
-      description: Determines whether the ADE-OS configure is restored.
-      type: str
+  backupEncryptionKey:
+    description: The encryption key which was provided at the time of taking backup.
+    type: str
+  repositoryName:
+    description: Name of the configred repository where the backup file exists.
+    type: str
+  restoreFile:
+    description: Name of the backup file to be restored on ISE node.
+    type: str
+  restoreIncludeAdeos:
+    description: Determines whether the ADE-OS configure is restored.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:

@@ -13,21 +13,21 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-    dacl:
-      description: Downloadable Acl's dacl.
-      type: str
-    daclType:
-      description: Downloadable Acl's daclType.
-      type: str
-    description:
-      description: Downloadable Acl's description.
-      type: str
-    id:
-      description: Id path parameter.
-      type: str
-    name:
-      description: Downloadable Acl's name.
-      type: str
+  dacl:
+    description: Downloadable Acl's dacl.
+    type: str
+  daclType:
+    description: Downloadable Acl's daclType.
+    type: str
+  description:
+    description: Downloadable Acl's description.
+    type: str
+  id:
+    description: Id path parameter.
+    type: str
+  name:
+    description: Downloadable Acl's name.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:
