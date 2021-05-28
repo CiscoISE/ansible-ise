@@ -50,7 +50,7 @@ jobs:
           cd "${docroot}/"
           rm -rf $(basename ${GITHUB_REF}) 2> /dev/null
           mkdir -p $(basename ${GITHUB_REF})
-          cp -a "docs/_build/html/" $(basename ${GITHUB_REF})
+          mv "docs/_build/html" $(basename ${GITHUB_REF})
           git init
           git remote add deploy "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
           git checkout -b gh-pages
