@@ -2,6 +2,7 @@ plugins/module_utils/ise.py compile-2.6!skip # Python 2.6 is not supported by th
 plugins/module_utils/ise.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/module_utils/ise.py import-2.6 # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/module_utils/ise.py import-2.7 # Python 2.7 is not supported by the Cisco ISE SDK
+plugins/action/active_directory.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/active_directory_add_groups.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/active_directory_groups_by_domain_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/active_directory_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
@@ -26,7 +27,9 @@ plugins/action/backup_last_status_info.py compile-2.6!skip # Python 2.6 is not s
 plugins/action/backup_restore.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/backup_schedule_config.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/bind_signed_certificate.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
+plugins/action/csr_delete.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/csr_export_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
+plugins/action/csr_generate.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/csr_generate_intermediate_ca.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/csr_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/device_administration_authentication_rules.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
@@ -79,6 +82,7 @@ plugins/action/external_radius_server_info.py compile-2.6!skip # Python 2.6 is n
 plugins/action/filter_policy.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/filter_policy_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/guest_location_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
+plugins/action/guest_smtp_notification_settings.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/guest_smtp_notification_settings_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/guest_ssid.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/guest_ssid_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
@@ -149,7 +153,9 @@ plugins/action/node_group_info.py compile-2.6!skip # Python 2.6 is not supported
 plugins/action/node_promotion.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/node_replication_status_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/node_sync.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
+plugins/action/pan_ha.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/pan_ha_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
+plugins/action/portal_global_setting.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/portal_global_setting_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/portal_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/portal_theme.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
@@ -177,6 +183,7 @@ plugins/action/sponsor_portal.py compile-2.6!skip # Python 2.6 is not supported 
 plugins/action/sponsor_portal_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/sponsored_guest_portal.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/sponsored_guest_portal_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
+plugins/action/system_certificate.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/system_certificate_export.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/system_certificate_import.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/system_certificate_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
@@ -188,9 +195,11 @@ plugins/action/tacacs_profile.py compile-2.6!skip # Python 2.6 is not supported 
 plugins/action/tacacs_profile_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/tacacs_server_sequence.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/tacacs_server_sequence_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
+plugins/action/trusted_certificate.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/trusted_certificate_export_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/trusted_certificate_import.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/trusted_certificate_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
+plugins/action/active_directory.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/active_directory_add_groups.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/active_directory_groups_by_domain_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/active_directory_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
@@ -215,7 +224,9 @@ plugins/action/backup_last_status_info.py compile-2.7!skip # Python 2.7 is not s
 plugins/action/backup_restore.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/backup_schedule_config.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/bind_signed_certificate.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
+plugins/action/csr_delete.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/csr_export_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
+plugins/action/csr_generate.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/csr_generate_intermediate_ca.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/csr_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/device_administration_authentication_rules.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
@@ -268,6 +279,7 @@ plugins/action/external_radius_server_info.py compile-2.7!skip # Python 2.7 is n
 plugins/action/filter_policy.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/filter_policy_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/guest_location_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
+plugins/action/guest_smtp_notification_settings.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/guest_smtp_notification_settings_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/guest_ssid.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/guest_ssid_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
@@ -338,7 +350,9 @@ plugins/action/node_group_info.py compile-2.7!skip # Python 2.7 is not supported
 plugins/action/node_promotion.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/node_replication_status_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/node_sync.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
+plugins/action/pan_ha.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/pan_ha_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
+plugins/action/portal_global_setting.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/portal_global_setting_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/portal_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/portal_theme.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
@@ -366,6 +380,7 @@ plugins/action/sponsor_portal.py compile-2.7!skip # Python 2.7 is not supported 
 plugins/action/sponsor_portal_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/sponsored_guest_portal.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/sponsored_guest_portal_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
+plugins/action/system_certificate.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/system_certificate_export.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/system_certificate_import.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/system_certificate_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
@@ -377,6 +392,7 @@ plugins/action/tacacs_profile.py compile-2.7!skip # Python 2.7 is not supported 
 plugins/action/tacacs_profile_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/tacacs_server_sequence.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/tacacs_server_sequence_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
+plugins/action/trusted_certificate.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/trusted_certificate_export_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/trusted_certificate_import.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/trusted_certificate_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
