@@ -96,12 +96,10 @@ ise_response:
   type: dict
   sample: >
     {
-      "Sgacl": {
-        "id": "string",
-        "name": "string",
-        "description": "string",
-        "ipVersion": "string",
-        "aclcontent": "string"
-      }
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "ipVersion": "string",
+      "aclcontent": "string"
     }
 """

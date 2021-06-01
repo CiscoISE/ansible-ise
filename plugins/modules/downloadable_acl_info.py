@@ -66,11 +66,9 @@ ise_response:
   type: dict
   sample: >
     {
-      "DownloadableAcl": {
-        "name": "string",
-        "description": "string",
-        "dacl": "string",
-        "daclType": "string"
-      }
+      "name": "string",
+      "description": "string",
+      "dacl": "string",
+      "daclType": "string"
     }
 """

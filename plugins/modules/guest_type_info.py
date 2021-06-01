@@ -96,46 +96,44 @@ ise_response:
   type: dict
   sample: >
     {
-      "GuestType": {
-        "id": "string",
-        "name": "string",
-        "description": "string",
-        "accessTime": {
-          "fromFirstLogin": true,
-          "maxAccountDuration": 0,
-          "durationTimeUnit": "string",
-          "defaultDuration": 0,
-          "allowAccessOnSpecificDaysTimes": true,
-          "dayTimeLimits": [
-            {
-              "startTime": "string",
-              "endTime": "string",
-              "days": [
-                "string"
-              ]
-            }
-          ]
-        },
-        "loginOptions": {
-          "limitSimultaneousLogins": true,
-          "maxSimultaneousLogins": 0,
-          "failureAction": "string",
-          "maxRegisteredDevices": 0,
-          "identityGroupId": "string",
-          "allowGuestPortalBypass": true
-        },
-        "expirationNotification": {
-          "enableNotification": true,
-          "advanceNotificationDuration": 0,
-          "advanceNotificationUnits": "string",
-          "sendEmailNotification": true,
-          "emailText": "string",
-          "sendSmsNotification": true,
-          "smsText": "string"
-        },
-        "sponsorGroups": [
-          "string"
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "accessTime": {
+        "fromFirstLogin": true,
+        "maxAccountDuration": 0,
+        "durationTimeUnit": "string",
+        "defaultDuration": 0,
+        "allowAccessOnSpecificDaysTimes": true,
+        "dayTimeLimits": [
+          {
+            "startTime": "string",
+            "endTime": "string",
+            "days": [
+              "string"
+            ]
+          }
         ]
-      }
+      },
+      "loginOptions": {
+        "limitSimultaneousLogins": true,
+        "maxSimultaneousLogins": 0,
+        "failureAction": "string",
+        "maxRegisteredDevices": 0,
+        "identityGroupId": "string",
+        "allowGuestPortalBypass": true
+      },
+      "expirationNotification": {
+        "enableNotification": true,
+        "advanceNotificationDuration": 0,
+        "advanceNotificationUnits": "string",
+        "sendEmailNotification": true,
+        "emailText": "string",
+        "sendSmsNotification": true,
+        "smsText": "string"
+      },
+      "sponsorGroups": [
+        "string"
+      ]
     }
 """

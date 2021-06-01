@@ -110,67 +110,65 @@ ise_response:
   type: dict
   sample: >
     {
-      "NetworkDevice": {
-        "name": "string",
-        "description": "string",
-        "authenticationSettings": {
-          "networkProtocol": "string",
-          "radiusSharedSecret": "string",
-          "enableKeyWrap": true,
-          "dtlsRequired": true,
-          "keyEncryptionKey": "string",
-          "messageAuthenticatorCodeKey": "string",
-          "keyInputFormat": "string",
-          "enableMultiSecret": "string"
+      "name": "string",
+      "description": "string",
+      "authenticationSettings": {
+        "networkProtocol": "string",
+        "radiusSharedSecret": "string",
+        "enableKeyWrap": true,
+        "dtlsRequired": true,
+        "keyEncryptionKey": "string",
+        "messageAuthenticatorCodeKey": "string",
+        "keyInputFormat": "string",
+        "enableMultiSecret": "string"
+      },
+      "tacacsSettings": {
+        "sharedSecret": "string",
+        "connectModeOptions": "string"
+      },
+      "snmpsettings": {
+        "version": "string",
+        "roCommunity": "string",
+        "pollingInterval": 0,
+        "linkTrapQuery": true,
+        "macTrapQuery": true,
+        "originatingPolicyServicesNode": "string",
+        "authPassowrd": "string",
+        "privacyPassowrd": "string"
+      },
+      "trustsecsettings": {
+        "deviceAuthenticationSettings": {
+          "sgaDeviceId": "string",
+          "sgaDevicePassword": "string"
         },
-        "tacacsSettings": {
-          "sharedSecret": "string",
-          "connectModeOptions": "string"
+        "sgaNotificationAndUpdates": {
+          "downlaodEnvironmentDataEveryXSeconds": 0,
+          "downlaodPeerAuthorizationPolicyEveryXSeconds": 0,
+          "reAuthenticationEveryXSeconds": 0,
+          "downloadSGACLListsEveryXSeconds": 0,
+          "otherSGADevicesToTrustThisDevice": true,
+          "sendConfigurationToDevice": true,
+          "sendConfigurationToDeviceUsing": "string",
+          "coaSourceHost": "string"
         },
-        "snmpsettings": {
-          "version": "string",
-          "roCommunity": "string",
-          "pollingInterval": 0,
-          "linkTrapQuery": true,
-          "macTrapQuery": true,
-          "originatingPolicyServicesNode": "string",
-          "authPassowrd": "string",
-          "privacyPassowrd": "string"
+        "deviceConfigurationDeployment": {
+          "includeWhenDeployingSGTUpdates": true,
+          "enableModePassword": "string",
+          "execModePassword": "string"
         },
-        "trustsecsettings": {
-          "deviceAuthenticationSettings": {
-            "sgaDeviceId": "string",
-            "sgaDevicePassword": "string"
-          },
-          "sgaNotificationAndUpdates": {
-            "downlaodEnvironmentDataEveryXSeconds": 0,
-            "downlaodPeerAuthorizationPolicyEveryXSeconds": 0,
-            "reAuthenticationEveryXSeconds": 0,
-            "downloadSGACLListsEveryXSeconds": 0,
-            "otherSGADevicesToTrustThisDevice": true,
-            "sendConfigurationToDevice": true,
-            "sendConfigurationToDeviceUsing": "string",
-            "coaSourceHost": "string"
-          },
-          "deviceConfigurationDeployment": {
-            "includeWhenDeployingSGTUpdates": true,
-            "enableModePassword": "string",
-            "execModePassword": "string"
-          },
-          "pushIdSupport": "string"
-        },
-        "profileName": "string",
-        "coaPort": 0,
-        "dtlsDnsName": "string",
-        "NetworkDeviceIPList": [
-          {
-            "ipaddress": "string",
-            "mask": 0
-          }
-        ],
-        "NetworkDeviceGroupList": [
-          "string"
-        ]
-      }
+        "pushIdSupport": "string"
+      },
+      "profileName": "string",
+      "coaPort": 0,
+      "dtlsDnsName": "string",
+      "NetworkDeviceIPList": [
+        {
+          "ipaddress": "string",
+          "mask": 0
+        }
+      ],
+      "NetworkDeviceGroupList": [
+        "string"
+      ]
     }
 """

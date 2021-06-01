@@ -66,40 +66,38 @@ ise_response:
   type: dict
   sample: >
     {
-      "RadiusServerSequence": {
-        "id": "string",
-        "name": "string",
-        "description": "string",
-        "stripPrefix": true,
-        "stripSuffix": true,
-        "prefixSeparator": "string",
-        "suffixSeparator": "string",
-        "remoteAccounting": true,
-        "localAccounting": true,
-        "useAttrSetOnRequest": true,
-        "useAttrSetBeforeAcc": true,
-        "continueAuthorzPolicy": true,
-        "RadiusServerList": [
-          "string"
-        ],
-        "OnRequestAttrManipulatorList": [
-          {
-            "action": "string",
-            "dictionaryName": "string",
-            "attributeName": "string",
-            "value": "string",
-            "changedVal": "string"
-          }
-        ],
-        "BeforeAcceptAttrManipulatorsList": [
-          {
-            "action": "string",
-            "dictionaryName": "string",
-            "attributeName": "string",
-            "value": "string",
-            "changedVal": "string"
-          }
-        ]
-      }
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "stripPrefix": true,
+      "stripSuffix": true,
+      "prefixSeparator": "string",
+      "suffixSeparator": "string",
+      "remoteAccounting": true,
+      "localAccounting": true,
+      "useAttrSetOnRequest": true,
+      "useAttrSetBeforeAcc": true,
+      "continueAuthorzPolicy": true,
+      "RadiusServerList": [
+        "string"
+      ],
+      "OnRequestAttrManipulatorList": [
+        {
+          "action": "string",
+          "dictionaryName": "string",
+          "attributeName": "string",
+          "value": "string",
+          "changedVal": "string"
+        }
+      ],
+      "BeforeAcceptAttrManipulatorsList": [
+        {
+          "action": "string",
+          "dictionaryName": "string",
+          "attributeName": "string",
+          "value": "string",
+          "changedVal": "string"
+        }
+      ]
     }
 """

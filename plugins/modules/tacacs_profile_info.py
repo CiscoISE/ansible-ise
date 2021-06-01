@@ -80,19 +80,17 @@ ise_response:
   type: dict
   sample: >
     {
-      "TacacsProfile": {
-        "id": "string",
-        "name": "string",
-        "description": "string",
-        "sessionAttributes": {
-          "sessionAttributeList": [
-            {
-              "type": "string",
-              "name": "string",
-              "value": "string"
-            }
-          ]
-        }
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "sessionAttributes": {
+        "sessionAttributeList": [
+          {
+            "type": "string",
+            "name": "string",
+            "value": "string"
+          }
+        ]
       }
     }
 """

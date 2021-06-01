@@ -110,11 +110,9 @@ ise_response:
   type: dict
   sample: >
     {
-      "EndPointGroup": {
-        "id": "string",
-        "name": "string",
-        "description": "string",
-        "systemDefined": true
-      }
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "systemDefined": true
     }
 """

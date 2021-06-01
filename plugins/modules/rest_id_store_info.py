@@ -110,20 +110,18 @@ ise_response:
   type: dict
   sample: >
     {
-      "ERSRestIDStore": {
-        "name": "string",
-        "description": "string",
-        "ersRestIDStoreAttributes": {
-          "usernameSuffix": "string",
-          "rootUrl": "string",
-          "predefined": "string",
-          "headers": [
-            {
-              "key": "string",
-              "value": "string"
-            }
-          ]
-        }
+      "name": "string",
+      "description": "string",
+      "ersRestIDStoreAttributes": {
+        "usernameSuffix": "string",
+        "rootUrl": "string",
+        "predefined": "string",
+        "headers": [
+          {
+            "key": "string",
+            "value": "string"
+          }
+        ]
       }
     }
 """

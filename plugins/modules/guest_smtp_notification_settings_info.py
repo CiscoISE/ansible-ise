@@ -96,20 +96,18 @@ ise_response:
   type: dict
   sample: >
     {
-      "ERSGuestSmtpNotificationSettings": {
-        "id": "string",
-        "notificationEnabled": true,
-        "useDefaultFromAddress": true,
-        "defaultFromAddress": "string",
-        "smtpPort": "string",
-        "connectionTimeout": "string",
-        "useTLSorSSLEncryption": true,
-        "usePasswordAuthentication": true,
-        "link": {
-          "rel": "string",
-          "href": "string",
-          "type": "string"
-        }
+      "id": "string",
+      "notificationEnabled": true,
+      "useDefaultFromAddress": true,
+      "defaultFromAddress": "string",
+      "smtpPort": "string",
+      "connectionTimeout": "string",
+      "useTLSorSSLEncryption": true,
+      "usePasswordAuthentication": true,
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
       }
     }
 """

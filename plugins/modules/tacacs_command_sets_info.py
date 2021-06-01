@@ -70,19 +70,17 @@ ise_response:
   type: dict
   sample: >
     {
-      "TacacsCommandSets": {
-        "name": "string",
-        "description": "string",
-        "permitUnmatched": true,
-        "commands": {
-          "commandList": [
-            {
-              "grant": "string",
-              "command": "string",
-              "arguments": "string"
-            }
-          ]
-        }
+      "name": "string",
+      "description": "string",
+      "permitUnmatched": true,
+      "commands": {
+        "commandList": [
+          {
+            "grant": "string",
+            "command": "string",
+            "arguments": "string"
+          }
+        ]
       }
     }
 """

@@ -96,15 +96,13 @@ ise_response:
   type: dict
   sample: >
     {
-      "PortalTheme": {
-        "id": "string",
-        "name": "string",
-        "themeData": "string",
-        "link": {
-          "rel": "string",
-          "href": "string",
-          "type": "string"
-        }
+      "id": "string",
+      "name": "string",
+      "themeData": "string",
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
       }
     }
 """

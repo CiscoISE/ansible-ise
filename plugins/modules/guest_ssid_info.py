@@ -96,9 +96,7 @@ ise_response:
   type: dict
   sample: >
     {
-      "GuestSSID": {
-        "id": "string",
-        "name": "string"
-      }
+      "id": "string",
+      "name": "string"
     }
 """

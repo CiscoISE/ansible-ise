@@ -110,27 +110,25 @@ ise_response:
   type: dict
   sample: >
     {
-      "InternalUser": {
-        "id": "string",
-        "name": "string",
-        "description": "string",
-        "enabled": true,
-        "password": "string",
-        "changePassword": true,
-        "expiryDateEnabled": true,
-        "enablePassword": "string",
-        "customAttributes": {
-          "Created": "string",
-          "Department": "string",
-          "Expired": "string",
-          "Country": "string"
-        },
-        "passwordIDStore": "string",
-        "link": {
-          "rel": "string",
-          "href": "string",
-          "type": "string"
-        }
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "enabled": true,
+      "password": "string",
+      "changePassword": true,
+      "expiryDateEnabled": true,
+      "enablePassword": "string",
+      "customAttributes": {
+        "Created": "string",
+        "Department": "string",
+        "Expired": "string",
+        "Country": "string"
+      },
+      "passwordIDStore": "string",
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
       }
     }
 """

@@ -96,51 +96,49 @@ ise_response:
   type: dict
   sample: >
     {
-      "SponsorGroup": {
-        "id": "string",
-        "name": "string",
-        "description": "string",
-        "isEnabled": true,
-        "isDefaultGroup": true,
-        "memberGroups": [
-          "string"
-        ],
-        "guestTypes": [
-          "string"
-        ],
-        "locations": [
-          "string"
-        ],
-        "autoNotification": true,
-        "createPermissions": {
-          "canImportMultipleAccounts": true,
-          "importBatchSizeLimit": 0,
-          "canCreateRandomAccounts": true,
-          "randomBatchSizeLimit": 0,
-          "canSpecifyUsernamePrefix": true,
-          "canSetFutureStartDate": true,
-          "startDateFutureLimitDays": 0
-        },
-        "managePermission": "string",
-        "otherPermissions": {
-          "canUpdateGuestContactInfo": true,
-          "canViewGuestPasswords": true,
-          "canSendSmsNotifications": true,
-          "canResetGuestPasswords": true,
-          "canExtendGuestAccounts": true,
-          "canDeleteGuestAccounts": true,
-          "canSuspendGuestAccounts": true,
-          "requireSuspensionReason": true,
-          "canReinstateSuspendedAccounts": true,
-          "canApproveSelfregGuests": true,
-          "limitApprovalToSponsorsGuests": true,
-          "canAccessViaRest": true
-        },
-        "link": {
-          "rel": "string",
-          "href": "string",
-          "type": "string"
-        }
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "isEnabled": true,
+      "isDefaultGroup": true,
+      "memberGroups": [
+        "string"
+      ],
+      "guestTypes": [
+        "string"
+      ],
+      "locations": [
+        "string"
+      ],
+      "autoNotification": true,
+      "createPermissions": {
+        "canImportMultipleAccounts": true,
+        "importBatchSizeLimit": 0,
+        "canCreateRandomAccounts": true,
+        "randomBatchSizeLimit": 0,
+        "canSpecifyUsernamePrefix": true,
+        "canSetFutureStartDate": true,
+        "startDateFutureLimitDays": 0
+      },
+      "managePermission": "string",
+      "otherPermissions": {
+        "canUpdateGuestContactInfo": true,
+        "canViewGuestPasswords": true,
+        "canSendSmsNotifications": true,
+        "canResetGuestPasswords": true,
+        "canExtendGuestAccounts": true,
+        "canDeleteGuestAccounts": true,
+        "canSuspendGuestAccounts": true,
+        "requireSuspensionReason": true,
+        "canReinstateSuspendedAccounts": true,
+        "canApproveSelfregGuests": true,
+        "limitApprovalToSponsorsGuests": true,
+        "canAccessViaRest": true
+      },
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
       }
     }
 """

@@ -96,14 +96,12 @@ ise_response:
   type: dict
   sample: >
     {
-      "PortalCustomizationGlobalSetting": {
-        "id": "string",
-        "customization": "string",
-        "link": {
-          "rel": "string",
-          "href": "string",
-          "type": "string"
-        }
+      "id": "string",
+      "customization": "string",
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
       }
     }
 """

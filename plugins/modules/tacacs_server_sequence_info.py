@@ -80,15 +80,13 @@ ise_response:
   type: dict
   sample: >
     {
-      "TacacsServerSequence": {
-        "name": "string",
-        "serverList": "string",
-        "localAccounting": true,
-        "remoteAccounting": true,
-        "prefixStrip": true,
-        "prefixDelimiter": "string",
-        "suffixStrip": true,
-        "suffixDelimiter": "string"
-      }
+      "name": "string",
+      "serverList": "string",
+      "localAccounting": true,
+      "remoteAccounting": true,
+      "prefixStrip": true,
+      "prefixDelimiter": "string",
+      "suffixStrip": true,
+      "suffixDelimiter": "string"
     }
 """

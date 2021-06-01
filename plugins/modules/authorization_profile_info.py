@@ -80,58 +80,56 @@ ise_response:
   type: dict
   sample: >
     {
-      "AuthorizationProfile": {
-        "id": "string",
-        "name": "string",
-        "description": "string",
-        "advancedAttributes": [
-          {
-            "leftHandSideDictionaryAttribue": {
-              "AdvancedAttributeValueType": "string",
-              "dictionaryName": "string",
-              "attributeName": "string"
-            },
-            "rightHandSideAttribueValue": {
-              "AdvancedAttributeValueType": "string",
-              "value": "string"
-            }
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "advancedAttributes": [
+        {
+          "leftHandSideDictionaryAttribue": {
+            "AdvancedAttributeValueType": "string",
+            "dictionaryName": "string",
+            "attributeName": "string"
+          },
+          "rightHandSideAttribueValue": {
+            "AdvancedAttributeValueType": "string",
+            "value": "string"
           }
-        ],
-        "accessType": "string",
-        "authzProfileType": "string",
-        "vlan": {
-          "nameID": "string",
-          "tagID": 0
-        },
-        "reauth": {
-          "timer": 0,
-          "connectivity": "string"
-        },
-        "airespaceACL": "string",
-        "airespaceIPv6ACL": "string",
-        "webRedirection": {
-          "WebRedirectionType": "string",
-          "acl": "string",
-          "portalName": "string",
-          "staticIPHostNameFQDN": "string",
-          "displayCertificatesRenewalMessages": true
-        },
+        }
+      ],
+      "accessType": "string",
+      "authzProfileType": "string",
+      "vlan": {
+        "nameID": "string",
+        "tagID": 0
+      },
+      "reauth": {
+        "timer": 0,
+        "connectivity": "string"
+      },
+      "airespaceACL": "string",
+      "airespaceIPv6ACL": "string",
+      "webRedirection": {
+        "WebRedirectionType": "string",
         "acl": "string",
-        "trackMovement": true,
-        "serviceTemplate": true,
-        "easywiredSessionCandidate": true,
-        "daclName": "string",
-        "voiceDomainPermission": true,
-        "neat": true,
-        "webAuth": true,
-        "autoSmartPort": "string",
-        "interfaceTemplate": "string",
-        "ipv6ACLFilter": "string",
-        "avcProfile": "string",
-        "macSecPolicy": "string",
-        "asaVpn": "string",
-        "profileName": "string",
-        "ipv6DaclName": "string"
-      }
+        "portalName": "string",
+        "staticIPHostNameFQDN": "string",
+        "displayCertificatesRenewalMessages": true
+      },
+      "acl": "string",
+      "trackMovement": true,
+      "serviceTemplate": true,
+      "easywiredSessionCandidate": true,
+      "daclName": "string",
+      "voiceDomainPermission": true,
+      "neat": true,
+      "webAuth": true,
+      "autoSmartPort": "string",
+      "interfaceTemplate": "string",
+      "ipv6ACLFilter": "string",
+      "avcProfile": "string",
+      "macSecPolicy": "string",
+      "asaVpn": "string",
+      "profileName": "string",
+      "ipv6DaclName": "string"
     }
 """

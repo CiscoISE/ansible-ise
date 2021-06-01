@@ -70,11 +70,9 @@ ise_response:
   type: dict
   sample: >
     {
-      "ErsAncPolicy": {
-        "name": "string",
-        "actions": [
-          "string"
-        ]
-      }
+      "name": "string",
+      "actions": [
+        "string"
+      ]
     }
 """

@@ -110,32 +110,30 @@ ise_response:
   type: dict
   sample: >
     {
-      "GuestUser": {
-        "id": "string",
-        "name": "string",
-        "guestType": "string",
-        "status": "string",
-        "sponsorUserName": "string",
-        "sponsorUserId": "string",
-        "guestInfo": {
-          "userName": "string",
-          "password": "string",
-          "creationTime": "string",
-          "enabled": true,
-          "notificationLanguage": "string"
-        },
-        "guestAccessInfo": {
-          "validDays": 0,
-          "fromDate": "string",
-          "toDate": "string",
-          "location": "string"
-        },
-        "customFields": {},
-        "link": {
-          "rel": "string",
-          "href": "string",
-          "type": "string"
-        }
+      "id": "string",
+      "name": "string",
+      "guestType": "string",
+      "status": "string",
+      "sponsorUserName": "string",
+      "sponsorUserId": "string",
+      "guestInfo": {
+        "userName": "string",
+        "password": "string",
+        "creationTime": "string",
+        "enabled": true,
+        "notificationLanguage": "string"
+      },
+      "guestAccessInfo": {
+        "validDays": 0,
+        "fromDate": "string",
+        "toDate": "string",
+        "location": "string"
+      },
+      "customFields": {},
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
       }
     }
 """

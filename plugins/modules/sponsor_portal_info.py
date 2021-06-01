@@ -66,104 +66,102 @@ ise_response:
   type: dict
   sample: >
     {
-      "SponsorPortal": {
-        "id": "string",
-        "name": "string",
-        "description": "string",
-        "portalType": "string",
-        "settings": {
-          "portalSettings": {
-            "httpsPort": 0,
-            "allowedInterfaces": [
-              "string"
-            ],
-            "certificateGroupTag": "string",
-            "fqdn": "string",
-            "authenticationMethod": "string",
-            "idleTimeout": 0,
-            "displayLang": "string",
-            "fallbackLanguage": "string",
-            "alwaysUsedLanguage": "string",
-            "availableSsids": [
-              "string"
-            ]
-          },
-          "loginPageSettings": {
-            "requireAccessCode": true,
-            "maxFailedAttemptsBeforeRateLimit": 0,
-            "timeBetweenLoginsDuringRateLimit": 0,
-            "includeAup": true,
-            "aupDisplay": "string",
-            "requireAupAcceptance": true,
-            "requireAupScrolling": true,
-            "allowGuestToCreateAccounts": true,
-            "allowGuestToChangePassword": true,
-            "allowAlternateGuestPortal": true,
-            "allowGuestToUseSocialAccounts": true,
-            "allowShowGuestForm": true,
-            "socialConfigs": []
-          },
-          "aupSettings": {
-            "includeAup": true,
-            "useDiffAupForEmployees": true,
-            "skipAupForEmployees": true,
-            "requireAccessCode": true,
-            "requireScrolling": true,
-            "displayFrequency": "string"
-          },
-          "sponsorChangePasswordSettings": {
-            "allowSponsorToChangePwd": true
-          },
-          "postLoginBannerSettings": {
-            "includePostAccessBanner": true
-          },
-          "supportInfoSettings": {
-            "includeSupportInfoPage": true,
-            "includeMacAddr": true,
-            "includeIpAddress": true,
-            "includeBrowserUserAgent": true,
-            "includePolicyServer": true,
-            "includeFailureCode": true,
-            "emptyFieldDisplay": "string"
-          }
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "portalType": "string",
+      "settings": {
+        "portalSettings": {
+          "httpsPort": 0,
+          "allowedInterfaces": [
+            "string"
+          ],
+          "certificateGroupTag": "string",
+          "fqdn": "string",
+          "authenticationMethod": "string",
+          "idleTimeout": 0,
+          "displayLang": "string",
+          "fallbackLanguage": "string",
+          "alwaysUsedLanguage": "string",
+          "availableSsids": [
+            "string"
+          ]
         },
-        "customizations": {
-          "portalTheme": {
-            "id": "string",
-            "name": "string",
-            "themeData": "string"
+        "loginPageSettings": {
+          "requireAccessCode": true,
+          "maxFailedAttemptsBeforeRateLimit": 0,
+          "timeBetweenLoginsDuringRateLimit": 0,
+          "includeAup": true,
+          "aupDisplay": "string",
+          "requireAupAcceptance": true,
+          "requireAupScrolling": true,
+          "allowGuestToCreateAccounts": true,
+          "allowGuestToChangePassword": true,
+          "allowAlternateGuestPortal": true,
+          "allowGuestToUseSocialAccounts": true,
+          "allowShowGuestForm": true,
+          "socialConfigs": []
+        },
+        "aupSettings": {
+          "includeAup": true,
+          "useDiffAupForEmployees": true,
+          "skipAupForEmployees": true,
+          "requireAccessCode": true,
+          "requireScrolling": true,
+          "displayFrequency": "string"
+        },
+        "sponsorChangePasswordSettings": {
+          "allowSponsorToChangePwd": true
+        },
+        "postLoginBannerSettings": {
+          "includePostAccessBanner": true
+        },
+        "supportInfoSettings": {
+          "includeSupportInfoPage": true,
+          "includeMacAddr": true,
+          "includeIpAddress": true,
+          "includeBrowserUserAgent": true,
+          "includePolicyServer": true,
+          "includeFailureCode": true,
+          "emptyFieldDisplay": "string"
+        }
+      },
+      "customizations": {
+        "portalTheme": {
+          "id": "string",
+          "name": "string",
+          "themeData": "string"
+        },
+        "portalTweakSettings": {
+          "bannerColor": "string",
+          "bannerTextColor": "string",
+          "pageBackgroundColor": "string",
+          "pageLabelAndTextColor": "string"
+        },
+        "language": {
+          "viewLanguage": "string"
+        },
+        "globalCustomizations": {
+          "mobileLogoImage": {
+            "data": "string"
           },
-          "portalTweakSettings": {
-            "bannerColor": "string",
-            "bannerTextColor": "string",
-            "pageBackgroundColor": "string",
-            "pageLabelAndTextColor": "string"
+          "desktopLogoImage": {
+            "data": "string"
           },
-          "language": {
-            "viewLanguage": "string"
+          "bannerImage": {
+            "data": "string"
           },
-          "globalCustomizations": {
-            "mobileLogoImage": {
-              "data": "string"
-            },
-            "desktopLogoImage": {
-              "data": "string"
-            },
-            "bannerImage": {
-              "data": "string"
-            },
-            "bannerTitle": "string",
-            "contactText": "string",
-            "footerElement": "string"
-          },
-          "pageCustomizations": {
-            "data": [
-              {
-                "key": "string",
-                "value": "string"
-              }
-            ]
-          }
+          "bannerTitle": "string",
+          "contactText": "string",
+          "footerElement": "string"
+        },
+        "pageCustomizations": {
+          "data": [
+            {
+              "key": "string",
+              "value": "string"
+            }
+          ]
         }
       }
     }

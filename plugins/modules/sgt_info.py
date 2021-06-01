@@ -96,12 +96,10 @@ ise_response:
   type: dict
   sample: >
     {
-      "Sgt": {
-        "name": "string",
-        "description": "string",
-        "value": 0,
-        "generationId": "string",
-        "propogateToApic": true
-      }
+      "name": "string",
+      "description": "string",
+      "value": 0,
+      "generationId": "string",
+      "propogateToApic": true
     }
 """

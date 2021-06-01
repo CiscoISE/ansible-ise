@@ -80,21 +80,19 @@ ise_response:
   type: dict
   sample: >
     {
-      "ExternalRadiusServer": {
-        "id": "string",
-        "name": "string",
-        "description": "string",
-        "hostIP": "string",
-        "sharedSecret": "string",
-        "enableKeyWrap": true,
-        "encryptionKey": "string",
-        "authenticatorKey": "string",
-        "keyInputFormat": "string",
-        "authenticationPort": 0,
-        "accountingPort": 0,
-        "timeout": 0,
-        "retries": 0,
-        "proxyTimeout": 0
-      }
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "hostIP": "string",
+      "sharedSecret": "string",
+      "enableKeyWrap": true,
+      "encryptionKey": "string",
+      "authenticatorKey": "string",
+      "keyInputFormat": "string",
+      "authenticationPort": 0,
+      "accountingPort": 0,
+      "timeout": 0,
+      "retries": 0,
+      "proxyTimeout": 0
     }
 """

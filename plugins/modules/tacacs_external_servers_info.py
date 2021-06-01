@@ -80,14 +80,12 @@ ise_response:
   type: dict
   sample: >
     {
-      "TacacsExternalServer": {
-        "name": "string",
-        "description": "string",
-        "hostIP": "string",
-        "connectionPort": 0,
-        "singleConnect": true,
-        "sharedSecret": "string",
-        "timeout": 0
-      }
+      "name": "string",
+      "description": "string",
+      "hostIP": "string",
+      "connectionPort": 0,
+      "singleConnect": true,
+      "sharedSecret": "string",
+      "timeout": 0
     }
 """

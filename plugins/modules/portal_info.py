@@ -96,26 +96,24 @@ ise_response:
   type: dict
   sample: >
     {
-      "ERSPortal": {
-        "id": "string",
-        "name": "string",
-        "description": "string",
-        "allowSponsorToChangeOwnPassword": true,
-        "guestUserFieldList": [
-          {
-            "labelName": "string",
-            "dataType": "string",
-            "required": true,
-            "dictionaryLabelKey": "string",
-            "customType": true
-          }
-        ],
-        "portalType": "string",
-        "link": {
-          "rel": "string",
-          "href": "string",
-          "type": "string"
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "allowSponsorToChangeOwnPassword": true,
+      "guestUserFieldList": [
+        {
+          "labelName": "string",
+          "dataType": "string",
+          "required": true,
+          "dictionaryLabelKey": "string",
+          "customType": true
         }
+      ],
+      "portalType": "string",
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
       }
     }
 """

@@ -110,39 +110,37 @@ ise_response:
   type: dict
   sample: >
     {
-      "ERSEndPoint": {
-        "id": "string",
-        "name": "string",
-        "description": "string",
-        "mac": "string",
-        "profileId": "string",
-        "staticProfileAssignment": true,
-        "groupId": "string",
-        "staticGroupAssignment": true,
-        "portalUser": "string",
-        "identityStore": "string",
-        "identityStoreId": "string",
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "mac": "string",
+      "profileId": "string",
+      "staticProfileAssignment": true,
+      "groupId": "string",
+      "staticGroupAssignment": true,
+      "portalUser": "string",
+      "identityStore": "string",
+      "identityStoreId": "string",
+      "customAttributes": {
         "customAttributes": {
-          "customAttributes": {
-            "key1": "string",
-            "key2": "string"
-          }
-        },
-        "mdmAttributes": {
-          "mdmServerName": "string",
-          "mdmReachable": true,
-          "mdmEnrolled": true,
-          "mdmComplianceStatus": true,
-          "mdmOS": "string",
-          "mdmManufacturer": "string",
-          "mdmModel": "string",
-          "mdmSerial": "string",
-          "mdmEncrypted": true,
-          "mdmPinlock": true,
-          "mdmJailBroken": true,
-          "mdmIMEI": "string",
-          "mdmPhoneNumber": "string"
+          "key1": "string",
+          "key2": "string"
         }
+      },
+      "mdmAttributes": {
+        "mdmServerName": "string",
+        "mdmReachable": true,
+        "mdmEnrolled": true,
+        "mdmComplianceStatus": true,
+        "mdmOS": "string",
+        "mdmManufacturer": "string",
+        "mdmModel": "string",
+        "mdmSerial": "string",
+        "mdmEncrypted": true,
+        "mdmPinlock": true,
+        "mdmJailBroken": true,
+        "mdmIMEI": "string",
+        "mdmPhoneNumber": "string"
       }
     }
 """

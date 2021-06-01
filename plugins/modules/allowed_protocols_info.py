@@ -80,79 +80,77 @@ ise_response:
   type: dict
   sample: >
     {
-      "AllowedProtocols": {
-        "name": "string",
-        "description": "string",
-        "eapTls": {
-          "allowEapTlsAuthOfExpiredCerts": true,
-          "eapTlsEnableStatelessSessionResume": true
-        },
-        "peap": {
-          "allowPeapEapMsChapV2": true,
-          "allowPeapEapMsChapV2PwdChange": true,
-          "allowPeapEapMsChapV2PwdChangeRetries": 0,
-          "allowPeapEapGtc": true,
-          "allowPeapEapTls": true,
-          "allowPeapEapTlsAuthOfExpiredCerts": true,
-          "requireCryptobinding": true,
-          "allowPeapV0": true
-        },
-        "eapFast": {
-          "allowEapFastEapMsChapV2": true,
-          "allowEapFastEapMsChapV2PwdChange": true,
-          "allowEapFastEapMsChapV2PwdChangeRetries": 0,
-          "allowEapFastEapGtc": true,
-          "allowEapFastEapGtcPwdChange": true,
-          "allowEapFastEapGtcPwdChangeRetries": 0,
-          "allowEapFastEapTls": true,
-          "allowEapFastEapTlsAuthOfExpiredCerts": true,
-          "eapFastUsePacs": true,
-          "eapFastUsePacsTunnelPacTtl": 0,
-          "eapFastUsePacsTunnelPacTtlUnits": "string",
-          "eapFastUsePacsUseProactivePacUpdatePrecentage": 0,
-          "eapFastUsePacsAllowAnonymProvisioning": true,
-          "eapFastUsePacsAllowAuthenProvisioning": true,
-          "eapFastUsePacsAllowMachineAuthentication": true,
-          "eapFastUsePacsStatelessSessionResume": true,
-          "eapFastEnableEAPChaining": true
-        },
-        "eapTtls": {
-          "eapTtlsPapAscii": true,
-          "eapTtlsChap": true,
-          "eapTtlsMsChapV1": true,
-          "eapTtlsMsChapV2": true,
-          "eapTtlsEapMd5": true,
-          "eapTtlsEapMsChapV2": true,
-          "eapTtlsEapMsChapV2PwdChange": true,
-          "eapTtlsEapMsChapV2PwdChangeRetries": 0
-        },
-        "teap": {
-          "allowTeapEapMsChapV2": true,
-          "allowTeapEapMsChapV2PwdChange": true,
-          "allowTeapEapMsChapV2PwdChangeRetries": 0,
-          "allowTeapEapTls": true,
-          "allowTeapEapTlsAuthOfExpiredCerts": true,
-          "acceptClientCertDuringTunnelEst": true,
-          "requestBasicPwdAuth": true,
-          "enableEapChaining": true
-        },
-        "processHostLookup": true,
-        "allowPapAscii": true,
-        "allowChap": true,
-        "allowMsChapV1": true,
-        "allowMsChapV2": true,
-        "allowEapMd5": true,
-        "allowLeap": true,
-        "allowEapTls": true,
-        "allowEapTtls": true,
-        "allowEapFast": true,
-        "allowPeap": true,
-        "allowTeap": true,
-        "allowPreferredEapProtocol": true,
-        "preferredEapProtocol": "string",
-        "eapTlsLBit": true,
-        "allowWeakCiphersForEap": true,
-        "requireMessageAuth": true
-      }
+      "name": "string",
+      "description": "string",
+      "eapTls": {
+        "allowEapTlsAuthOfExpiredCerts": true,
+        "eapTlsEnableStatelessSessionResume": true
+      },
+      "peap": {
+        "allowPeapEapMsChapV2": true,
+        "allowPeapEapMsChapV2PwdChange": true,
+        "allowPeapEapMsChapV2PwdChangeRetries": 0,
+        "allowPeapEapGtc": true,
+        "allowPeapEapTls": true,
+        "allowPeapEapTlsAuthOfExpiredCerts": true,
+        "requireCryptobinding": true,
+        "allowPeapV0": true
+      },
+      "eapFast": {
+        "allowEapFastEapMsChapV2": true,
+        "allowEapFastEapMsChapV2PwdChange": true,
+        "allowEapFastEapMsChapV2PwdChangeRetries": 0,
+        "allowEapFastEapGtc": true,
+        "allowEapFastEapGtcPwdChange": true,
+        "allowEapFastEapGtcPwdChangeRetries": 0,
+        "allowEapFastEapTls": true,
+        "allowEapFastEapTlsAuthOfExpiredCerts": true,
+        "eapFastUsePacs": true,
+        "eapFastUsePacsTunnelPacTtl": 0,
+        "eapFastUsePacsTunnelPacTtlUnits": "string",
+        "eapFastUsePacsUseProactivePacUpdatePrecentage": 0,
+        "eapFastUsePacsAllowAnonymProvisioning": true,
+        "eapFastUsePacsAllowAuthenProvisioning": true,
+        "eapFastUsePacsAllowMachineAuthentication": true,
+        "eapFastUsePacsStatelessSessionResume": true,
+        "eapFastEnableEAPChaining": true
+      },
+      "eapTtls": {
+        "eapTtlsPapAscii": true,
+        "eapTtlsChap": true,
+        "eapTtlsMsChapV1": true,
+        "eapTtlsMsChapV2": true,
+        "eapTtlsEapMd5": true,
+        "eapTtlsEapMsChapV2": true,
+        "eapTtlsEapMsChapV2PwdChange": true,
+        "eapTtlsEapMsChapV2PwdChangeRetries": 0
+      },
+      "teap": {
+        "allowTeapEapMsChapV2": true,
+        "allowTeapEapMsChapV2PwdChange": true,
+        "allowTeapEapMsChapV2PwdChangeRetries": 0,
+        "allowTeapEapTls": true,
+        "allowTeapEapTlsAuthOfExpiredCerts": true,
+        "acceptClientCertDuringTunnelEst": true,
+        "requestBasicPwdAuth": true,
+        "enableEapChaining": true
+      },
+      "processHostLookup": true,
+      "allowPapAscii": true,
+      "allowChap": true,
+      "allowMsChapV1": true,
+      "allowMsChapV2": true,
+      "allowEapMd5": true,
+      "allowLeap": true,
+      "allowEapTls": true,
+      "allowEapTtls": true,
+      "allowEapFast": true,
+      "allowPeap": true,
+      "allowTeap": true,
+      "allowPreferredEapProtocol": true,
+      "preferredEapProtocol": "string",
+      "eapTlsLBit": true,
+      "allowWeakCiphersForEap": true,
+      "requireMessageAuth": true
     }
 """

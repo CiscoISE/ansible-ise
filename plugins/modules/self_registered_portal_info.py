@@ -96,200 +96,198 @@ ise_response:
   type: dict
   sample: >
     {
-      "SelfRegPortal": {
-        "id": "string",
-        "name": "string",
-        "description": "string",
-        "portalType": "string",
-        "settings": {
-          "portalSettings": {
-            "httpsPort": 0,
-            "allowedInterfaces": [
-              "string"
-            ],
-            "certificateGroupTag": "string",
-            "endpointIdentityGroup": "string",
-            "authenticationMethod": "string",
-            "assignedGuestTypeForEmployee": "string",
-            "displayLang": "string",
-            "fallbackLanguage": "string",
-            "alwaysUsedLanguage": "string",
-            "availableSsids": []
-          },
-          "loginPageSettings": {
-            "requireAccessCode": true,
-            "accessCode": "string",
-            "maxFailedAttemptsBeforeRateLimit": 0,
-            "timeBetweenLoginsDuringRateLimit": 0,
-            "includeAup": true,
-            "aupDisplay": "string",
-            "requireAupAcceptance": true,
-            "requireAupScrolling": true,
-            "allowGuestToCreateAccounts": true,
-            "allowGuestToChangePassword": true,
-            "allowAlternateGuestPortal": true,
-            "allowGuestToUseSocialAccounts": true,
-            "allowShowGuestForm": true,
-            "socialConfigs": []
-          },
-          "selfRegPageSettings": {
-            "assignGuestsToGuestType": "string",
-            "accountValidityDuration": 0,
-            "accountValidityTimeUnits": "string",
-            "requireRegistrationCode": true,
-            "registrationCode": "string",
-            "fieldUserName": {
-              "include": true,
-              "require": true
-            },
-            "fieldFirstName": {
-              "include": true,
-              "require": true
-            },
-            "fieldLastName": {
-              "include": true,
-              "require": true
-            },
-            "fieldEmailAddr": {
-              "include": true,
-              "require": true
-            },
-            "fieldPhoneNo": {
-              "include": true,
-              "require": true
-            },
-            "fieldCompany": {
-              "include": true,
-              "require": true
-            },
-            "fieldLocation": {
-              "include": true,
-              "require": true
-            },
-            "selectableLocations": [
-              "string"
-            ],
-            "fieldSmsProvider": {
-              "include": true,
-              "require": true
-            },
-            "selectableSmsProviders": [
-              "string"
-            ],
-            "fieldReasonForVisit": {
-              "include": true,
-              "require": true
-            },
-            "includeAup": true,
-            "aupDisplay": "string",
-            "requireAupAcceptance": true,
-            "enableGuestEmailWhitelist": true,
-            "guestEmailWhitelistDomains": [
-              "string"
-            ],
-            "enableGuestEmailBlacklist": true,
-            "guestEmailBlacklistDomains": [
-              "string"
-            ],
-            "requireGuestApproval": true,
-            "sendApprovalRequestTo": "string",
-            "postRegistrationRedirect": "string",
-            "credentialNotificationUsingEmail": true,
-            "credentialNotificationUsingSms": true,
-            "approveDenyLinksTimeUnits": "string",
-            "authenticateSponsorsUsingPortalList": true,
-            "sponsorPortalList": []
-          },
-          "selfRegSuccessSettings": {
-            "includeUserName": true,
-            "includePassword": true,
-            "includeFirstName": true,
-            "includeLastName": true,
-            "includeEmailAddr": true,
-            "includePhoneNo": true,
-            "includeCompany": true,
-            "includeLocation": true,
-            "includeSmsProvider": true,
-            "includePersonBeingVisited": true,
-            "includeReasonForVisit": true,
-            "allowGuestSendSelfUsingPrint": true,
-            "allowGuestSendSelfUsingEmail": true,
-            "allowGuestSendSelfUsingSms": true,
-            "includeAup": true,
-            "aupOnPage": true,
-            "requireAupAcceptance": true,
-            "requireAupScrolling": true,
-            "allowGuestLoginFromSelfregSuccessPage": true
-          },
-          "aupSettings": {
-            "includeAup": true,
-            "useDiffAupForEmployees": true,
-            "skipAupForEmployees": true,
-            "requireAccessCode": true,
-            "requireScrolling": true,
-            "displayFrequency": "string"
-          },
-          "guestChangePasswordSettings": {
-            "allowChangePasswdAtFirstLogin": true
-          },
-          "guestDeviceRegistrationSettings": {
-            "autoRegisterGuestDevices": true,
-            "allowGuestsToRegisterDevices": true
-          },
-          "postLoginBannerSettings": {
-            "includePostAccessBanner": true
-          },
-          "authSuccessSettings": {
-            "successRedirect": "string",
-            "redirectUrl": "string"
-          },
-          "supportInfoSettings": {
-            "includeSupportInfoPage": true,
-            "includeMacAddr": true,
-            "includeIpAddress": true,
-            "includeBrowserUserAgent": true,
-            "includePolicyServer": true,
-            "includeFailureCode": true,
-            "emptyFieldDisplay": "string"
-          }
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "portalType": "string",
+      "settings": {
+        "portalSettings": {
+          "httpsPort": 0,
+          "allowedInterfaces": [
+            "string"
+          ],
+          "certificateGroupTag": "string",
+          "endpointIdentityGroup": "string",
+          "authenticationMethod": "string",
+          "assignedGuestTypeForEmployee": "string",
+          "displayLang": "string",
+          "fallbackLanguage": "string",
+          "alwaysUsedLanguage": "string",
+          "availableSsids": []
         },
-        "customizations": {
-          "portalTheme": {
-            "id": "string",
-            "name": "string",
-            "themeData": "string"
+        "loginPageSettings": {
+          "requireAccessCode": true,
+          "accessCode": "string",
+          "maxFailedAttemptsBeforeRateLimit": 0,
+          "timeBetweenLoginsDuringRateLimit": 0,
+          "includeAup": true,
+          "aupDisplay": "string",
+          "requireAupAcceptance": true,
+          "requireAupScrolling": true,
+          "allowGuestToCreateAccounts": true,
+          "allowGuestToChangePassword": true,
+          "allowAlternateGuestPortal": true,
+          "allowGuestToUseSocialAccounts": true,
+          "allowShowGuestForm": true,
+          "socialConfigs": []
+        },
+        "selfRegPageSettings": {
+          "assignGuestsToGuestType": "string",
+          "accountValidityDuration": 0,
+          "accountValidityTimeUnits": "string",
+          "requireRegistrationCode": true,
+          "registrationCode": "string",
+          "fieldUserName": {
+            "include": true,
+            "require": true
           },
-          "portalTweakSettings": {
-            "bannerColor": "string",
-            "bannerTextColor": "string",
-            "pageBackgroundColor": "string",
-            "pageLabelAndTextColor": "string"
+          "fieldFirstName": {
+            "include": true,
+            "require": true
           },
-          "language": {
-            "viewLanguage": "string"
+          "fieldLastName": {
+            "include": true,
+            "require": true
           },
-          "globalCustomizations": {
-            "mobileLogoImage": {
-              "data": "string"
-            },
-            "desktopLogoImage": {
-              "data": "string"
-            },
-            "bannerImage": {
-              "data": "string"
-            },
-            "bannerTitle": "string",
-            "contactText": "string",
-            "footerElement": "string"
+          "fieldEmailAddr": {
+            "include": true,
+            "require": true
           },
-          "pageCustomizations": {
-            "data": [
-              {
-                "key": "string",
-                "value": "string"
-              }
-            ]
-          }
+          "fieldPhoneNo": {
+            "include": true,
+            "require": true
+          },
+          "fieldCompany": {
+            "include": true,
+            "require": true
+          },
+          "fieldLocation": {
+            "include": true,
+            "require": true
+          },
+          "selectableLocations": [
+            "string"
+          ],
+          "fieldSmsProvider": {
+            "include": true,
+            "require": true
+          },
+          "selectableSmsProviders": [
+            "string"
+          ],
+          "fieldReasonForVisit": {
+            "include": true,
+            "require": true
+          },
+          "includeAup": true,
+          "aupDisplay": "string",
+          "requireAupAcceptance": true,
+          "enableGuestEmailWhitelist": true,
+          "guestEmailWhitelistDomains": [
+            "string"
+          ],
+          "enableGuestEmailBlacklist": true,
+          "guestEmailBlacklistDomains": [
+            "string"
+          ],
+          "requireGuestApproval": true,
+          "sendApprovalRequestTo": "string",
+          "postRegistrationRedirect": "string",
+          "credentialNotificationUsingEmail": true,
+          "credentialNotificationUsingSms": true,
+          "approveDenyLinksTimeUnits": "string",
+          "authenticateSponsorsUsingPortalList": true,
+          "sponsorPortalList": []
+        },
+        "selfRegSuccessSettings": {
+          "includeUserName": true,
+          "includePassword": true,
+          "includeFirstName": true,
+          "includeLastName": true,
+          "includeEmailAddr": true,
+          "includePhoneNo": true,
+          "includeCompany": true,
+          "includeLocation": true,
+          "includeSmsProvider": true,
+          "includePersonBeingVisited": true,
+          "includeReasonForVisit": true,
+          "allowGuestSendSelfUsingPrint": true,
+          "allowGuestSendSelfUsingEmail": true,
+          "allowGuestSendSelfUsingSms": true,
+          "includeAup": true,
+          "aupOnPage": true,
+          "requireAupAcceptance": true,
+          "requireAupScrolling": true,
+          "allowGuestLoginFromSelfregSuccessPage": true
+        },
+        "aupSettings": {
+          "includeAup": true,
+          "useDiffAupForEmployees": true,
+          "skipAupForEmployees": true,
+          "requireAccessCode": true,
+          "requireScrolling": true,
+          "displayFrequency": "string"
+        },
+        "guestChangePasswordSettings": {
+          "allowChangePasswdAtFirstLogin": true
+        },
+        "guestDeviceRegistrationSettings": {
+          "autoRegisterGuestDevices": true,
+          "allowGuestsToRegisterDevices": true
+        },
+        "postLoginBannerSettings": {
+          "includePostAccessBanner": true
+        },
+        "authSuccessSettings": {
+          "successRedirect": "string",
+          "redirectUrl": "string"
+        },
+        "supportInfoSettings": {
+          "includeSupportInfoPage": true,
+          "includeMacAddr": true,
+          "includeIpAddress": true,
+          "includeBrowserUserAgent": true,
+          "includePolicyServer": true,
+          "includeFailureCode": true,
+          "emptyFieldDisplay": "string"
+        }
+      },
+      "customizations": {
+        "portalTheme": {
+          "id": "string",
+          "name": "string",
+          "themeData": "string"
+        },
+        "portalTweakSettings": {
+          "bannerColor": "string",
+          "bannerTextColor": "string",
+          "pageBackgroundColor": "string",
+          "pageLabelAndTextColor": "string"
+        },
+        "language": {
+          "viewLanguage": "string"
+        },
+        "globalCustomizations": {
+          "mobileLogoImage": {
+            "data": "string"
+          },
+          "desktopLogoImage": {
+            "data": "string"
+          },
+          "bannerImage": {
+            "data": "string"
+          },
+          "bannerTitle": "string",
+          "contactText": "string",
+          "footerElement": "string"
+        },
+        "pageCustomizations": {
+          "data": [
+            {
+              "key": "string",
+              "value": "string"
+            }
+          ]
         }
       }
     }

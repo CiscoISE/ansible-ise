@@ -96,72 +96,70 @@ ise_response:
   type: dict
   sample: >
     {
-      "HotspotPortal": {
-        "id": "string",
-        "name": "string",
-        "description": "string",
-        "portalType": "string",
-        "portalTestUrl": "string",
-        "settings": {
-          "portalSettings": {
-            "httpsPort": 0,
-            "allowedInterfaces": [
-              "string"
-            ],
-            "certificateGroupTag": "string",
-            "endpointIdentityGroup": "string",
-            "coaType": "string",
-            "displayLang": "string",
-            "fallbackLanguage": "string",
-            "alwaysUsedLanguage": "string"
-          },
-          "aupSettings": {
-            "includeAup": true,
-            "requireScrolling": true
-          },
-          "postAccessBannerSettings": {
-            "includePostAccessBanner": true
-          },
-          "authSuccessSettings": {
-            "successRedirect": "string"
-          },
-          "supportInfoSettings": {
-            "includeSupportInfoPage": true,
-            "includeMacAddr": true,
-            "includeIpAddress": true,
-            "includeBrowserUserAgent": true,
-            "includePolicyServer": true,
-            "includeFailureCode": true,
-            "emptyFieldDisplay": "string"
-          }
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "portalType": "string",
+      "portalTestUrl": "string",
+      "settings": {
+        "portalSettings": {
+          "httpsPort": 0,
+          "allowedInterfaces": [
+            "string"
+          ],
+          "certificateGroupTag": "string",
+          "endpointIdentityGroup": "string",
+          "coaType": "string",
+          "displayLang": "string",
+          "fallbackLanguage": "string",
+          "alwaysUsedLanguage": "string"
         },
-        "customizations": {
-          "portalTheme": {
-            "id": "string",
-            "name": "string"
-          },
-          "language": {
-            "viewLanguage": "string"
-          },
-          "globalCustomizations": {
-            "bannerTitle": "string",
-            "contactText": "string",
-            "footerElement": "string"
-          },
-          "pageCustomizations": {
-            "data": [
-              {
-                "key": "string",
-                "value": "string"
-              }
-            ]
-          }
+        "aupSettings": {
+          "includeAup": true,
+          "requireScrolling": true
         },
-        "link": {
-          "rel": "string",
-          "href": "string",
-          "type": "string"
+        "postAccessBannerSettings": {
+          "includePostAccessBanner": true
+        },
+        "authSuccessSettings": {
+          "successRedirect": "string"
+        },
+        "supportInfoSettings": {
+          "includeSupportInfoPage": true,
+          "includeMacAddr": true,
+          "includeIpAddress": true,
+          "includeBrowserUserAgent": true,
+          "includePolicyServer": true,
+          "includeFailureCode": true,
+          "emptyFieldDisplay": "string"
         }
+      },
+      "customizations": {
+        "portalTheme": {
+          "id": "string",
+          "name": "string"
+        },
+        "language": {
+          "viewLanguage": "string"
+        },
+        "globalCustomizations": {
+          "bannerTitle": "string",
+          "contactText": "string",
+          "footerElement": "string"
+        },
+        "pageCustomizations": {
+          "data": [
+            {
+              "key": "string",
+              "value": "string"
+            }
+          ]
+        }
+      },
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
       }
     }
 """

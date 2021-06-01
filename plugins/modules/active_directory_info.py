@@ -80,61 +80,59 @@ ise_response:
   type: dict
   sample: >
     {
-      "ERSActiveDirectory": {
-        "name": "string",
-        "description": "string",
-        "domain": "string",
-        "adgroups": {
-          "groups": [
-            {
-              "name": "string",
-              "sid": "string",
-              "type": "string"
-            }
-          ]
-        },
-        "advancedSettings": {
-          "enablePassChange": true,
-          "enableMachineAuth": true,
-          "enableMachineAccess": true,
-          "agingTime": 0,
-          "enableDialinPermissionCheck": true,
-          "enableCallbackForDialinClient": true,
-          "plaintextAuth": true,
-          "identityNotInAdBehaviour": "string",
-          "unreachableDomainsBehaviour": "string",
-          "enableRewrites": true,
-          "rewriteRules": [
-            {
-              "rowId": 0,
-              "rewriteMatch": "string",
-              "rewriteResult": "string"
-            }
-          ],
-          "firstName": "string",
-          "department": "string",
-          "lastName": "string",
-          "organizationalUnit": "string",
-          "jobTitle": "string",
-          "locality": "string",
-          "email": "string",
-          "stateOrProvince": "string",
-          "telephone": "string",
-          "country": "string",
-          "streetAddress": "string",
-          "schema": "string"
-        },
-        "adAttributes": {
-          "attributes": [
-            {
-              "name": "string",
-              "type": "string",
-              "defaultValue": "string",
-              "internalName": "string"
-            }
-          ]
-        },
-        "adScopesNames": "string"
-      }
+      "name": "string",
+      "description": "string",
+      "domain": "string",
+      "adgroups": {
+        "groups": [
+          {
+            "name": "string",
+            "sid": "string",
+            "type": "string"
+          }
+        ]
+      },
+      "advancedSettings": {
+        "enablePassChange": true,
+        "enableMachineAuth": true,
+        "enableMachineAccess": true,
+        "agingTime": 0,
+        "enableDialinPermissionCheck": true,
+        "enableCallbackForDialinClient": true,
+        "plaintextAuth": true,
+        "identityNotInAdBehaviour": "string",
+        "unreachableDomainsBehaviour": "string",
+        "enableRewrites": true,
+        "rewriteRules": [
+          {
+            "rowId": 0,
+            "rewriteMatch": "string",
+            "rewriteResult": "string"
+          }
+        ],
+        "firstName": "string",
+        "department": "string",
+        "lastName": "string",
+        "organizationalUnit": "string",
+        "jobTitle": "string",
+        "locality": "string",
+        "email": "string",
+        "stateOrProvince": "string",
+        "telephone": "string",
+        "country": "string",
+        "streetAddress": "string",
+        "schema": "string"
+      },
+      "adAttributes": {
+        "attributes": [
+          {
+            "name": "string",
+            "type": "string",
+            "defaultValue": "string",
+            "internalName": "string"
+          }
+        ]
+      },
+      "adScopesNames": "string"
     }
 """

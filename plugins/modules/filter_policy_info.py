@@ -66,11 +66,9 @@ ise_response:
   type: dict
   sample: >
     {
-      "ERSFilterPolicy": {
-        "subnet": "string",
-        "domains": "string",
-        "sgt": "string",
-        "vn": "string"
-      }
+      "subnet": "string",
+      "domains": "string",
+      "sgt": "string",
+      "vn": "string"
     }
 """

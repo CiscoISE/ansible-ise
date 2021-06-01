@@ -110,10 +110,8 @@ ise_response:
   type: dict
   sample: >
     {
-      "NetworkDeviceGroup": {
-        "name": "string",
-        "description": "string",
-        "othername": "string"
-      }
+      "name": "string",
+      "description": "string",
+      "othername": "string"
     }
 """

@@ -80,11 +80,9 @@ ise_response:
   type: dict
   sample: >
     {
-      "IdentityGroup": {
-        "id": "string",
-        "name": "string",
-        "description": "string",
-        "parent": "string"
-      }
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "parent": "string"
     }
 """
