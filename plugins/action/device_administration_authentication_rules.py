@@ -60,7 +60,7 @@ class DeviceAdministrationAuthenticationRules(object):
     def get_object_by_name(self, name, policy_id):
         # NOTICE: Does not have a get by name method or it is in another action
         result = None
-        items =  self.ise.exec(
+        items = self.ise.exec(
             family="device_administration_authentication_rules",
             function="get_all_device_admin_authentication_rules",
             params={"policy_id": policy_id}

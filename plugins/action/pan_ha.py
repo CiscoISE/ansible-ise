@@ -54,7 +54,7 @@ class PanHa(object):
     def get_object_by_name(self, name):
         # NOTICE: Does not have a get by name method or it is in another action
         result = None
-        items =  self.ise.exec(
+        items = self.ise.exec(
             family="pan_ha",
             function="get_pan_ha_status"
         ).response['response']

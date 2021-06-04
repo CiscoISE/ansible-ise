@@ -52,7 +52,7 @@ class DeviceAdministrationAuthorizationGlobalExceptionRules(object):
     def get_object_by_name(self, name):
         # NOTICE: Does not have a get by name method or it is in another action
         result = None
-        items =  self.ise.exec(
+        items = self.ise.exec(
             family="device_administration_authorization_global_exception_rules",
             function="get_all_device_admin_policy_set_global_exception",
         ).response.get('response', []) or []
