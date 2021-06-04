@@ -32,8 +32,10 @@ argument_spec.update(dict(
 ))
 
 required_if = [
-    ("state", "present", ("id", "policyId"), True),
-    ("state", "absent", ("id", "policyId"), True),
+    ("state", "present", ["id", "rule"], True),
+    ("state", "present", ["policyId"], True),
+    ("state", "absent", ["id", "rule"], True),
+    ("state", "absent", ["policyId"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -51,17 +53,26 @@ class DeviceAdministrationAuthorizationRules(object):
             id=params.get("id"),
         )
 
-    def get_object_by_name(self, name):
+    def get_object_by_name(self, name, policy_id):
         # NOTICE: Does not have a get by name method or it is in another action
         result = None
+        items =  self.ise.exec(
+            family="device_administration_authorization_rules",
+            function="get_all_device_admin_authorization_rules",
+            params={"policy_id": policy_id}
+        ).response.get('response', []) or []
+        for item in items:
+            if item.get('rule') and item['rule'].get('name') == name and item['rule'].get('id'):
+                result = dict(item)
+                return result
         return result
 
-    def get_object_by_id(self, id):
+    def get_object_by_id(self, id, policy_id):
         try:
             result = self.ise.exec(
                 family="device_administration_authorization_rules",
                 function="get_device_admin_authorization_rule_by_id",
-                params={"id": quote(id)}
+                params={"id": quote(id), "policy_id": policy_id}
             ).response
         except Exception as e:
             result = None
@@ -70,16 +81,17 @@ class DeviceAdministrationAuthorizationRules(object):
     def exists(self):
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get("id")
-        name = self.new_object.get("name")
+        o_id = self.new_object.get("id") or self.new_object.get('rule', {}).get("id")
+        policy_id = self.new_object.get("policy_id")
+        name = self.new_object.get('rule', {}).get("name")
         if o_id:
-            if self.get_object_by_id(o_id):
+            if self.get_object_by_id(o_id, policy_id):
                 id_exists = True
         if name:
-            if self.get_object_by_name(name):
+            if self.get_object_by_name(name, policy_id):
                 name_exists = True
         if id_exists and name_exists:
-            _id = self.get_object_by_name(name).get("id")
+            _id = self.get_object_by_name(name, policy_id).get('rule', {}).get("id")
             if o_id != _id:
                 raise InconsistentParameters("The 'id' and 'name' params don't refer to the same object")
         return id_exists or name_exists
@@ -93,12 +105,15 @@ class DeviceAdministrationAuthorizationRules(object):
         return result
 
     def update(self):
-        id = self.new_object.get("id")
-        name = self.new_object.get("name")
+        id = self.new_object.get("id") or self.new_object.get('rule', {}).get("id")
+        name = self.new_object.get('rule', {}).get("name")
+        policy_id = self.new_object.get("policy_id")
         result = None
         if not id:
-            id_ = self.get_object_by_name(name).get("id")
-            self.new_object.update(dict(id=id_))
+            id_ = self.get_object_by_name(name, policy_id).get('rule', {}).get("id")
+            rule = self.new_object.get('rule', {})
+            rule.update(dict(id=id_))
+            self.new_object.update(dict(rule=rule, id=id_))
         result = self.ise.exec(
             family="device_administration_authorization_rules",
             function="update_device_admin_authorization_rule_by_id",
@@ -107,12 +122,15 @@ class DeviceAdministrationAuthorizationRules(object):
         return result
 
     def delete(self):
-        id = self.new_object.get("id")
-        name = self.new_object.get("name")
+        id = self.new_object.get("id") or self.new_object.get('rule', {}).get("id")
+        name = self.new_object.get('rule', {}).get("name")
+        policy_id = self.new_object.get("policy_id")
         result = None
         if not id:
-            id_ = self.get_object_by_name(name).get("id")
-            self.new_object.update(dict(id=id_))
+            id_ = self.get_object_by_name(name, policy_id).get('rule', {}).get("id")
+            rule = self.new_object.get('rule', {})
+            rule.update(dict(id=id_))
+            self.new_object.update(dict(rule=rule, id=id_))
         result = self.ise.exec(
             family="device_administration_authorization_rules",
             function="delete_device_admin_authorization_rule_by_id",

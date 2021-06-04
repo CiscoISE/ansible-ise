@@ -10,7 +10,7 @@ This collection has been tested and supports Cisco ISE 3.0.
 
 ## Requirements
 - Ansible >= 2.9
-- [Cisco ISE SDK](https://github.com/CiscoISE/ciscoisesdk) v0.3.1 or newer
+- [Cisco ISE SDK](https://github.com/CiscoISE/ciscoisesdk) v0.4.0 or newer
 - Python >= 3.6, as the Cisco ISE SDK doesn't support Python version 2.x
 
 ## Install
@@ -35,7 +35,7 @@ First, define a `credentials.yml` file where you specify your Cisco ISE credenti
 ise_hostname: <A.B.C.D>
 ise_username: <username>
 ise_password: <password>
-ise_version: 3.1.0  # optional, defaults to 3.0.0
+ise_version: 3.0.0  # optional, defaults to 3.0.0
 ise_verify: False  # optional, defaults to True
 ```
 

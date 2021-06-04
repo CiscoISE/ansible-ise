@@ -13,37 +13,52 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-  cliDnisList:
-    description: Network Access Network Condition's cliDnisList.
-    elements: str
-    type: list
   conditionType:
-    description: Network Access Network Condition's conditionType.
+    description: This field determines the content of the conditions field.
     type: str
+  conditions:
+    description: Network Access Network Condition's conditions.
+    suboptions:
+      cliDnisList:
+        description: <p>This field should contain a Caller ID (CLI), comma, and Called
+          ID (DNIS).<br> Line format - Caller ID (CLI), Called ID (DNIS)</p>.
+        elements: str
+        type: list
+      deviceGroupList:
+        description: <p>This field should contain a tuple with NDG Root, comma, and
+          an NDG (that it under the root).<br> Line format - NDG Root Name, NDG, Port</p>.
+        elements: str
+        type: list
+      deviceList:
+        description: <p>This field should contain Device-Name,port-number. The device
+          name must be the same as the name field in a Network Device object.<br> Line
+          format - Device Name,Port</p>.
+        elements: str
+        type: list
+      ipAddrList:
+        description: <p>This field should contain IP-address-or-subnet,port number<br>
+          IP address can be IPV4 format (n.n.n.n) or IPV6 format (n n n n n n n n).<br>
+          IP subnet can be IPV4 format (n.n.n.n/m) or IPV6 format (n n n n n n n n/m).<br>
+          Line format - IP Address or subnet,Port</p>.
+        elements: str
+        type: list
+      macAddrList:
+        description: <p>This field should contain Endstation MAC address, comma, and
+          Destination MAC addresses.<br> Each Max address must include twelve hexadecimal
+          digits using formats nn nn nn nn nn nn or nn-nn-nn-nn-nn-nn or nnnn.nnnn.nnnn
+          or nnnnnnnnnnnn.<br> Line format - Endstation MAC,Destination MAC </p>.
+        elements: str
+        type: list
+    type: list
   description:
     description: Network Access Network Condition's description.
     type: str
-  deviceGroupList:
-    description: Network Access Network Condition's deviceGroupList.
-    elements: str
-    type: list
-  deviceList:
-    description: Network Access Network Condition's deviceList.
-    elements: str
-    type: list
   id:
     description: Network Access Network Condition's id.
     type: str
-  ipAddrList:
-    description: Network Access Network Condition's ipAddrList.
-    elements: str
-    type: list
-  macAddrList:
-    description: Network Access Network Condition's macAddrList.
-    elements: str
-    type: list
   name:
-    description: Network Access Network Condition's name.
+    description: NetworkCondition name, Valid characters are alphanumerics, underscore,
+      space.
     type: str
 requirements:
 - ciscoisesdk
@@ -72,19 +87,20 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    cliDnisList:
-    - string
     conditionType: string
+    conditions:
+    - cliDnisList:
+      - string
+      deviceGroupList:
+      - string
+      deviceList:
+      - string
+      ipAddrList:
+      - string
+      macAddrList:
+      - string
     description: string
-    deviceGroupList:
-    - string
-    deviceList:
-    - string
     id: string
-    ipAddrList:
-    - string
-    macAddrList:
-    - string
     name: string
 
 - name: Delete by id
@@ -109,20 +125,24 @@ ise_response:
       "id": "string",
       "description": "string",
       "conditionType": "string",
-      "ipAddrList": [
-        "string"
-      ],
-      "macAddrList": [
-        "string"
-      ],
-      "cliDnisList": [
-        "string"
-      ],
-      "deviceList": [
-        "string"
-      ],
-      "deviceGroupList": [
-        "string"
+      "conditions": [
+        {
+          "ipAddrList": [
+            "string"
+          ],
+          "macAddrList": [
+            "string"
+          ],
+          "cliDnisList": [
+            "string"
+          ],
+          "deviceList": [
+            "string"
+          ],
+          "deviceGroupList": [
+            "string"
+          ]
+        }
       ]
     }
 """

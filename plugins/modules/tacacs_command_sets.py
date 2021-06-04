@@ -63,12 +63,12 @@ EXAMPLES = r"""
     state: present
     commands:
       commandList:
-      - arguments: string
-        command: string
-        grant: string
-    description: string
-    name: string
-    permitUnmatched: true
+      - arguments: any host 10.1.1.2
+        command: deny
+        grant: DENY
+    description: Deny some command
+    name: DenySomeCommands
+    permitUnmatched: false
 
 - name: Update by id
   cisco.ise.tacacs_command_sets:
@@ -79,13 +79,13 @@ EXAMPLES = r"""
     state: present
     commands:
       commandList:
-      - arguments: string
-        command: string
-        grant: string
-    description: string
+      - arguments: any host 10.1.1.2
+        command: deny
+        grant: DENY
+    description: Deny some command
     id: string
-    name: string
-    permitUnmatched: true
+    name: DenySomeCommands
+    permitUnmatched: false
 
 - name: Delete by id
   cisco.ise.tacacs_command_sets:

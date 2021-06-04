@@ -60,20 +60,24 @@ ise_response:
       "id": "string",
       "description": "string",
       "conditionType": "string",
-      "ipAddrList": [
-        "string"
-      ],
-      "macAddrList": [
-        "string"
-      ],
-      "cliDnisList": [
-        "string"
-      ],
-      "deviceList": [
-        "string"
-      ],
-      "deviceGroupList": [
-        "string"
+      "conditions": [
+        {
+          "ipAddrList": [
+            "string"
+          ],
+          "macAddrList": [
+            "string"
+          ],
+          "cliDnisList": [
+            "string"
+          ],
+          "deviceList": [
+            "string"
+          ],
+          "deviceGroupList": [
+            "string"
+          ]
+        }
       ]
     }
 """

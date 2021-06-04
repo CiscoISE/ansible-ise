@@ -34,8 +34,8 @@ argument_spec.update(dict(
 ))
 
 required_if = [
-    ("state", "present", ("hostname"), True),
-    ("state", "absent", ("hostname"), True),
+    ("state", "present", ["hostname"], True),
+    ("state", "absent", ["hostname"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -60,7 +60,7 @@ class NodeDeployment(object):
             result = self.ise.exec(
                 family="node_deployment",
                 function="get_node_details",
-                params={"name": quote(name)}
+                params={"hostname": quote(name)}
             ).response
         except Exception as e:
             result = None
@@ -75,7 +75,7 @@ class NodeDeployment(object):
         id_exists = False
         name_exists = False
         o_id = self.new_object.get("id")
-        name = self.new_object.get("name")
+        name = self.new_object.get("hostname")
         if o_id:
             if self.get_object_by_id(o_id):
                 id_exists = True
@@ -97,12 +97,6 @@ class NodeDeployment(object):
         return result
 
     def update(self):
-        id = self.new_object.get("id")
-        name = self.new_object.get("name")
-        result = None
-        if not name:
-            name_ = self.get_object_by_id(id).get("name")
-            self.new_object.update(dict(name=name_))
         result = self.ise.exec(
             family="node_deployment",
             function="update_node",
@@ -111,12 +105,6 @@ class NodeDeployment(object):
         return result
 
     def delete(self):
-        id = self.new_object.get("id")
-        name = self.new_object.get("name")
-        result = None
-        if not name:
-            name_ = self.get_object_by_id(id).get("name")
-            self.new_object.update(dict(name=name_))
         result = self.ise.exec(
             family="node_deployment",
             function="delete_node",

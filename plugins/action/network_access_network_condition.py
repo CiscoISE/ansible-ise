@@ -28,16 +28,12 @@ argument_spec.update(dict(
     id=dict(type="str"),
     description=dict(type="str"),
     conditionType=dict(type="str"),
-    ipAddrList=dict(type="list"),
-    macAddrList=dict(type="list"),
-    cliDnisList=dict(type="list"),
-    deviceList=dict(type="list"),
-    deviceGroupList=dict(type="list"),
+    conditions=dict(type="list"),
 ))
 
 required_if = [
-    ("state", "present", ("id", "name"), True),
-    ("state", "absent", ("id", "name"), True),
+    ("state", "present", ["id", "name"], True),
+    ("state", "absent", ["id", "name"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -52,16 +48,20 @@ class NetworkAccessNetworkCondition(object):
             id=params.get("id"),
             description=params.get("description"),
             condition_type=params.get("conditionType"),
-            ip_addr_list=params.get("ipAddrList"),
-            mac_addr_list=params.get("macAddrList"),
-            cli_dnis_list=params.get("cliDnisList"),
-            device_list=params.get("deviceList"),
-            device_group_list=params.get("deviceGroupList"),
+            conditions=params.get("conditions"),
         )
 
     def get_object_by_name(self, name):
         # NOTICE: Does not have a get by name method or it is in another action
         result = None
+        items =  self.ise.exec(
+            family="network_access_network_conditions",
+            function="get_all_network_access_network_conditions",
+        ).response.get('response', []) or []
+        for item in items:
+            if item.get('name') == name and item.get('id'):
+                result = dict(item)
+                return result
         return result
 
     def get_object_by_id(self, id):

@@ -14,29 +14,44 @@ version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
   attributeId:
-    description: Device Administration Conditions's attributeId.
+    description: Dictionary attribute id (Optional), used for additional verification.
     type: str
   attributeName:
-    description: Device Administration Conditions's attributeName.
+    description: Dictionary attribute name.
     type: str
   attributeValue:
-    description: Device Administration Conditions's attributeValue.
+    description: <ul><li>Attribute value for condition</li> <li>Value type is specified
+      in dictionary object</li> <li>if multiple values allowed is specified in dictionary
+      object</li></ul>.
     type: str
   children:
-    description: Device Administration Conditions's children.
+    description: In case type is andBlock or orBlock addtional conditions will be aggregated
+      under this logical (OR/AND) condition.
     suboptions:
       conditionType:
-        description: Device Administration Conditions's conditionType.
+        description: <ul><li>Inidicates whether the record is the condition itself(data)
+          or a logical(or,and) aggregation</li> <li>Data type enum(reference,single)
+          indicates than "conditonId" OR "ConditionAttrs" fields should contain condition
+          data but not both</li> <li>Logical aggreation(and,or) enum indicates that
+          additional conditions are present under the children field</li></ul>.
         type: str
       isNegate:
-        description: IsNegate flag.
+        description: Indicates whereas this condition is in negate mode.
         type: bool
     type: list
   conditionType:
-    description: Device Administration Conditions's conditionType.
+    description: <ul><li>Inidicates whether the record is the condition itself(data)
+      or a logical(or,and) aggregation</li> <li>Data type enum(reference,single) indicates
+      than "conditonId" OR "ConditionAttrs" fields should contain condition data but
+      not both</li> <li>Logical aggreation(and,or) enum indicates that additional conditions
+      are present under the children field</li></ul>.
     type: str
   datesRange:
-    description: Device Administration Conditions's datesRange.
+    description: <p>Defines for which date/s TimeAndDate condition will be matched or
+      NOT matched if used in exceptionDates prooperty<br> Options are - Date range,
+      for specific date, the same date should be used for start/end date <br> Default
+      - no specific dates<br> In order to reset the dates to have no specific dates
+      Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)</p>.
     suboptions:
       endDate:
         description: Device Administration Conditions's endDate.
@@ -46,7 +61,11 @@ options:
         type: str
     type: dict
   datesRangeException:
-    description: Device Administration Conditions's datesRangeException.
+    description: <p>Defines for which date/s TimeAndDate condition will be matched or
+      NOT matched if used in exceptionDates prooperty<br> Options are - Date range,
+      for specific date, the same date should be used for start/end date <br> Default
+      - no specific dates<br> In order to reset the dates to have no specific dates
+      Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)</p>.
     suboptions:
       endDate:
         description: Device Administration Conditions's endDate.
@@ -56,16 +75,18 @@ options:
         type: str
     type: dict
   description:
-    description: Device Administration Conditions's description.
+    description: Condition description.
     type: str
   dictionaryName:
-    description: Device Administration Conditions's dictionaryName.
+    description: Dictionary name.
     type: str
   dictionaryValue:
-    description: Device Administration Conditions's dictionaryValue.
+    description: Dictionary value.
     type: str
   hoursRange:
-    description: Device Administration Conditions's hoursRange.
+    description: <p>Defines for which hours a TimeAndDate condition will be matched
+      or not matched if used in exceptionHours property<br> Time foramt - hh mm ( h
+      = hour , mm = minutes ) <br> Default - All Day </p>.
     suboptions:
       endTime:
         description: Device Administration Conditions's endTime.
@@ -75,7 +96,9 @@ options:
         type: str
     type: dict
   hoursRangeException:
-    description: Device Administration Conditions's hoursRangeException.
+    description: <p>Defines for which hours a TimeAndDate condition will be matched
+      or not matched if used in exceptionHours property<br> Time foramt - hh mm ( h
+      = hour , mm = minutes ) <br> Default - All Day </p>.
     suboptions:
       endTime:
         description: Device Administration Conditions's endTime.
@@ -88,20 +111,22 @@ options:
     description: Device Administration Conditions's id.
     type: str
   isNegate:
-    description: IsNegate flag.
+    description: Indicates whereas this condition is in negate mode.
     type: bool
   name:
-    description: Device Administration Conditions's name.
+    description: Condition name.
     type: str
   operator:
-    description: Device Administration Conditions's operator.
+    description: Equality operator.
     type: str
   weekDays:
-    description: Device Administration Conditions's weekDays.
+    description: <p>Defines for which days this condition will be matched<br> Days format
+      - Arrays of WeekDay enums <br> Default - List of All week days</p>.
     elements: str
     type: list
   weekDaysException:
-    description: Device Administration Conditions's weekDaysException.
+    description: <p>Defines for which days this condition will NOT be matched<br> Days
+      format - Arrays of WeekDay enums <br> Default - Not enabled</p>.
     elements: str
     type: list
 requirements:

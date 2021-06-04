@@ -29,26 +29,26 @@
   #   ansible.builtin.debug:
   #     var: result
 
-  # - name: Create or update a network policy set
-  #   cisco.ise.network_access_policy_set:
-  #     ise_hostname: "{{ise_hostname}}"
-  #     ise_username: "{{ise_username}}"
-  #     ise_password: "{{ise_password}}"
-  #     ise_verify: "{{ise_verify}}"
-  #     state: present
-  #     condition:
-  #       conditionType: "ConditionReference"
-  #       isNegate: False
-  #       name: "My New Condition"
-  #       description: "New optional Description"
-  #       id: 7bca72c0-712e-41ea-9d58-a8c368bc234d
-  #     default: False
-  #     description: "Test Policy Set"
-  #     isProxy: False
-  #     rank: 0
-  #     serviceName: "Default Network Access"
-  #     name: "Test Policy Set 2"
-  #   register: result
+  - name: Create or update a network policy set
+    cisco.ise.network_access_policy_set:
+      ise_hostname: "{{ise_hostname}}"
+      ise_username: "{{ise_username}}"
+      ise_password: "{{ise_password}}"
+      ise_verify: "{{ise_verify}}"
+      state: present
+      condition:
+        conditionType: "ConditionReference"
+        isNegate: False
+        name: "My New Condition"
+        description: "New optional Description"
+        id: 7bca72c0-712e-41ea-9d58-a8c368bc234d
+      default: False
+      description: "Test Policy Set"
+      isProxy: False
+      rank: 0
+      serviceName: "Default Network Access"
+      name: "Test Policy Set 2"
+    register: result
 
   # - name: Delete a network policy set by id
   #   cisco.ise.network_access_policy_set:

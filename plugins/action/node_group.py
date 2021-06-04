@@ -30,8 +30,8 @@ argument_spec.update(dict(
 ))
 
 required_if = [
-    ("state", "present", ("node_group_name"), True),
-    ("state", "absent", ("node_group_name"), True),
+    ("state", "present", ["node_group_name"], True),
+    ("state", "absent", ["node_group_name"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -52,7 +52,7 @@ class NodeGroup(object):
             result = self.ise.exec(
                 family="node_group",
                 function="get_node_group",
-                params={"name": quote(name)}
+                params={"node_group_name": quote(name)}
             ).response
         except Exception as e:
             result = None
@@ -67,7 +67,7 @@ class NodeGroup(object):
         id_exists = False
         name_exists = False
         o_id = self.new_object.get("id")
-        name = self.new_object.get("name")
+        name = self.new_object.get("node_group_name")
         if o_id:
             if self.get_object_by_id(o_id):
                 id_exists = True
@@ -89,12 +89,6 @@ class NodeGroup(object):
         return result
 
     def update(self):
-        id = self.new_object.get("id")
-        name = self.new_object.get("name")
-        result = None
-        if not name:
-            name_ = self.get_object_by_id(id).get("name")
-            self.new_object.update(dict(name=name_))
         result = self.ise.exec(
             family="node_group",
             function="update_node_group",
@@ -103,12 +97,6 @@ class NodeGroup(object):
         return result
 
     def delete(self):
-        id = self.new_object.get("id")
-        name = self.new_object.get("name")
-        result = None
-        if not name:
-            name_ = self.get_object_by_id(id).get("name")
-            self.new_object.update(dict(name=name_))
         result = self.ise.exec(
             family="node_group",
             function="delete_node_group",

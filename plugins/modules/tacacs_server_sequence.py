@@ -59,14 +59,14 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    localAccounting: true
-    name: string
-    prefixDelimiter: string
-    prefixStrip: true
+    localAccounting: false
+    name: TacacsServerSequence1
+    prefixDelimiter: \
+    prefixStrip: false
     remoteAccounting: true
-    serverList: string
-    suffixDelimiter: string
-    suffixStrip: true
+    serverList: TacacsExternalServer1,TacacsExternalServer2
+    suffixDelimiter: '@'
+    suffixStrip: false
 
 - name: Update by id
   cisco.ise.tacacs_server_sequence:
@@ -76,14 +76,14 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     id: string
-    localAccounting: true
-    name: string
-    prefixDelimiter: string
-    prefixStrip: true
+    localAccounting: false
+    name: TacacsServerSequence1
+    prefixDelimiter: \
+    prefixStrip: false
     remoteAccounting: true
-    serverList: string
-    suffixDelimiter: string
-    suffixStrip: true
+    serverList: TacacsExternalServer1,TacacsExternalServer2
+    suffixDelimiter: '@'
+    suffixStrip: false
 
 - name: Delete by id
   cisco.ise.tacacs_server_sequence:

@@ -88,7 +88,7 @@ class ActionModule(ActionBase):
                 family="egress_matrix_cell",
                 function='get_egress_matrix_cell_by_id',
                 params=self.get_object(self._task.args)
-            ).response
+            ).response['EgressMatrixCell']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

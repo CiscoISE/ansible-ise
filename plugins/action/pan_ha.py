@@ -32,8 +32,8 @@ argument_spec.update(dict(
 ))
 
 required_if = [
-    ("state", "present", (), True),
-    ("state", "absent", (), True),
+    ("state", "present", [], True),
+    ("state", "absent", [], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -54,6 +54,14 @@ class PanHa(object):
     def get_object_by_name(self, name):
         # NOTICE: Does not have a get by name method or it is in another action
         result = None
+        items =  self.ise.exec(
+            family="pan_ha",
+            function="get_pan_ha_status"
+        ).response['response']
+        for item in items:
+            if item.get('name') == name and item.get('id'):
+                result = dict(item)
+                return result
         return result
 
     def get_object_by_id(self, id):

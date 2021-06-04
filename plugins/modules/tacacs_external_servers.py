@@ -56,13 +56,14 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    connectionPort: 0
-    description: string
-    hostIP: string
-    name: string
-    sharedSecret: string
+    connectionPort: 49
+    description: TacacsExternalServerForSDK
+    hostIP: 1.1.1.1
+    id: '123456789'
+    name: TacacsExternalServer1
+    sharedSecret: SharedSecret
     singleConnect: true
-    timeout: 0
+    timeout: 20
 
 - name: Update by id
   cisco.ise.tacacs_external_servers:
@@ -71,14 +72,14 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    connectionPort: 0
-    description: string
-    hostIP: string
-    id: string
-    name: string
-    sharedSecret: string
+    connectionPort: 49
+    description: TacacsExternalServerForSDK
+    hostIP: 1.1.1.1
+    id: '123456789'
+    name: TacacsExternalServer1
+    sharedSecret: SharedSecret
     singleConnect: true
-    timeout: 0
+    timeout: 20
 
 - name: Delete by id
   cisco.ise.tacacs_external_servers:

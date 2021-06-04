@@ -24,6 +24,8 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
+    name=dict(type="str"),
+    description=dict(type="str"),
     sourceSgtId=dict(type="str"),
     destinationSgtId=dict(type="str"),
     matrixCellStatus=dict(type="str"),
@@ -33,8 +35,8 @@ argument_spec.update(dict(
 ))
 
 required_if = [
-    ("state", "present", ("id"), True),
-    ("state", "absent", ("id"), True),
+    ("state", "present", ["id", "name"], True),
+    ("state", "absent", ["id", "name"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -45,6 +47,8 @@ class EgressMatrixCell(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
+            name=params.get("name"),
+            description=params.get("description"),
             source_sgt_id=params.get("sourceSgtId"),
             destination_sgt_id=params.get("destinationSgtId"),
             matrix_cell_status=params.get("matrixCellStatus"),
@@ -56,6 +60,16 @@ class EgressMatrixCell(object):
     def get_object_by_name(self, name):
         # NOTICE: Get does not support filter by name
         result = None
+        gen_items_responses = self.ise.exec(
+            family="egress_matrix_cell",
+            function="get_all_egress_matrix_cell_generator"
+        )
+        for items_response in gen_items_responses:
+            items = items_response.response['SearchResult']['resources']
+            for item in items:
+                if item.get('name') == name and item.get('id'):
+                    result = dict(item)
+                    return result
         return result
 
     def get_object_by_id(self, id):
@@ -64,7 +78,7 @@ class EgressMatrixCell(object):
                 family="egress_matrix_cell",
                 function="get_egress_matrix_cell_by_id",
                 params={"id": quote(id)}
-            ).response
+            ).response['EgressMatrixCell']
         except Exception as e:
             result = None
         return result

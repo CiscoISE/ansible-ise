@@ -35,8 +35,10 @@ argument_spec.update(dict(
 ))
 
 required_if = [
-    ("state", "present", ("dictionaryName", "name"), True),
-    ("state", "absent", ("dictionaryName", "name"), True),
+    ("state", "present", ["dictionaryName"], True),
+    ("state", "present", ["name"], True),
+    ("state", "absent", ["dictionaryName"], True),
+    ("state", "absent", ["name"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -57,12 +59,12 @@ class NetworkAccessDictionaryAttribute(object):
             allowed_values=params.get("allowedValues"),
         )
 
-    def get_object_by_name(self, name):
+    def get_object_by_name(self, name, dictionary_name):
         try:
             result = self.ise.exec(
                 family="network_access_dictionary_attribute",
                 function="get_network_access_dictionary_attribute_by_name",
-                params={"name": quote(name)}
+                params={"name": quote(name), "dictionary_name": dictionary_name}
             ).response
         except Exception as e:
             result = None
@@ -78,14 +80,15 @@ class NetworkAccessDictionaryAttribute(object):
         name_exists = False
         o_id = self.new_object.get("id")
         name = self.new_object.get("name")
+        dictionary_name = self.new_object.get("dictionary_name")
         if o_id:
             if self.get_object_by_id(o_id):
                 id_exists = True
         if name:
-            if self.get_object_by_name(name):
+            if self.get_object_by_name(name, dictionary_name):
                 name_exists = True
         if id_exists and name_exists:
-            _id = self.get_object_by_name(name).get("id")
+            _id = self.get_object_by_name(name, dictionary_name).get("id")
             if o_id != _id:
                 raise InconsistentParameters("The 'id' and 'name' params don't refer to the same object")
         return id_exists or name_exists
@@ -99,12 +102,6 @@ class NetworkAccessDictionaryAttribute(object):
         return result
 
     def update(self):
-        id = self.new_object.get("id")
-        name = self.new_object.get("name")
-        result = None
-        if not name:
-            name_ = self.get_object_by_id(id).get("name")
-            self.new_object.update(dict(name=name_))
         result = self.ise.exec(
             family="network_access_dictionary_attribute",
             function="update_network_access_dictionary_attribute_by_name",
@@ -113,12 +110,6 @@ class NetworkAccessDictionaryAttribute(object):
         return result
 
     def delete(self):
-        id = self.new_object.get("id")
-        name = self.new_object.get("name")
-        result = None
-        if not name:
-            name_ = self.get_object_by_id(id).get("name")
-            self.new_object.update(dict(name=name_))
         result = self.ise.exec(
             family="network_access_dictionary_attribute",
             function="delete_network_access_dictionary_attribute_by_name",

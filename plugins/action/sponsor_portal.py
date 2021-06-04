@@ -27,14 +27,15 @@ argument_spec.update(dict(
     id=dict(type="str"),
     name=dict(type="str"),
     description=dict(type="str"),
+    portalTestUrl=dict(type="str"),
     portalType=dict(type="str"),
     settings=dict(type="dict"),
     customizations=dict(type="dict"),
 ))
 
 required_if = [
-    ("state", "present", ("id", "name"), True),
-    ("state", "absent", ("id", "name"), True),
+    ("state", "present", ["id", "name"], True),
+    ("state", "absent", ["id", "name"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -48,6 +49,7 @@ class SponsorPortal(object):
             id=params.get("id"),
             name=params.get("name"),
             description=params.get("description"),
+            portal_test_url=params.get("portalTestUrl"),
             portal_type=params.get("portalType"),
             settings=params.get("settings"),
             customizations=params.get("customizations"),
@@ -56,6 +58,16 @@ class SponsorPortal(object):
     def get_object_by_name(self, name):
         # NOTICE: Does not have a get by name method or it is in another action
         result = None
+        gen_items_responses = self.ise.exec(
+            family="sponsor_portal",
+            function="get_all_sponsor_portal_generator"
+        )
+        for items_response in gen_items_responses:
+            items = items_response.response['SearchResult']['resources']
+            for item in items:
+                if item.get('name') == name and item.get('id'):
+                    result = dict(item)
+                    return result
         return result
 
     def get_object_by_id(self, id):

@@ -42,8 +42,8 @@ argument_spec.update(dict(
 ))
 
 required_if = [
-    ("state", "present", ("id", "name"), True),
-    ("state", "absent", ("id", "name"), True),
+    ("state", "present", ["id", "name"], True),
+    ("state", "absent", ["id", "name"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -74,6 +74,16 @@ class RadiusServerSequence(object):
     def get_object_by_name(self, name):
         # NOTICE: Does not have a get by name method or it is in another action
         result = None
+        gen_items_responses = self.ise.exec(
+            family="radius_server_sequence",
+            function="get_all_radius_server_sequence_generator"
+        )
+        for items_response in gen_items_responses:
+            items = items_response.response['SearchResult']['resources']
+            for item in items:
+                if item.get('name') == name and item.get('id'):
+                    result = dict(item)
+                    return result
         return result
 
     def get_object_by_id(self, id):

@@ -133,41 +133,43 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    autoNotification: true
+    autoNotification: false
     createPermissions:
       canCreateRandomAccounts: true
       canImportMultipleAccounts: true
-      canSetFutureStartDate: true
-      canSpecifyUsernamePrefix: true
-      defaultUsernamePrefix: string
-      importBatchSizeLimit: 0
-      randomBatchSizeLimit: 0
-      startDateFutureLimitDays: 0
-    description: string
+      canSetFutureStartDate: false
+      canSpecifyUsernamePrefix: false
+      defaultUsernamePrefix: ''
+      importBatchSizeLimit: 20
+      randomBatchSizeLimit: 30
+      startDateFutureLimitDays: 10
+    description: description
     guestTypes:
-    - string
-    id: string
-    isDefaultGroup: true
+    - Contractor (default)
+    - Daily (default)
+    - Weekly (default)
+    id: id
+    isDefaultGroup: false
     isEnabled: true
     locations:
-    - string
-    managePermission: string
+    - San Jose
+    managePermission: ALLACCOUNTS
     memberGroups:
-    - string
-    name: string
+    - ALL_ACCOUNTS (default)
+    name: name
     otherPermissions:
-      canAccessViaRest: true
-      canApproveSelfregGuests: true
-      canDeleteGuestAccounts: true
-      canExtendGuestAccounts: true
-      canReinstateSuspendedAccounts: true
-      canResetGuestPasswords: true
-      canSendSmsNotifications: true
-      canSuspendGuestAccounts: true
-      canUpdateGuestContactInfo: true
-      canViewGuestPasswords: true
-      limitApprovalToSponsorsGuests: true
-      requireSuspensionReason: true
+      canAccessViaRest: false
+      canApproveSelfregGuests: false
+      canDeleteGuestAccounts: false
+      canExtendGuestAccounts: false
+      canReinstateSuspendedAccounts: false
+      canResetGuestPasswords: false
+      canSendSmsNotifications: false
+      canSuspendGuestAccounts: false
+      canUpdateGuestContactInfo: false
+      canViewGuestPasswords: false
+      limitApprovalToSponsorsGuests: false
+      requireSuspensionReason: false
 
 - name: Update by id
   cisco.ise.sponsor_group:
@@ -176,41 +178,43 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    autoNotification: true
+    autoNotification: false
     createPermissions:
       canCreateRandomAccounts: true
       canImportMultipleAccounts: true
-      canSetFutureStartDate: true
-      canSpecifyUsernamePrefix: true
-      defaultUsernamePrefix: string
-      importBatchSizeLimit: 0
-      randomBatchSizeLimit: 0
-      startDateFutureLimitDays: 0
-    description: string
+      canSetFutureStartDate: false
+      canSpecifyUsernamePrefix: false
+      defaultUsernamePrefix: ''
+      importBatchSizeLimit: 20
+      randomBatchSizeLimit: 30
+      startDateFutureLimitDays: 10
+    description: description
     guestTypes:
-    - string
-    id: string
-    isDefaultGroup: true
+    - Contractor (default)
+    - Daily (default)
+    - Weekly (default)
+    id: id
+    isDefaultGroup: false
     isEnabled: true
     locations:
-    - string
-    managePermission: string
+    - San Jose
+    managePermission: ALLACCOUNTS
     memberGroups:
-    - string
-    name: string
+    - ALL_ACCOUNTS (default)
+    name: name
     otherPermissions:
-      canAccessViaRest: true
-      canApproveSelfregGuests: true
-      canDeleteGuestAccounts: true
-      canExtendGuestAccounts: true
-      canReinstateSuspendedAccounts: true
-      canResetGuestPasswords: true
-      canSendSmsNotifications: true
-      canSuspendGuestAccounts: true
-      canUpdateGuestContactInfo: true
-      canViewGuestPasswords: true
-      limitApprovalToSponsorsGuests: true
-      requireSuspensionReason: true
+      canAccessViaRest: false
+      canApproveSelfregGuests: false
+      canDeleteGuestAccounts: false
+      canExtendGuestAccounts: false
+      canReinstateSuspendedAccounts: false
+      canResetGuestPasswords: false
+      canSendSmsNotifications: false
+      canSuspendGuestAccounts: false
+      canUpdateGuestContactInfo: false
+      canViewGuestPasswords: false
+      limitApprovalToSponsorsGuests: false
+      requireSuspensionReason: false
 
 - name: Delete by id
   cisco.ise.sponsor_group:

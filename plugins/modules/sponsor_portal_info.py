@@ -69,6 +69,7 @@ ise_response:
       "id": "string",
       "name": "string",
       "description": "string",
+      "portalTestUrl": "string",
       "portalType": "string",
       "settings": {
         "portalSettings": {

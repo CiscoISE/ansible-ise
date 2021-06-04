@@ -40,8 +40,10 @@ argument_spec.update(dict(
 ))
 
 required_if = [
-    ("state", "present", ("hostName", "id", "name"), True),
-    ("state", "absent", ("hostName", "id", "name"), True),
+    ("state", "present", ["hostName"], True),
+    ("state", "present", ["id", "name"], True),
+    ("state", "present", ["hostName"], True),
+    ("state", "absent", ["id", "name"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -70,23 +72,27 @@ class SystemCertificate(object):
             host_name=params.get("hostName"),
         )
 
-    def get_object_by_name(self, name):
-        try:
-            result = self.ise.exec(
-                family="certificates",
-                function="get_all_system_certificates",
-                params={"name": quote(name)}
-            ).response
-        except Exception as e:
-            result = None
+    def get_object_by_name(self, name, host_name):
+        result = None
+        gen_items_responses = self.ise.exec(
+            family="certificates",
+            function="get_all_system_certificates_generator",
+            params={"host_name": host_name}
+        )
+        for items_response in gen_items_responses:
+            items = items_response.response.get('response', []) or []
+            for item in items:
+                if item.get('friendlyName') == name and item.get('id'):
+                    result = dict(item)
+                    return result
         return result
 
-    def get_object_by_id(self, id):
+    def get_object_by_id(self, id, host_name):
         try:
             result = self.ise.exec(
                 family="certificates",
                 function="get_system_certificate_by_id",
-                params={"id": quote(id)}
+                params={"id": quote(id), "host_name": host_name}
             ).response
         except Exception as e:
             result = None
@@ -96,20 +102,22 @@ class SystemCertificate(object):
         result = False
         id = self.new_object.get("id")
         name = self.new_object.get("name")
+        host_name = self.new_object.get("host_name")
         if id:
-            if self.get_object_by_id(id):
+            if self.get_object_by_id(id, host_name):
                 result = True
         elif name:
-            if self.get_object_by_name(name):
+            if self.get_object_by_name(name, host_name):
                 result = True
         return result
 
     def update(self):
         id = self.new_object.get("id")
         name = self.new_object.get("name")
+        host_name = self.new_object.get("host_name")
         result = None
         if not id:
-            id_ = self.get_object_by_name(name).get("id")
+            id_ = self.get_object_by_name(name, host_name).get("id")
             self.new_object.update(dict(id=id_))
         result = self.ise.exec(
             family="certificates",
@@ -121,9 +129,10 @@ class SystemCertificate(object):
     def delete(self):
         id = self.new_object.get("id")
         name = self.new_object.get("name")
+        host_name = self.new_object.get("host_name")
         result = None
         if not id:
-            id_ = self.get_object_by_name(name).get("id")
+            id_ = self.get_object_by_name(name, host_name).get("id")
             self.new_object.update(dict(id=id_))
         result = self.ise.exec(
             family="certificates",

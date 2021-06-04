@@ -45,7 +45,44 @@ ise_response:
     [
       {
         "conditionType": "string",
-        "isNegate": true
+        "isNegate": true,
+        "name": "string",
+        "id": "string",
+        "description": "string",
+        "dictionaryName": "string",
+        "attributeName": "string",
+        "attributeId": "string",
+        "operator": "string",
+        "dictionaryValue": "string",
+        "attributeValue": "string",
+        "children": [
+          {
+            "conditionType": "string",
+            "isNegate": true
+          }
+        ],
+        "hoursRange": {
+          "startTime": "string",
+          "endTime": "string"
+        },
+        "hoursRangeException": {
+          "startTime": "string",
+          "endTime": "string"
+        },
+        "weekDays": [
+          "string"
+        ],
+        "weekDaysException": [
+          "string"
+        ],
+        "datesRange": {
+          "startDate": "string",
+          "endDate": "string"
+        },
+        "datesRangeException": {
+          "startDate": "string",
+          "endDate": "string"
+        }
       }
     ]
 """

@@ -45,8 +45,8 @@ argument_spec.update(dict(
 ))
 
 required_if = [
-    ("state", "present", ("id", "name"), True),
-    ("state", "absent", ("id", "name"), True),
+    ("state", "present", ["id", "name"], True),
+    ("state", "absent", ["id", "name"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -80,6 +80,14 @@ class DeviceAdministrationTimeDateConditions(object):
     def get_object_by_name(self, name):
         # NOTICE: Does not have a get by name method or it is in another action
         result = None
+        items =  self.ise.exec(
+            family="device_administration_time_date_conditions",
+            function="get_all_device_admin_time_conditions",
+        ).response.get('response', []) or []
+        for item in items:
+            if item.get('name') == name and item.get('id'):
+                result = dict(item)
+                return result
         return result
 
     def get_object_by_id(self, id):

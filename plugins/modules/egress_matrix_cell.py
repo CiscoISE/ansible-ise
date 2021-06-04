@@ -16,14 +16,20 @@ options:
   defaultRule:
     description: Egress Matrix Cell's defaultRule.
     type: str
+  description:
+    description: Egress Matrix Cell's description.
+    type: str
   destinationSgtId:
     description: Egress Matrix Cell's destinationSgtId.
     type: str
   id:
-    description: Id path parameter.
+    description: Egress Matrix Cell's id.
     type: str
   matrixCellStatus:
     description: Egress Matrix Cell's matrixCellStatus.
+    type: str
+  name:
+    description: Egress Matrix Cell's name.
     type: str
   sgacls:
     description: Egress Matrix Cell's sgacls.
@@ -54,6 +60,7 @@ EXAMPLES = r"""
     defaultRule: PERMIT_IP
     destinationSgtId: 1ebbc200-7a26-11e4-bc43-000c29ed7428
     matrixCellStatus: MONITOR
+    name: Workstations
     sgacls:
     - 1ebbc100-7a26-11e4-bc43-000c29ed7428
     - 2ebbc100-7a26-11e4-bc43-000c29ed7428
@@ -68,8 +75,9 @@ EXAMPLES = r"""
     state: present
     defaultRule: PERMIT_IP
     destinationSgtId: 1ebbc200-7a26-11e4-bc43-000c29ed7428
-    id: string
+    id: 4746ca01-c3c4-11eb-95af-f263cf05f605
     matrixCellStatus: MONITOR
+    name: Workstations
     sgacls:
     - 1ebbc100-7a26-11e4-bc43-000c29ed7428
     - 2ebbc100-7a26-11e4-bc43-000c29ed7428

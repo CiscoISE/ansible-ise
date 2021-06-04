@@ -31,8 +31,8 @@ argument_spec.update(dict(
 ))
 
 required_if = [
-    ("state", "present", ("id"), True),
-    ("state", "absent", ("id"), True),
+    ("state", "present", ["id", "rule"], True),
+    ("state", "absent", ["id", "rule"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -52,6 +52,14 @@ class DeviceAdministrationAuthorizationGlobalExceptionRules(object):
     def get_object_by_name(self, name):
         # NOTICE: Does not have a get by name method or it is in another action
         result = None
+        items =  self.ise.exec(
+            family="device_administration_authorization_global_exception_rules",
+            function="get_all_device_admin_policy_set_global_exception",
+        ).response.get('response', []) or []
+        for item in items:
+            if item.get('rule') and item['rule'].get('name') == name and item['rule'].get('id'):
+                result = dict(item)
+                return result
         return result
 
     def get_object_by_id(self, id):
@@ -68,8 +76,8 @@ class DeviceAdministrationAuthorizationGlobalExceptionRules(object):
     def exists(self):
         id_exists = False
         name_exists = False
-        o_id = self.new_object.get("id")
-        name = self.new_object.get("name")
+        o_id = self.new_object.get("id") or self.new_object.get('rule', {}).get("id")
+        name = self.new_object.get('rule', {}).get("name")
         if o_id:
             if self.get_object_by_id(o_id):
                 id_exists = True
@@ -77,7 +85,7 @@ class DeviceAdministrationAuthorizationGlobalExceptionRules(object):
             if self.get_object_by_name(name):
                 name_exists = True
         if id_exists and name_exists:
-            _id = self.get_object_by_name(name).get("id")
+            _id = self.get_object_by_name(name).get('rule', {}).get("id")
             if o_id != _id:
                 raise InconsistentParameters("The 'id' and 'name' params don't refer to the same object")
         return id_exists or name_exists
@@ -91,12 +99,14 @@ class DeviceAdministrationAuthorizationGlobalExceptionRules(object):
         return result
 
     def update(self):
-        id = self.new_object.get("id")
-        name = self.new_object.get("name")
+        id = self.new_object.get("id") or self.new_object.get('rule', {}).get("id")
+        name = self.new_object.get('rule', {}).get("name")
         result = None
         if not id:
-            id_ = self.get_object_by_name(name).get("id")
-            self.new_object.update(dict(id=id_))
+            id_ = self.get_object_by_name(name).get('rule', {}).get("id")
+            rule = self.new_object.get('rule', {})
+            rule.update(dict(id=id_))
+            self.new_object.update(dict(rule=rule, id=id_))
         result = self.ise.exec(
             family="device_administration_authorization_global_exception_rules",
             function="update_device_admin_policyset_global_exception_by_id",
@@ -105,12 +115,14 @@ class DeviceAdministrationAuthorizationGlobalExceptionRules(object):
         return result
 
     def delete(self):
-        id = self.new_object.get("id")
-        name = self.new_object.get("name")
+        id = self.new_object.get("id") or self.new_object.get('rule', {}).get("id")
+        name = self.new_object.get('rule', {}).get("name")
         result = None
         if not id:
-            id_ = self.get_object_by_name(name).get("id")
-            self.new_object.update(dict(id=id_))
+            id_ = self.get_object_by_name(name).get('rule', {}).get("id")
+            rule = self.new_object.get('rule', {})
+            rule.update(dict(id=id_))
+            self.new_object.update(dict(rule=rule, id=id_))
         result = self.ise.exec(
             family="device_administration_authorization_global_exception_rules",
             function="delete_device_admin_policyset_global_exception_by_id",

@@ -96,6 +96,9 @@ ise_response:
   type: dict
   sample: >
     {
+      "id": "string",
+      "name": "string",
+      "description": "string",
       "sourceSgtId": "string",
       "destinationSgtId": "string",
       "matrixCellStatus": "string",

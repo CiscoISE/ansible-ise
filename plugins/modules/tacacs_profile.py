@@ -58,14 +58,14 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    description: string
-    id: string
-    name: string
+    description: WLC ALL
+    id: 18101520-78ab-11eb-b39e-2284e1c57b72
+    name: WLC ALL
     sessionAttributes:
       sessionAttributeList:
-      - name: string
-        type: string
-        value: string
+      - name: role1
+        type: MANDATORY
+        value: ALL
 
 - name: Update by id
   cisco.ise.tacacs_profile:
@@ -74,14 +74,14 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    description: string
-    id: string
-    name: string
+    description: WLC ALL
+    id: 18101520-78ab-11eb-b39e-2284e1c57b72
+    name: WLC ALL
     sessionAttributes:
       sessionAttributeList:
-      - name: string
-        type: string
-        value: string
+      - name: role1
+        type: MANDATORY
+        value: ALL
 
 - name: Delete by id
   cisco.ise.tacacs_profile:
