@@ -43,4 +43,3 @@
   - name: Print result
     ansible.builtin.debug:
       var: result
-
