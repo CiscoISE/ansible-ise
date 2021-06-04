@@ -7,3 +7,7 @@ releases:
     release_date: '2021-05-25'
     changes:
       release_summary: Added all idempotent modules. Most modules are still untested against a live ISE.
+  0.0.3:
+    release_date: '2021-06-04'
+    changes:
+      release_summary: Added other modules and playbooks. Most modules are still untested against a live ISE.
