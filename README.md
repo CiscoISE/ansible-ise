@@ -28,6 +28,10 @@ Install the collection
 ```
 ansible-galaxy collection install cisco.ise
 ```
+## ISE Setup
+
+This collection assumes that the API Gateway, the ERS APIs and OpenAPIs are enabled.
+
 ## Use
 First, define a `credentials.yml` file where you specify your Cisco ISE credentials as ansible variables:
 ```
