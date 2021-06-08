@@ -119,6 +119,7 @@ plugins/action/network_access_authorization_global_exception_rules.py compile-2.
 plugins/action/network_access_authorization_global_exception_rules_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/network_access_authorization_rules.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/network_access_authorization_rules_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
+plugins/action/network_access_conditions.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/network_access_conditions_for_authentication_rule_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/network_access_conditions_for_authorization_rule_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/network_access_conditions_for_policy_set_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
@@ -319,6 +320,7 @@ plugins/action/network_access_authorization_global_exception_rules.py compile-2.
 plugins/action/network_access_authorization_global_exception_rules_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/network_access_authorization_rules.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/network_access_authorization_rules_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
+plugins/action/network_access_conditions.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/network_access_conditions_for_authentication_rule_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/network_access_conditions_for_authorization_rule_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/network_access_conditions_for_policy_set_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
