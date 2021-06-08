@@ -25,22 +25,26 @@
   #     id: 15c562ac-459b-401f-8bf6-28bba3173467
   #   register: result
 
-  # - name: Create or update a network access conditions
-  #   cisco.ise.network_access_conditions:
-  #     ise_hostname: "{{ise_hostname}}"
-  #     ise_username: "{{ise_username}}"
-  #     ise_password: "{{ise_password}}"
-  #     ise_verify: "{{ise_verify}}"
-  #     state: present
-  #     conditionType: "LibraryConditionAttributes"
-  #     isNegate: False
-  #     name: "My New Condition"
-  #     description: "New optional Description"
-  #     dictionaryName: "Radius"
-  #     attributeName: "Service-Type"
-  #     operator: "equals"
-  #     attributeValue: "Call Check"
-  #   register: result
+  - name: Create or update a network access conditions
+    cisco.ise.network_access_conditions:
+      ise_hostname: "{{ise_hostname}}"
+      ise_username: "{{ise_username}}"
+      ise_password: "{{ise_password}}"
+      ise_verify: "{{ise_verify}}"
+      state: present
+      conditionType: "LibraryConditionAttributes"
+      isNegate: False
+      name: "My New Condition"
+      description: "New optional Description"
+      dictionaryName: "Radius"
+      attributeName: "Service-Type"
+      operator: "equals"
+      attributeValue: "Call Check"
+    register: result
+
+  - name: Print result
+    ansible.builtin.debug:
+      var: result
 
   # - name: Get a network access conditions by name
   #   cisco.ise.network_access_conditions_info:
