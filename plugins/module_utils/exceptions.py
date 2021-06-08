@@ -13,3 +13,15 @@ class InconsistentParameters(AnsibleISEException):
     pass
 
 
+class PrimaryNodeNotUnique(AnsibleISEException):
+    """More than one node has the 'PPAN' attribute"""
+    pass
+
+
+class ISEAPIError(AnsibleISEException):
+    """An API error was received from the ISE node"""
+    pass
+
+class NodeNotStandalone(AnsibleISEException):
+    """The node is not in standalone state"""
+
