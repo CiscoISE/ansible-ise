@@ -26,9 +26,9 @@ options:
     description:
     - Sortasc query parameter. Sort asc.
     type: str
-  sortdec:
+  sortdsc:
     description:
-    - Sortdec query parameter. Sort desc.
+    - Sortdsc query parameter. Sort desc.
     type: str
   filter:
     description:
@@ -72,8 +72,8 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     page: 1
     size: 20
-    sortasc: asc
-    sortdec: string
+    sortasc: string
+    sortdsc: string
     filter: []
     filterType: AND
   register: result
