@@ -44,9 +44,9 @@ options:
     description:
     - Sortasc query parameter. Sort asc.
     type: str
-  sortdec:
+  sortdsc:
     description:
-    - Sortdec query parameter. Sort desc.
+    - Sortdsc query parameter. Sort desc.
     type: str
   id:
     description:
@@ -74,8 +74,8 @@ EXAMPLES = r"""
     size: 20
     filter: []
     filterType: AND
-    sortasc: asc
-    sortdec: string
+    sortasc: string
+    sortdsc: string
   register: result
 
 - name: Get Sponsor Group Member by id

@@ -15,3 +15,7 @@ releases:
     release_date: '2021-06-08'
     changes:
       release_summary: Added network_access_conditions module. Most modules are still untested against a live ISE.
+  0.0.5:
+    release_date: '2021-06-11'
+    changes:
+      release_summary: Update sorting params for info_ modules.
