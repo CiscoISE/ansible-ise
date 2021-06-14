@@ -25,7 +25,7 @@ argument_spec.update(dict(
     filter=dict(type="list"),
     filterType=dict(type="str"),
     sortasc=dict(type="str"),
-    sortdec=dict(type="str"),
+    sortdsc=dict(type="str"),
     id=dict(type="str"),
 ))
 
@@ -68,7 +68,7 @@ class ActionModule(ActionBase):
             filter=params.get("filter"),
             filter_type=params.get("filterType"),
             sortasc=params.get("sortasc"),
-            sortdec=params.get("sortdec"),
+            sortdsc=params.get("sortdsc"),
             id=params.get("id"),
         )
         return new_object
