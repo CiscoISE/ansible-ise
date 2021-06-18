@@ -52,7 +52,7 @@ Then, create a playbook `myplaybook.yml` referencing the variables in your crede
   tasks:
   - name: Get network device by id
     cisco.ise.network_device_info:
-      ise_hostname: "{{ise_host}}"
+      ise_hostname: "{{ise_hostname}}"
       ise_username: "{{ise_username}}"
       ise_password: "{{ise_password}}"
       ise_verify: "{{ise_verify}}"
