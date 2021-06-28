@@ -83,28 +83,22 @@ class Node(object):
         return False
 
     def app_server_is_running(self):
-        # dev = Connection(hostname=self.hostname,
-        #                  start=["ssh -o UserKnownHostsFile=/dev/null {ip}".format(ip=self.ip)],
-        #                  username=self.username,
-        #                  password=self.password,
-        #                  os='ise')
-        # dev.settings.LINUX_INIT_EXEC_COMMANDS = []
-        # dev.connect()
-        # dev.sendline("term length 0")
-        # retry = 2
-        # for i in range(retry):
-        #     res = dev.execute("show application status ise", timeout=120)
-        #     time.sleep(2)
-        #     status = 'Application Server                     running'
-        #     if status in res:
-        #         time.sleep(2)
-        #         dev.disconnect()
-        #         return True
-        #     else:
-        #         time.sleep(5)
-        #         continue
-        # dev.disconnect()
-        return True
+        url = "https://{ip}/ers/config/op/systemconfig/iseversion".format(ip=self.ip)
+        headers = {'Accept': 'application/json'}
+        try:
+            response = requests.get(url=url,headers=headers,auth=(self.username, self.password), verify=False)
+            # Application Server is down but API Gateway is up
+            if response.status_code == 502:
+                return False
+            # The Application Server is up
+            if response.status_code == 200:
+                return True
+            # Any other case return False
+            else:
+                return False
+        # Both Application Server and API Gateway are down
+        except Exception as e:
+            return False
 
     def return_id_of_certificate(self):
         url = "https://{ip}/api/v1/certs/system-certificate/{hostname}".format(ip=self.ip, hostname=self.hostname)
@@ -140,7 +134,7 @@ class Node(object):
         data = xml_template.format(
             hostname=self.hostname,
             fqdn="{}.{}".format(self.hostname,self.domain),
-            ip=self.ip,
+            ip=self.local_ip,
             username=self.username,
             password=self.password,
             roles=roles_str
@@ -186,6 +180,7 @@ class ISEDeployment(object):
 
     def export_import_default_self_signed_server_cert(self):
         for node in self.nodes:
+            print("Exporting certificate for node {}".format(node.name))
             try:
                 cert_id = node.return_id_of_certificate()
                 data = json.dumps({"id": cert_id, "export": "CERTIFICATE"})
@@ -208,23 +203,19 @@ class ISEDeployment(object):
                     "trustForClientAuth": True,
                     "data": cert_data.decode("utf-8"),
                     "trustForIseAuth": True,
-                    "name": "testTrustCertBaltimore",
+                    "name": node.name,
                     "validateCertificateExtensions": True
                 })
                 url = "https://{primary_node_ip}/api/v1/certs/trusted-certificate/import".format(primary_node_ip=self.primary.ip)
                 headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
                 response = requests.post(url=url, data=data, headers=headers, auth=(self.primary.username, self.primary.password), verify=False)
-                output = json.loads(response.text)
+                return_message = json.loads(response.text)["response"]["message"]
                 if not response.status_code == 200:
-                    raise AnsibleActionFail("Received status code {status_code} when importing certificate.".format(status_code=str(response.status_code)))
-                if not output['response']['message'] == 'Trust certificate was added successfully':
-                    raise AnsibleActionFail("Expected message was 'Trust certificate was added successfully'. Actual message was {message}".format(message=output['response']['message']))
-                if not output['response']['status'] == 'Success':
-                    raise AnsibleActionFail("Expected response status was 'Success'. Actual message was {message}".format(message=output['response']['status']))
+                    if not (return_message == 'Trust certificate was added successfully' or return_message == "Certificates are having same subject, same serial number and they are binary equal. Hence skipping the replace"):                
+                        raise AnsibleActionFail("Expected message was 'Trust certificate was added successfully'. Actual message was {message}".format(message=return_message))
 
             except Exception as e:
-                print(e)
-                assert False
+                AnsibleActionFail(e)
 
     def promote_primary_node(self):
         headers = {'Content-Type': 'text/xml'}
@@ -313,8 +304,17 @@ class ActionModule(ActionBase):
 
         ise_deployment.export_import_default_self_signed_server_cert()
         ise_deployment.promote_primary_node()
-        for node in ise_deployment.nodes:
-            node.register_node(ise_deployment.primary)
+        retries_left = 10
+        wait_interval = 120
+        time.sleep(wait_interval)
+        while retries_left > 0:
+            if ise_deployment.primary.app_server_is_running():
+                for node in ise_deployment.nodes:
+                    node.register_node(ise_deployment.primary)
+                break
+            else:
+                retries_left -= 1
+                time.sleep(wait_interval)
 
         response = "All nodes were successfully updated"
 

@@ -1,0 +1,44 @@
+- hosts: ise_servers
+  gather_facts: no
+  tasks:
+  - name: Deploy nodes
+    cisco.ise.deployment:
+      nodes:
+      - name: ISE PAN Server 1
+        ip: 52.39.187.54
+        local_ip: 10.10.1.71
+        hostname: ise-pan-server-1
+        username: admin
+        password: P@sbg1234
+        domain: sstcloud.com
+        roles:
+          - PPAN
+          - MNT-ACTIVE
+      - name: ISE PAN Server 2
+        ip: 54.202.151.6
+        local_ip: 10.10.1.226
+        hostname: ise-pan-server-2
+        username: admin
+        password: P@sbg1234
+        domain: sstcloud.com
+        roles:
+          - SPAN
+          - MNT-STANDBY
+      - name: ISE PSN Server 1
+        ip: 35.160.20.24
+        local_ip: 10.10.1.214
+        hostname: ise-psn-server-1
+        username: admin
+        password: P@sbg1234
+        domain: sstcloud.com
+        roles:
+          - PDP
+      - name: ISE PSN Server 2
+        ip: 54.70.225.21
+        local_ip: 10.10.1.130
+        hostname: ise-psn-server-2
+        username: admin
+        password: P@sbg1234
+        domain: sstcloud.com
+        roles:
+          - PDP
