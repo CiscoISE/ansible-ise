@@ -1,6 +1,4 @@
 - hosts: ise_servers
-  vars_files:
-    - credentials.yml
   gather_facts: no
   tasks:
 
@@ -31,7 +29,7 @@
       ise_username: "{{ise_username}}"
       ise_password: "{{ise_password}}"
       ise_verify: "{{ise_verify}}"
-      state: absent
+      state: present
       conditionType: TimeAndDateCondition
       isNegate: false
       name: Test1
@@ -48,11 +46,11 @@
       weekDaysException:
       - Sunday
       datesRange:
-        startDate: '2021-06-03'
+        startDate: '2021-06-30'
         endDate: '2021-07-03'
       datesRangeException:
-        startDate: '2021-06-03'
-        endDate: '2021-06-03'
+        startDate: '2021-06-30'
+        endDate: '2021-06-30'
     register: result
 
   - name: Print result

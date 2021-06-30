@@ -1,20 +1,32 @@
 - hosts: ise_servers
-  vars_files:
-    - credentials.yml
   gather_facts: no
   tasks:
 
-  # - name: Get all
-  #   cisco.ise.egress_matrix_cell_info:
-  #     ise_hostname: "{{ise_hostname}}"
-  #     ise_username: "{{ise_username}}"
-  #     ise_password: "{{ise_password}}"
-  #     ise_verify: "{{ise_verify}}"
-  #   register: result
+  - name: Get sgt src
+    cisco.ise.sgt_info:
+      ise_hostname: "{{ise_hostname}}"
+      ise_username: "{{ise_username}}"
+      ise_password: "{{ise_password}}"
+      ise_verify: "{{ise_verify}}"
+      filter: 'name.EQ.Quarantined_Systems'
+    register: sgt_src
 
-  # - name: Print all
-  #   ansible.builtin.debug:
-  #     var: result
+  - name: Get sgt dest
+    cisco.ise.sgt_info:
+      ise_hostname: "{{ise_hostname}}"
+      ise_username: "{{ise_username}}"
+      ise_password: "{{ise_password}}"
+      ise_verify: "{{ise_verify}}"
+      filter: 'name.EQ.Guests'
+    register: sgt_dest
+
+  - name: Print sgt_src
+    ansible.builtin.debug:
+      var: sgt_src['ise_response'][0]
+
+  - name: Print sgt_dest
+    ansible.builtin.debug:
+      var: sgt_dest['ise_response'][0]
 
   # - name: Get by id
   #   cisco.ise.egress_matrix_cell_info:
@@ -32,10 +44,10 @@
       ise_password: "{{ise_password}}"
       ise_verify: "{{ise_verify}}"
       state: present
-      name: "Workstations-Printers"
+      name: "{{sgt_src['ise_response'][0]['name']}}-{{sgt_dest['ise_response'][0]['name']}}"
       description: "Updated by import utility (3)."
-      sourceSgtId: "bc279f20-a916-11eb-8830-2ec507028ea8"
-      destinationSgtId: "bc9ea3e0-a916-11eb-8830-2ec507028ea8"
+      sourceSgtId: "{{sgt_src['ise_response'][0]['id']}}"
+      destinationSgtId: "{{sgt_dest['ise_response'][0]['id']}}"
       matrixCellStatus: "ENABLED"
       defaultRule: "DENY_IP"
     register: result

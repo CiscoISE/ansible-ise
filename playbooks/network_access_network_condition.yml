@@ -1,6 +1,4 @@
 - hosts: ise_servers
-  vars_files:
-    - credentials.yml
   gather_facts: no
   tasks:
 
@@ -31,7 +29,7 @@
       ise_username: "{{ise_username}}"
       ise_password: "{{ise_password}}"
       ise_verify: "{{ise_verify}}"
-      state: absent
+      state: present
       name: Endstation condition 1
       description: Optional description
       conditionType: EndstationCondition

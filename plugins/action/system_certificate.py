@@ -10,10 +10,11 @@ except ImportError:
 else:
     ANSIBLE_UTILS_IS_INSTALLED = True
 from ansible.errors import AnsibleActionFail
-from urllib.parse import quote
 from ansible_collections.cisco.ise.plugins.module_utils.ise import (
     ISESDK,
     ise_argument_spec,
+    ise_compare_equality,
+    get_dict_result,
 )
 
 # Get common arguments specification
@@ -92,24 +93,52 @@ class SystemCertificate(object):
             result = self.ise.exec(
                 family="certificates",
                 function="get_system_certificate_by_id",
-                params={"id": quote(id), "host_name": host_name}
+                params={"id": id, "host_name": host_name}
             ).response
         except Exception as e:
             result = None
         return result
 
     def exists(self):
+        prev_obj = None
         result = False
         id = self.new_object.get("id")
         name = self.new_object.get("name")
         host_name = self.new_object.get("host_name")
         if id:
-            if self.get_object_by_id(id, host_name):
-                result = True
+            prev_obj = self.get_object_by_id(id, host_name)
+            result = prev_obj is not None and isinstance(prev_obj, dict)
         elif name:
-            if self.get_object_by_name(name, host_name):
-                result = True
-        return result
+            prev_obj = self.get_object_by_name(name, host_name)
+            result = prev_obj is not None and isinstance(prev_obj, dict)
+        return (result, prev_obj)
+
+    def requires_update(self, current_obj):
+        requested_obj = self.new_object
+
+        obj_params = [
+            ("name", "name"),
+            ("description", "description"),
+            ("admin", "admin"),
+            ("eap", "eap"),
+            ("radius", "radius"),
+            ("pxgrid", "pxgrid"),
+            ("saml", "saml"),
+            ("portal", "portal"),
+            ("ims", "ims"),
+            ("portalGroupTag", "portal_group_tag"),
+            ("allowReplacementOfPortalGroupTag", "allow_replacement_of_portal_group_tag"),
+            ("renewSelfSignedCertificate", "renew_self_signed_certificate"),
+            ("expirationTTLPeriod", "expiration_ttl_period"),
+            ("expirationTTLUnits", "expiration_ttl_units"),
+            ("id", "id"),
+            ("hostName", "host_name"),
+        ]
+        # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
+        # If any does not have eq params, it requires update
+        return any(not ise_compare_equality(current_obj.get(ise_param),
+                                            requested_obj.get(ansible_param))
+                   for (ise_param, ansible_param) in obj_params)
 
     def update(self):
         id = self.new_object.get("id")
@@ -181,10 +210,19 @@ class ActionModule(ActionBase):
 
         response = None
         if state == "present":
-            response = obj.update()
-            ise.object_updated()
+            (obj_exists, prev_obj) = obj.exists()
+            if obj_exists:
+                if obj.requires_update(prev_obj):
+                    response = obj.update()
+                    ise.object_updated()
+                else:
+                    response = prev_obj
+                    ise.object_already_present()
+            else:
+                ise.fail_json("Object does not exists, plugin only has update")
         elif state == "absent":
-            if obj.exists():
+            (obj_exists, prev_obj) = obj.exists()
+            if obj_exists:
                 response = obj.delete()
                 ise.object_deleted()
             else:

@@ -10,7 +10,6 @@ except ImportError:
 else:
     ANSIBLE_UTILS_IS_INSTALLED = True
 from ansible.errors import AnsibleActionFail
-from urllib.parse import quote
 import re
 try:
     import ipaddress
@@ -21,6 +20,8 @@ else:
 from ansible_collections.cisco.ise.plugins.module_utils.ise import (
     ISESDK,
     ise_argument_spec,
+    ise_compare_equality,
+    get_dict_result,
 )
 from ansible_collections.cisco.ise.plugins.module_utils.exceptions import (
     InconsistentParameters,
@@ -92,10 +93,9 @@ class FilterPolicy(object):
             result = self.ise.exec(
                 family="sgt",
                 function="get_all_security_groups",
-                params={"filter": "name.EQ.{0}".format(quote(name))}
+                params={"filter": "name.EQ.{0}".format(name)}
             ).response['SearchResult']['resources']
-            if isinstance(result, list) and len(result) == 1:
-                result = result[0]
+            result = get_dict_result(result, 'name', name)
         except Exception as e:
             result = None
         return result
@@ -107,7 +107,7 @@ class FilterPolicy(object):
             result = self.ise.exec(
                 family="sgt",
                 function="get_security_group_by_id",
-                params={"id": quote(id)}
+                params={"id": id}
             ).response['Sgt']
         except Exception as e:
             result = None
@@ -158,27 +158,48 @@ class FilterPolicy(object):
             result = self.ise.exec(
                 family="filter_policy",
                 function="get_filter_policy_by_id",
-                params={"id": quote(id)}
+                params={"id": id}
             ).response['ERSFilterPolicy']
         except Exception as e:
             result = None
         return result
 
     def exists(self):
+        prev_obj = None
         id_exists = False
         name_exists = False
         o_id = self.new_object.get("id")
         id_exists = o_id and self.get_object_by_id(o_id)
+        if id_exists:
+            prev_obj = self.get_object_by_id(o_id)
         if not id_exists:
             name = self.new_object.get("name")
             subnet = self.new_object.get("subnet")
             sgt = self.new_object.get("sgt")
             vn = self.new_object.get("vn")
-            name_exists = self.get_object_by_name(name, subnet, sgt, vn)
+            prev_obj = self.get_object_by_name(name, subnet, sgt, vn)
+            name_exists = prev_obj is not None and isinstance(prev_obj, dict)
             if name_exists:
-                id_ = name_exists.get("id")
+                id_ = prev_obj.get("id")
                 self.new_object.update(dict(id=id_))
-        return id_exists or name_exists
+        it_exists = prev_obj is not None and isinstance(prev_obj, dict)
+        return (it_exists, prev_obj)
+
+    def requires_update(self, current_obj):
+        requested_obj = self.new_object
+
+        obj_params = [
+            ("subnet", "subnet"),
+            ("domains", "domains"),
+            ("sgt", "sgt"),
+            ("vn", "vn"),
+            ("id", "id"),
+        ]
+        # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
+        # If any does not have eq params, it requires update
+        return any(not ise_compare_equality(current_obj.get(ise_param),
+                                            requested_obj.get(ansible_param))
+                   for (ise_param, ansible_param) in obj_params)
 
     def create(self):
         result = self.ise.exec(
@@ -210,7 +231,7 @@ class ActionModule(ActionBase):
         if not ANSIBLE_UTILS_IS_INSTALLED:
             raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
         super(ActionModule, self).__init__(*args, **kwargs)
-        self._supports_async = False
+        self._supports_async = True
         self._result = None
 
     # Checks the supplied parameters against the argument spec for this module
@@ -245,17 +266,21 @@ class ActionModule(ActionBase):
         response = None
 
         if state == "present":
-            check_if_exists = obj.exists()
-            if check_if_exists:
-                response = obj.update()
-                ise.object_updated()
+            (obj_exists, prev_obj) = obj.exists()
+            if obj_exists:
+                if obj.requires_update(prev_obj):
+                    response = obj.update()
+                    ise.object_updated()
+                else:
+                    response = prev_obj
+                    ise.object_already_present()
             else:
                 response = obj.create()
                 ise.object_created()
 
         elif state == "absent":
-            check_if_exists = obj.exists()
-            if check_if_exists:
+            (obj_exists, prev_obj) = obj.exists()
+            if obj_exists:
                 response = obj.delete()
                 ise.object_deleted()
             else:
