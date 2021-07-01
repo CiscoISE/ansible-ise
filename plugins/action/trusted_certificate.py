@@ -96,7 +96,7 @@ class TrustedCertificate(object):
                 family="certificates",
                 function="get_all_trusted_certificates",
                 params={"filter": "name.EQ.{0}".format(name)}
-            ).response
+            ).response.get('response', [])
             result = get_dict_result(result, 'name', name)
         except Exception as e:
             result = None

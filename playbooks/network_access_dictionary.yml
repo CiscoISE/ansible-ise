@@ -8,6 +8,7 @@
   #     ise_username: "{{ise_username}}"
   #     ise_password: "{{ise_password}}"
   #     ise_verify: "{{ise_verify}}"
+  #     name: Test_dict
   #   register: result
 
   # - name: Print all

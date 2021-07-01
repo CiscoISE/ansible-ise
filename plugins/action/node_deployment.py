@@ -62,7 +62,7 @@ class NodeDeployment(object):
                 family="node_deployment",
                 function="get_node_details",
                 params={"hostname": name}
-            ).response
+            ).response.get('response', {})
             result = get_dict_result(result, 'name', name)
         except Exception as e:
             result = None

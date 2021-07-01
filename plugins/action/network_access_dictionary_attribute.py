@@ -66,7 +66,7 @@ class NetworkAccessDictionaryAttribute(object):
                 family="network_access_dictionary_attribute",
                 function="get_network_access_dictionary_attribute_by_name",
                 params={"name": name, "dictionary_name": dictionary_name}
-            ).response
+            ).response.get('response', {})
             result = get_dict_result(result, 'name', name)
         except Exception as e:
             result = None
@@ -92,7 +92,7 @@ class NetworkAccessDictionaryAttribute(object):
             name_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if name_exists:
             _id = prev_obj.get("id")
-            if o_id != _id:
+            if id_exists and name_exists and o_id != _id:
                 raise InconsistentParameters("The 'id' and 'name' params don't refer to the same object")
         it_exists = prev_obj is not None and isinstance(prev_obj, dict)
         return (it_exists, prev_obj)

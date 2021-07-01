@@ -84,7 +84,7 @@ class NetworkAccessConditions(object):
         items = self.ise.exec(
             family="network_access_conditions",
             function="get_all_network_access_conditions",
-        ).response
+        ).response.get('response', [])
         for item in items:
             if item.get('name') == name and item.get('id'):
                 result = dict(item)

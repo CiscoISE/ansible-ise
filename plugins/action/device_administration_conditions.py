@@ -84,7 +84,7 @@ class DeviceAdministrationConditions(object):
         items = self.ise.exec(
             family="device_administration_conditions",
             function="get_all_device_admin_conditions",
-        ).response
+        ).response.get('response', [])
         for item in items:
             if item.get('name') == name and item.get('id'):
                 result = dict(item)
