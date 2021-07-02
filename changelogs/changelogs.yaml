@@ -23,3 +23,9 @@ releases:
     release_date: '2021-06-18'
     changes:
       release_summary: Fix README playbook example.
+  0.0.7:
+    release_date: '2021-07-01'
+    changes:
+      release_summary: >
+        Adds more playbooks. Changes credentials.yml to group_vars. Adds ISE ERS modules.
+        Compares requested object to found object before updating to only update if necessary.

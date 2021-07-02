@@ -90,19 +90,18 @@ class AciSettings(object):
     def get_object_by_name(self, name):
         # NOTICE: Does not have a get by name method or it is in another action
         result = None
-        items = self.ise.exec(
-            family="aci_settings",
-            function="get_all_aci_settings"
-        ).response['AciSettings']
-        for item in items:
-            if item.get('name') == name and item.get('id'):
-                result = dict(item)
-                return result
         return result
 
     def get_object_by_id(self, id):
         # NOTICE: Does not have a get by id method or it is in another action
-        result = None
+        try:
+            result = self.ise.exec(
+                family="aci_settings",
+                function="get_all_aci_settings"
+            ).response['AciSettings']
+            result = get_dict_result(result, 'id', id)
+        except Exception as e:
+            result = None
         return result
 
     def exists(self):

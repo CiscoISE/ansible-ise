@@ -69,7 +69,7 @@ class NetworkAccessAuthorizationGlobalExceptionRules(object):
                 family="network_access_authorization_global_exception_rules",
                 function="get_network_access_global_exception_rule_by_id",
                 params={"id": id}
-            ).response.get('response', {})
+            ).response.get('response')
         except Exception as e:
             result = None
         return result

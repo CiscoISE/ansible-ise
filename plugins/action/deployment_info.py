@@ -19,6 +19,7 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
+    timeout=dict(type="float"),
 ))
 
 required_if = []
@@ -55,6 +56,7 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
+            timeout=params.get('timeout')
         )
         return new_object
 

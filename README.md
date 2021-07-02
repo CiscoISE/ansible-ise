@@ -10,7 +10,7 @@ This collection has been tested and supports Cisco ISE 3.0.
 
 ## Requirements
 - Ansible >= 2.9
-- [Cisco ISE SDK](https://github.com/CiscoISE/ciscoisesdk) v0.4.0 or newer
+- [Cisco ISE SDK](https://github.com/CiscoISE/ciscoisesdk) v0.5.0 or newer
 - Python >= 3.6, as the Cisco ISE SDK doesn't support Python version 2.x
 
 ## Install

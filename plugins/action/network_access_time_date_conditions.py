@@ -97,7 +97,7 @@ class NetworkAccessTimeDateConditions(object):
                 family="network_access_time_date_conditions",
                 function="get_network_access_time_condition_by_id",
                 params={"id": id}
-            ).response.get('response', {})
+            ).response.get('response')
         except Exception as e:
             result = None
         return result

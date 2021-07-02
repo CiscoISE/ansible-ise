@@ -69,7 +69,7 @@ class DeviceAdministrationAuthorizationGlobalExceptionRules(object):
                 family="device_administration_authorization_global_exception_rules",
                 function="get_device_admin_policy_set_global_exception_by_id",
                 params={"id": id}
-            ).response.get('response', {})
+            ).response.get('response')
         except Exception as e:
             result = None
         return result

@@ -66,7 +66,7 @@ class NetworkAccessDictionaryAttribute(object):
                 family="network_access_dictionary_attribute",
                 function="get_network_access_dictionary_attribute_by_name",
                 params={"name": name, "dictionary_name": dictionary_name}
-            ).response.get('response', {})
+            ).response.get('response')
             result = get_dict_result(result, 'name', name)
         except Exception as e:
             result = None
