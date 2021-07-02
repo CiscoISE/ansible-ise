@@ -1,6 +1,4 @@
 - hosts: ise_servers
-  vars_files:
-    - credentials.yml
   gather_facts: no
   tasks:
 
@@ -32,7 +30,7 @@
       ise_password: "{{ise_password}}"
       ise_verify: "{{ise_verify}}"
       state: present
-      rule: 
+      rule:
         default: False
         name: "Test2"
         hitCounts: 0
@@ -48,6 +46,7 @@
           name: "EAP-MSCHAPv2"
           id: "c456a490-0429-4fd4-91d7-efd1eb1f855a"
       policyId: cb32c3bc-c720-40c3-83e4-8897f9dd6943
+      id: 2f3bb55b-e004-4792-9019-d448b8c0534
       commands:
         - DenyAllCommands
       profile: "Default Shell Profile"

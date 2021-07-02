@@ -1,6 +1,4 @@
 - hosts: ise_servers
-  vars_files:
-    - credentials.yml
   gather_facts: no
   tasks:
 
@@ -36,7 +34,7 @@
       description: Default portal used by sponsors to create and manage accounts for authorized
         visitors to securely access the network
       portalType: SPONSOR
-      portalTestUrl: https://198.18.133.27:8445/sponsorportal/PortalSetup.action?portal=7bec8cde-6c3e-4afd-a224-216b8cc376b2
+      portalTestUrl: https://198.18.133.27:8445/sponsorportal/PortalSetup.action?portal=fe0fc087-6fd7-44fa-966e-ad4ba1c8f557
       settings:
         portalSettings:
           httpsPort: 8445

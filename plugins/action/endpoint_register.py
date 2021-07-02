@@ -10,7 +10,6 @@ except ImportError:
 else:
     ANSIBLE_UTILS_IS_INSTALLED = True
 from ansible.errors import AnsibleActionFail
-from urllib.parse import quote
 from ansible_collections.cisco.ise.plugins.module_utils.ise import (
     ISESDK,
     ise_argument_spec,
@@ -46,7 +45,7 @@ class ActionModule(ActionBase):
         if not ANSIBLE_UTILS_IS_INSTALLED:
             raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
         super(ActionModule, self).__init__(*args, **kwargs)
-        self._supports_async = False
+        self._supports_async = True
         self._result = None
 
     # Checks the supplied parameters against the argument spec for this module

@@ -1,6 +1,4 @@
 - hosts: ise_servers
-  vars_files:
-    - credentials.yml
   gather_facts: no
   tasks:
 
@@ -37,21 +35,24 @@
       ise_verify: "{{ise_verify}}"
       state: present
       default: false
-      id: bde8f4d9-a910-4dd4-8735-730b008319e2
+      id: cfa2063a-5292-466b-8841-901dd3f9d03f
       name: New Policy Set 1
-      description: New policy set 1
+      description: New Policy Set test
       hitCounts: 0
       rank: 0
-      state_: enabled
+      state_: disabled
       condition:
         conditionType: ConditionReference
         isNegate: false
-        name: test1
-        id: ebae02eb-e430-450f-abd6-03df2564fb7a
-        description: New condition for policy set 1
+        name: test3
+        id: dc75fe09-1a9f-40cc-9f13-e29afadd72b9
       serviceName: Default Device Admin
       isProxy: false
     register: result
+
+  - name: Print
+    ansible.builtin.debug:
+      var: result
 
   # - name: Delete a network policy set by id
   #   cisco.ise.device_administration_policy_set:
