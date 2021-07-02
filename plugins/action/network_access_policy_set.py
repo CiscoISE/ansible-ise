@@ -81,7 +81,7 @@ class NetworkAccessPolicySet(object):
                 family="network_access_policy_set",
                 function="get_network_access_policy_set_by_id",
                 params={"id": id}
-            ).response.get('response', {})
+            ).response.get('response')
         except Exception as e:
             result = None
         return result

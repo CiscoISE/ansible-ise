@@ -97,7 +97,7 @@ class DeviceAdministrationConditions(object):
                 family="device_administration_conditions",
                 function="get_device_admin_condition_by_id",
                 params={"id": id}
-            ).response.get('response', {})
+            ).response.get('response')
         except Exception as e:
             result = None
         return result

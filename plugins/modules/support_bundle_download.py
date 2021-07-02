@@ -16,6 +16,9 @@ options:
   fileName:
     description: Support Bundle Download's fileName.
     type: str
+  dirPath:
+    description: Directory absolute path. Defaults to current working directory
+    type: str
 requirements:
 - ciscoisesdk
 seealso:
@@ -35,6 +38,7 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     fileName: Support bundle file name to be picked for download
+    dirPath: '/tmp'
 
 """
 

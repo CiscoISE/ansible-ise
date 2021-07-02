@@ -60,7 +60,7 @@ class CertificateProfile(object):
                 family="certificate_profile",
                 function="get_certificate_profile_by_name",
                 params={"name": name}
-            ).response.get('response', {})
+            ).response.get('CertificateProfile')
             result = get_dict_result(result, 'name', name)
         except Exception as e:
             result = None
@@ -72,7 +72,7 @@ class CertificateProfile(object):
                 family="certificate_profile",
                 function="get_certificate_profile_by_id",
                 params={"id": id}
-            ).response.get('response', {})
+            ).response.get('CertificateProfile')
         except Exception as e:
             result = None
         return result

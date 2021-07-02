@@ -74,7 +74,7 @@ class DeviceAdministrationAuthorizationExceptionRules(object):
                 family="device_administration_authorization_exception_rules",
                 function="get_device_admin_local_exception_by_id",
                 params={"id": id, "policy_id": policy_id}
-            ).response.get('response', {})
+            ).response.get('response')
         except Exception as e:
             result = None
         return result

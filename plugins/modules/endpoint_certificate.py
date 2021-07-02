@@ -32,6 +32,9 @@ options:
   password:
     description: Endpoint Certificate's password.
     type: str
+  dirPath:
+    description: Directory absolute path. Defaults to current working directory
+    type: str
 requirements:
 - ciscoisesdk
 seealso:
@@ -56,6 +59,7 @@ EXAMPLES = r"""
       san: 11-22-33-44-55-66
     format: PKCS8 [or] PKCS8_CHAIN [or] PKCS12 [or] PKCS12_CHAIN
     password: password
+    dirPath: '/tmp'
 
 """
 

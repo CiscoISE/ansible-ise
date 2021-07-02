@@ -12,7 +12,11 @@ description:
 - Get all Deployment.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
-options: {}
+options:
+  timeout:
+    description:
+    - How long to wait for the server to send data before giving up.
+    type: float
 requirements:
 - ciscoisesdk
 seealso:
@@ -31,6 +35,7 @@ EXAMPLES = r"""
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
+    timeout: 300
   register: result
 
 """

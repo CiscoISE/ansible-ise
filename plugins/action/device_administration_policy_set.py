@@ -81,7 +81,7 @@ class DeviceAdministrationPolicySet(object):
                 family="device_administration_policy_set",
                 function="get_device_admin_policy_set_by_id",
                 params={"id": id}
-            ).response.get('response', {})
+            ).response.get('response')
         except Exception as e:
             result = None
         return result

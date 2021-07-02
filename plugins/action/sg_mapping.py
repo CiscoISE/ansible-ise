@@ -72,7 +72,7 @@ class SgMapping(object):
                 family="sg_mapping",
                 function="get_ip_to_sgt_mapping_by_id",
                 params={"id": id}
-            ).response.get('response', {})
+            ).response.get('SGMapping')
         except Exception as e:
             result = None
         return result

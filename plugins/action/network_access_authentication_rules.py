@@ -78,7 +78,7 @@ class NetworkAccessAuthenticationRules(object):
                 family="network_access_authentication_rules",
                 function="get_network_access_authentication_rule_by_id",
                 params={"id": id, "policy_id": policy_id}
-            ).response.get('response', {})
+            ).response.get('response')
         except Exception as e:
             result = None
         return result

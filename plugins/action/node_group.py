@@ -54,7 +54,7 @@ class NodeGroup(object):
                 family="node_group",
                 function="get_node_group",
                 params={"node_group_name": name}
-            ).response.get('response', {})
+            ).response.get('response')
             result = get_dict_result(result, 'name', name)
         except Exception as e:
             result = None
