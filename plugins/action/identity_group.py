@@ -25,7 +25,7 @@ argument_spec.update(dict(
     id=dict(type="str"),
     name=dict(type="str"),
     description=dict(type="str"),
-    systemDefined=dict(type="bool"),
+    parent=dict(type="str"),
 ))
 
 required_if = [
@@ -44,7 +44,7 @@ class IdentityGroup(object):
             id=params.get("id"),
             name=params.get("name"),
             description=params.get("description"),
-            system_defined=params.get("systemDefined"),
+            parent=params.get("parent"),
         )
 
     def get_object_by_name(self, name):
@@ -53,7 +53,7 @@ class IdentityGroup(object):
                 family="identity_group",
                 function="get_identity_group_by_name",
                 params={"name": name}
-            ).response['EndPointGroup']
+            ).response['IdentityGroup']
             result = get_dict_result(result, 'name', name)
         except Exception as e:
             result = None
@@ -65,7 +65,7 @@ class IdentityGroup(object):
                 family="identity_group",
                 function="get_identity_group_by_id",
                 params={"id": id}
-            ).response['EndPointGroup']
+            ).response['IdentityGroup']
         except Exception as e:
             result = None
         return result
@@ -90,7 +90,7 @@ class IdentityGroup(object):
             ("id", "id"),
             ("name", "name"),
             ("description", "description"),
-            ("systemDefined", "system_defined"),
+            ("parent", "parent"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

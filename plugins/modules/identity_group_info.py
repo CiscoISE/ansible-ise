@@ -113,6 +113,6 @@ ise_response:
       "id": "string",
       "name": "string",
       "description": "string",
-      "systemDefined": true
+      "parent": "string"
     }
 """

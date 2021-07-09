@@ -89,7 +89,7 @@ class ActionModule(ActionBase):
                 family="identity_group",
                 function='get_identity_group_by_id',
                 params=self.get_object(self._task.args)
-            ).response['EndPointGroup']
+            ).response['IdentityGroup']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result
@@ -98,7 +98,7 @@ class ActionModule(ActionBase):
                 family="identity_group",
                 function='get_identity_group_by_name',
                 params=self.get_object(self._task.args)
-            ).response['EndPointGroup']
+            ).response['IdentityGroup']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result
