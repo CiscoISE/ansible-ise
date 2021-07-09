@@ -22,9 +22,9 @@ options:
   name:
     description: Identity Group's name.
     type: str
-  systemDefined:
-    description: SystemDefined flag.
-    type: bool
+  parent:
+    description: Identity Group's parent.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:
@@ -44,10 +44,10 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    description: 'Identity Group for Profile: Cisco-Meraki-Device'
+    description: 'Identity group mirroring the guest type'
     id: 1e2700a0-8c00-11e6-996c-525400b48521
-    name: Cisco-Meraki-Device
-    systemDefined: true
+    name: GuestType_Weekly (default)
+    parent: NAC Group:NAC:IdentityGroups:User Identity Groups
 
 - name: Update by id
   cisco.ise.identity_group:
@@ -56,10 +56,10 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    description: 'Identity Group for Profile: Cisco-Meraki-Device'
+    description: 'Identity group mirroring the guest type'
     id: 1e2700a0-8c00-11e6-996c-525400b48521
-    name: Cisco-Meraki-Device
-    systemDefined: true
+    name: GuestType_Weekly (default)
+    parent: NAC Group:NAC:IdentityGroups:User Identity Groups
 
 - name: Delete by id
   cisco.ise.identity_group:
