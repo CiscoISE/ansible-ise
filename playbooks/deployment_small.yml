@@ -1,27 +1,71 @@
 - hosts: ise_servers
   gather_facts: no
+  vars:
+    username: admin
+    password: P@sbg1234
+    server1_ip: 54.189.187.181
+    server2_ip: 54.189.152.44
+    domain: sstcloud.com
+
   tasks:
-  - name: Deploy nodes
-    cisco.ise.deployment:
-      nodes:
+  - name: Check if all nodes are in STANDALONE state
+    cisco.ise.personas_check_standalone:
+      name: "{{ item.name }}"
+      ip: "{{ item.ip }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+    loop:
       - name: ISE Server 1
-        ip: 18.236.171.195
-        local_ip: 10.10.1.124
-        hostname: ise-server-1
-        username: admin
-        password: P@sbg1234
-        domain: sstcloud.com
-        roles:
-          - PPAN
-          - MNT-ACTIVE
-          - PDP
+        ip: "{{ server1_ip }}"
       - name: ISE Server 2
-        ip: 54.185.192.202
-        local_ip: 10.10.1.13
+        ip: "{{ server2_ip }}"
+
+  - name: Export trusted certificates into primary node
+    cisco.ise.personas_export_certs:
+      primary_ip: "{{ server1_ip }}"
+      primary_username: "{{ username }}"
+      primary_password: "{{ password }}"
+      name: "{{ item.name }}"
+      ip: "{{ item.ip }}"
+      hostname: "{{ item.hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+    loop:
+      - name: ISE Server 2
+        ip: "{{ server2_ip }}"
         hostname: ise-server-2
-        username: admin
-        password: P@sbg1234
-        domain: sstcloud.com
+
+  - name: Promote primary node
+    cisco.ise.personas_promote_primary:
+      ip: "{{ server1_ip }}"
+      hostname: ise-server-1
+      username: "{{ username }}"
+      password: "{{ password }}"
+      roles:
+        - PPAN
+        - MNT-ACTIVE
+        - PDP
+
+  - name: Wait for primary application server to come up again 
+    pause:
+      minutes: 10
+
+  - name: Update roles on the rest of the nodes
+    cisco.ise.personas_update_roles:
+      primary_ip: "{{ server1_ip }}"
+      primary_username: "{{ username }}"
+      primary_password: "{{ password }}"
+      name: "{{ item.name }}"
+      local_ip: "{{ item.local_ip }}"
+      hostname: "{{ item.hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      domain: sstcloud.com
+      roles: "{{ item.roles }}"
+    loop:
+      - name: ISE Server 2
+        local_ip: 10.10.1.84
+        hostname: ise-server-2
         roles:
           - SPAN
           - MNT-STANDBY

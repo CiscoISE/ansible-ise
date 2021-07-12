@@ -1,60 +1,145 @@
 - hosts: ise_servers
   gather_facts: no
+  vars:
+    username: admin
+    password: P@sbg1234
+    pan1_ip: 34.219.79.104
+    pan2_ip: 54.190.194.222
+    mnt1_ip: 35.164.54.161
+    mnt2_ip: 34.220.237.230
+    psn1_ip: 54.203.118.110
+    psn2_ip: 34.215.65.56
+    pan2_local_ip: 10.10.1.184
+    mnt1_local_ip: 10.10.1.216
+    mnt2_local_ip: 10.10.1.165
+    psn1_local_ip: 10.10.1.149
+    psn2_local_ip: 10.10.1.122
+    domain: sstcloud.com
+
   tasks:
-  - name: Deploy nodes
-    cisco.ise.deployment:
-      nodes:
+  - name: Check if all nodes are in STANDALONE state
+    cisco.ise.personas_check_standalone:
+      name: "{{ item.name }}"
+      ip: "{{ item.ip }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+    loop:
       - name: ISE PAN Server 1
-        ip: 18.236.188.219
-        local_ip: 10.10.1.200
-        hostname: ise-pan-server-1
-        username: admin
-        password: P@sbg1234
-        domain: sstcloud.com
-        roles:
-          - PPAN
+        ip: "{{ pan1_ip }}"
       - name: ISE PAN Server 2
-        ip: 54.201.56.80
-        local_ip: 10.10.1.233
+        ip: "{{ pan2_ip }}"
+      - name: ISE MNT Server 1
+        ip: "{{ mnt1_ip }}"
+      - name: ISE MNT Server 2
+        ip: "{{ mnt2_ip }}"
+      - name: ISE PSN Server 1
+        ip: "{{ psn1_ip }}"
+      - name: ISE PSN Server 2
+        ip: "{{ psn2_ip }}"
+
+  - name: Export trusted certificates into primary node
+    cisco.ise.personas_export_certs:
+      primary_ip: "{{ pan1_ip }}"
+      primary_username: "{{ username }}"
+      primary_password: "{{ password }}"
+      name: "{{ item.name }}"
+      ip: "{{ item.ip }}"
+      hostname: "{{ item.hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+    loop:
+      - name: ISE PAN Server 2
+        ip: "{{ pan2_ip }}"
         hostname: ise-pan-server-2
-        username: admin
-        password: P@sbg1234
-        domain: sstcloud.com
+      - name: ISE MNT Server 1
+        ip: "{{ mnt1_ip }}"
+        hostname: ise-mnt-server-1
+      - name: ISE MNT Server 2
+        ip: "{{ mnt2_ip }}"
+        hostname: ise-mnt-server-2
+      - name: ISE PSN Server 1
+        ip: "{{ psn1_ip }}"
+        hostname: ise-psn-server-1
+      - name: ISE PSN Server 2
+        ip: "{{ psn2_ip }}"
+        hostname: ise-psn-server-2
+
+  - name: Promote primary node
+    cisco.ise.personas_promote_primary:
+      ip: "{{ pan1_ip }}"
+      hostname: ise-pan-server-1
+      username: "{{ username }}"
+      password: "{{ password }}"
+      roles:
+        - PPAN
+        - MNT-ACTIVE
+
+  - name: Wait for primary application server to come up again 
+    pause:
+      minutes: 10
+
+  - name: Update roles on the rest of the nodes except the standby MNT
+    cisco.ise.personas_update_roles:
+      primary_ip: "{{ pan1_ip }}"
+      primary_username: "{{ username }}"
+      primary_password: "{{ password }}"
+      name: "{{ item.name }}"
+      local_ip: "{{ item.local_ip }}"
+      hostname: "{{ item.hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      domain: sstcloud.com
+      roles: "{{ item.roles }}"
+    loop:
+      - name: ISE PAN Server 2
+        local_ip: "{{ pan2_local_ip }}"
+        hostname: ise-pan-server-2
         roles:
           - SPAN
       - name: ISE MNT Server 1
-        ip: 18.236.94.216
-        local_ip: 10.10.1.234
+        local_ip: "{{ mnt1_local_ip }}"
         hostname: ise-mnt-server-1
-        username: admin
-        password: P@sbg1234
-        domain: sstcloud.com
         roles:
           - MNT-ACTIVE
-      - name: ISE MNT Server 2
-        ip: 54.213.43.81
-        local_ip: 10.10.1.75
-        hostname: ise-mnt-server-2
-        username: admin
-        password: P@sbg1234
-        domain: sstcloud.com
-        roles:
-          - MNT-STANDBY
       - name: ISE PSN Server 1
-        ip: 54.212.193.101
-        local_ip: 10.10.1.98
+        local_ip: "{{ psn1_local_ip }}"
         hostname: ise-psn-server-1
-        username: admin
-        password: P@sbg1234
-        domain: sstcloud.com
         roles:
           - PDP
       - name: ISE PSN Server 2
-        ip: 34.222.6.177
-        local_ip: 10.10.1.109
+        local_ip: "{{ psn2_local_ip }}"
         hostname: ise-psn-server-2
-        username: admin
-        password: P@sbg1234
-        domain: sstcloud.com
         roles:
           - PDP
+
+  - name: Delete the MNT role from the primary node
+    cisco.ise.personas_promote_primary:
+      ip: "{{ pan1_ip }}"
+      hostname: ise-pan-server-1
+      username: "{{ username }}"
+      password: "{{ password }}"
+      roles:
+        - PPAN
+
+  - name: Wait for primary application server to come up again 
+    pause:
+      minutes: 10
+
+  - name: Update node 'MNT Server 2' as MNT-STANDBY
+    cisco.ise.personas_update_roles:
+      primary_ip: "{{ pan1_ip }}"
+      primary_username: "{{ username }}"
+      primary_password: "{{ password }}"
+      name: "{{ item.name }}"
+      local_ip: "{{ item.local_ip }}"
+      hostname: "{{ item.hostname }}"
+      username: "{{ username }}"
+      password: "{{ password }}"
+      domain: sstcloud.com
+      roles: "{{ item.roles }}"
+    loop:
+      - name: ISE MNT Server 2
+        local_ip: "{{ mnt2_local_ip }}"
+        hostname: ise-mnt-server-2
+        roles:
+          - MNT-STANDBY
