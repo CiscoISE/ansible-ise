@@ -15,7 +15,7 @@ import time
 from ansible_collections.cisco.ise.plugins.module_utils.personas_utils import (
     Node,
     ISEDeployment,
-) 
+)
 
 argument_spec = dict(
     primary_ip=dict(type="str", required=True),
@@ -28,7 +28,7 @@ argument_spec = dict(
     password=dict(type="str", required=True),
     ise_verify=dict(type="bool", default=True),
     ise_version=dict(type="str", default="3.0.0"),
-    ise_wait_on_rate_limit=dict(type="bool", default=True), # TODO: verify what the true default value should be 
+    ise_wait_on_rate_limit=dict(type="bool", default=True),  # TODO: verify what the true default value should be
 )
 
 required_if = []
@@ -72,22 +72,22 @@ class ActionModule(ActionBase):
         primary_node = dict(ip=self._task.args.get("primary_ip"),
                             username=self._task.args.get("primary_username"),
                             password=self._task.args.get("primary_password"),
-                        )
-        
+                           )
+
         other_node = dict(name=self._task.args.get("name"),
                           ip=self._task.args.get("ip"),
                           hostname=self._task.args.get("hostname"),
                           username=self._task.args.get("username"),
                           password=self._task.args.get("password"),
-                        )
+                         )
 
         ise_deployment = ISEDeployment()
         ise_deployment.add_primary(primary_node)
         ise_deployment.add_node(other_node)
-        
+
         ise_deployment.export_import_default_self_signed_server_cert()
 
-        response = "The certificate for {} was exported successfully to the primary node".format(self._task.args.get("name"))
+        response = "The certificate for {name} was exported successfully to the primary node".format(name=self._task.args.get("name"))
 
         self._result.update(dict(ise_response=response))
         return self._result

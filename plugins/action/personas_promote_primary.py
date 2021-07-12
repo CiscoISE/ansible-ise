@@ -15,7 +15,7 @@ import time
 from ansible_collections.cisco.ise.plugins.module_utils.personas_utils import (
     Node,
     ISEDeployment,
-) 
+)
 
 argument_spec = dict(
     ip=dict(type="str", required=True),
@@ -25,7 +25,7 @@ argument_spec = dict(
     roles=dict(type="list", required=True),
     ise_verify=dict(type="bool", default=True),
     ise_version=dict(type="str", default="3.0.0"),
-    ise_wait_on_rate_limit=dict(type="bool", default=True), # TODO: verify what the true default value should be 
+    ise_wait_on_rate_limit=dict(type="bool", default=True),  # TODO: verify what the true default value should be
 )
 
 required_if = []
@@ -71,16 +71,15 @@ class ActionModule(ActionBase):
                             username=self._task.args.get("username"),
                             password=self._task.args.get("password"),
                             roles=self._task.args.get("roles"),
-                        )
-        
+                           )
+
         if "PPAN" not in primary_node.get("roles"):
             raise AnsibleActionFail("Primary node must have at least the 'PPAN' role")
-        
+
         ise_deployment = ISEDeployment()
         ise_deployment.add_primary(primary_node)
 
         ise_deployment.promote_primary_node()
-
 
         response = "Primary node was successfully updated"
 

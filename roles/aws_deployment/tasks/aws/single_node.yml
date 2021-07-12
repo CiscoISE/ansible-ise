@@ -1,4 +1,3 @@
-
 - name: Provision ISE Server
   amazon.aws.ec2:
     key_name: "{{ aws_keypair_name }}"

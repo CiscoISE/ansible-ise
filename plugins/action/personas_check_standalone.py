@@ -14,7 +14,7 @@ from urllib.parse import quote
 import time
 from ansible_collections.cisco.ise.plugins.module_utils.personas_utils import (
     Node,
-) 
+)
 
 argument_spec = dict(
     name=dict(type="str", required=True),
@@ -23,7 +23,7 @@ argument_spec = dict(
     password=dict(type="str", required=True),
     ise_verify=dict(type="bool", default=True),
     ise_version=dict(type="str", default="3.0.0"),
-    ise_wait_on_rate_limit=dict(type="bool", default=True), # TODO: verify what the true default value should be 
+    ise_wait_on_rate_limit=dict(type="bool", default=True),  # TODO: verify what the true default value should be
 )
 
 required_if = []
@@ -68,12 +68,13 @@ class ActionModule(ActionBase):
                          ip=self._task.args.get("ip"),
                          username=self._task.args.get("username"),
                          password=self._task.args.get("password"),
-                        ))
-        
+                        )
+                   )
+
         if not (node.is_standalone() and node.app_server_is_running()):
             raise AnsibleActionFail("Node {node_name} is not in STANDALONE state or application server is not running.".format(node_name=node.name))
 
-        response = "Node {} is in STANDALONE mode".format(self._task.args.get("name"))
+        response = "Node {name} is in STANDALONE mode".format(name=self._task.args.get("name"))
 
         self._result.update(dict(ise_response=response))
         return self._result

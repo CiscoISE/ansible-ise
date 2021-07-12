@@ -73,4 +73,3 @@
 
     - include_tasks: large_deployment.yml
       when: ise_deployment_type == "large"
-

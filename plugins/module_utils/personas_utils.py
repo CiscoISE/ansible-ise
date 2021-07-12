@@ -1,6 +1,5 @@
 from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
-from ansible.plugins.action import ActionBase
 
 from ansible.errors import AnsibleActionFail
 import requests
@@ -35,11 +34,11 @@ class Node(object):
                     self.roles[attribute] = ["PXG"]
 
     def __str__(self):
-        return "{} <{}>".format(self.name, self.ip)
+        return "{name} <{ip}>".format(name=self.name, ip=self.ip)
 
     def __repr__(self):
-        return "{} <{}>".format(self.name, self.ip)
-    
+        return "{name} <{ip}>".format(name=self.name, ip=self.ip)
+
     def is_standalone(self):
         headers = {'Content-Type': 'text/xml'}
         url = "https://{ip}/admin/API/Infra/Node/SimpleList".format(ip=self.ip)
@@ -47,10 +46,10 @@ class Node(object):
         try:
             response = requests.get(url=url, headers=headers, auth=(self.username, self.password), verify=False)
         except Exception as e:
-            raise AnsibleActionFail("Couldn't connect to the API. Maybe the node is still initializing, try again in a few minutes. Complete error message: {}".format(e))
+            raise AnsibleActionFail("Couldn't connect, the node might be still initializing, try again in a few minutes. Error received: {e}".format(e=e))
         if not response:
             raise AnsibleActionFail("Couldn't get a valid response from the API. Maybe the node is still initializing, try again in a few minutes.")
-        elif "STANDALONE" in response.text: #TODO: Parse the XML to look for the nodeRoleStatus tag.
+        elif "STANDALONE" in response.text:  # TODO: Parse the XML to look for the nodeRoleStatus tag.
             return True
         return False
 
@@ -58,7 +57,7 @@ class Node(object):
         url = "https://{ip}/ers/config/op/systemconfig/iseversion".format(ip=self.ip)
         headers = {'Accept': 'application/json'}
         try:
-            response = requests.get(url=url,headers=headers,auth=(self.username, self.password), verify=False)
+            response = requests.get(url=url, headers=headers, auth=(self.username, self.password), verify=False)
             # Application Server is down but API Gateway is up
             if response.status_code == 502:
                 return False
@@ -76,7 +75,7 @@ class Node(object):
         url = "https://{ip}/api/v1/certs/system-certificate/{hostname}".format(ip=self.ip, hostname=self.hostname)
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
         try:
-            response = requests.get(url=url, timeout=15, headers=headers,auth=(self.username, self.password), verify=False)
+            response = requests.get(url=url, timeout=15, headers=headers, auth=(self.username, self.password), verify=False)
         except requests.exceptions.ReadTimeout:
             raise AnsibleActionFail("The request timed out. Please verify that the API is enabled on the node.")
         except Exception as e:
@@ -90,7 +89,7 @@ class Node(object):
         headers = {'Content-Type': 'application/xml'}
         url = "https://{primary_ip}/admin/API/Infra/Register".format(primary_ip=primary.ip)
         xml_template = \
-"""<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     <infraDeployBean>
         <displayname>{hostname}</displayname>
         <gateway></gateway>
@@ -104,12 +103,12 @@ class Node(object):
         for key in self.roles.keys():
             roles_str += "<roles>"
             for value in self.roles.get(key):
-                roles_str += "<item>{}</item>".format(value)
+                roles_str += "<item>{value}</item>".format(value=value)
             roles_str += "</roles>"
 
         data = xml_template.format(
             hostname=self.hostname,
-            fqdn="{}.{}".format(self.hostname,self.domain),
+            fqdn="{hostname}.{domain}".format(hostname=self.hostname, domain=self.domain),
             ip=self.local_ip,
             username=self.username,
             password=self.password,
@@ -120,8 +119,8 @@ class Node(object):
         except Exception as e:
             raise AnsibleActionFail(e)
         if not response:
-            raise AnsibleActionFail("Failed to receive a valid response from the API. The actual response was: {}".format(response.text))
-    
+            raise AnsibleActionFail("Failed to receive a valid response from the API. The actual response was: {response}".format(response=response.text))
+
 
 class ISEDeployment(object):
     def __init__(self):
@@ -140,13 +139,13 @@ class ISEDeployment(object):
             data = json.dumps({"id": cert_id, "export": "CERTIFICATE"})
             url = "https://{ip}/api/v1/certs/system-certificate/export".format(ip=node.ip)
             headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
-            try:   
+            try:
                 response = requests.post(url=url, timeout=15, data=data, headers=headers, auth=(node.username, node.password), verify=False)
             except Exception as e:
                 AnsibleActionFail(e)
-            
+
             if not response.status_code == 200:
-                    raise AnsibleActionFail("Received status code {status_code} when exporting certificate.".format(status_code=str(response.status_code)))
+                raise AnsibleActionFail("Received status code {status_code} when exporting certificate.".format(status_code=str(response.status_code)))
 
             zf = zipfile.ZipFile(io.BytesIO(response.content), 'r')
             cert_data = zf.read("Defaultselfsignedservercerti.pem")
@@ -169,16 +168,17 @@ class ISEDeployment(object):
                 return_message = json.loads(response.text)["response"]["message"]
             except Exception as e:
                 AnsibleActionFail(e)
-            
+
             if not response.status_code == 200:
-                if not (return_message == 'Trust certificate was added successfully' or return_message == "Certificates are having same subject, same serial number and they are binary equal. Hence skipping the replace"):                
-                    raise AnsibleActionFail("Expected message was 'Trust certificate was added successfully'. Actual message was {message}".format(message=return_message))
+                if not (return_message == 'Trust certificate was added successfully' or \
+                        return_message == "Certificates are having same subject, same serial number and they are binary equal. Hence skipping the replace"):
+                    raise AnsibleActionFail("Unexpected response from API. Received response was {message}".format(message=return_message))
 
     def promote_primary_node(self):
         headers = {'Content-Type': 'text/xml'}
         url = "https://{ip}/admin/API/Infra/Edit".format(ip=self.primary.ip)
         xml_template = \
-"""<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
     <infraDeployBean>
         <displayname>{hostname}</displayname>
         <gateway></gateway>
@@ -192,7 +192,7 @@ class ISEDeployment(object):
         for key in self.primary.roles.keys():
             roles_str += "<roles>"
             for value in self.primary.roles.get(key):
-                roles_str += "<item>{}</item>".format(value)
+                roles_str += "<item>{value}</item>".format(value=value)
             roles_str += "</roles>"
 
         data = xml_template.format(

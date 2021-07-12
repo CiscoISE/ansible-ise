@@ -15,7 +15,7 @@ import time
 from ansible_collections.cisco.ise.plugins.module_utils.personas_utils import (
     Node,
     ISEDeployment,
-) 
+)
 
 argument_spec = dict(
     primary_ip=dict(type="str", required=True),
@@ -30,7 +30,7 @@ argument_spec = dict(
     roles=dict(type="list", required=True),
     ise_verify=dict(type="bool", default=True),
     ise_version=dict(type="str", default="3.0.0"),
-    ise_wait_on_rate_limit=dict(type="bool", default=True), # TODO: verify what the true default value should be 
+    ise_wait_on_rate_limit=dict(type="bool", default=True),  # TODO: verify what the true default value should be
 )
 
 required_if = []
@@ -74,20 +74,20 @@ class ActionModule(ActionBase):
         primary_node = dict(ip=self._task.args.get("primary_ip"),
                             username=self._task.args.get("primary_username"),
                             password=self._task.args.get("primary_password"),
-                        )
-        
+                           )
+
         other_node = dict(name=self._task.args.get("name"),
-                    local_ip=self._task.args.get("local_ip"),
-                    hostname=self._task.args.get("hostname"),
-                    username=self._task.args.get("username"),
-                    password=self._task.args.get("password"),
-                    domain=self._task.args.get("domain"),
-                    roles=self._task.args.get("roles"),
-                )
+                          local_ip=self._task.args.get("local_ip"),
+                          hostname=self._task.args.get("hostname"),
+                          username=self._task.args.get("username"),
+                          password=self._task.args.get("password"),
+                          domain=self._task.args.get("domain"),
+                          roles=self._task.args.get("roles"),
+                         )
 
         if "PPAN" in other_node.get("roles"):
             raise AnsibleActionFail("Only the primary node can have the 'PPAN' role")
-        
+
         ise_deployment = ISEDeployment()
         ise_deployment.add_primary(primary_node)
         ise_deployment.add_node(other_node)
@@ -103,7 +103,7 @@ class ActionModule(ActionBase):
                 retries_left -= 1
                 time.sleep(wait_interval)
 
-        response = "Node {} updated successfully".format(self._task.args.get("name"))
+        response = "Node {name} updated successfully".format(name=self._task.args.get("name"))
 
         self._result.update(dict(ise_response=response))
         return self._result
