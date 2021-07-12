@@ -1,6 +1,6 @@
 - hosts: ise_servers
   vars_files:
-    - credentials.yml
+    - vars/device_administration_time_date_conditions.yml
   gather_facts: no
   tasks:
 
@@ -32,27 +32,24 @@
       ise_password: "{{ise_password}}"
       ise_verify: "{{ise_verify}}"
       state: present
-      conditionType: TimeAndDateCondition
+      conditionType: "{{conditionType}}"
       isNegate: false
-      name: Test2
+      name: "{{name}}"
       description:
       hoursRange:
-        startTime: '22:02'
-        endTime: '13:02'
+        startTime: "{{hours_range_start_time}}"
+        endTime: "{{hours_range_end_time}}"
       hoursRangeException:
-        startTime: '23:02'
-        endTime: '23:50'
-      weekDays:
-      - Saturday
-      - Sunday
-      weekDaysException:
-      - Sunday
+        startTime: "{{hours_range_exception_start_time}}"
+        endTime: "{{hours_range_exception_end_time}}"
+      weekDays: "{{weekDays | list }}"
+      weekDaysException: "{{weekDaysException | list }}"
       datesRange:
-        startDate: '2021-06-03'
-        endDate: '2021-07-03'
+        startDate: "{{dates_range_start_date}}"
+        endDate: "{{dates_range_end_date}}"
       datesRangeException:
-        startDate: '2021-06-03'
-        endDate: '2021-06-03'
+        startDate: "{{dates_range_exception_start_date}}"
+        endDate: "{{dates_range_exception_end_date}}"
     register: result
 
   - name: Print result

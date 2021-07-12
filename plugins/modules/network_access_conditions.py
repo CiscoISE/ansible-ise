@@ -196,53 +196,6 @@ EXAMPLES = r"""
     state: absent
     id: string
 
-- name: Delete by name
-  cisco.ise.network_access_conditions:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
-    name: string
-
-- name: Update by name
-  cisco.ise.network_access_conditions:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    attributeId: string
-    attributeName: string
-    attributeValue: string
-    children:
-    - conditionType: string
-      isNegate: true
-    conditionType: string
-    datesRange:
-      endDate: string
-      startDate: string
-    datesRangeException:
-      endDate: string
-      startDate: string
-    description: string
-    dictionaryName: string
-    dictionaryValue: string
-    hoursRange:
-      endTime: string
-      startTime: string
-    hoursRangeException:
-      endTime: string
-      startTime: string
-    id: string
-    isNegate: true
-    name: string
-    operator: string
-    weekDays:
-    - string
-    weekDaysException:
-    - string
-
 """
 
 RETURN = r"""

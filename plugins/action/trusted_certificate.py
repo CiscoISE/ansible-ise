@@ -10,10 +10,11 @@ except ImportError:
 else:
     ANSIBLE_UTILS_IS_INSTALLED = True
 from ansible.errors import AnsibleActionFail
-from urllib.parse import quote
 from ansible_collections.cisco.ise.plugins.module_utils.ise import (
     ISESDK,
     ise_argument_spec,
+    ise_compare_equality,
+    get_dict_result,
 )
 from ansible_collections.cisco.ise.plugins.module_utils.exceptions import (
     InconsistentParameters,
@@ -94,10 +95,9 @@ class TrustedCertificate(object):
             result = self.ise.exec(
                 family="certificates",
                 function="get_all_trusted_certificates",
-                params={"filter": "name.EQ.{0}".format(quote(name))}
-            ).response
-            if isinstance(result, list) and len(result) == 1:
-                result = result[0]
+                params={"filter": "name.EQ.{0}".format(name)}
+            ).response.get('response', []) or []
+            result = get_dict_result(result, 'name', name)
         except Exception as e:
             result = None
         return result
@@ -107,28 +107,67 @@ class TrustedCertificate(object):
             result = self.ise.exec(
                 family="certificates",
                 function="get_trusted_certificate_by_id",
-                params={"id": quote(id)}
-            ).response
+                params={"id": id}
+            ).response.get('response')
         except Exception as e:
             result = None
         return result
 
     def exists(self):
+        prev_obj = None
         id_exists = False
         name_exists = False
         o_id = self.new_object.get("id")
         name = self.new_object.get("name")
         if o_id:
-            if self.get_object_by_id(o_id):
-                id_exists = True
+            prev_obj = self.get_object_by_id(o_id)
+            id_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if name:
-            if self.get_object_by_name(name):
-                name_exists = True
-        if id_exists and name_exists:
-            _id = self.get_object_by_name(name).get("id")
-            if o_id != _id:
+            prev_obj = self.get_object_by_name(name)
+            name_exists = prev_obj is not None and isinstance(prev_obj, dict)
+        if name_exists:
+            _id = prev_obj.get("id")
+            if id_exists and name_exists and o_id != _id:
                 raise InconsistentParameters("The 'id' and 'name' params don't refer to the same object")
-        return id_exists or name_exists
+            if _id:
+                prev_obj = self.get_object_by_id(_id)
+        it_exists = prev_obj is not None and isinstance(prev_obj, dict)
+        return (it_exists, prev_obj)
+
+    def requires_update(self, current_obj):
+        requested_obj = self.new_object
+
+        obj_params = [
+            ("name", "name"),
+            ("status", "status"),
+            ("description", "description"),
+            ("enableOCSPValidation", "enable_ocs_p_validation"),
+            ("selectedOCSPService", "selected_ocs_p_service"),
+            ("rejectIfNoStatusFromOCSP", "reject_if_no_status_from_ocs_p"),
+            ("rejectIfUnreachableFromOCSP", "reject_if_unreachable_from_ocs_p"),
+            ("downloadCRL", "download_crl"),
+            ("crlDistributionUrl", "crl_distribution_url"),
+            ("automaticCRLUpdate", "automatic_crl_update"),
+            ("automaticCRLUpdatePeriod", "automatic_crl_update_period"),
+            ("automaticCRLUpdateUnits", "automatic_crl_update_units"),
+            ("nonAutomaticCRLUpdatePeriod", "non_automatic_crl_update_period"),
+            ("nonAutomaticCRLUpdateUnits", "non_automatic_crl_update_units"),
+            ("crlDownloadFailureRetries", "crl_download_failure_retries"),
+            ("crlDownloadFailureRetriesUnits", "crl_download_failure_retries_units"),
+            ("enableServerIdentityCheck", "enable_server_identity_check"),
+            ("authenticateBeforeCRLReceived", "authenticate_before_crl_received"),
+            ("ignoreCRLExpiration", "ignore_crl_expiration"),
+            ("trustForIseAuth", "trust_for_ise_auth"),
+            ("trustForClientAuth", "trust_for_client_auth"),
+            ("trustForCiscoServicesAuth", "trust_for_cisco_services_auth"),
+            ("trustForCertificateBasedAdminAuth", "trust_for_certificate_based_admin_auth"),
+            ("id", "id"),
+        ]
+        # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
+        # If any does not have eq params, it requires update
+        return any(not ise_compare_equality(current_obj.get(ise_param),
+                                            requested_obj.get(ansible_param))
+                   for (ise_param, ansible_param) in obj_params)
 
     def update(self):
         id = self.new_object.get("id")
@@ -164,7 +203,7 @@ class ActionModule(ActionBase):
         if not ANSIBLE_UTILS_IS_INSTALLED:
             raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
         super(ActionModule, self).__init__(*args, **kwargs)
-        self._supports_async = False
+        self._supports_async = True
         self._result = None
 
     # Checks the supplied parameters against the argument spec for this module
@@ -198,10 +237,19 @@ class ActionModule(ActionBase):
 
         response = None
         if state == "present":
-            response = obj.update()
-            ise.object_updated()
+            (obj_exists, prev_obj) = obj.exists()
+            if obj_exists:
+                if obj.requires_update(prev_obj):
+                    response = obj.update()
+                    ise.object_updated()
+                else:
+                    response = prev_obj
+                    ise.object_already_present()
+            else:
+                ise.fail_json("Object does not exists, plugin only has update")
         elif state == "absent":
-            if obj.exists():
+            (obj_exists, prev_obj) = obj.exists()
+            if obj_exists:
                 response = obj.delete()
                 ise.object_deleted()
             else:

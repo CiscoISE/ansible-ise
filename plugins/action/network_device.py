@@ -10,10 +10,11 @@ except ImportError:
 else:
     ANSIBLE_UTILS_IS_INSTALLED = True
 from ansible.errors import AnsibleActionFail
-from urllib.parse import quote
 from ansible_collections.cisco.ise.plugins.module_utils.ise import (
     ISESDK,
     ise_argument_spec,
+    ise_compare_equality,
+    get_dict_result,
 )
 
 # Get common arguments specification
@@ -67,8 +68,9 @@ class NetworkDevice(object):
             result = self.ise.exec(
                 family="network_device",
                 function="get_network_device_by_name",
-                params={"name": quote(name)}
+                params={"name": name}
             ).response['NetworkDevice']
+            result = get_dict_result(result, 'name', name)
         except Exception as e:
             result = None
         return result
@@ -78,7 +80,7 @@ class NetworkDevice(object):
             result = self.ise.exec(
                 family="network_device",
                 function="get_network_device_by_id",
-                params={"id": quote(id)}
+                params={"id": id}
             ).response['NetworkDevice']
         except Exception as e:
             result = None
@@ -86,15 +88,39 @@ class NetworkDevice(object):
 
     def exists(self):
         result = False
+        prev_obj = None
         id = self.new_object.get("id")
         name = self.new_object.get("name")
         if id:
-            if self.get_object_by_id(id):
-                result = True
+            prev_obj = self.get_object_by_id(id)
+            result = prev_obj is not None and isinstance(prev_obj, dict)
         elif name:
-            if self.get_object_by_name(name):
-                result = True
-        return result
+            prev_obj = self.get_object_by_name(name)
+            result = prev_obj is not None and isinstance(prev_obj, dict)
+        return (result, prev_obj)
+
+    def requires_update(self, current_obj):
+        requested_obj = self.new_object
+
+        obj_params = [
+            ("name", "name"),
+            ("description", "description"),
+            ("authenticationSettings", "authentication_settings"),
+            ("tacacsSettings", "tacacs_settings"),
+            ("snmpsettings", "snmpsettings"),
+            ("trustsecsettings", "trustsecsettings"),
+            ("profileName", "profile_name"),
+            ("coaPort", "coa_port"),
+            ("dtlsDnsName", "dtls_dns_name"),
+            ("NetworkDeviceIPList", "network_device_iplist"),
+            ("NetworkDeviceGroupList", "network_device_group_list"),
+            ("id", "id"),
+        ]
+        # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
+        # If any does not have eq params, it requires update
+        return any(not ise_compare_equality(current_obj.get(ise_param),
+                                            requested_obj.get(ansible_param))
+                   for (ise_param, ansible_param) in obj_params)
 
     def create(self):
         result = self.ise.exec(
@@ -146,7 +172,7 @@ class ActionModule(ActionBase):
         if not ANSIBLE_UTILS_IS_INSTALLED:
             raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
         super(ActionModule, self).__init__(*args, **kwargs)
-        self._supports_async = False
+        self._supports_async = True
         self._result = None
 
     # Checks the supplied parameters against the argument spec for this module
@@ -181,15 +207,21 @@ class ActionModule(ActionBase):
         response = None
 
         if state == "present":
-            if obj.exists():
-                response = obj.update()
-                ise.object_updated()
+            (obj_exists, prev_obj) = obj.exists()
+            if obj_exists:
+                if obj.requires_update(prev_obj):
+                    response = obj.update()
+                    ise.object_updated()
+                else:
+                    response = prev_obj
+                    ise.object_already_present()
             else:
                 response = obj.create()
                 ise.object_created()
 
         elif state == "absent":
-            if obj.exists():
+            (obj_exists, prev_obj) = obj.exists()
+            if obj_exists:
                 response = obj.delete()
                 ise.object_deleted()
             else:

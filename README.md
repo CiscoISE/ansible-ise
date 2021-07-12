@@ -10,7 +10,7 @@ This collection has been tested and supports Cisco ISE 3.0.
 
 ## Requirements
 - Ansible >= 2.9
-- [Cisco ISE SDK](https://github.com/CiscoISE/ciscoisesdk) v0.4.0 or newer
+- [Cisco ISE SDK](https://github.com/CiscoISE/ciscoisesdk) v0.5.0 or newer
 - Python >= 3.6, as the Cisco ISE SDK doesn't support Python version 2.x
 
 ## Install
@@ -65,6 +65,7 @@ ansible-playbook -i hosts myplaybook.yml
 ```
 In the `playbooks` directory you can find more examples and use cases.
 
+The examples found on the `playbooks` directory uses the `group_vars` variables. Consider using `ansible-vault` to encrypt the file that has the `ise_username` and `ise_password`.
 
 ## Update
 Getting the latest/nightly collection build

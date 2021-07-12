@@ -1,3 +1,4 @@
+# Consider using ansible-vault
 ---
 ise_hostname: "198.18.133.27"
 ise_username: "admin"
