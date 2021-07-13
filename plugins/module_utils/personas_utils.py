@@ -9,8 +9,10 @@ else:
     ANSIBLE_ERRORS_INSTALLED = True
 try:
     import requests
-except:
-    raise AnsibleActionFail("Prerequisite 'requests' module not installed. Please execute 'pip install requests'")
+except ImportError:
+    REQUESTS_INSTALLED = False
+else:
+    REQUESTS_INSTALLED = True
 import json
 import zipfile
 import io
