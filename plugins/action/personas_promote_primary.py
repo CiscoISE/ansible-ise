@@ -71,7 +71,7 @@ class ActionModule(ActionBase):
                             username=self._task.args.get("username"),
                             password=self._task.args.get("password"),
                             roles=self._task.args.get("roles"),
-                           )
+                            )
 
         if "PPAN" not in primary_node.get("roles"):
             raise AnsibleActionFail("Primary node must have at least the 'PPAN' role")

@@ -72,14 +72,14 @@ class ActionModule(ActionBase):
         primary_node = dict(ip=self._task.args.get("primary_ip"),
                             username=self._task.args.get("primary_username"),
                             password=self._task.args.get("primary_password"),
-                           )
+                            )
 
         other_node = dict(name=self._task.args.get("name"),
                           ip=self._task.args.get("ip"),
                           hostname=self._task.args.get("hostname"),
                           username=self._task.args.get("username"),
                           password=self._task.args.get("password"),
-                         )
+                          )
 
         ise_deployment = ISEDeployment()
         ise_deployment.add_primary(primary_node)

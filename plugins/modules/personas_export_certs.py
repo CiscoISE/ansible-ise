@@ -85,7 +85,7 @@ EXAMPLES = r"""
 
 RETURN = r"""
 ise_response:
-  description: A text string stating that the certificate was exported successfully. 
+  description: A text string stating that the certificate was exported successfully.
   returned: always
   type: str
   sample: The certificate for ISE PAN Server 2 was exported successfully to the primary node

@@ -74,7 +74,7 @@ class ActionModule(ActionBase):
         primary_node = dict(ip=self._task.args.get("primary_ip"),
                             username=self._task.args.get("primary_username"),
                             password=self._task.args.get("primary_password"),
-                           )
+                            )
 
         other_node = dict(name=self._task.args.get("name"),
                           local_ip=self._task.args.get("local_ip"),
@@ -83,7 +83,7 @@ class ActionModule(ActionBase):
                           password=self._task.args.get("password"),
                           domain=self._task.args.get("domain"),
                           roles=self._task.args.get("roles"),
-                         )
+                          )
 
         if "PPAN" in other_node.get("roles"):
             raise AnsibleActionFail("Only the primary node can have the 'PPAN' role")

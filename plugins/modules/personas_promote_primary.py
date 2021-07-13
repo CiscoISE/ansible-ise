@@ -31,7 +31,7 @@ options:
     type: str
   roles:
     description:
-    - The roles to be fulfilled by this node. Must contain at least 'PPAN' and any of these: ['MNT-ACTIVE', 'MNT-STANDBY, 'PDP']
+    - The roles to be fulfilled by this node. Must contain at least 'PPAN' and any of these: 'MNT-ACTIVE', 'MNT-STANDBY, 'PDP'
     type: list
   ise_verify:
     description:

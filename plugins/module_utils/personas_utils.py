@@ -1,7 +1,12 @@
 from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
 
-from ansible.errors import AnsibleActionFail
+try:
+    from ansible.errors import AnsibleActionFail
+except ImportError:
+    ANSIBLE_ERRORS_INSTALLED = False
+else:
+    ANSIBLE_ERRORS_INSTALLED = True
 import requests
 import json
 import zipfile
@@ -88,17 +93,16 @@ class Node(object):
     def register_node(self, primary):
         headers = {'Content-Type': 'application/xml'}
         url = "https://{primary_ip}/admin/API/Infra/Register".format(primary_ip=primary.ip)
-        xml_template = \
-    """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-    <infraDeployBean>
-        <displayname>{hostname}</displayname>
-        <gateway></gateway>
-        <hostname>{fqdn}</hostname>
-        <nodeIPaddr>{ip}</nodeIPaddr>
-        <username>{username}</username>
-        <password>{password}</password>
-        {roles}
-    </infraDeployBean>"""
+        xml_template = ('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n'
+                        '<infraDeployBean>\n'
+                        '    <displayname>{hostname}</displayname>\n'
+                        '    <gateway></gateway>\n'
+                        '    <hostname>{fqdn}</hostname>\n'
+                        '    <nodeIPaddr>{ip}</nodeIPaddr>\n'
+                        '    <username>{username}</username>\n'
+                        '    <password>{password}</password>\n'
+                        '    {roles}'
+                        '</infraDeployBean>')
         roles_str = ""
         for key in self.roles.keys():
             roles_str += "<roles>"
@@ -170,24 +174,23 @@ class ISEDeployment(object):
                 AnsibleActionFail(e)
 
             if not response.status_code == 200:
-                if not (return_message == 'Trust certificate was added successfully' or \
+                if not (return_message == 'Trust certificate was added successfully' or
                         return_message == "Certificates are having same subject, same serial number and they are binary equal. Hence skipping the replace"):
                     raise AnsibleActionFail("Unexpected response from API. Received response was {message}".format(message=return_message))
 
     def promote_primary_node(self):
         headers = {'Content-Type': 'text/xml'}
         url = "https://{ip}/admin/API/Infra/Edit".format(ip=self.primary.ip)
-        xml_template = \
-    """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-    <infraDeployBean>
-        <displayname>{hostname}</displayname>
-        <gateway></gateway>
-        <hostname>{hostname}</hostname>
-        <nodeIPaddr>{ip}</nodeIPaddr>
-        <username>{username}</username>
-        <password>{password}</password>
-        {roles}
-    </infraDeployBean>"""
+        xml_template = ('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n'
+                        '   <infraDeployBean>\n'
+                        '       <displayname>{hostname}</displayname>\n'
+                        '       <gateway></gateway>\n'
+                        '       <hostname>{hostname}</hostname>\n'
+                        '       <nodeIPaddr>{ip}</nodeIPaddr>\n'
+                        '       <username>{username}</username>\n'
+                        '       <password>{password}</password>\n'
+                        '       {roles}\n'
+                        '   </infraDeployBean>')
         roles_str = ""
         for key in self.primary.roles.keys():
             roles_str += "<roles>"

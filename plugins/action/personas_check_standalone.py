@@ -68,8 +68,7 @@ class ActionModule(ActionBase):
                          ip=self._task.args.get("ip"),
                          username=self._task.args.get("username"),
                          password=self._task.args.get("password"),
-                        )
-                   )
+                         ))
 
         if not (node.is_standalone() and node.app_server_is_running()):
             raise AnsibleActionFail("Node {node_name} is not in STANDALONE state or application server is not running.".format(node_name=node.name))
