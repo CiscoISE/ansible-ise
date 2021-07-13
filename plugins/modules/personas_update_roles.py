@@ -47,7 +47,7 @@ options:
     type: str
   roles:
     description:
-    - The roles to be fulfilled by this node. Possible roles: 'SPAN' 'MNT-ACTIVE' 'MNT-STANDBY 'PDP'
+    - The roles to be fulfilled by this node. Possible roles are SPAN or MNT-ACTIVE or MNT-STANDBY or PDP
     type: list
   ise_verify:
     description:
