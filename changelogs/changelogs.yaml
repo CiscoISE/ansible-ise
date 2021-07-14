@@ -27,9 +27,16 @@ releases:
     release_date: '2021-07-01'
     changes:
       release_summary: >
-        Adds more playbooks. Changes credentials.yml to group_vars. Adds ISE ERS modules.
+        Adds more playbooks. Changes credentials.yml to group_vars. Adds ISE ER S modules.
         Compares requested object to found object before updating to only update if necessary.
   0.0.8:
     release_date: '2021-07-09'
     changes:
       release_summary: Fix Indentity Group modules.
+  0.0.9:
+    release_date: '2021-07-12'
+    changes:
+      release_summary: Adds an Ansible role for the deployment of ISE to AWS as well as four modules for the deployment of personas to the ISE nodes.
+      major_changes:
+        - Adds a 'aws_deployment' role that allows the deployment of an arbitrary large ISE cluster to AWS.
+        - Adds four new modules for the deployment of personas to existing nodes in an ISE cluster.
