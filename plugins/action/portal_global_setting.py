@@ -49,7 +49,7 @@ class PortalGlobalSetting(object):
         try:
             result = self.ise.exec(
                 family="portal_global_setting",
-                function="get_all_portal_global_settings",
+                function="get_portal_global_settings",
                 params={"filter": "name.EQ.{0}".format(name)}
             ).response['SearchResult']['resources']
             result = get_dict_result(result, 'name', name)

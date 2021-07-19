@@ -19,8 +19,8 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    id=dict(type="str"),
     name=dict(type="str"),
+    id=dict(type="str"),
 ))
 
 required_if = []
@@ -57,8 +57,8 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            id=params.get("id"),
             name=params.get("name"),
+            id=params.get("id"),
         )
         return new_object
 
@@ -93,7 +93,7 @@ class ActionModule(ActionBase):
         if not name and not id:
             response = ise.exec(
                 family="device_administration_conditions",
-                function='get_all_device_admin_conditions',
+                function='get_device_admin_conditions',
                 params=self.get_object(self._task.args),
             ).response
             self._result.update(dict(ise_response=response))

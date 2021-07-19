@@ -19,9 +19,9 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
+    id=dict(type="str"),
     page=dict(type="int"),
     size=dict(type="int"),
-    id=dict(type="str"),
 ))
 
 required_if = []
@@ -58,9 +58,9 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
+            id=params.get("id"),
             page=params.get("page"),
             size=params.get("size"),
-            id=params.get("id"),
         )
         return new_object
 
@@ -87,7 +87,7 @@ class ActionModule(ActionBase):
             response = []
             generator = ise.exec(
                 family="native_supplicant_profile",
-                function='get_all_native_supplicant_profile_generator',
+                function='get_native_supplicant_profile_generator',
                 params=self.get_object(self._task.args),
             )
             for item in generator:

@@ -66,8 +66,8 @@ class GuestSmtpNotificationSettings(object):
     def get_object_by_name(self, name):
         try:
             result = self.ise.exec(
-                family="guest_smtp_notifications",
-                function="get_all_guest_smtp_notification_settings",
+                family="guest_smtp_notification_configuration",
+                function="get_guest_smtp_notification_settings",
                 params={"filter": "name.EQ.{0}".format(name)}
             ).response['SearchResult']['resources']
             result = get_dict_result(result, 'name', name)
@@ -78,7 +78,7 @@ class GuestSmtpNotificationSettings(object):
     def get_object_by_id(self, id):
         try:
             result = self.ise.exec(
-                family="guest_smtp_notifications",
+                family="guest_smtp_notification_configuration",
                 function="get_guest_smtp_notification_settings_by_id",
                 params={"id": id}
             ).response['ERSGuestSmtpNotificationSettings']
@@ -131,7 +131,7 @@ class GuestSmtpNotificationSettings(object):
 
     def create(self):
         result = self.ise.exec(
-            family="guest_smtp_notifications",
+            family="guest_smtp_notification_configuration",
             function="create_guest_smtp_notification_settings",
             params=self.new_object,
         ).response
@@ -145,7 +145,7 @@ class GuestSmtpNotificationSettings(object):
             id_ = self.get_object_by_name(name).get("id")
             self.new_object.update(dict(id=id_))
         result = self.ise.exec(
-            family="guest_smtp_notifications",
+            family="guest_smtp_notification_configuration",
             function="update_guest_smtp_notification_settings_by_id",
             params=self.new_object
         ).response

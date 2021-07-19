@@ -19,14 +19,14 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
+    name=dict(type="str"),
+    id=dict(type="str"),
     page=dict(type="int"),
     size=dict(type="int"),
     sortasc=dict(type="str"),
     sortdsc=dict(type="str"),
     filter=dict(type="list"),
     filterType=dict(type="str"),
-    id=dict(type="str"),
-    name=dict(type="str"),
 ))
 
 required_if = []
@@ -63,14 +63,14 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
+            name=params.get("name"),
+            id=params.get("id"),
             page=params.get("page"),
             size=params.get("size"),
             sortasc=params.get("sortasc"),
             sortdsc=params.get("sortdsc"),
             filter=params.get("filter"),
             filter_type=params.get("filterType"),
-            id=params.get("id"),
-            name=params.get("name"),
         )
         return new_object
 
@@ -87,7 +87,7 @@ class ActionModule(ActionBase):
         if id:
             response = ise.exec(
                 family="internal_user",
-                function='internaluser_by_id',
+                function='get_internal_user_by_id',
                 params=self.get_object(self._task.args)
             ).response['InternalUser']
             self._result.update(dict(ise_response=response))
@@ -106,7 +106,7 @@ class ActionModule(ActionBase):
             response = []
             generator = ise.exec(
                 family="internal_user",
-                function='get_all_internal_user_generator',
+                function='get_internal_user_generator',
                 params=self.get_object(self._task.args),
             )
             for item in generator:

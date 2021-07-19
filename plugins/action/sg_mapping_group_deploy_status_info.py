@@ -70,10 +70,10 @@ class ActionModule(ActionBase):
         name = self._task.args.get("name")
         if not name and not id:
             response = ise.exec(
-                family="sg_mapping_group",
+                family="ip_to_sgt_mapping_group",
                 function='get_deploy_status_ip_to_sgt_mapping_group',
                 params=self.get_object(self._task.args),
-            ).response
+            ).response['OperationResult']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

@@ -22,14 +22,15 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
+    id=dict(type="str"),
     name=dict(type="str"),
     description=dict(type="str"),
     domain=dict(type="str"),
+    enableDomainWhiteList=dict(type="bool"),
     adgroups=dict(type="dict"),
     advancedSettings=dict(type="dict"),
     adAttributes=dict(type="dict"),
     adScopesNames=dict(type="str"),
-    id=dict(type="str"),
 ))
 
 required_if = [
@@ -45,14 +46,15 @@ class ActiveDirectory(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
+            id=params.get("id"),
             name=params.get("name"),
             description=params.get("description"),
             domain=params.get("domain"),
+            enable_domain_white_list=params.get("enableDomainWhiteList"),
             adgroups=params.get("adgroups"),
             advanced_settings=params.get("advancedSettings"),
             ad_attributes=params.get("adAttributes"),
             ad_scopes_names=params.get("adScopesNames"),
-            id=params.get("id"),
         )
 
     def get_object_by_name(self, name):
@@ -95,14 +97,15 @@ class ActiveDirectory(object):
         requested_obj = self.new_object
 
         obj_params = [
+            ("id", "id"),
             ("name", "name"),
             ("description", "description"),
             ("domain", "domain"),
+            ("enableDomainWhiteList", "enable_domain_white_list"),
             ("adgroups", "adgroups"),
             ("advancedSettings", "advanced_settings"),
             ("adAttributes", "ad_attributes"),
             ("adScopesNames", "ad_scopes_names"),
-            ("id", "id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

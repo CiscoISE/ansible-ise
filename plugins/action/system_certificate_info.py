@@ -96,7 +96,7 @@ class ActionModule(ActionBase):
         if name:
             response = ise.exec(
                 family="certificates",
-                function='get_all_system_certificates',
+                function='get_system_certificates',
                 params=self.get_object(self._task.args)
             ).response
             self._result.update(dict(ise_response=response))

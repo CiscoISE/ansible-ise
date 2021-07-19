@@ -19,8 +19,14 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    id=dict(type="str"),
     name=dict(type="str"),
+    id=dict(type="str"),
+    page=dict(type="int"),
+    size=dict(type="int"),
+    sortasc=dict(type="str"),
+    sortdsc=dict(type="str"),
+    filter=dict(type="list"),
+    filterType=dict(type="str"),
 ))
 
 required_if = []
@@ -57,8 +63,14 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            id=params.get("id"),
             name=params.get("name"),
+            id=params.get("id"),
+            page=params.get("page"),
+            size=params.get("size"),
+            sortasc=params.get("sortasc"),
+            sortdsc=params.get("sortdsc"),
+            filter=params.get("filter"),
+            filter_type=params.get("filterType"),
         )
         return new_object
 
@@ -91,11 +103,18 @@ class ActionModule(ActionBase):
             self._result.update(ise.exit_json())
             return self._result
         if not name and not id:
-            response = ise.exec(
+            response = []
+            generator = ise.exec(
                 family="anc_policy",
-                function='get_all_anc_policy',
+                function='get_anc_policy_generator',
                 params=self.get_object(self._task.args),
-            ).response['SearchResult']['resources']
+            )
+            for item in generator:
+                tmp_response = item.response['SearchResult']['resources']
+                if isinstance(tmp_response, list):
+                    response += tmp_response
+                else:
+                    response.append(tmp_response)
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

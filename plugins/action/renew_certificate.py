@@ -70,7 +70,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="certificates",
-            function='renew_certificate',
+            function='renew_certificates',
             params=self.get_object(self._task.args),
         ).response
         self._result.update(dict(ise_response=response))

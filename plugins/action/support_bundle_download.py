@@ -21,6 +21,7 @@ argument_spec = ise_argument_spec()
 argument_spec.update(dict(
     fileName=dict(type="str"),
     dirPath=dict(type="str"),
+    saveFile=dict(type="bool"),
 ))
 
 required_if = []
@@ -59,7 +60,7 @@ class ActionModule(ActionBase):
         new_object = dict(
             file_name=params.get("fileName"),
             dirpath=params.get("dirPath"),
-            save_file=True,
+            save_file=params.get("saveFile"),
         )
         return new_object
 
@@ -72,10 +73,10 @@ class ActionModule(ActionBase):
         ise = ISESDK(params=self._task.args)
 
         response = ise.exec(
-            family="support_bundle",
+            family="support_bundle_download",
             function='download_support_bundle',
             params=self.get_object(self._task.args),
-        )
-        self._result.update(dict(ise_response='Downloaded'))
+        ).response
+        self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

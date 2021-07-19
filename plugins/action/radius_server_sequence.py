@@ -25,7 +25,6 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    id=dict(type="str"),
     name=dict(type="str"),
     description=dict(type="str"),
     stripPrefix=dict(type="bool"),
@@ -40,6 +39,7 @@ argument_spec.update(dict(
     RadiusServerList=dict(type="list"),
     OnRequestAttrManipulatorList=dict(type="list"),
     BeforeAcceptAttrManipulatorsList=dict(type="list"),
+    id=dict(type="str"),
 ))
 
 required_if = [
@@ -55,7 +55,6 @@ class RadiusServerSequence(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            id=params.get("id"),
             name=params.get("name"),
             description=params.get("description"),
             strip_prefix=params.get("stripPrefix"),
@@ -70,6 +69,7 @@ class RadiusServerSequence(object):
             radius_server_list=params.get("RadiusServerList"),
             on_request_attr_manipulator_list=params.get("OnRequestAttrManipulatorList"),
             before_accept_attr_manipulators_list=params.get("BeforeAcceptAttrManipulatorsList"),
+            id=params.get("id"),
         )
 
     def get_object_by_name(self, name):
@@ -77,7 +77,7 @@ class RadiusServerSequence(object):
         result = None
         gen_items_responses = self.ise.exec(
             family="radius_server_sequence",
-            function="get_all_radius_server_sequence_generator"
+            function="get_radius_server_sequence_generator"
         )
         for items_response in gen_items_responses:
             items = items_response.response['SearchResult']['resources']
@@ -123,7 +123,6 @@ class RadiusServerSequence(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("id", "id"),
             ("name", "name"),
             ("description", "description"),
             ("stripPrefix", "strip_prefix"),
@@ -138,6 +137,7 @@ class RadiusServerSequence(object):
             ("RadiusServerList", "radius_server_list"),
             ("OnRequestAttrManipulatorList", "on_request_attr_manipulator_list"),
             ("BeforeAcceptAttrManipulatorsList", "before_accept_attr_manipulators_list"),
+            ("id", "id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

@@ -19,7 +19,6 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    name=dict(type="str"),
 ))
 
 required_if = []
@@ -56,7 +55,6 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            name=params.get("name"),
         )
         return new_object
 
@@ -68,23 +66,11 @@ class ActionModule(ActionBase):
 
         ise = ISESDK(params=self._task.args)
 
-        id = self._task.args.get("id")
-        name = self._task.args.get("name")
-        if name:
-            response = ise.exec(
-                family="service",
-                function='get_service_by_name',
-                params=self.get_object(self._task.args)
-            ).response
-            self._result.update(dict(ise_response=response))
-            self._result.update(ise.exit_json())
-            return self._result
-        if not name and not id:
-            response = ise.exec(
-                family="service",
-                function='get_all_service',
-                params=self.get_object(self._task.args),
-            ).response['SearchResult']['resources']
-            self._result.update(dict(ise_response=response))
-            self._result.update(ise.exit_json())
-            return self._result
+        response = ise.exec(
+            family="network_access_policy_set",
+            function='reset_hit_counts_network_access_policy_sets',
+            params=self.get_object(self._task.args),
+        ).response
+        self._result.update(dict(ise_response=response))
+        self._result.update(ise.exit_json())
+        return self._result

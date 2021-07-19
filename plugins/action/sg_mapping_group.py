@@ -55,8 +55,8 @@ class SgMappingGroup(object):
     def get_object_by_name(self, name):
         try:
             result = self.ise.exec(
-                family="sg_mapping_group",
-                function="get_all_ip_to_sgt_mapping_group",
+                family="ip_to_sgt_mapping_group",
+                function="get_ip_to_sgt_mapping_group",
                 params={"filter": "name.EQ.{0}".format(name)}
             ).response['SearchResult']['resources']
             result = get_dict_result(result, 'name', name)
@@ -67,7 +67,7 @@ class SgMappingGroup(object):
     def get_object_by_id(self, id):
         try:
             result = self.ise.exec(
-                family="sg_mapping_group",
+                family="ip_to_sgt_mapping_group",
                 function="get_ip_to_sgt_mapping_group_by_id",
                 params={"id": id}
             ).response['SGMappingGroup']
@@ -114,7 +114,7 @@ class SgMappingGroup(object):
 
     def create(self):
         result = self.ise.exec(
-            family="sg_mapping_group",
+            family="ip_to_sgt_mapping_group",
             function="create_ip_to_sgt_mapping_group",
             params=self.new_object,
         ).response
@@ -128,7 +128,7 @@ class SgMappingGroup(object):
             id_ = self.get_object_by_name(name).get("id")
             self.new_object.update(dict(id=id_))
         result = self.ise.exec(
-            family="sg_mapping_group",
+            family="ip_to_sgt_mapping_group",
             function="update_ip_to_sgt_mapping_group_by_id",
             params=self.new_object
         ).response
@@ -142,7 +142,7 @@ class SgMappingGroup(object):
             id_ = self.get_object_by_name(name).get("id")
             self.new_object.update(dict(id=id_))
         result = self.ise.exec(
-            family="sg_mapping_group",
+            family="ip_to_sgt_mapping_group",
             function="delete_ip_to_sgt_mapping_group_by_id",
             params=self.new_object
         ).response

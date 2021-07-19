@@ -19,23 +19,23 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    id=dict(type="str"),
-    name=dict(type="str"),
-    hostName=dict(type="str"),
-    data=dict(type="str"),
     admin=dict(type="bool"),
-    eap=dict(type="bool"),
-    radius=dict(type="bool"),
-    pxgrid=dict(type="bool"),
-    ims=dict(type="bool"),
-    portal=dict(type="bool"),
-    saml=dict(type="bool"),
-    portalGroupTag=dict(type="str"),
-    validateCertificateExtensions=dict(type="bool"),
+    allowExtendedValidity=dict(type="bool"),
     allowOutOfDateCert=dict(type="bool"),
     allowReplacementOfCertificates=dict(type="bool"),
     allowReplacementOfPortalGroupTag=dict(type="bool"),
-    allowExtendedValidity=dict(type="bool"),
+    data=dict(type="str"),
+    eap=dict(type="bool"),
+    hostName=dict(type="str"),
+    id=dict(type="str"),
+    ims=dict(type="bool"),
+    name=dict(type="str"),
+    portal=dict(type="bool"),
+    portalGroupTag=dict(type="str"),
+    pxgrid=dict(type="bool"),
+    radius=dict(type="bool"),
+    saml=dict(type="bool"),
+    validateCertificateExtensions=dict(type="bool"),
 ))
 
 required_if = []
@@ -72,23 +72,23 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            id=params.get("id"),
-            name=params.get("name"),
-            host_name=params.get("hostName"),
-            data=params.get("data"),
             admin=params.get("admin"),
-            eap=params.get("eap"),
-            radius=params.get("radius"),
-            pxgrid=params.get("pxgrid"),
-            ims=params.get("ims"),
-            portal=params.get("portal"),
-            saml=params.get("saml"),
-            portal_group_tag=params.get("portalGroupTag"),
-            validate_certificate_extensions=params.get("validateCertificateExtensions"),
+            allow_extended_validity=params.get("allowExtendedValidity"),
             allow_out_of_date_cert=params.get("allowOutOfDateCert"),
             allow_replacement_of_certificates=params.get("allowReplacementOfCertificates"),
             allow_replacement_of_portal_group_tag=params.get("allowReplacementOfPortalGroupTag"),
-            allow_extended_validity=params.get("allowExtendedValidity"),
+            data=params.get("data"),
+            eap=params.get("eap"),
+            host_name=params.get("hostName"),
+            id=params.get("id"),
+            ims=params.get("ims"),
+            name=params.get("name"),
+            portal=params.get("portal"),
+            portal_group_tag=params.get("portalGroupTag"),
+            pxgrid=params.get("pxgrid"),
+            radius=params.get("radius"),
+            saml=params.get("saml"),
+            validate_certificate_extensions=params.get("validateCertificateExtensions"),
         )
         return new_object
 

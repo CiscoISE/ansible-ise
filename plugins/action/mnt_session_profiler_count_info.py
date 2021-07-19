@@ -19,8 +19,6 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    policyId=dict(type="str"),
-    id=dict(type="str"),
 ))
 
 required_if = []
@@ -57,8 +55,6 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            policy_id=params.get("policyId"),
-            id=params.get("id"),
         )
         return new_object
 
@@ -72,21 +68,12 @@ class ActionModule(ActionBase):
 
         id = self._task.args.get("id")
         name = self._task.args.get("name")
-        if id:
-            response = ise.exec(
-                family="network_access_authorization_exception_rules",
-                function='get_network_access_local_exception_rule_by_id',
-                params=self.get_object(self._task.args)
-            ).response
-            self._result.update(dict(ise_response=response))
-            self._result.update(ise.exit_json())
-            return self._result
         if not name and not id:
             response = ise.exec(
-                family="network_access_authorization_exception_rules",
-                function='get_all_network_access_local_exception_rules',
+                family="misc",
+                function='get_profiler_count',
                 params=self.get_object(self._task.args),
-            ).response
+            ).response['count']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

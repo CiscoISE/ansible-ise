@@ -73,7 +73,7 @@ class ActionModule(ActionBase):
         if not name and not id:
             response = ise.exec(
                 family="active_directory",
-                function='get_all_trusted_domains',
+                function='get_trusted_domains',
                 params=self.get_object(self._task.args),
             ).response['ERSActiveDirectoryDomains']
             self._result.update(dict(ise_response=response))

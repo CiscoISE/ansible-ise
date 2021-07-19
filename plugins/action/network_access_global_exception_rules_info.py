@@ -19,8 +19,6 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    page=dict(type="int"),
-    size=dict(type="int"),
     id=dict(type="str"),
 ))
 
@@ -58,8 +56,6 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            page=params.get("page"),
-            size=params.get("size"),
             id=params.get("id"),
         )
         return new_object
@@ -76,26 +72,19 @@ class ActionModule(ActionBase):
         name = self._task.args.get("name")
         if id:
             response = ise.exec(
-                family="telemetry_information",
-                function='get_telemetry_info_by_id',
+                family="network_access_authorization_global_exception_rules",
+                function='get_network_access_policy_set_global_exception_rule_by_id',
                 params=self.get_object(self._task.args)
-            ).response['TelemetryInfo']
+            ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result
         if not name and not id:
-            response = []
-            generator = ise.exec(
-                family="telemetry_information",
-                function='get_all_telemetry_information_generator',
+            response = ise.exec(
+                family="network_access_authorization_global_exception_rules",
+                function='get_network_access_policy_set_global_exception_rules',
                 params=self.get_object(self._task.args),
-            )
-            for item in generator:
-                tmp_response = item.response['SearchResult']['resources']
-                if isinstance(tmp_response, list):
-                    response += tmp_response
-                else:
-                    response.append(tmp_response)
+            ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

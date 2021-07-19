@@ -75,7 +75,7 @@ class ActionModule(ActionBase):
         if not name and not id:
             response = ise.exec(
                 family="active_directory",
-                function='get_all_user_groups',
+                function='get_user_groups',
                 params=self.get_object(self._task.args),
             ).response['ERSActiveDirectoryGroups']
             self._result.update(dict(ise_response=response))

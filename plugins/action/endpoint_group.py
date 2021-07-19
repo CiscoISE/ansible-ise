@@ -22,10 +22,10 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    id=dict(type="str"),
     name=dict(type="str"),
     description=dict(type="str"),
     systemDefined=dict(type="bool"),
+    id=dict(type="str"),
 ))
 
 required_if = [
@@ -41,16 +41,16 @@ class EndpointGroup(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            id=params.get("id"),
             name=params.get("name"),
             description=params.get("description"),
             system_defined=params.get("systemDefined"),
+            id=params.get("id"),
         )
 
     def get_object_by_name(self, name):
         try:
             result = self.ise.exec(
-                family="endpoint_group",
+                family="endpoint_identity_group",
                 function="get_endpoint_group_by_name",
                 params={"name": name}
             ).response['EndPointGroup']
@@ -62,7 +62,7 @@ class EndpointGroup(object):
     def get_object_by_id(self, id):
         try:
             result = self.ise.exec(
-                family="endpoint_group",
+                family="endpoint_identity_group",
                 function="get_endpoint_group_by_id",
                 params={"id": id}
             ).response['EndPointGroup']
@@ -87,10 +87,10 @@ class EndpointGroup(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("id", "id"),
             ("name", "name"),
             ("description", "description"),
             ("systemDefined", "system_defined"),
+            ("id", "id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
@@ -100,7 +100,7 @@ class EndpointGroup(object):
 
     def create(self):
         result = self.ise.exec(
-            family="endpoint_group",
+            family="endpoint_identity_group",
             function="create_endpoint_group",
             params=self.new_object,
         ).response
@@ -114,7 +114,7 @@ class EndpointGroup(object):
             id_ = self.get_object_by_name(name).get("id")
             self.new_object.update(dict(id=id_))
         result = self.ise.exec(
-            family="endpoint_group",
+            family="endpoint_identity_group",
             function="update_endpoint_group_by_id",
             params=self.new_object
         ).response
@@ -128,7 +128,7 @@ class EndpointGroup(object):
             id_ = self.get_object_by_name(name).get("id")
             self.new_object.update(dict(id=id_))
         result = self.ise.exec(
-            family="endpoint_group",
+            family="endpoint_identity_group",
             function="delete_endpoint_group_by_id",
             params=self.new_object
         ).response

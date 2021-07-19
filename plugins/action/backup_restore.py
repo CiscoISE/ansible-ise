@@ -19,9 +19,9 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    restoreFile=dict(type="str"),
-    repositoryName=dict(type="str"),
     backupEncryptionKey=dict(type="str"),
+    repositoryName=dict(type="str"),
+    restoreFile=dict(type="str"),
     restoreIncludeAdeos=dict(type="str"),
 ))
 
@@ -59,9 +59,9 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            restore_file=params.get("restoreFile"),
-            repository_name=params.get("repositoryName"),
             backup_encryption_key=params.get("backupEncryptionKey"),
+            repository_name=params.get("repositoryName"),
+            restore_file=params.get("restoreFile"),
             restore_include_adeos=params.get("restoreIncludeAdeos"),
         )
         return new_object

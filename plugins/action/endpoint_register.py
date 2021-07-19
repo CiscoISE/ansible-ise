@@ -30,8 +30,8 @@ argument_spec.update(dict(
     portalUser=dict(type="str"),
     identityStore=dict(type="str"),
     identityStoreId=dict(type="str"),
-    customAttributes=dict(type="dict"),
     mdmAttributes=dict(type="dict"),
+    customAttributes=dict(type="dict"),
 ))
 
 required_if = []
@@ -79,8 +79,8 @@ class ActionModule(ActionBase):
             portal_user=params.get("portalUser"),
             identity_store=params.get("identityStore"),
             identity_store_id=params.get("identityStoreId"),
-            custom_attributes=params.get("customAttributes"),
             mdm_attributes=params.get("mdmAttributes"),
+            custom_attributes=params.get("customAttributes"),
         )
         return new_object
 

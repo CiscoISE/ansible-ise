@@ -25,11 +25,14 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    id=dict(type="str"),
     name=dict(type="str"),
     description=dict(type="str"),
-    ipVersion=dict(type="str"),
+    generationId=dict(type="str"),
     aclcontent=dict(type="str"),
+    isReadOnly=dict(type="bool"),
+    modelledContent=dict(type="dict"),
+    ipVersion=dict(type="str"),
+    id=dict(type="str"),
 ))
 
 required_if = [
@@ -45,18 +48,21 @@ class SgAcl(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            id=params.get("id"),
             name=params.get("name"),
             description=params.get("description"),
-            ip_version=params.get("ipVersion"),
+            generation_id=params.get("generationId"),
             aclcontent=params.get("aclcontent"),
+            is_read_only=params.get("isReadOnly"),
+            modelled_content=params.get("modelledContent"),
+            ip_version=params.get("ipVersion"),
+            id=params.get("id"),
         )
 
     def get_object_by_name(self, name):
         try:
             result = self.ise.exec(
-                family="sg_acl",
-                function="get_all_security_groups_acl",
+                family="security_groups_acls",
+                function="get_security_groups_acl",
                 params={"filter": "name.EQ.{0}".format(name)}
             ).response['SearchResult']['resources']
             result = get_dict_result(result, 'name', name)
@@ -67,7 +73,7 @@ class SgAcl(object):
     def get_object_by_id(self, id):
         try:
             result = self.ise.exec(
-                family="sg_acl",
+                family="security_groups_acls",
                 function="get_security_groups_acl_by_id",
                 params={"id": id}
             ).response['Sgacl']
@@ -100,11 +106,14 @@ class SgAcl(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("id", "id"),
             ("name", "name"),
             ("description", "description"),
-            ("ipVersion", "ip_version"),
+            ("generationId", "generation_id"),
             ("aclcontent", "aclcontent"),
+            ("isReadOnly", "is_read_only"),
+            ("modelledContent", "modelled_content"),
+            ("ipVersion", "ip_version"),
+            ("id", "id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
@@ -114,7 +123,7 @@ class SgAcl(object):
 
     def create(self):
         result = self.ise.exec(
-            family="sg_acl",
+            family="security_groups_acls",
             function="create_security_groups_acl",
             params=self.new_object,
         ).response
@@ -128,7 +137,7 @@ class SgAcl(object):
             id_ = self.get_object_by_name(name).get("id")
             self.new_object.update(dict(id=id_))
         result = self.ise.exec(
-            family="sg_acl",
+            family="security_groups_acls",
             function="update_security_groups_acl_by_id",
             params=self.new_object
         ).response
@@ -142,7 +151,7 @@ class SgAcl(object):
             id_ = self.get_object_by_name(name).get("id")
             self.new_object.update(dict(id=id_))
         result = self.ise.exec(
-            family="sg_acl",
+            family="security_groups_acls",
             function="delete_security_groups_acl_by_id",
             params=self.new_object
         ).response

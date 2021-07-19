@@ -72,7 +72,7 @@ class ActionModule(ActionBase):
         name = self._task.args.get("name")
         if id:
             response = ise.exec(
-                family="sg_acl",
+                family="security_groups_acls",
                 function='monitor_bulk_status_security_groups_acl',
                 params=self.get_object(self._task.args)
             ).response

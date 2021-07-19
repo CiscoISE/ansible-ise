@@ -55,7 +55,7 @@ class NativeSupplicantProfile(object):
         result = None
         gen_items_responses = self.ise.exec(
             family="native_supplicant_profile",
-            function="get_all_native_supplicant_profile_generator"
+            function="get_native_supplicant_profile_generator"
         )
         for items_response in gen_items_responses:
             items = items_response.response['SearchResult']['resources']

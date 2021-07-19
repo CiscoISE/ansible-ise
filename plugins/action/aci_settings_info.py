@@ -71,7 +71,7 @@ class ActionModule(ActionBase):
         if not name and not id:
             response = ise.exec(
                 family="aci_settings",
-                function='get_all_aci_settings',
+                function='get_aci_settings',
                 params=self.get_object(self._task.args),
             ).response['AciSettings']
             self._result.update(dict(ise_response=response))

@@ -25,27 +25,29 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    rule=dict(type="dict"),
+    link=dict(type="dict"),
     profile=dict(type="list"),
+    rule=dict(type="dict"),
     securityGroup=dict(type="str"),
     id=dict(type="str"),
 ))
 
 required_if = [
-    ("state", "present", ["id", "rule"], True),
-    ("state", "absent", ["id", "rule"], True),
+    ("state", "present", ["id"], True),
+    ("state", "absent", ["id"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
 required_together = []
 
 
-class NetworkAccessAuthorizationGlobalExceptionRules(object):
+class NetworkAccessGlobalExceptionRules(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            rule=params.get("rule"),
+            link=params.get("link"),
             profile=params.get("profile"),
+            rule=params.get("rule"),
             security_group=params.get("securityGroup"),
             id=params.get("id"),
         )
@@ -55,7 +57,7 @@ class NetworkAccessAuthorizationGlobalExceptionRules(object):
         result = None
         items = self.ise.exec(
             family="network_access_authorization_global_exception_rules",
-            function="get_all_network_access_global_exception_rules",
+            function="get_network_access_policy_set_global_exception_rules",
         ).response.get('response', []) or []
         for item in items:
             if item.get('rule') and item['rule'].get('name') == name and item['rule'].get('id'):
@@ -67,17 +69,17 @@ class NetworkAccessAuthorizationGlobalExceptionRules(object):
         try:
             result = self.ise.exec(
                 family="network_access_authorization_global_exception_rules",
-                function="get_network_access_global_exception_rule_by_id",
+                function="get_network_access_policy_set_global_exception_rule_by_id",
                 params={"id": id}
-            ).response.get('response')
+            ).response.get('response', {})
         except Exception as e:
             result = None
         return result
 
     def exists(self):
-        prev_obj = None
         id_exists = False
         name_exists = False
+        prev_obj = None
         o_id = self.new_object.get("id") or self.new_object.get('rule', {}).get("id")
         name = self.new_object.get('rule', {}).get("name")
         if o_id:
@@ -99,8 +101,9 @@ class NetworkAccessAuthorizationGlobalExceptionRules(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("rule", "rule"),
+            ("link", "link"),
             ("profile", "profile"),
+            ("rule", "rule"),
             ("securityGroup", "security_group"),
             ("id", "id"),
         ]
@@ -113,7 +116,7 @@ class NetworkAccessAuthorizationGlobalExceptionRules(object):
     def create(self):
         result = self.ise.exec(
             family="network_access_authorization_global_exception_rules",
-            function="create_network_access_global_exception_rule",
+            function="create_network_access_policy_set_global_exception_rule",
             params=self.new_object,
         ).response
         return result
@@ -129,7 +132,7 @@ class NetworkAccessAuthorizationGlobalExceptionRules(object):
             self.new_object.update(dict(rule=rule, id=id_))
         result = self.ise.exec(
             family="network_access_authorization_global_exception_rules",
-            function="update_network_access_global_exception_rule_by_id",
+            function="update_network_access_policy_set_global_exception_rule_by_id",
             params=self.new_object
         ).response
         return result
@@ -145,7 +148,7 @@ class NetworkAccessAuthorizationGlobalExceptionRules(object):
             self.new_object.update(dict(rule=rule, id=id_))
         result = self.ise.exec(
             family="network_access_authorization_global_exception_rules",
-            function="delete_network_access_global_exception_rule_by_id",
+            function="delete_network_access_policy_set_global_exception_rule_by_id",
             params=self.new_object
         ).response
         return result
@@ -184,7 +187,7 @@ class ActionModule(ActionBase):
         self._check_argspec()
 
         ise = ISESDK(self._task.args)
-        obj = NetworkAccessAuthorizationGlobalExceptionRules(self._task.args, ise)
+        obj = NetworkAccessGlobalExceptionRules(self._task.args, ise)
 
         state = self._task.args.get("state")
 

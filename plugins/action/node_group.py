@@ -53,8 +53,8 @@ class NodeGroup(object):
             result = self.ise.exec(
                 family="node_group",
                 function="get_node_group",
-                params={"node_group_name": name}
-            ).response.get('response')
+                params={"name": name}
+            ).response.get('response', {})
             result = get_dict_result(result, 'name', name)
         except Exception as e:
             result = None
@@ -66,11 +66,11 @@ class NodeGroup(object):
         return result
 
     def exists(self):
-        prev_obj = None
         id_exists = False
         name_exists = False
+        prev_obj = None
         o_id = self.new_object.get("id")
-        name = self.new_object.get("node_group_name")
+        name = self.new_object.get("name")
         if o_id:
             prev_obj = self.get_object_by_id(o_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
@@ -107,6 +107,12 @@ class NodeGroup(object):
         return result
 
     def update(self):
+        id = self.new_object.get("id")
+        name = self.new_object.get("name")
+        result = None
+        if not name:
+            name_ = self.get_object_by_id(id).get("name")
+            self.new_object.update(dict(name=name_))
         result = self.ise.exec(
             family="node_group",
             function="update_node_group",
@@ -115,6 +121,12 @@ class NodeGroup(object):
         return result
 
     def delete(self):
+        id = self.new_object.get("id")
+        name = self.new_object.get("name")
+        result = None
+        if not name:
+            name_ = self.get_object_by_id(id).get("name")
+            self.new_object.update(dict(name=name_))
         result = self.ise.exec(
             family="node_group",
             function="delete_node_group",

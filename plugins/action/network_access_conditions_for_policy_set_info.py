@@ -71,7 +71,7 @@ class ActionModule(ActionBase):
         if not name and not id:
             response = ise.exec(
                 family="network_access_conditions",
-                function='get_all_network_access_conditions_for_policy_set',
+                function='get_network_access_conditions_for_policy_sets',
                 params=self.get_object(self._task.args),
             ).response
             self._result.update(dict(ise_response=response))

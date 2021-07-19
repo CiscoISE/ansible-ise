@@ -84,11 +84,11 @@ class ActionModule(ActionBase):
             response = []
             generator = ise.exec(
                 family="aci_bindings",
-                function='get_all_aci_bindings_generator',
+                function='get_aci_bindings_generator',
                 params=self.get_object(self._task.args),
             )
             for item in generator:
-                tmp_response = item.response['ArrayList']
+                tmp_response = item.response['ACIBindings']
                 if isinstance(tmp_response, list):
                     response += tmp_response
                 else:

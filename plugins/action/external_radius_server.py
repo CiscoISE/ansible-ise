@@ -22,7 +22,6 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    id=dict(type="str"),
     name=dict(type="str"),
     description=dict(type="str"),
     hostIP=dict(type="str"),
@@ -36,6 +35,7 @@ argument_spec.update(dict(
     timeout=dict(type="int"),
     retries=dict(type="int"),
     proxyTimeout=dict(type="int"),
+    id=dict(type="str"),
 ))
 
 required_if = [
@@ -51,7 +51,6 @@ class ExternalRadiusServer(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            id=params.get("id"),
             name=params.get("name"),
             description=params.get("description"),
             host_ip=params.get("hostIP"),
@@ -65,6 +64,7 @@ class ExternalRadiusServer(object):
             timeout=params.get("timeout"),
             retries=params.get("retries"),
             proxy_timeout=params.get("proxyTimeout"),
+            id=params.get("id"),
         )
 
     def get_object_by_name(self, name):
@@ -107,7 +107,6 @@ class ExternalRadiusServer(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("id", "id"),
             ("name", "name"),
             ("description", "description"),
             ("hostIP", "host_ip"),
@@ -121,6 +120,7 @@ class ExternalRadiusServer(object):
             ("timeout", "timeout"),
             ("retries", "retries"),
             ("proxyTimeout", "proxy_timeout"),
+            ("id", "id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

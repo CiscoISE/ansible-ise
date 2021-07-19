@@ -25,13 +25,13 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    id=dict(type="str"),
     name=dict(type="str"),
     description=dict(type="str"),
-    portalTestUrl=dict(type="str"),
     portalType=dict(type="str"),
+    portalTestUrl=dict(type="str"),
     settings=dict(type="dict"),
     customizations=dict(type="dict"),
+    id=dict(type="str"),
 ))
 
 required_if = [
@@ -47,28 +47,25 @@ class SponsorPortal(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            id=params.get("id"),
             name=params.get("name"),
             description=params.get("description"),
-            portal_test_url=params.get("portalTestUrl"),
             portal_type=params.get("portalType"),
+            portal_test_url=params.get("portalTestUrl"),
             settings=params.get("settings"),
             customizations=params.get("customizations"),
+            id=params.get("id"),
         )
 
     def get_object_by_name(self, name):
-        # NOTICE: Does not have a get by name method or it is in another action
-        result = None
-        gen_items_responses = self.ise.exec(
-            family="sponsor_portal",
-            function="get_all_sponsor_portal_generator"
-        )
-        for items_response in gen_items_responses:
-            items = items_response.response['SearchResult']['resources']
-            for item in items:
-                if item.get('name') == name and item.get('id'):
-                    result = dict(item)
-                    return result
+        try:
+            result = self.ise.exec(
+                family="sponsor_portal",
+                function="get_sponsor_portal",
+                params={"filter": "name.EQ.{0}".format(name)}
+            ).response['SearchResult']['resources']
+            result = get_dict_result(result, 'name', name)
+        except Exception as e:
+            result = None
         return result
 
     def get_object_by_id(self, id):
@@ -107,13 +104,13 @@ class SponsorPortal(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("id", "id"),
             ("name", "name"),
             ("description", "description"),
-            ("portalTestUrl", "portal_test_url"),
             ("portalType", "portal_type"),
+            ("portalTestUrl", "portal_test_url"),
             ("settings", "settings"),
             ("customizations", "customizations"),
+            ("id", "id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

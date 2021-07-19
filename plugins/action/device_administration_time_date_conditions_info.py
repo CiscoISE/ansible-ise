@@ -82,7 +82,7 @@ class ActionModule(ActionBase):
         if not name and not id:
             response = ise.exec(
                 family="device_administration_time_date_conditions",
-                function='get_all_device_admin_time_conditions',
+                function='get_device_admin_time_conditions',
                 params=self.get_object(self._task.args),
             ).response
             self._result.update(dict(ise_response=response))

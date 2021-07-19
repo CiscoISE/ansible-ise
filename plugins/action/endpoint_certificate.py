@@ -23,7 +23,8 @@ argument_spec.update(dict(
     format=dict(type="str"),
     password=dict(type="str"),
     certificateRequest=dict(type="dict"),
-    dirPath=dict(type="str")
+    dirPath=dict(type="str"),
+    saveFile=dict(type="bool"),
 ))
 
 required_if = []
@@ -65,7 +66,7 @@ class ActionModule(ActionBase):
             password=params.get("password"),
             certificate_request=params.get("certificateRequest"),
             dirpath=params.get("dirPath"),
-            save_file=True,
+            save_file=params.get("saveFile"),
         )
         return new_object
 
@@ -78,10 +79,10 @@ class ActionModule(ActionBase):
         ise = ISESDK(params=self._task.args)
 
         response = ise.exec(
-            family="endpoint_cert",
+            family="endpoint_certificate",
             function='create_endpoint_certificate',
             params=self.get_object(self._task.args),
-        )
-        self._result.update(dict(ise_response='Downloaded'))
+        ).response
+        self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

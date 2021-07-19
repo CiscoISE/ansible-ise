@@ -70,7 +70,7 @@ class ActionModule(ActionBase):
         name = self._task.args.get("name")
         if not name and not id:
             response = ise.exec(
-                family="version_",
+                family="version_and_patch",
                 function='get_ise_version_and_patch',
                 params=self.get_object(self._task.args),
             ).response['OperationResult']

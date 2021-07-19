@@ -95,7 +95,7 @@ class ActionModule(ActionBase):
             response = []
             generator = ise.exec(
                 family="certificates",
-                function='get_all_trusted_certificates_generator',
+                function='get_trusted_certificates_generator',
                 params=self.get_object(self._task.args),
             )
             for item in generator:

@@ -25,11 +25,12 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    id=dict(type="str"),
-    name=dict(type="str"),
     description=dict(type="str"),
-    version=dict(type="str"),
     dictionaryAttrType=dict(type="str"),
+    id=dict(type="str"),
+    link=dict(type="dict"),
+    name=dict(type="str"),
+    version=dict(type="str"),
 ))
 
 required_if = [
@@ -45,11 +46,12 @@ class NetworkAccessDictionary(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            id=params.get("id"),
-            name=params.get("name"),
             description=params.get("description"),
-            version=params.get("version"),
             dictionary_attr_type=params.get("dictionaryAttrType"),
+            id=params.get("id"),
+            link=params.get("link"),
+            name=params.get("name"),
+            version=params.get("version"),
         )
 
     def get_object_by_name(self, name):
@@ -58,7 +60,7 @@ class NetworkAccessDictionary(object):
                 family="network_access_dictionary",
                 function="get_network_access_dictionary_by_name",
                 params={"name": name}
-            ).response.get('response')
+            ).response.get('response', {})
             result = get_dict_result(result, 'name', name)
         except Exception as e:
             result = None
@@ -92,11 +94,12 @@ class NetworkAccessDictionary(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("id", "id"),
-            ("name", "name"),
             ("description", "description"),
-            ("version", "version"),
             ("dictionaryAttrType", "dictionary_attr_type"),
+            ("id", "id"),
+            ("link", "link"),
+            ("name", "name"),
+            ("version", "version"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
@@ -121,7 +124,7 @@ class NetworkAccessDictionary(object):
             self.new_object.update(dict(name=name_))
         result = self.ise.exec(
             family="network_access_dictionary",
-            function="update_network_access_dictionaries_by_name",
+            function="update_network_access_dictionary_by_name",
             params=self.new_object
         ).response
         return result
@@ -135,7 +138,7 @@ class NetworkAccessDictionary(object):
             self.new_object.update(dict(name=name_))
         result = self.ise.exec(
             family="network_access_dictionary",
-            function="delete_network_access_dictionaries_by_name",
+            function="delete_network_access_dictionary_by_name",
             params=self.new_object
         ).response
         return result

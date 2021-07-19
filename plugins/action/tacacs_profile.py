@@ -22,10 +22,10 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    id=dict(type="str"),
     name=dict(type="str"),
     description=dict(type="str"),
     sessionAttributes=dict(type="dict"),
+    id=dict(type="str"),
 ))
 
 required_if = [
@@ -41,10 +41,10 @@ class TacacsProfile(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            id=params.get("id"),
             name=params.get("name"),
             description=params.get("description"),
             session_attributes=params.get("sessionAttributes"),
+            id=params.get("id"),
         )
 
     def get_object_by_name(self, name):
@@ -87,10 +87,10 @@ class TacacsProfile(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("id", "id"),
             ("name", "name"),
             ("description", "description"),
             ("sessionAttributes", "session_attributes"),
+            ("id", "id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

@@ -71,7 +71,7 @@ class ActionModule(ActionBase):
         if not name and not id:
             response = ise.exec(
                 family="network_access_security_groups",
-                function='get_all_network_access_security_groups',
+                function='get_network_access_security_groups',
                 params=self.get_object(self._task.args),
             ).response
             self._result.update(dict(ise_response=response))

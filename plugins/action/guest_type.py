@@ -25,13 +25,14 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    id=dict(type="str"),
     name=dict(type="str"),
     description=dict(type="str"),
+    isDefaultType=dict(type="bool"),
     accessTime=dict(type="dict"),
     loginOptions=dict(type="dict"),
     expirationNotification=dict(type="dict"),
     sponsorGroups=dict(type="list"),
+    id=dict(type="str"),
 ))
 
 required_if = [
@@ -47,20 +48,21 @@ class GuestType(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            id=params.get("id"),
             name=params.get("name"),
             description=params.get("description"),
+            is_default_type=params.get("isDefaultType"),
             access_time=params.get("accessTime"),
             login_options=params.get("loginOptions"),
             expiration_notification=params.get("expirationNotification"),
             sponsor_groups=params.get("sponsorGroups"),
+            id=params.get("id"),
         )
 
     def get_object_by_name(self, name):
         try:
             result = self.ise.exec(
                 family="guest_type",
-                function="get_all_guest_type",
+                function="get_guest_type",
                 params={"filter": "name.EQ.{0}".format(name)}
             ).response['SearchResult']['resources']
             result = get_dict_result(result, 'name', name)
@@ -104,13 +106,14 @@ class GuestType(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("id", "id"),
             ("name", "name"),
             ("description", "description"),
+            ("isDefaultType", "is_default_type"),
             ("accessTime", "access_time"),
             ("loginOptions", "login_options"),
             ("expirationNotification", "expiration_notification"),
             ("sponsorGroups", "sponsor_groups"),
+            ("id", "id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
@@ -135,7 +138,7 @@ class GuestType(object):
             self.new_object.update(dict(id=id_))
         result = self.ise.exec(
             family="guest_type",
-            function="update_guesttype_by_id",
+            function="update_guest_type_by_id",
             params=self.new_object
         ).response
         return result

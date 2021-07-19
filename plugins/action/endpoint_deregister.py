@@ -70,6 +70,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="endpoint",
+            function='deregister_endpoint',
             params=self.get_object(self._task.args),
         ).response
         self._result.update(dict(ise_response=response))

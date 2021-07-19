@@ -22,7 +22,6 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    id=dict(type="str"),
     name=dict(type="str"),
     description=dict(type="str"),
     mac=dict(type="str"),
@@ -33,8 +32,9 @@ argument_spec.update(dict(
     portalUser=dict(type="str"),
     identityStore=dict(type="str"),
     identityStoreId=dict(type="str"),
-    customAttributes=dict(type="dict"),
     mdmAttributes=dict(type="dict"),
+    customAttributes=dict(type="dict"),
+    id=dict(type="str"),
 ))
 
 required_if = [
@@ -50,7 +50,6 @@ class Endpoint(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            id=params.get("id"),
             name=params.get("name"),
             description=params.get("description"),
             mac=params.get("mac"),
@@ -61,8 +60,9 @@ class Endpoint(object):
             portal_user=params.get("portalUser"),
             identity_store=params.get("identityStore"),
             identity_store_id=params.get("identityStoreId"),
-            custom_attributes=params.get("customAttributes"),
             mdm_attributes=params.get("mdmAttributes"),
+            custom_attributes=params.get("customAttributes"),
+            id=params.get("id"),
         )
 
     def get_object_by_name(self, name):
@@ -105,7 +105,6 @@ class Endpoint(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("id", "id"),
             ("name", "name"),
             ("description", "description"),
             ("mac", "mac"),
@@ -116,8 +115,9 @@ class Endpoint(object):
             ("portalUser", "portal_user"),
             ("identityStore", "identity_store"),
             ("identityStoreId", "identity_store_id"),
-            ("customAttributes", "custom_attributes"),
             ("mdmAttributes", "mdm_attributes"),
+            ("customAttributes", "custom_attributes"),
+            ("id", "id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

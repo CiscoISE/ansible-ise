@@ -19,10 +19,7 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    id=dict(type="str"),
-    name=dict(type="str"),
-    description=dict(type="str"),
-    macAddresses=dict(type="list"),
+    macAddresses=dict(type="str"),
 ))
 
 required_if = []
@@ -59,9 +56,6 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            id=params.get("id"),
-            name=params.get("name"),
-            description=params.get("description"),
             mac_addresses=params.get("macAddresses"),
         )
         return new_object
@@ -75,7 +69,7 @@ class ActionModule(ActionBase):
         ise = ISESDK(params=self._task.args)
 
         response = ise.exec(
-            family="threat",
+            family="clear_threats_and_vulnerabilities",
             function='clear_threats_and_vulnerabilities',
             params=self.get_object(self._task.args),
         ).response

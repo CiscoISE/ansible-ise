@@ -97,7 +97,7 @@ class ActionModule(ActionBase):
             response = []
             generator = ise.exec(
                 family="certificates",
-                function='get_csr_generator',
+                function='get_csrs_generator',
                 params=self.get_object(self._task.args),
             )
             for item in generator:

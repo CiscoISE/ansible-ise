@@ -71,7 +71,7 @@ class ActionModule(ActionBase):
         if not name and not id:
             response = ise.exec(
                 family="device_administration_command_set",
-                function='get_all_device_admin_command_sets',
+                function='get_device_admin_command_sets',
                 params=self.get_object(self._task.args),
             ).response
             self._result.update(dict(ise_response=response))

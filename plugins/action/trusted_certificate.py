@@ -25,29 +25,29 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    name=dict(type="str"),
-    status=dict(type="str"),
-    description=dict(type="str"),
-    enableOCSPValidation=dict(type="bool"),
-    selectedOCSPService=dict(type="str"),
-    rejectIfNoStatusFromOCSP=dict(type="bool"),
-    rejectIfUnreachableFromOCSP=dict(type="bool"),
-    downloadCRL=dict(type="bool"),
-    crlDistributionUrl=dict(type="str"),
+    authenticateBeforeCRLReceived=dict(type="bool"),
     automaticCRLUpdate=dict(type="bool"),
     automaticCRLUpdatePeriod=dict(type="int"),
     automaticCRLUpdateUnits=dict(type="str"),
-    nonAutomaticCRLUpdatePeriod=dict(type="int"),
-    nonAutomaticCRLUpdateUnits=dict(type="str"),
+    crlDistributionUrl=dict(type="str"),
     crlDownloadFailureRetries=dict(type="int"),
     crlDownloadFailureRetriesUnits=dict(type="str"),
+    description=dict(type="str"),
+    downloadCRL=dict(type="bool"),
+    enableOCSPValidation=dict(type="bool"),
     enableServerIdentityCheck=dict(type="bool"),
-    authenticateBeforeCRLReceived=dict(type="bool"),
     ignoreCRLExpiration=dict(type="bool"),
-    trustForIseAuth=dict(type="bool"),
-    trustForClientAuth=dict(type="bool"),
-    trustForCiscoServicesAuth=dict(type="bool"),
+    name=dict(type="str"),
+    nonAutomaticCRLUpdatePeriod=dict(type="int"),
+    nonAutomaticCRLUpdateUnits=dict(type="str"),
+    rejectIfNoStatusFromOCSP=dict(type="bool"),
+    rejectIfUnreachableFromOCSP=dict(type="bool"),
+    selectedOCSPService=dict(type="str"),
+    status=dict(type="str"),
     trustForCertificateBasedAdminAuth=dict(type="bool"),
+    trustForCiscoServicesAuth=dict(type="bool"),
+    trustForClientAuth=dict(type="bool"),
+    trustForIseAuth=dict(type="bool"),
     id=dict(type="str"),
 ))
 
@@ -64,29 +64,29 @@ class TrustedCertificate(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            name=params.get("name"),
-            status=params.get("status"),
-            description=params.get("description"),
-            enable_ocs_p_validation=params.get("enableOCSPValidation"),
-            selected_ocs_p_service=params.get("selectedOCSPService"),
-            reject_if_no_status_from_ocs_p=params.get("rejectIfNoStatusFromOCSP"),
-            reject_if_unreachable_from_ocs_p=params.get("rejectIfUnreachableFromOCSP"),
-            download_crl=params.get("downloadCRL"),
-            crl_distribution_url=params.get("crlDistributionUrl"),
+            authenticate_before_crl_received=params.get("authenticateBeforeCRLReceived"),
             automatic_crl_update=params.get("automaticCRLUpdate"),
             automatic_crl_update_period=params.get("automaticCRLUpdatePeriod"),
             automatic_crl_update_units=params.get("automaticCRLUpdateUnits"),
-            non_automatic_crl_update_period=params.get("nonAutomaticCRLUpdatePeriod"),
-            non_automatic_crl_update_units=params.get("nonAutomaticCRLUpdateUnits"),
+            crl_distribution_url=params.get("crlDistributionUrl"),
             crl_download_failure_retries=params.get("crlDownloadFailureRetries"),
             crl_download_failure_retries_units=params.get("crlDownloadFailureRetriesUnits"),
+            description=params.get("description"),
+            download_crl=params.get("downloadCRL"),
+            enable_ocsp_validation=params.get("enableOCSPValidation"),
             enable_server_identity_check=params.get("enableServerIdentityCheck"),
-            authenticate_before_crl_received=params.get("authenticateBeforeCRLReceived"),
             ignore_crl_expiration=params.get("ignoreCRLExpiration"),
-            trust_for_ise_auth=params.get("trustForIseAuth"),
-            trust_for_client_auth=params.get("trustForClientAuth"),
-            trust_for_cisco_services_auth=params.get("trustForCiscoServicesAuth"),
+            name=params.get("name"),
+            non_automatic_crl_update_period=params.get("nonAutomaticCRLUpdatePeriod"),
+            non_automatic_crl_update_units=params.get("nonAutomaticCRLUpdateUnits"),
+            reject_if_no_status_from_ocs_p=params.get("rejectIfNoStatusFromOCSP"),
+            reject_if_unreachable_from_ocs_p=params.get("rejectIfUnreachableFromOCSP"),
+            selected_ocsp_service=params.get("selectedOCSPService"),
+            status=params.get("status"),
             trust_for_certificate_based_admin_auth=params.get("trustForCertificateBasedAdminAuth"),
+            trust_for_cisco_services_auth=params.get("trustForCiscoServicesAuth"),
+            trust_for_client_auth=params.get("trustForClientAuth"),
+            trust_for_ise_auth=params.get("trustForIseAuth"),
             id=params.get("id"),
         )
 
@@ -94,9 +94,9 @@ class TrustedCertificate(object):
         try:
             result = self.ise.exec(
                 family="certificates",
-                function="get_all_trusted_certificates",
+                function="get_trusted_certificates",
                 params={"filter": "name.EQ.{0}".format(name)}
-            ).response.get('response', []) or []
+            ).response.get('response', [])
             result = get_dict_result(result, 'name', name)
         except Exception as e:
             result = None
@@ -108,7 +108,7 @@ class TrustedCertificate(object):
                 family="certificates",
                 function="get_trusted_certificate_by_id",
                 params={"id": id}
-            ).response.get('response')
+            ).response.get('response', {})
         except Exception as e:
             result = None
         return result
@@ -138,29 +138,29 @@ class TrustedCertificate(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("name", "name"),
-            ("status", "status"),
-            ("description", "description"),
-            ("enableOCSPValidation", "enable_ocs_p_validation"),
-            ("selectedOCSPService", "selected_ocs_p_service"),
-            ("rejectIfNoStatusFromOCSP", "reject_if_no_status_from_ocs_p"),
-            ("rejectIfUnreachableFromOCSP", "reject_if_unreachable_from_ocs_p"),
-            ("downloadCRL", "download_crl"),
-            ("crlDistributionUrl", "crl_distribution_url"),
+            ("authenticateBeforeCRLReceived", "authenticate_before_crl_received"),
             ("automaticCRLUpdate", "automatic_crl_update"),
             ("automaticCRLUpdatePeriod", "automatic_crl_update_period"),
             ("automaticCRLUpdateUnits", "automatic_crl_update_units"),
-            ("nonAutomaticCRLUpdatePeriod", "non_automatic_crl_update_period"),
-            ("nonAutomaticCRLUpdateUnits", "non_automatic_crl_update_units"),
+            ("crlDistributionUrl", "crl_distribution_url"),
             ("crlDownloadFailureRetries", "crl_download_failure_retries"),
             ("crlDownloadFailureRetriesUnits", "crl_download_failure_retries_units"),
+            ("description", "description"),
+            ("downloadCRL", "download_crl"),
+            ("enableOCSPValidation", "enable_ocsp_validation"),
             ("enableServerIdentityCheck", "enable_server_identity_check"),
-            ("authenticateBeforeCRLReceived", "authenticate_before_crl_received"),
             ("ignoreCRLExpiration", "ignore_crl_expiration"),
-            ("trustForIseAuth", "trust_for_ise_auth"),
-            ("trustForClientAuth", "trust_for_client_auth"),
-            ("trustForCiscoServicesAuth", "trust_for_cisco_services_auth"),
+            ("name", "name"),
+            ("nonAutomaticCRLUpdatePeriod", "non_automatic_crl_update_period"),
+            ("nonAutomaticCRLUpdateUnits", "non_automatic_crl_update_units"),
+            ("rejectIfNoStatusFromOCSP", "reject_if_no_status_from_ocs_p"),
+            ("rejectIfUnreachableFromOCSP", "reject_if_unreachable_from_ocs_p"),
+            ("selectedOCSPService", "selected_ocsp_service"),
+            ("status", "status"),
             ("trustForCertificateBasedAdminAuth", "trust_for_certificate_based_admin_auth"),
+            ("trustForCiscoServicesAuth", "trust_for_cisco_services_auth"),
+            ("trustForClientAuth", "trust_for_client_auth"),
+            ("trustForIseAuth", "trust_for_ise_auth"),
             ("id", "id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params

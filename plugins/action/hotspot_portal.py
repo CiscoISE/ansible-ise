@@ -28,6 +28,7 @@ argument_spec.update(dict(
     name=dict(type="str"),
     description=dict(type="str"),
     portalType=dict(type="str"),
+    portalTestUrl=dict(type="str"),
     settings=dict(type="dict"),
     customizations=dict(type="dict"),
     id=dict(type="str"),
@@ -49,6 +50,7 @@ class HotspotPortal(object):
             name=params.get("name"),
             description=params.get("description"),
             portal_type=params.get("portalType"),
+            portal_test_url=params.get("portalTestUrl"),
             settings=params.get("settings"),
             customizations=params.get("customizations"),
             id=params.get("id"),
@@ -58,7 +60,7 @@ class HotspotPortal(object):
         try:
             result = self.ise.exec(
                 family="hotspot_portal",
-                function="get_all_hotspot_portal",
+                function="get_hotspot_portal",
                 params={"filter": "name.EQ.{0}".format(name)}
             ).response['SearchResult']['resources']
             result = get_dict_result(result, 'name', name)
@@ -105,6 +107,7 @@ class HotspotPortal(object):
             ("name", "name"),
             ("description", "description"),
             ("portalType", "portal_type"),
+            ("portalTestUrl", "portal_test_url"),
             ("settings", "settings"),
             ("customizations", "customizations"),
             ("id", "id"),

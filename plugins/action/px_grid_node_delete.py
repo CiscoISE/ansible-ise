@@ -19,8 +19,6 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    policyId=dict(type="str"),
-    id=dict(type="str"),
 ))
 
 required_if = []
@@ -57,8 +55,6 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            policy_id=params.get("policyId"),
-            id=params.get("id"),
         )
         return new_object
 
@@ -70,23 +66,11 @@ class ActionModule(ActionBase):
 
         ise = ISESDK(params=self._task.args)
 
-        id = self._task.args.get("id")
-        name = self._task.args.get("name")
-        if id:
-            response = ise.exec(
-                family="device_administration_authorization_exception_rules",
-                function='get_device_admin_local_exception_by_id',
-                params=self.get_object(self._task.args)
-            ).response
-            self._result.update(dict(ise_response=response))
-            self._result.update(ise.exit_json())
-            return self._result
-        if not name and not id:
-            response = ise.exec(
-                family="device_administration_authorization_exception_rules",
-                function='get_all_device_admin_local_exception',
-                params=self.get_object(self._task.args),
-            ).response
-            self._result.update(dict(ise_response=response))
-            self._result.update(ise.exit_json())
-            return self._result
+        response = ise.exec(
+            family="px_grid_node",
+            function="delete_px_grid_node_by_name",
+            params=self.get_object(self._task.args),
+        ).response['PxgridNode']
+        self._result.update(dict(ise_response=response))
+        self._result.update(ise.exit_json())
+        return self._result

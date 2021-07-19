@@ -25,8 +25,8 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    id=dict(type="str"),
     sxpVpnName=dict(type="str"),
+    id=dict(type="str"),
 ))
 
 required_if = [
@@ -42,15 +42,15 @@ class SxpVpns(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            id=params.get("id"),
             sxp_vpn_name=params.get("sxpVpnName"),
+            id=params.get("id"),
         )
 
     def get_object_by_name(self, name):
         try:
             result = self.ise.exec(
                 family="sxp_vpns",
-                function="get_all_sxp_vpns",
+                function="get_sxp_vpns",
                 params={"filter": "name.EQ.{0}".format(name)}
             ).response['SearchResult']['resources']
             result = get_dict_result(result, 'name', name)
@@ -94,8 +94,8 @@ class SxpVpns(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("id", "id"),
             ("sxpVpnName", "sxp_vpn_name"),
+            ("id", "id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

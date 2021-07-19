@@ -19,10 +19,10 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
+    name=dict(type="str"),
+    id=dict(type="str"),
     page=dict(type="int"),
     size=dict(type="int"),
-    id=dict(type="str"),
-    name=dict(type="str"),
 ))
 
 required_if = []
@@ -59,10 +59,10 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
+            name=params.get("name"),
+            id=params.get("id"),
             page=params.get("page"),
             size=params.get("size"),
-            id=params.get("id"),
-            name=params.get("name"),
         )
         return new_object
 
@@ -81,7 +81,7 @@ class ActionModule(ActionBase):
                 family="certificate_profile",
                 function='get_certificate_profile_by_id',
                 params=self.get_object(self._task.args)
-            ).response
+            ).response['CertificateProfile']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result
@@ -90,7 +90,7 @@ class ActionModule(ActionBase):
                 family="certificate_profile",
                 function='get_certificate_profile_by_name',
                 params=self.get_object(self._task.args)
-            ).response
+            ).response['CertificateProfile']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result
@@ -98,7 +98,7 @@ class ActionModule(ActionBase):
             response = []
             generator = ise.exec(
                 family="certificate_profile",
-                function='get_all_certificate_profile_generator',
+                function='get_certificate_profile_generator',
                 params=self.get_object(self._task.args),
             )
             for item in generator:

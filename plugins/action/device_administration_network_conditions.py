@@ -25,10 +25,11 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    name=dict(type="str"),
-    id=dict(type="str"),
-    description=dict(type="str"),
     conditionType=dict(type="str"),
+    description=dict(type="str"),
+    id=dict(type="str"),
+    link=dict(type="dict"),
+    name=dict(type="str"),
     conditions=dict(type="list"),
 ))
 
@@ -45,10 +46,11 @@ class DeviceAdministrationNetworkConditions(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            name=params.get("name"),
-            id=params.get("id"),
-            description=params.get("description"),
             condition_type=params.get("conditionType"),
+            description=params.get("description"),
+            id=params.get("id"),
+            link=params.get("link"),
+            name=params.get("name"),
             conditions=params.get("conditions"),
         )
 
@@ -57,8 +59,8 @@ class DeviceAdministrationNetworkConditions(object):
         result = None
         items = self.ise.exec(
             family="device_administration_network_conditions",
-            function="get_all_device_admin_network_conditions",
-        ).response.get('response', []) or []
+            function="get_device_admin_network_conditions",
+        ).response.get('response', [])
         for item in items:
             if item.get('name') == name and item.get('id'):
                 result = dict(item)
@@ -71,15 +73,15 @@ class DeviceAdministrationNetworkConditions(object):
                 family="device_administration_network_conditions",
                 function="get_device_admin_network_condition_by_id",
                 params={"id": id}
-            ).response.get('response')
+            ).response.get('response', {})
         except Exception as e:
             result = None
         return result
 
     def exists(self):
-        prev_obj = None
         id_exists = False
         name_exists = False
+        prev_obj = None
         o_id = self.new_object.get("id")
         name = self.new_object.get("name")
         if o_id:
@@ -101,10 +103,11 @@ class DeviceAdministrationNetworkConditions(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("name", "name"),
-            ("id", "id"),
-            ("description", "description"),
             ("conditionType", "condition_type"),
+            ("description", "description"),
+            ("id", "id"),
+            ("link", "link"),
+            ("name", "name"),
             ("conditions", "conditions"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params

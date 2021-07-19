@@ -19,9 +19,9 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
+    backupEncryptionKey=dict(type="str"),
     backupName=dict(type="str"),
     repositoryName=dict(type="str"),
-    backupEncryptionKey=dict(type="str"),
 ))
 
 required_if = []
@@ -58,9 +58,9 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
+            backup_encryption_key=params.get("backupEncryptionKey"),
             backup_name=params.get("backupName"),
             repository_name=params.get("repositoryName"),
-            backup_encryption_key=params.get("backupEncryptionKey"),
         )
         return new_object
 

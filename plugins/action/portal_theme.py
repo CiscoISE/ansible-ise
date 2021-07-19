@@ -26,6 +26,7 @@ argument_spec = ise_argument_spec()
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
     name=dict(type="str"),
+    description=dict(type="str"),
     themeData=dict(type="str"),
     id=dict(type="str"),
 ))
@@ -44,6 +45,7 @@ class PortalTheme(object):
         self.ise = ise
         self.new_object = dict(
             name=params.get("name"),
+            description=params.get("description"),
             theme_data=params.get("themeData"),
             id=params.get("id"),
         )
@@ -52,7 +54,7 @@ class PortalTheme(object):
         try:
             result = self.ise.exec(
                 family="portal_theme",
-                function="get_all_portal_themes",
+                function="get_portal_themes",
                 params={"filter": "name.EQ.{0}".format(name)}
             ).response['SearchResult']['resources']
             result = get_dict_result(result, 'name', name)
@@ -97,6 +99,7 @@ class PortalTheme(object):
 
         obj_params = [
             ("name", "name"),
+            ("description", "description"),
             ("themeData", "theme_data"),
             ("id", "id"),
         ]

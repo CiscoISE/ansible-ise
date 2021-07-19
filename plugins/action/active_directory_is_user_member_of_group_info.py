@@ -77,7 +77,7 @@ class ActionModule(ActionBase):
                 family="active_directory",
                 function='is_user_member_of_groups',
                 params=self.get_object(self._task.args),
-            ).response
+            ).response['ERSActiveDirectoryGroups']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

@@ -19,6 +19,8 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
+    autoApproveCertBasedAccounts=dict(type="bool"),
+    allowPasswordBasedAccounts=dict(type="bool"),
 ))
 
 required_if = []
@@ -55,6 +57,8 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
+            auto_approve_cert_based_accounts=params.get("autoApproveCertBasedAccounts"),
+            allow_password_based_accounts=params.get("allowPasswordBasedAccounts"),
         )
         return new_object
 
@@ -68,7 +72,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="px_grid_settings",
-            function='autoapprove_px_grid_node',
+            function='autoapprove_px_grid_settings',
             params=self.get_object(self._task.args),
         ).response
         self._result.update(dict(ise_response=response))

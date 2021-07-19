@@ -25,7 +25,6 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    id=dict(type="str"),
     name=dict(type="str"),
     description=dict(type="str"),
     isEnabled=dict(type="bool"),
@@ -37,6 +36,7 @@ argument_spec.update(dict(
     createPermissions=dict(type="dict"),
     managePermission=dict(type="str"),
     otherPermissions=dict(type="dict"),
+    id=dict(type="str"),
 ))
 
 required_if = [
@@ -52,7 +52,6 @@ class SponsorGroup(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            id=params.get("id"),
             name=params.get("name"),
             description=params.get("description"),
             is_enabled=params.get("isEnabled"),
@@ -64,13 +63,14 @@ class SponsorGroup(object):
             create_permissions=params.get("createPermissions"),
             manage_permission=params.get("managePermission"),
             other_permissions=params.get("otherPermissions"),
+            id=params.get("id"),
         )
 
     def get_object_by_name(self, name):
         try:
             result = self.ise.exec(
                 family="sponsor_group",
-                function="get_all_sponsor_group",
+                function="get_sponsor_group",
                 params={"filter": "name.EQ.{0}".format(name)}
             ).response['SearchResult']['resources']
             result = get_dict_result(result, 'name', name)
@@ -114,7 +114,6 @@ class SponsorGroup(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("id", "id"),
             ("name", "name"),
             ("description", "description"),
             ("isEnabled", "is_enabled"),
@@ -126,6 +125,7 @@ class SponsorGroup(object):
             ("createPermissions", "create_permissions"),
             ("managePermission", "manage_permission"),
             ("otherPermissions", "other_permissions"),
+            ("id", "id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

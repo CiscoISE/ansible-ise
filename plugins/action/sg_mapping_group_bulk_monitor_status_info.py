@@ -72,7 +72,7 @@ class ActionModule(ActionBase):
         name = self._task.args.get("name")
         if id:
             response = ise.exec(
-                family="sg_mapping_group",
+                family="ip_to_sgt_mapping_group",
                 function='monitor_bulk_status_ip_to_sgt_mapping_group',
                 params=self.get_object(self._task.args)
             ).response

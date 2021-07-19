@@ -59,18 +59,15 @@ class EgressMatrixCell(object):
         )
 
     def get_object_by_name(self, name):
-        # NOTICE: Get does not support filter by name
-        result = None
-        gen_items_responses = self.ise.exec(
-            family="egress_matrix_cell",
-            function="get_all_egress_matrix_cell_generator"
-        )
-        for items_response in gen_items_responses:
-            items = items_response.response['SearchResult']['resources']
-            for item in items:
-                if item.get('name') == name and item.get('id'):
-                    result = dict(item)
-                    return result
+        try:
+            result = self.ise.exec(
+                family="egress_matrix_cell",
+                function="get_egress_matrix_cell",
+                params={"filter": "name.EQ.{0}".format(name)}
+            ).response['SearchResult']['resources']
+            result = get_dict_result(result, 'name', name)
+        except Exception as e:
+            result = None
         return result
 
     def get_object_by_id(self, id):

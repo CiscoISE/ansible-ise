@@ -84,7 +84,7 @@ class ActionModule(ActionBase):
         if not name and not id:
             response = ise.exec(
                 family="device_administration_authorization_rules",
-                function='get_all_device_admin_authorization_rules',
+                function='get_device_admin_authorization_rules',
                 params=self.get_object(self._task.args),
             ).response
             self._result.update(dict(ise_response=response))

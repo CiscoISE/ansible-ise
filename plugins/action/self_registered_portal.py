@@ -25,12 +25,13 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    id=dict(type="str"),
     name=dict(type="str"),
     description=dict(type="str"),
     portalType=dict(type="str"),
+    portalTestUrl=dict(type="str"),
     settings=dict(type="dict"),
     customizations=dict(type="dict"),
+    id=dict(type="str"),
 ))
 
 required_if = [
@@ -46,19 +47,20 @@ class SelfRegisteredPortal(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            id=params.get("id"),
             name=params.get("name"),
             description=params.get("description"),
             portal_type=params.get("portalType"),
+            portal_test_url=params.get("portalTestUrl"),
             settings=params.get("settings"),
             customizations=params.get("customizations"),
+            id=params.get("id"),
         )
 
     def get_object_by_name(self, name):
         try:
             result = self.ise.exec(
                 family="self_registered_portal",
-                function="get_all_self_registered_portals",
+                function="get_self_registered_portals",
                 params={"filter": "name.EQ.{0}".format(name)}
             ).response['SearchResult']['resources']
             result = get_dict_result(result, 'name', name)
@@ -102,12 +104,13 @@ class SelfRegisteredPortal(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("id", "id"),
             ("name", "name"),
             ("description", "description"),
             ("portalType", "portal_type"),
+            ("portalTestUrl", "portal_test_url"),
             ("settings", "settings"),
             ("customizations", "customizations"),
+            ("id", "id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

@@ -71,7 +71,7 @@ class ActionModule(ActionBase):
         if not name and not id:
             response = ise.exec(
                 family="network_access_dictionary_attributes_list",
-                function='get_all_network_access_dictionaries_authentication',
+                function='get_network_access_dictionaries_authentication',
                 params=self.get_object(self._task.args),
             ).response
             self._result.update(dict(ise_response=response))

@@ -28,9 +28,9 @@ argument_spec.update(dict(
     name=dict(type="str"),
     protocol=dict(type="str"),
     path=dict(type="str"),
+    password=dict(type="str", no_log=True),
     serverName=dict(type="str"),
     userName=dict(type="str"),
-    password=dict(type="str", no_log=True),
     enablePki=dict(type="bool"),
 ))
 
@@ -50,9 +50,9 @@ class Repository(object):
             name=params.get("name"),
             protocol=params.get("protocol"),
             path=params.get("path"),
+            password=params.get("password"),
             server_name=params.get("serverName"),
             user_name=params.get("userName"),
-            password=params.get("password"),
             enable_pki=params.get("enablePki"),
         )
 
@@ -60,9 +60,9 @@ class Repository(object):
         try:
             result = self.ise.exec(
                 family="repository",
-                function="get_repository_by_name",
+                function="get_repository",
                 params={"name": name}
-            ).response['response']
+            ).response.get('response', {})
             result = get_dict_result(result, 'name', name)
         except Exception as e:
             result = None
@@ -99,9 +99,9 @@ class Repository(object):
             ("name", "name"),
             ("protocol", "protocol"),
             ("path", "path"),
+            ("password", "password"),
             ("serverName", "server_name"),
             ("userName", "user_name"),
-            ("password", "password"),
             ("enablePki", "enable_pki"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
@@ -127,7 +127,7 @@ class Repository(object):
             self.new_object.update(dict(name=name_))
         result = self.ise.exec(
             family="repository",
-            function="update_repository_by_name",
+            function="update_repository",
             params=self.new_object
         ).response
         return result
@@ -141,7 +141,7 @@ class Repository(object):
             self.new_object.update(dict(name=name_))
         result = self.ise.exec(
             family="repository",
-            function="delete_repository_by_name",
+            function="delete_repository",
             params=self.new_object
         ).response
         return result

@@ -19,9 +19,13 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
+    id=dict(type="str"),
     page=dict(type="int"),
     size=dict(type="int"),
-    id=dict(type="str"),
+    sortasc=dict(type="str"),
+    sortdsc=dict(type="str"),
+    filter=dict(type="list"),
+    filterType=dict(type="str"),
 ))
 
 required_if = []
@@ -58,9 +62,13 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
+            id=params.get("id"),
             page=params.get("page"),
             size=params.get("size"),
-            id=params.get("id"),
+            sortasc=params.get("sortasc"),
+            sortdsc=params.get("sortdsc"),
+            filter=params.get("filter"),
+            filter_type=params.get("filterType"),
         )
         return new_object
 
@@ -87,7 +95,7 @@ class ActionModule(ActionBase):
             response = []
             generator = ise.exec(
                 family="sponsor_portal",
-                function='get_all_sponsor_portal_generator',
+                function='get_sponsor_portal_generator',
                 params=self.get_object(self._task.args),
             )
             for item in generator:

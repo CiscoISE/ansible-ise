@@ -57,7 +57,7 @@ class DownloadableAcl(object):
         result = None
         gen_items_responses = self.ise.exec(
             family="downloadable_acl",
-            function="get_all_downloadable_acl_generator"
+            function="get_downloadable_acl_generator"
         )
         for items_response in gen_items_responses:
             items = items_response.response['SearchResult']['resources']

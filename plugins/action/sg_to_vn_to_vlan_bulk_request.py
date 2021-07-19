@@ -71,7 +71,7 @@ class ActionModule(ActionBase):
         ise = ISESDK(params=self._task.args)
 
         response = ise.exec(
-            family="sgt_vn_vlan",
+            family="security_group_to_virtual_network",
             function='bulk_request_for_security_groups_to_vn_to_vlan',
             params=self.get_object(self._task.args),
         ).response

@@ -25,20 +25,20 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    rule=dict(type="dict"),
     identitySourceId=dict(type="str"),
+    identitySourceName=dict(type="str"),
     ifAuthFail=dict(type="str"),
-    ifUserNotFound=dict(type="str"),
     ifProcessFail=dict(type="str"),
+    ifUserNotFound=dict(type="str"),
+    link=dict(type="dict"),
+    rule=dict(type="dict"),
     policyId=dict(type="str"),
     id=dict(type="str"),
 ))
 
 required_if = [
-    ("state", "present", ["id", "rule"], True),
-    ("state", "present", ["policyId"], True),
-    ("state", "absent", ["id", "rule"], True),
-    ("state", "absent", ["policyId"], True),
+    ("state", "present", ["id", "policyId"], True),
+    ("state", "absent", ["id", "policyId"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -49,11 +49,13 @@ class DeviceAdministrationAuthenticationRules(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            rule=params.get("rule"),
             identity_source_id=params.get("identitySourceId"),
+            identity_source_name=params.get("identitySourceName"),
             if_auth_fail=params.get("ifAuthFail"),
-            if_user_not_found=params.get("ifUserNotFound"),
             if_process_fail=params.get("ifProcessFail"),
+            if_user_not_found=params.get("ifUserNotFound"),
+            link=params.get("link"),
+            rule=params.get("rule"),
             policy_id=params.get("policyId"),
             id=params.get("id"),
         )
@@ -63,7 +65,7 @@ class DeviceAdministrationAuthenticationRules(object):
         result = None
         items = self.ise.exec(
             family="device_administration_authentication_rules",
-            function="get_all_device_admin_authentication_rules",
+            function="get_device_admin_authentication_rules",
             params={"policy_id": policy_id}
         ).response.get('response', []) or []
         for item in items:
@@ -78,15 +80,15 @@ class DeviceAdministrationAuthenticationRules(object):
                 family="device_administration_authentication_rules",
                 function="get_device_admin_authentication_rule_by_id",
                 params={"id": id, "policy_id": policy_id}
-            ).response.get('response')
+            ).response.get('response', {})
         except Exception as e:
             result = None
         return result
 
     def exists(self):
-        prev_obj = None
         id_exists = False
         name_exists = False
+        prev_obj = None
         o_id = self.new_object.get("id") or self.new_object.get('rule', {}).get("id")
         policy_id = self.new_object.get("policy_id")
         name = self.new_object.get('rule', {}).get("name")
@@ -109,11 +111,13 @@ class DeviceAdministrationAuthenticationRules(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("rule", "rule"),
             ("identitySourceId", "identity_source_id"),
+            ("identitySourceName", "identity_source_name"),
             ("ifAuthFail", "if_auth_fail"),
-            ("ifUserNotFound", "if_user_not_found"),
             ("ifProcessFail", "if_process_fail"),
+            ("ifUserNotFound", "if_user_not_found"),
+            ("link", "link"),
+            ("rule", "rule"),
             ("policyId", "policy_id"),
             ("id", "id"),
         ]
@@ -126,7 +130,7 @@ class DeviceAdministrationAuthenticationRules(object):
     def create(self):
         result = self.ise.exec(
             family="device_administration_authentication_rules",
-            function="create_device_admin_authentication_rules",
+            function="create_device_admin_authentication_rule",
             params=self.new_object,
         ).response
         return result

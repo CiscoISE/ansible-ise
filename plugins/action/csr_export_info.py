@@ -21,6 +21,8 @@ argument_spec = ise_argument_spec()
 argument_spec.update(dict(
     hostname=dict(type="str"),
     id=dict(type="str"),
+    dirPath=dict(type="str"),
+    saveFile=dict(type="bool"),
 ))
 
 required_if = []
@@ -59,6 +61,8 @@ class ActionModule(ActionBase):
         new_object = dict(
             hostname=params.get("hostname"),
             id=params.get("id"),
+            dirpath=params.get("dirPath"),
+            save_file=params.get("saveFile"),
         )
         return new_object
 

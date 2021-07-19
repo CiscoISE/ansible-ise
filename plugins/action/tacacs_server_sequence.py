@@ -23,6 +23,7 @@ argument_spec = ise_argument_spec()
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
     name=dict(type="str"),
+    description=dict(type="str"),
     serverList=dict(type="str"),
     localAccounting=dict(type="bool"),
     remoteAccounting=dict(type="bool"),
@@ -47,6 +48,7 @@ class TacacsServerSequence(object):
         self.ise = ise
         self.new_object = dict(
             name=params.get("name"),
+            description=params.get("description"),
             server_list=params.get("serverList"),
             local_accounting=params.get("localAccounting"),
             remote_accounting=params.get("remoteAccounting"),
@@ -98,6 +100,7 @@ class TacacsServerSequence(object):
 
         obj_params = [
             ("name", "name"),
+            ("description", "description"),
             ("serverList", "server_list"),
             ("localAccounting", "local_accounting"),
             ("remoteAccounting", "remote_accounting"),

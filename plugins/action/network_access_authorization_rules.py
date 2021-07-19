@@ -25,18 +25,17 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    rule=dict(type="dict"),
+    link=dict(type="dict"),
     profile=dict(type="list"),
+    rule=dict(type="dict"),
     securityGroup=dict(type="str"),
     policyId=dict(type="str"),
     id=dict(type="str"),
 ))
 
 required_if = [
-    ("state", "present", ["id", "rule"], True),
-    ("state", "present", ["policyId"], True),
-    ("state", "absent", ["id", "rule"], True),
-    ("state", "absent", ["policyId"], True),
+    ("state", "present", ["id", "policyId"], True),
+    ("state", "absent", ["id", "policyId"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -47,8 +46,9 @@ class NetworkAccessAuthorizationRules(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            rule=params.get("rule"),
+            link=params.get("link"),
             profile=params.get("profile"),
+            rule=params.get("rule"),
             security_group=params.get("securityGroup"),
             policy_id=params.get("policyId"),
             id=params.get("id"),
@@ -59,7 +59,7 @@ class NetworkAccessAuthorizationRules(object):
         result = None
         items = self.ise.exec(
             family="network_access_authorization_rules",
-            function="get_all_network_access_authorization_rules",
+            function="get_network_access_authorization_rules",
             params={"policy_id": policy_id}
         ).response.get('response', []) or []
         for item in items:
@@ -74,15 +74,15 @@ class NetworkAccessAuthorizationRules(object):
                 family="network_access_authorization_rules",
                 function="get_network_access_authorization_rule_by_id",
                 params={"id": id, "policy_id": policy_id}
-            ).response.get('response')
+            ).response.get('response', {})
         except Exception as e:
             result = None
         return result
 
     def exists(self):
-        prev_obj = None
         id_exists = False
         name_exists = False
+        prev_obj = None
         o_id = self.new_object.get("id") or self.new_object.get('rule', {}).get("id")
         policy_id = self.new_object.get("policy_id")
         name = self.new_object.get('rule', {}).get("name")
@@ -105,8 +105,9 @@ class NetworkAccessAuthorizationRules(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("rule", "rule"),
+            ("link", "link"),
             ("profile", "profile"),
+            ("rule", "rule"),
             ("securityGroup", "security_group"),
             ("policyId", "policy_id"),
             ("id", "id"),

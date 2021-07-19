@@ -75,7 +75,7 @@ class ActionModule(ActionBase):
         ise = ISESDK(params=self._task.args)
 
         response = ise.exec(
-            family="support_bundle",
+            family="support_bundle_trigger_configuration",
             function='create_support_bundle',
             params=self.get_object(self._task.args),
         ).response

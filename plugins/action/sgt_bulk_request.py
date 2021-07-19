@@ -71,7 +71,7 @@ class ActionModule(ActionBase):
         ise = ISESDK(params=self._task.args)
 
         response = ise.exec(
-            family="sgt",
+            family="security_groups",
             function='bulk_request_for_security_group',
             params=self.get_object(self._task.args),
         ).response

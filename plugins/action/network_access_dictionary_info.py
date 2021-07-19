@@ -80,8 +80,11 @@ class ActionModule(ActionBase):
             self._result.update(ise.exit_json())
             return self._result
         if not name and not id:
-            # NOTICE: Does not have a get all method or it is in another action
-            response = None
+            response = ise.exec(
+                family="network_access_dictionary",
+                function='get_network_access_dictionaries',
+                params=self.get_object(self._task.args),
+            ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

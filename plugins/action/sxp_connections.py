@@ -64,7 +64,7 @@ class SxpConnections(object):
         try:
             result = self.ise.exec(
                 family="sxp_connections",
-                function="get_all_sxp_connections",
+                function="get_sxp_connections",
                 params={"filter": "name.EQ.{0}".format(name)}
             ).response['SearchResult']['resources']
             result = get_dict_result(result, 'name', name)

@@ -71,7 +71,7 @@ class ActionModule(ActionBase):
         if not name and not id:
             response = ise.exec(
                 family="device_administration_dictionary_attributes_list",
-                function='get_all_device_admin_dictionaries_authentication',
+                function='get_device_admin_dictionaries_authentication',
                 params=self.get_object(self._task.args),
             ).response
             self._result.update(dict(ise_response=response))

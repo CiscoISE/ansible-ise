@@ -22,10 +22,13 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    id=dict(type="str"),
     name=dict(type="str"),
     description=dict(type="str"),
     parent=dict(type="str"),
+    idSeqItem=dict(type="list"),
+    certificateAuthenticationProfile=dict(type="str"),
+    breakOnStoreFail=dict(type="bool"),
+    id=dict(type="str"),
 ))
 
 required_if = [
@@ -41,19 +44,22 @@ class IdStoreSequence(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            id=params.get("id"),
             name=params.get("name"),
             description=params.get("description"),
             parent=params.get("parent"),
+            id_seq_item=params.get("idSeqItem"),
+            certificate_authentication_profile=params.get("certificateAuthenticationProfile"),
+            break_on_store_fail=params.get("breakOnStoreFail"),
+            id=params.get("id"),
         )
 
     def get_object_by_name(self, name):
         try:
             result = self.ise.exec(
-                family="identity_store_sequence",
-                function="get_identity_store_sequence_by_name",
+                family="identity_sequence",
+                function="get_identity_sequence_by_name",
                 params={"name": name}
-            ).response['IdentityGroup']
+            ).response['IdStoreSequence']
             result = get_dict_result(result, 'name', name)
         except Exception as e:
             result = None
@@ -62,10 +68,10 @@ class IdStoreSequence(object):
     def get_object_by_id(self, id):
         try:
             result = self.ise.exec(
-                family="identity_store_sequence",
-                function="get_identity_store_sequence_by_id",
+                family="identity_sequence",
+                function="get_identity_sequence_by_id",
                 params={"id": id}
-            ).response['IdentityGroup']
+            ).response['IdStoreSequence']
         except Exception as e:
             result = None
         return result
@@ -87,10 +93,13 @@ class IdStoreSequence(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("id", "id"),
             ("name", "name"),
             ("description", "description"),
             ("parent", "parent"),
+            ("idSeqItem", "id_seq_item"),
+            ("certificateAuthenticationProfile", "certificate_authentication_profile"),
+            ("breakOnStoreFail", "break_on_store_fail"),
+            ("id", "id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
@@ -100,8 +109,8 @@ class IdStoreSequence(object):
 
     def create(self):
         result = self.ise.exec(
-            family="identity_store_sequence",
-            function="create_identity_store_sequence",
+            family="identity_sequence",
+            function="create_identity_sequence",
             params=self.new_object,
         ).response
         return result
@@ -114,8 +123,8 @@ class IdStoreSequence(object):
             id_ = self.get_object_by_name(name).get("id")
             self.new_object.update(dict(id=id_))
         result = self.ise.exec(
-            family="identity_store_sequence",
-            function="update_identity_store_sequence_by_id",
+            family="identity_sequence",
+            function="update_identity_sequence_by_id",
             params=self.new_object
         ).response
         return result
@@ -128,8 +137,8 @@ class IdStoreSequence(object):
             id_ = self.get_object_by_name(name).get("id")
             self.new_object.update(dict(id=id_))
         result = self.ise.exec(
-            family="identity_store_sequence",
-            function="delete_identity_store_sequence_by_id",
+            family="identity_sequence",
+            function="delete_identity_sequence_by_id",
             params=self.new_object
         ).response
         return result

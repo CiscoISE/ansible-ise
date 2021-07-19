@@ -70,6 +70,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="px_grid_node",
+            function='approve_px_grid_node',
             params=self.get_object(self._task.args),
         ).response
         self._result.update(dict(ise_response=response))

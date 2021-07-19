@@ -19,14 +19,17 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    backupName=dict(type="str"),
     backupDescription=dict(type="str"),
-    repositoryName=dict(type="str"),
     backupEncryptionKey=dict(type="str"),
-    frequency=dict(type="str"),
-    startDate=dict(type="str"),
+    backupName=dict(type="str"),
     endDate=dict(type="str"),
+    frequency=dict(type="str"),
+    monthDay=dict(type="str"),
+    repositoryName=dict(type="str"),
+    startDate=dict(type="str"),
+    status=dict(type="str"),
     time=dict(type="str"),
+    weekDay=dict(type="str"),
 ))
 
 required_if = []
@@ -63,14 +66,17 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            backup_name=params.get("backupName"),
             backup_description=params.get("backupDescription"),
-            repository_name=params.get("repositoryName"),
             backup_encryption_key=params.get("backupEncryptionKey"),
-            frequency=params.get("frequency"),
-            start_date=params.get("startDate"),
+            backup_name=params.get("backupName"),
             end_date=params.get("endDate"),
+            frequency=params.get("frequency"),
+            month_day=params.get("monthDay"),
+            repository_name=params.get("repositoryName"),
+            start_date=params.get("startDate"),
+            status=params.get("status"),
             time=params.get("time"),
+            week_day=params.get("weekDay"),
         )
         return new_object
 
@@ -84,7 +90,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="backup_and_restore",
-            function='schedule_config_backup',
+            function='create_scheduled_config_backup',
             params=self.get_object(self._task.args),
         ).response
         self._result.update(dict(ise_response=response))

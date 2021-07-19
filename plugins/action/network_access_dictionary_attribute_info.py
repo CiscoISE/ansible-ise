@@ -19,8 +19,8 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    name=dict(type="str"),
     dictionaryName=dict(type="str"),
+    name=dict(type="str"),
 ))
 
 required_if = []
@@ -57,8 +57,8 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            name=params.get("name"),
             dictionary_name=params.get("dictionaryName"),
+            name=params.get("name"),
         )
         return new_object
 
@@ -82,8 +82,11 @@ class ActionModule(ActionBase):
             self._result.update(ise.exit_json())
             return self._result
         if not name and not id:
-            # NOTICE: Does not have a get all method or it is in another action
-            response = None
+            response = ise.exec(
+                family="network_access_dictionary_attribute",
+                function='get_network_access_dictionary_attributes_by_dictionary_name',
+                params=self.get_object(self._task.args),
+            ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

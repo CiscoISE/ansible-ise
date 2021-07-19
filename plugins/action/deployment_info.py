@@ -19,7 +19,7 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    timeout=dict(type="float"),
+    timeout=dict(type="int"),
 ))
 
 required_if = []
@@ -56,7 +56,7 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            timeout=params.get('timeout')
+            timeout=params.get("timeout"),
         )
         return new_object
 
@@ -72,8 +72,8 @@ class ActionModule(ActionBase):
         name = self._task.args.get("name")
         if not name and not id:
             response = ise.exec(
-                family="deployment",
-                function='get_all_deployment_info',
+                family="pull_deployment_info",
+                function='get_deployment_info',
                 params=self.get_object(self._task.args),
             ).response['ERSDeploymentInfo']
             self._result.update(dict(ise_response=response))

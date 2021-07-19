@@ -22,13 +22,19 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
+    name=dict(type="str"),
+    description=dict(type="str"),
     guestType=dict(type="str"),
+    status=dict(type="str"),
+    statusReason=dict(type="str"),
     reasonForVisit=dict(type="str"),
-    portalId=dict(type="str"),
+    sponsorUserId=dict(type="str"),
+    sponsorUserName=dict(type="str"),
     guestInfo=dict(type="dict"),
     guestAccessInfo=dict(type="dict"),
+    portalId=dict(type="str"),
+    customFields=dict(type="dict"),
     id=dict(type="str"),
-    name=dict(type="str"),
 ))
 
 required_if = [
@@ -44,13 +50,19 @@ class GuestUser(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
+            name=params.get("name"),
+            description=params.get("description"),
             guest_type=params.get("guestType"),
+            status=params.get("status"),
+            status_reason=params.get("statusReason"),
             reason_for_visit=params.get("reasonForVisit"),
-            portal_id=params.get("portalId"),
+            sponsor_user_id=params.get("sponsorUserId"),
+            sponsor_user_name=params.get("sponsorUserName"),
             guest_info=params.get("guestInfo"),
             guest_access_info=params.get("guestAccessInfo"),
+            portal_id=params.get("portalId"),
+            custom_fields=params.get("customFields"),
             id=params.get("id"),
-            name=params.get("name"),
         )
 
     def get_object_by_name(self, name):
@@ -93,13 +105,19 @@ class GuestUser(object):
         requested_obj = self.new_object
 
         obj_params = [
+            ("name", "name"),
+            ("description", "description"),
             ("guestType", "guest_type"),
+            ("status", "status"),
+            ("statusReason", "status_reason"),
             ("reasonForVisit", "reason_for_visit"),
-            ("portalId", "portal_id"),
+            ("sponsorUserId", "sponsor_user_id"),
+            ("sponsorUserName", "sponsor_user_name"),
             ("guestInfo", "guest_info"),
             ("guestAccessInfo", "guest_access_info"),
+            ("portalId", "portal_id"),
+            ("customFields", "custom_fields"),
             ("id", "id"),
-            ("name", "name"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

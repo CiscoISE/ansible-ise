@@ -19,10 +19,10 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
+    name=dict(type="str"),
+    id=dict(type="str"),
     page=dict(type="int"),
     size=dict(type="int"),
-    id=dict(type="str"),
-    name=dict(type="str"),
 ))
 
 required_if = []
@@ -59,10 +59,10 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
+            name=params.get("name"),
+            id=params.get("id"),
             page=params.get("page"),
             size=params.get("size"),
-            id=params.get("id"),
-            name=params.get("name"),
         )
         return new_object
 
@@ -81,7 +81,7 @@ class ActionModule(ActionBase):
                 family="px_grid_node",
                 function='get_px_grid_node_by_id',
                 params=self.get_object(self._task.args)
-            ).response
+            ).response['PxgridNode']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result
@@ -90,7 +90,7 @@ class ActionModule(ActionBase):
                 family="px_grid_node",
                 function='get_px_grid_node_by_name',
                 params=self.get_object(self._task.args)
-            ).response
+            ).response['PxgridNode']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result
@@ -98,11 +98,11 @@ class ActionModule(ActionBase):
             response = []
             generator = ise.exec(
                 family="px_grid_node",
-                function='get_all_px_grid_node_generator',
+                function='get_px_grid_node_generator',
                 params=self.get_object(self._task.args),
             )
             for item in generator:
-                tmp_response = item.response
+                tmp_response = item.response['SearchResult']['resources']
                 if isinstance(tmp_response, list):
                     response += tmp_response
                 else:

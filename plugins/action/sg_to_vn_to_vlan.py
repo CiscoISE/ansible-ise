@@ -53,24 +53,21 @@ class SgToVnToVlan(object):
         )
 
     def get_object_by_name(self, name):
-        # NOTICE: Does not have a get by name method or it is in another action
-        result = None
-        gen_items_responses = self.ise.exec(
-            family="sgt_vn_vlan",
-            function="get_all_security_groups_to_vn_to_vlan_generator"
-        )
-        for items_response in gen_items_responses:
-            items = items_response.response['SearchResult']['resources']
-            for item in items:
-                if item.get('name') == name and item.get('id'):
-                    result = dict(item)
-                    return result
+        try:
+            result = self.ise.exec(
+                family="security_group_to_virtual_network",
+                function="get_security_groups_to_vn_to_vlan",
+                params={"filter": "name.EQ.{0}".format(name)}
+            ).response['SearchResult']['resources']
+            result = get_dict_result(result, 'name', name)
+        except Exception as e:
+            result = None
         return result
 
     def get_object_by_id(self, id):
         try:
             result = self.ise.exec(
-                family="sgt_vn_vlan",
+                family="security_group_to_virtual_network",
                 function="get_security_groups_to_vn_to_vlan_by_id",
                 params={"id": id}
             ).response['SgtVNVlanContainer']
@@ -117,7 +114,7 @@ class SgToVnToVlan(object):
 
     def create(self):
         result = self.ise.exec(
-            family="sgt_vn_vlan",
+            family="security_group_to_virtual_network",
             function="create_security_groups_to_vn_to_vlan",
             params=self.new_object,
         ).response
@@ -131,7 +128,7 @@ class SgToVnToVlan(object):
             id_ = self.get_object_by_name(name).get("id")
             self.new_object.update(dict(id=id_))
         result = self.ise.exec(
-            family="sgt_vn_vlan",
+            family="security_group_to_virtual_network",
             function="update_security_groups_to_vn_to_vlan_by_id",
             params=self.new_object
         ).response
@@ -145,7 +142,7 @@ class SgToVnToVlan(object):
             id_ = self.get_object_by_name(name).get("id")
             self.new_object.update(dict(id=id_))
         result = self.ise.exec(
-            family="sgt_vn_vlan",
+            family="security_group_to_virtual_network",
             function="delete_security_groups_to_vn_to_vlan_by_id",
             params=self.new_object
         ).response

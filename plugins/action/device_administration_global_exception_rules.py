@@ -25,28 +25,30 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    rule=dict(type="dict"),
     commands=dict(type="list"),
+    link=dict(type="dict"),
     profile=dict(type="str"),
+    rule=dict(type="dict"),
     id=dict(type="str"),
 ))
 
 required_if = [
-    ("state", "present", ["id", "rule"], True),
-    ("state", "absent", ["id", "rule"], True),
+    ("state", "present", ["id"], True),
+    ("state", "absent", ["id"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
 required_together = []
 
 
-class DeviceAdministrationAuthorizationGlobalExceptionRules(object):
+class DeviceAdministrationGlobalExceptionRules(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            rule=params.get("rule"),
             commands=params.get("commands"),
+            link=params.get("link"),
             profile=params.get("profile"),
+            rule=params.get("rule"),
             id=params.get("id"),
         )
 
@@ -55,7 +57,7 @@ class DeviceAdministrationAuthorizationGlobalExceptionRules(object):
         result = None
         items = self.ise.exec(
             family="device_administration_authorization_global_exception_rules",
-            function="get_all_device_admin_policy_set_global_exception",
+            function="get_device_admin_policy_set_global_exception_rules",
         ).response.get('response', []) or []
         for item in items:
             if item.get('rule') and item['rule'].get('name') == name and item['rule'].get('id'):
@@ -67,17 +69,17 @@ class DeviceAdministrationAuthorizationGlobalExceptionRules(object):
         try:
             result = self.ise.exec(
                 family="device_administration_authorization_global_exception_rules",
-                function="get_device_admin_policy_set_global_exception_by_id",
+                function="get_device_admin_policy_set_global_exception_by_rule_id",
                 params={"id": id}
-            ).response.get('response')
+            ).response.get('response', {})
         except Exception as e:
             result = None
         return result
 
     def exists(self):
-        prev_obj = None
         id_exists = False
         name_exists = False
+        prev_obj = None
         o_id = self.new_object.get("id") or self.new_object.get('rule', {}).get("id")
         name = self.new_object.get('rule', {}).get("name")
         if o_id:
@@ -99,9 +101,10 @@ class DeviceAdministrationAuthorizationGlobalExceptionRules(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("rule", "rule"),
             ("commands", "commands"),
+            ("link", "link"),
             ("profile", "profile"),
+            ("rule", "rule"),
             ("id", "id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
@@ -129,7 +132,7 @@ class DeviceAdministrationAuthorizationGlobalExceptionRules(object):
             self.new_object.update(dict(rule=rule, id=id_))
         result = self.ise.exec(
             family="device_administration_authorization_global_exception_rules",
-            function="update_device_admin_policyset_global_exception_by_id",
+            function="update_device_admin_policy_set_global_exception_by_rule_id",
             params=self.new_object
         ).response
         return result
@@ -145,7 +148,7 @@ class DeviceAdministrationAuthorizationGlobalExceptionRules(object):
             self.new_object.update(dict(rule=rule, id=id_))
         result = self.ise.exec(
             family="device_administration_authorization_global_exception_rules",
-            function="delete_device_admin_policyset_global_exception_by_id",
+            function="delete_device_admin_policy_set_global_exception_by_rule_id",
             params=self.new_object
         ).response
         return result
@@ -184,7 +187,7 @@ class ActionModule(ActionBase):
         self._check_argspec()
 
         ise = ISESDK(self._task.args)
-        obj = DeviceAdministrationAuthorizationGlobalExceptionRules(self._task.args, ise)
+        obj = DeviceAdministrationGlobalExceptionRules(self._task.args, ise)
 
         state = self._task.args.get("state")
 

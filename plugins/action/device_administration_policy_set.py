@@ -25,16 +25,17 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    id=dict(type="str"),
-    name=dict(type="str"),
+    condition=dict(type="dict"),
+    default=dict(type="bool"),
     description=dict(type="str"),
     hitCounts=dict(type="int"),
-    rank=dict(type="int"),
-    state_=dict(type="str"),
-    default=dict(type="bool"),
-    condition=dict(type="dict"),
-    serviceName=dict(type="str"),
+    id=dict(type="str"),
     isProxy=dict(type="bool"),
+    link=dict(type="dict"),
+    name=dict(type="str"),
+    rank=dict(type="int"),
+    serviceName=dict(type="str"),
+    state_=dict(type="str"),
 ))
 
 required_if = [
@@ -50,16 +51,17 @@ class DeviceAdministrationPolicySet(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            id=params.get("id"),
-            name=params.get("name"),
+            condition=params.get("condition"),
+            default=params.get("default"),
             description=params.get("description"),
             hit_counts=params.get("hitCounts"),
-            rank=params.get("rank"),
-            state=params.get("state_"),
-            default=params.get("default"),
-            condition=params.get("condition"),
-            service_name=params.get("serviceName"),
+            id=params.get("id"),
             is_proxy=params.get("isProxy"),
+            link=params.get("link"),
+            name=params.get("name"),
+            rank=params.get("rank"),
+            service_name=params.get("serviceName"),
+            state=params.get("state_"),
         )
 
     def get_object_by_name(self, name):
@@ -67,8 +69,8 @@ class DeviceAdministrationPolicySet(object):
         result = None
         items = self.ise.exec(
             family="device_administration_policy_set",
-            function="get_all_device_admin_policy_sets",
-        ).response.get('response', []) or []
+            function="get_device_admin_policy_sets",
+        ).response.get('response', [])
         for item in items:
             if item.get('name') == name and item.get('id'):
                 result = dict(item)
@@ -81,15 +83,15 @@ class DeviceAdministrationPolicySet(object):
                 family="device_administration_policy_set",
                 function="get_device_admin_policy_set_by_id",
                 params={"id": id}
-            ).response.get('response')
+            ).response.get('response', {})
         except Exception as e:
             result = None
         return result
 
     def exists(self):
-        prev_obj = None
         id_exists = False
         name_exists = False
+        prev_obj = None
         o_id = self.new_object.get("id")
         name = self.new_object.get("name")
         if o_id:
@@ -111,16 +113,17 @@ class DeviceAdministrationPolicySet(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("id", "id"),
-            ("name", "name"),
+            ("condition", "condition"),
+            ("default", "default"),
             ("description", "description"),
             ("hitCounts", "hit_counts"),
-            ("rank", "rank"),
-            ("state_", "state"),
-            ("default", "default"),
-            ("condition", "condition"),
-            ("serviceName", "service_name"),
+            ("id", "id"),
             ("isProxy", "is_proxy"),
+            ("link", "link"),
+            ("name", "name"),
+            ("rank", "rank"),
+            ("serviceName", "service_name"),
+            ("state_", "state"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

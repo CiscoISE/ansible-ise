@@ -20,6 +20,8 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     id=dict(type="str"),
+    dirPath=dict(type="str"),
+    saveFile=dict(type="bool"),
 ))
 
 required_if = []
@@ -57,6 +59,8 @@ class ActionModule(ActionBase):
     def get_object(self, params):
         new_object = dict(
             id=params.get("id"),
+            dirpath=params.get("dirPath"),
+            save_file=params.get("saveFile"),
         )
         return new_object
 

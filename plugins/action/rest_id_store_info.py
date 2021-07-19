@@ -19,14 +19,14 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
+    name=dict(type="str"),
+    id=dict(type="str"),
     page=dict(type="int"),
     size=dict(type="int"),
-    filter=dict(type="list"),
-    filterType=dict(type="str"),
     sortasc=dict(type="str"),
     sortdsc=dict(type="str"),
-    id=dict(type="str"),
-    name=dict(type="str"),
+    filter=dict(type="list"),
+    filterType=dict(type="str"),
 ))
 
 required_if = []
@@ -63,14 +63,14 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
+            name=params.get("name"),
+            id=params.get("id"),
             page=params.get("page"),
             size=params.get("size"),
-            filter=params.get("filter"),
-            filter_type=params.get("filterType"),
             sortasc=params.get("sortasc"),
             sortdsc=params.get("sortdsc"),
-            id=params.get("id"),
-            name=params.get("name"),
+            filter=params.get("filter"),
+            filter_type=params.get("filterType"),
         )
         return new_object
 
@@ -106,7 +106,7 @@ class ActionModule(ActionBase):
             response = []
             generator = ise.exec(
                 family="restid_store",
-                function='get_all_rest_id_store_generator',
+                function='get_rest_id_store_generator',
                 params=self.get_object(self._task.args),
             )
             for item in generator:

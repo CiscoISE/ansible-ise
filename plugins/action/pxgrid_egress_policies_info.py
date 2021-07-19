@@ -19,7 +19,6 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    id=dict(type="str"),
 ))
 
 required_if = []
@@ -56,7 +55,6 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            id=params.get("id"),
         )
         return new_object
 
@@ -68,23 +66,11 @@ class ActionModule(ActionBase):
 
         ise = ISESDK(params=self._task.args)
 
-        id = self._task.args.get("id")
-        name = self._task.args.get("name")
-        if id:
-            response = ise.exec(
-                family="network_access_authorization_global_exception_rules",
-                function='get_network_access_global_exception_rule_by_id',
-                params=self.get_object(self._task.args)
-            ).response
-            self._result.update(dict(ise_response=response))
-            self._result.update(ise.exit_json())
-            return self._result
-        if not name and not id:
-            response = ise.exec(
-                family="network_access_authorization_global_exception_rules",
-                function='get_all_network_access_global_exception_rules',
-                params=self.get_object(self._task.args),
-            ).response
-            self._result.update(dict(ise_response=response))
-            self._result.update(ise.exit_json())
-            return self._result
+        response = ise.exec(
+            family="trust_sec_configuration",
+            function='get_egress_policies',
+            params=self.get_object(self._task.args),
+        ).response
+        self._result.update(dict(ise_response=response))
+        self._result.update(ise.exit_json())
+        return self._result

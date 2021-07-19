@@ -23,6 +23,11 @@ argument_spec.update(dict(
     name=dict(type="str"),
     description=dict(type="str"),
     domain=dict(type="str"),
+    enableDomainWhiteList=dict(type="bool"),
+    adgroups=dict(type="dict"),
+    advancedSettings=dict(type="dict"),
+    adAttributes=dict(type="dict"),
+    adScopesNames=dict(type="str"),
 ))
 
 required_if = []
@@ -63,6 +68,11 @@ class ActionModule(ActionBase):
             name=params.get("name"),
             description=params.get("description"),
             domain=params.get("domain"),
+            enable_domain_white_list=params.get("enableDomainWhiteList"),
+            adgroups=params.get("adgroups"),
+            advanced_settings=params.get("advancedSettings"),
+            ad_attributes=params.get("adAttributes"),
+            ad_scopes_names=params.get("adScopesNames"),
         )
         return new_object
 
@@ -76,6 +86,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="active_directory",
+            function='load_groups_from_domain',
             params=self.get_object(self._task.args),
         ).response
         self._result.update(dict(ise_response=response))

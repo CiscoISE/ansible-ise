@@ -30,6 +30,8 @@ argument_spec.update(dict(
     deployTo=dict(type="str"),
     deployType=dict(type="str"),
     hostName=dict(type="str"),
+    hostIp=dict(type="str"),
+    mappingGroup=dict(type="str"),
     id=dict(type="str"),
 ))
 
@@ -51,14 +53,16 @@ class SgMapping(object):
             deploy_to=params.get("deployTo"),
             deploy_type=params.get("deployType"),
             host_name=params.get("hostName"),
+            host_ip=params.get("hostIp"),
+            mapping_group=params.get("mappingGroup"),
             id=params.get("id"),
         )
 
     def get_object_by_name(self, name):
         try:
             result = self.ise.exec(
-                family="sg_mapping",
-                function="get_all_ip_to_sgt_mapping",
+                family="ip_to_sgt_mapping",
+                function="get_ip_to_sgt_mapping",
                 params={"filter": "name.EQ.{0}".format(name)}
             ).response['SearchResult']['resources']
             result = get_dict_result(result, 'name', name)
@@ -69,10 +73,10 @@ class SgMapping(object):
     def get_object_by_id(self, id):
         try:
             result = self.ise.exec(
-                family="sg_mapping",
+                family="ip_to_sgt_mapping",
                 function="get_ip_to_sgt_mapping_by_id",
                 params={"id": id}
-            ).response.get('SGMapping')
+            ).response['SGMapping']
         except Exception as e:
             result = None
         return result
@@ -107,6 +111,8 @@ class SgMapping(object):
             ("deployTo", "deploy_to"),
             ("deployType", "deploy_type"),
             ("hostName", "host_name"),
+            ("hostIp", "host_ip"),
+            ("mappingGroup", "mapping_group"),
             ("id", "id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
@@ -117,7 +123,7 @@ class SgMapping(object):
 
     def create(self):
         result = self.ise.exec(
-            family="sg_mapping",
+            family="ip_to_sgt_mapping",
             function="create_ip_to_sgt_mapping",
             params=self.new_object,
         ).response
@@ -131,7 +137,7 @@ class SgMapping(object):
             id_ = self.get_object_by_name(name).get("id")
             self.new_object.update(dict(id=id_))
         result = self.ise.exec(
-            family="sg_mapping",
+            family="ip_to_sgt_mapping",
             function="update_ip_to_sgt_mapping_by_id",
             params=self.new_object
         ).response
@@ -145,7 +151,7 @@ class SgMapping(object):
             id_ = self.get_object_by_name(name).get("id")
             self.new_object.update(dict(id=id_))
         result = self.ise.exec(
-            family="sg_mapping",
+            family="ip_to_sgt_mapping",
             function="delete_ip_to_sgt_mapping_by_id",
             params=self.new_object
         ).response

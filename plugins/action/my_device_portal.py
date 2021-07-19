@@ -24,17 +24,19 @@ from ansible_collections.cisco.ise.plugins.module_utils.exceptions import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    state=dict(type="str", default="present", choices=["present"]),
-    id=dict(type="str"),
+    state=dict(type="str", default="present", choices=["present", "absent"]),
     name=dict(type="str"),
     description=dict(type="str"),
     portalType=dict(type="str"),
+    portalTestUrl=dict(type="str"),
     settings=dict(type="dict"),
     customizations=dict(type="dict"),
+    id=dict(type="str"),
 ))
 
 required_if = [
     ("state", "present", ["id", "name"], True),
+    ("state", "absent", ["id", "name"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -45,19 +47,20 @@ class MyDevicePortal(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            id=params.get("id"),
             name=params.get("name"),
             description=params.get("description"),
             portal_type=params.get("portalType"),
+            portal_test_url=params.get("portalTestUrl"),
             settings=params.get("settings"),
             customizations=params.get("customizations"),
+            id=params.get("id"),
         )
 
     def get_object_by_name(self, name):
         try:
             result = self.ise.exec(
                 family="my_device_portal",
-                function="get_all_my_device_portal",
+                function="get_my_device_portal",
                 params={"filter": "name.EQ.{0}".format(name)}
             ).response['SearchResult']['resources']
             result = get_dict_result(result, 'name', name)
@@ -77,9 +80,9 @@ class MyDevicePortal(object):
         return result
 
     def exists(self):
-        prev_obj = None
         id_exists = False
         name_exists = False
+        prev_obj = None
         o_id = self.new_object.get("id")
         name = self.new_object.get("name")
         if o_id:
@@ -101,12 +104,13 @@ class MyDevicePortal(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("id", "id"),
             ("name", "name"),
             ("description", "description"),
             ("portalType", "portal_type"),
+            ("portalTestUrl", "portal_test_url"),
             ("settings", "settings"),
             ("customizations", "customizations"),
+            ("id", "id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
@@ -132,6 +136,20 @@ class MyDevicePortal(object):
         result = self.ise.exec(
             family="my_device_portal",
             function="update_my_device_portal_by_id",
+            params=self.new_object
+        ).response
+        return result
+
+    def delete(self):
+        id = self.new_object.get("id")
+        name = self.new_object.get("name")
+        result = None
+        if not id:
+            id_ = self.get_object_by_name(name).get("id")
+            self.new_object.update(dict(id=id_))
+        result = self.ise.exec(
+            family="my_device_portal",
+            function="delete_my_device_portal_by_id",
             params=self.new_object
         ).response
         return result
@@ -175,6 +193,7 @@ class ActionModule(ActionBase):
         state = self._task.args.get("state")
 
         response = None
+
         if state == "present":
             (obj_exists, prev_obj) = obj.exists()
             if obj_exists:
@@ -187,6 +206,14 @@ class ActionModule(ActionBase):
             else:
                 response = obj.create()
                 ise.object_created()
+
+        elif state == "absent":
+            (obj_exists, prev_obj) = obj.exists()
+            if obj_exists:
+                response = obj.delete()
+                ise.object_deleted()
+            else:
+                ise.object_already_absent()
 
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())

@@ -21,16 +21,15 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    state=dict(type="str", default="present", choices=["present", "absent"]),
-    id=dict(type="str"),
+    state=dict(type="str", default="present", choices=["present"]),
     name=dict(type="str"),
     description=dict(type="str"),
     parent=dict(type="str"),
+    id=dict(type="str"),
 ))
 
 required_if = [
     ("state", "present", ["id", "name"], True),
-    ("state", "absent", ["id", "name"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -41,16 +40,16 @@ class IdentityGroup(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            id=params.get("id"),
             name=params.get("name"),
             description=params.get("description"),
             parent=params.get("parent"),
+            id=params.get("id"),
         )
 
     def get_object_by_name(self, name):
         try:
             result = self.ise.exec(
-                family="identity_group",
+                family="identity_groups",
                 function="get_identity_group_by_name",
                 params={"name": name}
             ).response['IdentityGroup']
@@ -62,7 +61,7 @@ class IdentityGroup(object):
     def get_object_by_id(self, id):
         try:
             result = self.ise.exec(
-                family="identity_group",
+                family="identity_groups",
                 function="get_identity_group_by_id",
                 params={"id": id}
             ).response['IdentityGroup']
@@ -71,8 +70,8 @@ class IdentityGroup(object):
         return result
 
     def exists(self):
-        result = False
         prev_obj = None
+        result = False
         id = self.new_object.get("id")
         name = self.new_object.get("name")
         if id:
@@ -87,10 +86,10 @@ class IdentityGroup(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("id", "id"),
             ("name", "name"),
             ("description", "description"),
             ("parent", "parent"),
+            ("id", "id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
@@ -100,7 +99,7 @@ class IdentityGroup(object):
 
     def create(self):
         result = self.ise.exec(
-            family="identity_group",
+            family="identity_groups",
             function="create_identity_group",
             params=self.new_object,
         ).response
@@ -114,22 +113,8 @@ class IdentityGroup(object):
             id_ = self.get_object_by_name(name).get("id")
             self.new_object.update(dict(id=id_))
         result = self.ise.exec(
-            family="identity_group",
+            family="identity_groups",
             function="update_identity_group_by_id",
-            params=self.new_object
-        ).response
-        return result
-
-    def delete(self):
-        id = self.new_object.get("id")
-        name = self.new_object.get("name")
-        result = None
-        if not id:
-            id_ = self.get_object_by_name(name).get("id")
-            self.new_object.update(dict(id=id_))
-        result = self.ise.exec(
-            family="identity_group",
-            function="delete_identity_group_by_id",
             params=self.new_object
         ).response
         return result
@@ -173,7 +158,6 @@ class ActionModule(ActionBase):
         state = self._task.args.get("state")
 
         response = None
-
         if state == "present":
             (obj_exists, prev_obj) = obj.exists()
             if obj_exists:
@@ -186,14 +170,6 @@ class ActionModule(ActionBase):
             else:
                 response = obj.create()
                 ise.object_created()
-
-        elif state == "absent":
-            (obj_exists, prev_obj) = obj.exists()
-            if obj_exists:
-                response = obj.delete()
-                ise.object_deleted()
-            else:
-                ise.object_already_absent()
 
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())

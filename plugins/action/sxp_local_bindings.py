@@ -26,9 +26,6 @@ argument_spec = ise_argument_spec()
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
     id=dict(type="str"),
-    name=dict(type="str"),
-    description=dict(type="str"),
-    bindingName=dict(type="str"),
     ipAddressOrHost=dict(type="str"),
     sxpVpn=dict(type="str"),
     sgt=dict(type="str"),
@@ -36,8 +33,8 @@ argument_spec.update(dict(
 ))
 
 required_if = [
-    ("state", "present", ["id", "name"], True),
-    ("state", "absent", ["id", "name"], True),
+    ("state", "present", ["id"], True),
+    ("state", "absent", ["id"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -49,9 +46,6 @@ class SxpLocalBindings(object):
         self.ise = ise
         self.new_object = dict(
             id=params.get("id"),
-            name=params.get("name"),
-            description=params.get("description"),
-            binding_name=params.get("bindingName"),
             ip_address_or_host=params.get("ipAddressOrHost"),
             sxp_vpn=params.get("sxpVpn"),
             sgt=params.get("sgt"),
@@ -62,7 +56,7 @@ class SxpLocalBindings(object):
         try:
             result = self.ise.exec(
                 family="sxp_local_bindings",
-                function="get_all_sxp_local_bindings",
+                function="get_sxp_local_bindings",
                 params={"filter": "name.EQ.{0}".format(name)}
             ).response['SearchResult']['resources']
             result = get_dict_result(result, 'name', name)
@@ -107,9 +101,6 @@ class SxpLocalBindings(object):
 
         obj_params = [
             ("id", "id"),
-            ("name", "name"),
-            ("description", "description"),
-            ("bindingName", "binding_name"),
             ("ipAddressOrHost", "ip_address_or_host"),
             ("sxpVpn", "sxp_vpn"),
             ("sgt", "sgt"),

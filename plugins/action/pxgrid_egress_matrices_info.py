@@ -19,10 +19,6 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    id=dict(type="str"),
-    certificateID=dict(type="str"),
-    password=dict(type="str"),
-    export=dict(type="str"),
 ))
 
 required_if = []
@@ -59,10 +55,6 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            id=params.get("id"),
-            certificate_id=params.get("certificateID"),
-            password=params.get("password"),
-            export=params.get("export"),
         )
         return new_object
 
@@ -75,8 +67,8 @@ class ActionModule(ActionBase):
         ise = ISESDK(params=self._task.args)
 
         response = ise.exec(
-            family="certificates",
-            function='export_system_cert',
+            family="trust_sec_configuration",
+            function='get_egress_matrices',
             params=self.get_object(self._task.args),
         ).response
         self._result.update(dict(ise_response=response))

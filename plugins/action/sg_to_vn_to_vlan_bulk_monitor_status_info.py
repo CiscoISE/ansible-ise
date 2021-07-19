@@ -72,7 +72,7 @@ class ActionModule(ActionBase):
         name = self._task.args.get("name")
         if id:
             response = ise.exec(
-                family="sgt_vn_vlan",
+                family="security_group_to_virtual_network",
                 function='monitor_bulk_status_security_groups_to_vn_to_vlan',
                 params=self.get_object(self._task.args)
             ).response

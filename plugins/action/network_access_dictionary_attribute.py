@@ -25,21 +25,19 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    id=dict(type="str"),
-    directionType=dict(type="str"),
-    name=dict(type="str"),
-    description=dict(type="str"),
-    internalName=dict(type="str"),
-    dataType=dict(type="str"),
-    dictionaryName=dict(type="str"),
     allowedValues=dict(type="list"),
+    dataType=dict(type="str"),
+    description=dict(type="str"),
+    dictionaryName=dict(type="str"),
+    directionType=dict(type="str"),
+    id=dict(type="str"),
+    internalName=dict(type="str"),
+    name=dict(type="str"),
 ))
 
 required_if = [
-    ("state", "present", ["dictionaryName"], True),
-    ("state", "present", ["name"], True),
-    ("state", "absent", ["dictionaryName"], True),
-    ("state", "absent", ["name"], True),
+    ("state", "present", ["dictionaryName", "name"], True),
+    ("state", "absent", ["dictionaryName", "name"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -50,23 +48,23 @@ class NetworkAccessDictionaryAttribute(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            id=params.get("id"),
-            direction_type=params.get("directionType"),
-            name=params.get("name"),
-            description=params.get("description"),
-            internal_name=params.get("internalName"),
-            data_type=params.get("dataType"),
-            dictionary_name=params.get("dictionaryName"),
             allowed_values=params.get("allowedValues"),
+            data_type=params.get("dataType"),
+            description=params.get("description"),
+            dictionary_name=params.get("dictionaryName"),
+            direction_type=params.get("directionType"),
+            id=params.get("id"),
+            internal_name=params.get("internalName"),
+            name=params.get("name"),
         )
 
-    def get_object_by_name(self, name, dictionary_name):
+    def get_object_by_name(self, name):
         try:
             result = self.ise.exec(
                 family="network_access_dictionary_attribute",
                 function="get_network_access_dictionary_attribute_by_name",
-                params={"name": name, "dictionary_name": dictionary_name}
-            ).response.get('response')
+                params={"name": name}
+            ).response.get('response', {})
             result = get_dict_result(result, 'name', name)
         except Exception as e:
             result = None
@@ -78,17 +76,16 @@ class NetworkAccessDictionaryAttribute(object):
         return result
 
     def exists(self):
-        prev_obj = None
         id_exists = False
         name_exists = False
+        prev_obj = None
         o_id = self.new_object.get("id")
         name = self.new_object.get("name")
-        dictionary_name = self.new_object.get("dictionary_name")
         if o_id:
             prev_obj = self.get_object_by_id(o_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if name:
-            prev_obj = self.get_object_by_name(name, dictionary_name)
+            prev_obj = self.get_object_by_name(name)
             name_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if name_exists:
             _id = prev_obj.get("id")
@@ -101,14 +98,14 @@ class NetworkAccessDictionaryAttribute(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("id", "id"),
-            ("directionType", "direction_type"),
-            ("name", "name"),
-            ("description", "description"),
-            ("internalName", "internal_name"),
-            ("dataType", "data_type"),
-            ("dictionaryName", "dictionary_name"),
             ("allowedValues", "allowed_values"),
+            ("dataType", "data_type"),
+            ("description", "description"),
+            ("dictionaryName", "dictionary_name"),
+            ("directionType", "direction_type"),
+            ("id", "id"),
+            ("internalName", "internal_name"),
+            ("name", "name"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
@@ -119,12 +116,18 @@ class NetworkAccessDictionaryAttribute(object):
     def create(self):
         result = self.ise.exec(
             family="network_access_dictionary_attribute",
-            function="create_network_access_dictionary_attribute_for_dictionary",
+            function="create_network_access_dictionary_attribute",
             params=self.new_object,
         ).response
         return result
 
     def update(self):
+        id = self.new_object.get("id")
+        name = self.new_object.get("name")
+        result = None
+        if not name:
+            name_ = self.get_object_by_id(id).get("name")
+            self.new_object.update(dict(name=name_))
         result = self.ise.exec(
             family="network_access_dictionary_attribute",
             function="update_network_access_dictionary_attribute_by_name",
@@ -133,6 +136,12 @@ class NetworkAccessDictionaryAttribute(object):
         return result
 
     def delete(self):
+        id = self.new_object.get("id")
+        name = self.new_object.get("name")
+        result = None
+        if not name:
+            name_ = self.get_object_by_id(id).get("name")
+            self.new_object.update(dict(name=name_))
         result = self.ise.exec(
             family="network_access_dictionary_attribute",
             function="delete_network_access_dictionary_attribute_by_name",

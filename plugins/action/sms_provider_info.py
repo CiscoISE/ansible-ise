@@ -21,11 +21,10 @@ argument_spec = ise_argument_spec()
 argument_spec.update(dict(
     page=dict(type="int"),
     size=dict(type="int"),
-    filter=dict(type="list"),
-    filterType=dict(type="str"),
     sortasc=dict(type="str"),
     sortdsc=dict(type="str"),
-    id=dict(type="str"),
+    filter=dict(type="list"),
+    filterType=dict(type="str"),
 ))
 
 required_if = []
@@ -64,11 +63,10 @@ class ActionModule(ActionBase):
         new_object = dict(
             page=params.get("page"),
             size=params.get("size"),
-            filter=params.get("filter"),
-            filter_type=params.get("filterType"),
             sortasc=params.get("sortasc"),
             sortdsc=params.get("sortdsc"),
-            id=params.get("id"),
+            filter=params.get("filter"),
+            filter_type=params.get("filterType"),
         )
         return new_object
 
@@ -82,20 +80,11 @@ class ActionModule(ActionBase):
 
         id = self._task.args.get("id")
         name = self._task.args.get("name")
-        if id:
-            response = ise.exec(
-                family="sms_provider",
-                function='get_sms_provider_by_id',
-                params=self.get_object(self._task.args)
-            ).response
-            self._result.update(dict(ise_response=response))
-            self._result.update(ise.exit_json())
-            return self._result
         if not name and not id:
             response = []
             generator = ise.exec(
                 family="sms_provider",
-                function='get_all_sms_provider_generator',
+                function='get_sms_provider_generator',
                 params=self.get_object(self._task.args),
             )
             for item in generator:

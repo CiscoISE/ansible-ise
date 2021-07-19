@@ -29,8 +29,11 @@ argument_spec.update(dict(
     enableAci=dict(type="bool"),
     ipAddressHostName=dict(type="str"),
     adminName=dict(type="str"),
-    tenantName=dict(type="str"),
     adminPassword=dict(type="str"),
+    aciipaddress=dict(type="str"),
+    aciuserName=dict(type="str"),
+    acipassword=dict(type="str"),
+    tenantName=dict(type="str"),
     l3RouteNetwork=dict(type="str"),
     suffixToEpg=dict(type="str"),
     suffixToSgt=dict(type="str"),
@@ -43,9 +46,6 @@ argument_spec.update(dict(
     enableElementsLimit=dict(type="bool"),
     maxNumIepgFromAci=dict(type="int"),
     maxNumSgtToAci=dict(type="int"),
-    aciipaddress=dict(type="str"),
-    aciuserName=dict(type="str"),
-    acipassword=dict(type="str"),
     aci50=dict(type="bool"),
     aci51=dict(type="bool"),
 ))
@@ -66,8 +66,11 @@ class AciSettings(object):
             enable_aci=params.get("enableAci"),
             ip_address_host_name=params.get("ipAddressHostName"),
             admin_name=params.get("adminName"),
-            tenant_name=params.get("tenantName"),
             admin_password=params.get("adminPassword"),
+            aciipaddress=params.get("aciipaddress"),
+            aciuser_name=params.get("aciuserName"),
+            acipassword=params.get("acipassword"),
+            tenant_name=params.get("tenantName"),
             l3_route_network=params.get("l3RouteNetwork"),
             suffix_to_epg=params.get("suffixToEpg"),
             suffix_to_sgt=params.get("suffixToSgt"),
@@ -80,9 +83,6 @@ class AciSettings(object):
             enable_elements_limit=params.get("enableElementsLimit"),
             max_num_iepg_from_aci=params.get("maxNumIepgFromAci"),
             max_num_sgt_to_aci=params.get("maxNumSgtToAci"),
-            aciipaddress=params.get("aciipaddress"),
-            aciuser_name=params.get("aciuserName"),
-            acipassword=params.get("acipassword"),
             aci50=params.get("aci50"),
             aci51=params.get("aci51"),
         )
@@ -90,6 +90,14 @@ class AciSettings(object):
     def get_object_by_name(self, name):
         # NOTICE: Does not have a get by name method or it is in another action
         result = None
+        items = self.ise.exec(
+            family="aci_settings",
+            function="get_aci_settings"
+        ).response['AciSettings']
+        for item in items:
+            if item.get('name') == name and item.get('id'):
+                result = dict(item)
+                return result
         return result
 
     def get_object_by_id(self, id):
@@ -99,7 +107,6 @@ class AciSettings(object):
                 family="aci_settings",
                 function="get_all_aci_settings"
             ).response['AciSettings']
-            result = get_dict_result(result, 'id', id)
         except Exception as e:
             result = None
         return result
@@ -131,8 +138,11 @@ class AciSettings(object):
             ("enableAci", "enable_aci"),
             ("ipAddressHostName", "ip_address_host_name"),
             ("adminName", "admin_name"),
-            ("tenantName", "tenant_name"),
             ("adminPassword", "admin_password"),
+            ("aciipaddress", "aciipaddress"),
+            ("aciuserName", "aciuser_name"),
+            ("acipassword", "acipassword"),
+            ("tenantName", "tenant_name"),
             ("l3RouteNetwork", "l3_route_network"),
             ("suffixToEpg", "suffix_to_epg"),
             ("suffixToSgt", "suffix_to_sgt"),
@@ -145,9 +155,6 @@ class AciSettings(object):
             ("enableElementsLimit", "enable_elements_limit"),
             ("maxNumIepgFromAci", "max_num_iepg_from_aci"),
             ("maxNumSgtToAci", "max_num_sgt_to_aci"),
-            ("aciipaddress", "aciipaddress"),
-            ("aciuserName", "aciuser_name"),
-            ("acipassword", "acipassword"),
             ("aci50", "aci50"),
             ("aci51", "aci51"),
         ]

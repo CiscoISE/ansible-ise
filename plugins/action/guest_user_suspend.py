@@ -19,8 +19,9 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    id=dict(type="str"),
     name=dict(type="str"),
+    additionalData=dict(type="list"),
+    id=dict(type="str"),
 ))
 
 required_if = []
@@ -57,8 +58,9 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            id=params.get("id"),
             name=params.get("name"),
+            additional_data=params.get("additionalData"),
+            id=params.get("id"),
         )
         return new_object
 

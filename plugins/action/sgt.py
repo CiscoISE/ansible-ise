@@ -28,8 +28,10 @@ argument_spec.update(dict(
     name=dict(type="str"),
     description=dict(type="str"),
     value=dict(type="int"),
-    generationId=dict(type="str"),
+    generationId=dict(type="int"),
+    isReadOnly=dict(type="bool"),
     propogateToApic=dict(type="bool"),
+    defaultSGACLs=dict(type="list"),
     id=dict(type="str"),
 ))
 
@@ -50,15 +52,17 @@ class Sgt(object):
             description=params.get("description"),
             value=params.get("value"),
             generation_id=params.get("generationId"),
+            is_read_only=params.get("isReadOnly"),
             propogate_to_apic=params.get("propogateToApic"),
+            default_sgacls=params.get("defaultSGACLs"),
             id=params.get("id"),
         )
 
     def get_object_by_name(self, name):
         try:
             result = self.ise.exec(
-                family="sgt",
-                function="get_all_security_groups",
+                family="security_groups",
+                function="get_security_groups",
                 params={"filter": "name.EQ.{0}".format(name)}
             ).response['SearchResult']['resources']
             result = get_dict_result(result, 'name', name)
@@ -69,7 +73,7 @@ class Sgt(object):
     def get_object_by_id(self, id):
         try:
             result = self.ise.exec(
-                family="sgt",
+                family="security_groups",
                 function="get_security_group_by_id",
                 params={"id": id}
             ).response['Sgt']
@@ -106,7 +110,9 @@ class Sgt(object):
             ("description", "description"),
             ("value", "value"),
             ("generationId", "generation_id"),
+            ("isReadOnly", "is_read_only"),
             ("propogateToApic", "propogate_to_apic"),
+            ("defaultSGACLs", "default_sgacls"),
             ("id", "id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
@@ -117,7 +123,7 @@ class Sgt(object):
 
     def create(self):
         result = self.ise.exec(
-            family="sgt",
+            family="security_groups",
             function="create_security_group",
             params=self.new_object,
         ).response
@@ -131,7 +137,7 @@ class Sgt(object):
             id_ = self.get_object_by_name(name).get("id")
             self.new_object.update(dict(id=id_))
         result = self.ise.exec(
-            family="sgt",
+            family="security_groups",
             function="update_security_group_by_id",
             params=self.new_object
         ).response
@@ -145,7 +151,7 @@ class Sgt(object):
             id_ = self.get_object_by_name(name).get("id")
             self.new_object.update(dict(id=id_))
         result = self.ise.exec(
-            family="sgt",
+            family="security_groups",
             function="delete_security_group_by_id",
             params=self.new_object
         ).response

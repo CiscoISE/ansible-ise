@@ -22,7 +22,6 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    id=dict(type="str"),
     name=dict(type="str"),
     description=dict(type="str"),
     enabled=dict(type="bool"),
@@ -37,6 +36,7 @@ argument_spec.update(dict(
     enablePassword=dict(type="str"),
     customAttributes=dict(type="dict"),
     passwordIDStore=dict(type="str"),
+    id=dict(type="str"),
 ))
 
 required_if = [
@@ -52,7 +52,6 @@ class InternalUser(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            id=params.get("id"),
             name=params.get("name"),
             description=params.get("description"),
             enabled=params.get("enabled"),
@@ -67,6 +66,7 @@ class InternalUser(object):
             enable_password=params.get("enablePassword"),
             custom_attributes=params.get("customAttributes"),
             password_idstore=params.get("passwordIDStore"),
+            id=params.get("id"),
         )
 
     def get_object_by_name(self, name):
@@ -85,7 +85,7 @@ class InternalUser(object):
         try:
             result = self.ise.exec(
                 family="internal_user",
-                function="internaluser_by_id",
+                function="get_internal_user_by_id",
                 params={"id": id}
             ).response['InternalUser']
         except Exception as e:
@@ -109,7 +109,6 @@ class InternalUser(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("id", "id"),
             ("name", "name"),
             ("description", "description"),
             ("enabled", "enabled"),
@@ -124,6 +123,7 @@ class InternalUser(object):
             ("enablePassword", "enable_password"),
             ("customAttributes", "custom_attributes"),
             ("passwordIDStore", "password_idstore"),
+            ("id", "id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

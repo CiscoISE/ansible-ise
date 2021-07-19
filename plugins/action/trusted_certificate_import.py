@@ -19,17 +19,17 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    name=dict(type="str"),
+    allowBasicConstraintCAFalse=dict(type="bool"),
+    allowOutOfDateCert=dict(type="bool"),
+    allowSHA1Certificates=dict(type="bool"),
     data=dict(type="str"),
     description=dict(type="str"),
+    name=dict(type="str"),
     validateCertificateExtensions=dict(type="bool"),
-    allowSHA1Certificates=dict(type="bool"),
-    allowOutOfDateCert=dict(type="bool"),
-    allowBasicConstraintCAFalse=dict(type="bool"),
-    trustForIseAuth=dict(type="bool"),
-    trustForClientAuth=dict(type="bool"),
-    trustForCiscoServicesAuth=dict(type="bool"),
     trustForCertificateBasedAdminAuth=dict(type="bool"),
+    trustForCiscoServicesAuth=dict(type="bool"),
+    trustForClientAuth=dict(type="bool"),
+    trustForIseAuth=dict(type="bool"),
 ))
 
 required_if = []
@@ -66,17 +66,17 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            name=params.get("name"),
+            allow_basic_constraint_cafalse=params.get("allowBasicConstraintCAFalse"),
+            allow_out_of_date_cert=params.get("allowOutOfDateCert"),
+            allow_sha1_certificates=params.get("allowSHA1Certificates"),
             data=params.get("data"),
             description=params.get("description"),
+            name=params.get("name"),
             validate_certificate_extensions=params.get("validateCertificateExtensions"),
-            allow_sha1_certificates=params.get("allowSHA1Certificates"),
-            allow_out_of_date_cert=params.get("allowOutOfDateCert"),
-            allow_basic_constraint_cafalse=params.get("allowBasicConstraintCAFalse"),
-            trust_for_ise_auth=params.get("trustForIseAuth"),
-            trust_for_client_auth=params.get("trustForClientAuth"),
-            trust_for_cisco_services_auth=params.get("trustForCiscoServicesAuth"),
             trust_for_certificate_based_admin_auth=params.get("trustForCertificateBasedAdminAuth"),
+            trust_for_cisco_services_auth=params.get("trustForCiscoServicesAuth"),
+            trust_for_client_auth=params.get("trustForClientAuth"),
+            trust_for_ise_auth=params.get("trustForIseAuth"),
         )
         return new_object
 
@@ -90,7 +90,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="certificates",
-            function='import_trusted_certificate',
+            function='import_trust_certificate',
             params=self.get_object(self._task.args),
         ).response
         self._result.update(dict(ise_response=response))
