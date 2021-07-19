@@ -16,8 +16,6 @@ options: {}
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.system_config_version
 # Reference by Internet resource
 - name: System Config Version reference
   description: Complete reference of the System Config Version object model.

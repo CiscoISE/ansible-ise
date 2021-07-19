@@ -24,8 +24,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.csr_delete
 # Reference by Internet resource
 - name: Csr Delete reference
   description: Complete reference of the Csr Delete object model.

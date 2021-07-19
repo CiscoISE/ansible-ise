@@ -14,28 +14,33 @@ version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
   deployTo:
-    description: Sg Mapping's deployTo.
+    description: Mandatory unless mappingGroup is set or unless deployType=ALL.
     type: str
   deployType:
-    description: Sg Mapping's deployType.
+    description: Allowed values - ALL, - ND, - NDG.
+    type: str
+  hostIp:
+    description: Mandatory if hostName is empty -- valid IP.
     type: str
   hostName:
-    description: Sg Mapping's hostName.
+    description: Mandatory if hostIp is empty.
     type: str
   id:
-    description: Id path parameter.
+    description: Sg Mapping's id.
+    type: str
+  mappingGroup:
+    description: Mapping Group Id. Mandatory unless sgt and deployTo and deployType
+      are set.
     type: str
   name:
     description: Sg Mapping's name.
     type: str
   sgt:
-    description: Sg Mapping's sgt.
+    description: Mandatory unless mappingGroup is set.
     type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.sg_mapping
 # Reference by Internet resource
 - name: Sg Mapping reference
   description: Complete reference of the Sg Mapping object model.
@@ -43,19 +48,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.sg_mapping:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    deployTo: network_device_id
-    deployType: ND
-    hostName: server1.cisco.com
-    name: server1.cisco.com
-    sgt: sgt_id
-
 - name: Update by id
   cisco.ise.sg_mapping:
     ise_hostname: "{{ise_hostname}}"
@@ -63,12 +55,14 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    deployTo: network_device_id
-    deployType: ND
-    hostName: server1.cisco.com
+    deployTo: string
+    deployType: string
+    hostIp: string
+    hostName: string
     id: string
-    name: server1.cisco.com
-    sgt: sgt_id
+    mappingGroup: string
+    name: string
+    sgt: string
 
 - name: Delete by id
   cisco.ise.sg_mapping:
@@ -79,6 +73,21 @@ EXAMPLES = r"""
     state: absent
     id: string
 
+- name: Create
+  cisco.ise.sg_mapping:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    deployTo: string
+    deployType: string
+    hostIp: string
+    hostName: string
+    mappingGroup: string
+    name: string
+    sgt: string
+
 """
 
 RETURN = r"""
@@ -87,5 +96,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

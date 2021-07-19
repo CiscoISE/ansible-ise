@@ -9,6 +9,7 @@ DOCUMENTATION = r"""
 module: network_access_dictionary_info
 short_description: Information module for Network Access Dictionary
 description:
+- Get all Network Access Dictionary.
 - Get Network Access Dictionary by name.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
@@ -20,8 +21,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.network_access_dictionary
 # Reference by Internet resource
 - name: Network Access Dictionary reference
   description: Complete reference of the Network Access Dictionary object model.
@@ -29,6 +28,14 @@ seealso:
 """
 
 EXAMPLES = r"""
+- name: Get all Network Access Dictionary
+  cisco.ise.network_access_dictionary_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+  register: result
+
 - name: Get Network Access Dictionary by name
   cisco.ise.network_access_dictionary_info:
     ise_hostname: "{{ise_hostname}}"
@@ -47,10 +54,18 @@ ise_response:
   type: dict
   sample: >
     {
-      "id": "string",
-      "name": "string",
-      "description": "string",
-      "version": "string",
-      "dictionaryAttrType": "string"
+      "response": {
+        "description": "string",
+        "dictionaryAttrType": "string",
+        "id": "string",
+        "link": {
+          "href": "string",
+          "rel": "string",
+          "type": "string"
+        },
+        "name": "string",
+        "version": "string"
+      },
+      "version": "string"
     }
 """

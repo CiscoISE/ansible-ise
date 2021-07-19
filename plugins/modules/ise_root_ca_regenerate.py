@@ -20,8 +20,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.ise_root_ca_regenerate
 # Reference by Internet resource
 - name: Ise Root Ca Regenerate reference
   description: Complete reference of the Ise Root Ca Regenerate object model.
@@ -48,12 +46,12 @@ ise_response:
     {
       "response": {
         "id": "string",
-        "message": "string",
         "link": {
-          "rel": "string",
           "href": "string",
+          "rel": "string",
           "type": "string"
-        }
+        },
+        "message": "string"
       },
       "version": "string"
     }

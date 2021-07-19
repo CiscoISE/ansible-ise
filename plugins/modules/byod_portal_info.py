@@ -14,6 +14,10 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  id:
+    description:
+    - Id path parameter. Portal id.
+    type: str
   page:
     description:
     - Page query parameter. Page number.
@@ -48,15 +52,9 @@ options:
       FilterType query parameter. The logical operator common to ALL filter criteria will be by default AND, and
       can be changed by using the parameter.
     type: str
-  id:
-    description:
-    - Id path parameter.
-    type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.byod_portal
 # Reference by Internet resource
 - name: Byod Portal reference
   description: Complete reference of the Byod Portal object model.
@@ -100,6 +98,7 @@ ise_response:
       "name": "string",
       "description": "string",
       "portalType": "string",
+      "portalTestUrl": "string",
       "settings": {
         "portalSettings": {
           "httpsPort": 0,
@@ -107,10 +106,10 @@ ise_response:
             "string"
           ],
           "certificateGroupTag": "string",
+          "endpointIdentityGroup": "string",
           "displayLang": "string",
           "fallbackLanguage": "string",
-          "alwaysUsedLanguage": "string",
-          "availableSsids": []
+          "alwaysUsedLanguage": "string"
         },
         "byodSettings": {
           "byodWelcomeSettings": {
@@ -138,7 +137,8 @@ ise_response:
           "includeBrowserUserAgent": true,
           "includePolicyServer": true,
           "includeFailureCode": true,
-          "emptyFieldDisplay": "string"
+          "emptyFieldDisplay": "string",
+          "defaultEmptyFieldValue": "string"
         }
       },
       "customizations": {
@@ -166,6 +166,9 @@ ise_response:
           "bannerImage": {
             "data": "string"
           },
+          "backgroundImage": {
+            "data": "string"
+          },
           "bannerTitle": "string",
           "contactText": "string",
           "footerElement": "string"
@@ -178,6 +181,11 @@ ise_response:
             }
           ]
         }
+      },
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
       }
     }
 """

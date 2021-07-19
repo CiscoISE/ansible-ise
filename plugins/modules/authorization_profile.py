@@ -14,7 +14,7 @@ version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
   accessType:
-    description: Authorization Profile's accessType.
+    description: Allowed Values - ACCESS_ACCEPT, - ACCESS_REJECT.
     type: str
   acl:
     description: Authorization Profile's acl.
@@ -34,18 +34,32 @@ options:
           dictionaryName:
             description: Authorization Profile's dictionaryName.
             type: str
+          value:
+            description: Authorization Profile's value.
+            type: str
         type: dict
       rightHandSideAttribueValue:
-        description: Authorization Profile's rightHandSideAttribueValue.
+        description: Attribute value can be of type AttributeValue or AdvancedDictionaryAttribute.
+          For AttributeValue the value is String, For AdvancedDictionaryAttribute the
+          value is dictionaryName and attributeName properties.
         suboptions:
           AdvancedAttributeValueType:
             description: Authorization Profile's AdvancedAttributeValueType.
+            type: str
+          attributeName:
+            description: Authorization Profile's attributeName.
+            type: str
+          dictionaryName:
+            description: Authorization Profile's dictionaryName.
             type: str
           value:
             description: Authorization Profile's value.
             type: str
         type: dict
     type: list
+  agentlessPosture:
+    description: AgentlessPosture flag.
+    type: bool
   airespaceACL:
     description: Authorization Profile's airespaceACL.
     type: str
@@ -56,7 +70,8 @@ options:
     description: Authorization Profile's asaVpn.
     type: str
   authzProfileType:
-    description: Authorization Profile's authzProfileType.
+    description: Allowed Values - SWITCH, - TRUSTSEC, - TACACS SWITCH is used for Standard
+      Authorization Profiles.
     type: str
   autoSmartPort:
     description: Authorization Profile's autoSmartPort.
@@ -74,7 +89,7 @@ options:
     description: EasywiredSessionCandidate flag.
     type: bool
   id:
-    description: Authorization Profile's id.
+    description: Resource UUID value.
     type: str
   interfaceTemplate:
     description: Authorization Profile's interfaceTemplate.
@@ -86,10 +101,10 @@ options:
     description: Authorization Profile's ipv6DaclName.
     type: str
   macSecPolicy:
-    description: Authorization Profile's macSecPolicy.
+    description: Allowed Values - MUST_SECURE, - MUST_NOT_SECURE, - SHOULD_SECURE.
     type: str
   name:
-    description: Authorization Profile's name.
+    description: Resource Name.
     type: str
   neat:
     description: Neat flag.
@@ -101,10 +116,10 @@ options:
     description: Authorization Profile's reauth.
     suboptions:
       connectivity:
-        description: Authorization Profile's connectivity.
+        description: Allowed Values - DEFAULT, - RADIUS_REQUEST.
         type: str
       timer:
-        description: Authorization Profile's timer.
+        description: Valid range is 1-65535.
         type: int
     type: dict
   serviceTemplate:
@@ -120,7 +135,7 @@ options:
         description: Authorization Profile's nameID.
         type: str
       tagID:
-        description: Authorization Profile's tagID.
+        description: Valid range is 0-31.
         type: int
     type: dict
   voiceDomainPermission:
@@ -133,16 +148,20 @@ options:
     description: Authorization Profile's webRedirection.
     suboptions:
       WebRedirectionType:
-        description: Authorization Profile's WebRedirectionType.
+        description: Value MUST be one of the following CentralizedWebAuth, HotSpot,
+          NativeSupplicanProvisioning, ClientProvisioning. The WebRedirectionType must
+          fit the portalName.
         type: str
       acl:
         description: Authorization Profile's acl.
         type: str
       displayCertificatesRenewalMessages:
-        description: DisplayCertificatesRenewalMessages flag.
+        description: The displayCertificatesRenewalMessages is mandatory when 'WebRedirectionType'
+          value is 'CentralizedWebAuth'. For all other 'WebRedirectionType' values the
+          field must be ignored.
         type: bool
       portalName:
-        description: Authorization Profile's portalName.
+        description: A portal that exist in the DB and fits the WebRedirectionType.
         type: str
       staticIPHostNameFQDN:
         description: Authorization Profile's staticIPHostNameFQDN.
@@ -151,8 +170,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.authorization_profile
 # Reference by Internet resource
 - name: Authorization Profile reference
   description: Complete reference of the Authorization Profile object model.
@@ -160,57 +177,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.authorization_profile:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    accessType: ACCESS_ACCEPT
-    acl: aclfilter
-    advancedAttributes:
-    - leftHandSideDictionaryAttribue:
-        AdvancedAttributeValueType: AdvancedDictionaryAttribute
-        attributeName: cisco-call-filter
-        dictionaryName: Cisco
-      rightHandSideAttribueValue:
-        AdvancedAttributeValueType: AttributeValue
-        value: '23'
-    airespaceACL: ACL
-    airespaceIPv6ACL: ACL6
-    asaVpn: Cisco:cisco-call-type
-    authzProfileType: SWITCH
-    autoSmartPort: autoSmartPort
-    avcProfile: avcProfile
-    daclName: PERMIT_ALL_IPV4_TRAFFIC
-    description: description
-    easywiredSessionCandidate: false
-    id: id
-    interfaceTemplate: interfaceTemplate
-    ipv6ACLFilter: ipv6ACLFilter
-    ipv6DaclName: PERMIT_ALL_IPV6_TRAFFIC
-    macSecPolicy: MUST_SECURE
-    name: name
-    neat: false
-    profileName: Cisco
-    reauth:
-      connectivity: RADIUS_REQUEST
-      timer: 1800
-    serviceTemplate: false
-    trackMovement: false
-    vlan:
-      nameID: vlanName
-      tagID: 1
-    voiceDomainPermission: false
-    webAuth: false
-    webRedirection:
-      WebRedirectionType: CentralizedWebAuth
-      acl: acl
-      displayCertificatesRenewalMessages: true
-      portalName: Sponsored Guest Portal (default)
-      staticIPHostNameFQDN: 10.56.54.200
-
 - name: Update by id
   cisco.ise.authorization_profile:
     ise_hostname: "{{ise_hostname}}"
@@ -218,49 +184,53 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    accessType: ACCESS_ACCEPT
-    acl: aclfilter
+    accessType: string
+    acl: string
     advancedAttributes:
     - leftHandSideDictionaryAttribue:
-        AdvancedAttributeValueType: AdvancedDictionaryAttribute
-        attributeName: cisco-call-filter
-        dictionaryName: Cisco
+        AdvancedAttributeValueType: string
+        attributeName: string
+        dictionaryName: string
+        value: string
       rightHandSideAttribueValue:
-        AdvancedAttributeValueType: AttributeValue
-        value: '23'
-    airespaceACL: ACL
-    airespaceIPv6ACL: ACL6
-    asaVpn: Cisco:cisco-call-type
-    authzProfileType: SWITCH
-    autoSmartPort: autoSmartPort
-    avcProfile: avcProfile
-    daclName: PERMIT_ALL_IPV4_TRAFFIC
-    description: description
-    easywiredSessionCandidate: false
-    id: id
-    interfaceTemplate: interfaceTemplate
-    ipv6ACLFilter: ipv6ACLFilter
-    ipv6DaclName: PERMIT_ALL_IPV6_TRAFFIC
-    macSecPolicy: MUST_SECURE
-    name: name
-    neat: false
-    profileName: Cisco
+        AdvancedAttributeValueType: string
+        attributeName: string
+        dictionaryName: string
+        value: string
+    agentlessPosture: true
+    airespaceACL: string
+    airespaceIPv6ACL: string
+    asaVpn: string
+    authzProfileType: string
+    autoSmartPort: string
+    avcProfile: string
+    daclName: string
+    description: string
+    easywiredSessionCandidate: true
+    id: string
+    interfaceTemplate: string
+    ipv6ACLFilter: string
+    ipv6DaclName: string
+    macSecPolicy: string
+    name: string
+    neat: true
+    profileName: string
     reauth:
-      connectivity: RADIUS_REQUEST
-      timer: 1800
-    serviceTemplate: false
-    trackMovement: false
+      connectivity: string
+      timer: 0
+    serviceTemplate: true
+    trackMovement: true
     vlan:
-      nameID: vlanName
-      tagID: 1
-    voiceDomainPermission: false
-    webAuth: false
+      nameID: string
+      tagID: 0
+    voiceDomainPermission: true
+    webAuth: true
     webRedirection:
-      WebRedirectionType: CentralizedWebAuth
-      acl: acl
+      WebRedirectionType: string
+      acl: string
       displayCertificatesRenewalMessages: true
-      portalName: Sponsored Guest Portal (default)
-      staticIPHostNameFQDN: 10.56.54.200
+      portalName: string
+      staticIPHostNameFQDN: string
 
 - name: Delete by id
   cisco.ise.authorization_profile:
@@ -271,6 +241,61 @@ EXAMPLES = r"""
     state: absent
     id: string
 
+- name: Create
+  cisco.ise.authorization_profile:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    accessType: string
+    acl: string
+    advancedAttributes:
+    - leftHandSideDictionaryAttribue:
+        AdvancedAttributeValueType: string
+        attributeName: string
+        dictionaryName: string
+        value: string
+      rightHandSideAttribueValue:
+        AdvancedAttributeValueType: string
+        attributeName: string
+        dictionaryName: string
+        value: string
+    agentlessPosture: true
+    airespaceACL: string
+    airespaceIPv6ACL: string
+    asaVpn: string
+    authzProfileType: string
+    autoSmartPort: string
+    avcProfile: string
+    daclName: string
+    description: string
+    easywiredSessionCandidate: true
+    id: string
+    interfaceTemplate: string
+    ipv6ACLFilter: string
+    ipv6DaclName: string
+    macSecPolicy: string
+    name: string
+    neat: true
+    profileName: string
+    reauth:
+      connectivity: string
+      timer: 0
+    serviceTemplate: true
+    trackMovement: true
+    vlan:
+      nameID: string
+      tagID: 0
+    voiceDomainPermission: true
+    webAuth: true
+    webRedirection:
+      WebRedirectionType: string
+      acl: string
+      displayCertificatesRenewalMessages: true
+      portalName: string
+      staticIPHostNameFQDN: string
+
 """
 
 RETURN = r"""
@@ -279,5 +304,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

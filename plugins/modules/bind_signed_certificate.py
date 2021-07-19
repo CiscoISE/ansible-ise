@@ -67,8 +67,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.bind_signed_certificate
 # Reference by Internet resource
 - name: Bind Signed Certificate reference
   description: Complete reference of the Bind Signed Certificate object model.

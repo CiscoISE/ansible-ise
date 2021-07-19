@@ -30,17 +30,18 @@ options:
             type: str
         type: list
       predefined:
-        description: Rest Id Store's predefined.
+        description: The cloud provider connected to of the RestIDStore. Options are
+          - Azure, - Okta, - None.
         type: str
       rootUrl:
-        description: Rest Id Store's rootUrl.
+        description: Url of the root of the RestIDStore.
         type: str
       usernameSuffix:
-        description: Rest Id Store's usernameSuffix.
+        description: Suffix of the username domain.
         type: str
     type: dict
   id:
-    description: Id path parameter.
+    description: Rest Id Store's id.
     type: str
   name:
     description: Rest Id Store's name.
@@ -48,8 +49,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.rest_id_store
 # Reference by Internet resource
 - name: Rest Id Store reference
   description: Complete reference of the Rest Id Store object model.
@@ -57,47 +56,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.rest_id_store:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    description: '{{description}}'
-    ersRestIDStoreAttributes:
-      headers:
-      - key: clientID
-        value: '{{clientID}}'
-      - key: clientSecret
-        value: '{{clientSecret}}'
-      - key: tenantID
-        value: '{{tenantID}}'
-      predefined: Azure
-      rootUrl: http://169.254.6.2:9601/azure
-      usernameSuffix: '{{usernameSuffix}}'
-    name: '{{name}}'
-
-- name: Update by id
-  cisco.ise.rest_id_store:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    description: my new description
-    id: '{{id}}'
-    name: ISE_AzureAD_ROPC
-
-- name: Delete by id
-  cisco.ise.rest_id_store:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
-    id: string
-
 - name: Update by name
   cisco.ise.rest_id_store:
     ise_hostname: "{{ise_hostname}}"
@@ -105,7 +63,15 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    description: my new description
+    description: string
+    ersRestIDStoreAttributes:
+      headers:
+      - key: string
+        value: string
+      predefined: string
+      rootUrl: string
+      usernameSuffix: string
+    id: string
     name: string
 
 - name: Delete by name
@@ -117,6 +83,50 @@ EXAMPLES = r"""
     state: absent
     name: string
 
+- name: Update by id
+  cisco.ise.rest_id_store:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    description: string
+    ersRestIDStoreAttributes:
+      headers:
+      - key: string
+        value: string
+      predefined: string
+      rootUrl: string
+      usernameSuffix: string
+    id: string
+    name: string
+
+- name: Delete by id
+  cisco.ise.rest_id_store:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: absent
+    id: string
+
+- name: Create
+  cisco.ise.rest_id_store:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    description: string
+    ersRestIDStoreAttributes:
+      headers:
+      - key: string
+        value: string
+      predefined: string
+      rootUrl: string
+      usernameSuffix: string
+    name: string
+
 """
 
 RETURN = r"""
@@ -126,20 +136,15 @@ ise_response:
   type: dict
   sample: >
     {
-      "ERSResponse": {
-        "operation": "string",
-        "messages": [
-          {
-            "title": "string",
-            "type": "string",
-            "code": "string"
-          }
-        ],
-        "link": {
-          "rel": "string",
-          "href": "string",
-          "type": "string"
-        }
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
       }
     }
 """

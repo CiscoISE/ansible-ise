@@ -16,8 +16,6 @@ options: {}
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.endpoint_deregister
 # Reference by Internet resource
 - name: Endpoint Deregister reference
   description: Complete reference of the Endpoint Deregister object model.

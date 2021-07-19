@@ -9,21 +9,30 @@ DOCUMENTATION = r"""
 module: my_device_portal
 short_description: Resource module for My Device Portal
 description:
-- Manage operations create and update of the resource My Device Portal.
+- Manage operations create, update and delete of the resource My Device Portal.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
   customizations:
-    description: My Device Portal's customizations.
+    description: Defines all of the Portal Customizations available.
     suboptions:
       globalCustomizations:
         description: My Device Portal's globalCustomizations.
         suboptions:
+          backgroundImage:
+            description: My Device Portal's backgroundImage.
+            suboptions:
+              data:
+                description: Represented as base 64 encoded string of the image byte
+                  array.
+                type: str
+            type: dict
           bannerImage:
             description: My Device Portal's bannerImage.
             suboptions:
               data:
-                description: My Device Portal's data.
+                description: Represented as base 64 encoded string of the image byte
+                  array.
                 type: str
             type: dict
           bannerTitle:
@@ -36,7 +45,8 @@ options:
             description: My Device Portal's desktopLogoImage.
             suboptions:
               data:
-                description: My Device Portal's data.
+                description: Represented as base 64 encoded string of the image byte
+                  array.
                 type: str
             type: dict
           footerElement:
@@ -46,22 +56,24 @@ options:
             description: My Device Portal's mobileLogoImage.
             suboptions:
               data:
-                description: My Device Portal's data.
+                description: Represented as base 64 encoded string of the image byte
+                  array.
                 type: str
             type: dict
         type: dict
       language:
-        description: My Device Portal's language.
+        description: This property is supported only for Read operation and it allows
+          to show the customizations in English. Other languages are not supported.
         suboptions:
           viewLanguage:
             description: My Device Portal's viewLanguage.
             type: str
         type: dict
       pageCustomizations:
-        description: My Device Portal's pageCustomizations.
+        description: Represent the entire page customization as a giant dictionary.
         suboptions:
           data:
-            description: My Device Portal's data.
+            description: The Dictionary will be exposed here as key value pair.
             suboptions:
               key:
                 description: My Device Portal's key.
@@ -78,17 +90,20 @@ options:
             description: My Device Portal's id.
             type: str
           name:
-            description: My Device Portal's name.
+            description: The system- or user-assigned name of the portal theme.
             type: str
           themeData:
-            description: My Device Portal's themeData.
+            description: A CSS file, represented as a Base64-encoded byte array.
             type: str
         type: dict
       portalTweakSettings:
-        description: My Device Portal's portalTweakSettings.
+        description: The Tweak Settings are a customization of the Portal Theme that
+          has been selected for the portal. When the Portal Theme selection is changed,
+          the Tweak Settings are overwritten to match the values in the theme. The Tweak
+          Settings can subsequently be changed by the user.
         suboptions:
           bannerColor:
-            description: My Device Portal's bannerColor.
+            description: Hex value of color.
             type: str
           bannerTextColor:
             description: My Device Portal's bannerTextColor.
@@ -110,32 +125,34 @@ options:
   name:
     description: My Device Portal's name.
     type: str
+  portalTestUrl:
+    description: URL to bring up a test page for this portal.
+    type: str
   portalType:
-    description: My Device Portal's portalType.
+    description: Allowed values - BYOD, - HOTSPOTGUEST, - MYDEVICE, - SELFREGGUEST,
+      - SPONSOR, - SPONSOREDGUEST.
     type: str
   settings:
-    description: My Device Portal's settings.
+    description: Defines all of the settings groups available for a Mydevice portal.
     suboptions:
       aupSettings:
-        description: My Device Portal's aupSettings.
+        description: Configuration of the Acceptable Use Policy (AUP) for a portal.
         suboptions:
           displayFrequency:
-            description: My Device Portal's displayFrequency.
+            description: How the AUP should be displayed, either on page or as a link.
+              Only valid if includeAup = true. Allowed Values - FIRSTLOGIN, - EVERYLOGIN,
+              - RECURRING.
             type: str
+          displayFrequencyIntervalDays:
+            description: Number of days between AUP confirmations (when displayFrequency
+              = recurring).
+            type: int
           includeAup:
-            description: IncludeAup flag.
-            type: bool
-          requireAccessCode:
-            description: RequireAccessCode flag.
+            description: Require the portal user to read and accept an AUP.
             type: bool
           requireScrolling:
-            description: RequireScrolling flag.
-            type: bool
-          skipAupForEmployees:
-            description: SkipAupForEmployees flag.
-            type: bool
-          useDiffAupForEmployees:
-            description: UseDiffAupForEmployees flag.
+            description: Require the portal user to scroll to the end of the AUP. Only
+              valid if requireAupAcceptance = true.
             type: bool
         type: dict
       employeeChangePasswordSettings:
@@ -148,96 +165,89 @@ options:
       loginPageSettings:
         description: My Device Portal's loginPageSettings.
         suboptions:
-          allowAlternateGuestPortal:
-            description: AllowAlternateGuestPortal flag.
-            type: bool
-          allowGuestToChangePassword:
-            description: AllowGuestToChangePassword flag.
-            type: bool
-          allowGuestToCreateAccounts:
-            description: AllowGuestToCreateAccounts flag.
-            type: bool
-          allowGuestToUseSocialAccounts:
-            description: AllowGuestToUseSocialAccounts flag.
-            type: bool
-          allowShowGuestForm:
-            description: AllowShowGuestForm flag.
-            type: bool
           aupDisplay:
-            description: My Device Portal's aupDisplay.
+            description: How the AUP should be displayed, either on page or as a link.
+              Only valid if includeAup = true. Allowed values - ONPAGE, - ASLINK.
             type: str
           includeAup:
-            description: IncludeAup flag.
+            description: Include an Acceptable Use Policy (AUP) that should be displayed
+              during login.
             type: bool
           maxFailedAttemptsBeforeRateLimit:
-            description: My Device Portal's maxFailedAttemptsBeforeRateLimit.
+            description: Maximum failed login attempts before rate limiting.
             type: int
-          requireAccessCode:
-            description: RequireAccessCode flag.
-            type: bool
           requireAupAcceptance:
-            description: RequireAupAcceptance flag.
+            description: Require the portal user to accept the AUP. Only valid if includeAup
+              = true.
             type: bool
-          requireAupScrolling:
-            description: RequireAupScrolling flag.
+          requireScrolling:
+            description: Require the portal user to scroll to the end of the AUP. Only
+              valid if requireAupAcceptance = true.
             type: bool
           socialConfigs:
             description: My Device Portal's socialConfigs.
+            suboptions:
+            - description: My Device Portal's socialConfigs.
+              type: dict
             type: list
           timeBetweenLoginsDuringRateLimit:
-            description: My Device Portal's timeBetweenLoginsDuringRateLimit.
+            description: Time between login attempts when rate limiting.
             type: int
         type: dict
       portalSettings:
-        description: My Device Portal's portalSettings.
+        description: The port, interface, certificate, and other basic settings of a
+          portal.
         suboptions:
           allowedInterfaces:
-            description: My Device Portal's allowedInterfaces.
-            elements: str
-            type: list
+            description: Interfaces that the portal will be reachable on. Allowed values
+              - eth0, - eth1, - eth2, - eth3, - eth4, - eth5, - bond0, - bond1, - bond2.
+            type: str
           alwaysUsedLanguage:
             description: My Device Portal's alwaysUsedLanguage.
             type: str
-          authenticationMethod:
-            description: My Device Portal's authenticationMethod.
-            type: str
-          availableSsids:
-            description: My Device Portal's availableSsids.
-            type: list
           certificateGroupTag:
-            description: My Device Portal's certificateGroupTag.
+            description: Logical name of the x.509 server certificate that will be used
+              for the portal.
             type: str
           displayLang:
-            description: My Device Portal's displayLang.
+            description: Allowed values - USEBROWSERLOCALE, - ALWAYSUSE.
             type: str
           endpointIdentityGroup:
-            description: My Device Portal's endpointIdentityGroup.
+            description: Unique Id of the endpoint identity group where user's devices
+              will be added. Used only in Hotspot Portal.
             type: str
           fallbackLanguage:
-            description: My Device Portal's fallbackLanguage.
-            type: str
-          fqdn:
-            description: My Device Portal's fqdn.
+            description: Used when displayLang = USEBROWSERLOCALE.
             type: str
           httpsPort:
-            description: My Device Portal's httpsPort.
-            type: int
-          idleTimeout:
-            description: My Device Portal's idleTimeout.
+            description: The port number that the allowed interfaces will listen on.
+              Range from 8000 to 8999.
             type: int
         type: dict
-      postLoginBannerSettings:
-        description: My Device Portal's postLoginBannerSettings.
+      postAccessBannerSettings:
+        description: My Device Portal's postAccessBannerSettings.
         suboptions:
           includePostAccessBanner:
             description: IncludePostAccessBanner flag.
             type: bool
         type: dict
+      postLoginBannerSettings:
+        description: My Device Portal's postLoginBannerSettings.
+        suboptions:
+          includePostAccessBanner:
+            description: Include a Post-Login Banner page.
+            type: bool
+        type: dict
       supportInfoSettings:
         description: My Device Portal's supportInfoSettings.
         suboptions:
+          defaultEmptyFieldValue:
+            description: The default value displayed for an empty field. Only valid
+              when emptyFieldDisplay = DISPLAYWITHDEFAULTVALUE.
+            type: str
           emptyFieldDisplay:
-            description: My Device Portal's emptyFieldDisplay.
+            description: Specifies how empty fields are handled on the Support Information
+              Page. Allowed values - HIDE, - DISPLAYWITHNOVALUE, - DISPLAYWITHDEFAULTVALUE.
             type: str
           includeBrowserUserAgent:
             description: IncludeBrowserUserAgent flag.
@@ -262,8 +272,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.my_device_portal
 # Reference by Internet resource
 - name: My Device Portal reference
   description: Complete reference of the My Device Portal object model.
@@ -271,91 +279,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.my_device_portal:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    customizations:
-      globalCustomizations:
-        bannerImage:
-          data: string
-        bannerTitle: string
-        contactText: string
-        desktopLogoImage:
-          data: string
-        footerElement: string
-        mobileLogoImage:
-          data: string
-      language:
-        viewLanguage: string
-      pageCustomizations:
-        data:
-        - key: string
-          value: string
-      portalTheme:
-        id: string
-        name: string
-        themeData: string
-      portalTweakSettings:
-        bannerColor: string
-        bannerTextColor: string
-        pageBackgroundColor: string
-        pageLabelAndTextColor: string
-    description: string
-    id: string
-    name: string
-    portalType: string
-    settings:
-      aupSettings:
-        displayFrequency: string
-        includeAup: true
-        requireAccessCode: true
-        requireScrolling: true
-        skipAupForEmployees: true
-        useDiffAupForEmployees: true
-      employeeChangePasswordSettings:
-        allowEmployeeToChangePwd: true
-      loginPageSettings:
-        allowAlternateGuestPortal: true
-        allowGuestToChangePassword: true
-        allowGuestToCreateAccounts: true
-        allowGuestToUseSocialAccounts: true
-        allowShowGuestForm: true
-        aupDisplay: string
-        includeAup: true
-        maxFailedAttemptsBeforeRateLimit: 0
-        requireAccessCode: true
-        requireAupAcceptance: true
-        requireAupScrolling: true
-        socialConfigs: []
-        timeBetweenLoginsDuringRateLimit: 0
-      portalSettings:
-        allowedInterfaces:
-        - string
-        alwaysUsedLanguage: string
-        authenticationMethod: string
-        availableSsids: []
-        certificateGroupTag: string
-        displayLang: string
-        endpointIdentityGroup: string
-        fallbackLanguage: string
-        fqdn: string
-        httpsPort: 0
-        idleTimeout: 0
-      postLoginBannerSettings:
-        includePostAccessBanner: true
-      supportInfoSettings:
-        emptyFieldDisplay: string
-        includeBrowserUserAgent: true
-        includeFailureCode: true
-        includeIpAddress: true
-        includeMacAddr: true
-        includePolicyServer: true
-        includeSupportInfoPage: true
-
 - name: Update by id
   cisco.ise.my_device_portal:
     ise_hostname: "{{ise_hostname}}"
@@ -365,6 +288,8 @@ EXAMPLES = r"""
     state: present
     customizations:
       globalCustomizations:
+        backgroundImage:
+          data: string
         bannerImage:
           data: string
         bannerTitle: string
@@ -392,47 +317,126 @@ EXAMPLES = r"""
     description: string
     id: string
     name: string
+    portalTestUrl: string
     portalType: string
     settings:
       aupSettings:
         displayFrequency: string
+        displayFrequencyIntervalDays: 0
         includeAup: true
-        requireAccessCode: true
         requireScrolling: true
-        skipAupForEmployees: true
-        useDiffAupForEmployees: true
       employeeChangePasswordSettings:
         allowEmployeeToChangePwd: true
       loginPageSettings:
-        allowAlternateGuestPortal: true
-        allowGuestToChangePassword: true
-        allowGuestToCreateAccounts: true
-        allowGuestToUseSocialAccounts: true
-        allowShowGuestForm: true
         aupDisplay: string
         includeAup: true
         maxFailedAttemptsBeforeRateLimit: 0
-        requireAccessCode: true
         requireAupAcceptance: true
-        requireAupScrolling: true
-        socialConfigs: []
+        requireScrolling: true
+        socialConfigs:
+        - {}
         timeBetweenLoginsDuringRateLimit: 0
       portalSettings:
-        allowedInterfaces:
-        - string
+        allowedInterfaces: string
         alwaysUsedLanguage: string
-        authenticationMethod: string
-        availableSsids: []
         certificateGroupTag: string
         displayLang: string
         endpointIdentityGroup: string
         fallbackLanguage: string
-        fqdn: string
         httpsPort: 0
-        idleTimeout: 0
+      postAccessBannerSettings:
+        includePostAccessBanner: true
       postLoginBannerSettings:
         includePostAccessBanner: true
       supportInfoSettings:
+        defaultEmptyFieldValue: string
+        emptyFieldDisplay: string
+        includeBrowserUserAgent: true
+        includeFailureCode: true
+        includeIpAddress: true
+        includeMacAddr: true
+        includePolicyServer: true
+        includeSupportInfoPage: true
+
+- name: Delete by id
+  cisco.ise.my_device_portal:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: absent
+    id: string
+
+- name: Create
+  cisco.ise.my_device_portal:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    customizations:
+      globalCustomizations:
+        backgroundImage:
+          data: string
+        bannerImage:
+          data: string
+        bannerTitle: string
+        contactText: string
+        desktopLogoImage:
+          data: string
+        footerElement: string
+        mobileLogoImage:
+          data: string
+      language:
+        viewLanguage: string
+      pageCustomizations:
+        data:
+        - key: string
+          value: string
+      portalTheme:
+        id: string
+        name: string
+        themeData: string
+      portalTweakSettings:
+        bannerColor: string
+        bannerTextColor: string
+        pageBackgroundColor: string
+        pageLabelAndTextColor: string
+    description: string
+    name: string
+    portalTestUrl: string
+    portalType: string
+    settings:
+      aupSettings:
+        displayFrequency: string
+        displayFrequencyIntervalDays: 0
+        includeAup: true
+        requireScrolling: true
+      employeeChangePasswordSettings:
+        allowEmployeeToChangePwd: true
+      loginPageSettings:
+        aupDisplay: string
+        includeAup: true
+        maxFailedAttemptsBeforeRateLimit: 0
+        requireAupAcceptance: true
+        requireScrolling: true
+        socialConfigs:
+        - {}
+        timeBetweenLoginsDuringRateLimit: 0
+      portalSettings:
+        allowedInterfaces: string
+        alwaysUsedLanguage: string
+        certificateGroupTag: string
+        displayLang: string
+        endpointIdentityGroup: string
+        fallbackLanguage: string
+        httpsPort: 0
+      postAccessBannerSettings:
+        includePostAccessBanner: true
+      postLoginBannerSettings:
+        includePostAccessBanner: true
+      supportInfoSettings:
+        defaultEmptyFieldValue: string
         emptyFieldDisplay: string
         includeBrowserUserAgent: true
         includeFailureCode: true
@@ -449,5 +453,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

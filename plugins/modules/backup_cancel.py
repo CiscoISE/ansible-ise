@@ -16,8 +16,6 @@ options: {}
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.backup_cancel
 # Reference by Internet resource
 - name: Backup Cancel reference
   description: Complete reference of the Backup Cancel object model.
@@ -42,20 +40,20 @@ ise_response:
   sample: >
     {
       "response": {
-        "repository": "string",
-        "type": "string",
-        "name": "string",
-        "startDate": "string",
-        "error": "string",
         "action": "string",
-        "scheduled": "string",
-        "status": "string",
-        "message": "string",
-        "justComplete": "string",
-        "percentComplete": "string",
         "details": "string",
+        "error": "string",
         "hostName": "string",
-        "initiatedFrom": "string"
+        "initiatedFrom": "string",
+        "justComplete": "string",
+        "message": "string",
+        "name": "string",
+        "percentComplete": "string",
+        "repository": "string",
+        "scheduled": "string",
+        "startDate": "string",
+        "status": "string",
+        "type": "string"
       },
       "version": "string"
     }

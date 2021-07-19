@@ -33,14 +33,18 @@ options:
   filter:
     description:
     - >
-      Filter query parameter. <br/> **Simple filtering** should be available through the filter query string
-      parameter. The structure of a filter is a triplet of field operator and value separated with dots. More than
-      one filter can be sent. The logical operator common to ALL filter criteria will be by default AND, and can
-      be changed by using the "filterType=or" query string parameter. Each resource Data model description should
-      specify if an attribute is a filtered field. <br/> Operator | Description <br/>
-      ------------|----------------- <br/> EQ | Equals <br/> NEQ | Not Equals <br/> GT | Greater Than <br/> LT |
-      Less Then <br/> STARTSW | Starts With <br/> NSTARTSW | Not Starts With <br/> ENDSW | Ends With <br/> NENDSW
-      | Not Ends With <br/> CONTAINS | Contains <br/> NCONTAINS | Not Contains <br/>.
+      Filter query parameter. <div> <style type="text/css" scoped> .apiServiceTable td, .apiServiceTable th {
+      padding 5px 10px !important; text-align left; } </style> <span> <b>Simple filtering</b> should be available
+      through the filter query string parameter. The structure of a filter is a triplet of field operator and
+      value separated with dots. More than one filter can be sent. The logical operator common to ALL filter
+      criteria will be by default AND, and can be changed by using the <i>"filterType=or"</i> query string
+      parameter. Each resource Data model description should specify if an attribute is a filtered field. </span>
+      <br /> <table class="apiServiceTable"> <thead> <tr> <th>OPERATOR</th> <th>DESCRIPTION</th> </tr> </thead>
+      <tbody> <tr> <td>EQ</td> <td>Equals</td> </tr> <tr> <td>NEQ</td> <td>Not Equals</td> </tr> <tr> <td>GT</td>
+      <td>Greater Than</td> </tr> <tr> <td>LT</td> <td>Less Then</td> </tr> <tr> <td>STARTSW</td> <td>Starts
+      With</td> </tr> <tr> <td>NSTARTSW</td> <td>Not Starts With</td> </tr> <tr> <td>ENDSW</td> <td>Ends With</td>
+      </tr> <tr> <td>NENDSW</td> <td>Not Ends With</td> </tr> <tr> <td>CONTAINS</td> <td>Contains</td> </tr> <tr>
+      <td>NCONTAINS</td> <td>Not Contains</td> </tr> </tbody> </table> </div>.
     type: list
   filterType:
     description:
@@ -55,8 +59,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.trusted_certificate
 # Reference by Internet resource
 - name: Trusted Certificate reference
   description: Complete reference of the Trusted Certificate object model.
@@ -97,43 +99,43 @@ ise_response:
   sample: >
     {
       "response": {
-        "id": "string",
-        "friendlyName": "string",
-        "subject": "string",
-        "issuedTo": "string",
-        "issuedBy": "string",
-        "keySize": "string",
-        "signatureAlgorithm": "string",
-        "validFrom": "string",
-        "expirationDate": "string",
-        "serialNumberDecimalFormat": "string",
-        "description": "string",
-        "status": "string",
-        "trustedFor": "string",
-        "internalCA": true,
-        "isReferredInPolicy": true,
-        "downloadCRL": "string",
-        "crlDistributionUrl": "string",
+        "authenticateBeforeCRLReceived": "string",
         "automaticCRLUpdate": "string",
         "automaticCRLUpdatePeriod": "string",
         "automaticCRLUpdateUnits": "string",
-        "nonAutomaticCRLUpdatePeriod": "string",
-        "nonAutomaticCRLUpdateUnits": "string",
+        "crlDistributionUrl": "string",
         "crlDownloadFailureRetries": "string",
         "crlDownloadFailureRetriesUnits": "string",
-        "authenticateBeforeCRLReceived": "string",
-        "ignoreCRLExpiration": "string",
-        "enableServerIdentityCheck": "string",
+        "description": "string",
+        "downloadCRL": "string",
         "enableOCSPValidation": "string",
-        "selectedOCSPService": "string",
+        "enableServerIdentityCheck": "string",
+        "expirationDate": "string",
+        "friendlyName": "string",
+        "id": "string",
+        "ignoreCRLExpiration": "string",
+        "internalCA": true,
+        "isReferredInPolicy": true,
+        "issuedBy": "string",
+        "issuedTo": "string",
+        "keySize": "string",
+        "link": {
+          "href": "string",
+          "rel": "string",
+          "type": "string"
+        },
+        "nonAutomaticCRLUpdatePeriod": "string",
+        "nonAutomaticCRLUpdateUnits": "string",
         "rejectIfNoStatusFromOCSP": "string",
         "rejectIfUnreachableFromOCSP": "string",
+        "selectedOCSPService": "string",
+        "serialNumberDecimalFormat": "string",
         "sha256Fingerprint": "string",
-        "link": {
-          "rel": "string",
-          "href": "string",
-          "type": "string"
-        }
+        "signatureAlgorithm": "string",
+        "status": "string",
+        "subject": "string",
+        "trustedFor": "string",
+        "validFrom": "string"
       },
       "version": "string"
     }

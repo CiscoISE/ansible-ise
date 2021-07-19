@@ -15,19 +15,17 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-  id:
-    description:
-    - Id path parameter. Condition id.
-    type: str
   name:
     description:
     - Name path parameter. Condition name.
     type: str
+  id:
+    description:
+    - Id path parameter. Condition id.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.network_access_conditions
 # Reference by Internet resource
 - name: Network Access Conditions reference
   description: Complete reference of the Network Access Conditions object model.
@@ -70,44 +68,55 @@ ise_response:
   type: dict
   sample: >
     {
-      "conditionType": "string",
-      "isNegate": true,
-      "name": "string",
-      "id": "string",
-      "description": "string",
-      "dictionaryName": "string",
-      "attributeName": "string",
-      "attributeId": "string",
-      "operator": "string",
-      "dictionaryValue": "string",
-      "attributeValue": "string",
-      "children": [
-        {
-          "conditionType": "string",
-          "isNegate": true
-        }
-      ],
-      "hoursRange": {
-        "startTime": "string",
-        "endTime": "string"
+      "response": {
+        "conditionType": "string",
+        "isNegate": true,
+        "link": {
+          "href": "string",
+          "rel": "string",
+          "type": "string"
+        },
+        "description": "string",
+        "id": "string",
+        "name": "string",
+        "attributeValue": "string",
+        "dictionaryName": "string",
+        "dictionaryValue": "string",
+        "operator": "string",
+        "children": [
+          {
+            "conditionType": "string",
+            "isNegate": true,
+            "link": {
+              "href": "string",
+              "rel": "string",
+              "type": "string"
+            }
+          }
+        ],
+        "datesRange": {
+          "endDate": "string",
+          "startDate": "string"
+        },
+        "datesRangeException": {
+          "endDate": "string",
+          "startDate": "string"
+        },
+        "hoursRange": {
+          "endTime": "string",
+          "startTime": "string"
+        },
+        "hoursRangeException": {
+          "endTime": "string",
+          "startTime": "string"
+        },
+        "weekDays": [
+          "string"
+        ],
+        "weekDaysException": [
+          "string"
+        ]
       },
-      "hoursRangeException": {
-        "startTime": "string",
-        "endTime": "string"
-      },
-      "weekDays": [
-        "string"
-      ],
-      "weekDaysException": [
-        "string"
-      ],
-      "datesRange": {
-        "startDate": "string",
-        "endDate": "string"
-      },
-      "datesRangeException": {
-        "startDate": "string",
-        "endDate": "string"
-      }
+      "version": "string"
     }
 """

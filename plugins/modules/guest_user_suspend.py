@@ -12,12 +12,20 @@ description:
 - Manage operation update of the resource Guest User Suspend.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
-options: {}
+options:
+  additionalData:
+    description: Guest User Suspend's additionalData.
+    suboptions:
+      name:
+        description: Guest User Suspend's name.
+        type: str
+      value:
+        description: Guest User Suspend's value.
+        type: str
+    type: list
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.guest_user_suspend
 # Reference by Internet resource
 - name: Guest User Suspend reference
   description: Complete reference of the Guest User Suspend object model.
@@ -25,14 +33,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Update by id
-  cisco.ise.guest_user_suspend:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    id: string
-
 - name: Update by name
   cisco.ise.guest_user_suspend:
     ise_hostname: "{{ise_hostname}}"
@@ -40,6 +40,17 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     name: string
+
+- name: Update by id
+  cisco.ise.guest_user_suspend:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    additionalData:
+    - name: reason
+      value: reason
+    id: string
 
 """
 

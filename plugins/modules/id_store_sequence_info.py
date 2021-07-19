@@ -15,6 +15,14 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  name:
+    description:
+    - Name path parameter.
+    type: str
+  id:
+    description:
+    - Id path parameter.
+    type: str
   page:
     description:
     - Page query parameter. Page number.
@@ -23,19 +31,9 @@ options:
     description:
     - Size query parameter. Number of objects returned per page.
     type: int
-  id:
-    description:
-    - Id path parameter.
-    type: str
-  name:
-    description:
-    - Name path parameter.
-    type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.id_store_sequence
 # Reference by Internet resource
 - name: Id Store Sequence reference
   description: Complete reference of the Id Store Sequence object model.
@@ -83,6 +81,19 @@ ise_response:
       "id": "string",
       "name": "string",
       "description": "string",
-      "parent": "string"
+      "parent": "string",
+      "idSeqItem": [
+        {
+          "idstore": "string",
+          "order": 0
+        }
+      ],
+      "certificateAuthenticationProfile": "string",
+      "breakOnStoreFail": true,
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
+      }
     }
 """

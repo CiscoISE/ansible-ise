@@ -66,8 +66,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.sg_to_vn_to_vlan
 # Reference by Internet resource
 - name: Sg To Vn To Vlan reference
   description: Complete reference of the Sg To Vn To Vlan object model.
@@ -75,51 +73,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.sg_to_vn_to_vlan:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    description: description
-    id: id
-    name: name
-    sgtId: sgt_id
-    virtualnetworklist:
-    - defaultVirtualNetwork: false
-      description: description
-      id: id
-      name: virtual1
-      vlans:
-      - data: true
-        defaultVlan: true
-        description: description1
-        id: '1'
-        maxValue: 909386796
-        name: vlan1
-      - data: false
-        defaultVlan: false
-        description: description
-        id: id
-        maxValue: 1964790221
-        name: vlan2
-      - data: true
-        defaultVlan: false
-        description: description
-        id: id
-        maxValue: 0
-        name: vlan3
-    - defaultVirtualNetwork: true
-      description: description
-      id: id
-      name: virtual2
-      vlans:
-      - data: false
-        defaultVlan: false
-        maxValue: 1368125387
-        name: vlan4
-
 - name: Update by id
   cisco.ise.sg_to_vn_to_vlan:
     ise_hostname: "{{ise_hostname}}"
@@ -127,43 +80,22 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    description: description
-    id: id
-    name: name
-    sgtId: sgt_id
+    description: string
+    id: string
+    name: string
+    sgtId: string
     virtualnetworklist:
-    - defaultVirtualNetwork: false
-      description: description
-      id: id
-      name: virtual1
+    - defaultVirtualNetwork: true
+      description: string
+      id: string
+      name: string
       vlans:
       - data: true
         defaultVlan: true
-        description: description1
-        id: '1'
-        maxValue: 909386796
-        name: vlan1
-      - data: false
-        defaultVlan: false
-        description: description
-        id: id
-        maxValue: 1964790221
-        name: vlan2
-      - data: true
-        defaultVlan: false
-        description: description
-        id: id
+        description: string
+        id: string
         maxValue: 0
-        name: vlan3
-    - defaultVirtualNetwork: true
-      description: description
-      id: id
-      name: virtual2
-      vlans:
-      - data: false
-        defaultVlan: false
-        maxValue: 1368125387
-        name: vlan4
+        name: string
 
 - name: Delete by id
   cisco.ise.sg_to_vn_to_vlan:
@@ -174,6 +106,30 @@ EXAMPLES = r"""
     state: absent
     id: string
 
+- name: Create
+  cisco.ise.sg_to_vn_to_vlan:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    description: string
+    id: string
+    name: string
+    sgtId: string
+    virtualnetworklist:
+    - defaultVirtualNetwork: true
+      description: string
+      id: string
+      name: string
+      vlans:
+      - data: true
+        defaultVlan: true
+        description: string
+        id: string
+        maxValue: 0
+        name: string
+
 """
 
 RETURN = r"""
@@ -182,5 +138,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

@@ -14,6 +14,10 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  id:
+    description:
+    - Id path parameter.
+    type: str
   page:
     description:
     - Page query parameter. Page number.
@@ -22,15 +26,9 @@ options:
     description:
     - Size query parameter. Number of objects returned per page.
     type: int
-  id:
-    description:
-    - Id path parameter.
-    type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.filter_policy
 # Reference by Internet resource
 - name: Filter Policy reference
   description: Complete reference of the Filter Policy object model.

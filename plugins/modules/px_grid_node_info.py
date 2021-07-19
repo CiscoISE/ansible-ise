@@ -15,6 +15,14 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  name:
+    description:
+    - Name path parameter.
+    type: str
+  id:
+    description:
+    - Id path parameter.
+    type: str
   page:
     description:
     - Page query parameter. Page number.
@@ -23,19 +31,9 @@ options:
     description:
     - Size query parameter. Number of objects returned per page.
     type: int
-  id:
-    description:
-    - Id path parameter.
-    type: str
-  name:
-    description:
-    - Name path parameter.
-    type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.px_grid_node
 # Reference by Internet resource
 - name: Px Grid Node reference
   description: Complete reference of the Px Grid Node object model.
@@ -78,6 +76,18 @@ ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "status": "string",
+      "authMethod": "string",
+      "groups": "string",
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
+      }
+    }
 """

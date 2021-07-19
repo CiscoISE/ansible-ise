@@ -17,14 +17,7 @@ options:
     description: Endpoint's customAttributes.
     suboptions:
       customAttributes:
-        description: Endpoint's customAttributes.
-        suboptions:
-          key1:
-            description: Endpoint's key1.
-            type: str
-          key2:
-            description: Endpoint's key2.
-            type: str
+        description: Key value map.
         type: dict
     type: dict
   description:
@@ -106,8 +99,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.endpoint
 # Reference by Internet resource
 - name: Endpoint reference
   description: Complete reference of the Endpoint object model.
@@ -115,19 +106,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.endpoint:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    description: MyEndpoint
-    groupId: aa13bb40-8bff-11e6-996c-525400b48521
-    mac: 11:22:33:44:55:66
-    name: MyEndpoint
-    staticGroupAssignment: true
-
 - name: Update by id
   cisco.ise.endpoint:
     ise_hostname: "{{ise_hostname}}"
@@ -135,9 +113,33 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    description: a new description
-    groupId: 3a1b38d0-8c00-11e6-996c-525400b48521
+    customAttributes:
+      customAttributes: {}
+    description: string
+    groupId: string
     id: string
+    identityStore: string
+    identityStoreId: string
+    mac: string
+    mdmAttributes:
+      mdmComplianceStatus: true
+      mdmEncrypted: true
+      mdmEnrolled: true
+      mdmIMEI: string
+      mdmJailBroken: true
+      mdmManufacturer: string
+      mdmModel: string
+      mdmOS: string
+      mdmPhoneNumber: string
+      mdmPinlock: true
+      mdmReachable: true
+      mdmSerial: string
+      mdmServerName: string
+    name: string
+    portalUser: string
+    profileId: string
+    staticGroupAssignment: true
+    staticProfileAssignment: true
 
 - name: Delete by id
   cisco.ise.endpoint:
@@ -148,6 +150,40 @@ EXAMPLES = r"""
     state: absent
     id: string
 
+- name: Create
+  cisco.ise.endpoint:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    customAttributes:
+      customAttributes: {}
+    description: string
+    groupId: string
+    identityStore: string
+    identityStoreId: string
+    mac: string
+    mdmAttributes:
+      mdmComplianceStatus: true
+      mdmEncrypted: true
+      mdmEnrolled: true
+      mdmIMEI: string
+      mdmJailBroken: true
+      mdmManufacturer: string
+      mdmModel: string
+      mdmOS: string
+      mdmPhoneNumber: string
+      mdmPinlock: true
+      mdmReachable: true
+      mdmSerial: string
+      mdmServerName: string
+    name: string
+    portalUser: string
+    profileId: string
+    staticGroupAssignment: true
+    staticProfileAssignment: true
+
 """
 
 RETURN = r"""
@@ -156,5 +192,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

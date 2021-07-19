@@ -14,10 +14,10 @@ version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
   deployTo:
-    description: Sg Mapping Group's deployTo.
+    description: Mandatory unless mappingGroup is set or unless deployType=ALL.
     type: str
   deployType:
-    description: Sg Mapping Group's deployType.
+    description: Allowed values - ALL, - ND, - NDG.
     type: str
   id:
     description: Id path parameter.
@@ -26,13 +26,11 @@ options:
     description: Sg Mapping Group's name.
     type: str
   sgt:
-    description: Sg Mapping Group's sgt.
+    description: Mandatory unless mappingGroup is set.
     type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.sg_mapping_group
 # Reference by Internet resource
 - name: Sg Mapping Group reference
   description: Complete reference of the Sg Mapping Group object model.
@@ -40,18 +38,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.sg_mapping_group:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    deployTo: network_device_id
-    deployType: ND
-    name: groupA
-    sgt: sgt_id
-
 - name: Update by id
   cisco.ise.sg_mapping_group:
     ise_hostname: "{{ise_hostname}}"
@@ -59,11 +45,11 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    deployTo: network_device_id
-    deployType: ND
+    deployTo: string
+    deployType: string
     id: string
-    name: groupA
-    sgt: sgt_id
+    name: string
+    sgt: string
 
 - name: Delete by id
   cisco.ise.sg_mapping_group:
@@ -74,6 +60,18 @@ EXAMPLES = r"""
     state: absent
     id: string
 
+- name: Create
+  cisco.ise.sg_mapping_group:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    deployTo: string
+    deployType: string
+    name: string
+    sgt: string
+
 """
 
 RETURN = r"""
@@ -82,5 +80,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

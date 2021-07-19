@@ -14,6 +14,10 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  id:
+    description:
+    - Id path parameter.
+    type: str
   page:
     description:
     - Page query parameter. Page number.
@@ -48,15 +52,9 @@ options:
       FilterType query parameter. The logical operator common to ALL filter criteria will be by default AND, and
       can be changed by using the parameter.
     type: str
-  id:
-    description:
-    - Id path parameter.
-    type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.my_device_portal
 # Reference by Internet resource
 - name: My Device Portal reference
   description: Complete reference of the My Device Portal object model.
@@ -100,49 +98,41 @@ ise_response:
       "name": "string",
       "description": "string",
       "portalType": "string",
+      "portalTestUrl": "string",
       "settings": {
         "portalSettings": {
           "httpsPort": 0,
-          "allowedInterfaces": [
-            "string"
-          ],
+          "allowedInterfaces": "string",
           "certificateGroupTag": "string",
           "endpointIdentityGroup": "string",
-          "fqdn": "string",
-          "authenticationMethod": "string",
-          "idleTimeout": 0,
           "displayLang": "string",
           "fallbackLanguage": "string",
-          "alwaysUsedLanguage": "string",
-          "availableSsids": []
+          "alwaysUsedLanguage": "string"
         },
         "loginPageSettings": {
-          "requireAccessCode": true,
           "maxFailedAttemptsBeforeRateLimit": 0,
           "timeBetweenLoginsDuringRateLimit": 0,
           "includeAup": true,
           "aupDisplay": "string",
           "requireAupAcceptance": true,
-          "requireAupScrolling": true,
-          "allowGuestToCreateAccounts": true,
-          "allowGuestToChangePassword": true,
-          "allowAlternateGuestPortal": true,
-          "allowGuestToUseSocialAccounts": true,
-          "allowShowGuestForm": true,
-          "socialConfigs": []
+          "requireScrolling": true,
+          "socialConfigs": [
+            {}
+          ]
         },
         "aupSettings": {
+          "displayFrequencyIntervalDays": 0,
+          "displayFrequency": "string",
           "includeAup": true,
-          "useDiffAupForEmployees": true,
-          "skipAupForEmployees": true,
-          "requireAccessCode": true,
-          "requireScrolling": true,
-          "displayFrequency": "string"
+          "requireScrolling": true
         },
         "employeeChangePasswordSettings": {
           "allowEmployeeToChangePwd": true
         },
         "postLoginBannerSettings": {
+          "includePostAccessBanner": true
+        },
+        "postAccessBannerSettings": {
           "includePostAccessBanner": true
         },
         "supportInfoSettings": {
@@ -152,7 +142,8 @@ ise_response:
           "includeBrowserUserAgent": true,
           "includePolicyServer": true,
           "includeFailureCode": true,
-          "emptyFieldDisplay": "string"
+          "emptyFieldDisplay": "string",
+          "defaultEmptyFieldValue": "string"
         }
       },
       "customizations": {
@@ -180,6 +171,9 @@ ise_response:
           "bannerImage": {
             "data": "string"
           },
+          "backgroundImage": {
+            "data": "string"
+          },
           "bannerTitle": "string",
           "contactText": "string",
           "footerElement": "string"
@@ -192,6 +186,11 @@ ise_response:
             }
           ]
         }
+      },
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
       }
     }
 """

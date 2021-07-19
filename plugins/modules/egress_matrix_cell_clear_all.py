@@ -16,8 +16,6 @@ options: {}
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.egress_matrix_cell_clear_all
 # Reference by Internet resource
 - name: Egress Matrix Cell Clear All reference
   description: Complete reference of the Egress Matrix Cell Clear All object model.

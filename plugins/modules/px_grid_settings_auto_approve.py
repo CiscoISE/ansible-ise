@@ -12,12 +12,16 @@ description:
 - Manage operation update of the resource Px Grid Settings Auto Approve.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
-options: {}
+options:
+  allowPasswordBasedAccounts:
+    description: Allow password based accounts when true.
+    type: bool
+  autoApproveCertBasedAccounts:
+    description: Auto approve certificate based accounts when true.
+    type: bool
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.px_grid_settings_auto_approve
 # Reference by Internet resource
 - name: Px Grid Settings Auto Approve reference
   description: Complete reference of the Px Grid Settings Auto Approve object model.
@@ -31,6 +35,8 @@ EXAMPLES = r"""
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
+    allowPasswordBasedAccounts: true
+    autoApproveCertBasedAccounts: true
 
 """
 

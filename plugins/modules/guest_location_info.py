@@ -14,6 +14,10 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  id:
+    description:
+    - Id path parameter.
+    type: str
   page:
     description:
     - Page query parameter. Page number.
@@ -48,15 +52,9 @@ options:
       FilterType query parameter. The logical operator common to ALL filter criteria will be by default AND, and
       can be changed by using the parameter.
     type: str
-  id:
-    description:
-    - Id path parameter.
-    type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.guest_location
 # Reference by Internet resource
 - name: Guest Location reference
   description: Complete reference of the Guest Location object model.
@@ -93,19 +91,15 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: list
-  elements: dict
+  type: dict
   sample: >
-    [
-      {
-        "id": "string",
-        "name": "string",
-        "description": "string",
-        "link": {
-          "rel": "string",
-          "href": "string",
-          "type": "string"
-        }
+    {
+      "id": "string",
+      "name": "string",
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
       }
-    ]
+    }
 """

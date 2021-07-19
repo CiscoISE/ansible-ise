@@ -16,8 +16,6 @@ options: {}
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.sg_mapping_deploy_status
 # Reference by Internet resource
 - name: Sg Mapping Deploy Status reference
   description: Complete reference of the Sg Mapping Deploy Status object model.
@@ -40,6 +38,13 @@ ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "resultValue": [
+        {
+          "value": "string",
+          "name": "string"
+        }
+      ]
+    }
 """

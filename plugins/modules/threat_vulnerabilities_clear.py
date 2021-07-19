@@ -13,24 +13,12 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-  description:
-    description: Threat Vulnerabilities Clear's description.
-    type: str
-  id:
-    description: Threat Vulnerabilities Clear's id.
-    type: str
   macAddresses:
     description: Threat Vulnerabilities Clear's macAddresses.
-    elements: str
-    type: list
-  name:
-    description: Threat Vulnerabilities Clear's name.
     type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.threat_vulnerabilities_clear
 # Reference by Internet resource
 - name: Threat Vulnerabilities Clear reference
   description: Complete reference of the Threat Vulnerabilities Clear object model.
@@ -44,11 +32,7 @@ EXAMPLES = r"""
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
-    description: string
-    id: string
-    macAddresses:
-    - string
-    name: string
+    macAddresses: string
 
 """
 

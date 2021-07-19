@@ -16,8 +16,6 @@ options: {}
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.guest_user_sms
 # Reference by Internet resource
 - name: Guest User Sms reference
   description: Complete reference of the Guest User Sms object model.

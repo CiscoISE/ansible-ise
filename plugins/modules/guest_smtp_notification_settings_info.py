@@ -14,6 +14,10 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  id:
+    description:
+    - Id path parameter.
+    type: str
   page:
     description:
     - Page query parameter. Page number.
@@ -48,15 +52,9 @@ options:
       FilterType query parameter. The logical operator common to ALL filter criteria will be by default AND, and
       can be changed by using the parameter.
     type: str
-  id:
-    description:
-    - Id path parameter.
-    type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.guest_smtp_notification_settings
 # Reference by Internet resource
 - name: Guest Smtp Notification Settings reference
   description: Complete reference of the Guest Smtp Notification Settings object model.
@@ -97,6 +95,7 @@ ise_response:
   sample: >
     {
       "id": "string",
+      "smtpServer": "string",
       "notificationEnabled": true,
       "useDefaultFromAddress": true,
       "defaultFromAddress": "string",
@@ -104,6 +103,8 @@ ise_response:
       "connectionTimeout": "string",
       "useTLSorSSLEncryption": true,
       "usePasswordAuthentication": true,
+      "userName": "string",
+      "password": "string",
       "link": {
         "rel": "string",
         "href": "string",

@@ -28,8 +28,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.endpoint_group
 # Reference by Internet resource
 - name: Endpoint Group reference
   description: Complete reference of the Endpoint Group object model.
@@ -37,16 +35,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.endpoint_group:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    description: Description
-    name: MyEndpointGroup
-
 - name: Update by id
   cisco.ise.endpoint_group:
     ise_hostname: "{{ise_hostname}}"
@@ -54,9 +42,9 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    description: 'Identity Group for Profile: Cisco-Meraki-Device'
-    id: 1e2700a0-8c00-11e6-996c-525400b48521
-    name: Cisco-Meraki-Device
+    description: string
+    id: string
+    name: string
     systemDefined: true
 
 - name: Delete by id
@@ -68,6 +56,17 @@ EXAMPLES = r"""
     state: absent
     id: string
 
+- name: Create
+  cisco.ise.endpoint_group:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    description: string
+    name: string
+    systemDefined: true
+
 """
 
 RETURN = r"""
@@ -76,5 +75,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

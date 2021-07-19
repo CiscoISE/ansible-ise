@@ -14,11 +14,15 @@ version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
   actions:
-    description: Anc Policy's actions.
+    description: '- QUARANTINE Allows you to use Exception policies (authorization policies)
+      to limit or deny an endpoint access to the network. - PORTBOUNCE Resets the port
+      on the network device to which the endpoint is connected. - SHUTDOWN Shuts down
+      the port on the network device to which the endpoint is connected. - RE_AUTHENTICATE
+      Re-authenticates the session from the endpoint.'
     elements: str
     type: list
   id:
-    description: Id path parameter.
+    description: Anc Policy's id.
     type: str
   name:
     description: Anc Policy's name.
@@ -26,8 +30,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.anc_policy
 # Reference by Internet resource
 - name: Anc Policy reference
   description: Complete reference of the Anc Policy object model.
@@ -35,17 +37,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.anc_policy:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    actions:
-    - QUARANTINE
-    name: policy1
-
 - name: Update by id
   cisco.ise.anc_policy:
     ise_hostname: "{{ise_hostname}}"
@@ -54,9 +45,9 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     actions:
-    - QUARANTINE
+    - string
     id: string
-    name: policy1
+    name: string
 
 - name: Delete by id
   cisco.ise.anc_policy:
@@ -66,6 +57,17 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
+
+- name: Create
+  cisco.ise.anc_policy:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    actions:
+    - string
+    name: string
 
 """
 

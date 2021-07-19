@@ -16,8 +16,6 @@ options: {}
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.device_administration_command_set
 # Reference by Internet resource
 - name: Device Administration Command Set reference
   description: Complete reference of the Device Administration Command Set object model.
@@ -40,9 +38,12 @@ ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
   type: list
-  elements: str
+  elements: dict
   sample: >
     [
-      "string"
+      {
+        "id": "string",
+        "name": "string"
+      }
     ]
 """

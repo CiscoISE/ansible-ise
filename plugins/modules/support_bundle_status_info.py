@@ -18,11 +18,17 @@ options:
     description:
     - Id path parameter.
     type: str
+  page:
+    description:
+    - Page query parameter. Page number.
+    type: int
+  size:
+    description:
+    - Size query parameter. Number of objects returned per page.
+    type: int
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.support_bundle_status
 # Reference by Internet resource
 - name: Support Bundle Status reference
   description: Complete reference of the Support Bundle Status object model.
@@ -36,6 +42,8 @@ EXAMPLES = r"""
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
+    page: 1
+    size: 20
   register: result
 
 - name: Get Support Bundle Status by id
@@ -60,9 +68,10 @@ ise_response:
       "name": "string",
       "description": "string",
       "fileName": "string",
-      "fileSize": 0,
+      "fileSize": "string",
       "hostName": "string",
       "message": "string",
+      "startTime": "string",
       "status": "string",
       "link": {
         "rel": "string",

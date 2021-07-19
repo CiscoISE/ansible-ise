@@ -14,7 +14,7 @@ version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
   defaultRule:
-    description: Egress Matrix Cell's defaultRule.
+    description: Allowed values - NONE, - DENY_IP, - PERMIT_IP.
     type: str
   description:
     description: Egress Matrix Cell's description.
@@ -26,7 +26,7 @@ options:
     description: Egress Matrix Cell's id.
     type: str
   matrixCellStatus:
-    description: Egress Matrix Cell's matrixCellStatus.
+    description: Allowed values - DISABLED, - ENABLED, - MONITOR.
     type: str
   name:
     description: Egress Matrix Cell's name.
@@ -41,8 +41,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.egress_matrix_cell
 # Reference by Internet resource
 - name: Egress Matrix Cell reference
   description: Complete reference of the Egress Matrix Cell object model.
@@ -50,22 +48,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.egress_matrix_cell:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    defaultRule: PERMIT_IP
-    destinationSgtId: 1ebbc200-7a26-11e4-bc43-000c29ed7428
-    matrixCellStatus: MONITOR
-    name: Workstations
-    sgacls:
-    - 1ebbc100-7a26-11e4-bc43-000c29ed7428
-    - 2ebbc100-7a26-11e4-bc43-000c29ed7428
-    sourceSgtId: 2ebbc200-7a26-11e4-bc43-000c29ed7428
-
 - name: Update by id
   cisco.ise.egress_matrix_cell:
     ise_hostname: "{{ise_hostname}}"
@@ -73,15 +55,15 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    defaultRule: PERMIT_IP
-    destinationSgtId: 1ebbc200-7a26-11e4-bc43-000c29ed7428
-    id: 4746ca01-c3c4-11eb-95af-f263cf05f605
-    matrixCellStatus: MONITOR
-    name: Workstations
+    defaultRule: string
+    description: string
+    destinationSgtId: string
+    id: string
+    matrixCellStatus: string
+    name: string
     sgacls:
-    - 1ebbc100-7a26-11e4-bc43-000c29ed7428
-    - 2ebbc100-7a26-11e4-bc43-000c29ed7428
-    sourceSgtId: 2ebbc200-7a26-11e4-bc43-000c29ed7428
+    - string
+    sourceSgtId: string
 
 - name: Delete by id
   cisco.ise.egress_matrix_cell:
@@ -92,6 +74,22 @@ EXAMPLES = r"""
     state: absent
     id: string
 
+- name: Create
+  cisco.ise.egress_matrix_cell:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    defaultRule: string
+    description: string
+    destinationSgtId: string
+    matrixCellStatus: string
+    name: string
+    sgacls:
+    - string
+    sourceSgtId: string
+
 """
 
 RETURN = r"""
@@ -100,5 +98,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

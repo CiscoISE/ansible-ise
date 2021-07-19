@@ -73,8 +73,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.system_certificate_import
 # Reference by Internet resource
 - name: System Certificate Import reference
   description: Complete reference of the System Certificate Import object model.
@@ -118,9 +116,9 @@ ise_response:
   sample: >
     {
       "response": {
-        "Status": "string",
-        "Message": "string",
-        "Id": "string"
+        "id": "string",
+        "message": "string",
+        "status": "string"
       },
       "version": "string"
     }

@@ -17,14 +17,7 @@ options:
     description: ChangePassword flag.
     type: bool
   customAttributes:
-    description: Internal User's customAttributes.
-    suboptions:
-      key1:
-        description: Internal User's key1.
-        type: str
-      key2:
-        description: Internal User's key2.
-        type: str
+    description: Key value map.
     type: dict
   description:
     description: Internal User's description.
@@ -36,10 +29,13 @@ options:
     description: Internal User's enablePassword.
     type: str
   enabled:
-    description: Enabled flag.
+    description: Whether the user is enabled/disabled. To use it as filter, the values
+      should be 'Enabled' or 'Disabled'. The values are case sensitive. For example,
+      'ERSObjectURL?filter=enabled.EQ.Enabled'.
     type: bool
   expiryDate:
-    description: Internal User's expiryDate.
+    description: To store the internal user's expiry date information. It's format is
+      = 'YYYY-MM-DD'.
     type: str
   expiryDateEnabled:
     description: ExpiryDateEnabled flag.
@@ -51,7 +47,7 @@ options:
     description: Internal User's id.
     type: str
   identityGroups:
-    description: Internal User's identityGroups.
+    description: CSV of identity group IDs.
     type: str
   lastName:
     description: Internal User's lastName.
@@ -63,13 +59,11 @@ options:
     description: Internal User's password.
     type: str
   passwordIDStore:
-    description: Internal User's passwordIDStore.
+    description: The id store where the internal user's password is kept.
     type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.internal_user
 # Reference by Internet resource
 - name: Internal User reference
   description: Complete reference of the Internal User object model.
@@ -77,36 +71,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.internal_user:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    description: '{{description}}'
-    name: '{{username}}'
-    password: '{{password}}'
-
-- name: Update by id
-  cisco.ise.internal_user:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    description: New description
-    id: string
-
-- name: Delete by id
-  cisco.ise.internal_user:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
-    id: string
-
 - name: Update by name
   cisco.ise.internal_user:
     ise_hostname: "{{ise_hostname}}"
@@ -114,8 +78,21 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
+    changePassword: true
+    customAttributes: {}
+    description: string
+    email: string
+    enablePassword: string
+    enabled: true
+    expiryDate: string
+    expiryDateEnabled: true
+    firstName: string
+    id: string
+    identityGroups: string
+    lastName: string
     name: string
-    password: Ch@ngedP@55w0rd
+    password: string
+    passwordIDStore: string
 
 - name: Delete by name
   cisco.ise.internal_user:
@@ -126,6 +103,60 @@ EXAMPLES = r"""
     state: absent
     name: string
 
+- name: Update by id
+  cisco.ise.internal_user:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    changePassword: true
+    customAttributes: {}
+    description: string
+    email: string
+    enablePassword: string
+    enabled: true
+    expiryDate: string
+    expiryDateEnabled: true
+    firstName: string
+    id: string
+    identityGroups: string
+    lastName: string
+    name: string
+    password: string
+    passwordIDStore: string
+
+- name: Delete by id
+  cisco.ise.internal_user:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: absent
+    id: string
+
+- name: Create
+  cisco.ise.internal_user:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    changePassword: true
+    customAttributes: {}
+    description: string
+    email: string
+    enablePassword: string
+    enabled: true
+    expiryDate: string
+    expiryDateEnabled: true
+    firstName: string
+    identityGroups: string
+    lastName: string
+    name: string
+    password: string
+    passwordIDStore: string
+
 """
 
 RETURN = r"""
@@ -134,5 +165,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

@@ -21,8 +21,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.repository
 # Reference by Internet resource
 - name: Repository reference
   description: Complete reference of the Repository object model.
@@ -56,12 +54,15 @@ ise_response:
   type: dict
   sample: >
     {
-      "name": "string",
-      "protocol": "string",
-      "path": "string",
-      "serverName": "string",
-      "userName": "string",
-      "password": "string",
-      "enablePki": true
+      "response": {
+        "name": "string",
+        "protocol": "string",
+        "path": "string",
+        "password": "string",
+        "serverName": "string",
+        "userName": "string",
+        "enablePki": true
+      },
+      "version": "string"
     }
 """

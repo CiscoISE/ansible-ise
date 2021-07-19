@@ -19,8 +19,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.node_promotion
 # Reference by Internet resource
 - name: Node Promotion reference
   description: Complete reference of the Node Promotion object model.

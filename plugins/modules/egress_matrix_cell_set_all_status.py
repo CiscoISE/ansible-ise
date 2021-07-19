@@ -16,8 +16,6 @@ options: {}
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.egress_matrix_cell_set_all_status
 # Reference by Internet resource
 - name: Egress Matrix Cell Set All Status reference
   description: Complete reference of the Egress Matrix Cell Set All Status object model.

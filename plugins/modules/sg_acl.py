@@ -19,20 +19,27 @@ options:
   description:
     description: Sg Acl's description.
     type: str
+  generationId:
+    description: Sg Acl's generationId.
+    type: str
   id:
     description: Sg Acl's id.
     type: str
   ipVersion:
-    description: Sg Acl's ipVersion.
+    description: Allowed values - IPV4, - IPV6, - IP_AGNOSTIC.
     type: str
+  isReadOnly:
+    description: IsReadOnly flag.
+    type: bool
+  modelledContent:
+    description: Modelled content of contract.
+    type: dict
   name:
     description: Sg Acl's name.
     type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.sg_acl
 # Reference by Internet resource
 - name: Sg Acl reference
   description: Complete reference of the Sg Acl object model.
@@ -40,19 +47,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.sg_acl:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    aclcontent: Permit IP
-    description: description
-    id: id
-    ipVersion: IPV4
-    name: name
-
 - name: Update by id
   cisco.ise.sg_acl:
     ise_hostname: "{{ise_hostname}}"
@@ -60,11 +54,14 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    aclcontent: Permit IP
-    description: description
-    id: id
-    ipVersion: IPV4
-    name: name
+    aclcontent: string
+    description: string
+    generationId: string
+    id: string
+    ipVersion: string
+    isReadOnly: true
+    modelledContent: {}
+    name: string
 
 - name: Delete by id
   cisco.ise.sg_acl:
@@ -75,6 +72,21 @@ EXAMPLES = r"""
     state: absent
     id: string
 
+- name: Create
+  cisco.ise.sg_acl:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    aclcontent: string
+    description: string
+    generationId: string
+    ipVersion: string
+    isReadOnly: true
+    modelledContent: {}
+    name: string
+
 """
 
 RETURN = r"""
@@ -83,5 +95,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

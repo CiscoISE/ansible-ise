@@ -14,40 +14,44 @@ version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
   connectionTimeout:
-    description: Guest Smtp Notification Settings's connectionTimeout.
+    description: Interval in seconds for all the SMTP client connections.
     type: str
   defaultFromAddress:
-    description: Guest Smtp Notification Settings's defaultFromAddress.
+    description: The default from email address to be used to send emails from.
+    type: str
+  id:
+    description: Guest Smtp Notification Settings's id.
     type: str
   notificationEnabled:
-    description: NotificationEnabled flag.
+    description: Indicates if the email notification service is to be enabled.
     type: bool
   password:
-    description: Guest Smtp Notification Settings's password.
+    description: Password of Secure SMTP server.
     type: str
   smtpPort:
-    description: Guest Smtp Notification Settings's smtpPort.
+    description: Port at which SMTP Secure Server is listening.
     type: str
   smtpServer:
-    description: Guest Smtp Notification Settings's smtpServer.
+    description: The SMTP server ip address or fqdn such as outbound.mycompany.com.
     type: str
   useDefaultFromAddress:
-    description: UseDefaultFromAddress flag.
+    description: If the default from address should be used rather than using a sponsor
+      user email address.
     type: bool
   usePasswordAuthentication:
-    description: UsePasswordAuthentication flag.
+    description: If configured to true, SMTP server authentication will happen using
+      username/password.
     type: bool
   useTLSorSSLEncryption:
-    description: UseTLSorSSLEncryption flag.
+    description: If configured to true, SMTP server authentication will happen using
+      TLS/SSL.
     type: bool
   userName:
-    description: Guest Smtp Notification Settings's userName.
+    description: Username of Secure SMTP server.
     type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.guest_smtp_notification_settings
 # Reference by Internet resource
 - name: Guest Smtp Notification Settings reference
   description: Complete reference of the Guest Smtp Notification Settings object model.
@@ -55,24 +59,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.guest_smtp_notification_settings:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    connectionTimeout: '60'
-    defaultFromAddress: admin@ise.example.com
-    notificationEnabled: true
-    password: C1sco12345
-    smtpPort: '465'
-    smtpServer: smtp.example.com
-    useDefaultFromAddress: false
-    usePasswordAuthentication: true
-    useTLSorSSLEncryption: true
-    userName: smtp@example.com
-
 - name: Update by id
   cisco.ise.guest_smtp_notification_settings:
     ise_hostname: "{{ise_hostname}}"
@@ -80,17 +66,35 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    connectionTimeout: '60'
-    defaultFromAddress: admin@ise.example.com
+    connectionTimeout: string
+    defaultFromAddress: string
     id: string
     notificationEnabled: true
-    password: C1sco12345
-    smtpPort: '465'
-    smtpServer: smtp.example.com
-    useDefaultFromAddress: false
+    password: string
+    smtpPort: string
+    smtpServer: string
+    useDefaultFromAddress: true
     usePasswordAuthentication: true
     useTLSorSSLEncryption: true
-    userName: smtp@example.com
+    userName: string
+
+- name: Create
+  cisco.ise.guest_smtp_notification_settings:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    connectionTimeout: string
+    defaultFromAddress: string
+    notificationEnabled: true
+    password: string
+    smtpPort: string
+    smtpServer: string
+    useDefaultFromAddress: true
+    usePasswordAuthentication: true
+    useTLSorSSLEncryption: true
+    userName: string
 
 """
 
@@ -100,5 +104,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

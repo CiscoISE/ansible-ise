@@ -26,7 +26,8 @@ options:
     description: Native Supplicant Profile's wirelessProfiles.
     suboptions:
       actionType:
-        description: Native Supplicant Profile's actionType.
+        description: Action type for WifiProfile. Allowed values - ADD, - UPDATE, -
+          DELETE (required for updating existing WirelessProfile).
         type: str
       allowedProtocol:
         description: Native Supplicant Profile's allowedProtocol.
@@ -35,7 +36,7 @@ options:
         description: Native Supplicant Profile's certificateTemplateId.
         type: str
       previousSsid:
-        description: Native Supplicant Profile's previousSsid.
+        description: Previous ssid for WifiProfile (required for updating existing WirelessProfile).
         type: str
       ssid:
         description: Native Supplicant Profile's ssid.
@@ -44,8 +45,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.native_supplicant_profile
 # Reference by Internet resource
 - name: Native Supplicant Profile reference
   description: Complete reference of the Native Supplicant Profile object model.
@@ -60,15 +59,15 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    description: 'ERS example Native supplicant profile '
-    id: '123456789'
-    name: NSPProfile
+    description: string
+    id: string
+    name: string
     wirelessProfiles:
-    - actionType: UPDATE
-      allowedProtocol: TLS
-      certificateTemplateId: '123456789'
-      previousSsid: ssid1
-      ssid: ssid1
+    - actionType: string
+      allowedProtocol: string
+      certificateTemplateId: string
+      previousSsid: string
+      ssid: string
 
 - name: Delete by id
   cisco.ise.native_supplicant_profile:
@@ -87,5 +86,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

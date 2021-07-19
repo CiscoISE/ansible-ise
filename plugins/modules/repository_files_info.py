@@ -20,8 +20,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.repository_files
 # Reference by Internet resource
 - name: Repository Files reference
   description: Complete reference of the Repository Files object model.
@@ -44,10 +42,12 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: list
-  elements: str
+  type: dict
   sample: >
-    [
-      "string"
-    ]
+    {
+      "response": [
+        "string"
+      ],
+      "version": "string"
+    }
 """

@@ -25,8 +25,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.device_administration_authorization_rules
 # Reference by Internet resource
 - name: Device Administration Authorization Rules reference
   description: Complete reference of the Device Administration Authorization Rules object model.
@@ -62,59 +60,74 @@ ise_response:
   type: dict
   sample: >
     {
-      "rule": {
-        "id": "string",
-        "name": "string",
-        "description": "string",
-        "hitCounts": 0,
-        "rank": 0,
-        "state": "string",
-        "default": true,
-        "condition": {
-          "conditionType": "string",
-          "isNegate": true,
-          "name": "string",
+      "response": {
+        "commands": [
+          "string"
+        ],
+        "link": {
+          "href": "string",
+          "rel": "string",
+          "type": "string"
+        },
+        "profile": "string",
+        "rule": {
+          "condition": {
+            "conditionType": "string",
+            "isNegate": true,
+            "link": {
+              "href": "string",
+              "rel": "string",
+              "type": "string"
+            },
+            "description": "string",
+            "id": "string",
+            "name": "string",
+            "attributeValue": "string",
+            "dictionaryName": "string",
+            "dictionaryValue": "string",
+            "operator": "string",
+            "children": [
+              {
+                "conditionType": "string",
+                "isNegate": true,
+                "link": {
+                  "href": "string",
+                  "rel": "string",
+                  "type": "string"
+                }
+              }
+            ],
+            "datesRange": {
+              "endDate": "string",
+              "startDate": "string"
+            },
+            "datesRangeException": {
+              "endDate": "string",
+              "startDate": "string"
+            },
+            "hoursRange": {
+              "endTime": "string",
+              "startTime": "string"
+            },
+            "hoursRangeException": {
+              "endTime": "string",
+              "startTime": "string"
+            },
+            "weekDays": [
+              "string"
+            ],
+            "weekDaysException": [
+              "string"
+            ]
+          },
+          "default": true,
+          "hitCounts": 0,
           "id": "string",
-          "description": "string",
-          "dictionaryName": "string",
-          "attributeName": "string",
-          "attributeId": "string",
-          "operator": "string",
-          "dictionaryValue": "string",
-          "attributeValue": "string",
-          "children": [
-            {
-              "conditionType": "string",
-              "isNegate": true
-            }
-          ],
-          "hoursRange": {
-            "startTime": "string",
-            "endTime": "string"
-          },
-          "hoursRangeException": {
-            "startTime": "string",
-            "endTime": "string"
-          },
-          "weekDays": [
-            "string"
-          ],
-          "weekDaysException": [
-            "string"
-          ],
-          "datesRange": {
-            "startDate": "string",
-            "endDate": "string"
-          },
-          "datesRangeException": {
-            "startDate": "string",
-            "endDate": "string"
-          }
+          "name": "string",
+          "rank": 0,
+          "state": "string"
         }
       },
-      "commands": [
-        "string"
-      ],
-      "profile": "string"
+      "version": "string"
     }
 """

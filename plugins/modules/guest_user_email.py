@@ -26,8 +26,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.guest_user_email
 # Reference by Internet resource
 - name: Guest User Email reference
   description: Complete reference of the Guest User Email object model.
@@ -43,7 +41,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     additionalData:
     - name: senderEmail
-      value: '{{value_1}}'
+      value: senderEmail
     id: string
     portalId: string
 

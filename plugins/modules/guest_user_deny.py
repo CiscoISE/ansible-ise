@@ -16,8 +16,6 @@ options: {}
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.guest_user_deny
 # Reference by Internet resource
 - name: Guest User Deny reference
   description: Complete reference of the Guest User Deny object model.

@@ -13,14 +13,26 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  customFields:
+    description: Key value map.
+    type: dict
+  description:
+    description: Guest User's description.
+    type: str
   guestAccessInfo:
     description: Guest User's guestAccessInfo.
     suboptions:
       fromDate:
         description: Guest User's fromDate.
         type: str
+      groupTag:
+        description: Guest User's groupTag.
+        type: str
       location:
         description: Guest User's location.
+        type: str
+      ssid:
+        description: Guest User's ssid.
         type: str
       toDate:
         description: Guest User's toDate.
@@ -32,23 +44,40 @@ options:
   guestInfo:
     description: Guest User's guestInfo.
     suboptions:
+      company:
+        description: Guest User's company.
+        type: str
+      creationTime:
+        description: Guest User's creationTime.
+        type: str
       emailAddress:
         description: Guest User's emailAddress.
         type: str
       enabled:
-        description: Guest User's enabled.
-        type: str
+        description: This field is only for Get operation not applicable for Create,
+          Update operations.
+        type: bool
       firstName:
         description: Guest User's firstName.
         type: str
       lastName:
         description: Guest User's lastName.
         type: str
+      notificationLanguage:
+        description: Guest User's notificationLanguage.
+        type: str
       password:
         description: Guest User's password.
         type: str
+      phoneNumber:
+        description: Phone number should be E.164 format.
+        type: str
+      smsServiceProvider:
+        description: Guest User's smsServiceProvider.
+        type: str
       userName:
-        description: Guest User's userName.
+        description: If account needs be created with mobile number, please provide
+          mobile number here.
         type: str
     type: dict
   guestType:
@@ -58,7 +87,7 @@ options:
     description: Guest User's id.
     type: str
   name:
-    description: Name path parameter.
+    description: Guest User's name.
     type: str
   portalId:
     description: Guest User's portalId.
@@ -66,11 +95,21 @@ options:
   reasonForVisit:
     description: Guest User's reasonForVisit.
     type: str
+  sponsorUserId:
+    description: Guest User's sponsorUserId.
+    type: str
+  sponsorUserName:
+    description: Guest User's sponsorUserName.
+    type: str
+  status:
+    description: Guest User's status.
+    type: str
+  statusReason:
+    description: Guest User's statusReason.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.guest_user
 # Reference by Internet resource
 - name: Guest User reference
   description: Complete reference of the Guest User object model.
@@ -78,51 +117,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.guest_user:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    guestAccessInfo:
-      fromDate: 04/27/2021 17:40
-      location: San Jose
-      toDate: 04/28/2021 17:40
-      validDays: 1
-    guestInfo:
-      emailAddress: thomas@cisco.com
-      enabled: 'true'
-      firstName: Thomas
-      lastName: Howard
-      password: C1sco12345
-      userName: 1homas
-    guestType: Daily (default)
-    portalId: bd48c1a1-9477-4746-8e40-e43d20c9f429
-    reasonForVisit: ISE Guest Services
-
-- name: Update by id
-  cisco.ise.guest_user:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    guestInfo:
-      enabled: true
-    guestType: Daily (default)
-    id: 4cea2c31-605c-42d2-92d1-1e999b61aad0
-    portalId: bd48c1a1-9477-4746-8e40-e43d20c9f429
-
-- name: Delete by id
-  cisco.ise.guest_user:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
-    id: string
-
 - name: Update by name
   cisco.ise.guest_user:
     ise_hostname: "{{ise_hostname}}"
@@ -130,12 +124,36 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
+    customFields: {}
+    description: string
+    guestAccessInfo:
+      fromDate: string
+      groupTag: string
+      location: string
+      ssid: string
+      toDate: string
+      validDays: 0
     guestInfo:
+      company: string
+      creationTime: string
+      emailAddress: string
       enabled: true
-    guestType: Daily (default)
-    id: 4cea2c31-605c-42d2-92d1-1e999b61aad0
+      firstName: string
+      lastName: string
+      notificationLanguage: string
+      password: string
+      phoneNumber: string
+      smsServiceProvider: string
+      userName: string
+    guestType: string
+    id: string
     name: string
-    portalId: bd48c1a1-9477-4746-8e40-e43d20c9f429
+    portalId: string
+    reasonForVisit: string
+    sponsorUserId: string
+    sponsorUserName: string
+    status: string
+    statusReason: string
 
 - name: Delete by name
   cisco.ise.guest_user:
@@ -146,6 +164,90 @@ EXAMPLES = r"""
     state: absent
     name: string
 
+- name: Update by id
+  cisco.ise.guest_user:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    customFields: {}
+    description: string
+    guestAccessInfo:
+      fromDate: string
+      groupTag: string
+      location: string
+      ssid: string
+      toDate: string
+      validDays: 0
+    guestInfo:
+      company: string
+      creationTime: string
+      emailAddress: string
+      enabled: true
+      firstName: string
+      lastName: string
+      notificationLanguage: string
+      password: string
+      phoneNumber: string
+      smsServiceProvider: string
+      userName: string
+    guestType: string
+    id: string
+    name: string
+    portalId: string
+    reasonForVisit: string
+    sponsorUserId: string
+    sponsorUserName: string
+    status: string
+    statusReason: string
+
+- name: Delete by id
+  cisco.ise.guest_user:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: absent
+    id: string
+
+- name: Create
+  cisco.ise.guest_user:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    customFields: {}
+    description: string
+    guestAccessInfo:
+      fromDate: string
+      groupTag: string
+      location: string
+      ssid: string
+      toDate: string
+      validDays: 0
+    guestInfo:
+      company: string
+      creationTime: string
+      emailAddress: string
+      enabled: true
+      firstName: string
+      lastName: string
+      notificationLanguage: string
+      password: string
+      phoneNumber: string
+      smsServiceProvider: string
+      userName: string
+    guestType: string
+    name: string
+    portalId: string
+    reasonForVisit: string
+    sponsorUserId: string
+    sponsorUserName: string
+    status: string
+    statusReason: string
+
 """
 
 RETURN = r"""
@@ -154,5 +256,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

@@ -17,14 +17,7 @@ options:
     description: Endpoint Register's customAttributes.
     suboptions:
       customAttributes:
-        description: Endpoint Register's customAttributes.
-        suboptions:
-          key1:
-            description: Endpoint Register's key1.
-            type: str
-          key2:
-            description: Endpoint Register's key2.
-            type: str
+        description: Key value map.
         type: dict
     type: dict
   description:
@@ -106,8 +99,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.endpoint_register
 # Reference by Internet resource
 - name: Endpoint Register reference
   description: Complete reference of the Endpoint Register object model.
@@ -122,34 +113,32 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     customAttributes:
-      customAttributes:
-        key1: value1
-        key2: value2
-    description: description
-    groupId: groupId
-    id: id
-    identityStore: identityStore
-    identityStoreId: identityStoreId
-    mac: 00:01:02:03:04:05
+      customAttributes: {}
+    description: string
+    groupId: string
+    id: string
+    identityStore: string
+    identityStoreId: string
+    mac: string
     mdmAttributes:
-      mdmComplianceStatus: false
-      mdmEncrypted: false
-      mdmEnrolled: false
-      mdmIMEI: IMEI
-      mdmJailBroken: false
-      mdmManufacturer: Apple Inc.
-      mdmModel: iPad
-      mdmOS: iOS
-      mdmPhoneNumber: Phone Number
-      mdmPinlock: false
+      mdmComplianceStatus: true
+      mdmEncrypted: true
+      mdmEnrolled: true
+      mdmIMEI: string
+      mdmJailBroken: true
+      mdmManufacturer: string
+      mdmModel: string
+      mdmOS: string
+      mdmPhoneNumber: string
+      mdmPinlock: true
       mdmReachable: true
-      mdmSerial: '10000000001'
-      mdmServerName: MdmServerName
-    name: name
-    portalUser: portalUser
-    profileId: profileId
+      mdmSerial: string
+      mdmServerName: string
+    name: string
+    portalUser: string
+    profileId: string
     staticGroupAssignment: true
-    staticProfileAssignment: false
+    staticProfileAssignment: true
 
 """
 

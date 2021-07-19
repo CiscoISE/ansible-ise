@@ -89,8 +89,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.trusted_certificate
 # Reference by Internet resource
 - name: Trusted Certificate reference
   description: Complete reference of the Trusted Certificate object model.
@@ -149,13 +147,13 @@ ise_response:
   sample: >
     {
       "response": {
-        "message": "string",
         "id": "string",
         "link": {
-          "rel": "string",
           "href": "string",
+          "rel": "string",
           "type": "string"
-        }
+        },
+        "message": "string"
       },
       "version": "string"
     }

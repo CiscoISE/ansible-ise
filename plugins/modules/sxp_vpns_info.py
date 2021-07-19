@@ -14,6 +14,10 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  id:
+    description:
+    - Id path parameter.
+    type: str
   page:
     description:
     - Page query parameter. Page number.
@@ -48,15 +52,9 @@ options:
     description:
     - Sortdsc query parameter. Sort desc.
     type: str
-  id:
-    description:
-    - Id path parameter.
-    type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.sxp_vpns
 # Reference by Internet resource
 - name: Sxp Vpns reference
   description: Complete reference of the Sxp Vpns object model.
@@ -97,6 +95,11 @@ ise_response:
   sample: >
     {
       "id": "string",
-      "sxpVpnName": "string"
+      "sxpVpnName": "string",
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
+      }
     }
 """

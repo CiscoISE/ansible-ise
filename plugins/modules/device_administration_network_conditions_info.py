@@ -21,8 +21,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.device_administration_network_conditions
 # Reference by Internet resource
 - name: Device Administration Network Conditions reference
   description: Complete reference of the Device Administration Network Conditions object model.
@@ -56,28 +54,36 @@ ise_response:
   type: dict
   sample: >
     {
-      "name": "string",
-      "id": "string",
-      "description": "string",
-      "conditionType": "string",
-      "conditions": [
-        {
-          "ipAddrList": [
-            "string"
-          ],
-          "macAddrList": [
-            "string"
-          ],
-          "cliDnisList": [
-            "string"
-          ],
-          "deviceList": [
-            "string"
-          ],
-          "deviceGroupList": [
-            "string"
-          ]
-        }
-      ]
+      "response": {
+        "conditionType": "string",
+        "description": "string",
+        "id": "string",
+        "link": {
+          "href": "string",
+          "rel": "string",
+          "type": "string"
+        },
+        "name": "string",
+        "conditions": [
+          {
+            "cliDnisList": [
+              "string"
+            ],
+            "ipAddrList": [
+              "string"
+            ],
+            "macAddrList": [
+              "string"
+            ],
+            "deviceGroupList": [
+              "string"
+            ],
+            "deviceList": [
+              "string"
+            ]
+          }
+        ]
+      },
+      "version": "string"
     }
 """

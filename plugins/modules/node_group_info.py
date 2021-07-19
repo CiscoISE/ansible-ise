@@ -21,8 +21,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.node_group
 # Reference by Internet resource
 - name: Node Group reference
   description: Complete reference of the Node Group object model.

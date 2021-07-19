@@ -15,6 +15,14 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  name:
+    description:
+    - Name path parameter.
+    type: str
+  id:
+    description:
+    - Id path parameter.
+    type: str
   page:
     description:
     - Page query parameter. Page number.
@@ -23,19 +31,9 @@ options:
     description:
     - Size query parameter. Number of objects returned per page.
     type: int
-  id:
-    description:
-    - Id path parameter.
-    type: str
-  name:
-    description:
-    - Name path parameter.
-    type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.certificate_template
 # Reference by Internet resource
 - name: Certificate Template reference
   description: Complete reference of the Certificate Template object model.
@@ -85,11 +83,6 @@ ise_response:
       "description": "string",
       "keySize": 0,
       "validityPeriod": 0,
-      "raprofile": "string",
-      "link": {
-        "rel": "string",
-        "href": "string",
-        "type": "string"
-      }
+      "raprofile": "string"
     }
 """

@@ -26,8 +26,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.anc_endpoint_apply
 # Reference by Internet resource
 - name: Anc Endpoint Apply reference
   description: Complete reference of the Anc Endpoint Apply object model.
@@ -43,11 +41,11 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     additionalData:
     - name: macAddress
-      value: value_1
+      value: MAC address
     - name: ipAddress
-      value: value_2
+      value: IP address
     - name: policyName
-      value: value_3
+      value: Policy Name
 
 """
 

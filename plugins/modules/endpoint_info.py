@@ -15,6 +15,14 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  name:
+    description:
+    - Name path parameter.
+    type: str
+  id:
+    description:
+    - Id path parameter.
+    type: str
   page:
     description:
     - Page query parameter. Page number.
@@ -49,19 +57,9 @@ options:
       FilterType query parameter. The logical operator common to ALL filter criteria will be by default AND, and
       can be changed by using the parameter.
     type: str
-  id:
-    description:
-    - Id path parameter.
-    type: str
-  name:
-    description:
-    - Name path parameter.
-    type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.endpoint
 # Reference by Internet resource
 - name: Endpoint reference
   description: Complete reference of the Endpoint object model.
@@ -121,12 +119,6 @@ ise_response:
       "portalUser": "string",
       "identityStore": "string",
       "identityStoreId": "string",
-      "customAttributes": {
-        "customAttributes": {
-          "key1": "string",
-          "key2": "string"
-        }
-      },
       "mdmAttributes": {
         "mdmServerName": "string",
         "mdmReachable": true,
@@ -141,6 +133,14 @@ ise_response:
         "mdmJailBroken": true,
         "mdmIMEI": "string",
         "mdmPhoneNumber": "string"
+      },
+      "customAttributes": {
+        "customAttributes": {}
+      },
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
       }
     }
 """

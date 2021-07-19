@@ -17,13 +17,12 @@ options:
     description: Guest Ssid's id.
     type: str
   name:
-    description: Guest Ssid's name.
+    description: Resource Name. Name may contain alphanumeric or any of the following
+      characters _.-.
     type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.guest_ssid
 # Reference by Internet resource
 - name: Guest Ssid reference
   description: Complete reference of the Guest Ssid object model.
@@ -31,16 +30,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.guest_ssid:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    id: id
-    name: ssid value
-
 - name: Update by id
   cisco.ise.guest_ssid:
     ise_hostname: "{{ise_hostname}}"
@@ -48,8 +37,8 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    id: id
-    name: ssid value
+    id: string
+    name: string
 
 - name: Delete by id
   cisco.ise.guest_ssid:
@@ -60,6 +49,15 @@ EXAMPLES = r"""
     state: absent
     id: string
 
+- name: Create
+  cisco.ise.guest_ssid:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    name: string
+
 """
 
 RETURN = r"""
@@ -68,5 +66,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

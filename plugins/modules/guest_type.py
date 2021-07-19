@@ -20,55 +20,58 @@ options:
         description: AllowAccessOnSpecificDaysTimes flag.
         type: bool
       dayTimeLimits:
-        description: Guest Type's dayTimeLimits.
+        description: List of Time Ranges for account access.
         suboptions:
           days:
-            description: Guest Type's days.
+            description: List of Days Values should be one of Week day. Allowed values
+              are - Sunday, - Monday, - Tuesday, - Wednesday, - Thursday, - Friday,
+              - Saturday.
             elements: str
             type: list
           endTime:
-            description: Guest Type's endTime.
+            description: End time in HH mm format.
             type: str
           startTime:
-            description: Guest Type's startTime.
+            description: Start time in HH mm format.
             type: str
         type: list
       defaultDuration:
         description: Guest Type's defaultDuration.
         type: int
       durationTimeUnit:
-        description: Guest Type's durationTimeUnit.
+        description: Allowed values are - DAYS, - HOURS, - MINUTES.
         type: str
       fromFirstLogin:
-        description: FromFirstLogin flag.
+        description: When Account Duration starts from first login or specified date.
         type: bool
       maxAccountDuration:
-        description: Guest Type's maxAccountDuration.
+        description: Maximum value of Account Duration.
         type: int
     type: dict
   description:
     description: Guest Type's description.
     type: str
   expirationNotification:
-    description: Guest Type's expirationNotification.
+    description: Expiration Notification Settings.
     suboptions:
       advanceNotificationDuration:
-        description: Guest Type's advanceNotificationDuration.
+        description: Send Account Expiration Notification Duration before ( Days, Hours,
+          Minutes ).
         type: int
       advanceNotificationUnits:
-        description: Guest Type's advanceNotificationUnits.
+        description: Allowed values are - DAYS, - HOURS, - MINUTES.
         type: str
       emailText:
         description: Guest Type's emailText.
         type: str
       enableNotification:
-        description: EnableNotification flag.
+        description: Enable Notification settings.
         type: bool
       sendEmailNotification:
-        description: SendEmailNotification flag.
+        description: Enable Email Notification.
         type: bool
       sendSmsNotification:
-        description: SendSmsNotification flag.
+        description: Maximum devices guests can register.
         type: bool
       smsText:
         description: Guest Type's smsText.
@@ -77,6 +80,9 @@ options:
   id:
     description: Guest Type's id.
     type: str
+  isDefaultType:
+    description: IsDefaultType flag.
+    type: bool
   loginOptions:
     description: Guest Type's loginOptions.
     suboptions:
@@ -84,19 +90,20 @@ options:
         description: AllowGuestPortalBypass flag.
         type: bool
       failureAction:
-        description: Guest Type's failureAction.
+        description: When Guest Exceeds limit this action will be invoked. Allowed values
+          are - Disconnect_Oldest_Connection, - Disconnect_Newest_Connection.
         type: str
       identityGroupId:
         description: Guest Type's identityGroupId.
         type: str
       limitSimultaneousLogins:
-        description: LimitSimultaneousLogins flag.
+        description: Enable Simultaneous Logins.
         type: bool
       maxRegisteredDevices:
-        description: Guest Type's maxRegisteredDevices.
+        description: Maximum devices guests can register.
         type: int
       maxSimultaneousLogins:
-        description: Guest Type's maxSimultaneousLogins.
+        description: Number of Simultaneous Logins.
         type: int
     type: dict
   name:
@@ -109,8 +116,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.guest_type
 # Reference by Internet resource
 - name: Guest Type reference
   description: Complete reference of the Guest Type object model.
@@ -118,47 +123,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.guest_type:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    accessTime:
-      allowAccessOnSpecificDaysTimes: false
-      dayTimeLimits:
-      - days:
-        - Sunday
-        - Tuesday
-        endTime: '16:00'
-        startTime: '12:00'
-      defaultDuration: 90
-      durationTimeUnit: DAYS
-      fromFirstLogin: true
-      maxAccountDuration: 365
-    description: Description
-    expirationNotification:
-      advanceNotificationDuration: 3
-      advanceNotificationUnits: DAYS
-      emailText: EmailText
-      enableNotification: false
-      sendEmailNotification: false
-      sendSmsNotification: false
-      smsText: SMS Text
-    id: id
-    loginOptions:
-      allowGuestPortalBypass: false
-      failureAction: Disconnect_Oldest_Connection
-      identityGroupId: generatedID
-      limitSimultaneousLogins: true
-      maxRegisteredDevices: 5
-      maxSimultaneousLogins: 3
-    name: Name
-    sponsorGroups:
-    - Group1
-    - Group2
-
 - name: Update by id
   cisco.ise.guest_type:
     ise_hostname: "{{ise_hostname}}"
@@ -167,38 +131,37 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     accessTime:
-      allowAccessOnSpecificDaysTimes: false
+      allowAccessOnSpecificDaysTimes: true
       dayTimeLimits:
       - days:
-        - Sunday
-        - Tuesday
-        endTime: '16:00'
-        startTime: '12:00'
-      defaultDuration: 90
-      durationTimeUnit: DAYS
+        - string
+        endTime: string
+        startTime: string
+      defaultDuration: 0
+      durationTimeUnit: string
       fromFirstLogin: true
-      maxAccountDuration: 365
-    description: Description
+      maxAccountDuration: 0
+    description: string
     expirationNotification:
-      advanceNotificationDuration: 3
-      advanceNotificationUnits: DAYS
-      emailText: EmailText
-      enableNotification: false
-      sendEmailNotification: false
-      sendSmsNotification: false
-      smsText: SMS Text
-    id: id
+      advanceNotificationDuration: 0
+      advanceNotificationUnits: string
+      emailText: string
+      enableNotification: true
+      sendEmailNotification: true
+      sendSmsNotification: true
+      smsText: string
+    id: string
+    isDefaultType: true
     loginOptions:
-      allowGuestPortalBypass: false
-      failureAction: Disconnect_Oldest_Connection
-      identityGroupId: generatedID
+      allowGuestPortalBypass: true
+      failureAction: string
+      identityGroupId: string
       limitSimultaneousLogins: true
-      maxRegisteredDevices: 5
-      maxSimultaneousLogins: 3
-    name: Name
+      maxRegisteredDevices: 0
+      maxSimultaneousLogins: 0
+    name: string
     sponsorGroups:
-    - Group1
-    - Group2
+    - string
 
 - name: Delete by id
   cisco.ise.guest_type:
@@ -209,6 +172,45 @@ EXAMPLES = r"""
     state: absent
     id: string
 
+- name: Create
+  cisco.ise.guest_type:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    accessTime:
+      allowAccessOnSpecificDaysTimes: true
+      dayTimeLimits:
+      - days:
+        - string
+        endTime: string
+        startTime: string
+      defaultDuration: 0
+      durationTimeUnit: string
+      fromFirstLogin: true
+      maxAccountDuration: 0
+    description: string
+    expirationNotification:
+      advanceNotificationDuration: 0
+      advanceNotificationUnits: string
+      emailText: string
+      enableNotification: true
+      sendEmailNotification: true
+      sendSmsNotification: true
+      smsText: string
+    isDefaultType: true
+    loginOptions:
+      allowGuestPortalBypass: true
+      failureAction: string
+      identityGroupId: string
+      limitSimultaneousLogins: true
+      maxRegisteredDevices: 0
+      maxSimultaneousLogins: 0
+    name: string
+    sponsorGroups:
+    - string
+
 """
 
 RETURN = r"""
@@ -218,44 +220,15 @@ ise_response:
   type: dict
   sample: >
     {
-      "id": "string",
-      "name": "string",
-      "description": "string",
-      "accessTime": {
-        "fromFirstLogin": true,
-        "maxAccountDuration": 0,
-        "durationTimeUnit": "string",
-        "defaultDuration": 0,
-        "allowAccessOnSpecificDaysTimes": true,
-        "dayTimeLimits": [
-          {
-            "startTime": "string",
-            "endTime": "string",
-            "days": [
-              "string"
-            ]
-          }
-        ]
-      },
-      "loginOptions": {
-        "limitSimultaneousLogins": true,
-        "maxSimultaneousLogins": 0,
-        "failureAction": "string",
-        "maxRegisteredDevices": 0,
-        "identityGroupId": "string",
-        "allowGuestPortalBypass": true
-      },
-      "expirationNotification": {
-        "enableNotification": true,
-        "advanceNotificationDuration": 0,
-        "advanceNotificationUnits": "string",
-        "sendEmailNotification": true,
-        "emailText": "string",
-        "sendSmsNotification": true,
-        "smsText": "string"
-      },
-      "sponsorGroups": [
-        "string"
-      ]
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
     }
 """

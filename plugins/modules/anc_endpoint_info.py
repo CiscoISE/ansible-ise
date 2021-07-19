@@ -14,6 +14,10 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  id:
+    description:
+    - Id path parameter.
+    type: str
   page:
     description:
     - Page query parameter. Page number.
@@ -48,15 +52,9 @@ options:
       FilterType query parameter. The logical operator common to ALL filter criteria will be by default AND, and
       can be changed by using the parameter.
     type: str
-  id:
-    description:
-    - Id path parameter.
-    type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.anc_endpoint
 # Reference by Internet resource
 - name: Anc Endpoint reference
   description: Complete reference of the Anc Endpoint object model.
@@ -96,7 +94,13 @@ ise_response:
   type: dict
   sample: >
     {
+      "id": "string",
       "macAddress": "string",
-      "policyName": "string"
+      "policyName": "string",
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
+      }
     }
 """

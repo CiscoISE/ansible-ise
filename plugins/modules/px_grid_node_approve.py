@@ -16,8 +16,6 @@ options: {}
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.px_grid_node_approve
 # Reference by Internet resource
 - name: Px Grid Node Approve reference
   description: Complete reference of the Px Grid Node Approve object model.

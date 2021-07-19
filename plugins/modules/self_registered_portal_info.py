@@ -14,6 +14,10 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  id:
+    description:
+    - Id path parameter.
+    type: str
   page:
     description:
     - Page query parameter. Page number.
@@ -22,6 +26,14 @@ options:
     description:
     - Size query parameter. Number of objects returned per page.
     type: int
+  sortasc:
+    description:
+    - Sortasc query parameter. Sort asc.
+    type: str
+  sortdsc:
+    description:
+    - Sortdsc query parameter. Sort desc.
+    type: str
   filter:
     description:
     - >
@@ -40,23 +52,9 @@ options:
       FilterType query parameter. The logical operator common to ALL filter criteria will be by default AND, and
       can be changed by using the parameter.
     type: str
-  sortasc:
-    description:
-    - Sortasc query parameter. Sort asc.
-    type: str
-  sortdsc:
-    description:
-    - Sortdsc query parameter. Sort desc.
-    type: str
-  id:
-    description:
-    - Id path parameter.
-    type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.self_registered_portal
 # Reference by Internet resource
 - name: Self Registered Portal reference
   description: Complete reference of the Self Registered Portal object model.
@@ -72,10 +70,10 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     page: 1
     size: 20
-    filter: []
-    filterType: AND
     sortasc: string
     sortdsc: string
+    filter: []
+    filterType: AND
   register: result
 
 - name: Get Self Registered Portal by id
@@ -100,36 +98,39 @@ ise_response:
       "name": "string",
       "description": "string",
       "portalType": "string",
+      "portalTestUrl": "string",
       "settings": {
         "portalSettings": {
           "httpsPort": 0,
-          "allowedInterfaces": [
-            "string"
-          ],
+          "allowedInterfaces": "string",
           "certificateGroupTag": "string",
-          "endpointIdentityGroup": "string",
           "authenticationMethod": "string",
           "assignedGuestTypeForEmployee": "string",
           "displayLang": "string",
           "fallbackLanguage": "string",
-          "alwaysUsedLanguage": "string",
-          "availableSsids": []
+          "alwaysUsedLanguage": "string"
         },
         "loginPageSettings": {
           "requireAccessCode": true,
-          "accessCode": "string",
           "maxFailedAttemptsBeforeRateLimit": 0,
           "timeBetweenLoginsDuringRateLimit": 0,
           "includeAup": true,
           "aupDisplay": "string",
           "requireAupAcceptance": true,
-          "requireAupScrolling": true,
+          "accessCode": "string",
           "allowGuestToCreateAccounts": true,
+          "allowForgotPassword": true,
           "allowGuestToChangePassword": true,
           "allowAlternateGuestPortal": true,
+          "alternateGuestPortal": "string",
           "allowGuestToUseSocialAccounts": true,
           "allowShowGuestForm": true,
-          "socialConfigs": []
+          "socialConfigs": [
+            {
+              "socialMediaType": "string",
+              "socialMediaValue": "string"
+            }
+          ]
         },
         "selfRegPageSettings": {
           "assignGuestsToGuestType": "string",
@@ -175,6 +176,10 @@ ise_response:
           "selectableSmsProviders": [
             "string"
           ],
+          "fieldPersonBeingVisited": {
+            "include": true,
+            "require": true
+          },
           "fieldReasonForVisit": {
             "include": true,
             "require": true
@@ -183,20 +188,25 @@ ise_response:
           "aupDisplay": "string",
           "requireAupAcceptance": true,
           "enableGuestEmailWhitelist": true,
-          "guestEmailWhitelistDomains": [
-            "string"
-          ],
+          "guestEmailWhitelistDomains": "string",
           "enableGuestEmailBlacklist": true,
-          "guestEmailBlacklistDomains": [
-            "string"
-          ],
+          "guestEmailBlacklistDomains": "string",
           "requireGuestApproval": true,
+          "autoLoginSelfWait": true,
+          "autoLoginTimePeriod": 0,
+          "allowGraceAccess": true,
+          "graceAccessExpireInterval": 0,
+          "graceAccessSendAccountExpiration": true,
           "sendApprovalRequestTo": "string",
+          "approvalEmailAddresses": "string",
           "postRegistrationRedirect": "string",
+          "postRegistrationRedirectUrl": "string",
           "credentialNotificationUsingEmail": true,
           "credentialNotificationUsingSms": true,
+          "approveDenyLinksValidFor": 0,
           "approveDenyLinksTimeUnits": "string",
-          "authenticateSponsorsUsingPortalList": true,
+          "requireApproverToAuthenticate": true,
+          "authenticateSponsorsUsingPortalList": "string",
           "sponsorPortalList": []
         },
         "selfRegSuccessSettings": {
@@ -224,9 +234,10 @@ ise_response:
           "includeAup": true,
           "useDiffAupForEmployees": true,
           "skipAupForEmployees": true,
-          "requireAccessCode": true,
           "requireScrolling": true,
-          "displayFrequency": "string"
+          "requireAupScrolling": true,
+          "displayFrequency": "string",
+          "displayFrequencyIntervalDays": 0
         },
         "guestChangePasswordSettings": {
           "allowChangePasswdAtFirstLogin": true
@@ -235,7 +246,29 @@ ise_response:
           "autoRegisterGuestDevices": true,
           "allowGuestsToRegisterDevices": true
         },
+        "byodSettings": {
+          "byodWelcomeSettings": {
+            "enableBYOD": true,
+            "enableGuestAccess": true,
+            "requireMDM": true,
+            "includeAup": true,
+            "aupDisplay": "string",
+            "requireAupAcceptance": true,
+            "requireScrolling": true
+          },
+          "byodRegistrationSettings": {
+            "showDeviceID": true,
+            "endPointIdentityGroupId": "string"
+          },
+          "byodRegistrationSuccessSettings": {
+            "successRedirect": "string",
+            "redirectUrl": "string"
+          }
+        },
         "postLoginBannerSettings": {
+          "includePostAccessBanner": true
+        },
+        "postAccessBannerSettings": {
           "includePostAccessBanner": true
         },
         "authSuccessSettings": {
@@ -249,7 +282,8 @@ ise_response:
           "includeBrowserUserAgent": true,
           "includePolicyServer": true,
           "includeFailureCode": true,
-          "emptyFieldDisplay": "string"
+          "emptyFieldDisplay": "string",
+          "defaultEmptyFieldValue": "string"
         }
       },
       "customizations": {
@@ -277,6 +311,9 @@ ise_response:
           "bannerImage": {
             "data": "string"
           },
+          "backgroundImage": {
+            "data": "string"
+          },
           "bannerTitle": "string",
           "contactText": "string",
           "footerElement": "string"
@@ -289,6 +326,11 @@ ise_response:
             }
           ]
         }
+      },
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
       }
     }
 """

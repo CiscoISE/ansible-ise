@@ -15,6 +15,14 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  name:
+    description:
+    - Name path parameter.
+    type: str
+  id:
+    description:
+    - Id path parameter.
+    type: str
   page:
     description:
     - Page query parameter. Page number.
@@ -49,19 +57,9 @@ options:
       FilterType query parameter. The logical operator common to ALL filter criteria will be by default AND, and
       can be changed by using the parameter.
     type: str
-  id:
-    description:
-    - Id path parameter.
-    type: str
-  name:
-    description:
-    - Name path parameter.
-    type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.guest_user
 # Reference by Internet resource
 - name: Guest User reference
   description: Complete reference of the Guest User object model.
@@ -112,23 +110,35 @@ ise_response:
     {
       "id": "string",
       "name": "string",
+      "description": "string",
       "guestType": "string",
       "status": "string",
-      "sponsorUserName": "string",
+      "statusReason": "string",
+      "reasonForVisit": "string",
       "sponsorUserId": "string",
+      "sponsorUserName": "string",
       "guestInfo": {
-        "userName": "string",
-        "password": "string",
+        "firstName": "string",
+        "lastName": "string",
+        "company": "string",
         "creationTime": "string",
+        "notificationLanguage": "string",
+        "userName": "string",
+        "emailAddress": "string",
+        "phoneNumber": "string",
+        "password": "string",
         "enabled": true,
-        "notificationLanguage": "string"
+        "smsServiceProvider": "string"
       },
       "guestAccessInfo": {
         "validDays": 0,
         "fromDate": "string",
         "toDate": "string",
-        "location": "string"
+        "location": "string",
+        "ssid": "string",
+        "groupTag": "string"
       },
+      "portalId": "string",
       "customFields": {},
       "link": {
         "rel": "string",

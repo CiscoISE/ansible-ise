@@ -17,7 +17,7 @@ options:
     description: Network Device Group's description.
     type: str
   id:
-    description: Id path parameter.
+    description: Network Device Group's id.
     type: str
   name:
     description: Network Device Group's name.
@@ -28,8 +28,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.network_device_group
 # Reference by Internet resource
 - name: Network Device Group reference
   description: Complete reference of the Network Device Group object model.
@@ -37,17 +35,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.network_device_group:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    description: '...'
-    name: Device Type#All Device Types#SDWAN
-    othername: Device Type
-
 - name: Update by id
   cisco.ise.network_device_group:
     ise_hostname: "{{ise_hostname}}"
@@ -55,10 +42,10 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    description: SDWAN description
+    description: string
     id: string
-    name: Device Type#All Device Types#SDWAN
-    othername: Device Type
+    name: string
+    othername: string
 
 - name: Delete by id
   cisco.ise.network_device_group:
@@ -68,6 +55,17 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
+
+- name: Create
+  cisco.ise.network_device_group:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    description: string
+    name: string
+    othername: string
 
 """
 
@@ -79,13 +77,14 @@ ise_response:
   sample: >
     {
       "UpdatedFieldsList": {
-        "updatedField": [
-          {
-            "field": "string",
-            "oldValue": "string",
-            "newValue": "string"
-          }
-        ]
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
       }
     }
 """

@@ -14,6 +14,10 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  id:
+    description:
+    - Id path parameter.
+    type: str
   page:
     description:
     - Page query parameter. Page number.
@@ -22,6 +26,14 @@ options:
     description:
     - Size query parameter. Number of objects returned per page.
     type: int
+  sortasc:
+    description:
+    - Sortasc query parameter. Sort asc.
+    type: str
+  sortdsc:
+    description:
+    - Sortdsc query parameter. Sort desc.
+    type: str
   filter:
     description:
     - >
@@ -40,23 +52,9 @@ options:
       FilterType query parameter. The logical operator common to ALL filter criteria will be by default AND, and
       can be changed by using the parameter.
     type: str
-  sortasc:
-    description:
-    - Sortasc query parameter. Sort asc.
-    type: str
-  sortdsc:
-    description:
-    - Sortdsc query parameter. Sort desc.
-    type: str
-  id:
-    description:
-    - Id path parameter.
-    type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.sponsored_guest_portal
 # Reference by Internet resource
 - name: Sponsored Guest Portal reference
   description: Complete reference of the Sponsored Guest Portal object model.
@@ -72,10 +70,10 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     page: 1
     size: 20
-    filter: []
-    filterType: AND
     sortasc: string
     sortdsc: string
+    filter: []
+    filterType: AND
   register: result
 
 - name: Get Sponsored Guest Portal by id
@@ -100,41 +98,43 @@ ise_response:
       "name": "string",
       "description": "string",
       "portalType": "string",
+      "portalTestUrl": "string",
       "settings": {
         "portalSettings": {
           "httpsPort": 0,
-          "allowedInterfaces": [
-            "string"
-          ],
+          "allowedInterfaces": "string",
           "certificateGroupTag": "string",
           "authenticationMethod": "string",
           "assignedGuestTypeForEmployee": "string",
           "displayLang": "string",
           "fallbackLanguage": "string",
-          "alwaysUsedLanguage": "string",
-          "availableSsids": []
+          "alwaysUsedLanguage": "string"
         },
         "loginPageSettings": {
           "requireAccessCode": true,
-          "accessCode": "string",
           "maxFailedAttemptsBeforeRateLimit": 0,
           "timeBetweenLoginsDuringRateLimit": 0,
           "includeAup": true,
           "aupDisplay": "string",
           "requireAupAcceptance": true,
-          "requireAupScrolling": true,
+          "accessCode": "string",
           "allowGuestToCreateAccounts": true,
+          "allowForgotPassword": true,
           "allowGuestToChangePassword": true,
           "allowAlternateGuestPortal": true,
-          "allowGuestToUseSocialAccounts": true,
-          "allowShowGuestForm": true,
-          "socialConfigs": []
+          "socialConfigs": [
+            {
+              "socialMediaType": "string",
+              "socialMediaValue": "string"
+            }
+          ]
         },
         "aupSettings": {
           "includeAup": true,
+          "requireAupScrolling": true,
           "useDiffAupForEmployees": true,
           "skipAupForEmployees": true,
-          "requireAccessCode": true,
+          "displayFrequencyIntervalDays": 0,
           "requireScrolling": true,
           "displayFrequency": "string"
         },
@@ -145,12 +145,34 @@ ise_response:
           "autoRegisterGuestDevices": true,
           "allowGuestsToRegisterDevices": true
         },
-        "postLoginBannerSettings": {
+        "byodSettings": {
+          "byodWelcomeSettings": {
+            "enableBYOD": true,
+            "enableGuestAccess": true,
+            "requireMDM": true,
+            "includeAup": true,
+            "aupDisplay": "string",
+            "requireAupAcceptance": true,
+            "requireScrolling": true
+          },
+          "byodRegistrationSettings": {
+            "showDeviceID": true,
+            "endPointIdentityGroupId": "string"
+          },
+          "byodRegistrationSuccessSettings": {
+            "successRedirect": "string",
+            "redirectUrl": "string"
+          }
+        },
+        "postAccessBannerSettings": {
           "includePostAccessBanner": true
         },
         "authSuccessSettings": {
           "successRedirect": "string",
           "redirectUrl": "string"
+        },
+        "postLoginBannerSettings": {
+          "includePostAccessBanner": true
         },
         "supportInfoSettings": {
           "includeSupportInfoPage": true,
@@ -159,7 +181,8 @@ ise_response:
           "includeBrowserUserAgent": true,
           "includePolicyServer": true,
           "includeFailureCode": true,
-          "emptyFieldDisplay": "string"
+          "emptyFieldDisplay": "string",
+          "defaultEmptyFieldValue": "string"
         }
       },
       "customizations": {
@@ -187,6 +210,9 @@ ise_response:
           "bannerImage": {
             "data": "string"
           },
+          "backgroundImage": {
+            "data": "string"
+          },
           "bannerTitle": "string",
           "contactText": "string",
           "footerElement": "string"
@@ -199,6 +225,11 @@ ise_response:
             }
           ]
         }
+      },
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
       }
     }
 """

@@ -15,6 +15,14 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  name:
+    description:
+    - Name path parameter.
+    type: str
+  id:
+    description:
+    - Id path parameter.
+    type: str
   page:
     description:
     - Page query parameter. Page number.
@@ -23,19 +31,9 @@ options:
     description:
     - Size query parameter. Number of objects returned per page.
     type: int
-  id:
-    description:
-    - Id path parameter.
-    type: str
-  name:
-    description:
-    - Name path parameter.
-    type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.tacacs_external_servers
 # Reference by Internet resource
 - name: Tacacs External Servers reference
   description: Complete reference of the Tacacs External Servers object model.
@@ -80,12 +78,18 @@ ise_response:
   type: dict
   sample: >
     {
+      "id": "string",
       "name": "string",
       "description": "string",
       "hostIP": "string",
       "connectionPort": 0,
       "singleConnect": true,
       "sharedSecret": "string",
-      "timeout": 0
+      "timeout": 0,
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
+      }
     }
 """

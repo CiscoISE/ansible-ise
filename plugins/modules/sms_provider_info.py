@@ -10,7 +10,6 @@ module: sms_provider_info
 short_description: Information module for Sms Provider
 description:
 - Get all Sms Provider.
-- Get Sms Provider by id.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
@@ -22,6 +21,14 @@ options:
     description:
     - Size query parameter. Number of objects returned per page.
     type: int
+  sortasc:
+    description:
+    - Sortasc query parameter. Sort asc.
+    type: str
+  sortdsc:
+    description:
+    - Sortdsc query parameter. Sort desc.
+    type: str
   filter:
     description:
     - >
@@ -40,23 +47,9 @@ options:
       FilterType query parameter. The logical operator common to ALL filter criteria will be by default AND, and
       can be changed by using the parameter.
     type: str
-  sortasc:
-    description:
-    - Sortasc query parameter. Sort asc.
-    type: str
-  sortdsc:
-    description:
-    - Sortdsc query parameter. Sort desc.
-    type: str
-  id:
-    description:
-    - Id path parameter.
-    type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.sms_provider
 # Reference by Internet resource
 - name: Sms Provider reference
   description: Complete reference of the Sms Provider object model.
@@ -72,19 +65,10 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     page: 1
     size: 20
-    filter: []
-    filterType: AND
     sortasc: string
     sortdsc: string
-  register: result
-
-- name: Get Sms Provider by id
-  cisco.ise.sms_provider_info:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    id: string
+    filter: []
+    filterType: AND
   register: result
 
 """
@@ -100,7 +84,6 @@ ise_response:
       {
         "id": "string",
         "name": "string",
-        "description": "string",
         "link": {
           "rel": "string",
           "href": "string",

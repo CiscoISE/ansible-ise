@@ -14,52 +14,56 @@ version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
   accountingPort:
-    description: External Radius Server's accountingPort.
+    description: Valid Range 1 to 65535.
     type: int
   authenticationPort:
-    description: External Radius Server's authenticationPort.
+    description: Valid Range 1 to 65535.
     type: int
   authenticatorKey:
-    description: External Radius Server's authenticatorKey.
+    description: The authenticatorKey is required only if enableKeyWrap is true, otherwise
+      it must be ignored or empty. The maximum length is 20 ASCII characters or 40 HEXADECIMAL
+      characters (depend on selection in field 'keyInputFormat').
     type: str
   description:
     description: External Radius Server's description.
     type: str
   enableKeyWrap:
-    description: EnableKeyWrap flag.
+    description: KeyWrap may only be enabled if it is supported on the device. When
+      running in FIPS mode this option should be enabled for such devices.
     type: bool
   encryptionKey:
-    description: External Radius Server's encryptionKey.
+    description: The encryptionKey is required only if enableKeyWrap is true, otherwise
+      it must be ignored or empty. The maximum length is 16 ASCII characters or 32 HEXADECIMAL
+      characters (depend on selection in field 'keyInputFormat').
     type: str
   hostIP:
-    description: External Radius Server's hostIP.
+    description: The IP of the host - must be a valid IPV4 address.
     type: str
   id:
     description: External Radius Server's id.
     type: str
   keyInputFormat:
-    description: External Radius Server's keyInputFormat.
+    description: Specifies the format of the input for fields 'encryptionKey' and 'authenticatorKey'.
+      Allowed Values - ASCII - HEXADECIMAL.
     type: str
   name:
-    description: External Radius Server's name.
+    description: Resource Name. Allowed charactera are alphanumeric and _ (underscore).
     type: str
   proxyTimeout:
-    description: External Radius Server's proxyTimeout.
+    description: Valid Range 1 to 600.
     type: int
   retries:
-    description: External Radius Server's retries.
+    description: Valid Range 1 to 9.
     type: int
   sharedSecret:
-    description: External Radius Server's sharedSecret.
+    description: Shared secret maximum length is 128 characters.
     type: str
   timeout:
-    description: External Radius Server's timeout.
+    description: Valid Range 1 to 120.
     type: int
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.external_radius_server
 # Reference by Internet resource
 - name: External Radius Server reference
   description: Complete reference of the External Radius Server object model.
@@ -67,28 +71,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.external_radius_server:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    accountingPort: 1813
-    authenticationPort: 1812
-    authenticatorKey: '20202020202020202020'
-    description: example external radius server
-    enableKeyWrap: true
-    encryptionKey: '1616161616161616'
-    hostIP: 1.1.1.1
-    id: '123456789'
-    keyInputFormat: ASCII
-    name: externalRadiusServer1
-    proxyTimeout: 300
-    retries: 3
-    sharedSecret: sharedSecret
-    timeout: 5
-
 - name: Update by id
   cisco.ise.external_radius_server:
     ise_hostname: "{{ise_hostname}}"
@@ -96,20 +78,20 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    accountingPort: 1813
-    authenticationPort: 1812
-    authenticatorKey: '20202020202020202020'
-    description: example external radius server
+    accountingPort: 0
+    authenticationPort: 0
+    authenticatorKey: string
+    description: string
     enableKeyWrap: true
-    encryptionKey: '1616161616161616'
-    hostIP: 1.1.1.1
-    id: '123456789'
-    keyInputFormat: ASCII
-    name: externalRadiusServer1
-    proxyTimeout: 300
-    retries: 3
-    sharedSecret: sharedSecret
-    timeout: 5
+    encryptionKey: string
+    hostIP: string
+    id: string
+    keyInputFormat: string
+    name: string
+    proxyTimeout: 0
+    retries: 0
+    sharedSecret: string
+    timeout: 0
 
 - name: Delete by id
   cisco.ise.external_radius_server:
@@ -120,6 +102,27 @@ EXAMPLES = r"""
     state: absent
     id: string
 
+- name: Create
+  cisco.ise.external_radius_server:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    accountingPort: 0
+    authenticationPort: 0
+    authenticatorKey: string
+    description: string
+    enableKeyWrap: true
+    encryptionKey: string
+    hostIP: string
+    keyInputFormat: string
+    name: string
+    proxyTimeout: 0
+    retries: 0
+    sharedSecret: string
+    timeout: 0
+
 """
 
 RETURN = r"""
@@ -128,5 +131,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

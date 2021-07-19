@@ -26,8 +26,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.active_directory_leave_domain_with_all_nodes
 # Reference by Internet resource
 - name: Active Directory Leave Domain With All Nodes reference
   description: Complete reference of the Active Directory Leave Domain With All Nodes object model.
@@ -43,9 +41,9 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     additionalData:
     - name: username
-      value: '{{ad_admin_username}}'
+      value: Required. The domain user to use
     - name: password
-      value: '{{ad_admin_password}}'
+      value: Required. The domain user's password
     id: string
 
 """

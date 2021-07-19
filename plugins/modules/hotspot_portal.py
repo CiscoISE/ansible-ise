@@ -14,23 +14,56 @@ version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
   customizations:
-    description: Hotspot Portal's customizations.
+    description: Defines all of the Portal Customizations available.
     suboptions:
       globalCustomizations:
         description: Hotspot Portal's globalCustomizations.
         suboptions:
+          backgroundImage:
+            description: Hotspot Portal's backgroundImage.
+            suboptions:
+              data:
+                description: Represented as base 64 encoded string of the image byte
+                  array.
+                type: str
+            type: dict
+          bannerImage:
+            description: Hotspot Portal's bannerImage.
+            suboptions:
+              data:
+                description: Represented as base 64 encoded string of the image byte
+                  array.
+                type: str
+            type: dict
           bannerTitle:
             description: Hotspot Portal's bannerTitle.
             type: str
           contactText:
             description: Hotspot Portal's contactText.
             type: str
+          desktopLogoImage:
+            description: Hotspot Portal's desktopLogoImage.
+            suboptions:
+              data:
+                description: Represented as base 64 encoded string of the image byte
+                  array.
+                type: str
+            type: dict
           footerElement:
             description: Hotspot Portal's footerElement.
             type: str
+          mobileLogoImage:
+            description: Hotspot Portal's mobileLogoImage.
+            suboptions:
+              data:
+                description: Represented as base 64 encoded string of the image byte
+                  array.
+                type: str
+            type: dict
         type: dict
       language:
-        description: Hotspot Portal's language.
+        description: This property is supported only for Read operation and it allows
+          to show the customizations in English. Other languages are not supported.
         suboptions:
           viewLanguage:
             description: Hotspot Portal's viewLanguage.
@@ -51,13 +84,35 @@ options:
             type: list
         type: dict
       portalTheme:
-        description: Hotspot Portal's portalTheme.
+        description: Defines the configuration for portal theme.
         suboptions:
           id:
-            description: Hotspot Portal's id.
+            description: The unique internal identifier of the portal theme.
             type: str
           name:
-            description: Hotspot Portal's name.
+            description: The system- or user-assigned name of the portal theme.
+            type: str
+          themeData:
+            description: A CSS file, represented as a Base64-encoded byte array.
+            type: str
+        type: dict
+      portalTweakSettings:
+        description: The Tweak Settings are a customization of the Portal Theme that
+          has been selected for the portal. When the Portal Theme selection is changed,
+          the Tweak Settings are overwritten to match the values in the theme. The Tweak
+          Settings can subsequently be changed by the user.
+        suboptions:
+          bannerColor:
+            description: Hex value of color.
+            type: str
+          bannerTextColor:
+            description: Hotspot Portal's bannerTextColor.
+            type: str
+          pageBackgroundColor:
+            description: Hotspot Portal's pageBackgroundColor.
+            type: str
+          pageLabelAndTextColor:
+            description: Hotspot Portal's pageLabelAndTextColor.
             type: str
         type: dict
     type: dict
@@ -70,56 +125,77 @@ options:
   name:
     description: Hotspot Portal's name.
     type: str
+  portalTestUrl:
+    description: URL to bring up a test page for this portal.
+    type: str
   portalType:
-    description: Hotspot Portal's portalType.
+    description: Allowed values - BYOD, - HOTSPOTGUEST, - MYDEVICE, - SELFREGGUEST,
+      - SPONSOR, - SPONSOREDGUEST.
     type: str
   settings:
-    description: Hotspot Portal's settings.
+    description: Defines all of the settings groups available for a BYOD.
     suboptions:
       aupSettings:
-        description: Hotspot Portal's aupSettings.
+        description: Configuration of the Acceptable Use Policy (AUP) for a portal.
         suboptions:
+          accessCode:
+            description: Access code that must be entered by the portal user (only valid
+              if requireAccessCode = true).
+            type: str
           includeAup:
-            description: IncludeAup flag.
+            description: Require the portal user to read and accept an AUP.
+            type: bool
+          requireAccessCode:
+            description: Require the portal user to enter an access code. Only used
+              in Hotspot portal.
             type: bool
           requireScrolling:
-            description: RequireScrolling flag.
+            description: Require the portal user to scroll to the end of the AUP. Only
+              valid if requireAupAcceptance = true.
             type: bool
         type: dict
       authSuccessSettings:
         description: Hotspot Portal's authSuccessSettings.
         suboptions:
+          redirectUrl:
+            description: Target URL for redirection, used when successRedirect = URL.
+            type: str
           successRedirect:
-            description: Hotspot Portal's successRedirect.
+            description: After an Authentication Success where should device be redirected.
+              Allowed values - AUTHSUCCESSPAGE, - ORIGINATINGURL, - URL.
             type: str
         type: dict
       portalSettings:
-        description: Hotspot Portal's portalSettings.
+        description: The port, interface, certificate, and other basic settings of a
+          portal.
         suboptions:
           allowedInterfaces:
-            description: Hotspot Portal's allowedInterfaces.
-            elements: str
-            type: list
+            description: Interfaces that the portal will be reachable on. Allowed values
+              - eth0 - eth1 - eth2 - eth3 - eth4 - eth5 - bond0 - bond1 - bond2.
+            type: str
           alwaysUsedLanguage:
-            description: Hotspot Portal's alwaysUsedLanguage.
+            description: Used when displayLang = ALWAYSUSE.
             type: str
           certificateGroupTag:
-            description: Hotspot Portal's certificateGroupTag.
+            description: Logical name of the x.509 server certificate that will be used
+              for the portal.
             type: str
           coaType:
-            description: Hotspot Portal's coaType.
+            description: Allowed Values - COAREAUTHENTICATE, - COATERMINATE.
             type: str
           displayLang:
-            description: Hotspot Portal's displayLang.
+            description: Allowed values - USEBROWSERLOCALE, - ALWAYSUSE.
             type: str
           endpointIdentityGroup:
-            description: Hotspot Portal's endpointIdentityGroup.
+            description: Unique Id of the endpoint identity group where user's devices
+              will be added. Used only in Hotspot Portal.
             type: str
           fallbackLanguage:
-            description: Hotspot Portal's fallbackLanguage.
+            description: Used when displayLang = USEBROWSERLOCALE.
             type: str
           httpsPort:
-            description: Hotspot Portal's httpsPort.
+            description: The port number that the allowed interfaces will listen on.
+              Range from 8000 to 8999.
             type: int
         type: dict
       postAccessBannerSettings:
@@ -129,11 +205,23 @@ options:
             description: IncludePostAccessBanner flag.
             type: bool
         type: dict
-      supportInfoSettings:
-        description: Hotspot Portal's supportInfoSettings.
+      postLoginBannerSettings:
+        description: Hotspot Portal's postLoginBannerSettings.
         suboptions:
+          includePostAccessBanner:
+            description: Include a Post-Login Banner page.
+            type: bool
+        type: dict
+      supportInfoSettings:
+        description: Portal Support Information Settings.
+        suboptions:
+          defaultEmptyFieldValue:
+            description: The default value displayed for an empty field. Only valid
+              when emptyFieldDisplay = DISPLAYWITHDEFAULTVALUE.
+            type: str
           emptyFieldDisplay:
-            description: Hotspot Portal's emptyFieldDisplay.
+            description: Specifies how empty fields are handled on the Support Information
+              Page. Allowed values - HIDE, - DISPLAYWITHNOVALUE, - DISPLAYWITHDEFAULTVALUE.
             type: str
           includeBrowserUserAgent:
             description: IncludeBrowserUserAgent flag.
@@ -158,8 +246,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.hotspot_portal
 # Reference by Internet resource
 - name: Hotspot Portal reference
   description: Complete reference of the Hotspot Portal object model.
@@ -167,7 +253,7 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
+- name: Update by id
   cisco.ise.hotspot_portal:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -176,199 +262,68 @@ EXAMPLES = r"""
     state: present
     customizations:
       globalCustomizations:
-        bannerTitle: Hotspot Portal
-        contactText: Contact Support
-        footerElement: ''
+        backgroundImage:
+          data: string
+        bannerImage:
+          data: string
+        bannerTitle: string
+        contactText: string
+        desktopLogoImage:
+          data: string
+        footerElement: string
+        mobileLogoImage:
+          data: string
       language:
-        viewLanguage: English
+        viewLanguage: string
       pageCustomizations:
         data:
-        - key: ui_contact_ip_address_label
-          value: SVAgYWRkcmVzczo=
-        - key: ui_error_content_label
-          value: RXJyb3I=
-        - key: ui_success_optional_content_2
-          value: ''
-        - key: ui_success_optional_content_1
-          value: ''
-        - key: ui_post_access_optional_content_1
-          value: ''
-        - key: ui_post_access_optional_content_2
-          value: ''
-        - key: ui_success_message
-          value: WW91IGhhdmUgc3VjY2Vzc2Z1bGx5IGNvbm5lY3RlZCB0byB0aGUgbmV0d29yay4=
-        - key: ui_contact_optional_content_1
-          value: ''
-        - key: ui_contact_optional_content_2
-          value: ''
-        - key: ui_vlan_unsupported_error_message
-          value: VG8gYWNjZXNzIHRoZSBuZXR3b3JrLCB5b3UgbXVzdCBtYW51YWxseSByZXNldCB0aGUgSVAgYWRkcmVzcyBvbiB5b3VyIGRldml...
-        - key: ui_user_last_login_pass_time_label
-          value: TGFzdCBMb2dpbjo=
-        - key: ui_post_access_content_label
-          value: V2VsY29tZSBNZXNzYWdl
-        - key: ui_success_returning_message
-          value: ''
-        - key: ui_error_page_title
-          value: RXJyb3I=
-        - key: ui_vlan_instruction_message
-          value: ''
-        - key: ui_contact_sessioninfo_text
-          value: VGhpcyBpbmZvcm1hdGlvbiBwcm92aWRlcyBkZXRhaWxzIHRoYXQgdGhlIGhlbHAgZGVzayBtaWdodCBuZWVkIHRvIHJlc29sdmU...
-        - key: ui_contact_content_label
-          value: U3VwcG9ydCBJbmZvcm1hdGlvbg==
-        - key: ui_contact_sessioninfo_title
-          value: U2Vzc2lvbiBJbmZvcm1hdGlvbg==
-        - key: ui_aup_accept_button
-          value: QWNjZXB0
-        - key: ui_error_optional_content_2
-          value: ''
-        - key: ui_error_optional_content_1
-          value: ''
-        - key: ui_vlan_install_error_message
-          value: SW5zdGFsbGF0aW9uIG9mIHRoZSBhcHBsaWNhdGlvbiBmYWlsZWQuIEZvbGxvdyB0aGUgaW5zdHJ1Y3Rpb25zIGJlbG93IHRvIGN...
-        - key: ui_footer_label
-          value: ''
-        - key: ui_post_access_instruction_message
-          value: ''
-        - key: ui_post_access_page_title
-          value: UG9zdC1BY2Nlc3MgQmFubmVy
-        - key: ui_aup_content_label
-          value: QWNjZXB0YWJsZSBVc2UgUG9saWN5
-        - key: ui_contact_page_title
-          value: U3VwcG9ydCBJbmZvcm1hdGlvbg==
-        - key: ui_contact_instruction_message
-          value: U2hhcmUgdGhlc2UgZGV0YWlscyB3aXRoIHRoZSBoZWxwIGRlc2sgd2hlbiB0cm91Ymxlc2hvb3RpbmcgaXNzdWVzIHdpdGggdGh...
-        - key: ui_session_timeout_error
-          value: WW91ciBzZXNzaW9uIGhhcyB0aW1lZCBvdXQuIENsaWNrIFJldHJ5IHRvIHRyeSBhZ2Fpbi4=
-        - key: ui_vlan_page_title
-          value: Q29ubmVjdGluZyB0byBOZXR3b3Jr
-        - key: ui_contact_helpdesk_text
-          value: Q29udGFjdCB0aGUgaGVscCBkZXNrIGF0ICh4eHgpIHh4eC14eHh4Lg==
-        - key: ui_aup_registration_code_label
-          value: QWNjZXNzIGNvZGU6
-        - key: ui_vlan_coa_error_message
-          value: VW5hYmxlIHRvIGNvbW11bmljYXRlIHdpdGggc2VydmVyIHRvIHBlcmZvcm0gdGhlIGNoYW5nZSBvZiBhdXRob3JpemF0aW9uICh...
-        - key: ui_vlan_execute_message
-          value: UmVsZWFzaW5nIGFuZCByZW5ld2luZyB5b3VyIElQIGFkZHJlc3Mu
-        - key: ui_vlan_execute_error_message
-          value: VW5hYmxlIHRvIHJlbmV3IHRoZSBJUCBhZGRyZXNzLiBZb3UgbWlnaHQgbmVlZCB0byBkaXNhYmxlIG9yIHJlZHVjZSB0aGUgc2V...
-        - key: ui_contact_failure_code_label
-          value: RmFpbHVyZSBjb2RlOg==
-        - key: ui_contact_link
-          value: Q29udGFjdCBTdXBwb3J0
-        - key: ui_success_instruction_message
-          value: ''
-        - key: ui_aup_page_title
-          value: QWNjZXB0YWJsZSBVc2UgUG9saWN5
-        - key: ui_contact_user_agent_label
-          value: VXNlciBhZ2VudDo=
-        - key: ui_aup_hotspot_text
-          value: UGxlYXNlIGFjY2VwdCB0aGUgcG9saWN5OllvdSBhcmUgcmVzcG9uc2libGUgZm9yIG1haW50YWluaW5nIHRoZSBjb25maWRlbnR...
-        - key: ui_vlan_content_label
-          value: Q29ubmVjdGluZyB0byBOZXR3b3Jr
-        - key: ui_aup_optional_content_2
-          value: ''
-        - key: ui_vlan_install_message
-          value: WW91ciB3ZWIgYnJvd3NlciBpcyBhdHRlbXB0aW5nIHRvIGRvd25sb2FkIGFuIGFwcGxpY2F0aW9uLCB3aGljaCB3aWxsIGF1dG9...
-        - key: ui_contact_mac_address_label
-          value: TUFDIGFkZHJlc3M6
-        - key: ui_aup_optional_content_1
-          value: ''
-        - key: ui_error_instruction_message
-          value: ''
-        - key: ui_success_content_label
-          value: Q29ubmVjdGlvbiBTdWNjZXNzZnVs
-        - key: ui_contact_title_label
-          value: U3VwcG9ydCBJbmZvcm1hdGlvbg==
-        - key: ui_vlan_java_disabled_error_message
-          value: VG8gY29udGludWUsIGluc3RhbGwgYW5kIGVuYWJsZSB0aGUgbGF0ZXN0IEphdmEgdmVyc2lvbiwgYW5kIG1ha2Ugc3VyZSB0aGU...
-        - key: ui_post_access_continue_button
-          value: Q29udGludWU=
-        - key: ui_javascript_disabled_message
-          value: WW91IG11c3QgdHVybiBvbiBKYXZhU2NyaXB0IHRvIHVzZSB0aGlzIHdlYiBzaXRlLg==
-        - key: ui_contact_policy_server_label
-          value: UG9saWN5IHNlcnZlcjo=
-        - key: ui_user_last_login_ipaddr_label
-          value: RnJvbTo=
-        - key: ui_success_page_title
-          value: Q29ubmVjdGlvbiBTdWNjZXNzZnVs
-        - key: ui_contact_helpdesk_title
-          value: U3VwcG9ydCBJbmZvcm1hdGlvbg==
-        - key: ui_aup_decline_button
-          value: RGVjbGluZQ==
-        - key: ui_aup_decline_error
-          value: WW91IGNob3NlIHRvIHJlamVjdCB0aGUgQWNjZXB0YWJsZSBVc2UgUG9saWN5LiBXZSBjYW5ub3QgYWxsb3cgYWNjZXNzIHRvIHR...
-        - key: ui_session_timeout_retry_button
-          value: UmV0cnk=
-        - key: ui_post_access_message
-          value: Q2xpY2sgPGI+Q29udGludWU8L2I+IHRvIGNvbm5lY3QgdG8gdGhlIG5ldHdvcmsu
-        - key: ui_vlan_optional_content_2
-          value: ''
-        - key: ui_vlan_optional_content_1
-          value: ''
-        - key: ui_aup_agreement_label
-          value: SSBhZ3JlZSB0byB0aGUgdGVybXMgYW5kIGNvbmRpdGlvbnM=
-        - key: ui_contact_message
-          value: Q29udGFjdCBJbmZvcm1hdGlvbg==
-        - key: ui_field_required_error
-          value: VGhpcyBmaWVsZCBpcyByZXF1aXJlZC4=
-        - key: ui_banner_label
-          value: SG90c3BvdCBQb3J0YWw=
-        - key: ui_aup_instruction_message
-          value: UGxlYXNlIHJlYWQgdGhlIEFjY2VwdGFibGUgVXNlIFBvbGljeS4=
+        - key: string
+          value: string
       portalTheme:
-        id: 9eb421c0-8c01-11e6-996c-525400b48521
-        name: Default Blue theme
-    description: Guests do not require username and password credentials to access the
-      network, but you can optionally require an access code
-    name: Hotspot Guest Portal (default)
-    portalType: HOTSPOTGUEST
+        id: string
+        name: string
+        themeData: string
+      portalTweakSettings:
+        bannerColor: string
+        bannerTextColor: string
+        pageBackgroundColor: string
+        pageLabelAndTextColor: string
+    description: string
+    id: string
+    name: string
+    portalTestUrl: string
+    portalType: string
     settings:
       aupSettings:
+        accessCode: string
         includeAup: true
-        requireScrolling: false
+        requireAccessCode: true
+        requireScrolling: true
       authSuccessSettings:
-        successRedirect: AUTHSUCCESSPAGE
+        redirectUrl: string
+        successRedirect: string
       portalSettings:
-        allowedInterfaces:
-        - eth0
-        - bond0
-        alwaysUsedLanguage: English
-        certificateGroupTag: Default Portal Certificate Group
-        coaType: COAREAUTHENTICATE
-        displayLang: USEBROWSERLOCALE
-        endpointIdentityGroup: aa178bd0-8bff-11e6-996c-525400b48521
-        fallbackLanguage: English
-        httpsPort: 8443
+        allowedInterfaces: string
+        alwaysUsedLanguage: string
+        certificateGroupTag: string
+        coaType: string
+        displayLang: string
+        endpointIdentityGroup: string
+        fallbackLanguage: string
+        httpsPort: 0
       postAccessBannerSettings:
-        includePostAccessBanner: false
+        includePostAccessBanner: true
+      postLoginBannerSettings:
+        includePostAccessBanner: true
       supportInfoSettings:
-        emptyFieldDisplay: HIDE
+        defaultEmptyFieldValue: string
+        emptyFieldDisplay: string
         includeBrowserUserAgent: true
         includeFailureCode: true
         includeIpAddress: true
         includeMacAddr: true
         includePolicyServer: true
-        includeSupportInfoPage: false
-
-- name: Update by id
-  cisco.ise.hotspot_portal:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    description: ''
-    id: bd533907-bb9e-43d3-aef2-9a9f2a9dbb35
-    name: My Hotspot Guest Portal
-    settings:
-      portalSettings:
-        allowedInterfaces:
-        - eth0
-        - eth1
-        - bond0
-        httpsPort: 8443
+        includeSupportInfoPage: true
 
 - name: Delete by id
   cisco.ise.hotspot_portal:
@@ -379,6 +334,77 @@ EXAMPLES = r"""
     state: absent
     id: string
 
+- name: Create
+  cisco.ise.hotspot_portal:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    customizations:
+      globalCustomizations:
+        backgroundImage:
+          data: string
+        bannerImage:
+          data: string
+        bannerTitle: string
+        contactText: string
+        desktopLogoImage:
+          data: string
+        footerElement: string
+        mobileLogoImage:
+          data: string
+      language:
+        viewLanguage: string
+      pageCustomizations:
+        data:
+        - key: string
+          value: string
+      portalTheme:
+        id: string
+        name: string
+        themeData: string
+      portalTweakSettings:
+        bannerColor: string
+        bannerTextColor: string
+        pageBackgroundColor: string
+        pageLabelAndTextColor: string
+    description: string
+    name: string
+    portalTestUrl: string
+    portalType: string
+    settings:
+      aupSettings:
+        accessCode: string
+        includeAup: true
+        requireAccessCode: true
+        requireScrolling: true
+      authSuccessSettings:
+        redirectUrl: string
+        successRedirect: string
+      portalSettings:
+        allowedInterfaces: string
+        alwaysUsedLanguage: string
+        certificateGroupTag: string
+        coaType: string
+        displayLang: string
+        endpointIdentityGroup: string
+        fallbackLanguage: string
+        httpsPort: 0
+      postAccessBannerSettings:
+        includePostAccessBanner: true
+      postLoginBannerSettings:
+        includePostAccessBanner: true
+      supportInfoSettings:
+        defaultEmptyFieldValue: string
+        emptyFieldDisplay: string
+        includeBrowserUserAgent: true
+        includeFailureCode: true
+        includeIpAddress: true
+        includeMacAddr: true
+        includePolicyServer: true
+        includeSupportInfoPage: true
+
 """
 
 RETURN = r"""
@@ -387,5 +413,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

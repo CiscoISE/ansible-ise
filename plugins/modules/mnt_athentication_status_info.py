@@ -6,45 +6,44 @@
 
 DOCUMENTATION = r"""
 ---
-module: service_info
-short_description: Information module for Service
+module: mnt_athentication_status_info
+short_description: Information module for Mnt Athentication Status
 description:
-- Get all Service.
-- Get Service by name.
+- Get all Mnt Athentication Status.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-  name:
+  MAC:
     description:
-    - Name path parameter.
+    - MAC path parameter.
+    type: str
+  SECONDS:
+    description:
+    - SECONDS path parameter.
+    type: str
+  RECORDS:
+    description:
+    - RECORDS path parameter.
     type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.service
 # Reference by Internet resource
-- name: Service reference
-  description: Complete reference of the Service object model.
+- name: Mnt Athentication Status reference
+  description: Complete reference of the Mnt Athentication Status object model.
   link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
 """
 
 EXAMPLES = r"""
-- name: Get all Service
-  cisco.ise.service_info:
+- name: Get all Mnt Athentication Status
+  cisco.ise.mnt_athentication_status_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
-  register: result
-
-- name: Get Service by name
-  cisco.ise.service_info:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    name: string
+    MAC: string
+    SECONDS: string
+    RECORDS: string
   register: result
 
 """
@@ -53,16 +52,7 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: list
-  elements: dict
-  sample: >
-    [
-      {
-        "link": {
-          "rel": "string",
-          "href": "string",
-          "type": "string"
-        }
-      }
-    ]
+  type: dict
+  sample:
+  - {}
 """

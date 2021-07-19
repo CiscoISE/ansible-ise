@@ -6,40 +6,30 @@
 
 DOCUMENTATION = r"""
 ---
-module: guest_user_reinstante
-short_description: Resource module for Guest User Reinstante
+module: mnt_session_active_count_info
+short_description: Information module for Mnt Session Active Count
 description:
-- Manage operation update of the resource Guest User Reinstante.
+- Get all Mnt Session Active Count.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.guest_user_reinstante
 # Reference by Internet resource
-- name: Guest User Reinstante reference
-  description: Complete reference of the Guest User Reinstante object model.
+- name: Mnt Session Active Count reference
+  description: Complete reference of the Mnt Session Active Count object model.
   link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
 """
 
 EXAMPLES = r"""
-- name: Update by id
-  cisco.ise.guest_user_reinstante:
+- name: Get all Mnt Session Active Count
+  cisco.ise.mnt_session_active_count_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
-    id: string
-
-- name: Update by name
-  cisco.ise.guest_user_reinstante:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    name: string
+  register: result
 
 """
 
@@ -49,5 +39,7 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "count": 0
+    }
 """

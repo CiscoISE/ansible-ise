@@ -17,13 +17,15 @@ options:
     description: EnablePki flag.
     type: bool
   name:
-    description: Repository's name.
+    description: Repository name should be less than 80 characters and can contain alphanumeric,
+      underscore, hyphen and dot characters.
     type: str
   password:
-    description: Repository's password.
+    description: Password can contain alphanumeric and/or special characters.
     type: str
   path:
-    description: Repository's path.
+    description: Path should always start with "/" and can contain alphanumeric, underscore,
+      hyphen and dot characters.
     type: str
   protocol:
     description: Repository's protocol.
@@ -32,13 +34,11 @@ options:
     description: Repository's serverName.
     type: str
   userName:
-    description: Repository's userName.
+    description: Username can contain alphanumeric characters.
     type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.repository
 # Reference by Internet resource
 - name: Repository reference
   description: Complete reference of the Repository object model.
@@ -94,6 +94,9 @@ ise_response:
   type: dict
   sample: >
     {
-      "error": "string"
+      "success": {
+        "message": "string"
+      },
+      "version": "string"
     }
 """

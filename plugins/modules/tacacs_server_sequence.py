@@ -13,8 +13,11 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  description:
+    description: Tacacs Server Sequence's description.
+    type: str
   id:
-    description: Id path parameter.
+    description: Tacacs Server Sequence's id.
     type: str
   localAccounting:
     description: LocalAccounting flag.
@@ -23,28 +26,27 @@ options:
     description: Tacacs Server Sequence's name.
     type: str
   prefixDelimiter:
-    description: Tacacs Server Sequence's prefixDelimiter.
+    description: The delimiter that will be used for prefix strip.
     type: str
   prefixStrip:
-    description: PrefixStrip flag.
+    description: Define if a delimiter will be used for prefix strip.
     type: bool
   remoteAccounting:
     description: RemoteAccounting flag.
     type: bool
   serverList:
-    description: Tacacs Server Sequence's serverList.
+    description: The names of Tacacs external servers separated by commas. The order
+      of the names in the string is the order of servers that will be used during authentication.
     type: str
   suffixDelimiter:
-    description: Tacacs Server Sequence's suffixDelimiter.
+    description: The delimiter that will be used for suffix strip.
     type: str
   suffixStrip:
-    description: SuffixStrip flag.
+    description: Define if a delimiter will be used for suffix strip.
     type: bool
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.tacacs_server_sequence
 # Reference by Internet resource
 - name: Tacacs Server Sequence reference
   description: Complete reference of the Tacacs Server Sequence object model.
@@ -52,22 +54,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.tacacs_server_sequence:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    localAccounting: false
-    name: TacacsServerSequence1
-    prefixDelimiter: \
-    prefixStrip: false
-    remoteAccounting: true
-    serverList: TacacsExternalServer1,TacacsExternalServer2
-    suffixDelimiter: '@'
-    suffixStrip: false
-
 - name: Update by id
   cisco.ise.tacacs_server_sequence:
     ise_hostname: "{{ise_hostname}}"
@@ -75,15 +61,16 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
+    description: string
     id: string
-    localAccounting: false
-    name: TacacsServerSequence1
-    prefixDelimiter: \
-    prefixStrip: false
+    localAccounting: true
+    name: string
+    prefixDelimiter: string
+    prefixStrip: true
     remoteAccounting: true
-    serverList: TacacsExternalServer1,TacacsExternalServer2
-    suffixDelimiter: '@'
-    suffixStrip: false
+    serverList: string
+    suffixDelimiter: string
+    suffixStrip: true
 
 - name: Delete by id
   cisco.ise.tacacs_server_sequence:
@@ -94,6 +81,23 @@ EXAMPLES = r"""
     state: absent
     id: string
 
+- name: Create
+  cisco.ise.tacacs_server_sequence:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    description: string
+    localAccounting: true
+    name: string
+    prefixDelimiter: string
+    prefixStrip: true
+    remoteAccounting: true
+    serverList: string
+    suffixDelimiter: string
+    suffixStrip: true
+
 """
 
 RETURN = r"""
@@ -102,5 +106,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

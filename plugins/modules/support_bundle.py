@@ -17,47 +17,45 @@ options:
     description: Support Bundle's description.
     type: str
   hostName:
-    description: Support Bundle's hostName.
+    description: This parameter is hostName only, xxxx of xxxx.yyy.zz.
     type: str
   name:
-    description: Support Bundle's name.
+    description: Resource Name.
     type: str
   supportBundleIncludeOptions:
     description: Support Bundle's supportBundleIncludeOptions.
     suboptions:
       fromDate:
-        description: Support Bundle's fromDate.
+        description: Date from where support bundle should include the logs.
         type: str
       includeConfigDB:
-        description: IncludeConfigDB flag.
+        description: Set to include Config DB in Support Bundle.
         type: bool
       includeCoreFiles:
-        description: IncludeCoreFiles flag.
+        description: Set to include Core files in Support Bundle.
         type: bool
       includeDebugLogs:
-        description: IncludeDebugLogs flag.
+        description: Set to include Debug logs in Support Bundle.
         type: bool
       includeLocalLogs:
-        description: IncludeLocalLogs flag.
+        description: Set to include Local logs in Support Bundle.
         type: bool
       includeSystemLogs:
-        description: IncludeSystemLogs flag.
+        description: Set to include System logs in Support Bundle.
         type: bool
       mntLogs:
-        description: MntLogs flag.
+        description: Set to include Monitoring and troublshooting logs in Support Bundle.
         type: bool
       policyXml:
-        description: PolicyXml flag.
+        description: Set to include Policy XML in Support Bundle.
         type: bool
       toDate:
-        description: Support Bundle's toDate.
+        description: Date upto where support bundle should include the logs.
         type: str
     type: dict
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.support_bundle
 # Reference by Internet resource
 - name: Support Bundle reference
   description: Complete reference of the Support Bundle object model.
@@ -71,11 +69,11 @@ EXAMPLES = r"""
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
-    description: Support Bundle Generation
-    hostName: ise
-    name: supportBundle
+    description: string
+    hostName: string
+    name: string
     supportBundleIncludeOptions:
-      fromDate: 04/21/2021
+      fromDate: string
       includeConfigDB: true
       includeCoreFiles: true
       includeDebugLogs: true
@@ -83,7 +81,7 @@ EXAMPLES = r"""
       includeSystemLogs: true
       mntLogs: true
       policyXml: true
-      toDate: 04/22/2021
+      toDate: string
 
 """
 

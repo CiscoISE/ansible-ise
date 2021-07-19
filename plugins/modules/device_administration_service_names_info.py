@@ -16,8 +16,6 @@ options: {}
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.device_administration_service_names
 # Reference by Internet resource
 - name: Device Administration Service Names reference
   description: Complete reference of the Device Administration Service Names object model.
@@ -44,10 +42,10 @@ ise_response:
   sample: >
     [
       {
-        "name": "string",
         "id": "string",
-        "serviceType": "string",
-        "isLocalAuthorization": true
+        "isLocalAuthorization": true,
+        "name": "string",
+        "serviceType": "string"
       }
     ]
 """

@@ -21,8 +21,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.network_access_policy_set
 # Reference by Internet resource
 - name: Network Access Policy Set reference
   description: Complete reference of the Network Access Policy Set object model.
@@ -56,55 +54,71 @@ ise_response:
   type: dict
   sample: >
     {
-      "id": "string",
-      "name": "string",
-      "description": "string",
-      "hitCounts": 0,
-      "rank": 0,
-      "state": "string",
-      "default": true,
-      "condition": {
-        "conditionType": "string",
-        "isNegate": true,
-        "name": "string",
-        "id": "string",
+      "response": {
+        "condition": {
+          "conditionType": "string",
+          "isNegate": true,
+          "link": {
+            "href": "string",
+            "rel": "string",
+            "type": "string"
+          },
+          "description": "string",
+          "id": "string",
+          "name": "string",
+          "attributeValue": "string",
+          "dictionaryName": "string",
+          "dictionaryValue": "string",
+          "operator": "string",
+          "children": [
+            {
+              "conditionType": "string",
+              "isNegate": true,
+              "link": {
+                "href": "string",
+                "rel": "string",
+                "type": "string"
+              }
+            }
+          ],
+          "datesRange": {
+            "endDate": "string",
+            "startDate": "string"
+          },
+          "datesRangeException": {
+            "endDate": "string",
+            "startDate": "string"
+          },
+          "hoursRange": {
+            "endTime": "string",
+            "startTime": "string"
+          },
+          "hoursRangeException": {
+            "endTime": "string",
+            "startTime": "string"
+          },
+          "weekDays": [
+            "string"
+          ],
+          "weekDaysException": [
+            "string"
+          ]
+        },
+        "default": true,
         "description": "string",
-        "dictionaryName": "string",
-        "attributeName": "string",
-        "attributeId": "string",
-        "operator": "string",
-        "dictionaryValue": "string",
-        "attributeValue": "string",
-        "children": [
-          {
-            "conditionType": "string",
-            "isNegate": true
-          }
-        ],
-        "hoursRange": {
-          "startTime": "string",
-          "endTime": "string"
+        "hitCounts": 0,
+        "id": "string",
+        "isProxy": true,
+        "link": {
+          "href": "string",
+          "rel": "string",
+          "type": "string"
         },
-        "hoursRangeException": {
-          "startTime": "string",
-          "endTime": "string"
-        },
-        "weekDays": [
-          "string"
-        ],
-        "weekDaysException": [
-          "string"
-        ],
-        "datesRange": {
-          "startDate": "string",
-          "endDate": "string"
-        },
-        "datesRangeException": {
-          "startDate": "string",
-          "endDate": "string"
-        }
+        "name": "string",
+        "rank": 0,
+        "serviceName": "string",
+        "state": "string"
       },
-      "serviceName": "string",
-      "isProxy": true
+      "version": "string"
     }
 """

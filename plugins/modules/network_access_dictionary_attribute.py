@@ -51,8 +51,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.network_access_dictionary_attribute
 # Reference by Internet resource
 - name: Network Access Dictionary Attribute reference
   description: Complete reference of the Network Access Dictionary Attribute object model.
@@ -117,19 +115,22 @@ ise_response:
   type: dict
   sample: >
     {
-      "id": "string",
-      "directionType": "string",
-      "name": "string",
-      "description": "string",
-      "internalName": "string",
-      "dataType": "string",
-      "dictionaryName": "string",
-      "allowedValues": [
-        {
-          "key": "string",
-          "value": "string",
-          "isDefault": true
-        }
-      ]
+      "response": {
+        "allowedValues": [
+          {
+            "isDefault": true,
+            "key": "string",
+            "value": "string"
+          }
+        ],
+        "dataType": "string",
+        "description": "string",
+        "dictionaryName": "string",
+        "directionType": "string",
+        "id": "string",
+        "internalName": "string",
+        "name": "string"
+      },
+      "version": "string"
     }
 """

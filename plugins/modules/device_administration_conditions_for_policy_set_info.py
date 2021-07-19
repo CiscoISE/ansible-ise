@@ -16,8 +16,6 @@ options: {}
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.device_administration_conditions_for_policy_set
 # Reference by Internet resource
 - name: Device Administration Conditions For Policy Set reference
   description: Complete reference of the Device Administration Conditions For Policy Set object model.
@@ -39,50 +37,60 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: list
-  elements: dict
+  type: dict
   sample: >
-    [
-      {
-        "conditionType": "string",
-        "isNegate": true,
-        "name": "string",
-        "id": "string",
-        "description": "string",
-        "dictionaryName": "string",
-        "attributeName": "string",
-        "attributeId": "string",
-        "operator": "string",
-        "dictionaryValue": "string",
-        "attributeValue": "string",
-        "children": [
-          {
-            "conditionType": "string",
-            "isNegate": true
-          }
-        ],
-        "hoursRange": {
-          "startTime": "string",
-          "endTime": "string"
-        },
-        "hoursRangeException": {
-          "startTime": "string",
-          "endTime": "string"
-        },
-        "weekDays": [
-          "string"
-        ],
-        "weekDaysException": [
-          "string"
-        ],
-        "datesRange": {
-          "startDate": "string",
-          "endDate": "string"
-        },
-        "datesRangeException": {
-          "startDate": "string",
-          "endDate": "string"
+    {
+      "response": [
+        {
+          "conditionType": "string",
+          "isNegate": true,
+          "link": {
+            "href": "string",
+            "rel": "string",
+            "type": "string"
+          },
+          "description": "string",
+          "id": "string",
+          "name": "string",
+          "attributeValue": "string",
+          "dictionaryName": "string",
+          "dictionaryValue": "string",
+          "operator": "string",
+          "children": [
+            {
+              "conditionType": "string",
+              "isNegate": true,
+              "link": {
+                "href": "string",
+                "rel": "string",
+                "type": "string"
+              }
+            }
+          ],
+          "datesRange": {
+            "endDate": "string",
+            "startDate": "string"
+          },
+          "datesRangeException": {
+            "endDate": "string",
+            "startDate": "string"
+          },
+          "hoursRange": {
+            "endTime": "string",
+            "startTime": "string"
+          },
+          "hoursRangeException": {
+            "endTime": "string",
+            "startTime": "string"
+          },
+          "weekDays": [
+            "string"
+          ],
+          "weekDaysException": [
+            "string"
+          ]
         }
-      }
-    ]
+      ],
+      "version": "string"
+    }
 """

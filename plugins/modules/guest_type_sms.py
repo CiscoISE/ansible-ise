@@ -26,8 +26,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.guest_type_sms
 # Reference by Internet resource
 - name: Guest Type Sms reference
   description: Complete reference of the Guest Type Sms object model.
@@ -43,9 +41,9 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     additionalData:
     - name: phoneNumber
-      value: '{{value_1}}'
+      value: phoneNumber
     - name: serviceProvider
-      value: '{{value_2}}'
+      value: serviceProvider
     id: string
 
 """

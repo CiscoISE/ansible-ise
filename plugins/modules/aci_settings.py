@@ -14,25 +14,25 @@ version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
   aci50:
-    description: Aci50 flag.
+    description: Enable 5.0 ACI Version.
     type: bool
   aci51:
-    description: Aci51 flag.
+    description: Enable 5.1 ACI Version.
     type: bool
   aciipaddress:
-    description: Aci Settings's aciipaddress.
+    description: ACI Domain manager Ip Address.
     type: str
   acipassword:
-    description: Aci Settings's acipassword.
+    description: ACI Domain manager Password.
     type: str
   aciuserName:
-    description: Aci Settings's aciuserName.
+    description: ACI Domain manager Username.
     type: str
   adminName:
-    description: Aci Settings's adminName.
+    description: ACI Cluster Admin name.
     type: str
   adminPassword:
-    description: Aci Settings's adminPassword.
+    description: ACI Cluster Admin password.
     type: str
   allSxpDomain:
     description: AllSxpDomain flag.
@@ -41,7 +41,7 @@ options:
     description: Aci Settings's defaultSgtName.
     type: str
   enableAci:
-    description: EnableAci flag.
+    description: Enable ACI Integration.
     type: bool
   enableDataPlane:
     description: EnableDataPlane flag.
@@ -50,10 +50,10 @@ options:
     description: EnableElementsLimit flag.
     type: bool
   id:
-    description: Aci Settings's id.
+    description: Resource UUID value.
     type: str
   ipAddressHostName:
-    description: Aci Settings's ipAddressHostName.
+    description: ACI Cluster IP Address / Host name.
     type: str
   l3RouteNetwork:
     description: Aci Settings's l3RouteNetwork.
@@ -86,8 +86,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.aci_settings
 # Reference by Internet resource
 - name: Aci Settings reference
   description: Complete reference of the Aci Settings object model.
@@ -102,26 +100,30 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    aci50: false
-    aci51: false
-    adminName: admin name
-    allSxpDomain: false
-    defaultSgtName: Unknown
-    enableAci: false
-    enableDataPlane: false
+    aci50: true
+    aci51: true
+    aciipaddress: string
+    acipassword: string
+    aciuserName: string
+    adminName: string
+    adminPassword: string
+    allSxpDomain: true
+    defaultSgtName: string
+    enableAci: true
+    enableDataPlane: true
     enableElementsLimit: true
-    id: 872c4e3f-8b3f-4462-98ba-00519a033cce
-    ipAddressHostName: 10.0.0.1
-    l3RouteNetwork: L3_ROUTE
-    maxNumIepgFromAci: 1000
-    maxNumSgtToAci: 500
+    id: string
+    ipAddressHostName: string
+    l3RouteNetwork: string
+    maxNumIepgFromAci: 0
+    maxNumSgtToAci: 0
     specificSxpDomain: true
     specifixSxpDomainList:
-    - default
-    suffixToEpg: SGT
-    suffixToSgt: EPG
-    tenantName: ISE
-    untaggedPacketIepgName: Untagged
+    - string
+    suffixToEpg: string
+    suffixToSgt: string
+    tenantName: string
+    untaggedPacketIepgName: string
 
 """
 
@@ -131,5 +133,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

@@ -16,8 +16,6 @@ options: {}
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.aci_settings
 # Reference by Internet resource
 - name: Aci Settings reference
   description: Complete reference of the Aci Settings object model.
@@ -46,8 +44,11 @@ ise_response:
       "enableAci": true,
       "ipAddressHostName": "string",
       "adminName": "string",
-      "tenantName": "string",
       "adminPassword": "string",
+      "aciipaddress": "string",
+      "aciuserName": "string",
+      "acipassword": "string",
+      "tenantName": "string",
       "l3RouteNetwork": "string",
       "suffixToEpg": "string",
       "suffixToSgt": "string",
@@ -62,9 +63,6 @@ ise_response:
       "enableElementsLimit": true,
       "maxNumIepgFromAci": 0,
       "maxNumSgtToAci": 0,
-      "aciipaddress": "string",
-      "aciuserName": "string",
-      "acipassword": "string",
       "aci50": true,
       "aci51": true
     }

@@ -18,20 +18,22 @@ options:
     - Id path parameter.
     type: str
   additionalData:
-    description: Active Directory Get User Groups's additionalData.
+    description:
+    - AdditionalData part of the request body.
+    type: list
+  additionalData:
+    description: Active Directory Get User Groups Info's additionalData.
     suboptions:
       name:
-        description: Active Directory Get User Groups's name.
+        description: Active Directory Get User Groups Info's name.
         type: str
       value:
-        description: Active Directory Get User Groups's value.
+        description: Active Directory Get User Groups Info's value.
         type: str
     type: list
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.active_directory_user_groups
 # Reference by Internet resource
 - name: Active Directory User Groups reference
   description: Complete reference of the Active Directory User Groups object model.
@@ -48,7 +50,7 @@ EXAMPLES = r"""
     id: string
     additionalData:
     - name: username
-      value: '{{username}}'
+      value: Required. The user to get its groups.
   register: result
 
 """
@@ -62,7 +64,7 @@ ise_response:
     {
       "groups": [
         {
-          "name": "string",
+          "groupName": "string",
           "sid": "string",
           "type": "string"
         }

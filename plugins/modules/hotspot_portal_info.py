@@ -14,6 +14,10 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  id:
+    description:
+    - Id path parameter.
+    type: str
   page:
     description:
     - Page query parameter. Page number.
@@ -48,15 +52,9 @@ options:
       FilterType query parameter. The logical operator common to ALL filter criteria will be by default AND, and
       can be changed by using the parameter.
     type: str
-  id:
-    description:
-    - Id path parameter.
-    type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.hotspot_portal
 # Reference by Internet resource
 - name: Hotspot Portal reference
   description: Complete reference of the Hotspot Portal object model.
@@ -104,9 +102,7 @@ ise_response:
       "settings": {
         "portalSettings": {
           "httpsPort": 0,
-          "allowedInterfaces": [
-            "string"
-          ],
+          "allowedInterfaces": "string",
           "certificateGroupTag": "string",
           "endpointIdentityGroup": "string",
           "coaType": "string",
@@ -115,6 +111,8 @@ ise_response:
           "alwaysUsedLanguage": "string"
         },
         "aupSettings": {
+          "requireAccessCode": true,
+          "accessCode": "string",
           "includeAup": true,
           "requireScrolling": true
         },
@@ -122,7 +120,11 @@ ise_response:
           "includePostAccessBanner": true
         },
         "authSuccessSettings": {
-          "successRedirect": "string"
+          "successRedirect": "string",
+          "redirectUrl": "string"
+        },
+        "postLoginBannerSettings": {
+          "includePostAccessBanner": true
         },
         "supportInfoSettings": {
           "includeSupportInfoPage": true,
@@ -131,18 +133,38 @@ ise_response:
           "includeBrowserUserAgent": true,
           "includePolicyServer": true,
           "includeFailureCode": true,
-          "emptyFieldDisplay": "string"
+          "emptyFieldDisplay": "string",
+          "defaultEmptyFieldValue": "string"
         }
       },
       "customizations": {
         "portalTheme": {
           "id": "string",
-          "name": "string"
+          "name": "string",
+          "themeData": "string"
+        },
+        "portalTweakSettings": {
+          "bannerColor": "string",
+          "bannerTextColor": "string",
+          "pageBackgroundColor": "string",
+          "pageLabelAndTextColor": "string"
         },
         "language": {
           "viewLanguage": "string"
         },
         "globalCustomizations": {
+          "mobileLogoImage": {
+            "data": "string"
+          },
+          "desktopLogoImage": {
+            "data": "string"
+          },
+          "backgroundImage": {
+            "data": "string"
+          },
+          "bannerImage": {
+            "data": "string"
+          },
           "bannerTitle": "string",
           "contactText": "string",
           "footerElement": "string"

@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: identity_group
 short_description: Resource module for Identity Group
 description:
-- Manage operations create, update and delete of the resource Identity Group.
+- Manage operations create and update of the resource Identity Group.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
@@ -28,8 +28,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.identity_group
 # Reference by Internet resource
 - name: Identity Group reference
   description: Complete reference of the Identity Group object model.
@@ -37,18 +35,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.identity_group:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    description: 'Identity group mirroring the guest type'
-    id: 1e2700a0-8c00-11e6-996c-525400b48521
-    name: GuestType_Weekly (default)
-    parent: NAC Group:NAC:IdentityGroups:User Identity Groups
-
 - name: Update by id
   cisco.ise.identity_group:
     ise_hostname: "{{ise_hostname}}"
@@ -56,19 +42,21 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    description: 'Identity group mirroring the guest type'
-    id: 1e2700a0-8c00-11e6-996c-525400b48521
-    name: GuestType_Weekly (default)
-    parent: NAC Group:NAC:IdentityGroups:User Identity Groups
+    description: string
+    id: string
+    name: string
+    parent: string
 
-- name: Delete by id
+- name: Create
   cisco.ise.identity_group:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
-    state: absent
-    id: string
+    state: present
+    description: string
+    name: string
+    parent: string
 
 """
 
@@ -78,5 +66,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

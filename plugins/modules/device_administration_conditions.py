@@ -13,12 +13,6 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-  attributeId:
-    description: Dictionary attribute id (Optional), used for additional verification.
-    type: str
-  attributeName:
-    description: Dictionary attribute name.
-    type: str
   attributeValue:
     description: <ul><li>Attribute value for condition</li> <li>Value type is specified
       in dictionary object</li> <li>if multiple values allowed is specified in dictionary
@@ -38,6 +32,19 @@ options:
       isNegate:
         description: Indicates whereas this condition is in negate mode.
         type: bool
+      link:
+        description: Device Administration Conditions's link.
+        suboptions:
+          href:
+            description: Device Administration Conditions's href.
+            type: str
+          rel:
+            description: Device Administration Conditions's rel.
+            type: str
+          type:
+            description: Device Administration Conditions's type.
+            type: str
+        type: dict
     type: list
   conditionType:
     description: <ul><li>Inidicates whether the record is the condition itself(data)
@@ -113,6 +120,19 @@ options:
   isNegate:
     description: Indicates whereas this condition is in negate mode.
     type: bool
+  link:
+    description: Device Administration Conditions's link.
+    suboptions:
+      href:
+        description: Device Administration Conditions's href.
+        type: str
+      rel:
+        description: Device Administration Conditions's rel.
+        type: str
+      type:
+        description: Device Administration Conditions's type.
+        type: str
+    type: dict
   name:
     description: Condition name.
     type: str
@@ -132,8 +152,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.device_administration_conditions
 # Reference by Internet resource
 - name: Device Administration Conditions reference
   description: Complete reference of the Device Administration Conditions object model.
@@ -148,20 +166,14 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-
-- name: Update by id
-  cisco.ise.device_administration_conditions:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    attributeId: string
-    attributeName: string
     attributeValue: string
     children:
     - conditionType: string
       isNegate: true
+      link:
+        href: string
+        rel: string
+        type: string
     conditionType: string
     datesRange:
       endDate: string
@@ -180,6 +192,107 @@ EXAMPLES = r"""
       startTime: string
     id: string
     isNegate: true
+    link:
+      href: string
+      rel: string
+      type: string
+    name: string
+    operator: string
+    weekDays:
+    - string
+    weekDaysException:
+    - string
+
+- name: Update by name
+  cisco.ise.device_administration_conditions:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    attributeValue: string
+    children:
+    - conditionType: string
+      isNegate: true
+      link:
+        href: string
+        rel: string
+        type: string
+    conditionType: string
+    datesRange:
+      endDate: string
+      startDate: string
+    datesRangeException:
+      endDate: string
+      startDate: string
+    description: string
+    dictionaryName: string
+    dictionaryValue: string
+    hoursRange:
+      endTime: string
+      startTime: string
+    hoursRangeException:
+      endTime: string
+      startTime: string
+    id: string
+    isNegate: true
+    link:
+      href: string
+      rel: string
+      type: string
+    name: string
+    operator: string
+    weekDays:
+    - string
+    weekDaysException:
+    - string
+
+- name: Delete by name
+  cisco.ise.device_administration_conditions:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: absent
+    name: string
+
+- name: Update by id
+  cisco.ise.device_administration_conditions:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    attributeValue: string
+    children:
+    - conditionType: string
+      isNegate: true
+      link:
+        href: string
+        rel: string
+        type: string
+    conditionType: string
+    datesRange:
+      endDate: string
+      startDate: string
+    datesRangeException:
+      endDate: string
+      startDate: string
+    description: string
+    dictionaryName: string
+    dictionaryValue: string
+    hoursRange:
+      endTime: string
+      startTime: string
+    hoursRangeException:
+      endTime: string
+      startTime: string
+    id: string
+    isNegate: true
+    link:
+      href: string
+      rel: string
+      type: string
     name: string
     operator: string
     weekDays:
@@ -205,44 +318,55 @@ ise_response:
   type: dict
   sample: >
     {
-      "conditionType": "string",
-      "isNegate": true,
-      "name": "string",
-      "id": "string",
-      "description": "string",
-      "dictionaryName": "string",
-      "attributeName": "string",
-      "attributeId": "string",
-      "operator": "string",
-      "dictionaryValue": "string",
-      "attributeValue": "string",
-      "children": [
-        {
-          "conditionType": "string",
-          "isNegate": true
-        }
-      ],
-      "hoursRange": {
-        "startTime": "string",
-        "endTime": "string"
+      "response": {
+        "conditionType": "string",
+        "isNegate": true,
+        "link": {
+          "href": "string",
+          "rel": "string",
+          "type": "string"
+        },
+        "description": "string",
+        "id": "string",
+        "name": "string",
+        "attributeValue": "string",
+        "dictionaryName": "string",
+        "dictionaryValue": "string",
+        "operator": "string",
+        "children": [
+          {
+            "conditionType": "string",
+            "isNegate": true,
+            "link": {
+              "href": "string",
+              "rel": "string",
+              "type": "string"
+            }
+          }
+        ],
+        "datesRange": {
+          "endDate": "string",
+          "startDate": "string"
+        },
+        "datesRangeException": {
+          "endDate": "string",
+          "startDate": "string"
+        },
+        "hoursRange": {
+          "endTime": "string",
+          "startTime": "string"
+        },
+        "hoursRangeException": {
+          "endTime": "string",
+          "startTime": "string"
+        },
+        "weekDays": [
+          "string"
+        ],
+        "weekDaysException": [
+          "string"
+        ]
       },
-      "hoursRangeException": {
-        "startTime": "string",
-        "endTime": "string"
-      },
-      "weekDays": [
-        "string"
-      ],
-      "weekDaysException": [
-        "string"
-      ],
-      "datesRange": {
-        "startDate": "string",
-        "endDate": "string"
-      },
-      "datesRangeException": {
-        "startDate": "string",
-        "endDate": "string"
-      }
+      "version": "string"
     }
 """

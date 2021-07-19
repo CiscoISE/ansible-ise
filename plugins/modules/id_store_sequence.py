@@ -13,12 +13,28 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  breakOnStoreFail:
+    description: BreakOnStoreFail flag.
+    type: bool
+  certificateAuthenticationProfile:
+    description: Id Store Sequence's certificateAuthenticationProfile.
+    type: str
   description:
     description: Id Store Sequence's description.
     type: str
   id:
     description: Id Store Sequence's id.
     type: str
+  idSeqItem:
+    description: Id Store Sequence's idSeqItem.
+    suboptions:
+      idstore:
+        description: Id Store Sequence's idstore.
+        type: str
+      order:
+        description: Id Store Sequence's order.
+        type: int
+    type: list
   name:
     description: Id Store Sequence's name.
     type: str
@@ -28,8 +44,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.id_store_sequence
 # Reference by Internet resource
 - name: Id Store Sequence reference
   description: Complete reference of the Id Store Sequence object model.
@@ -37,18 +51,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.id_store_sequence:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    description: description
-    id: id
-    name: name
-    parent: parent
-
 - name: Update by id
   cisco.ise.id_store_sequence:
     ise_hostname: "{{ise_hostname}}"
@@ -56,10 +58,15 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    description: description
-    id: id
-    name: name
-    parent: parent
+    breakOnStoreFail: true
+    certificateAuthenticationProfile: string
+    description: string
+    id: string
+    idSeqItem:
+    - idstore: string
+      order: 0
+    name: string
+    parent: string
 
 - name: Delete by id
   cisco.ise.id_store_sequence:
@@ -70,6 +77,22 @@ EXAMPLES = r"""
     state: absent
     id: string
 
+- name: Create
+  cisco.ise.id_store_sequence:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    breakOnStoreFail: true
+    certificateAuthenticationProfile: string
+    description: string
+    idSeqItem:
+    - idstore: string
+      order: 0
+    name: string
+    parent: string
+
 """
 
 RETURN = r"""
@@ -78,5 +101,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

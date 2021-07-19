@@ -20,8 +20,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.node_replication_status
 # Reference by Internet resource
 - name: Node Replication Status reference
   description: Complete reference of the Node Replication Status object model.

@@ -16,8 +16,6 @@ options: {}
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.sg_mapping_group_deploy
 # Reference by Internet resource
 - name: Sg Mapping Group Deploy reference
   description: Complete reference of the Sg Mapping Group Deploy object model.

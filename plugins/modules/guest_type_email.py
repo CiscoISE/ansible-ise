@@ -26,8 +26,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.guest_type_email
 # Reference by Internet resource
 - name: Guest Type Email reference
   description: Complete reference of the Guest Type Email object model.
@@ -43,7 +41,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     additionalData:
     - name: emailAddress
-      value: '{{value_1}}'
+      value: emailAddress
     id: string
 
 """

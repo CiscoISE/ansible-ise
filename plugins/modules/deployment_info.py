@@ -16,12 +16,10 @@ options:
   timeout:
     description:
     - How long to wait for the server to send data before giving up.
-    type: float
+    type: int
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.deployment
 # Reference by Internet resource
 - name: Deployment reference
   description: Complete reference of the Deployment object model.
@@ -35,7 +33,6 @@ EXAMPLES = r"""
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
-    timeout: 300
   register: result
 
 """
@@ -49,139 +46,56 @@ ise_response:
     {
       "networkAccessInfo": {
         "deploymentID": "string",
+        "isCsnEnabled": true,
         "nodeList": {
           "nodeAndScope": [
-            {
-              "content": [
-                {
-                  "name": "string",
-                  "declaredType": "string",
-                  "scope": "string",
-                  "value": {
-                    "ndghierarchyMap": "string",
-                    "ndgheierarchyNADMap": "string",
-                    "policyLineCount": 0,
-                    "localIdentityNonAdminUserCount": 0,
-                    "restIDInfo": [
-                      {
-                        "restIDType": [
-                          "string"
-                        ],
-                        "restidcount": 0
-                      }
-                    ],
-                    "odbcInfo": [
-                      {
-                        "odbctype": [
-                          "string"
-                        ],
-                        "odbccount": 0
-                      }
-                    ],
-                    "rsaidstoreCount": 0,
-                    "radiusidstoreCount": 0,
-                    "adauthStoreCount": 0,
-                    "ldapidstoreCount": 0,
-                    "activeVLANCount": 0,
-                    "activedACLCount": 0
-                  },
-                  "nil": true,
-                  "globalScope": true,
-                  "typeSubstituted": true
-                }
-              ]
-            }
+            {}
           ]
         },
-        "sdaVNs": [
-          "string"
-        ],
+        "sdaVNs": [],
         "trustSecControl": "string",
-        "radius3RdParty": [
-          "string"
-        ]
+        "radius3RdParty": []
       },
       "profilerInfo": {
         "deploymentID": "string",
         "nodeList": {
           "node": [
             {
-              "profiles": {
-                "profile": [
-                  "string"
-                ],
-                "customProfilesCount": 0,
-                "endpointTypes": "string",
-                "totalProfilesCount": 0,
-                "uniqueEndpointsCount": 0,
-                "unknownEndpointsCount": 0,
-                "totalEndpointsCount": 0,
-                "unknownEndpointsPercentage": 0
-              },
               "onlineSubscriptionEnabled": true,
               "lastAppliedFeedDateTime": "string",
-              "scope": "string"
+              "scope": "string",
+              "profiles": [
+                {
+                  "profile": [],
+                  "customProfilesCount": 0,
+                  "endpointTypes": "string",
+                  "totalProfilesCount": 0,
+                  "uniqueEndpointsCount": 0,
+                  "unknownEndpointsCount": 0,
+                  "totalEndpointsCount": 0,
+                  "unknownEndpointsPercentage": 0
+                }
+              ]
             }
           ]
         }
       },
       "deploymentInfo": {
         "deploymentID": "string",
+        "versionHistoryInfo": [
+          {
+            "opType": "string",
+            "mainVersion": "string",
+            "epochTime": 0
+          }
+        ],
         "nodeList": {
           "nodeAndNodeCountAndCountInfo": [
             {
               "name": "string",
+              "value": "string",
               "declaredType": "string",
               "scope": "string",
-              "value": {
-                "content": [
-                  {
-                    "name": "string",
-                    "declaredType": "string",
-                    "scope": "string",
-                    "value": {
-                      "fromDate": "string",
-                      "toDate": "string",
-                      "total": "string",
-                      "free": "string",
-                      "percent": "string",
-                      "fileSystem": [
-                        {
-                          "name": "string",
-                          "total": "string",
-                          "used": "string",
-                          "available": "string",
-                          "percent": "string",
-                          "mountPoint": "string"
-                        }
-                      ],
-                      "loadAvgOne": "string",
-                      "loadAvgFive": "string",
-                      "loadAvgFifteen": "string",
-                      "content": [
-                        {
-                          "name": "string",
-                          "declaredType": "string",
-                          "scope": "string",
-                          "value": true,
-                          "nil": true,
-                          "globalScope": true,
-                          "typeSubstituted": true
-                        }
-                      ]
-                    },
-                    "nil": true,
-                    "globalScope": true,
-                    "typeSubstituted": true
-                  }
-                ],
-                "fromDate": "string",
-                "toDate": "string",
-                "currentPostureEndptCount": 0,
-                "currentGuestUserCount": 0,
-                "currentMDMEndPtCount": 0,
-                "currentPxGridClientCount": 0
-              },
               "nil": true,
               "globalScope": true,
               "typeSubstituted": true
@@ -191,31 +105,9 @@ ise_response:
         "fipsstatus": "string"
       },
       "nadInfo": {
-        "deploymentID": "string",
         "nodeList": {
           "nodeAndScope": [
-            {
-              "content": [
-                {
-                  "name": "string",
-                  "declaredType": "string",
-                  "scope": "string",
-                  "value": {
-                    "name": "string",
-                    "isCiscoProvided": true,
-                    "isDefProfile": true,
-                    "isTacacsSupported": true,
-                    "isRadiusSupported": true,
-                    "isTrustSecSupported": true,
-                    "activeNADCount": 0,
-                    "totalNADCount": 0
-                  },
-                  "nil": true,
-                  "globalScope": true,
-                  "typeSubstituted": true
-                }
-              ]
-            }
+            {}
           ]
         },
         "nadcountInfo": {
@@ -223,48 +115,21 @@ ise_response:
         }
       },
       "mdmInfo": {
-        "activeMdmServersCount": "string",
-        "activeDesktopMdmServersCount": "string",
-        "activeMobileMdmServersCount": "string",
+        "activeMdmServersCount": 0,
+        "activeDesktopMdmServersCount": 0,
+        "activeMobileMdmServersCount": 0,
         "deploymentID": "string",
         "nodeList": {
           "nodeAndScope": [
-            {
-              "content": [
-                "string"
-              ]
-            }
+            {}
           ]
         }
       },
       "licensesInfo": {
         "deploymentID": "string",
         "nodeList": {
-          "nodeAndScope": [
-            {
-              "content": [
-                {
-                  "name": "string",
-                  "declaredType": "string",
-                  "scope": "string",
-                  "value": {
-                    "serviceTypes": "string",
-                    "count": 0,
-                    "remainingDays": 0,
-                    "fileName": "string",
-                    "isExpired": true,
-                    "isEvaluation": true,
-                    "isWiredEnabled": true,
-                    "term": 0,
-                    "primaryUDI": "string",
-                    "secondaryUDI": "string"
-                  },
-                  "nil": true,
-                  "globalScope": true,
-                  "typeSubstituted": true
-                }
-              ]
-            }
+          "node": [
+            {}
           ]
         }
       },
@@ -272,9 +137,9 @@ ise_response:
         "content": [
           {
             "name": "string",
+            "value": "string",
             "declaredType": "string",
             "scope": "string",
-            "value": 0,
             "nil": true,
             "globalScope": true,
             "typeSubstituted": true
@@ -285,7 +150,22 @@ ise_response:
         "deploymentID": "string",
         "nodeList": {
           "node": [
-            "string"
+            {
+              "sn": "string",
+              "service": [
+                {
+                  "serviceName": "string",
+                  "route": [
+                    {
+                      "routeName": "string",
+                      "httpCount": {},
+                      "latencyCount": {},
+                      "latencySum": {}
+                    }
+                  ]
+                }
+              ]
+            }
           ]
         }
       }

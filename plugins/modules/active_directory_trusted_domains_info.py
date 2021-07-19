@@ -20,8 +20,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.active_directory_trusted_domains
 # Reference by Internet resource
 - name: Active Directory Trusted Domains reference
   description: Complete reference of the Active Directory Trusted Domains object model.

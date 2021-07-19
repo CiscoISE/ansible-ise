@@ -13,12 +13,6 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-  attributeId:
-    description: Dictionary attribute id (Optional), used for additional verification.
-    type: str
-  attributeName:
-    description: Dictionary attribute name.
-    type: str
   attributeValue:
     description: <ul><li>Attribute value for condition</li> <li>Value type is specified
       in dictionary object</li> <li>if multiple values allowed is specified in dictionary
@@ -38,6 +32,19 @@ options:
       isNegate:
         description: Indicates whereas this condition is in negate mode.
         type: bool
+      link:
+        description: Network Access Time Date Conditions's link.
+        suboptions:
+          href:
+            description: Network Access Time Date Conditions's href.
+            type: str
+          rel:
+            description: Network Access Time Date Conditions's rel.
+            type: str
+          type:
+            description: Network Access Time Date Conditions's type.
+            type: str
+        type: dict
     type: list
   conditionType:
     description: <ul><li>Inidicates whether the record is the condition itself(data)
@@ -113,6 +120,19 @@ options:
   isNegate:
     description: Indicates whereas this condition is in negate mode.
     type: bool
+  link:
+    description: Network Access Time Date Conditions's link.
+    suboptions:
+      href:
+        description: Network Access Time Date Conditions's href.
+        type: str
+      rel:
+        description: Network Access Time Date Conditions's rel.
+        type: str
+      type:
+        description: Network Access Time Date Conditions's type.
+        type: str
+    type: dict
   name:
     description: Condition name.
     type: str
@@ -132,8 +152,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.network_access_time_date_conditions
 # Reference by Internet resource
 - name: Network Access Time Date Conditions reference
   description: Complete reference of the Network Access Time Date Conditions object model.
@@ -148,42 +166,14 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    conditionType: TimeAndDateCondition
-    datesRange:
-      endDate: '2021-07-03'
-      startDate: '2021-06-03'
-    datesRangeException:
-      endDate: '2021-06-03'
-      startDate: '2021-06-03'
-    description: null
-    hoursRange:
-      endTime: '13:02'
-      startTime: '22:02'
-    hoursRangeException:
-      endTime: '23:50'
-      startTime: '23:02'
-    id: 53714248-a906-4f21-a688-37646b8cc94b
-    isNegate: false
-    name: Test1
-    weekDays:
-    - Saturday
-    - Sunday
-    weekDaysException:
-    - Sunday
-
-- name: Update by id
-  cisco.ise.network_access_time_date_conditions:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    attributeId: string
-    attributeName: string
     attributeValue: string
     children:
     - conditionType: string
       isNegate: true
+      link:
+        href: string
+        rel: string
+        type: string
     conditionType: string
     datesRange:
       endDate: string
@@ -202,6 +192,54 @@ EXAMPLES = r"""
       startTime: string
     id: string
     isNegate: true
+    link:
+      href: string
+      rel: string
+      type: string
+    name: string
+    operator: string
+    weekDays:
+    - string
+    weekDaysException:
+    - string
+
+- name: Update by id
+  cisco.ise.network_access_time_date_conditions:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    attributeValue: string
+    children:
+    - conditionType: string
+      isNegate: true
+      link:
+        href: string
+        rel: string
+        type: string
+    conditionType: string
+    datesRange:
+      endDate: string
+      startDate: string
+    datesRangeException:
+      endDate: string
+      startDate: string
+    description: string
+    dictionaryName: string
+    dictionaryValue: string
+    hoursRange:
+      endTime: string
+      startTime: string
+    hoursRangeException:
+      endTime: string
+      startTime: string
+    id: string
+    isNegate: true
+    link:
+      href: string
+      rel: string
+      type: string
     name: string
     operator: string
     weekDays:
@@ -227,44 +265,7 @@ ise_response:
   type: dict
   sample: >
     {
-      "conditionType": "string",
-      "isNegate": true,
-      "name": "string",
-      "id": "string",
-      "description": "string",
-      "dictionaryName": "string",
-      "attributeName": "string",
-      "attributeId": "string",
-      "operator": "string",
-      "dictionaryValue": "string",
-      "attributeValue": "string",
-      "children": [
-        {
-          "conditionType": "string",
-          "isNegate": true
-        }
-      ],
-      "hoursRange": {
-        "startTime": "string",
-        "endTime": "string"
-      },
-      "hoursRangeException": {
-        "startTime": "string",
-        "endTime": "string"
-      },
-      "weekDays": [
-        "string"
-      ],
-      "weekDaysException": [
-        "string"
-      ],
-      "datesRange": {
-        "startDate": "string",
-        "endDate": "string"
-      },
-      "datesRangeException": {
-        "startDate": "string",
-        "endDate": "string"
-      }
+      "response": {},
+      "version": "string"
     }
 """

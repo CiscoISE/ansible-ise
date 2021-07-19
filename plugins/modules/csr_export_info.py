@@ -21,11 +21,17 @@ options:
     description:
     - Id path parameter. The ID of the CSR to be exported.
     type: str
+  dirPath:
+    description:
+    - Directory absolute path. Defaults to the current working directory.
+    type: str
+  saveFile:
+    description:
+    - Enable or disable automatic file creation of raw response.
+    type: bool
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.csr_export
 # Reference by Internet resource
 - name: Csr Export reference
   description: Complete reference of the Csr Export object model.

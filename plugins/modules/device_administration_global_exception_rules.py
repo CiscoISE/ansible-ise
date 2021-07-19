@@ -6,10 +6,10 @@
 
 DOCUMENTATION = r"""
 ---
-module: device_administration_authorization_global_exception_rules
-short_description: Resource module for Device Administration Authorization Global Exception Rules
+module: device_administration_global_exception_rules
+short_description: Resource module for Device Administration Global Exception Rules
 description:
-- Manage operations create, update and delete of the resource Device Administration Authorization Global Exception Rules.
+- Manage operations create, update and delete of the resource Device Administration Global Exception Rules.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
@@ -21,6 +21,19 @@ options:
   id:
     description: Id path parameter. Rule id.
     type: str
+  link:
+    description: Device Administration Global Exception Rules's link.
+    suboptions:
+      href:
+        description: Device Administration Global Exception Rules's href.
+        type: str
+      rel:
+        description: Device Administration Global Exception Rules's rel.
+        type: str
+      type:
+        description: Device Administration Global Exception Rules's type.
+        type: str
+    type: dict
   profile:
     description: Device admin profiles control the initial login session of the device
       administrator.
@@ -29,14 +42,8 @@ options:
     description: Common attributes in rule authentication/authorization.
     suboptions:
       condition:
-        description: Device Administration Authorization Global Exception Rules's condition.
+        description: Device Administration Global Exception Rules's condition.
         suboptions:
-          attributeId:
-            description: Dictionary attribute id (Optional), used for additional verification.
-            type: str
-          attributeName:
-            description: Dictionary attribute name.
-            type: str
           attributeValue:
             description: <ul><li>Attribute value for condition</li> <li>Value type is
               specified in dictionary object</li> <li>if multiple values allowed is
@@ -57,6 +64,19 @@ options:
               isNegate:
                 description: Indicates whereas this condition is in negate mode.
                 type: bool
+              link:
+                description: Device Administration Global Exception Rules's link.
+                suboptions:
+                  href:
+                    description: Device Administration Global Exception Rules's href.
+                    type: str
+                  rel:
+                    description: Device Administration Global Exception Rules's rel.
+                    type: str
+                  type:
+                    description: Device Administration Global Exception Rules's type.
+                    type: str
+                type: dict
             type: list
           conditionType:
             description: <ul><li>Inidicates whether the record is the condition itself(data)
@@ -74,12 +94,10 @@ options:
               = year)</p>.
             suboptions:
               endDate:
-                description: Device Administration Authorization Global Exception Rules's
-                  endDate.
+                description: Device Administration Global Exception Rules's endDate.
                 type: str
               startDate:
-                description: Device Administration Authorization Global Exception Rules's
-                  startDate.
+                description: Device Administration Global Exception Rules's startDate.
                 type: str
             type: dict
           datesRangeException:
@@ -91,12 +109,10 @@ options:
               = year)</p>.
             suboptions:
               endDate:
-                description: Device Administration Authorization Global Exception Rules's
-                  endDate.
+                description: Device Administration Global Exception Rules's endDate.
                 type: str
               startDate:
-                description: Device Administration Authorization Global Exception Rules's
-                  startDate.
+                description: Device Administration Global Exception Rules's startDate.
                 type: str
             type: dict
           description:
@@ -114,12 +130,10 @@ options:
               - hh mm ( h = hour , mm = minutes ) <br> Default - All Day </p>.
             suboptions:
               endTime:
-                description: Device Administration Authorization Global Exception Rules's
-                  endTime.
+                description: Device Administration Global Exception Rules's endTime.
                 type: str
               startTime:
-                description: Device Administration Authorization Global Exception Rules's
-                  startTime.
+                description: Device Administration Global Exception Rules's startTime.
                 type: str
             type: dict
           hoursRangeException:
@@ -128,21 +142,31 @@ options:
               - hh mm ( h = hour , mm = minutes ) <br> Default - All Day </p>.
             suboptions:
               endTime:
-                description: Device Administration Authorization Global Exception Rules's
-                  endTime.
+                description: Device Administration Global Exception Rules's endTime.
                 type: str
               startTime:
-                description: Device Administration Authorization Global Exception Rules's
-                  startTime.
+                description: Device Administration Global Exception Rules's startTime.
                 type: str
             type: dict
           id:
-            description: Device Administration Authorization Global Exception Rules's
-              id.
+            description: Device Administration Global Exception Rules's id.
             type: str
           isNegate:
             description: Indicates whereas this condition is in negate mode.
             type: bool
+          link:
+            description: Device Administration Global Exception Rules's link.
+            suboptions:
+              href:
+                description: Device Administration Global Exception Rules's href.
+                type: str
+              rel:
+                description: Device Administration Global Exception Rules's rel.
+                type: str
+              type:
+                description: Device Administration Global Exception Rules's type.
+                type: str
+            type: dict
           name:
             description: Condition name.
             type: str
@@ -164,9 +188,6 @@ options:
       default:
         description: Indicates if this rule is the default one.
         type: bool
-      description:
-        description: The description of the rule.
-        type: str
       hitCounts:
         description: The amount of times the rule was matched.
         type: int
@@ -188,17 +209,15 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.device_administration_authorization_global_exception_rules
 # Reference by Internet resource
-- name: Device Administration Authorization Global Exception Rules reference
-  description: Complete reference of the Device Administration Authorization Global Exception Rules object model.
+- name: Device Administration Global Exception Rules reference
+  description: Complete reference of the Device Administration Global Exception Rules object model.
   link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
 """
 
 EXAMPLES = r"""
 - name: Create
-  cisco.ise.device_administration_authorization_global_exception_rules:
+  cisco.ise.device_administration_global_exception_rules:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
@@ -206,15 +225,21 @@ EXAMPLES = r"""
     state: present
     commands:
     - string
+    link:
+      href: string
+      rel: string
+      type: string
     profile: string
     rule:
       condition:
-        attributeId: string
-        attributeName: string
         attributeValue: string
         children:
         - conditionType: string
           isNegate: true
+          link:
+            href: string
+            rel: string
+            type: string
         conditionType: string
         datesRange:
           endDate: string
@@ -233,6 +258,10 @@ EXAMPLES = r"""
           startTime: string
         id: string
         isNegate: true
+        link:
+          href: string
+          rel: string
+          type: string
         name: string
         operator: string
         weekDays:
@@ -240,7 +269,6 @@ EXAMPLES = r"""
         weekDaysException:
         - string
       default: true
-      description: string
       hitCounts: 0
       id: string
       name: string
@@ -248,7 +276,7 @@ EXAMPLES = r"""
       state: string
 
 - name: Update by id
-  cisco.ise.device_administration_authorization_global_exception_rules:
+  cisco.ise.device_administration_global_exception_rules:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
@@ -257,15 +285,21 @@ EXAMPLES = r"""
     commands:
     - string
     id: string
+    link:
+      href: string
+      rel: string
+      type: string
     profile: string
     rule:
       condition:
-        attributeId: string
-        attributeName: string
         attributeValue: string
         children:
         - conditionType: string
           isNegate: true
+          link:
+            href: string
+            rel: string
+            type: string
         conditionType: string
         datesRange:
           endDate: string
@@ -284,6 +318,10 @@ EXAMPLES = r"""
           startTime: string
         id: string
         isNegate: true
+        link:
+          href: string
+          rel: string
+          type: string
         name: string
         operator: string
         weekDays:
@@ -291,7 +329,6 @@ EXAMPLES = r"""
         weekDaysException:
         - string
       default: true
-      description: string
       hitCounts: 0
       id: string
       name: string
@@ -299,7 +336,7 @@ EXAMPLES = r"""
       state: string
 
 - name: Delete by id
-  cisco.ise.device_administration_authorization_global_exception_rules:
+  cisco.ise.device_administration_global_exception_rules:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
@@ -316,59 +353,74 @@ ise_response:
   type: dict
   sample: >
     {
-      "rule": {
-        "id": "string",
-        "name": "string",
-        "description": "string",
-        "hitCounts": 0,
-        "rank": 0,
-        "state": "string",
-        "default": true,
-        "condition": {
-          "conditionType": "string",
-          "isNegate": true,
-          "name": "string",
+      "response": {
+        "commands": [
+          "string"
+        ],
+        "link": {
+          "href": "string",
+          "rel": "string",
+          "type": "string"
+        },
+        "profile": "string",
+        "rule": {
+          "condition": {
+            "conditionType": "string",
+            "isNegate": true,
+            "link": {
+              "href": "string",
+              "rel": "string",
+              "type": "string"
+            },
+            "description": "string",
+            "id": "string",
+            "name": "string",
+            "attributeValue": "string",
+            "dictionaryName": "string",
+            "dictionaryValue": "string",
+            "operator": "string",
+            "children": [
+              {
+                "conditionType": "string",
+                "isNegate": true,
+                "link": {
+                  "href": "string",
+                  "rel": "string",
+                  "type": "string"
+                }
+              }
+            ],
+            "datesRange": {
+              "endDate": "string",
+              "startDate": "string"
+            },
+            "datesRangeException": {
+              "endDate": "string",
+              "startDate": "string"
+            },
+            "hoursRange": {
+              "endTime": "string",
+              "startTime": "string"
+            },
+            "hoursRangeException": {
+              "endTime": "string",
+              "startTime": "string"
+            },
+            "weekDays": [
+              "string"
+            ],
+            "weekDaysException": [
+              "string"
+            ]
+          },
+          "default": true,
+          "hitCounts": 0,
           "id": "string",
-          "description": "string",
-          "dictionaryName": "string",
-          "attributeName": "string",
-          "attributeId": "string",
-          "operator": "string",
-          "dictionaryValue": "string",
-          "attributeValue": "string",
-          "children": [
-            {
-              "conditionType": "string",
-              "isNegate": true
-            }
-          ],
-          "hoursRange": {
-            "startTime": "string",
-            "endTime": "string"
-          },
-          "hoursRangeException": {
-            "startTime": "string",
-            "endTime": "string"
-          },
-          "weekDays": [
-            "string"
-          ],
-          "weekDaysException": [
-            "string"
-          ],
-          "datesRange": {
-            "startDate": "string",
-            "endDate": "string"
-          },
-          "datesRangeException": {
-            "startDate": "string",
-            "endDate": "string"
-          }
+          "name": "string",
+          "rank": 0,
+          "state": "string"
         }
       },
-      "commands": [
-        "string"
-      ],
-      "profile": "string"
+      "version": "string"
     }
 """

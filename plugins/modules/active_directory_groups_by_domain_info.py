@@ -18,20 +18,22 @@ options:
     - Id path parameter.
     type: str
   additionalData:
-    description: Active Directory Get Groups By Domain's additionalData.
+    description:
+    - AdditionalData part of the request body.
+    type: list
+  additionalData:
+    description: Active Directory Get Groups By Domain Info's additionalData.
     suboptions:
       name:
-        description: Active Directory Get Groups By Domain's name.
+        description: Active Directory Get Groups By Domain Info's name.
         type: str
       value:
-        description: Active Directory Get Groups By Domain's value.
+        description: Active Directory Get Groups By Domain Info's value.
         type: str
     type: list
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.active_directory_groups_by_domain
 # Reference by Internet resource
 - name: Active Directory Groups By Domain reference
   description: Complete reference of the Active Directory Groups By Domain object model.
@@ -47,10 +49,15 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     id: string
     additionalData:
-    - name: name
-      value: '{{ad_domain_name}}'
     - name: domain
-      value: '{{ad_domain_name}}'
+      value: Required. The domain whose groups we want to fetch
+    - name: filter
+      value: Optional. Exact match filter on group's CN
+    - name: sidFilter
+      value: Optional. Exact match filter on group's SID, optionally specifying the domain
+        as prefix. e.g. S-1-5-33-544 and R1.dom/S-1-5-33-544 are legal
+    - name: typeFilter
+      value: Optional. Can be exactly one of:BUILTIN, DOMAIN LOCAL, GLOBAL, UNIVERSAL
   register: result
 
 """
@@ -64,7 +71,7 @@ ise_response:
     {
       "groups": [
         {
-          "name": "string",
+          "groupName": "string",
           "sid": "string",
           "type": "string"
         }

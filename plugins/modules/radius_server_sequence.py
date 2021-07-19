@@ -14,16 +14,17 @@ version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
   BeforeAcceptAttrManipulatorsList:
-    description: Radius Server Sequence's BeforeAcceptAttrManipulatorsList.
+    description: The beforeAcceptAttrManipulators is required only if useAttrSetBeforeAcc
+      is true.
     suboptions:
       action:
-        description: Radius Server Sequence's action.
+        description: Allowed Values - ADD, - UPDATE, - REMOVE, - REMOVEANY.
         type: str
       attributeName:
         description: Radius Server Sequence's attributeName.
         type: str
       changedVal:
-        description: Radius Server Sequence's changedVal.
+        description: The changedVal is required only if the action equals to 'UPDATE'.
         type: str
       dictionaryName:
         description: Radius Server Sequence's dictionaryName.
@@ -33,16 +34,17 @@ options:
         type: str
     type: list
   OnRequestAttrManipulatorList:
-    description: Radius Server Sequence's OnRequestAttrManipulatorList.
+    description: The onRequestAttrManipulators is required only if useAttrSetOnRequest
+      is true.
     suboptions:
       action:
-        description: Radius Server Sequence's action.
+        description: Allowed Values - ADD, - UPDATE, - REMOVE, - REMOVEANY.
         type: str
       attributeName:
         description: Radius Server Sequence's attributeName.
         type: str
       changedVal:
-        description: Radius Server Sequence's changedVal.
+        description: The changedVal is required only if the action equals to 'UPDATE'.
         type: str
       dictionaryName:
         description: Radius Server Sequence's dictionaryName.
@@ -71,7 +73,8 @@ options:
     description: Radius Server Sequence's name.
     type: str
   prefixSeparator:
-    description: Radius Server Sequence's prefixSeparator.
+    description: The prefixSeparator is required only if stripPrefix is true. The maximum
+      length is 1 character.
     type: str
   remoteAccounting:
     description: RemoteAccounting flag.
@@ -83,7 +86,8 @@ options:
     description: StripSuffix flag.
     type: bool
   suffixSeparator:
-    description: Radius Server Sequence's suffixSeparator.
+    description: The suffixSeparator is required only if stripSuffix is true. The maximum
+      length is 1 character.
     type: str
   useAttrSetBeforeAcc:
     description: UseAttrSetBeforeAcc flag.
@@ -94,8 +98,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.radius_server_sequence
 # Reference by Internet resource
 - name: Radius Server Sequence reference
   description: Complete reference of the Radius Server Sequence object model.
@@ -103,51 +105,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.radius_server_sequence:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    BeforeAcceptAttrManipulatorsList:
-    - action: ADD
-      attributeName: cisco-prev-hop-ip
-      changedVal: test2
-      dictionaryName: Cisco
-      value: test1
-    - action: UPDATE
-      attributeName: Cisco:cisco-ppp-vj-slot-comp
-      changedVal: '13'
-      dictionaryName: Cisco
-      value: '12'
-    OnRequestAttrManipulatorList:
-    - action: ADD
-      attributeName: cisco-prev-hop-ip
-      changedVal: test2
-      dictionaryName: Cisco
-      value: test1
-    - action: UPDATE
-      attributeName: Cisco:cisco-ppp-vj-slot-comp
-      changedVal: '13'
-      dictionaryName: Cisco
-      value: '12'
-    RadiusServerList:
-    - externalRadiusServer1
-    - externalRadiusServer2
-    continueAuthorzPolicy: false
-    description: description
-    id: id
-    localAccounting: false
-    name: name
-    prefixSeparator: \
-    remoteAccounting: true
-    stripPrefix: false
-    stripSuffix: false
-    suffixSeparator: '@'
-    useAttrSetBeforeAcc: false
-    useAttrSetOnRequest: false
-
 - name: Update by id
   cisco.ise.radius_server_sequence:
     ise_hostname: "{{ise_hostname}}"
@@ -156,42 +113,31 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     BeforeAcceptAttrManipulatorsList:
-    - action: ADD
-      attributeName: cisco-prev-hop-ip
-      changedVal: test2
-      dictionaryName: Cisco
-      value: test1
-    - action: UPDATE
-      attributeName: Cisco:cisco-ppp-vj-slot-comp
-      changedVal: '13'
-      dictionaryName: Cisco
-      value: '12'
+    - action: string
+      attributeName: string
+      changedVal: string
+      dictionaryName: string
+      value: string
     OnRequestAttrManipulatorList:
-    - action: ADD
-      attributeName: cisco-prev-hop-ip
-      changedVal: test2
-      dictionaryName: Cisco
-      value: test1
-    - action: UPDATE
-      attributeName: Cisco:cisco-ppp-vj-slot-comp
-      changedVal: '13'
-      dictionaryName: Cisco
-      value: '12'
+    - action: string
+      attributeName: string
+      changedVal: string
+      dictionaryName: string
+      value: string
     RadiusServerList:
-    - externalRadiusServer1
-    - externalRadiusServer2
-    continueAuthorzPolicy: false
-    description: description
-    id: id
-    localAccounting: false
-    name: name
-    prefixSeparator: \
+    - string
+    continueAuthorzPolicy: true
+    description: string
+    id: string
+    localAccounting: true
+    name: string
+    prefixSeparator: string
     remoteAccounting: true
-    stripPrefix: false
-    stripSuffix: false
-    suffixSeparator: '@'
-    useAttrSetBeforeAcc: false
-    useAttrSetOnRequest: false
+    stripPrefix: true
+    stripSuffix: true
+    suffixSeparator: string
+    useAttrSetBeforeAcc: true
+    useAttrSetOnRequest: true
 
 - name: Delete by id
   cisco.ise.radius_server_sequence:
@@ -202,6 +148,39 @@ EXAMPLES = r"""
     state: absent
     id: string
 
+- name: Create
+  cisco.ise.radius_server_sequence:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    BeforeAcceptAttrManipulatorsList:
+    - action: string
+      attributeName: string
+      changedVal: string
+      dictionaryName: string
+      value: string
+    OnRequestAttrManipulatorList:
+    - action: string
+      attributeName: string
+      changedVal: string
+      dictionaryName: string
+      value: string
+    RadiusServerList:
+    - string
+    continueAuthorzPolicy: true
+    description: string
+    localAccounting: true
+    name: string
+    prefixSeparator: string
+    remoteAccounting: true
+    stripPrefix: true
+    stripSuffix: true
+    suffixSeparator: string
+    useAttrSetBeforeAcc: true
+    useAttrSetOnRequest: true
+
 """
 
 RETURN = r"""
@@ -210,5 +189,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

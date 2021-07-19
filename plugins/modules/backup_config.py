@@ -24,13 +24,12 @@ options:
     description: The backup file will get saved with this name.
     type: str
   repositoryName:
-    description: Name of the repository where the generated backup file will get copied.
+    description: Name of the configured repository where the generated backup file will
+      get copied.
     type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.backup_config
 # Reference by Internet resource
 - name: Backup Config reference
   description: Complete reference of the Backup Config object model.

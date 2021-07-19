@@ -14,6 +14,10 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  id:
+    description:
+    - Id path parameter.
+    type: str
   page:
     description:
     - Page query parameter. Page number.
@@ -22,15 +26,27 @@ options:
     description:
     - Size query parameter. Number of objects returned per page.
     type: int
-  id:
+  filter:
     description:
-    - Id path parameter.
+    - >
+      Filter query parameter. <br/> **Simple filtering** should be available through the filter query string
+      parameter. The structure of a filter is a triplet of field operator and value separated with dots. More than
+      one filter can be sent. The logical operator common to ALL filter criteria will be by default AND, and can
+      be changed by using the "filterType=or" query string parameter. Each resource Data model description should
+      specify if an attribute is a filtered field. <br/> Operator | Description <br/>
+      ------------|----------------- <br/> EQ | Equals <br/> NEQ | Not Equals <br/> GT | Greater Than <br/> LT |
+      Less Then <br/> STARTSW | Starts With <br/> NSTARTSW | Not Starts With <br/> ENDSW | Ends With <br/> NENDSW
+      | Not Ends With <br/> CONTAINS | Contains <br/> NCONTAINS | Not Contains <br/>.
+    type: list
+  filterType:
+    description:
+    - >
+      FilterType query parameter. The logical operator common to ALL filter criteria will be by default AND, and
+      can be changed by using the parameter.
     type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.telemetry_info
 # Reference by Internet resource
 - name: Telemetry Info reference
   description: Complete reference of the Telemetry Info object model.
@@ -46,6 +62,8 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     page: 1
     size: 20
+    filter: []
+    filterType: AND
   register: result
 
 - name: Get Telemetry Info by id

@@ -20,8 +20,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.sg_acl_bulk_monitor_status
 # Reference by Internet resource
 - name: Sg Acl Bulk Monitor Status reference
   description: Complete reference of the Sg Acl Bulk Monitor Status object model.
@@ -45,6 +43,26 @@ ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "BulkStatus": {
+        "bulkId": "string",
+        "mediaType": "string",
+        "executionStatus": "string",
+        "operationType": "string",
+        "startTime": "string",
+        "resourcesCount": 0,
+        "successCount": 0,
+        "failCount": 0,
+        "resourcesStatus": [
+          {
+            "id": "string",
+            "name": "string",
+            "description": "string",
+            "resourceExecutionStatus": "string",
+            "status": "string"
+          }
+        ]
+      }
+    }
 """

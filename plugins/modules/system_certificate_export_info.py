@@ -6,47 +6,49 @@
 
 DOCUMENTATION = r"""
 ---
-module: system_certificate_export
-short_description: Resource module for System Certificate Export
+module: system_certificate_export_info
+short_description: Information module for System Certificate Export Info
 description:
-- Manage operation create of the resource System Certificate Export.
+- Get System Certificate Export Info.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-  certificateID:
-    description: System Certificate Export's certificateID.
+  dirPath:
+    description: Directory absolute path. Defaults to the current working directory.
     type: str
   export:
-    description: System Certificate Export's export.
+    description: System Certificate Export Info's export.
     type: str
   id:
-    description: System Certificate Export's id.
+    description: System Certificate Export Info's id.
     type: str
   password:
-    description: System Certificate Export's password.
+    description: System Certificate Export Info's password.
     type: str
+  saveFile:
+    description: Enable or disable automatic file creation of raw response.
+    type: bool
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.system_certificate_export
 # Reference by Internet resource
-- name: System Certificate Export reference
-  description: Complete reference of the System Certificate Export object model.
+- name: System Certificate Export Info reference
+  description: Complete reference of the System Certificate Export Info object model.
   link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
 """
 
 EXAMPLES = r"""
 - name: Create
-  cisco.ise.system_certificate_export:
+  cisco.ise.system_certificate_export_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
-    certificateID: string
+    dirPath: /tmp/downloads/
     export: string
     id: string
     password: string
+    saveFile: true
 
 """
 
@@ -54,7 +56,7 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: str
-  sample: >
-    "'string'"
+  type: dict
+  sample:
+  - {}
 """

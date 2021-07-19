@@ -9,23 +9,22 @@ DOCUMENTATION = r"""
 module: network_access_dictionary_attribute_info
 short_description: Information module for Network Access Dictionary Attribute
 description:
+- Get all Network Access Dictionary Attribute.
 - Get Network Access Dictionary Attribute by name.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-  name:
-    description:
-    - Name path parameter. The dictionary attribute name.
-    type: str
   dictionaryName:
     description:
     - DictionaryName path parameter. The name of the dictionary the dictionary attribute belongs to.
     type: str
+  name:
+    description:
+    - Name path parameter. The dictionary attribute name.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.network_access_dictionary_attribute
 # Reference by Internet resource
 - name: Network Access Dictionary Attribute reference
   description: Complete reference of the Network Access Dictionary Attribute object model.
@@ -33,6 +32,15 @@ seealso:
 """
 
 EXAMPLES = r"""
+- name: Get all Network Access Dictionary Attribute
+  cisco.ise.network_access_dictionary_attribute_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    dictionaryName: string
+  register: result
+
 - name: Get Network Access Dictionary Attribute by name
   cisco.ise.network_access_dictionary_attribute_info:
     ise_hostname: "{{ise_hostname}}"
@@ -52,19 +60,22 @@ ise_response:
   type: dict
   sample: >
     {
-      "id": "string",
-      "directionType": "string",
-      "name": "string",
-      "description": "string",
-      "internalName": "string",
-      "dataType": "string",
-      "dictionaryName": "string",
-      "allowedValues": [
-        {
-          "key": "string",
-          "value": "string",
-          "isDefault": true
-        }
-      ]
+      "response": {
+        "allowedValues": [
+          {
+            "isDefault": true,
+            "key": "string",
+            "value": "string"
+          }
+        ],
+        "dataType": "string",
+        "description": "string",
+        "dictionaryName": "string",
+        "directionType": "string",
+        "id": "string",
+        "internalName": "string",
+        "name": "string"
+      },
+      "version": "string"
     }
 """

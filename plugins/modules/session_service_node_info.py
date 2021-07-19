@@ -15,19 +15,25 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-  id:
-    description:
-    - Id path parameter.
-    type: str
   name:
     description:
     - Name path parameter.
     type: str
+  id:
+    description:
+    - Id path parameter.
+    type: str
+  page:
+    description:
+    - Page query parameter. Page number.
+    type: int
+  size:
+    description:
+    - Size query parameter. Number of objects returned per page.
+    type: int
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.session_service_node
 # Reference by Internet resource
 - name: Session Service Node reference
   description: Complete reference of the Session Service Node object model.
@@ -41,6 +47,8 @@ EXAMPLES = r"""
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
+    page: 1
+    size: 20
   register: result
 
 - name: Get Session Service Node by id
@@ -74,6 +82,7 @@ ise_response:
       "name": "string",
       "description": "string",
       "ipAddress": "string",
+      "gateWay": "string",
       "link": {
         "rel": "string",
         "href": "string",

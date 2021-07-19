@@ -14,7 +14,7 @@ version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
   id:
-    description: Sxp Vpns's id.
+    description: Id path parameter.
     type: str
   sxpVpnName:
     description: Sxp Vpns's sxpVpnName.
@@ -22,8 +22,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.sxp_vpns
 # Reference by Internet resource
 - name: Sxp Vpns reference
   description: Complete reference of the Sxp Vpns object model.
@@ -31,15 +29,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.sxp_vpns:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    sxpVpnName: SxpVpn1
-
 - name: Delete by id
   cisco.ise.sxp_vpns:
     ise_hostname: "{{ise_hostname}}"
@@ -48,6 +37,15 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
+
+- name: Create
+  cisco.ise.sxp_vpns:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    sxpVpnName: string
 
 """
 

@@ -40,8 +40,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.aci_bindings
 # Reference by Internet resource
 - name: Aci Bindings reference
   description: Complete reference of the Aci Bindings object model.
@@ -69,10 +67,17 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: list
-  elements: str
+  type: dict
   sample: >
-    [
-      "string"
-    ]
+    {
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "ip": "string",
+      "sgtValue": "string",
+      "vn": "string",
+      "psn": "string",
+      "learnedFrom": "string",
+      "learnedBy": "string"
+    }
 """

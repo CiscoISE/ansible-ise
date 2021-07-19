@@ -15,6 +15,14 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  name:
+    description:
+    - Name path parameter.
+    type: str
+  id:
+    description:
+    - Id path parameter.
+    type: str
   page:
     description:
     - Page query parameter. Page number.
@@ -23,19 +31,9 @@ options:
     description:
     - Size query parameter. Number of objects returned per page.
     type: int
-  id:
-    description:
-    - Id path parameter.
-    type: str
-  name:
-    description:
-    - Name path parameter.
-    type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.active_directory
 # Reference by Internet resource
 - name: Active Directory reference
   description: Complete reference of the Active Directory object model.
@@ -80,9 +78,12 @@ ise_response:
   type: dict
   sample: >
     {
+      "id": "string",
       "name": "string",
       "description": "string",
       "domain": "string",
+      "enableDomainWhiteList": true,
+      "enableDomainAllowedList": true,
       "adgroups": {
         "groups": [
           {
@@ -100,6 +101,9 @@ ise_response:
         "enableDialinPermissionCheck": true,
         "enableCallbackForDialinClient": true,
         "plaintextAuth": true,
+        "enableFailedAuthProtection": true,
+        "authProtectionType": "string",
+        "failedAuthThreshold": 0,
         "identityNotInAdBehaviour": "string",
         "unreachableDomainsBehaviour": "string",
         "enableRewrites": true,
@@ -128,11 +132,16 @@ ise_response:
           {
             "name": "string",
             "type": "string",
-            "defaultValue": "string",
-            "internalName": "string"
+            "internalName": "string",
+            "defaultValue": "string"
           }
         ]
       },
-      "adScopesNames": "string"
+      "adScopesNames": "string",
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
+      }
     }
 """

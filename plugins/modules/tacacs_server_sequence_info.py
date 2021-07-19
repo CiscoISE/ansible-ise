@@ -15,6 +15,14 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  name:
+    description:
+    - Name path parameter.
+    type: str
+  id:
+    description:
+    - Id path parameter.
+    type: str
   page:
     description:
     - Page query parameter. Page number.
@@ -23,19 +31,9 @@ options:
     description:
     - Size query parameter. Number of objects returned per page.
     type: int
-  id:
-    description:
-    - Id path parameter.
-    type: str
-  name:
-    description:
-    - Name path parameter.
-    type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.tacacs_server_sequence
 # Reference by Internet resource
 - name: Tacacs Server Sequence reference
   description: Complete reference of the Tacacs Server Sequence object model.
@@ -80,13 +78,20 @@ ise_response:
   type: dict
   sample: >
     {
+      "id": "string",
       "name": "string",
+      "description": "string",
       "serverList": "string",
       "localAccounting": true,
       "remoteAccounting": true,
       "prefixStrip": true,
       "prefixDelimiter": "string",
       "suffixStrip": true,
-      "suffixDelimiter": "string"
+      "suffixDelimiter": "string",
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
+      }
     }
 """

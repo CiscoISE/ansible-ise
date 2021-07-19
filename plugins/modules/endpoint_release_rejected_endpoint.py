@@ -16,8 +16,6 @@ options: {}
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.endpoint_release_rejected_endpoint
 # Reference by Internet resource
 - name: Endpoint Release Rejected Endpoint reference
   description: Complete reference of the Endpoint Release Rejected Endpoint object model.

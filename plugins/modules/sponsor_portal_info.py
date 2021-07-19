@@ -14,6 +14,10 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  id:
+    description:
+    - Id path parameter.
+    type: str
   page:
     description:
     - Page query parameter. Page number.
@@ -22,15 +26,35 @@ options:
     description:
     - Size query parameter. Number of objects returned per page.
     type: int
-  id:
+  sortasc:
     description:
-    - Id path parameter.
+    - Sortasc query parameter. Sort asc.
+    type: str
+  sortdsc:
+    description:
+    - Sortdsc query parameter. Sort desc.
+    type: str
+  filter:
+    description:
+    - >
+      Filter query parameter. <br/> **Simple filtering** should be available through the filter query string
+      parameter. The structure of a filter is a triplet of field operator and value separated with dots. More than
+      one filter can be sent. The logical operator common to ALL filter criteria will be by default AND, and can
+      be changed by using the "filterType=or" query string parameter. Each resource Data model description should
+      specify if an attribute is a filtered field. <br/> Operator | Description <br/>
+      ------------|----------------- <br/> EQ | Equals <br/> NEQ | Not Equals <br/> GT | Greater Than <br/> LT |
+      Less Then <br/> STARTSW | Starts With <br/> NSTARTSW | Not Starts With <br/> ENDSW | Ends With <br/> NENDSW
+      | Not Ends With <br/> CONTAINS | Contains <br/> NCONTAINS | Not Contains <br/>.
+    type: list
+  filterType:
+    description:
+    - >
+      FilterType query parameter. The logical operator common to ALL filter criteria will be by default AND, and
+      can be changed by using the parameter.
     type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.sponsor_portal
 # Reference by Internet resource
 - name: Sponsor Portal reference
   description: Complete reference of the Sponsor Portal object model.
@@ -46,6 +70,10 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     page: 1
     size: 20
+    sortasc: string
+    sortdsc: string
+    filter: []
+    filterType: AND
   register: result
 
 - name: Get Sponsor Portal by id
@@ -69,52 +97,42 @@ ise_response:
       "id": "string",
       "name": "string",
       "description": "string",
-      "portalTestUrl": "string",
       "portalType": "string",
+      "portalTestUrl": "string",
       "settings": {
         "portalSettings": {
           "httpsPort": 0,
-          "allowedInterfaces": [
-            "string"
-          ],
+          "allowedInterfaces": "string",
           "certificateGroupTag": "string",
           "fqdn": "string",
           "authenticationMethod": "string",
           "idleTimeout": 0,
           "displayLang": "string",
           "fallbackLanguage": "string",
-          "alwaysUsedLanguage": "string",
-          "availableSsids": [
-            "string"
-          ]
+          "availableSsids": "string"
         },
         "loginPageSettings": {
-          "requireAccessCode": true,
           "maxFailedAttemptsBeforeRateLimit": 0,
           "timeBetweenLoginsDuringRateLimit": 0,
           "includeAup": true,
           "aupDisplay": "string",
           "requireAupAcceptance": true,
           "requireAupScrolling": true,
-          "allowGuestToCreateAccounts": true,
-          "allowGuestToChangePassword": true,
-          "allowAlternateGuestPortal": true,
-          "allowGuestToUseSocialAccounts": true,
-          "allowShowGuestForm": true,
           "socialConfigs": []
         },
         "aupSettings": {
           "includeAup": true,
-          "useDiffAupForEmployees": true,
-          "skipAupForEmployees": true,
-          "requireAccessCode": true,
           "requireScrolling": true,
-          "displayFrequency": "string"
+          "displayFrequency": "string",
+          "displayFrequencyIntervalDays": 0
         },
         "sponsorChangePasswordSettings": {
           "allowSponsorToChangePwd": true
         },
         "postLoginBannerSettings": {
+          "includePostAccessBanner": true
+        },
+        "postAccessBannerSettings": {
           "includePostAccessBanner": true
         },
         "supportInfoSettings": {
@@ -124,7 +142,8 @@ ise_response:
           "includeBrowserUserAgent": true,
           "includePolicyServer": true,
           "includeFailureCode": true,
-          "emptyFieldDisplay": "string"
+          "emptyFieldDisplay": "string",
+          "defaultEmptyFieldValue": "string"
         }
       },
       "customizations": {
@@ -152,6 +171,9 @@ ise_response:
           "bannerImage": {
             "data": "string"
           },
+          "backgroundImage": {
+            "data": "string"
+          },
           "bannerTitle": "string",
           "contactText": "string",
           "footerElement": "string"
@@ -164,6 +186,11 @@ ise_response:
             }
           ]
         }
+      },
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
       }
     }
 """

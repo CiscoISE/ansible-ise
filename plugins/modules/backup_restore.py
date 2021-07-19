@@ -23,13 +23,12 @@ options:
     description: Name of the backup file to be restored on ISE node.
     type: str
   restoreIncludeAdeos:
-    description: Determines whether the ADE-OS configure is restored.
+    description: Determines whether the ADE-OS configure is restored. Possible values
+      true, false.
     type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.backup_restore
 # Reference by Internet resource
 - name: Backup Restore reference
   description: Complete reference of the Backup Restore object model.

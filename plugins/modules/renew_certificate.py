@@ -19,8 +19,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.renew_certificate
 # Reference by Internet resource
 - name: Renew Certificate reference
   description: Complete reference of the Renew Certificate object model.
@@ -47,12 +45,12 @@ ise_response:
     {
       "response": {
         "id": "string",
-        "message": "string",
         "link": {
-          "rel": "string",
           "href": "string",
+          "rel": "string",
           "type": "string"
-        }
+        },
+        "message": "string"
       },
       "version": "string"
     }

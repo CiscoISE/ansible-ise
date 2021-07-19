@@ -16,8 +16,6 @@ options: {}
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.sg_mapping_deploy_all
 # Reference by Internet resource
 - name: Sg Mapping Deploy All reference
   description: Complete reference of the Sg Mapping Deploy All object model.

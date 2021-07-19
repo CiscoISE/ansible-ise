@@ -14,25 +14,24 @@ version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
   domains:
-    description: Filter Policy's domains.
+    description: List of SXP Domains, separated with comma.
     type: str
   id:
     description: Id path parameter.
     type: str
   sgt:
-    description: Filter Policy's sgt.
+    description: SGT name or ID. At least one of subnet or sgt or vn should be defined.
     type: str
   subnet:
-    description: Filter Policy's subnet.
+    description: Subnet for filter policy (hostname is not supported). At least one
+      of subnet or sgt or vn should be defined.
     type: str
   vn:
-    description: Filter Policy's vn.
+    description: Virtual Network. At least one of subnet or sgt or vn should be defined.
     type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.filter_policy
 # Reference by Internet resource
 - name: Filter Policy reference
   description: Complete reference of the Filter Policy object model.
@@ -40,18 +39,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.filter_policy:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    domains: Sxp Vpn Name
-    sgt: sgt
-    subnet: subnetAddress
-    vn: virtualNetwork
-
 - name: Update by id
   cisco.ise.filter_policy:
     ise_hostname: "{{ise_hostname}}"
@@ -59,11 +46,11 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    domains: Sxp Vpn Name
+    domains: string
     id: string
-    sgt: sgt
-    subnet: subnetAddress
-    vn: virtualNetwork
+    sgt: string
+    subnet: string
+    vn: string
 
 - name: Delete by id
   cisco.ise.filter_policy:
@@ -74,6 +61,18 @@ EXAMPLES = r"""
     state: absent
     id: string
 
+- name: Create
+  cisco.ise.filter_policy:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    domains: string
+    sgt: string
+    subnet: string
+    vn: string
+
 """
 
 RETURN = r"""
@@ -82,5 +81,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

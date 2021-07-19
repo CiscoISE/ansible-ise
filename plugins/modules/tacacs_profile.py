@@ -23,7 +23,7 @@ options:
     description: Tacacs Profile's name.
     type: str
   sessionAttributes:
-    description: Tacacs Profile's sessionAttributes.
+    description: Holds list of session attributes. View type for GUI is Shell by default.
     suboptions:
       sessionAttributeList:
         description: Tacacs Profile's sessionAttributeList.
@@ -32,7 +32,7 @@ options:
             description: Tacacs Profile's name.
             type: str
           type:
-            description: Tacacs Profile's type.
+            description: Allowed values MANDATORY, OPTIONAL.
             type: str
           value:
             description: Tacacs Profile's value.
@@ -42,8 +42,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.tacacs_profile
 # Reference by Internet resource
 - name: Tacacs Profile reference
   description: Complete reference of the Tacacs Profile object model.
@@ -51,22 +49,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.tacacs_profile:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    description: WLC ALL
-    id: 18101520-78ab-11eb-b39e-2284e1c57b72
-    name: WLC ALL
-    sessionAttributes:
-      sessionAttributeList:
-      - name: role1
-        type: MANDATORY
-        value: ALL
-
 - name: Update by id
   cisco.ise.tacacs_profile:
     ise_hostname: "{{ise_hostname}}"
@@ -74,14 +56,14 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    description: WLC ALL
-    id: 18101520-78ab-11eb-b39e-2284e1c57b72
-    name: WLC ALL
+    description: string
+    id: string
+    name: string
     sessionAttributes:
       sessionAttributeList:
-      - name: role1
-        type: MANDATORY
-        value: ALL
+      - name: string
+        type: string
+        value: string
 
 - name: Delete by id
   cisco.ise.tacacs_profile:
@@ -92,6 +74,21 @@ EXAMPLES = r"""
     state: absent
     id: string
 
+- name: Create
+  cisco.ise.tacacs_profile:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    description: string
+    name: string
+    sessionAttributes:
+      sessionAttributeList:
+      - name: string
+        type: string
+        value: string
+
 """
 
 RETURN = r"""
@@ -100,5 +97,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

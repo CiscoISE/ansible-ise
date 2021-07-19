@@ -20,7 +20,7 @@ options:
     description: Enabled flag.
     type: bool
   id:
-    description: Id path parameter.
+    description: Sxp Connections's id.
     type: str
   ipAddress:
     description: Sxp Connections's ipAddress.
@@ -43,8 +43,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.sxp_connections
 # Reference by Internet resource
 - name: Sxp Connections reference
   description: Complete reference of the Sxp Connections object model.
@@ -52,22 +50,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.sxp_connections:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    description: Brief description about network peer
-    enabled: true
-    ipAddress: 198.20.10.1
-    sxpMode: LISTENER
-    sxpNode: SxpNodeName
-    sxpPeer: SxpPeerName
-    sxpVersion: VERSION_4
-    sxpVpn: SxpVPNName
-
 - name: Update by id
   cisco.ise.sxp_connections:
     ise_hostname: "{{ise_hostname}}"
@@ -75,15 +57,15 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    description: Brief description about network peer
+    description: string
     enabled: true
     id: string
-    ipAddress: 198.20.10.1
-    sxpMode: LISTENER
-    sxpNode: SxpNodeName
-    sxpPeer: SxpPeerName
-    sxpVersion: VERSION_4
-    sxpVpn: SxpVPNName
+    ipAddress: string
+    sxpMode: string
+    sxpNode: string
+    sxpPeer: string
+    sxpVersion: string
+    sxpVpn: string
 
 - name: Delete by id
   cisco.ise.sxp_connections:
@@ -94,6 +76,22 @@ EXAMPLES = r"""
     state: absent
     id: string
 
+- name: Create
+  cisco.ise.sxp_connections:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    description: string
+    enabled: true
+    ipAddress: string
+    sxpMode: string
+    sxpNode: string
+    sxpPeer: string
+    sxpVersion: string
+    sxpVpn: string
+
 """
 
 RETURN = r"""
@@ -102,5 +100,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

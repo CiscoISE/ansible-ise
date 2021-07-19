@@ -16,8 +16,6 @@ options: {}
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.egress_matrix_cell_clone
 # Reference by Internet resource
 - name: Egress Matrix Cell Clone reference
   description: Complete reference of the Egress Matrix Cell Clone object model.
@@ -43,5 +41,14 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "OperationResult": {
+        "resultValue": [
+          {
+            "value": "string",
+            "name": "string"
+          }
+        ]
+      }
+    }
 """

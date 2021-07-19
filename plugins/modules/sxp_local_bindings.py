@@ -13,35 +13,26 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
-  bindingName:
-    description: Sxp Local Bindings's bindingName.
-    type: str
-  description:
-    description: Sxp Local Bindings's description.
-    type: str
   id:
     description: Sxp Local Bindings's id.
     type: str
   ipAddressOrHost:
-    description: Sxp Local Bindings's ipAddressOrHost.
-    type: str
-  name:
-    description: Sxp Local Bindings's name.
+    description: IP address for static mapping (hostname is not supported).
     type: str
   sgt:
-    description: Sxp Local Bindings's sgt.
+    description: SGT name or ID.
     type: str
   sxpVpn:
-    description: Sxp Local Bindings's sxpVpn.
+    description: List of SXP Domains, separated with comma. At least one of sxpVpn or
+      vns should be defined.
     type: str
   vns:
-    description: Sxp Local Bindings's vns.
+    description: List of Virtual Networks, separated with comma. At least one of sxpVpn
+      or vns should be defined.
     type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.sxp_local_bindings
 # Reference by Internet resource
 - name: Sxp Local Bindings reference
   description: Complete reference of the Sxp Local Bindings object model.
@@ -49,20 +40,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.sxp_local_bindings:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    bindingName: ''
-    ipAddressOrHost: ipAddressOrHost
-    name: ''
-    sgt: sgt_id
-    sxpVpn: Sxp Vpn Name
-    vns: virtualNetwork
-
 - name: Update by id
   cisco.ise.sxp_local_bindings:
     ise_hostname: "{{ise_hostname}}"
@@ -70,13 +47,11 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    bindingName: ''
     id: string
-    ipAddressOrHost: ipAddressOrHost
-    name: ''
-    sgt: sgt_id
-    sxpVpn: Sxp Vpn Name
-    vns: virtualNetwork
+    ipAddressOrHost: string
+    sgt: string
+    sxpVpn: string
+    vns: string
 
 - name: Delete by id
   cisco.ise.sxp_local_bindings:
@@ -87,6 +62,19 @@ EXAMPLES = r"""
     state: absent
     id: string
 
+- name: Create
+  cisco.ise.sxp_local_bindings:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    id: string
+    ipAddressOrHost: string
+    sgt: string
+    sxpVpn: string
+    vns: string
+
 """
 
 RETURN = r"""
@@ -95,5 +83,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

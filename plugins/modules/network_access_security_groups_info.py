@@ -16,8 +16,6 @@ options: {}
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.network_access_security_groups
 # Reference by Internet resource
 - name: Network Access Security Groups reference
   description: Complete reference of the Network Access Security Groups object model.
@@ -44,6 +42,7 @@ ise_response:
   sample: >
     [
       {
+        "id": "string",
         "name": "string"
       }
     ]

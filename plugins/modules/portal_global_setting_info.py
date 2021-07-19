@@ -14,6 +14,10 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  id:
+    description:
+    - Id path parameter.
+    type: str
   page:
     description:
     - Page query parameter. Page number.
@@ -22,6 +26,14 @@ options:
     description:
     - Size query parameter. Number of objects returned per page.
     type: int
+  sortasc:
+    description:
+    - Sortasc query parameter. Sort asc.
+    type: str
+  sortdsc:
+    description:
+    - Sortdsc query parameter. Sort desc.
+    type: str
   filter:
     description:
     - >
@@ -40,23 +52,9 @@ options:
       FilterType query parameter. The logical operator common to ALL filter criteria will be by default AND, and
       can be changed by using the parameter.
     type: str
-  sortasc:
-    description:
-    - Sortasc query parameter. Sort asc.
-    type: str
-  sortdsc:
-    description:
-    - Sortdsc query parameter. Sort desc.
-    type: str
-  id:
-    description:
-    - Id path parameter.
-    type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.portal_global_setting
 # Reference by Internet resource
 - name: Portal Global Setting reference
   description: Complete reference of the Portal Global Setting object model.
@@ -72,10 +70,10 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     page: 1
     size: 20
-    filter: []
-    filterType: AND
     sortasc: string
     sortdsc: string
+    filter: []
+    filterType: AND
   register: result
 
 - name: Get Portal Global Setting by id

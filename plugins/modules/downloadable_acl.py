@@ -14,25 +14,24 @@ version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
   dacl:
-    description: Downloadable Acl's dacl.
+    description: The DACL Content. Use the string \\n for a newline.
     type: str
   daclType:
-    description: Downloadable Acl's daclType.
+    description: Allowed values - IPV4, - IPV6, - IP_AGNOSTIC.
     type: str
   description:
-    description: Downloadable Acl's description.
+    description: Use the string \\n for a newline.
     type: str
   id:
-    description: Id path parameter.
+    description: Downloadable Acl's id.
     type: str
   name:
-    description: Downloadable Acl's name.
+    description: Resource Name. Name may contain alphanumeric or any of the following
+      characters _.-.
     type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.downloadable_acl
 # Reference by Internet resource
 - name: Downloadable Acl reference
   description: Complete reference of the Downloadable Acl object model.
@@ -40,18 +39,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.downloadable_acl:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    dacl: permit ip any any
-    daclType: IPV4
-    description: MyDACL
-    name: MyDACL6
-
 - name: Update by id
   cisco.ise.downloadable_acl:
     ise_hostname: "{{ise_hostname}}"
@@ -59,11 +46,11 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    dacl: deny ip any any
-    daclType: IPV4
-    description: MyDACL6
+    dacl: string
+    daclType: string
+    description: string
     id: string
-    name: MyDACL6
+    name: string
 
 - name: Delete by id
   cisco.ise.downloadable_acl:
@@ -74,6 +61,18 @@ EXAMPLES = r"""
     state: absent
     id: string
 
+- name: Create
+  cisco.ise.downloadable_acl:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    dacl: string
+    daclType: string
+    description: string
+    name: string
+
 """
 
 RETURN = r"""
@@ -82,5 +81,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

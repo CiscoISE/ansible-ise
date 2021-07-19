@@ -13,17 +13,18 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  dirPath:
+    description: Directory absolute path. Defaults to the current working directory.
+    type: str
   fileName:
     description: Support Bundle Download's fileName.
     type: str
-  dirPath:
-    description: Directory absolute path. Defaults to current working directory
-    type: str
+  saveFile:
+    description: Enable or disable automatic file creation of raw response.
+    type: bool
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.support_bundle_download
 # Reference by Internet resource
 - name: Support Bundle Download reference
   description: Complete reference of the Support Bundle Download object model.
@@ -37,8 +38,9 @@ EXAMPLES = r"""
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
-    fileName: Support bundle file name to be picked for download
-    dirPath: '/tmp'
+    dirPath: /tmp/downloads/
+    fileName: string
+    saveFile: true
 
 """
 

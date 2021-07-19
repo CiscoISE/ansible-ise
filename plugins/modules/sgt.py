@@ -13,15 +13,24 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  defaultSGACLs:
+    description: Sgt's defaultSGACLs.
+    suboptions:
+    - description: Sgt's defaultSGACLs.
+      type: dict
+    type: list
   description:
     description: Sgt's description.
     type: str
   generationId:
     description: Sgt's generationId.
-    type: str
+    type: int
   id:
-    description: Id path parameter.
+    description: Sgt's id.
     type: str
+  isReadOnly:
+    description: IsReadOnly flag.
+    type: bool
   name:
     description: Sgt's name.
     type: str
@@ -29,13 +38,11 @@ options:
     description: PropogateToApic flag.
     type: bool
   value:
-    description: Sgt's value.
+    description: Value range 2 ot 65519 or -1 to auto-generate.
     type: int
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.sgt
 # Reference by Internet resource
 - name: Sgt reference
   description: Complete reference of the Sgt object model.
@@ -43,19 +50,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.sgt:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    description: Printers
-    generationId: '0'
-    name: Printers
-    propogateToApic: true
-    value: 999
-
 - name: Update by id
   cisco.ise.sgt:
     ise_hostname: "{{ise_hostname}}"
@@ -63,12 +57,15 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    description: Printers
-    generationId: '0'
+    defaultSGACLs:
+    - {}
+    description: string
+    generationId: 0
     id: string
-    name: Printers
+    isReadOnly: true
+    name: string
     propogateToApic: true
-    value: 999
+    value: 0
 
 - name: Delete by id
   cisco.ise.sgt:
@@ -79,6 +76,22 @@ EXAMPLES = r"""
     state: absent
     id: string
 
+- name: Create
+  cisco.ise.sgt:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    defaultSGACLs:
+    - {}
+    description: string
+    generationId: 0
+    isReadOnly: true
+    name: string
+    propogateToApic: true
+    value: 0
+
 """
 
 RETURN = r"""
@@ -87,5 +100,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

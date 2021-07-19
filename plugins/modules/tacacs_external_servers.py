@@ -14,34 +14,32 @@ version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
   connectionPort:
-    description: Tacacs External Servers's connectionPort.
+    description: The port to connect the server.
     type: int
   description:
     description: Tacacs External Servers's description.
     type: str
   hostIP:
-    description: Tacacs External Servers's hostIP.
+    description: The server IPV4 address.
     type: str
   id:
-    description: Id path parameter.
+    description: Tacacs External Servers's id.
     type: str
   name:
     description: Tacacs External Servers's name.
     type: str
   sharedSecret:
-    description: Tacacs External Servers's sharedSecret.
+    description: The server shared secret.
     type: str
   singleConnect:
-    description: SingleConnect flag.
+    description: Define the use of single connection.
     type: bool
   timeout:
-    description: Tacacs External Servers's timeout.
+    description: The server timeout.
     type: int
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.tacacs_external_servers
 # Reference by Internet resource
 - name: Tacacs External Servers reference
   description: Complete reference of the Tacacs External Servers object model.
@@ -49,22 +47,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.tacacs_external_servers:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    connectionPort: 49
-    description: TacacsExternalServerForSDK
-    hostIP: 1.1.1.1
-    id: '123456789'
-    name: TacacsExternalServer1
-    sharedSecret: SharedSecret
-    singleConnect: true
-    timeout: 20
-
 - name: Update by id
   cisco.ise.tacacs_external_servers:
     ise_hostname: "{{ise_hostname}}"
@@ -72,14 +54,14 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    connectionPort: 49
-    description: TacacsExternalServerForSDK
-    hostIP: 1.1.1.1
-    id: '123456789'
-    name: TacacsExternalServer1
-    sharedSecret: SharedSecret
+    connectionPort: 0
+    description: string
+    hostIP: string
+    id: string
+    name: string
+    sharedSecret: string
     singleConnect: true
-    timeout: 20
+    timeout: 0
 
 - name: Delete by id
   cisco.ise.tacacs_external_servers:
@@ -90,6 +72,21 @@ EXAMPLES = r"""
     state: absent
     id: string
 
+- name: Create
+  cisco.ise.tacacs_external_servers:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    connectionPort: 0
+    description: string
+    hostIP: string
+    name: string
+    sharedSecret: string
+    singleConnect: true
+    timeout: 0
+
 """
 
 RETURN = r"""
@@ -98,5 +95,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

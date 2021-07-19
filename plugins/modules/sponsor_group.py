@@ -117,8 +117,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.sponsor_group
 # Reference by Internet resource
 - name: Sponsor Group reference
   description: Complete reference of the Sponsor Group object model.
@@ -126,51 +124,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.sponsor_group:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    autoNotification: false
-    createPermissions:
-      canCreateRandomAccounts: true
-      canImportMultipleAccounts: true
-      canSetFutureStartDate: false
-      canSpecifyUsernamePrefix: false
-      defaultUsernamePrefix: ''
-      importBatchSizeLimit: 20
-      randomBatchSizeLimit: 30
-      startDateFutureLimitDays: 10
-    description: description
-    guestTypes:
-    - Contractor (default)
-    - Daily (default)
-    - Weekly (default)
-    id: id
-    isDefaultGroup: false
-    isEnabled: true
-    locations:
-    - San Jose
-    managePermission: ALLACCOUNTS
-    memberGroups:
-    - ALL_ACCOUNTS (default)
-    name: name
-    otherPermissions:
-      canAccessViaRest: false
-      canApproveSelfregGuests: false
-      canDeleteGuestAccounts: false
-      canExtendGuestAccounts: false
-      canReinstateSuspendedAccounts: false
-      canResetGuestPasswords: false
-      canSendSmsNotifications: false
-      canSuspendGuestAccounts: false
-      canUpdateGuestContactInfo: false
-      canViewGuestPasswords: false
-      limitApprovalToSponsorsGuests: false
-      requireSuspensionReason: false
-
 - name: Update by id
   cisco.ise.sponsor_group:
     ise_hostname: "{{ise_hostname}}"
@@ -178,43 +131,41 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    autoNotification: false
+    autoNotification: true
     createPermissions:
       canCreateRandomAccounts: true
       canImportMultipleAccounts: true
-      canSetFutureStartDate: false
-      canSpecifyUsernamePrefix: false
-      defaultUsernamePrefix: ''
-      importBatchSizeLimit: 20
-      randomBatchSizeLimit: 30
-      startDateFutureLimitDays: 10
-    description: description
+      canSetFutureStartDate: true
+      canSpecifyUsernamePrefix: true
+      defaultUsernamePrefix: string
+      importBatchSizeLimit: 0
+      randomBatchSizeLimit: 0
+      startDateFutureLimitDays: 0
+    description: string
     guestTypes:
-    - Contractor (default)
-    - Daily (default)
-    - Weekly (default)
-    id: id
-    isDefaultGroup: false
+    - string
+    id: string
+    isDefaultGroup: true
     isEnabled: true
     locations:
-    - San Jose
-    managePermission: ALLACCOUNTS
+    - string
+    managePermission: string
     memberGroups:
-    - ALL_ACCOUNTS (default)
-    name: name
+    - string
+    name: string
     otherPermissions:
-      canAccessViaRest: false
-      canApproveSelfregGuests: false
-      canDeleteGuestAccounts: false
-      canExtendGuestAccounts: false
-      canReinstateSuspendedAccounts: false
-      canResetGuestPasswords: false
-      canSendSmsNotifications: false
-      canSuspendGuestAccounts: false
-      canUpdateGuestContactInfo: false
-      canViewGuestPasswords: false
-      limitApprovalToSponsorsGuests: false
-      requireSuspensionReason: false
+      canAccessViaRest: true
+      canApproveSelfregGuests: true
+      canDeleteGuestAccounts: true
+      canExtendGuestAccounts: true
+      canReinstateSuspendedAccounts: true
+      canResetGuestPasswords: true
+      canSendSmsNotifications: true
+      canSuspendGuestAccounts: true
+      canUpdateGuestContactInfo: true
+      canViewGuestPasswords: true
+      limitApprovalToSponsorsGuests: true
+      requireSuspensionReason: true
 
 - name: Delete by id
   cisco.ise.sponsor_group:
@@ -225,6 +176,48 @@ EXAMPLES = r"""
     state: absent
     id: string
 
+- name: Create
+  cisco.ise.sponsor_group:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    autoNotification: true
+    createPermissions:
+      canCreateRandomAccounts: true
+      canImportMultipleAccounts: true
+      canSetFutureStartDate: true
+      canSpecifyUsernamePrefix: true
+      defaultUsernamePrefix: string
+      importBatchSizeLimit: 0
+      randomBatchSizeLimit: 0
+      startDateFutureLimitDays: 0
+    description: string
+    guestTypes:
+    - string
+    isDefaultGroup: true
+    isEnabled: true
+    locations:
+    - string
+    managePermission: string
+    memberGroups:
+    - string
+    name: string
+    otherPermissions:
+      canAccessViaRest: true
+      canApproveSelfregGuests: true
+      canDeleteGuestAccounts: true
+      canExtendGuestAccounts: true
+      canReinstateSuspendedAccounts: true
+      canResetGuestPasswords: true
+      canSendSmsNotifications: true
+      canSuspendGuestAccounts: true
+      canUpdateGuestContactInfo: true
+      canViewGuestPasswords: true
+      limitApprovalToSponsorsGuests: true
+      requireSuspensionReason: true
+
 """
 
 RETURN = r"""
@@ -233,5 +226,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

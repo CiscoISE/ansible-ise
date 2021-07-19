@@ -14,42 +14,51 @@ version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
   adAttributes:
-    description: Active Directory's adAttributes.
+    description: Holds list of AD Attributes.
     suboptions:
       attributes:
-        description: Active Directory's attributes.
+        description: List of Attributes.
         suboptions:
           defaultValue:
-            description: Active Directory's defaultValue.
+            description: Required for each attribute in the attribute list. Can contain
+              an empty string. All characters are allowed except <%".
             type: str
           internalName:
-            description: Active Directory's internalName.
+            description: Required for each attribute in the attribute list. All characters
+              are allowed except <%".
             type: str
           name:
-            description: Active Directory's name.
+            description: Required for each attribute in the attribute list with no duplication
+              between attributes. All characters are allowed except <%".
             type: str
           type:
-            description: Active Directory's type.
+            description: Required for each group in the group list. Allowed values STRING,
+              IP, BOOLEAN, INT, OCTET_STRING.
             type: str
         type: list
     type: dict
   adScopesNames:
-    description: Active Directory's adScopesNames.
+    description: String that contains the names of the scopes that the active directory
+      belongs to. Names are separated by comma. Alphanumeric, underscore (_) characters
+      are allowed.
     type: str
   adgroups:
-    description: Active Directory's adgroups.
+    description: Holds list of AD Groups.
     suboptions:
       groups:
-        description: Active Directory's groups.
+        description: List of Groups.
         suboptions:
           name:
-            description: Active Directory's name.
+            description: Required for each group in the group list with no duplication
+              between groups. All characters are allowed except %.
             type: str
           sid:
-            description: Active Directory's sid.
+            description: Cisco ISE uses security identifiers (SIDs) for optimization
+              of group membership evaluation. SIDs are useful for efficiency (speed)
+              when the groups are evaluated. All characters are allowed except %.
             type: str
           type:
-            description: Active Directory's type.
+            description: No character restriction.
             type: str
         type: list
     type: dict
@@ -57,22 +66,30 @@ options:
     description: Active Directory's advancedSettings.
     suboptions:
       agingTime:
-        description: Active Directory's agingTime.
+        description: Range 1-8760 hours.
         type: int
+      authProtectionType:
+        description: Enable prevent AD account lockout. Allowed values - WIRELESS, -
+          WIRED, - BOTH.
+        type: str
       country:
-        description: Active Directory's country.
+        description: User info attribute. All characters are allowed except %.
         type: str
       department:
-        description: Active Directory's department.
+        description: User info attribute. All characters are allowed except %.
         type: str
       email:
-        description: Active Directory's email.
+        description: User info attribute. All characters are allowed except %.
         type: str
       enableCallbackForDialinClient:
         description: EnableCallbackForDialinClient flag.
         type: bool
       enableDialinPermissionCheck:
         description: EnableDialinPermissionCheck flag.
+        type: bool
+      enableFailedAuthProtection:
+        description: Enable prevent AD account lockout due to too many bad password
+          attempts.
         type: bool
       enableMachineAccess:
         description: EnableMachineAccess flag.
@@ -86,73 +103,89 @@ options:
       enableRewrites:
         description: EnableRewrites flag.
         type: bool
+      failedAuthThreshold:
+        description: Number of bad password attempts.
+        type: int
       firstName:
-        description: Active Directory's firstName.
+        description: User info attribute. All characters are allowed except %.
         type: str
       identityNotInAdBehaviour:
-        description: Active Directory's identityNotInAdBehaviour.
+        description: Allowed values REJECT, SEARCH_JOINED_FOREST, SEARCH_ALL.
         type: str
       jobTitle:
-        description: Active Directory's jobTitle.
+        description: User info attribute. All characters are allowed except %.
         type: str
       lastName:
-        description: Active Directory's lastName.
+        description: User info attribute. All characters are allowed except %.
         type: str
       locality:
-        description: Active Directory's locality.
+        description: User info attribute. All characters are allowed except %.
         type: str
       organizationalUnit:
-        description: Active Directory's organizationalUnit.
+        description: User info attribute. All characters are allowed except %.
         type: str
       plaintextAuth:
         description: PlaintextAuth flag.
         type: bool
       rewriteRules:
-        description: Active Directory's rewriteRules.
+        description: Identity rewrite is an advanced feature that directs Cisco ISE
+          to manipulate the identity before it is passed to the external Active Directory
+          system. You can create rules to change the identity to a desired format that
+          includes or excludes a domain prefix and/or suffix or other additional markup
+          of your choice.
         suboptions:
           rewriteMatch:
-            description: Active Directory's rewriteMatch.
+            description: Required for each rule in the list with no duplication between
+              rules. All characters are allowed except %".
             type: str
           rewriteResult:
-            description: Active Directory's rewriteResult.
+            description: Required for each rule in the list. All characters are allowed
+              except %".
             type: str
           rowId:
-            description: Active Directory's rowId.
+            description: Required for each rule in the list in serial order.
             type: int
         type: list
       schema:
-        description: Active Directory's schema.
+        description: Allowed values ACTIVE_DIRECTORY, CUSTOM. Choose ACTIVE_DIRECTORY
+          schema when the AD attributes defined in AD can be copied to relevant attributes
+          in Cisco ISE. If customization is needed, choose CUSTOM schema. All User info
+          attributes are always set to default value if schema is ACTIVE_DIRECTORY.
+          Values can be changed only for CUSTOM schema.
         type: str
       stateOrProvince:
-        description: Active Directory's stateOrProvince.
+        description: User info attribute. All characters are allowed except %.
         type: str
       streetAddress:
-        description: Active Directory's streetAddress.
+        description: User info attribute. All characters are allowed except %.
         type: str
       telephone:
-        description: Active Directory's telephone.
+        description: User info attribute. All characters are allowed except %.
         type: str
       unreachableDomainsBehaviour:
-        description: Active Directory's unreachableDomainsBehaviour.
+        description: Allowed values PROCEED, DROP.
         type: str
     type: dict
   description:
-    description: Active Directory's description.
+    description: No character restriction.
     type: str
   domain:
-    description: Active Directory's domain.
+    description: The AD domain. Alphanumeric, hyphen (-) and dot (.) characters are
+      allowed.
     type: str
+  enableDomainWhiteList:
+    description: EnableDomainWhiteList flag.
+    type: bool
   id:
     description: Id path parameter.
     type: str
   name:
-    description: Active Directory's name.
+    description: Resource Name. Maximum 32 characters allowed. Allowed characters are
+      alphanumeric and .-_/\\ characters.
     type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.active_directory
 # Reference by Internet resource
 - name: Active Directory reference
   description: Complete reference of the Active Directory object model.
@@ -160,6 +193,15 @@ seealso:
 """
 
 EXAMPLES = r"""
+- name: Delete by id
+  cisco.ise.active_directory:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: absent
+    id: string
+
 - name: Create
   cisco.ise.active_directory:
     ise_hostname: "{{ise_hostname}}"
@@ -169,67 +211,51 @@ EXAMPLES = r"""
     state: present
     adAttributes:
       attributes:
-      - defaultValue: defaultString
-        internalName: internalName1
-        name: name1
-        type: STRING
-    adScopesNames: Default_Scope
+      - defaultValue: string
+        internalName: string
+        name: string
+        type: string
+    adScopesNames: string
     adgroups:
       groups:
-      - name: cisco.com/operators
-        sid: S-1-5-32-548
-        type: GLOBAL
+      - name: string
+        sid: string
+        type: string
     advancedSettings:
-      agingTime: 5
-      country: co
-      department: department
-      email: mail
-      enableCallbackForDialinClient: false
-      enableDialinPermissionCheck: false
+      agingTime: 0
+      authProtectionType: string
+      country: string
+      department: string
+      email: string
+      enableCallbackForDialinClient: true
+      enableDialinPermissionCheck: true
+      enableFailedAuthProtection: true
       enableMachineAccess: true
       enableMachineAuth: true
       enablePassChange: true
-      enableRewrites: false
-      firstName: givenName
-      identityNotInAdBehaviour: SEARCH_JOINED_FOREST
-      jobTitle: title
-      lastName: sn
-      locality: l
-      organizationalUnit: company
-      plaintextAuth: false
+      enableRewrites: true
+      failedAuthThreshold: 0
+      firstName: string
+      identityNotInAdBehaviour: string
+      jobTitle: string
+      lastName: string
+      locality: string
+      organizationalUnit: string
+      plaintextAuth: true
       rewriteRules:
-      - rewriteMatch: host/[HOSTNAME].[DOMAIN]
-        rewriteResult: host/[HOSTNAME].[DOMAIN]
+      - rewriteMatch: string
+        rewriteResult: string
         rowId: 0
-      - rewriteMatch: host/[HOSTNAME]
-        rewriteResult: host/[HOSTNAME]
-        rowId: 1
-      - rewriteMatch: '[DOMAIN]\[IDENTITY]'
-        rewriteResult: '[DOMAIN]\[IDENTITY]'
-        rowId: 2
-      - rewriteMatch: '[IDENTITY]@[DOMAIN]'
-        rewriteResult: '[IDENTITY]@[DOMAIN]'
-        rowId: 3
-      - rewriteMatch: '[IDENTITY]'
-        rewriteResult: '[IDENTITY]'
-        rowId: 4
-      schema: ACTIVE_DIRECTORY
-      stateOrProvince: st
-      streetAddress: streetAddress
-      telephone: telephoneNumber
-      unreachableDomainsBehaviour: PROCEED
-    description: ''
-    domain: cisco.com
-    name: cisco.com
-
-- name: Delete by id
-  cisco.ise.active_directory:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
+      schema: string
+      stateOrProvince: string
+      streetAddress: string
+      telephone: string
+      unreachableDomainsBehaviour: string
+    description: string
+    domain: string
+    enableDomainWhiteList: true
     id: string
+    name: string
 
 """
 

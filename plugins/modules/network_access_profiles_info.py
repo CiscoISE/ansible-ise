@@ -16,8 +16,6 @@ options: {}
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.network_access_profiles
 # Reference by Internet resource
 - name: Network Access Profiles reference
   description: Complete reference of the Network Access Profiles object model.
@@ -40,9 +38,12 @@ ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
   type: list
-  elements: str
+  elements: dict
   sample: >
     [
-      "string"
+      {
+        "id": "string",
+        "name": "string"
+      }
     ]
 """

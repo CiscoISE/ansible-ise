@@ -13,20 +13,21 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  description:
+    description: Portal Theme's description.
+    type: str
   id:
-    description: Id path parameter.
+    description: Portal Theme's id.
     type: str
   name:
     description: Portal Theme's name.
     type: str
   themeData:
-    description: Portal Theme's themeData.
+    description: Portal Theme for all portals.
     type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.portal_theme
 # Reference by Internet resource
 - name: Portal Theme reference
   description: Complete reference of the Portal Theme object model.
@@ -34,16 +35,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.portal_theme:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    name: New Theme
-    themeData: Base64 encoded string of CSS file
-
 - name: Update by id
   cisco.ise.portal_theme:
     ise_hostname: "{{ise_hostname}}"
@@ -51,9 +42,10 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    id: 935e5e90-bd06-4cba-9465-e71c475bfe1d
-    name: New Theme
-    themeData: More Base64 encoded string of CSS file
+    description: string
+    id: string
+    name: string
+    themeData: string
 
 - name: Delete by id
   cisco.ise.portal_theme:
@@ -64,6 +56,17 @@ EXAMPLES = r"""
     state: absent
     id: string
 
+- name: Create
+  cisco.ise.portal_theme:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    description: string
+    name: string
+    themeData: string
+
 """
 
 RETURN = r"""
@@ -72,5 +75,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

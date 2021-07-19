@@ -14,16 +14,25 @@ version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
   customizations:
-    description: Self Registered Portal's customizations.
+    description: Defines all of the Portal Customizations available.
     suboptions:
       globalCustomizations:
         description: Self Registered Portal's globalCustomizations.
         suboptions:
+          backgroundImage:
+            description: Self Registered Portal's backgroundImage.
+            suboptions:
+              data:
+                description: Represented as base 64 encoded string of the image byte
+                  array.
+                type: str
+            type: dict
           bannerImage:
             description: Self Registered Portal's bannerImage.
             suboptions:
               data:
-                description: Self Registered Portal's data.
+                description: Represented as base 64 encoded string of the image byte
+                  array.
                 type: str
             type: dict
           bannerTitle:
@@ -36,7 +45,8 @@ options:
             description: Self Registered Portal's desktopLogoImage.
             suboptions:
               data:
-                description: Self Registered Portal's data.
+                description: Represented as base 64 encoded string of the image byte
+                  array.
                 type: str
             type: dict
           footerElement:
@@ -46,22 +56,24 @@ options:
             description: Self Registered Portal's mobileLogoImage.
             suboptions:
               data:
-                description: Self Registered Portal's data.
+                description: Represented as base 64 encoded string of the image byte
+                  array.
                 type: str
             type: dict
         type: dict
       language:
-        description: Self Registered Portal's language.
+        description: This property is supported only for Read operation and it allows
+          to show the customizations in English. Other languages are not supported.
         suboptions:
           viewLanguage:
             description: Self Registered Portal's viewLanguage.
             type: str
         type: dict
       pageCustomizations:
-        description: Self Registered Portal's pageCustomizations.
+        description: Represent the entire page customization as a giant dictionary.
         suboptions:
           data:
-            description: Self Registered Portal's data.
+            description: The Dictionary will be exposed here as key value pair.
             suboptions:
               key:
                 description: Self Registered Portal's key.
@@ -78,17 +90,20 @@ options:
             description: Self Registered Portal's id.
             type: str
           name:
-            description: Self Registered Portal's name.
+            description: The system- or user-assigned name of the portal theme.
             type: str
           themeData:
-            description: Self Registered Portal's themeData.
+            description: A CSS file, represented as a Base64-encoded byte array.
             type: str
         type: dict
       portalTweakSettings:
-        description: Self Registered Portal's portalTweakSettings.
+        description: The Tweak Settings are a customization of the Portal Theme that
+          has been selected for the portal. When the Portal Theme selection is changed,
+          the Tweak Settings are overwritten to match the values in the theme. The Tweak
+          Settings can subsequently be changed by the user.
         suboptions:
           bannerColor:
-            description: Self Registered Portal's bannerColor.
+            description: Hex value of color.
             type: str
           bannerTextColor:
             description: Self Registered Portal's bannerTextColor.
@@ -110,32 +125,43 @@ options:
   name:
     description: Self Registered Portal's name.
     type: str
+  portalTestUrl:
+    description: URL to bring up a test page for this portal.
+    type: str
   portalType:
-    description: Self Registered Portal's portalType.
+    description: Allowed values - BYOD, - HOTSPOTGUEST, - MYDEVICE, - SELFREGGUEST,
+      - SPONSOR, - SPONSOREDGUEST.
     type: str
   settings:
-    description: Self Registered Portal's settings.
+    description: Defines all of the settings groups available for a portal.
     suboptions:
       aupSettings:
         description: Self Registered Portal's aupSettings.
         suboptions:
           displayFrequency:
-            description: Self Registered Portal's displayFrequency.
+            description: How the AUP should be displayed, either on page or as a link.
+              Only valid if includeAup = true. Allowed Values - FIRSTLOGIN, - EVERYLOGIN,
+              - RECURRING.
             type: str
+          displayFrequencyIntervalDays:
+            description: Number of days between AUP confirmations (when displayFrequency
+              = recurring).
+            type: int
           includeAup:
-            description: IncludeAup flag.
+            description: Require the portal user to read and accept an AUP.
             type: bool
-          requireAccessCode:
-            description: RequireAccessCode flag.
+          requireAupScrolling:
+            description: Require the portal user to scroll to the end of the AUP. Only
+              valid if requireAupAcceptance = true.
             type: bool
           requireScrolling:
             description: RequireScrolling flag.
             type: bool
           skipAupForEmployees:
-            description: SkipAupForEmployees flag.
+            description: Only valid if requireAupAcceptance = trueG.
             type: bool
           useDiffAupForEmployees:
-            description: UseDiffAupForEmployees flag.
+            description: Only valid if requireAupAcceptance = trueG.
             type: bool
         type: dict
       authSuccessSettings:
@@ -148,34 +174,94 @@ options:
             description: Self Registered Portal's successRedirect.
             type: str
         type: dict
+      byodSettings:
+        description: Configuration of BYOD Device Welcome, Registration and Success
+          steps.
+        suboptions:
+          byodRegistrationSettings:
+            description: Configuration of BYOD endpoint Registration step configuration.
+            suboptions:
+              endPointIdentityGroupId:
+                description: Identity group id for which endpoint belongs.
+                type: str
+              showDeviceID:
+                description: Display Device ID field during registration.
+                type: bool
+            type: dict
+          byodRegistrationSuccessSettings:
+            description: Configuration of BYOD endpoint Registration Success step configuration.
+            suboptions:
+              redirectUrl:
+                description: Target URL for redirection, used when successRedirect =
+                  URL.
+                type: str
+              successRedirect:
+                description: After an Authentication Success where should device be
+                  redirected. Allowed values - AUTHSUCCESSPAGE, - ORIGINATINGURL, -
+                  URL.
+                type: str
+            type: dict
+          byodWelcomeSettings:
+            description: Configuration of BYOD endpoint welcome step configuration.
+            suboptions:
+              aupDisplay:
+                description: How the AUP should be displayed, either on page or as a
+                  link. Only valid if includeAup = true. Allowed values - ONPAGE, -
+                  ASLINK.
+                type: str
+              enableBYOD:
+                description: EnableBYOD flag.
+                type: bool
+              enableGuestAccess:
+                description: EnableGuestAccess flag.
+                type: bool
+              includeAup:
+                description: IncludeAup flag.
+                type: bool
+              requireAupAcceptance:
+                description: RequireAupAcceptance flag.
+                type: bool
+              requireMDM:
+                description: RequireMDM flag.
+                type: bool
+              requireScrolling:
+                description: Require BYOD devices to scroll down to the bottom of the
+                  AUP, Only valid if includeAup = true.
+                type: bool
+            type: dict
+        type: dict
       guestChangePasswordSettings:
         description: Self Registered Portal's guestChangePasswordSettings.
         suboptions:
           allowChangePasswdAtFirstLogin:
-            description: AllowChangePasswdAtFirstLogin flag.
+            description: Allow guest to change their own passwords.
             type: bool
         type: dict
       guestDeviceRegistrationSettings:
         description: Self Registered Portal's guestDeviceRegistrationSettings.
         suboptions:
           allowGuestsToRegisterDevices:
-            description: AllowGuestsToRegisterDevices flag.
+            description: Allow guests to register devices.
             type: bool
           autoRegisterGuestDevices:
-            description: AutoRegisterGuestDevices flag.
+            description: Automatically register guest devices.
             type: bool
         type: dict
       loginPageSettings:
-        description: Self Registered Portal's loginPageSettings.
+        description: Portal Login Page settings groups follow.
         suboptions:
           accessCode:
-            description: Self Registered Portal's accessCode.
+            description: Access code that must be entered by the portal user (only valid
+              if requireAccessCode = true).
             type: str
           allowAlternateGuestPortal:
             description: AllowAlternateGuestPortal flag.
             type: bool
+          allowForgotPassword:
+            description: AllowForgotPassword flag.
+            type: bool
           allowGuestToChangePassword:
-            description: AllowGuestToChangePassword flag.
+            description: Require the portal user to enter an access code.
             type: bool
           allowGuestToCreateAccounts:
             description: AllowGuestToCreateAccounts flag.
@@ -186,105 +272,147 @@ options:
           allowShowGuestForm:
             description: AllowShowGuestForm flag.
             type: bool
+          alternateGuestPortal:
+            description: Self Registered Portal's alternateGuestPortal.
+            type: str
           aupDisplay:
-            description: Self Registered Portal's aupDisplay.
+            description: How the AUP should be displayed, either on page or as a link.
+              Only valid if includeAup = true. Allowed values - ONPAGE, - ASLINK.
             type: str
           includeAup:
-            description: IncludeAup flag.
+            description: Include an Acceptable Use Policy (AUP) that should be displayed
+              during login.
             type: bool
           maxFailedAttemptsBeforeRateLimit:
-            description: Self Registered Portal's maxFailedAttemptsBeforeRateLimit.
+            description: Maximum failed login attempts before rate limiting.
             type: int
           requireAccessCode:
-            description: RequireAccessCode flag.
+            description: Require the portal user to enter an access code.
             type: bool
           requireAupAcceptance:
-            description: RequireAupAcceptance flag.
-            type: bool
-          requireAupScrolling:
-            description: RequireAupScrolling flag.
+            description: Require the portal user to accept the AUP. Only valid if includeAup
+              = true.
             type: bool
           socialConfigs:
             description: Self Registered Portal's socialConfigs.
+            suboptions:
+              socialMediaType:
+                description: Self Registered Portal's socialMediaType.
+                type: str
+              socialMediaValue:
+                description: Self Registered Portal's socialMediaValue.
+                type: str
             type: list
           timeBetweenLoginsDuringRateLimit:
-            description: Self Registered Portal's timeBetweenLoginsDuringRateLimit.
+            description: Time between login attempts when rate limiting.
             type: int
         type: dict
       portalSettings:
-        description: Self Registered Portal's portalSettings.
+        description: The port, interface, certificate, and other basic settings of a
+          portal.
         suboptions:
           allowedInterfaces:
-            description: Self Registered Portal's allowedInterfaces.
-            elements: str
-            type: list
+            description: Interfaces that the portal will be reachable on. Allowed values
+              - eth0, - eth1, - eth2, - eth3, - eth4, - eth5, - bond0, - bond1, - bond2.
+            type: str
           alwaysUsedLanguage:
             description: Self Registered Portal's alwaysUsedLanguage.
             type: str
           assignedGuestTypeForEmployee:
-            description: Self Registered Portal's assignedGuestTypeForEmployee.
+            description: Unique Id of a guest type. Employees using this portal as a
+              guest inherit login options from the guest type.
             type: str
           authenticationMethod:
-            description: Self Registered Portal's authenticationMethod.
+            description: Unique Id of the identity source sequence.
             type: str
-          availableSsids:
-            description: Self Registered Portal's availableSsids.
-            type: list
           certificateGroupTag:
-            description: Self Registered Portal's certificateGroupTag.
+            description: Logical name of the x.509 server certificate that will be used
+              for the portal.
             type: str
           displayLang:
-            description: Self Registered Portal's displayLang.
-            type: str
-          endpointIdentityGroup:
-            description: Self Registered Portal's endpointIdentityGroup.
+            description: Allowed values - USEBROWSERLOCALE, - ALWAYSUSE.
             type: str
           fallbackLanguage:
-            description: Self Registered Portal's fallbackLanguage.
+            description: Used when displayLang = USEBROWSERLOCALE.
             type: str
           httpsPort:
-            description: Self Registered Portal's httpsPort.
+            description: The port number that the allowed interfaces will listen on.
+              Range from 8000 to 8999.
             type: int
+        type: dict
+      postAccessBannerSettings:
+        description: Self Registered Portal's postAccessBannerSettings.
+        suboptions:
+          includePostAccessBanner:
+            description: IncludePostAccessBanner flag.
+            type: bool
         type: dict
       postLoginBannerSettings:
         description: Self Registered Portal's postLoginBannerSettings.
         suboptions:
           includePostAccessBanner:
-            description: IncludePostAccessBanner flag.
+            description: Include a Post-Login Banner page.
             type: bool
         type: dict
       selfRegPageSettings:
         description: Self Registered Portal's selfRegPageSettings.
         suboptions:
           accountValidityDuration:
-            description: Self Registered Portal's accountValidityDuration.
+            description: Self-registered guest account is valid for this many account_validity_time_units.
             type: int
           accountValidityTimeUnits:
-            description: Self Registered Portal's accountValidityTimeUnits.
+            description: Time units for account_validity_duration. Allowed Values -
+              DAYS, - HOURS, - MINUTES.
+            type: str
+          allowGraceAccess:
+            description: AllowGraceAccess flag.
+            type: bool
+          approvalEmailAddresses:
+            description: Only valid if requireGuestApproval = true and sendApprovalRequestTo
+              = SELECTEDEMAILADDRESSES.
             type: str
           approveDenyLinksTimeUnits:
-            description: Self Registered Portal's approveDenyLinksTimeUnits.
+            description: This attribute, along with approveDenyLinksValidFor, specifies
+              how long the link can be used. Only valid if requireGuestApproval = true.
+              Allowed Values - DAYS, - HOURS, - MINUTES.
             type: str
+          approveDenyLinksValidFor:
+            description: This attribute, along with approveDenyLinksTimeUnits, specifies
+              how long the link can be used. Only valid if requireGuestApproval = true.
+            type: int
           assignGuestsToGuestType:
-            description: Self Registered Portal's assignGuestsToGuestType.
+            description: Guests are assigned to this guest type.
             type: str
           aupDisplay:
-            description: Self Registered Portal's aupDisplay.
+            description: How the AUP should be displayed, either on page or as a link.
+              Only valid if includeAup = true. Allowed values - ONPAGE, - ASLINK.
             type: str
           authenticateSponsorsUsingPortalList:
-            description: AuthenticateSponsorsUsingPortalList flag.
+            description: Self Registered Portal's authenticateSponsorsUsingPortalList.
+            type: str
+          autoLoginSelfWait:
+            description: Allow guests to login automatically from self-registration
+              after sponsor's approval. No need to provide the credentials by guest
+              to login.
             type: bool
+          autoLoginTimePeriod:
+            description: Waiting period for auto login until sponsor's approval. If
+              time exceeds, guest has to login manually by providing the credentials.
+              Default value is 5 minutes.
+            type: int
           credentialNotificationUsingEmail:
-            description: CredentialNotificationUsingEmail flag.
+            description: If true, send credential notification upon approval using email.
+              Only valid if requireGuestApproval = true.
             type: bool
           credentialNotificationUsingSms:
-            description: CredentialNotificationUsingSms flag.
+            description: If true, send credential notification upon approval using SMS.
+              Only valid if requireGuestApproval = true.
             type: bool
           enableGuestEmailBlacklist:
-            description: EnableGuestEmailBlacklist flag.
+            description: Disallow guests with an e-mail address from selected domains.
             type: bool
           enableGuestEmailWhitelist:
-            description: EnableGuestEmailWhitelist flag.
+            description: Allow guests with an e-mail address from selected domains.
             type: bool
           fieldCompany:
             description: Self Registered Portal's fieldCompany.
@@ -293,7 +421,7 @@ options:
                 description: Include flag.
                 type: bool
               require:
-                description: Require flag.
+                description: Only applicable if include = true.
                 type: bool
             type: dict
           fieldEmailAddr:
@@ -303,7 +431,7 @@ options:
                 description: Include flag.
                 type: bool
               require:
-                description: Require flag.
+                description: Only applicable if include = true.
                 type: bool
             type: dict
           fieldFirstName:
@@ -313,7 +441,7 @@ options:
                 description: Include flag.
                 type: bool
               require:
-                description: Require flag.
+                description: Only applicable if include = true.
                 type: bool
             type: dict
           fieldLastName:
@@ -323,7 +451,7 @@ options:
                 description: Include flag.
                 type: bool
               require:
-                description: Require flag.
+                description: Only applicable if include = true.
                 type: bool
             type: dict
           fieldLocation:
@@ -333,7 +461,17 @@ options:
                 description: Include flag.
                 type: bool
               require:
-                description: Require flag.
+                description: Only applicable if include = true.
+                type: bool
+            type: dict
+          fieldPersonBeingVisited:
+            description: Self Registered Portal's fieldPersonBeingVisited.
+            suboptions:
+              include:
+                description: Include flag.
+                type: bool
+              require:
+                description: Only applicable if include = true.
                 type: bool
             type: dict
           fieldPhoneNo:
@@ -343,7 +481,7 @@ options:
                 description: Include flag.
                 type: bool
               require:
-                description: Require flag.
+                description: Only applicable if include = true.
                 type: bool
             type: dict
           fieldReasonForVisit:
@@ -353,7 +491,7 @@ options:
                 description: Include flag.
                 type: bool
               require:
-                description: Require flag.
+                description: Only applicable if include = true.
                 type: bool
             type: dict
           fieldSmsProvider:
@@ -363,7 +501,7 @@ options:
                 description: Include flag.
                 type: bool
               require:
-                description: Require flag.
+                description: Only applicable if include = true.
                 type: bool
             type: dict
           fieldUserName:
@@ -373,45 +511,68 @@ options:
                 description: Include flag.
                 type: bool
               require:
-                description: Require flag.
+                description: Only applicable if include = true.
                 type: bool
             type: dict
+          graceAccessExpireInterval:
+            description: Self Registered Portal's graceAccessExpireInterval.
+            type: int
+          graceAccessSendAccountExpiration:
+            description: GraceAccessSendAccountExpiration flag.
+            type: bool
           guestEmailBlacklistDomains:
-            description: Self Registered Portal's guestEmailBlacklistDomains.
-            elements: str
-            type: list
+            description: Disallow guests with an e-mail address from selected domains.
+            type: str
           guestEmailWhitelistDomains:
-            description: Self Registered Portal's guestEmailWhitelistDomains.
-            elements: str
-            type: list
+            description: Self-registered guests whose e-mail address is in one of these
+              domains will be allowed. Only valid if enableGuestEmailWhitelist = true.
+            type: str
           includeAup:
-            description: IncludeAup flag.
+            description: Include an Acceptable Use Policy (AUP) that should be displayed
+              during login.
             type: bool
           postRegistrationRedirect:
-            description: Self Registered Portal's postRegistrationRedirect.
+            description: After the registration submission direct the guest user to
+              one of the following pages. Only valid if requireGuestApproval = true.
+              Allowed Values - SELFREGISTRATIONSUCCESS, - LOGINPAGEWITHINSTRUCTIONS
+              - URL.
+            type: str
+          postRegistrationRedirectUrl:
+            description: URL where guest user is redirected after registration. Only
+              valid if requireGuestApproval = true and postRegistrationRedirect = URL.
             type: str
           registrationCode:
-            description: Self Registered Portal's registrationCode.
+            description: The registration code that the guest user must enter.
             type: str
+          requireApproverToAuthenticate:
+            description: When self-registered guests require approval, an approval request
+              is e-mailed to one or more sponsor users. If the Cisco ISE Administrator
+              chooses to include an approval link in the e-mail, a sponsor user who
+              clicks the link will be required to enter their username and password
+              if this attribute is true. Only valid if requireGuestApproval = true.
+            type: bool
           requireAupAcceptance:
-            description: RequireAupAcceptance flag.
+            description: Require the portal user to accept the AUP. Only valid if includeAup
+              = true.
             type: bool
           requireGuestApproval:
-            description: RequireGuestApproval flag.
+            description: Require self-registered guests to be approved if true.
             type: bool
           requireRegistrationCode:
-            description: RequireRegistrationCode flag.
+            description: Self-registered guests are required to enter a registration
+              code.
             type: bool
           selectableLocations:
-            description: Self Registered Portal's selectableLocations.
+            description: Guests can choose from these locations to set their time zone.
             elements: str
             type: list
           selectableSmsProviders:
-            description: Self Registered Portal's selectableSmsProviders.
+            description: This attribute is an array of SMS provider names.
             elements: str
             type: list
           sendApprovalRequestTo:
-            description: Self Registered Portal's sendApprovalRequestTo.
+            description: Specifies where approval requests are sent. Only valid if requireGuestApproval
+              = true. Allowed Values - SELECTEDEMAILADDRESSES, - PERSONBEINGVISITED.
             type: str
           sponsorPortalList:
             description: Self Registered Portal's sponsorPortalList.
@@ -481,8 +642,13 @@ options:
       supportInfoSettings:
         description: Self Registered Portal's supportInfoSettings.
         suboptions:
+          defaultEmptyFieldValue:
+            description: The default value displayed for an empty field. Only valid
+              when emptyFieldDisplay = DISPLAYWITHDEFAULTVALUE.
+            type: str
           emptyFieldDisplay:
-            description: Self Registered Portal's emptyFieldDisplay.
+            description: Specifies how empty fields are handled on the Support Information
+              Page. Allowed values - HIDE, - DISPLAYWITHNOVALUE, - DISPLAYWITHDEFAULTVALUE.
             type: str
           includeBrowserUserAgent:
             description: IncludeBrowserUserAgent flag.
@@ -507,8 +673,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.self_registered_portal
 # Reference by Internet resource
 - name: Self Registered Portal reference
   description: Complete reference of the Self Registered Portal object model.
@@ -516,7 +680,7 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
+- name: Update by id
   cisco.ise.self_registered_portal:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -525,832 +689,171 @@ EXAMPLES = r"""
     state: present
     customizations:
       globalCustomizations:
-        bannerTitle: Guest Portal
-        contactText: Contact Support
-        footerElement: ''
+        backgroundImage:
+          data: string
+        bannerImage:
+          data: string
+        bannerTitle: string
+        contactText: string
+        desktopLogoImage:
+          data: string
+        footerElement: string
+        mobileLogoImage:
+          data: string
       language:
-        viewLanguage: English
+        viewLanguage: string
       pageCustomizations:
         data:
-        - key: ui_contact_ip_address_label
-          value: SVAgQWRkcmVzczo=
-        - key: ui_self_reg_results_sms_error
-          value: U01TIHdhcyBub3Qgc2VudC4=
-        - key: ui_self_reg_results_email_attempts_left_instruction_message
-          value: RW1haWwgTWUgYXR0ZW1wdHMgbGVmdDo=
-        - key: ui_error_content_label
-          value: RXJyb3I=
-        - key: ui_self_reg_registration_code_label
-          value: UmVnaXN0cmF0aW9uIENvZGU=
-        - key: ui_error_retry_button
-          value: UmV0cnk=
-        - key: ui_device_reg_skip_button
-          value: Tm8sIHNraXAgcmVnaXN0cmF0aW9uLg==
-        - key: ui_byod_install_ios_button
-          value: TGF1bmNoIEFwcGxlIFByb2ZpbGUgYW5kIENlcnRpZmljYXRlIEluc3RhbGxlcnMgTm93
-        - key: ui_byod_install_android_instruction_message
-          value: VG8gY29uZmlndXJlIHlvdXIgZGV2aWNlIGZvciBzZWN1cmUgYWNjZXNzLCB5b3UgbmVlZCB0byBnbyB0byBHb29nbGUgUGxheSB...
-        - key: ui_smtp_error
-          value: WW91ciByZXF1ZXN0IGZvciBuZXR3b3JrIGFjY2VzcyBpcyBkZW5pZWQuIFBsZWFzZSBjb250YWN0IHlvdXIgaG9zdCBmb3IgbW9...
-        - key: ui_self_reg_results_email_button
-          value: RW1haWwgTWU=
-        - key: ui_byod_reg_id_label
-          value: RGV2aWNlIElEOg==
-        - key: ui_success_optional_content_2
-          value: ''
-        - key: ui_success_optional_content_1
-          value: ''
-        - key: ui_client_provision_restricted_network_error
-          value: WW91IGFyZSB1c2luZyByZXN0cmljdGVkIG5ldHdvcmsgYWNjZXNzIQ==
-        - key: ui_post_access_optional_content_1
-          value: ''
-        - key: ui_post_access_optional_content_2
-          value: ''
-        - key: ui_contact_optional_content_1
-          value: ''
-        - key: ui_self_reg_email_deny
-          value: RGVueQ==
-        - key: ui_contact_optional_content_2
-          value: ''
-        - key: ui_byod_ios_provisioning_error
-          value: RmFpbGVkIHRvIGNvbXBsZXRlIHByb3Zpc2lvbmluZyBvZiB5b3VyIGRldmljZS4gIFlvdSBjYW4gcnVuIHRoZSBwcm9jZXNzIGF...
-        - key: ui_vlan_unsupported_error_message
-          value: VG8gYWNjZXNzIHRoZSBuZXR3b3JrLCB5b3UgbXVzdCBtYW51YWxseSByZXNldCB0aGUgSVAgYWRkcmVzcyBvbiB5b3VyIGRldml...
-        - key: ui_byod_reg_page_title
-          value: RGV2aWNlIEluZm9ybWF0aW9u
-        - key: ui_self_reg_results_password_label
-          value: UGFzc3dvcmQ6
-        - key: ui_login_sso_hyperlink_1
-          value: QWx0ZXJuYXRpdmUgTG9naW4gUG9ydGFs
-        - key: ui_client_provision_instruction_message_temporal
-          value: WW91ciBjb21wdXRlciByZXF1aXJlcyBzZWN1cml0eSBzb2Z0d2FyZSB0byBiZSBydW5uaW5nIGJlZm9yZSB5b3UgY2FuIGNvbm5...
-        - key: ui_client_provision_agent_installation_message
-          value: PG9sPiA8bGk+IDxzcGFuPiBZb3UgbXVzdCBpbnN0YWxsICR1aV9jbGllbnRfcHJvdmlzaW9uX2FnZW50X3R5cGUkIHRvIGNoZWN...
-        - key: ui_login_sso_hyperlink_7
-          value: QWx0ZXJuYXRpdmUgTG9naW4gUG9ydGFs
-        - key: ui_login_sso_hyperlink_6
-          value: QWx0ZXJuYXRpdmUgTG9naW4gUG9ydGFs
-        - key: ui_login_sso_hyperlink_9
-          value: QWx0ZXJuYXRpdmUgTG9naW4gUG9ydGFs
-        - key: ui_login_sso_hyperlink_8
-          value: QWx0ZXJuYXRpdmUgTG9naW4gUG9ydGFs
-        - key: ui_login_aup_link
-          value: UGxlYXNlIHJlYWQgdGhlIHRlcm1zIGFuZCBjb25kaXRpb25zLg==
-        - key: ui_client_provision_agent_installed_instructions_without_java_message_temporal
-          value: PG9sPiA8bGk+IDxzcGFuPiBTdGFydCAkdWlfY2xpZW50X3Byb3Zpc2lvbl9hZ2VudF90eXBlJCBzbyBpdCBjYW4gY2hlY2sgeW9...
-        - key: ui_login_sso_hyperlink_3
-          value: QWx0ZXJuYXRpdmUgTG9naW4gUG9ydGFs
-        - key: ui_login_sso_hyperlink_2
-          value: QWx0ZXJuYXRpdmUgTG9naW4gUG9ydGFs
-        - key: ui_login_content_welcome_label
-          value: V2VsY29tZQ==
-        - key: ui_login_sso_hyperlink_5
-          value: QWx0ZXJuYXRpdmUgTG9naW4gUG9ydGFs
-        - key: ui_login_sso_hyperlink_4
-          value: QWx0ZXJuYXRpdmUgTG9naW4gUG9ydGFs
-        - key: ui_self_reg_content_label
-          value: UmVnaXN0cmF0aW9u
-        - key: ui_client_provision_page_title
-          value: RGV2aWNlIFNlY3VyaXR5IENoZWNr
-        - key: ui_client_provision_protected_mode_error
-          value: VmVyaWZ5IHByb3RlY3RlZCBtb2RlIGlzIGVuYWJsZWQgZm9yIHRoaXMgc2VjdXJpdHkgem9uZS4gVG8gZW5hYmxlZCBpdCwgY2h...
-        - key: ui_byod_welcome_os_selection_message
-          value: U2VsZWN0IHlvdXIgRGV2aWNl
-        - key: ui_invalid_password_policy_error
-          value: SW52YWxpZCBQYXNzd29yZCBQb2xpY3ku
-        - key: ui_grace_access_expire_page_instruction_message
-          value: ''
-        - key: ui_device_reg_delete_button
-          value: RGVsZXRl
-        - key: ui_self_reg_results_print_button
-          value: UHJpbnQ=
-        - key: ui_contact_sessioninfo_title
-          value: U2Vzc2lvbiBJbmZvcm1hdGlvbg==
-        - key: ui_login_sso_hyperlink_14
-          value: QWx0ZXJuYXRpdmUgTG9naW4gUG9ydGFs
-        - key: ui_login_facebook_signon_button
-          value: TG9nIGluIFdpdGggRmFjZWJvb2s=
-        - key: ui_login_sso_hyperlink_13
-          value: QWx0ZXJuYXRpdmUgTG9naW4gUG9ydGFs
-        - key: ui_byod_welcome_aup_agreement_label
-          value: SSBhZ3JlZSB0byB0aGUgdGVybXMgYW5kIGNvbmRpdGlvbnM=
-        - key: ui_login_sso_hyperlink_15
-          value: QWx0ZXJuYXRpdmUgTG9naW4gUG9ydGFs
-        - key: ui_byod_reg_optional_content_1
-          value: ''
-        - key: ui_login_sso_hyperlink_10
-          value: QWx0ZXJuYXRpdmUgTG9naW4gUG9ydGFs
-        - key: ui_client_provision_agent_installed_button_message_temporal
-          value: KyBUaGlzIGlzIHdoYXQgdG8gZG8gbmV4dA==
-        - key: ui_aup_accept_button
-          value: QWNjZXB0
-        - key: ui_client_provision_unsupported_browser_error
-          value: VGhpcyBicm93c2VyIGlzIG5vdCBzdXBwb3J0ZWQuIENsb3NlIHRoaXMgd2luZG93LCBzd2l0Y2ggdG8gYSBzdXBwb3J0ZWQgd2V...
-        - key: ui_login_sso_hyperlink_12
-          value: QWx0ZXJuYXRpdmUgTG9naW4gUG9ydGFs
-        - key: ui_device_reg_register_label
-          value: WWVzLCByZWdpc3RlciBkZXZpY2VzLg==
-        - key: ui_login_sso_hyperlink_11
-          value: QWx0ZXJuYXRpdmUgTG9naW4gUG9ydGFs
-        - key: ui_invalid_email_error
-          value: SW52YWxpZCBlbWFpbCBhZGRyZXNzIGZvcm1hdC4=
-        - key: ui_self_reg_results_email_sms_limit_instruction_message
-          value: WW91IGNhbiBvbmx5IGNsaWNrIHRoZSBidXR0b24gNSB0aW1lcy4=
-        - key: ui_grace_access_expire_page_title
-          value: V2UgYXJlIHNvcnJ5IHRoYXQgeW91IGFyZSBzdGlsbCB3YWl0aW5nIQ==
-        - key: ui_client_provision_agent_status_message
-          value: c3RhdHVz
-        - key: ui_changepwd_values_match_error
-          value: WW91IG11c3QgZW50ZXIgdGhlIHNhbWUgcGFzc3dvcmQgaW4gdGhlIE5ldyBQYXNzd29yZCBhbmQgQ29uZmlybSBQYXNzd29yZCB...
-        - key: ui_confirm_popup_yes_button
-          value: WWVz
-        - key: ui_error_optional_content_2
-          value: ''
-        - key: ui_changepwd_confirmpwd_label
-          value: Q29uZmlybSBwYXNzd29yZDo=
-        - key: ui_error_optional_content_1
-          value: ''
-        - key: ui_byod_welcome_renew_cert_message
-          value: WW91ciBkZXZpY2UgcmVnaXN0cmF0aW9uIG11c3QgYmUgcmVuZXdlZCB0byBjb250aW51ZSB1c2luZyB0aGUgc2VjdXJlIG5ldHd...
-        - key: ui_login_page_title
-          value: U2lnbiBPbg==
-        - key: ui_client_provision_java_or_activex_not_present_error
-          value: VG8gY29udGludWUsIGluc3RhbGwgYW5kIGVuYWJsZSB0aGUgbGF0ZXN0IEphdmEgdmVyc2lvbiwgYW5kIG1ha2Ugc3VyZSB0aGU...
-        - key: ui_notification_success_message
-          value: eW91ciBlbWFpbCBvciBTTVMgd2FzIHNlbnQgc3VjY2Vzc2Z1bGx5Lg==
-        - key: ui_client_provision_running_agent_message
-          value: UnVubmluZyBDaXNjbyBBZ2VudC4uLnBsZWFzZSB3YWl0Lg==
-        - key: ui_self_reg_aup_agreement_label
-          value: SSBhZ3JlZSB0byB0aGUgdGVybXMgYW5kIGNvbmRpdGlvbnM=
-        - key: ui_device_reg_optional_content_2
-          value: ''
-        - key: ui_changepwd_content_label
-          value: Q2hhbmdlIFBhc3N3b3Jk
-        - key: ui_step_viewer_registration_tab_label
-          value: UmVnaXN0cmF0aW9u
-        - key: ui_device_reg_optional_content_1
-          value: ''
-        - key: ui_footer_label
-          value: ''
-        - key: ui_client_provision_installation_timer_message_temporal
-          value: WW91IGhhdmUgJHVpX2NsaWVudF9wcm92aXNpb25faW5zdGFsbF9hZ2VudF9taW5zJCBtaW51dGVzIHRvIHJ1biBhbmQgZm9yIHR...
-        - key: ui_login_instruction_message
-          value: U2lnbiBvbiBmb3IgZ3Vlc3QgYWNjZXNzLg==
-        - key: ui_post_access_page_title
-          value: UG9zdC1Mb2dpbiBCYW5uZXI=
-        - key: ui_byod_success_optional_content_2
-          value: ''
-        - key: ui_byod_success_optional_content_1
-          value: ''
-        - key: ui_grace_access_success_page_instruction_message
-          value: ''
-        - key: ui_contact_page_title
-          value: U3VwcG9ydCBJbmZvcm1hdGlvbg==
-        - key: ui_byod_reg_content_message
-          value: RW50ZXIgdGhlIERldmljZSBOYW1lIGFuZCBvcHRpb25hbCBkZXNjcmlwdGlvbiBmb3IgdGhpcyBkZXZpY2Ugc28geW91IGNhbiB...
-        - key: ui_changepwd_values_unique_error
-          value: WW91IGNhbm5vdCBlbnRlciB0aGUgc2FtZSBwYXNzd29yZCBpbiB0aGUgQ3VycmVudCBQYXNzd29yZCBhbmQgTmV3IFBhc3N3b3J...
-        - key: ui_client_provision_agent_run_applet_error
-          value: RXJyb3Igd2hlbiBydW5uaW5nIEphdmEgQXBwbGV0IGZvciBDaXNjbyBBZ2VudA==
-        - key: ui_step_viewer_denied_tab_label
-          value: RGVuaWVk
-        - key: ui_byod_reg_continue_button
-          value: Q29udGludWU=
-        - key: ui_byod_success_instruction_message
-          value: WW91IGNhbiBjbG9zZSB5b3VyIGJyb3dzZXIgbm93Lg==
-        - key: ui_contact_instruction_message
-          value: U2hhcmUgdGhlc2UgZGV0YWlscyB3aXRoIHRoZSBoZWxwIGRlc2sgd2hlbiB0cm91Ymxlc2hvb3RpbmcgaXNzdWVzIHdpdGggdGh...
-        - key: ui_login_aup_agreement_label
-          value: SSBhZ3JlZSB0byB0aGUgdGVybXMgYW5kIGNvbmRpdGlvbnM=
-        - key: ui_session_timeout_error
-          value: WW91ciBzZXNzaW9uIGhhcyB0aW1lZCBvdXQuIENsaWNrIFJldHJ5IHRvIHRyeSBhZ2Fpbi4=
-        - key: ui_byod_success_unsupported_device_message
-          value: WW91ciBkZXZpY2UgaXMgdW5zdXBwb3J0ZWQuICBIb3dldmVyLCB5b3UgYXJlIG5vdyBjb25uZWN0ZWQgdG8gdGhlIHNlY3VyZSB...
-        - key: ui_self_reg_instruction_message
-          value: UGxlYXNlIGNvbXBsZXRlIHRoaXMgcmVnaXN0cmF0aW9uIGZvcm06
-        - key: ui_contact_helpdesk_text
-          value: Q29udGFjdCB0aGUgaGVscCBkZXNrIGF0ICh4eHgpIHh4eC14eHh4Lg==
-        - key: ui_login_change_password_button
-          value: Q2hhbmdlIFBhc3N3b3Jk
-        - key: ui_byod_reg_limit_message
-          value: WW91IGhhdmUgcmVhY2hlZCB0aGUgbWF4aW11bSBudW1iZXIgb2YgZGV2aWNlcyBhbGxvd2VkIHRvIHJlZ2lzdGVyLiBTZWxlY3Q...
-        - key: ui_grace_access_success_page_description_html
-          value: WW91ciBhY2NvdW50IGlzIGFwcHJvdmVkIGFuZCB5b3UgbWF5IG5vdyBhY2Nlc3MgdGhlIGludGVybmV0Ljxici8+V2Ugc2VudCB...
-        - key: ui_client_provision_posture_check_compliant_message
-          value: WW91ciBkZXZpY2UgY29tcGxpZXMgd2l0aCB0aGUgbmV0d29yaydzIHNlY3VyaXR5IGd1aWRlbGluZXMsIGFuZCB5b3Ugc2hvdWx...
-        - key: ui_login_content_label
-          value: V2VsY29tZQ==
-        - key: ui_client_provision_installation_timer_message
-          value: WW91IGhhdmUgJHVpX2NsaWVudF9wcm92aXNpb25faW5zdGFsbF9hZ2VudF9taW5zJCBtaW51dGVzIHRvIGluc3RhbGwgYW5kIGZ...
-        - key: ui_vlan_execute_message
-          value: UmVsZWFzaW5nIGFuZCByZW5ld2luZyB5b3VyIElQIGFkZHJlc3Mu
-        - key: ui_login_self_service_button
-          value: T3IgcmVnaXN0ZXIgZm9yIGd1ZXN0IGFjY2Vzcw==
-        - key: ui_username_mismatch_policy_error
-          value: VXNlcm5hbWUgZGlkIG5vdCBtYXRjaCBVc2VybmFtZSBQb2xpY3ku
-        - key: ui_aup_guest_text
-          value: UGxlYXNlIGFjY2VwdCB0aGUgcG9saWN5OllvdSBhcmUgcmVzcG9uc2libGUgZm9yIG1haW50YWluaW5nIHRoZSBjb25maWRlbnR...
-        - key: ui_byod_reg_optional_content_2
-          value: ''
-        - key: ui_vlan_execute_error_message
-          value: VW5hYmxlIHRvIHJlbmV3IHRoZSBJUCBhZGRyZXNzLiBZb3UgbWlnaHQgbmVlZCB0byBkaXNhYmxlIG9yIHJlZHVjZSB0aGUgc2V...
-        - key: ui_contact_link
-          value: Q29udGFjdCBTdXBwb3J0
-        - key: ui_aup_page_title
-          value: QWNjZXB0YWJsZSBVc2UgUG9saWN5
-        - key: ui_self_reg_results_social_login_approval
-          value: V2hlbiBhY2Nlc3MgaGFzIGJlZW4gYXBwcm92ZWQgeW91IHdpbGwgcmVjZWl2ZSBhbiBlbWFpbCBvciB0ZXh0IG1lc3NhZ2Uu
-        - key: ui_self_reg_results_optional_content_2
-          value: ''
-        - key: ui_device_reg_max_reached_message
-          value: WW91IGhhdmUgcmVhY2hlZCB0aGUgbWF4aW11bSBhbW91bnQgb2YgZGV2aWNlcyB0aGF0IGNhbiBiZSByZWdpc3RlcmVkLiBJZiB...
-        - key: ui_client_provision_agentless_page_button
-          value: QWJvcnQ=
-        - key: ui_self_reg_results_optional_content_1
-          value: ''
-        - key: ui_byod_install_android_after_install_message
-          value: QWZ0ZXIgaW5zdGFsbGluZywgcnVuIHRoZSBTZXR1cCBBc3Npc3RhbnQgYW5kIHlvdSB3aWxsIGF1dG9tYXRpY2FsbHkgYmUgcmV...
-        - key: ui_changepwd_policy_help_label
-          value: UGFzc3dvcmRzIG11c3QgYmUgOCBjaGFyYWN0ZXJzIGFuZCBoYXZlIGEgbGV0dGVyIGFuZCBudW1iZXIu
-        - key: ui_device_reg_manage_label
-          value: TWFuYWdlIERldmljZXM=
-        - key: ui_invalid_mac_format_error
-          value: SW52YWxpZCBNQUMgYWRkcmVzcyBmb3JtYXQu
-        - key: ui_client_provision_agent_aup_error
-          value: WW91IG11c3QgYWNjZXB0IHRoZSBhZ3JlZW1lbnQgdG8gZ2V0IG5ldHdvcmsgYWNjZXNzIQ==
-        - key: ui_client_provision_agent_installed_message
-          value: Q2lzY28gQWdlbnQgd2FzIHN1Y2Nlc3NmdWxseSBpbnN0YWxsZWQh
-        - key: ui_contact_user_agent_label
-          value: VXNlciBBZ2VudDo=
-        - key: ui_byod_success_content_label
-          value: U3VjY2Vzcw==
-        - key: ui_self_reg_results_phone_label
-          value: TW9iaWxlIG51bWJlcjo=
-        - key: ui_client_provision_agentless_content_label
-          value: QWdlbnRsZXNzIFBvcnRhbA==
-        - key: ui_aup_employee_text
-          value: UGxlYXNlIGFjY2VwdCB0aGUgcG9saWN5OllvdSBhcmUgcmVzcG9uc2libGUgZm9yIG1haW50YWluaW5nIHRoZSBjb25maWRlbnR...
-        - key: ui_aup_optional_content_2
-          value: ''
-        - key: ui_vlan_install_message
-          value: WW91ciB3ZWIgYnJvd3NlciBpcyBhdHRlbXB0aW5nIHRvIGRvd25sb2FkIGFuIGFwcGxpY2F0aW9uLCB3aGljaCB3aWxsIGF1dG9...
-        - key: ui_contact_mac_address_label
-          value: TUFDIEFkZHJlc3M6
-        - key: ui_aup_optional_content_1
-          value: ''
-        - key: ui_changepwd_page_title
-          value: Q2hhbmdlIFBhc3N3b3Jk
-        - key: ui_error_instruction_message
-          value: ''
-        - key: ui_client_provision_start_button
-          value: U3RhcnQ=
-        - key: ui_contact_title_label
-          value: U3VwcG9ydCBJbmZvcm1hdGlvbg==
-        - key: ui_contact_username_label
-          value: VXNlcm5hbWU6
-        - key: ui_client_provision_agent_run_error
-          value: RXJyb3Igd2hlbiBydW5uaW5nIENpc2NvIEFnZW50
-        - key: ui_client_provision_agent_download_error
-          value: RmFpbGVkIHRvIGRvd25sb2FkIENpc2NvIEFnZW50
-        - key: ui_self_reg_results_aup_text
-          value: UGxlYXNlIGFjY2VwdCB0aGUgcG9saWN5OllvdSBhcmUgcmVzcG9uc2libGUgZm9yIG1haW50YWluaW5nIHRoZSBjb25maWRlbnR...
-        - key: ui_max_devices_continue_button
-          value: Q29udGludWU=
-        - key: ui_client_provision_optional_content_1
-          value: ''
-        - key: ui_client_provision_downloading_agent_message
-          value: RG93bmxvYWRpbmcgQ2lzY28gQWdlbnQuLi5wbGVhc2Ugd2FpdC4=
-        - key: ui_changepwd_instruction_message
-          value: WW91IGFyZSByZXF1aXJlZCB0byBjaGFuZ2UgeW91ciBwYXNzd29yZCBub3cuIFBsZWFzZSBlbnRlciBhIG5ldyBwYXNzd29yZC4=
-        - key: ui_user_last_login_ipaddr_label
-          value: RnJvbTo=
-        - key: ui_client_provision_optional_content_2
-          value: ''
-        - key: ui_grace_access_waiting_page_optional_content_1
-          value: ''
-        - key: ui_grace_access_waiting_page_optional_content_2
-          value: ''
-        - key: ui_client_provision_cookies_not_present_error
-          value: WW91IG5lZWQgdG8gZW5hYmxlIGJyb3dzZXIgY29va2llcyB0byB1c2UgdGhpcyBzaXRlLg==
-        - key: ui_grace_access_success_page_timer
-          value: WW91IHdpbGwgYmUgcmVkaXJlY3RlZCBpbg==
-        - key: ui_byod_reg_next_button
-          value: TmV4dA==
-        - key: ui_client_provision_posture_agent_check_message
-          value: RGV0ZWN0aW5nIGlmICR1aV9jbGllbnRfcHJvdmlzaW9uX2FnZW50X3R5cGUkIGlzIGluc3RhbGxlZCBhbmQgcnVubmluZy4uLg==
-        - key: ui_grace_access_expire_page_optional_content_1
-          value: ''
-        - key: ui_invalid_first_name_error
-          value: SW52YWxpZCBGaXJzdCBuYW1lLg==
-        - key: ui_byod_install_winmac_instruction_message
-          value: UGxlYXNlIHdhaXQgd2hpbGUgd2UgZG93bmxvYWQgdGhlIENpc2NvIE5ldHdvcmsgU2V0dXAgQXNzaXN0YW50LiBZb3Ugd2lsbCB...
-        - key: ui_grace_access_expire_page_optional_content_2
-          value: ''
-        - key: ui_byod_install_ios_instruction_message
-          value: VG8gY29uZmlndXJlIHlvdXIgZGV2aWNlLCBjbGljayB0aGUgPGI+TGF1bmNoIEFwcGxlIFByb2ZpbGUgYW5kIENlcnRpZmljYXR...
-        - key: ui_self_reg_aup_link
-          value: UGxlYXNlIHJlYWQgdGhlIHRlcm1zIGFuZCBjb25kaXRpb25z
-        - key: ui_byod_welcome_optional_content_1
-          value: ''
-        - key: ui_device_reg_desc_label
-          value: RGV2aWNlIERlc2NyaXB0aW9u
-        - key: ui_login_username_label
-          value: VXNlcm5hbWU6
-        - key: ui_byod_welcome_optional_content_2
-          value: ''
-        - key: ui_aup_decline_error
-          value: WW91IGNob3NlIHRvIHJlamVjdCB0aGUgQWNjZXB0YWJsZSBVc2UgUG9saWN5LiBXZSBjYW5ub3QgYWxsb3cgYWNjZXNzIHRvIHR...
-        - key: ui_invalid_last_name_error
-          value: SW52YWxpZCBMYXN0IG5hbWUu
-        - key: ui_self_reg_results_auto_email_require_approval_error
-          value: WW91ciByZXF1ZXN0IGZvciBuZXR3b3JrIGFjY2VzcyBpcyBkZW5pZWQuIFBsZWFzZSBjb250YWN0IHlvdXIgaG9zdCBmb3IgbW9...
-        - key: ui_client_provision_os_not_supported_error
-          value: VGhlIE9TIHlvdSBhcmUgdXNpbmcgaXMgbm90IHN1cHBvcnRlZC4=
-        - key: ui_self_reg_results_location_label
-          value: TG9jYXRpb246
-        - key: ui_vlan_optional_content_2
-          value: ''
-        - key: ui_vlan_optional_content_1
-          value: ''
-        - key: ui_aup_agreement_label
-          value: SSBhZ3JlZSB0byB0aGUgdGVybXMgYW5kIGNvbmRpdGlvbnMu
-        - key: ui_grace_access_success_page_optional_content_2
-          value: ''
-        - key: ui_self_reg_results_page_title
-          value: QWNjb3VudCBDcmVhdGVk
-        - key: ui_byod_welcome_guest_access_button
-          value: SSB3YW50IGd1ZXN0IGFjY2VzcyBvbmx5
-        - key: ui_self_reg_results_username_label
-          value: VXNlcm5hbWU6
-        - key: ui_invalid_username_policy_error
-          value: SW52YWxpZCBVc2VybmFtZSBQb2xpY3ku
-        - key: ui_grace_access_success_page_optional_content_1
-          value: ''
-        - key: ui_client_provision_try_install_message
-          value: VHJ5aW5nIHRvIGluc3RhbGw=
-        - key: ui_field_required_error
-          value: VGhpcyBmaWVsZCBpcyByZXF1aXJlZC4=
-        - key: ui_client_provision_install_button
-          value: SW5zdGFsbCBhZ2VudA==
-        - key: ui_grace_access_waiting_page_description_html
-          value: V2hpbGUgeW91IGFyZSB3YWl0aW5nIGZvciB5b3VyIGFjY291bnQsIHlvdSBoYXZlIHRlbXBvcmFyeSBhY2Nlc3MgdG8gdGhlIGl...
-        - key: ui_self_reg_email_approve
-          value: QXBwcm92ZQ==
-        - key: ui_grace_access_waiting_page_timer
-          value: VGVtcG9yYXJ5IGFjY2VzcyBleHBpcmVzIGlu
-        - key: ui_self_reg_results_email_success
-          value: RW1haWwgd2FzIHNlbnQgc3VjY2Vzc2Z1bGx5Lg==
-        - key: ui_self_reg_results_aup_agreement_label
-          value: SSBhZ3JlZSB0byB0aGUgdGVybXMgYW5kIGNvbmRpdGlvbnM=
-        - key: ui_byod_success_message
-          value: RmluaXNoZWQgaW5zdGFsbGluZyBhbmQgY29uZmlndXJpbmcgeW91ciBkZXZpY2UuICBZb3UgYXJlIG5vdyBjb25uZWN0ZWQgdG8...
-        - key: ui_grace_access_deny_page_instruction_message
-          value: ''
-        - key: ui_self_reg_results_continue_button
-          value: U2lnbiBPbg==
-        - key: ui_aup_instruction_message
-          value: UGxlYXNlIHJlYWQgdGhlIEFjY2VwdGFibGUgVXNlIFBvbGljeQ==
-        - key: ui_byod_welcome_content_label
-          value: QllPRCBXZWxjb21l
-        - key: ui_invalid_username_error
-          value: SW52YWxpZCB1c2VybmFtZS4=
-        - key: ui_self_reg_results_access_code_label
-          value: QWNjZXNzIGNvZGU6
-        - key: ui_device_reg_delete_confirmation_message
-          value: QXJlIHlvdSBzdXJlIHlvdSB3YW50IHRvIGRlbGV0ZSB5b3VyIGRldmljZT8=
-        - key: ui_lastname_mismatch_policy_error
-          value: TGFzdE5hbWUgZGlkIG5vdCBtYXRjaCBVc2VybmFtZSBQb2xpY3k=
-        - key: ui_changepwd_policy_error_message
-          value: WW91ciBwYXNzd29yZCBkb2VzIG5vdCBtZWV0IHRoZSBwYXNzd29yZCBwb2xpY3kgcmVxdWlyZW1lbnRzLiBQbGVhc2UgY29udGF...
-        - key: ui_max_devices_message
-          value: WW91IGhhdmUgYWRkZWQgdGhlIG1heGltdW0gbnVtYmVyIG9mIHN1cHBvcnRlZCBkZXZpY2VzLiBUaGUgZmlyc3QgZGV2aWNlIHl...
-        - key: ui_byod_welcome_aup_text
-          value: UGxlYXNlIGFjY2VwdCB0aGUgcG9saWN5OllvdSBhcmUgcmVzcG9uc2libGUgZm9yIG1haW50YWluaW5nIHRoZSBjb25maWRlbnR...
-        - key: ui_byod_install_winmac_button
-          value: RG93bmxvYWQgYW5kIEluc3RhbGwu
-        - key: ui_client_provision_agent_installation_message_temporal
-          value: PG9sPiA8bGk+IDxzcGFuPiA8YSBocmVmPSIkdWlfY2xpZW50X3Byb3Zpc2lvbl9hZ2VudF91cmwkIiB0YXJnZXQ9Il9ibGFuayI...
-        - key: ui_invalid_date_dmy_error
-          value: SW52YWxpZCBkYXRlIGZvcm1hdCBkZC9tbS95eS4=
-        - key: ui_byod_reg_install_button
-          value: RG93bmxvYWQgYW5kIEluc3RhbGw=
-        - key: ui_grace_access_expire_page_description_html
-          value: WW91ciByZXF1ZXN0IGZvciBuZXR3b3JrIGFjY2VzcyBoYXMgZXhwaXJlZC4gUGxlYXNlIGNoZWNrIGlmIHlvdXIgaG9zdCBoYXM...
-        - key: ui_back_to_login_page_button
-          value: QmFjayB0byBMb2cgSW4=
-        - key: ui_device_reg_content_label
-          value: RGV2aWNlIFJlZ2lzdHJhdGlvbg==
-        - key: ui_byod_install_page_title
-          value: SW5zdGFsbA==
-        - key: ui_success_message
-          value: WW91IG5vdyBoYXZlIEludGVybmV0IGFjY2VzcyB0aHJvdWdoIHRoaXMgbmV0d29yay4=
-        - key: ui_client_provision_no_policy_error
-          value: SVNFIGlzIG5vdCBhYmxlIHRvIGFwcGx5IGFuIGFjY2VzcyBwb2xpY3kgdG8geW91ciBsb2ctaW4gc2Vzc2lvbiBhdCB0aGlzIHR...
-        - key: ui_client_provision_generic_system_error
-          value: QSBzeXN0ZW0gZXJyb3Igb2NjdXJyZWQsIHBsZWFzZSBjb250YWN0IHlvdXIgbmV0d29yayBhZG1pbmlzdHJhdG9yLg==
-        - key: ui_changepwd_submit_button
-          value: U3VibWl0
-        - key: ui_user_last_login_pass_time_label
-          value: TGFzdCBMb2dpbjo=
-        - key: ui_post_access_content_label
-          value: V2VsY29tZSBNZXNzYWdl
-        - key: ui_byod_success_redirecting_message
-          value: UmVjb25uZWN0aW5nIGFuZCByZWRpcmVjdGluZy4uLg==
-        - key: ui_client_provision_agent_not_installed_button_message
-          value: KyBUaGlzIGlzIG15IGZpcnN0IHRpbWUgaGVyZQ==
-        - key: ui_login_forgot_password_button
-          value: UmVzZXQgUGFzc3dvcmQ=
-        - key: ui_grace_access_deny_page_title
-          value: WW91ciByZXF1ZXN0IGlzIGRlbmllZA==
-        - key: ui_login_signon_button
-          value: U2lnbiBPbg==
-        - key: ui_client_provision_content_label
-          value: RGV2aWNlIFNlY3VyaXR5IENoZWNr
-        - key: ui_byod_reg_instruction_message
-          value: ''
-        - key: ui_success_returning_message
-          value: ''
-        - key: ui_byod_success_manual_reconnect_message
-          value: SW5zdGFsbGF0aW9uIGFuZCBDb25maWd1cmF0aW9uIG9mIHlvdXIgZGV2aWNlIGlzIG5vdyBmaW5pc2hlZC4gIFlvdSBtdXN0IG5...
-        - key: ui_error_page_title
-          value: RXJyb3I=
-        - key: ui_invalid_phone_error
-          value: SW52YWxpZCBtb2JpbGUgbnVtYmVyIGZvcm1hdC4=
-        - key: ui_client_provision_cp_disabled_error
-          value: Q2xpZW50IHByb3Zpc2lvbmluZyBpcyBkaXNhYmxlZC4=
-        - key: ui_vlan_instruction_message
-          value: ''
-        - key: ui_self_reg_results_email_error
-          value: RW1haWwgd2FzIG5vdCBzZW50Lg==
-        - key: ui_byod_install_android_button
-          value: R2V0IENpc2NvIE5ldHdvcmsgU2V0dXAgQXNzaXN0YW50IE5vdw==
-        - key: ui_contact_sessioninfo_text
-          value: VGhpcyBpbmZvcm1hdGlvbiBwcm92aWRlcyBkZXRhaWxzIHRoYXQgdGhlIGhlbHAgZGVzayBtaWdodCBuZWVkIHRvIHJlc29sdmU...
-        - key: ui_contact_content_label
-          value: Q29udGVudA==
-        - key: ui_device_reg_already_registered_message
-          value: VGhlIGRldmljZSBoYXMgYWxyZWFkeSBiZWVuIHJlZ2lzdGVyZWQu
-        - key: ui_byod_success_page_title
-          value: U3VjY2Vzcw==
-        - key: ui_self_reg_submit_button
-          value: UmVnaXN0ZXI=
-        - key: ui_login_failed_error
-          value: QXV0aGVudGljYXRpb24gZmFpbGVkLg==
-        - key: ui_byod_install_content_label
-          value: SW5zdGFsbA==
-        - key: ui_self_reg_results_reason_visit_label
-          value: UmVhc29uIGJlaW5nIHZpc2l0ZWQ6
-        - key: ui_device_reg_add_button
-          value: QWRk
-        - key: ui_portal_internal_error
-          value: QW4gdW5leHBlY3RlZCBlcnJvciBvY2N1cnJlZC4gUGxlYXNlIGNvbnRhY3QgdGhlIGhlbHAgZGVzayBmb3IgYXNzaXN0YW5jZS4=
-        - key: ui_byod_reg_delete_confirmation_message
-          value: QXJlIHlvdSBzdXJlIHlvdSB3YW50IHRvIGRlbGV0ZSB0aGlzIGRldmljZT8gIFlvdSB3b24ndCBiZSBhYmxlIHRvIHVzZSBpdCB...
-        - key: ui_vlan_install_error_message
-          value: SW5zdGFsbGF0aW9uIG9mIHRoZSBhcHBsaWNhdGlvbiBmYWlsZWQuIEZvbGxvdyB0aGUgaW5zdHJ1Y3Rpb25zIGJlbG93IHRvIGN...
-        - key: ui_byod_welcome_page_title
-          value: QllPRCBXZWxjb21l
-        - key: ui_login_alternative_login_msg
-          value: WW91IGNhbiBhbHNvIGxvZ2luIHdpdGg=
-        - key: ui_grace_access_deny_page_description_html
-          value: WW91ciByZXF1ZXN0IGZvciBuZXR3b3JrIGFjY2VzcyBpcyBkZW5pZWQuIFBsZWFzZSBjb250YWN0IHlvdXIgaG9zdCBmb3IgbW9...
-        - key: ui_client_provision_posture_check_non_compliant_message
-          value: WW91ciBkZXZpY2UgZG9lcyBub3QgY29tcGx5IHdpdGggdGhlIG5ldHdvcmsncyBzZWN1cml0eSBndWlkZWxpbmVzLCBhbmQgaGF...
-        - key: ui_byod_install_optional_content_2
-          value: ''
-        - key: ui_changepwd_cancel_button
-          value: U2tpcA==
-        - key: ui_byod_reg_desc_label
-          value: RGVzY3JpcHRpb246
-        - key: ui_byod_install_optional_content_1
-          value: ''
-        - key: ui_post_access_instruction_message
-          value: Q2xpY2sgPGI+Q29udGludWU8L2I+IHRvIGNvbm5lY3QgdG8gdGhlIG5ldHdvcmsu
-        - key: ui_client_provision_login_fail_error
-          value: WW91ciBsb2dpbiBzZXNzaW9uIGZhaWxlZCE=
-        - key: ui_changepwd_currentpwd_label
-          value: Q3VycmVudCBwYXNzd29yZDo=
-        - key: ui_aup_content_label
-          value: QWNjZXB0YWJsZSBVc2UgUG9saWN5
-        - key: ui_max_devices_content_label
-          value: TWF4aW11bSBEZXZpY2VzIFJlYWNoZWQ=
-        - key: ui_byod_install_ios_after_install_message
-          value: QWZ0ZXIgY29uZmlndXJhdGlvbiBvZiB5b3VyIGRldmljZSwgeW91IHdpbGwgYmUgYWJsZSB0byBjb25uZWN0IHRvIHRoZSBuZXR...
-        - key: ui_grace_access_deny_page_optional_content_1
-          value: ''
-        - key: ui_login_passcode_label
-          value: UGFzc2NvZGU6
-        - key: ui_self_reg_results_email_label
-          value: RW1haWw6
-        - key: ui_grace_access_deny_page_optional_content_2
-          value: ''
-        - key: ui_empty_phone_error
-          value: TW9iaWxlIG51bWJlciBpcyByZXF1aXJlZC4=
-        - key: ui_login_aup_text
-          value: UGxlYXNlIGFjY2VwdCB0aGUgcG9saWN5OiBZb3UgYXJlIHJlc3BvbnNpYmxlIGZvciBtYWludGFpbmluZyB0aGUgY29uZmlkZW5...
-        - key: ui_changepwd_optional_content_2
-          value: ''
-        - key: ui_self_reg_page_title
-          value: U2VsZiBSZWdpc3RyYXRpb24=
-        - key: ui_changepwd_optional_content_1
-          value: ''
-        - key: ui_client_provision_login_timeout_error
-          value: WW91ciBsb2dpbiBzZXNzaW9uIHRpbWVkIG91dCE=
-        - key: ui_vlan_page_title
-          value: Q29ubmVjdGluZyB0byBOZXR3b3Jr
-        - key: ui_byod_welcome_renew_button
-          value: UmVuZXc=
-        - key: ui_vlan_coa_error_message
-          value: VW5hYmxlIHRvIGNvbW11bmljYXRlIHdpdGggc2VydmVyIHRvIHBlcmZvcm0gQ29BLiBDb250YWN0IHlvdXIgc3lzdGVtIGFkbWl...
-        - key: ui_self_reg_results_sms_provider_label
-          value: U01TIHByb3ZpZGVyOg==
-        - key: ui_client_provision_refresh_ipaddress_error
-          value: WW91IG5lZWQgdG8gcmVmcmVzaCBJUCBhZGRyZXNzIG1hbnVhbGx5IHRvIGdldCBuZXR3b3JrIGFjY2VzcyE=
-        - key: ui_self_reg_optional_content_2
-          value: ''
-        - key: ui_byod_install_instruction_message
-          value: ''
-        - key: ui_self_reg_results_sms_attempts_left_instruction_message
-          value: VGV4dCBNZSBhdHRlbXB0cyBsZWZ0Og==
-        - key: ui_self_reg_results_sms_button
-          value: VGV4dCBNZQ==
-        - key: ui_self_reg_results_person_visited_label
-          value: UGVyc29uIGJlaW5nIHZpc2l0ZWQgKGVtYWlsKTo=
-        - key: ui_device_reg_instruction_message
-          value: RG8geW91IHdhbnQgdG8gcmVnaXN0ZXIgYW55IGRldmljZXMgYXQgdGhpcyB0aW1lPyBUaGlzIGlzIHVzZWZ1bCBmb3IgcmVnaXN...
-        - key: ui_contact_failure_code_label
-          value: RmFpbHVyZSBDb2RlOg==
-        - key: ui_success_instruction_message
-          value: ''
-        - key: ui_client_provision_agent_installed_instructions_without_java_message
-          value: PG9sPiA8bGk+IDxzcGFuPiBJZiAkdWlfY2xpZW50X3Byb3Zpc2lvbl9hZ2VudF90eXBlJCBpcyBhbHJlYWR5IGluc3RhbGxlZCw...
-        - key: ui_self_reg_optional_content_1
-          value: ''
-        - key: ui_byod_welcome_config_device_message
-          value: QWNjZXNzIHRvIHRoaXMgbmV0d29yayByZXF1aXJlcyB5b3VyIGRldmljZSB0byBiZSBjb25maWd1cmVkIGZvciBlbmhhbmNlZCB...
-        - key: ui_self_reg_aup_text
-          value: UGxlYXNlIGFjY2VwdCB0aGUgcG9saWN5OllvdSBhcmUgcmVzcG9uc2libGUgZm9yIG1haW50YWluaW5nIHRoZSBjb25maWRlbnR...
-        - key: ui_changepwd_newpwd_label
-          value: TmV3IHBhc3N3b3JkOg==
-        - key: ui_vlan_content_label
-          value: Q29ubmVjdGluZyB0byBOZXR3b3Jr
-        - key: ui_self_reg_cancel_button
-          value: Q2FuY2Vs
-        - key: ui_device_reg_cancel_button
-          value: Q2FuY2VsLCBDb250aW51ZQ==
-        - key: ui_client_provision_agent_installation_cancel_error
-          value: Q2lzY28gTkFDIEFnZW50IGluc3RhbGxhdGlvbiB3YXMgY2FuY2VsbGVkLiBUbyB0cnkgYWdhaW4sIG9wZW4gYSBuZXcgYnJvd3N...
-        - key: ui_self_reg_results_last_name_label
-          value: TGFzdCBuYW1lOg==
-        - key: ui_device_reg_page_title
-          value: RGV2aWNlIFJlZ2lzdHJhdGlvbg==
-        - key: ui_client_provision_agent_installation_instructions_with_no_java_message
-          value: VG8gY29udGludWUsIGluc3RhbGwgYW5kIGVuYWJsZSB0aGUgbGF0ZXN0IEphdmEgdmVyc2lvbiwgYW5kIG1ha2Ugc3VyZSB0aGU...
-        - key: ui_client_provision_posture_agent_scan_message
-          value: U2Nhbm5pbmcgeW91ciBkZXZpY2UuIE9wZW4gJHVpX2NsaWVudF9wcm92aXNpb25fYWdlbnRfdHlwZSQgdG8gY2hlY2sgdGhlIGN...
-        - key: ui_self_reg_results_content_label
-          value: QWNjb3VudCBDcmVhdGVk
-        - key: ui_auto_device_reg_content_label
-          value: QXV0b21hdGljIEd1ZXN0IERldmljZSBSZWdpc3RyYXRpb24=
-        - key: ui_step_viewer_approval_tab_label
-          value: QXBwcm92YWw=
-        - key: ui_self_reg_results_first_name_label
-          value: Rmlyc3QgbmFtZTo=
-        - key: ui_success_content_label
-          value: U3VjY2Vzcw==
-        - key: ui_login_or_for_buttons
-          value: T1I=
-        - key: ui_client_provision_unable_to_detect_message
-          value: VW5hYmxlIHRvIGRldGVjdCAkdWlfY2xpZW50X3Byb3Zpc2lvbl9hZ2VudF90eXBlJCBQb3N0dXJlIEFnZW50
-        - key: ui_client_provision_login_fail_hint_message
-          value: WW91IHdpbGwgaGF2ZSBsaW1pdGVkIG5ldHdvcmsgY29ubmVjdGl2aXR5LiBQbGVhc2UgdHJ5IGRpc2Nvbm5lY3RpbmcgYW5kIHJ...
-        - key: ui_byod_reg_confirmation_yes_button
-          value: WWVz
-        - key: ui_vlan_java_disabled_error_message
-          value: VG8gY29udGludWUsIGluc3RhbGwgYW5kIGVuYWJsZSB0aGUgbGF0ZXN0IEphdmEgdmVyc2lvbiwgYW5kIG1ha2Ugc3VyZSB0aGU...
-        - key: ui_step_viewer_waiting_tab_label
-          value: V2FpdGluZyBmb3IgYXBwcm92YWw=
-        - key: ui_byod_reg_name_label
-          value: RGV2aWNlIE5hbWU6
-        - key: ui_self_reg_results_instruction_message
-          value: Q2hvb3NlIGhvdyB0byByZWNlaXZlIHlvdXIgbG9naW4gaW5mb3JtYXRpb24sIGJ5IHRleHQgb3IgZW1haWwu
-        - key: ui_post_access_continue_button
-          value: Q29udGludWU=
-        - key: ui_javascript_disabled_message
-          value: WW91IG11c3QgdHVybiBvbiBKYXZhU2NyaXB0IHRvIHVzZSB0aGlzIHdlYiBzaXRlLg==
-        - key: ui_client_provision_posture_agent_message
-          value: UG9zdHVyZSBBZ2VudC4=
-        - key: ui_max_devices_page_title
-          value: QXV0b21hdGljIEd1ZXN0IERldmljZSBSZWdpc3RyYXRpb24=
-        - key: ui_byod_welcome_instruction_message
-          value: V2VsY29tZSB0byB0aGUgQllPRCBwb3J0YWwu
-        - key: ui_contact_policy_server_label
-          value: UG9saWN5IFNlcnZlcjo=
-        - key: ui_max_devices_optional_content_2
-          value: ''
-        - key: ui_max_devices_optional_content_1
-          value: ''
-        - key: ui_login_notification_instruction_message
-          value: QW4gZW1haWwgb3IgYW4gU01TIG1lc3NhZ2UgaGFzIGJlZW4gc2VudCB0byB5b3UgY29udGFpbmluZyB5b3VyIHNpZ24gb24gY3J...
-        - key: ui_grace_access_waiting_page_instruction_message
-          value: ''
-        - key: ui_byod_time_skew_error
-          value: VGltZSBza2V3IGV4aXN0cyBiZXR3ZWVuIHlvdXIgZGV2aWNlIGFuZCBJU0UuICBQbGVhc2UgY29ycmVjdCB5b3VyIGRldmljZSd...
-        - key: ui_grace_access_waiting_page_title
-          value: ''
-        - key: ui_confirm_popup_no_button
-          value: Tm8=
-        - key: ui_success_page_title
-          value: U3VjY2Vzcw==
-        - key: ui_invalid_date_mdy_error
-          value: SW52YWxpZCBkYXRlIGZvcm1hdCBtbS9kZC95eS4=
-        - key: ui_byod_reg_confirmation_no_button
-          value: Tm8=
-        - key: ui_contact_helpdesk_title
-          value: U3VwcG9ydCBJbmZvcm1hdGlvbg==
-        - key: ui_byod_welcome_start_button
-          value: U3RhcnQ=
-        - key: ui_login_optional_content_1
-          value: ''
-        - key: ui_login_optional_content_2
-          value: ''
-        - key: ui_byod_welcome_os_detection_confirmation_message
-          value: V2FzIHlvdXIgZGV2aWNlIGRldGVjdGVkIGluY29ycmVjdGx5Pw==
-        - key: ui_aup_decline_button
-          value: RGVjbGluZQ==
-        - key: ui_changepwd_username_label
-          value: VXNlcm5hbWU6
-        - key: ui_max_devices_instruction_message
-          value: ''
-        - key: ui_device_reg_id_label
-          value: RGV2aWNlIElE
-        - key: ui_client_provision_another_login_running_error
-          value: WW91IGhhdmUgYW5vdGhlciBsb2dpbiBzZXNzaW9uIHJ1bm5pbmch
-        - key: ui_client_provision_agent_installed_button_message
-          value: KyBSZW1pbmQgbWUgd2hhdCB0byBkbyBuZXh0
-        - key: ui_byod_welcome_os_detected_message
-          value: VGhlIGZvbGxvd2luZyBzeXN0ZW0gd2FzIGRldGVjdGVk
-        - key: ui_session_timeout_retry_button
-          value: UmV0cnk=
-        - key: ui_post_access_message
-          value: WW91J3JlIHZlcnkgY2xvc2UgdG8gZ2FpbmluZyBuZXR3b3JrIGFjY2Vzcy4=
-        - key: ui_client_provision_agent_non_compliant_message
-          value: WW91ciBzeXN0ZW0gaXMgbm90IGNvbXBsaWFudCBhbmQgd2lsbCBoYXZlIGxpbWl0ZWQgbmV0d29yayBjb25uZWN0aXZpdHkuIFB...
-        - key: ui_step_viewer_expired_tab_label
-          value: RXhwaXJlZA==
-        - key: ui_self_reg_results_company_label
-          value: Q29tcGFueTo=
-        - key: ui_client_provision_instruction_message
-          value: WW91ciBjb21wdXRlciByZXF1aXJlcyBzZWN1cml0eSBzb2Z0d2FyZSB0byBiZSBpbnN0YWxsZWQgYmVmb3JlIHlvdSBjYW4gY29...
-        - key: ui_self_reg_results_aup_link
-          value: VGVybXMgYW5kIENvbmRpdGlvbnM=
-        - key: ui_contact_message
-          value: U3VwcG9ydCBJbmZvcm1hdGlvbg==
-        - key: ui_login_password_label
-          value: UGFzc3dvcmQ6
-        - key: ui_device_reg_register_message
-          value: WW91IGNhbiBhZGQgYSBtYXhpbXVtIG9mICR1aV9tYXhfcmVnX2RldmljZXMkIGRldmljZXMuIEVudGVyIGEgZGV2aWNlIElEIGF...
-        - key: ui_client_provision_agentless_instruction_message
-          value: WW91ciBjb21wdXRlciBpcyBkb2luZyBzZWN1cml0eSBjaGVjayBiZWZvcmUgeW91IGNhbiBjb25uZWN0IHRvIHRoZSBuZXR3b3J...
-        - key: ui_client_provision_agent_check_complete_message
-          value: Q2lzY28gQWdlbnQgZmluaXNoZWQgY2hlY2tpbmcgeW91ciBzeXN0ZW0u
-        - key: ui_self_reg_results_sms_success
-          value: U01TIHdhcyBzZW50IHN1Y2Nlc3NmdWxseS4=
-        - key: ui_byod_reg_content_label
-          value: RGV2aWNlIEluZm9ybWF0aW9u
-        - key: ui_device_reg_save_button
-          value: U2F2ZSwgQ29udGludWU=
-        - key: ui_byod_reg_delete_button
-          value: RGVsZXRl
-        - key: ui_banner_label
-          value: R3Vlc3QgUG9ydGFs
-        - key: ui_byod_welcome_aup_link
-          value: UGxlYXNlIHJlYWQgdGhlIHRlcm1zIGFuZCBjb25kaXRpb25zLg==
-        - key: ui_firstname_mismatch_policy_error
-          value: Rmlyc3ROYW1lIGRpZCBub3QgbWF0Y2ggVXNlcm5hbWUgUG9saWN5
-        - key: ui_grace_access_success_page_title
-          value: U3VjY2Vzc2Z1bCE=
+        - key: string
+          value: string
       portalTheme:
-        id: 9eb421c0-8c01-11e6-996c-525400b48521
-        name: Default Blue theme
-      portalTweakSettings: {}
-    description: My description
-    name: My Self-Registered Guest Portal
-    portalType: SELFREGGUEST
+        id: string
+        name: string
+        themeData: string
+      portalTweakSettings:
+        bannerColor: string
+        bannerTextColor: string
+        pageBackgroundColor: string
+        pageLabelAndTextColor: string
+    description: string
+    id: string
+    name: string
+    portalTestUrl: string
+    portalType: string
     settings:
       aupSettings:
-        displayFrequency: FIRSTLOGIN
+        displayFrequency: string
+        displayFrequencyIntervalDays: 0
         includeAup: true
-        requireScrolling: false
+        requireAupScrolling: true
+        requireScrolling: true
+        skipAupForEmployees: true
+        useDiffAupForEmployees: true
       authSuccessSettings:
-        successRedirect: AUTHSUCCESSPAGE
+        redirectUrl: string
+        successRedirect: string
       byodSettings:
         byodRegistrationSettings:
-          endPointIdentityGroupId: aa13bb40-8bff-11e6-996c-525400b48521
-          showDeviceID: false
+          endPointIdentityGroupId: string
+          showDeviceID: true
         byodRegistrationSuccessSettings:
-          successRedirect: AUTHSUCCESSPAGE
+          redirectUrl: string
+          successRedirect: string
         byodWelcomeSettings:
-          aupDisplay: ONPAGE
-          enableBYOD: false
-          enableGuestAccess: false
-          includeAup: false
-          requireAupAcceptance: false
-          requireMDM: false
-          requireScrolling: false
+          aupDisplay: string
+          enableBYOD: true
+          enableGuestAccess: true
+          includeAup: true
+          requireAupAcceptance: true
+          requireMDM: true
+          requireScrolling: true
       guestChangePasswordSettings:
         allowChangePasswdAtFirstLogin: true
       guestDeviceRegistrationSettings:
-        allowGuestsToRegisterDevices: false
+        allowGuestsToRegisterDevices: true
         autoRegisterGuestDevices: true
       loginPageSettings:
-        allowAlternateGuestPortal: false
+        accessCode: string
+        allowAlternateGuestPortal: true
         allowForgotPassword: true
-        allowGuestToChangePassword: false
+        allowGuestToChangePassword: true
         allowGuestToCreateAccounts: true
-        includeAup: false
-        maxFailedAttemptsBeforeRateLimit: 5
-        requireAccessCode: false
+        allowGuestToUseSocialAccounts: true
+        allowShowGuestForm: true
+        alternateGuestPortal: string
+        aupDisplay: string
+        includeAup: true
+        maxFailedAttemptsBeforeRateLimit: 0
+        requireAccessCode: true
+        requireAupAcceptance: true
         socialConfigs:
-        - socialMediaType: ''
-          socialMediaValue: ''
-        timeBetweenLoginsDuringRateLimit: 2
+        - socialMediaType: string
+          socialMediaValue: string
+        timeBetweenLoginsDuringRateLimit: 0
       portalSettings:
-        allowedInterfaces:
-        - eth0
-        - bond0
-        alwaysUsedLanguage: English
-        assignedGuestTypeForEmployee: Contractor (default)
-        authenticationMethod: 92e50f80-8c01-11e6-996c-525400b48521
-        certificateGroupTag: Default Portal Certificate Group
-        displayLang: USEBROWSERLOCALE
-        fallbackLanguage: English
-        httpsPort: 8443
+        allowedInterfaces: string
+        alwaysUsedLanguage: string
+        assignedGuestTypeForEmployee: string
+        authenticationMethod: string
+        certificateGroupTag: string
+        displayLang: string
+        fallbackLanguage: string
+        httpsPort: 0
+      postAccessBannerSettings:
+        includePostAccessBanner: true
       postLoginBannerSettings:
         includePostAccessBanner: true
       selfRegPageSettings:
-        accountValidityDuration: 1
-        allowGraceAccess: false
-        approveDenyLinksTimeUnits: DAYS
-        assignGuestsToGuestType: Daily (default)
-        authenticateSponsorsUsingPortalList: false
-        autoLoginSelfWait: false
-        autoLoginTimePeriod: 5
-        credentialNotificationUsingEmail: false
-        credentialNotificationUsingSms: false
-        enableGuestEmailBlacklist: false
-        enableGuestEmailWhitelist: false
+        accountValidityDuration: 0
+        accountValidityTimeUnits: string
+        allowGraceAccess: true
+        approvalEmailAddresses: string
+        approveDenyLinksTimeUnits: string
+        approveDenyLinksValidFor: 0
+        assignGuestsToGuestType: string
+        aupDisplay: string
+        authenticateSponsorsUsingPortalList: string
+        autoLoginSelfWait: true
+        autoLoginTimePeriod: 0
+        credentialNotificationUsingEmail: true
+        credentialNotificationUsingSms: true
+        enableGuestEmailBlacklist: true
+        enableGuestEmailWhitelist: true
         fieldCompany:
           include: true
-          require: false
+          require: true
         fieldEmailAddr:
           include: true
-          require: false
+          require: true
         fieldFirstName:
           include: true
-          require: false
+          require: true
         fieldLastName:
           include: true
-          require: false
+          require: true
         fieldLocation:
           include: true
-          require: false
+          require: true
         fieldPersonBeingVisited:
           include: true
-          require: false
+          require: true
         fieldPhoneNo:
           include: true
-          require: false
+          require: true
         fieldReasonForVisit:
           include: true
-          require: false
+          require: true
         fieldSmsProvider:
           include: true
-          require: false
+          require: true
         fieldUserName:
           include: true
-          require: false
-        graceAccessExpireInterval: 10
-        graceAccessSendAccountExpiration: false
-        guestEmailBlacklistDomains: []
-        guestEmailWhitelistDomains: []
-        includeAup: false
-        postRegistrationRedirect: SELFREGISTRATIONSUCCESS
-        requireAupAcceptance: false
-        requireGuestApproval: false
-        requireRegistrationCode: false
+          require: true
+        graceAccessExpireInterval: 0
+        graceAccessSendAccountExpiration: true
+        guestEmailBlacklistDomains: string
+        guestEmailWhitelistDomains: string
+        includeAup: true
+        postRegistrationRedirect: string
+        postRegistrationRedirectUrl: string
+        registrationCode: string
+        requireApproverToAuthenticate: true
+        requireAupAcceptance: true
+        requireGuestApproval: true
+        requireRegistrationCode: true
         selectableLocations:
-        - San Jose
+        - string
         selectableSmsProviders:
-        - Global Default
+        - string
+        sendApprovalRequestTo: string
         sponsorPortalList: []
       selfRegSuccessSettings:
-        allowGuestLoginFromSelfregSuccessPage: false
-        allowGuestSendSelfUsingEmail: false
-        allowGuestSendSelfUsingPrint: false
-        allowGuestSendSelfUsingSms: false
-        aupOnPage: false
-        includeAup: false
+        allowGuestLoginFromSelfregSuccessPage: true
+        allowGuestSendSelfUsingEmail: true
+        allowGuestSendSelfUsingPrint: true
+        allowGuestSendSelfUsingSms: true
+        aupOnPage: true
+        includeAup: true
         includeCompany: true
         includeEmailAddr: true
         includeFirstName: true
@@ -1362,27 +865,17 @@ EXAMPLES = r"""
         includeReasonForVisit: true
         includeSmsProvider: true
         includeUserName: true
-        requireAupAcceptance: false
-        requireAupScrolling: false
+        requireAupAcceptance: true
+        requireAupScrolling: true
       supportInfoSettings:
-        emptyFieldDisplay: HIDE
+        defaultEmptyFieldValue: string
+        emptyFieldDisplay: string
         includeBrowserUserAgent: true
         includeFailureCode: true
         includeIpAddress: true
         includeMacAddr: true
         includePolicyServer: true
-        includeSupportInfoPage: false
-
-- name: Update by id
-  cisco.ise.self_registered_portal:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    description: My SelfRegPortal
-    id: 28771952-4a11-47da-8a12-e14569a0ac77
-    name: My Self-Registered Guest Portal
+        includeSupportInfoPage: true
 
 - name: Delete by id
   cisco.ise.self_registered_portal:
@@ -1392,6 +885,202 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
+
+- name: Create
+  cisco.ise.self_registered_portal:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    customizations:
+      globalCustomizations:
+        backgroundImage:
+          data: string
+        bannerImage:
+          data: string
+        bannerTitle: string
+        contactText: string
+        desktopLogoImage:
+          data: string
+        footerElement: string
+        mobileLogoImage:
+          data: string
+      language:
+        viewLanguage: string
+      pageCustomizations:
+        data:
+        - key: string
+          value: string
+      portalTheme:
+        id: string
+        name: string
+        themeData: string
+      portalTweakSettings:
+        bannerColor: string
+        bannerTextColor: string
+        pageBackgroundColor: string
+        pageLabelAndTextColor: string
+    description: string
+    name: string
+    portalTestUrl: string
+    portalType: string
+    settings:
+      aupSettings:
+        displayFrequency: string
+        displayFrequencyIntervalDays: 0
+        includeAup: true
+        requireAupScrolling: true
+        requireScrolling: true
+        skipAupForEmployees: true
+        useDiffAupForEmployees: true
+      authSuccessSettings:
+        redirectUrl: string
+        successRedirect: string
+      byodSettings:
+        byodRegistrationSettings:
+          endPointIdentityGroupId: string
+          showDeviceID: true
+        byodRegistrationSuccessSettings:
+          redirectUrl: string
+          successRedirect: string
+        byodWelcomeSettings:
+          aupDisplay: string
+          enableBYOD: true
+          enableGuestAccess: true
+          includeAup: true
+          requireAupAcceptance: true
+          requireMDM: true
+          requireScrolling: true
+      guestChangePasswordSettings:
+        allowChangePasswdAtFirstLogin: true
+      guestDeviceRegistrationSettings:
+        allowGuestsToRegisterDevices: true
+        autoRegisterGuestDevices: true
+      loginPageSettings:
+        accessCode: string
+        allowAlternateGuestPortal: true
+        allowForgotPassword: true
+        allowGuestToChangePassword: true
+        allowGuestToCreateAccounts: true
+        allowGuestToUseSocialAccounts: true
+        allowShowGuestForm: true
+        alternateGuestPortal: string
+        aupDisplay: string
+        includeAup: true
+        maxFailedAttemptsBeforeRateLimit: 0
+        requireAccessCode: true
+        requireAupAcceptance: true
+        socialConfigs:
+        - socialMediaType: string
+          socialMediaValue: string
+        timeBetweenLoginsDuringRateLimit: 0
+      portalSettings:
+        allowedInterfaces: string
+        alwaysUsedLanguage: string
+        assignedGuestTypeForEmployee: string
+        authenticationMethod: string
+        certificateGroupTag: string
+        displayLang: string
+        fallbackLanguage: string
+        httpsPort: 0
+      postAccessBannerSettings:
+        includePostAccessBanner: true
+      postLoginBannerSettings:
+        includePostAccessBanner: true
+      selfRegPageSettings:
+        accountValidityDuration: 0
+        accountValidityTimeUnits: string
+        allowGraceAccess: true
+        approvalEmailAddresses: string
+        approveDenyLinksTimeUnits: string
+        approveDenyLinksValidFor: 0
+        assignGuestsToGuestType: string
+        aupDisplay: string
+        authenticateSponsorsUsingPortalList: string
+        autoLoginSelfWait: true
+        autoLoginTimePeriod: 0
+        credentialNotificationUsingEmail: true
+        credentialNotificationUsingSms: true
+        enableGuestEmailBlacklist: true
+        enableGuestEmailWhitelist: true
+        fieldCompany:
+          include: true
+          require: true
+        fieldEmailAddr:
+          include: true
+          require: true
+        fieldFirstName:
+          include: true
+          require: true
+        fieldLastName:
+          include: true
+          require: true
+        fieldLocation:
+          include: true
+          require: true
+        fieldPersonBeingVisited:
+          include: true
+          require: true
+        fieldPhoneNo:
+          include: true
+          require: true
+        fieldReasonForVisit:
+          include: true
+          require: true
+        fieldSmsProvider:
+          include: true
+          require: true
+        fieldUserName:
+          include: true
+          require: true
+        graceAccessExpireInterval: 0
+        graceAccessSendAccountExpiration: true
+        guestEmailBlacklistDomains: string
+        guestEmailWhitelistDomains: string
+        includeAup: true
+        postRegistrationRedirect: string
+        postRegistrationRedirectUrl: string
+        registrationCode: string
+        requireApproverToAuthenticate: true
+        requireAupAcceptance: true
+        requireGuestApproval: true
+        requireRegistrationCode: true
+        selectableLocations:
+        - string
+        selectableSmsProviders:
+        - string
+        sendApprovalRequestTo: string
+        sponsorPortalList: []
+      selfRegSuccessSettings:
+        allowGuestLoginFromSelfregSuccessPage: true
+        allowGuestSendSelfUsingEmail: true
+        allowGuestSendSelfUsingPrint: true
+        allowGuestSendSelfUsingSms: true
+        aupOnPage: true
+        includeAup: true
+        includeCompany: true
+        includeEmailAddr: true
+        includeFirstName: true
+        includeLastName: true
+        includeLocation: true
+        includePassword: true
+        includePersonBeingVisited: true
+        includePhoneNo: true
+        includeReasonForVisit: true
+        includeSmsProvider: true
+        includeUserName: true
+        requireAupAcceptance: true
+        requireAupScrolling: true
+      supportInfoSettings:
+        defaultEmptyFieldValue: string
+        emptyFieldDisplay: string
+        includeBrowserUserAgent: true
+        includeFailureCode: true
+        includeIpAddress: true
+        includeMacAddr: true
+        includePolicyServer: true
+        includeSupportInfoPage: true
 
 """
 
@@ -1403,9 +1092,14 @@ ise_response:
   sample: >
     {
       "UpdatedFieldsList": {
-        "updatedField": [
-          "string"
-        ]
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
       }
     }
 """

@@ -17,31 +17,38 @@ options:
     description: AllowedAsUserName flag.
     type: bool
   certificateAttributeName:
-    description: Certificate Profile's certificateAttributeName.
+    description: Attribute name of the Certificate Profile - used only when CERTIFICATE
+      is chosen in usernameFrom. Allowed values - SUBJECT_COMMON_NAME - SUBJECT_ALTERNATIVE_NAME
+      - SUBJECT_SERIAL_NUMBER - SUBJECT - SUBJECT_ALTERNATIVE_NAME_OTHER_NAME - SUBJECT_ALTERNATIVE_NAME_EMAIL
+      - SUBJECT_ALTERNATIVE_NAME_DNS. - Additional internal value ALL_SUBJECT_AND_ALTERNATIVE_NAMES
+      is used automatically when usernameFrom=UPN.
     type: str
   description:
     description: Certificate Profile's description.
     type: str
   externalIdentityStoreName:
-    description: Certificate Profile's externalIdentityStoreName.
+    description: Referred IDStore name for the Certificate Profile or not applicable
+      in case no identity store is chosen.
     type: str
   id:
     description: Certificate Profile's id.
     type: str
   matchMode:
-    description: Certificate Profile's matchMode.
+    description: Match mode of the Certificate Profile. Allowed values - NEVER - RESOLVE_IDENTITY_AMBIGUITY
+      - BINARY_COMPARISON.
     type: str
   name:
     description: Certificate Profile's name.
     type: str
   usernameFrom:
-    description: Certificate Profile's usernameFrom.
+    description: The attribute in the certificate where the user name should be taken
+      from. Allowed values - CERTIFICATE (for a specific attribute as defined in certificateAttributeName)
+      - UPN (for using any Subject or Alternative Name Attributes in the Certificate
+      - an option only in AD).
     type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.certificate_profile
 # Reference by Internet resource
 - name: Certificate Profile reference
   description: Complete reference of the Certificate Profile object model.
@@ -49,22 +56,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.certificate_profile:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    allowedAsUserName: false
-    certificateAttributeName: SUBJECT_COMMON_NAME
-    description: Precreated Certificate Authorization Profile.
-    externalIdentityStoreName: '[not applicable]'
-    id: 925b6d20-8c01-11e6-996c-525400b48521
-    matchMode: NEVER
-    name: Preloaded_Certificate_Profile
-    usernameFrom: CERTIFICATE
-
 - name: Update by id
   cisco.ise.certificate_profile:
     ise_hostname: "{{ise_hostname}}"
@@ -72,14 +63,30 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    allowedAsUserName: false
-    certificateAttributeName: SUBJECT_COMMON_NAME
-    description: Precreated Certificate Authorization Profile.
-    externalIdentityStoreName: '[not applicable]'
-    id: 925b6d20-8c01-11e6-996c-525400b48521
-    matchMode: NEVER
-    name: Preloaded_Certificate_Profile
-    usernameFrom: CERTIFICATE
+    allowedAsUserName: true
+    certificateAttributeName: string
+    description: string
+    externalIdentityStoreName: string
+    id: string
+    matchMode: string
+    name: string
+    usernameFrom: string
+
+- name: Create
+  cisco.ise.certificate_profile:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    allowedAsUserName: true
+    certificateAttributeName: string
+    description: string
+    externalIdentityStoreName: string
+    id: string
+    matchMode: string
+    name: string
+    usernameFrom: string
 
 """
 
@@ -89,5 +96,15 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": [
+          {
+            "field": "string",
+            "oldValue": "string",
+            "newValue": "string"
+          }
+        ]
+      }
+    }
 """

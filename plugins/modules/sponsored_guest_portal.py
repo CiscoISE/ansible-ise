@@ -14,16 +14,25 @@ version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
   customizations:
-    description: Sponsored Guest Portal's customizations.
+    description: Defines all of the Portal Customizations available.
     suboptions:
       globalCustomizations:
         description: Sponsored Guest Portal's globalCustomizations.
         suboptions:
+          backgroundImage:
+            description: Sponsored Guest Portal's backgroundImage.
+            suboptions:
+              data:
+                description: Represented as base 64 encoded string of the image byte
+                  array.
+                type: str
+            type: dict
           bannerImage:
             description: Sponsored Guest Portal's bannerImage.
             suboptions:
               data:
-                description: Sponsored Guest Portal's data.
+                description: Represented as base 64 encoded string of the image byte
+                  array.
                 type: str
             type: dict
           bannerTitle:
@@ -36,7 +45,8 @@ options:
             description: Sponsored Guest Portal's desktopLogoImage.
             suboptions:
               data:
-                description: Sponsored Guest Portal's data.
+                description: Represented as base 64 encoded string of the image byte
+                  array.
                 type: str
             type: dict
           footerElement:
@@ -46,22 +56,24 @@ options:
             description: Sponsored Guest Portal's mobileLogoImage.
             suboptions:
               data:
-                description: Sponsored Guest Portal's data.
+                description: Represented as base 64 encoded string of the image byte
+                  array.
                 type: str
             type: dict
         type: dict
       language:
-        description: Sponsored Guest Portal's language.
+        description: This property is supported only for Read operation and it allows
+          to show the customizations in English. Other languages are not supported.
         suboptions:
           viewLanguage:
             description: Sponsored Guest Portal's viewLanguage.
             type: str
         type: dict
       pageCustomizations:
-        description: Sponsored Guest Portal's pageCustomizations.
+        description: Represent the entire page customization as a giant dictionary.
         suboptions:
           data:
-            description: Sponsored Guest Portal's data.
+            description: The Dictionary will be exposed here as key value pair.
             suboptions:
               key:
                 description: Sponsored Guest Portal's key.
@@ -78,17 +90,20 @@ options:
             description: Sponsored Guest Portal's id.
             type: str
           name:
-            description: Sponsored Guest Portal's name.
+            description: The system- or user-assigned name of the portal theme.
             type: str
           themeData:
-            description: Sponsored Guest Portal's themeData.
+            description: A CSS file, represented as a Base64-encoded byte array.
             type: str
         type: dict
       portalTweakSettings:
-        description: Sponsored Guest Portal's portalTweakSettings.
+        description: The Tweak Settings are a customization of the Portal Theme that
+          has been selected for the portal. When the Portal Theme selection is changed,
+          the Tweak Settings are overwritten to match the values in the theme. The Tweak
+          Settings can subsequently be changed by the user.
         suboptions:
           bannerColor:
-            description: Sponsored Guest Portal's bannerColor.
+            description: Hex value of color.
             type: str
           bannerTextColor:
             description: Sponsored Guest Portal's bannerTextColor.
@@ -110,151 +125,236 @@ options:
   name:
     description: Sponsored Guest Portal's name.
     type: str
+  portalTestUrl:
+    description: URL to bring up a test page for this portal.
+    type: str
   portalType:
-    description: Sponsored Guest Portal's portalType.
+    description: Allowed values - BYOD, - HOTSPOTGUEST, - MYDEVICE, - SELFREGGUEST,
+      - SPONSOR, - SPONSOREDGUEST.
     type: str
   settings:
-    description: Sponsored Guest Portal's settings.
+    description: Defines all of the settings groups available for a portal.
     suboptions:
       aupSettings:
         description: Sponsored Guest Portal's aupSettings.
         suboptions:
           displayFrequency:
-            description: Sponsored Guest Portal's displayFrequency.
+            description: How the AUP should be displayed, either on page or as a link.
+              Only valid if includeAup = true. Allowed Values - FIRSTLOGIN, - EVERYLOGIN,
+              - RECURRING.
             type: str
+          displayFrequencyIntervalDays:
+            description: Number of days between AUP confirmations (when displayFrequency
+              = recurring).
+            type: int
           includeAup:
             description: IncludeAup flag.
             type: bool
-          requireAccessCode:
-            description: RequireAccessCode flag.
+          requireAupScrolling:
+            description: Require the portal user to scroll to the end of the AUP. Only
+              valid if requireAupAcceptance = true.
             type: bool
           requireScrolling:
             description: RequireScrolling flag.
             type: bool
           skipAupForEmployees:
-            description: SkipAupForEmployees flag.
+            description: Only valid if requireAupAcceptance = true.
             type: bool
           useDiffAupForEmployees:
-            description: UseDiffAupForEmployees flag.
+            description: Only valid if requireAupAcceptance = true.
             type: bool
         type: dict
       authSuccessSettings:
         description: Sponsored Guest Portal's authSuccessSettings.
         suboptions:
           redirectUrl:
-            description: Sponsored Guest Portal's redirectUrl.
+            description: Target URL for redirection, used when successRedirect = URL.
             type: str
           successRedirect:
-            description: Sponsored Guest Portal's successRedirect.
+            description: After an Authentication Success where should device be redirected.
+              Allowed values - AUTHSUCCESSPAGE, - ORIGINATINGURL, - URL.
             type: str
+        type: dict
+      byodSettings:
+        description: Sponsored Guest Portal's byodSettings.
+        suboptions:
+          byodRegistrationSettings:
+            description: Configuration of BYOD endpoint Registration step configuration.
+            suboptions:
+              endPointIdentityGroupId:
+                description: Identity group id for which endpoint belongs.
+                type: str
+              showDeviceID:
+                description: Display Device ID field during registration.
+                type: bool
+            type: dict
+          byodRegistrationSuccessSettings:
+            description: Sponsored Guest Portal's byodRegistrationSuccessSettings.
+            suboptions:
+              redirectUrl:
+                description: Target URL for redirection, used when successRedirect =
+                  URL.
+                type: str
+              successRedirect:
+                description: After an Authentication Success where should device be
+                  redirected. Allowed values - AUTHSUCCESSPAGE, - ORIGINATINGURL, -
+                  URL.
+                type: str
+            type: dict
+          byodWelcomeSettings:
+            description: Sponsored Guest Portal's byodWelcomeSettings.
+            suboptions:
+              aupDisplay:
+                description: How the AUP should be displayed, either on page or as a
+                  link. Only valid if includeAup = true. Allowed values - ONPAGE, -
+                  ASLINK.
+                type: str
+              enableBYOD:
+                description: EnableBYOD flag.
+                type: bool
+              enableGuestAccess:
+                description: EnableGuestAccess flag.
+                type: bool
+              includeAup:
+                description: IncludeAup flag.
+                type: bool
+              requireAupAcceptance:
+                description: RequireAupAcceptance flag.
+                type: bool
+              requireMDM:
+                description: RequireMDM flag.
+                type: bool
+              requireScrolling:
+                description: Require BYOD devices to scroll down to the bottom of the
+                  AUP. Only valid if includeAup = true.
+                type: bool
+            type: dict
         type: dict
       guestChangePasswordSettings:
         description: Sponsored Guest Portal's guestChangePasswordSettings.
         suboptions:
           allowChangePasswdAtFirstLogin:
-            description: AllowChangePasswdAtFirstLogin flag.
+            description: Allow guest to change their own passwords.
             type: bool
         type: dict
       guestDeviceRegistrationSettings:
         description: Sponsored Guest Portal's guestDeviceRegistrationSettings.
         suboptions:
           allowGuestsToRegisterDevices:
-            description: AllowGuestsToRegisterDevices flag.
+            description: Allow guests to register devices.
             type: bool
           autoRegisterGuestDevices:
-            description: AutoRegisterGuestDevices flag.
+            description: Automatically register guest devices.
             type: bool
         type: dict
       loginPageSettings:
-        description: Sponsored Guest Portal's loginPageSettings.
+        description: Portal Login Page settings groups follow.
         suboptions:
           accessCode:
-            description: Sponsored Guest Portal's accessCode.
+            description: Access code that must be entered by the portal user (only valid
+              if requireAccessCode = true).
             type: str
           allowAlternateGuestPortal:
             description: AllowAlternateGuestPortal flag.
             type: bool
+          allowForgotPassword:
+            description: AllowForgotPassword flag.
+            type: bool
           allowGuestToChangePassword:
-            description: AllowGuestToChangePassword flag.
+            description: Require the portal user to enter an access code.
             type: bool
           allowGuestToCreateAccounts:
             description: AllowGuestToCreateAccounts flag.
             type: bool
-          allowGuestToUseSocialAccounts:
-            description: AllowGuestToUseSocialAccounts flag.
-            type: bool
-          allowShowGuestForm:
-            description: AllowShowGuestForm flag.
-            type: bool
           aupDisplay:
-            description: Sponsored Guest Portal's aupDisplay.
+            description: How the AUP should be displayed, either on page or as a link.
+              Only valid if includeAup = true. Allowed values - ONPAGE, - ASLINK.
             type: str
           includeAup:
-            description: IncludeAup flag.
+            description: Include an Acceptable Use Policy (AUP) that should be displayed
+              during login.
             type: bool
           maxFailedAttemptsBeforeRateLimit:
-            description: Sponsored Guest Portal's maxFailedAttemptsBeforeRateLimit.
+            description: Maximum failed login attempts before rate limiting.
             type: int
           requireAccessCode:
             description: RequireAccessCode flag.
             type: bool
           requireAupAcceptance:
-            description: RequireAupAcceptance flag.
-            type: bool
-          requireAupScrolling:
-            description: RequireAupScrolling flag.
+            description: Require the portal user to accept the AUP. Only valid if includeAup
+              = true.
             type: bool
           socialConfigs:
             description: Sponsored Guest Portal's socialConfigs.
+            suboptions:
+              socialMediaType:
+                description: Sponsored Guest Portal's socialMediaType.
+                type: str
+              socialMediaValue:
+                description: Sponsored Guest Portal's socialMediaValue.
+                type: str
             type: list
           timeBetweenLoginsDuringRateLimit:
-            description: Sponsored Guest Portal's timeBetweenLoginsDuringRateLimit.
+            description: Time between login attempts when rate limiting.
             type: int
         type: dict
       portalSettings:
-        description: Sponsored Guest Portal's portalSettings.
+        description: The port, interface, certificate, and other basic settings of a
+          portal.
         suboptions:
           allowedInterfaces:
-            description: Sponsored Guest Portal's allowedInterfaces.
-            elements: str
-            type: list
+            description: Interfaces that the portal will be reachable on. Allowed values
+              - eth0, - eth1, - eth2, - eth3, - eth4, - eth5, - bond0, - bond1, - bond2.
+            type: str
           alwaysUsedLanguage:
             description: Sponsored Guest Portal's alwaysUsedLanguage.
             type: str
           assignedGuestTypeForEmployee:
-            description: Sponsored Guest Portal's assignedGuestTypeForEmployee.
+            description: Unique Id of a guest type. Employees using this portal as a
+              guest inherit login options from the guest type.
             type: str
           authenticationMethod:
-            description: Sponsored Guest Portal's authenticationMethod.
+            description: Unique Id of the identity source sequence.
             type: str
-          availableSsids:
-            description: Sponsored Guest Portal's availableSsids.
-            type: list
           certificateGroupTag:
-            description: Sponsored Guest Portal's certificateGroupTag.
+            description: Logical name of the x.509 server certificate that will be used
+              for the portal.
             type: str
           displayLang:
-            description: Sponsored Guest Portal's displayLang.
+            description: Allowed values - USEBROWSERLOCALE, - ALWAYSUSE.
             type: str
           fallbackLanguage:
-            description: Sponsored Guest Portal's fallbackLanguage.
+            description: Used when displayLang = USEBROWSERLOCALE.
             type: str
           httpsPort:
-            description: Sponsored Guest Portal's httpsPort.
+            description: The port number that the allowed interfaces will listen on.
+              Range from 8000 to 8999.
             type: int
         type: dict
-      postLoginBannerSettings:
-        description: Sponsored Guest Portal's postLoginBannerSettings.
+      postAccessBannerSettings:
+        description: Sponsored Guest Portal's postAccessBannerSettings.
         suboptions:
           includePostAccessBanner:
             description: IncludePostAccessBanner flag.
             type: bool
         type: dict
+      postLoginBannerSettings:
+        description: Sponsored Guest Portal's postLoginBannerSettings.
+        suboptions:
+          includePostAccessBanner:
+            description: Include a Post-Login Banner page.
+            type: bool
+        type: dict
       supportInfoSettings:
         description: Sponsored Guest Portal's supportInfoSettings.
         suboptions:
+          defaultEmptyFieldValue:
+            description: The default value displayed for an empty field. Only valid
+              when emptyFieldDisplay = DISPLAYWITHDEFAULTVALUE.
+            type: str
           emptyFieldDisplay:
-            description: Sponsored Guest Portal's emptyFieldDisplay.
+            description: Specifies how empty fields are handled on the Support Information
+              Page. Allowed values - HIDE, - DISPLAYWITHNOVALUE, - DISPLAYWITHDEFAULTVALUE.
             type: str
           includeBrowserUserAgent:
             description: IncludeBrowserUserAgent flag.
@@ -279,8 +379,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.sponsored_guest_portal
 # Reference by Internet resource
 - name: Sponsored Guest Portal reference
   description: Complete reference of the Sponsored Guest Portal object model.
@@ -288,97 +386,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.sponsored_guest_portal:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    customizations:
-      globalCustomizations:
-        bannerImage:
-          data: base 64 encoded value of image
-        bannerTitle: Banner Title
-        contactText: 'Contact Information '
-        desktopLogoImage:
-          data: base 64 encoded value of image
-        footerElement: Footer Element
-        mobileLogoImage:
-          data: base 64 encoded value of image
-      language:
-        viewLanguage: English
-      pageCustomizations:
-        data:
-        - key: ui_contact_link
-          value: Contact Support
-      portalTheme:
-        id: themeId
-        name: ThemeName
-        themeData: Base 64 encoded string of Theme CSS file
-      portalTweakSettings:
-        bannerColor: Banner Color from GUI
-        bannerTextColor: Banner Text color code from GUI
-        pageBackgroundColor: Color code from GUI
-        pageLabelAndTextColor: Label and Text color from GUI
-    description: description
-    id: id
-    name: name
-    portalType: SPONSOREDGUEST
-    settings:
-      aupSettings:
-        displayFrequency: FIRSTLOGIN
-        includeAup: false
-        requireAccessCode: false
-        requireScrolling: false
-        skipAupForEmployees: false
-        useDiffAupForEmployees: false
-      authSuccessSettings:
-        redirectUrl: www.cisco.com
-        successRedirect: AUTHSUCCESSPAGE
-      guestChangePasswordSettings:
-        allowChangePasswdAtFirstLogin: false
-      guestDeviceRegistrationSettings:
-        allowGuestsToRegisterDevices: true
-        autoRegisterGuestDevices: false
-      loginPageSettings:
-        accessCode: Access code
-        allowAlternateGuestPortal: false
-        allowGuestToChangePassword: false
-        allowGuestToCreateAccounts: false
-        allowGuestToUseSocialAccounts: false
-        allowShowGuestForm: false
-        aupDisplay: ASLINK
-        includeAup: false
-        maxFailedAttemptsBeforeRateLimit: 5
-        requireAccessCode: false
-        requireAupAcceptance: false
-        requireAupScrolling: false
-        socialConfigs: []
-        timeBetweenLoginsDuringRateLimit: 2
-      portalSettings:
-        allowedInterfaces:
-        - eth0
-        - bond0
-        alwaysUsedLanguage: English
-        assignedGuestTypeForEmployee: Guest Type
-        authenticationMethod: Identity Source
-        availableSsids: []
-        certificateGroupTag: Default Portal Certificate Group
-        displayLang: USEBROWSERLOCALE
-        fallbackLanguage: English
-        httpsPort: 8443
-      postLoginBannerSettings:
-        includePostAccessBanner: true
-      supportInfoSettings:
-        emptyFieldDisplay: HIDE
-        includeBrowserUserAgent: true
-        includeFailureCode: true
-        includeIpAddress: true
-        includeMacAddr: true
-        includePolicyServer: true
-        includeSupportInfoPage: false
-
 - name: Update by id
   cisco.ise.sponsored_guest_portal:
     ise_hostname: "{{ise_hostname}}"
@@ -388,87 +395,106 @@ EXAMPLES = r"""
     state: present
     customizations:
       globalCustomizations:
+        backgroundImage:
+          data: string
         bannerImage:
-          data: base 64 encoded value of image
-        bannerTitle: Banner Title
-        contactText: 'Contact Information '
+          data: string
+        bannerTitle: string
+        contactText: string
         desktopLogoImage:
-          data: base 64 encoded value of image
-        footerElement: Footer Element
+          data: string
+        footerElement: string
         mobileLogoImage:
-          data: base 64 encoded value of image
+          data: string
       language:
-        viewLanguage: English
+        viewLanguage: string
       pageCustomizations:
         data:
-        - key: ui_contact_link
-          value: Contact Support
+        - key: string
+          value: string
       portalTheme:
-        id: themeId
-        name: ThemeName
-        themeData: Base 64 encoded string of Theme CSS file
+        id: string
+        name: string
+        themeData: string
       portalTweakSettings:
-        bannerColor: Banner Color from GUI
-        bannerTextColor: Banner Text color code from GUI
-        pageBackgroundColor: Color code from GUI
-        pageLabelAndTextColor: Label and Text color from GUI
-    description: description
-    id: id
-    name: name
-    portalType: SPONSOREDGUEST
+        bannerColor: string
+        bannerTextColor: string
+        pageBackgroundColor: string
+        pageLabelAndTextColor: string
+    description: string
+    id: string
+    name: string
+    portalTestUrl: string
+    portalType: string
     settings:
       aupSettings:
-        displayFrequency: FIRSTLOGIN
-        includeAup: false
-        requireAccessCode: false
-        requireScrolling: false
-        skipAupForEmployees: false
-        useDiffAupForEmployees: false
+        displayFrequency: string
+        displayFrequencyIntervalDays: 0
+        includeAup: true
+        requireAupScrolling: true
+        requireScrolling: true
+        skipAupForEmployees: true
+        useDiffAupForEmployees: true
       authSuccessSettings:
-        redirectUrl: www.cisco.com
-        successRedirect: AUTHSUCCESSPAGE
+        redirectUrl: string
+        successRedirect: string
+      byodSettings:
+        byodRegistrationSettings:
+          endPointIdentityGroupId: string
+          showDeviceID: true
+        byodRegistrationSuccessSettings:
+          redirectUrl: string
+          successRedirect: string
+        byodWelcomeSettings:
+          aupDisplay: string
+          enableBYOD: true
+          enableGuestAccess: true
+          includeAup: true
+          requireAupAcceptance: true
+          requireMDM: true
+          requireScrolling: true
       guestChangePasswordSettings:
-        allowChangePasswdAtFirstLogin: false
+        allowChangePasswdAtFirstLogin: true
       guestDeviceRegistrationSettings:
         allowGuestsToRegisterDevices: true
-        autoRegisterGuestDevices: false
+        autoRegisterGuestDevices: true
       loginPageSettings:
-        accessCode: Access code
-        allowAlternateGuestPortal: false
-        allowGuestToChangePassword: false
-        allowGuestToCreateAccounts: false
-        allowGuestToUseSocialAccounts: false
-        allowShowGuestForm: false
-        aupDisplay: ASLINK
-        includeAup: false
-        maxFailedAttemptsBeforeRateLimit: 5
-        requireAccessCode: false
-        requireAupAcceptance: false
-        requireAupScrolling: false
-        socialConfigs: []
-        timeBetweenLoginsDuringRateLimit: 2
+        accessCode: string
+        allowAlternateGuestPortal: true
+        allowForgotPassword: true
+        allowGuestToChangePassword: true
+        allowGuestToCreateAccounts: true
+        aupDisplay: string
+        includeAup: true
+        maxFailedAttemptsBeforeRateLimit: 0
+        requireAccessCode: true
+        requireAupAcceptance: true
+        socialConfigs:
+        - socialMediaType: string
+          socialMediaValue: string
+        timeBetweenLoginsDuringRateLimit: 0
       portalSettings:
-        allowedInterfaces:
-        - eth0
-        - bond0
-        alwaysUsedLanguage: English
-        assignedGuestTypeForEmployee: Guest Type
-        authenticationMethod: Identity Source
-        availableSsids: []
-        certificateGroupTag: Default Portal Certificate Group
-        displayLang: USEBROWSERLOCALE
-        fallbackLanguage: English
-        httpsPort: 8443
+        allowedInterfaces: string
+        alwaysUsedLanguage: string
+        assignedGuestTypeForEmployee: string
+        authenticationMethod: string
+        certificateGroupTag: string
+        displayLang: string
+        fallbackLanguage: string
+        httpsPort: 0
+      postAccessBannerSettings:
+        includePostAccessBanner: true
       postLoginBannerSettings:
         includePostAccessBanner: true
       supportInfoSettings:
-        emptyFieldDisplay: HIDE
+        defaultEmptyFieldValue: string
+        emptyFieldDisplay: string
         includeBrowserUserAgent: true
         includeFailureCode: true
         includeIpAddress: true
         includeMacAddr: true
         includePolicyServer: true
-        includeSupportInfoPage: false
+        includeSupportInfoPage: true
 
 - name: Delete by id
   cisco.ise.sponsored_guest_portal:
@@ -479,6 +505,115 @@ EXAMPLES = r"""
     state: absent
     id: string
 
+- name: Create
+  cisco.ise.sponsored_guest_portal:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    customizations:
+      globalCustomizations:
+        backgroundImage:
+          data: string
+        bannerImage:
+          data: string
+        bannerTitle: string
+        contactText: string
+        desktopLogoImage:
+          data: string
+        footerElement: string
+        mobileLogoImage:
+          data: string
+      language:
+        viewLanguage: string
+      pageCustomizations:
+        data:
+        - key: string
+          value: string
+      portalTheme:
+        id: string
+        name: string
+        themeData: string
+      portalTweakSettings:
+        bannerColor: string
+        bannerTextColor: string
+        pageBackgroundColor: string
+        pageLabelAndTextColor: string
+    description: string
+    name: string
+    portalTestUrl: string
+    portalType: string
+    settings:
+      aupSettings:
+        displayFrequency: string
+        displayFrequencyIntervalDays: 0
+        includeAup: true
+        requireAupScrolling: true
+        requireScrolling: true
+        skipAupForEmployees: true
+        useDiffAupForEmployees: true
+      authSuccessSettings:
+        redirectUrl: string
+        successRedirect: string
+      byodSettings:
+        byodRegistrationSettings:
+          endPointIdentityGroupId: string
+          showDeviceID: true
+        byodRegistrationSuccessSettings:
+          redirectUrl: string
+          successRedirect: string
+        byodWelcomeSettings:
+          aupDisplay: string
+          enableBYOD: true
+          enableGuestAccess: true
+          includeAup: true
+          requireAupAcceptance: true
+          requireMDM: true
+          requireScrolling: true
+      guestChangePasswordSettings:
+        allowChangePasswdAtFirstLogin: true
+      guestDeviceRegistrationSettings:
+        allowGuestsToRegisterDevices: true
+        autoRegisterGuestDevices: true
+      loginPageSettings:
+        accessCode: string
+        allowAlternateGuestPortal: true
+        allowForgotPassword: true
+        allowGuestToChangePassword: true
+        allowGuestToCreateAccounts: true
+        aupDisplay: string
+        includeAup: true
+        maxFailedAttemptsBeforeRateLimit: 0
+        requireAccessCode: true
+        requireAupAcceptance: true
+        socialConfigs:
+        - socialMediaType: string
+          socialMediaValue: string
+        timeBetweenLoginsDuringRateLimit: 0
+      portalSettings:
+        allowedInterfaces: string
+        alwaysUsedLanguage: string
+        assignedGuestTypeForEmployee: string
+        authenticationMethod: string
+        certificateGroupTag: string
+        displayLang: string
+        fallbackLanguage: string
+        httpsPort: 0
+      postAccessBannerSettings:
+        includePostAccessBanner: true
+      postLoginBannerSettings:
+        includePostAccessBanner: true
+      supportInfoSettings:
+        defaultEmptyFieldValue: string
+        emptyFieldDisplay: string
+        includeBrowserUserAgent: true
+        includeFailureCode: true
+        includeIpAddress: true
+        includeMacAddr: true
+        includePolicyServer: true
+        includeSupportInfoPage: true
+
 """
 
 RETURN = r"""
@@ -487,5 +622,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

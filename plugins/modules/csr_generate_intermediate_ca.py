@@ -16,8 +16,6 @@ options: {}
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.csr_generate_intermediate_ca
 # Reference by Internet resource
 - name: Csr Generate Intermediate Ca reference
   description: Complete reference of the Csr Generate Intermediate Ca object model.
@@ -42,13 +40,13 @@ ise_response:
   sample: >
     {
       "response": {
-        "message": "string",
         "id": "string",
         "link": {
-          "rel": "string",
           "href": "string",
+          "rel": "string",
           "type": "string"
-        }
+        },
+        "message": "string"
       },
       "version": "string"
     }

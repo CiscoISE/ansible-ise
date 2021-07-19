@@ -15,6 +15,14 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  name:
+    description:
+    - Name path parameter.
+    type: str
+  id:
+    description:
+    - Id path parameter.
+    type: str
   page:
     description:
     - Page query parameter. Page number.
@@ -23,19 +31,9 @@ options:
     description:
     - Size query parameter. Number of objects returned per page.
     type: int
-  id:
-    description:
-    - Id path parameter.
-    type: str
-  name:
-    description:
-    - Name path parameter.
-    type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.allowed_protocols
 # Reference by Internet resource
 - name: Allowed Protocols reference
   description: Complete reference of the Allowed Protocols object model.
@@ -80,17 +78,23 @@ ise_response:
   type: dict
   sample: >
     {
+      "id": "string",
       "name": "string",
       "description": "string",
       "eapTls": {
         "allowEapTlsAuthOfExpiredCerts": true,
-        "eapTlsEnableStatelessSessionResume": true
+        "eapTlsEnableStatelessSessionResume": true,
+        "eapTlsSessionTicketTtl": 0,
+        "eapTlsSessionTicketTtlUnits": "string",
+        "eapTlsSessionTicketPrecentage": 0
       },
       "peap": {
         "allowPeapEapMsChapV2": true,
         "allowPeapEapMsChapV2PwdChange": true,
         "allowPeapEapMsChapV2PwdChangeRetries": 0,
         "allowPeapEapGtc": true,
+        "allowPeapEapGtcPwdChange": true,
+        "allowPeapEapGtcPwdChangeRetries": 0,
         "allowPeapEapTls": true,
         "allowPeapEapTlsAuthOfExpiredCerts": true,
         "requireCryptobinding": true,
@@ -111,8 +115,16 @@ ise_response:
         "eapFastUsePacsUseProactivePacUpdatePrecentage": 0,
         "eapFastUsePacsAllowAnonymProvisioning": true,
         "eapFastUsePacsAllowAuthenProvisioning": true,
+        "eapFastUsePacsReturnAccessAcceptAfterAuthenticatedProvisioning": true,
+        "eapFastUsePacsAcceptClientCert": true,
+        "eapFastUsePacsMachinePacTtl": 0,
+        "eapFastUsePacsMachinePacTtlUnits": "string",
         "eapFastUsePacsAllowMachineAuthentication": true,
         "eapFastUsePacsStatelessSessionResume": true,
+        "eapFastUsePacsAuthorizationPacTtl": 0,
+        "eapFastUsePacsAuthorizationPacTtlUnits": "string",
+        "eapFastDontUsePacsAcceptClientCert": true,
+        "eapFastDontUsePacsAllowMachineAuthentication": true,
         "eapFastEnableEAPChaining": true
       },
       "eapTtls": {
@@ -132,8 +144,8 @@ ise_response:
         "allowTeapEapTls": true,
         "allowTeapEapTlsAuthOfExpiredCerts": true,
         "acceptClientCertDuringTunnelEst": true,
-        "requestBasicPwdAuth": true,
-        "enableEapChaining": true
+        "enableEapChaining": true,
+        "allowDowngradeMsk": true
       },
       "processHostLookup": true,
       "allowPapAscii": true,
@@ -151,6 +163,11 @@ ise_response:
       "preferredEapProtocol": "string",
       "eapTlsLBit": true,
       "allowWeakCiphersForEap": true,
-      "requireMessageAuth": true
+      "requireMessageAuth": true,
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
+      }
     }
 """

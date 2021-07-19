@@ -22,8 +22,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.sxp_connections_bulk_request
 # Reference by Internet resource
 - name: Sxp Connections Bulk Request reference
   description: Complete reference of the Sxp Connections Bulk Request object model.
@@ -37,8 +35,8 @@ EXAMPLES = r"""
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
-    operationType: create
-    resourceMediaType: vnd.com.cisco.ise.sxp.sxpconnections.1.0+xml
+    operationType: string
+    resourceMediaType: string
 
 """
 

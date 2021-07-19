@@ -26,8 +26,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.guest_user_change_sponsor_password
 # Reference by Internet resource
 - name: Guest User Change Sponsor Password reference
   description: Complete reference of the Guest User Change Sponsor Password object model.
@@ -43,9 +41,9 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     additionalData:
     - name: currentPassword
-      value: '{{value_1}}'
+      value: password
     - name: newPassword
-      value: '{{value_2}}'
+      value: password
     portalId: string
 
 """

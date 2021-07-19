@@ -18,6 +18,10 @@ options:
     - Id path parameter.
     type: str
   additionalData:
+    description:
+    - AdditionalData part of the request body.
+    type: list
+  additionalData:
     description: Active Directory Is User Member Of Group's additionalData.
     suboptions:
       name:
@@ -30,8 +34,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.active_directory_is_user_member_of_group
 # Reference by Internet resource
 - name: Active Directory Is User Member Of Group reference
   description: Complete reference of the Active Directory Is User Member Of Group object model.
@@ -48,9 +50,10 @@ EXAMPLES = r"""
     id: string
     additionalData:
     - name: username
-      value: '{{username}}'
+      value: Required. Perform the check on this user
     - name: groupsids
-      value: '{{group_sids}}'
+      value: Required. Membership is looked for. The result will be a subset of this list
+        of the groups the user is a member of
   register: result
 
 """
@@ -60,6 +63,14 @@ ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {
+      "groups": [
+        {
+          "groupName": "string",
+          "sid": "string",
+          "type": "string"
+        }
+      ]
+    }
 """

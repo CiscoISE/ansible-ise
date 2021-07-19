@@ -15,6 +15,14 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  name:
+    description:
+    - Name path parameter.
+    type: str
+  id:
+    description:
+    - Id path parameter.
+    type: str
   page:
     description:
     - Page query parameter. Page number.
@@ -23,19 +31,9 @@ options:
     description:
     - Size query parameter. Number of objects returned per page.
     type: int
-  id:
-    description:
-    - Id path parameter.
-    type: str
-  name:
-    description:
-    - Name path parameter.
-    type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.authorization_profile
 # Reference by Internet resource
 - name: Authorization Profile reference
   description: Complete reference of the Authorization Profile object model.
@@ -88,10 +86,13 @@ ise_response:
           "leftHandSideDictionaryAttribue": {
             "AdvancedAttributeValueType": "string",
             "dictionaryName": "string",
-            "attributeName": "string"
+            "attributeName": "string",
+            "value": "string"
           },
           "rightHandSideAttribueValue": {
             "AdvancedAttributeValueType": "string",
+            "dictionaryName": "string",
+            "attributeName": "string",
             "value": "string"
           }
         }
@@ -117,6 +118,7 @@ ise_response:
       },
       "acl": "string",
       "trackMovement": true,
+      "agentlessPosture": true,
       "serviceTemplate": true,
       "easywiredSessionCandidate": true,
       "daclName": "string",
@@ -130,6 +132,11 @@ ise_response:
       "macSecPolicy": "string",
       "asaVpn": "string",
       "profileName": "string",
-      "ipv6DaclName": "string"
+      "ipv6DaclName": "string",
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
+      }
     }
 """

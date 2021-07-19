@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: backup_schedule_config
 short_description: Resource module for Backup Schedule Config
 description:
-- Manage operation create of the resource Backup Schedule Config.
+- Manage operation update of the resource Backup Schedule Config.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
@@ -27,27 +27,37 @@ options:
     description: The backup file will get saved with this name.
     type: str
   endDate:
-    description: End date of the scheduled backup job. Allowed format YYYY-MM-DD. End
+    description: End date of the scheduled backup job. Allowed format MM/DD/YYYY. End
       date is not required in case of ONE_TIME frequency.
     type: str
   frequency:
     description: Frequency with which the backup will get scheduled in the ISE node.
-      Allowed values - ONE_TIME, DAILY, WEEKLY, MONTHLY.
+      Allowed values - ONCE, DAILY, WEEKLY, MONTHLY.
+    type: str
+  monthDay:
+    description: Day of month you want backup to be performed on when scheduled frequency
+      is MONTHLY. Allowed values - from 1 to 28.
     type: str
   repositoryName:
-    description: Name of the repository where the generated backup file will get copied.
+    description: Name of the configured repository where the generated backup file will
+      get copied.
     type: str
   startDate:
-    description: Start date for scheduling the backup job. Allowed format YYYY-MM-DD.
+    description: Start date for scheduling the backup job. Allowed format MM/DD/YYYY.
+    type: str
+  status:
+    description: Enable or disable scheduled backup.
     type: str
   time:
     description: Time at which backup job get scheduled. Example- 12 00 AM.
     type: str
+  weekDay:
+    description: Day of week you want backup to be performed on when scheduled frequency
+      is WEEKLY. Allowed values - MON, TUE, WED, THU, FRI, SAT, SUN.
+    type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.backup_schedule_config
 # Reference by Internet resource
 - name: Backup Schedule Config reference
   description: Complete reference of the Backup Schedule Config object model.
@@ -55,6 +65,24 @@ seealso:
 """
 
 EXAMPLES = r"""
+- name: Update all
+  cisco.ise.backup_schedule_config:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    backupDescription: string
+    backupEncryptionKey: string
+    backupName: string
+    endDate: string
+    frequency: string
+    monthDay: string
+    repositoryName: string
+    startDate: string
+    status: string
+    time: string
+    weekDay: string
+
 - name: Create
   cisco.ise.backup_schedule_config:
     ise_hostname: "{{ise_hostname}}"
@@ -66,9 +94,12 @@ EXAMPLES = r"""
     backupName: string
     endDate: string
     frequency: string
+    monthDay: string
     repositoryName: string
     startDate: string
+    status: string
     time: string
+    weekDay: string
 
 """
 

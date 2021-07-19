@@ -16,8 +16,6 @@ options: {}
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.device_administration_identity_stores
 # Reference by Internet resource
 - name: Device Administration Identity Stores reference
   description: Complete reference of the Device Administration Identity Stores object model.
@@ -40,9 +38,12 @@ ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
   type: list
-  elements: str
+  elements: dict
   sample: >
     [
-      "string"
+      {
+        "id": "string",
+        "name": "string"
+      }
     ]
 """

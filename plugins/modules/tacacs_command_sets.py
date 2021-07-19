@@ -26,7 +26,7 @@ options:
             description: Tacacs Command Sets's command.
             type: str
           grant:
-            description: Tacacs Command Sets's grant.
+            description: Allowed values PERMIT, DENY, DENY_ALWAYS.
             type: str
         type: list
     type: dict
@@ -34,7 +34,7 @@ options:
     description: Tacacs Command Sets's description.
     type: str
   id:
-    description: Id path parameter.
+    description: Tacacs Command Sets's id.
     type: str
   name:
     description: Tacacs Command Sets's name.
@@ -45,8 +45,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.tacacs_command_sets
 # Reference by Internet resource
 - name: Tacacs Command Sets reference
   description: Complete reference of the Tacacs Command Sets object model.
@@ -54,22 +52,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.tacacs_command_sets:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    commands:
-      commandList:
-      - arguments: any host 10.1.1.2
-        command: deny
-        grant: DENY
-    description: Deny some command
-    name: DenySomeCommands
-    permitUnmatched: false
-
 - name: Update by id
   cisco.ise.tacacs_command_sets:
     ise_hostname: "{{ise_hostname}}"
@@ -79,13 +61,13 @@ EXAMPLES = r"""
     state: present
     commands:
       commandList:
-      - arguments: any host 10.1.1.2
-        command: deny
-        grant: DENY
-    description: Deny some command
+      - arguments: string
+        command: string
+        grant: string
+    description: string
     id: string
-    name: DenySomeCommands
-    permitUnmatched: false
+    name: string
+    permitUnmatched: true
 
 - name: Delete by id
   cisco.ise.tacacs_command_sets:
@@ -96,6 +78,22 @@ EXAMPLES = r"""
     state: absent
     id: string
 
+- name: Create
+  cisco.ise.tacacs_command_sets:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    commands:
+      commandList:
+      - arguments: string
+        command: string
+        grant: string
+    description: string
+    name: string
+    permitUnmatched: true
+
 """
 
 RETURN = r"""
@@ -104,5 +102,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

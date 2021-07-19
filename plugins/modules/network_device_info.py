@@ -15,6 +15,14 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  name:
+    description:
+    - Name path parameter.
+    type: str
+  id:
+    description:
+    - Id path parameter.
+    type: str
   page:
     description:
     - Page query parameter. Page number.
@@ -49,19 +57,9 @@ options:
       FilterType query parameter. The logical operator common to ALL filter criteria will be by default AND, and
       can be changed by using the parameter.
     type: str
-  id:
-    description:
-    - Id path parameter.
-    type: str
-  name:
-    description:
-    - Name path parameter.
-    type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.network_device
 # Reference by Internet resource
 - name: Network Device reference
   description: Complete reference of the Network Device object model.
@@ -110,21 +108,20 @@ ise_response:
   type: dict
   sample: >
     {
+      "id": "string",
       "name": "string",
       "description": "string",
       "authenticationSettings": {
         "networkProtocol": "string",
+        "secondRadiusSharedSecret": "string",
         "radiusSharedSecret": "string",
         "enableKeyWrap": true,
+        "enabled": true,
         "dtlsRequired": true,
+        "enableMultiSecret": true,
         "keyEncryptionKey": "string",
         "messageAuthenticatorCodeKey": "string",
-        "keyInputFormat": "string",
-        "enableMultiSecret": "string"
-      },
-      "tacacsSettings": {
-        "sharedSecret": "string",
-        "connectModeOptions": "string"
+        "keyInputFormat": "string"
       },
       "snmpsettings": {
         "version": "string",
@@ -132,9 +129,7 @@ ise_response:
         "pollingInterval": 0,
         "linkTrapQuery": true,
         "macTrapQuery": true,
-        "originatingPolicyServicesNode": "string",
-        "authPassowrd": "string",
-        "privacyPassowrd": "string"
+        "originatingPolicyServicesNode": "string"
       },
       "trustsecsettings": {
         "deviceAuthenticationSettings": {
@@ -154,21 +149,34 @@ ise_response:
         "deviceConfigurationDeployment": {
           "includeWhenDeployingSGTUpdates": true,
           "enableModePassword": "string",
-          "execModePassword": "string"
+          "execModePassword": "string",
+          "execModeUsername": "string"
         },
-        "pushIdSupport": "string"
+        "pushIdSupport": true
+      },
+      "tacacsSettings": {
+        "sharedSecret": "string",
+        "connectModeOptions": "string"
       },
       "profileName": "string",
       "coaPort": 0,
       "dtlsDnsName": "string",
+      "modelName": "string",
+      "softwareVersion": "string",
       "NetworkDeviceIPList": [
         {
           "ipaddress": "string",
-          "mask": 0
+          "mask": 0,
+          "getIpaddressExclude": "string"
         }
       ],
       "NetworkDeviceGroupList": [
         "string"
-      ]
+      ],
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
+      }
     }
 """

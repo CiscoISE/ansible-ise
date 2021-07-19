@@ -16,8 +16,6 @@ options: {}
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.pan_ha
 # Reference by Internet resource
 - name: Pan Ha reference
   description: Complete reference of the Pan Ha object model.

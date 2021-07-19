@@ -14,16 +14,25 @@ version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
   customizations:
-    description: Byod Portal's customizations.
+    description: Defines all of the Portal Customizations available for a BYOD.
     suboptions:
       globalCustomizations:
-        description: Byod Portal's globalCustomizations.
+        description: Represent the portal Global customizations.
         suboptions:
+          backgroundImage:
+            description: Byod Portal's backgroundImage.
+            suboptions:
+              data:
+                description: Represented as base 64 encoded string of the image byte
+                  array.
+                type: str
+            type: dict
           bannerImage:
             description: Byod Portal's bannerImage.
             suboptions:
               data:
-                description: Byod Portal's data.
+                description: Represented as base 64 encoded string of the image byte
+                  array.
                 type: str
             type: dict
           bannerTitle:
@@ -36,7 +45,8 @@ options:
             description: Byod Portal's desktopLogoImage.
             suboptions:
               data:
-                description: Byod Portal's data.
+                description: Represented as base 64 encoded string of the image byte
+                  array.
                 type: str
             type: dict
           footerElement:
@@ -46,22 +56,24 @@ options:
             description: Byod Portal's mobileLogoImage.
             suboptions:
               data:
-                description: Byod Portal's data.
+                description: Represented as base 64 encoded string of the image byte
+                  array.
                 type: str
             type: dict
         type: dict
       language:
-        description: Byod Portal's language.
+        description: This property is supported only for Read operation and it allows
+          to show the customizations in English. Other languages are not supported.
         suboptions:
           viewLanguage:
             description: Byod Portal's viewLanguage.
             type: str
         type: dict
       pageCustomizations:
-        description: Byod Portal's pageCustomizations.
+        description: Represent the entire page customization as a giant dictionary.
         suboptions:
           data:
-            description: Byod Portal's data.
+            description: The Dictionary will be exposed here as key value pair.
             suboptions:
               key:
                 description: Byod Portal's key.
@@ -72,23 +84,26 @@ options:
             type: list
         type: dict
       portalTheme:
-        description: Byod Portal's portalTheme.
+        description: Defines the configuration for portal theme.
         suboptions:
           id:
-            description: Byod Portal's id.
+            description: The unique internal identifier of the portal theme.
             type: str
           name:
-            description: Byod Portal's name.
+            description: The system- or user-assigned name of the portal theme.
             type: str
           themeData:
-            description: Byod Portal's themeData.
+            description: A CSS file, represented as a Base64-encoded byte array.
             type: str
         type: dict
       portalTweakSettings:
-        description: Byod Portal's portalTweakSettings.
+        description: The Tweak Settings are a customization of the Portal Theme that
+          has been selected for the portal. When the Portal Theme selection is changed,
+          the Tweak Settings are overwritten to match the values in the theme. The Tweak
+          Settings can subsequently be changed by the user.
         suboptions:
           bannerColor:
-            description: Byod Portal's bannerColor.
+            description: Hex value of color.
             type: str
           bannerTextColor:
             description: Byod Portal's bannerTextColor.
@@ -105,19 +120,24 @@ options:
     description: Byod Portal's description.
     type: str
   id:
-    description: Byod Portal's id.
+    description: Resource UUID, mandatory for update.
     type: str
   name:
-    description: Byod Portal's name.
+    description: Resource Name.
+    type: str
+  portalTestUrl:
+    description: URL to bring up a test page for this portal.
     type: str
   portalType:
-    description: Byod Portal's portalType.
+    description: Allowed values - BYOD, - HOTSPOTGUEST, - MYDEVICE, - SELFREGGUEST,
+      - SPONSOR, - SPONSOREDGUEST.
     type: str
   settings:
-    description: Byod Portal's settings.
+    description: Defines all of the settings groups available for a BYOD.
     suboptions:
       byodSettings:
-        description: Byod Portal's byodSettings.
+        description: Configuration of BYOD Device Welcome, Registration and Success
+          steps.
         suboptions:
           byodRegistrationSettings:
             description: Byod Portal's byodRegistrationSettings.
@@ -133,17 +153,21 @@ options:
             description: Byod Portal's byodRegistrationSuccessSettings.
             suboptions:
               redirectUrl:
-                description: Byod Portal's redirectUrl.
+                description: Target URL for redirection, used when successRedirect =
+                  URL.
                 type: str
               successRedirect:
-                description: Byod Portal's successRedirect.
+                description: After an Authentication Success where should device be
+                  redirected. Allowed values.
                 type: str
             type: dict
           byodWelcomeSettings:
-            description: Byod Portal's byodWelcomeSettings.
+            description: Configuration of BYOD endpoint welcome step configuration.
             suboptions:
               aupDisplay:
-                description: Byod Portal's aupDisplay.
+                description: How the AUP should be displayed, either on page or as a
+                  link. Only valid if includeAup = true. Allowed values - ONPAGE, -
+                  ASLINK.
                 type: str
               enableBYOD:
                 description: EnableBYOD flag.
@@ -161,41 +185,52 @@ options:
                 description: RequireMDM flag.
                 type: bool
               requireScrolling:
-                description: RequireScrolling flag.
+                description: Require BYOD devices to scroll down to the bottom of the
+                  AUP, Only valid if includeAup = true.
                 type: bool
             type: dict
         type: dict
       portalSettings:
-        description: Byod Portal's portalSettings.
+        description: The port, interface, certificate, and other basic settings of a
+          portal.
         suboptions:
           allowedInterfaces:
-            description: Byod Portal's allowedInterfaces.
+            description: Interfaces that the portal will be reachable on. Allowed values
+              - eth0, - eth1, - eth2, - eth3, - eth4, - eth5, - bond0, - bond1, - bond2.
             elements: str
             type: list
           alwaysUsedLanguage:
-            description: Byod Portal's alwaysUsedLanguage.
+            description: Used when displayLang = ALWAYSUSE.
             type: str
-          availableSsids:
-            description: Byod Portal's availableSsids.
-            type: list
           certificateGroupTag:
-            description: Byod Portal's certificateGroupTag.
+            description: Logical name of the x.509 server certificate that will be used
+              for the portal.
             type: str
           displayLang:
-            description: Byod Portal's displayLang.
+            description: Allowed values - USEBROWSERLOCALE, - ALWAYSUSE.
+            type: str
+          endpointIdentityGroup:
+            description: Unique Id of the endpoint identity group where user's devices
+              will be added. Used only in Hotspot Portal.
             type: str
           fallbackLanguage:
-            description: Byod Portal's fallbackLanguage.
+            description: Used when displayLang = USEBROWSERLOCALE.
             type: str
           httpsPort:
-            description: Byod Portal's httpsPort.
+            description: The port number that the allowed interfaces will listen on.
+              Range from 8000 to 8999.
             type: int
         type: dict
       supportInfoSettings:
         description: Byod Portal's supportInfoSettings.
         suboptions:
+          defaultEmptyFieldValue:
+            description: The default value displayed for an empty field. Only valid
+              when emptyFieldDisplay = DISPLAYWITHDEFAULTVALUE.
+            type: str
           emptyFieldDisplay:
-            description: Byod Portal's emptyFieldDisplay.
+            description: Specifies how empty fields are handled on the Support Information
+              Page. Allowed values - HIDE, - DISPLAYWITHNOVALUE, - DISPLAYWITHDEFAULTVALUE.
             type: str
           includeBrowserUserAgent:
             description: IncludeBrowserUserAgent flag.
@@ -220,8 +255,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.byod_portal
 # Reference by Internet resource
 - name: Byod Portal reference
   description: Complete reference of the Byod Portal object model.
@@ -229,78 +262,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.byod_portal:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    customizations:
-      globalCustomizations:
-        bannerImage:
-          data: base 64 encoded value of image
-        bannerTitle: Banner Title
-        contactText: 'Contact Information '
-        desktopLogoImage:
-          data: base 64 encoded value of image
-        footerElement: Footer Element
-        mobileLogoImage:
-          data: base 64 encoded value of image
-      language:
-        viewLanguage: English
-      pageCustomizations:
-        data:
-        - key: ui_contact_link
-          value: Contact Support
-      portalTheme:
-        id: themeId
-        name: ThemeName
-        themeData: Base 64 encoded string of Theme CSS file
-      portalTweakSettings:
-        bannerColor: Banner Color from GUI
-        bannerTextColor: Banner Text color code from GUI
-        pageBackgroundColor: Color code from GUI
-        pageLabelAndTextColor: Label and Text color from GUI
-    description: description
-    id: id
-    name: name
-    portalType: BYOD
-    settings:
-      byodSettings:
-        byodRegistrationSettings:
-          endPointIdentityGroupId: End Identity Group ID
-          showDeviceID: true
-        byodRegistrationSuccessSettings:
-          redirectUrl: Redirect URL
-          successRedirect: AUTHSUCCESSPAGE
-        byodWelcomeSettings:
-          aupDisplay: ASLINK
-          enableBYOD: true
-          enableGuestAccess: false
-          includeAup: true
-          requireAupAcceptance: false
-          requireMDM: false
-          requireScrolling: false
-      portalSettings:
-        allowedInterfaces:
-        - eth0
-        - bond0
-        alwaysUsedLanguage: English
-        availableSsids: []
-        certificateGroupTag: Default Portal Certificate Group
-        displayLang: USEBROWSERLOCALE
-        fallbackLanguage: English
-        httpsPort: 8443
-      supportInfoSettings:
-        emptyFieldDisplay: HIDE
-        includeBrowserUserAgent: true
-        includeFailureCode: true
-        includeIpAddress: true
-        includeMacAddr: true
-        includePolicyServer: true
-        includeSupportInfoPage: false
-
 - name: Update by id
   cisco.ise.byod_portal:
     ise_hostname: "{{ise_hostname}}"
@@ -310,68 +271,71 @@ EXAMPLES = r"""
     state: present
     customizations:
       globalCustomizations:
+        backgroundImage:
+          data: string
         bannerImage:
-          data: base 64 encoded value of image
-        bannerTitle: Banner Title
-        contactText: 'Contact Information '
+          data: string
+        bannerTitle: string
+        contactText: string
         desktopLogoImage:
-          data: base 64 encoded value of image
-        footerElement: Footer Element
+          data: string
+        footerElement: string
         mobileLogoImage:
-          data: base 64 encoded value of image
+          data: string
       language:
-        viewLanguage: English
+        viewLanguage: string
       pageCustomizations:
         data:
-        - key: ui_contact_link
-          value: Contact Support
+        - key: string
+          value: string
       portalTheme:
-        id: themeId
-        name: ThemeName
-        themeData: Base 64 encoded string of Theme CSS file
+        id: string
+        name: string
+        themeData: string
       portalTweakSettings:
-        bannerColor: Banner Color from GUI
-        bannerTextColor: Banner Text color code from GUI
-        pageBackgroundColor: Color code from GUI
-        pageLabelAndTextColor: Label and Text color from GUI
-    description: description
-    id: id
-    name: name
-    portalType: BYOD
+        bannerColor: string
+        bannerTextColor: string
+        pageBackgroundColor: string
+        pageLabelAndTextColor: string
+    description: string
+    id: string
+    name: string
+    portalTestUrl: string
+    portalType: string
     settings:
       byodSettings:
         byodRegistrationSettings:
-          endPointIdentityGroupId: End Identity Group ID
+          endPointIdentityGroupId: string
           showDeviceID: true
         byodRegistrationSuccessSettings:
-          redirectUrl: Redirect URL
-          successRedirect: AUTHSUCCESSPAGE
+          redirectUrl: string
+          successRedirect: string
         byodWelcomeSettings:
-          aupDisplay: ASLINK
+          aupDisplay: string
           enableBYOD: true
-          enableGuestAccess: false
+          enableGuestAccess: true
           includeAup: true
-          requireAupAcceptance: false
-          requireMDM: false
-          requireScrolling: false
+          requireAupAcceptance: true
+          requireMDM: true
+          requireScrolling: true
       portalSettings:
         allowedInterfaces:
-        - eth0
-        - bond0
-        alwaysUsedLanguage: English
-        availableSsids: []
-        certificateGroupTag: Default Portal Certificate Group
-        displayLang: USEBROWSERLOCALE
-        fallbackLanguage: English
-        httpsPort: 8443
+        - string
+        alwaysUsedLanguage: string
+        certificateGroupTag: string
+        displayLang: string
+        endpointIdentityGroup: string
+        fallbackLanguage: string
+        httpsPort: 0
       supportInfoSettings:
-        emptyFieldDisplay: HIDE
+        defaultEmptyFieldValue: string
+        emptyFieldDisplay: string
         includeBrowserUserAgent: true
         includeFailureCode: true
         includeIpAddress: true
         includeMacAddr: true
         includePolicyServer: true
-        includeSupportInfoPage: false
+        includeSupportInfoPage: true
 
 - name: Delete by id
   cisco.ise.byod_portal:
@@ -382,6 +346,81 @@ EXAMPLES = r"""
     state: absent
     id: string
 
+- name: Create
+  cisco.ise.byod_portal:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    customizations:
+      globalCustomizations:
+        backgroundImage:
+          data: string
+        bannerImage:
+          data: string
+        bannerTitle: string
+        contactText: string
+        desktopLogoImage:
+          data: string
+        footerElement: string
+        mobileLogoImage:
+          data: string
+      language:
+        viewLanguage: string
+      pageCustomizations:
+        data:
+        - key: string
+          value: string
+      portalTheme:
+        id: string
+        name: string
+        themeData: string
+      portalTweakSettings:
+        bannerColor: string
+        bannerTextColor: string
+        pageBackgroundColor: string
+        pageLabelAndTextColor: string
+    description: string
+    id: string
+    name: string
+    portalTestUrl: string
+    portalType: string
+    settings:
+      byodSettings:
+        byodRegistrationSettings:
+          endPointIdentityGroupId: string
+          showDeviceID: true
+        byodRegistrationSuccessSettings:
+          redirectUrl: string
+          successRedirect: string
+        byodWelcomeSettings:
+          aupDisplay: string
+          enableBYOD: true
+          enableGuestAccess: true
+          includeAup: true
+          requireAupAcceptance: true
+          requireMDM: true
+          requireScrolling: true
+      portalSettings:
+        allowedInterfaces:
+        - string
+        alwaysUsedLanguage: string
+        certificateGroupTag: string
+        displayLang: string
+        endpointIdentityGroup: string
+        fallbackLanguage: string
+        httpsPort: 0
+      supportInfoSettings:
+        defaultEmptyFieldValue: string
+        emptyFieldDisplay: string
+        includeBrowserUserAgent: true
+        includeFailureCode: true
+        includeIpAddress: true
+        includeMacAddr: true
+        includePolicyServer: true
+        includeSupportInfoPage: true
+
 """
 
 RETURN = r"""
@@ -390,5 +429,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

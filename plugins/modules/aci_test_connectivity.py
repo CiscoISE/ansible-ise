@@ -16,8 +16,6 @@ options: {}
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.aci_test_connectivity
 # Reference by Internet resource
 - name: Aci Test Connectivity reference
   description: Complete reference of the Aci Test Connectivity object model.
@@ -40,5 +38,9 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "ACITestConnectionResult": {
+        "result": true
+      }
+    }
 """

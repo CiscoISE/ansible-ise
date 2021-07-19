@@ -65,8 +65,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.system_certificate
 # Reference by Internet resource
 - name: System Certificate reference
   description: Complete reference of the System Certificate object model.
@@ -74,16 +72,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Delete by id
-  cisco.ise.system_certificate:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
-    hostName: string
-    id: string
-
 - name: Update by id
   cisco.ise.system_certificate:
     ise_hostname: "{{ise_hostname}}"
@@ -108,6 +96,16 @@ EXAMPLES = r"""
     renewSelfSignedCertificate: true
     saml: true
 
+- name: Delete by id
+  cisco.ise.system_certificate:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: absent
+    hostName: string
+    id: string
+
 """
 
 RETURN = r"""
@@ -118,7 +116,14 @@ ise_response:
   sample: >
     {
       "response": {
-        "message": "string"
+        "id": "string",
+        "link": {
+          "href": "string",
+          "rel": "string",
+          "type": "string"
+        },
+        "message": "string",
+        "status": "string"
       },
       "version": "string"
     }

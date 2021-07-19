@@ -16,8 +16,6 @@ options: {}
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.endpoint_get_rejected_endpoints
 # Reference by Internet resource
 - name: Endpoint Get Rejected Endpoints reference
   description: Complete reference of the Endpoint Get Rejected Endpoints object model.

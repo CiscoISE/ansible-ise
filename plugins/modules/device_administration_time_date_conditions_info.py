@@ -21,8 +21,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.device_administration_time_date_conditions
 # Reference by Internet resource
 - name: Device Administration Time Date Conditions reference
   description: Complete reference of the Device Administration Time Date Conditions object model.
@@ -56,44 +54,7 @@ ise_response:
   type: dict
   sample: >
     {
-      "conditionType": "string",
-      "isNegate": true,
-      "name": "string",
-      "id": "string",
-      "description": "string",
-      "dictionaryName": "string",
-      "attributeName": "string",
-      "attributeId": "string",
-      "operator": "string",
-      "dictionaryValue": "string",
-      "attributeValue": "string",
-      "children": [
-        {
-          "conditionType": "string",
-          "isNegate": true
-        }
-      ],
-      "hoursRange": {
-        "startTime": "string",
-        "endTime": "string"
-      },
-      "hoursRangeException": {
-        "startTime": "string",
-        "endTime": "string"
-      },
-      "weekDays": [
-        "string"
-      ],
-      "weekDaysException": [
-        "string"
-      ],
-      "datesRange": {
-        "startDate": "string",
-        "endDate": "string"
-      },
-      "datesRangeException": {
-        "startDate": "string",
-        "endDate": "string"
-      }
+      "response": {},
+      "version": "string"
     }
 """

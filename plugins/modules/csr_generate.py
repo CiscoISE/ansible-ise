@@ -75,8 +75,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.csr_generate
 # Reference by Internet resource
 - name: Csr Generate reference
   description: Complete reference of the Csr Generate object model.
@@ -125,13 +123,13 @@ ise_response:
     {
       "response": [
         {
-          "message": "string",
           "id": "string",
           "link": {
-            "rel": "string",
             "href": "string",
+            "rel": "string",
             "type": "string"
-          }
+          },
+          "message": "string"
         }
       ],
       "version": "string"

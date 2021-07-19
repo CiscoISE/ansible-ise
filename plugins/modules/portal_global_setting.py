@@ -14,7 +14,7 @@ version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
   customization:
-    description: Portal Global Setting's customization.
+    description: Allowed values - HTML, - HTMLANDJAVASCRIPT.
     type: str
   id:
     description: Portal Global Setting's id.
@@ -22,8 +22,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.portal_global_setting
 # Reference by Internet resource
 - name: Portal Global Setting reference
   description: Complete reference of the Portal Global Setting object model.
@@ -38,8 +36,8 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    customization: HTMLANDJAVASCRIPT
-    id: 21013cb2-d030-4fb1-9ba2-35757634d770
+    customization: string
+    id: string
 
 """
 
@@ -51,9 +49,14 @@ ise_response:
   sample: >
     {
       "UpdatedFieldsList": {
-        "updatedField": [
-          "string"
-        ]
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
       }
     }
 """

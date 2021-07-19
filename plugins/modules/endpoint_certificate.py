@@ -9,37 +9,41 @@ DOCUMENTATION = r"""
 module: endpoint_certificate
 short_description: Resource module for Endpoint Certificate
 description:
-- Manage operation create of the resource Endpoint Certificate.
+- Manage operation update of the resource Endpoint Certificate.
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
   certTemplateName:
-    description: Endpoint Certificate's certTemplateName.
+    description: Name of an Internal CA template.
     type: str
   certificateRequest:
-    description: Endpoint Certificate's certificateRequest.
+    description: Key value map. Must have CN and SAN entries.
     suboptions:
       cn:
-        description: Endpoint Certificate's cn.
+        description: Matches the requester's User Name, unless the Requester is an ERS
+          Admin. ERS Admins are allowed to create requests for any CN.
         type: str
       san:
-        description: Endpoint Certificate's san.
+        description: Valid MAC Address, delimited by '-'.
         type: str
     type: dict
+  dirPath:
+    description: Directory absolute path. Defaults to the current working directory.
+    type: str
   format:
-    description: Endpoint Certificate's format.
+    description: Allowed values - PKCS12, - PKCS12_CHAIN, - PKCS8, - PKCS8_CHAIN.
     type: str
   password:
-    description: Endpoint Certificate's password.
+    description: Protects the private key. Must have more than 8 characters, less than
+      15 characters, at least one upper case letter, at least one lower case letter,
+      at least one digit, and can only contain A-Za-z0-9_#.
     type: str
-  dirPath:
-    description: Directory absolute path. Defaults to current working directory
-    type: str
+  saveFile:
+    description: Enable or disable automatic file creation of raw response.
+    type: bool
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.endpoint_certificate
 # Reference by Internet resource
 - name: Endpoint Certificate reference
   description: Complete reference of the Endpoint Certificate object model.
@@ -53,13 +57,14 @@ EXAMPLES = r"""
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
-    certTemplateName: Certificate_Template_Name
+    certTemplateName: string
     certificateRequest:
-      cn: userName [or] machineName
-      san: 11-22-33-44-55-66
-    format: PKCS8 [or] PKCS8_CHAIN [or] PKCS12 [or] PKCS12_CHAIN
-    password: password
-    dirPath: '/tmp'
+      cn: string
+      san: string
+    dirPath: /tmp/downloads/
+    format: string
+    password: string
+    saveFile: true
 
 """
 

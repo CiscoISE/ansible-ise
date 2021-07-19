@@ -22,6 +22,19 @@ options:
   id:
     description: Identifier for the dictionary.
     type: str
+  link:
+    description: Network Access Dictionary's link.
+    suboptions:
+      href:
+        description: Network Access Dictionary's href.
+        type: str
+      rel:
+        description: Network Access Dictionary's rel.
+        type: str
+      type:
+        description: Network Access Dictionary's type.
+        type: str
+    type: dict
   name:
     description: The dictionary name.
     type: str
@@ -31,8 +44,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.network_access_dictionary
 # Reference by Internet resource
 - name: Network Access Dictionary reference
   description: Complete reference of the Network Access Dictionary object model.
@@ -50,6 +61,10 @@ EXAMPLES = r"""
     description: string
     dictionaryAttrType: string
     id: string
+    link:
+      href: string
+      rel: string
+      type: string
     name: string
     version: string
 
@@ -63,6 +78,10 @@ EXAMPLES = r"""
     description: string
     dictionaryAttrType: string
     id: string
+    link:
+      href: string
+      rel: string
+      type: string
     name: string
     version: string
 
@@ -84,10 +103,18 @@ ise_response:
   type: dict
   sample: >
     {
-      "id": "string",
-      "name": "string",
-      "description": "string",
-      "version": "string",
-      "dictionaryAttrType": "string"
+      "response": {
+        "description": "string",
+        "dictionaryAttrType": "string",
+        "id": "string",
+        "link": {
+          "href": "string",
+          "rel": "string",
+          "type": "string"
+        },
+        "name": "string",
+        "version": "string"
+      },
+      "version": "string"
     }
 """

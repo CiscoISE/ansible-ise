@@ -19,8 +19,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.node_sync
 # Reference by Internet resource
 - name: Node Sync reference
   description: Complete reference of the Node Sync object model.

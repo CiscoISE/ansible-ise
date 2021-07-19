@@ -14,12 +14,15 @@ version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
   NetworkDeviceGroupList:
-    description: Network Device's NetworkDeviceGroupList.
+    description: List of Network Device Group names for this node.
     elements: str
     type: list
   NetworkDeviceIPList:
-    description: Network Device's NetworkDeviceIPList.
+    description: List of IP Subnets for this node.
     suboptions:
+      getIpaddressExclude:
+        description: It can be either single IP address or IP range address.
+        type: str
       ipaddress:
         description: Network Device's ipaddress.
         type: str
@@ -31,28 +34,34 @@ options:
     description: Network Device's authenticationSettings.
     suboptions:
       dtlsRequired:
-        description: DtlsRequired flag.
+        description: This value enforces use of dtls.
         type: bool
       enableKeyWrap:
         description: EnableKeyWrap flag.
         type: bool
       enableMultiSecret:
-        description: Network Device's enableMultiSecret.
-        type: str
+        description: EnableMultiSecret flag.
+        type: bool
+      enabled:
+        description: Enabled flag.
+        type: bool
       keyEncryptionKey:
         description: Network Device's keyEncryptionKey.
         type: str
       keyInputFormat:
-        description: Network Device's keyInputFormat.
+        description: Allowed values - ASCII, - HEXADECIMAL.
         type: str
       messageAuthenticatorCodeKey:
         description: Network Device's messageAuthenticatorCodeKey.
         type: str
       networkProtocol:
-        description: Network Device's networkProtocol.
+        description: Allowed values - RADIUS, - TACACS_PLUS.
         type: str
       radiusSharedSecret:
         description: Network Device's radiusSharedSecret.
+        type: str
+      secondRadiusSharedSecret:
+        description: Network Device's secondRadiusSharedSecret.
         type: str
     type: dict
   coaPort:
@@ -62,10 +71,14 @@ options:
     description: Network Device's description.
     type: str
   dtlsDnsName:
-    description: Network Device's dtlsDnsName.
+    description: This value is used to verify the client identity contained in the X.509
+      RADIUS/DTLS client certificate.
     type: str
   id:
-    description: Id path parameter.
+    description: Network Device's id.
+    type: str
+  modelName:
+    description: Network Device's modelName.
     type: str
   name:
     description: Network Device's name.
@@ -76,9 +89,6 @@ options:
   snmpsettings:
     description: Network Device's snmpsettings.
     suboptions:
-      authPassowrd:
-        description: Network Device's authPassowrd.
-        type: str
       linkTrapQuery:
         description: LinkTrapQuery flag.
         type: bool
@@ -91,9 +101,6 @@ options:
       pollingInterval:
         description: Network Device's pollingInterval.
         type: int
-      privacyPassowrd:
-        description: Network Device's privacyPassowrd.
-        type: str
       roCommunity:
         description: Network Device's roCommunity.
         type: str
@@ -101,11 +108,14 @@ options:
         description: Network Device's version.
         type: str
     type: dict
+  softwareVersion:
+    description: Network Device's softwareVersion.
+    type: str
   tacacsSettings:
     description: Network Device's tacacsSettings.
     suboptions:
       connectModeOptions:
-        description: Network Device's connectModeOptions.
+        description: Allowed values - OFF, - ON_LEGACY, - ON_DRAFT_COMPLIANT.
         type: str
       sharedSecret:
         description: Network Device's sharedSecret.
@@ -133,13 +143,16 @@ options:
           execModePassword:
             description: Network Device's execModePassword.
             type: str
+          execModeUsername:
+            description: Network Device's execModeUsername.
+            type: str
           includeWhenDeployingSGTUpdates:
             description: IncludeWhenDeployingSGTUpdates flag.
             type: bool
         type: dict
       pushIdSupport:
-        description: Network Device's pushIdSupport.
-        type: str
+        description: PushIdSupport flag.
+        type: bool
       sgaNotificationAndUpdates:
         description: Network Device's sgaNotificationAndUpdates.
         suboptions:
@@ -165,15 +178,13 @@ options:
             description: SendConfigurationToDevice flag.
             type: bool
           sendConfigurationToDeviceUsing:
-            description: Network Device's sendConfigurationToDeviceUsing.
+            description: Allowed values - ENABLE_USING_COA, - ENABLE_USING_CLI, - DISABLE_ALL.
             type: str
         type: dict
     type: dict
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.network_device
 # Reference by Internet resource
 - name: Network Device reference
   description: Complete reference of the Network Device object model.
@@ -181,62 +192,6 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Create
-  cisco.ise.network_device:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    NetworkDeviceGroupList:
-    - Location#All Locations
-    - IPSEC#Is IPSEC Device#No
-    - Device Type#All Device Types
-    NetworkDeviceIPList:
-    - ipaddress: 1.2.3.4
-      mask: 32
-    authenticationSettings:
-      networkProtocol: RADIUS
-      radiusSharedSecret: C1sco12345
-    description: ''
-    name: nad
-    tacacsSettings:
-      connectModeOptions: false
-      sharedSecret: C1sco12345
-
-- name: Update by id
-  cisco.ise.network_device:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: present
-    NetworkDeviceGroupList:
-    - Location#All Locations
-    - IPSEC#Is IPSEC Device#No
-    - Device Type#All Device Types
-    NetworkDeviceIPList:
-    - ipaddress: 1.2.3.4
-      mask: 32
-    authenticationSettings:
-      networkProtocol: RADIUS
-      radiusSharedSecret: C1sco12345
-    description: ''
-    id: string
-    name: nad
-    tacacsSettings:
-      connectModeOptions: false
-      sharedSecret: C1sco12345
-
-- name: Delete by id
-  cisco.ise.network_device:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
-    id: string
-
 - name: Update by name
   cisco.ise.network_device:
     ise_hostname: "{{ise_hostname}}"
@@ -245,20 +200,59 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     NetworkDeviceGroupList:
-    - Location#All Locations
-    - IPSEC#Is IPSEC Device#No
-    - Device Type#All Device Types
+    - string
     NetworkDeviceIPList:
-    - ipaddress: 1.2.3.4
-      mask: 32
+    - getIpaddressExclude: string
+      ipaddress: string
+      mask: 0
     authenticationSettings:
-      networkProtocol: RADIUS
-      radiusSharedSecret: C1sco12345
-    description: ''
-    name: nad
+      dtlsRequired: true
+      enableKeyWrap: true
+      enableMultiSecret: true
+      enabled: true
+      keyEncryptionKey: string
+      keyInputFormat: string
+      messageAuthenticatorCodeKey: string
+      networkProtocol: string
+      radiusSharedSecret: string
+      secondRadiusSharedSecret: string
+    coaPort: 0
+    description: string
+    dtlsDnsName: string
+    id: string
+    modelName: string
+    name: string
+    profileName: string
+    snmpsettings:
+      linkTrapQuery: true
+      macTrapQuery: true
+      originatingPolicyServicesNode: string
+      pollingInterval: 0
+      roCommunity: string
+      version: string
+    softwareVersion: string
     tacacsSettings:
-      connectModeOptions: false
-      sharedSecret: C1sco12345
+      connectModeOptions: string
+      sharedSecret: string
+    trustsecsettings:
+      deviceAuthenticationSettings:
+        sgaDeviceId: string
+        sgaDevicePassword: string
+      deviceConfigurationDeployment:
+        enableModePassword: string
+        execModePassword: string
+        execModeUsername: string
+        includeWhenDeployingSGTUpdates: true
+      pushIdSupport: true
+      sgaNotificationAndUpdates:
+        coaSourceHost: string
+        downlaodEnvironmentDataEveryXSeconds: 0
+        downlaodPeerAuthorizationPolicyEveryXSeconds: 0
+        downloadSGACLListsEveryXSeconds: 0
+        otherSGADevicesToTrustThisDevice: true
+        reAuthenticationEveryXSeconds: 0
+        sendConfigurationToDevice: true
+        sendConfigurationToDeviceUsing: string
 
 - name: Delete by name
   cisco.ise.network_device:
@@ -269,6 +263,138 @@ EXAMPLES = r"""
     state: absent
     name: string
 
+- name: Update by id
+  cisco.ise.network_device:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    NetworkDeviceGroupList:
+    - string
+    NetworkDeviceIPList:
+    - getIpaddressExclude: string
+      ipaddress: string
+      mask: 0
+    authenticationSettings:
+      dtlsRequired: true
+      enableKeyWrap: true
+      enableMultiSecret: true
+      enabled: true
+      keyEncryptionKey: string
+      keyInputFormat: string
+      messageAuthenticatorCodeKey: string
+      networkProtocol: string
+      radiusSharedSecret: string
+      secondRadiusSharedSecret: string
+    coaPort: 0
+    description: string
+    dtlsDnsName: string
+    id: string
+    modelName: string
+    name: string
+    profileName: string
+    snmpsettings:
+      linkTrapQuery: true
+      macTrapQuery: true
+      originatingPolicyServicesNode: string
+      pollingInterval: 0
+      roCommunity: string
+      version: string
+    softwareVersion: string
+    tacacsSettings:
+      connectModeOptions: string
+      sharedSecret: string
+    trustsecsettings:
+      deviceAuthenticationSettings:
+        sgaDeviceId: string
+        sgaDevicePassword: string
+      deviceConfigurationDeployment:
+        enableModePassword: string
+        execModePassword: string
+        execModeUsername: string
+        includeWhenDeployingSGTUpdates: true
+      pushIdSupport: true
+      sgaNotificationAndUpdates:
+        coaSourceHost: string
+        downlaodEnvironmentDataEveryXSeconds: 0
+        downlaodPeerAuthorizationPolicyEveryXSeconds: 0
+        downloadSGACLListsEveryXSeconds: 0
+        otherSGADevicesToTrustThisDevice: true
+        reAuthenticationEveryXSeconds: 0
+        sendConfigurationToDevice: true
+        sendConfigurationToDeviceUsing: string
+
+- name: Delete by id
+  cisco.ise.network_device:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: absent
+    id: string
+
+- name: Create
+  cisco.ise.network_device:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    NetworkDeviceGroupList:
+    - string
+    NetworkDeviceIPList:
+    - getIpaddressExclude: string
+      ipaddress: string
+      mask: 0
+    authenticationSettings:
+      dtlsRequired: true
+      enableKeyWrap: true
+      enableMultiSecret: true
+      enabled: true
+      keyEncryptionKey: string
+      keyInputFormat: string
+      messageAuthenticatorCodeKey: string
+      networkProtocol: string
+      radiusSharedSecret: string
+      secondRadiusSharedSecret: string
+    coaPort: 0
+    description: string
+    dtlsDnsName: string
+    modelName: string
+    name: string
+    profileName: string
+    snmpsettings:
+      linkTrapQuery: true
+      macTrapQuery: true
+      originatingPolicyServicesNode: string
+      pollingInterval: 0
+      roCommunity: string
+      version: string
+    softwareVersion: string
+    tacacsSettings:
+      connectModeOptions: string
+      sharedSecret: string
+    trustsecsettings:
+      deviceAuthenticationSettings:
+        sgaDeviceId: string
+        sgaDevicePassword: string
+      deviceConfigurationDeployment:
+        enableModePassword: string
+        execModePassword: string
+        execModeUsername: string
+        includeWhenDeployingSGTUpdates: true
+      pushIdSupport: true
+      sgaNotificationAndUpdates:
+        coaSourceHost: string
+        downlaodEnvironmentDataEveryXSeconds: 0
+        downlaodPeerAuthorizationPolicyEveryXSeconds: 0
+        downloadSGACLListsEveryXSeconds: 0
+        otherSGADevicesToTrustThisDevice: true
+        reAuthenticationEveryXSeconds: 0
+        sendConfigurationToDevice: true
+        sendConfigurationToDeviceUsing: string
+
 """
 
 RETURN = r"""
@@ -277,5 +403,16 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "UpdatedFieldsList": {
+        "updatedField": {
+          "field": "string",
+          "oldValue": "string",
+          "newValue": "string"
+        },
+        "field": "string",
+        "oldValue": "string",
+        "newValue": "string"
+      }
+    }
 """

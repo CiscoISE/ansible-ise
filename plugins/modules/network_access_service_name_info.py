@@ -16,8 +16,6 @@ options: {}
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.network_access_service_name
 # Reference by Internet resource
 - name: Network Access Service Name reference
   description: Complete reference of the Network Access Service Name object model.
@@ -44,10 +42,10 @@ ise_response:
   sample: >
     [
       {
-        "name": "string",
         "id": "string",
-        "serviceType": "string",
-        "isLocalAuthorization": true
+        "isLocalAuthorization": true,
+        "name": "string",
+        "serviceType": "string"
       }
     ]
 """

@@ -26,8 +26,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.active_directory_join_domain
 # Reference by Internet resource
 - name: Active Directory Join Domain reference
   description: Complete reference of the Active Directory Join Domain object model.
@@ -43,13 +41,15 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     additionalData:
     - name: username
-      value: '{{ad_admin_username}}'
+      value: Required. The domain user to use
     - name: password
-      value: '{{ad_admin_password}}'
+      value: Required. The domain user's password
     - name: node
-      value: '{{node_name}}'
+      value: Required. The name of the ISE node to join the domain. The node names can
+        be retrieved with the "Node Details/Get All" ERS operation
     - name: orgunit
-      value: '{{org_unit}}'
+      value: Optional. The organizational unit in AD where the machine object for the
+        joined ISE will be stored.
     id: string
 
 """
@@ -60,21 +60,5 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {
-      "ERSResponse": {
-        "operation": "string",
-        "messages": [
-          {
-            "title": "string",
-            "type": "string",
-            "code": "string"
-          }
-        ],
-        "link": {
-          "rel": "string",
-          "href": "string",
-          "type": "string"
-        }
-      }
-    }
+    {}
 """

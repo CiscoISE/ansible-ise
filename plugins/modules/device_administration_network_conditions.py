@@ -56,15 +56,25 @@ options:
   id:
     description: Device Administration Network Conditions's id.
     type: str
+  link:
+    description: Device Administration Network Conditions's link.
+    suboptions:
+      href:
+        description: Device Administration Network Conditions's href.
+        type: str
+      rel:
+        description: Device Administration Network Conditions's rel.
+        type: str
+      type:
+        description: Device Administration Network Conditions's type.
+        type: str
+    type: dict
   name:
-    description: NetworkCondition name, Valid characters are alphanumerics, underscore,
-      space.
+    description: Network Condition name.
     type: str
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.device_administration_network_conditions
 # Reference by Internet resource
 - name: Device Administration Network Conditions reference
   description: Complete reference of the Device Administration Network Conditions object model.
@@ -79,6 +89,25 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
+    conditionType: string
+    conditions:
+    - cliDnisList:
+      - string
+      deviceGroupList:
+      - string
+      deviceList:
+      - string
+      ipAddrList:
+      - string
+      macAddrList:
+      - string
+    description: string
+    id: string
+    link:
+      href: string
+      rel: string
+      type: string
+    name: string
 
 - name: Update by id
   cisco.ise.device_administration_network_conditions:
@@ -101,6 +130,10 @@ EXAMPLES = r"""
       - string
     description: string
     id: string
+    link:
+      href: string
+      rel: string
+      type: string
     name: string
 
 - name: Delete by id
@@ -121,28 +154,36 @@ ise_response:
   type: dict
   sample: >
     {
-      "name": "string",
-      "id": "string",
-      "description": "string",
-      "conditionType": "string",
-      "conditions": [
-        {
-          "ipAddrList": [
-            "string"
-          ],
-          "macAddrList": [
-            "string"
-          ],
-          "cliDnisList": [
-            "string"
-          ],
-          "deviceList": [
-            "string"
-          ],
-          "deviceGroupList": [
-            "string"
-          ]
-        }
-      ]
+      "response": {
+        "conditionType": "string",
+        "description": "string",
+        "id": "string",
+        "link": {
+          "href": "string",
+          "rel": "string",
+          "type": "string"
+        },
+        "name": "string",
+        "conditions": [
+          {
+            "cliDnisList": [
+              "string"
+            ],
+            "ipAddrList": [
+              "string"
+            ],
+            "macAddrList": [
+              "string"
+            ],
+            "deviceGroupList": [
+              "string"
+            ],
+            "deviceList": [
+              "string"
+            ]
+          }
+        ]
+      },
+      "version": "string"
     }
 """

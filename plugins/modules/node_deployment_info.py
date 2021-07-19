@@ -21,8 +21,6 @@ options:
 requirements:
 - ciscoisesdk
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.module_utils.definitions.node_deployment
 # Reference by Internet resource
 - name: Node Deployment reference
   description: Complete reference of the Node Deployment object model.
