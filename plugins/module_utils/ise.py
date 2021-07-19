@@ -15,6 +15,12 @@ except ImportError:
     ANSIBLE_ERRORS_INSTALLED = False
 else:
     ANSIBLE_ERRORS_INSTALLED = True
+try:
+    import logging
+except ImportError:
+    LOGGING_IN_STANDARD = False
+else:
+    LOGGING_IN_STANDARD = True
 
 
 def is_list_complex(x):
@@ -97,6 +103,7 @@ def ise_argument_spec():
         ise_verify=dict(type="bool", default=True),
         ise_version=dict(type="str", default="3.0.0"),
         ise_wait_on_rate_limit=dict(type="bool", default=True),  # TODO: verify what the true default value should be
+        ise_debug=dict(type="bool", default=False),
     )
     return argument_spec
 
@@ -112,7 +119,10 @@ class ISESDK(object):
                 verify=params.get("ise_verify"),
                 version=params.get("ise_version"),
                 wait_on_rate_limit=params.get("ise_wait_on_rate_limit"),
+                debug=params.get("ise_debug"),
             )
+            if params.get("ise_debug") and LOGGING_IN_STANDARD:
+                logging.getLogger('ciscoisesdk').addHandler(logging.StreamHandler())
         else:
             self.fail_json(msg="Cisco ISE Python SDK is not installed. Execute 'pip install ciscoisesdk'")
 
