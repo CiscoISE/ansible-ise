@@ -76,7 +76,7 @@ class ActionModule(ActionBase):
             family="support_bundle_download",
             function='download_support_bundle',
             params=self.get_object(self._task.args),
-        ).response
+        ).data
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

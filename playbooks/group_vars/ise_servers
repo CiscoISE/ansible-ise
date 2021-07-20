@@ -4,3 +4,4 @@ ise_hostname: "198.18.133.27"
 ise_username: "admin"
 ise_password: "C1sco12345"
 ise_verify: False
+ise_debug: True

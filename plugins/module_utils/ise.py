@@ -84,13 +84,13 @@ def get_dict_result(result, key, value):
                 result = None
         else:
             for item in result:
-                if isinstance(item, dict) and item.get(key) == value:
+                if isinstance(item, dict) and (item.get(key) is None or item.get(key) == value):
                     result = item
                     return result
             result = None
     elif not isinstance(result, dict):
         result = None
-    elif result.get(key) != value:
+    elif result.get(key) and result.get(key) != value:
         result = None
     return result
 

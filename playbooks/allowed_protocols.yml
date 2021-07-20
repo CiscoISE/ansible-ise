@@ -37,8 +37,8 @@
       ise_password: "{{ise_password}}"
       ise_verify: "{{ise_verify}}"
       state: present
-      name: Default Device Admin
-      description: Default Allowed Protocol Service Device Admin
+      name: Test Device Admin
+      description: Test Allowed Protocol Service Device Admin
       processHostLookup: false
       allowPapAscii: true
       allowChap: true
@@ -57,6 +57,6 @@
       requireMessageAuth: false
     register: result
 
-  - name: Print Active Directory
+  - name: Print Allowed Protocol
     ansible.builtin.debug:
       var: result

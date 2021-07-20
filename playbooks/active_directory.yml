@@ -2,19 +2,19 @@
   gather_facts: no
   tasks:
 
-  - name: Get active directory
-    cisco.ise.active_directory_info:
-      ise_hostname: "{{ise_hostname}}"
-      ise_username: "{{ise_username}}"
-      ise_password: "{{ise_password}}"
-      ise_verify: "{{ise_verify}}"
-      page: 1
-      size: 1
-    register: result
+  # - name: Get active directory
+  #   cisco.ise.active_directory_info:
+  #     ise_hostname: "{{ise_hostname}}"
+  #     ise_username: "{{ise_username}}"
+  #     ise_password: "{{ise_password}}"
+  #     ise_verify: "{{ise_verify}}"
+  #     page: 1
+  #     size: 1
+  #   register: result
 
-  - name: Print Active Directories
-    ansible.builtin.debug:
-      var: result
+  # - name: Print Active Directories
+  #   ansible.builtin.debug:
+  #     var: result
 
   - name: Create or update active directory
     cisco.ise.active_directory:
@@ -22,6 +22,7 @@
       ise_username: "{{ise_username}}"
       ise_password: "{{ise_password}}"
       ise_verify: "{{ise_verify}}"
+      ise_debug: "{{ise_debug}}"
       state: present
       name: cisco.com
       description: ''
@@ -77,6 +78,7 @@
           defaultValue: defaultString
           internalName: internalName1
       adScopesNames: Default_Scope
+    register: result
 
   - name: Print Active Directory
     ansible.builtin.debug:

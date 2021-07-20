@@ -19,6 +19,8 @@ from ansible_collections.cisco.ise.plugins.module_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
+    hostName=dict(type="str"),
+    id=dict(type="str"),
 ))
 
 required_if = []
@@ -55,6 +57,8 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
+            host_name=params.get("hostName"),
+            id=params.get("id"),
         )
         return new_object
 

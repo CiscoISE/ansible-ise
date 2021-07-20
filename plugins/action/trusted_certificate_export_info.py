@@ -79,7 +79,7 @@ class ActionModule(ActionBase):
                 family="certificates",
                 function='export_trusted_certificate',
                 params=self.get_object(self._task.args)
-            ).response
+            ).data
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

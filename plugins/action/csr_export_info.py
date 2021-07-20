@@ -75,13 +75,13 @@ class ActionModule(ActionBase):
         ise = ISESDK(params=self._task.args)
 
         id = self._task.args.get("id")
-        name = self._task.args.get("name")
+        name = self._task.args.get("hostname")
         if id:
             response = ise.exec(
                 family="certificates",
                 function='export_csr',
                 params=self.get_object(self._task.args)
-            ).response
+            ).data
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

@@ -61,10 +61,9 @@ class FilterPolicy(object):
         )
         for items_response in gen_items_responses:
             items = items_response.response['SearchResult']['resources']
-            for item in items:
-                if item.get('name') == name and item.get('id'):
-                    result = dict(item)
-                    return result
+            result = get_dict_result(items, 'name', name)
+            if result:
+                return result
         return result
 
     def get_object_by_id(self, id):
@@ -87,7 +86,7 @@ class FilterPolicy(object):
         if o_id:
             prev_obj = self.get_object_by_id(o_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
-        if name:
+        if not id_exists and name:
             prev_obj = self.get_object_by_name(name)
             name_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if name_exists:

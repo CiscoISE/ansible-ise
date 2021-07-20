@@ -83,7 +83,7 @@ class ActionModule(ActionBase):
         ise = ISESDK(params=self._task.args)
 
         id = self._task.args.get("id")
-        name = self._task.args.get("name")
+        name = self._task.args.get("hostName")
         if id:
             response = ise.exec(
                 family="certificates",

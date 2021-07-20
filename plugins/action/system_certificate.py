@@ -82,10 +82,9 @@ class SystemCertificate(object):
         )
         for items_response in gen_items_responses:
             items = items_response.response.get('response', []) or []
-            for item in items:
-                if item.get('friendlyName') == name and item.get('id'):
-                    result = dict(item)
-                    return result
+            result = get_dict_result(items, 'friendlyName', name)
+            if result:
+                return result
         return result
 
     def get_object_by_id(self, id, host_name):
