@@ -80,6 +80,8 @@ def get_dict_result(result, key, value):
         if len(result) == 1:
             if isinstance(result[0], dict):
                 result = result[0]
+                if result.get(key) is not None and result.get(key) != value:
+                    result = None
             else:
                 result = None
         else:
@@ -90,7 +92,7 @@ def get_dict_result(result, key, value):
             result = None
     elif not isinstance(result, dict):
         result = None
-    elif result.get(key) and result.get(key) != value:
+    elif result.get(key)  is not None and result.get(key) != value:
         result = None
     return result
 
