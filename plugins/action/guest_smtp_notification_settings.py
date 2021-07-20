@@ -34,7 +34,7 @@ argument_spec.update(dict(
     useTLSorSSLEncryption=dict(type="bool"),
     usePasswordAuthentication=dict(type="bool"),
     userName=dict(type="str"),
-    password=dict(type="str"),
+    password=dict(type="str", no_log=True),
     id=dict(type="str"),
 ))
 

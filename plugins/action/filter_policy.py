@@ -10,6 +10,13 @@ except ImportError:
 else:
     ANSIBLE_UTILS_IS_INSTALLED = True
 from ansible.errors import AnsibleActionFail
+import re
+try:
+    import ipaddress
+except ImportError:
+    IPADDRESS_INSTALLED = False
+else:
+    IPADDRESS_INSTALLED = True
 from ansible_collections.cisco.ise.plugins.module_utils.ise import (
     ISESDK,
     ise_argument_spec,
@@ -52,7 +59,81 @@ class FilterPolicy(object):
             id=params.get("id"),
         )
 
-    def get_object_by_name(self, name):
+    def is_same_subnet(self, new, current):
+        if IPADDRESS_INSTALLED:
+            new_net = None
+            current_net = None
+            try:
+                new_net = ipaddress.ip_network(new, strict=False)
+            except ValueError:
+                new_net = None
+            try:
+                current_net = ipaddress.ip_network(current, strict=False)
+            except ValueError:
+                current_net = None
+            if new_net and current_net:
+                conflict = current_net.overlaps(new_net) or new_net.overlaps(current_net)
+                # conflict = current_net.subnet_of(new_net) or new_net.subnet_of(current_net)
+                # They are the mostly the same, both have overlapping net
+                return conflict
+            elif new_net is None and current_net is None:
+                return True
+            else:
+                return False
+        else:
+            if new and current:
+                return new == current
+            else:
+                return not current and not new
+
+    def get_sgt_by_name(self, name):
+        if not name:
+            return None
+        try:
+            result = self.ise.exec(
+                family="sgt",
+                function="get_all_security_groups",
+                params={"filter": "name.EQ.{0}".format(name)}
+            ).response['SearchResult']['resources']
+            result = get_dict_result(result, 'name', name)
+        except Exception as e:
+            result = None
+        return result
+
+    def get_sgt_by_id(self, id):
+        if not id:
+            return None
+        try:
+            result = self.ise.exec(
+                family="sgt",
+                function="get_security_group_by_id",
+                params={"id": id}
+            ).response['Sgt']
+        except Exception as e:
+            result = None
+        return result
+
+    def is_same_sgt(self, new, current):
+        # Values can be id or name
+        def clean_excess(name):
+            if name:
+                return re.sub(r"\s*\(.*\)$", "", name)
+            else:
+                return name
+        has_new = self.get_sgt_by_id(new) or self.get_sgt_by_name(clean_excess(new))
+        has_current = self.get_sgt_by_id(current) or self.get_sgt_by_name(clean_excess(current))
+        if has_new and has_current:
+            return has_new.get("id") == has_current.get("id")
+        else:
+            return not has_current and not has_new
+
+    def is_same_vn(self, new, current):
+        if new and current:
+            return new == current
+        else:
+            return not current and not new
+
+    def get_object_by_name(self, name, new_subnet, new_sgt, new_vn):
         # NOTICE: Does not have a get by name method or it is in another action
         result = None
         gen_items_responses = self.ise.exec(
@@ -61,9 +142,15 @@ class FilterPolicy(object):
         )
         for items_response in gen_items_responses:
             items = items_response.response['SearchResult']['resources']
-            result = get_dict_result(items, 'name', name)
-            if result:
-                return result
+            for item in items:
+                current = self.get_object_by_id(item.get('id'))
+                if current:
+                    has_same_subnet = self.is_same_subnet(new_subnet, current.get('subnet'))
+                    has_same_sgt = self.is_same_sgt(new_sgt, current.get('sgt'))
+                    has_same_vn = self.is_same_vn(new_vn, current.get('vn'))
+                if has_same_subnet and has_same_sgt and has_same_vn:
+                    result = dict(current)
+                    return result
         return result
 
     def get_object_by_id(self, id):
@@ -78,23 +165,23 @@ class FilterPolicy(object):
         return result
 
     def exists(self):
+        prev_obj = None
         id_exists = False
         name_exists = False
-        prev_obj = None
         o_id = self.new_object.get("id")
-        name = self.new_object.get("name")
-        if o_id:
+        id_exists = o_id and self.get_object_by_id(o_id)
+        if id_exists:
             prev_obj = self.get_object_by_id(o_id)
-            id_exists = prev_obj is not None and isinstance(prev_obj, dict)
-        if not id_exists and name:
-            prev_obj = self.get_object_by_name(name)
+        if not id_exists:
+            name = self.new_object.get("name")
+            subnet = self.new_object.get("subnet")
+            sgt = self.new_object.get("sgt")
+            vn = self.new_object.get("vn")
+            prev_obj = self.get_object_by_name(name, subnet, sgt, vn)
             name_exists = prev_obj is not None and isinstance(prev_obj, dict)
-        if name_exists:
-            _id = prev_obj.get("id")
-            if id_exists and name_exists and o_id != _id:
-                raise InconsistentParameters("The 'id' and 'name' params don't refer to the same object")
-            if _id:
-                prev_obj = self.get_object_by_id(_id)
+            if name_exists:
+                id_ = prev_obj.get("id")
+                self.new_object.update(dict(id=id_))
         it_exists = prev_obj is not None and isinstance(prev_obj, dict)
         return (it_exists, prev_obj)
 
@@ -123,12 +210,6 @@ class FilterPolicy(object):
         return result
 
     def update(self):
-        id = self.new_object.get("id")
-        name = self.new_object.get("name")
-        result = None
-        if not id:
-            id_ = self.get_object_by_name(name).get("id")
-            self.new_object.update(dict(id=id_))
         result = self.ise.exec(
             family="filter_policy",
             function="update_filter_policy_by_id",
@@ -137,12 +218,6 @@ class FilterPolicy(object):
         return result
 
     def delete(self):
-        id = self.new_object.get("id")
-        name = self.new_object.get("name")
-        result = None
-        if not id:
-            id_ = self.get_object_by_name(name).get("id")
-            self.new_object.update(dict(id=id_))
         result = self.ise.exec(
             family="filter_policy",
             function="delete_filter_policy_by_id",

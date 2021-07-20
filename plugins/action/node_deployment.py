@@ -61,7 +61,7 @@ class NodeDeployment(object):
             result = self.ise.exec(
                 family="node_deployment",
                 function="get_node_details",
-                params={"name": name}
+                params={"hostname": name}
             ).response.get('response', {})
             result = get_dict_result(result, 'name', name)
         except Exception as e:
@@ -74,11 +74,11 @@ class NodeDeployment(object):
         return result
 
     def exists(self):
+        prev_obj = None
         id_exists = False
         name_exists = False
-        prev_obj = None
         o_id = self.new_object.get("id")
-        name = self.new_object.get("name")
+        name = self.new_object.get("hostname")
         if o_id:
             prev_obj = self.get_object_by_id(o_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
@@ -119,12 +119,6 @@ class NodeDeployment(object):
         return result
 
     def update(self):
-        id = self.new_object.get("id")
-        name = self.new_object.get("name")
-        result = None
-        if not name:
-            name_ = self.get_object_by_id(id).get("name")
-            self.new_object.update(dict(name=name_))
         result = self.ise.exec(
             family="node_deployment",
             function="update_node",
@@ -133,12 +127,6 @@ class NodeDeployment(object):
         return result
 
     def delete(self):
-        id = self.new_object.get("id")
-        name = self.new_object.get("name")
-        result = None
-        if not name:
-            name_ = self.get_object_by_id(id).get("name")
-            self.new_object.update(dict(name=name_))
         result = self.ise.exec(
             family="node_deployment",
             function="delete_node",

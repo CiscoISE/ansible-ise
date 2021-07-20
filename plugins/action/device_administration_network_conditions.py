@@ -60,11 +60,8 @@ class DeviceAdministrationNetworkConditions(object):
         items = self.ise.exec(
             family="device_administration_network_conditions",
             function="get_device_admin_network_conditions",
-        ).response.get('response', [])
-        for item in items:
-            if item.get('name') == name and item.get('id'):
-                result = dict(item)
-                return result
+        ).response.get('response', []) or []
+        result = get_dict_result(items, 'name', name)
         return result
 
     def get_object_by_id(self, id):
@@ -79,9 +76,9 @@ class DeviceAdministrationNetworkConditions(object):
         return result
 
     def exists(self):
+        prev_obj = None
         id_exists = False
         name_exists = False
-        prev_obj = None
         o_id = self.new_object.get("id")
         name = self.new_object.get("name")
         if o_id:

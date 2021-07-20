@@ -30,7 +30,7 @@ argument_spec.update(dict(
     eap=dict(type="bool"),
     ims=dict(type="bool"),
     name=dict(type="str"),
-    password=dict(type="str"),
+    password=dict(type="str", no_log=True),
     portal=dict(type="bool"),
     portalGroupTag=dict(type="str"),
     privateKeyData=dict(type="str"),

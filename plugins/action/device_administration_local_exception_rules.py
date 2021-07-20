@@ -34,8 +34,10 @@ argument_spec.update(dict(
 ))
 
 required_if = [
-    ("state", "present", ["id", "policyId"], True),
-    ("state", "absent", ["id", "policyId"], True),
+    ("state", "present", ["id", "rule"], True),
+    ("state", "present", ["policyId"], True),
+    ("state", "absent", ["id", "rule"], True),
+    ("state", "absent", ["policyId"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -80,9 +82,9 @@ class DeviceAdministrationLocalExceptionRules(object):
         return result
 
     def exists(self):
+        prev_obj = None
         id_exists = False
         name_exists = False
-        prev_obj = None
         o_id = self.new_object.get("id") or self.new_object.get('rule', {}).get("id")
         policy_id = self.new_object.get("policy_id")
         name = self.new_object.get('rule', {}).get("name")

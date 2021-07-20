@@ -21,7 +21,7 @@ argument_spec = ise_argument_spec()
 argument_spec.update(dict(
     export=dict(type="str"),
     id=dict(type="str"),
-    password=dict(type="str"),
+    password=dict(type="str", no_log=True),
     dirPath=dict(type="str"),
     saveFile=dict(type="bool"),
 ))
