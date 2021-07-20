@@ -11,7 +11,7 @@
       state: present
       id: 925b6d20-8c01-11e6-996c-525400b48521
       name: Preloaded_Certificate_Profile
-      description: Precreated Certificate Authorization Profile.
+      description: Pre-created Certificate Authorization Profile.
       externalIdentityStoreName: "[not applicable]"
       certificateAttributeName: SUBJECT_COMMON_NAME
       allowedAsUserName: false
