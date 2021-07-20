@@ -9,6 +9,7 @@ except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
     ANSIBLE_UTILS_IS_INSTALLED = True
+from ciscoisesdk import exceptions
 from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.ise.plugins.module_utils.ise import (
     ISESDK,
@@ -108,6 +109,25 @@ class InternalUser(object):
     def requires_update(self, current_obj):
         requested_obj = self.new_object
 
+        force_change = False
+        change_params = [
+          ("change_password", bool)
+        ]
+        for (change_param, type_) in change_params:
+            requested_obj_value = requested_obj.get(change_param)
+            if isinstance(requested_obj_value, type_):
+                # Next line checks if value is evaluated as True
+                if requested_obj_value:
+                    force_change = True
+                    break
+                else:
+                    pass
+            else:
+                pass
+
+        if force_change:
+            return force_change
+
         obj_params = [
             ("name", "name"),
             ("description", "description"),
@@ -142,19 +162,42 @@ class InternalUser(object):
     def update(self):
         id = self.new_object.get("id")
         name = self.new_object.get("name")
+        change_password = self.new_object.get("change_password")
         result = None
         if id:
-            result = self.ise.exec(
-                family="internal_user",
-                function="update_internal_user_by_id",
-                params=self.new_object
-            ).response
+            try:
+                result = self.ise.exec(
+                    family="internal_user",
+                    function="update_internal_user_by_id",
+                    params=self.new_object,
+                    handle_func_exception=False,
+                ).response
+            except exceptions.ApiError as e:
+                if not change_password and "Password can't be set to one of the earlier" in e.message:
+                    self.ise.object_modify_result(changed=False, result="Object already present, update was attempted but failed because of password")
+                    result = {'_changed_': True}
+                elif not change_password and "Password can't be set to one of the earlier" in e.details_str:
+                    self.ise.object_modify_result(changed=False, result="Object already present, update was attempted but failed because of password")
+                    result = {'_changed_': True}
+                else:
+                    raise e
         elif name:
-            result = self.ise.exec(
-                family="internal_user",
-                function="update_internal_user_by_name",
-                params=self.new_object
-            ).response
+            try:
+                result = self.ise.exec(
+                    family="internal_user",
+                    function="update_internal_user_by_name",
+                    params=self.new_object,
+                    handle_func_exception=False,
+                ).response
+            except exceptions.ApiError as e:
+                if not change_password and "Password can't be set to one of the earlier" in e.message:
+                    self.ise.object_modify_result(changed=False, result="Object already present, update was attempted but failed because of password")
+                    result = {'_changed_': True}
+                elif not change_password and "Password can't be set to one of the earlier" in e.details_str:
+                    self.ise.object_modify_result(changed=False, result="Object already present, update was attempted but failed because of password")
+                    result = {'_changed_': True}
+                else:
+                    raise e
         return result
 
     def delete(self):
@@ -219,8 +262,19 @@ class ActionModule(ActionBase):
             (obj_exists, prev_obj) = obj.exists()
             if obj_exists:
                 if obj.requires_update(prev_obj):
-                    response = obj.update()
-                    ise.object_updated()
+                    try:
+                        response = obj.update()
+                        if response and response.get('_changed_'):
+                            response = prev_obj
+                        else:
+                            ise.object_updated()
+                    except Exception as e:
+                        ise.fail_json(
+                            msg=(
+                                "An error occured when executing operation."
+                                " The error was: {error}"
+                            ).format(error=e)
+                        )
                 else:
                     response = prev_obj
                     ise.object_already_present()

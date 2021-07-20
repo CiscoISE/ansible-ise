@@ -152,7 +152,13 @@ class ISESDK(object):
     def object_present_and_different(self):
         self.result["result"] = "Object already present, but it has different values to the requested"
 
-    def exec(self, family, function, params=None):
+    def object_modify_result(self, changed=None, result=None):
+        if result is not None:
+            self.result["result"] = result
+        if changed:
+            self.changed()
+
+    def exec(self, family, function, params=None, handle_func_exception=True):
         try:
             family = getattr(self.api, family)
             func = getattr(family, function)
@@ -165,12 +171,15 @@ class ISESDK(object):
             else:
                 response = func()
         except exceptions.ciscoisesdkException as e:
-            self.fail_json(
-                msg=(
-                    "An error occured when executing operation."
-                    " The error was: {error}"
-                ).format(error=e)
-            )
+            if handle_func_exception:
+                self.fail_json(
+                    msg=(
+                        "An error occured when executing operation."
+                        " The error was: {error}"
+                    ).format(error=e)
+                )
+            else:
+                raise e
         return response
 
     def fail_json(self, msg, **kwargs):
