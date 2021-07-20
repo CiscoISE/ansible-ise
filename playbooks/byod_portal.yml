@@ -8,6 +8,7 @@
       ise_username: "{{ise_username}}"
       ise_password: "{{ise_password}}"
       ise_verify: "{{ise_verify}}"
+      ise_debug: "{{ise_debug}}"
       state: present
       name: Test BYOD Portal (default)
       description: Test portal and user experience used when employees register a personal

@@ -2,18 +2,18 @@
   gather_facts: no
   tasks:
 
-  # - name: Get all
-  #   cisco.ise.device_administration_authentication_rules_info:
-  #     ise_hostname: "{{ise_hostname}}"
-  #     ise_username: "{{ise_username}}"
-  #     ise_password: "{{ise_password}}"
-  #     ise_verify: "{{ise_verify}}"
-  #     policyId: cb32c3bc-c720-40c3-83e4-8897f9dd6943
-  #   register: result
+  - name: Get all
+    cisco.ise.device_administration_authentication_rules_info:
+      ise_hostname: "{{ise_hostname}}"
+      ise_username: "{{ise_username}}"
+      ise_password: "{{ise_password}}"
+      ise_verify: "{{ise_verify}}"
+      policyId: cb32c3bc-c720-40c3-83e4-8897f9dd6943
+    register: result
 
-  # - name: Print all
-  #   ansible.builtin.debug:
-  #     var: result
+  - name: Print all
+    ansible.builtin.debug:
+      var: result
 
   - name: Get by id
     cisco.ise.device_administration_authentication_rules_info:
@@ -21,7 +21,8 @@
       ise_username: "{{ise_username}}"
       ise_password: "{{ise_password}}"
       ise_verify: "{{ise_verify}}"
-      id: 11849c90-ed50-4a12-8166-8feb06d42889
+      ise_debug: "{{ise_debug}}"
+      id: 31f8299a-13af-4836-8179-7f28a4d03e58
       policyId: cb32c3bc-c720-40c3-83e4-8897f9dd6943
     register: result
 
@@ -35,10 +36,10 @@
       ise_username: "{{ise_username}}"
       ise_password: "{{ise_password}}"
       ise_verify: "{{ise_verify}}"
-      state: present
+      state: absent
       rule: 
         default: False
-        id: 11849c90-ed50-4a12-8166-8feb06d42889
+        # id: fc67fb89-7611-4e8c-b3fa-7ea18e62d44f
         name: "Test2"
         hitCounts: 0
         rank: 0

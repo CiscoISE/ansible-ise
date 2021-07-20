@@ -3,7 +3,7 @@
   tasks:
 
   # - name: Get all
-  #   cisco.ise.device_administration_authorization_global_exception_rules_info:
+  #   cisco.ise.device_administration_global_exception_rules_info:
   #     ise_hostname: "{{ise_hostname}}"
   #     ise_username: "{{ise_username}}"
   #     ise_password: "{{ise_password}}"
@@ -15,16 +15,16 @@
   #     var: result
 
   # - name: Get by id
-  #   cisco.ise.device_administration_authorization_global_exception_rules_info:
+  #   cisco.ise.device_administration_global_exception_rules_info:
   #     ise_hostname: "{{ise_hostname}}"
   #     ise_username: "{{ise_username}}"
   #     ise_password: "{{ise_password}}"
   #     ise_verify: "{{ise_verify}}"
-  #     id: d704e911-a916-11eb-8830-2ec507028ea8
+  #     id: 4642f81a-0878-4722-975a-e1fd19f2d5ae
   #   register: result
 
-  - name: Create or update an device_administration_authorization_global_exception_rules
-    cisco.ise.device_administration_authorization_global_exception_rules:
+  - name: Create or update an device_administration_global_exception_rules
+    cisco.ise.device_administration_global_exception_rules:
       ise_hostname: "{{ise_hostname}}"
       ise_username: "{{ise_username}}"
       ise_password: "{{ise_password}}"
