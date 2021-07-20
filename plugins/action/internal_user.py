@@ -9,7 +9,12 @@ except ImportError:
     ANSIBLE_UTILS_IS_INSTALLED = False
 else:
     ANSIBLE_UTILS_IS_INSTALLED = True
-from ciscoisesdk import exceptions
+try:
+    from ciscoisesdk import exceptions
+except ImportError:
+    ISE_SDK_IS_INSTALLED = False
+else:
+    ISE_SDK_IS_INSTALLED = True
 from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.ise.plugins.module_utils.ise import (
     ISESDK,
@@ -221,6 +226,8 @@ class InternalUser(object):
 
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
+        if not ISE_SDK_IS_INSTALLED:
+            raise AnsibleActionFail("Cisco ISE Python SDK is not installed. Execute 'pip install ciscoisesdk'")
         if not ANSIBLE_UTILS_IS_INSTALLED:
             raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
         super(ActionModule, self).__init__(*args, **kwargs)
