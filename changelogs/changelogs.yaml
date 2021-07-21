@@ -27,7 +27,7 @@ releases:
     release_date: '2021-07-01'
     changes:
       release_summary: >
-        Adds more playbooks. Changes credentials.yml to group_vars. Adds ISE ERS modules.
+        Adds more playbooks. Changes credentials.yml to group_vars. Adds ISE ER S modules.
         Compares requested object to found object before updating to only update if necessary.
   0.0.8:
     release_date: '2021-07-09'

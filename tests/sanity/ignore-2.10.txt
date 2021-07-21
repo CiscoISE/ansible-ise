@@ -647,3 +647,4 @@ plugins/action/trusted_certificate_export_info.py compile-2.7!skip # Python 2.7 
 plugins/action/trusted_certificate_import.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/trusted_certificate_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/module_utils/ise.py pylint:ansible-bad-module-import # We need more information about this error in order to fix integration_event
+plugins/module_utils/personas_utils.py pylint:ansible-bad-module-import # We need more information about this error in order to fix it

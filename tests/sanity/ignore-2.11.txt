@@ -969,3 +969,8 @@ plugins/action/trusted_certificate_export_info.py import-2.7 # Python 2.7 is not
 plugins/action/trusted_certificate_import.py import-2.7 # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/trusted_certificate_info.py import-2.7 # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/module_utils/ise.py pylint:ansible-bad-module-import # We need more information about this error in order to fix integration_event
+plugins/module_utils/personas_utils.py pylint:ansible-bad-module-import # We need more information about this error in order to fix it
+plugins/action/personas_check_standalone.py import-2.7 # Python 2.7 is not supported
+plugins/action/personas_export_certs.py import-2.7 # Python 2.7 is not supported
+plugins/action/personas_promote_primary.py import-2.7 # Python 2.7 is not supported
+plugins/action/personas_update_roles.py import-2.7 # Python 2.7 is not supported
