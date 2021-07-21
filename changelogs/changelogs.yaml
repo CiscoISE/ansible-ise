@@ -34,17 +34,21 @@ releases:
     changes:
       release_summary: Fix Indentity Group modules.
   0.0.9:
-    release_date: '2021-07-13'
+    release_date: '2021-07-12'
     changes:
-      release_summary: Delay release of version 0.0.8
+      release_summary: Adds an Ansible role for the deployment of ISE to AWS as well as four modules for the deployment of personas to the ISE nodes.
+      major_changes:
+        - Adds a 'aws_deployment' role that allows the deployment of an arbitrary large ISE cluster to AWS.
+        - Adds four new modules for the deployment of personas to existing nodes in an ISE cluster.
   1.0.0:
     release_date: '2021-07-21'
     changes:
-      release_summary: >
-      - Adds more plugins
-      - Updates options required for modules
-      - Rename module device_administration_authorization_exception_rules => device_administration_local_exception_rules
-      - Rename module network_access_authorization_exception_rules => network_access_local_exception_rules
-      - Rename module network_access_authorization_global_exception_rules => network_access_global_exception_rules
-      - Rename module device_administration_authorization_global_exception_rules => device_administration_global_exception_rules
-      - Fixes inner logic of modules that have no get by name and have not working filter
+      release_summary: Update to use ciscoisesdk v1.0.0 or newer
+      major_changes: 
+        - Adds more plugins.
+        - Updates options required for modules.
+        - Rename module device_administration_authorization_exception_rules => device_administration_local_exception_rules.
+        - Rename module network_access_authorization_exception_rules => network_access_local_exception_rules.
+        - Rename module network_access_authorization_global_exception_rules => network_access_global_exception_rules.
+        - Rename module device_administration_authorization_global_exception_rules => device_administration_global_exception_rules.
+        - Fixes inner logic of modules that have no get by name and have not working filter.
