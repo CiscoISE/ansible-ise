@@ -77,7 +77,7 @@ class SystemCertificate(object):
         result = None
         gen_items_responses = self.ise.exec(
             family="certificates",
-            function="get_all_system_certificates_generator",
+            function="get_system_certificates_generator",
             params={"host_name": host_name}
         )
         for items_response in gen_items_responses:

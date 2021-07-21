@@ -92,7 +92,7 @@ class FilterPolicy(object):
         try:
             result = self.ise.exec(
                 family="sgt",
-                function="get_all_security_groups",
+                function="get_security_groups",
                 params={"filter": "name.EQ.{0}".format(name)}
             ).response['SearchResult']['resources']
             result = get_dict_result(result, 'name', name)
