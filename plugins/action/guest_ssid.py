@@ -47,7 +47,7 @@ class GuestSsid(object):
         )
 
     def get_object_by_name(self, name):
-        # NOTICE: Get does not support filter by name
+        # NOTICE: Get does not support/work for filter by name with EQ
         result = None
         gen_items_responses = self.ise.exec(
             family="guest_ssid",
