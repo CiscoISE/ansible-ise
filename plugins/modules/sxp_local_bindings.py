@@ -13,6 +13,12 @@ description:
 version_added: '1.0.0'
 author: Rafael Campos (@racampos)
 options:
+  bindingName:
+    description: This field is depricated from Cisco ISE 3.0.
+    type: str
+  description:
+    description: Sxp Local Bindings's description.
+    type: str
   id:
     description: Sxp Local Bindings's id.
     type: str
@@ -47,6 +53,8 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
+    bindingName: string
+    description: string
     id: string
     ipAddressOrHost: string
     sgt: string
@@ -69,6 +77,8 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
+    bindingName: string
+    description: string
     id: string
     ipAddressOrHost: string
     sgt: string

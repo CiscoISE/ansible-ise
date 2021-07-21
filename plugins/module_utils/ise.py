@@ -92,7 +92,7 @@ def get_dict_result(result, key, value):
             result = None
     elif not isinstance(result, dict):
         result = None
-    elif result.get(key)  is not None and result.get(key) != value:
+    elif result.get(key) is not None and result.get(key) != value:
         result = None
     return result
 

@@ -18,10 +18,6 @@ options:
     - Id path parameter.
     type: str
   additionalData:
-    description:
-    - AdditionalData part of the request body.
-    type: list
-  additionalData:
     description: Active Directory Get User Groups Info's additionalData.
     suboptions:
       name:

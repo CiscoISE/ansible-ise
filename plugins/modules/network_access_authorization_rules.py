@@ -42,6 +42,12 @@ options:
       condition:
         description: Network Access Authorization Rules's condition.
         suboptions:
+          attributeId:
+            description: Dictionary attribute id (Optional), used for additional verification.
+            type: str
+          attributeName:
+            description: Dictionary attribute name.
+            type: str
           attributeValue:
             description: <ul><li>Attribute value for condition</li> <li>Value type is
               specified in dictionary object</li> <li>if multiple values allowed is
@@ -232,6 +238,8 @@ EXAMPLES = r"""
     - string
     rule:
       condition:
+        attributeId: string
+        attributeName: string
         attributeValue: string
         children:
         - conditionType: string
@@ -293,6 +301,8 @@ EXAMPLES = r"""
     - string
     rule:
       condition:
+        attributeId: string
+        attributeName: string
         attributeValue: string
         children:
         - conditionType: string
@@ -377,6 +387,8 @@ ise_response:
             "description": "string",
             "id": "string",
             "name": "string",
+            "attributeName": "string",
+            "attributeId": "string",
             "attributeValue": "string",
             "dictionaryName": "string",
             "dictionaryValue": "string",

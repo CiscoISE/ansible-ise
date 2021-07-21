@@ -95,6 +95,8 @@ ise_response:
   sample: >
     {
       "id": "string",
+      "description": "string",
+      "bindingName": "string",
       "ipAddressOrHost": "string",
       "sxpVpn": "string",
       "sgt": "string",

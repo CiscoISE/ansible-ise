@@ -26,6 +26,8 @@ argument_spec = ise_argument_spec()
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
     id=dict(type="str"),
+    description=dict(type="str"),
+    bindingName=dict(type="str"),
     ipAddressOrHost=dict(type="str"),
     sxpVpn=dict(type="str"),
     sgt=dict(type="str"),
@@ -46,6 +48,8 @@ class SxpLocalBindings(object):
         self.ise = ise
         self.new_object = dict(
             id=params.get("id"),
+            description=params.get("description"),
+            binding_name=params.get("bindingName"),
             ip_address_or_host=params.get("ipAddressOrHost"),
             sxp_vpn=params.get("sxpVpn"),
             sgt=params.get("sgt"),
@@ -103,6 +107,8 @@ class SxpLocalBindings(object):
 
         obj_params = [
             ("id", "id"),
+            ("description", "description"),
+            ("bindingName", "binding_name"),
             ("ipAddressOrHost", "ip_address_or_host"),
             ("sxpVpn", "sxp_vpn"),
             ("sgt", "sgt"),

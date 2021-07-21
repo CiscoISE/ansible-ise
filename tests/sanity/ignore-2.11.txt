@@ -245,6 +245,7 @@ plugins/action/pxgrid_user_groups_info.py compile-2.6!skip # Python 2.6 is not s
 plugins/action/radius_server_sequence.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/radius_server_sequence_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/renew_certificate.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
+plugins/action/resource_version_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/repository.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/repository_files_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/repository_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
@@ -252,7 +253,6 @@ plugins/action/rest_id_store.py compile-2.6!skip # Python 2.6 is not supported b
 plugins/action/rest_id_store_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/self_registered_portal.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/self_registered_portal_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
-plugins/action/service_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/session_service_node_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/sg_acl.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/sg_acl_bulk_monitor_status_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
@@ -567,6 +567,7 @@ plugins/action/pxgrid_user_groups_info.py compile-2.7!skip # Python 2.7 is not s
 plugins/action/radius_server_sequence.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/radius_server_sequence_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/renew_certificate.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
+plugins/action/resource_version_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/repository.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/repository_files_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/repository_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
@@ -574,7 +575,6 @@ plugins/action/rest_id_store.py compile-2.7!skip # Python 2.7 is not supported b
 plugins/action/rest_id_store_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/self_registered_portal.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/self_registered_portal_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
-plugins/action/service_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/session_service_node_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/sg_acl.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/sg_acl_bulk_monitor_status_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
@@ -889,6 +889,7 @@ plugins/action/pxgrid_user_groups_info.py import-2.7 # Python 2.7 is not support
 plugins/action/radius_server_sequence.py import-2.7 # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/radius_server_sequence_info.py import-2.7 # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/renew_certificate.py import-2.7 # Python 2.7 is not supported by the Cisco ISE SDK
+plugins/action/resource_version_info.py import-2.7 # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/repository.py import-2.7 # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/repository_files_info.py import-2.7 # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/repository_info.py import-2.7 # Python 2.7 is not supported by the Cisco ISE SDK
@@ -896,7 +897,6 @@ plugins/action/rest_id_store.py import-2.7 # Python 2.7 is not supported by the 
 plugins/action/rest_id_store_info.py import-2.7 # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/self_registered_portal.py import-2.7 # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/self_registered_portal_info.py import-2.7 # Python 2.7 is not supported by the Cisco ISE SDK
-plugins/action/service_info.py import-2.7 # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/session_service_node_info.py import-2.7 # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/sg_acl.py import-2.7 # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/sg_acl_bulk_monitor_status_info.py import-2.7 # Python 2.7 is not supported by the Cisco ISE SDK

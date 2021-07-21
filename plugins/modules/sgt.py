@@ -15,9 +15,7 @@ author: Rafael Campos (@racampos)
 options:
   defaultSGACLs:
     description: Sgt's defaultSGACLs.
-    suboptions:
-    - description: Sgt's defaultSGACLs.
-      type: dict
+    elements: dict
     type: list
   description:
     description: Sgt's description.

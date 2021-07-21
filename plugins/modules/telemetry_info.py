@@ -6,7 +6,7 @@
 
 DOCUMENTATION = r"""
 ---
-module: telemetry_info_info
+module: telemetry_info
 short_description: Information module for Telemetry Info
 description:
 - Get all Telemetry Info.

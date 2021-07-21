@@ -116,7 +116,7 @@ class InternalUser(object):
 
         force_change = False
         change_params = [
-          ("change_password", bool)
+            ("change_password", bool)
         ]
         for (change_param, type_) in change_params:
             requested_obj_value = requested_obj.get(change_param)

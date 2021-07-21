@@ -66,6 +66,8 @@ ise_response:
           "description": "string",
           "id": "string",
           "name": "string",
+          "attributeName": "string",
+          "attributeId": "string",
           "attributeValue": "string",
           "dictionaryName": "string",
           "dictionaryValue": "string",

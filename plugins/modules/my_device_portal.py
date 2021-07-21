@@ -186,9 +186,7 @@ options:
             type: bool
           socialConfigs:
             description: My Device Portal's socialConfigs.
-            suboptions:
-            - description: My Device Portal's socialConfigs.
-              type: dict
+            elements: dict
             type: list
           timeBetweenLoginsDuringRateLimit:
             description: Time between login attempts when rate limiting.
