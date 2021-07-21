@@ -90,12 +90,15 @@ class FilterPolicy(object):
         if not name:
             return None
         try:
-            result = self.ise.exec(
-                family="sgt",
-                function="get_security_groups",
-                params={"filter": "name.EQ.{0}".format(name)}
-            ).response['SearchResult']['resources']
-            result = get_dict_result(result, 'name', name)
+            gen_items_responses = self.ise.exec(
+                family="filter_policy",
+                function="get_filter_policy_generator"
+            )
+            for items_response in gen_items_responses:
+                items = items_response.response['SearchResult']['resources']
+                result = get_dict_result(items, 'name', name)
+                if result:
+                    return result
         except Exception as e:
             result = None
         return result

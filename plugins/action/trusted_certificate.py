@@ -91,15 +91,17 @@ class TrustedCertificate(object):
         )
 
     def get_object_by_name(self, name):
-        try:
-            result = self.ise.exec(
-                family="certificates",
-                function="get_trusted_certificates",
-                params={"filter": "name.EQ.{0}".format(name)}
-            ).response.get('response', [])
-            result = get_dict_result(result, 'name', name)
-        except Exception as e:
-            result = None
+        # NOTICE: Get does not support filter by name
+        result = None
+        gen_items_responses = self.ise.exec(
+            family="certificates",
+            function="get_trusted_certificates_generator"
+        )
+        for items_response in gen_items_responses:
+            items = items_response.response.get('response', [])
+            result = get_dict_result(items, 'name', name)
+            if result:
+                return result
         return result
 
     def get_object_by_id(self, id):

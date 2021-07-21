@@ -57,15 +57,17 @@ class SelfRegisteredPortal(object):
         )
 
     def get_object_by_name(self, name):
-        try:
-            result = self.ise.exec(
-                family="self_registered_portal",
-                function="get_self_registered_portals",
-                params={"filter": "name.EQ.{0}".format(name)}
-            ).response['SearchResult']['resources']
-            result = get_dict_result(result, 'name', name)
-        except Exception as e:
-            result = None
+        # NOTICE: Get does not support filter by name
+        result = None
+        gen_items_responses = self.ise.exec(
+            family="self_registered_portal",
+            function="get_self_registered_portals_generator"
+        )
+        for items_response in gen_items_responses:
+            items = items_response.response['SearchResult']['resources']
+            result = get_dict_result(items, 'name', name)
+            if result:
+                return result
         return result
 
     def get_object_by_id(self, id):
