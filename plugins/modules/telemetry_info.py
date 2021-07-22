@@ -55,7 +55,7 @@ seealso:
 
 EXAMPLES = r"""
 - name: Get all Telemetry Info
-  cisco.ise.telemetry_info_info:
+  cisco.ise.telemetry_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
@@ -67,7 +67,7 @@ EXAMPLES = r"""
   register: result
 
 - name: Get Telemetry Info by id
-  cisco.ise.telemetry_info_info:
+  cisco.ise.telemetry_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
