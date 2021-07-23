@@ -54,7 +54,7 @@ class SxpVpns(object):
             function="get_sxp_vpns_generator"
         )
         for items_response in gen_items_responses:
-            items = items_response.response['SearchResult']['resources']
+            items = items_response.response.get('SearchResult', {}).get('resources', [])
             result = get_dict_result(items, 'name', name)
             if result:
                 return result

@@ -58,7 +58,7 @@ class PanHa(object):
         items = self.ise.exec(
             family="pan_ha",
             function="get_pan_ha_status"
-        ).response['response']
+        ).response.get('response')
         result = get_dict_result(items, 'name', name)
         return result
 

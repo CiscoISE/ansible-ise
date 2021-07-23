@@ -99,7 +99,7 @@ class ActionModule(ActionBase):
                 params=self.get_object(self._task.args),
             )
             for item in generator:
-                tmp_response = item.response['SearchResult']['resources']
+                tmp_response = item.response.get('SearchResult', {}).get('resources', [])
                 if isinstance(tmp_response, list):
                     response += tmp_response
                 else:
