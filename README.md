@@ -36,7 +36,7 @@ This collection assumes that the API Gateway, the ERS APIs and OpenAPIs are enab
 First, define a `credentials.yml` file where you specify your Cisco ISE credentials as ansible variables:
 ```
 ---
-ise_hostname: <A.B.C.D>
+ise_hostname: <A.B.C.D> # Default ISE ERS port 9060 may be needed, myise.example.com:9060
 ise_username: <username>
 ise_password: <password>
 ise_version: 3.0.0  # optional, defaults to 3.0.0
