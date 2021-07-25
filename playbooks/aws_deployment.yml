@@ -1,6 +1,6 @@
 ---
   - name:  AWS ISE Deployment Playbook
-    hosts: localhost
+    hosts: ise
     connection: local
     vars:
       ise_username: admin
