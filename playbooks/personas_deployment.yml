@@ -1,0 +1,26 @@
+---
+  - name:  ISE Personas Deployment Playbook
+    hosts: localhost
+    connection: local
+    vars:
+      # Variables common to all deployment types
+      ise_deployment_type: medium
+      ise_username: admin
+      ise_password: P@sbg1234
+      ise_domain: sstcloud.com
+      pan1_ip: 34.210.9.76
+      pan2_ip: 34.217.31.158
+      pan2_local_ip: 10.10.1.11
+      # Variables for medium or large deployments
+      psn1_ip: 54.200.238.252
+      psn1_local_ip: 10.10.1.37
+      psn2_ip: 52.25.72.83
+      psn2_local_ip: 10.10.1.95
+      # Variables specific for large deployments
+      mnt1_ip: 
+      mnt1_local_ip: 
+      mnt2_ip: 
+      mnt2_local_ip: 
+
+    roles:
+        - cisco.ise.personas_deployment

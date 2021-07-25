@@ -1,0 +1,62 @@
+- name: Check if all nodes are in STANDALONE state
+  cisco.ise.personas_check_standalone:
+    name: "{{ item.name }}"
+    ip: "{{ item.ip }}"
+    username: "{{ ise_username }}"
+    password: "{{ ise_password }}"
+  loop:
+    - name: ISE Server 1
+      ip: "{{ pan1_ip }}"
+    - name: ISE Server 2
+      ip: "{{ pan2_ip }}"
+
+- name: Export trusted certificates into primary node
+  cisco.ise.personas_export_certs:
+    primary_ip: "{{ pan1_ip }}"
+    primary_username: "{{ ise_username }}"
+    primary_password: "{{ ise_password }}"
+    name: "{{ item.name }}"
+    ip: "{{ item.ip }}"
+    hostname: "{{ item.hostname }}"
+    username: "{{ ise_username }}"
+    password: "{{ ise_password }}"
+  loop:
+    - name: ISE Server 2
+      ip: "{{ pan2_ip }}"
+      hostname: "{{ ise_base_hostname | lower }}-server-2"
+
+- name: Promote primary node
+  cisco.ise.personas_promote_primary:
+    ip: "{{ pan1_ip }}"
+    hostname: "{{ ise_base_hostname | lower }}-server-1"
+    username: "{{ ise_username }}"
+    password: "{{ ise_password }}"
+    roles:
+      - PPAN
+      - MNT-ACTIVE
+      - PDP
+
+- name: Wait for primary application server to come up again 
+  pause:
+    minutes: 10
+
+- name: Update roles on the rest of the nodes
+  cisco.ise.personas_update_roles:
+    primary_ip: "{{ pan1_ip }}"
+    primary_username: "{{ ise_username }}"
+    primary_password: "{{ ise_password }}"
+    name: "{{ item.name }}"
+    local_ip: "{{ item.local_ip }}"
+    hostname: "{{ item.hostname }}"
+    username: "{{ ise_username }}"
+    password: "{{ ise_password }}"
+    domain: "{{ ise_domain }}"
+    roles: "{{ item.roles }}"
+  loop:
+    - name: ISE Server 2
+      local_ip: "{{ pan2_local_ip }}"
+      hostname: "{{ ise_base_hostname | lower }}-server-2"
+      roles:
+        - SPAN
+        - MNT-STANDBY
+        - PDP
