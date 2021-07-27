@@ -62,6 +62,8 @@ class ActionModule(ActionBase):
             raise AnsibleActionFail(errors)
 
     def get_object(self, params):
+        if params.get("name"):
+            params["name"] = params["name"].replace('#', ':')
         new_object = dict(
             name=params.get("name"),
             id=params.get("id"),

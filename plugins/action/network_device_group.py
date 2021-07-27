@@ -48,11 +48,14 @@ class NetworkDeviceGroup(object):
         )
 
     def get_object_by_name(self, name):
+        query_name = name
+        if query_name:
+            query_name = query_name.replace('#', ':')
         try:
             result = self.ise.exec(
                 family="network_device_group",
                 function="get_network_device_group_by_name",
-                params={"name": name},
+                params={"name": query_name},
                 handle_func_exception=False,
             ).response['NetworkDeviceGroup']
             result = get_dict_result(result, 'name', name)
