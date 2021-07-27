@@ -52,3 +52,7 @@ releases:
         - Rename module network_access_authorization_global_exception_rules => network_access_global_exception_rules.
         - Rename module device_administration_authorization_global_exception_rules => device_administration_global_exception_rules.
         - Fixes inner logic of modules that have no get by name and have not working filter.
+  1.0.1:
+    release_date: '2021-07-25'
+    changes:
+      release_summary: Migrated the Personas Deployment playbooks to a role
