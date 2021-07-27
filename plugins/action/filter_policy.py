@@ -199,7 +199,7 @@ class FilterPolicy(object):
                 handle_func_exception=False,
                 params={"id": id}
             ).response['ERSFilterPolicy']
-        except (TypeError, AttributeError):
+        except (TypeError, AttributeError) as e:
             self.ise.fail_json(
                 msg=(
                     "An error occured when executing operation."
