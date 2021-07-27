@@ -60,10 +60,21 @@ class TacacsExternalServers(object):
             result = self.ise.exec(
                 family="tacacs_external_servers",
                 function="get_tacacs_external_servers_by_name",
-                params={"name": name}
+                params={"name": name},
+                handle_func_exception=False,
             ).response['TacacsExternalServer']
             result = get_dict_result(result, 'name', name)
-        except Exception as e:
+        except (TypeError, AttributeError) as e:
+            self.ise.fail_json(
+                msg=(
+                    "An error occured when executing operation."
+                    " Check the configuration of your API Settings and API Gateway settings on your ISE server."
+                    " This collection assumes that the API Gateway, the ERS APIs and OpenAPIs are enabled."
+                    " You may want to enable the (ise_debug: True) argument."
+                    " The error was: {error}"
+                ).format(error=e)
+            )
+        except Exception:
             result = None
         return result
 
@@ -72,9 +83,20 @@ class TacacsExternalServers(object):
             result = self.ise.exec(
                 family="tacacs_external_servers",
                 function="get_tacacs_external_servers_by_id",
+                handle_func_exception=False,
                 params={"id": id}
             ).response['TacacsExternalServer']
-        except Exception as e:
+        except (TypeError, AttributeError) as e:
+            self.ise.fail_json(
+                msg=(
+                    "An error occured when executing operation."
+                    " Check the configuration of your API Settings and API Gateway settings on your ISE server."
+                    " This collection assumes that the API Gateway, the ERS APIs and OpenAPIs are enabled."
+                    " You may want to enable the (ise_debug: True) argument."
+                    " The error was: {error}"
+                ).format(error=e)
+            )
+        except Exception:
             result = None
         return result
 

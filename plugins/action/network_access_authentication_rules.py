@@ -81,9 +81,20 @@ class NetworkAccessAuthenticationRules(object):
             result = self.ise.exec(
                 family="network_access_authentication_rules",
                 function="get_network_access_authentication_rule_by_id",
+                handle_func_exception=False,
                 params={"id": id, "policy_id": policy_id}
             ).response.get('response', {})
-        except Exception as e:
+        except (TypeError, AttributeError) as e:
+            self.ise.fail_json(
+                msg=(
+                    "An error occured when executing operation."
+                    " Check the configuration of your API Settings and API Gateway settings on your ISE server."
+                    " This collection assumes that the API Gateway, the ERS APIs and OpenAPIs are enabled."
+                    " You may want to enable the (ise_debug: True) argument."
+                    " The error was: {error}"
+                ).format(error=e)
+            )
+        except Exception:
             result = None
         return result
 

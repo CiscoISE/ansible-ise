@@ -80,11 +80,24 @@ class SystemCertificate(object):
             function="get_system_certificates_generator",
             params={"host_name": host_name}
         )
-        for items_response in gen_items_responses:
-            items = items_response.response.get('response', []) or []
-            result = get_dict_result(items, 'friendlyName', name)
-            if result:
-                return result
+        try:
+            for items_response in gen_items_responses:
+                items = items_response.response.get('response', []) or []
+                result = get_dict_result(items, 'friendlyName', name)
+                if result:
+                    return result
+        except (TypeError, AttributeError) as e:
+            self.ise.fail_json(
+                msg=(
+                    "An error occured when executing operation."
+                    " Check the configuration of your API Settings and API Gateway settings on your ISE server."
+                    " This collection assumes that the API Gateway, the ERS APIs and OpenAPIs are enabled."
+                    " You may want to enable the (ise_debug: True) argument."
+                    " The error was: {error}"
+                ).format(error=e)
+            )
+        except Exception:
+            result = None
         return result
 
     def get_object_by_id(self, id, host_name):
@@ -92,7 +105,8 @@ class SystemCertificate(object):
             result = self.ise.exec(
                 family="certificates",
                 function="get_system_certificate_by_id",
-                params={"id": id, "host_name": host_name}
+                params={"id": id, "host_name": host_name},
+                handle_func_exception=False,
             ).response
         except Exception as e:
             result = None

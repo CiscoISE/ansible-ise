@@ -98,12 +98,32 @@ class ActionModule(ActionBase):
                 function='get_portal_global_settings_generator',
                 params=self.get_object(self._task.args),
             )
-            for item in generator:
-                tmp_response = item.response.get('SearchResult', {}).get('resources', [])
-                if isinstance(tmp_response, list):
-                    response += tmp_response
-                else:
-                    response.append(tmp_response)
+            try:
+                for item in generator:
+                    tmp_response = item.response['SearchResult']['resources']
+                    if isinstance(tmp_response, list):
+                        response += tmp_response
+                    else:
+                        response.append(tmp_response)
+            except (TypeError, AttributeError) as e:
+                ise.fail_json(
+                  msg=(
+                      "An error occured when executing operation."
+                      " Check the configuration of your API Settings and API Gateway settings on your ISE server."
+                      " This collection assumes that the API Gateway, the ERS APIs and OpenAPIs are enabled."
+                      " You may want to enable the (ise_debug: True) argument."
+                      " The error was: {error}"
+                  ).format(error=e)
+                )
+            except Exception as e:
+                ise.fail_json(
+                    msg=(
+                        "An error occured when executing operation."
+                        " The error was: {error}"
+                        " You may want to enable the (ise_debug: True) argument."
+                    ).format(error=e)
+                )
+
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

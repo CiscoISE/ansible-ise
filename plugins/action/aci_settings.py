@@ -102,7 +102,8 @@ class AciSettings(object):
         try:
             result = self.ise.exec(
                 family="aci_settings",
-                function="get_aci_settings"
+                function="get_aci_settings",
+                handle_func_exception=False,
             ).response['AciSettings']
             # result = get_dict_result(result, 'id', id)
         except Exception as e:
