@@ -100,7 +100,7 @@ class ActionModule(ActionBase):
             )
             try:
                 for item in generator:
-                    tmp_response = item.response
+                    tmp_response = item.response['response']
                     if isinstance(tmp_response, list):
                         response += tmp_response
                     else:
