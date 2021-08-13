@@ -1,31 +1,19 @@
-cisco-ise-*.tar.gz
+tmp/*
 __pycache__/
 .vscode/
-
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-pip-wheel-metadata/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-# Translations
-*.mo
-*.pot
-
-# Sphinx documentation
+.tmp
+.cache
+*.retry
+tests/test_playbooks/vars/server.yml
+__pycache__
+*.pyc
+*.pyo
+*.swp
+*.tar.gz
+.pytest_cache/
+.mypy_cache/
+venv/
+/build/
+docs/plugins/
 docs/_build/
+changelogs/.plugin-cache.yaml
