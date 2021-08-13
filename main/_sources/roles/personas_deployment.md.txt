@@ -1,4 +1,4 @@
-# Ansible Role for Deployment on AWS
+# Personas Deployment Guide
 ## Introduction
 
 Once all ISE nodes have been deployed to AWS, we can use Ansible to build a multi-node ISE cluster with distinct ISE personas, such as Policy Administration nodes (PAN), Monitoring and Troubleshooting nodes (MNT), and Policy Services nodes (PSN).
