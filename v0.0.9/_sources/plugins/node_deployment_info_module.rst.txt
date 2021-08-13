@@ -1,0 +1,282 @@
+.. Document meta
+
+:orphan:
+
+.. Anchors
+
+.. _ansible_collections.cisco.ise.node_deployment_info_module:
+
+.. Anchors: short name for ansible.builtin
+
+.. Anchors: aliases
+
+
+
+.. Title
+
+cisco.ise.node_deployment_info -- Information module for Node Deployment
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. Collection note
+
+.. note::
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 0.0.9).
+
+    To install it use: :code:`ansible-galaxy collection install cisco.ise`.
+
+    To use it in a playbook, specify: :code:`cisco.ise.node_deployment_info`.
+
+.. version_added
+
+.. versionadded:: 1.0.0 of cisco.ise
+
+.. contents::
+   :local:
+   :depth: 1
+
+.. Deprecated
+
+
+Synopsis
+--------
+
+.. Description
+
+- Get all Node Deployment.
+- Get Node Deployment by name.
+
+.. note::
+    This module has a corresponding :ref:`action plugin <action_plugins>`.
+
+.. Aliases
+
+
+.. Requirements
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- ciscoisesdk
+
+
+.. Options
+
+Parameters
+----------
+
+.. raw:: html
+
+    <table  border=0 cellpadding=0 class="documentation-table">
+        <tr>
+            <th colspan="1">Parameter</th>
+            <th>Choices/<font color="blue">Defaults</font></th>
+                        <th width="100%">Comments</th>
+        </tr>
+                    <tr>
+                                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-hostname"></div>
+                    <b>hostname</b>
+                    <a class="ansibleOptionLink" href="#parameter-hostname" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Hostname path parameter. ID of the existing deployed node.</div>
+                                                        </td>
+            </tr>
+                        </table>
+    <br/>
+
+.. Notes
+
+
+.. Seealso
+
+See Also
+--------
+
+.. seealso::
+
+   :ref:`cisco.ise.plugins.module_utils.definitions.node_deployment <ansible_collections.cisco.ise.plugins.module_utils.definitions.node_deployment_module>`
+      The official documentation on the **cisco.ise.plugins.module_utils.definitions.node_deployment** module.
+   `Node Deployment reference <https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary>`_
+       Complete reference of the Node Deployment object model.
+
+.. Examples
+
+Examples
+--------
+
+.. code-block:: yaml+jinja
+
+    
+    - name: Get all Node Deployment
+      cisco.ise.node_deployment_info:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+      register: result
+
+    - name: Get Node Deployment by name
+      cisco.ise.node_deployment_info:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        hostname: string
+      register: result
+
+
+
+
+
+.. Facts
+
+
+.. Return values
+
+Return Values
+-------------
+Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
+
+.. raw:: html
+
+    <table border=0 cellpadding=0 class="documentation-table">
+        <tr>
+            <th colspan="1">Key</th>
+            <th>Returned</th>
+            <th width="100%">Description</th>
+        </tr>
+                    <tr>
+                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="return-ise_response"></div>
+                    <b>ise_response</b>
+                    <a class="ansibleOptionLink" href="#return-ise_response" title="Permalink to this return value"></a>
+                    <div style="font-size: small">
+                      <span style="color: purple">dictionary</span>
+                                          </div>
+                                    </td>
+                <td>always</td>
+                <td>
+                                            <div>A dictionary or list with the response returned by the Cisco ISE Python SDK</div>
+                                        <br/>
+                                            <div style="font-size: smaller"><b>Sample:</b></div>
+                                                <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">{
+      &quot;response&quot;: {
+        &quot;hostname&quot;: &quot;string&quot;,
+        &quot;fqdn&quot;: &quot;string&quot;,
+        &quot;ipAddress&quot;: &quot;string&quot;,
+        &quot;nodeType&quot;: &quot;string&quot;,
+        &quot;administration&quot;: {
+          &quot;isEnabled&quot;: true,
+          &quot;role&quot;: &quot;string&quot;
+        },
+        &quot;generalSettings&quot;: {
+          &quot;monitoring&quot;: {
+            &quot;isEnabled&quot;: true,
+            &quot;role&quot;: &quot;string&quot;,
+            &quot;otherMonitoringNode&quot;: &quot;string&quot;,
+            &quot;isMntDedicated&quot;: true,
+            &quot;policyservice&quot;: {
+              &quot;enabled&quot;: true,
+              &quot;sessionService&quot;: {
+                &quot;isEnabled&quot;: true,
+                &quot;nodegroup&quot;: &quot;string&quot;
+              },
+              &quot;enableProfilingService&quot;: true,
+              &quot;enableNACService&quot;: true,
+              &quot;sxpservice&quot;: {
+                &quot;isEnabled&quot;: true,
+                &quot;userInterface&quot;: &quot;string&quot;
+              },
+              &quot;enableDeviceAdminService&quot;: true,
+              &quot;enablePassiveIdentityService&quot;: true
+            },
+            &quot;enablePXGrid&quot;: true
+          }
+        },
+        &quot;profilingConfiguration&quot;: {
+          &quot;netflow&quot;: {
+            &quot;enabled&quot;: true,
+            &quot;interface&quot;: &quot;string&quot;,
+            &quot;port&quot;: {},
+            &quot;description&quot;: &quot;string&quot;
+          },
+          &quot;dhcp&quot;: {
+            &quot;enabled&quot;: true,
+            &quot;interface&quot;: &quot;string&quot;,
+            &quot;port&quot;: {},
+            &quot;description&quot;: &quot;string&quot;
+          },
+          &quot;dhcpSpan&quot;: {
+            &quot;enabled&quot;: true,
+            &quot;interface&quot;: &quot;string&quot;,
+            &quot;description&quot;: &quot;string&quot;
+          },
+          &quot;http&quot;: {
+            &quot;enabled&quot;: true,
+            &quot;interface&quot;: &quot;string&quot;,
+            &quot;description&quot;: &quot;string&quot;
+          },
+          &quot;radius&quot;: {
+            &quot;enabled&quot;: true,
+            &quot;description&quot;: &quot;string&quot;
+          },
+          &quot;nmap&quot;: {
+            &quot;enabled&quot;: true,
+            &quot;description&quot;: &quot;string&quot;
+          },
+          &quot;dns&quot;: {
+            &quot;enabled&quot;: true,
+            &quot;description&quot;: &quot;string&quot;
+          },
+          &quot;snmpQuery&quot;: {
+            &quot;enabled&quot;: true,
+            &quot;description&quot;: &quot;string&quot;,
+            &quot;retries&quot;: 0,
+            &quot;timeout&quot;: 0,
+            &quot;eventTimeout&quot;: 0
+          },
+          &quot;snmpTrap&quot;: {
+            &quot;linkTrapQuery&quot;: true,
+            &quot;macTrapQuery&quot;: true,
+            &quot;interface&quot;: &quot;string&quot;,
+            &quot;port&quot;: {},
+            &quot;description&quot;: &quot;string&quot;
+          },
+          &quot;activeDirectory&quot;: {
+            &quot;enabled&quot;: true,
+            &quot;daysBeforeRescan&quot;: 0,
+            &quot;description&quot;: &quot;string&quot;
+          },
+          &quot;pxgrid&quot;: {
+            &quot;enabled&quot;: true,
+            &quot;description&quot;: &quot;string&quot;
+          }
+        }
+      }
+    }</div>
+                                    </td>
+            </tr>
+                        </table>
+    <br/><br/>
+
+..  Status (Presently only deprecated)
+
+
+.. Authors
+
+Authors
+~~~~~~~
+
+- Rafael Campos (@racampos)
+
+
+
+.. Parsing errors
+

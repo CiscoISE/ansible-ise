@@ -1,0 +1,318 @@
+.. Document meta
+
+:orphan:
+
+.. Anchors
+
+.. _ansible_collections.cisco.ise.allowed_protocols_info_module:
+
+.. Anchors: short name for ansible.builtin
+
+.. Anchors: aliases
+
+
+
+.. Title
+
+cisco.ise.allowed_protocols_info -- Information module for Allowed Protocols
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. Collection note
+
+.. note::
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 0.0.9).
+
+    To install it use: :code:`ansible-galaxy collection install cisco.ise`.
+
+    To use it in a playbook, specify: :code:`cisco.ise.allowed_protocols_info`.
+
+.. version_added
+
+.. versionadded:: 1.0.0 of cisco.ise
+
+.. contents::
+   :local:
+   :depth: 1
+
+.. Deprecated
+
+
+Synopsis
+--------
+
+.. Description
+
+- Get all Allowed Protocols.
+- Get Allowed Protocols by id.
+- Get Allowed Protocols by name.
+
+.. note::
+    This module has a corresponding :ref:`action plugin <action_plugins>`.
+
+.. Aliases
+
+
+.. Requirements
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- ciscoisesdk
+
+
+.. Options
+
+Parameters
+----------
+
+.. raw:: html
+
+    <table  border=0 cellpadding=0 class="documentation-table">
+        <tr>
+            <th colspan="1">Parameter</th>
+            <th>Choices/<font color="blue">Defaults</font></th>
+                        <th width="100%">Comments</th>
+        </tr>
+                    <tr>
+                                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-id"></div>
+                    <b>id</b>
+                    <a class="ansibleOptionLink" href="#parameter-id" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Id path parameter.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-name"></div>
+                    <b>name</b>
+                    <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Name path parameter.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-page"></div>
+                    <b>page</b>
+                    <a class="ansibleOptionLink" href="#parameter-page" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">integer</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Page query parameter. Page number.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-size"></div>
+                    <b>size</b>
+                    <a class="ansibleOptionLink" href="#parameter-size" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">integer</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Size query parameter. Number of objects returned per page.</div>
+                                                        </td>
+            </tr>
+                        </table>
+    <br/>
+
+.. Notes
+
+
+.. Seealso
+
+See Also
+--------
+
+.. seealso::
+
+   :ref:`cisco.ise.plugins.module_utils.definitions.allowed_protocols <ansible_collections.cisco.ise.plugins.module_utils.definitions.allowed_protocols_module>`
+      The official documentation on the **cisco.ise.plugins.module_utils.definitions.allowed_protocols** module.
+   `Allowed Protocols reference <https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary>`_
+       Complete reference of the Allowed Protocols object model.
+
+.. Examples
+
+Examples
+--------
+
+.. code-block:: yaml+jinja
+
+    
+    - name: Get all Allowed Protocols
+      cisco.ise.allowed_protocols_info:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        page: 1
+        size: 20
+      register: result
+
+    - name: Get Allowed Protocols by id
+      cisco.ise.allowed_protocols_info:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        id: string
+      register: result
+
+    - name: Get Allowed Protocols by name
+      cisco.ise.allowed_protocols_info:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        name: string
+      register: result
+
+
+
+
+
+.. Facts
+
+
+.. Return values
+
+Return Values
+-------------
+Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
+
+.. raw:: html
+
+    <table border=0 cellpadding=0 class="documentation-table">
+        <tr>
+            <th colspan="1">Key</th>
+            <th>Returned</th>
+            <th width="100%">Description</th>
+        </tr>
+                    <tr>
+                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="return-ise_response"></div>
+                    <b>ise_response</b>
+                    <a class="ansibleOptionLink" href="#return-ise_response" title="Permalink to this return value"></a>
+                    <div style="font-size: small">
+                      <span style="color: purple">dictionary</span>
+                                          </div>
+                                    </td>
+                <td>always</td>
+                <td>
+                                            <div>A dictionary or list with the response returned by the Cisco ISE Python SDK</div>
+                                        <br/>
+                                            <div style="font-size: smaller"><b>Sample:</b></div>
+                                                <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">{
+      &quot;name&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;string&quot;,
+      &quot;eapTls&quot;: {
+        &quot;allowEapTlsAuthOfExpiredCerts&quot;: true,
+        &quot;eapTlsEnableStatelessSessionResume&quot;: true
+      },
+      &quot;peap&quot;: {
+        &quot;allowPeapEapMsChapV2&quot;: true,
+        &quot;allowPeapEapMsChapV2PwdChange&quot;: true,
+        &quot;allowPeapEapMsChapV2PwdChangeRetries&quot;: 0,
+        &quot;allowPeapEapGtc&quot;: true,
+        &quot;allowPeapEapTls&quot;: true,
+        &quot;allowPeapEapTlsAuthOfExpiredCerts&quot;: true,
+        &quot;requireCryptobinding&quot;: true,
+        &quot;allowPeapV0&quot;: true
+      },
+      &quot;eapFast&quot;: {
+        &quot;allowEapFastEapMsChapV2&quot;: true,
+        &quot;allowEapFastEapMsChapV2PwdChange&quot;: true,
+        &quot;allowEapFastEapMsChapV2PwdChangeRetries&quot;: 0,
+        &quot;allowEapFastEapGtc&quot;: true,
+        &quot;allowEapFastEapGtcPwdChange&quot;: true,
+        &quot;allowEapFastEapGtcPwdChangeRetries&quot;: 0,
+        &quot;allowEapFastEapTls&quot;: true,
+        &quot;allowEapFastEapTlsAuthOfExpiredCerts&quot;: true,
+        &quot;eapFastUsePacs&quot;: true,
+        &quot;eapFastUsePacsTunnelPacTtl&quot;: 0,
+        &quot;eapFastUsePacsTunnelPacTtlUnits&quot;: &quot;string&quot;,
+        &quot;eapFastUsePacsUseProactivePacUpdatePrecentage&quot;: 0,
+        &quot;eapFastUsePacsAllowAnonymProvisioning&quot;: true,
+        &quot;eapFastUsePacsAllowAuthenProvisioning&quot;: true,
+        &quot;eapFastUsePacsAllowMachineAuthentication&quot;: true,
+        &quot;eapFastUsePacsStatelessSessionResume&quot;: true,
+        &quot;eapFastEnableEAPChaining&quot;: true
+      },
+      &quot;eapTtls&quot;: {
+        &quot;eapTtlsPapAscii&quot;: true,
+        &quot;eapTtlsChap&quot;: true,
+        &quot;eapTtlsMsChapV1&quot;: true,
+        &quot;eapTtlsMsChapV2&quot;: true,
+        &quot;eapTtlsEapMd5&quot;: true,
+        &quot;eapTtlsEapMsChapV2&quot;: true,
+        &quot;eapTtlsEapMsChapV2PwdChange&quot;: true,
+        &quot;eapTtlsEapMsChapV2PwdChangeRetries&quot;: 0
+      },
+      &quot;teap&quot;: {
+        &quot;allowTeapEapMsChapV2&quot;: true,
+        &quot;allowTeapEapMsChapV2PwdChange&quot;: true,
+        &quot;allowTeapEapMsChapV2PwdChangeRetries&quot;: 0,
+        &quot;allowTeapEapTls&quot;: true,
+        &quot;allowTeapEapTlsAuthOfExpiredCerts&quot;: true,
+        &quot;acceptClientCertDuringTunnelEst&quot;: true,
+        &quot;requestBasicPwdAuth&quot;: true,
+        &quot;enableEapChaining&quot;: true
+      },
+      &quot;processHostLookup&quot;: true,
+      &quot;allowPapAscii&quot;: true,
+      &quot;allowChap&quot;: true,
+      &quot;allowMsChapV1&quot;: true,
+      &quot;allowMsChapV2&quot;: true,
+      &quot;allowEapMd5&quot;: true,
+      &quot;allowLeap&quot;: true,
+      &quot;allowEapTls&quot;: true,
+      &quot;allowEapTtls&quot;: true,
+      &quot;allowEapFast&quot;: true,
+      &quot;allowPeap&quot;: true,
+      &quot;allowTeap&quot;: true,
+      &quot;allowPreferredEapProtocol&quot;: true,
+      &quot;preferredEapProtocol&quot;: &quot;string&quot;,
+      &quot;eapTlsLBit&quot;: true,
+      &quot;allowWeakCiphersForEap&quot;: true,
+      &quot;requireMessageAuth&quot;: true
+    }</div>
+                                    </td>
+            </tr>
+                        </table>
+    <br/><br/>
+
+..  Status (Presently only deprecated)
+
+
+.. Authors
+
+Authors
+~~~~~~~
+
+- Rafael Campos (@racampos)
+
+
+
+.. Parsing errors
+

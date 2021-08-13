@@ -1,0 +1,778 @@
+.. Document meta
+
+:orphan:
+
+.. Anchors
+
+.. _ansible_collections.cisco.ise.guest_type_module:
+
+.. Anchors: short name for ansible.builtin
+
+.. Anchors: aliases
+
+
+
+.. Title
+
+cisco.ise.guest_type -- Resource module for Guest Type
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. Collection note
+
+.. note::
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 0.0.9).
+
+    To install it use: :code:`ansible-galaxy collection install cisco.ise`.
+
+    To use it in a playbook, specify: :code:`cisco.ise.guest_type`.
+
+.. version_added
+
+.. versionadded:: 1.0.0 of cisco.ise
+
+.. contents::
+   :local:
+   :depth: 1
+
+.. Deprecated
+
+
+Synopsis
+--------
+
+.. Description
+
+- Manage operations create, update and delete of the resource Guest Type.
+
+.. note::
+    This module has a corresponding :ref:`action plugin <action_plugins>`.
+
+.. Aliases
+
+
+.. Requirements
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- ciscoisesdk
+
+
+.. Options
+
+Parameters
+----------
+
+.. raw:: html
+
+    <table  border=0 cellpadding=0 class="documentation-table">
+        <tr>
+            <th colspan="3">Parameter</th>
+            <th>Choices/<font color="blue">Defaults</font></th>
+                        <th width="100%">Comments</th>
+        </tr>
+                    <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-accessTime"></div>
+                    <b>accessTime</b>
+                    <a class="ansibleOptionLink" href="#parameter-accessTime" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">dictionary</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Guest Type&#x27;s accessTime.</div>
+                                                        </td>
+            </tr>
+                                        <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-accessTime/allowAccessOnSpecificDaysTimes"></div>
+                    <b>allowAccessOnSpecificDaysTimes</b>
+                    <a class="ansibleOptionLink" href="#parameter-accessTime/allowAccessOnSpecificDaysTimes" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li>yes</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>AllowAccessOnSpecificDaysTimes flag.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-accessTime/dayTimeLimits"></div>
+                    <b>dayTimeLimits</b>
+                    <a class="ansibleOptionLink" href="#parameter-accessTime/dayTimeLimits" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">list</span>
+                         / <span style="color: purple">elements=string</span>                                            </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Guest Type&#x27;s dayTimeLimits.</div>
+                                                        </td>
+            </tr>
+                                        <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-accessTime/dayTimeLimits/days"></div>
+                    <b>days</b>
+                    <a class="ansibleOptionLink" href="#parameter-accessTime/dayTimeLimits/days" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">list</span>
+                         / <span style="color: purple">elements=string</span>                                            </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Guest Type&#x27;s days.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-accessTime/dayTimeLimits/endTime"></div>
+                    <b>endTime</b>
+                    <a class="ansibleOptionLink" href="#parameter-accessTime/dayTimeLimits/endTime" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Guest Type&#x27;s endTime.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-accessTime/dayTimeLimits/startTime"></div>
+                    <b>startTime</b>
+                    <a class="ansibleOptionLink" href="#parameter-accessTime/dayTimeLimits/startTime" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Guest Type&#x27;s startTime.</div>
+                                                        </td>
+            </tr>
+                    
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-accessTime/defaultDuration"></div>
+                    <b>defaultDuration</b>
+                    <a class="ansibleOptionLink" href="#parameter-accessTime/defaultDuration" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">integer</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Guest Type&#x27;s defaultDuration.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-accessTime/durationTimeUnit"></div>
+                    <b>durationTimeUnit</b>
+                    <a class="ansibleOptionLink" href="#parameter-accessTime/durationTimeUnit" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Guest Type&#x27;s durationTimeUnit.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-accessTime/fromFirstLogin"></div>
+                    <b>fromFirstLogin</b>
+                    <a class="ansibleOptionLink" href="#parameter-accessTime/fromFirstLogin" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li>yes</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>FromFirstLogin flag.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-accessTime/maxAccountDuration"></div>
+                    <b>maxAccountDuration</b>
+                    <a class="ansibleOptionLink" href="#parameter-accessTime/maxAccountDuration" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">integer</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Guest Type&#x27;s maxAccountDuration.</div>
+                                                        </td>
+            </tr>
+                    
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-description"></div>
+                    <b>description</b>
+                    <a class="ansibleOptionLink" href="#parameter-description" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Guest Type&#x27;s description.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-expirationNotification"></div>
+                    <b>expirationNotification</b>
+                    <a class="ansibleOptionLink" href="#parameter-expirationNotification" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">dictionary</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Guest Type&#x27;s expirationNotification.</div>
+                                                        </td>
+            </tr>
+                                        <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-expirationNotification/advanceNotificationDuration"></div>
+                    <b>advanceNotificationDuration</b>
+                    <a class="ansibleOptionLink" href="#parameter-expirationNotification/advanceNotificationDuration" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">integer</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Guest Type&#x27;s advanceNotificationDuration.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-expirationNotification/advanceNotificationUnits"></div>
+                    <b>advanceNotificationUnits</b>
+                    <a class="ansibleOptionLink" href="#parameter-expirationNotification/advanceNotificationUnits" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Guest Type&#x27;s advanceNotificationUnits.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-expirationNotification/emailText"></div>
+                    <b>emailText</b>
+                    <a class="ansibleOptionLink" href="#parameter-expirationNotification/emailText" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Guest Type&#x27;s emailText.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-expirationNotification/enableNotification"></div>
+                    <b>enableNotification</b>
+                    <a class="ansibleOptionLink" href="#parameter-expirationNotification/enableNotification" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li>yes</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>EnableNotification flag.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-expirationNotification/sendEmailNotification"></div>
+                    <b>sendEmailNotification</b>
+                    <a class="ansibleOptionLink" href="#parameter-expirationNotification/sendEmailNotification" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li>yes</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>SendEmailNotification flag.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-expirationNotification/sendSmsNotification"></div>
+                    <b>sendSmsNotification</b>
+                    <a class="ansibleOptionLink" href="#parameter-expirationNotification/sendSmsNotification" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li>yes</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>SendSmsNotification flag.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-expirationNotification/smsText"></div>
+                    <b>smsText</b>
+                    <a class="ansibleOptionLink" href="#parameter-expirationNotification/smsText" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Guest Type&#x27;s smsText.</div>
+                                                        </td>
+            </tr>
+                    
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-id"></div>
+                    <b>id</b>
+                    <a class="ansibleOptionLink" href="#parameter-id" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Guest Type&#x27;s id.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-loginOptions"></div>
+                    <b>loginOptions</b>
+                    <a class="ansibleOptionLink" href="#parameter-loginOptions" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">dictionary</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Guest Type&#x27;s loginOptions.</div>
+                                                        </td>
+            </tr>
+                                        <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-loginOptions/allowGuestPortalBypass"></div>
+                    <b>allowGuestPortalBypass</b>
+                    <a class="ansibleOptionLink" href="#parameter-loginOptions/allowGuestPortalBypass" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li>yes</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>AllowGuestPortalBypass flag.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-loginOptions/failureAction"></div>
+                    <b>failureAction</b>
+                    <a class="ansibleOptionLink" href="#parameter-loginOptions/failureAction" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Guest Type&#x27;s failureAction.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-loginOptions/identityGroupId"></div>
+                    <b>identityGroupId</b>
+                    <a class="ansibleOptionLink" href="#parameter-loginOptions/identityGroupId" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Guest Type&#x27;s identityGroupId.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-loginOptions/limitSimultaneousLogins"></div>
+                    <b>limitSimultaneousLogins</b>
+                    <a class="ansibleOptionLink" href="#parameter-loginOptions/limitSimultaneousLogins" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li>yes</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>LimitSimultaneousLogins flag.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-loginOptions/maxRegisteredDevices"></div>
+                    <b>maxRegisteredDevices</b>
+                    <a class="ansibleOptionLink" href="#parameter-loginOptions/maxRegisteredDevices" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">integer</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Guest Type&#x27;s maxRegisteredDevices.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-loginOptions/maxSimultaneousLogins"></div>
+                    <b>maxSimultaneousLogins</b>
+                    <a class="ansibleOptionLink" href="#parameter-loginOptions/maxSimultaneousLogins" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">integer</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Guest Type&#x27;s maxSimultaneousLogins.</div>
+                                                        </td>
+            </tr>
+                    
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-name"></div>
+                    <b>name</b>
+                    <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Guest Type&#x27;s name.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-sponsorGroups"></div>
+                    <b>sponsorGroups</b>
+                    <a class="ansibleOptionLink" href="#parameter-sponsorGroups" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">list</span>
+                         / <span style="color: purple">elements=string</span>                                            </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Guest Type&#x27;s sponsorGroups.</div>
+                                                        </td>
+            </tr>
+                        </table>
+    <br/>
+
+.. Notes
+
+
+.. Seealso
+
+See Also
+--------
+
+.. seealso::
+
+   :ref:`cisco.ise.plugins.module_utils.definitions.guest_type <ansible_collections.cisco.ise.plugins.module_utils.definitions.guest_type_module>`
+      The official documentation on the **cisco.ise.plugins.module_utils.definitions.guest_type** module.
+   `Guest Type reference <https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary>`_
+       Complete reference of the Guest Type object model.
+
+.. Examples
+
+Examples
+--------
+
+.. code-block:: yaml+jinja
+
+    
+    - name: Create
+      cisco.ise.guest_type:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: present
+        accessTime:
+          allowAccessOnSpecificDaysTimes: false
+          dayTimeLimits:
+          - days:
+            - Sunday
+            - Tuesday
+            endTime: '16:00'
+            startTime: '12:00'
+          defaultDuration: 90
+          durationTimeUnit: DAYS
+          fromFirstLogin: true
+          maxAccountDuration: 365
+        description: Description
+        expirationNotification:
+          advanceNotificationDuration: 3
+          advanceNotificationUnits: DAYS
+          emailText: EmailText
+          enableNotification: false
+          sendEmailNotification: false
+          sendSmsNotification: false
+          smsText: SMS Text
+        id: id
+        loginOptions:
+          allowGuestPortalBypass: false
+          failureAction: Disconnect_Oldest_Connection
+          identityGroupId: generatedID
+          limitSimultaneousLogins: true
+          maxRegisteredDevices: 5
+          maxSimultaneousLogins: 3
+        name: Name
+        sponsorGroups:
+        - Group1
+        - Group2
+
+    - name: Update by id
+      cisco.ise.guest_type:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: present
+        accessTime:
+          allowAccessOnSpecificDaysTimes: false
+          dayTimeLimits:
+          - days:
+            - Sunday
+            - Tuesday
+            endTime: '16:00'
+            startTime: '12:00'
+          defaultDuration: 90
+          durationTimeUnit: DAYS
+          fromFirstLogin: true
+          maxAccountDuration: 365
+        description: Description
+        expirationNotification:
+          advanceNotificationDuration: 3
+          advanceNotificationUnits: DAYS
+          emailText: EmailText
+          enableNotification: false
+          sendEmailNotification: false
+          sendSmsNotification: false
+          smsText: SMS Text
+        id: id
+        loginOptions:
+          allowGuestPortalBypass: false
+          failureAction: Disconnect_Oldest_Connection
+          identityGroupId: generatedID
+          limitSimultaneousLogins: true
+          maxRegisteredDevices: 5
+          maxSimultaneousLogins: 3
+        name: Name
+        sponsorGroups:
+        - Group1
+        - Group2
+
+    - name: Delete by id
+      cisco.ise.guest_type:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: absent
+        id: string
+
+
+
+
+
+.. Facts
+
+
+.. Return values
+
+Return Values
+-------------
+Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
+
+.. raw:: html
+
+    <table border=0 cellpadding=0 class="documentation-table">
+        <tr>
+            <th colspan="1">Key</th>
+            <th>Returned</th>
+            <th width="100%">Description</th>
+        </tr>
+                    <tr>
+                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="return-ise_response"></div>
+                    <b>ise_response</b>
+                    <a class="ansibleOptionLink" href="#return-ise_response" title="Permalink to this return value"></a>
+                    <div style="font-size: small">
+                      <span style="color: purple">dictionary</span>
+                                          </div>
+                                    </td>
+                <td>always</td>
+                <td>
+                                            <div>A dictionary or list with the response returned by the Cisco ISE Python SDK</div>
+                                        <br/>
+                                            <div style="font-size: smaller"><b>Sample:</b></div>
+                                                <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">{
+      &quot;id&quot;: &quot;string&quot;,
+      &quot;name&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;string&quot;,
+      &quot;accessTime&quot;: {
+        &quot;fromFirstLogin&quot;: true,
+        &quot;maxAccountDuration&quot;: 0,
+        &quot;durationTimeUnit&quot;: &quot;string&quot;,
+        &quot;defaultDuration&quot;: 0,
+        &quot;allowAccessOnSpecificDaysTimes&quot;: true,
+        &quot;dayTimeLimits&quot;: [
+          {
+            &quot;startTime&quot;: &quot;string&quot;,
+            &quot;endTime&quot;: &quot;string&quot;,
+            &quot;days&quot;: [
+              &quot;string&quot;
+            ]
+          }
+        ]
+      },
+      &quot;loginOptions&quot;: {
+        &quot;limitSimultaneousLogins&quot;: true,
+        &quot;maxSimultaneousLogins&quot;: 0,
+        &quot;failureAction&quot;: &quot;string&quot;,
+        &quot;maxRegisteredDevices&quot;: 0,
+        &quot;identityGroupId&quot;: &quot;string&quot;,
+        &quot;allowGuestPortalBypass&quot;: true
+      },
+      &quot;expirationNotification&quot;: {
+        &quot;enableNotification&quot;: true,
+        &quot;advanceNotificationDuration&quot;: 0,
+        &quot;advanceNotificationUnits&quot;: &quot;string&quot;,
+        &quot;sendEmailNotification&quot;: true,
+        &quot;emailText&quot;: &quot;string&quot;,
+        &quot;sendSmsNotification&quot;: true,
+        &quot;smsText&quot;: &quot;string&quot;
+      },
+      &quot;sponsorGroups&quot;: [
+        &quot;string&quot;
+      ]
+    }</div>
+                                    </td>
+            </tr>
+                        </table>
+    <br/><br/>
+
+..  Status (Presently only deprecated)
+
+
+.. Authors
+
+Authors
+~~~~~~~
+
+- Rafael Campos (@racampos)
+
+
+
+.. Parsing errors
+
