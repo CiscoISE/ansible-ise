@@ -1,5 +1,4 @@
-# Ansible Role for Deployment on AWS
-
+# AWS Deployment Guide
 ## Introduction
 
 It is possible to deploy the Cisco Identity Service Enginer (ISE) on AWS using the official Cisco ISE AMI. The following guide explains how to use the Ansible role created for such task.
