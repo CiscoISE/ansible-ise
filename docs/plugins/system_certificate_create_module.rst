@@ -1,0 +1,557 @@
+.. Document meta
+
+:orphan:
+
+.. Anchors
+
+.. _ansible_collections.cisco.ise.system_certificate_create_module:
+
+.. Anchors: short name for ansible.builtin
+
+.. Anchors: aliases
+
+
+
+.. Title
+
+cisco.ise.system_certificate_create -- Resource module for System Certificate Create
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. Collection note
+
+.. note::
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 1.0.2).
+
+    To install it use: :code:`ansible-galaxy collection install cisco.ise`.
+
+    To use it in a playbook, specify: :code:`cisco.ise.system_certificate_create`.
+
+.. version_added
+
+.. versionadded:: 1.0.0 of cisco.ise
+
+.. contents::
+   :local:
+   :depth: 1
+
+.. Deprecated
+
+
+Synopsis
+--------
+
+.. Description
+
+- Manage operation create of the resource System Certificate Create.
+
+.. note::
+    This module has a corresponding :ref:`action plugin <action_plugins>`.
+
+.. Aliases
+
+
+.. Requirements
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- ciscoisesdk
+
+
+.. Options
+
+Parameters
+----------
+
+.. raw:: html
+
+    <table  border=0 cellpadding=0 class="documentation-table">
+        <tr>
+            <th colspan="3">Parameter</th>
+            <th>Choices/<font color="blue">Defaults</font></th>
+                        <th width="100%">Comments</th>
+        </tr>
+                    <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-ersLocalCertStub"></div>
+                    <b>ersLocalCertStub</b>
+                    <a class="ansibleOptionLink" href="#parameter-ersLocalCertStub" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">dictionary</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Inputs for certificate creation.</div>
+                                                        </td>
+            </tr>
+                                        <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-ersLocalCertStub/allowWildcardCerts"></div>
+                    <b>allowWildcardCerts</b>
+                    <a class="ansibleOptionLink" href="#parameter-ersLocalCertStub/allowWildcardCerts" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>System Certificate Create&#x27;s allowWildcardCerts.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-ersLocalCertStub/certificatePolicies"></div>
+                    <b>certificatePolicies</b>
+                    <a class="ansibleOptionLink" href="#parameter-ersLocalCertStub/certificatePolicies" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>System Certificate Create&#x27;s certificatePolicies.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-ersLocalCertStub/certificateSanDns"></div>
+                    <b>certificateSanDns</b>
+                    <a class="ansibleOptionLink" href="#parameter-ersLocalCertStub/certificateSanDns" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>System Certificate Create&#x27;s certificateSanDns.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-ersLocalCertStub/certificateSanIp"></div>
+                    <b>certificateSanIp</b>
+                    <a class="ansibleOptionLink" href="#parameter-ersLocalCertStub/certificateSanIp" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>System Certificate Create&#x27;s certificateSanIp.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-ersLocalCertStub/certificateSanUri"></div>
+                    <b>certificateSanUri</b>
+                    <a class="ansibleOptionLink" href="#parameter-ersLocalCertStub/certificateSanUri" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>System Certificate Create&#x27;s certificateSanUri.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-ersLocalCertStub/digest"></div>
+                    <b>digest</b>
+                    <a class="ansibleOptionLink" href="#parameter-ersLocalCertStub/digest" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>System Certificate Create&#x27;s digest.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-ersLocalCertStub/ersSubjectStub"></div>
+                    <b>ersSubjectStub</b>
+                    <a class="ansibleOptionLink" href="#parameter-ersLocalCertStub/ersSubjectStub" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">dictionary</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Subject data of certificate.</div>
+                                                        </td>
+            </tr>
+                                        <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-ersLocalCertStub/ersSubjectStub/commonName"></div>
+                    <b>commonName</b>
+                    <a class="ansibleOptionLink" href="#parameter-ersLocalCertStub/ersSubjectStub/commonName" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>System Certificate Create&#x27;s commonName.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-ersLocalCertStub/ersSubjectStub/countryName"></div>
+                    <b>countryName</b>
+                    <a class="ansibleOptionLink" href="#parameter-ersLocalCertStub/ersSubjectStub/countryName" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>System Certificate Create&#x27;s countryName.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-ersLocalCertStub/ersSubjectStub/localityName"></div>
+                    <b>localityName</b>
+                    <a class="ansibleOptionLink" href="#parameter-ersLocalCertStub/ersSubjectStub/localityName" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>System Certificate Create&#x27;s localityName.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-ersLocalCertStub/ersSubjectStub/organizationalUnitName"></div>
+                    <b>organizationalUnitName</b>
+                    <a class="ansibleOptionLink" href="#parameter-ersLocalCertStub/ersSubjectStub/organizationalUnitName" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>System Certificate Create&#x27;s organizationalUnitName.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-ersLocalCertStub/ersSubjectStub/organizationName"></div>
+                    <b>organizationName</b>
+                    <a class="ansibleOptionLink" href="#parameter-ersLocalCertStub/ersSubjectStub/organizationName" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>System Certificate Create&#x27;s organizationName.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-ersLocalCertStub/ersSubjectStub/stateOrProvinceName"></div>
+                    <b>stateOrProvinceName</b>
+                    <a class="ansibleOptionLink" href="#parameter-ersLocalCertStub/ersSubjectStub/stateOrProvinceName" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>System Certificate Create&#x27;s stateOrProvinceName.</div>
+                                                        </td>
+            </tr>
+                    
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-ersLocalCertStub/expirationTTL"></div>
+                    <b>expirationTTL</b>
+                    <a class="ansibleOptionLink" href="#parameter-ersLocalCertStub/expirationTTL" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">integer</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>System Certificate Create&#x27;s expirationTTL.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-ersLocalCertStub/friendlyName"></div>
+                    <b>friendlyName</b>
+                    <a class="ansibleOptionLink" href="#parameter-ersLocalCertStub/friendlyName" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>System Certificate Create&#x27;s friendlyName.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-ersLocalCertStub/groupTagDD"></div>
+                    <b>groupTagDD</b>
+                    <a class="ansibleOptionLink" href="#parameter-ersLocalCertStub/groupTagDD" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>System Certificate Create&#x27;s groupTagDD.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-ersLocalCertStub/keyLength"></div>
+                    <b>keyLength</b>
+                    <a class="ansibleOptionLink" href="#parameter-ersLocalCertStub/keyLength" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>System Certificate Create&#x27;s keyLength.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-ersLocalCertStub/keyType"></div>
+                    <b>keyType</b>
+                    <a class="ansibleOptionLink" href="#parameter-ersLocalCertStub/keyType" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>System Certificate Create&#x27;s keyType.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-ersLocalCertStub/samlCertificate"></div>
+                    <b>samlCertificate</b>
+                    <a class="ansibleOptionLink" href="#parameter-ersLocalCertStub/samlCertificate" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>System Certificate Create&#x27;s samlCertificate.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-ersLocalCertStub/selectedExpirationTTLUnit"></div>
+                    <b>selectedExpirationTTLUnit</b>
+                    <a class="ansibleOptionLink" href="#parameter-ersLocalCertStub/selectedExpirationTTLUnit" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>System Certificate Create&#x27;s selectedExpirationTTLUnit.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-ersLocalCertStub/xgridCertificate"></div>
+                    <b>xgridCertificate</b>
+                    <a class="ansibleOptionLink" href="#parameter-ersLocalCertStub/xgridCertificate" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>System Certificate Create&#x27;s xgridCertificate.</div>
+                                                        </td>
+            </tr>
+                    
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-nodeId"></div>
+                    <b>nodeId</b>
+                    <a class="ansibleOptionLink" href="#parameter-nodeId" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>NodeId of Cisco ISE application.</div>
+                                                        </td>
+            </tr>
+                        </table>
+    <br/>
+
+.. Notes
+
+
+.. Seealso
+
+See Also
+--------
+
+.. seealso::
+
+   `System Certificate Create reference <https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary>`_
+       Complete reference of the System Certificate Create object model.
+
+.. Examples
+
+Examples
+--------
+
+.. code-block:: yaml+jinja
+
+    
+    - name: Create
+      cisco.ise.system_certificate_create:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        ersLocalCertStub:
+          allowWildcardCerts: string
+          certificatePolicies: string
+          certificateSanDns: string
+          certificateSanIp: string
+          certificateSanUri: string
+          digest: string
+          ersSubjectStub:
+            commonName: string
+            countryName: string
+            localityName: string
+            organizationName: string
+            organizationalUnitName: string
+            stateOrProvinceName: string
+          expirationTTL: 0
+          friendlyName: string
+          groupTagDD: string
+          keyLength: string
+          keyType: string
+          samlCertificate: string
+          selectedExpirationTTLUnit: string
+          xgridCertificate: string
+        nodeId: string
+
+
+
+
+
+.. Facts
+
+
+.. Return values
+
+Return Values
+-------------
+Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
+
+.. raw:: html
+
+    <table border=0 cellpadding=0 class="documentation-table">
+        <tr>
+            <th colspan="1">Key</th>
+            <th>Returned</th>
+            <th width="100%">Description</th>
+        </tr>
+                    <tr>
+                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="return-ise_response"></div>
+                    <b>ise_response</b>
+                    <a class="ansibleOptionLink" href="#return-ise_response" title="Permalink to this return value"></a>
+                    <div style="font-size: small">
+                      <span style="color: purple">dictionary</span>
+                                          </div>
+                                    </td>
+                <td>always</td>
+                <td>
+                                            <div>A dictionary or list with the response returned by the Cisco ISE Python SDK</div>
+                                        <br/>
+                                            <div style="font-size: smaller"><b>Sample:</b></div>
+                                                <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">{}</div>
+                                    </td>
+            </tr>
+                        </table>
+    <br/><br/>
+
+..  Status (Presently only deprecated)
+
+
+.. Authors
+
+Authors
+~~~~~~~
+
+- Rafael Campos (@racampos)
+
+
+
+.. Parsing errors
+
