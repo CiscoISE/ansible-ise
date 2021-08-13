@@ -11,6 +11,7 @@ Welcome to ISE Ansible Actions' documentation!
    :caption: User documentation
 
    plugins/index
+   roles/index
 
 
 Indices and tables
