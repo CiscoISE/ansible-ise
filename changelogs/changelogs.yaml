@@ -60,3 +60,7 @@ releases:
     release_data: '2021-08-13'
     changes:
       release_summary: Fix response of csr_info, system_certificate_info and trusted_certificate_info by accessing each page `response` property.
+  1.0.3:
+    release_date: '2021-08-17'
+    changes:
+      release_summary: Added backup & restore and certificate management sample playbooks
