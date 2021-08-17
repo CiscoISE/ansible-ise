@@ -1,0 +1,26 @@
+- name:  Schedule configuration backup
+  hosts: ise
+  connection: local
+  vars:
+    ise_hostname: 198.18.133.27
+    ise_username: admin
+    ise_password: C1sco12345
+    ise_verify: false
+  tasks:
+
+  - name: Schedule backup
+    cisco.ise.backup_schedule_config:
+      ise_hostname: "{{ise_hostname}}"
+      ise_username: "{{ise_username}}"
+      ise_password: "{{ise_password}}"
+      ise_verify: "{{ise_verify}}"
+      backupDescription: mybackup
+      backupEncryptionKey: My3ncryptionkey
+      repositoryName: myRepo
+      backupName: myBackup2
+      startDate: 01/01/2022
+      endDate: 12/31/2022
+      frequency: WEEKLY
+      status: ENABLE
+      time: 12:00 AM
+      weekDay: SAT

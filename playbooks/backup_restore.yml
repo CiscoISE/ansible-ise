@@ -1,0 +1,21 @@
+- name:  Restore configuration backup
+  hosts: ise
+  connection: local
+  vars:
+    ise_hostname: 198.18.133.27
+    ise_username: admin
+    ise_password: C1sco12345
+    ise_verify: false
+  tasks:
+
+  - name: Restore backup
+    cisco.ise.backup_restore:
+      ise_hostname: "{{ise_hostname}}"
+      ise_username: "{{ise_username}}"
+      ise_password: "{{ise_password}}"
+      ise_verify: "{{ise_verify}}"
+      backupEncryptionKey: My3ncryptionkey
+      restoreFile: myBackup-CFG10-210806-2232.tar.gpg 
+      repositoryName: myRepo
+      restoreIncludeAdeos: True
+    register: result
