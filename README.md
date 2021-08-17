@@ -105,9 +105,10 @@ objc[34120]: +[__NSCFConstantString initialize] may have been in progress in ano
 ERROR! A worker was found in a dead state
 ```
 
-If that's the case try setting this environment variable:
+If that's the case try setting these environment variables:
 ```
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+export no_proxy=*
 ```
 
 ## Contributing to this collection
