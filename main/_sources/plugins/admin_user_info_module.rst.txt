@@ -20,7 +20,7 @@ cisco.ise.admin_user_info -- Information module for Admin User
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 1.0.2).
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 1.0.3).
 
     To install it use: :code:`ansible-galaxy collection install cisco.ise`.
 

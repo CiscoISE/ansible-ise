@@ -20,7 +20,7 @@ cisco.ise.sg_to_vn_to_vlan_bulk_request -- Resource module for Sg To Vn To Vlan 
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 1.0.2).
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 1.0.3).
 
     To install it use: :code:`ansible-galaxy collection install cisco.ise`.
 
