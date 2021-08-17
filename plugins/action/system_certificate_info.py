@@ -84,7 +84,7 @@ class ActionModule(ActionBase):
 
         id = self._task.args.get("id")
         name = self._task.args.get("hostName")
-        if id:
+        if id and name:
             response = ise.exec(
                 family="certificates",
                 function='get_system_certificate_by_id',
@@ -93,12 +93,39 @@ class ActionModule(ActionBase):
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result
-        if name:
-            response = ise.exec(
+        if name and not id:
+            response = []
+            generator = ise.exec(
                 family="certificates",
-                function='get_system_certificates',
-                params=self.get_object(self._task.args)
-            ).response
+                function='get_system_certificates_generator',
+                params=self.get_object(self._task.args),
+            )
+            try:
+                for item in generator:
+                    tmp_response = item.response['response']
+                    if isinstance(tmp_response, list):
+                        response += tmp_response
+                    else:
+                        response.append(tmp_response)
+            except (TypeError, AttributeError) as e:
+                ise.fail_json(
+                    msg=(
+                        "An error occured when executing operation."
+                        " Check the configuration of your API Settings and API Gateway settings on your ISE server."
+                        " This collection assumes that the API Gateway, the ERS APIs and OpenAPIs are enabled."
+                        " You may want to enable the (ise_debug: True) argument."
+                        " The error was: {error}"
+                    ).format(error=e)
+                )
+            except Exception as e:
+                ise.fail_json(
+                    msg=(
+                        "An error occured when executing operation."
+                        " The error was: {error}"
+                        " You may want to enable the (ise_debug: True) argument."
+                    ).format(error=e)
+                )
+
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

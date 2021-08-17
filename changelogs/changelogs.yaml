@@ -56,3 +56,7 @@ releases:
     release_date: '2021-07-25'
     changes:
       release_summary: Migrated the Personas Deployment playbooks to a role
+  1.0.2:
+    release_data: '2021-08-13'
+    changes:
+      release_summary: Fix response of csr_info, system_certificate_info and trusted_certificate_info by accessing each page `response` property.

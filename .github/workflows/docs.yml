@@ -1,12 +1,9 @@
 name: docs
 
-env:
-  GITHUB_ACTOR: wastorga
-  GITHUB_REPOSITORY: CiscoISE/ansible-ise.github.io
-  GITHUB_TOKEN: ${{ secrets.CREATE_DOC_SECRET }}
-
 on:
   push:
+    tags:
+      - v[0-9]+.[0-9]+.[0-9]+
     branches:
       - main
 
@@ -24,39 +21,19 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: "3.7"
-      - name: Restore pip cache
-        uses: actions/cache@v2.1.5
-        with:
-          path: ~/.cache/pip
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
-      - name: Install libyaml-dev for PyYAML
-        run: sudo apt-get install -y libyaml-dev
-      - name: Install Ansible
-        run: pip install --upgrade git+https://github.com/ansible/ansible.git@stable-2.11
       - name: Install dependencies
         run: make doc-setup
       - name: Build docs
         run: make doc
       - name: commit docs
         run: |
+          git checkout gh-pages
+          rm -rf $(basename ${GITHUB_REF})
+          mv docs/_build/html $(basename ${GITHUB_REF})
           git show origin/main:docs/_gh_include/header.inc > index.html
-          (echo main) | xargs -I@@ -n1 echo '<div class="col-md-4 center"><a href="@@/html" class="btn-doc btn"><i class="fa fa-newspaper-o"></i><p>@@</p></a></div>' >> index.html
+          (echo main; dirname v*/index.html | sort --version-sort --reverse) | xargs -I@@ -n1 echo '<div class="col-md-4 center"><a href="@@/" class="btn-doc btn"><i class="fa fa-newspaper-o"></i><p>@@</p></a></div>' >> index.html
           git show origin/main:docs/_gh_include/footer.inc >> index.html
-          docroot=`mktemp -d`
-          cp -R . "${docroot}/"
-          cd "${docroot}/"
-          rm -rf $(basename ${GITHUB_REF}) 2> /dev/null
-          mkdir -p $(basename ${GITHUB_REF})
-          cp -R "docs/_build/html/" $(basename ${GITHUB_REF})
-          git init
-          git remote add deploy "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
-          git checkout -b gh-pages
-          touch .nojekyll
-          rm README.md 2> /dev/null
-          git add .
-          msg="Updating docs $(basename ${GITHUB_REF}) by ${GITHUB_ACTOR}"
-          git commit -am "${msg}"
-          git push deploy gh-pages --force
-          cd -
+          git add $(basename ${GITHUB_REF}) index.html
+          git commit -m "update docs for $(basename ${GITHUB_REF})" || true
+      - name: push docs
+        run: git push origin gh-pages

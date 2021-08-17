@@ -52,11 +52,25 @@ class PortalGlobalSetting(object):
             family="portal_global_setting",
             function="get_portal_global_settings_generator"
         )
-        for items_response in gen_items_responses:
-            items = items_response.response['SearchResult']['resources']
-            result = get_dict_result(items, 'name', name)
-            if result:
-                return result
+        try:
+            for items_response in gen_items_responses:
+                items = items_response.response['SearchResult']['resources']
+                result = get_dict_result(items, 'name', name)
+                if result:
+                    return result
+        except (TypeError, AttributeError) as e:
+            self.ise.fail_json(
+                msg=(
+                    "An error occured when executing operation."
+                    " Check the configuration of your API Settings and API Gateway settings on your ISE server."
+                    " This collection assumes that the API Gateway, the ERS APIs and OpenAPIs are enabled."
+                    " You may want to enable the (ise_debug: True) argument."
+                    " The error was: {error}"
+                ).format(error=e)
+            )
+        except Exception:
+            result = None
+            return result
         return result
 
     def get_object_by_id(self, id):
@@ -64,9 +78,20 @@ class PortalGlobalSetting(object):
             result = self.ise.exec(
                 family="portal_global_setting",
                 function="get_portal_global_setting_by_id",
-                params={"id": id}
+                params={"id": id},
+                handle_func_exception=False,
             ).response['PortalCustomizationGlobalSetting']
-        except Exception as e:
+        except (TypeError, AttributeError) as e:
+            self.ise.fail_json(
+                msg=(
+                    "An error occured when executing operation."
+                    " Check the configuration of your API Settings and API Gateway settings on your ISE server."
+                    " This collection assumes that the API Gateway, the ERS APIs and OpenAPIs are enabled."
+                    " You may want to enable the (ise_debug: True) argument."
+                    " The error was: {error}"
+                ).format(error=e)
+            )
+        except Exception:
             result = None
         return result
 
