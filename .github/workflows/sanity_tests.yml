@@ -17,6 +17,7 @@ jobs:
           - stable-2.9
           - stable-2.10
           - stable-2.11
+          - stable-2.12
     runs-on: ubuntu-latest
     steps:
       - name: Check out code
