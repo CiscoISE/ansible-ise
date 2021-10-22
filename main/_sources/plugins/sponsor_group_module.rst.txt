@@ -30,7 +30,7 @@ cisco.ise.sponsor_group -- Resource module for Sponsor Group
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 1.1.0).
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 1.2.0).
 
     To install it use: :code:`ansible-galaxy collection install cisco.ise`.
 
@@ -66,7 +66,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 1.0.0
+- ciscoisesdk >= 1.1.0
 - python >= 3.5
 
 
@@ -392,6 +392,30 @@ Parameters
             </tr>
                                 <tr>
                                                                 <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-ise_uses_api_gateway"></div>
+                    <b>ise_uses_api_gateway</b>
+                    <a class="ansibleOptionLink" href="#parameter-ise_uses_api_gateway" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                          <div style="font-style: italic; font-size: small; color: darkgreen">
+                        added in 1.1.0 of cisco.ise
+                      </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                                                                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li><div style="color: blue"><b>yes</b>&nbsp;&larr;</div></li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Flag that informs the SDK whether to use the Identity Services Engine&#x27;s API Gateway to send requests.</div>
+                                            <div>If it is true, it uses the ISE&#x27;s API Gateway and sends requests to https://{{ise_hostname}}.</div>
+                                            <div>If it is false, it sends the requests to https://{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="2">
                     <div class="ansibleOptionAnchor" id="parameter-ise_verify"></div>
                     <b>ise_verify</b>
                     <a class="ansibleOptionLink" href="#parameter-ise_verify" title="Permalink to this option"></a>
@@ -419,7 +443,7 @@ Parameters
                                                                     </div>
                                                         </td>
                                 <td>
-                                                                                                                                                                    <b>Default:</b><br/><div style="color: blue">"3.0.0"</div>
+                                                                                                                                                                    <b>Default:</b><br/><div style="color: blue">"3.1.0"</div>
                                     </td>
                                                                 <td>
                                             <div>Informs the SDK which version of Identity Services Engine to use.</div>
@@ -935,6 +959,69 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
                       <span style="color: purple">dictionary</span>
                                           </div>
                                     </td>
+                <td>always</td>
+                <td>
+                                            <div>A dictionary or list with the response returned by the Cisco ISE Python SDK</div>
+                                        <br/>
+                                            <div style="font-size: smaller"><b>Sample:</b></div>
+                                                <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">{
+      &quot;id&quot;: &quot;string&quot;,
+      &quot;name&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;string&quot;,
+      &quot;isEnabled&quot;: true,
+      &quot;isDefaultGroup&quot;: true,
+      &quot;memberGroups&quot;: [
+        &quot;string&quot;
+      ],
+      &quot;guestTypes&quot;: [
+        &quot;string&quot;
+      ],
+      &quot;locations&quot;: [
+        &quot;string&quot;
+      ],
+      &quot;autoNotification&quot;: true,
+      &quot;createPermissions&quot;: {
+        &quot;canImportMultipleAccounts&quot;: true,
+        &quot;importBatchSizeLimit&quot;: 0,
+        &quot;canCreateRandomAccounts&quot;: true,
+        &quot;randomBatchSizeLimit&quot;: 0,
+        &quot;defaultUsernamePrefix&quot;: &quot;string&quot;,
+        &quot;canSpecifyUsernamePrefix&quot;: true,
+        &quot;canSetFutureStartDate&quot;: true,
+        &quot;startDateFutureLimitDays&quot;: 0
+      },
+      &quot;managePermission&quot;: &quot;string&quot;,
+      &quot;otherPermissions&quot;: {
+        &quot;canUpdateGuestContactInfo&quot;: true,
+        &quot;canViewGuestPasswords&quot;: true,
+        &quot;canSendSmsNotifications&quot;: true,
+        &quot;canResetGuestPasswords&quot;: true,
+        &quot;canExtendGuestAccounts&quot;: true,
+        &quot;canDeleteGuestAccounts&quot;: true,
+        &quot;canSuspendGuestAccounts&quot;: true,
+        &quot;requireSuspensionReason&quot;: true,
+        &quot;canReinstateSuspendedAccounts&quot;: true,
+        &quot;canApproveSelfregGuests&quot;: true,
+        &quot;limitApprovalToSponsorsGuests&quot;: true,
+        &quot;canAccessViaRest&quot;: true
+      },
+      &quot;link&quot;: {
+        &quot;rel&quot;: &quot;string&quot;,
+        &quot;href&quot;: &quot;string&quot;,
+        &quot;type&quot;: &quot;string&quot;
+      }
+    }</div>
+                                    </td>
+            </tr>
+                                <tr>
+                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="return-ise_update_response"></div>
+                    <b>ise_update_response</b>
+                    <a class="ansibleOptionLink" href="#return-ise_update_response" title="Permalink to this return value"></a>
+                    <div style="font-size: small">
+                      <span style="color: purple">dictionary</span>
+                                          </div>
+                    <div style="font-style: italic; font-size: small; color: darkgreen">added in 1.1.0 of cisco.ise</div>                </td>
                 <td>always</td>
                 <td>
                                             <div>A dictionary or list with the response returned by the Cisco ISE Python SDK</div>

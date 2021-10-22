@@ -30,7 +30,7 @@ cisco.ise.personas_check_standalone -- Ensure the node is in standalone mode
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 1.1.0).
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 1.2.0).
 
     To install it use: :code:`ansible-galaxy collection install cisco.ise`.
 
@@ -66,7 +66,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 1.0.0
+- requests >= 2.25.1
 - python >= 3.5
 
 

@@ -408,7 +408,7 @@
 <h1>cisco.ise.sponsored_guest_portal – Resource module for Sponsored Guest Portal<a class="headerlink" href="#cisco-ise-sponsored-guest-portal-resource-module-for-sponsored-guest-portal" title="Permalink to this headline"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This plugin is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/ise">cisco.ise collection</a> (version 1.1.0).</p>
+<p>This plugin is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/ise">cisco.ise collection</a> (version 1.2.0).</p>
 <p>To install it use: <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">install</span> <span class="pre">cisco.ise</span></code>.</p>
 <p>To use it in a playbook, specify: <code class="code docutils literal notranslate"><span class="pre">cisco.ise.sponsored_guest_portal</span></code>.</p>
 </div>
@@ -440,7 +440,7 @@
 <h2><a class="toc-backref" href="#id2">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this headline"></a></h2>
 <p>The below requirements are needed on the host that executes this module.</p>
 <ul class="simple">
-<li><p>ciscoisesdk &gt;= 1.0.0</p></li>
+<li><p>ciscoisesdk &gt;= 1.1.0</p></li>
 <li><p>python &gt;= 3.5</p></li>
 </ul>
 </section>
@@ -1034,6 +1034,30 @@
         </tr>
                             <tr>
                                                             <td colspan="4">
+                <div class="ansibleOptionAnchor" id="parameter-ise_uses_api_gateway"></div>
+                <b>ise_uses_api_gateway</b>
+                <a class="ansibleOptionLink" href="#parameter-ise_uses_api_gateway" title="Permalink to this option"></a>
+                <div style="font-size: small">
+                    <span style="color: purple">boolean</span>
+                                                                </div>
+                                      <div style="font-style: italic; font-size: small; color: darkgreen">
+                    added in 1.1.0 of cisco.ise
+                  </div>
+                                                    </td>
+                            <td>
+                                                                                                                                                                                                                <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                            <li>no</li>
+                                                                                                                                                                                            <li><div style="color: blue"><b>yes</b>&nbsp;&larr;</div></li>
+                                                                                </ul>
+                                                                        </td>
+                                                            <td>
+                                        <div>Flag that informs the SDK whether to use the Identity Services Engine&#x27;s API Gateway to send requests.</div>
+                                        <div>If it is true, it uses the ISE&#x27;s API Gateway and sends requests to https://{{ise_hostname}}.</div>
+                                        <div>If it is false, it sends the requests to https://{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).</div>
+                                                    </td>
+        </tr>
+                            <tr>
+                                                            <td colspan="4">
                 <div class="ansibleOptionAnchor" id="parameter-ise_verify"></div>
                 <b>ise_verify</b>
                 <a class="ansibleOptionLink" href="#parameter-ise_verify" title="Permalink to this option"></a>
@@ -1061,7 +1085,7 @@
                                                                 </div>
                                                     </td>
                             <td>
-                                                                                                                                                                <b>Default:</b><br/><div style="color: blue">"3.0.0"</div>
+                                                                                                                                                                <b>Default:</b><br/><div style="color: blue">"3.1.0"</div>
                                 </td>
                                                             <td>
                                         <div>Informs the SDK which version of Identity Services Engine to use.</div>
@@ -2711,6 +2735,163 @@
                   <span style="color: purple">dictionary</span>
                                       </div>
                                 </td>
+            <td>always</td>
+            <td>
+                                        <div>A dictionary or list with the response returned by the Cisco ISE Python SDK</div>
+                                    <br/>
+                                        <div style="font-size: smaller"><b>Sample:</b></div>
+                                            <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">{
+  &quot;id&quot;: &quot;string&quot;,
+  &quot;name&quot;: &quot;string&quot;,
+  &quot;description&quot;: &quot;string&quot;,
+  &quot;portalType&quot;: &quot;string&quot;,
+  &quot;portalTestUrl&quot;: &quot;string&quot;,
+  &quot;settings&quot;: {
+    &quot;portalSettings&quot;: {
+      &quot;httpsPort&quot;: 0,
+      &quot;allowedInterfaces&quot;: [
+        &quot;string&quot;
+      ],
+      &quot;certificateGroupTag&quot;: &quot;string&quot;,
+      &quot;authenticationMethod&quot;: &quot;string&quot;,
+      &quot;assignedGuestTypeForEmployee&quot;: &quot;string&quot;,
+      &quot;displayLang&quot;: &quot;string&quot;,
+      &quot;fallbackLanguage&quot;: &quot;string&quot;,
+      &quot;alwaysUsedLanguage&quot;: &quot;string&quot;
+    },
+    &quot;loginPageSettings&quot;: {
+      &quot;requireAccessCode&quot;: true,
+      &quot;maxFailedAttemptsBeforeRateLimit&quot;: 0,
+      &quot;timeBetweenLoginsDuringRateLimit&quot;: 0,
+      &quot;includeAup&quot;: true,
+      &quot;aupDisplay&quot;: &quot;string&quot;,
+      &quot;requireAupAcceptance&quot;: true,
+      &quot;accessCode&quot;: &quot;string&quot;,
+      &quot;allowGuestToCreateAccounts&quot;: true,
+      &quot;allowForgotPassword&quot;: true,
+      &quot;allowGuestToChangePassword&quot;: true,
+      &quot;allowAlternateGuestPortal&quot;: true,
+      &quot;socialConfigs&quot;: [
+        {
+          &quot;socialMediaType&quot;: &quot;string&quot;,
+          &quot;socialMediaValue&quot;: &quot;string&quot;
+        }
+      ]
+    },
+    &quot;aupSettings&quot;: {
+      &quot;includeAup&quot;: true,
+      &quot;requireAupScrolling&quot;: true,
+      &quot;useDiffAupForEmployees&quot;: true,
+      &quot;skipAupForEmployees&quot;: true,
+      &quot;displayFrequencyIntervalDays&quot;: 0,
+      &quot;requireScrolling&quot;: true,
+      &quot;displayFrequency&quot;: &quot;string&quot;
+    },
+    &quot;guestChangePasswordSettings&quot;: {
+      &quot;allowChangePasswdAtFirstLogin&quot;: true
+    },
+    &quot;guestDeviceRegistrationSettings&quot;: {
+      &quot;autoRegisterGuestDevices&quot;: true,
+      &quot;allowGuestsToRegisterDevices&quot;: true
+    },
+    &quot;byodSettings&quot;: {
+      &quot;byodWelcomeSettings&quot;: {
+        &quot;enableBYOD&quot;: true,
+        &quot;enableGuestAccess&quot;: true,
+        &quot;requireMDM&quot;: true,
+        &quot;includeAup&quot;: true,
+        &quot;aupDisplay&quot;: &quot;string&quot;,
+        &quot;requireAupAcceptance&quot;: true,
+        &quot;requireScrolling&quot;: true
+      },
+      &quot;byodRegistrationSettings&quot;: {
+        &quot;showDeviceID&quot;: true,
+        &quot;endPointIdentityGroupId&quot;: &quot;string&quot;
+      },
+      &quot;byodRegistrationSuccessSettings&quot;: {
+        &quot;successRedirect&quot;: &quot;string&quot;,
+        &quot;redirectUrl&quot;: &quot;string&quot;
+      }
+    },
+    &quot;postAccessBannerSettings&quot;: {
+      &quot;includePostAccessBanner&quot;: true
+    },
+    &quot;authSuccessSettings&quot;: {
+      &quot;successRedirect&quot;: &quot;string&quot;,
+      &quot;redirectUrl&quot;: &quot;string&quot;
+    },
+    &quot;postLoginBannerSettings&quot;: {
+      &quot;includePostAccessBanner&quot;: true
+    },
+    &quot;supportInfoSettings&quot;: {
+      &quot;includeSupportInfoPage&quot;: true,
+      &quot;includeMacAddr&quot;: true,
+      &quot;includeIpAddress&quot;: true,
+      &quot;includeBrowserUserAgent&quot;: true,
+      &quot;includePolicyServer&quot;: true,
+      &quot;includeFailureCode&quot;: true,
+      &quot;emptyFieldDisplay&quot;: &quot;string&quot;,
+      &quot;defaultEmptyFieldValue&quot;: &quot;string&quot;
+    }
+  },
+  &quot;customizations&quot;: {
+    &quot;portalTheme&quot;: {
+      &quot;id&quot;: &quot;string&quot;,
+      &quot;name&quot;: &quot;string&quot;,
+      &quot;themeData&quot;: &quot;string&quot;
+    },
+    &quot;portalTweakSettings&quot;: {
+      &quot;bannerColor&quot;: &quot;string&quot;,
+      &quot;bannerTextColor&quot;: &quot;string&quot;,
+      &quot;pageBackgroundColor&quot;: &quot;string&quot;,
+      &quot;pageLabelAndTextColor&quot;: &quot;string&quot;
+    },
+    &quot;language&quot;: {
+      &quot;viewLanguage&quot;: &quot;string&quot;
+    },
+    &quot;globalCustomizations&quot;: {
+      &quot;mobileLogoImage&quot;: {
+        &quot;data&quot;: &quot;string&quot;
+      },
+      &quot;desktopLogoImage&quot;: {
+        &quot;data&quot;: &quot;string&quot;
+      },
+      &quot;bannerImage&quot;: {
+        &quot;data&quot;: &quot;string&quot;
+      },
+      &quot;backgroundImage&quot;: {
+        &quot;data&quot;: &quot;string&quot;
+      },
+      &quot;bannerTitle&quot;: &quot;string&quot;,
+      &quot;contactText&quot;: &quot;string&quot;,
+      &quot;footerElement&quot;: &quot;string&quot;
+    },
+    &quot;pageCustomizations&quot;: {
+      &quot;data&quot;: [
+        {
+          &quot;key&quot;: &quot;string&quot;,
+          &quot;value&quot;: &quot;string&quot;
+        }
+      ]
+    }
+  },
+  &quot;link&quot;: {
+    &quot;rel&quot;: &quot;string&quot;,
+    &quot;href&quot;: &quot;string&quot;,
+    &quot;type&quot;: &quot;string&quot;
+  }
+}</div>
+                                </td>
+        </tr>
+                            <tr>
+                            <td colspan="1">
+                <div class="ansibleOptionAnchor" id="return-ise_update_response"></div>
+                <b>ise_update_response</b>
+                <a class="ansibleOptionLink" href="#return-ise_update_response" title="Permalink to this return value"></a>
+                <div style="font-size: small">
+                  <span style="color: purple">dictionary</span>
+                                      </div>
+                <div style="font-style: italic; font-size: small; color: darkgreen">added in 1.1.0 of cisco.ise</div>                </td>
             <td>always</td>
             <td>
                                         <div>A dictionary or list with the response returned by the Cisco ISE Python SDK</div>
