@@ -4,7 +4,7 @@
 Cisco.Ise
 =========
 
-Collection version 1.0.3
+Collection version 1.1.0
 
 .. toctree::
     :maxdepth: 1
@@ -152,6 +152,7 @@ Modules
 * :ref:`ise_root_ca_regenerate <ansible_collections.cisco.ise.ise_root_ca_regenerate_module>` -- Resource module for Ise Root Ca Regenerate
 * :ref:`mnt_account_status_info <ansible_collections.cisco.ise.mnt_account_status_info_module>` -- Information module for Mnt Account Status
 * :ref:`mnt_athentication_status_info <ansible_collections.cisco.ise.mnt_athentication_status_info_module>` -- Information module for Mnt Athentication Status
+* :ref:`mnt_authentication_status_info <ansible_collections.cisco.ise.mnt_authentication_status_info_module>` -- Information module for Mnt Authentication Status
 * :ref:`mnt_failure_reasons_info <ansible_collections.cisco.ise.mnt_failure_reasons_info_module>` -- Information module for Mnt Failure Reasons
 * :ref:`mnt_session_active_count_info <ansible_collections.cisco.ise.mnt_session_active_count_info_module>` -- Information module for Mnt Session Active Count
 * :ref:`mnt_session_active_list_info <ansible_collections.cisco.ise.mnt_session_active_list_info_module>` -- Information module for Mnt Session Active List
@@ -489,6 +490,7 @@ Modules
     ise_root_ca_regenerate_module
     mnt_account_status_info_module
     mnt_athentication_status_info_module
+    mnt_authentication_status_info_module
     mnt_failure_reasons_info_module
     mnt_session_active_count_info_module
     mnt_session_active_list_info_module
