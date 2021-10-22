@@ -447,3 +447,12 @@ releases:
         - Added backup_restore sample playbook.
         - Added backup_schedule sample playbook.
         - Added certificate_management sample playbook.
+  1.1.0:
+    release_date: '2021-10-22'
+    changes:
+      release_summary: Adds mnt_authentication_status_info module
+      bugfixes:
+        - Improves the changelog.
+        - Improves the documentation of modules.
+      minor_changes:
+        - mnt_authentication_status_info - new module.
