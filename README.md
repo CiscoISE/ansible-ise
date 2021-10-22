@@ -10,8 +10,9 @@ This collection has been tested and supports Cisco ISE 3.1.
 
 ## Requirements
 - Ansible >= 2.9
-- [Cisco ISE SDK](https://github.com/CiscoISE/ciscoisesdk) v1.0.0 or newer
+- [Cisco ISE SDK](https://github.com/CiscoISE/ciscoisesdk) v1.1.0 or newer
 - Python >= 3.6, as the Cisco ISE SDK doesn't support Python version 2.x
+- requests >= 2.25.1, for the personas modules and personas_deployment role.
 
 ## Install
 Ansible must be installed ([Install guide](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html))
@@ -43,9 +44,10 @@ ise_hostname: <A.B.C.D>
 ise_username: <username>
 ise_password: <password>
 ise_verify: False # optional, defaults to True
-ise_version: 3.0.0 # optional, defaults to 3.0.0
+ise_version: 3.1.0 # optional, defaults to 3.1.0
 ise_wait_on_rate_limit: True # optional, defaults to True
 ise_debug: False # optional, defaults to False
+ise_uses_api_gateway: True # optional, defaults to True
 ```
 
 Create a `hosts` ([example](playbooks/hosts)) file that uses `[ise_servers]` with your Cisco ISE Settings:
@@ -67,6 +69,8 @@ Then, create a playbook `myplaybook.yml` referencing the variables in your crede
       ise_username: "{{ise_username}}"
       ise_password: "{{ise_password}}"
       ise_verify: "{{ise_verify}}"
+      ise_debug: "{{ise_debug}}"
+      ise_uses_api_gateway: "{{ise_uses_api_gateway}}"
       id: "0667bc80-78a9-11eb-b987-005056aba98b"
 ```
 
@@ -87,9 +91,10 @@ ise_hostname: <A.B.C.D>
 ise_username: <username>
 ise_password: <password>
 ise_verify: False # optional, defaults to True
-ise_version: 3.0.0 # optional, defaults to 3.0.0
+ise_version: 3.1.0 # optional, defaults to 3.1.0
 ise_wait_on_rate_limit: True # optional, defaults to True
 ise_debug: False # optional, defaults to False
+ise_uses_api_gateway: True # optional, defaults to True
 ```
 
 Create a `hosts` ([example](playbooks/hosts)) file that uses `[ise_servers]` with your Cisco ISE Settings:
@@ -109,6 +114,8 @@ Then, create a playbook `myplaybook.yml` ([example](playbooks/network_device.yml
       ise_username: "{{ise_username}}"
       ise_password: "{{ise_password}}"
       ise_verify: "{{ise_verify}}"
+      ise_debug: "{{ise_debug}}"
+      ise_uses_api_gateway: "{{ise_uses_api_gateway}}"
       id: "0667bc80-78a9-11eb-b987-005056aba98b"
 ```
 
