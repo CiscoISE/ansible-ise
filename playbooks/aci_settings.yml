@@ -41,6 +41,9 @@
       maxNumSgtToAci: 500
       aci50: false
       aci51: false
+    when:
+      - aci_settings_info['ise_response'] is defined
+      - aci_settings_info['ise_response']['id'] is defined
     register: result
 
 

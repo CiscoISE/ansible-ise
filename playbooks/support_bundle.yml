@@ -47,6 +47,7 @@
       fileName: "{{support_bundle_status_result['ise_response']['fileName']}}"
       saveFile: True
     when:
+      - support_bundle_status_result['ise_response'] is defined
       - support_bundle_status_result['ise_response']['status'] == "complete"
       - support_bundle_status_result['ise_response']['fileName']
     register: support_bundle_download_result

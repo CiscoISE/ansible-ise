@@ -1,11 +1,6 @@
-- name:  Schedule configuration backup
-  hosts: ise
-  connection: local
-  vars:
-    ise_hostname: 198.18.133.27
-    ise_username: admin
-    ise_password: C1sco12345
-    ise_verify: false
+- hosts: ise_servers
+  gather_facts: no
+  name: Schedule configuration backup
   tasks:
 
   - name: Schedule backup
