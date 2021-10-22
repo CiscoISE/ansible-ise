@@ -1,6 +1,0 @@
-plugins/module_utils/ise.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
-plugins/module_utils/ise.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
-plugins/module_utils/ise.py import-2.6 # Python 2.6 is not supported by the Cisco ISE SDK
-plugins/module_utils/ise.py import-2.7 # Python 2.7 is not supported by the Cisco ISE SDK
-plugins/module_utils/ise.py pylint:ansible-bad-module-import # We need more information about this error in order to fix integration_event
-plugins/module_utils/personas_utils.py pylint:ansible-bad-module-import # We need more information about this error in order to fix it

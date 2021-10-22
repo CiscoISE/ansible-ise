@@ -1,7 +1,5 @@
-plugins/module_utils/ise.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
-plugins/module_utils/ise.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
-plugins/module_utils/ise.py import-2.6 # Python 2.6 is not supported by the Cisco ISE SDK
-plugins/module_utils/ise.py import-2.7 # Python 2.7 is not supported by the Cisco ISE SDK
+plugins/plugin_utils/ise.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
+plugins/plugin_utils/ise.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/aci_bindings_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/aci_settings.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/aci_settings_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
@@ -135,6 +133,7 @@ plugins/action/internal_user_info.py compile-2.6!skip # Python 2.6 is not suppor
 plugins/action/ise_root_ca_regenerate.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/mnt_account_status_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/mnt_athentication_status_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
+plugins/action/mnt_authentication_status_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/mnt_failure_reasons_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/mnt_session_active_count_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/mnt_session_active_list_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
@@ -457,6 +456,7 @@ plugins/action/internal_user_info.py compile-2.7!skip # Python 2.7 is not suppor
 plugins/action/ise_root_ca_regenerate.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/mnt_account_status_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/mnt_athentication_status_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
+plugins/action/mnt_authentication_status_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/mnt_failure_reasons_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/mnt_session_active_count_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/mnt_session_active_list_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
@@ -646,5 +646,3 @@ plugins/action/trusted_certificate.py compile-2.7!skip # Python 2.7 is not suppo
 plugins/action/trusted_certificate_export_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/trusted_certificate_import.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/trusted_certificate_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
-plugins/module_utils/ise.py pylint:ansible-bad-module-import # We need more information about this error in order to fix integration_event
-plugins/module_utils/personas_utils.py pylint:ansible-bad-module-import # We need more information about this error in order to fix it
