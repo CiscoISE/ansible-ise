@@ -108,24 +108,48 @@ def ise_argument_spec():
         ise_username=dict(type="str", required=True),
         ise_password=dict(type="str", required=True, no_log=True),
         ise_verify=dict(type="bool", default=True),
-        ise_version=dict(type="str", default="3.0.0"),
+        ise_version=dict(type="str", default="3.1.0"),
         ise_wait_on_rate_limit=dict(type="bool", default=True),
+        ise_uses_api_gateway=dict(type="bool", default=True),
         ise_debug=dict(type="bool", default=False),
     )
     return argument_spec
+
+
+def get_ise_url(hostname, port=None):
+    url_result = "https://{hostname}".format(hostname=hostname)
+    if port:
+        url_result = url_result + ":{port}".format(port=port)
+    return url_result
 
 
 class ISESDK(object):
     def __init__(self, params):
         self.result = dict(changed=False, result="")
         if ISE_SDK_IS_INSTALLED:
+            ise_uses_api_gateway = params.get("ise_uses_api_gateway")
+            ui_base_url = None
+            ers_base_url = None
+            mnt_base_url = None
+            px_grid_base_url = None
+            if not ise_uses_api_gateway:
+                ui_base_url = get_ise_url(params.get("ise_hostname"), port="443")
+                ers_base_url = get_ise_url(params.get("ise_hostname"), port="9060")
+                mnt_base_url = get_ise_url(params.get("ise_hostname"), port="443")
+                px_grid_base_url = get_ise_url(params.get("ise_hostname"), port="8910")
+
             self.api = api.IdentityServicesEngineAPI(
                 username=params.get("ise_username"),
                 password=params.get("ise_password"),
-                base_url="https://{ise_hostname}".format(ise_hostname=params.get("ise_hostname")),
+                base_url=get_ise_url(params.get("ise_hostname"), port=None),
+                ui_base_url=ui_base_url,
+                ers_base_url=ers_base_url,
+                mnt_base_url=mnt_base_url,
+                px_grid_base_url=px_grid_base_url,
                 verify=params.get("ise_verify"),
                 version=params.get("ise_version"),
                 wait_on_rate_limit=params.get("ise_wait_on_rate_limit"),
+                uses_api_gateway=ise_uses_api_gateway,
                 debug=params.get("ise_debug"),
             )
             if params.get("ise_debug") and LOGGING_IN_STANDARD:
