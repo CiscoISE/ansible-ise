@@ -6,3 +6,4 @@ ise_password: "C1sco12345"
 ise_version: "3.0.0"
 ise_verify: False
 ise_debug: True
+ise_uses_api_gateway: True
