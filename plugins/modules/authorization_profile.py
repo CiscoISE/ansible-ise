@@ -11,6 +11,8 @@ short_description: Resource module for Authorization Profile
 description:
 - Manage operations create, update and delete of the resource Authorization Profile.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   accessType:
@@ -168,7 +170,8 @@ options:
         type: str
     type: dict
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Authorization Profile reference

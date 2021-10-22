@@ -11,6 +11,8 @@ short_description: Resource module for Device Administration Global Exception Ru
 description:
 - Manage operations create, update and delete of the resource Device Administration Global Exception Rules.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   commands:
@@ -213,7 +215,8 @@ options:
         type: str
     type: dict
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Device Administration Global Exception Rules reference

@@ -11,6 +11,8 @@ short_description: Resource module for Filter Policy
 description:
 - Manage operations create, update and delete of the resource Filter Policy.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   domains:
@@ -30,7 +32,8 @@ options:
     description: Virtual Network. At least one of subnet or sgt or vn should be defined.
     type: str
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Filter Policy reference

@@ -11,10 +11,13 @@ short_description: Information module for Mnt Session Posture Count
 description:
 - Get all Mnt Session Posture Count.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Mnt Session Posture Count reference

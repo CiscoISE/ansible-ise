@@ -11,6 +11,8 @@ short_description: Information module for Mnt Sessions By Session Id
 description:
 - Get all Mnt Sessions By Session Id.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options:
   session_id:
@@ -18,7 +20,8 @@ options:
     - Session_id path parameter.
     type: str
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Mnt Sessions By Session Id reference

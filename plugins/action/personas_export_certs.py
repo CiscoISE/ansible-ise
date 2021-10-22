@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+# Copyright (c) 2021, Cisco Systems
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+
 from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
 from ansible.plugins.action import ActionBase
@@ -12,7 +18,7 @@ else:
 from ansible.errors import AnsibleActionFail
 from urllib.parse import quote
 import time
-from ansible_collections.cisco.ise.plugins.module_utils.personas_utils import (
+from ansible_collections.cisco.ise.plugins.plugin_utils.personas_utils import (
     Node,
     ISEDeployment,
 )
@@ -28,7 +34,7 @@ argument_spec = dict(
     password=dict(type="str", required=True),
     ise_verify=dict(type="bool", default=True),
     ise_version=dict(type="str", default="3.0.0"),
-    ise_wait_on_rate_limit=dict(type="bool", default=True),  # TODO: verify what the true default value should be
+    ise_wait_on_rate_limit=dict(type="bool", default=True),
 )
 
 required_if = []
@@ -43,6 +49,7 @@ class ActionModule(ActionBase):
             raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
+        self._supports_check_mode = False
         self._result = None
 
     # Checks the supplied parameters against the argument spec for this module
@@ -68,6 +75,11 @@ class ActionModule(ActionBase):
         self._result = super(ActionModule, self).run(tmp, task_vars)
         self._result["changed"] = False
         self._check_argspec()
+
+        if self._play_context.check_mode:
+            # in --check mode, always skip this module execution
+            self._result["skipped"] = True
+            return self._result
 
         primary_node = dict(ip=self._task.args.get("primary_ip"),
                             username=self._task.args.get("primary_username"),

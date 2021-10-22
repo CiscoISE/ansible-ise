@@ -11,6 +11,8 @@ short_description: Information module for Mnt Athentication Status
 description:
 - Get all Mnt Athentication Status.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options:
   MAC:
@@ -26,7 +28,8 @@ options:
     - RECORDS path parameter.
     type: str
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Mnt Athentication Status reference

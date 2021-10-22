@@ -13,6 +13,8 @@
   - name: Print portal_global_setting id
     ansible.builtin.debug:
       var: portal_global_settings['ise_response'][0]['id']
+    when: not ansible_check_mode
+
 
   - name: Update portal_global_setting
     cisco.ise.portal_global_setting:
@@ -23,6 +25,7 @@
       state: present
       id: "{{portal_global_settings['ise_response'][0]['id']}}"
       customization: HTML
+    when: not ansible_check_mode
     register: result
 
   - name: Print result

@@ -11,6 +11,8 @@ short_description: Resource module for Byod Portal
 description:
 - Manage operations create, update and delete of the resource Byod Portal.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   customizations:
@@ -253,7 +255,8 @@ options:
         type: dict
     type: dict
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Byod Portal reference

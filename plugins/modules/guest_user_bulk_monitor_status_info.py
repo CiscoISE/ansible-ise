@@ -11,6 +11,8 @@ short_description: Information module for Guest User Bulk Monitor Status
 description:
 - Get Guest User Bulk Monitor Status by id.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options:
   bulkid:
@@ -18,7 +20,8 @@ options:
     - Bulkid path parameter.
     type: str
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Guest User Bulk Monitor Status reference

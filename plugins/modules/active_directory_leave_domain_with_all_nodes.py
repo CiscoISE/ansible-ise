@@ -11,6 +11,8 @@ short_description: Resource module for Active Directory Leave Domain With All No
 description:
 - Manage operation update of the resource Active Directory Leave Domain With All Nodes.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   additionalData:
@@ -24,7 +26,8 @@ options:
         type: str
     type: list
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Active Directory Leave Domain With All Nodes reference

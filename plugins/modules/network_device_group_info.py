@@ -13,6 +13,8 @@ description:
 - Get Network Device Group by id.
 - Get Network Device Group by name.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options:
   name:
@@ -60,7 +62,8 @@ options:
       can be changed by using the parameter.
     type: str
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Network Device Group reference

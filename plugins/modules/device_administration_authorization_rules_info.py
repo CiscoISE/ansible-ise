@@ -12,6 +12,8 @@ description:
 - Get all Device Administration Authorization Rules.
 - Get Device Administration Authorization Rules by id.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options:
   policyId:
@@ -23,7 +25,8 @@ options:
     - Id path parameter. Rule id.
     type: str
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Device Administration Authorization Rules reference

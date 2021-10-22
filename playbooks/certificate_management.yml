@@ -1,11 +1,6 @@
-- name:  Certificate management
-  hosts: ise
-  connection: local
-  vars:
-    ise_hostname: 198.18.133.27
-    ise_username: admin
-    ise_password: C1sco12345
-    ise_verify: false
+- hosts: ise_servers
+  gather_facts: no
+  name: Certificate management
   tasks:
 
   # - name: Import certificate into ISE node
@@ -50,6 +45,7 @@
   - name: Set ID value to variable
     ansible.builtin.set_fact:
       csr_id: "{{result['ise_response']['response'][0]['id']}}"
+    when: not ansible_check_mode
 
   - name: Pause until the CSR has been signed by the CA
     pause:
@@ -76,4 +72,5 @@
       ims: true
       portal: true
     with_fileglob:
-      - "/Users/rcampos/Downloads/RootCACert.pem"     
+      - "/Users/rcampos/Downloads/RootCACert.pem"
+    when: not ansible_check_mode

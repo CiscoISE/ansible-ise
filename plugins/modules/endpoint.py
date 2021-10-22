@@ -11,6 +11,8 @@ short_description: Resource module for Endpoint
 description:
 - Manage operations create, update and delete of the resource Endpoint.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   customAttributes:
@@ -97,7 +99,8 @@ options:
     description: StaticProfileAssignment flag.
     type: bool
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Endpoint reference

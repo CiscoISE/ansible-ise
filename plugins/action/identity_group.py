@@ -1,3 +1,9 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+# Copyright (c) 2021, Cisco Systems
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+
 from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
 from ansible.plugins.action import ActionBase
@@ -10,7 +16,7 @@ except ImportError:
 else:
     ANSIBLE_UTILS_IS_INSTALLED = True
 from ansible.errors import AnsibleActionFail
-from ansible_collections.cisco.ise.plugins.module_utils.ise import (
+from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
     ISESDK,
     ise_argument_spec,
     ise_compare_equality,
@@ -147,7 +153,8 @@ class ActionModule(ActionBase):
         if not ANSIBLE_UTILS_IS_INSTALLED:
             raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
         super(ActionModule, self).__init__(*args, **kwargs)
-        self._supports_async = True
+        self._supports_async = False
+        self._supports_check_mode = False
         self._result = None
 
     # Checks the supplied parameters against the argument spec for this module
@@ -174,7 +181,12 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-        ise = ISESDK(self._task.args)
+        if self._play_context.check_mode:
+            # in --check mode, always skip this module execution
+            self._result["skipped"] = True
+            return self._result
+
+        ise = ISESDK(params=self._task.args)
         obj = IdentityGroup(self._task.args, ise)
 
         state = self._task.args.get("state")

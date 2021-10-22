@@ -11,6 +11,8 @@ short_description: Resource module for Sg Mapping Group
 description:
 - Manage operations create, update and delete of the resource Sg Mapping Group.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   deployTo:
@@ -29,7 +31,8 @@ options:
     description: Mandatory unless mappingGroup is set.
     type: str
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Sg Mapping Group reference

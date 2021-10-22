@@ -11,6 +11,8 @@ short_description: Resource module for Device Administration Conditions
 description:
 - Manage operations create, update and delete of the resource Device Administration Conditions.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   attributeId:
@@ -156,7 +158,8 @@ options:
     elements: str
     type: list
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Device Administration Conditions reference

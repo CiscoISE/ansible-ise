@@ -1,11 +1,6 @@
-- name:  Backup configuration
-  hosts: ise
-  connection: local
-  vars:
-    ise_hostname: 198.18.133.27
-    ise_username: admin
-    ise_password: C1sco12345
-    ise_verify: false
+- hosts: ise_servers
+  gather_facts: no
+  name:  Backup configuration
   tasks:
 
   - name: Create a repository
@@ -38,6 +33,11 @@
       ise_password: "{{ise_password}}"
       ise_verify: "{{ise_verify}}"
       taskId: "{{result.ise_response.response.id}}"
+    when:
+      - result is defined
+      - result['ise_response'] is defined
+      - result['ise_response']['response']
+      - result['ise_response']['response']['id'] is defined
     register: task_status
 
   - name: Show task status

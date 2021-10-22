@@ -11,6 +11,8 @@ short_description: Resource module for Native Supplicant Profile
 description:
 - Manage operations update and delete of the resource Native Supplicant Profile.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   description:
@@ -43,7 +45,8 @@ options:
         type: str
     type: list
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Native Supplicant Profile reference

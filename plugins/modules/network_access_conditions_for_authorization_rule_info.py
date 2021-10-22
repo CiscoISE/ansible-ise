@@ -11,10 +11,13 @@ short_description: Information module for Network Access Conditions For Authoriz
 description:
 - Get all Network Access Conditions For Authorization Rule.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Network Access Conditions For Authorization Rule reference

@@ -12,6 +12,8 @@ description:
 - Get all Csr.
 - Get Csr by id.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options:
   page:
@@ -61,7 +63,8 @@ options:
     - Id path parameter. The ID of the Certificate Signing Request returned.
     type: str
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Csr reference

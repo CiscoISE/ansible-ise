@@ -11,6 +11,8 @@ short_description: Resource module for Bind Signed Certificate
 description:
 - Manage operation create of the resource Bind Signed Certificate.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   admin:
@@ -65,7 +67,8 @@ options:
     description: Validate Certificate Extensions.
     type: bool
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Bind Signed Certificate reference

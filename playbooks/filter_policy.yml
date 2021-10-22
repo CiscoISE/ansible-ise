@@ -35,6 +35,7 @@
   - name: Print sgt_src
     ansible.builtin.debug:
       var: sgt_src['ise_response'][0]
+    when: not ansible_check_mode
 
   - name: Create or update a filter_policy
     cisco.ise.filter_policy:
@@ -47,6 +48,10 @@
       domains: "default"
       sgt: "{{sgt_src['ise_response'][0]['name']}}"
       id: ""
+    when:
+      - sgt_src['ise_response'] is defined
+      - sgt_src['ise_response']|length == 1
+      - sgt_src['ise_response'][0]['name']
     register: result
 
   - name: Print result

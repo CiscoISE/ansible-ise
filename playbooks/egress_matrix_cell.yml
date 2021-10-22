@@ -50,6 +50,15 @@
       destinationSgtId: "{{sgt_dest['ise_response'][0]['id']}}"
       matrixCellStatus: "ENABLED"
       defaultRule: "DENY_IP"
+    when:
+      - sgt_src['ise_response'] is defined
+      - sgt_dest['ise_response'] is defined
+      - sgt_src['ise_response']|length == 1
+      - sgt_dest['ise_response']|length == 1
+      - sgt_src['ise_response'][0] is defined
+      - sgt_dest['ise_response'][0] is defined
+      - sgt_src['ise_response'][0]['id'] is defined
+      - sgt_dest['ise_response'][0]['id'] is defined
     register: result
 
   - name: Print result

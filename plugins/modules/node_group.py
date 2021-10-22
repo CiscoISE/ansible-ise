@@ -11,6 +11,8 @@ short_description: Resource module for Node Group
 description:
 - Manage operations create, update and delete of the resource Node Group.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   description:
@@ -39,7 +41,8 @@ options:
     description: Node-group-name path parameter. ID of the existing node group.
     type: str
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Node Group reference

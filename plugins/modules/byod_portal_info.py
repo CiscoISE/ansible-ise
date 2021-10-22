@@ -12,6 +12,8 @@ description:
 - Get all Byod Portal.
 - Get Byod Portal by id.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options:
   id:
@@ -53,7 +55,8 @@ options:
       can be changed by using the parameter.
     type: str
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Byod Portal reference

@@ -11,6 +11,8 @@ short_description: Resource module for Id Store Sequence
 description:
 - Manage operations create, update and delete of the resource Id Store Sequence.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   breakOnStoreFail:
@@ -42,7 +44,8 @@ options:
     description: Id Store Sequence's parent.
     type: str
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Id Store Sequence reference
