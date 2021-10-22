@@ -1,4 +1,9 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+# Copyright (c) 2021, Cisco Systems
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+
 from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
 try:
@@ -103,8 +108,8 @@ def ise_argument_spec():
         ise_username=dict(type="str", required=True),
         ise_password=dict(type="str", required=True, no_log=True),
         ise_verify=dict(type="bool", default=True),
-        ise_version=dict(type="str", default="3.0.0"),
-        ise_wait_on_rate_limit=dict(type="bool", default=True),  # TODO: verify what the true default value should be
+        ise_version=dict(type="str", default="3.1.0"),
+        ise_wait_on_rate_limit=dict(type="bool", default=True),
         ise_debug=dict(type="bool", default=False),
     )
     return argument_spec
@@ -163,7 +168,12 @@ class ISESDK(object):
             family = getattr(self.api, family)
             func = getattr(family, function)
         except Exception as e:
-            self.fail_json(msg=e)
+            self.fail_json(
+                msg=(
+                    "An error occured when retrieving operation."
+                    " The error was: {error}"
+                ).format(error=e)
+            )
 
         try:
             if params:
