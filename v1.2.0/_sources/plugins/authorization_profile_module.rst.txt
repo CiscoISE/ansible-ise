@@ -1,0 +1,1292 @@
+.. Document meta
+
+:orphan:
+
+.. |antsibull-internal-nbsp| unicode:: 0xA0
+    :trim:
+
+.. role:: ansible-attribute-support-label
+.. role:: ansible-attribute-support-property
+.. role:: ansible-attribute-support-full
+.. role:: ansible-attribute-support-partial
+.. role:: ansible-attribute-support-none
+.. role:: ansible-attribute-support-na
+
+.. Anchors
+
+.. _ansible_collections.cisco.ise.authorization_profile_module:
+
+.. Anchors: short name for ansible.builtin
+
+.. Anchors: aliases
+
+
+
+.. Title
+
+cisco.ise.authorization_profile -- Resource module for Authorization Profile
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. Collection note
+
+.. note::
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 1.2.0).
+
+    To install it use: :code:`ansible-galaxy collection install cisco.ise`.
+
+    To use it in a playbook, specify: :code:`cisco.ise.authorization_profile`.
+
+.. version_added
+
+.. versionadded:: 1.0.0 of cisco.ise
+
+.. contents::
+   :local:
+   :depth: 1
+
+.. Deprecated
+
+
+Synopsis
+--------
+
+.. Description
+
+- Manage operations create, update and delete of the resource Authorization Profile.
+
+.. note::
+    This module has a corresponding :ref:`action plugin <action_plugins>`.
+
+.. Aliases
+
+
+.. Requirements
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- ciscoisesdk >= 1.1.0
+- python >= 3.5
+
+
+.. Options
+
+Parameters
+----------
+
+.. raw:: html
+
+    <table  border=0 cellpadding=0 class="documentation-table">
+        <tr>
+            <th colspan="3">Parameter</th>
+            <th>Choices/<font color="blue">Defaults</font></th>
+                        <th width="100%">Comments</th>
+        </tr>
+                    <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-accessType"></div>
+                    <b>accessType</b>
+                    <a class="ansibleOptionLink" href="#parameter-accessType" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Allowed Values - ACCESS_ACCEPT, - ACCESS_REJECT.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-acl"></div>
+                    <b>acl</b>
+                    <a class="ansibleOptionLink" href="#parameter-acl" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Authorization Profile&#x27;s acl.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-advancedAttributes"></div>
+                    <b>advancedAttributes</b>
+                    <a class="ansibleOptionLink" href="#parameter-advancedAttributes" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">list</span>
+                         / <span style="color: purple">elements=string</span>                                            </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Authorization Profile&#x27;s advancedAttributes.</div>
+                                                        </td>
+            </tr>
+                                        <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-advancedAttributes/leftHandSideDictionaryAttribue"></div>
+                    <b>leftHandSideDictionaryAttribue</b>
+                    <a class="ansibleOptionLink" href="#parameter-advancedAttributes/leftHandSideDictionaryAttribue" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">dictionary</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Authorization Profile&#x27;s leftHandSideDictionaryAttribue.</div>
+                                                        </td>
+            </tr>
+                                        <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-advancedAttributes/leftHandSideDictionaryAttribue/AdvancedAttributeValueType"></div>
+                    <b>AdvancedAttributeValueType</b>
+                    <a class="ansibleOptionLink" href="#parameter-advancedAttributes/leftHandSideDictionaryAttribue/AdvancedAttributeValueType" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Authorization Profile&#x27;s AdvancedAttributeValueType.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-advancedAttributes/leftHandSideDictionaryAttribue/attributeName"></div>
+                    <b>attributeName</b>
+                    <a class="ansibleOptionLink" href="#parameter-advancedAttributes/leftHandSideDictionaryAttribue/attributeName" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Authorization Profile&#x27;s attributeName.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-advancedAttributes/leftHandSideDictionaryAttribue/dictionaryName"></div>
+                    <b>dictionaryName</b>
+                    <a class="ansibleOptionLink" href="#parameter-advancedAttributes/leftHandSideDictionaryAttribue/dictionaryName" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Authorization Profile&#x27;s dictionaryName.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-advancedAttributes/leftHandSideDictionaryAttribue/value"></div>
+                    <b>value</b>
+                    <a class="ansibleOptionLink" href="#parameter-advancedAttributes/leftHandSideDictionaryAttribue/value" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Authorization Profile&#x27;s value.</div>
+                                                        </td>
+            </tr>
+                    
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-advancedAttributes/rightHandSideAttribueValue"></div>
+                    <b>rightHandSideAttribueValue</b>
+                    <a class="ansibleOptionLink" href="#parameter-advancedAttributes/rightHandSideAttribueValue" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">dictionary</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Attribute value can be of type AttributeValue or AdvancedDictionaryAttribute. For AttributeValue the value is String, For AdvancedDictionaryAttribute the value is dictionaryName and attributeName properties.</div>
+                                                        </td>
+            </tr>
+                                        <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-advancedAttributes/rightHandSideAttribueValue/AdvancedAttributeValueType"></div>
+                    <b>AdvancedAttributeValueType</b>
+                    <a class="ansibleOptionLink" href="#parameter-advancedAttributes/rightHandSideAttribueValue/AdvancedAttributeValueType" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Authorization Profile&#x27;s AdvancedAttributeValueType.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-advancedAttributes/rightHandSideAttribueValue/attributeName"></div>
+                    <b>attributeName</b>
+                    <a class="ansibleOptionLink" href="#parameter-advancedAttributes/rightHandSideAttribueValue/attributeName" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Authorization Profile&#x27;s attributeName.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-advancedAttributes/rightHandSideAttribueValue/dictionaryName"></div>
+                    <b>dictionaryName</b>
+                    <a class="ansibleOptionLink" href="#parameter-advancedAttributes/rightHandSideAttribueValue/dictionaryName" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Authorization Profile&#x27;s dictionaryName.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-advancedAttributes/rightHandSideAttribueValue/value"></div>
+                    <b>value</b>
+                    <a class="ansibleOptionLink" href="#parameter-advancedAttributes/rightHandSideAttribueValue/value" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Authorization Profile&#x27;s value.</div>
+                                                        </td>
+            </tr>
+                    
+                    
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-agentlessPosture"></div>
+                    <b>agentlessPosture</b>
+                    <a class="ansibleOptionLink" href="#parameter-agentlessPosture" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li>yes</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>AgentlessPosture flag.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-airespaceACL"></div>
+                    <b>airespaceACL</b>
+                    <a class="ansibleOptionLink" href="#parameter-airespaceACL" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Authorization Profile&#x27;s airespaceACL.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-airespaceIPv6ACL"></div>
+                    <b>airespaceIPv6ACL</b>
+                    <a class="ansibleOptionLink" href="#parameter-airespaceIPv6ACL" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Authorization Profile&#x27;s airespaceIPv6ACL.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-asaVpn"></div>
+                    <b>asaVpn</b>
+                    <a class="ansibleOptionLink" href="#parameter-asaVpn" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Authorization Profile&#x27;s asaVpn.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-authzProfileType"></div>
+                    <b>authzProfileType</b>
+                    <a class="ansibleOptionLink" href="#parameter-authzProfileType" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Allowed Values - SWITCH, - TRUSTSEC, - TACACS SWITCH is used for Standard Authorization Profiles.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-autoSmartPort"></div>
+                    <b>autoSmartPort</b>
+                    <a class="ansibleOptionLink" href="#parameter-autoSmartPort" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Authorization Profile&#x27;s autoSmartPort.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-avcProfile"></div>
+                    <b>avcProfile</b>
+                    <a class="ansibleOptionLink" href="#parameter-avcProfile" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Authorization Profile&#x27;s avcProfile.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-daclName"></div>
+                    <b>daclName</b>
+                    <a class="ansibleOptionLink" href="#parameter-daclName" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Authorization Profile&#x27;s daclName.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-description"></div>
+                    <b>description</b>
+                    <a class="ansibleOptionLink" href="#parameter-description" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Authorization Profile&#x27;s description.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-easywiredSessionCandidate"></div>
+                    <b>easywiredSessionCandidate</b>
+                    <a class="ansibleOptionLink" href="#parameter-easywiredSessionCandidate" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li>yes</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>EasywiredSessionCandidate flag.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-id"></div>
+                    <b>id</b>
+                    <a class="ansibleOptionLink" href="#parameter-id" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Resource UUID value.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-interfaceTemplate"></div>
+                    <b>interfaceTemplate</b>
+                    <a class="ansibleOptionLink" href="#parameter-interfaceTemplate" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Authorization Profile&#x27;s interfaceTemplate.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-ipv6ACLFilter"></div>
+                    <b>ipv6ACLFilter</b>
+                    <a class="ansibleOptionLink" href="#parameter-ipv6ACLFilter" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Authorization Profile&#x27;s ipv6ACLFilter.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-ipv6DaclName"></div>
+                    <b>ipv6DaclName</b>
+                    <a class="ansibleOptionLink" href="#parameter-ipv6DaclName" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Authorization Profile&#x27;s ipv6DaclName.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-ise_debug"></div>
+                    <b>ise_debug</b>
+                    <a class="ansibleOptionLink" href="#parameter-ise_debug" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                                                                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li><div style="color: blue"><b>no</b>&nbsp;&larr;</div></li>
+                                                                                                                                                                                                <li>yes</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Flag for Identity Services Engine SDK to enable debugging.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-ise_hostname"></div>
+                    <b>ise_hostname</b>
+                    <a class="ansibleOptionLink" href="#parameter-ise_hostname" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                 / <span style="color: red">required</span>                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>The Identity Services Engine hostname.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-ise_password"></div>
+                    <b>ise_password</b>
+                    <a class="ansibleOptionLink" href="#parameter-ise_password" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                 / <span style="color: red">required</span>                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>The Identity Services Engine password to authenticate.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-ise_username"></div>
+                    <b>ise_username</b>
+                    <a class="ansibleOptionLink" href="#parameter-ise_username" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                 / <span style="color: red">required</span>                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>The Identity Services Engine username to authenticate.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-ise_uses_api_gateway"></div>
+                    <b>ise_uses_api_gateway</b>
+                    <a class="ansibleOptionLink" href="#parameter-ise_uses_api_gateway" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                          <div style="font-style: italic; font-size: small; color: darkgreen">
+                        added in 1.1.0 of cisco.ise
+                      </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                                                                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li><div style="color: blue"><b>yes</b>&nbsp;&larr;</div></li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Flag that informs the SDK whether to use the Identity Services Engine&#x27;s API Gateway to send requests.</div>
+                                            <div>If it is true, it uses the ISE&#x27;s API Gateway and sends requests to https://{{ise_hostname}}.</div>
+                                            <div>If it is false, it sends the requests to https://{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-ise_verify"></div>
+                    <b>ise_verify</b>
+                    <a class="ansibleOptionLink" href="#parameter-ise_verify" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                                                                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li><div style="color: blue"><b>yes</b>&nbsp;&larr;</div></li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Flag to enable or disable SSL certificate verification.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-ise_version"></div>
+                    <b>ise_version</b>
+                    <a class="ansibleOptionLink" href="#parameter-ise_version" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                    <b>Default:</b><br/><div style="color: blue">"3.1.0"</div>
+                                    </td>
+                                                                <td>
+                                            <div>Informs the SDK which version of Identity Services Engine to use.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-ise_wait_on_rate_limit"></div>
+                    <b>ise_wait_on_rate_limit</b>
+                    <a class="ansibleOptionLink" href="#parameter-ise_wait_on_rate_limit" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                                                                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li><div style="color: blue"><b>yes</b>&nbsp;&larr;</div></li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Flag for Identity Services Engine SDK to enable automatic rate-limit handling.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-macSecPolicy"></div>
+                    <b>macSecPolicy</b>
+                    <a class="ansibleOptionLink" href="#parameter-macSecPolicy" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Allowed Values - MUST_SECURE, - MUST_NOT_SECURE, - SHOULD_SECURE.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-name"></div>
+                    <b>name</b>
+                    <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Resource Name.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-neat"></div>
+                    <b>neat</b>
+                    <a class="ansibleOptionLink" href="#parameter-neat" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li>yes</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Neat flag.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-profileName"></div>
+                    <b>profileName</b>
+                    <a class="ansibleOptionLink" href="#parameter-profileName" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Authorization Profile&#x27;s profileName.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-reauth"></div>
+                    <b>reauth</b>
+                    <a class="ansibleOptionLink" href="#parameter-reauth" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">dictionary</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Authorization Profile&#x27;s reauth.</div>
+                                                        </td>
+            </tr>
+                                        <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-reauth/connectivity"></div>
+                    <b>connectivity</b>
+                    <a class="ansibleOptionLink" href="#parameter-reauth/connectivity" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Allowed Values - DEFAULT, - RADIUS_REQUEST.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-reauth/timer"></div>
+                    <b>timer</b>
+                    <a class="ansibleOptionLink" href="#parameter-reauth/timer" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">integer</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Valid range is 1-65535.</div>
+                                                        </td>
+            </tr>
+                    
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-serviceTemplate"></div>
+                    <b>serviceTemplate</b>
+                    <a class="ansibleOptionLink" href="#parameter-serviceTemplate" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li>yes</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>ServiceTemplate flag.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-trackMovement"></div>
+                    <b>trackMovement</b>
+                    <a class="ansibleOptionLink" href="#parameter-trackMovement" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li>yes</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>TrackMovement flag.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-vlan"></div>
+                    <b>vlan</b>
+                    <a class="ansibleOptionLink" href="#parameter-vlan" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">dictionary</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Authorization Profile&#x27;s vlan.</div>
+                                                        </td>
+            </tr>
+                                        <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-vlan/nameID"></div>
+                    <b>nameID</b>
+                    <a class="ansibleOptionLink" href="#parameter-vlan/nameID" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Authorization Profile&#x27;s nameID.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-vlan/tagID"></div>
+                    <b>tagID</b>
+                    <a class="ansibleOptionLink" href="#parameter-vlan/tagID" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">integer</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Valid range is 0-31.</div>
+                                                        </td>
+            </tr>
+                    
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-voiceDomainPermission"></div>
+                    <b>voiceDomainPermission</b>
+                    <a class="ansibleOptionLink" href="#parameter-voiceDomainPermission" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li>yes</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>VoiceDomainPermission flag.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-webAuth"></div>
+                    <b>webAuth</b>
+                    <a class="ansibleOptionLink" href="#parameter-webAuth" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li>yes</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>WebAuth flag.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-webRedirection"></div>
+                    <b>webRedirection</b>
+                    <a class="ansibleOptionLink" href="#parameter-webRedirection" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">dictionary</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Authorization Profile&#x27;s webRedirection.</div>
+                                                        </td>
+            </tr>
+                                        <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-webRedirection/acl"></div>
+                    <b>acl</b>
+                    <a class="ansibleOptionLink" href="#parameter-webRedirection/acl" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Authorization Profile&#x27;s acl.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-webRedirection/displayCertificatesRenewalMessages"></div>
+                    <b>displayCertificatesRenewalMessages</b>
+                    <a class="ansibleOptionLink" href="#parameter-webRedirection/displayCertificatesRenewalMessages" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li>yes</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>The displayCertificatesRenewalMessages is mandatory when &#x27;WebRedirectionType&#x27; value is &#x27;CentralizedWebAuth&#x27;. For all other &#x27;WebRedirectionType&#x27; values the field must be ignored.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-webRedirection/portalName"></div>
+                    <b>portalName</b>
+                    <a class="ansibleOptionLink" href="#parameter-webRedirection/portalName" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>A portal that exist in the DB and fits the WebRedirectionType.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-webRedirection/staticIPHostNameFQDN"></div>
+                    <b>staticIPHostNameFQDN</b>
+                    <a class="ansibleOptionLink" href="#parameter-webRedirection/staticIPHostNameFQDN" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Authorization Profile&#x27;s staticIPHostNameFQDN.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-webRedirection/WebRedirectionType"></div>
+                    <b>WebRedirectionType</b>
+                    <a class="ansibleOptionLink" href="#parameter-webRedirection/WebRedirectionType" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Value MUST be one of the following CentralizedWebAuth, HotSpot, NativeSupplicanProvisioning, ClientProvisioning. The WebRedirectionType must fit the portalName.</div>
+                                                        </td>
+            </tr>
+                    
+                        </table>
+    <br/>
+
+.. Attributes
+
+
+.. Notes
+
+Notes
+-----
+
+.. note::
+   - Does not support ``check_mode``
+
+.. Seealso
+
+See Also
+--------
+
+.. seealso::
+
+   `Authorization Profile reference <https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary>`_
+       Complete reference of the Authorization Profile object model.
+
+.. Examples
+
+Examples
+--------
+
+.. code-block:: yaml+jinja
+
+    
+    - name: Update by id
+      cisco.ise.authorization_profile:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: present
+        accessType: string
+        acl: string
+        advancedAttributes:
+        - leftHandSideDictionaryAttribue:
+            AdvancedAttributeValueType: string
+            attributeName: string
+            dictionaryName: string
+            value: string
+          rightHandSideAttribueValue:
+            AdvancedAttributeValueType: string
+            attributeName: string
+            dictionaryName: string
+            value: string
+        agentlessPosture: true
+        airespaceACL: string
+        airespaceIPv6ACL: string
+        asaVpn: string
+        authzProfileType: string
+        autoSmartPort: string
+        avcProfile: string
+        daclName: string
+        description: string
+        easywiredSessionCandidate: true
+        id: string
+        interfaceTemplate: string
+        ipv6ACLFilter: string
+        ipv6DaclName: string
+        macSecPolicy: string
+        name: string
+        neat: true
+        profileName: string
+        reauth:
+          connectivity: string
+          timer: 0
+        serviceTemplate: true
+        trackMovement: true
+        vlan:
+          nameID: string
+          tagID: 0
+        voiceDomainPermission: true
+        webAuth: true
+        webRedirection:
+          WebRedirectionType: string
+          acl: string
+          displayCertificatesRenewalMessages: true
+          portalName: string
+          staticIPHostNameFQDN: string
+
+    - name: Delete by id
+      cisco.ise.authorization_profile:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: absent
+        id: string
+
+    - name: Create
+      cisco.ise.authorization_profile:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: present
+        accessType: string
+        acl: string
+        advancedAttributes:
+        - leftHandSideDictionaryAttribue:
+            AdvancedAttributeValueType: string
+            attributeName: string
+            dictionaryName: string
+            value: string
+          rightHandSideAttribueValue:
+            AdvancedAttributeValueType: string
+            attributeName: string
+            dictionaryName: string
+            value: string
+        agentlessPosture: true
+        airespaceACL: string
+        airespaceIPv6ACL: string
+        asaVpn: string
+        authzProfileType: string
+        autoSmartPort: string
+        avcProfile: string
+        daclName: string
+        description: string
+        easywiredSessionCandidate: true
+        id: string
+        interfaceTemplate: string
+        ipv6ACLFilter: string
+        ipv6DaclName: string
+        macSecPolicy: string
+        name: string
+        neat: true
+        profileName: string
+        reauth:
+          connectivity: string
+          timer: 0
+        serviceTemplate: true
+        trackMovement: true
+        vlan:
+          nameID: string
+          tagID: 0
+        voiceDomainPermission: true
+        webAuth: true
+        webRedirection:
+          WebRedirectionType: string
+          acl: string
+          displayCertificatesRenewalMessages: true
+          portalName: string
+          staticIPHostNameFQDN: string
+
+
+
+
+
+.. Facts
+
+
+.. Return values
+
+Return Values
+-------------
+Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
+
+.. raw:: html
+
+    <table border=0 cellpadding=0 class="documentation-table">
+        <tr>
+            <th colspan="1">Key</th>
+            <th>Returned</th>
+            <th width="100%">Description</th>
+        </tr>
+                    <tr>
+                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="return-ise_response"></div>
+                    <b>ise_response</b>
+                    <a class="ansibleOptionLink" href="#return-ise_response" title="Permalink to this return value"></a>
+                    <div style="font-size: small">
+                      <span style="color: purple">dictionary</span>
+                                          </div>
+                                    </td>
+                <td>always</td>
+                <td>
+                                            <div>A dictionary or list with the response returned by the Cisco ISE Python SDK</div>
+                                        <br/>
+                                            <div style="font-size: smaller"><b>Sample:</b></div>
+                                                <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">{
+      &quot;id&quot;: &quot;string&quot;,
+      &quot;name&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;string&quot;,
+      &quot;advancedAttributes&quot;: [
+        {
+          &quot;leftHandSideDictionaryAttribue&quot;: {
+            &quot;AdvancedAttributeValueType&quot;: &quot;string&quot;,
+            &quot;dictionaryName&quot;: &quot;string&quot;,
+            &quot;attributeName&quot;: &quot;string&quot;,
+            &quot;value&quot;: &quot;string&quot;
+          },
+          &quot;rightHandSideAttribueValue&quot;: {
+            &quot;AdvancedAttributeValueType&quot;: &quot;string&quot;,
+            &quot;dictionaryName&quot;: &quot;string&quot;,
+            &quot;attributeName&quot;: &quot;string&quot;,
+            &quot;value&quot;: &quot;string&quot;
+          }
+        }
+      ],
+      &quot;accessType&quot;: &quot;string&quot;,
+      &quot;authzProfileType&quot;: &quot;string&quot;,
+      &quot;vlan&quot;: {
+        &quot;nameID&quot;: &quot;string&quot;,
+        &quot;tagID&quot;: 0
+      },
+      &quot;reauth&quot;: {
+        &quot;timer&quot;: 0,
+        &quot;connectivity&quot;: &quot;string&quot;
+      },
+      &quot;airespaceACL&quot;: &quot;string&quot;,
+      &quot;airespaceIPv6ACL&quot;: &quot;string&quot;,
+      &quot;webRedirection&quot;: {
+        &quot;WebRedirectionType&quot;: &quot;string&quot;,
+        &quot;acl&quot;: &quot;string&quot;,
+        &quot;portalName&quot;: &quot;string&quot;,
+        &quot;staticIPHostNameFQDN&quot;: &quot;string&quot;,
+        &quot;displayCertificatesRenewalMessages&quot;: true
+      },
+      &quot;acl&quot;: &quot;string&quot;,
+      &quot;trackMovement&quot;: true,
+      &quot;agentlessPosture&quot;: true,
+      &quot;serviceTemplate&quot;: true,
+      &quot;easywiredSessionCandidate&quot;: true,
+      &quot;daclName&quot;: &quot;string&quot;,
+      &quot;voiceDomainPermission&quot;: true,
+      &quot;neat&quot;: true,
+      &quot;webAuth&quot;: true,
+      &quot;autoSmartPort&quot;: &quot;string&quot;,
+      &quot;interfaceTemplate&quot;: &quot;string&quot;,
+      &quot;ipv6ACLFilter&quot;: &quot;string&quot;,
+      &quot;avcProfile&quot;: &quot;string&quot;,
+      &quot;macSecPolicy&quot;: &quot;string&quot;,
+      &quot;asaVpn&quot;: &quot;string&quot;,
+      &quot;profileName&quot;: &quot;string&quot;,
+      &quot;ipv6DaclName&quot;: &quot;string&quot;,
+      &quot;link&quot;: {
+        &quot;rel&quot;: &quot;string&quot;,
+        &quot;href&quot;: &quot;string&quot;,
+        &quot;type&quot;: &quot;string&quot;
+      }
+    }</div>
+                                    </td>
+            </tr>
+                                <tr>
+                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="return-ise_update_response"></div>
+                    <b>ise_update_response</b>
+                    <a class="ansibleOptionLink" href="#return-ise_update_response" title="Permalink to this return value"></a>
+                    <div style="font-size: small">
+                      <span style="color: purple">dictionary</span>
+                                          </div>
+                    <div style="font-style: italic; font-size: small; color: darkgreen">added in 1.1.0 of cisco.ise</div>                </td>
+                <td>always</td>
+                <td>
+                                            <div>A dictionary or list with the response returned by the Cisco ISE Python SDK</div>
+                                        <br/>
+                                            <div style="font-size: smaller"><b>Sample:</b></div>
+                                                <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">{
+      &quot;UpdatedFieldsList&quot;: {
+        &quot;updatedField&quot;: {
+          &quot;field&quot;: &quot;string&quot;,
+          &quot;oldValue&quot;: &quot;string&quot;,
+          &quot;newValue&quot;: &quot;string&quot;
+        },
+        &quot;field&quot;: &quot;string&quot;,
+        &quot;oldValue&quot;: &quot;string&quot;,
+        &quot;newValue&quot;: &quot;string&quot;
+      }
+    }</div>
+                                    </td>
+            </tr>
+                        </table>
+    <br/><br/>
+
+..  Status (Presently only deprecated)
+
+
+.. Authors
+
+Authors
+~~~~~~~
+
+- Rafael Campos (@racampos)
+
+
+
+.. Parsing errors
+
