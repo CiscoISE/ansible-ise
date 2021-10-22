@@ -98,7 +98,7 @@ options:
     description: UseAttrSetOnRequest flag.
     type: bool
 requirements:
-- ciscoisesdk >= 1.0.0
+- ciscoisesdk >= 1.1.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -190,6 +190,53 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
+  type: dict
+  sample: >
+    {
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "stripPrefix": true,
+      "stripSuffix": true,
+      "prefixSeparator": "string",
+      "suffixSeparator": "string",
+      "remoteAccounting": true,
+      "localAccounting": true,
+      "useAttrSetOnRequest": true,
+      "useAttrSetBeforeAcc": true,
+      "continueAuthorzPolicy": true,
+      "RadiusServerList": [
+        "string"
+      ],
+      "OnRequestAttrManipulatorList": [
+        {
+          "action": "string",
+          "dictionaryName": "string",
+          "attributeName": "string",
+          "value": "string",
+          "changedVal": "string"
+        }
+      ],
+      "BeforeAcceptAttrManipulatorsList": [
+        {
+          "action": "string",
+          "dictionaryName": "string",
+          "attributeName": "string",
+          "value": "string",
+          "changedVal": "string"
+        }
+      ],
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
+      }
+    }
+
+ise_update_response:
+  description: A dictionary or list with the response returned by the Cisco ISE Python SDK
+  returned: always
+  version_added: "1.1.0"
   type: dict
   sample: >
     {

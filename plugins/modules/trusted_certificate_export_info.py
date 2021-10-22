@@ -28,7 +28,7 @@ options:
     - Enable or disable automatic file creation of raw response.
     type: bool
 requirements:
-- ciscoisesdk >= 1.0.0
+- ciscoisesdk >= 1.1.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource

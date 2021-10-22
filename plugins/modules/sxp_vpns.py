@@ -22,7 +22,7 @@ options:
     description: Sxp Vpns's sxpVpnName.
     type: str
 requirements:
-- ciscoisesdk >= 1.0.0
+- ciscoisesdk >= 1.1.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -58,5 +58,13 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "id": "string",
+      "sxpVpnName": "string",
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
+      }
+    }
 """

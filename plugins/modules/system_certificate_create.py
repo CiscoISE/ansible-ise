@@ -87,7 +87,7 @@ options:
     description: NodeId of Cisco ISE application.
     type: str
 requirements:
-- ciscoisesdk >= 1.0.0
+- ciscoisesdk >= 1.1.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource

@@ -185,7 +185,7 @@ options:
         type: dict
     type: dict
 requirements:
-- ciscoisesdk >= 1.0.0
+- ciscoisesdk >= 1.1.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -404,6 +404,85 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
+  type: dict
+  sample: >
+    {
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "authenticationSettings": {
+        "networkProtocol": "string",
+        "secondRadiusSharedSecret": "string",
+        "radiusSharedSecret": "string",
+        "enableKeyWrap": true,
+        "enabled": true,
+        "dtlsRequired": true,
+        "enableMultiSecret": "string",
+        "keyEncryptionKey": "string",
+        "messageAuthenticatorCodeKey": "string",
+        "keyInputFormat": "string"
+      },
+      "snmpsettings": {
+        "version": "string",
+        "roCommunity": "string",
+        "pollingInterval": 0,
+        "linkTrapQuery": true,
+        "macTrapQuery": true,
+        "originatingPolicyServicesNode": "string"
+      },
+      "trustsecsettings": {
+        "deviceAuthenticationSettings": {
+          "sgaDeviceId": "string",
+          "sgaDevicePassword": "string"
+        },
+        "sgaNotificationAndUpdates": {
+          "downlaodEnvironmentDataEveryXSeconds": 0,
+          "downlaodPeerAuthorizationPolicyEveryXSeconds": 0,
+          "reAuthenticationEveryXSeconds": 0,
+          "downloadSGACLListsEveryXSeconds": 0,
+          "otherSGADevicesToTrustThisDevice": true,
+          "sendConfigurationToDevice": true,
+          "sendConfigurationToDeviceUsing": "string",
+          "coaSourceHost": "string"
+        },
+        "deviceConfigurationDeployment": {
+          "includeWhenDeployingSGTUpdates": true,
+          "enableModePassword": "string",
+          "execModePassword": "string",
+          "execModeUsername": "string"
+        },
+        "pushIdSupport": true
+      },
+      "tacacsSettings": {
+        "sharedSecret": "string",
+        "connectModeOptions": "string"
+      },
+      "profileName": "string",
+      "coaPort": 0,
+      "dtlsDnsName": "string",
+      "modelName": "string",
+      "softwareVersion": "string",
+      "NetworkDeviceIPList": [
+        {
+          "ipaddress": "string",
+          "mask": 0,
+          "getIpaddressExclude": "string"
+        }
+      ],
+      "NetworkDeviceGroupList": [
+        "string"
+      ],
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
+      }
+    }
+
+ise_update_response:
+  description: A dictionary or list with the response returned by the Cisco ISE Python SDK
+  returned: always
+  version_added: "1.1.0"
   type: dict
   sample: >
     {

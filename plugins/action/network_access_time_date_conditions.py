@@ -255,19 +255,25 @@ class ActionModule(ActionBase):
             (obj_exists, prev_obj) = obj.exists()
             if obj_exists:
                 if obj.requires_update(prev_obj):
-                    response = obj.update()
+                    ise_update_response = obj.update()
+                    self._result.update(dict(ise_update_response=ise_update_response))
+                    (obj_exists, updated_obj) = obj.exists()
+                    response = updated_obj
                     ise.object_updated()
                 else:
                     response = prev_obj
                     ise.object_already_present()
             else:
-                response = obj.create()
+                ise_create_response = obj.create()
+                (obj_exists, created_obj) = obj.exists()
+                response = created_obj
                 ise.object_created()
 
         elif state == "absent":
             (obj_exists, prev_obj) = obj.exists()
             if obj_exists:
-                response = obj.delete()
+                obj.delete()
+                response = prev_obj
                 ise.object_deleted()
             else:
                 ise.object_already_absent()

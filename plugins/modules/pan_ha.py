@@ -31,7 +31,7 @@ options:
     description: Pan Ha's secondaryHealthCheckNode.
     type: str
 requirements:
-- ciscoisesdk >= 1.0.0
+- ciscoisesdk >= 1.1.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -71,8 +71,10 @@ ise_response:
   type: dict
   sample: >
     {
-      "code": 0,
-      "message": "string",
-      "rootCause": "string"
+      "isEnabled": true,
+      "primaryHealthCheckNode": "string",
+      "secondaryHealthCheckNode": "string",
+      "pollingInterval": 0,
+      "failedAttempts": 0
     }
 """

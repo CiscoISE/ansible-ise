@@ -246,7 +246,7 @@ options:
         type: dict
     type: dict
 requirements:
-- ciscoisesdk >= 1.0.0
+- ciscoisesdk >= 1.1.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -414,6 +414,106 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
+  type: dict
+  sample: >
+    {
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "portalType": "string",
+      "portalTestUrl": "string",
+      "settings": {
+        "portalSettings": {
+          "httpsPort": 0,
+          "allowedInterfaces": [
+            "string"
+          ],
+          "certificateGroupTag": "string",
+          "endpointIdentityGroup": "string",
+          "coaType": "string",
+          "displayLang": "string",
+          "fallbackLanguage": "string",
+          "alwaysUsedLanguage": "string"
+        },
+        "aupSettings": {
+          "requireAccessCode": true,
+          "accessCode": "string",
+          "includeAup": true,
+          "requireScrolling": true
+        },
+        "postAccessBannerSettings": {
+          "includePostAccessBanner": true
+        },
+        "authSuccessSettings": {
+          "successRedirect": "string",
+          "redirectUrl": "string"
+        },
+        "postLoginBannerSettings": {
+          "includePostAccessBanner": true
+        },
+        "supportInfoSettings": {
+          "includeSupportInfoPage": true,
+          "includeMacAddr": true,
+          "includeIpAddress": true,
+          "includeBrowserUserAgent": true,
+          "includePolicyServer": true,
+          "includeFailureCode": true,
+          "emptyFieldDisplay": "string",
+          "defaultEmptyFieldValue": "string"
+        }
+      },
+      "customizations": {
+        "portalTheme": {
+          "id": "string",
+          "name": "string",
+          "themeData": "string"
+        },
+        "portalTweakSettings": {
+          "bannerColor": "string",
+          "bannerTextColor": "string",
+          "pageBackgroundColor": "string",
+          "pageLabelAndTextColor": "string"
+        },
+        "language": {
+          "viewLanguage": "string"
+        },
+        "globalCustomizations": {
+          "mobileLogoImage": {
+            "data": "string"
+          },
+          "desktopLogoImage": {
+            "data": "string"
+          },
+          "backgroundImage": {
+            "data": "string"
+          },
+          "bannerImage": {
+            "data": "string"
+          },
+          "bannerTitle": "string",
+          "contactText": "string",
+          "footerElement": "string"
+        },
+        "pageCustomizations": {
+          "data": [
+            {
+              "key": "string",
+              "value": "string"
+            }
+          ]
+        }
+      },
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
+      }
+    }
+
+ise_update_response:
+  description: A dictionary or list with the response returned by the Cisco ISE Python SDK
+  returned: always
+  version_added: "1.1.0"
   type: dict
   sample: >
     {

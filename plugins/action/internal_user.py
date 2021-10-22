@@ -303,9 +303,13 @@ class ActionModule(ActionBase):
                 if obj.requires_update(prev_obj):
                     try:
                         response = obj.update()
+                        ise_update_response = response
+                        self._result.update(dict(ise_update_response=ise_update_response))
                         if response and response.get('_changed_'):
                             response = prev_obj
                         else:
+                            (obj_exists, updated_obj) = obj.exists()
+                            response = updated_obj
                             ise.object_updated()
                     except Exception as e:
                         ise.fail_json(
@@ -318,13 +322,16 @@ class ActionModule(ActionBase):
                     response = prev_obj
                     ise.object_already_present()
             else:
-                response = obj.create()
+                ise_create_response = obj.create()
+                (obj_exists, created_obj) = obj.exists()
+                response = created_obj
                 ise.object_created()
 
         elif state == "absent":
             (obj_exists, prev_obj) = obj.exists()
             if obj_exists:
-                response = obj.delete()
+                obj.delete()
+                response = prev_obj
                 ise.object_deleted()
             else:
                 ise.object_already_absent()

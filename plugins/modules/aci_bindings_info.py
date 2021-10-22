@@ -40,7 +40,7 @@ options:
     - FilterValue query parameter.
     type: list
 requirements:
-- ciscoisesdk >= 1.0.0
+- ciscoisesdk >= 1.1.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -83,4 +83,24 @@ ise_response:
       "learnedFrom": "string",
       "learnedBy": "string"
     }
+ise_responses:
+  description: A dictionary or list with the response returned by the Cisco ISE Python SDK
+  returned: always
+  version_added: "1.1.0"
+  type: list
+  elements: dict
+  sample: >
+    [
+      {
+        "id": "string",
+        "name": "string",
+        "description": "string",
+        "ip": "string",
+        "sgtValue": "string",
+        "vn": "string",
+        "psn": "string",
+        "learnedFrom": "string",
+        "learnedBy": "string"
+      }
+    ]
 """
