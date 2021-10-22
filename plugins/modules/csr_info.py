@@ -63,7 +63,7 @@ options:
     - Id path parameter. The ID of the Certificate Signing Request returned.
     type: str
 requirements:
-- ciscoisesdk >= 1.0.0
+- ciscoisesdk >= 1.1.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -109,4 +109,29 @@ ise_response:
       "response": {},
       "version": "string"
     }
+ise_responses:
+  description: A dictionary or list with the response returned by the Cisco ISE Python SDK
+  returned: always
+  version_added: "1.1.0"
+  type: list
+  elements: dict
+  sample: >
+    [
+      {
+        "friendlyName": "string",
+        "groupTag": "string",
+        "hostName": "string",
+        "id": "string",
+        "keySize": "string",
+        "link": {
+          "href": "string",
+          "rel": "string",
+          "type": "string"
+        },
+        "signatureAlgorithm": "string",
+        "subject": "string",
+        "timeStamp": "string",
+        "usedFor": "string"
+      }
+    ]
 """

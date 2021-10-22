@@ -41,7 +41,7 @@ options:
     description: Value range 2 ot 65519 or -1 to auto-generate.
     type: int
 requirements:
-- ciscoisesdk >= 1.0.0
+- ciscoisesdk >= 1.1.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -99,6 +99,30 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
+  type: dict
+  sample: >
+    {
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "value": 0,
+      "generationId": 0,
+      "isReadOnly": true,
+      "propogateToApic": true,
+      "defaultSGACLs": [
+        {}
+      ],
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
+      }
+    }
+
+ise_update_response:
+  description: A dictionary or list with the response returned by the Cisco ISE Python SDK
+  returned: always
+  version_added: "1.1.0"
   type: dict
   sample: >
     {

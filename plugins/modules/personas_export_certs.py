@@ -54,7 +54,7 @@ options:
     - Whether or not to wait on rate limit
     type: bool
 requirements:
-- ciscoisesdk >= 1.0.0
+- requests >= 2.25.1
 - python >= 3.5
 seealso:
 # Reference by module name

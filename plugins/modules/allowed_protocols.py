@@ -307,7 +307,7 @@ options:
         type: bool
     type: dict
 requirements:
-- ciscoisesdk >= 1.0.0
+- ciscoisesdk >= 1.1.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -509,6 +509,106 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
+  type: dict
+  sample: >
+    {
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "eapTls": {
+        "allowEapTlsAuthOfExpiredCerts": true,
+        "eapTlsEnableStatelessSessionResume": true,
+        "eapTlsSessionTicketTtl": 0,
+        "eapTlsSessionTicketTtlUnits": "string",
+        "eapTlsSessionTicketPrecentage": 0
+      },
+      "peap": {
+        "allowPeapEapMsChapV2": true,
+        "allowPeapEapMsChapV2PwdChange": true,
+        "allowPeapEapMsChapV2PwdChangeRetries": 0,
+        "allowPeapEapGtc": true,
+        "allowPeapEapGtcPwdChange": true,
+        "allowPeapEapGtcPwdChangeRetries": 0,
+        "allowPeapEapTls": true,
+        "allowPeapEapTlsAuthOfExpiredCerts": true,
+        "requireCryptobinding": true,
+        "allowPeapV0": true
+      },
+      "eapFast": {
+        "allowEapFastEapMsChapV2": true,
+        "allowEapFastEapMsChapV2PwdChange": true,
+        "allowEapFastEapMsChapV2PwdChangeRetries": 0,
+        "allowEapFastEapGtc": true,
+        "allowEapFastEapGtcPwdChange": true,
+        "allowEapFastEapGtcPwdChangeRetries": 0,
+        "allowEapFastEapTls": true,
+        "allowEapFastEapTlsAuthOfExpiredCerts": true,
+        "eapFastUsePacs": true,
+        "eapFastUsePacsTunnelPacTtl": 0,
+        "eapFastUsePacsTunnelPacTtlUnits": "string",
+        "eapFastUsePacsUseProactivePacUpdatePrecentage": 0,
+        "eapFastUsePacsAllowAnonymProvisioning": true,
+        "eapFastUsePacsAllowAuthenProvisioning": true,
+        "eapFastUsePacsReturnAccessAcceptAfterAuthenticatedProvisioning": true,
+        "eapFastUsePacsAcceptClientCert": true,
+        "eapFastUsePacsMachinePacTtl": 0,
+        "eapFastUsePacsMachinePacTtlUnits": "string",
+        "eapFastUsePacsAllowMachineAuthentication": true,
+        "eapFastUsePacsStatelessSessionResume": true,
+        "eapFastUsePacsAuthorizationPacTtl": 0,
+        "eapFastUsePacsAuthorizationPacTtlUnits": "string",
+        "eapFastDontUsePacsAcceptClientCert": true,
+        "eapFastDontUsePacsAllowMachineAuthentication": true,
+        "eapFastEnableEAPChaining": true
+      },
+      "eapTtls": {
+        "eapTtlsPapAscii": true,
+        "eapTtlsChap": true,
+        "eapTtlsMsChapV1": true,
+        "eapTtlsMsChapV2": true,
+        "eapTtlsEapMd5": true,
+        "eapTtlsEapMsChapV2": true,
+        "eapTtlsEapMsChapV2PwdChange": true,
+        "eapTtlsEapMsChapV2PwdChangeRetries": 0
+      },
+      "teap": {
+        "allowTeapEapMsChapV2": true,
+        "allowTeapEapMsChapV2PwdChange": true,
+        "allowTeapEapMsChapV2PwdChangeRetries": 0,
+        "allowTeapEapTls": true,
+        "allowTeapEapTlsAuthOfExpiredCerts": true,
+        "acceptClientCertDuringTunnelEst": true,
+        "enableEapChaining": true,
+        "allowDowngradeMsk": true
+      },
+      "processHostLookup": true,
+      "allowPapAscii": true,
+      "allowChap": true,
+      "allowMsChapV1": true,
+      "allowMsChapV2": true,
+      "allowEapMd5": true,
+      "allowLeap": true,
+      "allowEapTls": true,
+      "allowEapTtls": true,
+      "allowEapFast": true,
+      "allowPeap": true,
+      "allowTeap": true,
+      "allowPreferredEapProtocol": true,
+      "preferredEapProtocol": "string",
+      "eapTlsLBit": true,
+      "allowWeakCiphersForEap": true,
+      "requireMessageAuth": true,
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
+      }
+    }
+
+ise_update_response:
+  description: A dictionary or list with the response returned by the Cisco ISE Python SDK
+  returned: always
+  version_added: "1.1.0"
   type: dict
   sample: >
     {

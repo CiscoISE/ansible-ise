@@ -457,3 +457,13 @@ releases:
         - Fixes check_mode behavior for non-info modules.
       minor_changes:
         - mnt_authentication_status_info - new module.
+  1.2.0:
+    release_date: '2021-10-22'
+    changes:
+      release_summary: Adds ise_responses, ise_update_response values
+      major_changes:
+        - Adds ise_responses to return values of info modules.
+        - Adds ise_update_response to return values of non-info modules.
+        - Adds ``ise_uses_api_gateway`` to module options.
+      minor_changes:
+        - Update requirements.

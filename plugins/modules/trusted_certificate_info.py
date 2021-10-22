@@ -59,7 +59,7 @@ options:
     - Id path parameter. The id of the trust certificate.
     type: str
 requirements:
-- ciscoisesdk >= 1.0.0
+- ciscoisesdk >= 1.1.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -142,4 +142,52 @@ ise_response:
       },
       "version": "string"
     }
+ise_responses:
+  description: A dictionary or list with the response returned by the Cisco ISE Python SDK
+  returned: always
+  version_added: "1.1.0"
+  type: list
+  elements: dict
+  sample: >
+    [
+      {
+        "authenticateBeforeCRLReceived": "string",
+        "automaticCRLUpdate": "string",
+        "automaticCRLUpdatePeriod": "string",
+        "automaticCRLUpdateUnits": "string",
+        "crlDistributionUrl": "string",
+        "crlDownloadFailureRetries": "string",
+        "crlDownloadFailureRetriesUnits": "string",
+        "description": "string",
+        "downloadCRL": "string",
+        "enableOCSPValidation": "string",
+        "enableServerIdentityCheck": "string",
+        "expirationDate": "string",
+        "friendlyName": "string",
+        "id": "string",
+        "ignoreCRLExpiration": "string",
+        "internalCA": true,
+        "isReferredInPolicy": true,
+        "issuedBy": "string",
+        "issuedTo": "string",
+        "keySize": "string",
+        "link": {
+          "href": "string",
+          "rel": "string",
+          "type": "string"
+        },
+        "nonAutomaticCRLUpdatePeriod": "string",
+        "nonAutomaticCRLUpdateUnits": "string",
+        "rejectIfNoStatusFromOCSP": "string",
+        "rejectIfUnreachableFromOCSP": "string",
+        "selectedOCSPService": "string",
+        "serialNumberDecimalFormat": "string",
+        "sha256Fingerprint": "string",
+        "signatureAlgorithm": "string",
+        "status": "string",
+        "subject": "string",
+        "trustedFor": "string",
+        "validFrom": "string"
+      }
+    ]
 """

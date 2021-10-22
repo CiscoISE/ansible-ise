@@ -186,7 +186,7 @@ options:
       alphanumeric and .-_/\\ characters.
     type: str
 requirements:
-- ciscoisesdk >= 1.0.0
+- ciscoisesdk >= 1.1.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -268,5 +268,71 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "domain": "string",
+      "enableDomainWhiteList": true,
+      "enableDomainAllowedList": true,
+      "adgroups": {
+          "groups": [
+          {
+              "name": "string",
+              "sid": "string",
+              "type": "string"
+          }
+          ]
+      },
+      "advancedSettings": {
+          "enablePassChange": true,
+          "enableMachineAuth": true,
+          "enableMachineAccess": true,
+          "agingTime": 0,
+          "enableDialinPermissionCheck": true,
+          "enableCallbackForDialinClient": true,
+          "plaintextAuth": true,
+          "enableFailedAuthProtection": true,
+          "authProtectionType": "string",
+          "failedAuthThreshold": 0,
+          "identityNotInAdBehaviour": "string",
+          "unreachableDomainsBehaviour": "string",
+          "enableRewrites": true,
+          "rewriteRules": [
+          {
+              "rowId": 0,
+              "rewriteMatch": "string",
+              "rewriteResult": "string"
+          }
+          ],
+          "firstName": "string",
+          "department": "string",
+          "lastName": "string",
+          "organizationalUnit": "string",
+          "jobTitle": "string",
+          "locality": "string",
+          "email": "string",
+          "stateOrProvince": "string",
+          "telephone": "string",
+          "country": "string",
+          "streetAddress": "string",
+          "schema": "string"
+      },
+      "adAttributes": {
+          "attributes": [
+          {
+              "name": "string",
+              "type": "string",
+              "internalName": "string",
+              "defaultValue": "string"
+          }
+          ]
+      },
+      "adScopesNames": "string",
+      "link": {
+          "rel": "string",
+          "href": "string",
+          "type": "string"
+      }
+    }
 """

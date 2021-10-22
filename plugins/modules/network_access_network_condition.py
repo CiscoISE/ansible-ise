@@ -75,7 +75,7 @@ options:
     description: Network Condition name.
     type: str
 requirements:
-- ciscoisesdk >= 1.0.0
+- ciscoisesdk >= 1.1.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -154,6 +154,43 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
+  type: dict
+  sample: >
+    {
+      "conditionType": "string",
+      "description": "string",
+      "id": "string",
+      "link": {
+        "href": "string",
+        "rel": "string",
+        "type": "string"
+      },
+      "name": "string",
+      "conditions": [
+        {
+          "cliDnisList": [
+            "string"
+          ],
+          "ipAddrList": [
+            "string"
+          ],
+          "macAddrList": [
+            "string"
+          ],
+          "deviceGroupList": [
+            "string"
+          ],
+          "deviceList": [
+            "string"
+          ]
+        }
+      ]
+    }
+
+ise_update_response:
+  description: A dictionary or list with the response returned by the Cisco ISE Python SDK
+  returned: always
+  version_added: "1.1.0"
   type: dict
   sample: >
     {

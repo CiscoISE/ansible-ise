@@ -218,7 +218,7 @@ options:
         type: str
     type: dict
 requirements:
-- ciscoisesdk >= 1.0.0
+- ciscoisesdk >= 1.1.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -368,6 +368,83 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
+  type: dict
+  sample: >
+    {
+      "commands": [
+        "string"
+      ],
+      "link": {
+        "href": "string",
+        "rel": "string",
+        "type": "string"
+      },
+      "profile": "string",
+      "rule": {
+        "condition": {
+          "conditionType": "string",
+          "isNegate": true,
+          "link": {
+            "href": "string",
+            "rel": "string",
+            "type": "string"
+          },
+          "description": "string",
+          "id": "string",
+          "name": "string",
+          "attributeName": "string",
+          "attributeId": "string",
+          "attributeValue": "string",
+          "dictionaryName": "string",
+          "dictionaryValue": "string",
+          "operator": "string",
+          "children": [
+            {
+              "conditionType": "string",
+              "isNegate": true,
+              "link": {
+                "href": "string",
+                "rel": "string",
+                "type": "string"
+              }
+            }
+          ],
+          "datesRange": {
+            "endDate": "string",
+            "startDate": "string"
+          },
+          "datesRangeException": {
+            "endDate": "string",
+            "startDate": "string"
+          },
+          "hoursRange": {
+            "endTime": "string",
+            "startTime": "string"
+          },
+          "hoursRangeException": {
+            "endTime": "string",
+            "startTime": "string"
+          },
+          "weekDays": [
+            "string"
+          ],
+          "weekDaysException": [
+            "string"
+          ]
+        },
+        "default": true,
+        "hitCounts": 0,
+        "id": "string",
+        "name": "string",
+        "rank": 0,
+        "state": "string"
+      }
+    }
+
+ise_update_response:
+  description: A dictionary or list with the response returned by the Cisco ISE Python SDK
+  returned: always
+  version_added: "1.1.0"
   type: dict
   sample: >
     {

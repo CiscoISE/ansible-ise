@@ -64,7 +64,7 @@ options:
     description: Valid Range 1 to 120.
     type: int
 requirements:
-- ciscoisesdk >= 1.0.0
+- ciscoisesdk >= 1.1.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -132,6 +132,34 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
+  type: dict
+  sample: >
+    {
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "hostIP": "string",
+      "sharedSecret": "string",
+      "enableKeyWrap": true,
+      "encryptionKey": "string",
+      "authenticatorKey": "string",
+      "keyInputFormat": "string",
+      "authenticationPort": 0,
+      "accountingPort": 0,
+      "timeout": 0,
+      "retries": 0,
+      "proxyTimeout": 0,
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
+      }
+    }
+
+ise_update_response:
+  description: A dictionary or list with the response returned by the Cisco ISE Python SDK
+  returned: always
+  version_added: "1.1.0"
   type: dict
   sample: >
     {

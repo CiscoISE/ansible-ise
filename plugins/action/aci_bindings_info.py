@@ -93,7 +93,7 @@ class ActionModule(ActionBase):
         id = self._task.args.get("id")
         name = self._task.args.get("name")
         if not name and not id:
-            response = []
+            responses = []
             generator = ise.exec(
                 family="aci_bindings",
                 function='get_aci_bindings_generator',
@@ -103,9 +103,11 @@ class ActionModule(ActionBase):
                 for item in generator:
                     tmp_response = item.response['ACIBindings']
                     if isinstance(tmp_response, list):
-                        response += tmp_response
+                        responses += tmp_response
                     else:
-                        response.append(tmp_response)
+                        responses.append(tmp_response)
+                self._result.update(dict(ise_responses=responses))
+                response = responses
             except (TypeError, AttributeError) as e:
                 ise.fail_json(
                     msg=(

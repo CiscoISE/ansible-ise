@@ -86,7 +86,7 @@ options:
     description: Aci Settings's untaggedPacketIepgName.
     type: str
 requirements:
-- ciscoisesdk >= 1.0.0
+- ciscoisesdk >= 1.1.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -134,6 +134,40 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
+  type: dict
+  sample: >
+    {
+      "id": "string",
+      "enableAci": true,
+      "ipAddressHostName": "string",
+      "adminName": "string",
+      "adminPassword": "string",
+      "aciipaddress": "string",
+      "aciuserName": "string",
+      "acipassword": "string",
+      "tenantName": "string",
+      "l3RouteNetwork": "string",
+      "suffixToEpg": "string",
+      "suffixToSgt": "string",
+      "allSxpDomain": true,
+      "specificSxpDomain": true,
+      "specifixSxpDomainList": [
+        "string"
+      ],
+      "enableDataPlane": true,
+      "untaggedPacketIepgName": "string",
+      "defaultSgtName": "string",
+      "enableElementsLimit": true,
+      "maxNumIepgFromAci": 0,
+      "maxNumSgtToAci": 0,
+      "aci50": true,
+      "aci51": true
+    }
+
+ise_update_response:
+  description: A dictionary or list with the response returned by the Cisco ISE Python SDK
+  returned: always
+  version_added: "1.1.0"
   type: dict
   sample: >
     {

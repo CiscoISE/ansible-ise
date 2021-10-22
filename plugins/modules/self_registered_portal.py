@@ -673,7 +673,7 @@ options:
         type: dict
     type: dict
 requirements:
-- ciscoisesdk >= 1.0.0
+- ciscoisesdk >= 1.1.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -1091,6 +1091,255 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
+  type: dict
+  sample: >
+    {
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "portalType": "string",
+      "portalTestUrl": "string",
+      "settings": {
+        "portalSettings": {
+          "httpsPort": 0,
+          "allowedInterfaces": [
+            "string"
+          ],
+          "certificateGroupTag": "string",
+          "authenticationMethod": "string",
+          "assignedGuestTypeForEmployee": "string",
+          "displayLang": "string",
+          "fallbackLanguage": "string",
+          "alwaysUsedLanguage": "string"
+        },
+        "loginPageSettings": {
+          "requireAccessCode": true,
+          "maxFailedAttemptsBeforeRateLimit": 0,
+          "timeBetweenLoginsDuringRateLimit": 0,
+          "includeAup": true,
+          "aupDisplay": "string",
+          "requireAupAcceptance": true,
+          "accessCode": "string",
+          "allowGuestToCreateAccounts": true,
+          "allowForgotPassword": true,
+          "allowGuestToChangePassword": true,
+          "allowAlternateGuestPortal": true,
+          "alternateGuestPortal": "string",
+          "allowGuestToUseSocialAccounts": true,
+          "allowShowGuestForm": true,
+          "socialConfigs": [
+            {
+              "socialMediaType": "string",
+              "socialMediaValue": "string"
+            }
+          ]
+        },
+        "selfRegPageSettings": {
+          "assignGuestsToGuestType": "string",
+          "accountValidityDuration": 0,
+          "accountValidityTimeUnits": "string",
+          "requireRegistrationCode": true,
+          "registrationCode": "string",
+          "fieldUserName": {
+            "include": true,
+            "require": true
+          },
+          "fieldFirstName": {
+            "include": true,
+            "require": true
+          },
+          "fieldLastName": {
+            "include": true,
+            "require": true
+          },
+          "fieldEmailAddr": {
+            "include": true,
+            "require": true
+          },
+          "fieldPhoneNo": {
+            "include": true,
+            "require": true
+          },
+          "fieldCompany": {
+            "include": true,
+            "require": true
+          },
+          "fieldLocation": {
+            "include": true,
+            "require": true
+          },
+          "selectableLocations": [
+            "string"
+          ],
+          "fieldSmsProvider": {
+            "include": true,
+            "require": true
+          },
+          "selectableSmsProviders": [
+            "string"
+          ],
+          "fieldPersonBeingVisited": {
+            "include": true,
+            "require": true
+          },
+          "fieldReasonForVisit": {
+            "include": true,
+            "require": true
+          },
+          "includeAup": true,
+          "aupDisplay": "string",
+          "requireAupAcceptance": true,
+          "enableGuestEmailWhitelist": true,
+          "guestEmailWhitelistDomains": "string",
+          "enableGuestEmailBlacklist": true,
+          "guestEmailBlacklistDomains": "string",
+          "requireGuestApproval": true,
+          "autoLoginSelfWait": true,
+          "autoLoginTimePeriod": 0,
+          "allowGraceAccess": true,
+          "graceAccessExpireInterval": 0,
+          "graceAccessSendAccountExpiration": true,
+          "sendApprovalRequestTo": "string",
+          "approvalEmailAddresses": "string",
+          "postRegistrationRedirect": "string",
+          "postRegistrationRedirectUrl": "string",
+          "credentialNotificationUsingEmail": true,
+          "credentialNotificationUsingSms": true,
+          "approveDenyLinksValidFor": 0,
+          "approveDenyLinksTimeUnits": "string",
+          "requireApproverToAuthenticate": true,
+          "authenticateSponsorsUsingPortalList": "string",
+          "sponsorPortalList": []
+        },
+        "selfRegSuccessSettings": {
+          "includeUserName": true,
+          "includePassword": true,
+          "includeFirstName": true,
+          "includeLastName": true,
+          "includeEmailAddr": true,
+          "includePhoneNo": true,
+          "includeCompany": true,
+          "includeLocation": true,
+          "includeSmsProvider": true,
+          "includePersonBeingVisited": true,
+          "includeReasonForVisit": true,
+          "allowGuestSendSelfUsingPrint": true,
+          "allowGuestSendSelfUsingEmail": true,
+          "allowGuestSendSelfUsingSms": true,
+          "includeAup": true,
+          "aupOnPage": true,
+          "requireAupAcceptance": true,
+          "requireAupScrolling": true,
+          "allowGuestLoginFromSelfregSuccessPage": true
+        },
+        "aupSettings": {
+          "includeAup": true,
+          "useDiffAupForEmployees": true,
+          "skipAupForEmployees": true,
+          "requireScrolling": true,
+          "requireAupScrolling": true,
+          "displayFrequency": "string",
+          "displayFrequencyIntervalDays": 0
+        },
+        "guestChangePasswordSettings": {
+          "allowChangePasswdAtFirstLogin": true
+        },
+        "guestDeviceRegistrationSettings": {
+          "autoRegisterGuestDevices": true,
+          "allowGuestsToRegisterDevices": true
+        },
+        "byodSettings": {
+          "byodWelcomeSettings": {
+            "enableBYOD": true,
+            "enableGuestAccess": true,
+            "requireMDM": true,
+            "includeAup": true,
+            "aupDisplay": "string",
+            "requireAupAcceptance": true,
+            "requireScrolling": true
+          },
+          "byodRegistrationSettings": {
+            "showDeviceID": true,
+            "endPointIdentityGroupId": "string"
+          },
+          "byodRegistrationSuccessSettings": {
+            "successRedirect": "string",
+            "redirectUrl": "string"
+          }
+        },
+        "postLoginBannerSettings": {
+          "includePostAccessBanner": true
+        },
+        "postAccessBannerSettings": {
+          "includePostAccessBanner": true
+        },
+        "authSuccessSettings": {
+          "successRedirect": "string",
+          "redirectUrl": "string"
+        },
+        "supportInfoSettings": {
+          "includeSupportInfoPage": true,
+          "includeMacAddr": true,
+          "includeIpAddress": true,
+          "includeBrowserUserAgent": true,
+          "includePolicyServer": true,
+          "includeFailureCode": true,
+          "emptyFieldDisplay": "string",
+          "defaultEmptyFieldValue": "string"
+        }
+      },
+      "customizations": {
+        "portalTheme": {
+          "id": "string",
+          "name": "string",
+          "themeData": "string"
+        },
+        "portalTweakSettings": {
+          "bannerColor": "string",
+          "bannerTextColor": "string",
+          "pageBackgroundColor": "string",
+          "pageLabelAndTextColor": "string"
+        },
+        "language": {
+          "viewLanguage": "string"
+        },
+        "globalCustomizations": {
+          "mobileLogoImage": {
+            "data": "string"
+          },
+          "desktopLogoImage": {
+            "data": "string"
+          },
+          "bannerImage": {
+            "data": "string"
+          },
+          "backgroundImage": {
+            "data": "string"
+          },
+          "bannerTitle": "string",
+          "contactText": "string",
+          "footerElement": "string"
+        },
+        "pageCustomizations": {
+          "data": [
+            {
+              "key": "string",
+              "value": "string"
+            }
+          ]
+        }
+      },
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
+      }
+    }
+
+ise_update_response:
+  description: A dictionary or list with the response returned by the Cisco ISE Python SDK
+  returned: always
+  version_added: "1.1.0"
   type: dict
   sample: >
     {

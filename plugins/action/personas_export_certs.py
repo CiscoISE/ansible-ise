@@ -33,7 +33,7 @@ argument_spec = dict(
     username=dict(type="str", required=True),
     password=dict(type="str", required=True),
     ise_verify=dict(type="bool", default=True),
-    ise_version=dict(type="str", default="3.0.0"),
+    ise_version=dict(type="str", default="3.1.0"),
     ise_wait_on_rate_limit=dict(type="bool", default=True),
 )
 

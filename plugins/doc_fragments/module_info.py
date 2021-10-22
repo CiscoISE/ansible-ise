@@ -37,7 +37,7 @@ options:
         description:
           - Informs the SDK which version of Identity Services Engine to use.
         type: str
-        default: 3.0.0
+        default: 3.1.0
     ise_wait_on_rate_limit:
         description:
           - Flag for Identity Services Engine SDK to enable automatic rate-limit handling.
@@ -48,6 +48,14 @@ options:
           - Flag for Identity Services Engine SDK to enable debugging.
         type: bool
         default: false
+    ise_uses_api_gateway:
+        description:
+          - Flag that informs the SDK whether to use the Identity Services Engine's API Gateway to send requests.
+          - If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise_hostname}}.
+          - If it is false, it sends the requests to https://{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
+        type: bool
+        default: true
+        version_added: "1.1.0"
 notes:
     - "Supports C(check_mode)"
 '''

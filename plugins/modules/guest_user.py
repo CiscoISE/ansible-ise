@@ -110,7 +110,7 @@ options:
     description: Guest User's statusReason.
     type: str
 requirements:
-- ciscoisesdk >= 1.0.0
+- ciscoisesdk >= 1.1.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -257,6 +257,52 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
+  type: dict
+  sample: >
+    {
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "guestType": "string",
+      "status": "string",
+      "statusReason": "string",
+      "reasonForVisit": "string",
+      "sponsorUserId": "string",
+      "sponsorUserName": "string",
+      "guestInfo": {
+        "firstName": "string",
+        "lastName": "string",
+        "company": "string",
+        "creationTime": "string",
+        "notificationLanguage": "string",
+        "userName": "string",
+        "emailAddress": "string",
+        "phoneNumber": "string",
+        "password": "string",
+        "enabled": true,
+        "smsServiceProvider": "string"
+      },
+      "guestAccessInfo": {
+        "validDays": 0,
+        "fromDate": "string",
+        "toDate": "string",
+        "location": "string",
+        "ssid": "string",
+        "groupTag": "string"
+      },
+      "portalId": "string",
+      "customFields": {},
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
+      }
+    }
+
+ise_update_response:
+  description: A dictionary or list with the response returned by the Cisco ISE Python SDK
+  returned: always
+  version_added: "1.1.0"
   type: dict
   sample: >
     {
