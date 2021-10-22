@@ -454,5 +454,6 @@ releases:
       bugfixes:
         - Improves the changelog.
         - Improves the documentation of modules.
+        - Fixes check_mode behavior for non-info modules.
       minor_changes:
         - mnt_authentication_status_info - new module.
