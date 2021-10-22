@@ -11,6 +11,8 @@ short_description: Resource module for Network Device
 description:
 - Manage operations create, update and delete of the resource Network Device.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   NetworkDeviceGroupList:
@@ -183,7 +185,8 @@ options:
         type: dict
     type: dict
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Network Device reference

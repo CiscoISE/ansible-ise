@@ -11,6 +11,8 @@ short_description: Resource module for Guest Type Sms
 description:
 - Manage operation update of the resource Guest Type Sms.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   additionalData:
@@ -24,7 +26,8 @@ options:
         type: str
     type: list
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Guest Type Sms reference

@@ -54,10 +54,13 @@ options:
     - Whether or not to wait on rate limit
     type: bool
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by module name
 - module: cisco.ise.plugins.modules.personas_export_certs
+notes:
+    - "Does not support C(check_mode)"
 """
 
 EXAMPLES = r"""

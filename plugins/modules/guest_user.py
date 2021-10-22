@@ -11,6 +11,8 @@ short_description: Resource module for Guest User
 description:
 - Manage operations create, update and delete of the resource Guest User.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   customFields:
@@ -108,7 +110,8 @@ options:
     description: Guest User's statusReason.
     type: str
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Guest User reference

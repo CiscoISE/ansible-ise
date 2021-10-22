@@ -12,6 +12,8 @@ description:
 - Get all Sxp Vpns.
 - Get Sxp Vpns by id.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options:
   id:
@@ -53,7 +55,8 @@ options:
     - Sortdsc query parameter. Sort desc.
     type: str
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Sxp Vpns reference

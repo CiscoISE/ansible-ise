@@ -13,6 +13,8 @@ description:
 - Get Tacacs Command Sets by id.
 - Get Tacacs Command Sets by name.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options:
   name:
@@ -32,7 +34,8 @@ options:
     - Size query parameter. Number of objects returned per page.
     type: int
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Tacacs Command Sets reference

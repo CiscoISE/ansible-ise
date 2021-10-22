@@ -11,6 +11,8 @@ short_description: Resource module for Portal Theme
 description:
 - Manage operations create, update and delete of the resource Portal Theme.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   description:
@@ -26,7 +28,8 @@ options:
     description: Portal Theme for all portals.
     type: str
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Portal Theme reference

@@ -11,6 +11,8 @@ short_description: Resource module for Egress Matrix Cell
 description:
 - Manage operations create, update and delete of the resource Egress Matrix Cell.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   defaultRule:
@@ -39,7 +41,8 @@ options:
     description: Egress Matrix Cell's sourceSgtId.
     type: str
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Egress Matrix Cell reference

@@ -11,6 +11,8 @@ short_description: Resource module for Active Directory Add Groups
 description:
 - Manage operation update of the resource Active Directory Add Groups.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   adAttributes:
@@ -184,7 +186,8 @@ options:
       alphanumeric and .-_/\\ characters.
     type: str
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Active Directory Add Groups reference

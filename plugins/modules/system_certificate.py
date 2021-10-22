@@ -11,6 +11,8 @@ short_description: Resource module for System Certificate
 description:
 - Manage operations update and delete of the resource System Certificate.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   admin:
@@ -63,7 +65,8 @@ options:
     description: Use certificate for SAML Signing.
     type: bool
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: System Certificate reference

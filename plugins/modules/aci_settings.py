@@ -11,6 +11,8 @@ short_description: Resource module for Aci Settings
 description:
 - Manage operation update of the resource Aci Settings.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   aci50:
@@ -84,7 +86,8 @@ options:
     description: Aci Settings's untaggedPacketIepgName.
     type: str
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Aci Settings reference

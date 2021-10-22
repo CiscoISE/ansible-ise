@@ -11,6 +11,8 @@ short_description: Resource module for External Radius Server
 description:
 - Manage operations create, update and delete of the resource External Radius Server.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   accountingPort:
@@ -62,7 +64,8 @@ options:
     description: Valid Range 1 to 120.
     type: int
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: External Radius Server reference

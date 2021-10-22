@@ -11,6 +11,8 @@ short_description: Resource module for System Certificate Create
 description:
 - Manage operation create of the resource System Certificate Create.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   ersLocalCertStub:
@@ -85,7 +87,8 @@ options:
     description: NodeId of Cisco ISE application.
     type: str
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: System Certificate Create reference

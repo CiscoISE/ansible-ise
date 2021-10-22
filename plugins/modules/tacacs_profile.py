@@ -11,6 +11,8 @@ short_description: Resource module for Tacacs Profile
 description:
 - Manage operations create, update and delete of the resource Tacacs Profile.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   description:
@@ -40,7 +42,8 @@ options:
         type: list
     type: dict
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Tacacs Profile reference

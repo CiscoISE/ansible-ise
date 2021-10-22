@@ -12,6 +12,8 @@ description:
 - Get all Device Administration Time Date Conditions.
 - Get Device Administration Time Date Conditions by id.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options:
   id:
@@ -19,7 +21,8 @@ options:
     - Id path parameter. Condition id.
     type: str
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Device Administration Time Date Conditions reference

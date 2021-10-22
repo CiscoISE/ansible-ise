@@ -12,6 +12,8 @@ description:
 - Get all Node Deployment.
 - Get Node Deployment by name.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options:
   hostname:
@@ -19,7 +21,8 @@ options:
     - Hostname path parameter. ID of the existing deployed node.
     type: str
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Node Deployment reference

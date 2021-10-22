@@ -11,10 +11,13 @@ short_description: Resource module for Px Grid Node Approve
 description:
 - Manage operation update of the resource Px Grid Node Approve.
 version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk
+- ciscoisesdk >= 1.0.0
+- python >= 3.5
 seealso:
 # Reference by Internet resource
 - name: Px Grid Node Approve reference
