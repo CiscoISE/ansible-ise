@@ -2,9 +2,9 @@
 
 ## Ansible Modules for Cisco ISE
 
-The ise-ansible project provides an Ansible collection for managing and automating your Cisco ISE environment. It consists of a set of modules and roles for performing tasks related to Cisco ISE.
+The ise-ansible project provides an Ansible collection for managing and automating your Cisco Identity Services Engine (ISE) environment. It consists of a set of modules and roles for performing tasks related to Cisco ISE.
 
-This collection has been tested and supports Cisco ISE 3.0.
+This collection has been tested and supports Cisco ISE 3.1.
 
 *Note: This collection is not compatible with versions of Ansible before v2.9.*
 
@@ -14,7 +14,7 @@ This collection has been tested and supports Cisco ISE 3.0.
 - Python >= 3.6, as the Cisco ISE SDK doesn't support Python version 2.x
 
 ## Install
-Ansible must be installed
+Ansible must be installed ([Install guide](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html))
 ```
 sudo pip install ansible
 ```
@@ -24,7 +24,7 @@ Cisco ISE SDK must be installed
 sudo pip install ciscoisesdk
 ```
 
-Install the collection
+Install the collection ([Galaxy link](https://galaxy.ansible.com/cisco/ise))
 ```
 ansible-galaxy collection install cisco.ise
 ```
@@ -33,14 +33,25 @@ ansible-galaxy collection install cisco.ise
 This collection assumes that the API Gateway, the ERS APIs and OpenAPIs are enabled.
 
 ## Use
-First, define a `credentials.yml` file where you specify your Cisco ISE credentials as ansible variables:
+
+### Using vars_files
+
+First, define a `credentials.yml` ([example](playbooks/credentials.template)) file where you specify your Cisco ISE credentials as ansible variables:
 ```
 ---
 ise_hostname: <A.B.C.D>
 ise_username: <username>
 ise_password: <password>
-ise_version: 3.0.0  # optional, defaults to 3.0.0
-ise_verify: False  # optional, defaults to True
+ise_verify: False # optional, defaults to True
+ise_version: 3.0.0 # optional, defaults to 3.0.0
+ise_wait_on_rate_limit: True # optional, defaults to True
+ise_debug: False # optional, defaults to False
+```
+
+Create a `hosts` ([example](playbooks/hosts)) file that uses `[ise_servers]` with your Cisco ISE Settings:
+```
+[ise_servers]
+ise_server
 ```
 
 Then, create a playbook `myplaybook.yml` referencing the variables in your credentials.yml file and specifying the full namespace path to the module, plugin and/or role:
@@ -63,9 +74,52 @@ Execute the playbook:
 ```
 ansible-playbook -i hosts myplaybook.yml
 ```
-In the `playbooks` directory you can find more examples and use cases.
+In the `playbooks` [directory](playbooks/) directory you can find more examples and use cases.
 
-The examples found on the `playbooks` directory uses the `group_vars` variables. Consider using `ansible-vault` to encrypt the file that has the `ise_username` and `ise_password`.
+**Note**: The examples found on the `playbooks` directory use the `group_vars` variables. Remember to make the appropiate changes when running the examples.
+
+### Using group_vars directory
+
+First, define your group_vars for credentials `ise_servers` ([example](playbooks/group_vars/ise_servers)) file where you specify your Cisco ISE credentials as ansible variables:
+```
+---
+ise_hostname: <A.B.C.D>
+ise_username: <username>
+ise_password: <password>
+ise_verify: False # optional, defaults to True
+ise_version: 3.0.0 # optional, defaults to 3.0.0
+ise_wait_on_rate_limit: True # optional, defaults to True
+ise_debug: False # optional, defaults to False
+```
+
+Create a `hosts` ([example](playbooks/hosts)) file that uses `[ise_servers]` with your Cisco ISE Settings:
+```
+[ise_servers]
+ise_server
+```
+
+Then, create a playbook `myplaybook.yml` ([example](playbooks/network_device.yml)) referencing the variables in your credentials.yml file and specifying the full namespace path to the module, plugin and/or role:
+```
+- hosts: ise_servers
+  gather_facts: no
+  tasks:
+  - name: Get network device by id
+    cisco.ise.network_device_info:
+      ise_hostname: "{{ise_hostname}}"
+      ise_username: "{{ise_username}}"
+      ise_password: "{{ise_password}}"
+      ise_verify: "{{ise_verify}}"
+      id: "0667bc80-78a9-11eb-b987-005056aba98b"
+```
+
+Execute the playbook:
+```
+ansible-playbook -i hosts myplaybook.yml
+```
+In the `playbooks` [directory](playbooks/)  directory you can find more examples and use cases.
+
+**Note**: The examples found on the `playbooks` directory use the `group_vars` variables. Consider using `ansible-vault` to encrypt the file that has the `ise_username` and `ise_password`.
+
 
 ## Update
 Getting the latest/nightly collection build
