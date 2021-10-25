@@ -215,11 +215,6 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-        if self._play_context.check_mode:
-            # in --check mode, always skip this module execution
-            self._result["skipped"] = True
-            return self._result
-
         ise = ISESDK(params=self._task.args)
         obj = SgToVnToVlan(self._task.args, ise)
 

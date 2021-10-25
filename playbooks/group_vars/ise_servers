@@ -3,7 +3,7 @@
 ise_hostname: "198.18.133.27"
 ise_username: "admin"
 ise_password: "C1sco12345"
-ise_version: "3.0.0"
+ise_version: "3.1.0"
 ise_verify: False
 ise_debug: True
 ise_uses_api_gateway: True
