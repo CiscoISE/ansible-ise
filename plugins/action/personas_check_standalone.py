@@ -71,10 +71,6 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-        if self._play_context.check_mode:
-            # in --check mode, always skip this module execution
-            self._result["skipped"] = True
-            return self._result
 
         node = Node(dict(name=self._task.args.get("name"),
                          ip=self._task.args.get("ip"),

@@ -83,9 +83,8 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
+        self._result.update(dict(ise_response={}))
         if self._play_context.check_mode:
-            self._result["changed"] = True
-            self._result.update(dict(ise_response={}))
             return self._result
 
         ise = ISESDK(params=self._task.args)
