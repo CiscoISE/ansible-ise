@@ -193,7 +193,6 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-
         ise = ISESDK(params=self._task.args)
         obj = AncPolicy(self._task.args, ise)
 

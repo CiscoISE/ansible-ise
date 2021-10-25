@@ -239,7 +239,6 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-
         ise = ISESDK(params=self._task.args)
         obj = NetworkAccessTimeDateConditions(self._task.args, ise)
 

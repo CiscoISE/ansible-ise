@@ -71,7 +71,6 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-
         node = Node(dict(name=self._task.args.get("name"),
                          ip=self._task.args.get("ip"),
                          username=self._task.args.get("username"),

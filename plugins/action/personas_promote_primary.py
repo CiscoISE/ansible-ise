@@ -73,7 +73,6 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-
         primary_node = dict(ip=self._task.args.get("ip"),
                             hostname=self._task.args.get("hostname"),
                             username=self._task.args.get("username"),

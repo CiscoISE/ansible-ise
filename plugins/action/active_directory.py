@@ -197,7 +197,6 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-
         ise = ISESDK(params=self._task.args)
         obj = ActiveDirectory(self._task.args, ise)
 
