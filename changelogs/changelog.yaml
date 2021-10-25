@@ -467,3 +467,10 @@ releases:
         - Adds ``ise_uses_api_gateway`` to module options.
       minor_changes:
         - Update requirements.
+  1.2.1:
+    release_date: '2021-10-25'
+    changes:
+      release_summary: Fixes check_mode behavior
+      bugfixes:
+        - On regular modules additional comparison of check_mode was removed as Ansible already handles it.
+        - On info modules comparison was removed, because info modules should always run.
