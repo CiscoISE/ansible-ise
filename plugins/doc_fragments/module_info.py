@@ -58,4 +58,6 @@ options:
         version_added: "1.1.0"
 notes:
     - "Supports C(check_mode)"
+    - "The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK"
+    - "The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection"
 '''
