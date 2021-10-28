@@ -33,6 +33,14 @@ ansible-galaxy collection install cisco.ise
 
 This collection assumes that the API Gateway, the ERS APIs and OpenAPIs are enabled.
 
+### Using the collection on previous Cisco ISE versions 
+
+As stated before, the collection has been tested and supports Cisco ISE 3.1.
+
+Some resources may not have many changes and could work with Cisco ISE 3.0. But it requires extra setup on ISE found at [DEVNET ISE API Reference](https://developer.cisco.com/docs/identity-services-engine/3.0/#!setting-up) and on the collection variable `ise_uses_api_gateway`.
+
+It is still highly recommended to use the collection for the intended Cisco ISE version, 3.1.
+
 ## Use
 
 ### Using vars_files
@@ -103,7 +111,7 @@ Create a `hosts` ([example](playbooks/hosts)) file that uses `[ise_servers]` wit
 ise_server
 ```
 
-Then, create a playbook `myplaybook.yml` ([example](playbooks/network_device.yml)) referencing the variables in your credentials.yml file and specifying the full namespace path to the module, plugin and/or role:
+Then, create a playbook `myplaybook.yml` ([example](playbooks/network_device.yml)) referencing the variables in your `group_vars/ise_servers` file and specifying the full namespace path to the module, plugin and/or role:
 ```
 - hosts: ise_servers
   gather_facts: no
