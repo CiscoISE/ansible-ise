@@ -37,9 +37,7 @@ This collection assumes that the API Gateway, the ERS APIs and OpenAPIs are enab
 
 As stated before, the collection has been tested and supports Cisco ISE 3.1.
 
-Some resources may not have many changes and could work with Cisco ISE 3.0. But it requires extra setup on ISE found at [DEVNET ISE API Reference](https://developer.cisco.com/docs/identity-services-engine/3.0/#!setting-up) and on the collection variable `ise_uses_api_gateway`.
-
-It is still highly recommended to use the collection for the intended Cisco ISE version, 3.1.
+It may work with Cisco ISE version 3.0, but it is not officially supported.
 
 ## Use
 
