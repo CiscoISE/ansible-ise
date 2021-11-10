@@ -61,7 +61,7 @@ class NodeGroup(object):
                 function="get_node_group",
                 handle_func_exception=False,
                 params={"node_group_name": name}
-            ).response.get('response', {})
+            ).response
             result = get_dict_result(result, 'name', name)
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(

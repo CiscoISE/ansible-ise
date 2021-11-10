@@ -80,6 +80,7 @@ class ActionModule(ActionBase):
             function='get_endpoints_by_type',
             params=self.get_object(self._task.args),
         ).response
+
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

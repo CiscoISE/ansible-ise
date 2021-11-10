@@ -84,7 +84,7 @@ class ActionModule(ActionBase):
                 family="replication_status",
                 function='get_node_replication_status',
                 params=self.get_object(self._task.args)
-            ).response
+            ).response['NodeStatus']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

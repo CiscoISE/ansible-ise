@@ -82,6 +82,7 @@ class ActionModule(ActionBase):
             function='bulk_request_for_ip_to_sgt_mapping_group',
             params=self.get_object(self._task.args),
         ).response
+
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

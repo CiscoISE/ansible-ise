@@ -84,7 +84,7 @@ class ActionModule(ActionBase):
                 family="ip_to_sgt_mapping",
                 function='monitor_bulk_status_ip_to_sgt_mapping',
                 params=self.get_object(self._task.args)
-            ).response
+            ).response['BulkStatus']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

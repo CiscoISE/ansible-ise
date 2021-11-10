@@ -82,6 +82,7 @@ class ActionModule(ActionBase):
             function='bulk_request_for_egress_matrix_cell',
             params=self.get_object(self._task.args),
         ).response
+
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

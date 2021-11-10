@@ -96,6 +96,7 @@ class ActionModule(ActionBase):
             function='load_groups_from_domain',
             params=self.get_object(self._task.args),
         ).response
+
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

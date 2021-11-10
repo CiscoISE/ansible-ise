@@ -90,6 +90,7 @@ class ActionModule(ActionBase):
             function='create_endpoint_certificate',
             params=self.get_object(self._task.args),
         ).data
+
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

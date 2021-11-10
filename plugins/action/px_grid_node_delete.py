@@ -79,7 +79,8 @@ class ActionModule(ActionBase):
             family="px_grid_node",
             function="delete_px_grid_node_by_name",
             params=self.get_object(self._task.args),
-        ).response['PxgridNode']
+        ).response
+
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

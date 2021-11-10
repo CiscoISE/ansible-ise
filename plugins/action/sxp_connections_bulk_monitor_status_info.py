@@ -84,7 +84,7 @@ class ActionModule(ActionBase):
                 family="sxp_connections",
                 function='monitor_bulk_status_sxp_connections',
                 params=self.get_object(self._task.args)
-            ).response
+            ).response['BulkStatus']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

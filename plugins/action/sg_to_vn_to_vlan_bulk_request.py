@@ -82,6 +82,7 @@ class ActionModule(ActionBase):
             function='bulk_request_for_security_groups_to_vn_to_vlan',
             params=self.get_object(self._task.args),
         ).response
+
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result
