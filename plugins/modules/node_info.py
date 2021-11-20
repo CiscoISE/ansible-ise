@@ -125,6 +125,7 @@ ise_response:
         "type": "string"
       }
     }
+
 ise_responses:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
@@ -136,7 +137,22 @@ ise_responses:
       {
         "id": "string",
         "name": "string",
-        "description": "string",
+        "gateWay": "string",
+        "userName": "string",
+        "passWord": "string",
+        "displayName": "string",
+        "inDeployment": true,
+        "otherPapFqdn": "string",
+        "ipAddresses": [
+          "string"
+        ],
+        "ipAddress": "string",
+        "sxpIpAddress": "string",
+        "nodeServiceTypes": "string",
+        "fqdn": "string",
+        "papNode": true,
+        "primaryPapNode": true,
+        "pxGridNode": true,
         "link": {
           "rel": "string",
           "href": "string",

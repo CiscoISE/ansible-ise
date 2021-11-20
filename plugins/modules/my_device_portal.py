@@ -201,7 +201,8 @@ options:
           allowedInterfaces:
             description: Interfaces that the portal will be reachable on. Allowed values
               - eth0, - eth1, - eth2, - eth3, - eth4, - eth5, - bond0, - bond1, - bond2.
-            type: str
+            elements: str
+            type: list
           alwaysUsedLanguage:
             description: My Device Portal's alwaysUsedLanguage.
             type: str
@@ -338,7 +339,8 @@ EXAMPLES = r"""
         - {}
         timeBetweenLoginsDuringRateLimit: 0
       portalSettings:
-        allowedInterfaces: string
+        allowedInterfaces:
+        - string
         alwaysUsedLanguage: string
         certificateGroupTag: string
         displayLang: string
@@ -425,7 +427,8 @@ EXAMPLES = r"""
         - {}
         timeBetweenLoginsDuringRateLimit: 0
       portalSettings:
-        allowedInterfaces: string
+        allowedInterfaces:
+        - string
         alwaysUsedLanguage: string
         certificateGroupTag: string
         displayLang: string
@@ -565,11 +568,13 @@ ise_update_response:
   sample: >
     {
       "UpdatedFieldsList": {
-        "updatedField": {
-          "field": "string",
-          "oldValue": "string",
-          "newValue": "string"
-        },
+        "updatedField": [
+          {
+            "field": "string",
+            "oldValue": "string",
+            "newValue": "string"
+          }
+        ],
         "field": "string",
         "oldValue": "string",
         "newValue": "string"

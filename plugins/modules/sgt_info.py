@@ -101,7 +101,7 @@ ise_response:
       "name": "string",
       "description": "string",
       "value": 0,
-      "generationId": 0,
+      "generationId": "string",
       "isReadOnly": true,
       "propogateToApic": true,
       "defaultSGACLs": [
@@ -113,6 +113,7 @@ ise_response:
         "type": "string"
       }
     }
+
 ise_responses:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
@@ -125,6 +126,13 @@ ise_responses:
         "id": "string",
         "name": "string",
         "description": "string",
+        "value": 0,
+        "generationId": "string",
+        "isReadOnly": true,
+        "propogateToApic": true,
+        "defaultSGACLs": [
+          {}
+        ],
         "link": {
           "rel": "string",
           "href": "string",

@@ -25,6 +25,9 @@ options:
         description: Guest Type Sms's value.
         type: str
     type: list
+  id:
+    description: Id path parameter.
+    type: str
 requirements:
 - ciscoisesdk >= 1.1.0
 - python >= 3.5

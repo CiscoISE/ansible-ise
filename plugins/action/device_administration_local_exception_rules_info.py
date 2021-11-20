@@ -86,7 +86,7 @@ class ActionModule(ActionBase):
                 family="device_administration_authorization_exception_rules",
                 function='get_device_admin_local_exception_rule_by_id',
                 params=self.get_object(self._task.args)
-            ).response
+            ).response['response']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result
@@ -95,7 +95,7 @@ class ActionModule(ActionBase):
                 family="device_administration_authorization_exception_rules",
                 function='get_device_admin_local_exception_rules',
                 params=self.get_object(self._task.args),
-            ).response
+            ).response['response']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

@@ -65,6 +65,7 @@ EXAMPLES = r"""
       query-timeout: 0
       replication-attempts: 0
       replication-timeout: 0
+    node_group_name: string
 
 - name: Update by name
   cisco.ise.node_group:

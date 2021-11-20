@@ -101,6 +101,7 @@ ise_response:
         "type": "string"
       }
     }
+
 ise_responses:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
@@ -113,6 +114,17 @@ ise_responses:
         "id": "string",
         "name": "string",
         "description": "string",
+        "hostIP": "string",
+        "sharedSecret": "string",
+        "enableKeyWrap": true,
+        "encryptionKey": "string",
+        "authenticatorKey": "string",
+        "keyInputFormat": "string",
+        "authenticationPort": 0,
+        "accountingPort": 0,
+        "timeout": 0,
+        "retries": 0,
+        "proxyTimeout": 0,
         "link": {
           "rel": "string",
           "href": "string",

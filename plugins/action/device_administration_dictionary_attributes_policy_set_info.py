@@ -82,7 +82,7 @@ class ActionModule(ActionBase):
                 family="device_administration_dictionary_attributes_list",
                 function='get_device_admin_dictionaries_policy_set',
                 params=self.get_object(self._task.args),
-            ).response
+            ).response['response']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

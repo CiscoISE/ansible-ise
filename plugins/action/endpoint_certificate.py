@@ -87,9 +87,10 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="endpoint_certificate",
-            function='create_endpoint_certificate',
+            # No function
+            # Metadata: {'type': 'u', 'tag': 'EndpointCertificate', 'create_all': 'create_endpoint_certificate'}
             params=self.get_object(self._task.args),
-        ).data
+        ).response
 
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())

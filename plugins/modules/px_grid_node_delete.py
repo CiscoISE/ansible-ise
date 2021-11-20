@@ -45,5 +45,17 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "status": "string",
+      "authMethod": "string",
+      "groups": "string",
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
+      }
+    }
 """

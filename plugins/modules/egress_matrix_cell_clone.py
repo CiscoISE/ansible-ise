@@ -14,7 +14,16 @@ version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
-options: {}
+options:
+  dstSgtId:
+    description: DstSgtId path parameter.
+    type: str
+  id:
+    description: Id path parameter.
+    type: str
+  srcSgtId:
+    description: SrcSgtId path parameter.
+    type: str
 requirements:
 - ciscoisesdk >= 1.1.0
 - python >= 3.5

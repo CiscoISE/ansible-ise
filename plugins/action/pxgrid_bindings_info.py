@@ -77,7 +77,8 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="trust_sec_sxp",
-            function='get_bindings',
+            # No function
+            # Metadata: {'type': 'c', 'tag': 'TrustSec SXP', 'get_all': 'get_bindings'}
             params=self.get_object(self._task.args),
         ).response
 

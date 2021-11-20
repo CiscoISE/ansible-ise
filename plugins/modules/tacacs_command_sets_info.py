@@ -100,6 +100,7 @@ ise_response:
         "type": "string"
       }
     }
+
 ise_responses:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
@@ -112,6 +113,16 @@ ise_responses:
         "id": "string",
         "name": "string",
         "description": "string",
+        "permitUnmatched": true,
+        "commands": {
+          "commandList": [
+            {
+              "grant": "string",
+              "command": "string",
+              "arguments": "string"
+            }
+          ]
+        },
         "link": {
           "rel": "string",
           "href": "string",

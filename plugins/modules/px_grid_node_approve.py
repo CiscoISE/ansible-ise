@@ -14,7 +14,10 @@ version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
-options: {}
+options:
+  name:
+    description: Name path parameter.
+    type: str
 requirements:
 - ciscoisesdk >= 1.1.0
 - python >= 3.5

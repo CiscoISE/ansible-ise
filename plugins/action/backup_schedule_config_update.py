@@ -25,6 +25,17 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
+    backupDescription=dict(type="str"),
+    backupEncryptionKey=dict(type="str"),
+    backupName=dict(type="str"),
+    endDate=dict(type="str"),
+    frequency=dict(type="str"),
+    monthDay=dict(type="str"),
+    repositoryName=dict(type="str"),
+    startDate=dict(type="str"),
+    status=dict(type="str"),
+    time=dict(type="str"),
+    weekDay=dict(type="str"),
 ))
 
 required_if = []
@@ -39,7 +50,7 @@ class ActionModule(ActionBase):
             raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
-        self._supports_check_mode = True
+        self._supports_check_mode = False
         self._result = None
 
     # Checks the supplied parameters against the argument spec for this module
@@ -62,6 +73,17 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
+            backup_description=params.get("backupDescription"),
+            backup_encryption_key=params.get("backupEncryptionKey"),
+            backup_name=params.get("backupName"),
+            end_date=params.get("endDate"),
+            frequency=params.get("frequency"),
+            month_day=params.get("monthDay"),
+            repository_name=params.get("repositoryName"),
+            start_date=params.get("startDate"),
+            status=params.get("status"),
+            time=params.get("time"),
+            week_day=params.get("weekDay"),
         )
         return new_object
 
@@ -71,14 +93,11 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-        self._result.update(dict(ise_response={}))
-
         ise = ISESDK(params=self._task.args)
 
         response = ise.exec(
-            family="mdm",
-            # No function
-            # Metadata: {'type': 'c', 'tag': 'MDM', 'get_all': 'get_endpoints'}
+            family="backup_and_restore",
+            function='update_scheduled_config_backup',
             params=self.get_object(self._task.args),
         ).response
 

@@ -142,6 +142,7 @@ ise_response:
         "type": "string"
       }
     }
+
 ise_responses:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
@@ -154,6 +155,58 @@ ise_responses:
         "id": "string",
         "name": "string",
         "description": "string",
+        "advancedAttributes": [
+          {
+            "leftHandSideDictionaryAttribue": {
+              "AdvancedAttributeValueType": "string",
+              "dictionaryName": "string",
+              "attributeName": "string",
+              "value": "string"
+            },
+            "rightHandSideAttribueValue": {
+              "AdvancedAttributeValueType": "string",
+              "dictionaryName": "string",
+              "attributeName": "string",
+              "value": "string"
+            }
+          }
+        ],
+        "accessType": "string",
+        "authzProfileType": "string",
+        "vlan": {
+          "nameID": "string",
+          "tagID": 0
+        },
+        "reauth": {
+          "timer": 0,
+          "connectivity": "string"
+        },
+        "airespaceACL": "string",
+        "airespaceIPv6ACL": "string",
+        "webRedirection": {
+          "WebRedirectionType": "string",
+          "acl": "string",
+          "portalName": "string",
+          "staticIPHostNameFQDN": "string",
+          "displayCertificatesRenewalMessages": true
+        },
+        "acl": "string",
+        "trackMovement": true,
+        "agentlessPosture": true,
+        "serviceTemplate": true,
+        "easywiredSessionCandidate": true,
+        "daclName": "string",
+        "voiceDomainPermission": true,
+        "neat": true,
+        "webAuth": true,
+        "autoSmartPort": "string",
+        "interfaceTemplate": "string",
+        "ipv6ACLFilter": "string",
+        "avcProfile": "string",
+        "macSecPolicy": "string",
+        "asaVpn": "string",
+        "profileName": "string",
+        "ipv6DaclName": "string",
         "link": {
           "rel": "string",
           "href": "string",

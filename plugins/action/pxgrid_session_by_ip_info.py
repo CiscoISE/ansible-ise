@@ -77,7 +77,8 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="session_directory",
-            function='get_session_by_ip_address',
+            # No function
+            # Metadata: {'type': 'c', 'tag': 'Session Directory', 'get_all': 'get_session_by_ip_address'}
             params=self.get_object(self._task.args),
         ).response
 

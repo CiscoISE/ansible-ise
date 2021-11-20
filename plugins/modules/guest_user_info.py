@@ -149,6 +149,7 @@ ise_response:
         "type": "string"
       }
     }
+
 ise_responses:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
@@ -161,6 +162,35 @@ ise_responses:
         "id": "string",
         "name": "string",
         "description": "string",
+        "guestType": "string",
+        "status": "string",
+        "statusReason": "string",
+        "reasonForVisit": "string",
+        "sponsorUserId": "string",
+        "sponsorUserName": "string",
+        "guestInfo": {
+          "firstName": "string",
+          "lastName": "string",
+          "company": "string",
+          "creationTime": "string",
+          "notificationLanguage": "string",
+          "userName": "string",
+          "emailAddress": "string",
+          "phoneNumber": "string",
+          "password": "string",
+          "enabled": true,
+          "smsServiceProvider": "string"
+        },
+        "guestAccessInfo": {
+          "validDays": 0,
+          "fromDate": "string",
+          "toDate": "string",
+          "location": "string",
+          "ssid": "string",
+          "groupTag": "string"
+        },
+        "portalId": "string",
+        "customFields": {},
         "link": {
           "rel": "string",
           "href": "string",

@@ -77,7 +77,8 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="system_health",
-            function='get_healths',
+            # No function
+            # Metadata: {'type': 'c', 'tag': 'System Health', 'get_all': 'get_healths'}
             params=self.get_object(self._task.args),
         ).response
 

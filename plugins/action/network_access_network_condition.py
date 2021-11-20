@@ -77,7 +77,7 @@ class NetworkAccessNetworkCondition(object):
                 function="get_network_access_network_condition_by_id",
                 params={"id": id},
                 handle_func_exception=False,
-            ).response.get('response', {})
+            ).response['response']
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(
                 msg=(

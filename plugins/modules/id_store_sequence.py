@@ -105,23 +105,23 @@ ise_response:
   type: dict
   sample: >
     {
-        "id": "string",
-        "name": "string",
-        "description": "string",
-        "parent": "string",
-        "idSeqItem": [
-          {
-            "idstore": "string",
-            "order": 0
-          }
-        ],
-        "certificateAuthenticationProfile": "string",
-        "breakOnStoreFail": true,
-        "link": {
-          "rel": "string",
-          "href": "string",
-          "type": "string"
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "parent": "string",
+      "idSeqItem": [
+        {
+          "idstore": "string",
+          "order": 0
         }
+      ],
+      "certificateAuthenticationProfile": "string",
+      "breakOnStoreFail": true,
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
+      }
     }
 
 ise_update_response:
@@ -132,11 +132,13 @@ ise_update_response:
   sample: >
     {
       "UpdatedFieldsList": {
-        "updatedField": {
-          "field": "string",
-          "oldValue": "string",
-          "newValue": "string"
-        },
+        "updatedField": [
+          {
+            "field": "string",
+            "oldValue": "string",
+            "newValue": "string"
+          }
+        ],
         "field": "string",
         "oldValue": "string",
         "newValue": "string"

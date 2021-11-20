@@ -316,7 +316,8 @@ options:
           allowedInterfaces:
             description: Interfaces that the portal will be reachable on. Allowed values
               - eth0, - eth1, - eth2, - eth3, - eth4, - eth5, - bond0, - bond1, - bond2.
-            type: str
+            elements: str
+            type: list
           alwaysUsedLanguage:
             description: Self Registered Portal's alwaysUsedLanguage.
             type: str
@@ -390,8 +391,8 @@ options:
               Only valid if includeAup = true. Allowed values - ONPAGE, - ASLINK.
             type: str
           authenticateSponsorsUsingPortalList:
-            description: Self Registered Portal's authenticateSponsorsUsingPortalList.
-            type: str
+            description: AuthenticateSponsorsUsingPortalList flag.
+            type: bool
           autoLoginSelfWait:
             description: Allow guests to login automatically from self-registration
               after sponsor's approval. No need to provide the credentials by guest
@@ -524,11 +525,13 @@ options:
             type: bool
           guestEmailBlacklistDomains:
             description: Disallow guests with an e-mail address from selected domains.
-            type: str
+            elements: str
+            type: list
           guestEmailWhitelistDomains:
             description: Self-registered guests whose e-mail address is in one of these
               domains will be allowed. Only valid if enableGuestEmailWhitelist = true.
-            type: str
+            elements: str
+            type: list
           includeAup:
             description: Include an Acceptable Use Policy (AUP) that should be displayed
               during login.
@@ -774,7 +777,8 @@ EXAMPLES = r"""
           socialMediaValue: string
         timeBetweenLoginsDuringRateLimit: 0
       portalSettings:
-        allowedInterfaces: string
+        allowedInterfaces:
+        - string
         alwaysUsedLanguage: string
         assignedGuestTypeForEmployee: string
         authenticationMethod: string
@@ -795,7 +799,7 @@ EXAMPLES = r"""
         approveDenyLinksValidFor: 0
         assignGuestsToGuestType: string
         aupDisplay: string
-        authenticateSponsorsUsingPortalList: string
+        authenticateSponsorsUsingPortalList: true
         autoLoginSelfWait: true
         autoLoginTimePeriod: 0
         credentialNotificationUsingEmail: true
@@ -834,8 +838,10 @@ EXAMPLES = r"""
           require: true
         graceAccessExpireInterval: 0
         graceAccessSendAccountExpiration: true
-        guestEmailBlacklistDomains: string
-        guestEmailWhitelistDomains: string
+        guestEmailBlacklistDomains:
+        - string
+        guestEmailWhitelistDomains:
+        - string
         includeAup: true
         postRegistrationRedirect: string
         postRegistrationRedirectUrl: string
@@ -979,7 +985,8 @@ EXAMPLES = r"""
           socialMediaValue: string
         timeBetweenLoginsDuringRateLimit: 0
       portalSettings:
-        allowedInterfaces: string
+        allowedInterfaces:
+        - string
         alwaysUsedLanguage: string
         assignedGuestTypeForEmployee: string
         authenticationMethod: string
@@ -1000,7 +1007,7 @@ EXAMPLES = r"""
         approveDenyLinksValidFor: 0
         assignGuestsToGuestType: string
         aupDisplay: string
-        authenticateSponsorsUsingPortalList: string
+        authenticateSponsorsUsingPortalList: true
         autoLoginSelfWait: true
         autoLoginTimePeriod: 0
         credentialNotificationUsingEmail: true
@@ -1039,8 +1046,10 @@ EXAMPLES = r"""
           require: true
         graceAccessExpireInterval: 0
         graceAccessSendAccountExpiration: true
-        guestEmailBlacklistDomains: string
-        guestEmailWhitelistDomains: string
+        guestEmailBlacklistDomains:
+        - string
+        guestEmailWhitelistDomains:
+        - string
         includeAup: true
         postRegistrationRedirect: string
         postRegistrationRedirectUrl: string
@@ -1190,9 +1199,13 @@ ise_response:
           "aupDisplay": "string",
           "requireAupAcceptance": true,
           "enableGuestEmailWhitelist": true,
-          "guestEmailWhitelistDomains": "string",
+          "guestEmailWhitelistDomains": [
+            "string"
+          ],
           "enableGuestEmailBlacklist": true,
-          "guestEmailBlacklistDomains": "string",
+          "guestEmailBlacklistDomains": [
+            "string"
+          ],
           "requireGuestApproval": true,
           "autoLoginSelfWait": true,
           "autoLoginTimePeriod": 0,
@@ -1208,7 +1221,7 @@ ise_response:
           "approveDenyLinksValidFor": 0,
           "approveDenyLinksTimeUnits": "string",
           "requireApproverToAuthenticate": true,
-          "authenticateSponsorsUsingPortalList": "string",
+          "authenticateSponsorsUsingPortalList": true,
           "sponsorPortalList": []
         },
         "selfRegSuccessSettings": {
@@ -1344,11 +1357,13 @@ ise_update_response:
   sample: >
     {
       "UpdatedFieldsList": {
-        "updatedField": {
-          "field": "string",
-          "oldValue": "string",
-          "newValue": "string"
-        },
+        "updatedField": [
+          {
+            "field": "string",
+            "oldValue": "string",
+            "newValue": "string"
+          }
+        ],
         "field": "string",
         "oldValue": "string",
         "newValue": "string"

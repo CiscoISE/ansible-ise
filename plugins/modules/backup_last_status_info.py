@@ -43,22 +43,19 @@ ise_response:
   type: dict
   sample: >
     {
-      "response": {
-        "action": "string",
-        "details": "string",
-        "error": "string",
-        "hostName": "string",
-        "initiatedFrom": "string",
-        "justComplete": "string",
-        "message": "string",
-        "name": "string",
-        "percentComplete": "string",
-        "repository": "string",
-        "scheduled": "string",
-        "startDate": "string",
-        "status": "string",
-        "type": "string"
-      },
-      "version": "string"
+      "action": "string",
+      "details": "string",
+      "error": "string",
+      "hostName": "string",
+      "initiatedFrom": "string",
+      "justComplete": "string",
+      "message": "string",
+      "name": "string",
+      "percentComplete": "string",
+      "repository": "string",
+      "scheduled": "string",
+      "startDate": "string",
+      "status": "string",
+      "type": "string"
     }
 """

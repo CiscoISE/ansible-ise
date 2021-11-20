@@ -85,6 +85,7 @@ ise_response:
         "type": "string"
       }
     }
+
 ise_responses:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
@@ -97,6 +98,15 @@ ise_responses:
         "id": "string",
         "name": "string",
         "description": "string",
+        "wirelessProfiles": [
+          {
+            "ssid": "string",
+            "allowedProtocol": "string",
+            "certificateTemplateId": "string",
+            "actionType": "string",
+            "previousSsid": "string"
+          }
+        ],
         "link": {
           "rel": "string",
           "href": "string",

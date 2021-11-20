@@ -96,7 +96,7 @@ ise_response:
           "nodeAndNodeCountAndCountInfo": [
             {
               "name": "string",
-              "value": "string",
+              "value": {},
               "declaredType": "string",
               "scope": "string",
               "nil": true,
@@ -118,9 +118,9 @@ ise_response:
         }
       },
       "mdmInfo": {
-        "activeMdmServersCount": 0,
-        "activeDesktopMdmServersCount": 0,
-        "activeMobileMdmServersCount": 0,
+        "activeMdmServersCount": "string",
+        "activeDesktopMdmServersCount": "string",
+        "activeMobileMdmServersCount": "string",
         "deploymentID": "string",
         "nodeList": {
           "nodeAndScope": [
@@ -140,7 +140,7 @@ ise_response:
         "content": [
           {
             "name": "string",
-            "value": "string",
+            "value": {},
             "declaredType": "string",
             "scope": "string",
             "nil": true,

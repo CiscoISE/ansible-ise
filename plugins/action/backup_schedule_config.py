@@ -100,6 +100,7 @@ class ActionModule(ActionBase):
             function='create_scheduled_config_backup',
             params=self.get_object(self._task.args),
         ).response
+
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

@@ -19,7 +19,7 @@ options:
     description: Use certificate to authenticate the ISE Admin Portal.
     type: bool
   allowExtendedValidity:
-    description: Allow import of certificates with validity greater than 398 days.
+    description: Allow import of certificates with validity greater than 398 days (required).
     type: bool
   allowOutOfDateCert:
     description: Allow out of date certificates (required).
@@ -57,6 +57,10 @@ options:
   portalGroupTag:
     description: Set Group tag.
     type: str
+  portalTagTransferForSameSubject:
+    description: Allow overwriting the portal tag from matching certificate of same
+      subject.
+    type: bool
   privateKeyData:
     description: Private Key data (required).
     type: str
@@ -65,6 +69,9 @@ options:
     type: bool
   radius:
     description: Use certificate for the RADSec server.
+    type: bool
+  roleTransferForSameSubject:
+    description: Allow transfer of roles for certificate with matching subject.
     type: bool
   saml:
     description: Use certificate for SAML Signing.
@@ -103,9 +110,11 @@ EXAMPLES = r"""
     password: string
     portal: true
     portalGroupTag: string
+    portalTagTransferForSameSubject: true
     privateKeyData: string
     pxgrid: true
     radius: true
+    roleTransferForSameSubject: true
     saml: true
     validateCertificateExtensions: true
 

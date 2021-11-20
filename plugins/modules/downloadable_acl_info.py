@@ -72,12 +72,13 @@ ise_response:
       "description": "string",
       "dacl": "string",
       "daclType": "string",
-      "link1": {
+      "link": {
         "rel": "string",
         "href": "string",
         "type": "string"
       }
     }
+
 ise_responses:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
@@ -90,6 +91,8 @@ ise_responses:
         "id": "string",
         "name": "string",
         "description": "string",
+        "dacl": "string",
+        "daclType": "string",
         "link": {
           "rel": "string",
           "href": "string",

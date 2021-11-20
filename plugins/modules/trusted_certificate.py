@@ -50,7 +50,7 @@ options:
       name fits the configured server URL.
     type: bool
   id:
-    description: Id path parameter. The ID of the Trusted Certificate to be deleted.
+    description: Id path parameter. The id of the trust certificate.
     type: str
   ignoreCRLExpiration:
     description: Switch to enable/disable ignore CRL Expiration.

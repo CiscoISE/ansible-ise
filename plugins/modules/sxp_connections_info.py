@@ -112,6 +112,7 @@ ise_response:
         "type": "string"
       }
     }
+
 ise_responses:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
@@ -122,6 +123,14 @@ ise_responses:
     [
       {
         "id": "string",
+        "description": "string",
+        "sxpPeer": "string",
+        "sxpVpn": "string",
+        "sxpNode": "string",
+        "ipAddress": "string",
+        "sxpMode": "string",
+        "sxpVersion": "string",
+        "enabled": true,
         "link": {
           "rel": "string",
           "href": "string",

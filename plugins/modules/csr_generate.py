@@ -121,20 +121,25 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: dict
+  type: list
+  elements: dict
   sample: >
-    {
-      "response": [
-        {
-          "id": "string",
-          "link": {
-            "href": "string",
-            "rel": "string",
-            "type": "string"
-          },
-          "message": "string"
-        }
-      ],
-      "version": "string"
-    }
+    [
+      {
+        "friendlyName": "string",
+        "groupTag": "string",
+        "hostName": "string",
+        "id": "string",
+        "keySize": "string",
+        "link": {
+          "href": "string",
+          "rel": "string",
+          "type": "string"
+        },
+        "signatureAlgorithm": "string",
+        "subject": "string",
+        "timeStamp": "string",
+        "usedFor": "string"
+      }
+    ]
 """

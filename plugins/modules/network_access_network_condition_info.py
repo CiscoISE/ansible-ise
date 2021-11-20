@@ -57,36 +57,42 @@ ise_response:
   type: dict
   sample: >
     {
-      "response": {
-        "conditionType": "string",
-        "description": "string",
-        "id": "string",
-        "link": {
-          "href": "string",
-          "rel": "string",
-          "type": "string"
-        },
-        "name": "string",
-        "conditions": [
-          {
-            "cliDnisList": [
-              "string"
-            ],
-            "ipAddrList": [
-              "string"
-            ],
-            "macAddrList": [
-              "string"
-            ],
-            "deviceGroupList": [
-              "string"
-            ],
-            "deviceList": [
-              "string"
-            ]
-          }
-        ]
+      "conditionType": "string",
+      "description": "string",
+      "id": "string",
+      "link": {
+        "href": "string",
+        "rel": "string",
+        "type": "string"
       },
-      "version": "string"
+      "name": "string",
+      "conditions": [
+        {
+          "cliDnisList": [
+            "string"
+          ],
+          "conditionType": "string",
+          "description": "string",
+          "id": "string",
+          "ipAddrList": [
+            "string"
+          ],
+          "link": {
+            "href": "string",
+            "rel": "string",
+            "type": "string"
+          },
+          "macAddrList": [
+            "string"
+          ],
+          "name": "string",
+          "deviceGroupList": [
+            "string"
+          ],
+          "deviceList": [
+            "string"
+          ]
+        }
+      ]
     }
 """

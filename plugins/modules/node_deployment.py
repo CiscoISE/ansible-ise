@@ -91,7 +91,7 @@ options:
         type: dict
     type: dict
   hostname:
-    description: Hostname path parameter. Node name of the existing deployed node.
+    description: Hostname path parameter. ID of the existing deployed node.
     type: str
   password:
     description: Node Deployment's password.

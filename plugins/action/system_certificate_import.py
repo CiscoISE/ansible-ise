@@ -39,9 +39,11 @@ argument_spec.update(dict(
     password=dict(type="str", no_log=True),
     portal=dict(type="bool"),
     portalGroupTag=dict(type="str"),
+    portalTagTransferForSameSubject=dict(type="bool"),
     privateKeyData=dict(type="str"),
     pxgrid=dict(type="bool"),
     radius=dict(type="bool"),
+    roleTransferForSameSubject=dict(type="bool"),
     saml=dict(type="bool"),
     validateCertificateExtensions=dict(type="bool"),
 ))
@@ -95,9 +97,11 @@ class ActionModule(ActionBase):
             password=params.get("password"),
             portal=params.get("portal"),
             portal_group_tag=params.get("portalGroupTag"),
+            portal_tag_transfer_for_same_subject=params.get("portalTagTransferForSameSubject"),
             private_key_data=params.get("privateKeyData"),
             pxgrid=params.get("pxgrid"),
             radius=params.get("radius"),
+            role_transfer_for_same_subject=params.get("roleTransferForSameSubject"),
             saml=params.get("saml"),
             validate_certificate_extensions=params.get("validateCertificateExtensions"),
         )
@@ -116,6 +120,7 @@ class ActionModule(ActionBase):
             function='import_system_certificate',
             params=self.get_object(self._task.args),
         ).response
+
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

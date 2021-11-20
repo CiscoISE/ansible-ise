@@ -34,11 +34,11 @@ options:
     description: System Certificate's expirationTTLUnits.
     type: str
   hostName:
-    description: HostName path parameter. Name of the host from which the System Certificate
-      needs to be deleted.
+    description: HostName path parameter. Name of Host whose certificate needs to be
+      updated.
     type: str
   id:
-    description: Id path parameter. The ID of the System Certificate to be deleted.
+    description: Id path parameter. The ID of the System Certificate to be updated.
     type: str
   ims:
     description: Use certificate for the ISE Messaging Service.
@@ -52,6 +52,10 @@ options:
   portalGroupTag:
     description: Set Group tag.
     type: str
+  portalTagTransferForSameSubject:
+    description: Allow overwriting the portal tag from matching certificate of same
+      subject.
+    type: bool
   pxgrid:
     description: Use certificate for the pxGrid Controller.
     type: bool
@@ -60,6 +64,9 @@ options:
     type: bool
   renewSelfSignedCertificate:
     description: Renew Self Signed Certificate.
+    type: bool
+  roleTransferForSameSubject:
+    description: Allow transfer of roles for certificate with matching subject.
     type: bool
   saml:
     description: Use certificate for SAML Signing.
@@ -94,9 +101,11 @@ EXAMPLES = r"""
     name: string
     portal: true
     portalGroupTag: string
+    portalTagTransferForSameSubject: true
     pxgrid: true
     radius: true
     renewSelfSignedCertificate: true
+    roleTransferForSameSubject: true
     saml: true
 
 - name: Delete by id

@@ -84,7 +84,7 @@ class ActionModule(ActionBase):
                 family="repository",
                 function='get_repository',
                 params=self.get_object(self._task.args)
-            ).response
+            ).response['response']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result
@@ -93,7 +93,7 @@ class ActionModule(ActionBase):
                 family="repository",
                 function='get_repositories',
                 params=self.get_object(self._task.args),
-            ).response
+            ).response['response']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

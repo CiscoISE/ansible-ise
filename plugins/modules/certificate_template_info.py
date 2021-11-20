@@ -88,6 +88,7 @@ ise_response:
       "validityPeriod": 0,
       "raprofile": "string"
     }
+
 ise_responses:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
@@ -100,11 +101,9 @@ ise_responses:
         "id": "string",
         "name": "string",
         "description": "string",
-        "link": {
-          "rel": "string",
-          "href": "string",
-          "type": "string"
-        }
+        "keySize": 0,
+        "validityPeriod": 0,
+        "raprofile": "string"
       }
     ]
 """

@@ -57,18 +57,15 @@ ise_response:
   type: dict
   sample: >
     {
-      "response": {
-        "description": "string",
-        "dictionaryAttrType": "string",
-        "id": "string",
-        "link": {
-          "href": "string",
-          "rel": "string",
-          "type": "string"
-        },
-        "name": "string",
-        "version": "string"
+      "description": "string",
+      "dictionaryAttrType": "string",
+      "id": "string",
+      "link": {
+        "href": "string",
+        "rel": "string",
+        "type": "string"
       },
+      "name": "string",
       "version": "string"
     }
 """

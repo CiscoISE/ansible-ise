@@ -25,6 +25,12 @@ options:
         description: Guest User Email's value.
         type: str
     type: list
+  id:
+    description: Id path parameter.
+    type: str
+  portalId:
+    description: PortalId path parameter.
+    type: str
 requirements:
 - ciscoisesdk >= 1.1.0
 - python >= 3.5

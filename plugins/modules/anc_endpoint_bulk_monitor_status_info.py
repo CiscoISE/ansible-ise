@@ -48,23 +48,21 @@ ise_response:
   type: dict
   sample: >
     {
-      "BulkStatus": {
-        "bulkID": "string",
-        "executionStatus": "string",
-        "operationType": "string",
-        "startTime": "string",
-        "resourcesCount": 0,
-        "successCount": 0,
-        "failCount": 0,
-        "resourcesStatus": [
-          {
-            "id": "string",
-            "name": "string",
-            "description": "string",
-            "resourceExecutionStatus": "string",
-            "status": "string"
-          }
-        ]
-      }
+      "bulkID": "string",
+      "executionStatus": "string",
+      "operationType": "string",
+      "startTime": "string",
+      "resourcesCount": 0,
+      "successCount": 0,
+      "failCount": 0,
+      "resourcesStatus": [
+        {
+          "id": "string",
+          "name": "string",
+          "description": "string",
+          "resourceExecutionStatus": "string",
+          "status": "string"
+        }
+      ]
     }
 """

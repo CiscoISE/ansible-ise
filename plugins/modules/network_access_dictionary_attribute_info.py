@@ -63,22 +63,19 @@ ise_response:
   type: dict
   sample: >
     {
-      "response": {
-        "allowedValues": [
-          {
-            "isDefault": true,
-            "key": "string",
-            "value": "string"
-          }
-        ],
-        "dataType": "string",
-        "description": "string",
-        "dictionaryName": "string",
-        "directionType": "string",
-        "id": "string",
-        "internalName": "string",
-        "name": "string"
-      },
-      "version": "string"
+      "allowedValues": [
+        {
+          "isDefault": true,
+          "key": "string",
+          "value": "string"
+        }
+      ],
+      "dataType": "string",
+      "description": "string",
+      "dictionaryName": "string",
+      "directionType": "string",
+      "id": "string",
+      "internalName": "string",
+      "name": "string"
     }
 """

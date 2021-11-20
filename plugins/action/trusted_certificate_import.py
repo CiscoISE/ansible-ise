@@ -31,11 +31,11 @@ argument_spec.update(dict(
     data=dict(type="str"),
     description=dict(type="str"),
     name=dict(type="str"),
-    validateCertificateExtensions=dict(type="bool"),
     trustForCertificateBasedAdminAuth=dict(type="bool"),
     trustForCiscoServicesAuth=dict(type="bool"),
     trustForClientAuth=dict(type="bool"),
     trustForIseAuth=dict(type="bool"),
+    validateCertificateExtensions=dict(type="bool"),
 ))
 
 required_if = []
@@ -79,11 +79,11 @@ class ActionModule(ActionBase):
             data=params.get("data"),
             description=params.get("description"),
             name=params.get("name"),
-            validate_certificate_extensions=params.get("validateCertificateExtensions"),
             trust_for_certificate_based_admin_auth=params.get("trustForCertificateBasedAdminAuth"),
             trust_for_cisco_services_auth=params.get("trustForCiscoServicesAuth"),
             trust_for_client_auth=params.get("trustForClientAuth"),
             trust_for_ise_auth=params.get("trustForIseAuth"),
+            validate_certificate_extensions=params.get("validateCertificateExtensions"),
         )
         return new_object
 
@@ -100,6 +100,7 @@ class ActionModule(ActionBase):
             function='import_trust_certificate',
             params=self.get_object(self._task.args),
         ).response
+
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

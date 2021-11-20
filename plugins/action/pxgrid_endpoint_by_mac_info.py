@@ -77,7 +77,8 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="mdm",
-            function='get_endpoint_by_mac_address',
+            # No function
+            # Metadata: {'type': 'c', 'tag': 'MDM', 'get_all': 'get_endpoint_by_mac_address'}
             params=self.get_object(self._task.args),
         ).response
 

@@ -87,22 +87,31 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-        self._result.update(dict(ise_response={}))
+        self._result.update(dict(ise_response=[]))
 
         ise = ISESDK(params=self._task.args)
 
         id = self._task.args.get("id")
         name = self._task.args.get("hostName")
-        if id and name:
+        if id:
             response = ise.exec(
                 family="certificates",
                 function='get_system_certificate_by_id',
                 params=self.get_object(self._task.args)
-            ).response
+            ).response['response']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result
-        if name and not id:
+        if name:
+            response = ise.exec(
+                family="certificates",
+                function='get_system_certificates',
+                params=self.get_object(self._task.args)
+            ).response['response']
+            self._result.update(dict(ise_response=response))
+            self._result.update(ise.exit_json())
+            return self._result
+        if not name and not id:
             responses = []
             generator = ise.exec(
                 family="certificates",
@@ -137,12 +146,6 @@ class ActionModule(ActionBase):
                     ).format(error=e)
                 )
 
-            self._result.update(dict(ise_response=response))
-            self._result.update(ise.exit_json())
-            return self._result
-        if not name and not id:
-            # NOTICE: Does not have a get all method or it is in another action
-            response = None
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

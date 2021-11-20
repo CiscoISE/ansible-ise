@@ -114,6 +114,7 @@ ise_response:
         "type": "string"
       }
     }
+
 ise_responses:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
@@ -124,6 +125,16 @@ ise_responses:
     [
       {
         "id": "string",
+        "smtpServer": "string",
+        "notificationEnabled": true,
+        "useDefaultFromAddress": true,
+        "defaultFromAddress": "string",
+        "smtpPort": "string",
+        "connectionTimeout": "string",
+        "useTLSorSSLEncryption": true,
+        "usePasswordAuthentication": true,
+        "userName": "string",
+        "password": "string",
         "link": {
           "rel": "string",
           "href": "string",

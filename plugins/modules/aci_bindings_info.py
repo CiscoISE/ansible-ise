@@ -83,6 +83,7 @@ ise_response:
       "learnedFrom": "string",
       "learnedBy": "string"
     }
+
 ise_responses:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

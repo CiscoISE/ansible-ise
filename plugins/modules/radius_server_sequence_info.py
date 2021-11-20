@@ -106,6 +106,7 @@ ise_response:
         "type": "string"
       }
     }
+
 ise_responses:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
@@ -118,6 +119,36 @@ ise_responses:
         "id": "string",
         "name": "string",
         "description": "string",
+        "stripPrefix": true,
+        "stripSuffix": true,
+        "prefixSeparator": "string",
+        "suffixSeparator": "string",
+        "remoteAccounting": true,
+        "localAccounting": true,
+        "useAttrSetOnRequest": true,
+        "useAttrSetBeforeAcc": true,
+        "continueAuthorzPolicy": true,
+        "RadiusServerList": [
+          "string"
+        ],
+        "OnRequestAttrManipulatorList": [
+          {
+            "action": "string",
+            "dictionaryName": "string",
+            "attributeName": "string",
+            "value": "string",
+            "changedVal": "string"
+          }
+        ],
+        "BeforeAcceptAttrManipulatorsList": [
+          {
+            "action": "string",
+            "dictionaryName": "string",
+            "attributeName": "string",
+            "value": "string",
+            "changedVal": "string"
+          }
+        ],
         "link": {
           "rel": "string",
           "href": "string",

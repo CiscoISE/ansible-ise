@@ -56,8 +56,5 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {
-      "response": {},
-      "version": "string"
-    }
+    {}
 """

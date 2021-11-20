@@ -45,12 +45,10 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: dict
+  type: list
+  elements: str
   sample: >
-    {
-      "response": [
-        "string"
-      ],
-      "version": "string"
-    }
+    [
+      "string"
+    ]
 """

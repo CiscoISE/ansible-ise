@@ -9,6 +9,7 @@ DOCUMENTATION = r"""
 module: system_certificate_info
 short_description: Information module for System Certificate
 description:
+- Get all System Certificate.
 - Get System Certificate by id.
 - Get System Certificate by name.
 version_added: '1.0.0'
@@ -73,6 +74,21 @@ seealso:
 """
 
 EXAMPLES = r"""
+- name: Get all System Certificate
+  cisco.ise.system_certificate_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    page: 0
+    size: 0
+    sort: string
+    sortBy: string
+    filter: []
+    filterType: string
+    hostName: string
+  register: result
+
 - name: Get System Certificate by id
   cisco.ise.system_certificate_info:
     ise_hostname: "{{ise_hostname}}"
@@ -81,21 +97,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     hostName: string
     id: string
-  register: result
-
-- name: Get System Certificate by name
-  cisco.ise.system_certificate_info:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    page: 1
-    size: 20
-    sort: asc
-    sortBy: string
-    filter: []
-    filterType: AND
-    hostName: string
   register: result
 
 """
@@ -107,29 +108,27 @@ ise_response:
   type: dict
   sample: >
     {
-      "response": {
-        "expirationDate": "string",
-        "friendlyName": "string",
-        "groupTag": "string",
-        "id": "string",
-        "issuedBy": "string",
-        "issuedTo": "string",
-        "keySize": 0,
-        "link": {
-          "href": "string",
-          "rel": "string",
-          "type": "string"
-        },
-        "portalsUsingTheTag": "string",
-        "selfSigned": true,
-        "serialNumberDecimalFormat": "string",
-        "sha256Fingerprint": "string",
-        "signatureAlgorithm": "string",
-        "usedBy": "string",
-        "validFrom": "string"
+      "expirationDate": "string",
+      "friendlyName": "string",
+      "groupTag": "string",
+      "id": "string",
+      "issuedBy": "string",
+      "issuedTo": "string",
+      "keySize": 0,
+      "link": {
+        "href": "string",
+        "rel": "string",
+        "type": "string"
       },
-      "version": "string"
+      "portalsUsingTheTag": "string",
+      "selfSigned": true,
+      "serialNumberDecimalFormat": "string",
+      "sha256Fingerprint": "string",
+      "signatureAlgorithm": "string",
+      "usedBy": "string",
+      "validFrom": "string"
     }
+
 ise_responses:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
