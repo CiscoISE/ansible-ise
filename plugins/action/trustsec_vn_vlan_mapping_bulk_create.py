@@ -76,7 +76,7 @@ class ActionModule(ActionBase):
         ise = ISESDK(params=self._task.args)
 
         response = ise.exec(
-            family="vnvlanmapping",
+            family="vn_vlan_mapping",
             function='bulk_create_vn_vlan_mappings',
             params=self.get_object(self._task.args),
         ).response

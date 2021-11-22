@@ -76,7 +76,7 @@ class ActionModule(ActionBase):
         ise = ISESDK(params=self._task.args)
 
         response = ise.exec(
-            family="virtualnetwork",
+            family="virtual_network",
             function='bulk_create_virtual_networks',
             params=self.get_object(self._task.args),
         ).response

@@ -68,8 +68,9 @@ class TrustsecVnVlanMapping(object):
         # NOTICE: Get does not support/work for filter by name with EQ
         result = None
         gen_items_responses = self.ise.exec(
-            family="vnvlanmapping",
-            function="get_vn_vlan_mappings_generator"
+            family="vn_vlan_mapping",
+            function="get_vn_vlan_mappings_generator",
+            params={"filter": "name.EQ.{name}".format(name=name)}
         )
         try:
             for items_response in gen_items_responses:
@@ -95,7 +96,7 @@ class TrustsecVnVlanMapping(object):
     def get_object_by_id(self, id):
         try:
             result = self.ise.exec(
-                family="vnvlanmapping",
+                family="vn_vlan_mapping",
                 function="get_vn_vlan_mapping_by_id",
                 handle_func_exception=False,
                 params={"id": id}
@@ -112,6 +113,8 @@ class TrustsecVnVlanMapping(object):
             )
         except Exception:
             result = None
+        if isinstance(result, list) and len(result) > 0:
+            return result[0]
         return result
 
     def exists(self):
@@ -156,7 +159,7 @@ class TrustsecVnVlanMapping(object):
 
     def create(self):
         result = self.ise.exec(
-            family="vnvlanmapping",
+            family="vn_vlan_mapping",
             function="create_vn_vlan_mapping",
             params=self.new_object,
         ).response
@@ -170,7 +173,7 @@ class TrustsecVnVlanMapping(object):
             id_ = self.get_object_by_name(name).get("id")
             self.new_object.update(dict(id=id_))
         result = self.ise.exec(
-            family="vnvlanmapping",
+            family="vn_vlan_mapping",
             function="update_vn_vlan_mapping_by_id",
             params=self.new_object
         ).response
@@ -184,7 +187,7 @@ class TrustsecVnVlanMapping(object):
             id_ = self.get_object_by_name(name).get("id")
             self.new_object.update(dict(id=id_))
         result = self.ise.exec(
-            family="vnvlanmapping",
+            family="vn_vlan_mapping",
             function="delete_vn_vlan_mapping_by_id",
             params=self.new_object
         ).response

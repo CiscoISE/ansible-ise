@@ -93,7 +93,7 @@ class ActionModule(ActionBase):
         name = self._task.args.get("name")
         if id:
             response = ise.exec(
-                family="vnvlanmapping",
+                family="vn_vlan_mapping",
                 function='get_vn_vlan_mapping_by_id',
                 params=self.get_object(self._task.args)
             ).response['response']
@@ -103,7 +103,7 @@ class ActionModule(ActionBase):
         if not name and not id:
             responses = []
             generator = ise.exec(
-                family="vnvlanmapping",
+                family="vn_vlan_mapping",
                 function='get_vn_vlan_mappings_generator',
                 params=self.get_object(self._task.args),
             )

@@ -60,8 +60,9 @@ class TrustsecNbarApp(object):
         # NOTICE: Get does not support/work for filter by name with EQ
         result = None
         gen_items_responses = self.ise.exec(
-            family="nbarapp",
-            function="get_nbar_apps_generator"
+            family="nbar_app",
+            function="get_nbar_apps_generator",
+            params={"filter": "name.EQ.{name}".format(name=name)}
         )
         try:
             for items_response in gen_items_responses:
@@ -87,7 +88,7 @@ class TrustsecNbarApp(object):
     def get_object_by_id(self, id):
         try:
             result = self.ise.exec(
-                family="nbarapp",
+                family="nbar_app",
                 function="get_nbar_app_by_id",
                 handle_func_exception=False,
                 params={"id": id}
@@ -104,6 +105,8 @@ class TrustsecNbarApp(object):
             )
         except Exception:
             result = None
+        if isinstance(result, list) and len(result) > 0:
+            return result[0]
         return result
 
     def exists(self):
@@ -144,7 +147,7 @@ class TrustsecNbarApp(object):
 
     def create(self):
         result = self.ise.exec(
-            family="nbarapp",
+            family="nbar_app",
             function="create_nbar_app",
             params=self.new_object,
         ).response
@@ -158,7 +161,7 @@ class TrustsecNbarApp(object):
             id_ = self.get_object_by_name(name).get("id")
             self.new_object.update(dict(id=id_))
         result = self.ise.exec(
-            family="nbarapp",
+            family="nbar_app",
             function="update_nbar_app_by_id",
             params=self.new_object
         ).response
@@ -172,7 +175,7 @@ class TrustsecNbarApp(object):
             id_ = self.get_object_by_name(name).get("id")
             self.new_object.update(dict(id=id_))
         result = self.ise.exec(
-            family="nbarapp",
+            family="nbar_app",
             function="delete_nbar_app_by_id",
             params=self.new_object
         ).response

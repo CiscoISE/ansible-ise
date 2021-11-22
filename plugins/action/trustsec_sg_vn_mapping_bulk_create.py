@@ -76,7 +76,7 @@ class ActionModule(ActionBase):
         ise = ISESDK(params=self._task.args)
 
         response = ise.exec(
-            family="sgvnmapping",
+            family="sg_vn_mapping",
             function='bulk_create_sg_vn_mappings',
             params=self.get_object(self._task.args),
         ).response

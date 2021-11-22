@@ -60,8 +60,9 @@ class TrustsecVn(object):
         # NOTICE: Get does not support/work for filter by name with EQ
         result = None
         gen_items_responses = self.ise.exec(
-            family="virtualnetwork",
-            function="get_virtual_networks_generator"
+            family="virtual_network",
+            function="get_virtual_networks_generator",
+            params={"filter": "name.EQ.{name}".format(name=name)}
         )
         try:
             for items_response in gen_items_responses:
@@ -87,7 +88,7 @@ class TrustsecVn(object):
     def get_object_by_id(self, id):
         try:
             result = self.ise.exec(
-                family="virtualnetwork",
+                family="virtual_network",
                 function="get_virtual_network_by_id",
                 handle_func_exception=False,
                 params={"id": id}
@@ -104,6 +105,8 @@ class TrustsecVn(object):
             )
         except Exception:
             result = None
+        if isinstance(result, list) and len(result) > 0:
+            return result[0]
         return result
 
     def exists(self):
@@ -144,7 +147,7 @@ class TrustsecVn(object):
 
     def create(self):
         result = self.ise.exec(
-            family="virtualnetwork",
+            family="virtual_network",
             function="create_virtual_network",
             params=self.new_object,
         ).response
@@ -158,7 +161,7 @@ class TrustsecVn(object):
             id_ = self.get_object_by_name(name).get("id")
             self.new_object.update(dict(id=id_))
         result = self.ise.exec(
-            family="virtualnetwork",
+            family="virtual_network",
             function="update_virtual_network_by_id",
             params=self.new_object
         ).response
@@ -172,7 +175,7 @@ class TrustsecVn(object):
             id_ = self.get_object_by_name(name).get("id")
             self.new_object.update(dict(id=id_))
         result = self.ise.exec(
-            family="virtualnetwork",
+            family="virtual_network",
             function="delete_virtual_network_by_id",
             params=self.new_object
         ).response

@@ -40,8 +40,8 @@ argument_spec.update(dict(
 ))
 
 required_if = [
-    ("state", "present", ["id"], True),
-    ("state", "absent", ["id"], True),
+    ("state", "present", ["id", "sgName", "vnName"], True),
+    ("state", "absent", ["id", "sgName", "vnName"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -60,17 +60,23 @@ class TrustsecSgVnMapping(object):
             vn_name=params.get("vnName"),
         )
 
-    def get_object_by_name(self, name):
+    def get_object_by_name(self, sg_name, vn_name):
         # NOTICE: Get does not support/work for filter by name with EQ
         result = None
         gen_items_responses = self.ise.exec(
-            family="sgvnmapping",
+            family="sg_vn_mapping",
             function="get_sg_vn_mappings_generator"
         )
         try:
             for items_response in gen_items_responses:
                 items = items_response.response['response']
-                result = get_dict_result(items, 'name', name)
+                print("[TEST][items]", items)
+                for item in items:
+                    print("[TEST][item]", item)
+                    if isinstance(item, dict) and item.get('sgName') == sg_name and item.get('vnName') == vn_name:
+                        result = item
+                        print("[TEST][item] found", result)
+                        break
                 if result:
                     return result
         except (TypeError, AttributeError) as e:
@@ -91,7 +97,7 @@ class TrustsecSgVnMapping(object):
     def get_object_by_id(self, id):
         try:
             result = self.ise.exec(
-                family="sgvnmapping",
+                family="sg_vn_mapping",
                 function="get_sg_vn_mapping_by_id",
                 handle_func_exception=False,
                 params={"id": id}
@@ -108,6 +114,8 @@ class TrustsecSgVnMapping(object):
             )
         except Exception:
             result = None
+        if isinstance(result, list) and len(result) > 0:
+            return result[0]
         return result
 
     def exists(self):
@@ -115,12 +123,13 @@ class TrustsecSgVnMapping(object):
         name_exists = False
         prev_obj = None
         o_id = self.new_object.get("id")
-        name = self.new_object.get("name")
+        sg_name = self.new_object.get("sg_name")
+        vn_name = self.new_object.get("vn_name")
         if o_id:
             prev_obj = self.get_object_by_id(o_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
-        if not id_exists and name:
-            prev_obj = self.get_object_by_name(name)
+        if not id_exists and sg_name and vn_name:
+            prev_obj = self.get_object_by_name(sg_name, vn_name)
             name_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if name_exists:
             _id = prev_obj.get("id")
@@ -150,7 +159,7 @@ class TrustsecSgVnMapping(object):
 
     def create(self):
         result = self.ise.exec(
-            family="sgvnmapping",
+            family="sg_vn_mapping",
             function="create_sg_vn_mapping",
             params=self.new_object,
         ).response
@@ -158,13 +167,14 @@ class TrustsecSgVnMapping(object):
 
     def update(self):
         id = self.new_object.get("id")
-        name = self.new_object.get("name")
+        sg_name = self.new_object.get("sg_name")
+        vn_name = self.new_object.get("vn_name")
         result = None
         if not id:
-            id_ = self.get_object_by_name(name).get("id")
+            id_ = self.get_object_by_name(sg_name, vn_name).get("id")
             self.new_object.update(dict(id=id_))
         result = self.ise.exec(
-            family="sgvnmapping",
+            family="sg_vn_mapping",
             function="update_sg_vn_mapping_by_id",
             params=self.new_object
         ).response
@@ -172,13 +182,14 @@ class TrustsecSgVnMapping(object):
 
     def delete(self):
         id = self.new_object.get("id")
-        name = self.new_object.get("name")
+        sg_name = self.new_object.get("sg_name")
+        vn_name = self.new_object.get("vn_name")
         result = None
         if not id:
-            id_ = self.get_object_by_name(name).get("id")
+            id_ = self.get_object_by_name(sg_name, vn_name).get("id")
             self.new_object.update(dict(id=id_))
         result = self.ise.exec(
-            family="sgvnmapping",
+            family="sg_vn_mapping",
             function="delete_sg_vn_mapping_by_id",
             params=self.new_object
         ).response
@@ -227,6 +238,7 @@ class ActionModule(ActionBase):
 
         if state == "present":
             (obj_exists, prev_obj) = obj.exists()
+            print("[TEST][obj_exists, prev_obj]", obj_exists, prev_obj)
             if obj_exists:
                 if obj.requires_update(prev_obj):
                     ise_update_response = obj.update()
