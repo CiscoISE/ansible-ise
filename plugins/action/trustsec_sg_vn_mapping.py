@@ -70,12 +70,9 @@ class TrustsecSgVnMapping(object):
         try:
             for items_response in gen_items_responses:
                 items = items_response.response['response']
-                print("[TEST][items]", items)
                 for item in items:
-                    print("[TEST][item]", item)
                     if isinstance(item, dict) and item.get('sgName') == sg_name and item.get('vnName') == vn_name:
                         result = item
-                        print("[TEST][item] found", result)
                         break
                 if result:
                     return result
@@ -238,7 +235,6 @@ class ActionModule(ActionBase):
 
         if state == "present":
             (obj_exists, prev_obj) = obj.exists()
-            print("[TEST][obj_exists, prev_obj]", obj_exists, prev_obj)
             if obj_exists:
                 if obj.requires_update(prev_obj):
                     ise_update_response = obj.update()
