@@ -21,10 +21,10 @@ A clear and concise description of what you expected to happen.
 Please provide an screenshot of the successful API call with cuRL, Postman, etc.
 
 **Environment (please complete the following information):**
-* ISE Version and patch: 
-* Ansible Version: 
-* ISE Collection Version:
-* OS Version: 
+* ISE version and patch: 
+* Ansible version: 
+* ISE collection version:
+* OS version: 
 
 **Additional context**
 Add any other context about the problem here.
