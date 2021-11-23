@@ -30,9 +30,13 @@ cisco.ise.mnt_session_by_username_info -- Information module for Mnt Session By 
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 1.2.0).
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 1.2.1).
 
-    To install it use: :code:`ansible-galaxy collection install cisco.ise`.
+    You might already have this collection installed if you are using the ``ansible`` package.
+    It is not included in ``ansible-core``.
+    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+
+    To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
 
     To use it in a playbook, specify: :code:`cisco.ise.mnt_session_by_username_info`.
 
@@ -315,7 +319,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
                 <td>
                                             <div>A dictionary or list with the response returned by the Cisco ISE Python SDK</div>
                                         <br/>
-                                            <div style="font-size: smaller"><b>Sample:</b></div>
+                                                                <div style="font-size: smaller"><b>Sample:</b></div>
                                                 <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">[{}]</div>
                                     </td>
             </tr>
