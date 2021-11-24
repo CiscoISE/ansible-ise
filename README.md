@@ -10,7 +10,7 @@ This collection has been tested and supports Cisco ISE 3.1.
 
 ## Requirements
 - Ansible >= 2.9
-- [Cisco ISE SDK](https://github.com/CiscoISE/ciscoisesdk) v1.1.0 or newer
+- [Cisco ISE SDK](https://github.com/CiscoISE/ciscoisesdk) v1.2.0 or newer
 - Python >= 3.6, as the Cisco ISE SDK doesn't support Python version 2.x
 - requests >= 2.25.1, for the personas modules and personas_deployment role.
 

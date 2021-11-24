@@ -63,7 +63,7 @@ options:
     - Id path parameter. The ID of the Certificate Signing Request returned.
     type: str
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource

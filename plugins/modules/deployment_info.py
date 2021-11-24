@@ -20,7 +20,7 @@ options:
     - How long to wait for the server to send data before giving up.
     type: int
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource

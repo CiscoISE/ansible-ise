@@ -41,7 +41,7 @@ options:
     description: Value range 2 ot 65519 or -1 to auto-generate.
     type: int
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource

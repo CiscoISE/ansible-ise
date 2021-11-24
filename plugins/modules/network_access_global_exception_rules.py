@@ -208,7 +208,7 @@ options:
     description: Security group used in authorization policies.
     type: str
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
