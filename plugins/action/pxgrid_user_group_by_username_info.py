@@ -77,8 +77,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="session_directory",
-            # No function
-            # Metadata: {'type': 'c', 'tag': 'Session Directory', 'get_all': 'get_user_group_by_user_name'}
+            function="get_user_group_by_user_name",
             params=self.get_object(self._task.args),
         ).response
 

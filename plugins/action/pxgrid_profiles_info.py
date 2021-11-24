@@ -77,8 +77,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="profiler",
-            # No function
-            # Metadata: {'type': 'c', 'tag': 'Profiler', 'get_all': 'get_profiles'}
+            function="get_profiles",
             params=self.get_object(self._task.args),
         ).response
 

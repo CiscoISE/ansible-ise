@@ -77,8 +77,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="trust_sec_configuration",
-            # No function
-            # Metadata: {'type': 'c', 'tag': 'TrustSec Configuration', 'get_all': 'get_security_groups'}
+            function="get_security_groups",
             params=self.get_object(self._task.args),
         ).response
 
