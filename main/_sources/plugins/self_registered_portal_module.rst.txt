@@ -30,7 +30,7 @@ cisco.ise.self_registered_portal -- Resource module for Self Registered Portal
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 1.2.1).
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.0.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -70,7 +70,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 
 
@@ -1775,8 +1775,8 @@ Parameters
                     <b>allowedInterfaces</b>
                     <a class="ansibleOptionLink" href="#parameter-settings/portalSettings/allowedInterfaces" title="Permalink to this option"></a>
                     <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
+                        <span style="color: purple">list</span>
+                         / <span style="color: purple">elements=string</span>                                            </div>
                                                         </td>
                                 <td>
                                                                                                                                                             </td>
@@ -2144,13 +2144,17 @@ Parameters
                     <b>authenticateSponsorsUsingPortalList</b>
                     <a class="ansibleOptionLink" href="#parameter-settings/selfRegPageSettings/authenticateSponsorsUsingPortalList" title="Permalink to this option"></a>
                     <div style="font-size: small">
-                        <span style="color: purple">string</span>
+                        <span style="color: purple">boolean</span>
                                                                     </div>
                                                         </td>
                                 <td>
-                                                                                                                                                            </td>
+                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li>yes</li>
+                                                                                    </ul>
+                                                                            </td>
                                                                 <td>
-                                            <div>Self Registered Portal&#x27;s authenticateSponsorsUsingPortalList.</div>
+                                            <div>AuthenticateSponsorsUsingPortalList flag.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -2941,8 +2945,8 @@ Parameters
                     <b>guestEmailBlacklistDomains</b>
                     <a class="ansibleOptionLink" href="#parameter-settings/selfRegPageSettings/guestEmailBlacklistDomains" title="Permalink to this option"></a>
                     <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
+                        <span style="color: purple">list</span>
+                         / <span style="color: purple">elements=string</span>                                            </div>
                                                         </td>
                                 <td>
                                                                                                                                                             </td>
@@ -2958,8 +2962,8 @@ Parameters
                     <b>guestEmailWhitelistDomains</b>
                     <a class="ansibleOptionLink" href="#parameter-settings/selfRegPageSettings/guestEmailWhitelistDomains" title="Permalink to this option"></a>
                     <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
+                        <span style="color: purple">list</span>
+                         / <span style="color: purple">elements=string</span>                                            </div>
                                                         </td>
                                 <td>
                                                                                                                                                             </td>
@@ -3799,6 +3803,8 @@ Notes
 
 .. note::
    - Does not support ``check_mode``
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
+   - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
@@ -3909,7 +3915,8 @@ Examples
               socialMediaValue: string
             timeBetweenLoginsDuringRateLimit: 0
           portalSettings:
-            allowedInterfaces: string
+            allowedInterfaces:
+            - string
             alwaysUsedLanguage: string
             assignedGuestTypeForEmployee: string
             authenticationMethod: string
@@ -3930,7 +3937,7 @@ Examples
             approveDenyLinksValidFor: 0
             assignGuestsToGuestType: string
             aupDisplay: string
-            authenticateSponsorsUsingPortalList: string
+            authenticateSponsorsUsingPortalList: true
             autoLoginSelfWait: true
             autoLoginTimePeriod: 0
             credentialNotificationUsingEmail: true
@@ -3969,8 +3976,10 @@ Examples
               require: true
             graceAccessExpireInterval: 0
             graceAccessSendAccountExpiration: true
-            guestEmailBlacklistDomains: string
-            guestEmailWhitelistDomains: string
+            guestEmailBlacklistDomains:
+            - string
+            guestEmailWhitelistDomains:
+            - string
             includeAup: true
             postRegistrationRedirect: string
             postRegistrationRedirectUrl: string
@@ -4114,7 +4123,8 @@ Examples
               socialMediaValue: string
             timeBetweenLoginsDuringRateLimit: 0
           portalSettings:
-            allowedInterfaces: string
+            allowedInterfaces:
+            - string
             alwaysUsedLanguage: string
             assignedGuestTypeForEmployee: string
             authenticationMethod: string
@@ -4135,7 +4145,7 @@ Examples
             approveDenyLinksValidFor: 0
             assignGuestsToGuestType: string
             aupDisplay: string
-            authenticateSponsorsUsingPortalList: string
+            authenticateSponsorsUsingPortalList: true
             autoLoginSelfWait: true
             autoLoginTimePeriod: 0
             credentialNotificationUsingEmail: true
@@ -4174,8 +4184,10 @@ Examples
               require: true
             graceAccessExpireInterval: 0
             graceAccessSendAccountExpiration: true
-            guestEmailBlacklistDomains: string
-            guestEmailWhitelistDomains: string
+            guestEmailBlacklistDomains:
+            - string
+            guestEmailWhitelistDomains:
+            - string
             includeAup: true
             postRegistrationRedirect: string
             postRegistrationRedirectUrl: string
@@ -4352,9 +4364,13 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
           &quot;aupDisplay&quot;: &quot;string&quot;,
           &quot;requireAupAcceptance&quot;: true,
           &quot;enableGuestEmailWhitelist&quot;: true,
-          &quot;guestEmailWhitelistDomains&quot;: &quot;string&quot;,
+          &quot;guestEmailWhitelistDomains&quot;: [
+            &quot;string&quot;
+          ],
           &quot;enableGuestEmailBlacklist&quot;: true,
-          &quot;guestEmailBlacklistDomains&quot;: &quot;string&quot;,
+          &quot;guestEmailBlacklistDomains&quot;: [
+            &quot;string&quot;
+          ],
           &quot;requireGuestApproval&quot;: true,
           &quot;autoLoginSelfWait&quot;: true,
           &quot;autoLoginTimePeriod&quot;: 0,
@@ -4370,7 +4386,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
           &quot;approveDenyLinksValidFor&quot;: 0,
           &quot;approveDenyLinksTimeUnits&quot;: &quot;string&quot;,
           &quot;requireApproverToAuthenticate&quot;: true,
-          &quot;authenticateSponsorsUsingPortalList&quot;: &quot;string&quot;,
+          &quot;authenticateSponsorsUsingPortalList&quot;: true,
           &quot;sponsorPortalList&quot;: []
         },
         &quot;selfRegSuccessSettings&quot;: {
@@ -4515,11 +4531,13 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
                                                                 <div style="font-size: smaller"><b>Sample:</b></div>
                                                 <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">{
       &quot;UpdatedFieldsList&quot;: {
-        &quot;updatedField&quot;: {
-          &quot;field&quot;: &quot;string&quot;,
-          &quot;oldValue&quot;: &quot;string&quot;,
-          &quot;newValue&quot;: &quot;string&quot;
-        },
+        &quot;updatedField&quot;: [
+          {
+            &quot;field&quot;: &quot;string&quot;,
+            &quot;oldValue&quot;: &quot;string&quot;,
+            &quot;newValue&quot;: &quot;string&quot;
+          }
+        ],
         &quot;field&quot;: &quot;string&quot;,
         &quot;oldValue&quot;: &quot;string&quot;,
         &quot;newValue&quot;: &quot;string&quot;

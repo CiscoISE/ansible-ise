@@ -30,7 +30,7 @@ cisco.ise.backup_last_status_info -- Information module for Backup Last Status
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 1.2.1).
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.0.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -70,7 +70,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 
 
@@ -242,6 +242,8 @@ Notes
 
 .. note::
    - Supports ``check_mode``
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
+   - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
@@ -305,23 +307,20 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
                                         <br/>
                                                                 <div style="font-size: smaller"><b>Sample:</b></div>
                                                 <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">{
-      &quot;response&quot;: {
-        &quot;action&quot;: &quot;string&quot;,
-        &quot;details&quot;: &quot;string&quot;,
-        &quot;error&quot;: &quot;string&quot;,
-        &quot;hostName&quot;: &quot;string&quot;,
-        &quot;initiatedFrom&quot;: &quot;string&quot;,
-        &quot;justComplete&quot;: &quot;string&quot;,
-        &quot;message&quot;: &quot;string&quot;,
-        &quot;name&quot;: &quot;string&quot;,
-        &quot;percentComplete&quot;: &quot;string&quot;,
-        &quot;repository&quot;: &quot;string&quot;,
-        &quot;scheduled&quot;: &quot;string&quot;,
-        &quot;startDate&quot;: &quot;string&quot;,
-        &quot;status&quot;: &quot;string&quot;,
-        &quot;type&quot;: &quot;string&quot;
-      },
-      &quot;version&quot;: &quot;string&quot;
+      &quot;action&quot;: &quot;string&quot;,
+      &quot;details&quot;: &quot;string&quot;,
+      &quot;error&quot;: &quot;string&quot;,
+      &quot;hostName&quot;: &quot;string&quot;,
+      &quot;initiatedFrom&quot;: &quot;string&quot;,
+      &quot;justComplete&quot;: &quot;string&quot;,
+      &quot;message&quot;: &quot;string&quot;,
+      &quot;name&quot;: &quot;string&quot;,
+      &quot;percentComplete&quot;: &quot;string&quot;,
+      &quot;repository&quot;: &quot;string&quot;,
+      &quot;scheduled&quot;: &quot;string&quot;,
+      &quot;startDate&quot;: &quot;string&quot;,
+      &quot;status&quot;: &quot;string&quot;,
+      &quot;type&quot;: &quot;string&quot;
     }</div>
                                     </td>
             </tr>

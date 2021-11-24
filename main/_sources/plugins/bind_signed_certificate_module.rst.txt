@@ -30,7 +30,7 @@ cisco.ise.bind_signed_certificate -- Resource module for Bind Signed Certificate
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 1.2.1).
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.0.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -70,7 +70,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 
 
@@ -122,7 +122,7 @@ Parameters
                                                                                     </ul>
                                                                             </td>
                                                                 <td>
-                                            <div>Allow import of certificates with validity greater than 398 days.</div>
+                                            <div>Allow import of certificates with validity greater than 398 days (required).</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -194,7 +194,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Signed Certificate in escaped format.</div>
+                                            <div>Signed Certificate data (required).</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -228,7 +228,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Name of Host whose CSR ID has been provided.</div>
+                                            <div>Name of Host whose CSR ID has been provided (required).</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -243,7 +243,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>ID of the generated CSR.</div>
+                                            <div>ID of the generated CSR (required).</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -545,6 +545,8 @@ Notes
 
 .. note::
    - Does not support ``check_mode``
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
+   - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 

@@ -30,7 +30,7 @@ cisco.ise.device_administration_authentication_reset_hitcount -- Resource module
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 1.2.1).
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.0.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -70,7 +70,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 
 
@@ -229,6 +229,21 @@ Parameters
                                             <div>Flag for Identity Services Engine SDK to enable automatic rate-limit handling.</div>
                                                         </td>
             </tr>
+                                <tr>
+                                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-policyId"></div>
+                    <b>policyId</b>
+                    <a class="ansibleOptionLink" href="#parameter-policyId" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>PolicyId path parameter. Policy id.</div>
+                                                        </td>
+            </tr>
                         </table>
     <br/>
 
@@ -242,6 +257,8 @@ Notes
 
 .. note::
    - Does not support ``check_mode``
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
+   - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
@@ -267,6 +284,7 @@ Examples
         ise_username: "{{ise_username}}"
         ise_password: "{{ise_password}}"
         ise_verify: "{{ise_verify}}"
+        policyId: string
 
 
 

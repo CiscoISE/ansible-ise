@@ -30,7 +30,7 @@ cisco.ise.device_administration_global_exception_rules -- Resource module for De
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 1.2.1).
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.0.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -70,7 +70,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 
 
@@ -373,23 +373,6 @@ Parameters
                                                     <td class="elbow-placeholder"></td>
                                     <td class="elbow-placeholder"></td>
                                                 <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/attributeId"></div>
-                    <b>attributeId</b>
-                    <a class="ansibleOptionLink" href="#parameter-rule/condition/attributeId" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Dictionary attribute id (Optional), used for additional verification.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
                     <div class="ansibleOptionAnchor" id="parameter-rule/condition/attributeName"></div>
                     <b>attributeName</b>
                     <a class="ansibleOptionLink" href="#parameter-rule/condition/attributeName" title="Permalink to this option"></a>
@@ -585,7 +568,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>&lt;p&gt;Defines for which date/s TimeAndDate condition will be matched or NOT matched if used in exceptionDates prooperty&lt;br&gt; Options are - Date range, for specific date, the same date should be used for start/end date &lt;br&gt; Default - no specific dates&lt;br&gt; In order to reset the dates to have no specific dates Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)&lt;/p&gt;.</div>
+                                            <div>&lt;p&gt;Defines for which date/s TimeAndDate condition will be matched&lt;br&gt; Options are - Date range, for specific date, the same date should be used for start/end date &lt;br&gt; Default - no specific dates&lt;br&gt; In order to reset the dates to have no specific dates Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)&lt;/p&gt;.</div>
                                                         </td>
             </tr>
                                         <tr>
@@ -639,7 +622,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>&lt;p&gt;Defines for which date/s TimeAndDate condition will be matched or NOT matched if used in exceptionDates prooperty&lt;br&gt; Options are - Date range, for specific date, the same date should be used for start/end date &lt;br&gt; Default - no specific dates&lt;br&gt; In order to reset the dates to have no specific dates Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)&lt;/p&gt;.</div>
+                                            <div>&lt;p&gt;Defines for which date/s TimeAndDate condition will be matched&lt;br&gt; Options are - Date range, for specific date, the same date should be used for start/end date &lt;br&gt; Default - no specific dates&lt;br&gt; In order to reset the dates to have no specific dates Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)&lt;/p&gt;.</div>
                                                         </td>
             </tr>
                                         <tr>
@@ -744,7 +727,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>&lt;p&gt;Defines for which hours a TimeAndDate condition will be matched or not matched if used in exceptionHours property&lt;br&gt; Time foramt - hh mm ( h = hour , mm = minutes ) &lt;br&gt; Default - All Day &lt;/p&gt;.</div>
+                                            <div>&lt;p&gt;Defines for which hours a TimeAndDate condition will be matched&lt;br&gt; Time format - hh mm ( h = hour , mm = minutes ) &lt;br&gt; Default - All Day &lt;/p&gt;.</div>
                                                         </td>
             </tr>
                                         <tr>
@@ -798,7 +781,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>&lt;p&gt;Defines for which hours a TimeAndDate condition will be matched or not matched if used in exceptionHours property&lt;br&gt; Time foramt - hh mm ( h = hour , mm = minutes ) &lt;br&gt; Default - All Day &lt;/p&gt;.</div>
+                                            <div>&lt;p&gt;Defines for which hours a TimeAndDate condition will be matched&lt;br&gt; Time format - hh mm ( h = hour , mm = minutes ) &lt;br&gt; Default - All Day &lt;/p&gt;.</div>
                                                         </td>
             </tr>
                                         <tr>
@@ -1131,6 +1114,8 @@ Notes
 
 .. note::
    - Does not support ``check_mode``
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
+   - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
@@ -1166,7 +1151,6 @@ Examples
         profile: string
         rule:
           condition:
-            attributeId: string
             attributeName: string
             attributeValue: string
             children:
@@ -1228,7 +1212,6 @@ Examples
         profile: string
         rule:
           condition:
-            attributeId: string
             attributeName: string
             attributeValue: string
             children:
@@ -1340,7 +1323,6 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
           &quot;id&quot;: &quot;string&quot;,
           &quot;name&quot;: &quot;string&quot;,
           &quot;attributeName&quot;: &quot;string&quot;,
-          &quot;attributeId&quot;: &quot;string&quot;,
           &quot;attributeValue&quot;: &quot;string&quot;,
           &quot;dictionaryName&quot;: &quot;string&quot;,
           &quot;dictionaryValue&quot;: &quot;string&quot;,
@@ -1427,7 +1409,6 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
             &quot;id&quot;: &quot;string&quot;,
             &quot;name&quot;: &quot;string&quot;,
             &quot;attributeName&quot;: &quot;string&quot;,
-            &quot;attributeId&quot;: &quot;string&quot;,
             &quot;attributeValue&quot;: &quot;string&quot;,
             &quot;dictionaryName&quot;: &quot;string&quot;,
             &quot;dictionaryValue&quot;: &quot;string&quot;,

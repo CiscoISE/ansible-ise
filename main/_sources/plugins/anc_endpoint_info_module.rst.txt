@@ -30,7 +30,7 @@ cisco.ise.anc_endpoint_info -- Information module for Anc Endpoint
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 1.2.1).
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.0.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -71,7 +71,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 
 
@@ -348,6 +348,8 @@ Notes
 
 .. note::
    - Supports ``check_mode``
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
+   - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
@@ -454,6 +456,8 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
                                                 <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">[
       {
         &quot;id&quot;: &quot;string&quot;,
+        &quot;macAddress&quot;: &quot;string&quot;,
+        &quot;policyName&quot;: &quot;string&quot;,
         &quot;link&quot;: {
           &quot;rel&quot;: &quot;string&quot;,
           &quot;href&quot;: &quot;string&quot;,

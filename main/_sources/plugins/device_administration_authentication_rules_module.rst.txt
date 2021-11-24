@@ -30,7 +30,7 @@ cisco.ise.device_administration_authentication_rules -- Resource module for Devi
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 1.2.1).
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.0.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -70,7 +70,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 
 
@@ -100,21 +100,6 @@ Parameters
                                                                                                                                                             </td>
                                                                 <td>
                                             <div>Id path parameter. Rule id.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="5">
-                    <div class="ansibleOptionAnchor" id="parameter-identitySourceId"></div>
-                    <b>identitySourceId</b>
-                    <a class="ansibleOptionLink" href="#parameter-identitySourceId" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Identity source id from the identity stores.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -433,23 +418,6 @@ Parameters
                                                     <td class="elbow-placeholder"></td>
                                     <td class="elbow-placeholder"></td>
                                                 <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/attributeId"></div>
-                    <b>attributeId</b>
-                    <a class="ansibleOptionLink" href="#parameter-rule/condition/attributeId" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Dictionary attribute id (Optional), used for additional verification.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
                     <div class="ansibleOptionAnchor" id="parameter-rule/condition/attributeName"></div>
                     <b>attributeName</b>
                     <a class="ansibleOptionLink" href="#parameter-rule/condition/attributeName" title="Permalink to this option"></a>
@@ -645,7 +613,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>&lt;p&gt;Defines for which date/s TimeAndDate condition will be matched or NOT matched if used in exceptionDates prooperty&lt;br&gt; Options are - Date range, for specific date, the same date should be used for start/end date &lt;br&gt; Default - no specific dates&lt;br&gt; In order to reset the dates to have no specific dates Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)&lt;/p&gt;.</div>
+                                            <div>&lt;p&gt;Defines for which date/s TimeAndDate condition will be matched&lt;br&gt; Options are - Date range, for specific date, the same date should be used for start/end date &lt;br&gt; Default - no specific dates&lt;br&gt; In order to reset the dates to have no specific dates Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)&lt;/p&gt;.</div>
                                                         </td>
             </tr>
                                         <tr>
@@ -699,7 +667,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>&lt;p&gt;Defines for which date/s TimeAndDate condition will be matched or NOT matched if used in exceptionDates prooperty&lt;br&gt; Options are - Date range, for specific date, the same date should be used for start/end date &lt;br&gt; Default - no specific dates&lt;br&gt; In order to reset the dates to have no specific dates Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)&lt;/p&gt;.</div>
+                                            <div>&lt;p&gt;Defines for which date/s TimeAndDate condition will be matched&lt;br&gt; Options are - Date range, for specific date, the same date should be used for start/end date &lt;br&gt; Default - no specific dates&lt;br&gt; In order to reset the dates to have no specific dates Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)&lt;/p&gt;.</div>
                                                         </td>
             </tr>
                                         <tr>
@@ -804,7 +772,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>&lt;p&gt;Defines for which hours a TimeAndDate condition will be matched or not matched if used in exceptionHours property&lt;br&gt; Time foramt - hh mm ( h = hour , mm = minutes ) &lt;br&gt; Default - All Day &lt;/p&gt;.</div>
+                                            <div>&lt;p&gt;Defines for which hours a TimeAndDate condition will be matched&lt;br&gt; Time format - hh mm ( h = hour , mm = minutes ) &lt;br&gt; Default - All Day &lt;/p&gt;.</div>
                                                         </td>
             </tr>
                                         <tr>
@@ -858,7 +826,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>&lt;p&gt;Defines for which hours a TimeAndDate condition will be matched or not matched if used in exceptionHours property&lt;br&gt; Time foramt - hh mm ( h = hour , mm = minutes ) &lt;br&gt; Default - All Day &lt;/p&gt;.</div>
+                                            <div>&lt;p&gt;Defines for which hours a TimeAndDate condition will be matched&lt;br&gt; Time format - hh mm ( h = hour , mm = minutes ) &lt;br&gt; Default - All Day &lt;/p&gt;.</div>
                                                         </td>
             </tr>
                                         <tr>
@@ -1191,6 +1159,8 @@ Notes
 
 .. note::
    - Does not support ``check_mode``
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
+   - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
@@ -1217,7 +1187,6 @@ Examples
         ise_password: "{{ise_password}}"
         ise_verify: "{{ise_verify}}"
         state: present
-        identitySourceId: string
         identitySourceName: string
         ifAuthFail: string
         ifProcessFail: string
@@ -1226,9 +1195,9 @@ Examples
           href: string
           rel: string
           type: string
+        policyId: string
         rule:
           condition:
-            attributeId: string
             attributeName: string
             attributeValue: string
             children:
@@ -1281,7 +1250,6 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: present
         id: string
-        identitySourceId: string
         identitySourceName: string
         ifAuthFail: string
         ifProcessFail: string
@@ -1293,7 +1261,6 @@ Examples
         policyId: string
         rule:
           condition:
-            attributeId: string
             attributeName: string
             attributeValue: string
             children:
@@ -1384,7 +1351,6 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
                                         <br/>
                                                                 <div style="font-size: smaller"><b>Sample:</b></div>
                                                 <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">{
-      &quot;identitySourceId&quot;: &quot;string&quot;,
       &quot;identitySourceName&quot;: &quot;string&quot;,
       &quot;ifAuthFail&quot;: &quot;string&quot;,
       &quot;ifProcessFail&quot;: &quot;string&quot;,
@@ -1407,7 +1373,6 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
           &quot;id&quot;: &quot;string&quot;,
           &quot;name&quot;: &quot;string&quot;,
           &quot;attributeName&quot;: &quot;string&quot;,
-          &quot;attributeId&quot;: &quot;string&quot;,
           &quot;attributeValue&quot;: &quot;string&quot;,
           &quot;dictionaryName&quot;: &quot;string&quot;,
           &quot;dictionaryValue&quot;: &quot;string&quot;,
@@ -1472,7 +1437,6 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
                                                                 <div style="font-size: smaller"><b>Sample:</b></div>
                                                 <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">{
       &quot;response&quot;: {
-        &quot;identitySourceId&quot;: &quot;string&quot;,
         &quot;identitySourceName&quot;: &quot;string&quot;,
         &quot;ifAuthFail&quot;: &quot;string&quot;,
         &quot;ifProcessFail&quot;: &quot;string&quot;,
@@ -1495,7 +1459,6 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
             &quot;id&quot;: &quot;string&quot;,
             &quot;name&quot;: &quot;string&quot;,
             &quot;attributeName&quot;: &quot;string&quot;,
-            &quot;attributeId&quot;: &quot;string&quot;,
             &quot;attributeValue&quot;: &quot;string&quot;,
             &quot;dictionaryName&quot;: &quot;string&quot;,
             &quot;dictionaryValue&quot;: &quot;string&quot;,

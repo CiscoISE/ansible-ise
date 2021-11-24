@@ -30,7 +30,7 @@ cisco.ise.system_certificate -- Resource module for System Certificate
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 1.2.1).
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.0.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -70,7 +70,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 
 
@@ -201,7 +201,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>HostName path parameter. Name of the host from which the System Certificate needs to be deleted.</div>
+                                            <div>HostName path parameter. Name of Host whose certificate needs to be updated.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -216,7 +216,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Id path parameter. The ID of the System Certificate to be deleted.</div>
+                                            <div>Id path parameter. The ID of the System Certificate to be updated.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -431,6 +431,25 @@ Parameters
             </tr>
                                 <tr>
                                                                 <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-portalTagTransferForSameSubject"></div>
+                    <b>portalTagTransferForSameSubject</b>
+                    <a class="ansibleOptionLink" href="#parameter-portalTagTransferForSameSubject" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li>yes</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Allow overwriting the portal tag from matching certificate of same subject.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="1">
                     <div class="ansibleOptionAnchor" id="parameter-pxgrid"></div>
                     <b>pxgrid</b>
                     <a class="ansibleOptionLink" href="#parameter-pxgrid" title="Permalink to this option"></a>
@@ -488,6 +507,25 @@ Parameters
             </tr>
                                 <tr>
                                                                 <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-roleTransferForSameSubject"></div>
+                    <b>roleTransferForSameSubject</b>
+                    <a class="ansibleOptionLink" href="#parameter-roleTransferForSameSubject" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li>yes</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Allow transfer of roles for certificate with matching subject.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="1">
                     <div class="ansibleOptionAnchor" id="parameter-saml"></div>
                     <b>saml</b>
                     <a class="ansibleOptionLink" href="#parameter-saml" title="Permalink to this option"></a>
@@ -518,6 +556,8 @@ Notes
 
 .. note::
    - Does not support ``check_mode``
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
+   - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
@@ -556,9 +596,11 @@ Examples
         name: string
         portal: true
         portalGroupTag: string
+        portalTagTransferForSameSubject: true
         pxgrid: true
         radius: true
         renewSelfSignedCertificate: true
+        roleTransferForSameSubject: true
         saml: true
 
     - name: Delete by id

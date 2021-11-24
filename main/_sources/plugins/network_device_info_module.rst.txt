@@ -30,7 +30,7 @@ cisco.ise.network_device_info -- Information module for Network Device
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 1.2.1).
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.0.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -72,7 +72,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 
 
@@ -364,6 +364,8 @@ Notes
 
 .. note::
    - Supports ``check_mode``
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
+   - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
@@ -461,7 +463,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
         &quot;enableKeyWrap&quot;: true,
         &quot;enabled&quot;: true,
         &quot;dtlsRequired&quot;: true,
-        &quot;enableMultiSecret&quot;: true,
+        &quot;enableMultiSecret&quot;: &quot;string&quot;,
         &quot;keyEncryptionKey&quot;: &quot;string&quot;,
         &quot;messageAuthenticatorCodeKey&quot;: &quot;string&quot;,
         &quot;keyInputFormat&quot;: &quot;string&quot;
@@ -543,6 +545,68 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
         &quot;id&quot;: &quot;string&quot;,
         &quot;name&quot;: &quot;string&quot;,
         &quot;description&quot;: &quot;string&quot;,
+        &quot;authenticationSettings&quot;: {
+          &quot;networkProtocol&quot;: &quot;string&quot;,
+          &quot;secondRadiusSharedSecret&quot;: &quot;string&quot;,
+          &quot;radiusSharedSecret&quot;: &quot;string&quot;,
+          &quot;enableKeyWrap&quot;: true,
+          &quot;enabled&quot;: true,
+          &quot;dtlsRequired&quot;: true,
+          &quot;enableMultiSecret&quot;: &quot;string&quot;,
+          &quot;keyEncryptionKey&quot;: &quot;string&quot;,
+          &quot;messageAuthenticatorCodeKey&quot;: &quot;string&quot;,
+          &quot;keyInputFormat&quot;: &quot;string&quot;
+        },
+        &quot;snmpsettings&quot;: {
+          &quot;version&quot;: &quot;string&quot;,
+          &quot;roCommunity&quot;: &quot;string&quot;,
+          &quot;pollingInterval&quot;: 0,
+          &quot;linkTrapQuery&quot;: true,
+          &quot;macTrapQuery&quot;: true,
+          &quot;originatingPolicyServicesNode&quot;: &quot;string&quot;
+        },
+        &quot;trustsecsettings&quot;: {
+          &quot;deviceAuthenticationSettings&quot;: {
+            &quot;sgaDeviceId&quot;: &quot;string&quot;,
+            &quot;sgaDevicePassword&quot;: &quot;string&quot;
+          },
+          &quot;sgaNotificationAndUpdates&quot;: {
+            &quot;downlaodEnvironmentDataEveryXSeconds&quot;: 0,
+            &quot;downlaodPeerAuthorizationPolicyEveryXSeconds&quot;: 0,
+            &quot;reAuthenticationEveryXSeconds&quot;: 0,
+            &quot;downloadSGACLListsEveryXSeconds&quot;: 0,
+            &quot;otherSGADevicesToTrustThisDevice&quot;: true,
+            &quot;sendConfigurationToDevice&quot;: true,
+            &quot;sendConfigurationToDeviceUsing&quot;: &quot;string&quot;,
+            &quot;coaSourceHost&quot;: &quot;string&quot;
+          },
+          &quot;deviceConfigurationDeployment&quot;: {
+            &quot;includeWhenDeployingSGTUpdates&quot;: true,
+            &quot;enableModePassword&quot;: &quot;string&quot;,
+            &quot;execModePassword&quot;: &quot;string&quot;,
+            &quot;execModeUsername&quot;: &quot;string&quot;
+          },
+          &quot;pushIdSupport&quot;: true
+        },
+        &quot;tacacsSettings&quot;: {
+          &quot;sharedSecret&quot;: &quot;string&quot;,
+          &quot;connectModeOptions&quot;: &quot;string&quot;
+        },
+        &quot;profileName&quot;: &quot;string&quot;,
+        &quot;coaPort&quot;: 0,
+        &quot;dtlsDnsName&quot;: &quot;string&quot;,
+        &quot;modelName&quot;: &quot;string&quot;,
+        &quot;softwareVersion&quot;: &quot;string&quot;,
+        &quot;NetworkDeviceIPList&quot;: [
+          {
+            &quot;ipaddress&quot;: &quot;string&quot;,
+            &quot;mask&quot;: 0,
+            &quot;getIpaddressExclude&quot;: &quot;string&quot;
+          }
+        ],
+        &quot;NetworkDeviceGroupList&quot;: [
+          &quot;string&quot;
+        ],
         &quot;link&quot;: {
           &quot;rel&quot;: &quot;string&quot;,
           &quot;href&quot;: &quot;string&quot;,

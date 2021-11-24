@@ -30,7 +30,7 @@ cisco.ise.backup_schedule_config -- Resource module for Backup Schedule Config
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 1.2.1).
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.0.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -56,7 +56,7 @@ Synopsis
 
 .. Description
 
-- Manage operation update of the resource Backup Schedule Config.
+- Manage operation create of the resource Backup Schedule Config.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -70,7 +70,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 
 
@@ -159,7 +159,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Frequency with which the backup will get scheduled in the ISE node. Allowed values - ONCE, DAILY, WEEKLY, MONTHLY.</div>
+                                            <div>Frequency with which the backup will get scheduled in the ISE node.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -391,7 +391,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Day of week you want backup to be performed on when scheduled frequency is WEEKLY. Allowed values - MON, TUE, WED, THU, FRI, SAT, SUN.</div>
+                                            <div>Day of week you want backup to be performed on when scheduled frequency is WEEKLY.</div>
                                                         </td>
             </tr>
                         </table>
@@ -407,6 +407,8 @@ Notes
 
 .. note::
    - Does not support ``check_mode``
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
+   - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 

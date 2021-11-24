@@ -30,7 +30,7 @@ cisco.ise.network_device -- Resource module for Network Device
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 1.2.1).
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.0.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -70,7 +70,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 
 
@@ -169,17 +169,13 @@ Parameters
                     <b>enableMultiSecret</b>
                     <a class="ansibleOptionLink" href="#parameter-authenticationSettings/enableMultiSecret" title="Permalink to this option"></a>
                     <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
+                        <span style="color: purple">string</span>
                                                                     </div>
                                                         </td>
                                 <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
+                                                                                                                                                            </td>
                                                                 <td>
-                                            <div>EnableMultiSecret flag.</div>
+                                            <div>Network Device&#x27;s enableMultiSecret.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -1138,6 +1134,8 @@ Notes
 
 .. note::
    - Does not support ``check_mode``
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
+   - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
@@ -1173,7 +1171,7 @@ Examples
         authenticationSettings:
           dtlsRequired: true
           enableKeyWrap: true
-          enableMultiSecret: true
+          enableMultiSecret: string
           enabled: true
           keyEncryptionKey: string
           keyInputFormat: string
@@ -1244,7 +1242,7 @@ Examples
         authenticationSettings:
           dtlsRequired: true
           enableKeyWrap: true
-          enableMultiSecret: true
+          enableMultiSecret: string
           enabled: true
           keyEncryptionKey: string
           keyInputFormat: string
@@ -1315,7 +1313,7 @@ Examples
         authenticationSettings:
           dtlsRequired: true
           enableKeyWrap: true
-          enableMultiSecret: true
+          enableMultiSecret: string
           enabled: true
           keyEncryptionKey: string
           keyInputFormat: string
@@ -1485,11 +1483,13 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
                                                                 <div style="font-size: smaller"><b>Sample:</b></div>
                                                 <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">{
       &quot;UpdatedFieldsList&quot;: {
-        &quot;updatedField&quot;: {
-          &quot;field&quot;: &quot;string&quot;,
-          &quot;oldValue&quot;: &quot;string&quot;,
-          &quot;newValue&quot;: &quot;string&quot;
-        },
+        &quot;updatedField&quot;: [
+          {
+            &quot;field&quot;: &quot;string&quot;,
+            &quot;oldValue&quot;: &quot;string&quot;,
+            &quot;newValue&quot;: &quot;string&quot;
+          }
+        ],
         &quot;field&quot;: &quot;string&quot;,
         &quot;oldValue&quot;: &quot;string&quot;,
         &quot;newValue&quot;: &quot;string&quot;

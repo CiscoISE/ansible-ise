@@ -30,7 +30,7 @@ cisco.ise.repository -- Resource module for Repository
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 1.2.1).
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.0.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -70,7 +70,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 
 
@@ -335,7 +335,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Username can contain alphanumeric characters.</div>
+                                            <div>Username may contain alphanumeric and _-./@\\$ characters.</div>
                                                         </td>
             </tr>
                         </table>
@@ -351,6 +351,8 @@ Notes
 
 .. note::
    - Does not support ``check_mode``
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
+   - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
@@ -445,13 +447,13 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
                                         <br/>
                                                                 <div style="font-size: smaller"><b>Sample:</b></div>
                                                 <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">{
-        &quot;name&quot;: &quot;string&quot;,
-        &quot;protocol&quot;: &quot;string&quot;,
-        &quot;path&quot;: &quot;string&quot;,
-        &quot;password&quot;: &quot;string&quot;,
-        &quot;serverName&quot;: &quot;string&quot;,
-        &quot;userName&quot;: &quot;string&quot;,
-        &quot;enablePki&quot;: true
+      &quot;name&quot;: &quot;string&quot;,
+      &quot;protocol&quot;: &quot;string&quot;,
+      &quot;path&quot;: &quot;string&quot;,
+      &quot;password&quot;: &quot;string&quot;,
+      &quot;serverName&quot;: &quot;string&quot;,
+      &quot;userName&quot;: &quot;string&quot;,
+      &quot;enablePki&quot;: true
     }</div>
                                     </td>
             </tr>

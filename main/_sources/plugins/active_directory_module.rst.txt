@@ -30,7 +30,7 @@ cisco.ise.active_directory -- Resource module for Active Directory
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 1.2.1).
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.0.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -70,7 +70,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 
 
@@ -1037,6 +1037,8 @@ Notes
 
 .. note::
    - Does not support ``check_mode``
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
+   - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
@@ -1163,63 +1165,63 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       &quot;enableDomainWhiteList&quot;: true,
       &quot;enableDomainAllowedList&quot;: true,
       &quot;adgroups&quot;: {
-          &quot;groups&quot;: [
+        &quot;groups&quot;: [
           {
-              &quot;name&quot;: &quot;string&quot;,
-              &quot;sid&quot;: &quot;string&quot;,
-              &quot;type&quot;: &quot;string&quot;
+            &quot;name&quot;: &quot;string&quot;,
+            &quot;sid&quot;: &quot;string&quot;,
+            &quot;type&quot;: &quot;string&quot;
           }
-          ]
+        ]
       },
       &quot;advancedSettings&quot;: {
-          &quot;enablePassChange&quot;: true,
-          &quot;enableMachineAuth&quot;: true,
-          &quot;enableMachineAccess&quot;: true,
-          &quot;agingTime&quot;: 0,
-          &quot;enableDialinPermissionCheck&quot;: true,
-          &quot;enableCallbackForDialinClient&quot;: true,
-          &quot;plaintextAuth&quot;: true,
-          &quot;enableFailedAuthProtection&quot;: true,
-          &quot;authProtectionType&quot;: &quot;string&quot;,
-          &quot;failedAuthThreshold&quot;: 0,
-          &quot;identityNotInAdBehaviour&quot;: &quot;string&quot;,
-          &quot;unreachableDomainsBehaviour&quot;: &quot;string&quot;,
-          &quot;enableRewrites&quot;: true,
-          &quot;rewriteRules&quot;: [
+        &quot;enablePassChange&quot;: true,
+        &quot;enableMachineAuth&quot;: true,
+        &quot;enableMachineAccess&quot;: true,
+        &quot;agingTime&quot;: 0,
+        &quot;enableDialinPermissionCheck&quot;: true,
+        &quot;enableCallbackForDialinClient&quot;: true,
+        &quot;plaintextAuth&quot;: true,
+        &quot;enableFailedAuthProtection&quot;: true,
+        &quot;authProtectionType&quot;: &quot;string&quot;,
+        &quot;failedAuthThreshold&quot;: 0,
+        &quot;identityNotInAdBehaviour&quot;: &quot;string&quot;,
+        &quot;unreachableDomainsBehaviour&quot;: &quot;string&quot;,
+        &quot;enableRewrites&quot;: true,
+        &quot;rewriteRules&quot;: [
           {
-              &quot;rowId&quot;: 0,
-              &quot;rewriteMatch&quot;: &quot;string&quot;,
-              &quot;rewriteResult&quot;: &quot;string&quot;
+            &quot;rowId&quot;: 0,
+            &quot;rewriteMatch&quot;: &quot;string&quot;,
+            &quot;rewriteResult&quot;: &quot;string&quot;
           }
-          ],
-          &quot;firstName&quot;: &quot;string&quot;,
-          &quot;department&quot;: &quot;string&quot;,
-          &quot;lastName&quot;: &quot;string&quot;,
-          &quot;organizationalUnit&quot;: &quot;string&quot;,
-          &quot;jobTitle&quot;: &quot;string&quot;,
-          &quot;locality&quot;: &quot;string&quot;,
-          &quot;email&quot;: &quot;string&quot;,
-          &quot;stateOrProvince&quot;: &quot;string&quot;,
-          &quot;telephone&quot;: &quot;string&quot;,
-          &quot;country&quot;: &quot;string&quot;,
-          &quot;streetAddress&quot;: &quot;string&quot;,
-          &quot;schema&quot;: &quot;string&quot;
+        ],
+        &quot;firstName&quot;: &quot;string&quot;,
+        &quot;department&quot;: &quot;string&quot;,
+        &quot;lastName&quot;: &quot;string&quot;,
+        &quot;organizationalUnit&quot;: &quot;string&quot;,
+        &quot;jobTitle&quot;: &quot;string&quot;,
+        &quot;locality&quot;: &quot;string&quot;,
+        &quot;email&quot;: &quot;string&quot;,
+        &quot;stateOrProvince&quot;: &quot;string&quot;,
+        &quot;telephone&quot;: &quot;string&quot;,
+        &quot;country&quot;: &quot;string&quot;,
+        &quot;streetAddress&quot;: &quot;string&quot;,
+        &quot;schema&quot;: &quot;string&quot;
       },
       &quot;adAttributes&quot;: {
-          &quot;attributes&quot;: [
+        &quot;attributes&quot;: [
           {
-              &quot;name&quot;: &quot;string&quot;,
-              &quot;type&quot;: &quot;string&quot;,
-              &quot;internalName&quot;: &quot;string&quot;,
-              &quot;defaultValue&quot;: &quot;string&quot;
+            &quot;name&quot;: &quot;string&quot;,
+            &quot;type&quot;: &quot;string&quot;,
+            &quot;internalName&quot;: &quot;string&quot;,
+            &quot;defaultValue&quot;: &quot;string&quot;
           }
-          ]
+        ]
       },
       &quot;adScopesNames&quot;: &quot;string&quot;,
       &quot;link&quot;: {
-          &quot;rel&quot;: &quot;string&quot;,
-          &quot;href&quot;: &quot;string&quot;,
-          &quot;type&quot;: &quot;string&quot;
+        &quot;rel&quot;: &quot;string&quot;,
+        &quot;href&quot;: &quot;string&quot;,
+        &quot;type&quot;: &quot;string&quot;
       }
     }</div>
                                     </td>

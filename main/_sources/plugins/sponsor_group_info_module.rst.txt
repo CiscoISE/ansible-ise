@@ -30,7 +30,7 @@ cisco.ise.sponsor_group_info -- Information module for Sponsor Group
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 1.2.1).
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.0.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -71,7 +71,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 
 
@@ -348,6 +348,8 @@ Notes
 
 .. note::
    - Supports ``check_mode``
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
+   - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
@@ -493,6 +495,43 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
         &quot;id&quot;: &quot;string&quot;,
         &quot;name&quot;: &quot;string&quot;,
         &quot;description&quot;: &quot;string&quot;,
+        &quot;isEnabled&quot;: true,
+        &quot;isDefaultGroup&quot;: true,
+        &quot;memberGroups&quot;: [
+          &quot;string&quot;
+        ],
+        &quot;guestTypes&quot;: [
+          &quot;string&quot;
+        ],
+        &quot;locations&quot;: [
+          &quot;string&quot;
+        ],
+        &quot;autoNotification&quot;: true,
+        &quot;createPermissions&quot;: {
+          &quot;canImportMultipleAccounts&quot;: true,
+          &quot;importBatchSizeLimit&quot;: 0,
+          &quot;canCreateRandomAccounts&quot;: true,
+          &quot;randomBatchSizeLimit&quot;: 0,
+          &quot;defaultUsernamePrefix&quot;: &quot;string&quot;,
+          &quot;canSpecifyUsernamePrefix&quot;: true,
+          &quot;canSetFutureStartDate&quot;: true,
+          &quot;startDateFutureLimitDays&quot;: 0
+        },
+        &quot;managePermission&quot;: &quot;string&quot;,
+        &quot;otherPermissions&quot;: {
+          &quot;canUpdateGuestContactInfo&quot;: true,
+          &quot;canViewGuestPasswords&quot;: true,
+          &quot;canSendSmsNotifications&quot;: true,
+          &quot;canResetGuestPasswords&quot;: true,
+          &quot;canExtendGuestAccounts&quot;: true,
+          &quot;canDeleteGuestAccounts&quot;: true,
+          &quot;canSuspendGuestAccounts&quot;: true,
+          &quot;requireSuspensionReason&quot;: true,
+          &quot;canReinstateSuspendedAccounts&quot;: true,
+          &quot;canApproveSelfregGuests&quot;: true,
+          &quot;limitApprovalToSponsorsGuests&quot;: true,
+          &quot;canAccessViaRest&quot;: true
+        },
         &quot;link&quot;: {
           &quot;rel&quot;: &quot;string&quot;,
           &quot;href&quot;: &quot;string&quot;,

@@ -30,7 +30,7 @@ cisco.ise.guest_type_info -- Information module for Guest Type
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 1.2.1).
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.0.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -71,7 +71,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 
 
@@ -348,6 +348,8 @@ Notes
 
 .. note::
    - Supports ``check_mode``
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
+   - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
@@ -493,6 +495,43 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
         &quot;id&quot;: &quot;string&quot;,
         &quot;name&quot;: &quot;string&quot;,
         &quot;description&quot;: &quot;string&quot;,
+        &quot;isDefaultType&quot;: true,
+        &quot;accessTime&quot;: {
+          &quot;fromFirstLogin&quot;: true,
+          &quot;maxAccountDuration&quot;: 0,
+          &quot;durationTimeUnit&quot;: &quot;string&quot;,
+          &quot;defaultDuration&quot;: 0,
+          &quot;allowAccessOnSpecificDaysTimes&quot;: true,
+          &quot;dayTimeLimits&quot;: [
+            {
+              &quot;startTime&quot;: &quot;string&quot;,
+              &quot;endTime&quot;: &quot;string&quot;,
+              &quot;days&quot;: [
+                &quot;string&quot;
+              ]
+            }
+          ]
+        },
+        &quot;loginOptions&quot;: {
+          &quot;limitSimultaneousLogins&quot;: true,
+          &quot;maxSimultaneousLogins&quot;: 0,
+          &quot;failureAction&quot;: &quot;string&quot;,
+          &quot;maxRegisteredDevices&quot;: 0,
+          &quot;identityGroupId&quot;: &quot;string&quot;,
+          &quot;allowGuestPortalBypass&quot;: true
+        },
+        &quot;expirationNotification&quot;: {
+          &quot;enableNotification&quot;: true,
+          &quot;advanceNotificationDuration&quot;: 0,
+          &quot;advanceNotificationUnits&quot;: &quot;string&quot;,
+          &quot;sendEmailNotification&quot;: true,
+          &quot;emailText&quot;: &quot;string&quot;,
+          &quot;sendSmsNotification&quot;: true,
+          &quot;smsText&quot;: &quot;string&quot;
+        },
+        &quot;sponsorGroups&quot;: [
+          &quot;string&quot;
+        ],
         &quot;link&quot;: {
           &quot;rel&quot;: &quot;string&quot;,
           &quot;href&quot;: &quot;string&quot;,

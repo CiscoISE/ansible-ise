@@ -30,7 +30,7 @@ cisco.ise.device_administration_dictionary_attributes_authentication_info -- Inf
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 1.2.1).
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.0.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -70,7 +70,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 
 
@@ -242,6 +242,8 @@ Notes
 
 .. note::
    - Supports ``check_mode``
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
+   - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
@@ -296,35 +298,32 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
                     <b>ise_response</b>
                     <a class="ansibleOptionLink" href="#return-ise_response" title="Permalink to this return value"></a>
                     <div style="font-size: small">
-                      <span style="color: purple">dictionary</span>
-                                          </div>
+                      <span style="color: purple">list</span>
+                       / <span style="color: purple">elements=dictionary</span>                    </div>
                                     </td>
                 <td>always</td>
                 <td>
                                             <div>A dictionary or list with the response returned by the Cisco ISE Python SDK</div>
                                         <br/>
                                                                 <div style="font-size: smaller"><b>Sample:</b></div>
-                                                <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">{
-      &quot;response&quot;: [
-        {
-          &quot;allowedValues&quot;: [
-            {
-              &quot;isDefault&quot;: true,
-              &quot;key&quot;: &quot;string&quot;,
-              &quot;value&quot;: &quot;string&quot;
-            }
-          ],
-          &quot;dataType&quot;: &quot;string&quot;,
-          &quot;description&quot;: &quot;string&quot;,
-          &quot;dictionaryName&quot;: &quot;string&quot;,
-          &quot;directionType&quot;: &quot;string&quot;,
-          &quot;id&quot;: &quot;string&quot;,
-          &quot;internalName&quot;: &quot;string&quot;,
-          &quot;name&quot;: &quot;string&quot;
-        }
-      ],
-      &quot;version&quot;: &quot;string&quot;
-    }</div>
+                                                <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">[
+      {
+        &quot;allowedValues&quot;: [
+          {
+            &quot;isDefault&quot;: true,
+            &quot;key&quot;: &quot;string&quot;,
+            &quot;value&quot;: &quot;string&quot;
+          }
+        ],
+        &quot;dataType&quot;: &quot;string&quot;,
+        &quot;description&quot;: &quot;string&quot;,
+        &quot;dictionaryName&quot;: &quot;string&quot;,
+        &quot;directionType&quot;: &quot;string&quot;,
+        &quot;id&quot;: &quot;string&quot;,
+        &quot;internalName&quot;: &quot;string&quot;,
+        &quot;name&quot;: &quot;string&quot;
+      }
+    ]</div>
                                     </td>
             </tr>
                         </table>

@@ -30,7 +30,7 @@ cisco.ise.endpoint_info -- Information module for Endpoint
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 1.2.1).
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.0.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -72,7 +72,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 
 
@@ -364,6 +364,8 @@ Notes
 
 .. note::
    - Supports ``check_mode``
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
+   - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
@@ -507,6 +509,32 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
         &quot;id&quot;: &quot;string&quot;,
         &quot;name&quot;: &quot;string&quot;,
         &quot;description&quot;: &quot;string&quot;,
+        &quot;mac&quot;: &quot;string&quot;,
+        &quot;profileId&quot;: &quot;string&quot;,
+        &quot;staticProfileAssignment&quot;: true,
+        &quot;groupId&quot;: &quot;string&quot;,
+        &quot;staticGroupAssignment&quot;: true,
+        &quot;portalUser&quot;: &quot;string&quot;,
+        &quot;identityStore&quot;: &quot;string&quot;,
+        &quot;identityStoreId&quot;: &quot;string&quot;,
+        &quot;mdmAttributes&quot;: {
+          &quot;mdmServerName&quot;: &quot;string&quot;,
+          &quot;mdmReachable&quot;: true,
+          &quot;mdmEnrolled&quot;: true,
+          &quot;mdmComplianceStatus&quot;: true,
+          &quot;mdmOS&quot;: &quot;string&quot;,
+          &quot;mdmManufacturer&quot;: &quot;string&quot;,
+          &quot;mdmModel&quot;: &quot;string&quot;,
+          &quot;mdmSerial&quot;: &quot;string&quot;,
+          &quot;mdmEncrypted&quot;: true,
+          &quot;mdmPinlock&quot;: true,
+          &quot;mdmJailBroken&quot;: true,
+          &quot;mdmIMEI&quot;: &quot;string&quot;,
+          &quot;mdmPhoneNumber&quot;: &quot;string&quot;
+        },
+        &quot;customAttributes&quot;: {
+          &quot;customAttributes&quot;: {}
+        },
         &quot;link&quot;: {
           &quot;rel&quot;: &quot;string&quot;,
           &quot;href&quot;: &quot;string&quot;,

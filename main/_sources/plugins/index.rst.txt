@@ -4,7 +4,7 @@
 Cisco.Ise
 =========
 
-Collection version 1.2.1
+Collection version 2.0.0
 
 .. toctree::
     :maxdepth: 1
@@ -53,6 +53,7 @@ Modules
 * :ref:`backup_last_status_info <ansible_collections.cisco.ise.backup_last_status_info_module>` -- Information module for Backup Last Status
 * :ref:`backup_restore <ansible_collections.cisco.ise.backup_restore_module>` -- Resource module for Backup Restore
 * :ref:`backup_schedule_config <ansible_collections.cisco.ise.backup_schedule_config_module>` -- Resource module for Backup Schedule Config
+* :ref:`backup_schedule_config_update <ansible_collections.cisco.ise.backup_schedule_config_update_module>` -- Resource module for Backup Schedule Config Update
 * :ref:`bind_signed_certificate <ansible_collections.cisco.ise.bind_signed_certificate_module>` -- Resource module for Bind Signed Certificate
 * :ref:`byod_portal <ansible_collections.cisco.ise.byod_portal_module>` -- Resource module for Byod Portal
 * :ref:`byod_portal_info <ansible_collections.cisco.ise.byod_portal_info_module>` -- Information module for Byod Portal
@@ -346,6 +347,23 @@ Modules
 * :ref:`trusted_certificate_export_info <ansible_collections.cisco.ise.trusted_certificate_export_info_module>` -- Information module for Trusted Certificate Export
 * :ref:`trusted_certificate_import <ansible_collections.cisco.ise.trusted_certificate_import_module>` -- Resource module for Trusted Certificate Import
 * :ref:`trusted_certificate_info <ansible_collections.cisco.ise.trusted_certificate_info_module>` -- Information module for Trusted Certificate
+* :ref:`trustsec_nbar_app <ansible_collections.cisco.ise.trustsec_nbar_app_module>` -- Resource module for Trustsec Nbar App
+* :ref:`trustsec_nbar_app_info <ansible_collections.cisco.ise.trustsec_nbar_app_info_module>` -- Information module for Trustsec Nbar App
+* :ref:`trustsec_sg_vn_mapping <ansible_collections.cisco.ise.trustsec_sg_vn_mapping_module>` -- Resource module for Trustsec Sg Vn Mapping
+* :ref:`trustsec_sg_vn_mapping_bulk_create <ansible_collections.cisco.ise.trustsec_sg_vn_mapping_bulk_create_module>` -- Resource module for Trustsec Sg Vn Mapping Bulk Create
+* :ref:`trustsec_sg_vn_mapping_bulk_delete <ansible_collections.cisco.ise.trustsec_sg_vn_mapping_bulk_delete_module>` -- Resource module for Trustsec Sg Vn Mapping Bulk Delete
+* :ref:`trustsec_sg_vn_mapping_bulk_update <ansible_collections.cisco.ise.trustsec_sg_vn_mapping_bulk_update_module>` -- Resource module for Trustsec Sg Vn Mapping Bulk Update
+* :ref:`trustsec_sg_vn_mapping_info <ansible_collections.cisco.ise.trustsec_sg_vn_mapping_info_module>` -- Information module for Trustsec Sg Vn Mapping
+* :ref:`trustsec_vn <ansible_collections.cisco.ise.trustsec_vn_module>` -- Resource module for Trustsec Vn
+* :ref:`trustsec_vn_bulk_create <ansible_collections.cisco.ise.trustsec_vn_bulk_create_module>` -- Resource module for Trustsec Vn Bulk Create
+* :ref:`trustsec_vn_bulk_delete <ansible_collections.cisco.ise.trustsec_vn_bulk_delete_module>` -- Resource module for Trustsec Vn Bulk Delete
+* :ref:`trustsec_vn_bulk_update <ansible_collections.cisco.ise.trustsec_vn_bulk_update_module>` -- Resource module for Trustsec Vn Bulk Update
+* :ref:`trustsec_vn_info <ansible_collections.cisco.ise.trustsec_vn_info_module>` -- Information module for Trustsec Vn
+* :ref:`trustsec_vn_vlan_mapping <ansible_collections.cisco.ise.trustsec_vn_vlan_mapping_module>` -- Resource module for Trustsec Vn Vlan Mapping
+* :ref:`trustsec_vn_vlan_mapping_bulk_create <ansible_collections.cisco.ise.trustsec_vn_vlan_mapping_bulk_create_module>` -- Resource module for Trustsec Vn Vlan Mapping Bulk Create
+* :ref:`trustsec_vn_vlan_mapping_bulk_delete <ansible_collections.cisco.ise.trustsec_vn_vlan_mapping_bulk_delete_module>` -- Resource module for Trustsec Vn Vlan Mapping Bulk Delete
+* :ref:`trustsec_vn_vlan_mapping_bulk_update <ansible_collections.cisco.ise.trustsec_vn_vlan_mapping_bulk_update_module>` -- Resource module for Trustsec Vn Vlan Mapping Bulk Update
+* :ref:`trustsec_vn_vlan_mapping_info <ansible_collections.cisco.ise.trustsec_vn_vlan_mapping_info_module>` -- Information module for Trustsec Vn Vlan Mapping
 
 
 
@@ -391,6 +409,7 @@ Modules
     backup_last_status_info_module
     backup_restore_module
     backup_schedule_config_module
+    backup_schedule_config_update_module
     bind_signed_certificate_module
     byod_portal_module
     byod_portal_info_module
@@ -684,3 +703,20 @@ Modules
     trusted_certificate_export_info_module
     trusted_certificate_import_module
     trusted_certificate_info_module
+    trustsec_nbar_app_module
+    trustsec_nbar_app_info_module
+    trustsec_sg_vn_mapping_module
+    trustsec_sg_vn_mapping_bulk_create_module
+    trustsec_sg_vn_mapping_bulk_delete_module
+    trustsec_sg_vn_mapping_bulk_update_module
+    trustsec_sg_vn_mapping_info_module
+    trustsec_vn_module
+    trustsec_vn_bulk_create_module
+    trustsec_vn_bulk_delete_module
+    trustsec_vn_bulk_update_module
+    trustsec_vn_info_module
+    trustsec_vn_vlan_mapping_module
+    trustsec_vn_vlan_mapping_bulk_create_module
+    trustsec_vn_vlan_mapping_bulk_delete_module
+    trustsec_vn_vlan_mapping_bulk_update_module
+    trustsec_vn_vlan_mapping_info_module
