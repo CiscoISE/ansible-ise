@@ -84,6 +84,7 @@ class ActionModule(ActionBase):
             function='suspend_guest_user_by_id',
             params=self.get_object(self._task.args),
         ).response
+
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

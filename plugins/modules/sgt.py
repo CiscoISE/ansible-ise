@@ -24,7 +24,7 @@ options:
     type: str
   generationId:
     description: Sgt's generationId.
-    type: int
+    type: str
   id:
     description: Sgt's id.
     type: str
@@ -41,7 +41,7 @@ options:
     description: Value range 2 ot 65519 or -1 to auto-generate.
     type: int
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -61,7 +61,7 @@ EXAMPLES = r"""
     defaultSGACLs:
     - {}
     description: string
-    generationId: 0
+    generationId: string
     id: string
     isReadOnly: true
     name: string
@@ -87,7 +87,7 @@ EXAMPLES = r"""
     defaultSGACLs:
     - {}
     description: string
-    generationId: 0
+    generationId: string
     isReadOnly: true
     name: string
     propogateToApic: true
@@ -106,7 +106,7 @@ ise_response:
       "name": "string",
       "description": "string",
       "value": 0,
-      "generationId": 0,
+      "generationId": "string",
       "isReadOnly": true,
       "propogateToApic": true,
       "defaultSGACLs": [
@@ -127,11 +127,13 @@ ise_update_response:
   sample: >
     {
       "UpdatedFieldsList": {
-        "updatedField": {
-          "field": "string",
-          "oldValue": "string",
-          "newValue": "string"
-        },
+        "updatedField": [
+          {
+            "field": "string",
+            "oldValue": "string",
+            "newValue": "string"
+          }
+        ],
         "field": "string",
         "oldValue": "string",
         "newValue": "string"

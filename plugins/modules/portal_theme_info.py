@@ -55,7 +55,7 @@ options:
       can be changed by using the parameter.
     type: str
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -107,6 +107,7 @@ ise_response:
         "type": "string"
       }
     }
+
 ise_responses:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
@@ -118,6 +119,8 @@ ise_responses:
       {
         "id": "string",
         "name": "string",
+        "description": "string",
+        "themeData": "string",
         "link": {
           "rel": "string",
           "href": "string",

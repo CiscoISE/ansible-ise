@@ -78,7 +78,7 @@ class DeviceAdministrationGlobalExceptionRules(object):
                 function="get_device_admin_policy_set_global_exception_by_rule_id",
                 handle_func_exception=False,
                 params={"id": id}
-            ).response.get('response', {})
+            ).response['response']
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(
                 msg=(

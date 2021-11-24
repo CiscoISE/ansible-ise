@@ -28,7 +28,7 @@ options:
     - REAUTH_TYPE path parameter.
     type: str
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -56,6 +56,6 @@ ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {}
 """

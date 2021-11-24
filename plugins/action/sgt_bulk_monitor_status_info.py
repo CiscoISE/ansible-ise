@@ -84,7 +84,7 @@ class ActionModule(ActionBase):
                 family="security_groups",
                 function='monitor_bulk_status_security_group',
                 params=self.get_object(self._task.args)
-            ).response
+            ).response['BulkStatus']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

@@ -91,7 +91,7 @@ options:
         type: dict
     type: dict
   hostname:
-    description: Hostname path parameter. Node name of the existing deployed node.
+    description: Hostname path parameter. ID of the existing deployed node.
     type: str
   password:
     description: Node Deployment's password.
@@ -253,7 +253,7 @@ options:
     description: Node Deployment's userName.
     type: str
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource

@@ -41,7 +41,7 @@ options:
     description: Node-group-name path parameter. ID of the existing node group.
     type: str
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -65,6 +65,7 @@ EXAMPLES = r"""
       query-timeout: 0
       replication-attempts: 0
       replication-timeout: 0
+    node_group_name: string
 
 - name: Update by name
   cisco.ise.node_group:

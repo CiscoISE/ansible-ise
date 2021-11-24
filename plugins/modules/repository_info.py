@@ -21,7 +21,7 @@ options:
     - Name path parameter. Unique name for a repository.
     type: str
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -57,15 +57,12 @@ ise_response:
   type: dict
   sample: >
     {
-      "response": {
-        "name": "string",
-        "protocol": "string",
-        "path": "string",
-        "password": "string",
-        "serverName": "string",
-        "userName": "string",
-        "enablePki": true
-      },
-      "version": "string"
+      "name": "string",
+      "protocol": "string",
+      "path": "string",
+      "password": "string",
+      "serverName": "string",
+      "userName": "string",
+      "enablePki": true
     }
 """

@@ -474,3 +474,104 @@ releases:
       bugfixes:
         - On regular modules additional comparison of check_mode was removed as Ansible already handles it.
         - On info modules comparison was removed, because info modules should always run.
+  2.0.0:
+    release_date: '2021-11-24'
+    changes:
+      release_summary: Updates ISE responses and adds Trust_Sec modules
+      minor_changes:
+        - trustsec_nbarapp - new playbook.
+        - trustsec_sg_vn_mapping - new playbook.
+        - trustsec_vn - new playbook.
+        - trustsec_vn_vlan_mapping - new playbook.
+        - backup_schedule_config_update - new module.
+        - trustsec_nbar_app - new module.
+        - trustsec_nbar_app_info - new module.
+        - trustsec_sg_vn_mapping - new module.
+        - trustsec_sg_vn_mapping_bulk_create - new module.
+        - trustsec_sg_vn_mapping_bulk_delete - new module.
+        - trustsec_sg_vn_mapping_bulk_update - new module.
+        - trustsec_sg_vn_mapping_info - new module.
+        - trustsec_vn - new module.
+        - trustsec_vn_bulk_create - new module.
+        - trustsec_vn_bulk_delete - new module.
+        - trustsec_vn_bulk_update - new module.
+        - trustsec_vn_info - new module.
+        - trustsec_vn_vlan_mapping - new module.
+        - trustsec_vn_vlan_mapping_bulk_create - new module.
+        - trustsec_vn_vlan_mapping_bulk_delete - new module.
+        - trustsec_vn_vlan_mapping_bulk_update - new module.
+        - trustsec_vn_vlan_mapping_info - new module.
+        - aci_bindings_info - change default response to [].
+        - active_directory_info - change default response to [].
+        - admin_user_info - change default response to [].
+        - allowed_protocols_info - change default response to [].
+        - anc_endpoint_info - change default response to [].
+        - anc_policy_info - change default response to [].
+        - authorization_profile_info - change default response to [].
+        - byod_portal_info - change default response to [].
+        - certificate_profile_info - change default response to [].
+        - certificate_template_info - change default response to [].
+        - csr_info - change default response to [].
+        - downloadable_acl_info - change default response to [].
+        - egress_matrix_cell_info - change default response to [].
+        - endpoint_bulk_monitor_status_info - change default response to [].
+        - radius_server_sequence_info - change default response to [].
+        - rest_id_store_info - change default response to [].
+        - self_registered_portal_info - change default response to [].
+        - sg_acl_info - change default response to [].
+        - sg_to_vn_to_vlan_info - change default response to [].
+        - sgt_info - change default response to [].
+        - sponsor_group_info - change default response to [].
+        - sponsor_portal_info - change default response to [].
+        - sponsored_guest_portal_info - change default response to [].
+        - support_bundle_status_info - change default response to [].
+        - sxp_connections_info - change default response to [].
+        - sxp_local_bindings_info - change default response to [].
+        - sxp_vpns_info - change default response to [].
+        - tacacs_command_sets_info - change default response to [].
+        - tacacs_external_servers_info - change default response to [].
+        - tacacs_profile_info - change default response to [].
+        - tacacs_server_sequence_info - change default response to [].
+        - telemetry_info - change default response to [].
+        - trusted_certificate - change default response to [].
+      major_changes:
+        - Update ciscoisesdk requirement to 1.2.0
+        - anc_endpoint_bulk_monitor_status_info - change return value, it returns BulkStatus content.
+        - anc_policy_bulk_monitor_status_info - change return value, it returns BulkStatus content.
+        - egress_matrix_cell_bulk_monitor_status_info - change return value, it returns BulkStatus content.
+        - sg_acl_bulk_monitor_status_info - change return value, it returns BulkStatus content.
+        - sg_mapping_group_info - change return value, it returns BulkStatus content.
+        - sg_mapping_bulk_monitor_status_info - change return value, it returns BulkStatus content.
+        - sg_mapping_group_bulk_monitor_status_info - change return value, it returns BulkStatus content.
+        - sg_to_vn_to_vlan_bulk_monitor_status_info - change return value, it returns BulkStatus content.
+        - sgt_bulk_monitor_status_info - change return value, it returns BulkStatus content.
+        - sxp_connections_bulk_monitor_status_info - change return value, it returns BulkStatus content.
+        - sxp_local_bindings_bulk_monitor_status_info - change return value, it returns BulkStatus content.
+        - sxp_vpns_bulk_monitor_status_info - change return value, it returns BulkStatus content.
+        - sgt - change generationId type from int to str.
+        - system_certificate - new parameters portalTagTransferForSameSubject and roleTransferForSameSubject.
+        - system_certificate_import - new parameters portalTagTransferForSameSubject and roleTransferForSameSubject.
+        - backup_last_status_info - change return value, it returns response content.
+        - device_administration_authentication_rules_info - change return value, it returns response content.
+        - device_administration_authorization_rules_info - change return value, it returns response content.
+        - device_administration_conditions_for_authentication_rule_info - change return value, it returns response content.
+        - device_administration_conditions_for_authorization_rule_info - change return value, it returns response content.
+        - device_administration_conditions_for_policy_set_info - change return value, it returns response content.
+        - device_administration_conditions_info - change return value, it returns response content.
+        - device_administration_dictionary_attributes_authentication_info - change return value, it returns response content.
+        - device_administration_dictionary_attributes_authorization_info - change return value, it returns response content.
+        - device_administration_dictionary_attributes_policy_set_info - change return value, it returns response content.
+        - device_administration_global_exception_rules_info - change return value, it returns response content.
+        - device_administration_network_conditions_info - change return value, it returns response content.
+        - device_administration_time_date_conditions_info - change return value, it returns response content.
+        - repository_files_info - change return value, it returns response content.
+        - repository_info - change return value, it returns response content.
+        - device_administration_authentication_rules - deletes parameter identitySourceId.
+        - network_access_authentication_rules - deletes parameter identitySourceId.
+        - device_administration_conditions - deletes parameter attributeId.
+        - device_administration_time_date_conditions - deletes parameter attributeId.
+        - network_access_conditions - deletes parameter attributeId.
+        - network_access_time_date_conditions - deletes parameter attributeId.
+      bugfixes:
+        - Update documentation of the modules.
+        - Update ISE version to 3.1.0 on vars example

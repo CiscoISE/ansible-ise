@@ -82,7 +82,7 @@ class ActionModule(ActionBase):
                 family="backup_and_restore",
                 function='get_last_config_backup_status',
                 params=self.get_object(self._task.args),
-            ).response
+            ).response['response']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

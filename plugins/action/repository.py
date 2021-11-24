@@ -69,7 +69,7 @@ class Repository(object):
                 function="get_repository",
                 params={"name": name},
                 handle_func_exception=False,
-            ).response.get('response', {})
+            ).response['response']
             result = get_dict_result(result, 'name', name)
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(

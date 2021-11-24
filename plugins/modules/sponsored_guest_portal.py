@@ -307,7 +307,8 @@ options:
           allowedInterfaces:
             description: Interfaces that the portal will be reachable on. Allowed values
               - eth0, - eth1, - eth2, - eth3, - eth4, - eth5, - bond0, - bond1, - bond2.
-            type: str
+            elements: str
+            type: list
           alwaysUsedLanguage:
             description: Sponsored Guest Portal's alwaysUsedLanguage.
             type: str
@@ -379,7 +380,7 @@ options:
         type: dict
     type: dict
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -477,7 +478,8 @@ EXAMPLES = r"""
           socialMediaValue: string
         timeBetweenLoginsDuringRateLimit: 0
       portalSettings:
-        allowedInterfaces: string
+        allowedInterfaces:
+        - string
         alwaysUsedLanguage: string
         assignedGuestTypeForEmployee: string
         authenticationMethod: string
@@ -595,7 +597,8 @@ EXAMPLES = r"""
           socialMediaValue: string
         timeBetweenLoginsDuringRateLimit: 0
       portalSettings:
-        allowedInterfaces: string
+        allowedInterfaces:
+        - string
         alwaysUsedLanguage: string
         assignedGuestTypeForEmployee: string
         authenticationMethod: string
@@ -775,11 +778,13 @@ ise_update_response:
   sample: >
     {
       "UpdatedFieldsList": {
-        "updatedField": {
-          "field": "string",
-          "oldValue": "string",
-          "newValue": "string"
-        },
+        "updatedField": [
+          {
+            "field": "string",
+            "oldValue": "string",
+            "newValue": "string"
+          }
+        ],
         "field": "string",
         "oldValue": "string",
         "newValue": "string"

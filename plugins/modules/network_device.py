@@ -42,8 +42,8 @@ options:
         description: EnableKeyWrap flag.
         type: bool
       enableMultiSecret:
-        description: EnableMultiSecret flag.
-        type: bool
+        description: Network Device's enableMultiSecret.
+        type: str
       enabled:
         description: Enabled flag.
         type: bool
@@ -185,7 +185,7 @@ options:
         type: dict
     type: dict
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -211,7 +211,7 @@ EXAMPLES = r"""
     authenticationSettings:
       dtlsRequired: true
       enableKeyWrap: true
-      enableMultiSecret: true
+      enableMultiSecret: string
       enabled: true
       keyEncryptionKey: string
       keyInputFormat: string
@@ -282,7 +282,7 @@ EXAMPLES = r"""
     authenticationSettings:
       dtlsRequired: true
       enableKeyWrap: true
-      enableMultiSecret: true
+      enableMultiSecret: string
       enabled: true
       keyEncryptionKey: string
       keyInputFormat: string
@@ -353,7 +353,7 @@ EXAMPLES = r"""
     authenticationSettings:
       dtlsRequired: true
       enableKeyWrap: true
-      enableMultiSecret: true
+      enableMultiSecret: string
       enabled: true
       keyEncryptionKey: string
       keyInputFormat: string
@@ -487,11 +487,13 @@ ise_update_response:
   sample: >
     {
       "UpdatedFieldsList": {
-        "updatedField": {
-          "field": "string",
-          "oldValue": "string",
-          "newValue": "string"
-        },
+        "updatedField": [
+          {
+            "field": "string",
+            "oldValue": "string",
+            "newValue": "string"
+          }
+        ],
         "field": "string",
         "oldValue": "string",
         "newValue": "string"

@@ -18,9 +18,6 @@ options:
   id:
     description: Id path parameter. Rule id.
     type: str
-  identitySourceId:
-    description: Identity source id from the identity stores.
-    type: str
   identitySourceName:
     description: Identity source name from the identity stores.
     type: str
@@ -56,9 +53,6 @@ options:
       condition:
         description: Network Access Authentication Rules's condition.
         suboptions:
-          attributeId:
-            description: Dictionary attribute id (Optional), used for additional verification.
-            type: str
           attributeName:
             description: Dictionary attribute name.
             type: str
@@ -104,12 +98,11 @@ options:
               that additional conditions are present under the children field</li></ul>.
             type: str
           datesRange:
-            description: <p>Defines for which date/s TimeAndDate condition will be matched
-              or NOT matched if used in exceptionDates prooperty<br> Options are - Date
-              range, for specific date, the same date should be used for start/end date
-              <br> Default - no specific dates<br> In order to reset the dates to have
-              no specific dates Date format - yyyy-mm-dd (MM = month, dd = day, yyyy
-              = year)</p>.
+            description: <p>Defines for which date/s TimeAndDate condition will be matched<br>
+              Options are - Date range, for specific date, the same date should be used
+              for start/end date <br> Default - no specific dates<br> In order to reset
+              the dates to have no specific dates Date format - yyyy-mm-dd (MM = month,
+              dd = day, yyyy = year)</p>.
             suboptions:
               endDate:
                 description: Network Access Authentication Rules's endDate.
@@ -119,12 +112,11 @@ options:
                 type: str
             type: dict
           datesRangeException:
-            description: <p>Defines for which date/s TimeAndDate condition will be matched
-              or NOT matched if used in exceptionDates prooperty<br> Options are - Date
-              range, for specific date, the same date should be used for start/end date
-              <br> Default - no specific dates<br> In order to reset the dates to have
-              no specific dates Date format - yyyy-mm-dd (MM = month, dd = day, yyyy
-              = year)</p>.
+            description: <p>Defines for which date/s TimeAndDate condition will be matched<br>
+              Options are - Date range, for specific date, the same date should be used
+              for start/end date <br> Default - no specific dates<br> In order to reset
+              the dates to have no specific dates Date format - yyyy-mm-dd (MM = month,
+              dd = day, yyyy = year)</p>.
             suboptions:
               endDate:
                 description: Network Access Authentication Rules's endDate.
@@ -144,8 +136,8 @@ options:
             type: str
           hoursRange:
             description: <p>Defines for which hours a TimeAndDate condition will be
-              matched or not matched if used in exceptionHours property<br> Time foramt
-              - hh mm ( h = hour , mm = minutes ) <br> Default - All Day </p>.
+              matched<br> Time format - hh mm ( h = hour , mm = minutes ) <br> Default
+              - All Day </p>.
             suboptions:
               endTime:
                 description: Network Access Authentication Rules's endTime.
@@ -156,8 +148,8 @@ options:
             type: dict
           hoursRangeException:
             description: <p>Defines for which hours a TimeAndDate condition will be
-              matched or not matched if used in exceptionHours property<br> Time foramt
-              - hh mm ( h = hour , mm = minutes ) <br> Default - All Day </p>.
+              matched<br> Time format - hh mm ( h = hour , mm = minutes ) <br> Default
+              - All Day </p>.
             suboptions:
               endTime:
                 description: Network Access Authentication Rules's endTime.
@@ -225,7 +217,7 @@ options:
         type: str
     type: dict
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -242,7 +234,6 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    identitySourceId: string
     identitySourceName: string
     ifAuthFail: string
     ifProcessFail: string
@@ -251,9 +242,9 @@ EXAMPLES = r"""
       href: string
       rel: string
       type: string
+    policyId: string
     rule:
       condition:
-        attributeId: string
         attributeName: string
         attributeValue: string
         children:
@@ -306,7 +297,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     id: string
-    identitySourceId: string
     identitySourceName: string
     ifAuthFail: string
     ifProcessFail: string
@@ -318,7 +308,6 @@ EXAMPLES = r"""
     policyId: string
     rule:
       condition:
-        attributeId: string
         attributeName: string
         attributeValue: string
         children:
@@ -382,7 +371,6 @@ ise_response:
   type: dict
   sample: >
     {
-      "identitySourceId": "string",
       "identitySourceName": "string",
       "ifAuthFail": "string",
       "ifProcessFail": "string",
@@ -405,7 +393,6 @@ ise_response:
           "id": "string",
           "name": "string",
           "attributeName": "string",
-          "attributeId": "string",
           "attributeValue": "string",
           "dictionaryName": "string",
           "dictionaryValue": "string",
@@ -461,7 +448,6 @@ ise_update_response:
   sample: >
     {
       "response": {
-        "identitySourceId": "string",
         "identitySourceName": "string",
         "ifAuthFail": "string",
         "ifProcessFail": "string",
@@ -484,7 +470,6 @@ ise_update_response:
             "id": "string",
             "name": "string",
             "attributeName": "string",
-            "attributeId": "string",
             "attributeValue": "string",
             "dictionaryName": "string",
             "dictionaryValue": "string",

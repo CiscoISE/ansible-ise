@@ -174,7 +174,8 @@ options:
           allowedInterfaces:
             description: Interfaces that the portal will be reachable on. Allowed values
               - eth0 - eth1 - eth2 - eth3 - eth4 - eth5 - bond0 - bond1 - bond2.
-            type: str
+            elements: str
+            type: list
           alwaysUsedLanguage:
             description: Used when displayLang = ALWAYSUSE.
             type: str
@@ -246,7 +247,7 @@ options:
         type: dict
     type: dict
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -306,7 +307,8 @@ EXAMPLES = r"""
         redirectUrl: string
         successRedirect: string
       portalSettings:
-        allowedInterfaces: string
+        allowedInterfaces:
+        - string
         alwaysUsedLanguage: string
         certificateGroupTag: string
         coaType: string
@@ -386,7 +388,8 @@ EXAMPLES = r"""
         redirectUrl: string
         successRedirect: string
       portalSettings:
-        allowedInterfaces: string
+        allowedInterfaces:
+        - string
         alwaysUsedLanguage: string
         certificateGroupTag: string
         coaType: string
@@ -518,11 +521,13 @@ ise_update_response:
   sample: >
     {
       "UpdatedFieldsList": {
-        "updatedField": {
-          "field": "string",
-          "oldValue": "string",
-          "newValue": "string"
-        },
+        "updatedField": [
+          {
+            "field": "string",
+            "oldValue": "string",
+            "newValue": "string"
+          }
+        ],
         "field": "string",
         "oldValue": "string",
         "newValue": "string"

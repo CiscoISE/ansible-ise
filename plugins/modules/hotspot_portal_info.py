@@ -55,7 +55,7 @@ options:
       can be changed by using the parameter.
     type: str
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -105,7 +105,9 @@ ise_response:
       "settings": {
         "portalSettings": {
           "httpsPort": 0,
-          "allowedInterfaces": "string",
+          "allowedInterfaces": [
+            "string"
+          ],
           "certificateGroupTag": "string",
           "endpointIdentityGroup": "string",
           "coaType": "string",
@@ -187,6 +189,7 @@ ise_response:
         "type": "string"
       }
     }
+
 ise_responses:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
@@ -199,6 +202,89 @@ ise_responses:
         "id": "string",
         "name": "string",
         "description": "string",
+        "portalType": "string",
+        "portalTestUrl": "string",
+        "settings": {
+          "portalSettings": {
+            "httpsPort": 0,
+            "allowedInterfaces": [
+              "string"
+            ],
+            "certificateGroupTag": "string",
+            "endpointIdentityGroup": "string",
+            "coaType": "string",
+            "displayLang": "string",
+            "fallbackLanguage": "string",
+            "alwaysUsedLanguage": "string"
+          },
+          "aupSettings": {
+            "requireAccessCode": true,
+            "accessCode": "string",
+            "includeAup": true,
+            "requireScrolling": true
+          },
+          "postAccessBannerSettings": {
+            "includePostAccessBanner": true
+          },
+          "authSuccessSettings": {
+            "successRedirect": "string",
+            "redirectUrl": "string"
+          },
+          "postLoginBannerSettings": {
+            "includePostAccessBanner": true
+          },
+          "supportInfoSettings": {
+            "includeSupportInfoPage": true,
+            "includeMacAddr": true,
+            "includeIpAddress": true,
+            "includeBrowserUserAgent": true,
+            "includePolicyServer": true,
+            "includeFailureCode": true,
+            "emptyFieldDisplay": "string",
+            "defaultEmptyFieldValue": "string"
+          }
+        },
+        "customizations": {
+          "portalTheme": {
+            "id": "string",
+            "name": "string",
+            "themeData": "string"
+          },
+          "portalTweakSettings": {
+            "bannerColor": "string",
+            "bannerTextColor": "string",
+            "pageBackgroundColor": "string",
+            "pageLabelAndTextColor": "string"
+          },
+          "language": {
+            "viewLanguage": "string"
+          },
+          "globalCustomizations": {
+            "mobileLogoImage": {
+              "data": "string"
+            },
+            "desktopLogoImage": {
+              "data": "string"
+            },
+            "backgroundImage": {
+              "data": "string"
+            },
+            "bannerImage": {
+              "data": "string"
+            },
+            "bannerTitle": "string",
+            "contactText": "string",
+            "footerElement": "string"
+          },
+          "pageCustomizations": {
+            "data": [
+              {
+                "key": "string",
+                "value": "string"
+              }
+            ]
+          }
+        },
         "link": {
           "rel": "string",
           "href": "string",

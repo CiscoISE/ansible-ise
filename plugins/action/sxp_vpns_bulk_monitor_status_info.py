@@ -84,7 +84,7 @@ class ActionModule(ActionBase):
                 family="sxp_vpns",
                 function='monitor_bulk_status_sxp_vpns',
                 params=self.get_object(self._task.args)
-            ).response
+            ).response['BulkStatus']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

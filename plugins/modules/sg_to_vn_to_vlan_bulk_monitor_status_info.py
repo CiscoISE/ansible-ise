@@ -20,7 +20,7 @@ options:
     - Bulkid path parameter.
     type: str
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -48,24 +48,22 @@ ise_response:
   type: dict
   sample: >
     {
-      "BulkStatus": {
-        "bulkId": "string",
-        "mediaType": "string",
-        "executionStatus": "string",
-        "operationType": "string",
-        "startTime": "string",
-        "resourcesCount": 0,
-        "successCount": 0,
-        "failCount": 0,
-        "resourcesStatus": [
-          {
-            "id": "string",
-            "name": "string",
-            "description": "string",
-            "resourceExecutionStatus": "string",
-            "status": "string"
-          }
-        ]
-      }
+      "bulkId": "string",
+      "mediaType": "string",
+      "executionStatus": "string",
+      "operationType": "string",
+      "startTime": "string",
+      "resourcesCount": 0,
+      "successCount": 0,
+      "failCount": 0,
+      "resourcesStatus": [
+        {
+          "id": "string",
+          "name": "string",
+          "description": "string",
+          "resourceExecutionStatus": "string",
+          "status": "string"
+        }
+      ]
     }
 """

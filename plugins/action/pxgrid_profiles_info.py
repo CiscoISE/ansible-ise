@@ -77,9 +77,10 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="profiler",
-            function='get_profiles',
+            function="get_profiles",
             params=self.get_object(self._task.args),
         ).response
+
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
         return self._result

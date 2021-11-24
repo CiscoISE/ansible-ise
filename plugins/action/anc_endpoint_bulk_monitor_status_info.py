@@ -84,7 +84,7 @@ class ActionModule(ActionBase):
                 family="anc_endpoint",
                 function='monitor_bulk_status_anc_endpoint',
                 params=self.get_object(self._task.args)
-            ).response
+            ).response['BulkStatus']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

@@ -84,7 +84,7 @@ class ActionModule(ActionBase):
                 family="device_administration_time_date_conditions",
                 function='get_device_admin_time_condition_by_id',
                 params=self.get_object(self._task.args)
-            ).response
+            ).response['response']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result
@@ -93,7 +93,7 @@ class ActionModule(ActionBase):
                 family="device_administration_time_date_conditions",
                 function='get_device_admin_time_conditions',
                 params=self.get_object(self._task.args),
-            ).response
+            ).response['response']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

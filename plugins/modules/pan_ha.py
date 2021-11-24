@@ -31,7 +31,7 @@ options:
     description: Pan Ha's secondaryHealthCheckNode.
     type: str
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -68,13 +68,16 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: dict
+  type: list
+  elements: dict
   sample: >
-    {
-      "isEnabled": true,
-      "primaryHealthCheckNode": "string",
-      "secondaryHealthCheckNode": "string",
-      "pollingInterval": 0,
-      "failedAttempts": 0
-    }
+    [
+      {
+        "isEnabled": true,
+        "primaryHealthCheckNode": "string",
+        "secondaryHealthCheckNode": "string",
+        "pollingInterval": 0,
+        "failedAttempts": 0
+      }
+    ]
 """

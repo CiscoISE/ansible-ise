@@ -60,7 +60,7 @@ options:
       can be changed by using the parameter.
     type: str
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -146,6 +146,7 @@ ise_response:
         "type": "string"
       }
     }
+
 ise_responses:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
@@ -158,6 +159,32 @@ ise_responses:
         "id": "string",
         "name": "string",
         "description": "string",
+        "mac": "string",
+        "profileId": "string",
+        "staticProfileAssignment": true,
+        "groupId": "string",
+        "staticGroupAssignment": true,
+        "portalUser": "string",
+        "identityStore": "string",
+        "identityStoreId": "string",
+        "mdmAttributes": {
+          "mdmServerName": "string",
+          "mdmReachable": true,
+          "mdmEnrolled": true,
+          "mdmComplianceStatus": true,
+          "mdmOS": "string",
+          "mdmManufacturer": "string",
+          "mdmModel": "string",
+          "mdmSerial": "string",
+          "mdmEncrypted": true,
+          "mdmPinlock": true,
+          "mdmJailBroken": true,
+          "mdmIMEI": "string",
+          "mdmPhoneNumber": "string"
+        },
+        "customAttributes": {
+          "customAttributes": {}
+        },
         "link": {
           "rel": "string",
           "href": "string",

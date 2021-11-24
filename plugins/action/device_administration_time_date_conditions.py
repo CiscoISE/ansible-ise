@@ -38,7 +38,6 @@ argument_spec.update(dict(
     id=dict(type="str"),
     name=dict(type="str"),
     attributeName=dict(type="str"),
-    attributeId=dict(type="str"),
     attributeValue=dict(type="str"),
     dictionaryName=dict(type="str"),
     dictionaryValue=dict(type="str"),
@@ -72,7 +71,6 @@ class DeviceAdministrationTimeDateConditions(object):
             id=params.get("id"),
             name=params.get("name"),
             attribute_name=params.get("attributeName"),
-            attribute_id=params.get("attributeId"),
             attribute_value=params.get("attributeValue"),
             dictionary_name=params.get("dictionaryName"),
             dictionary_value=params.get("dictionaryValue"),
@@ -103,7 +101,7 @@ class DeviceAdministrationTimeDateConditions(object):
                 function="get_device_admin_time_condition_by_id",
                 params={"id": id},
                 handle_func_exception=False,
-            ).response.get('response', {})
+            ).response['response']
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(
                 msg=(
@@ -150,7 +148,6 @@ class DeviceAdministrationTimeDateConditions(object):
             ("id", "id"),
             ("name", "name"),
             ("attributeName", "attribute_name"),
-            ("attributeId", "attribute_id"),
             ("attributeValue", "attribute_value"),
             ("dictionaryName", "dictionary_name"),
             ("dictionaryValue", "dictionary_value"),

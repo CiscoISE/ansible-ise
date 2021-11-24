@@ -19,7 +19,7 @@ options:
     description: Name path parameter.
     type: str
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -45,5 +45,17 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "id": "string",
+      "name": "string",
+      "description": "string",
+      "status": "string",
+      "authMethod": "string",
+      "groups": "string",
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
+      }
+    }
 """

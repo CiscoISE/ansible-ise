@@ -21,7 +21,7 @@ options:
     - Name path parameter. The dictionary name.
     type: str
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -57,18 +57,15 @@ ise_response:
   type: dict
   sample: >
     {
-      "response": {
-        "description": "string",
-        "dictionaryAttrType": "string",
-        "id": "string",
-        "link": {
-          "href": "string",
-          "rel": "string",
-          "type": "string"
-        },
-        "name": "string",
-        "version": "string"
+      "description": "string",
+      "dictionaryAttrType": "string",
+      "id": "string",
+      "link": {
+        "href": "string",
+        "rel": "string",
+        "type": "string"
       },
+      "name": "string",
       "version": "string"
     }
 """

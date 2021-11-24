@@ -20,7 +20,7 @@ options:
     - Name path parameter. Unique name for a repository.
     type: str
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -45,12 +45,10 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: dict
+  type: list
+  elements: str
   sample: >
-    {
-      "response": [
-        "string"
-      ],
-      "version": "string"
-    }
+    [
+      "string"
+    ]
 """

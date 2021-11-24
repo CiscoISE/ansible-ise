@@ -63,7 +63,7 @@ options:
     - Id path parameter. The ID of the Certificate Signing Request returned.
     type: str
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -79,12 +79,12 @@ EXAMPLES = r"""
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
-    page: 1
-    size: 20
-    sort: asc
+    page: 0
+    size: 0
+    sort: string
     sortBy: string
     filter: []
-    filterType: AND
+    filterType: string
   register: result
 
 - name: Get Csr by id
@@ -106,9 +106,23 @@ ise_response:
   type: dict
   sample: >
     {
-      "response": {},
-      "version": "string"
+      "csrContents": "string",
+      "friendlyName": "string",
+      "groupTag": "string",
+      "hostName": "string",
+      "id": "string",
+      "keySize": "string",
+      "link": {
+        "href": "string",
+        "rel": "string",
+        "type": "string"
+      },
+      "signatureAlgorithm": "string",
+      "subject": "string",
+      "timeStamp": "string",
+      "usedFor": "string"
     }
+
 ise_responses:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
@@ -118,6 +132,7 @@ ise_responses:
   sample: >
     [
       {
+        "csrContents": "string",
         "friendlyName": "string",
         "groupTag": "string",
         "hostName": "string",

@@ -25,8 +25,14 @@ options:
         description: Guest User Suspend's value.
         type: str
     type: list
+  id:
+    description: Id path parameter.
+    type: str
+  name:
+    description: Name path parameter.
+    type: str
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource

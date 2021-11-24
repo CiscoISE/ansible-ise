@@ -86,7 +86,7 @@ class ActionModule(ActionBase):
                 family="network_access_dictionary_attribute",
                 function='get_network_access_dictionary_attribute_by_name',
                 params=self.get_object(self._task.args)
-            ).response
+            ).response['response']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result
@@ -95,7 +95,7 @@ class ActionModule(ActionBase):
                 family="network_access_dictionary_attribute",
                 function='get_network_access_dictionary_attributes_by_dictionary_name',
                 params=self.get_object(self._task.args),
-            ).response
+            ).response['response']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

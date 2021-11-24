@@ -55,7 +55,7 @@ options:
       can be changed by using the parameter.
     type: str
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -105,14 +105,18 @@ ise_response:
       "settings": {
         "portalSettings": {
           "httpsPort": 0,
-          "allowedInterfaces": "string",
+          "allowedInterfaces": [
+            "string"
+          ],
           "certificateGroupTag": "string",
           "fqdn": "string",
           "authenticationMethod": "string",
           "idleTimeout": 0,
           "displayLang": "string",
           "fallbackLanguage": "string",
-          "availableSsids": "string"
+          "availableSsids": [
+            "string"
+          ]
         },
         "loginPageSettings": {
           "maxFailedAttemptsBeforeRateLimit": 0,
@@ -196,6 +200,7 @@ ise_response:
         "type": "string"
       }
     }
+
 ise_responses:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
@@ -208,6 +213,100 @@ ise_responses:
         "id": "string",
         "name": "string",
         "description": "string",
+        "portalType": "string",
+        "portalTestUrl": "string",
+        "settings": {
+          "portalSettings": {
+            "httpsPort": 0,
+            "allowedInterfaces": [
+              "string"
+            ],
+            "certificateGroupTag": "string",
+            "fqdn": "string",
+            "authenticationMethod": "string",
+            "idleTimeout": 0,
+            "displayLang": "string",
+            "fallbackLanguage": "string",
+            "availableSsids": [
+              "string"
+            ]
+          },
+          "loginPageSettings": {
+            "maxFailedAttemptsBeforeRateLimit": 0,
+            "timeBetweenLoginsDuringRateLimit": 0,
+            "includeAup": true,
+            "aupDisplay": "string",
+            "requireAupAcceptance": true,
+            "requireAupScrolling": true,
+            "socialConfigs": []
+          },
+          "aupSettings": {
+            "includeAup": true,
+            "requireScrolling": true,
+            "displayFrequency": "string",
+            "displayFrequencyIntervalDays": 0
+          },
+          "sponsorChangePasswordSettings": {
+            "allowSponsorToChangePwd": true
+          },
+          "postLoginBannerSettings": {
+            "includePostAccessBanner": true
+          },
+          "postAccessBannerSettings": {
+            "includePostAccessBanner": true
+          },
+          "supportInfoSettings": {
+            "includeSupportInfoPage": true,
+            "includeMacAddr": true,
+            "includeIpAddress": true,
+            "includeBrowserUserAgent": true,
+            "includePolicyServer": true,
+            "includeFailureCode": true,
+            "emptyFieldDisplay": "string",
+            "defaultEmptyFieldValue": "string"
+          }
+        },
+        "customizations": {
+          "portalTheme": {
+            "id": "string",
+            "name": "string",
+            "themeData": "string"
+          },
+          "portalTweakSettings": {
+            "bannerColor": "string",
+            "bannerTextColor": "string",
+            "pageBackgroundColor": "string",
+            "pageLabelAndTextColor": "string"
+          },
+          "language": {
+            "viewLanguage": "string"
+          },
+          "globalCustomizations": {
+            "mobileLogoImage": {
+              "data": "string"
+            },
+            "desktopLogoImage": {
+              "data": "string"
+            },
+            "bannerImage": {
+              "data": "string"
+            },
+            "backgroundImage": {
+              "data": "string"
+            },
+            "bannerTitle": "string",
+            "contactText": "string",
+            "footerElement": "string"
+          },
+          "pageCustomizations": {
+            "data": [
+              {
+                "key": "string",
+                "value": "string"
+              }
+            ]
+          }
+        },
         "link": {
           "rel": "string",
           "href": "string",

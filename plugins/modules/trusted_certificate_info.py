@@ -59,7 +59,7 @@ options:
     - Id path parameter. The id of the trust certificate.
     type: str
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -75,12 +75,12 @@ EXAMPLES = r"""
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
-    page: 1
-    size: 20
-    sort: asc
+    page: 0
+    size: 0
+    sort: string
     sortBy: string
     filter: []
-    filterType: AND
+    filterType: string
   register: result
 
 - name: Get Trusted Certificate by id
@@ -101,47 +101,45 @@ ise_response:
   type: dict
   sample: >
     {
-      "response": {
-        "authenticateBeforeCRLReceived": "string",
-        "automaticCRLUpdate": "string",
-        "automaticCRLUpdatePeriod": "string",
-        "automaticCRLUpdateUnits": "string",
-        "crlDistributionUrl": "string",
-        "crlDownloadFailureRetries": "string",
-        "crlDownloadFailureRetriesUnits": "string",
-        "description": "string",
-        "downloadCRL": "string",
-        "enableOCSPValidation": "string",
-        "enableServerIdentityCheck": "string",
-        "expirationDate": "string",
-        "friendlyName": "string",
-        "id": "string",
-        "ignoreCRLExpiration": "string",
-        "internalCA": true,
-        "isReferredInPolicy": true,
-        "issuedBy": "string",
-        "issuedTo": "string",
-        "keySize": "string",
-        "link": {
-          "href": "string",
-          "rel": "string",
-          "type": "string"
-        },
-        "nonAutomaticCRLUpdatePeriod": "string",
-        "nonAutomaticCRLUpdateUnits": "string",
-        "rejectIfNoStatusFromOCSP": "string",
-        "rejectIfUnreachableFromOCSP": "string",
-        "selectedOCSPService": "string",
-        "serialNumberDecimalFormat": "string",
-        "sha256Fingerprint": "string",
-        "signatureAlgorithm": "string",
-        "status": "string",
-        "subject": "string",
-        "trustedFor": "string",
-        "validFrom": "string"
+      "authenticateBeforeCRLReceived": "string",
+      "automaticCRLUpdate": "string",
+      "automaticCRLUpdatePeriod": "string",
+      "automaticCRLUpdateUnits": "string",
+      "crlDistributionUrl": "string",
+      "crlDownloadFailureRetries": "string",
+      "crlDownloadFailureRetriesUnits": "string",
+      "description": "string",
+      "downloadCRL": "string",
+      "enableOCSPValidation": "string",
+      "enableServerIdentityCheck": "string",
+      "expirationDate": "string",
+      "friendlyName": "string",
+      "id": "string",
+      "ignoreCRLExpiration": "string",
+      "internalCA": true,
+      "isReferredInPolicy": true,
+      "issuedBy": "string",
+      "issuedTo": "string",
+      "keySize": "string",
+      "link": {
+        "href": "string",
+        "rel": "string",
+        "type": "string"
       },
-      "version": "string"
+      "nonAutomaticCRLUpdatePeriod": "string",
+      "nonAutomaticCRLUpdateUnits": "string",
+      "rejectIfNoStatusFromOCSP": "string",
+      "rejectIfUnreachableFromOCSP": "string",
+      "selectedOCSPService": "string",
+      "serialNumberDecimalFormat": "string",
+      "sha256Fingerprint": "string",
+      "signatureAlgorithm": "string",
+      "status": "string",
+      "subject": "string",
+      "trustedFor": "string",
+      "validFrom": "string"
     }
+
 ise_responses:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

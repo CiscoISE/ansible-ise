@@ -24,7 +24,7 @@ options:
       deleted.
     type: str
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -52,9 +52,20 @@ ise_response:
   type: dict
   sample: >
     {
-      "response": {
-        "message": "string"
+      "csrContents": "string",
+      "friendlyName": "string",
+      "groupTag": "string",
+      "hostName": "string",
+      "id": "string",
+      "keySize": "string",
+      "link": {
+        "href": "string",
+        "rel": "string",
+        "type": "string"
       },
-      "version": "string"
+      "signatureAlgorithm": "string",
+      "subject": "string",
+      "timeStamp": "string",
+      "usedFor": "string"
     }
 """

@@ -87,7 +87,7 @@ class NetworkAccessPolicySet(object):
                 function="get_network_access_policy_set_by_id",
                 params={"id": id},
                 handle_func_exception=False,
-            ).response.get('response', {})
+            ).response['response']
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(
                 msg=(

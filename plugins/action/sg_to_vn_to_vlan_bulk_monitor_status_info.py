@@ -84,7 +84,7 @@ class ActionModule(ActionBase):
                 family="security_group_to_virtual_network",
                 function='monitor_bulk_status_security_groups_to_vn_to_vlan',
                 params=self.get_object(self._task.args)
-            ).response
+            ).response['BulkStatus']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

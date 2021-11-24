@@ -83,7 +83,7 @@ class NetworkAccessLocalExceptionRules(object):
                 function="get_network_access_local_exception_rule_by_id",
                 handle_func_exception=False,
                 params={"id": id, "policy_id": policy_id}
-            ).response.get('response', {})
+            ).response['response']
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(
                 msg=(

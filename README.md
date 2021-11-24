@@ -10,7 +10,7 @@ This collection has been tested and supports Cisco ISE 3.1.
 
 ## Requirements
 - Ansible >= 2.9
-- [Cisco ISE SDK](https://github.com/CiscoISE/ciscoisesdk) v1.1.0 or newer
+- [Cisco ISE SDK](https://github.com/CiscoISE/ciscoisesdk) v1.2.0 or newer
 - Python >= 3.6, as the Cisco ISE SDK doesn't support Python version 2.x
 - requests >= 2.25.1, for the personas modules and personas_deployment role.
 
@@ -32,6 +32,12 @@ ansible-galaxy collection install cisco.ise
 ## ISE Setup
 
 This collection assumes that the API Gateway, the ERS APIs and OpenAPIs are enabled.
+
+### Using the collection on previous Cisco ISE versions 
+
+As stated before, the collection has been tested and supports Cisco ISE 3.1.
+
+It may work with Cisco ISE version 3.0, but it is not officially supported.
 
 ## Use
 
@@ -103,7 +109,7 @@ Create a `hosts` ([example](playbooks/hosts)) file that uses `[ise_servers]` wit
 ise_server
 ```
 
-Then, create a playbook `myplaybook.yml` ([example](playbooks/network_device.yml)) referencing the variables in your credentials.yml file and specifying the full namespace path to the module, plugin and/or role:
+Then, create a playbook `myplaybook.yml` ([example](playbooks/network_device.yml)) referencing the variables in your `group_vars/ise_servers` file and specifying the full namespace path to the module, plugin and/or role:
 ```
 - hosts: ise_servers
   gather_facts: no

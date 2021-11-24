@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: backup_schedule_config
 short_description: Resource module for Backup Schedule Config
 description:
-- Manage operation update of the resource Backup Schedule Config.
+- Manage operation create of the resource Backup Schedule Config.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -34,7 +34,6 @@ options:
     type: str
   frequency:
     description: Frequency with which the backup will get scheduled in the ISE node.
-      Allowed values - ONCE, DAILY, WEEKLY, MONTHLY.
     type: str
   monthDay:
     description: Day of month you want backup to be performed on when scheduled frequency
@@ -55,10 +54,10 @@ options:
     type: str
   weekDay:
     description: Day of week you want backup to be performed on when scheduled frequency
-      is WEEKLY. Allowed values - MON, TUE, WED, THU, FRI, SAT, SUN.
+      is WEEKLY.
     type: str
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource

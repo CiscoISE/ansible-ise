@@ -10,7 +10,7 @@ module: mnt_authentication_status_info
 short_description: Information module for Mnt Authentication Status
 description:
 - Get all Mnt Authentication Status.
-version_added: '1.1.0'
+version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)
@@ -28,7 +28,7 @@ options:
     - RECORDS path parameter.
     type: str
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -56,6 +56,6 @@ ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
   type: dict
-  sample:
-  - {}
+  sample: >
+    {}
 """

@@ -87,7 +87,7 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-        self._result.update(dict(ise_response={}))
+        self._result.update(dict(ise_response=[]))
 
         ise = ISESDK(params=self._task.args)
 
@@ -98,7 +98,7 @@ class ActionModule(ActionBase):
                 family="certificates",
                 function='get_csr_by_id',
                 params=self.get_object(self._task.args)
-            ).response
+            ).response['response']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

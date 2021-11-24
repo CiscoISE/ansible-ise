@@ -19,7 +19,7 @@ options:
     description: Use certificate to authenticate the ISE Admin Portal.
     type: bool
   allowExtendedValidity:
-    description: Allow import of certificates with validity greater than 398 days.
+    description: Allow import of certificates with validity greater than 398 days (required).
     type: bool
   allowOutOfDateCert:
     description: Allow out of date certificates (required).
@@ -31,16 +31,16 @@ options:
     description: Allow Replacement of Portal Group Tag (required).
     type: bool
   data:
-    description: Signed Certificate in escaped format.
+    description: Signed Certificate data (required).
     type: str
   eap:
     description: Use certificate for EAP protocols that use SSL/TLS tunneling.
     type: bool
   hostName:
-    description: Name of Host whose CSR ID has been provided.
+    description: Name of Host whose CSR ID has been provided (required).
     type: str
   id:
-    description: ID of the generated CSR.
+    description: ID of the generated CSR (required).
     type: str
   ims:
     description: Use certificate for the ISE Messaging Service.
@@ -67,7 +67,7 @@ options:
     description: Validate Certificate Extensions.
     type: bool
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource

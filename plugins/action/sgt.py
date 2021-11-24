@@ -34,7 +34,7 @@ argument_spec.update(dict(
     name=dict(type="str"),
     description=dict(type="str"),
     value=dict(type="int"),
-    generationId=dict(type="int"),
+    generationId=dict(type="str"),
     isReadOnly=dict(type="bool"),
     propogateToApic=dict(type="bool"),
     defaultSGACLs=dict(type="list"),

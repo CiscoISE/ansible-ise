@@ -21,7 +21,7 @@ options:
     - Id path parameter. Policy id.
     type: str
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -57,73 +57,69 @@ ise_response:
   type: dict
   sample: >
     {
-      "response": {
-        "condition": {
-          "conditionType": "string",
-          "isNegate": true,
-          "link": {
-            "href": "string",
-            "rel": "string",
-            "type": "string"
-          },
-          "description": "string",
-          "id": "string",
-          "name": "string",
-          "attributeName": "string",
-          "attributeId": "string",
-          "attributeValue": "string",
-          "dictionaryName": "string",
-          "dictionaryValue": "string",
-          "operator": "string",
-          "children": [
-            {
-              "conditionType": "string",
-              "isNegate": true,
-              "link": {
-                "href": "string",
-                "rel": "string",
-                "type": "string"
-              }
-            }
-          ],
-          "datesRange": {
-            "endDate": "string",
-            "startDate": "string"
-          },
-          "datesRangeException": {
-            "endDate": "string",
-            "startDate": "string"
-          },
-          "hoursRange": {
-            "endTime": "string",
-            "startTime": "string"
-          },
-          "hoursRangeException": {
-            "endTime": "string",
-            "startTime": "string"
-          },
-          "weekDays": [
-            "string"
-          ],
-          "weekDaysException": [
-            "string"
-          ]
-        },
-        "default": true,
-        "description": "string",
-        "hitCounts": 0,
-        "id": "string",
-        "isProxy": true,
+      "condition": {
+        "conditionType": "string",
+        "isNegate": true,
         "link": {
           "href": "string",
           "rel": "string",
           "type": "string"
         },
+        "description": "string",
+        "id": "string",
         "name": "string",
-        "rank": 0,
-        "serviceName": "string",
-        "state": "string"
+        "attributeName": "string",
+        "attributeValue": "string",
+        "dictionaryName": "string",
+        "dictionaryValue": "string",
+        "operator": "string",
+        "children": [
+          {
+            "conditionType": "string",
+            "isNegate": true,
+            "link": {
+              "href": "string",
+              "rel": "string",
+              "type": "string"
+            }
+          }
+        ],
+        "datesRange": {
+          "endDate": "string",
+          "startDate": "string"
+        },
+        "datesRangeException": {
+          "endDate": "string",
+          "startDate": "string"
+        },
+        "hoursRange": {
+          "endTime": "string",
+          "startTime": "string"
+        },
+        "hoursRangeException": {
+          "endTime": "string",
+          "startTime": "string"
+        },
+        "weekDays": [
+          "string"
+        ],
+        "weekDaysException": [
+          "string"
+        ]
       },
-      "version": "string"
+      "default": true,
+      "description": "string",
+      "hitCounts": 0,
+      "id": "string",
+      "isProxy": true,
+      "link": {
+        "href": "string",
+        "rel": "string",
+        "type": "string"
+      },
+      "name": "string",
+      "rank": 0,
+      "serviceName": "string",
+      "state": "string"
     }
 """

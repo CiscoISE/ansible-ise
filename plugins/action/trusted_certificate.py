@@ -131,7 +131,7 @@ class TrustedCertificate(object):
                 function="get_trusted_certificate_by_id",
                 params={"id": id},
                 handle_func_exception=False,
-            ).response.get('response', {})
+            ).response['response']
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(
                 msg=(

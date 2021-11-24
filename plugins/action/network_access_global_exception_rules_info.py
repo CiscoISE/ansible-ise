@@ -84,7 +84,7 @@ class ActionModule(ActionBase):
                 family="network_access_authorization_global_exception_rules",
                 function='get_network_access_policy_set_global_exception_rule_by_id',
                 params=self.get_object(self._task.args)
-            ).response
+            ).response['response']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result
@@ -93,7 +93,7 @@ class ActionModule(ActionBase):
                 family="network_access_authorization_global_exception_rules",
                 function='get_network_access_policy_set_global_exception_rules',
                 params=self.get_object(self._task.args),
-            ).response
+            ).response['response']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

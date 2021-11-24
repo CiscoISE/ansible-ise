@@ -36,10 +36,10 @@ options:
     description: Repository's serverName.
     type: str
   userName:
-    description: Username can contain alphanumeric characters.
+    description: Username may contain alphanumeric and _-./@\\$ characters.
     type: str
 requirements:
-- ciscoisesdk >= 1.1.0
+- ciscoisesdk >= 1.2.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -97,13 +97,13 @@ ise_response:
   type: dict
   sample: >
     {
-        "name": "string",
-        "protocol": "string",
-        "path": "string",
-        "password": "string",
-        "serverName": "string",
-        "userName": "string",
-        "enablePki": true
+      "name": "string",
+      "protocol": "string",
+      "path": "string",
+      "password": "string",
+      "serverName": "string",
+      "userName": "string",
+      "enablePki": true
     }
 
 ise_update_response:
