@@ -64,7 +64,7 @@ options:
     description: Valid Range 1 to 120.
     type: int
 requirements:
-- ciscoisesdk >= 1.2.0
+- ciscoisesdk >= 1.3.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource

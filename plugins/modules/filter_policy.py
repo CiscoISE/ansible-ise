@@ -32,7 +32,7 @@ options:
     description: Virtual Network. At least one of subnet or sgt or vn should be defined.
     type: str
 requirements:
-- ciscoisesdk >= 1.2.0
+- ciscoisesdk >= 1.3.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource

@@ -44,7 +44,7 @@ options:
     description: Id Store Sequence's parent.
     type: str
 requirements:
-- ciscoisesdk >= 1.2.0
+- ciscoisesdk >= 1.3.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
