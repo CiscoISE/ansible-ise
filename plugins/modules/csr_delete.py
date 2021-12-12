@@ -20,8 +20,7 @@ options:
       deleted.
     type: str
   id:
-    description: Id path parameter. The ID of the Certificate Signing Request to be
-      deleted.
+    description: Id path parameter. ID of the Certificate Signing Request to be deleted.
     type: str
 requirements:
 - ciscoisesdk >= 1.2.0

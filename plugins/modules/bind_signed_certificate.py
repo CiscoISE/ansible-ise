@@ -16,7 +16,7 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   admin:
-    description: Use certificate to authenticate the ISE Admin Portal.
+    description: Use certificate to authenticate the Cisco ISE Admin Portal.
     type: bool
   allowExtendedValidity:
     description: Allow import of certificates with validity greater than 398 days (required).
@@ -31,7 +31,7 @@ options:
     description: Allow Replacement of Portal Group Tag (required).
     type: bool
   data:
-    description: Signed Certificate data (required).
+    description: Signed certificate data (required).
     type: str
   eap:
     description: Use certificate for EAP protocols that use SSL/TLS tunneling.
@@ -43,7 +43,7 @@ options:
     description: ID of the generated CSR (required).
     type: str
   ims:
-    description: Use certificate for the ISE Messaging Service.
+    description: Use certificate for the Cisco ISE Messaging Service.
     type: bool
   name:
     description: Friendly Name of the certificate.

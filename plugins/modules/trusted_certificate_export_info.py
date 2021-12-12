@@ -17,7 +17,7 @@ author: Rafael Campos (@racampos)
 options:
   id:
     description:
-    - Id path parameter. The ID of the Trusted Certificate to be exported.
+    - Id path parameter. ID of the Trusted Certificate to be exported.
     type: str
   dirPath:
     description:

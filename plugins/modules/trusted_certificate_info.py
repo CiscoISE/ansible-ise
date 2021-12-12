@@ -56,7 +56,7 @@ options:
     type: str
   id:
     description:
-    - Id path parameter. The id of the trust certificate.
+    - Id path parameter. ID of the trust certificate.
     type: str
 requirements:
 - ciscoisesdk >= 1.2.0

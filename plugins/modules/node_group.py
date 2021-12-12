@@ -18,27 +18,35 @@ options:
   description:
     description: Node Group's description.
     type: str
-  mar_cache:
-    description: Node Group's mar-cache.
+  forceDelete:
+    description: ForceDelete query parameter. Force delete the group even if the node
+      group contains one or more nodes.
+    type: bool
+  marCache:
+    description: Node Group's marCache.
     suboptions:
-      enabled:
-        description: Enabled flag.
-        type: bool
       query-attempts:
-        description: Node Group's query-attempts.
+        description: The number of times Cisco ISE attempts to perform the cache entry
+          query. (0 - 5).
         type: int
       query-timeout:
-        description: Node Group's query-timeout.
+        description: The time, in seconds, after which the cache entry query times out.
+          (1 - 10).
         type: int
       replication-attempts:
-        description: Node Group's replication-attempts.
+        description: The number of times Cisco ISE attempts to perform MAR cache entry
+          replication. (0 - 5).
         type: int
       replication-timeout:
-        description: Node Group's replication-timeout.
+        description: The time, in seconds, after which the cache entry replication times
+          out. (1 - 10).
         type: int
     type: dict
-  node_group_name:
-    description: Node-group-name path parameter. ID of the existing node group.
+  name:
+    description: Node Group's name.
+    type: str
+  nodeGroupName:
+    description: NodeGroupName path parameter. Name of the existing node group.
     type: str
 requirements:
 - ciscoisesdk >= 1.2.0
@@ -59,13 +67,12 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     description: string
-    mar_cache:
-      enabled: true
+    marCache:
       query-attempts: 0
       query-timeout: 0
       replication-attempts: 0
       replication-timeout: 0
-    node_group_name: string
+    name: string
 
 - name: Update by name
   cisco.ise.node_group:
@@ -75,13 +82,13 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     description: string
-    mar_cache:
-      enabled: true
+    marCache:
       query-attempts: 0
       query-timeout: 0
       replication-attempts: 0
       replication-timeout: 0
-    node_group_name: string
+    name: string
+    nodeGroupName: string
 
 - name: Delete by name
   cisco.ise.node_group:
@@ -90,7 +97,8 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: absent
-    node_group_name: string
+    forceDelete: true
+    nodeGroupName: string
 
 """
 
@@ -101,15 +109,14 @@ ise_response:
   type: dict
   sample: >
     {
-      "name": "string",
       "description": "string",
-      "mar-cache": {
-        "enabled": true,
-        "replication-timeout": 0,
-        "replication-attempts": 0,
+      "marCache": {
+        "query-attempts": 0,
         "query-timeout": 0,
-        "query-attempts": 0
-      }
+        "replication-attempts": 0,
+        "replication-timeout": 0
+      },
+      "name": "string"
     }
 
 ise_update_response:
@@ -119,8 +126,9 @@ ise_update_response:
   type: dict
   sample: >
     {
-      "code": 0,
-      "message": "string",
-      "rootCause": "string"
+      "success": {
+        "message": "string"
+      },
+      "version": "string"
     }
 """

@@ -31,12 +31,12 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
-    fdqn=dict(type="str"),
-    userName=dict(type="str"),
+    allowCertImport=dict(type="bool"),
+    fqdn=dict(type="str"),
     password=dict(type="str", no_log=True),
-    administration=dict(type="dict"),
-    generalSettings=dict(type="dict"),
-    profileConfiguration=dict(type="dict"),
+    roles=dict(type="list"),
+    services=dict(type="list"),
+    userName=dict(type="str"),
     hostname=dict(type="str"),
 ))
 
@@ -53,12 +53,12 @@ class NodeDeployment(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            fdqn=params.get("fdqn"),
-            user_name=params.get("userName"),
+            allow_cert_import=params.get("allowCertImport"),
+            fqdn=params.get("fqdn"),
             password=params.get("password"),
-            administration=params.get("administration"),
-            general_settings=params.get("generalSettings"),
-            profile_configuration=params.get("profileConfiguration"),
+            roles=params.get("roles"),
+            services=params.get("services"),
+            user_name=params.get("userName"),
             hostname=params.get("hostname"),
         )
 
@@ -113,12 +113,12 @@ class NodeDeployment(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("fdqn", "fdqn"),
-            ("userName", "user_name"),
+            ("allowCertImport", "allow_cert_import"),
+            ("fqdn", "fqdn"),
             ("password", "password"),
-            ("administration", "administration"),
-            ("generalSettings", "general_settings"),
-            ("profileConfiguration", "profile_configuration"),
+            ("roles", "roles"),
+            ("services", "services"),
+            ("userName", "user_name"),
             ("hostname", "hostname"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params

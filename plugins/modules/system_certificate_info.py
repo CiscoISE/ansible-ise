@@ -9,7 +9,6 @@ DOCUMENTATION = r"""
 module: system_certificate_info
 short_description: Information module for System Certificate
 description:
-- Get all System Certificate.
 - Get System Certificate by id.
 - Get System Certificate by name.
 version_added: '1.0.0'
@@ -61,7 +60,7 @@ options:
     type: str
   id:
     description:
-    - Id path parameter. The id of the system certificate.
+    - Id path parameter. ID of the system certificate.
     type: str
 requirements:
 - ciscoisesdk >= 1.2.0
@@ -74,7 +73,17 @@ seealso:
 """
 
 EXAMPLES = r"""
-- name: Get all System Certificate
+- name: Get System Certificate by id
+  cisco.ise.system_certificate_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    hostName: string
+    id: string
+  register: result
+
+- name: Get System Certificate by name
   cisco.ise.system_certificate_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -87,16 +96,6 @@ EXAMPLES = r"""
     filter: []
     filterType: string
     hostName: string
-  register: result
-
-- name: Get System Certificate by id
-  cisco.ise.system_certificate_info:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    hostName: string
-    id: string
   register: result
 
 """

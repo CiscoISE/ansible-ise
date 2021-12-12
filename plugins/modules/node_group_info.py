@@ -16,9 +16,9 @@ extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options:
-  node_group_name:
+  nodeGroupName:
     description:
-    - Node-group-name path parameter. ID of the existing node group.
+    - NodeGroupName path parameter. Name of the existing node group.
     type: str
 requirements:
 - ciscoisesdk >= 1.2.0
@@ -45,7 +45,7 @@ EXAMPLES = r"""
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
-    node_group_name: string
+    nodeGroupName: string
   register: result
 
 """
@@ -57,14 +57,13 @@ ise_response:
   type: dict
   sample: >
     {
-      "name": "string",
       "description": "string",
-      "mar-cache": {
-        "enabled": true,
-        "replication-timeout": 0,
-        "replication-attempts": 0,
+      "marCache": {
+        "query-attempts": 0,
         "query-timeout": 0,
-        "query-attempts": 0
-      }
+        "replication-attempts": 0,
+        "replication-timeout": 0
+      },
+      "name": "string"
     }
 """

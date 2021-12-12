@@ -29,7 +29,7 @@ argument_spec.update(dict(
     size=dict(type="int"),
     sort=dict(type="str"),
     sortBy=dict(type="str"),
-    filter=dict(type="str"),
+    filter=dict(type="list"),
     filterType=dict(type="str"),
     id=dict(type="str"),
 ))

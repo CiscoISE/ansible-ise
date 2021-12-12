@@ -16,10 +16,17 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   admin:
-    description: Use certificate to authenticate the ISE Admin Portal.
+    description: Use certificate to authenticate the Cisco ISE Admin Portal.
+    type: bool
+  allowPortalTagTransferForSameSubject:
+    description: Allow overwriting the portal tag from matching certificate of same
+      subject.
     type: bool
   allowReplacementOfPortalGroupTag:
     description: Allow Replacement of Portal Group Tag (required).
+    type: bool
+  allowRoleTransferForSameSubject:
+    description: Allow transfer of roles for certificate with matching subject.
     type: bool
   description:
     description: Description of System Certificate.
@@ -38,10 +45,10 @@ options:
       updated.
     type: str
   id:
-    description: Id path parameter. The ID of the System Certificate to be updated.
+    description: Id path parameter. ID of the System Certificate to be updated.
     type: str
   ims:
-    description: Use certificate for the ISE Messaging Service.
+    description: Use certificate for the Cisco ISE Messaging Service.
     type: bool
   name:
     description: Name of the certificate.
@@ -52,10 +59,6 @@ options:
   portalGroupTag:
     description: Set Group tag.
     type: str
-  portalTagTransferForSameSubject:
-    description: Allow overwriting the portal tag from matching certificate of same
-      subject.
-    type: bool
   pxgrid:
     description: Use certificate for the pxGrid Controller.
     type: bool
@@ -63,10 +66,7 @@ options:
     description: Use certificate for the RADSec server.
     type: bool
   renewSelfSignedCertificate:
-    description: Renew Self Signed Certificate.
-    type: bool
-  roleTransferForSameSubject:
-    description: Allow transfer of roles for certificate with matching subject.
+    description: Renew Self-signed Certificate.
     type: bool
   saml:
     description: Use certificate for SAML Signing.
@@ -90,7 +90,9 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     admin: true
+    allowPortalTagTransferForSameSubject: true
     allowReplacementOfPortalGroupTag: true
+    allowRoleTransferForSameSubject: true
     description: string
     eap: true
     expirationTTLPeriod: 0
@@ -101,11 +103,9 @@ EXAMPLES = r"""
     name: string
     portal: true
     portalGroupTag: string
-    portalTagTransferForSameSubject: true
     pxgrid: true
     radius: true
     renewSelfSignedCertificate: true
-    roleTransferForSameSubject: true
     saml: true
 
 - name: Delete by id

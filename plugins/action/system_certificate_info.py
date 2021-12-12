@@ -87,7 +87,7 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-        self._result.update(dict(ise_response=[]))
+        self._result.update(dict(ise_response={}))
 
         ise = ISESDK(params=self._task.args)
 

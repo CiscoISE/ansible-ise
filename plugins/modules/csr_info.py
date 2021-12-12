@@ -60,7 +60,7 @@ options:
     type: str
   id:
     description:
-    - Id path parameter. The ID of the Certificate Signing Request returned.
+    - Id path parameter. ID of the Certificate Signing Request returned.
     type: str
 requirements:
 - ciscoisesdk >= 1.2.0

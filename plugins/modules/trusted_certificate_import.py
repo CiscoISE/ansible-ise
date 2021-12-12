@@ -16,7 +16,7 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   allowBasicConstraintCAFalse:
-    description: Allow Certificates with Basic Constraints CA Field as False (required).
+    description: Allow certificates with Basic Constraints CA Field as False (required).
     type: bool
   allowOutOfDateCert:
     description: Allow out of date certificates (required).
@@ -43,7 +43,7 @@ options:
     description: Trust for client authentication and Syslog.
     type: bool
   trustForIseAuth:
-    description: Trust for authentication within ISE.
+    description: Trust for authentication within Cisco ISE.
     type: bool
   validateCertificateExtensions:
     description: Validate trust certificate extension.

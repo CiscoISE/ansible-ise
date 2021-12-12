@@ -17,11 +17,11 @@ author: Rafael Campos (@racampos)
 options:
   hostname:
     description:
-    - Hostname path parameter. The hostname to which the CSR belongs.
+    - Hostname path parameter. Hostname to which the CSR belongs.
     type: str
   id:
     description:
-    - Id path parameter. The ID of the CSR to be exported.
+    - Id path parameter. ID of the CSR to be exported.
     type: str
   dirPath:
     description:

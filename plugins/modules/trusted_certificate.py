@@ -16,10 +16,10 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   authenticateBeforeCRLReceived:
-    description: Switch to enable/disable CRL Verification if CRL is not Received.
+    description: Switch to enable or disable CRL verification if CRL is not received.
     type: bool
   automaticCRLUpdate:
-    description: Switch to enable/disable automatic CRL update.
+    description: Switch to enable or disable automatic CRL update.
     type: bool
   automaticCRLUpdatePeriod:
     description: Automatic CRL update period.
@@ -40,20 +40,20 @@ options:
     description: Description for trust certificate.
     type: str
   downloadCRL:
-    description: Switch to enable/disable download of CRL.
+    description: Switch to enable or disable download of CRL.
     type: bool
   enableOCSPValidation:
-    description: Switch to enable/disable OCSP Validation.
+    description: Switch to enable or disable OCSP Validation.
     type: bool
   enableServerIdentityCheck:
-    description: Switch to enable/disable verification if HTTPS or LDAP server certificate
+    description: Switch to enable or disable verification if HTTPS or LDAP server certificate
       name fits the configured server URL.
     type: bool
   id:
-    description: Id path parameter. The id of the trust certificate.
+    description: Id path parameter. ID of the trust certificate.
     type: str
   ignoreCRLExpiration:
-    description: Switch to enable/disable ignore CRL Expiration.
+    description: Switch to enable or disable ignore CRL expiration.
     type: bool
   name:
     description: Friendly name of the certificate.
@@ -86,7 +86,7 @@ options:
     description: Trust for client authentication and Syslog.
     type: bool
   trustForIseAuth:
-    description: Trust for authentication within ISE.
+    description: Trust for authentication within Cisco ISE.
     type: bool
 requirements:
 - ciscoisesdk >= 1.2.0
