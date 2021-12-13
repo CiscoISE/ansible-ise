@@ -10,7 +10,7 @@ module: licensing_eval_license_info
 short_description: Information module for Licensing Eval License
 description:
 - Get all Licensing Eval License.
-version_added: '1.0.0'
+version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)

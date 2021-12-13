@@ -10,7 +10,7 @@ module: patch_install
 short_description: Resource module for Patch Install
 description:
 - Manage operation create of the resource Patch Install.
-version_added: '1.0.0'
+version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)

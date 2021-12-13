@@ -10,7 +10,7 @@ module: trustsec_nbar_app
 short_description: Resource module for Trustsec Nbar App
 description:
 - Manage operations create, update and delete of the resource Trustsec Nbar App.
-version_added: '1.0.0'
+version_added: '2.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
@@ -108,7 +108,6 @@ ise_response:
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  version_added: "1.1.0"
   type: dict
   sample: >
     {

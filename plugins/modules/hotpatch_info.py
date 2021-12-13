@@ -10,7 +10,7 @@ module: hotpatch_info
 short_description: Information module for Hotpatch
 description:
 - Get all Hotpatch.
-version_added: '1.0.0'
+version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)

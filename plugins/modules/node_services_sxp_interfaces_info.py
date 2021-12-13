@@ -10,7 +10,7 @@ module: node_services_sxp_interfaces_info
 short_description: Information module for Node Services Sxp Interfaces
 description:
 - Get all Node Services Sxp Interfaces.
-version_added: '1.0.0'
+version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)

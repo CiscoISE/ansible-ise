@@ -10,7 +10,7 @@ module: trustsec_vn_bulk_update
 short_description: Resource module for Trustsec Vn Bulk Update
 description:
 - Manage operation create of the resource Trustsec Vn Bulk Update.
-version_added: '1.0.0'
+version_added: '2.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)

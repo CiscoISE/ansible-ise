@@ -10,7 +10,7 @@ module: licensing_registration_create
 short_description: Resource module for Licensing Registration Create
 description:
 - Manage operation create of the resource Licensing Registration Create.
-version_added: '1.0.0'
+version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)

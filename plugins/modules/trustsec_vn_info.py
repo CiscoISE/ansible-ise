@@ -11,7 +11,7 @@ short_description: Information module for Trustsec Vn
 description:
 - Get all Trustsec Vn.
 - Get Trustsec Vn by id.
-version_added: '1.0.0'
+version_added: '2.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)
@@ -113,7 +113,6 @@ ise_response:
 ise_responses:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  version_added: "1.1.0"
   type: list
   elements: dict
   sample: >

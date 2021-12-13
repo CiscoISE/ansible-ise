@@ -10,7 +10,7 @@ module: patch_rollback
 short_description: Resource module for Patch Rollback
 description:
 - Manage operation create of the resource Patch Rollback.
-version_added: '1.0.0'
+version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)

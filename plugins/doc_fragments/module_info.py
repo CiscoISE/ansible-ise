@@ -55,7 +55,7 @@ options:
           - If it is false, it sends the requests to https://{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
         type: bool
         default: true
-        version_added: "1.1.0"
+        version_added: '1.1.0'
 notes:
     - "Supports C(check_mode)"
     - "The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK"

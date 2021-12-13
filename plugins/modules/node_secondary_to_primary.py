@@ -10,7 +10,7 @@ module: node_secondary_to_primary
 short_description: Resource module for Node Secondary To Primary
 description:
 - Manage operation create of the resource Node Secondary To Primary.
-version_added: '1.0.0'
+version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)

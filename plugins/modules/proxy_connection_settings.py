@@ -10,7 +10,7 @@ module: proxy_connection_settings
 short_description: Resource module for Proxy Connection Settings
 description:
 - Manage operation update of the resource Proxy Connection Settings.
-version_added: '1.0.0'
+version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
@@ -78,7 +78,6 @@ ise_response:
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  version_added: "1.1.0"
   type: dict
   sample: >
     {
