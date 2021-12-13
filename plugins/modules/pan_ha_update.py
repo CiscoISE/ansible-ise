@@ -10,7 +10,7 @@ module: pan_ha_update
 short_description: Resource module for Pan Ha Update
 description:
 - Manage operation update of the resource Pan Ha Update.
-version_added: '1.0.0'
+version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
