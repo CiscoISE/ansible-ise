@@ -30,7 +30,7 @@ cisco.ise.backup_schedule_config_update -- Resource module for Backup Schedule C
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.0.0).
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.1.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -42,7 +42,7 @@ cisco.ise.backup_schedule_config_update -- Resource module for Backup Schedule C
 
 .. version_added
 
-.. versionadded:: 1.0.0 of cisco.ise
+.. versionadded:: 2.0.0 of cisco.ise
 
 .. contents::
    :local:
@@ -70,7 +70,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 1.2.0
+- ciscoisesdk >= 1.3.0
 - python >= 3.5
 
 
@@ -159,7 +159,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Frequency with which the backup will get scheduled in the ISE node.</div>
+                                            <div>Backup Schedule Config Update&#x27;s frequency.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -279,7 +279,7 @@ Parameters
                                                                     </div>
                                                         </td>
                                 <td>
-                                                                                                                                                                    <b>Default:</b><br/><div style="color: blue">"3.1.0"</div>
+                                                                                                                                                                    <b>Default:</b><br/><div style="color: blue">"3.1.1"</div>
                                     </td>
                                                                 <td>
                                             <div>Informs the SDK which version of Identity Services Engine to use.</div>
@@ -361,7 +361,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Enable or disable scheduled backup.</div>
+                                            <div>Backup Schedule Config Update&#x27;s status.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -391,7 +391,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Day of week you want backup to be performed on when scheduled frequency is WEEKLY.</div>
+                                            <div>Backup Schedule Config Update&#x27;s weekDay.</div>
                                                         </td>
             </tr>
                         </table>

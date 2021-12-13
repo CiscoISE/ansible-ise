@@ -30,7 +30,7 @@ cisco.ise.node_deployment -- Resource module for Node Deployment
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.0.0).
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.1.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -70,7 +70,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 1.2.0
+- ciscoisesdk >= 1.3.0
 - python >= 3.5
 
 
@@ -83,31 +83,15 @@ Parameters
 
     <table  border=0 cellpadding=0 class="documentation-table">
         <tr>
-            <th colspan="5">Parameter</th>
+            <th colspan="1">Parameter</th>
             <th>Choices/<font color="blue">Defaults</font></th>
                         <th width="100%">Comments</th>
         </tr>
                     <tr>
-                                                                <td colspan="5">
-                    <div class="ansibleOptionAnchor" id="parameter-administration"></div>
-                    <b>administration</b>
-                    <a class="ansibleOptionLink" href="#parameter-administration" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">dictionary</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s administration.</div>
-                                                        </td>
-            </tr>
-                                        <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="4">
-                    <div class="ansibleOptionAnchor" id="parameter-administration/isEnabled"></div>
-                    <b>isEnabled</b>
-                    <a class="ansibleOptionLink" href="#parameter-administration/isEnabled" title="Permalink to this option"></a>
+                                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-allowCertImport"></div>
+                    <b>allowCertImport</b>
+                    <a class="ansibleOptionLink" href="#parameter-allowCertImport" title="Permalink to this option"></a>
                     <div style="font-size: small">
                         <span style="color: purple">boolean</span>
                                                                     </div>
@@ -119,15 +103,14 @@ Parameters
                                                                                     </ul>
                                                                             </td>
                                                                 <td>
-                                            <div>IsEnabled flag.</div>
+                                            <div>Consent to import the self-signed certificate of the registering node.</div>
                                                         </td>
             </tr>
                                 <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="4">
-                    <div class="ansibleOptionAnchor" id="parameter-administration/role"></div>
-                    <b>role</b>
-                    <a class="ansibleOptionLink" href="#parameter-administration/role" title="Permalink to this option"></a>
+                                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-fqdn"></div>
+                    <b>fqdn</b>
+                    <a class="ansibleOptionLink" href="#parameter-fqdn" title="Permalink to this option"></a>
                     <div style="font-size: small">
                         <span style="color: purple">string</span>
                                                                     </div>
@@ -135,407 +118,11 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Node Deployment&#x27;s role.</div>
-                                                        </td>
-            </tr>
-                    
-                                <tr>
-                                                                <td colspan="5">
-                    <div class="ansibleOptionAnchor" id="parameter-fdqn"></div>
-                    <b>fdqn</b>
-                    <a class="ansibleOptionLink" href="#parameter-fdqn" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s fdqn.</div>
+                                            <div>Node Deployment&#x27;s fqdn.</div>
                                                         </td>
             </tr>
                                 <tr>
-                                                                <td colspan="5">
-                    <div class="ansibleOptionAnchor" id="parameter-generalSettings"></div>
-                    <b>generalSettings</b>
-                    <a class="ansibleOptionLink" href="#parameter-generalSettings" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">dictionary</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s generalSettings.</div>
-                                                        </td>
-            </tr>
-                                        <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="4">
-                    <div class="ansibleOptionAnchor" id="parameter-generalSettings/monitoring"></div>
-                    <b>monitoring</b>
-                    <a class="ansibleOptionLink" href="#parameter-generalSettings/monitoring" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">dictionary</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s monitoring.</div>
-                                                        </td>
-            </tr>
-                                        <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-generalSettings/monitoring/enablePXGrid"></div>
-                    <b>enablePXGrid</b>
-                    <a class="ansibleOptionLink" href="#parameter-generalSettings/monitoring/enablePXGrid" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>EnablePXGrid flag.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-generalSettings/monitoring/isEnabled"></div>
-                    <b>isEnabled</b>
-                    <a class="ansibleOptionLink" href="#parameter-generalSettings/monitoring/isEnabled" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>IsEnabled flag.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-generalSettings/monitoring/isMntDedicated"></div>
-                    <b>isMntDedicated</b>
-                    <a class="ansibleOptionLink" href="#parameter-generalSettings/monitoring/isMntDedicated" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>IsMntDedicated flag.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-generalSettings/monitoring/otherMonitoringNode"></div>
-                    <b>otherMonitoringNode</b>
-                    <a class="ansibleOptionLink" href="#parameter-generalSettings/monitoring/otherMonitoringNode" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s otherMonitoringNode.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-generalSettings/monitoring/policyservice"></div>
-                    <b>policyservice</b>
-                    <a class="ansibleOptionLink" href="#parameter-generalSettings/monitoring/policyservice" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">dictionary</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s policyservice.</div>
-                                                        </td>
-            </tr>
-                                        <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-generalSettings/monitoring/policyservice/enabled"></div>
-                    <b>enabled</b>
-                    <a class="ansibleOptionLink" href="#parameter-generalSettings/monitoring/policyservice/enabled" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Enabled flag.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-generalSettings/monitoring/policyservice/enableDeviceAdminService"></div>
-                    <b>enableDeviceAdminService</b>
-                    <a class="ansibleOptionLink" href="#parameter-generalSettings/monitoring/policyservice/enableDeviceAdminService" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>EnableDeviceAdminService flag.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-generalSettings/monitoring/policyservice/enableNACService"></div>
-                    <b>enableNACService</b>
-                    <a class="ansibleOptionLink" href="#parameter-generalSettings/monitoring/policyservice/enableNACService" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>EnableNACService flag.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-generalSettings/monitoring/policyservice/enablePassiveIdentityService"></div>
-                    <b>enablePassiveIdentityService</b>
-                    <a class="ansibleOptionLink" href="#parameter-generalSettings/monitoring/policyservice/enablePassiveIdentityService" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>EnablePassiveIdentityService flag.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-generalSettings/monitoring/policyservice/enableProfilingService"></div>
-                    <b>enableProfilingService</b>
-                    <a class="ansibleOptionLink" href="#parameter-generalSettings/monitoring/policyservice/enableProfilingService" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>EnableProfilingService flag.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-generalSettings/monitoring/policyservice/sessionService"></div>
-                    <b>sessionService</b>
-                    <a class="ansibleOptionLink" href="#parameter-generalSettings/monitoring/policyservice/sessionService" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">dictionary</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s sessionService.</div>
-                                                        </td>
-            </tr>
-                                        <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-generalSettings/monitoring/policyservice/sessionService/isEnabled"></div>
-                    <b>isEnabled</b>
-                    <a class="ansibleOptionLink" href="#parameter-generalSettings/monitoring/policyservice/sessionService/isEnabled" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>IsEnabled flag.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-generalSettings/monitoring/policyservice/sessionService/nodegroup"></div>
-                    <b>nodegroup</b>
-                    <a class="ansibleOptionLink" href="#parameter-generalSettings/monitoring/policyservice/sessionService/nodegroup" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s nodegroup.</div>
-                                                        </td>
-            </tr>
-                    
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="2">
-                    <div class="ansibleOptionAnchor" id="parameter-generalSettings/monitoring/policyservice/sxpservice"></div>
-                    <b>sxpservice</b>
-                    <a class="ansibleOptionLink" href="#parameter-generalSettings/monitoring/policyservice/sxpservice" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">dictionary</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s sxpservice.</div>
-                                                        </td>
-            </tr>
-                                        <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-generalSettings/monitoring/policyservice/sxpservice/isEnabled"></div>
-                    <b>isEnabled</b>
-                    <a class="ansibleOptionLink" href="#parameter-generalSettings/monitoring/policyservice/sxpservice/isEnabled" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>IsEnabled flag.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-generalSettings/monitoring/policyservice/sxpservice/userInterface"></div>
-                    <b>userInterface</b>
-                    <a class="ansibleOptionLink" href="#parameter-generalSettings/monitoring/policyservice/sxpservice/userInterface" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s userInterface.</div>
-                                                        </td>
-            </tr>
-                    
-                    
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-generalSettings/monitoring/role"></div>
-                    <b>role</b>
-                    <a class="ansibleOptionLink" href="#parameter-generalSettings/monitoring/role" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s role.</div>
-                                                        </td>
-            </tr>
-                    
-                    
-                                <tr>
-                                                                <td colspan="5">
+                                                                <td colspan="1">
                     <div class="ansibleOptionAnchor" id="parameter-hostname"></div>
                     <b>hostname</b>
                     <a class="ansibleOptionLink" href="#parameter-hostname" title="Permalink to this option"></a>
@@ -546,11 +133,11 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Hostname path parameter. ID of the existing deployed node.</div>
+                                            <div>Hostname path parameter. Hostname of the deployed node.</div>
                                                         </td>
             </tr>
                                 <tr>
-                                                                <td colspan="5">
+                                                                <td colspan="1">
                     <div class="ansibleOptionAnchor" id="parameter-ise_debug"></div>
                     <b>ise_debug</b>
                     <a class="ansibleOptionLink" href="#parameter-ise_debug" title="Permalink to this option"></a>
@@ -569,7 +156,7 @@ Parameters
                                                         </td>
             </tr>
                                 <tr>
-                                                                <td colspan="5">
+                                                                <td colspan="1">
                     <div class="ansibleOptionAnchor" id="parameter-ise_hostname"></div>
                     <b>ise_hostname</b>
                     <a class="ansibleOptionLink" href="#parameter-ise_hostname" title="Permalink to this option"></a>
@@ -584,7 +171,7 @@ Parameters
                                                         </td>
             </tr>
                                 <tr>
-                                                                <td colspan="5">
+                                                                <td colspan="1">
                     <div class="ansibleOptionAnchor" id="parameter-ise_password"></div>
                     <b>ise_password</b>
                     <a class="ansibleOptionLink" href="#parameter-ise_password" title="Permalink to this option"></a>
@@ -599,7 +186,7 @@ Parameters
                                                         </td>
             </tr>
                                 <tr>
-                                                                <td colspan="5">
+                                                                <td colspan="1">
                     <div class="ansibleOptionAnchor" id="parameter-ise_username"></div>
                     <b>ise_username</b>
                     <a class="ansibleOptionLink" href="#parameter-ise_username" title="Permalink to this option"></a>
@@ -614,7 +201,7 @@ Parameters
                                                         </td>
             </tr>
                                 <tr>
-                                                                <td colspan="5">
+                                                                <td colspan="1">
                     <div class="ansibleOptionAnchor" id="parameter-ise_uses_api_gateway"></div>
                     <b>ise_uses_api_gateway</b>
                     <a class="ansibleOptionLink" href="#parameter-ise_uses_api_gateway" title="Permalink to this option"></a>
@@ -638,7 +225,7 @@ Parameters
                                                         </td>
             </tr>
                                 <tr>
-                                                                <td colspan="5">
+                                                                <td colspan="1">
                     <div class="ansibleOptionAnchor" id="parameter-ise_verify"></div>
                     <b>ise_verify</b>
                     <a class="ansibleOptionLink" href="#parameter-ise_verify" title="Permalink to this option"></a>
@@ -657,7 +244,7 @@ Parameters
                                                         </td>
             </tr>
                                 <tr>
-                                                                <td colspan="5">
+                                                                <td colspan="1">
                     <div class="ansibleOptionAnchor" id="parameter-ise_version"></div>
                     <b>ise_version</b>
                     <a class="ansibleOptionLink" href="#parameter-ise_version" title="Permalink to this option"></a>
@@ -666,14 +253,14 @@ Parameters
                                                                     </div>
                                                         </td>
                                 <td>
-                                                                                                                                                                    <b>Default:</b><br/><div style="color: blue">"3.1.0"</div>
+                                                                                                                                                                    <b>Default:</b><br/><div style="color: blue">"3.1.1"</div>
                                     </td>
                                                                 <td>
                                             <div>Informs the SDK which version of Identity Services Engine to use.</div>
                                                         </td>
             </tr>
                                 <tr>
-                                                                <td colspan="5">
+                                                                <td colspan="1">
                     <div class="ansibleOptionAnchor" id="parameter-ise_wait_on_rate_limit"></div>
                     <b>ise_wait_on_rate_limit</b>
                     <a class="ansibleOptionLink" href="#parameter-ise_wait_on_rate_limit" title="Permalink to this option"></a>
@@ -692,7 +279,7 @@ Parameters
                                                         </td>
             </tr>
                                 <tr>
-                                                                <td colspan="5">
+                                                                <td colspan="1">
                     <div class="ansibleOptionAnchor" id="parameter-password"></div>
                     <b>password</b>
                     <a class="ansibleOptionLink" href="#parameter-password" title="Permalink to this option"></a>
@@ -707,853 +294,37 @@ Parameters
                                                         </td>
             </tr>
                                 <tr>
-                                                                <td colspan="5">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration"></div>
-                    <b>profileConfiguration</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration" title="Permalink to this option"></a>
+                                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-roles"></div>
+                    <b>roles</b>
+                    <a class="ansibleOptionLink" href="#parameter-roles" title="Permalink to this option"></a>
                     <div style="font-size: small">
-                        <span style="color: purple">dictionary</span>
-                                                                    </div>
+                        <span style="color: purple">list</span>
+                         / <span style="color: purple">elements=string</span>                                            </div>
                                                         </td>
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Node Deployment&#x27;s profileConfiguration.</div>
+                                            <div>Roles can be empty or have many values for a node.</div>
                                                         </td>
             </tr>
-                                        <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="4">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/activeDirectory"></div>
-                    <b>activeDirectory</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/activeDirectory" title="Permalink to this option"></a>
+                                <tr>
+                                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-services"></div>
+                    <b>services</b>
+                    <a class="ansibleOptionLink" href="#parameter-services" title="Permalink to this option"></a>
                     <div style="font-size: small">
-                        <span style="color: purple">dictionary</span>
-                                                                    </div>
+                        <span style="color: purple">list</span>
+                         / <span style="color: purple">elements=string</span>                                            </div>
                                                         </td>
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Node Deployment&#x27;s activeDirectory.</div>
-                                                        </td>
-            </tr>
-                                        <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/activeDirectory/daysBeforeRescan"></div>
-                    <b>daysBeforeRescan</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/activeDirectory/daysBeforeRescan" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">integer</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s daysBeforeRescan.</div>
+                                            <div>Services can be empty or have many values for a node.</div>
                                                         </td>
             </tr>
                                 <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/activeDirectory/description"></div>
-                    <b>description</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/activeDirectory/description" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s description.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/activeDirectory/enabled"></div>
-                    <b>enabled</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/activeDirectory/enabled" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Enabled flag.</div>
-                                                        </td>
-            </tr>
-                    
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="4">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/dhcp"></div>
-                    <b>dhcp</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/dhcp" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">dictionary</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s dhcp.</div>
-                                                        </td>
-            </tr>
-                                        <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/dhcp/description"></div>
-                    <b>description</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/dhcp/description" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s description.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/dhcp/enabled"></div>
-                    <b>enabled</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/dhcp/enabled" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Enabled flag.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/dhcp/interface"></div>
-                    <b>interface</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/dhcp/interface" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s interface.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/dhcp/port"></div>
-                    <b>port</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/dhcp/port" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">integer</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s port.</div>
-                                                        </td>
-            </tr>
-                    
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="4">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/dhcpSpan"></div>
-                    <b>dhcpSpan</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/dhcpSpan" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">dictionary</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s dhcpSpan.</div>
-                                                        </td>
-            </tr>
-                                        <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/dhcpSpan/description"></div>
-                    <b>description</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/dhcpSpan/description" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s description.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/dhcpSpan/enabled"></div>
-                    <b>enabled</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/dhcpSpan/enabled" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Enabled flag.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/dhcpSpan/interface"></div>
-                    <b>interface</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/dhcpSpan/interface" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s interface.</div>
-                                                        </td>
-            </tr>
-                    
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="4">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/dns"></div>
-                    <b>dns</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/dns" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">dictionary</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s dns.</div>
-                                                        </td>
-            </tr>
-                                        <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/dns/description"></div>
-                    <b>description</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/dns/description" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s description.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/dns/enabled"></div>
-                    <b>enabled</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/dns/enabled" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Enabled flag.</div>
-                                                        </td>
-            </tr>
-                    
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="4">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/http"></div>
-                    <b>http</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/http" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">dictionary</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s http.</div>
-                                                        </td>
-            </tr>
-                                        <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/http/description"></div>
-                    <b>description</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/http/description" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s description.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/http/enabled"></div>
-                    <b>enabled</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/http/enabled" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Enabled flag.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/http/interface"></div>
-                    <b>interface</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/http/interface" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s interface.</div>
-                                                        </td>
-            </tr>
-                    
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="4">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/netflow"></div>
-                    <b>netflow</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/netflow" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">dictionary</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s netflow.</div>
-                                                        </td>
-            </tr>
-                                        <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/netflow/description"></div>
-                    <b>description</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/netflow/description" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s description.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/netflow/enabled"></div>
-                    <b>enabled</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/netflow/enabled" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Enabled flag.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/netflow/interface"></div>
-                    <b>interface</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/netflow/interface" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s interface.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/netflow/port"></div>
-                    <b>port</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/netflow/port" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">integer</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s port.</div>
-                                                        </td>
-            </tr>
-                    
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="4">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/nmap"></div>
-                    <b>nmap</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/nmap" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">dictionary</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s nmap.</div>
-                                                        </td>
-            </tr>
-                                        <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/nmap/description"></div>
-                    <b>description</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/nmap/description" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s description.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/nmap/enabled"></div>
-                    <b>enabled</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/nmap/enabled" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Enabled flag.</div>
-                                                        </td>
-            </tr>
-                    
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="4">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/pxgrid"></div>
-                    <b>pxgrid</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/pxgrid" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">dictionary</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s pxgrid.</div>
-                                                        </td>
-            </tr>
-                                        <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/pxgrid/description"></div>
-                    <b>description</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/pxgrid/description" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s description.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/pxgrid/enabled"></div>
-                    <b>enabled</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/pxgrid/enabled" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Enabled flag.</div>
-                                                        </td>
-            </tr>
-                    
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="4">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/radius"></div>
-                    <b>radius</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/radius" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">dictionary</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s radius.</div>
-                                                        </td>
-            </tr>
-                                        <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/radius/description"></div>
-                    <b>description</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/radius/description" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s description.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/radius/enabled"></div>
-                    <b>enabled</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/radius/enabled" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Enabled flag.</div>
-                                                        </td>
-            </tr>
-                    
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="4">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/snmpQuery"></div>
-                    <b>snmpQuery</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/snmpQuery" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">dictionary</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s snmpQuery.</div>
-                                                        </td>
-            </tr>
-                                        <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/snmpQuery/description"></div>
-                    <b>description</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/snmpQuery/description" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s description.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/snmpQuery/enabled"></div>
-                    <b>enabled</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/snmpQuery/enabled" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Enabled flag.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/snmpQuery/eventTimeout"></div>
-                    <b>eventTimeout</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/snmpQuery/eventTimeout" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">integer</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s eventTimeout.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/snmpQuery/retries"></div>
-                    <b>retries</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/snmpQuery/retries" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">integer</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s retries.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/snmpQuery/timeout"></div>
-                    <b>timeout</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/snmpQuery/timeout" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">integer</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s timeout.</div>
-                                                        </td>
-            </tr>
-                    
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="4">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/snmpTrap"></div>
-                    <b>snmpTrap</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/snmpTrap" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">dictionary</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s snmpTrap.</div>
-                                                        </td>
-            </tr>
-                                        <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/snmpTrap/description"></div>
-                    <b>description</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/snmpTrap/description" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s description.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/snmpTrap/interface"></div>
-                    <b>interface</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/snmpTrap/interface" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s interface.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/snmpTrap/linkTrapQuery"></div>
-                    <b>linkTrapQuery</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/snmpTrap/linkTrapQuery" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>LinkTrapQuery flag.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/snmpTrap/macTrapQuery"></div>
-                    <b>macTrapQuery</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/snmpTrap/macTrapQuery" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>MacTrapQuery flag.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                    <td class="elbow-placeholder"></td>
-                                    <td class="elbow-placeholder"></td>
-                                                <td colspan="3">
-                    <div class="ansibleOptionAnchor" id="parameter-profileConfiguration/snmpTrap/port"></div>
-                    <b>port</b>
-                    <a class="ansibleOptionLink" href="#parameter-profileConfiguration/snmpTrap/port" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">integer</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Node Deployment&#x27;s port.</div>
-                                                        </td>
-            </tr>
-                    
-                    
-                                <tr>
-                                                                <td colspan="5">
+                                                                <td colspan="1">
                     <div class="ansibleOptionAnchor" id="parameter-userName"></div>
                     <b>userName</b>
                     <a class="ansibleOptionLink" href="#parameter-userName" title="Permalink to this option"></a>
@@ -1608,77 +379,13 @@ Examples
         ise_password: "{{ise_password}}"
         ise_verify: "{{ise_verify}}"
         state: present
-        administration:
-          isEnabled: true
-          role: string
-        fdqn: string
-        generalSettings:
-          monitoring:
-            enablePXGrid: true
-            isEnabled: true
-            isMntDedicated: true
-            otherMonitoringNode: string
-            policyservice:
-              enableDeviceAdminService: true
-              enableNACService: true
-              enablePassiveIdentityService: true
-              enableProfilingService: true
-              enabled: true
-              sessionService:
-                isEnabled: true
-                nodegroup: string
-              sxpservice:
-                isEnabled: true
-                userInterface: string
-            role: string
+        allowCertImport: true
+        fqdn: string
         password: string
-        profileConfiguration:
-          activeDirectory:
-            daysBeforeRescan: 0
-            description: string
-            enabled: true
-          dhcp:
-            description: string
-            enabled: true
-            interface: string
-            port: {}
-          dhcpSpan:
-            description: string
-            enabled: true
-            interface: string
-          dns:
-            description: string
-            enabled: true
-          http:
-            description: string
-            enabled: true
-            interface: string
-          netflow:
-            description: string
-            enabled: true
-            interface: string
-            port: {}
-          nmap:
-            description: string
-            enabled: true
-          pxgrid:
-            description: string
-            enabled: true
-          radius:
-            description: string
-            enabled: true
-          snmpQuery:
-            description: string
-            enabled: true
-            eventTimeout: 0
-            retries: 0
-            timeout: 0
-          snmpTrap:
-            description: string
-            interface: string
-            linkTrapQuery: true
-            macTrapQuery: true
-            port: {}
+        roles:
+        - string
+        services:
+        - string
         userName: string
 
     - name: Update by name
@@ -1688,73 +395,11 @@ Examples
         ise_password: "{{ise_password}}"
         ise_verify: "{{ise_verify}}"
         state: present
-        generalSettings:
-          monitoring:
-            enablePXGrid: true
-            isEnabled: true
-            isMntDedicated: true
-            otherMonitoringNode: string
-            policyservice:
-              enableDeviceAdminService: true
-              enableNACService: true
-              enablePassiveIdentityService: true
-              enableProfilingService: true
-              enabled: true
-              sessionService:
-                isEnabled: true
-                nodegroup: string
-              sxpservice:
-                isEnabled: true
-                userInterface: string
-            role: string
         hostname: string
-        profileConfiguration:
-          activeDirectory:
-            daysBeforeRescan: 0
-            description: string
-            enabled: true
-          dhcp:
-            description: string
-            enabled: true
-            interface: string
-            port: {}
-          dhcpSpan:
-            description: string
-            enabled: true
-            interface: string
-          dns:
-            description: string
-            enabled: true
-          http:
-            description: string
-            enabled: true
-            interface: string
-          netflow:
-            description: string
-            enabled: true
-            interface: string
-            port: {}
-          nmap:
-            description: string
-            enabled: true
-          pxgrid:
-            description: string
-            enabled: true
-          radius:
-            description: string
-            enabled: true
-          snmpQuery:
-            description: string
-            enabled: true
-            eventTimeout: 0
-            retries: 0
-            timeout: 0
-          snmpTrap:
-            description: string
-            interface: string
-            linkTrapQuery: true
-            macTrapQuery: true
-            port: {}
+        roles:
+        - string
+        services:
+        - string
 
     - name: Delete by name
       cisco.ise.node_deployment:
@@ -1801,97 +446,16 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
                                         <br/>
                                                                 <div style="font-size: smaller"><b>Sample:</b></div>
                                                 <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">{
-      &quot;hostname&quot;: &quot;string&quot;,
       &quot;fqdn&quot;: &quot;string&quot;,
+      &quot;hostname&quot;: &quot;string&quot;,
       &quot;ipAddress&quot;: &quot;string&quot;,
-      &quot;nodeType&quot;: &quot;string&quot;,
-      &quot;administration&quot;: {
-        &quot;isEnabled&quot;: true,
-        &quot;role&quot;: &quot;string&quot;
-      },
-      &quot;generalSettings&quot;: {
-        &quot;monitoring&quot;: {
-          &quot;isEnabled&quot;: true,
-          &quot;role&quot;: &quot;string&quot;,
-          &quot;otherMonitoringNode&quot;: &quot;string&quot;,
-          &quot;isMntDedicated&quot;: true,
-          &quot;policyservice&quot;: {
-            &quot;enabled&quot;: true,
-            &quot;sessionService&quot;: {
-              &quot;isEnabled&quot;: true,
-              &quot;nodegroup&quot;: &quot;string&quot;
-            },
-            &quot;enableProfilingService&quot;: true,
-            &quot;enableNACService&quot;: true,
-            &quot;sxpservice&quot;: {
-              &quot;isEnabled&quot;: true,
-              &quot;userInterface&quot;: &quot;string&quot;
-            },
-            &quot;enableDeviceAdminService&quot;: true,
-            &quot;enablePassiveIdentityService&quot;: true
-          },
-          &quot;enablePXGrid&quot;: true
-        }
-      },
-      &quot;profilingConfiguration&quot;: {
-        &quot;netflow&quot;: {
-          &quot;enabled&quot;: true,
-          &quot;interface&quot;: &quot;string&quot;,
-          &quot;port&quot;: {},
-          &quot;description&quot;: &quot;string&quot;
-        },
-        &quot;dhcp&quot;: {
-          &quot;enabled&quot;: true,
-          &quot;interface&quot;: &quot;string&quot;,
-          &quot;port&quot;: {},
-          &quot;description&quot;: &quot;string&quot;
-        },
-        &quot;dhcpSpan&quot;: {
-          &quot;enabled&quot;: true,
-          &quot;interface&quot;: &quot;string&quot;,
-          &quot;description&quot;: &quot;string&quot;
-        },
-        &quot;http&quot;: {
-          &quot;enabled&quot;: true,
-          &quot;interface&quot;: &quot;string&quot;,
-          &quot;description&quot;: &quot;string&quot;
-        },
-        &quot;radius&quot;: {
-          &quot;enabled&quot;: true,
-          &quot;description&quot;: &quot;string&quot;
-        },
-        &quot;nmap&quot;: {
-          &quot;enabled&quot;: true,
-          &quot;description&quot;: &quot;string&quot;
-        },
-        &quot;dns&quot;: {
-          &quot;enabled&quot;: true,
-          &quot;description&quot;: &quot;string&quot;
-        },
-        &quot;snmpQuery&quot;: {
-          &quot;enabled&quot;: true,
-          &quot;description&quot;: &quot;string&quot;,
-          &quot;retries&quot;: 0,
-          &quot;timeout&quot;: 0,
-          &quot;eventTimeout&quot;: 0
-        },
-        &quot;snmpTrap&quot;: {
-          &quot;linkTrapQuery&quot;: true,
-          &quot;macTrapQuery&quot;: true,
-          &quot;interface&quot;: &quot;string&quot;,
-          &quot;port&quot;: {},
-          &quot;description&quot;: &quot;string&quot;
-        },
-        &quot;activeDirectory&quot;: {
-          &quot;enabled&quot;: true,
-          &quot;daysBeforeRescan&quot;: 0,
-          &quot;description&quot;: &quot;string&quot;
-        },
-        &quot;pxgrid&quot;: {
-          &quot;enabled&quot;: true,
-          &quot;description&quot;: &quot;string&quot;
-        }
-      }
+      &quot;nodeStatus&quot;: &quot;string&quot;,
+      &quot;roles&quot;: [
+        &quot;string&quot;
+      ],
+      &quot;services&quot;: [
+        &quot;string&quot;
+      ]
     }</div>
                                     </td>
             </tr>
@@ -1910,9 +474,10 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
                                         <br/>
                                                                 <div style="font-size: smaller"><b>Sample:</b></div>
                                                 <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">{
-      &quot;code&quot;: 0,
-      &quot;message&quot;: &quot;string&quot;,
-      &quot;rootCause&quot;: &quot;string&quot;
+      &quot;success&quot;: {
+        &quot;message&quot;: &quot;string&quot;
+      },
+      &quot;version&quot;: &quot;string&quot;
     }</div>
                                     </td>
             </tr>

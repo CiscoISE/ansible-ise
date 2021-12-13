@@ -30,7 +30,7 @@ cisco.ise.system_certificate_info -- Information module for System Certificate
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.0.0).
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.1.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -56,7 +56,6 @@ Synopsis
 
 .. Description
 
-- Get all System Certificate.
 - Get System Certificate by id.
 - Get System Certificate by name.
 
@@ -72,7 +71,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 1.2.0
+- ciscoisesdk >= 1.3.0
 - python >= 3.5
 
 
@@ -146,7 +145,7 @@ Parameters
                                 <td>
                                                                                                                                                             </td>
                                                                 <td>
-                                            <div>Id path parameter. The id of the system certificate.</div>
+                                            <div>Id path parameter. ID of the system certificate.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -266,7 +265,7 @@ Parameters
                                                                     </div>
                                                         </td>
                                 <td>
-                                                                                                                                                                    <b>Default:</b><br/><div style="color: blue">"3.1.0"</div>
+                                                                                                                                                                    <b>Default:</b><br/><div style="color: blue">"3.1.1"</div>
                                     </td>
                                                                 <td>
                                             <div>Informs the SDK which version of Identity Services Engine to use.</div>
@@ -385,7 +384,17 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Get all System Certificate
+    - name: Get System Certificate by id
+      cisco.ise.system_certificate_info:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        hostName: string
+        id: string
+      register: result
+
+    - name: Get System Certificate by name
       cisco.ise.system_certificate_info:
         ise_hostname: "{{ise_hostname}}"
         ise_username: "{{ise_username}}"
@@ -398,16 +407,6 @@ Examples
         filter: []
         filterType: string
         hostName: string
-      register: result
-
-    - name: Get System Certificate by id
-      cisco.ise.system_certificate_info:
-        ise_hostname: "{{ise_hostname}}"
-        ise_username: "{{ise_username}}"
-        ise_password: "{{ise_password}}"
-        ise_verify: "{{ise_verify}}"
-        hostName: string
-        id: string
       register: result
 
 

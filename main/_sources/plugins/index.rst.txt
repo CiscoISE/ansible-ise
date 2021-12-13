@@ -4,7 +4,7 @@
 Cisco.Ise
 =========
 
-Collection version 2.0.0
+Collection version 2.1.0
 
 .. toctree::
     :maxdepth: 1
@@ -142,6 +142,9 @@ Modules
 * :ref:`guest_user_reset_password <ansible_collections.cisco.ise.guest_user_reset_password_module>` -- Resource module for Guest User Reset Password
 * :ref:`guest_user_sms <ansible_collections.cisco.ise.guest_user_sms_module>` -- Resource module for Guest User Sms
 * :ref:`guest_user_suspend <ansible_collections.cisco.ise.guest_user_suspend_module>` -- Resource module for Guest User Suspend
+* :ref:`hotpatch_info <ansible_collections.cisco.ise.hotpatch_info_module>` -- Information module for Hotpatch
+* :ref:`hotpatch_install <ansible_collections.cisco.ise.hotpatch_install_module>` -- Resource module for Hotpatch Install
+* :ref:`hotpatch_rollback <ansible_collections.cisco.ise.hotpatch_rollback_module>` -- Resource module for Hotpatch Rollback
 * :ref:`hotspot_portal <ansible_collections.cisco.ise.hotspot_portal_module>` -- Resource module for Hotspot Portal
 * :ref:`hotspot_portal_info <ansible_collections.cisco.ise.hotspot_portal_info_module>` -- Information module for Hotspot Portal
 * :ref:`id_store_sequence <ansible_collections.cisco.ise.id_store_sequence_module>` -- Resource module for Id Store Sequence
@@ -151,6 +154,15 @@ Modules
 * :ref:`internal_user <ansible_collections.cisco.ise.internal_user_module>` -- Resource module for Internal User
 * :ref:`internal_user_info <ansible_collections.cisco.ise.internal_user_info_module>` -- Information module for Internal User
 * :ref:`ise_root_ca_regenerate <ansible_collections.cisco.ise.ise_root_ca_regenerate_module>` -- Resource module for Ise Root Ca Regenerate
+* :ref:`licensing_connection_type_info <ansible_collections.cisco.ise.licensing_connection_type_info_module>` -- Information module for Licensing Connection Type
+* :ref:`licensing_eval_license_info <ansible_collections.cisco.ise.licensing_eval_license_info_module>` -- Information module for Licensing Eval License
+* :ref:`licensing_feature_to_tier_mapping_info <ansible_collections.cisco.ise.licensing_feature_to_tier_mapping_info_module>` -- Information module for Licensing Feature To Tier Mapping
+* :ref:`licensing_registration_create <ansible_collections.cisco.ise.licensing_registration_create_module>` -- Resource module for Licensing Registration Create
+* :ref:`licensing_registration_info <ansible_collections.cisco.ise.licensing_registration_info_module>` -- Information module for Licensing Registration
+* :ref:`licensing_smart_state_create <ansible_collections.cisco.ise.licensing_smart_state_create_module>` -- Resource module for Licensing Smart State Create
+* :ref:`licensing_smart_state_info <ansible_collections.cisco.ise.licensing_smart_state_info_module>` -- Information module for Licensing Smart State
+* :ref:`licensing_tier_state_create <ansible_collections.cisco.ise.licensing_tier_state_create_module>` -- Resource module for Licensing Tier State Create
+* :ref:`licensing_tier_state_info <ansible_collections.cisco.ise.licensing_tier_state_info_module>` -- Information module for Licensing Tier State
 * :ref:`mnt_account_status_info <ansible_collections.cisco.ise.mnt_account_status_info_module>` -- Information module for Mnt Account Status
 * :ref:`mnt_athentication_status_info <ansible_collections.cisco.ise.mnt_athentication_status_info_module>` -- Information module for Mnt Athentication Status
 * :ref:`mnt_authentication_status_info <ansible_collections.cisco.ise.mnt_authentication_status_info_module>` -- Information module for Mnt Authentication Status
@@ -216,14 +228,30 @@ Modules
 * :ref:`network_device_info <ansible_collections.cisco.ise.network_device_info_module>` -- Information module for Network Device
 * :ref:`node_deployment <ansible_collections.cisco.ise.node_deployment_module>` -- Resource module for Node Deployment
 * :ref:`node_deployment_info <ansible_collections.cisco.ise.node_deployment_info_module>` -- Information module for Node Deployment
+* :ref:`node_deployment_sync <ansible_collections.cisco.ise.node_deployment_sync_module>` -- Resource module for Node Deployment Sync
 * :ref:`node_group <ansible_collections.cisco.ise.node_group_module>` -- Resource module for Node Group
 * :ref:`node_group_info <ansible_collections.cisco.ise.node_group_info_module>` -- Information module for Node Group
+* :ref:`node_group_node_create <ansible_collections.cisco.ise.node_group_node_create_module>` -- Resource module for Node Group Node Create
+* :ref:`node_group_node_delete <ansible_collections.cisco.ise.node_group_node_delete_module>` -- Resource module for Node Group Node Delete
+* :ref:`node_group_node_info <ansible_collections.cisco.ise.node_group_node_info_module>` -- Information module for Node Group Node
 * :ref:`node_info <ansible_collections.cisco.ise.node_info_module>` -- Information module for Node
+* :ref:`node_primary_to_standalone <ansible_collections.cisco.ise.node_primary_to_standalone_module>` -- Resource module for Node Primary To Standalone
 * :ref:`node_promotion <ansible_collections.cisco.ise.node_promotion_module>` -- Resource module for Node Promotion
 * :ref:`node_replication_status_info <ansible_collections.cisco.ise.node_replication_status_info_module>` -- Information module for Node Replication Status
+* :ref:`node_secondary_to_primary <ansible_collections.cisco.ise.node_secondary_to_primary_module>` -- Resource module for Node Secondary To Primary
+* :ref:`node_services_interfaces_info <ansible_collections.cisco.ise.node_services_interfaces_info_module>` -- Information module for Node Services Interfaces
+* :ref:`node_services_profiler_probe_config <ansible_collections.cisco.ise.node_services_profiler_probe_config_module>` -- Resource module for Node Services Profiler Probe Config
+* :ref:`node_services_profiler_probe_config_info <ansible_collections.cisco.ise.node_services_profiler_probe_config_info_module>` -- Information module for Node Services Profiler Probe Config
+* :ref:`node_services_sxp_interfaces <ansible_collections.cisco.ise.node_services_sxp_interfaces_module>` -- Resource module for Node Services Sxp Interfaces
+* :ref:`node_services_sxp_interfaces_info <ansible_collections.cisco.ise.node_services_sxp_interfaces_info_module>` -- Information module for Node Services Sxp Interfaces
+* :ref:`node_standalone_to_primary <ansible_collections.cisco.ise.node_standalone_to_primary_module>` -- Resource module for Node Standalone To Primary
 * :ref:`node_sync <ansible_collections.cisco.ise.node_sync_module>` -- Resource module for Node Sync
 * :ref:`pan_ha <ansible_collections.cisco.ise.pan_ha_module>` -- Resource module for Pan Ha
 * :ref:`pan_ha_info <ansible_collections.cisco.ise.pan_ha_info_module>` -- Information module for Pan Ha
+* :ref:`pan_ha_update <ansible_collections.cisco.ise.pan_ha_update_module>` -- Resource module for Pan Ha Update
+* :ref:`patch_info <ansible_collections.cisco.ise.patch_info_module>` -- Information module for Patch
+* :ref:`patch_install <ansible_collections.cisco.ise.patch_install_module>` -- Resource module for Patch Install
+* :ref:`patch_rollback <ansible_collections.cisco.ise.patch_rollback_module>` -- Resource module for Patch Rollback
 * :ref:`personas_check_standalone <ansible_collections.cisco.ise.personas_check_standalone_module>` -- Ensure the node is in standalone mode
 * :ref:`personas_export_certs <ansible_collections.cisco.ise.personas_export_certs_module>` -- Export certificate into primary node
 * :ref:`personas_promote_primary <ansible_collections.cisco.ise.personas_promote_primary_module>` -- Promote a node as the primary node
@@ -234,6 +262,8 @@ Modules
 * :ref:`portal_theme <ansible_collections.cisco.ise.portal_theme_module>` -- Resource module for Portal Theme
 * :ref:`portal_theme_info <ansible_collections.cisco.ise.portal_theme_info_module>` -- Information module for Portal Theme
 * :ref:`profiler_profile_info <ansible_collections.cisco.ise.profiler_profile_info_module>` -- Information module for Profiler Profile
+* :ref:`proxy_connection_settings <ansible_collections.cisco.ise.proxy_connection_settings_module>` -- Resource module for Proxy Connection Settings
+* :ref:`proxy_connection_settings_info <ansible_collections.cisco.ise.proxy_connection_settings_info_module>` -- Information module for Proxy Connection Settings
 * :ref:`px_grid_node_approve <ansible_collections.cisco.ise.px_grid_node_approve_module>` -- Resource module for Px Grid Node Approve
 * :ref:`px_grid_node_delete <ansible_collections.cisco.ise.px_grid_node_delete_module>` -- Resource module for Px Grid Node Delete
 * :ref:`px_grid_node_info <ansible_collections.cisco.ise.px_grid_node_info_module>` -- Information module for Px Grid Node
@@ -276,6 +306,7 @@ Modules
 * :ref:`rest_id_store_info <ansible_collections.cisco.ise.rest_id_store_info_module>` -- Information module for Rest Id Store
 * :ref:`self_registered_portal <ansible_collections.cisco.ise.self_registered_portal_module>` -- Resource module for Self Registered Portal
 * :ref:`self_registered_portal_info <ansible_collections.cisco.ise.self_registered_portal_info_module>` -- Information module for Self Registered Portal
+* :ref:`selfsigned_certificate_generate <ansible_collections.cisco.ise.selfsigned_certificate_generate_module>` -- Resource module for Selfsigned Certificate Generate
 * :ref:`session_service_node_info <ansible_collections.cisco.ise.session_service_node_info_module>` -- Information module for Session Service Node
 * :ref:`sg_acl <ansible_collections.cisco.ise.sg_acl_module>` -- Resource module for Sg Acl
 * :ref:`sg_acl_bulk_monitor_status_info <ansible_collections.cisco.ise.sg_acl_bulk_monitor_status_info_module>` -- Information module for Sg Acl Bulk Monitor Status
@@ -343,6 +374,8 @@ Modules
 * :ref:`tasks_info <ansible_collections.cisco.ise.tasks_info_module>` -- Information module for Tasks
 * :ref:`telemetry_info <ansible_collections.cisco.ise.telemetry_info_module>` -- Information module for Telemetry Info
 * :ref:`threat_vulnerabilities_clear <ansible_collections.cisco.ise.threat_vulnerabilities_clear_module>` -- Resource module for Threat Vulnerabilities Clear
+* :ref:`transport_gateway_settings <ansible_collections.cisco.ise.transport_gateway_settings_module>` -- Resource module for Transport Gateway Settings
+* :ref:`transport_gateway_settings_info <ansible_collections.cisco.ise.transport_gateway_settings_info_module>` -- Information module for Transport Gateway Settings
 * :ref:`trusted_certificate <ansible_collections.cisco.ise.trusted_certificate_module>` -- Resource module for Trusted Certificate
 * :ref:`trusted_certificate_export_info <ansible_collections.cisco.ise.trusted_certificate_export_info_module>` -- Information module for Trusted Certificate Export
 * :ref:`trusted_certificate_import <ansible_collections.cisco.ise.trusted_certificate_import_module>` -- Resource module for Trusted Certificate Import
@@ -498,6 +531,9 @@ Modules
     guest_user_reset_password_module
     guest_user_sms_module
     guest_user_suspend_module
+    hotpatch_info_module
+    hotpatch_install_module
+    hotpatch_rollback_module
     hotspot_portal_module
     hotspot_portal_info_module
     id_store_sequence_module
@@ -507,6 +543,15 @@ Modules
     internal_user_module
     internal_user_info_module
     ise_root_ca_regenerate_module
+    licensing_connection_type_info_module
+    licensing_eval_license_info_module
+    licensing_feature_to_tier_mapping_info_module
+    licensing_registration_create_module
+    licensing_registration_info_module
+    licensing_smart_state_create_module
+    licensing_smart_state_info_module
+    licensing_tier_state_create_module
+    licensing_tier_state_info_module
     mnt_account_status_info_module
     mnt_athentication_status_info_module
     mnt_authentication_status_info_module
@@ -572,14 +617,30 @@ Modules
     network_device_info_module
     node_deployment_module
     node_deployment_info_module
+    node_deployment_sync_module
     node_group_module
     node_group_info_module
+    node_group_node_create_module
+    node_group_node_delete_module
+    node_group_node_info_module
     node_info_module
+    node_primary_to_standalone_module
     node_promotion_module
     node_replication_status_info_module
+    node_secondary_to_primary_module
+    node_services_interfaces_info_module
+    node_services_profiler_probe_config_module
+    node_services_profiler_probe_config_info_module
+    node_services_sxp_interfaces_module
+    node_services_sxp_interfaces_info_module
+    node_standalone_to_primary_module
     node_sync_module
     pan_ha_module
     pan_ha_info_module
+    pan_ha_update_module
+    patch_info_module
+    patch_install_module
+    patch_rollback_module
     personas_check_standalone_module
     personas_export_certs_module
     personas_promote_primary_module
@@ -590,6 +651,8 @@ Modules
     portal_theme_module
     portal_theme_info_module
     profiler_profile_info_module
+    proxy_connection_settings_module
+    proxy_connection_settings_info_module
     px_grid_node_approve_module
     px_grid_node_delete_module
     px_grid_node_info_module
@@ -632,6 +695,7 @@ Modules
     rest_id_store_info_module
     self_registered_portal_module
     self_registered_portal_info_module
+    selfsigned_certificate_generate_module
     session_service_node_info_module
     sg_acl_module
     sg_acl_bulk_monitor_status_info_module
@@ -699,6 +763,8 @@ Modules
     tasks_info_module
     telemetry_info_module
     threat_vulnerabilities_clear_module
+    transport_gateway_settings_module
+    transport_gateway_settings_info_module
     trusted_certificate_module
     trusted_certificate_export_info_module
     trusted_certificate_import_module

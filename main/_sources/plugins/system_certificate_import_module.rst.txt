@@ -30,7 +30,7 @@ cisco.ise.system_certificate_import -- Resource module for System Certificate Im
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.0.0).
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.1.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -70,7 +70,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 1.2.0
+- ciscoisesdk >= 1.3.0
 - python >= 3.5
 
 
@@ -103,7 +103,7 @@ Parameters
                                                                                     </ul>
                                                                             </td>
                                                                 <td>
-                                            <div>Use certificate to authenticate the ISE Admin Portal.</div>
+                                            <div>Use certificate to authenticate the Cisco ISE Admin Portal.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -146,6 +146,25 @@ Parameters
             </tr>
                                 <tr>
                                                                 <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-allowPortalTagTransferForSameSubject"></div>
+                    <b>allowPortalTagTransferForSameSubject</b>
+                    <a class="ansibleOptionLink" href="#parameter-allowPortalTagTransferForSameSubject" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li>yes</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Allow overwriting the portal tag from matching certificate of same subject.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="1">
                     <div class="ansibleOptionAnchor" id="parameter-allowReplacementOfCertificates"></div>
                     <b>allowReplacementOfCertificates</b>
                     <a class="ansibleOptionLink" href="#parameter-allowReplacementOfCertificates" title="Permalink to this option"></a>
@@ -184,6 +203,25 @@ Parameters
             </tr>
                                 <tr>
                                                                 <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-allowRoleTransferForSameSubject"></div>
+                    <b>allowRoleTransferForSameSubject</b>
+                    <a class="ansibleOptionLink" href="#parameter-allowRoleTransferForSameSubject" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li>yes</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Allow transfer of roles for certificate with matching subject.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="1">
                     <div class="ansibleOptionAnchor" id="parameter-allowSHA1Certificates"></div>
                     <b>allowSHA1Certificates</b>
                     <a class="ansibleOptionLink" href="#parameter-allowSHA1Certificates" title="Permalink to this option"></a>
@@ -217,7 +255,7 @@ Parameters
                                                                                     </ul>
                                                                             </td>
                                                                 <td>
-                                            <div>Allow Wildcard Certificates.</div>
+                                            <div>Allow Wildcard certificates.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -270,7 +308,7 @@ Parameters
                                                                                     </ul>
                                                                             </td>
                                                                 <td>
-                                            <div>Use certificate for the ISE Messaging Service.</div>
+                                            <div>Use certificate for the Cisco ISE Messaging Service.</div>
                                                         </td>
             </tr>
                                 <tr>
@@ -390,7 +428,7 @@ Parameters
                                                                     </div>
                                                         </td>
                                 <td>
-                                                                                                                                                                    <b>Default:</b><br/><div style="color: blue">"3.1.0"</div>
+                                                                                                                                                                    <b>Default:</b><br/><div style="color: blue">"3.1.1"</div>
                                     </td>
                                                                 <td>
                                             <div>Informs the SDK which version of Identity Services Engine to use.</div>
@@ -481,25 +519,6 @@ Parameters
             </tr>
                                 <tr>
                                                                 <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-portalTagTransferForSameSubject"></div>
-                    <b>portalTagTransferForSameSubject</b>
-                    <a class="ansibleOptionLink" href="#parameter-portalTagTransferForSameSubject" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Allow overwriting the portal tag from matching certificate of same subject.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
                     <div class="ansibleOptionAnchor" id="parameter-privateKeyData"></div>
                     <b>privateKeyData</b>
                     <a class="ansibleOptionLink" href="#parameter-privateKeyData" title="Permalink to this option"></a>
@@ -553,25 +572,6 @@ Parameters
             </tr>
                                 <tr>
                                                                 <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-roleTransferForSameSubject"></div>
-                    <b>roleTransferForSameSubject</b>
-                    <a class="ansibleOptionLink" href="#parameter-roleTransferForSameSubject" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Allow transfer of roles for certificate with matching subject.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
                     <div class="ansibleOptionAnchor" id="parameter-saml"></div>
                     <b>saml</b>
                     <a class="ansibleOptionLink" href="#parameter-saml" title="Permalink to this option"></a>
@@ -605,7 +605,7 @@ Parameters
                                                                                     </ul>
                                                                             </td>
                                                                 <td>
-                                            <div>Validate Certificate Extensions.</div>
+                                            <div>Validate certificate extensions.</div>
                                                         </td>
             </tr>
                         </table>
@@ -651,8 +651,10 @@ Examples
         admin: true
         allowExtendedValidity: true
         allowOutOfDateCert: true
+        allowPortalTagTransferForSameSubject: true
         allowReplacementOfCertificates: true
         allowReplacementOfPortalGroupTag: true
+        allowRoleTransferForSameSubject: true
         allowSHA1Certificates: true
         allowWildCardCertificates: true
         data: string
@@ -662,11 +664,9 @@ Examples
         password: string
         portal: true
         portalGroupTag: string
-        portalTagTransferForSameSubject: true
         privateKeyData: string
         pxgrid: true
         radius: true
-        roleTransferForSameSubject: true
         saml: true
         validateCertificateExtensions: true
 
