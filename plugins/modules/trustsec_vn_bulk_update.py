@@ -10,7 +10,7 @@ module: trustsec_vn_bulk_update
 short_description: Resource module for Trustsec Vn Bulk Update
 description:
 - Manage operation create of the resource Trustsec Vn Bulk Update.
-version_added: '1.0.0'
+version_added: '2.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
@@ -32,7 +32,7 @@ options:
         type: str
     type: list
 requirements:
-- ciscoisesdk >= 1.2.0
+- ciscoisesdk >= 1.3.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource

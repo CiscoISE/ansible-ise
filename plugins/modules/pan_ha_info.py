@@ -16,7 +16,7 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 1.2.0
+- ciscoisesdk >= 1.3.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -40,16 +40,17 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: list
-  elements: dict
+  type: dict
   sample: >
-    [
-      {
-        "isEnabled": true,
-        "primaryHealthCheckNode": "string",
-        "secondaryHealthCheckNode": "string",
-        "pollingInterval": 0,
-        "failedAttempts": 0
+    {
+      "failedAttempts": 0,
+      "isEnabled": true,
+      "pollingInterval": 0,
+      "primaryHealthCheckNode": {
+        "hostname": "string"
+      },
+      "secondaryHealthCheckNode": {
+        "hostname": "string"
       }
-    ]
+    }
 """

@@ -4,13 +4,13 @@
 
 The ise-ansible project provides an Ansible collection for managing and automating your Cisco Identity Services Engine (ISE) environment. It consists of a set of modules and roles for performing tasks related to Cisco ISE.
 
-This collection has been tested and supports Cisco ISE 3.1.
+This collection has been tested and supports Cisco ISE 3.1.1.
 
 *Note: This collection is not compatible with versions of Ansible before v2.9.*
 
 ## Requirements
 - Ansible >= 2.9
-- [Cisco ISE SDK](https://github.com/CiscoISE/ciscoisesdk) v1.2.0 or newer
+- [Cisco ISE SDK](https://github.com/CiscoISE/ciscoisesdk) v1.3.0 or newer
 - Python >= 3.6, as the Cisco ISE SDK doesn't support Python version 2.x
 - requests >= 2.25.1, for the personas modules and personas_deployment role.
 
@@ -35,7 +35,7 @@ This collection assumes that the API Gateway, the ERS APIs and OpenAPIs are enab
 
 ### Using the collection on previous Cisco ISE versions 
 
-As stated before, the collection has been tested and supports Cisco ISE 3.1.
+As stated before, the collection has been tested and supports Cisco ISE 3.1.1.
 
 It may work with Cisco ISE version 3.0, but it is not officially supported.
 
@@ -50,7 +50,7 @@ ise_hostname: <A.B.C.D>
 ise_username: <username>
 ise_password: <password>
 ise_verify: False # optional, defaults to True
-ise_version: 3.1.0 # optional, defaults to 3.1.0
+ise_version: 3.1.1 # optional, defaults to 3.1.1
 ise_wait_on_rate_limit: True # optional, defaults to True
 ise_debug: False # optional, defaults to False
 ise_uses_api_gateway: True # optional, defaults to True
@@ -97,7 +97,7 @@ ise_hostname: <A.B.C.D>
 ise_username: <username>
 ise_password: <password>
 ise_verify: False # optional, defaults to True
-ise_version: 3.1.0 # optional, defaults to 3.1.0
+ise_version: 3.1.1 # optional, defaults to 3.1.1
 ise_wait_on_rate_limit: True # optional, defaults to True
 ise_debug: False # optional, defaults to False
 ise_uses_api_gateway: True # optional, defaults to True

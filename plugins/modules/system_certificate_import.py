@@ -16,7 +16,7 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   admin:
-    description: Use certificate to authenticate the ISE Admin Portal.
+    description: Use certificate to authenticate the Cisco ISE Admin Portal.
     type: bool
   allowExtendedValidity:
     description: Allow import of certificates with validity greater than 398 days (required).
@@ -24,17 +24,24 @@ options:
   allowOutOfDateCert:
     description: Allow out of date certificates (required).
     type: bool
+  allowPortalTagTransferForSameSubject:
+    description: Allow overwriting the portal tag from matching certificate of same
+      subject.
+    type: bool
   allowReplacementOfCertificates:
     description: Allow Replacement of certificates (required).
     type: bool
   allowReplacementOfPortalGroupTag:
     description: Allow Replacement of Portal Group Tag (required).
     type: bool
+  allowRoleTransferForSameSubject:
+    description: Allow transfer of roles for certificate with matching subject.
+    type: bool
   allowSHA1Certificates:
     description: Allow SHA1 based certificates (required).
     type: bool
   allowWildCardCertificates:
-    description: Allow Wildcard Certificates.
+    description: Allow Wildcard certificates.
     type: bool
   data:
     description: Certificate Content (required).
@@ -43,7 +50,7 @@ options:
     description: Use certificate for EAP protocols that use SSL/TLS tunneling.
     type: bool
   ims:
-    description: Use certificate for the ISE Messaging Service.
+    description: Use certificate for the Cisco ISE Messaging Service.
     type: bool
   name:
     description: Name of the certificate.
@@ -57,10 +64,6 @@ options:
   portalGroupTag:
     description: Set Group tag.
     type: str
-  portalTagTransferForSameSubject:
-    description: Allow overwriting the portal tag from matching certificate of same
-      subject.
-    type: bool
   privateKeyData:
     description: Private Key data (required).
     type: str
@@ -70,17 +73,14 @@ options:
   radius:
     description: Use certificate for the RADSec server.
     type: bool
-  roleTransferForSameSubject:
-    description: Allow transfer of roles for certificate with matching subject.
-    type: bool
   saml:
     description: Use certificate for SAML Signing.
     type: bool
   validateCertificateExtensions:
-    description: Validate Certificate Extensions.
+    description: Validate certificate extensions.
     type: bool
 requirements:
-- ciscoisesdk >= 1.2.0
+- ciscoisesdk >= 1.3.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -99,8 +99,10 @@ EXAMPLES = r"""
     admin: true
     allowExtendedValidity: true
     allowOutOfDateCert: true
+    allowPortalTagTransferForSameSubject: true
     allowReplacementOfCertificates: true
     allowReplacementOfPortalGroupTag: true
+    allowRoleTransferForSameSubject: true
     allowSHA1Certificates: true
     allowWildCardCertificates: true
     data: string
@@ -110,11 +112,9 @@ EXAMPLES = r"""
     password: string
     portal: true
     portalGroupTag: string
-    portalTagTransferForSameSubject: true
     privateKeyData: string
     pxgrid: true
     radius: true
-    roleTransferForSameSubject: true
     saml: true
     validateCertificateExtensions: true
 

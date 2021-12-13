@@ -32,13 +32,15 @@ argument_spec = ise_argument_spec()
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
     description=dict(type="str"),
-    mar_cache=dict(type="dict"),
-    node_group_name=dict(type="str"),
+    marCache=dict(type="dict"),
+    name=dict(type="str"),
+    nodeGroupName=dict(type="str"),
+    forceDelete=dict(type="bool"),
 ))
 
 required_if = [
-    ("state", "present", ["node_group_name"], True),
-    ("state", "absent", ["node_group_name"], True),
+    ("state", "present", ["name", "nodeGroupName"], True),
+    ("state", "absent", ["name", "nodeGroupName"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -50,8 +52,10 @@ class NodeGroup(object):
         self.ise = ise
         self.new_object = dict(
             description=params.get("description"),
-            mar_cache=params.get("mar_cache"),
-            node_group_name=params.get("node_group_name"),
+            mar_cache=params.get("marCache"),
+            name=params.get("name"),
+            node_group_name=params.get("nodeGroupName"),
+            force_delete=params.get("forceDelete"),
         )
 
     def get_object_by_name(self, name):
@@ -61,7 +65,7 @@ class NodeGroup(object):
                 function="get_node_group",
                 handle_func_exception=False,
                 params={"node_group_name": name}
-            ).response
+            ).response['response']
             result = get_dict_result(result, 'name', name)
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(
@@ -106,8 +110,10 @@ class NodeGroup(object):
 
         obj_params = [
             ("description", "description"),
-            ("mar_cache", "mar_cache"),
-            ("node_group_name", "node_group_name"),
+            ("marCache", "mar_cache"),
+            ("name", "name"),
+            ("nodeGroupName", "node_group_name"),
+            ("forceDelete", "force_delete"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

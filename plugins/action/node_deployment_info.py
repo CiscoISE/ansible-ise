@@ -25,6 +25,8 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
+    filter=dict(type="list"),
+    filterType=dict(type="str"),
     hostname=dict(type="str"),
 ))
 
@@ -63,6 +65,8 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
+            filter=params.get("filter"),
+            filter_type=params.get("filterType"),
             hostname=params.get("hostname"),
         )
         return new_object

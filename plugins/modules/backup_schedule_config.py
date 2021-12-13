@@ -33,7 +33,7 @@ options:
       date is not required in case of ONE_TIME frequency.
     type: str
   frequency:
-    description: Frequency with which the backup will get scheduled in the ISE node.
+    description: Backup Schedule Config's frequency.
     type: str
   monthDay:
     description: Day of month you want backup to be performed on when scheduled frequency
@@ -47,17 +47,16 @@ options:
     description: Start date for scheduling the backup job. Allowed format MM/DD/YYYY.
     type: str
   status:
-    description: Enable or disable scheduled backup.
+    description: Backup Schedule Config's status.
     type: str
   time:
     description: Time at which backup job get scheduled. Example- 12 00 AM.
     type: str
   weekDay:
-    description: Day of week you want backup to be performed on when scheduled frequency
-      is WEEKLY.
+    description: Backup Schedule Config's weekDay.
     type: str
 requirements:
-- ciscoisesdk >= 1.2.0
+- ciscoisesdk >= 1.3.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource

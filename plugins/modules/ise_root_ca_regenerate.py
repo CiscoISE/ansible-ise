@@ -16,11 +16,11 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   removeExistingISEIntermediateCSR:
-    description: Setting this attribute to true will remove existing ISE Intermediate
+    description: Setting this attribute to true removes existing Cisco ISE Intermediate
       CSR.
     type: bool
 requirements:
-- ciscoisesdk >= 1.2.0
+- ciscoisesdk >= 1.3.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource

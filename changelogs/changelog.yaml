@@ -575,3 +575,52 @@ releases:
       bugfixes:
         - Update documentation of the modules.
         - Update ISE version to 3.1.0 on vars example
+  2.1.0:
+    release_date: '2021-12-13'
+    changes:
+      release_summary: Update to use ciscoisesdk v1.3.0 or newer
+      minor_changes:
+        - hotpatch_info - new module.
+        - hotpatch_install - new module.
+        - hotpatch_rollback - new module.
+        - licensing_connection_type_info - new module.
+        - licensing_eval_license_info - new module.
+        - licensing_feature_to_tier_mapping_info - new module.
+        - licensing_registration_create - new module.
+        - licensing_registration_info - new module.
+        - licensing_smart_state_create - new module.
+        - licensing_smart_state_info - new module.
+        - licensing_tier_state_create - new module.
+        - licensing_tier_state_info - new module.
+        - node_deployment_sync - new module.
+        - node_group_node_create - new module.
+        - node_group_node_delete - new module.
+        - node_group_node_info - new module.
+        - node_primary_to_standalone - new module.
+        - node_secondary_to_primary - new module.
+        - node_services_interfaces_info - new module.
+        - node_services_profiler_probe_config_info - new module.
+        - node_services_profiler_probe_config - new module.
+        - node_services_sxp_interfaces_info - new module.
+        - node_services_sxp_interfaces - new module.
+        - node_standalone_to_primary - new module.
+        - pan_ha_update - new module.
+        - patch_info - new module.
+        - patch_install - new module.
+        - patch_rollback - new module.
+        - proxy_connection_settings_info - new module.
+        - proxy_connection_settings - new module.
+        - selfsigned_certificate_generate - new module.
+        - transport_gateway_settings_info - new module.
+        - transport_gateway_settings - new module.
+      major_changes:
+        - node_deployment - update parameters.
+        - node_deployment_info - add filter and filterType parameters.
+        - node_group - fixes response recollection.
+        - node_group_info - fixes response recollection.
+        - system_certificate - portalTagTransferForSameSubject parameter renamed to allowPortalTagTransferForSameSubject.
+        - system_certificate - roleTransferForSameSubject parameter renamed to allowRoleTransferForSameSubject.
+        - system_certificate_import - portalTagTransferForSameSubject parameter renamed to allowPortalTagTransferForSameSubject.
+        - system_certificate_import - roleTransferForSameSubject parameter renamed to allowRoleTransferForSameSubject.
+        - trustsec_nbar_app_info - change type from str to list.
+        - trustsec_vn_info - change type from str to list.

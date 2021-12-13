@@ -16,12 +16,33 @@ extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options:
+  filter:
+    description:
+    - >
+      Filter query parameter. <div> <style type="text/css" scoped> .apiServiceTable td, .apiServiceTable th {
+      padding 5px 10px !important; text-align left; } </style> <span> <b>Simple filtering</b> is available through
+      the filter query string parameter. The structure of a filter is a triplet of field operator and value,
+      separated by dots. More than one filter can be sent. The logical operator common to all filter criteria is
+      AND by default, and can be changed by using the <i>"filterType=or"</i> query string parameter. Each resource
+      Data model description should specify if an attribute is a filtered field. </span> <br /> <table
+      class="apiServiceTable"> <thead> <tr> <th>OPERATOR</th> <th>DESCRIPTION</th> </tr> </thead> <tbody> <tr>
+      <td>EQ</td> <td>Equals</td> </tr> <tr> <td>NEQ</td> <td>Not Equals</td> </tr> <tr> <td>STARTSW</td>
+      <td>Starts With</td> </tr> <tr> <td>NSTARTSW</td> <td>Not Starts With</td> </tr> <tr> <td>ENDSW</td>
+      <td>Ends With</td> </tr> <tr> <td>NENDSW</td> <td>Not Ends With</td> </tr> <tr> <td>CONTAINS</td>
+      <td>Contains</td> </tr> <tr> <td>NCONTAINS</td> <td>Not Contains</td> </tr> </tbody> </table> </div>.
+    type: list
+  filterType:
+    description:
+    - >
+      FilterType query parameter. The logical operator common to all filter criteria is AND by default, and can be
+      changed by using this parameter.
+    type: str
   hostname:
     description:
-    - Hostname path parameter. ID of the existing deployed node.
+    - Hostname path parameter. Hostname of the deployed node.
     type: str
 requirements:
-- ciscoisesdk >= 1.2.0
+- ciscoisesdk >= 1.3.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -37,6 +58,8 @@ EXAMPLES = r"""
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
+    filter: []
+    filterType: string
   register: result
 
 - name: Get Node Deployment by name
@@ -57,96 +80,15 @@ ise_response:
   type: dict
   sample: >
     {
-      "hostname": "string",
       "fqdn": "string",
+      "hostname": "string",
       "ipAddress": "string",
-      "nodeType": "string",
-      "administration": {
-        "isEnabled": true,
-        "role": "string"
-      },
-      "generalSettings": {
-        "monitoring": {
-          "isEnabled": true,
-          "role": "string",
-          "otherMonitoringNode": "string",
-          "isMntDedicated": true,
-          "policyservice": {
-            "enabled": true,
-            "sessionService": {
-              "isEnabled": true,
-              "nodegroup": "string"
-            },
-            "enableProfilingService": true,
-            "enableNACService": true,
-            "sxpservice": {
-              "isEnabled": true,
-              "userInterface": "string"
-            },
-            "enableDeviceAdminService": true,
-            "enablePassiveIdentityService": true
-          },
-          "enablePXGrid": true
-        }
-      },
-      "profilingConfiguration": {
-        "netflow": {
-          "enabled": true,
-          "interface": "string",
-          "port": {},
-          "description": "string"
-        },
-        "dhcp": {
-          "enabled": true,
-          "interface": "string",
-          "port": {},
-          "description": "string"
-        },
-        "dhcpSpan": {
-          "enabled": true,
-          "interface": "string",
-          "description": "string"
-        },
-        "http": {
-          "enabled": true,
-          "interface": "string",
-          "description": "string"
-        },
-        "radius": {
-          "enabled": true,
-          "description": "string"
-        },
-        "nmap": {
-          "enabled": true,
-          "description": "string"
-        },
-        "dns": {
-          "enabled": true,
-          "description": "string"
-        },
-        "snmpQuery": {
-          "enabled": true,
-          "description": "string",
-          "retries": 0,
-          "timeout": 0,
-          "eventTimeout": 0
-        },
-        "snmpTrap": {
-          "linkTrapQuery": true,
-          "macTrapQuery": true,
-          "interface": "string",
-          "port": {},
-          "description": "string"
-        },
-        "activeDirectory": {
-          "enabled": true,
-          "daysBeforeRescan": 0,
-          "description": "string"
-        },
-        "pxgrid": {
-          "enabled": true,
-          "description": "string"
-        }
-      }
+      "nodeStatus": "string",
+      "roles": [
+        "string"
+      ],
+      "services": [
+        "string"
+      ]
     }
 """

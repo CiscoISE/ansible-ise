@@ -40,7 +40,7 @@ options:
     description: The server timeout.
     type: int
 requirements:
-- ciscoisesdk >= 1.2.0
+- ciscoisesdk >= 1.3.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -117,7 +117,7 @@ ise_response:
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  version_added: "1.1.0"
+  version_added: '1.1.0'
   type: dict
   sample: >
     {

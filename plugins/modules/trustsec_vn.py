@@ -10,7 +10,7 @@ module: trustsec_vn
 short_description: Resource module for Trustsec Vn
 description:
 - Manage operations create, update and delete of the resource Trustsec Vn.
-version_added: '1.0.0'
+version_added: '2.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
@@ -28,7 +28,7 @@ options:
     description: Name of the Virtual Network.
     type: str
 requirements:
-- ciscoisesdk >= 1.2.0
+- ciscoisesdk >= 1.3.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
@@ -92,7 +92,6 @@ ise_response:
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  version_added: "1.1.0"
   type: dict
   sample: >
     {

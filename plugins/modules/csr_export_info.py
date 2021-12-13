@@ -17,11 +17,11 @@ author: Rafael Campos (@racampos)
 options:
   hostname:
     description:
-    - Hostname path parameter. The hostname to which the CSR belongs.
+    - Hostname path parameter. Hostname to which the CSR belongs.
     type: str
   id:
     description:
-    - Id path parameter. The ID of the CSR to be exported.
+    - Id path parameter. ID of the CSR to be exported.
     type: str
   dirPath:
     description:
@@ -32,7 +32,7 @@ options:
     - Enable or disable automatic file creation of raw response.
     type: bool
 requirements:
-- ciscoisesdk >= 1.2.0
+- ciscoisesdk >= 1.3.0
 - python >= 3.5
 seealso:
 # Reference by Internet resource
