@@ -429,7 +429,7 @@ releases:
         - Migrated the Personas Deployment playbooks to a role.
         - telemetry_info - fixes EXAMPLES documentation.
   1.0.2:
-    release_data: '2021-08-13'
+    release_date: '2021-08-13'
     changes:
       release_summary: Fix response of csr_info, system_certificate_info and trusted_certificate_info by accessing each page `response` property.
     bugfixes:
@@ -624,3 +624,23 @@ releases:
         - system_certificate_import - roleTransferForSameSubject parameter renamed to allowRoleTransferForSameSubject.
         - trustsec_nbar_app_info - change type from str to list.
         - trustsec_vn_info - change type from str to list.
+  2.1.1:
+    release_date: '2021-12-16'
+    changes:
+      release_summary: Fixes on trustsec and node_group modules
+      bugfixes:
+      - trustsec_sg_vn_mapping - fix version_added to 2.0.0
+      - trustsec_sg_vn_mapping_bulk_create - fix version_added to 2.0.0
+      - trustsec_sg_vn_mapping_bulk_delete - fix version_added to 2.0.0
+      - trustsec_sg_vn_mapping_bulk_update - fix version_added to 2.0.0
+      - trustsec_sg_vn_mapping_info - fix version_added to 2.0.0
+      - trustsec_vn_vlan_mapping - fix version_added to 2.0.0
+      - trustsec_vn_vlan_mapping_bulk_create - fix version_added to 2.0.0
+      - trustsec_vn_vlan_mapping_bulk_delete - fix version_added to 2.0.0
+      - trustsec_vn_vlan_mapping_bulk_update - fix version_added to 2.0.0
+      - trustsec_vn_vlan_mapping_info - fix version_added to 2.0.0
+      - trustsec_sg_vn_mapping_info - change filter param type from str to list
+      - trustsec_vn_vlan_mapping_info - change filter param type from str to list
+      - node_group_node_create - fix family execution call from Node Deployment to Node Group.
+      - node_group_node_delete - fix family execution call from Node Deployment to Node Group.
+      - node_group_node_info - fix family execution call from Node Deployment to Node Group.
