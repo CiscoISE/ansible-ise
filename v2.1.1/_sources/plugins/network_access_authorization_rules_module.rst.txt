@@ -1,0 +1,1496 @@
+.. Document meta
+
+:orphan:
+
+.. |antsibull-internal-nbsp| unicode:: 0xA0
+    :trim:
+
+.. role:: ansible-attribute-support-label
+.. role:: ansible-attribute-support-property
+.. role:: ansible-attribute-support-full
+.. role:: ansible-attribute-support-partial
+.. role:: ansible-attribute-support-none
+.. role:: ansible-attribute-support-na
+
+.. Anchors
+
+.. _ansible_collections.cisco.ise.network_access_authorization_rules_module:
+
+.. Anchors: short name for ansible.builtin
+
+.. Anchors: aliases
+
+
+
+.. Title
+
+cisco.ise.network_access_authorization_rules -- Resource module for Network Access Authorization Rules
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. Collection note
+
+.. note::
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.1.1).
+
+    You might already have this collection installed if you are using the ``ansible`` package.
+    It is not included in ``ansible-core``.
+    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+
+    To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
+
+    To use it in a playbook, specify: :code:`cisco.ise.network_access_authorization_rules`.
+
+.. version_added
+
+.. versionadded:: 1.0.0 of cisco.ise
+
+.. contents::
+   :local:
+   :depth: 1
+
+.. Deprecated
+
+
+Synopsis
+--------
+
+.. Description
+
+- Manage operations create, update and delete of the resource Network Access Authorization Rules.
+
+.. note::
+    This module has a corresponding :ref:`action plugin <action_plugins>`.
+
+.. Aliases
+
+
+.. Requirements
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- ciscoisesdk >= 1.3.0
+- python >= 3.5
+
+
+.. Options
+
+Parameters
+----------
+
+.. raw:: html
+
+    <table  border=0 cellpadding=0 class="documentation-table">
+        <tr>
+            <th colspan="5">Parameter</th>
+            <th>Choices/<font color="blue">Defaults</font></th>
+                        <th width="100%">Comments</th>
+        </tr>
+                    <tr>
+                                                                <td colspan="5">
+                    <div class="ansibleOptionAnchor" id="parameter-id"></div>
+                    <b>id</b>
+                    <a class="ansibleOptionLink" href="#parameter-id" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Id path parameter. Rule id.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="5">
+                    <div class="ansibleOptionAnchor" id="parameter-ise_debug"></div>
+                    <b>ise_debug</b>
+                    <a class="ansibleOptionLink" href="#parameter-ise_debug" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                                                                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li><div style="color: blue"><b>no</b>&nbsp;&larr;</div></li>
+                                                                                                                                                                                                <li>yes</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Flag for Identity Services Engine SDK to enable debugging.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="5">
+                    <div class="ansibleOptionAnchor" id="parameter-ise_hostname"></div>
+                    <b>ise_hostname</b>
+                    <a class="ansibleOptionLink" href="#parameter-ise_hostname" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                 / <span style="color: red">required</span>                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>The Identity Services Engine hostname.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="5">
+                    <div class="ansibleOptionAnchor" id="parameter-ise_password"></div>
+                    <b>ise_password</b>
+                    <a class="ansibleOptionLink" href="#parameter-ise_password" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                 / <span style="color: red">required</span>                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>The Identity Services Engine password to authenticate.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="5">
+                    <div class="ansibleOptionAnchor" id="parameter-ise_username"></div>
+                    <b>ise_username</b>
+                    <a class="ansibleOptionLink" href="#parameter-ise_username" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                 / <span style="color: red">required</span>                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>The Identity Services Engine username to authenticate.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="5">
+                    <div class="ansibleOptionAnchor" id="parameter-ise_uses_api_gateway"></div>
+                    <b>ise_uses_api_gateway</b>
+                    <a class="ansibleOptionLink" href="#parameter-ise_uses_api_gateway" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                          <div style="font-style: italic; font-size: small; color: darkgreen">
+                        added in 1.1.0 of cisco.ise
+                      </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                                                                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li><div style="color: blue"><b>yes</b>&nbsp;&larr;</div></li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Flag that informs the SDK whether to use the Identity Services Engine&#x27;s API Gateway to send requests.</div>
+                                            <div>If it is true, it uses the ISE&#x27;s API Gateway and sends requests to https://{{ise_hostname}}.</div>
+                                            <div>If it is false, it sends the requests to https://{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="5">
+                    <div class="ansibleOptionAnchor" id="parameter-ise_verify"></div>
+                    <b>ise_verify</b>
+                    <a class="ansibleOptionLink" href="#parameter-ise_verify" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                                                                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li><div style="color: blue"><b>yes</b>&nbsp;&larr;</div></li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Flag to enable or disable SSL certificate verification.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="5">
+                    <div class="ansibleOptionAnchor" id="parameter-ise_version"></div>
+                    <b>ise_version</b>
+                    <a class="ansibleOptionLink" href="#parameter-ise_version" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                    <b>Default:</b><br/><div style="color: blue">"3.1.1"</div>
+                                    </td>
+                                                                <td>
+                                            <div>Informs the SDK which version of Identity Services Engine to use.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="5">
+                    <div class="ansibleOptionAnchor" id="parameter-ise_wait_on_rate_limit"></div>
+                    <b>ise_wait_on_rate_limit</b>
+                    <a class="ansibleOptionLink" href="#parameter-ise_wait_on_rate_limit" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                                                                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li><div style="color: blue"><b>yes</b>&nbsp;&larr;</div></li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Flag for Identity Services Engine SDK to enable automatic rate-limit handling.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="5">
+                    <div class="ansibleOptionAnchor" id="parameter-link"></div>
+                    <b>link</b>
+                    <a class="ansibleOptionLink" href="#parameter-link" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">dictionary</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Network Access Authorization Rules&#x27;s link.</div>
+                                                        </td>
+            </tr>
+                                        <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="4">
+                    <div class="ansibleOptionAnchor" id="parameter-link/href"></div>
+                    <b>href</b>
+                    <a class="ansibleOptionLink" href="#parameter-link/href" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Network Access Authorization Rules&#x27;s href.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="4">
+                    <div class="ansibleOptionAnchor" id="parameter-link/rel"></div>
+                    <b>rel</b>
+                    <a class="ansibleOptionLink" href="#parameter-link/rel" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Network Access Authorization Rules&#x27;s rel.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="4">
+                    <div class="ansibleOptionAnchor" id="parameter-link/type"></div>
+                    <b>type</b>
+                    <a class="ansibleOptionLink" href="#parameter-link/type" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Network Access Authorization Rules&#x27;s type.</div>
+                                                        </td>
+            </tr>
+                    
+                                <tr>
+                                                                <td colspan="5">
+                    <div class="ansibleOptionAnchor" id="parameter-policyId"></div>
+                    <b>policyId</b>
+                    <a class="ansibleOptionLink" href="#parameter-policyId" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>PolicyId path parameter. Policy id.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="5">
+                    <div class="ansibleOptionAnchor" id="parameter-profile"></div>
+                    <b>profile</b>
+                    <a class="ansibleOptionLink" href="#parameter-profile" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">list</span>
+                         / <span style="color: purple">elements=string</span>                                            </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>The authorization profile/s.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                                <td colspan="5">
+                    <div class="ansibleOptionAnchor" id="parameter-rule"></div>
+                    <b>rule</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">dictionary</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Common attributes in rule authentication/authorization.</div>
+                                                        </td>
+            </tr>
+                                        <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="4">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition"></div>
+                    <b>condition</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">dictionary</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Network Access Authorization Rules&#x27;s condition.</div>
+                                                        </td>
+            </tr>
+                                        <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/attributeName"></div>
+                    <b>attributeName</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/attributeName" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Dictionary attribute name.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/attributeValue"></div>
+                    <b>attributeValue</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/attributeValue" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>&lt;ul&gt;&lt;li&gt;Attribute value for condition&lt;/li&gt; &lt;li&gt;Value type is specified in dictionary object&lt;/li&gt; &lt;li&gt;if multiple values allowed is specified in dictionary object&lt;/li&gt;&lt;/ul&gt;.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/children"></div>
+                    <b>children</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/children" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">list</span>
+                         / <span style="color: purple">elements=string</span>                                            </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>In case type is andBlock or orBlock addtional conditions will be aggregated under this logical (OR/AND) condition.</div>
+                                                        </td>
+            </tr>
+                                        <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/children/conditionType"></div>
+                    <b>conditionType</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/children/conditionType" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>&lt;ul&gt;&lt;li&gt;Inidicates whether the record is the condition itself(data) or a logical(or,and) aggregation&lt;/li&gt; &lt;li&gt;Data type enum(reference,single) indicates than &quot;conditonId&quot; OR &quot;ConditionAttrs&quot; fields should contain condition data but not both&lt;/li&gt; &lt;li&gt;Logical aggreation(and,or) enum indicates that additional conditions are present under the children field&lt;/li&gt;&lt;/ul&gt;.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/children/isNegate"></div>
+                    <b>isNegate</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/children/isNegate" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li>yes</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Indicates whereas this condition is in negate mode.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/children/link"></div>
+                    <b>link</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/children/link" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">dictionary</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Network Access Authorization Rules&#x27;s link.</div>
+                                                        </td>
+            </tr>
+                                        <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/children/link/href"></div>
+                    <b>href</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/children/link/href" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Network Access Authorization Rules&#x27;s href.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/children/link/rel"></div>
+                    <b>rel</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/children/link/rel" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Network Access Authorization Rules&#x27;s rel.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/children/link/type"></div>
+                    <b>type</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/children/link/type" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Network Access Authorization Rules&#x27;s type.</div>
+                                                        </td>
+            </tr>
+                    
+                    
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/conditionType"></div>
+                    <b>conditionType</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/conditionType" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>&lt;ul&gt;&lt;li&gt;Inidicates whether the record is the condition itself(data) or a logical(or,and) aggregation&lt;/li&gt; &lt;li&gt;Data type enum(reference,single) indicates than &quot;conditonId&quot; OR &quot;ConditionAttrs&quot; fields should contain condition data but not both&lt;/li&gt; &lt;li&gt;Logical aggreation(and,or) enum indicates that additional conditions are present under the children field&lt;/li&gt;&lt;/ul&gt;.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/datesRange"></div>
+                    <b>datesRange</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/datesRange" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">dictionary</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>&lt;p&gt;Defines for which date/s TimeAndDate condition will be matched&lt;br&gt; Options are - Date range, for specific date, the same date should be used for start/end date &lt;br&gt; Default - no specific dates&lt;br&gt; In order to reset the dates to have no specific dates Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)&lt;/p&gt;.</div>
+                                                        </td>
+            </tr>
+                                        <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/datesRange/endDate"></div>
+                    <b>endDate</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/datesRange/endDate" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Network Access Authorization Rules&#x27;s endDate.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/datesRange/startDate"></div>
+                    <b>startDate</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/datesRange/startDate" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Network Access Authorization Rules&#x27;s startDate.</div>
+                                                        </td>
+            </tr>
+                    
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/datesRangeException"></div>
+                    <b>datesRangeException</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/datesRangeException" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">dictionary</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>&lt;p&gt;Defines for which date/s TimeAndDate condition will be matched&lt;br&gt; Options are - Date range, for specific date, the same date should be used for start/end date &lt;br&gt; Default - no specific dates&lt;br&gt; In order to reset the dates to have no specific dates Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)&lt;/p&gt;.</div>
+                                                        </td>
+            </tr>
+                                        <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/datesRangeException/endDate"></div>
+                    <b>endDate</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/datesRangeException/endDate" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Network Access Authorization Rules&#x27;s endDate.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/datesRangeException/startDate"></div>
+                    <b>startDate</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/datesRangeException/startDate" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Network Access Authorization Rules&#x27;s startDate.</div>
+                                                        </td>
+            </tr>
+                    
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/description"></div>
+                    <b>description</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/description" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Condition description.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/dictionaryName"></div>
+                    <b>dictionaryName</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/dictionaryName" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Dictionary name.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/dictionaryValue"></div>
+                    <b>dictionaryValue</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/dictionaryValue" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Dictionary value.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/hoursRange"></div>
+                    <b>hoursRange</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/hoursRange" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">dictionary</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>&lt;p&gt;Defines for which hours a TimeAndDate condition will be matched&lt;br&gt; Time format - hh mm ( h = hour , mm = minutes ) &lt;br&gt; Default - All Day &lt;/p&gt;.</div>
+                                                        </td>
+            </tr>
+                                        <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/hoursRange/endTime"></div>
+                    <b>endTime</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/hoursRange/endTime" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Network Access Authorization Rules&#x27;s endTime.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/hoursRange/startTime"></div>
+                    <b>startTime</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/hoursRange/startTime" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Network Access Authorization Rules&#x27;s startTime.</div>
+                                                        </td>
+            </tr>
+                    
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/hoursRangeException"></div>
+                    <b>hoursRangeException</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/hoursRangeException" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">dictionary</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>&lt;p&gt;Defines for which hours a TimeAndDate condition will be matched&lt;br&gt; Time format - hh mm ( h = hour , mm = minutes ) &lt;br&gt; Default - All Day &lt;/p&gt;.</div>
+                                                        </td>
+            </tr>
+                                        <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/hoursRangeException/endTime"></div>
+                    <b>endTime</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/hoursRangeException/endTime" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Network Access Authorization Rules&#x27;s endTime.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/hoursRangeException/startTime"></div>
+                    <b>startTime</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/hoursRangeException/startTime" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Network Access Authorization Rules&#x27;s startTime.</div>
+                                                        </td>
+            </tr>
+                    
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/id"></div>
+                    <b>id</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/id" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Network Access Authorization Rules&#x27;s id.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/isNegate"></div>
+                    <b>isNegate</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/isNegate" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li>yes</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Indicates whereas this condition is in negate mode.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/link"></div>
+                    <b>link</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/link" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">dictionary</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Network Access Authorization Rules&#x27;s link.</div>
+                                                        </td>
+            </tr>
+                                        <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/link/href"></div>
+                    <b>href</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/link/href" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Network Access Authorization Rules&#x27;s href.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/link/rel"></div>
+                    <b>rel</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/link/rel" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Network Access Authorization Rules&#x27;s rel.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="2">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/link/type"></div>
+                    <b>type</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/link/type" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Network Access Authorization Rules&#x27;s type.</div>
+                                                        </td>
+            </tr>
+                    
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/name"></div>
+                    <b>name</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/name" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Condition name.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/operator"></div>
+                    <b>operator</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/operator" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Equality operator.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/weekDays"></div>
+                    <b>weekDays</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/weekDays" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">list</span>
+                         / <span style="color: purple">elements=string</span>                                            </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>&lt;p&gt;Defines for which days this condition will be matched&lt;br&gt; Days format - Arrays of WeekDay enums &lt;br&gt; Default - List of All week days&lt;/p&gt;.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="3">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/condition/weekDaysException"></div>
+                    <b>weekDaysException</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/condition/weekDaysException" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">list</span>
+                         / <span style="color: purple">elements=string</span>                                            </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>&lt;p&gt;Defines for which days this condition will NOT be matched&lt;br&gt; Days format - Arrays of WeekDay enums &lt;br&gt; Default - Not enabled&lt;/p&gt;.</div>
+                                                        </td>
+            </tr>
+                    
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="4">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/default"></div>
+                    <b>default</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/default" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">boolean</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
+                                                                                                                                                                <li>no</li>
+                                                                                                                                                                                                <li>yes</li>
+                                                                                    </ul>
+                                                                            </td>
+                                                                <td>
+                                            <div>Indicates if this rule is the default one.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="4">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/hitCounts"></div>
+                    <b>hitCounts</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/hitCounts" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">integer</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>The amount of times the rule was matched.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="4">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/id"></div>
+                    <b>id</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/id" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>The identifier of the rule.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="4">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/name"></div>
+                    <b>name</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/name" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Rule name, Valid characters are alphanumerics, underscore, hyphen, space, period, parentheses.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="4">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/rank"></div>
+                    <b>rank</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/rank" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">integer</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>The rank(priority) in relation to other rules. Lower rank is higher priority.</div>
+                                                        </td>
+            </tr>
+                                <tr>
+                                                    <td class="elbow-placeholder"></td>
+                                                <td colspan="4">
+                    <div class="ansibleOptionAnchor" id="parameter-rule/state"></div>
+                    <b>state</b>
+                    <a class="ansibleOptionLink" href="#parameter-rule/state" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>The state that the rule is in. A disabled rule cannot be matched.</div>
+                                                        </td>
+            </tr>
+                    
+                                <tr>
+                                                                <td colspan="5">
+                    <div class="ansibleOptionAnchor" id="parameter-securityGroup"></div>
+                    <b>securityGroup</b>
+                    <a class="ansibleOptionLink" href="#parameter-securityGroup" title="Permalink to this option"></a>
+                    <div style="font-size: small">
+                        <span style="color: purple">string</span>
+                                                                    </div>
+                                                        </td>
+                                <td>
+                                                                                                                                                            </td>
+                                                                <td>
+                                            <div>Security group used in authorization policies.</div>
+                                                        </td>
+            </tr>
+                        </table>
+    <br/>
+
+.. Attributes
+
+
+.. Notes
+
+Notes
+-----
+
+.. note::
+   - Does not support ``check_mode``
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
+   - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
+
+.. Seealso
+
+See Also
+--------
+
+.. seealso::
+
+   `Network Access Authorization Rules reference <https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary>`_
+       Complete reference of the Network Access Authorization Rules object model.
+
+.. Examples
+
+Examples
+--------
+
+.. code-block:: yaml+jinja
+
+    
+    - name: Create
+      cisco.ise.network_access_authorization_rules:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: present
+        link:
+          href: string
+          rel: string
+          type: string
+        policyId: string
+        profile:
+        - string
+        rule:
+          condition:
+            attributeName: string
+            attributeValue: string
+            children:
+            - conditionType: string
+              isNegate: true
+              link:
+                href: string
+                rel: string
+                type: string
+            conditionType: string
+            datesRange:
+              endDate: string
+              startDate: string
+            datesRangeException:
+              endDate: string
+              startDate: string
+            description: string
+            dictionaryName: string
+            dictionaryValue: string
+            hoursRange:
+              endTime: string
+              startTime: string
+            hoursRangeException:
+              endTime: string
+              startTime: string
+            id: string
+            isNegate: true
+            link:
+              href: string
+              rel: string
+              type: string
+            name: string
+            operator: string
+            weekDays:
+            - string
+            weekDaysException:
+            - string
+          default: true
+          hitCounts: 0
+          id: string
+          name: string
+          rank: 0
+          state: string
+        securityGroup: string
+
+    - name: Update by id
+      cisco.ise.network_access_authorization_rules:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: present
+        id: string
+        link:
+          href: string
+          rel: string
+          type: string
+        policyId: string
+        profile:
+        - string
+        rule:
+          condition:
+            attributeName: string
+            attributeValue: string
+            children:
+            - conditionType: string
+              isNegate: true
+              link:
+                href: string
+                rel: string
+                type: string
+            conditionType: string
+            datesRange:
+              endDate: string
+              startDate: string
+            datesRangeException:
+              endDate: string
+              startDate: string
+            description: string
+            dictionaryName: string
+            dictionaryValue: string
+            hoursRange:
+              endTime: string
+              startTime: string
+            hoursRangeException:
+              endTime: string
+              startTime: string
+            id: string
+            isNegate: true
+            link:
+              href: string
+              rel: string
+              type: string
+            name: string
+            operator: string
+            weekDays:
+            - string
+            weekDaysException:
+            - string
+          default: true
+          hitCounts: 0
+          id: string
+          name: string
+          rank: 0
+          state: string
+        securityGroup: string
+
+    - name: Delete by id
+      cisco.ise.network_access_authorization_rules:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: absent
+        id: string
+        policyId: string
+
+
+
+
+
+.. Facts
+
+
+.. Return values
+
+Return Values
+-------------
+Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
+
+.. raw:: html
+
+    <table border=0 cellpadding=0 class="documentation-table">
+        <tr>
+            <th colspan="1">Key</th>
+            <th>Returned</th>
+            <th width="100%">Description</th>
+        </tr>
+                    <tr>
+                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="return-ise_response"></div>
+                    <b>ise_response</b>
+                    <a class="ansibleOptionLink" href="#return-ise_response" title="Permalink to this return value"></a>
+                    <div style="font-size: small">
+                      <span style="color: purple">dictionary</span>
+                                          </div>
+                                    </td>
+                <td>always</td>
+                <td>
+                                            <div>A dictionary or list with the response returned by the Cisco ISE Python SDK</div>
+                                        <br/>
+                                                                <div style="font-size: smaller"><b>Sample:</b></div>
+                                                <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">{
+      &quot;link&quot;: {
+        &quot;href&quot;: &quot;string&quot;,
+        &quot;rel&quot;: &quot;string&quot;,
+        &quot;type&quot;: &quot;string&quot;
+      },
+      &quot;profile&quot;: [
+        &quot;string&quot;
+      ],
+      &quot;rule&quot;: {
+        &quot;condition&quot;: {
+          &quot;conditionType&quot;: &quot;string&quot;,
+          &quot;isNegate&quot;: true,
+          &quot;link&quot;: {
+            &quot;href&quot;: &quot;string&quot;,
+            &quot;rel&quot;: &quot;string&quot;,
+            &quot;type&quot;: &quot;string&quot;
+          },
+          &quot;description&quot;: &quot;string&quot;,
+          &quot;id&quot;: &quot;string&quot;,
+          &quot;name&quot;: &quot;string&quot;,
+          &quot;attributeName&quot;: &quot;string&quot;,
+          &quot;attributeValue&quot;: &quot;string&quot;,
+          &quot;dictionaryName&quot;: &quot;string&quot;,
+          &quot;dictionaryValue&quot;: &quot;string&quot;,
+          &quot;operator&quot;: &quot;string&quot;,
+          &quot;children&quot;: [
+            {
+              &quot;conditionType&quot;: &quot;string&quot;,
+              &quot;isNegate&quot;: true,
+              &quot;link&quot;: {
+                &quot;href&quot;: &quot;string&quot;,
+                &quot;rel&quot;: &quot;string&quot;,
+                &quot;type&quot;: &quot;string&quot;
+              }
+            }
+          ],
+          &quot;datesRange&quot;: {
+            &quot;endDate&quot;: &quot;string&quot;,
+            &quot;startDate&quot;: &quot;string&quot;
+          },
+          &quot;datesRangeException&quot;: {
+            &quot;endDate&quot;: &quot;string&quot;,
+            &quot;startDate&quot;: &quot;string&quot;
+          },
+          &quot;hoursRange&quot;: {
+            &quot;endTime&quot;: &quot;string&quot;,
+            &quot;startTime&quot;: &quot;string&quot;
+          },
+          &quot;hoursRangeException&quot;: {
+            &quot;endTime&quot;: &quot;string&quot;,
+            &quot;startTime&quot;: &quot;string&quot;
+          },
+          &quot;weekDays&quot;: [
+            &quot;string&quot;
+          ],
+          &quot;weekDaysException&quot;: [
+            &quot;string&quot;
+          ]
+        },
+        &quot;default&quot;: true,
+        &quot;hitCounts&quot;: 0,
+        &quot;id&quot;: &quot;string&quot;,
+        &quot;name&quot;: &quot;string&quot;,
+        &quot;rank&quot;: 0,
+        &quot;state&quot;: &quot;string&quot;
+      },
+      &quot;securityGroup&quot;: &quot;string&quot;
+    }</div>
+                                    </td>
+            </tr>
+                                <tr>
+                                <td colspan="1">
+                    <div class="ansibleOptionAnchor" id="return-ise_update_response"></div>
+                    <b>ise_update_response</b>
+                    <a class="ansibleOptionLink" href="#return-ise_update_response" title="Permalink to this return value"></a>
+                    <div style="font-size: small">
+                      <span style="color: purple">dictionary</span>
+                                          </div>
+                    <div style="font-style: italic; font-size: small; color: darkgreen">added in 1.1.0 of cisco.ise</div>                </td>
+                <td>always</td>
+                <td>
+                                            <div>A dictionary or list with the response returned by the Cisco ISE Python SDK</div>
+                                        <br/>
+                                                                <div style="font-size: smaller"><b>Sample:</b></div>
+                                                <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">{
+      &quot;response&quot;: {
+        &quot;link&quot;: {
+          &quot;href&quot;: &quot;string&quot;,
+          &quot;rel&quot;: &quot;string&quot;,
+          &quot;type&quot;: &quot;string&quot;
+        },
+        &quot;profile&quot;: [
+          &quot;string&quot;
+        ],
+        &quot;rule&quot;: {
+          &quot;condition&quot;: {
+            &quot;conditionType&quot;: &quot;string&quot;,
+            &quot;isNegate&quot;: true,
+            &quot;link&quot;: {
+              &quot;href&quot;: &quot;string&quot;,
+              &quot;rel&quot;: &quot;string&quot;,
+              &quot;type&quot;: &quot;string&quot;
+            },
+            &quot;description&quot;: &quot;string&quot;,
+            &quot;id&quot;: &quot;string&quot;,
+            &quot;name&quot;: &quot;string&quot;,
+            &quot;attributeName&quot;: &quot;string&quot;,
+            &quot;attributeValue&quot;: &quot;string&quot;,
+            &quot;dictionaryName&quot;: &quot;string&quot;,
+            &quot;dictionaryValue&quot;: &quot;string&quot;,
+            &quot;operator&quot;: &quot;string&quot;,
+            &quot;children&quot;: [
+              {
+                &quot;conditionType&quot;: &quot;string&quot;,
+                &quot;isNegate&quot;: true,
+                &quot;link&quot;: {
+                  &quot;href&quot;: &quot;string&quot;,
+                  &quot;rel&quot;: &quot;string&quot;,
+                  &quot;type&quot;: &quot;string&quot;
+                }
+              }
+            ],
+            &quot;datesRange&quot;: {
+              &quot;endDate&quot;: &quot;string&quot;,
+              &quot;startDate&quot;: &quot;string&quot;
+            },
+            &quot;datesRangeException&quot;: {
+              &quot;endDate&quot;: &quot;string&quot;,
+              &quot;startDate&quot;: &quot;string&quot;
+            },
+            &quot;hoursRange&quot;: {
+              &quot;endTime&quot;: &quot;string&quot;,
+              &quot;startTime&quot;: &quot;string&quot;
+            },
+            &quot;hoursRangeException&quot;: {
+              &quot;endTime&quot;: &quot;string&quot;,
+              &quot;startTime&quot;: &quot;string&quot;
+            },
+            &quot;weekDays&quot;: [
+              &quot;string&quot;
+            ],
+            &quot;weekDaysException&quot;: [
+              &quot;string&quot;
+            ]
+          },
+          &quot;default&quot;: true,
+          &quot;hitCounts&quot;: 0,
+          &quot;id&quot;: &quot;string&quot;,
+          &quot;name&quot;: &quot;string&quot;,
+          &quot;rank&quot;: 0,
+          &quot;state&quot;: &quot;string&quot;
+        },
+        &quot;securityGroup&quot;: &quot;string&quot;
+      },
+      &quot;version&quot;: &quot;string&quot;
+    }</div>
+                                    </td>
+            </tr>
+                        </table>
+    <br/><br/>
+
+..  Status (Presently only deprecated)
+
+
+.. Authors
+
+Authors
+~~~~~~~
+
+- Rafael Campos (@racampos)
+
+
+
+.. Parsing errors
+
