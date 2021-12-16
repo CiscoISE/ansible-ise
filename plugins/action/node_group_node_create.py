@@ -78,7 +78,7 @@ class ActionModule(ActionBase):
         ise = ISESDK(params=self._task.args)
 
         response = ise.exec(
-            family="node_deployment",
+            family="node_group",
             function='add_node',
             params=self.get_object(self._task.args),
         ).response
