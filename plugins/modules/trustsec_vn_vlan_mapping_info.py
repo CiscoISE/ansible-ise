@@ -11,7 +11,7 @@ short_description: Information module for Trustsec Vn Vlan Mapping
 description:
 - Get all Trustsec Vn Vlan Mapping.
 - Get Trustsec Vn Vlan Mapping by id.
-version_added: '1.0.0'
+version_added: '2.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)
@@ -47,7 +47,7 @@ options:
       With</td> </tr> <tr> <td>NSTARTSW</td> <td>Not Starts With</td> </tr> <tr> <td>ENDSW</td> <td>Ends With</td>
       </tr> <tr> <td>NENDSW</td> <td>Not Ends With</td> </tr> <tr> <td>CONTAINS</td> <td>Contains</td> </tr> <tr>
       <td>NCONTAINS</td> <td>Not Contains</td> </tr> </tbody> </table> </div>.
-    type: str
+    type: list
   filterType:
     description:
     - >
@@ -79,7 +79,7 @@ EXAMPLES = r"""
     size: 0
     sort: string
     sortBy: string
-    filter: string
+    filter: []
     filterType: string
   register: result
 
@@ -117,7 +117,6 @@ ise_response:
 ise_responses:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  version_added: '1.1.0'
   type: list
   elements: dict
   sample: >

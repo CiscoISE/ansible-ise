@@ -10,7 +10,7 @@ module: trustsec_sg_vn_mapping_bulk_delete
 short_description: Resource module for Trustsec Sg Vn Mapping Bulk Delete
 description:
 - Manage operation create of the resource Trustsec Sg Vn Mapping Bulk Delete.
-version_added: '1.0.0'
+version_added: '2.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
