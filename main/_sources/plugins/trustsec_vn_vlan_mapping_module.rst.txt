@@ -30,7 +30,7 @@ cisco.ise.trustsec_vn_vlan_mapping -- Resource module for Trustsec Vn Vlan Mappi
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.1.0).
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.1.1).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -42,7 +42,7 @@ cisco.ise.trustsec_vn_vlan_mapping -- Resource module for Trustsec Vn Vlan Mappi
 
 .. version_added
 
-.. versionadded:: 1.0.0 of cisco.ise
+.. versionadded:: 2.0.0 of cisco.ise
 
 .. contents::
    :local:
@@ -489,7 +489,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
                     <div style="font-size: small">
                       <span style="color: purple">dictionary</span>
                                           </div>
-                    <div style="font-style: italic; font-size: small; color: darkgreen">added in 1.1.0 of cisco.ise</div>                </td>
+                                    </td>
                 <td>always</td>
                 <td>
                                             <div>A dictionary or list with the response returned by the Cisco ISE Python SDK</div>
