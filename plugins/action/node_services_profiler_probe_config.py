@@ -76,7 +76,7 @@ class NodeServicesProfilerProbeConfig(object):
             result = self.ise.exec(
                 family="node_services",
                 function="get_profiler_probe_config",
-                params={"name": name},
+                params={"hostname": name},
                 handle_func_exception=False,
             ).response['response']
             result = get_dict_result(result, 'name', name)
@@ -104,7 +104,7 @@ class NodeServicesProfilerProbeConfig(object):
         id_exists = False
         name_exists = False
         o_id = self.new_object.get("id")
-        name = self.new_object.get("name")
+        name = self.new_object.get("hostname")
         if o_id:
             prev_obj = self.get_object_by_id(o_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
@@ -143,10 +143,10 @@ class NodeServicesProfilerProbeConfig(object):
 
     def update(self):
         id = self.new_object.get("id")
-        name = self.new_object.get("name")
+        name = self.new_object.get("hostname")
         result = None
         if not name:
-            name_ = self.get_object_by_id(id).get("name")
+            name_ = self.get_object_by_id(id).get("hostname")
             self.new_object.update(dict(name=name_))
         result = self.ise.exec(
             family="node_services",

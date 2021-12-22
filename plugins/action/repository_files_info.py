@@ -63,7 +63,7 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            name=params.get("name"),
+            repository_name=params.get("name"),
         )
         return new_object
 

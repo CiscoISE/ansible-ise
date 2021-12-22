@@ -56,7 +56,8 @@ class NodeServicesSxpInterfaces(object):
         result = None
         items = self.ise.exec(
             family="node_services",
-            function="get_sxp_interface"
+            function="get_sxp_interface",
+            params={"hostname": name}
         ).response['response']
         result = get_dict_result(items, 'name', name)
         return result
@@ -71,7 +72,7 @@ class NodeServicesSxpInterfaces(object):
         id_exists = False
         name_exists = False
         o_id = self.new_object.get("id")
-        name = self.new_object.get("name")
+        name = self.new_object.get("hostname")
         if o_id:
             prev_obj = self.get_object_by_id(o_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
@@ -100,7 +101,7 @@ class NodeServicesSxpInterfaces(object):
 
     def update(self):
         id = self.new_object.get("id")
-        name = self.new_object.get("name")
+        name = self.new_object.get("hostname")
         result = None
         result = self.ise.exec(
             family="node_services",
