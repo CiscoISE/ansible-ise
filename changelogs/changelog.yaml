@@ -644,3 +644,12 @@ releases:
       - node_group_node_create - fix family execution call from Node Deployment to Node Group.
       - node_group_node_delete - fix family execution call from Node Deployment to Node Group.
       - node_group_node_info - fix family execution call from Node Deployment to Node Group.
+  2.1.2:
+    release_date: '2021-12-22'
+    changes:
+      release_summary: Fixes params used for modules
+      bugfixes:
+        - node_services_profiler_probe_config - fixes params used for module.
+        - node_services_sxp_interfaces - fixes params used for module.
+        - repository - fixes params used for modules. Fix for issue 19.
+        - repository_files_info - fixes params used for module.
