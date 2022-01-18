@@ -77,7 +77,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="licensing",
-            function="get_tier_state_info",
+            function="update_tier_state_info",
             params=self.get_object(self._task.args),
         ).response
 
