@@ -10,7 +10,7 @@ module: device_administration_authorization_rules
 short_description: Resource module for Device Administration Authorization Rules
 description:
 - Manage operations create, update and delete of the resource Device Administration Authorization Rules.
-- Device Admin - Create authorization rule:
+- Device Admin - Create authorization rule.
 - Device Admin - Delete authorization rule.
 version_added: '1.0.0'
 extends_documentation_fragment:

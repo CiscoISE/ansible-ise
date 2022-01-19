@@ -10,7 +10,7 @@ module: network_access_policy_set
 short_description: Resource module for Network Access Policy Set
 description:
 - Manage operations create, update and delete of the resource Network Access Policy Set.
-- Network Access - Create a new policy set:
+- Network Access - Create a new policy set.
 - Network Access - Delete a policy set.
 version_added: '1.0.0'
 extends_documentation_fragment:

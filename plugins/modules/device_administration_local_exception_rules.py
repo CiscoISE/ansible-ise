@@ -10,7 +10,7 @@ module: device_administration_local_exception_rules
 short_description: Resource module for Device Administration Local Exception Rules
 description:
 - Manage operations create, update and delete of the resource Device Administration Local Exception Rules.
-- Device Admin - Create local authorization exception rule:
+- Device Admin - Create local authorization exception rule.
 - Device Admin - Delete local exception rule.
 version_added: '1.0.0'
 extends_documentation_fragment:

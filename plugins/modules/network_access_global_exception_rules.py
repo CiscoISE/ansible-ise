@@ -10,7 +10,7 @@ module: network_access_global_exception_rules
 short_description: Resource module for Network Access Global Exception Rules
 description:
 - Manage operations create, update and delete of the resource Network Access Global Exception Rules.
-- Network Access - Create global exception authorization rule:
+- Network Access - Create global exception authorization rule.
 - Network Access - Delete global exception authorization rule.
 version_added: '1.0.0'
 extends_documentation_fragment:

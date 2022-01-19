@@ -10,7 +10,7 @@ module: network_access_conditions
 short_description: Resource module for Network Access Conditions
 description:
 - Manage operations create, update and delete of the resource Network Access Conditions.
-- Network Access - Creates a library condition:
+- Network Access - Creates a library condition.
 - Network Access - Delete a library condition using condition Name.
 - Network Access - Delete a library condition.
 version_added: '1.0.0'

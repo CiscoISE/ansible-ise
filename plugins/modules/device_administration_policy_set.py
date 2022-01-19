@@ -10,7 +10,7 @@ module: device_administration_policy_set
 short_description: Resource module for Device Administration Policy Set
 description:
 - Manage operations create, update and delete of the resource Device Administration Policy Set.
-- Device Admin - Create a new policy set:
+- Device Admin - Create a new policy set.
 - Device Admin - Delete a policy set.
 version_added: '1.0.0'
 extends_documentation_fragment:

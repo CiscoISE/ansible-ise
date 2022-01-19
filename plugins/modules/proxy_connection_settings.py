@@ -10,7 +10,7 @@ module: proxy_connection_settings
 short_description: Resource module for Proxy Connection Settings
 description:
 - Manage operation update of the resource Proxy Connection Settings.
-- The following functionalities are impacted by the proxy settings:
+- The following functionalities are impacted by the proxy settings.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module

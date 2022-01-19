@@ -10,7 +10,7 @@ module: device_administration_global_exception_rules
 short_description: Resource module for Device Administration Global Exception Rules
 description:
 - Manage operations create, update and delete of the resource Device Administration Global Exception Rules.
-- Device Admin - Create global exception authorization rule:
+- Device Admin - Create global exception authorization rule.
 - Device Admin - Delete global exception authorization rule.
 version_added: '1.0.0'
 extends_documentation_fragment:

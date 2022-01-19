@@ -10,7 +10,7 @@ module: network_access_authentication_rules
 short_description: Resource module for Network Access Authentication Rules
 description:
 - Manage operations create, update and delete of the resource Network Access Authentication Rules.
-- Network Access - Create authentication rule:
+- Network Access - Create authentication rule.
 - Network Access - Delete rule.
 version_added: '1.0.0'
 extends_documentation_fragment:

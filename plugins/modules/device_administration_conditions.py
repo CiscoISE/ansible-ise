@@ -10,7 +10,7 @@ module: device_administration_conditions
 short_description: Resource module for Device Administration Conditions
 description:
 - Manage operations create, update and delete of the resource Device Administration Conditions.
-- Device Admin - Creates a library condition:
+- Device Admin - Creates a library condition.
 - Device Admin - Delete a library condition.
 - NDevice Admin - Delete a library condition using condition Name.
 version_added: '1.0.0'

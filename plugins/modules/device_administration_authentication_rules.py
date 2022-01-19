@@ -10,7 +10,7 @@ module: device_administration_authentication_rules
 short_description: Resource module for Device Administration Authentication Rules
 description:
 - Manage operations create, update and delete of the resource Device Administration Authentication Rules.
-- Device Admin - Create authentication rule:
+- Device Admin - Create authentication rule.
 - Device Admin - Delete rule.
 version_added: '1.0.0'
 extends_documentation_fragment:
