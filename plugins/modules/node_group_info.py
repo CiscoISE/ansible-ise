@@ -12,7 +12,7 @@ description:
 - Get all Node Group.
 - Get Node Group by name.
 - This API retrieves the details of a node group in the cluster using a node group name.
-- This API retrieves the details of all the node groups in the cluster.  
+- This API retrieves the details of all the node groups in the cluster.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info

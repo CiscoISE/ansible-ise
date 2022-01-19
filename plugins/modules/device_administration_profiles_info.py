@@ -10,7 +10,7 @@ module: device_administration_profiles_info
 short_description: Information module for Device Administration Profiles
 description:
 - Get all Device Administration Profiles.
-- Device Admin - Returns list of shell profiles.  
+- Device Admin - Returns list of shell profiles.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info

@@ -10,8 +10,8 @@ module: node_deployment
 short_description: Resource module for Node Deployment
 description:
 - Manage operations create, update and delete of the resource Node Deployment.
-- This API registers a Cisco ISE node to form a multi-node deployment.  
-- The deregistered node becomes a standalone Cisco ISE node.  
+- This API registers a Cisco ISE node to form a multi-node deployment.
+- The deregistered node becomes a standalone Cisco ISE node.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module

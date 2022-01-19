@@ -10,7 +10,7 @@ module: device_administration_identity_stores_info
 short_description: Information module for Device Administration Identity Stores
 description:
 - Get all Device Administration Identity Stores.
-- Device Admin - Return list of identity stores for authentication.  
+- Device Admin - Return list of identity stores for authentication.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info

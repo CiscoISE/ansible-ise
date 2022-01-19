@@ -10,7 +10,7 @@ module: network_access_profiles_info
 short_description: Information module for Network Access Profiles
 description:
 - Get all Network Access Profiles.
-- Network Access - Returns list of authorization profiles.  
+- Network Access - Returns list of authorization profiles.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info

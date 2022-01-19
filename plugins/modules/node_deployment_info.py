@@ -11,7 +11,7 @@ short_description: Information module for Node Deployment
 description:
 - Get all Node Deployment.
 - Get Node Deployment by name.
-- The API lists all the nodes that are deployed in the cluster.  
+- The API lists all the nodes that are deployed in the cluster.
 - This API retrieves detailed information of the deployed node.
 version_added: '1.0.0'
 extends_documentation_fragment:

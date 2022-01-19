@@ -10,7 +10,7 @@ module: device_administration_command_set_info
 short_description: Information module for Device Administration Command Set
 description:
 - Get all Device Administration Command Set.
-- Device Admin - Return list of command sets.  
+- Device Admin - Return list of command sets.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
