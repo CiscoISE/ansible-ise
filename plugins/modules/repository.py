@@ -39,13 +39,18 @@ options:
     description: Username may contain alphanumeric and _-./@\\$ characters.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Repository reference
-  description: Complete reference of the Repository object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    repository.Repository.create_repository,
+    repository.Repository.update_repository,
+    repository.Repository.delete_repository
+
+  - Paths used are
+    post /api/v1/repository,
+    put /api/v1/repository/{name},
+    delete /api/v1/repository/{name}
 """
 
 EXAMPLES = r"""

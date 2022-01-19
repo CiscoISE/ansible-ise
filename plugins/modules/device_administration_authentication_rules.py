@@ -10,6 +10,8 @@ module: device_administration_authentication_rules
 short_description: Resource module for Device Administration Authentication Rules
 description:
 - Manage operations create, update and delete of the resource Device Administration Authentication Rules.
+- Device Admin - Create authentication rule.
+- Device Admin - Delete rule.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -217,13 +219,18 @@ options:
         type: str
     type: dict
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Device Administration Authentication Rules reference
-  description: Complete reference of the Device Administration Authentication Rules object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    device_administration_authentication_rules.DeviceAdministrationAuthenticationRules.create_device_admin_authentication_rule,
+    device_administration_authentication_rules.DeviceAdministrationAuthenticationRules.delete_device_admin_authentication_rule_by_id,
+    device_administration_authentication_rules.DeviceAdministrationAuthenticationRules.update_device_admin_authentication_rule_by_id,
+
+  - Paths used are
+    post /device-admin/policy-set/{policyId}/authentication,
+    delete /device-admin/policy-set/{policyId}/authentication/{id},
+
 """
 
 EXAMPLES = r"""

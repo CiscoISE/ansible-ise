@@ -10,19 +10,22 @@ module: licensing_smart_state_create
 short_description: Resource module for Licensing Smart State Create
 description:
 - Manage operation create of the resource Licensing Smart State Create.
+- License - Configure smart state information.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Licensing Smart State Create reference
-  description: Complete reference of the Licensing Smart State Create object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    licensing.Licensing.configure_smart_state,
+
+  - Paths used are
+    post /api/v1/license/system/smart-state,
+
 """
 
 EXAMPLES = r"""
@@ -39,10 +42,7 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: dict
+  type: str
   sample: >
-    {
-      "connectionType": "string",
-      "state": "string"
-    }
+    "'string'"
 """

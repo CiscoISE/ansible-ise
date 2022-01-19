@@ -10,6 +10,7 @@ module: sg_mapping_group_bulk_request
 short_description: Resource module for Sg Mapping Group Bulk Request
 description:
 - Manage operation update of the resource Sg Mapping Group Bulk Request.
+- This API allows the client to submit the bulk request.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -22,13 +23,15 @@ options:
     description: Sg Mapping Group Bulk Request's resourceMediaType.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Sg Mapping Group Bulk Request reference
-  description: Complete reference of the Sg Mapping Group Bulk Request object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    ip_to_sgt_mapping_group.IpToSgtMappingGroup.bulk_request_for_ip_to_sgt_mapping_group,
+
+  - Paths used are
+    put /ers/config/sgmappinggroup/bulk/submit,
+
 """
 
 EXAMPLES = r"""

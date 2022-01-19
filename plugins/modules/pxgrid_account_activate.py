@@ -19,13 +19,15 @@ options:
     description: Pxgrid Account Activate's description.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Pxgrid Account Activate reference
-  description: Complete reference of the Pxgrid Account Activate object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    consumer.Consumer.activate_account,
+
+  - Paths used are
+    post /control/AccountActivate,
+
 """
 
 EXAMPLES = r"""

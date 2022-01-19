@@ -12,6 +12,9 @@ description:
 - Get all External Radius Server.
 - Get External Radius Server by id.
 - Get External Radius Server by name.
+- This API allows the client to get all the external RADIUS servers.
+- This API allows the client to get an external RADIUS server by ID.
+- This API allows the client to get an external RADIUS server by name.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -34,13 +37,19 @@ options:
     - Size query parameter. Number of objects returned per page.
     type: int
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: External Radius Server reference
-  description: Complete reference of the External Radius Server object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    external_radius_server.ExternalRadiusServer.get_external_radius_server_by_id,
+    external_radius_server.ExternalRadiusServer.get_external_radius_server_by_name,
+    external_radius_server.ExternalRadiusServer.get_external_radius_server_generator,
+
+  - Paths used are
+    get /ers/config/externalradiusserver,
+    get /ers/config/externalradiusserver/name/{name},
+    get /ers/config/externalradiusserver/{id},
+
 """
 
 EXAMPLES = r"""

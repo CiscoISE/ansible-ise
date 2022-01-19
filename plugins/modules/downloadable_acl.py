@@ -10,6 +10,8 @@ module: downloadable_acl
 short_description: Resource module for Downloadable Acl
 description:
 - Manage operations create, update and delete of the resource Downloadable Acl.
+- This API creates a downloadable ACL.
+- This API deletes a downloadable ACL.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -32,13 +34,18 @@ options:
       characters _.-.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Downloadable Acl reference
-  description: Complete reference of the Downloadable Acl object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    downloadable_acl.DownloadableAcl.create_downloadable_acl,
+    downloadable_acl.DownloadableAcl.delete_downloadable_acl_by_id,
+    downloadable_acl.DownloadableAcl.update_downloadable_acl_by_id,
+
+  - Paths used are
+    post /ers/config/downloadableacl,
+    delete /ers/config/downloadableacl/{id},
+
 """
 
 EXAMPLES = r"""

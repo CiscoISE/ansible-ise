@@ -10,19 +10,22 @@ module: backup_cancel
 short_description: Resource module for Backup Cancel
 description:
 - Manage operation create of the resource Backup Cancel.
+- Cancels the backup job running on the node.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Backup Cancel reference
-  description: Complete reference of the Backup Cancel object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    backup_and_restore.BackupAndRestore.cancel_backup,
+
+  - Paths used are
+    post /api/v1/backup-restore/config/cancel-backup,
+
 """
 
 EXAMPLES = r"""

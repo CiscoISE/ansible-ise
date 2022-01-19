@@ -10,6 +10,8 @@ module: tacacs_profile
 short_description: Resource module for Tacacs Profile
 description:
 - Manage operations create, update and delete of the resource Tacacs Profile.
+- This API creates a TACACS profile.
+- This API deletes a TACACS profile.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -42,13 +44,18 @@ options:
         type: list
     type: dict
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Tacacs Profile reference
-  description: Complete reference of the Tacacs Profile object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    tacacs_profile.TacacsProfile.create_tacacs_profile,
+    tacacs_profile.TacacsProfile.delete_tacacs_profile_by_id,
+    tacacs_profile.TacacsProfile.update_tacacs_profile_by_id,
+
+  - Paths used are
+    post /ers/config/tacacsprofile,
+    delete /ers/config/tacacsprofile/{id},
+
 """
 
 EXAMPLES = r"""

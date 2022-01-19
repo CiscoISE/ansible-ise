@@ -10,6 +10,8 @@ module: my_device_portal
 short_description: Resource module for My Device Portal
 description:
 - Manage operations create, update and delete of the resource My Device Portal.
+- This API creates a my device portal.
+- This API deletes a my device portal by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -271,13 +273,18 @@ options:
         type: dict
     type: dict
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: My Device Portal reference
-  description: Complete reference of the My Device Portal object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    my_device_portal.MyDevicePortal.create_my_device_portal,
+    my_device_portal.MyDevicePortal.delete_my_device_portal_by_id,
+    my_device_portal.MyDevicePortal.update_my_device_portal_by_id,
+
+  - Paths used are
+    post /ers/config/mydeviceportal,
+    delete /ers/config/mydeviceportal/{id},
+
 """
 
 EXAMPLES = r"""

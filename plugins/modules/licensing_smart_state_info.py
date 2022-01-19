@@ -10,19 +10,22 @@ module: licensing_smart_state_info
 short_description: Information module for Licensing Smart State
 description:
 - Get all Licensing Smart State.
+- Get smart license information.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Licensing Smart State reference
-  description: Complete reference of the Licensing Smart State object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    licensing.Licensing.get_smart_state,
+
+  - Paths used are
+    get /api/v1/license/system/smart-state,
+
 """
 
 EXAMPLES = r"""

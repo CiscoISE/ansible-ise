@@ -11,6 +11,8 @@ short_description: Information module for Csr
 description:
 - Get all Csr.
 - Get Csr by id.
+- This API displays details of a Certificate Signing Request of a particular node for given HostName and ID.
+- This API supports Filtering, Sorting and Pagination.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -63,13 +65,17 @@ options:
     - Id path parameter. ID of the Certificate Signing Request returned.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Csr reference
-  description: Complete reference of the Csr object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    certificates.Certificates.get_csr_by_id,
+    certificates.Certificates.get_csrs_generator,
+
+  - Paths used are
+    get /api/v1/certs/certificate-signing-request,
+    get /api/v1/certs/certificate-signing-request/{hostName}/{id},
+
 """
 
 EXAMPLES = r"""

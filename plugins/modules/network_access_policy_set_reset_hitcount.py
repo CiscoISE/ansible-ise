@@ -10,19 +10,22 @@ module: network_access_policy_set_reset_hitcount
 short_description: Resource module for Network Access Policy Set Reset Hitcount
 description:
 - Manage operation create of the resource Network Access Policy Set Reset Hitcount.
+- Network Access - Reset HitCount for PolicySets.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Network Access Policy Set Reset Hitcount reference
-  description: Complete reference of the Network Access Policy Set Reset Hitcount object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    network_access_policy_set.NetworkAccessPolicySet.reset_hit_counts_network_access_policy_sets,
+
+  - Paths used are
+    post /network-access/policy-set/reset-hitcount,
+
 """
 
 EXAMPLES = r"""

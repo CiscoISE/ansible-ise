@@ -11,6 +11,8 @@ short_description: Information module for Trustsec Sg Vn Mapping
 description:
 - Get all Trustsec Sg Vn Mapping.
 - Get Trustsec Sg Vn Mapping by id.
+- Get Security Group and Virtual Network mapping by id.
+- Get all Security Group and Virtual Network mappings.
 version_added: '2.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -59,13 +61,17 @@ options:
     - Id path parameter.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Trustsec Sg Vn Mapping reference
-  description: Complete reference of the Trustsec Sg Vn Mapping object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    sg_vn_mapping.SgVnMapping.get_sg_vn_mapping_by_id,
+    sg_vn_mapping.SgVnMapping.get_sg_vn_mappings_generator,
+
+  - Paths used are
+    get /api/v1/trustsec/sgvnmapping,
+    get /api/v1/trustsec/sgvnmapping/{id},
+
 """
 
 EXAMPLES = r"""

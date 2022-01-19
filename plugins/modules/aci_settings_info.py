@@ -10,19 +10,22 @@ module: aci_settings_info
 short_description: Information module for Aci Settings
 description:
 - Get all Aci Settings.
+- This API allows the client to get ACI Settings.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Aci Settings reference
-  description: Complete reference of the Aci Settings object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    aci_settings.AciSettings.get_aci_settings,
+
+  - Paths used are
+    get /ers/config/acisettings,
+
 """
 
 EXAMPLES = r"""

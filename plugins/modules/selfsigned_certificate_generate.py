@@ -10,6 +10,7 @@ module: selfsigned_certificate_generate
 short_description: Resource module for Selfsigned Certificate Generate
 description:
 - Manage operation create of the resource Selfsigned Certificate Generate.
+- \#\#\# Generate Self-signed Certificate
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -118,13 +119,15 @@ options:
     description: Certificate state (ST).
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Selfsigned Certificate Generate reference
-  description: Complete reference of the Selfsigned Certificate Generate object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    certificates.Certificates.generate_self_signed_certificate,
+
+  - Paths used are
+    post /api/v1/certs/system-certificate/generate-selfsigned-certificate,
+
 """
 
 EXAMPLES = r"""

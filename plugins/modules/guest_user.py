@@ -10,6 +10,9 @@ module: guest_user
 short_description: Resource module for Guest User
 description:
 - Manage operations create, update and delete of the resource Guest User.
+- This API creates a guest user.
+- This API deletes a guest user by ID.
+- This API deletes a guest user.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -110,13 +113,21 @@ options:
     description: Guest User's statusReason.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Guest User reference
-  description: Complete reference of the Guest User object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    guest_user.GuestUser.create_guest_user,
+    guest_user.GuestUser.delete_guest_user_by_id,
+    guest_user.GuestUser.delete_guest_user_by_name,
+    guest_user.GuestUser.update_guest_user_by_id,
+    guest_user.GuestUser.update_guest_user_by_name,
+
+  - Paths used are
+    post /ers/config/guestuser,
+    delete /ers/config/guestuser/name/{name},
+    delete /ers/config/guestuser/{id},
+
 """
 
 EXAMPLES = r"""

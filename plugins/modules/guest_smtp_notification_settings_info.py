@@ -11,6 +11,8 @@ short_description: Information module for Guest Smtp Notification Settings
 description:
 - Get all Guest Smtp Notification Settings.
 - Get Guest Smtp Notification Settings by id.
+- This API allows the client to get a guest SMTP notification configuration by
+- This API allows the client to get all the guest SMTP notification
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -55,13 +57,17 @@ options:
       can be changed by using the parameter.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Guest Smtp Notification Settings reference
-  description: Complete reference of the Guest Smtp Notification Settings object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    guest_smtp_notification_configuration.GuestSmtpNotificationConfiguration.get_guest_smtp_notification_settings_by_id,
+    guest_smtp_notification_configuration.GuestSmtpNotificationConfiguration.get_guest_smtp_notification_settings_generator,
+
+  - Paths used are
+    get /ers/config/guestsmtpnotificationsettings,
+    get /ers/config/guestsmtpnotificationsettings/{id},
+
 """
 
 EXAMPLES = r"""

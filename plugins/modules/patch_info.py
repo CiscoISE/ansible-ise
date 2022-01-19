@@ -10,19 +10,22 @@ module: patch_info
 short_description: Information module for Patch
 description:
 - Get all Patch.
+- List all the installed patches in the system, with the patch number for rollback.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Patch reference
-  description: Complete reference of the Patch object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    patching.Patching.list_installed_patches,
+
+  - Paths used are
+    get /api/v1/patch,
+
 """
 
 EXAMPLES = r"""

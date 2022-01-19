@@ -11,6 +11,8 @@ short_description: Information module for Radius Server Sequence
 description:
 - Get all Radius Server Sequence.
 - Get Radius Server Sequence by id.
+- This API allows the client to get a RADIUS server sequence by ID.
+- This API allows the client to get all the RADIUS server sequences.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -29,13 +31,17 @@ options:
     - Size query parameter. Number of objects returned per page.
     type: int
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Radius Server Sequence reference
-  description: Complete reference of the Radius Server Sequence object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    radius_server_sequence.RadiusServerSequence.get_radius_server_sequence_by_id,
+    radius_server_sequence.RadiusServerSequence.get_radius_server_sequence_generator,
+
+  - Paths used are
+    get /ers/config/radiusserversequence,
+    get /ers/config/radiusserversequence/{id},
+
 """
 
 EXAMPLES = r"""

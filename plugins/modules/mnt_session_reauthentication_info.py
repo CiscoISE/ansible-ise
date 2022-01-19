@@ -10,6 +10,7 @@ module: mnt_session_reauthentication_info
 short_description: Information module for Mnt Session Reauthentication
 description:
 - Get Mnt Session Reauthentication by id.
+- Session Reauthentication by MAC.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -28,13 +29,15 @@ options:
     - REAUTH_TYPE path parameter.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Mnt Session Reauthentication reference
-  description: Complete reference of the Mnt Session Reauthentication object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    misc.Misc.session_reauthentication_by_mac,
+
+  - Paths used are
+    get /CoA/Reauth/{PSN_NAME}/{ENDPOINT_MAC}/{REAUTH_TYPE},
+
 """
 
 EXAMPLES = r"""

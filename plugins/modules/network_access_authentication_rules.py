@@ -10,6 +10,8 @@ module: network_access_authentication_rules
 short_description: Resource module for Network Access Authentication Rules
 description:
 - Manage operations create, update and delete of the resource Network Access Authentication Rules.
+- Network Access - Create authentication rule.
+- Network Access - Delete rule.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -217,13 +219,18 @@ options:
         type: str
     type: dict
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Network Access Authentication Rules reference
-  description: Complete reference of the Network Access Authentication Rules object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    network_access_authentication_rules.NetworkAccessAuthenticationRules.create_network_access_authentication_rule,
+    network_access_authentication_rules.NetworkAccessAuthenticationRules.delete_network_access_authentication_rule_by_id,
+    network_access_authentication_rules.NetworkAccessAuthenticationRules.update_network_access_authentication_rule_by_id,
+
+  - Paths used are
+    post /network-access/policy-set/{policyId}/authentication,
+    delete /network-access/policy-set/{policyId}/authentication/{id},
+
 """
 
 EXAMPLES = r"""

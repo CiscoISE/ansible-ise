@@ -11,6 +11,8 @@ short_description: Information module for Device Administration Time Date Condit
 description:
 - Get all Device Administration Time Date Conditions.
 - Get Device Administration Time Date Conditions by id.
+- Device Admin - Returns a list of time and date conditions.
+- Device Admin - Returns a network condition.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -21,13 +23,17 @@ options:
     - Id path parameter. Condition id.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Device Administration Time Date Conditions reference
-  description: Complete reference of the Device Administration Time Date Conditions object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    device_administration_time_date_conditions.DeviceAdministrationTimeDateConditions.get_device_admin_time_condition_by_id,
+    device_administration_time_date_conditions.DeviceAdministrationTimeDateConditions.get_device_admin_time_conditions,
+
+  - Paths used are
+    get /device-admin/time-condition,
+    get /device-admin/time-condition/{id},
+
 """
 
 EXAMPLES = r"""

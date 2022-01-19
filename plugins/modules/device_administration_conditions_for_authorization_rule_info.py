@@ -10,19 +10,22 @@ module: device_administration_conditions_for_authorization_rule_info
 short_description: Information module for Device Administration Conditions For Authorization Rule
 description:
 - Get all Device Administration Conditions For Authorization Rule.
+- Device Admin - Returns list of library conditions for authorization rules.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Device Administration Conditions For Authorization Rule reference
-  description: Complete reference of the Device Administration Conditions For Authorization Rule object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    device_administration_conditions.DeviceAdministrationConditions.get_device_admin_conditions_for_authorization_rules,
+
+  - Paths used are
+    get /device-admin/condition/authorization,
+
 """
 
 EXAMPLES = r"""

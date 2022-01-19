@@ -10,6 +10,8 @@ module: tacacs_server_sequence
 short_description: Resource module for Tacacs Server Sequence
 description:
 - Manage operations create, update and delete of the resource Tacacs Server Sequence.
+- This API creates a TACACS server sequence.
+- This API deletes a TACACS server sequence.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -47,13 +49,18 @@ options:
     description: Define if a delimiter will be used for suffix strip.
     type: bool
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Tacacs Server Sequence reference
-  description: Complete reference of the Tacacs Server Sequence object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    tacacs_server_sequence.TacacsServerSequence.create_tacacs_server_sequence,
+    tacacs_server_sequence.TacacsServerSequence.delete_tacacs_server_sequence_by_id,
+    tacacs_server_sequence.TacacsServerSequence.update_tacacs_server_sequence_by_id,
+
+  - Paths used are
+    post /ers/config/tacacsserversequence,
+    delete /ers/config/tacacsserversequence/{id},
+
 """
 
 EXAMPLES = r"""

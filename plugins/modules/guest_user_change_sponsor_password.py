@@ -10,6 +10,7 @@ module: guest_user_change_sponsor_password
 short_description: Resource module for Guest User Change Sponsor Password
 description:
 - Manage operation update of the resource Guest User Change Sponsor Password.
+- This API allows the client to change the sponsor password.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -29,13 +30,14 @@ options:
     description: PortalId path parameter.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Guest User Change Sponsor Password reference
-  description: Complete reference of the Guest User Change Sponsor Password object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    guest_user.GuestUser.change_sponsor_password,
+
+  - Paths used are
+    put /ers/config/guestuser/changeSponsorPassword/{portalId}
 """
 
 EXAMPLES = r"""

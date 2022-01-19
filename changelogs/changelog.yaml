@@ -653,3 +653,13 @@ releases:
         - node_services_sxp_interfaces - fixes params used for module.
         - repository - fixes params used for modules. Fix for issue 19.
         - repository_files_info - fixes params used for module.
+  2.2.0:
+    release_date: '2022-01-18'
+    changes:
+      release_summary: Update module doc & fix licensing_tier_state_create
+      minor_changes:
+        - licensing_tier_state_create - fix function call.
+        - Update requirements to use ciscoisesdk >= 1.4.0.
+      bugfixes:
+        - plugin/modules - update documentation block.
+        - update README.

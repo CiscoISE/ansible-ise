@@ -16,13 +16,15 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Mnt Session Auth List reference
-  description: Complete reference of the Mnt Session Auth List object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    misc.Misc.get_session_auth_list,
+
+  - Paths used are
+    get /Session/AuthList/null/null,
+
 """
 
 EXAMPLES = r"""

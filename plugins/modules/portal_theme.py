@@ -10,6 +10,8 @@ module: portal_theme
 short_description: Resource module for Portal Theme
 description:
 - Manage operations create, update and delete of the resource Portal Theme.
+- This API creates a portal theme.
+- This API deletes a portal theme by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -28,13 +30,18 @@ options:
     description: Portal Theme for all portals.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Portal Theme reference
-  description: Complete reference of the Portal Theme object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    portal_theme.PortalTheme.create_portal_theme,
+    portal_theme.PortalTheme.delete_portal_theme_by_id,
+    portal_theme.PortalTheme.update_portal_theme_by_id,
+
+  - Paths used are
+    post /ers/config/portaltheme,
+    delete /ers/config/portaltheme/{id},
+
 """
 
 EXAMPLES = r"""

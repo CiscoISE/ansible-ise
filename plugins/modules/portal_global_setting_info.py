@@ -11,6 +11,8 @@ short_description: Information module for Portal Global Setting
 description:
 - Get all Portal Global Setting.
 - Get Portal Global Setting by id.
+- This API allows the client to get all the portal global settings.
+- This API allows the client to get the portal global settings by id.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -55,13 +57,17 @@ options:
       can be changed by using the parameter.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Portal Global Setting reference
-  description: Complete reference of the Portal Global Setting object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    portal_global_setting.PortalGlobalSetting.get_portal_global_setting_by_id,
+    portal_global_setting.PortalGlobalSetting.get_portal_global_settings_generator,
+
+  - Paths used are
+    get /ers/config/portalglobalsetting,
+    get /ers/config/portalglobalsetting/{id},
+
 """
 
 EXAMPLES = r"""

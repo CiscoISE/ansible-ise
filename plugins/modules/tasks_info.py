@@ -21,13 +21,17 @@ options:
     - TaskId path parameter. The id of the task executed before.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Tasks reference
-  description: Complete reference of the Tasks object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    tasks.Tasks.get_task_status,
+    tasks.Tasks.get_task_status_by_id,
+
+  - Paths used are
+    get /api/v1/task,
+    get /api/v1/task/{taskId},
+
 """
 
 EXAMPLES = r"""

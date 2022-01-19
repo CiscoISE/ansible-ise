@@ -10,6 +10,8 @@ module: sponsor_portal
 short_description: Resource module for Sponsor Portal
 description:
 - Manage operations create, update and delete of the resource Sponsor Portal.
+- This API creates a sponsor portal.
+- This API deletes a sponsor portal by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -276,13 +278,18 @@ options:
         type: dict
     type: dict
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Sponsor Portal reference
-  description: Complete reference of the Sponsor Portal object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    sponsor_portal.SponsorPortal.create_sponsor_portal,
+    sponsor_portal.SponsorPortal.delete_sponsor_portal_by_id,
+    sponsor_portal.SponsorPortal.update_sponsor_portal_by_id,
+
+  - Paths used are
+    post /ers/config/sponsorportal,
+    delete /ers/config/sponsorportal/{id},
+
 """
 
 EXAMPLES = r"""

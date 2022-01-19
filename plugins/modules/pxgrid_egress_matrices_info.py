@@ -16,13 +16,14 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Pxgrid Egress Matrices Info reference
-  description: Complete reference of the Pxgrid Egress Matrices Info object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    trust_sec_configuration.TrustSecConfiguration.get_egress_matrices,
+
+  - Paths used are
+    post /pxgrid/ise/radius/ise/config/trustsec/getEgressMatrices
 """
 
 EXAMPLES = r"""

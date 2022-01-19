@@ -11,6 +11,8 @@ short_description: Information module for Sxp Vpns
 description:
 - Get all Sxp Vpns.
 - Get Sxp Vpns by id.
+- This API allows the client to get a SXP VPN by ID.
+- This API allows the client to get all the SXP VPNs.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -55,13 +57,17 @@ options:
     - Sortdsc query parameter. Sort desc.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Sxp Vpns reference
-  description: Complete reference of the Sxp Vpns object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    sxp_vpns.SxpVpns.get_sxp_vpn_by_id,
+    sxp_vpns.SxpVpns.get_sxp_vpns_generator,
+
+  - Paths used are
+    get /ers/config/sxpvpns,
+    get /ers/config/sxpvpns/{id},
+
 """
 
 EXAMPLES = r"""

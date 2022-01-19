@@ -10,6 +10,7 @@ module: guest_smtp_notification_settings
 short_description: Resource module for Guest Smtp Notification Settings
 description:
 - Manage operations create and update of the resource Guest Smtp Notification Settings.
+- This API creates a guest SMTP notification configuration.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -52,13 +53,16 @@ options:
     description: Username of Secure SMTP server.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Guest Smtp Notification Settings reference
-  description: Complete reference of the Guest Smtp Notification Settings object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    guest_smtp_notification_configuration.GuestSmtpNotificationConfiguration.create_guest_smtp_notification_settings,
+    guest_smtp_notification_configuration.GuestSmtpNotificationConfiguration.update_guest_smtp_notification_settings_by_id,
+
+  - Paths used are
+    post /ers/config/guestsmtpnotificationsettings,
+
 """
 
 EXAMPLES = r"""

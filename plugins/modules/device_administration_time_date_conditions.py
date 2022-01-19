@@ -10,6 +10,8 @@ module: device_administration_time_date_conditions
 short_description: Resource module for Device Administration Time Date Conditions
 description:
 - Manage operations create, update and delete of the resource Device Administration Time Date Conditions.
+- Device Admin - Creates time/date condition.
+- Device Admin - Delete Time/Date condition.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -153,13 +155,18 @@ options:
     elements: str
     type: list
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Device Administration Time Date Conditions reference
-  description: Complete reference of the Device Administration Time Date Conditions object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    device_administration_time_date_conditions.DeviceAdministrationTimeDateConditions.create_device_admin_time_condition,
+    device_administration_time_date_conditions.DeviceAdministrationTimeDateConditions.delete_device_admin_time_condition_by_id,
+    device_administration_time_date_conditions.DeviceAdministrationTimeDateConditions.update_device_admin_time_condition_by_id,
+
+  - Paths used are
+    post /device-admin/time-condition,
+    delete /device-admin/time-condition/{id},
+
 """
 
 EXAMPLES = r"""

@@ -11,6 +11,8 @@ short_description: Information module for Sponsor Portal
 description:
 - Get all Sponsor Portal.
 - Get Sponsor Portal by id.
+- This API allows the client to get a sponsor portal by ID.
+- This API allows the client to get all the sponsor portals.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -55,13 +57,17 @@ options:
       can be changed by using the parameter.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Sponsor Portal reference
-  description: Complete reference of the Sponsor Portal object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    sponsor_portal.SponsorPortal.get_sponsor_portal_by_id,
+    sponsor_portal.SponsorPortal.get_sponsor_portal_generator,
+
+  - Paths used are
+    get /ers/config/sponsorportal,
+    get /ers/config/sponsorportal/{id},
+
 """
 
 EXAMPLES = r"""

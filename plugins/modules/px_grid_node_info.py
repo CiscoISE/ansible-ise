@@ -12,6 +12,9 @@ description:
 - Get all Px Grid Node.
 - Get Px Grid Node by id.
 - Get Px Grid Node by name.
+- This API allows the client to get a pxGrid node by ID.
+- This API allows the client to get a pxGrid node by name.
+- This API allows the client to get all the npxGrid nodes.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -34,13 +37,19 @@ options:
     - Size query parameter. Number of objects returned per page.
     type: int
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Px Grid Node reference
-  description: Complete reference of the Px Grid Node object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    px_grid_node.PxGridNode.get_px_grid_node_by_id,
+    px_grid_node.PxGridNode.get_px_grid_node_by_name,
+    px_grid_node.PxGridNode.get_px_grid_node_generator,
+
+  - Paths used are
+    get /ers/config/pxgridnode,
+    get /ers/config/pxgridnode/name/{name},
+    get /ers/config/pxgridnode/{id},
+
 """
 
 EXAMPLES = r"""

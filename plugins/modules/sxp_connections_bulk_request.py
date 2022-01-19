@@ -10,6 +10,7 @@ module: sxp_connections_bulk_request
 short_description: Resource module for Sxp Connections Bulk Request
 description:
 - Manage operation update of the resource Sxp Connections Bulk Request.
+- This API allows the client to submit the bulk request.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -22,13 +23,15 @@ options:
     description: Sxp Connections Bulk Request's resourceMediaType.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Sxp Connections Bulk Request reference
-  description: Complete reference of the Sxp Connections Bulk Request object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    sxp_connections.SxpConnections.bulk_request_for_sxp_connections,
+
+  - Paths used are
+    put /ers/config/sxpconnections/bulk/submit,
+
 """
 
 EXAMPLES = r"""

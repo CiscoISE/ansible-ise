@@ -11,6 +11,8 @@ short_description: Information module for System Certificate
 description:
 - Get System Certificate by id.
 - Get System Certificate by name.
+- This API provides details of a System Certificate of a particular node based on given HostName and ID.
+- This API supports Filtering, Sorting and Pagination.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -63,13 +65,17 @@ options:
     - Id path parameter. ID of the system certificate.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: System Certificate reference
-  description: Complete reference of the System Certificate object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    certificates.Certificates.get_system_certificate_by_id,
+    certificates.Certificates.get_system_certificates,
+
+  - Paths used are
+    get /api/v1/certs/system-certificate/{hostName},
+    get /api/v1/certs/system-certificate/{hostName}/{id},
+
 """
 
 EXAMPLES = r"""

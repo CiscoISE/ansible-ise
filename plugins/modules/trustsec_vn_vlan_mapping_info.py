@@ -11,6 +11,8 @@ short_description: Information module for Trustsec Vn Vlan Mapping
 description:
 - Get all Trustsec Vn Vlan Mapping.
 - Get Trustsec Vn Vlan Mapping by id.
+- Get VN-Vlan Mapping by id.
+- Get all VN-Vlan Mappings.
 version_added: '2.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -59,13 +61,17 @@ options:
     - Id path parameter.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Trustsec Vn Vlan Mapping reference
-  description: Complete reference of the Trustsec Vn Vlan Mapping object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    vn_vlan_mapping.VnVlanMapping.get_vn_vlan_mapping_by_id,
+    vn_vlan_mapping.VnVlanMapping.get_vn_vlan_mappings_generator,
+
+  - Paths used are
+    get /api/v1/trustsec/vnvlanmapping,
+    get /api/v1/trustsec/vnvlanmapping/{id},
+
 """
 
 EXAMPLES = r"""

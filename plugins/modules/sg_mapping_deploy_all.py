@@ -10,19 +10,22 @@ module: sg_mapping_deploy_all
 short_description: Resource module for Sg Mapping Deploy All
 description:
 - Manage operation update of the resource Sg Mapping Deploy All.
+- This API allows the client to deploy all the IP to SGT mappings.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Sg Mapping Deploy All reference
-  description: Complete reference of the Sg Mapping Deploy All object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    ip_to_sgt_mapping.IpToSgtMapping.deploy_all_ip_to_sgt_mapping,
+
+  - Paths used are
+    put /ers/config/sgmapping/deployall,
+
 """
 
 EXAMPLES = r"""

@@ -10,6 +10,9 @@ module: patch_rollback
 short_description: Resource module for Patch Rollback
 description:
 - Manage operation create of the resource Patch Rollback.
+- >
+   Triggers patch rollback on the Cisco ISE node. A task ID is returned which can be used to monitor the progress of the patch rollback process. As the
+   patch   rollback triggers the Cisco ISE to restart, the task API becomes unavailable for  a certain period of time.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -19,13 +22,15 @@ options:
     description: Patch Rollback's patchNumber.
     type: int
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Patch Rollback reference
-  description: Complete reference of the Patch Rollback object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    patching.Patching.rollback_patch,
+
+  - Paths used are
+    post /api/v1/patch/rollback,
+
 """
 
 EXAMPLES = r"""

@@ -10,6 +10,7 @@ module: anc_policy_bulk_request
 short_description: Resource module for Anc Policy Bulk Request
 description:
 - Manage operation update of the resource Anc Policy Bulk Request.
+- This API allows the client to submit the bulk request.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -22,13 +23,15 @@ options:
     description: Anc Policy Bulk Request's resourceMediaType.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Anc Policy Bulk Request reference
-  description: Complete reference of the Anc Policy Bulk Request object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    anc_policy.AncPolicy.bulk_request_for_anc_policy,
+
+  - Paths used are
+    put /ers/config/ancpolicy/bulk/submit,
+
 """
 
 EXAMPLES = r"""

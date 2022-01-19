@@ -10,19 +10,22 @@ module: endpoint_get_rejected_endpoints_info
 short_description: Information module for Endpoint Get Rejected Endpoints
 description:
 - Get all Endpoint Get Rejected Endpoints.
+- This API allows the client to get the rejected endpoints.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Endpoint Get Rejected Endpoints reference
-  description: Complete reference of the Endpoint Get Rejected Endpoints object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    endpoint.Endpoint.get_rejected_endpoints,
+
+  - Paths used are
+    get /ers/config/endpoint/getrejectedendpoints,
+
 """
 
 EXAMPLES = r"""

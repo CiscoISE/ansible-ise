@@ -10,19 +10,22 @@ module: mnt_session_delete_all
 short_description: Resource module for Mnt Session Delete All
 description:
 - Manage operation delete of the resource Mnt Session Delete All.
+- Delete All Sessions.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Mnt Session Delete All reference
-  description: Complete reference of the Mnt Session Delete All object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    misc.Misc.delete_all_sessions,
+
+  - Paths used are
+    delete /Session/Delete/All,
+
 """
 
 EXAMPLES = r"""

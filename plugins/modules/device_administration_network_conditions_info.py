@@ -11,6 +11,8 @@ short_description: Information module for Device Administration Network Conditio
 description:
 - Get all Device Administration Network Conditions.
 - Get Device Administration Network Conditions by id.
+- Device Admin - Returns a list of network conditions.
+- Device Admin - Returns a network condition.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -21,13 +23,17 @@ options:
     - Id path parameter. Condition id.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Device Administration Network Conditions reference
-  description: Complete reference of the Device Administration Network Conditions object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    device_administration_network_conditions.DeviceAdministrationNetworkConditions.get_device_admin_network_condition_by_id,
+    device_administration_network_conditions.DeviceAdministrationNetworkConditions.get_device_admin_network_conditions,
+
+  - Paths used are
+    get /device-admin/network-condition,
+    get /device-admin/network-condition/{id},
+
 """
 
 EXAMPLES = r"""

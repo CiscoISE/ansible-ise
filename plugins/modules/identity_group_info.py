@@ -12,6 +12,9 @@ description:
 - Get all Identity Group.
 - Get Identity Group by id.
 - Get Identity Group by name.
+- This API allows the client to get all the identity groups.
+- This API allows the client to get an identity group by ID.
+- This API allows the client to get an identity group by name.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -60,13 +63,19 @@ options:
       can be changed by using the parameter.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Identity Group reference
-  description: Complete reference of the Identity Group object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    identity_groups.IdentityGroups.get_identity_group_by_id,
+    identity_groups.IdentityGroups.get_identity_group_by_name,
+    identity_groups.IdentityGroups.get_identity_groups_generator,
+
+  - Paths used are
+    get /ers/config/identitygroup,
+    get /ers/config/identitygroup/name/{name},
+    get /ers/config/identitygroup/{id},
+
 """
 
 EXAMPLES = r"""

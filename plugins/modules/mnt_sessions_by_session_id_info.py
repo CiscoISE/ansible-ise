@@ -20,13 +20,15 @@ options:
     - Session_id path parameter.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Mnt Sessions By Session Id reference
-  description: Complete reference of the Mnt Sessions By Session Id object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    misc.Misc.get_sessions_by_session_id,
+
+  - Paths used are
+    get /Session/Active/SessionID/{session_id}/0,
+
 """
 
 EXAMPLES = r"""

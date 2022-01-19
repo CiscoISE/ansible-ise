@@ -19,13 +19,15 @@ options:
     description: Pxgrid Service Register's name.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Pxgrid Service Register reference
-  description: Complete reference of the Pxgrid Service Register object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    provider.Provider.register_service,
+
+  - Paths used are
+    post /control/ServiceRegister,
+
 """
 
 EXAMPLES = r"""

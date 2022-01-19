@@ -16,13 +16,14 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Pxgrid User Group By Username Info reference
-  description: Complete reference of the Pxgrid User Group By Username Info object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    session_directory.SessionDirectory.get_user_group_by_user_name
+
+  - Paths used are
+    post /pxgrid/ise/radius/ise/session/getUserGroupByUserName
 """
 
 EXAMPLES = r"""

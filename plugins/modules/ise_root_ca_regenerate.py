@@ -10,6 +10,7 @@ module: ise_root_ca_regenerate
 short_description: Resource module for Ise Root Ca Regenerate
 description:
 - Manage operation create of the resource Ise Root Ca Regenerate.
+- This API initiates regeneration of Cisco ISE root CA certificate chain.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -20,13 +21,15 @@ options:
       CSR.
     type: bool
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Ise Root Ca Regenerate reference
-  description: Complete reference of the Ise Root Ca Regenerate object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    certificates.Certificates.regenerate_ise_root_ca,
+
+  - Paths used are
+    post /api/v1/certs/ise-root-ca/regenerate,
+
 """
 
 EXAMPLES = r"""

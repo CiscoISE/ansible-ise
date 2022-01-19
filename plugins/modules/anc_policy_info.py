@@ -12,6 +12,9 @@ description:
 - Get all Anc Policy.
 - Get Anc Policy by id.
 - Get Anc Policy by name.
+- This API allows the client to get all the ANC policies.
+- This API allows the client to get an ANC policy by ID.
+- This API allows the client to get an ANC policy by name.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -60,13 +63,19 @@ options:
       can be changed by using the parameter.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Anc Policy reference
-  description: Complete reference of the Anc Policy object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    anc_policy.AncPolicy.get_anc_policy_by_id,
+    anc_policy.AncPolicy.get_anc_policy_by_name,
+    anc_policy.AncPolicy.get_anc_policy_generator,
+
+  - Paths used are
+    get /ers/config/ancpolicy,
+    get /ers/config/ancpolicy/name/{name},
+    get /ers/config/ancpolicy/{id},
+
 """
 
 EXAMPLES = r"""

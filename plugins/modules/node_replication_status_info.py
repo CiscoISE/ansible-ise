@@ -20,13 +20,14 @@ options:
     - Node path parameter. ID of the existing node.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Node Replication Status reference
-  description: Complete reference of the Node Replication Status object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    replication_status.ReplicationStatus.get_node_replication_status,
+
+  - Paths used are
+    get /api/v1/replication-status/{node}
 """
 
 EXAMPLES = r"""

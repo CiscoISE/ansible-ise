@@ -10,6 +10,7 @@ module: active_directory_is_user_member_of_group_info
 short_description: Information module for Active Directory Is User Member Of Group
 description:
 - Get all Active Directory Is User Member Of Group.
+- This API verifies if the user is a member of the given groups.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -30,13 +31,14 @@ options:
         type: str
     type: list
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Active Directory Is User Member Of Group reference
-  description: Complete reference of the Active Directory Is User Member Of Group object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    active_directory.ActiveDirectory.is_user_member_of_groups,
+
+  - Paths used are
+    put /ers/config/activedirectory/{id}/isUserMemberOf
 """
 
 EXAMPLES = r"""

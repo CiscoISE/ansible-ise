@@ -11,6 +11,8 @@ short_description: Information module for Sg To Vn To Vlan
 description:
 - Get all Sg To Vn To Vlan.
 - Get Sg To Vn To Vlan by id.
+- This API allows the client to get a security group to virtual network by ID.
+- This API allows the client to get all the security group ACL to virtual
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -47,13 +49,17 @@ options:
       can be changed by using the parameter.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Sg To Vn To Vlan reference
-  description: Complete reference of the Sg To Vn To Vlan object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    security_group_to_virtual_network.SecurityGroupToVirtualNetwork.get_security_groups_to_vn_to_vlan_by_id,
+    security_group_to_virtual_network.SecurityGroupToVirtualNetwork.get_security_groups_to_vn_to_vlan_generator,
+
+  - Paths used are
+    get /ers/config/sgtvnvlan,
+    get /ers/config/sgtvnvlan/{id},
+
 """
 
 EXAMPLES = r"""

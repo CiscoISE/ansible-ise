@@ -10,19 +10,22 @@ module: node_secondary_to_primary
 short_description: Resource module for Node Secondary To Primary
 description:
 - Manage operation create of the resource Node Secondary To Primary.
+- Execute this API in the secondary PAN in the cluster to promote the node to
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Node Secondary To Primary reference
-  description: Complete reference of the Node Secondary To Primary object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    node_deployment.NodeDeployment.promote_node,
+
+  - Paths used are
+    post /api/v1/deployment/promote,
+
 """
 
 EXAMPLES = r"""

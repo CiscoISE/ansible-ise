@@ -10,6 +10,7 @@ module: mnt_session_by_username_info
 short_description: Information module for Mnt Session By Username
 description:
 - Get Mnt Session By Username by name.
+- Sessions by Username.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -20,13 +21,15 @@ options:
     - Username path parameter.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Mnt Session By Username reference
-  description: Complete reference of the Mnt Session By Username object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    misc.Misc.get_sessions_by_username,
+
+  - Paths used are
+    get /Session/UserName/{username},
+
 """
 
 EXAMPLES = r"""

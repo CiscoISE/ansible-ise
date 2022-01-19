@@ -10,6 +10,7 @@ module: pan_ha_update
 short_description: Resource module for Pan Ha Update
 description:
 - Manage operation update of the resource Pan Ha Update.
+- To deploy the auto-failover feature, you must have at least three nodes, where
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -41,13 +42,15 @@ options:
         type: str
     type: dict
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Pan Ha Update reference
-  description: Complete reference of the Pan Ha Update object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    pan_ha.PanHa.update_pan_ha,
+
+  - Paths used are
+    put /api/v1/deployment/pan-ha,
+
 """
 
 EXAMPLES = r"""
@@ -74,14 +77,9 @@ ise_response:
   type: dict
   sample: >
     {
-      "failedAttempts": 0,
-      "isEnabled": true,
-      "pollingInterval": 0,
-      "primaryHealthCheckNode": {
-        "hostname": "string"
+      "success": {
+        "message": "string"
       },
-      "secondaryHealthCheckNode": {
-        "hostname": "string"
-      }
+      "version": "string"
     }
 """

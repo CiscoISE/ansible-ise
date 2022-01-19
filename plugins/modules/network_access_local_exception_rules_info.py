@@ -11,6 +11,8 @@ short_description: Information module for Network Access Local Exception Rules
 description:
 - Get all Network Access Local Exception Rules.
 - Get Network Access Local Exception Rules by id.
+- Network Access - Get local exception rule attributes.
+- Network Access - Get local exception rules.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -25,13 +27,17 @@ options:
     - Id path parameter. Rule id.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Network Access Local Exception Rules reference
-  description: Complete reference of the Network Access Local Exception Rules object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    network_access_authorization_exception_rules.NetworkAccessAuthorizationExceptionRules.get_network_access_local_exception_rule_by_id,
+    network_access_authorization_exception_rules.NetworkAccessAuthorizationExceptionRules.get_network_access_local_exception_rules,
+
+  - Paths used are
+    get /network-access/policy-set/{policyId}/exception,
+    get /network-access/policy-set/{policyId}/exception/{id},
+
 """
 
 EXAMPLES = r"""

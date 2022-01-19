@@ -10,6 +10,7 @@ module: licensing_registration_create
 short_description: Resource module for Licensing Registration Create
 description:
 - Manage operation create of the resource Licensing Registration Create.
+- License - Configure registration information.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -33,13 +34,15 @@ options:
     description: Token.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Licensing Registration Create reference
-  description: Complete reference of the Licensing Registration Create object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    licensing.Licensing.create_registration_info,
+
+  - Paths used are
+    post /api/v1/license/system/register,
+
 """
 
 EXAMPLES = r"""
@@ -62,14 +65,7 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: dict
+  type: str
   sample: >
-    {
-      "connectionType": "string",
-      "registrationState": "string",
-      "ssmOnPremServer": "string",
-      "tier": [
-        "string"
-      ]
-    }
+    "'string'"
 """

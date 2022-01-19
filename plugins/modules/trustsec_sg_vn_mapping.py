@@ -10,6 +10,8 @@ module: trustsec_sg_vn_mapping
 short_description: Resource module for Trustsec Sg Vn Mapping
 description:
 - Manage operations create, update and delete of the resource Trustsec Sg Vn Mapping.
+- Create Security Group and Virtual Network mapping.
+- Delete Security Group and Virtual Network mapping.
 version_added: '2.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -38,13 +40,18 @@ options:
       is not provided.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Trustsec Sg Vn Mapping reference
-  description: Complete reference of the Trustsec Sg Vn Mapping object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    sg_vn_mapping.SgVnMapping.create_sg_vn_mapping,
+    sg_vn_mapping.SgVnMapping.delete_sg_vn_mapping_by_id,
+    sg_vn_mapping.SgVnMapping.update_sg_vn_mapping_by_id,
+
+  - Paths used are
+    post /api/v1/trustsec/sgvnmapping,
+    delete /api/v1/trustsec/sgvnmapping/{id},
+
 """
 
 EXAMPLES = r"""

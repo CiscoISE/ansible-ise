@@ -10,6 +10,7 @@ module: guest_user_sms
 short_description: Resource module for Guest User Sms
 description:
 - Manage operation update of the resource Guest User Sms.
+- This API allows the client to update a guest user sms by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -22,13 +23,14 @@ options:
     description: PortalId path parameter.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Guest User Sms reference
-  description: Complete reference of the Guest User Sms object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    guest_user.GuestUser.update_guest_user_sms,
+
+  - Paths used are
+    put /ers/config/guestuser/sms/{id}/portalId/{portalId}
 """
 
 EXAMPLES = r"""

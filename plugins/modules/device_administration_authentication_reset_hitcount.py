@@ -10,6 +10,7 @@ module: device_administration_authentication_reset_hitcount
 short_description: Resource module for Device Administration Authentication Reset Hitcount
 description:
 - Manage operation create of the resource Device Administration Authentication Reset Hitcount.
+- Device Admin - Reset HitCount for Authentication Rules.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -19,13 +20,15 @@ options:
     description: PolicyId path parameter. Policy id.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Device Administration Authentication Reset Hitcount reference
-  description: Complete reference of the Device Administration Authentication Reset Hitcount object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    device_administration_authentication_rules.DeviceAdministrationAuthenticationRules.reset_hit_counts_device_admin_authentication_rules,
+
+  - Paths used are
+    post /device-admin/policy-set/{policyId}/authentication/reset-hitcount,
+
 """
 
 EXAMPLES = r"""

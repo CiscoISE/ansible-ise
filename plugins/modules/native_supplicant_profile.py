@@ -10,6 +10,7 @@ module: native_supplicant_profile
 short_description: Resource module for Native Supplicant Profile
 description:
 - Manage operations update and delete of the resource Native Supplicant Profile.
+- This API deletes a native supplicant profile.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -45,13 +46,16 @@ options:
         type: str
     type: list
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Native Supplicant Profile reference
-  description: Complete reference of the Native Supplicant Profile object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    native_supplicant_profile.NativeSupplicantProfile.delete_native_supplicant_profile_by_id,
+    native_supplicant_profile.NativeSupplicantProfile.update_native_supplicant_profile_by_id,
+
+  - Paths used are
+    delete /ers/config/nspprofile/{id},
+
 """
 
 EXAMPLES = r"""

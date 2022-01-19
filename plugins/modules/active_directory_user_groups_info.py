@@ -10,6 +10,8 @@ module: active_directory_user_groups_info
 short_description: Information module for Active Directory User Groups
 description:
 - Get all Active Directory User Groups.
+- This API allows the client to get groups of which a given user
+  is a member.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -30,13 +32,15 @@ options:
         type: str
     type: list
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Active Directory User Groups reference
-  description: Complete reference of the Active Directory User Groups object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    active_directory.ActiveDirectory.get_user_groups,
+
+  - Paths used are
+    put /ers/config/activedirectory/{id}/getUserGroups
+
 """
 
 EXAMPLES = r"""

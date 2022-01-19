@@ -10,6 +10,7 @@ module: aci_bindings_info
 short_description: Information module for Aci Bindings
 description:
 - Get all Aci Bindings.
+- This API allows clients to retrieve all the bindings that were sent to Cisco
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -40,13 +41,15 @@ options:
     - FilterValue query parameter.
     type: list
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Aci Bindings reference
-  description: Complete reference of the Aci Bindings object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    aci_bindings.AciBindings.get_aci_bindings_generator,
+
+  - Paths used are
+    get /ers/config/acibindings/getall,
+
 """
 
 EXAMPLES = r"""

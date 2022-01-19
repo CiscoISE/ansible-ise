@@ -11,6 +11,8 @@ short_description: Information module for Network Access Time Date Conditions
 description:
 - Get all Network Access Time Date Conditions.
 - Get Network Access Time Date Conditions by id.
+- Network Access - Returns a list of time and date conditions.
+- Network Access - returns a network condition.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -21,13 +23,17 @@ options:
     - Id path parameter. Condition id.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Network Access Time Date Conditions reference
-  description: Complete reference of the Network Access Time Date Conditions object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    network_access_time_date_conditions.NetworkAccessTimeDateConditions.get_network_access_time_condition_by_id,
+    network_access_time_date_conditions.NetworkAccessTimeDateConditions.get_network_access_time_conditions,
+
+  - Paths used are
+    get /network-access/time-condition,
+    get /network-access/time-condition/{id},
+
 """
 
 EXAMPLES = r"""

@@ -10,6 +10,9 @@ module: device_administration_conditions
 short_description: Resource module for Device Administration Conditions
 description:
 - Manage operations create, update and delete of the resource Device Administration Conditions.
+- Device Admin - Creates a library condition.
+- Device Admin - Delete a library condition.
+- NDevice Admin - Delete a library condition using condition Name.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -153,13 +156,21 @@ options:
     elements: str
     type: list
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Device Administration Conditions reference
-  description: Complete reference of the Device Administration Conditions object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    device_administration_conditions.DeviceAdministrationConditions.create_device_admin_condition,
+    device_administration_conditions.DeviceAdministrationConditions.delete_device_admin_condition_by_id,
+    device_administration_conditions.DeviceAdministrationConditions.delete_device_admin_condition_by_name,
+    device_administration_conditions.DeviceAdministrationConditions.update_device_admin_condition_by_id,
+    device_administration_conditions.DeviceAdministrationConditions.update_device_admin_condition_by_name,
+
+  - Paths used are
+    post /device-admin/condition,
+    delete /device-admin/condition/condition-by-name/{name},
+    delete /device-admin/condition/{id},
+
 """
 
 EXAMPLES = r"""

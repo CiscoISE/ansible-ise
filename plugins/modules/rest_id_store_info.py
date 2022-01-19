@@ -12,6 +12,9 @@ description:
 - Get all Rest Id Store.
 - Get Rest Id Store by id.
 - Get Rest Id Store by name.
+- This API allows the client to get a REST ID store by ID.
+- This API allows the client to get a REST ID store by name.
+- This API allows the client to get all the REST ID stores.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -60,13 +63,19 @@ options:
       can be changed by using the parameter.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Rest Id Store reference
-  description: Complete reference of the Rest Id Store object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    restid_store.RestidStore.get_rest_id_store_by_id,
+    restid_store.RestidStore.get_rest_id_store_by_name,
+    restid_store.RestidStore.get_rest_id_store_generator,
+
+  - Paths used are
+    get /ers/config/restidstore,
+    get /ers/config/restidstore/name/{name},
+    get /ers/config/restidstore/{id},
+
 """
 
 EXAMPLES = r"""

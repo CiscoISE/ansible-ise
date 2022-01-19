@@ -11,6 +11,8 @@ short_description: Information module for Network Access Dictionary Attribute
 description:
 - Get all Network Access Dictionary Attribute.
 - Get Network Access Dictionary Attribute by name.
+- Get a Dictionary Attribute.
+- Returns a list of Dictionary Attributes for an existing Dictionary.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -25,13 +27,17 @@ options:
     - Name path parameter. The dictionary attribute name.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Network Access Dictionary Attribute reference
-  description: Complete reference of the Network Access Dictionary Attribute object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    network_access_dictionary_attribute.NetworkAccessDictionaryAttribute.get_network_access_dictionary_attribute_by_name,
+    network_access_dictionary_attribute.NetworkAccessDictionaryAttribute.get_network_access_dictionary_attributes_by_dictionary_name,
+
+  - Paths used are
+    get /network-access/dictionaries/{dictionaryName}/attribute,
+    get /network-access/dictionaries/{dictionaryName}/attribute/{name},
+
 """
 
 EXAMPLES = r"""

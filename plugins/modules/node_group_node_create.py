@@ -10,6 +10,7 @@ module: node_group_node_create
 short_description: Resource module for Node Group Node Create
 description:
 - Manage operation create of the resource Node Group Node Create.
+- This API adds a node to the node group in the cluster. When a node that
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -22,13 +23,15 @@ options:
     description: NodeGroupName path parameter. Name of the existing node group.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Node Group Node Create reference
-  description: Complete reference of the Node Group Node Create object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    node_group.NodeGroup.add_node,
+
+  - Paths used are
+    post /api/v1/deployment/node-group/{nodeGroupName}/add-node,
+
 """
 
 EXAMPLES = r"""

@@ -11,6 +11,8 @@ short_description: Information module for Device Administration Authentication R
 description:
 - Get all Device Administration Authentication Rules.
 - Get Device Administration Authentication Rules by id.
+- Device Admin - Get authentication rules.
+- Device Admin - Get rule attributes.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -25,13 +27,17 @@ options:
     - Id path parameter. Rule id.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Device Administration Authentication Rules reference
-  description: Complete reference of the Device Administration Authentication Rules object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    device_administration_authentication_rules.DeviceAdministrationAuthenticationRules.get_device_admin_authentication_rule_by_id,
+    device_administration_authentication_rules.DeviceAdministrationAuthenticationRules.get_device_admin_authentication_rules,
+
+  - Paths used are
+    get /device-admin/policy-set/{policyId}/authentication,
+    get /device-admin/policy-set/{policyId}/authentication/{id},
+
 """
 
 EXAMPLES = r"""

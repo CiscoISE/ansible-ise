@@ -10,6 +10,8 @@ module: id_store_sequence
 short_description: Resource module for Id Store Sequence
 description:
 - Manage operations create, update and delete of the resource Id Store Sequence.
+- This API creates an identity sequence.
+- This API deletes an identity sequence.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -44,13 +46,18 @@ options:
     description: Id Store Sequence's parent.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Id Store Sequence reference
-  description: Complete reference of the Id Store Sequence object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    identity_sequence.IdentitySequence.create_identity_sequence,
+    identity_sequence.IdentitySequence.delete_identity_sequence_by_id,
+    identity_sequence.IdentitySequence.update_identity_sequence_by_id,
+
+  - Paths used are
+    post /ers/config/idstoresequence,
+    delete /ers/config/idstoresequence/{id},
+
 """
 
 EXAMPLES = r"""

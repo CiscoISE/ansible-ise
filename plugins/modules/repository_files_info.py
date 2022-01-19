@@ -20,13 +20,14 @@ options:
     - Name path parameter. Unique name for a repository.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Repository Files reference
-  description: Complete reference of the Repository Files object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    repository.Repository.get_repository_files,
+
+  - Paths used are
+    get /api/v1/repository/{name}/files
 """
 
 EXAMPLES = r"""

@@ -12,6 +12,9 @@ description:
 - Get all Network Device.
 - Get Network Device by id.
 - Get Network Device by name.
+- This API allows the client to get a network device by ID.
+- This API allows the client to get a network device by name.
+- This API allows the client to get all the network devices.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -60,13 +63,19 @@ options:
       can be changed by using the parameter.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Network Device reference
-  description: Complete reference of the Network Device object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    network_device.NetworkDevice.get_network_device_by_id,
+    network_device.NetworkDevice.get_network_device_by_name,
+    network_device.NetworkDevice.get_network_device_generator,
+
+  - Paths used are
+    get /ers/config/networkdevice,
+    get /ers/config/networkdevice/name/{name},
+    get /ers/config/networkdevice/{id},
+
 """
 
 EXAMPLES = r"""

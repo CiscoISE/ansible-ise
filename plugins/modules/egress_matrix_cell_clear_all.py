@@ -10,19 +10,22 @@ module: egress_matrix_cell_clear_all
 short_description: Resource module for Egress Matrix Cell Clear All
 description:
 - Manage operation update of the resource Egress Matrix Cell Clear All.
+- This API allows the client to clear all the egress matrix cells.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Egress Matrix Cell Clear All reference
-  description: Complete reference of the Egress Matrix Cell Clear All object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    egress_matrix_cell.EgressMatrixCell.clear_all_matrix_cells,
+
+  - Paths used are
+    put /ers/config/egressmatrixcell/clearallmatrixcells,
+
 """
 
 EXAMPLES = r"""

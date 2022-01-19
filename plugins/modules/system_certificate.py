@@ -10,6 +10,7 @@ module: system_certificate
 short_description: Resource module for System Certificate
 description:
 - Manage operations update and delete of the resource System Certificate.
+- This API deletes a System Certificate of a particular node based on given HostName and ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -72,13 +73,16 @@ options:
     description: Use certificate for SAML Signing.
     type: bool
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: System Certificate reference
-  description: Complete reference of the System Certificate object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    certificates.Certificates.delete_system_certificate_by_id,
+    certificates.Certificates.update_system_certificate,
+
+  - Paths used are
+    delete /api/v1/certs/system-certificate/{hostName}/{id},
+
 """
 
 EXAMPLES = r"""

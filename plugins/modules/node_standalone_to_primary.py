@@ -10,19 +10,22 @@ module: node_standalone_to_primary
 short_description: Resource module for Node Standalone To Primary
 description:
 - Manage operation create of the resource Node Standalone To Primary.
+- This API promotes the standalone node on which the API is invoked to the primary Policy Administration node (PAN).
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Node Standalone To Primary reference
-  description: Complete reference of the Node Standalone To Primary object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    node_deployment.NodeDeployment.make_primary,
+
+  - Paths used are
+    post /api/v1/deployment/primary,
+
 """
 
 EXAMPLES = r"""

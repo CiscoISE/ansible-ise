@@ -42,13 +42,15 @@ options:
         type: str
     type: list
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Trustsec Sg Vn Mapping Bulk Create reference
-  description: Complete reference of the Trustsec Sg Vn Mapping Bulk Create object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    sg_vn_mapping.SgVnMapping.bulk_create_sg_vn_mappings,
+
+  - Paths used are
+    post /api/v1/trustsec/sgvnmapping/bulk/create,
+
 """
 
 EXAMPLES = r"""

@@ -10,6 +10,7 @@ module: support_bundle_download
 short_description: Resource module for Support Bundle Download
 description:
 - Manage operation update of the resource Support Bundle Download.
+- This API allows the client to upload a support bundle.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -25,13 +26,15 @@ options:
     description: Enable or disable automatic file creation of raw response.
     type: bool
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Support Bundle Download reference
-  description: Complete reference of the Support Bundle Download object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    support_bundle_download.SupportBundleDownload.download_support_bundle,
+
+  - Paths used are
+    put /ers/config/supportbundledownload,
+
 """
 
 EXAMPLES = r"""

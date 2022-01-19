@@ -10,6 +10,7 @@ module: renew_certificate
 short_description: Resource module for Renew Certificate
 description:
 - Manage operation create of the resource Renew Certificate.
+- This API initiates regeneration of certificates. Response contains ID which can be used to track the status.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -19,13 +20,15 @@ options:
     description: Renew Certificate's certType.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Renew Certificate reference
-  description: Complete reference of the Renew Certificate object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    certificates.Certificates.renew_certificates,
+
+  - Paths used are
+    post /api/v1/certs/renew-certificate,
+
 """
 
 EXAMPLES = r"""

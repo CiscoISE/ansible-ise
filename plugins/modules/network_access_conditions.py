@@ -10,6 +10,9 @@ module: network_access_conditions
 short_description: Resource module for Network Access Conditions
 description:
 - Manage operations create, update and delete of the resource Network Access Conditions.
+- Network Access - Creates a library condition.
+- Network Access - Delete a library condition using condition Name.
+- Network Access - Delete a library condition.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -153,13 +156,21 @@ options:
     elements: str
     type: list
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Network Access Conditions reference
-  description: Complete reference of the Network Access Conditions object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    network_access_conditions.NetworkAccessConditions.create_network_access_condition,
+    network_access_conditions.NetworkAccessConditions.delete_network_access_condition_by_id,
+    network_access_conditions.NetworkAccessConditions.delete_network_access_condition_by_name,
+    network_access_conditions.NetworkAccessConditions.update_network_access_condition_by_id,
+    network_access_conditions.NetworkAccessConditions.update_network_access_condition_by_name,
+
+  - Paths used are
+    post /network-access/condition,
+    delete /network-access/condition/condition-by-name/{name},
+    delete /network-access/condition/{id},
+
 """
 
 EXAMPLES = r"""

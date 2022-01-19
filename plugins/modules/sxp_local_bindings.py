@@ -10,6 +10,8 @@ module: sxp_local_bindings
 short_description: Resource module for Sxp Local Bindings
 description:
 - Manage operations create, update and delete of the resource Sxp Local Bindings.
+- This API creates a SXP local binding.
+- This API deletes a SXP local binding.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -39,13 +41,18 @@ options:
       or vns should be defined.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Sxp Local Bindings reference
-  description: Complete reference of the Sxp Local Bindings object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    sxp_local_bindings.SxpLocalBindings.create_sxp_local_bindings,
+    sxp_local_bindings.SxpLocalBindings.delete_sxp_local_bindings_by_id,
+    sxp_local_bindings.SxpLocalBindings.update_sxp_local_bindings_by_id,
+
+  - Paths used are
+    post /ers/config/sxplocalbindings,
+    delete /ers/config/sxplocalbindings/{id},
+
 """
 
 EXAMPLES = r"""

@@ -10,6 +10,8 @@ module: anc_policy
 short_description: Resource module for Anc Policy
 description:
 - Manage operations create, update and delete of the resource Anc Policy.
+- This API allows the client to create an ANC policy.
+- This API allows the client to delete an ANC policy.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -30,13 +32,18 @@ options:
     description: Anc Policy's name.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Anc Policy reference
-  description: Complete reference of the Anc Policy object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    anc_policy.AncPolicy.create_anc_policy,
+    anc_policy.AncPolicy.delete_anc_policy_by_id,
+    anc_policy.AncPolicy.update_anc_policy_by_id,
+
+  - Paths used are
+    post /ers/config/ancpolicy,
+    delete /ers/config/ancpolicy/{id},
+
 """
 
 EXAMPLES = r"""

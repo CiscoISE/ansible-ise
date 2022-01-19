@@ -46,13 +46,15 @@ options:
         type: str
     type: list
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Trustsec Vn Vlan Mapping Bulk Create reference
-  description: Complete reference of the Trustsec Vn Vlan Mapping Bulk Create object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    vn_vlan_mapping.VnVlanMapping.bulk_create_vn_vlan_mappings,
+
+  - Paths used are
+    post /api/v1/trustsec/vnvlanmapping/bulk/create,
+
 """
 
 EXAMPLES = r"""

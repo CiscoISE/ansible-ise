@@ -12,6 +12,9 @@ description:
 - Get all Tacacs Server Sequence.
 - Get Tacacs Server Sequence by id.
 - Get Tacacs Server Sequence by name.
+- This API allows the client to get a TACACS server sequence by ID.
+- This API allows the client to get a TACACS server sequence by name.
+- This API allows the client to get all the TACACS server sequences.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -34,13 +37,19 @@ options:
     - Size query parameter. Number of objects returned per page.
     type: int
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Tacacs Server Sequence reference
-  description: Complete reference of the Tacacs Server Sequence object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    tacacs_server_sequence.TacacsServerSequence.get_tacacs_server_sequence_by_id,
+    tacacs_server_sequence.TacacsServerSequence.get_tacacs_server_sequence_by_name,
+    tacacs_server_sequence.TacacsServerSequence.get_tacacs_server_sequence_generator,
+
+  - Paths used are
+    get /ers/config/tacacsserversequence,
+    get /ers/config/tacacsserversequence/name/{name},
+    get /ers/config/tacacsserversequence/{id},
+
 """
 
 EXAMPLES = r"""

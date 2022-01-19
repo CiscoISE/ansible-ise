@@ -12,6 +12,9 @@ description:
 - Get all Tacacs External Servers.
 - Get Tacacs External Servers by id.
 - Get Tacacs External Servers by name.
+- This API allows the client to get TACACS external servers by ID.
+- This API allows the client to get TACACS external servers by name.
+- This API allows the client to get all the TACACS external servers.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -34,13 +37,19 @@ options:
     - Size query parameter. Number of objects returned per page.
     type: int
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Tacacs External Servers reference
-  description: Complete reference of the Tacacs External Servers object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    tacacs_external_servers.TacacsExternalServers.get_tacacs_external_servers_by_id,
+    tacacs_external_servers.TacacsExternalServers.get_tacacs_external_servers_by_name,
+    tacacs_external_servers.TacacsExternalServers.get_tacacs_external_servers_generator,
+
+  - Paths used are
+    get /ers/config/tacacsexternalservers,
+    get /ers/config/tacacsexternalservers/name/{name},
+    get /ers/config/tacacsexternalservers/{id},
+
 """
 
 EXAMPLES = r"""

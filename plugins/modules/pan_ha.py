@@ -31,13 +31,14 @@ options:
     description: Pan Ha's secondaryHealthCheckNode.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Pan Ha reference
-  description: Complete reference of the Pan Ha object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    sync_ise_node.ReplicationStatus.get_node_replication_status,
+
+  - Paths used are
+    get /api/v1/replication-status/{node}
 """
 
 EXAMPLES = r"""

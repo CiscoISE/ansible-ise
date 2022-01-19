@@ -10,6 +10,9 @@ module: internal_user
 short_description: Resource module for Internal User
 description:
 - Manage operations create, update and delete of the resource Internal User.
+- This API creates an internal user.
+- This API deletes an internal user by ID.
+- This API deletes an internal user by name.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -64,13 +67,21 @@ options:
     description: The id store where the internal user's password is kept.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Internal User reference
-  description: Complete reference of the Internal User object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    internal_user.InternalUser.create_internal_user,
+    internal_user.InternalUser.delete_internal_user_by_id,
+    internal_user.InternalUser.delete_internal_user_by_name,
+    internal_user.InternalUser.update_internal_user_by_id,
+    internal_user.InternalUser.update_internal_user_by_name,
+
+  - Paths used are
+    post /ers/config/internaluser,
+    delete /ers/config/internaluser/name/{name},
+    delete /ers/config/internaluser/{id},
+
 """
 
 EXAMPLES = r"""

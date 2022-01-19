@@ -10,6 +10,7 @@ module: trustsec_nbar_app
 short_description: Resource module for Trustsec Nbar App
 description:
 - Manage operations create, update and delete of the resource Trustsec Nbar App.
+- Create NBAR application.
 version_added: '2.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -35,13 +36,18 @@ options:
         type: str
     type: list
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Trustsec Nbar App reference
-  description: Complete reference of the Trustsec Nbar App object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    nbar_app.NbarApp.create_nbar_app,
+    nbar_app.NbarApp.delete_nbar_app_by_id,
+    nbar_app.NbarApp.update_nbar_app_by_id,
+
+  - Paths used are
+    post /api/v1/trustsec/sgacl/nbarapp,
+    delete /api/v1/trustsec/sgacl/nbarapp/{id},
+
 """
 
 EXAMPLES = r"""

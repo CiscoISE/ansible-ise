@@ -10,6 +10,7 @@ module: certificate_profile
 short_description: Resource module for Certificate Profile
 description:
 - Manage operations create and update of the resource Certificate Profile.
+- This API allows the client to create a certificate profile.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -49,13 +50,16 @@ options:
       - an option only in AD).
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Certificate Profile reference
-  description: Complete reference of the Certificate Profile object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    certificate_profile.CertificateProfile.create_certificate_profile,
+    certificate_profile.CertificateProfile.update_certificate_profile_by_id,
+
+  - Paths used are
+    post /ers/config/certificateprofile,
+
 """
 
 EXAMPLES = r"""

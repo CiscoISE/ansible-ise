@@ -10,6 +10,7 @@ module: system_certificate_export_info
 short_description: Information module for System Certificate Export Info
 description:
 - Get System Certificate Export Info.
+- \#\#\# Export System Certificate.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -31,13 +32,15 @@ options:
     description: Enable or disable automatic file creation of raw response.
     type: bool
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: System Certificate Export Info reference
-  description: Complete reference of the System Certificate Export Info object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    certificates.Certificates.export_system_certificate,
+
+  - Paths used are
+    post /api/v1/certs/system-certificate/export,
+
 """
 
 EXAMPLES = r"""

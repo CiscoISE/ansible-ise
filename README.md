@@ -8,9 +8,11 @@ This collection has been tested and supports Cisco ISE 3.1.1.
 
 *Note: This collection is not compatible with versions of Ansible before v2.9.*
 
+Other versions of this collection have support for previous Cisco ISE versions. The recommended versions are listed on the [Compatibility matrix](#compatibility-matrix).
+
 ## Requirements
 - Ansible >= 2.9
-- [Cisco ISE SDK](https://github.com/CiscoISE/ciscoisesdk) v1.3.0 or newer
+- [Cisco ISE SDK](https://github.com/CiscoISE/ciscoisesdk) v1.4.0 or newer
 - Python >= 3.6, as the Cisco ISE SDK doesn't support Python version 2.x
 - requests >= 2.25.1, for the personas modules and personas_deployment role.
 
@@ -38,6 +40,35 @@ This collection assumes that the API Gateway, the ERS APIs and OpenAPIs are enab
 As stated before, the collection has been tested and supports Cisco ISE 3.1.1.
 
 It may work with Cisco ISE version 3.0, but it is not officially supported.
+
+The recommended versions are listed below on the [Compatibility matrix](#compatibility-matrix).
+
+## Compatibility matrix
+
+| Cisco ISE version | Ansible "cisco.ise" version | Python "ciscoisesdk" version |
+|-------------------|------------------------------|-----------------------------|
+| 3.1.0             | 2.0.0                        | 1.2.0                       |
+| 3.1.1             | 2.2.0                        | 1.4.0                       |
+
+*Notes*:
+
+1. The "Python 'ciscoisesdk' version" column has the minimum recommended version used when testing the Ansible collection. This means you could use later versions of the Python "ciscoisesdk" than those listed.
+2. The "Cisco ISE version" column has the value of the `ise_version` you should use for the Ansible collection.
+
+## Installing according to Compatibility Matrix
+
+For example, for Cisco ISE 3.1.0, it is recommended to use Ansible "cisco.ise" v2.0.0 and Python "ciscoisesdk" v1.2.0.
+
+To get the Python Cisco ISE SDK v1.2.0 in a fresh development environment:
+```
+sudo pip install ciscoisesdk==1.2.0
+```
+
+To get the Ansible collection v2.0.0 in a fresh development environment:
+```
+ansible-galaxy collection install cisco.ise:2.0.0
+```
+
 
 ## Use
 

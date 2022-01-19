@@ -12,6 +12,9 @@ description:
 - Get all Active Directory.
 - Get Active Directory by id.
 - Get Active Directory by name.
+- This API allows the client to get Active Directory by name.
+- This API fetchs the join point details by ID. The ID can be retrieved with the
+- This API lists all the join points for Active Directory domains in Cisco ISE.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -34,13 +37,19 @@ options:
     - Size query parameter. Number of objects returned per page.
     type: int
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Active Directory reference
-  description: Complete reference of the Active Directory object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    active_directory.ActiveDirectory.get_active_directory_by_id,
+    active_directory.ActiveDirectory.get_active_directory_by_name,
+    active_directory.ActiveDirectory.get_active_directory_generator,
+
+  - Paths used are
+    get /ers/config/activedirectory,
+    get /ers/config/activedirectory/name/{name},
+    get /ers/config/activedirectory/{id},
+
 """
 
 EXAMPLES = r"""

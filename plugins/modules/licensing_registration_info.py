@@ -10,19 +10,22 @@ module: licensing_registration_info
 short_description: Information module for Licensing Registration
 description:
 - Get all Licensing Registration.
+- Get registration information.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Licensing Registration reference
-  description: Complete reference of the Licensing Registration object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    licensing.Licensing.get_registration_info,
+
+  - Paths used are
+    get /api/v1/license/system/register,
+
 """
 
 EXAMPLES = r"""

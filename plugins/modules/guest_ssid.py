@@ -10,6 +10,8 @@ module: guest_ssid
 short_description: Resource module for Guest Ssid
 description:
 - Manage operations create, update and delete of the resource Guest Ssid.
+- This API creates a guest SSID.
+- This API deletes a guest SSID by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -23,13 +25,18 @@ options:
       characters _.-.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Guest Ssid reference
-  description: Complete reference of the Guest Ssid object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    guest_ssid.GuestSsid.create_guest_ssid,
+    guest_ssid.GuestSsid.delete_guest_ssid_by_id,
+    guest_ssid.GuestSsid.update_guest_ssid_by_id,
+
+  - Paths used are
+    post /ers/config/guestssid,
+    delete /ers/config/guestssid/{id},
+
 """
 
 EXAMPLES = r"""

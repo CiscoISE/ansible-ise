@@ -10,6 +10,7 @@ module: node_services_profiler_probe_config_info
 short_description: Information module for Node Services Profiler Probe Config
 description:
 - Get Node Services Profiler Probe Config by name.
+- This API retrieves the profiler probe configuration of a PSN.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -20,13 +21,15 @@ options:
     - Hostname path parameter. Hostname of the node.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Node Services Profiler Probe Config reference
-  description: Complete reference of the Node Services Profiler Probe Config object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    node_services.NodeServices.get_profiler_probe_config,
+
+  - Paths used are
+    get /api/v1/profile/{hostname},
+
 """
 
 EXAMPLES = r"""

@@ -10,6 +10,9 @@ module: licensing_tier_state_create
 short_description: Resource module for Licensing Tier State Create
 description:
 - Manage operation create of the resource Licensing Tier State Create.
+- Applicable values for  name  &  status  parameters     name are
+  ESSENTIAL, ADVANTAGE, PREMIER, DEVICEADMIN,   status are
+  ENABLED, DISABLED.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -26,13 +29,14 @@ options:
         type: str
     type: list
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Licensing Tier State Create reference
-  description: Complete reference of the Licensing Tier State Create object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    licensing.Licensing.update_tier_state_info,
+
+  - Paths used are
+    post /api/v1/license/system/tier-state
 """
 
 EXAMPLES = r"""
@@ -42,24 +46,25 @@ EXAMPLES = r"""
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
-
+    payload:
+    - name: string
+      status: string
 """
 
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: list
-  elements: dict
+  type: dict
   sample: >
-    [
-      {
-        "compliance": "string",
-        "consumptionCounter": 0,
-        "daysOutOfCompliance": "string",
-        "lastAuthorization": "string",
-        "name": "string",
-        "status": "string"
-      }
-    ]
+    {
+      "response": [
+        {
+          "message": "string",
+          "name": "string",
+          "status": "string"
+        }
+      ],
+      "version": "string"
+    }
 """

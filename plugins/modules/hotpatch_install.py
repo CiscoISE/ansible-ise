@@ -10,6 +10,9 @@ module: hotpatch_install
 short_description: Resource module for Hotpatch Install
 description:
 - Manage operation create of the resource Hotpatch Install.
+- >
+   Triggers hot patch installation on the Cisco ISE node. A task ID is returned which  can be used to monitor the progress of the hot patch installation
+   process.  As hot patch installation triggers the Cisco ISE to restart, the task API becomes  unavailable for a certain period of time.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -22,13 +25,15 @@ options:
     description: Hotpatch Install's repositoryName.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Hotpatch Install reference
-  description: Complete reference of the Hotpatch Install object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    patching.Patching.install_hotpatch,
+
+  - Paths used are
+    post /api/v1/hotpatch/install,
+
 """
 
 EXAMPLES = r"""

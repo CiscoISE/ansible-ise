@@ -11,6 +11,8 @@ short_description: Information module for Byod Portal
 description:
 - Get all Byod Portal.
 - Get Byod Portal by id.
+- This API allows the client to get a BYOD portal by ID.
+- This API allows the client to get all the BYOD portals.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -55,13 +57,17 @@ options:
       can be changed by using the parameter.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Byod Portal reference
-  description: Complete reference of the Byod Portal object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    byod_portal.ByodPortal.get_byod_portal_by_id,
+    byod_portal.ByodPortal.get_byod_portal_generator,
+
+  - Paths used are
+    get /ers/config/byodportal,
+    get /ers/config/byodportal/{id},
+
 """
 
 EXAMPLES = r"""

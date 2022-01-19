@@ -10,6 +10,7 @@ module: px_grid_settings_auto_approve
 short_description: Resource module for Px Grid Settings Auto Approve
 description:
 - Manage operation update of the resource Px Grid Settings Auto Approve.
+- This API allows the client to auto approve the pxGrid settings.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -22,13 +23,15 @@ options:
     description: Auto approve certificate based accounts when true.
     type: bool
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Px Grid Settings Auto Approve reference
-  description: Complete reference of the Px Grid Settings Auto Approve object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    px_grid_settings.PxGridSettings.autoapprove_px_grid_settings,
+
+  - Paths used are
+    put /ers/config/pxgridsettings/autoapprove,
+
 """
 
 EXAMPLES = r"""

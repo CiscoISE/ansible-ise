@@ -10,6 +10,8 @@ module: sgt
 short_description: Resource module for Sgt
 description:
 - Manage operations create, update and delete of the resource Sgt.
+- This API creates a security group.
+- This API deletes a security group.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -41,13 +43,18 @@ options:
     description: Value range 2 ot 65519 or -1 to auto-generate.
     type: int
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Sgt reference
-  description: Complete reference of the Sgt object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    security_groups.SecurityGroups.create_security_group,
+    security_groups.SecurityGroups.delete_security_group_by_id,
+    security_groups.SecurityGroups.update_security_group_by_id,
+
+  - Paths used are
+    post /ers/config/sgt,
+    delete /ers/config/sgt/{id},
+
 """
 
 EXAMPLES = r"""

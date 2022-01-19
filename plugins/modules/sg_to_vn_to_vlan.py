@@ -10,6 +10,8 @@ module: sg_to_vn_to_vlan
 short_description: Resource module for Sg To Vn To Vlan
 description:
 - Manage operations create, update and delete of the resource Sg To Vn To Vlan.
+- This API creates a security group to virtual network.
+- This API deletes a security group ACL to virtual network.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -66,13 +68,18 @@ options:
         type: list
     type: list
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Sg To Vn To Vlan reference
-  description: Complete reference of the Sg To Vn To Vlan object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    security_group_to_virtual_network.SecurityGroupToVirtualNetwork.create_security_groups_to_vn_to_vlan,
+    security_group_to_virtual_network.SecurityGroupToVirtualNetwork.delete_security_groups_to_vn_to_vlan_by_id,
+    security_group_to_virtual_network.SecurityGroupToVirtualNetwork.update_security_groups_to_vn_to_vlan_by_id,
+
+  - Paths used are
+    post /ers/config/sgtvnvlan,
+    delete /ers/config/sgtvnvlan/{id},
+
 """
 
 EXAMPLES = r"""

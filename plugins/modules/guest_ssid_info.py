@@ -11,6 +11,8 @@ short_description: Information module for Guest Ssid
 description:
 - Get all Guest Ssid.
 - Get Guest Ssid by id.
+- This API allows the client to get a guest SSID by ID.
+- This API allows the client to get all the guest SSIDs.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -55,13 +57,17 @@ options:
       can be changed by using the parameter.
     type: str
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Guest Ssid reference
-  description: Complete reference of the Guest Ssid object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    guest_ssid.GuestSsid.get_guest_ssid_by_id,
+    guest_ssid.GuestSsid.get_guest_ssid_generator,
+
+  - Paths used are
+    get /ers/config/guestssid,
+    get /ers/config/guestssid/{id},
+
 """
 
 EXAMPLES = r"""
