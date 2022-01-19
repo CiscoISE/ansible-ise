@@ -10,6 +10,8 @@ module: active_directory_trusted_domains_info
 short_description: Information module for Active Directory Trusted Domains
 description:
 - Get all Active Directory Trusted Domains.
+- This API gets the list of domains that are accessible through
+  the given join point via trust relationships.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -22,11 +24,12 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Active Directory Trusted Domains reference
-  description: Complete reference of the Active Directory Trusted Domains object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    active_directory.ActiveDirectory.get_trusted_domains,
+
+  - Paths used are
+    put /ers/config/activedirectory/{id}/getTrustedDomains
 """
 
 EXAMPLES = r"""

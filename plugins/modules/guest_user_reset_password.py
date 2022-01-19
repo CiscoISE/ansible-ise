@@ -10,6 +10,7 @@ module: guest_user_reset_password
 short_description: Resource module for Guest User Reset Password
 description:
 - Manage operation update of the resource Guest User Reset Password.
+- This API allows the client to reset the guest user password.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -21,11 +22,12 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Guest User Reset Password reference
-  description: Complete reference of the Guest User Reset Password object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    guest_user.GuestUser.reset_guest_user_password_by_id,
+
+  - Paths used are
+    put /ers/config/guestuser/resetpassword/{id}
 """
 
 EXAMPLES = r"""

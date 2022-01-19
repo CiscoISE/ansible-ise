@@ -10,6 +10,7 @@ module: system_certificate_create
 short_description: Resource module for System Certificate Create
 description:
 - Manage operation create of the resource System Certificate Create.
+- This API allows the client to create a system certificate.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -89,11 +90,13 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: System Certificate Create reference
-  description: Complete reference of the System Certificate Create object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    system_certificate.SystemCertificate.create_system_certificate,
+
+  - Paths used are
+    post /ers/config/systemcertificate,
+
 """
 
 EXAMPLES = r"""

@@ -11,6 +11,8 @@ short_description: Information module for Telemetry Info
 description:
 - Get all Telemetry Info.
 - Get Telemetry Info by id.
+- This API allows the client to get all the telemetry information.
+- This API allows the client to get telemetry information by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -49,11 +51,15 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Telemetry Info reference
-  description: Complete reference of the Telemetry Info object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    telemetry_information.TelemetryInformation.get_telemetry_info_by_id,
+    telemetry_information.TelemetryInformation.get_telemetry_information_generator,
+
+  - Paths used are
+    get /ers/config/telemetryinfo,
+    get /ers/config/telemetryinfo/{id},
+
 """
 
 EXAMPLES = r"""

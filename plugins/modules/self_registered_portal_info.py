@@ -11,6 +11,8 @@ short_description: Information module for Self Registered Portal
 description:
 - Get all Self Registered Portal.
 - Get Self Registered Portal by id.
+- This API allows the client to get a self registered portal by ID.
+- This API allows the client to get all the self registered portals.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -57,11 +59,15 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Self Registered Portal reference
-  description: Complete reference of the Self Registered Portal object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    self_registered_portal.SelfRegisteredPortal.get_self_registered_portal_by_id,
+    self_registered_portal.SelfRegisteredPortal.get_self_registered_portals_generator,
+
+  - Paths used are
+    get /ers/config/selfregportal,
+    get /ers/config/selfregportal/{id},
+
 """
 
 EXAMPLES = r"""

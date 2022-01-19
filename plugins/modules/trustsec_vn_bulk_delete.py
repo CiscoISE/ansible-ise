@@ -22,11 +22,13 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Trustsec Vn Bulk Delete reference
-  description: Complete reference of the Trustsec Vn Bulk Delete object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    virtual_network.VirtualNetwork.bulk_delete_virtual_networks,
+
+  - Paths used are
+    post /api/v1/trustsec/virtualnetwork/bulk/delete,
+
 """
 
 EXAMPLES = r"""

@@ -10,6 +10,7 @@ module: aci_test_connectivity
 short_description: Resource module for Aci Test Connectivity
 description:
 - Manage operation update of the resource Aci Test Connectivity.
+- This API allows the client to test ACI Domain Manager connection.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -18,11 +19,13 @@ options: {}
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Aci Test Connectivity reference
-  description: Complete reference of the Aci Test Connectivity object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    aci_settings.AciSettings.test_aci_connectivity,
+
+  - Paths used are
+    put /ers/config/acisettings/testACIConnectivity,
+
 """
 
 EXAMPLES = r"""

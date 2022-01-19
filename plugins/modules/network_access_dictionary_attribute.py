@@ -10,6 +10,8 @@ module: network_access_dictionary_attribute
 short_description: Resource module for Network Access Dictionary Attribute
 description:
 - Manage operations create, update and delete of the resource Network Access Dictionary Attribute.
+- Create a new Dictionary Attribute for an existing Dictionary.
+- Delete a Dictionary Attribute.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -53,11 +55,16 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Network Access Dictionary Attribute reference
-  description: Complete reference of the Network Access Dictionary Attribute object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    network_access_dictionary_attribute.NetworkAccessDictionaryAttribute.create_network_access_dictionary_attribute,
+    network_access_dictionary_attribute.NetworkAccessDictionaryAttribute.delete_network_access_dictionary_attribute_by_name,
+    network_access_dictionary_attribute.NetworkAccessDictionaryAttribute.update_network_access_dictionary_attribute_by_name,
+
+  - Paths used are
+    post /network-access/dictionaries/{dictionaryName}/attribute,
+    delete /network-access/dictionaries/{dictionaryName}/attribute/{name},
+
 """
 
 EXAMPLES = r"""

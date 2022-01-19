@@ -10,6 +10,8 @@ module: network_access_local_exception_rules
 short_description: Resource module for Network Access Local Exception Rules
 description:
 - Manage operations create, update and delete of the resource Network Access Local Exception Rules.
+- Network Access - Create local authorization exception rule:
+- Network Access - Delete local exception rule.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -213,11 +215,16 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Network Access Local Exception Rules reference
-  description: Complete reference of the Network Access Local Exception Rules object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    network_access_authorization_exception_rules.NetworkAccessAuthorizationExceptionRules.create_network_access_local_exception_rule,
+    network_access_authorization_exception_rules.NetworkAccessAuthorizationExceptionRules.delete_network_access_local_exception_rule_by_id,
+    network_access_authorization_exception_rules.NetworkAccessAuthorizationExceptionRules.update_network_access_local_exception_rule_by_id,
+
+  - Paths used are
+    post /network-access/policy-set/{policyId}/exception,
+    delete /network-access/policy-set/{policyId}/exception/{id},
+
 """
 
 EXAMPLES = r"""

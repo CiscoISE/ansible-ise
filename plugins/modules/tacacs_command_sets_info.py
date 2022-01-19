@@ -12,6 +12,9 @@ description:
 - Get all Tacacs Command Sets.
 - Get Tacacs Command Sets by id.
 - Get Tacacs Command Sets by name.
+- This API allows the client to get TACACS command sets by ID.
+- This API allows the client to get TACACS command sets by name.
+- This API allows the client to get all the TACACS command sets.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -36,11 +39,17 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Tacacs Command Sets reference
-  description: Complete reference of the Tacacs Command Sets object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    tacacs_command_sets.TacacsCommandSets.get_tacacs_command_sets_by_id,
+    tacacs_command_sets.TacacsCommandSets.get_tacacs_command_sets_by_name,
+    tacacs_command_sets.TacacsCommandSets.get_tacacs_command_sets_generator,
+
+  - Paths used are
+    get /ers/config/tacacscommandsets,
+    get /ers/config/tacacscommandsets/name/{name},
+    get /ers/config/tacacscommandsets/{id},
+
 """
 
 EXAMPLES = r"""

@@ -18,11 +18,13 @@ options: {}
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Mnt Session Posture Count reference
-  description: Complete reference of the Mnt Session Posture Count object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    misc.Misc.get_posture_count,
+
+  - Paths used are
+    get /Session/PostureCount,
+
 """
 
 EXAMPLES = r"""

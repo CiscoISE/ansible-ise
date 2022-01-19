@@ -12,6 +12,9 @@ description:
 - Get all Device Administration Conditions.
 - Get Device Administration Conditions by id.
 - Get Device Administration Conditions by name.
+- Device Admin - Returns a library condition.
+- Device Admin - Returns a library condition.
+- Device Admin - Returns list of library conditions.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -28,11 +31,17 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Device Administration Conditions reference
-  description: Complete reference of the Device Administration Conditions object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    device_administration_conditions.DeviceAdministrationConditions.get_device_admin_condition_by_id,
+    device_administration_conditions.DeviceAdministrationConditions.get_device_admin_condition_by_name,
+    device_administration_conditions.DeviceAdministrationConditions.get_device_admin_conditions,
+
+  - Paths used are
+    get /device-admin/condition,
+    get /device-admin/condition/condition-by-name/{name},
+    get /device-admin/condition/{id},
+
 """
 
 EXAMPLES = r"""

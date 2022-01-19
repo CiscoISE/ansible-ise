@@ -10,6 +10,7 @@ module: csr_delete
 short_description: Resource module for Csr Delete
 description:
 - Manage operation delete of the resource Csr Delete.
+- This API deletes a Certificate Signing Request of a particular node based on given HostName and ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -25,11 +26,13 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Csr Delete reference
-  description: Complete reference of the Csr Delete object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    certificates.Certificates.delete_csr_by_id,
+
+  - Paths used are
+    delete /api/v1/certs/certificate-signing-request/{hostName}/{id},
+
 """
 
 EXAMPLES = r"""
@@ -51,20 +54,9 @@ ise_response:
   type: dict
   sample: >
     {
-      "csrContents": "string",
-      "friendlyName": "string",
-      "groupTag": "string",
-      "hostName": "string",
-      "id": "string",
-      "keySize": "string",
-      "link": {
-        "href": "string",
-        "rel": "string",
-        "type": "string"
+      "response": {
+        "message": "string"
       },
-      "signatureAlgorithm": "string",
-      "subject": "string",
-      "timeStamp": "string",
-      "usedFor": "string"
+      "version": "string"
     }
 """

@@ -10,6 +10,7 @@ module: aci_settings
 short_description: Resource module for Aci Settings
 description:
 - Manage operation update of the resource Aci Settings.
+- This API allows the client to update ACI settings.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -88,11 +89,12 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Aci Settings reference
-  description: Complete reference of the Aci Settings object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    aci_settings.AciSettings.update_aci_settings_by_id,
+
+  - Paths used are
+    put /ers/config/acisettings/{id}
 """
 
 EXAMPLES = r"""

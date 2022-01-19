@@ -10,6 +10,7 @@ module: active_directory_join_domain
 short_description: Resource module for Active Directory Join Domain
 description:
 - Manage operation update of the resource Active Directory Join Domain.
+- This API joins a Cisco ISE node to an Active Directory domain.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -31,11 +32,13 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Active Directory Join Domain reference
-  description: Complete reference of the Active Directory Join Domain object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    active_directory.ActiveDirectory.join_domain,
+
+  - Paths used are
+    put /ers/config/activedirectory/{id}/join,
+
 """
 
 EXAMPLES = r"""

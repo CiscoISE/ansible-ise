@@ -10,6 +10,7 @@ module: transport_gateway_settings
 short_description: Resource module for Transport Gateway Settings
 description:
 - Manage operation update of the resource Transport Gateway Settings.
+- Transport Gateway acts a proxy for the communication between the ISE servers in your network and the Telemetry servers in case of air-gapped network.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -24,11 +25,13 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Transport Gateway Settings reference
-  description: Complete reference of the Transport Gateway Settings object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    telemetry.Telemetry.update_transport_gateway,
+
+  - Paths used are
+    put /api/v1/system-settings/telemetry/transport-gateway,
+
 """
 
 EXAMPLES = r"""

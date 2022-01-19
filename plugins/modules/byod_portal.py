@@ -10,6 +10,8 @@ module: byod_portal
 short_description: Resource module for Byod Portal
 description:
 - Manage operations create, update and delete of the resource Byod Portal.
+- This API creates a BYOD portal.
+- This API deletes a BYOD portal by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -257,11 +259,16 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Byod Portal reference
-  description: Complete reference of the Byod Portal object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    byod_portal.ByodPortal.create_byod_portal,
+    byod_portal.ByodPortal.delete_byod_portal_by_id,
+    byod_portal.ByodPortal.update_byod_portal_by_id,
+
+  - Paths used are
+    post /ers/config/byodportal,
+    delete /ers/config/byodportal/{id},
+
 """
 
 EXAMPLES = r"""

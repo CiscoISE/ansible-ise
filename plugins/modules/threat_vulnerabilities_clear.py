@@ -10,6 +10,7 @@ module: threat_vulnerabilities_clear
 short_description: Resource module for Threat Vulnerabilities Clear
 description:
 - Manage operation update of the resource Threat Vulnerabilities Clear.
+- This API allows the client to delete the ThreatContext and Threat events that
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -21,11 +22,13 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Threat Vulnerabilities Clear reference
-  description: Complete reference of the Threat Vulnerabilities Clear object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    clear_threats_and_vulnerabilities.ClearThreatsAndVulnerabilities.clear_threats_and_vulnerabilities,
+
+  - Paths used are
+    put /ers/config/threat/clearThreatsAndVulneribilities,
+
 """
 
 EXAMPLES = r"""

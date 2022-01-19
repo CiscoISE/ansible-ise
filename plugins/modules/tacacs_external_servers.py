@@ -10,6 +10,8 @@ module: tacacs_external_servers
 short_description: Resource module for Tacacs External Servers
 description:
 - Manage operations create, update and delete of the resource Tacacs External Servers.
+- This API creates TACACS external servers.
+- This API deletes TACACS external servers.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -42,11 +44,16 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Tacacs External Servers reference
-  description: Complete reference of the Tacacs External Servers object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    tacacs_external_servers.TacacsExternalServers.create_tacacs_external_servers,
+    tacacs_external_servers.TacacsExternalServers.delete_tacacs_external_servers_by_id,
+    tacacs_external_servers.TacacsExternalServers.update_tacacs_external_servers_by_id,
+
+  - Paths used are
+    post /ers/config/tacacsexternalservers,
+    delete /ers/config/tacacsexternalservers/{id},
+
 """
 
 EXAMPLES = r"""

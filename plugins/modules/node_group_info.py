@@ -11,6 +11,8 @@ short_description: Information module for Node Group
 description:
 - Get all Node Group.
 - Get Node Group by name.
+- This API retrieves the details of a node group in the cluster using a node group name.
+- This API retrieves the details of all the node groups in the cluster.  
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -23,11 +25,15 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Node Group reference
-  description: Complete reference of the Node Group object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    node_group.NodeGroup.get_node_group,
+    node_group.NodeGroup.get_node_groups,
+
+  - Paths used are
+    get /api/v1/deployment/node-group,
+    get /api/v1/deployment/node-group/{nodeGroupName},
+
 """
 
 EXAMPLES = r"""

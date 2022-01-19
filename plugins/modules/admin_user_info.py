@@ -11,6 +11,8 @@ short_description: Information module for Admin User
 description:
 - Get all Admin User.
 - Get Admin User by id.
+- This API allows the client to get all the admin users.
+- This API allows the client to get an admin user by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -57,11 +59,15 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Admin User reference
-  description: Complete reference of the Admin User object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    admin_user.AdminUser.get_admin_user_by_id,
+    admin_user.AdminUser.get_admin_users_generator,
+
+  - Paths used are
+    get /ers/config/adminuser,
+    get /ers/config/adminuser/{id},
+
 """
 
 EXAMPLES = r"""

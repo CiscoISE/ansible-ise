@@ -10,6 +10,7 @@ module: portal_global_setting
 short_description: Resource module for Portal Global Setting
 description:
 - Manage operation update of the resource Portal Global Setting.
+- This API allows the client to update the portal global settings by id.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -24,11 +25,12 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Portal Global Setting reference
-  description: Complete reference of the Portal Global Setting object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    portal_global_setting.PortalGlobalSetting.update_portal_global_setting_by_id,
+
+  - Paths used are
+    put /ers/config/portalglobalsetting/{id}
 """
 
 EXAMPLES = r"""

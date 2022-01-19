@@ -10,6 +10,7 @@ module: network_access_service_name_info
 short_description: Information module for Network Access Service Name
 description:
 - Get all Network Access Service Name.
+- Returns list of Allowed Protocols and Server Sequences for Network Access
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -18,11 +19,13 @@ options: {}
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Network Access Service Name reference
-  description: Complete reference of the Network Access Service Name object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    network_access_service_names.NetworkAccessServiceNames.get_network_access_service_names,
+
+  - Paths used are
+    get /network-access/service-names,
+
 """
 
 EXAMPLES = r"""

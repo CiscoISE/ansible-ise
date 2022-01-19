@@ -10,6 +10,7 @@ module: csr_generate_intermediate_ca
 short_description: Resource module for Csr Generate Intermediate Ca
 description:
 - Manage operation create of the resource Csr Generate Intermediate Ca.
+- CSR Generation for Intermediate Certificates.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -18,11 +19,13 @@ options: {}
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Csr Generate Intermediate Ca reference
-  description: Complete reference of the Csr Generate Intermediate Ca object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    certificates.Certificates.generate_intermediate_ca_csr,
+
+  - Paths used are
+    post /api/v1/certs/certificate-signing-request/intermediate-ca,
+
 """
 
 EXAMPLES = r"""

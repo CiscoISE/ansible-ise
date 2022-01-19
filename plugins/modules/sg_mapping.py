@@ -10,6 +10,8 @@ module: sg_mapping
 short_description: Resource module for Sg Mapping
 description:
 - Manage operations create, update and delete of the resource Sg Mapping.
+- This API creates an IP to SGT mapping.
+- This API deletes an IP to SGT mapping.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -43,11 +45,16 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Sg Mapping reference
-  description: Complete reference of the Sg Mapping object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    ip_to_sgt_mapping.IpToSgtMapping.create_ip_to_sgt_mapping,
+    ip_to_sgt_mapping.IpToSgtMapping.delete_ip_to_sgt_mapping_by_id,
+    ip_to_sgt_mapping.IpToSgtMapping.update_ip_to_sgt_mapping_by_id,
+
+  - Paths used are
+    post /ers/config/sgmapping,
+    delete /ers/config/sgmapping/{id},
+
 """
 
 EXAMPLES = r"""

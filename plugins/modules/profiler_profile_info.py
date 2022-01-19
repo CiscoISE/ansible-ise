@@ -11,6 +11,8 @@ short_description: Information module for Profiler Profile
 description:
 - Get all Profiler Profile.
 - Get Profiler Profile by id.
+- This API allows the client to get a profiler profile by ID.
+- This API allows the client to get all the profiler profiles.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -57,11 +59,15 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Profiler Profile reference
-  description: Complete reference of the Profiler Profile object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    profiler_profile.ProfilerProfile.get_profiler_profile_by_id,
+    profiler_profile.ProfilerProfile.get_profiler_profiles_generator,
+
+  - Paths used are
+    get /ers/config/profilerprofile,
+    get /ers/config/profilerprofile/{id},
+
 """
 
 EXAMPLES = r"""

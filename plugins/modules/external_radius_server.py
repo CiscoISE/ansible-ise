@@ -10,6 +10,8 @@ module: external_radius_server
 short_description: Resource module for External Radius Server
 description:
 - Manage operations create, update and delete of the resource External Radius Server.
+- This API creates an external RADIUS server.
+- This API deletes an external RADIUS server.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -66,11 +68,16 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: External Radius Server reference
-  description: Complete reference of the External Radius Server object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    external_radius_server.ExternalRadiusServer.create_external_radius_server,
+    external_radius_server.ExternalRadiusServer.delete_external_radius_server_by_id,
+    external_radius_server.ExternalRadiusServer.update_external_radius_server_by_id,
+
+  - Paths used are
+    post /ers/config/externalradiusserver,
+    delete /ers/config/externalradiusserver/{id},
+
 """
 
 EXAMPLES = r"""

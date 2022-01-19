@@ -10,6 +10,7 @@ module: support_bundle
 short_description: Resource module for Support Bundle
 description:
 - Manage operation create of the resource Support Bundle.
+- This API allows the client to create a support bundle trigger configuration.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -58,11 +59,13 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Support Bundle reference
-  description: Complete reference of the Support Bundle object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    support_bundle_trigger_configuration.SupportBundleTriggerConfiguration.create_support_bundle,
+
+  - Paths used are
+    post /ers/config/supportbundle,
+
 """
 
 EXAMPLES = r"""

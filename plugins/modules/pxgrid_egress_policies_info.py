@@ -18,11 +18,12 @@ options: {}
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Pxgrid Egress Policies Info reference
-  description: Complete reference of the Pxgrid Egress Policies Info object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    trust_sec_configuration.TrustSecConfiguration.get_egress_policies,
+
+  - Paths used are
+    post /pxgrid/ise/radius/ise/config/trustsec/getEgressPolicies
 """
 
 EXAMPLES = r"""

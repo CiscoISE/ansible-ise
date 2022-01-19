@@ -10,6 +10,7 @@ module: endpoint_deregister
 short_description: Resource module for Endpoint Deregister
 description:
 - Manage operation update of the resource Endpoint Deregister.
+- This API allows the client to de-register an endpoint.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -21,11 +22,13 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Endpoint Deregister reference
-  description: Complete reference of the Endpoint Deregister object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    endpoint.Endpoint.deregister_endpoint,
+
+  - Paths used are
+    put /ers/config/endpoint/{id}/deregister,
+
 """
 
 EXAMPLES = r"""

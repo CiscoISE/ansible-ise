@@ -10,6 +10,7 @@ module: network_access_local_exception_rules_reset_hitcounts
 short_description: Resource module for Network Access Local Exception Rules Reset Hitcounts
 description:
 - Manage operation create of the resource Network Access Local Exception Rules Reset Hitcounts.
+- Network Access - Reset HitCount for local exceptions.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -21,11 +22,13 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Network Access Local Exception Rules Reset Hitcounts reference
-  description: Complete reference of the Network Access Local Exception Rules Reset Hitcounts object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    network_access_authorization_exception_rules.NetworkAccessAuthorizationExceptionRules.reset_hit_counts_network_access_local_exceptions,
+
+  - Paths used are
+    post /network-access/policy-set/{policyId}/exception/reset-hitcount,
+
 """
 
 EXAMPLES = r"""

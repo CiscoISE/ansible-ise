@@ -18,11 +18,13 @@ options: {}
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Pxgrid Endpoints By Os Type Info reference
-  description: Complete reference of the Pxgrid Endpoints By Os Type Info object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    mdm.Mdm.get_endpoints_by_os_type
+
+  - Paths used are
+    post /pxgrid/ise/radius/ise/mdm/getEndpointsByOsType
+
 """
 
 EXAMPLES = r"""

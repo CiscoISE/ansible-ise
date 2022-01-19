@@ -10,6 +10,7 @@ module: device_administration_policy_set_reset_hitcount
 short_description: Resource module for Device Administration Policy Set Reset Hitcount
 description:
 - Manage operation create of the resource Device Administration Policy Set Reset Hitcount.
+- Device Admin - Reset HitCount for PolicySets.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -18,11 +19,13 @@ options: {}
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Device Administration Policy Set Reset Hitcount reference
-  description: Complete reference of the Device Administration Policy Set Reset Hitcount object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    device_administration_policy_set.DeviceAdministrationPolicySet.reset_hit_counts_device_admin_policy_sets,
+
+  - Paths used are
+    post /device-admin/policy-set/reset-hitcount,
+
 """
 
 EXAMPLES = r"""

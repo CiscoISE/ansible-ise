@@ -11,6 +11,8 @@ short_description: Information module for Sg Acl
 description:
 - Get all Sg Acl.
 - Get Sg Acl by id.
+- This API allows the client to get a security group ACL by ID.
+- This API allows the client to get all the security group ACLs.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -57,11 +59,15 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Sg Acl reference
-  description: Complete reference of the Sg Acl object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    security_groups_acls.SecurityGroupsAcls.get_security_groups_acl_by_id,
+    security_groups_acls.SecurityGroupsAcls.get_security_groups_acl_generator,
+
+  - Paths used are
+    get /ers/config/sgacl,
+    get /ers/config/sgacl/{id},
+
 """
 
 EXAMPLES = r"""

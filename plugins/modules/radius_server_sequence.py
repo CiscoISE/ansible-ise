@@ -10,6 +10,8 @@ module: radius_server_sequence
 short_description: Resource module for Radius Server Sequence
 description:
 - Manage operations create, update and delete of the resource Radius Server Sequence.
+- This API creates a RADIUS server sequence.
+- This API deletes a RADIUS server sequence.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -100,11 +102,16 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Radius Server Sequence reference
-  description: Complete reference of the Radius Server Sequence object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    radius_server_sequence.RadiusServerSequence.create_radius_server_sequence,
+    radius_server_sequence.RadiusServerSequence.delete_radius_server_sequence_by_id,
+    radius_server_sequence.RadiusServerSequence.update_radius_server_sequence_by_id,
+
+  - Paths used are
+    post /ers/config/radiusserversequence,
+    delete /ers/config/radiusserversequence/{id},
+
 """
 
 EXAMPLES = r"""

@@ -12,6 +12,9 @@ description:
 - Get all Id Store Sequence.
 - Get Id Store Sequence by id.
 - Get Id Store Sequence by name.
+- This API allows the client to get all the identity sequences.
+- This API allows the client to get an identity sequence by ID.
+- This API allows the client to get an identity sequence by name.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -36,11 +39,17 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Id Store Sequence reference
-  description: Complete reference of the Id Store Sequence object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    identity_sequence.IdentitySequence.get_identity_sequence_by_id,
+    identity_sequence.IdentitySequence.get_identity_sequence_by_name,
+    identity_sequence.IdentitySequence.get_identity_sequence_generator,
+
+  - Paths used are
+    get /ers/config/idstoresequence,
+    get /ers/config/idstoresequence/name/{name},
+    get /ers/config/idstoresequence/{id},
+
 """
 
 EXAMPLES = r"""

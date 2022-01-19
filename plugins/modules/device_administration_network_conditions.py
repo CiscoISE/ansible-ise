@@ -10,6 +10,8 @@ module: device_administration_network_conditions
 short_description: Resource module for Device Administration Network Conditions
 description:
 - Manage operations create, update and delete of the resource Device Administration Network Conditions.
+- Device Admin- Creates network condition.
+- Device Admin - Delete network condition.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -102,11 +104,16 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Device Administration Network Conditions reference
-  description: Complete reference of the Device Administration Network Conditions object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    device_administration_network_conditions.DeviceAdministrationNetworkConditions.create_device_admin_network_condition,
+    device_administration_network_conditions.DeviceAdministrationNetworkConditions.delete_device_admin_network_condition_by_id,
+    device_administration_network_conditions.DeviceAdministrationNetworkConditions.update_device_admin_network_condition_by_id,
+
+  - Paths used are
+    post /device-admin/network-condition,
+    delete /device-admin/network-condition/{id},
+
 """
 
 EXAMPLES = r"""

@@ -48,11 +48,13 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Trustsec Vn Vlan Mapping Bulk Update reference
-  description: Complete reference of the Trustsec Vn Vlan Mapping Bulk Update object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    vn_vlan_mapping.VnVlanMapping.bulk_update_vn_vlan_mappings,
+
+  - Paths used are
+    post /api/v1/trustsec/vnvlanmapping/bulk/update,
+
 """
 
 EXAMPLES = r"""

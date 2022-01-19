@@ -10,6 +10,7 @@ module: guest_type_email
 short_description: Resource module for Guest Type Email
 description:
 - Manage operation update of the resource Guest Type Email.
+- This API allows the client to update a guest type email by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -31,11 +32,12 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Guest Type Email reference
-  description: Complete reference of the Guest Type Email object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    guest_type.GuestType.update_guest_type_email,
+
+  - Paths used are
+    put /ers/config/guesttype/email/{id}
 """
 
 EXAMPLES = r"""

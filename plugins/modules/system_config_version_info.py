@@ -10,6 +10,7 @@ module: system_config_version_info
 short_description: Information module for System Config Version
 description:
 - Get all System Config Version.
+- This API allows the client to get Cisco ISE version and patch information.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -18,11 +19,13 @@ options: {}
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: System Config Version reference
-  description: Complete reference of the System Config Version object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    version_and_patch.VersionAndPatch.get_ise_version_and_patch,
+
+  - Paths used are
+    get /ers/config/op/systemconfig/iseversion,
+
 """
 
 EXAMPLES = r"""

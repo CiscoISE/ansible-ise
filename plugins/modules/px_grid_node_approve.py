@@ -10,6 +10,7 @@ module: px_grid_node_approve
 short_description: Resource module for Px Grid Node Approve
 description:
 - Manage operation update of the resource Px Grid Node Approve.
+- This API allows the client to approve a pxGrid node.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -21,11 +22,13 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Px Grid Node Approve reference
-  description: Complete reference of the Px Grid Node Approve object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    px_grid_node.PxGridNode.approve_px_grid_node,
+
+  - Paths used are
+    put /ers/config/pxgridnode/name/{name}/approve,
+
 """
 
 EXAMPLES = r"""

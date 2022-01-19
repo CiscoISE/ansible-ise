@@ -10,6 +10,8 @@ module: sxp_connections
 short_description: Resource module for Sxp Connections
 description:
 - Manage operations create, update and delete of the resource Sxp Connections.
+- This API creates a SXP connection.
+- This API deletes a SXP connection.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -45,11 +47,16 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Sxp Connections reference
-  description: Complete reference of the Sxp Connections object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    sxp_connections.SxpConnections.create_sxp_connections,
+    sxp_connections.SxpConnections.delete_sxp_connections_by_id,
+    sxp_connections.SxpConnections.update_sxp_connections_by_id,
+
+  - Paths used are
+    post /ers/config/sxpconnections,
+    delete /ers/config/sxpconnections/{id},
+
 """
 
 EXAMPLES = r"""

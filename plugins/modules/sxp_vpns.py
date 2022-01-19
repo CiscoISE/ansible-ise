@@ -10,6 +10,8 @@ module: sxp_vpns
 short_description: Resource module for Sxp Vpns
 description:
 - Manage operations create and delete of the resource Sxp Vpns.
+- This API creates a SXP VPN.
+- This API deletes a SXP VPN.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -24,11 +26,15 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Sxp Vpns reference
-  description: Complete reference of the Sxp Vpns object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    sxp_vpns.SxpVpns.create_sxp_vpn,
+    sxp_vpns.SxpVpns.delete_sxp_vpn_by_id,
+
+  - Paths used are
+    post /ers/config/sxpvpns,
+    delete /ers/config/sxpvpns/{id},
+
 """
 
 EXAMPLES = r"""

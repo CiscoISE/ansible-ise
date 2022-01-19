@@ -10,6 +10,7 @@ module: anc_policy_bulk_monitor_status_info
 short_description: Information module for Anc Policy Bulk Monitor Status
 description:
 - Get Anc Policy Bulk Monitor Status by id.
+- This API allows the client to monitor the bulk request.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -22,11 +23,13 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Anc Policy Bulk Monitor Status reference
-  description: Complete reference of the Anc Policy Bulk Monitor Status object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    anc_policy.AncPolicy.monitor_bulk_status_anc_policy,
+
+  - Paths used are
+    get /ers/config/ancpolicy/bulk/{bulkid},
+
 """
 
 EXAMPLES = r"""

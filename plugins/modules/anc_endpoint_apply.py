@@ -10,6 +10,7 @@ module: anc_endpoint_apply
 short_description: Resource module for Anc Endpoint Apply
 description:
 - Manage operation update of the resource Anc Endpoint Apply.
+- This API allows the client to apply the required configuration.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -28,11 +29,13 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Anc Endpoint Apply reference
-  description: Complete reference of the Anc Endpoint Apply object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    anc_endpoint.AncEndpoint.apply_anc_endpoint,
+
+  - Paths used are
+    put /ers/config/ancendpoint/apply,
+
 """
 
 EXAMPLES = r"""

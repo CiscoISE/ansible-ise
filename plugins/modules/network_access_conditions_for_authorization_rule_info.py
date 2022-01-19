@@ -10,6 +10,7 @@ module: network_access_conditions_for_authorization_rule_info
 short_description: Information module for Network Access Conditions For Authorization Rule
 description:
 - Get all Network Access Conditions For Authorization Rule.
+- Network Access - Returns list of library conditions for Authorization rules scope.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -18,11 +19,13 @@ options: {}
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Network Access Conditions For Authorization Rule reference
-  description: Complete reference of the Network Access Conditions For Authorization Rule object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    network_access_conditions.NetworkAccessConditions.get_network_access_conditions_for_authorization_rules,
+
+  - Paths used are
+    get /network-access/condition/authorization,
+
 """
 
 EXAMPLES = r"""

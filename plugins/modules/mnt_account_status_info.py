@@ -10,6 +10,7 @@ module: mnt_account_status_info
 short_description: Information module for Mnt Account Status
 description:
 - Get Mnt Account Status by id.
+- AccountStatus by MAC.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -26,11 +27,13 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Mnt Account Status reference
-  description: Complete reference of the Mnt Account Status object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    misc.Misc.get_account_status_by_mac,
+
+  - Paths used are
+    get /AcctStatus/MACAddress/{mac}/{duration},
+
 """
 
 EXAMPLES = r"""

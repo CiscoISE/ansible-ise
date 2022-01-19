@@ -10,6 +10,8 @@ module: sponsored_guest_portal
 short_description: Resource module for Sponsored Guest Portal
 description:
 - Manage operations create, update and delete of the resource Sponsored Guest Portal.
+- This API creates a sponsored guest portal.
+- This API deletes a sponsored guest portal by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -382,11 +384,16 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Sponsored Guest Portal reference
-  description: Complete reference of the Sponsored Guest Portal object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    sponsored_guest_portal.SponsoredGuestPortal.create_sponsored_guest_portal,
+    sponsored_guest_portal.SponsoredGuestPortal.delete_sponsored_guest_portal_by_id,
+    sponsored_guest_portal.SponsoredGuestPortal.update_sponsored_guest_portal_by_id,
+
+  - Paths used are
+    post /ers/config/sponsoredguestportal,
+    delete /ers/config/sponsoredguestportal/{id},
+
 """
 
 EXAMPLES = r"""

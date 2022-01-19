@@ -10,6 +10,8 @@ module: hotspot_portal
 short_description: Resource module for Hotspot Portal
 description:
 - Manage operations create, update and delete of the resource Hotspot Portal.
+- This API creates a hotspot portal.
+- This API deletes a hotspot portal by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -249,11 +251,16 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Hotspot Portal reference
-  description: Complete reference of the Hotspot Portal object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    hotspot_portal.HotspotPortal.create_hotspot_portal,
+    hotspot_portal.HotspotPortal.delete_hotspot_portal_by_id,
+    hotspot_portal.HotspotPortal.update_hotspot_portal_by_id,
+
+  - Paths used are
+    post /ers/config/hotspotportal,
+    delete /ers/config/hotspotportal/{id},
+
 """
 
 EXAMPLES = r"""

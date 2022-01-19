@@ -10,6 +10,7 @@ module: active_directory_groups_by_domain_info
 short_description: Information module for Active Directory Groups By Domain
 description:
 - Get all Active Directory Groups By Domain.
+- This API lists the groups of the given domain.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -32,11 +33,13 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Active Directory Groups By Domain reference
-  description: Complete reference of the Active Directory Groups By Domain object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    active_directory.ActiveDirectory.get_groups_by_domain,
+
+  - Paths used are
+    put /ers/config/activedirectory/{id}/getGroupsByDomain
+
 """
 
 EXAMPLES = r"""

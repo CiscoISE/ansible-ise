@@ -10,6 +10,8 @@ module: network_access_global_exception_rules
 short_description: Resource module for Network Access Global Exception Rules
 description:
 - Manage operations create, update and delete of the resource Network Access Global Exception Rules.
+- Network Access - Create global exception authorization rule:
+- Network Access - Delete global exception authorization rule.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -210,11 +212,16 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Network Access Global Exception Rules reference
-  description: Complete reference of the Network Access Global Exception Rules object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    network_access_authorization_global_exception_rules.NetworkAccessAuthorizationGlobalExceptionRules.create_network_access_policy_set_global_exception_rule,
+    network_access_authorization_global_exception_rules.NetworkAccessAuthorizationGlobalExceptionRules.delete_network_access_policy_set_global_exception_rule_by_id,
+    network_access_authorization_global_exception_rules.NetworkAccessAuthorizationGlobalExceptionRules.update_network_access_policy_set_global_exception_rule_by_id,
+
+  - Paths used are
+    post /network-access/policy-set/global-exception,
+    delete /network-access/policy-set/global-exception/{id},
+
 """
 
 EXAMPLES = r"""

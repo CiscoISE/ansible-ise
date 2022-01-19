@@ -10,6 +10,8 @@ module: tacacs_command_sets
 short_description: Resource module for Tacacs Command Sets
 description:
 - Manage operations create, update and delete of the resource Tacacs Command Sets.
+- This API creates TACACS command sets.
+- This API deletes TACACS command sets.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -47,11 +49,16 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Tacacs Command Sets reference
-  description: Complete reference of the Tacacs Command Sets object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    tacacs_command_sets.TacacsCommandSets.create_tacacs_command_sets,
+    tacacs_command_sets.TacacsCommandSets.delete_tacacs_command_sets_by_id,
+    tacacs_command_sets.TacacsCommandSets.update_tacacs_command_sets_by_id,
+
+  - Paths used are
+    post /ers/config/tacacscommandsets,
+    delete /ers/config/tacacscommandsets/{id},
+
 """
 
 EXAMPLES = r"""

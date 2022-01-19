@@ -10,6 +10,8 @@ module: guest_type
 short_description: Resource module for Guest Type
 description:
 - Manage operations create, update and delete of the resource Guest Type.
+- This API creates a guest type.
+- This API deletes a guest type.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -118,11 +120,16 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Guest Type reference
-  description: Complete reference of the Guest Type object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    guest_type.GuestType.create_guest_type,
+    guest_type.GuestType.delete_guest_type_by_id,
+    guest_type.GuestType.update_guest_type_by_id,
+
+  - Paths used are
+    post /ers/config/guesttype,
+    delete /ers/config/guesttype/{id},
+
 """
 
 EXAMPLES = r"""

@@ -11,6 +11,8 @@ short_description: Information module for Support Bundle Status
 description:
 - Get all Support Bundle Status.
 - Get Support Bundle Status by id.
+- This API allows the client to get a support bundle status by ID.
+- This API allows the client to get all the support bundle status.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -31,11 +33,15 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Support Bundle Status reference
-  description: Complete reference of the Support Bundle Status object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    support_bundle_status.SupportBundleStatus.get_support_bundle_status_by_id,
+    support_bundle_status.SupportBundleStatus.get_support_bundle_status_generator,
+
+  - Paths used are
+    get /ers/config/supportbundlestatus,
+    get /ers/config/supportbundlestatus/{id},
+
 """
 
 EXAMPLES = r"""

@@ -10,6 +10,8 @@ module: network_access_authorization_rules
 short_description: Resource module for Network Access Authorization Rules
 description:
 - Manage operations create, update and delete of the resource Network Access Authorization Rules.
+- Network Access - Create authorization rule:
+- Network Access - Delete authorization rule.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -213,11 +215,16 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Network Access Authorization Rules reference
-  description: Complete reference of the Network Access Authorization Rules object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    network_access_authorization_rules.NetworkAccessAuthorizationRules.create_network_access_authorization_rule,
+    network_access_authorization_rules.NetworkAccessAuthorizationRules.delete_network_access_authorization_rule_by_id,
+    network_access_authorization_rules.NetworkAccessAuthorizationRules.update_network_access_authorization_rule_by_id,
+
+  - Paths used are
+    post /network-access/policy-set/{policyId}/authorization,
+    delete /network-access/policy-set/{policyId}/authorization/{id},
+
 """
 
 EXAMPLES = r"""

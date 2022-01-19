@@ -10,6 +10,8 @@ module: network_access_time_date_conditions
 short_description: Resource module for Network Access Time Date Conditions
 description:
 - Manage operations create, update and delete of the resource Network Access Time Date Conditions.
+- Network Access - Creates time/date condition.
+- Network Access - Delete Time/Date condition.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -155,11 +157,16 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Network Access Time Date Conditions reference
-  description: Complete reference of the Network Access Time Date Conditions object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    network_access_time_date_conditions.NetworkAccessTimeDateConditions.create_network_access_time_condition,
+    network_access_time_date_conditions.NetworkAccessTimeDateConditions.delete_network_access_time_condition_by_id,
+    network_access_time_date_conditions.NetworkAccessTimeDateConditions.update_network_access_time_condition_by_id,
+
+  - Paths used are
+    post /network-access/time-condition,
+    delete /network-access/time-condition/{id},
+
 """
 
 EXAMPLES = r"""

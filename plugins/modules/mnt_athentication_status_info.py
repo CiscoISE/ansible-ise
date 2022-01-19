@@ -30,11 +30,15 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
+notes:
+  - SDK Method used are
+    misc.Misc.get_authentication_status_by_mac,
+
+  - Paths used are
+    get /AuthStatus/MACAddress/{MAC}/{SECONDS}/{RECORDS}/All,
 seealso:
-# Reference by Internet resource
-- name: Mnt Athentication Status reference
-  description: Complete reference of the Mnt Athentication Status object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+# Reference by module name
+- module: cisco.ise.mnt_authentication_status_info
 """
 
 EXAMPLES = r"""

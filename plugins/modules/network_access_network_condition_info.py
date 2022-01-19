@@ -11,6 +11,8 @@ short_description: Information module for Network Access Network Condition
 description:
 - Get all Network Access Network Condition.
 - Get Network Access Network Condition by id.
+- Network Access - Returns a list of network conditions.
+- Network Access - Returns a network condition.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -23,11 +25,15 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Network Access Network Condition reference
-  description: Complete reference of the Network Access Network Condition object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    network_access_network_conditions.NetworkAccessNetworkConditions.get_network_access_network_condition_by_id,
+    network_access_network_conditions.NetworkAccessNetworkConditions.get_network_access_network_conditions,
+
+  - Paths used are
+    get /network-access/network-condition,
+    get /network-access/network-condition/{id},
+
 """
 
 EXAMPLES = r"""

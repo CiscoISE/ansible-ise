@@ -10,6 +10,7 @@ module: node_group_node_delete
 short_description: Resource module for Node Group Node Delete
 description:
 - Manage operation create of the resource Node Group Node Delete.
+- Purpose of this API is to remove a node from a node group in the cluster.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -24,11 +25,13 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Node Group Node Delete reference
-  description: Complete reference of the Node Group Node Delete object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    node_group.NodeGroup.remove_node,
+
+  - Paths used are
+    post /api/v1/deployment/node-group/{nodeGroupName}/remove-node,
+
 """
 
 EXAMPLES = r"""

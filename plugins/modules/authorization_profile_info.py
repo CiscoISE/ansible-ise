@@ -12,6 +12,9 @@ description:
 - Get all Authorization Profile.
 - Get Authorization Profile by id.
 - Get Authorization Profile by name.
+- This API allows the client to get all authorization profiles.
+- This API allows the client to get an authorization profile by ID.
+- This API allows the client to get an authorization profile by name.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -36,11 +39,17 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Authorization Profile reference
-  description: Complete reference of the Authorization Profile object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    authorization_profile.AuthorizationProfile.get_authorization_profile_by_id,
+    authorization_profile.AuthorizationProfile.get_authorization_profile_by_name,
+    authorization_profile.AuthorizationProfile.get_authorization_profiles_generator,
+
+  - Paths used are
+    get /ers/config/authorizationprofile,
+    get /ers/config/authorizationprofile/name/{name},
+    get /ers/config/authorizationprofile/{id},
+
 """
 
 EXAMPLES = r"""

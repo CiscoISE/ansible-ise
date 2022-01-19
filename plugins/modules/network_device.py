@@ -10,6 +10,9 @@ module: network_device
 short_description: Resource module for Network Device
 description:
 - Manage operations create, update and delete of the resource Network Device.
+- This API creates a network device.
+- This API deletes a network device by ID.
+- This API deletes a network device by name.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -187,11 +190,19 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Network Device reference
-  description: Complete reference of the Network Device object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    network_device.NetworkDevice.create_network_device,
+    network_device.NetworkDevice.delete_network_device_by_id,
+    network_device.NetworkDevice.delete_network_device_by_name,
+    network_device.NetworkDevice.update_network_device_by_id,
+    network_device.NetworkDevice.update_network_device_by_name,
+
+  - Paths used are
+    post /ers/config/networkdevice,
+    delete /ers/config/networkdevice/name/{name},
+    delete /ers/config/networkdevice/{id},
+
 """
 
 EXAMPLES = r"""

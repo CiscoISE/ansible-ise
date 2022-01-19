@@ -10,6 +10,7 @@ module: backup_schedule_config_update
 short_description: Resource module for Backup Schedule Config Update
 description:
 - Manage operation update of the resource Backup Schedule Config Update.
+- Update the Schedule of the configuration backup on the ISE node as per the input parameters. This API only helps in editing the schedule.
 version_added: '2.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -58,33 +59,17 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Backup Schedule Config Update reference
-  description: Complete reference of the Backup Schedule Config Update object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    backup_and_restore.BackupAndRestore.update_scheduled_config_backup,
+
+  - Paths used are
+    put /api/v1/backup-restore/config/schedule-config-backup,
+
 """
 
 EXAMPLES = r"""
 - name: Update all
-  cisco.ise.backup_schedule_config_update:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    backupDescription: string
-    backupEncryptionKey: string
-    backupName: string
-    endDate: string
-    frequency: string
-    monthDay: string
-    repositoryName: string
-    startDate: string
-    status: string
-    time: string
-    weekDay: string
-
-- name: Create
   cisco.ise.backup_schedule_config_update:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

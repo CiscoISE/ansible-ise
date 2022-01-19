@@ -10,6 +10,7 @@ module: trustsec_vn_vlan_mapping
 short_description: Resource module for Trustsec Vn Vlan Mapping
 description:
 - Manage operations create, update and delete of the resource Trustsec Vn Vlan Mapping.
+- Create VN-Vlan Mapping.
 version_added: '2.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -44,11 +45,16 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Trustsec Vn Vlan Mapping reference
-  description: Complete reference of the Trustsec Vn Vlan Mapping object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    vn_vlan_mapping.VnVlanMapping.create_vn_vlan_mapping,
+    vn_vlan_mapping.VnVlanMapping.delete_vn_vlan_mapping_by_id,
+    vn_vlan_mapping.VnVlanMapping.update_vn_vlan_mapping_by_id,
+
+  - Paths used are
+    post /api/v1/trustsec/vnvlanmapping,
+    delete /api/v1/trustsec/vnvlanmapping/{id},
+
 """
 
 EXAMPLES = r"""

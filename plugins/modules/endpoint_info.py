@@ -12,6 +12,9 @@ description:
 - Get all Endpoint.
 - Get Endpoint by id.
 - Get Endpoint by name.
+- This API allows the client to get all the endpoints.
+- This API allows the client to get an endpoint by ID.
+- This API allows the client to get an endpoint by name.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -62,11 +65,17 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Endpoint reference
-  description: Complete reference of the Endpoint object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    endpoint.Endpoint.get_endpoint_by_id,
+    endpoint.Endpoint.get_endpoint_by_name,
+    endpoint.Endpoint.get_endpoints_generator,
+
+  - Paths used are
+    get /ers/config/endpoint,
+    get /ers/config/endpoint/name/{name},
+    get /ers/config/endpoint/{id},
+
 """
 
 EXAMPLES = r"""

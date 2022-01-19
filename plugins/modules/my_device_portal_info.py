@@ -11,6 +11,8 @@ short_description: Information module for My Device Portal
 description:
 - Get all My Device Portal.
 - Get My Device Portal by id.
+- This API allows the client to get a my device portal by ID.
+- This API allows the client to get all the my device portals.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -57,11 +59,15 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: My Device Portal reference
-  description: Complete reference of the My Device Portal object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    my_device_portal.MyDevicePortal.get_my_device_portal_by_id,
+    my_device_portal.MyDevicePortal.get_my_device_portal_generator,
+
+  - Paths used are
+    get /ers/config/mydeviceportal,
+    get /ers/config/mydeviceportal/{id},
+
 """
 
 EXAMPLES = r"""

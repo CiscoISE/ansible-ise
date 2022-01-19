@@ -12,6 +12,9 @@ description:
 - Get all Allowed Protocols.
 - Get Allowed Protocols by id.
 - Get Allowed Protocols by name.
+- This API allows the client to get all the allowed protocols.
+- This API allows the client to get an allowed protocol by ID.
+- This API allows the client to get an allowed protocol by name.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -36,11 +39,17 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Allowed Protocols reference
-  description: Complete reference of the Allowed Protocols object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    allowed_protocols.AllowedProtocols.get_allowed_protocol_by_id,
+    allowed_protocols.AllowedProtocols.get_allowed_protocol_by_name,
+    allowed_protocols.AllowedProtocols.get_allowed_protocols_generator,
+
+  - Paths used are
+    get /ers/config/allowedprotocols,
+    get /ers/config/allowedprotocols/name/{name},
+    get /ers/config/allowedprotocols/{id},
+
 """
 
 EXAMPLES = r"""

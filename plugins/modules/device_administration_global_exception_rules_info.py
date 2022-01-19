@@ -11,6 +11,8 @@ short_description: Information module for Device Administration Global Exception
 description:
 - Get all Device Administration Global Exception Rules.
 - Get Device Administration Global Exception Rules by id.
+- Device Admin - Get global exception rule attribute.
+- Device Admin - Get global execption rules.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -23,11 +25,15 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Device Administration Global Exception Rules reference
-  description: Complete reference of the Device Administration Global Exception Rules object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    device_administration_authorization_global_exception_rules.DeviceAdministrationAuthorizationGlobalExceptionRules.get_device_admin_policy_set_global_exception_by_rule_id,
+    device_administration_authorization_global_exception_rules.DeviceAdministrationAuthorizationGlobalExceptionRules.get_device_admin_policy_set_global_exception_rules,
+
+  - Paths used are
+    get /device-admin/policy-set/global-exception,
+    get /device-admin/policy-set/global-exception/{id},
+
 """
 
 EXAMPLES = r"""

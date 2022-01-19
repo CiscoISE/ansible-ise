@@ -10,6 +10,8 @@ module: self_registered_portal
 short_description: Resource module for Self Registered Portal
 description:
 - Manage operations create, update and delete of the resource Self Registered Portal.
+- This API creates a self registered portal.
+- This API deletes a self registered portal by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -678,11 +680,16 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Self Registered Portal reference
-  description: Complete reference of the Self Registered Portal object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    self_registered_portal.SelfRegisteredPortal.create_self_registered_portal,
+    self_registered_portal.SelfRegisteredPortal.delete_self_registered_portal_by_id,
+    self_registered_portal.SelfRegisteredPortal.update_self_registered_portal_by_id,
+
+  - Paths used are
+    post /ers/config/selfregportal,
+    delete /ers/config/selfregportal/{id},
+
 """
 
 EXAMPLES = r"""

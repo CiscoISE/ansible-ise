@@ -10,6 +10,7 @@ module: bind_signed_certificate
 short_description: Resource module for Bind Signed Certificate
 description:
 - Manage operation create of the resource Bind Signed Certificate.
+- \#\#\# Bind CA Signed Certificate.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -69,11 +70,13 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Bind Signed Certificate reference
-  description: Complete reference of the Bind Signed Certificate object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    certificates.Certificates.bind_csr,
+
+  - Paths used are
+    post /api/v1/certs/signed-certificate/bind,
+
 """
 
 EXAMPLES = r"""

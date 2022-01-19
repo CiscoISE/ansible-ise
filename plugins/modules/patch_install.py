@@ -10,6 +10,9 @@ module: patch_install
 short_description: Resource module for Patch Install
 description:
 - Manage operation create of the resource Patch Install.
+- >
+   Triggers patch installation on the Cisco ISE node. A task ID is returned which can be used to monitor the progress of the patch installation process. As
+   the patch   installation triggers the Cisco ISE to restart, the task API becomes unavailable for  a certain period of time.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -24,11 +27,13 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Patch Install reference
-  description: Complete reference of the Patch Install object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    patching.Patching.install_patch,
+
+  - Paths used are
+    post /api/v1/patch/install,
+
 """
 
 EXAMPLES = r"""

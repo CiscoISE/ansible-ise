@@ -10,6 +10,7 @@ module: sg_mapping_group_deploy
 short_description: Resource module for Sg Mapping Group Deploy
 description:
 - Manage operation update of the resource Sg Mapping Group Deploy.
+- This API allows the client to deploy an IP to SGT mapping group by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -21,11 +22,13 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Sg Mapping Group Deploy reference
-  description: Complete reference of the Sg Mapping Group Deploy object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    ip_to_sgt_mapping_group.IpToSgtMappingGroup.deploy_ip_to_sgt_mapping_group_by_id,
+
+  - Paths used are
+    put /ers/config/sgmappinggroup/{id}/deploy,
+
 """
 
 EXAMPLES = r"""

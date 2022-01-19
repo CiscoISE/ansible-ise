@@ -10,6 +10,7 @@ module: node_services_interfaces_info
 short_description: Information module for Node Services Interfaces
 description:
 - Get all Node Services Interfaces.
+- This API retrieves the list of interfaces on a node in a cluster.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -22,11 +23,13 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Node Services Interfaces reference
-  description: Complete reference of the Node Services Interfaces object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    node_services.NodeServices.get_interfaces,
+
+  - Paths used are
+    get /api/v1/node/{hostname}/interface,
+
 """
 
 EXAMPLES = r"""

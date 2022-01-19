@@ -10,6 +10,8 @@ module: authorization_profile
 short_description: Resource module for Authorization Profile
 description:
 - Manage operations create, update and delete of the resource Authorization Profile.
+- This API creates an authorization profile.
+- This API deletes an authorization profile.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -172,11 +174,16 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Authorization Profile reference
-  description: Complete reference of the Authorization Profile object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    authorization_profile.AuthorizationProfile.create_authorization_profile,
+    authorization_profile.AuthorizationProfile.delete_authorization_profile_by_id,
+    authorization_profile.AuthorizationProfile.update_authorization_profile_by_id,
+
+  - Paths used are
+    post /ers/config/authorizationprofile,
+    delete /ers/config/authorizationprofile/{id},
+
 """
 
 EXAMPLES = r"""

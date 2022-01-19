@@ -11,6 +11,8 @@ short_description: Information module for Network Access Authentication Rules
 description:
 - Get all Network Access Authentication Rules.
 - Get Network Access Authentication Rules by id.
+- Network Access - Get authentication rules.
+- Network Access - Get rule attributes.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -27,11 +29,15 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Network Access Authentication Rules reference
-  description: Complete reference of the Network Access Authentication Rules object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    network_access_authentication_rules.NetworkAccessAuthenticationRules.get_network_access_authentication_rule_by_id,
+    network_access_authentication_rules.NetworkAccessAuthenticationRules.get_network_access_authentication_rules,
+
+  - Paths used are
+    get /network-access/policy-set/{policyId}/authentication,
+    get /network-access/policy-set/{policyId}/authentication/{id},
+
 """
 
 EXAMPLES = r"""

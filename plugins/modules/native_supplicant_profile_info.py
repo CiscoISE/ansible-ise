@@ -11,6 +11,8 @@ short_description: Information module for Native Supplicant Profile
 description:
 - Get all Native Supplicant Profile.
 - Get Native Supplicant Profile by id.
+- This API allows the client to get a native supplicant profile by ID.
+- This API allows the client to get all the native supplicant profiles.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -31,11 +33,15 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Native Supplicant Profile reference
-  description: Complete reference of the Native Supplicant Profile object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    native_supplicant_profile.NativeSupplicantProfile.get_native_supplicant_profile_by_id,
+    native_supplicant_profile.NativeSupplicantProfile.get_native_supplicant_profile_generator,
+
+  - Paths used are
+    get /ers/config/nspprofile,
+    get /ers/config/nspprofile/{id},
+
 """
 
 EXAMPLES = r"""

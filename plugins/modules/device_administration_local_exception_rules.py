@@ -10,6 +10,8 @@ module: device_administration_local_exception_rules
 short_description: Resource module for Device Administration Local Exception Rules
 description:
 - Manage operations create, update and delete of the resource Device Administration Local Exception Rules.
+- Device Admin - Create local authorization exception rule:
+- Device Admin - Delete local exception rule.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -215,11 +217,16 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Device Administration Local Exception Rules reference
-  description: Complete reference of the Device Administration Local Exception Rules object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    device_administration_authorization_exception_rules.DeviceAdministrationAuthorizationExceptionRules.create_device_admin_local_exception_rule,
+    device_administration_authorization_exception_rules.DeviceAdministrationAuthorizationExceptionRules.delete_device_admin_local_exception_rule_by_id,
+    device_administration_authorization_exception_rules.DeviceAdministrationAuthorizationExceptionRules.update_device_admin_local_exception_rule_by_id,
+
+  - Paths used are
+    post /device-admin/policy-set/{policyId}/exception,
+    delete /device-admin/policy-set/{policyId}/exception/{id},
+
 """
 
 EXAMPLES = r"""

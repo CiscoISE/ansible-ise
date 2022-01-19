@@ -10,6 +10,7 @@ module: mnt_session_disconnect_info
 short_description: Information module for Mnt Session Disconnect
 description:
 - Get Mnt Session Disconnect by id.
+- Session Disconnect.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -38,11 +39,13 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Mnt Session Disconnect reference
-  description: Complete reference of the Mnt Session Disconnect object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    misc.Misc.session_disconnect,
+
+  - Paths used are
+    get /CoA/Disconnect>/{PSN_NAME}/{MAC}/{DISCONNECT_TYPE}/{NAS_IPV4}/{{ENDPOINT_IP}},
+
 """
 
 EXAMPLES = r"""

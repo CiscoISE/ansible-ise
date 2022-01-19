@@ -10,6 +10,8 @@ module: sg_acl
 short_description: Resource module for Sg Acl
 description:
 - Manage operations create, update and delete of the resource Sg Acl.
+- This API creates a security group ACL.
+- This API deletes a security group ACL.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -42,11 +44,16 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Sg Acl reference
-  description: Complete reference of the Sg Acl object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    security_groups_acls.SecurityGroupsAcls.create_security_groups_acl,
+    security_groups_acls.SecurityGroupsAcls.delete_security_groups_acl_by_id,
+    security_groups_acls.SecurityGroupsAcls.update_security_groups_acl_by_id,
+
+  - Paths used are
+    post /ers/config/sgacl,
+    delete /ers/config/sgacl/{id},
+
 """
 
 EXAMPLES = r"""

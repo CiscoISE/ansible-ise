@@ -10,6 +10,7 @@ module: licensing_feature_to_tier_mapping_info
 short_description: Information module for Licensing Feature To Tier Mapping
 description:
 - Get all Licensing Feature To Tier Mapping.
+- Get feature to tier mapping.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -18,11 +19,13 @@ options: {}
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Licensing Feature To Tier Mapping reference
-  description: Complete reference of the Licensing Feature To Tier Mapping object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    licensing.Licensing.get_feature_to_tier_mapping,
+
+  - Paths used are
+    get /api/v1/license/system/feature-to-tier-mapping,
+
 """
 
 EXAMPLES = r"""

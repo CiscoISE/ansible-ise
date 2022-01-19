@@ -11,6 +11,8 @@ short_description: Information module for Downloadable Acl
 description:
 - Get all Downloadable Acl.
 - Get Downloadable Acl by id.
+- This API allows the client to get a downloadable ACL by ID.
+- This API allows the client to get all downloadable ACLs.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -31,11 +33,15 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Downloadable Acl reference
-  description: Complete reference of the Downloadable Acl object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    downloadable_acl.DownloadableAcl.get_downloadable_acl_by_id,
+    downloadable_acl.DownloadableAcl.get_downloadable_acl_generator,
+
+  - Paths used are
+    get /ers/config/downloadableacl,
+    get /ers/config/downloadableacl/{id},
+
 """
 
 EXAMPLES = r"""

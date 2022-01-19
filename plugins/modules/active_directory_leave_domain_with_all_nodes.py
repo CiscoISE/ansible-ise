@@ -10,6 +10,7 @@ module: active_directory_leave_domain_with_all_nodes
 short_description: Resource module for Active Directory Leave Domain With All Nodes
 description:
 - Manage operation update of the resource Active Directory Leave Domain With All Nodes.
+- This API joins makes all Cisco ISE nodes leave an Active Directory domain.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -31,11 +32,13 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Active Directory Leave Domain With All Nodes reference
-  description: Complete reference of the Active Directory Leave Domain With All Nodes object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    active_directory.ActiveDirectory.leave_domain_with_all_nodes,
+
+  - Paths used are
+    put /ers/config/activedirectory/{id}/leaveAllNodes,
+
 """
 
 EXAMPLES = r"""

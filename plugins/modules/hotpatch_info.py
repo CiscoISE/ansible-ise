@@ -10,6 +10,7 @@ module: hotpatch_info
 short_description: Information module for Hotpatch
 description:
 - Get all Hotpatch.
+- List all the installed hot patches in the system.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -18,11 +19,13 @@ options: {}
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Hotpatch reference
-  description: Complete reference of the Hotpatch object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    patching.Patching.list_installed_hotpatches,
+
+  - Paths used are
+    get /api/v1/hotpatch,
+
 """
 
 EXAMPLES = r"""

@@ -11,6 +11,8 @@ short_description: Information module for Trustsec Nbar App
 description:
 - Get all Trustsec Nbar App.
 - Get Trustsec Nbar App by id.
+- Get NBAR Application by id.
+- Get all NBAR Applications.
 version_added: '2.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -61,11 +63,15 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Trustsec Nbar App reference
-  description: Complete reference of the Trustsec Nbar App object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    nbar_app.NbarApp.get_nbar_app_by_id,
+    nbar_app.NbarApp.get_nbar_apps_generator,
+
+  - Paths used are
+    get /api/v1/trustsec/sgacl/nbarapp,
+    get /api/v1/trustsec/sgacl/nbarapp/{id},
+
 """
 
 EXAMPLES = r"""

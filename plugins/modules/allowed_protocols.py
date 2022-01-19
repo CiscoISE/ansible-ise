@@ -10,6 +10,8 @@ module: allowed_protocols
 short_description: Resource module for Allowed Protocols
 description:
 - Manage operations create, update and delete of the resource Allowed Protocols.
+- This API creates an allowed protocol.
+- This API deletes an allowed protocol.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -309,11 +311,16 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Allowed Protocols reference
-  description: Complete reference of the Allowed Protocols object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    allowed_protocols.AllowedProtocols.create_allowed_protocol,
+    allowed_protocols.AllowedProtocols.delete_allowed_protocol_by_id,
+    allowed_protocols.AllowedProtocols.update_allowed_protocol_by_id,
+
+  - Paths used are
+    post /ers/config/allowedprotocols,
+    delete /ers/config/allowedprotocols/{id},
+
 """
 
 EXAMPLES = r"""

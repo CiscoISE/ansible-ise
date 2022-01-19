@@ -10,6 +10,7 @@ module: resource_version_info
 short_description: Information module for Resource Version
 description:
 - Get all Resource Version.
+- Get all VersionInfo.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -22,11 +23,13 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Resource Version reference
-  description: Complete reference of the Resource Version object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    version_info.VersionInfo.get_version_info,
+
+  - Paths used are
+    get /ers/config/{resource}/versioninfo,
+
 """
 
 EXAMPLES = r"""

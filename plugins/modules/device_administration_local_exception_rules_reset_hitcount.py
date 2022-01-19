@@ -10,6 +10,7 @@ module: device_administration_local_exception_rules_reset_hitcount
 short_description: Resource module for Device Administration Local Exception Rules Reset Hitcount
 description:
 - Manage operation create of the resource Device Administration Local Exception Rules Reset Hitcount.
+- Device Admin - Reset HitCount for local exceptions.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -21,11 +22,13 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Device Administration Local Exception Rules Reset Hitcount reference
-  description: Complete reference of the Device Administration Local Exception Rules Reset Hitcount object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    device_administration_authorization_exception_rules.DeviceAdministrationAuthorizationExceptionRules.reset_hit_counts_device_admin_local_exceptions,
+
+  - Paths used are
+    post /device-admin/policy-set/{policyId}/exception/reset-hitcount,
+
 """
 
 EXAMPLES = r"""

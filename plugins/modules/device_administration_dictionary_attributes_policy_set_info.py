@@ -10,6 +10,7 @@ module: device_administration_dictionary_attributes_policy_set_info
 short_description: Information module for Device Administration Dictionary Attributes Policy Set
 description:
 - Get all Device Administration Dictionary Attributes Policy Set.
+- Network Access - Returns list of dictionary attributes for policyset.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -18,11 +19,13 @@ options: {}
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Device Administration Dictionary Attributes Policy Set reference
-  description: Complete reference of the Device Administration Dictionary Attributes Policy Set object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    device_administration_dictionary_attributes_list.DeviceAdministrationDictionaryAttributesList.get_device_admin_dictionaries_policy_set,
+
+  - Paths used are
+    get /device-admin/dictionaries/policyset,
+
 """
 
 EXAMPLES = r"""

@@ -18,11 +18,13 @@ options: {}
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Pxgrid Authorization reference
-  description: Complete reference of the Pxgrid Authorization object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    provider.Provider.authorization,
+
+  - Paths used are
+    post /control/Authorization,
+
 """
 
 EXAMPLES = r"""

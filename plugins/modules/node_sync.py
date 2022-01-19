@@ -21,11 +21,12 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Node Sync reference
-  description: Complete reference of the Node Sync object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    sync_ise_node.SyncIseNode.sync_node,
+
+  - Paths used are
+    post /api/v1/deployment/sync-node
 """
 
 EXAMPLES = r"""

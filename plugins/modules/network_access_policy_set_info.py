@@ -11,6 +11,8 @@ short_description: Information module for Network Access Policy Set
 description:
 - Get all Network Access Policy Set.
 - Get Network Access Policy Set by id.
+- Get all network access policy sets.
+- Network Access - Get policy set attributes.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -23,11 +25,15 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Network Access Policy Set reference
-  description: Complete reference of the Network Access Policy Set object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    network_access_policy_set.NetworkAccessPolicySet.get_network_access_policy_set_by_id,
+    network_access_policy_set.NetworkAccessPolicySet.get_network_access_policy_sets,
+
+  - Paths used are
+    get /network-access/policy-set,
+    get /network-access/policy-set/{id},
+
 """
 
 EXAMPLES = r"""

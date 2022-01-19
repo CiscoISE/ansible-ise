@@ -10,6 +10,8 @@ module: active_directory
 short_description: Resource module for Active Directory
 description:
 - Manage operations create and delete of the resource Active Directory.
+- This API creates an AD join point in Cisco ISE.
+- This API deletes an AD join point from Cisco ISE.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -188,11 +190,15 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Active Directory reference
-  description: Complete reference of the Active Directory object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    active_directory.ActiveDirectory.create_active_directory,
+    active_directory.ActiveDirectory.delete_active_directory_by_id,
+
+  - Paths used are
+    post /ers/config/activedirectory,
+    delete /ers/config/activedirectory/{id},
+
 """
 
 EXAMPLES = r"""

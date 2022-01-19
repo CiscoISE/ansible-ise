@@ -10,6 +10,7 @@ module: proxy_connection_settings_info
 short_description: Information module for Proxy Connection Settings
 description:
 - Get all Proxy Connection Settings.
+- The following functionalities are impacted by the proxy settings:
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -18,11 +19,13 @@ options: {}
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Proxy Connection Settings reference
-  description: Complete reference of the Proxy Connection Settings object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    proxy.Proxy.get_proxy_connection,
+
+  - Paths used are
+    get /api/v1/system-settings/proxy,
+
 """
 
 EXAMPLES = r"""

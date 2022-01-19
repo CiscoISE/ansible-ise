@@ -10,6 +10,7 @@ module: active_directory_leave_domain
 short_description: Resource module for Active Directory Leave Domain
 description:
 - Manage operation update of the resource Active Directory Leave Domain.
+- This API makes a Cisco ISE node to leave an Active Directory domain.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -31,11 +32,13 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Active Directory Leave Domain reference
-  description: Complete reference of the Active Directory Leave Domain object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    active_directory.ActiveDirectory.leave_domain,
+
+  - Paths used are
+    put /ers/config/activedirectory/{id}/leave,
+
 """
 
 EXAMPLES = r"""

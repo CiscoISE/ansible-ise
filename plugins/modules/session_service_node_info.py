@@ -12,6 +12,9 @@ description:
 - Get all Session Service Node.
 - Get Session Service Node by id.
 - Get Session Service Node by name.
+- This API allows the client to get a PSN node details by ID.
+- This API allows the client to get a PSN node details by name.
+- This API allows the client to get all the PSN node details.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -36,11 +39,17 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Session Service Node reference
-  description: Complete reference of the Session Service Node object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    psn_node_details_with_radius_service.PsnNodeDetailsWithRadiusService.get_session_service_node_by_id,
+    psn_node_details_with_radius_service.PsnNodeDetailsWithRadiusService.get_session_service_node_by_name,
+    psn_node_details_with_radius_service.PsnNodeDetailsWithRadiusService.get_session_service_node_generator,
+
+  - Paths used are
+    get /ers/config/sessionservicenode,
+    get /ers/config/sessionservicenode/name/{name},
+    get /ers/config/sessionservicenode/{id},
+
 """
 
 EXAMPLES = r"""

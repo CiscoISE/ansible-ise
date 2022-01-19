@@ -11,6 +11,8 @@ short_description: Information module for Portal
 description:
 - Get all Portal.
 - Get Portal by id.
+- This API allows the client to get a portal by ID.
+- This API allows the client to get all the portals.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -57,11 +59,15 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Portal reference
-  description: Complete reference of the Portal object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    portal.Portal.get_portal_by_id,
+    portal.Portal.get_portals_generator,
+
+  - Paths used are
+    get /ers/config/portal,
+    get /ers/config/portal/{id},
+
 """
 
 EXAMPLES = r"""

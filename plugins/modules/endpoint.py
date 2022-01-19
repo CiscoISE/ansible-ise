@@ -10,6 +10,8 @@ module: endpoint
 short_description: Resource module for Endpoint
 description:
 - Manage operations create, update and delete of the resource Endpoint.
+- This API creates an endpoint.
+- This API deletes an endpoint.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -101,11 +103,16 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Endpoint reference
-  description: Complete reference of the Endpoint object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    endpoint.Endpoint.create_endpoint,
+    endpoint.Endpoint.delete_endpoint_by_id,
+    endpoint.Endpoint.update_endpoint_by_id,
+
+  - Paths used are
+    post /ers/config/endpoint,
+    delete /ers/config/endpoint/{id},
+
 """
 
 EXAMPLES = r"""

@@ -12,6 +12,9 @@ description:
 - Get all Certificate Profile.
 - Get Certificate Profile by id.
 - Get Certificate Profile by name.
+- This API allows the client to get a certificate profile by ID.
+- This API allows the client to get a certificate profile by name.
+- This API allows the client to get all the certificate profiles.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -36,11 +39,17 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Certificate Profile reference
-  description: Complete reference of the Certificate Profile object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    certificate_profile.CertificateProfile.get_certificate_profile_by_id,
+    certificate_profile.CertificateProfile.get_certificate_profile_by_name,
+    certificate_profile.CertificateProfile.get_certificate_profile_generator,
+
+  - Paths used are
+    get /ers/config/certificateprofile,
+    get /ers/config/certificateprofile/name/{name},
+    get /ers/config/certificateprofile/{id},
+
 """
 
 EXAMPLES = r"""

@@ -10,6 +10,7 @@ module: device_administration_authorization_reset_hitcount
 short_description: Resource module for Device Administration Authorization Reset Hitcount
 description:
 - Manage operation create of the resource Device Administration Authorization Reset Hitcount.
+- Device Admin - Reset HitCount for Authorization Rules.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -21,11 +22,13 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Device Administration Authorization Reset Hitcount reference
-  description: Complete reference of the Device Administration Authorization Reset Hitcount object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    device_administration_authorization_rules.DeviceAdministrationAuthorizationRules.reset_hit_counts_device_admin_authorization_rules,
+
+  - Paths used are
+    post /device-admin/policy-set/{policyId}/authorization/reset-hitcount,
+
 """
 
 EXAMPLES = r"""

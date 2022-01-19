@@ -21,11 +21,13 @@ options:
 requirements:
 - ciscoisesdk >= 1.3.0
 - python >= 3.5
-seealso:
-# Reference by Internet resource
-- name: Pxgrid Service Lookup reference
-  description: Complete reference of the Pxgrid Service Lookup object model.
-  link: https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary
+notes:
+  - SDK Method used are
+    consumer.Consumer.lookup_service,
+
+  - Paths used are
+    post /control/ServiceLookup,
+
 """
 
 EXAMPLES = r"""
