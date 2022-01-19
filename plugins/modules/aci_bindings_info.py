@@ -41,7 +41,7 @@ options:
     - FilterValue query parameter.
     type: list
 requirements:
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
 notes:
   - SDK Method used are
