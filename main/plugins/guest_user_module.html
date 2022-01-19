@@ -459,7 +459,7 @@
 <h1>cisco.ise.guest_user – Resource module for Guest User<a class="headerlink" href="#cisco-ise-guest-user-resource-module-for-guest-user" title="Permalink to this headline"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This plugin is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/ise">cisco.ise collection</a> (version 2.1.1).</p>
+<p>This plugin is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/ise">cisco.ise collection</a> (version 2.2.0).</p>
 <p>You might already have this collection installed if you are using the <code class="docutils literal notranslate"><span class="pre">ansible</span></code> package.
 It is not included in <code class="docutils literal notranslate"><span class="pre">ansible-core</span></code>.
 To check whether it is installed, run <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">list</span></code>.</p>
@@ -475,15 +475,17 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <li><p><a class="reference internal" href="#requirements" id="id2">Requirements</a></p></li>
 <li><p><a class="reference internal" href="#parameters" id="id3">Parameters</a></p></li>
 <li><p><a class="reference internal" href="#notes" id="id4">Notes</a></p></li>
-<li><p><a class="reference internal" href="#see-also" id="id5">See Also</a></p></li>
-<li><p><a class="reference internal" href="#examples" id="id6">Examples</a></p></li>
-<li><p><a class="reference internal" href="#return-values" id="id7">Return Values</a></p></li>
+<li><p><a class="reference internal" href="#examples" id="id5">Examples</a></p></li>
+<li><p><a class="reference internal" href="#return-values" id="id6">Return Values</a></p></li>
 </ul>
 </div>
 <section id="synopsis">
 <h2><a class="toc-backref" href="#id1">Synopsis</a><a class="headerlink" href="#synopsis" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p>Manage operations create, update and delete of the resource Guest User.</p></li>
+<li><p>This API creates a guest user.</p></li>
+<li><p>This API deletes a guest user by ID.</p></li>
+<li><p>This API deletes a guest user.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -494,887 +496,497 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <h2><a class="toc-backref" href="#id2">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this headline"></a></h2>
 <p>The below requirements are needed on the host that executes this module.</p>
 <ul class="simple">
-<li><p>ciscoisesdk &gt;= 1.3.0</p></li>
+<li><p>ciscoisesdk &gt;= 1.4.0</p></li>
 <li><p>python &gt;= 3.5</p></li>
 </ul>
 </section>
 <section id="parameters">
 <h2><a class="toc-backref" href="#id3">Parameters</a><a class="headerlink" href="#parameters" title="Permalink to this headline"></a></h2>
-<table  border=0 cellpadding=0 class="documentation-table">
-    <tr>
-        <th colspan="2">Parameter</th>
-        <th>Choices/<font color="blue">Defaults</font></th>
-                    <th width="100%">Comments</th>
-    </tr>
-                <tr>
-                                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-customFields"></div>
-                <b>customFields</b>
-                <a class="ansibleOptionLink" href="#parameter-customFields" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">dictionary</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Key value map.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-description"></div>
-                <b>description</b>
-                <a class="ansibleOptionLink" href="#parameter-description" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Guest User&#x27;s description.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-guestAccessInfo"></div>
-                <b>guestAccessInfo</b>
-                <a class="ansibleOptionLink" href="#parameter-guestAccessInfo" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">dictionary</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Guest User&#x27;s guestAccessInfo.</div>
-                                                    </td>
-        </tr>
-                                    <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-guestAccessInfo/fromDate"></div>
-                <b>fromDate</b>
-                <a class="ansibleOptionLink" href="#parameter-guestAccessInfo/fromDate" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Guest User&#x27;s fromDate.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-guestAccessInfo/groupTag"></div>
-                <b>groupTag</b>
-                <a class="ansibleOptionLink" href="#parameter-guestAccessInfo/groupTag" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Guest User&#x27;s groupTag.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-guestAccessInfo/location"></div>
-                <b>location</b>
-                <a class="ansibleOptionLink" href="#parameter-guestAccessInfo/location" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Guest User&#x27;s location.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-guestAccessInfo/ssid"></div>
-                <b>ssid</b>
-                <a class="ansibleOptionLink" href="#parameter-guestAccessInfo/ssid" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Guest User&#x27;s ssid.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-guestAccessInfo/toDate"></div>
-                <b>toDate</b>
-                <a class="ansibleOptionLink" href="#parameter-guestAccessInfo/toDate" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Guest User&#x27;s toDate.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-guestAccessInfo/validDays"></div>
-                <b>validDays</b>
-                <a class="ansibleOptionLink" href="#parameter-guestAccessInfo/validDays" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">integer</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Guest User&#x27;s validDays.</div>
-                                                    </td>
-        </tr>
-
-                            <tr>
-                                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-guestInfo"></div>
-                <b>guestInfo</b>
-                <a class="ansibleOptionLink" href="#parameter-guestInfo" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">dictionary</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Guest User&#x27;s guestInfo.</div>
-                                                    </td>
-        </tr>
-                                    <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-guestInfo/company"></div>
-                <b>company</b>
-                <a class="ansibleOptionLink" href="#parameter-guestInfo/company" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Guest User&#x27;s company.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-guestInfo/creationTime"></div>
-                <b>creationTime</b>
-                <a class="ansibleOptionLink" href="#parameter-guestInfo/creationTime" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Guest User&#x27;s creationTime.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-guestInfo/emailAddress"></div>
-                <b>emailAddress</b>
-                <a class="ansibleOptionLink" href="#parameter-guestInfo/emailAddress" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Guest User&#x27;s emailAddress.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-guestInfo/enabled"></div>
-                <b>enabled</b>
-                <a class="ansibleOptionLink" href="#parameter-guestInfo/enabled" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">boolean</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                            <li>no</li>
-                                                                                                                                                                                            <li>yes</li>
-                                                                                </ul>
-                                                                        </td>
-                                                            <td>
-                                        <div>This field is only for Get operation not applicable for Create, Update operations.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-guestInfo/firstName"></div>
-                <b>firstName</b>
-                <a class="ansibleOptionLink" href="#parameter-guestInfo/firstName" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Guest User&#x27;s firstName.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-guestInfo/lastName"></div>
-                <b>lastName</b>
-                <a class="ansibleOptionLink" href="#parameter-guestInfo/lastName" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Guest User&#x27;s lastName.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-guestInfo/notificationLanguage"></div>
-                <b>notificationLanguage</b>
-                <a class="ansibleOptionLink" href="#parameter-guestInfo/notificationLanguage" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Guest User&#x27;s notificationLanguage.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-guestInfo/password"></div>
-                <b>password</b>
-                <a class="ansibleOptionLink" href="#parameter-guestInfo/password" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Guest User&#x27;s password.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-guestInfo/phoneNumber"></div>
-                <b>phoneNumber</b>
-                <a class="ansibleOptionLink" href="#parameter-guestInfo/phoneNumber" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Phone number should be E.164 format.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-guestInfo/smsServiceProvider"></div>
-                <b>smsServiceProvider</b>
-                <a class="ansibleOptionLink" href="#parameter-guestInfo/smsServiceProvider" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Guest User&#x27;s smsServiceProvider.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-guestInfo/userName"></div>
-                <b>userName</b>
-                <a class="ansibleOptionLink" href="#parameter-guestInfo/userName" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>If account needs be created with mobile number, please provide mobile number here.</div>
-                                                    </td>
-        </tr>
-
-                            <tr>
-                                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-guestType"></div>
-                <b>guestType</b>
-                <a class="ansibleOptionLink" href="#parameter-guestType" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Guest User&#x27;s guestType.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-id"></div>
-                <b>id</b>
-                <a class="ansibleOptionLink" href="#parameter-id" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Guest User&#x27;s id.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-ise_debug"></div>
-                <b>ise_debug</b>
-                <a class="ansibleOptionLink" href="#parameter-ise_debug" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">boolean</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                                                                                <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                            <li><div style="color: blue"><b>no</b>&nbsp;&larr;</div></li>
-                                                                                                                                                                                            <li>yes</li>
-                                                                                </ul>
-                                                                        </td>
-                                                            <td>
-                                        <div>Flag for Identity Services Engine SDK to enable debugging.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-ise_hostname"></div>
-                <b>ise_hostname</b>
-                <a class="ansibleOptionLink" href="#parameter-ise_hostname" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                             / <span style="color: red">required</span>                    </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>The Identity Services Engine hostname.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-ise_password"></div>
-                <b>ise_password</b>
-                <a class="ansibleOptionLink" href="#parameter-ise_password" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                             / <span style="color: red">required</span>                    </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>The Identity Services Engine password to authenticate.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-ise_username"></div>
-                <b>ise_username</b>
-                <a class="ansibleOptionLink" href="#parameter-ise_username" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                             / <span style="color: red">required</span>                    </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>The Identity Services Engine username to authenticate.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-ise_uses_api_gateway"></div>
-                <b>ise_uses_api_gateway</b>
-                <a class="ansibleOptionLink" href="#parameter-ise_uses_api_gateway" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">boolean</span>
-                                                                </div>
-                                      <div style="font-style: italic; font-size: small; color: darkgreen">
-                    added in 1.1.0 of cisco.ise
-                  </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                                                                                <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                            <li>no</li>
-                                                                                                                                                                                            <li><div style="color: blue"><b>yes</b>&nbsp;&larr;</div></li>
-                                                                                </ul>
-                                                                        </td>
-                                                            <td>
-                                        <div>Flag that informs the SDK whether to use the Identity Services Engine&#x27;s API Gateway to send requests.</div>
-                                        <div>If it is true, it uses the ISE&#x27;s API Gateway and sends requests to https://{{ise_hostname}}.</div>
-                                        <div>If it is false, it sends the requests to https://{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-ise_verify"></div>
-                <b>ise_verify</b>
-                <a class="ansibleOptionLink" href="#parameter-ise_verify" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">boolean</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                                                                                <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                            <li>no</li>
-                                                                                                                                                                                            <li><div style="color: blue"><b>yes</b>&nbsp;&larr;</div></li>
-                                                                                </ul>
-                                                                        </td>
-                                                            <td>
-                                        <div>Flag to enable or disable SSL certificate verification.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-ise_version"></div>
-                <b>ise_version</b>
-                <a class="ansibleOptionLink" href="#parameter-ise_version" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                                <b>Default:</b><br/><div style="color: blue">"3.1.1"</div>
-                                </td>
-                                                            <td>
-                                        <div>Informs the SDK which version of Identity Services Engine to use.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-ise_wait_on_rate_limit"></div>
-                <b>ise_wait_on_rate_limit</b>
-                <a class="ansibleOptionLink" href="#parameter-ise_wait_on_rate_limit" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">boolean</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                                                                                <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                            <li>no</li>
-                                                                                                                                                                                            <li><div style="color: blue"><b>yes</b>&nbsp;&larr;</div></li>
-                                                                                </ul>
-                                                                        </td>
-                                                            <td>
-                                        <div>Flag for Identity Services Engine SDK to enable automatic rate-limit handling.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-name"></div>
-                <b>name</b>
-                <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Guest User&#x27;s name.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-portalId"></div>
-                <b>portalId</b>
-                <a class="ansibleOptionLink" href="#parameter-portalId" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Guest User&#x27;s portalId.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-reasonForVisit"></div>
-                <b>reasonForVisit</b>
-                <a class="ansibleOptionLink" href="#parameter-reasonForVisit" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Guest User&#x27;s reasonForVisit.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-sponsorUserId"></div>
-                <b>sponsorUserId</b>
-                <a class="ansibleOptionLink" href="#parameter-sponsorUserId" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Guest User&#x27;s sponsorUserId.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-sponsorUserName"></div>
-                <b>sponsorUserName</b>
-                <a class="ansibleOptionLink" href="#parameter-sponsorUserName" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Guest User&#x27;s sponsorUserName.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-status"></div>
-                <b>status</b>
-                <a class="ansibleOptionLink" href="#parameter-status" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Guest User&#x27;s status.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-statusReason"></div>
-                <b>statusReason</b>
-                <a class="ansibleOptionLink" href="#parameter-statusReason" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Guest User&#x27;s statusReason.</div>
-                                                    </td>
-        </tr>
-                    </table>
-<br/></section>
+<table class="colwidths-auto ansible-option-table docutils align-default" style="width: 100%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-customFields"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-customfields"><strong>customFields</strong></p>
+<a class="ansibleOptionLink" href="#parameter-customFields" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Key value map.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-description"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-description"><strong>description</strong></p>
+<a class="ansibleOptionLink" href="#parameter-description" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Guest User’s description.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-guestAccessInfo"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-guestaccessinfo"><strong>guestAccessInfo</strong></p>
+<a class="ansibleOptionLink" href="#parameter-guestAccessInfo" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Guest User’s guestAccessInfo.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-guestAccessInfo/fromDate"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-guestaccessinfo-fromdate"><strong>fromDate</strong></p>
+<a class="ansibleOptionLink" href="#parameter-guestAccessInfo/fromDate" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Guest User’s fromDate.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-guestAccessInfo/groupTag"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-guestaccessinfo-grouptag"><strong>groupTag</strong></p>
+<a class="ansibleOptionLink" href="#parameter-guestAccessInfo/groupTag" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Guest User’s groupTag.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-guestAccessInfo/location"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-guestaccessinfo-location"><strong>location</strong></p>
+<a class="ansibleOptionLink" href="#parameter-guestAccessInfo/location" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Guest User’s location.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-guestAccessInfo/ssid"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-guestaccessinfo-ssid"><strong>ssid</strong></p>
+<a class="ansibleOptionLink" href="#parameter-guestAccessInfo/ssid" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Guest User’s ssid.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-guestAccessInfo/toDate"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-guestaccessinfo-todate"><strong>toDate</strong></p>
+<a class="ansibleOptionLink" href="#parameter-guestAccessInfo/toDate" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Guest User’s toDate.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-guestAccessInfo/validDays"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-guestaccessinfo-validdays"><strong>validDays</strong></p>
+<a class="ansibleOptionLink" href="#parameter-guestAccessInfo/validDays" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Guest User’s validDays.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-guestInfo"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-guestinfo"><strong>guestInfo</strong></p>
+<a class="ansibleOptionLink" href="#parameter-guestInfo" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Guest User’s guestInfo.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-guestInfo/company"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-guestinfo-company"><strong>company</strong></p>
+<a class="ansibleOptionLink" href="#parameter-guestInfo/company" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Guest User’s company.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-guestInfo/creationTime"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-guestinfo-creationtime"><strong>creationTime</strong></p>
+<a class="ansibleOptionLink" href="#parameter-guestInfo/creationTime" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Guest User’s creationTime.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-guestInfo/emailAddress"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-guestinfo-emailaddress"><strong>emailAddress</strong></p>
+<a class="ansibleOptionLink" href="#parameter-guestInfo/emailAddress" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Guest User’s emailAddress.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-guestInfo/enabled"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-guestinfo-enabled"><strong>enabled</strong></p>
+<a class="ansibleOptionLink" href="#parameter-guestInfo/enabled" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>This field is only for Get operation not applicable for Create, Update operations.</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><span class="ansible-option-choices-entry">no</span></p></li>
+<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-guestInfo/firstName"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-guestinfo-firstname"><strong>firstName</strong></p>
+<a class="ansibleOptionLink" href="#parameter-guestInfo/firstName" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Guest User’s firstName.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-guestInfo/lastName"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-guestinfo-lastname"><strong>lastName</strong></p>
+<a class="ansibleOptionLink" href="#parameter-guestInfo/lastName" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Guest User’s lastName.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-guestInfo/notificationLanguage"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-guestinfo-notificationlanguage"><strong>notificationLanguage</strong></p>
+<a class="ansibleOptionLink" href="#parameter-guestInfo/notificationLanguage" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Guest User’s notificationLanguage.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-guestInfo/password"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-guestinfo-password"><strong>password</strong></p>
+<a class="ansibleOptionLink" href="#parameter-guestInfo/password" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Guest User’s password.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-guestInfo/phoneNumber"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-guestinfo-phonenumber"><strong>phoneNumber</strong></p>
+<a class="ansibleOptionLink" href="#parameter-guestInfo/phoneNumber" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Phone number should be E.164 format.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-guestInfo/smsServiceProvider"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-guestinfo-smsserviceprovider"><strong>smsServiceProvider</strong></p>
+<a class="ansibleOptionLink" href="#parameter-guestInfo/smsServiceProvider" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Guest User’s smsServiceProvider.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-guestInfo/userName"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-guestinfo-username"><strong>userName</strong></p>
+<a class="ansibleOptionLink" href="#parameter-guestInfo/userName" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>If account needs be created with mobile number, please provide mobile number here.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-guestType"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-guesttype"><strong>guestType</strong></p>
+<a class="ansibleOptionLink" href="#parameter-guestType" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Guest User’s guestType.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-id"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-id"><strong>id</strong></p>
+<a class="ansibleOptionLink" href="#parameter-id" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Guest User’s id.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-ise_debug"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-ise-debug"><strong>ise_debug</strong></p>
+<a class="ansibleOptionLink" href="#parameter-ise_debug" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Flag for Identity Services Engine SDK to enable debugging.</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><span class="ansible-option-default-bold">no</span> <span class="ansible-option-default">← (default)</span></p></li>
+<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-ise_hostname"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-ise-hostname"><strong>ise_hostname</strong></p>
+<a class="ansibleOptionLink" href="#parameter-ise_hostname" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span> / <span class="ansible-option-required">required</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>The Identity Services Engine hostname.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-ise_password"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-ise-password"><strong>ise_password</strong></p>
+<a class="ansibleOptionLink" href="#parameter-ise_password" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span> / <span class="ansible-option-required">required</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>The Identity Services Engine password to authenticate.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-ise_username"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-ise-username"><strong>ise_username</strong></p>
+<a class="ansibleOptionLink" href="#parameter-ise_username" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span> / <span class="ansible-option-required">required</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>The Identity Services Engine username to authenticate.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-ise_uses_api_gateway"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-ise-uses-api-gateway"><strong>ise_uses_api_gateway</strong></p>
+<a class="ansibleOptionLink" href="#parameter-ise_uses_api_gateway" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+<p><span class="ansible-option-versionadded">added in 1.1.0 of cisco.ise</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Flag that informs the SDK whether to use the Identity Services Engine’s API Gateway to send requests.</p>
+<p>If it is true, it uses the ISE’s API Gateway and sends requests to <a class="reference external" href="https:/">https:/</a>/{{ise_hostname}}.</p>
+<p>If it is false, it sends the requests to <a class="reference external" href="https:/">https:/</a>/{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><span class="ansible-option-choices-entry">no</span></p></li>
+<li><p><span class="ansible-option-default-bold">yes</span> <span class="ansible-option-default">← (default)</span></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-ise_verify"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-ise-verify"><strong>ise_verify</strong></p>
+<a class="ansibleOptionLink" href="#parameter-ise_verify" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Flag to enable or disable SSL certificate verification.</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><span class="ansible-option-choices-entry">no</span></p></li>
+<li><p><span class="ansible-option-default-bold">yes</span> <span class="ansible-option-default">← (default)</span></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-ise_version"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-ise-version"><strong>ise_version</strong></p>
+<a class="ansibleOptionLink" href="#parameter-ise_version" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Informs the SDK which version of Identity Services Engine to use.</p>
+<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <span class="ansible-option-default">“3.1.1”</span></p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-ise_wait_on_rate_limit"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-ise-wait-on-rate-limit"><strong>ise_wait_on_rate_limit</strong></p>
+<a class="ansibleOptionLink" href="#parameter-ise_wait_on_rate_limit" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Flag for Identity Services Engine SDK to enable automatic rate-limit handling.</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><span class="ansible-option-choices-entry">no</span></p></li>
+<li><p><span class="ansible-option-default-bold">yes</span> <span class="ansible-option-default">← (default)</span></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-name"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-name"><strong>name</strong></p>
+<a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Guest User’s name.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-portalId"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-portalid"><strong>portalId</strong></p>
+<a class="ansibleOptionLink" href="#parameter-portalId" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Guest User’s portalId.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-reasonForVisit"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-reasonforvisit"><strong>reasonForVisit</strong></p>
+<a class="ansibleOptionLink" href="#parameter-reasonForVisit" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Guest User’s reasonForVisit.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-sponsorUserId"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-sponsoruserid"><strong>sponsorUserId</strong></p>
+<a class="ansibleOptionLink" href="#parameter-sponsorUserId" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Guest User’s sponsorUserId.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-sponsorUserName"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-sponsorusername"><strong>sponsorUserName</strong></p>
+<a class="ansibleOptionLink" href="#parameter-sponsorUserName" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Guest User’s sponsorUserName.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-status"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-status"><strong>status</strong></p>
+<a class="ansibleOptionLink" href="#parameter-status" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Guest User’s status.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-statusReason"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-parameter-statusreason"><strong>statusReason</strong></p>
+<a class="ansibleOptionLink" href="#parameter-statusReason" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Guest User’s statusReason.</p>
+</div></td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="notes">
 <h2><a class="toc-backref" href="#id4">Notes</a><a class="headerlink" href="#notes" title="Permalink to this headline"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
+<li><p>SDK Method used are guest_user.GuestUser.create_guest_user, guest_user.GuestUser.delete_guest_user_by_id, guest_user.GuestUser.delete_guest_user_by_name, guest_user.GuestUser.update_guest_user_by_id, guest_user.GuestUser.update_guest_user_by_name,</p></li>
+<li><p>Paths used are post /ers/config/guestuser, delete /ers/config/guestuser/name/{name}, delete /ers/config/guestuser/{id},</p></li>
 <li><p>Does not support <code class="docutils literal notranslate"><span class="pre">check_mode</span></code></p></li>
 <li><p>The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK</p></li>
-<li><p>The parameters starting with <a href="#id8"><span class="problematic" id="id9">ise_</span></a> are used by the Cisco ISE Python SDK to establish the connection</p></li>
+<li><p>The parameters starting with <a href="#id7"><span class="problematic" id="id8">ise_</span></a> are used by the Cisco ISE Python SDK to establish the connection</p></li>
 </ul>
 </div>
 </section>
-<section id="see-also">
-<h2><a class="toc-backref" href="#id5">See Also</a><a class="headerlink" href="#see-also" title="Permalink to this headline"></a></h2>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<dl class="simple">
-<dt><a class="reference external" href="https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary">Guest User reference</a></dt><dd><p>Complete reference of the Guest User object model.</p>
-</dd>
-</dl>
-</div>
-</section>
 <section id="examples">
-<h2><a class="toc-backref" href="#id6">Examples</a><a class="headerlink" href="#examples" title="Permalink to this headline"></a></h2>
-<div class="highlight-yaml+jinja notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Update by name</span>
-  <span class="nt">cisco.ise.guest_user</span><span class="p">:</span>
-    <span class="nt">ise_hostname</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_hostname</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">ise_username</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_username</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">ise_password</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_password</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">ise_verify</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_verify</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">state</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">present</span>
-    <span class="nt">customFields</span><span class="p">:</span> <span class="p p-Indicator">{}</span>
-    <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">guestAccessInfo</span><span class="p">:</span>
-      <span class="nt">fromDate</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">groupTag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">location</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">ssid</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">toDate</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">validDays</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
-    <span class="nt">guestInfo</span><span class="p">:</span>
-      <span class="nt">company</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">creationTime</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">emailAddress</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-      <span class="nt">firstName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">lastName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">notificationLanguage</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">password</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">phoneNumber</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">smsServiceProvider</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">userName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">guestType</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">portalId</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">reasonForVisit</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">sponsorUserId</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">sponsorUserName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">status</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">statusReason</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+<h2><a class="toc-backref" href="#id5">Examples</a><a class="headerlink" href="#examples" title="Permalink to this headline"></a></h2>
+<div class="highlight-yaml+jinja notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Update by name</span><span class="w"></span>
+<span class="w">  </span><span class="nt">cisco.ise.guest_user</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_hostname</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_hostname</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_username</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_username</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_password</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_verify</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_verify</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
+<span class="w">    </span><span class="nt">customFields</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span><span class="w"></span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">guestAccessInfo</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">fromDate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">groupTag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">location</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">ssid</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">toDate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">validDays</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"></span>
+<span class="w">    </span><span class="nt">guestInfo</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">company</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">creationTime</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">emailAddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">      </span><span class="nt">firstName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">lastName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">notificationLanguage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">phoneNumber</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">smsServiceProvider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">userName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">guestType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">portalId</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">reasonForVisit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">sponsorUserId</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">sponsorUserName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">statusReason</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
 
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Delete by name</span>
-  <span class="nt">cisco.ise.guest_user</span><span class="p">:</span>
-    <span class="nt">ise_hostname</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_hostname</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">ise_username</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_username</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">ise_password</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_password</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">ise_verify</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_verify</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">state</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">absent</span>
-    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Delete by name</span><span class="w"></span>
+<span class="w">  </span><span class="nt">cisco.ise.guest_user</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_hostname</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_hostname</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_username</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_username</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_password</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_verify</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_verify</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">absent</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
 
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Update by id</span>
-  <span class="nt">cisco.ise.guest_user</span><span class="p">:</span>
-    <span class="nt">ise_hostname</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_hostname</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">ise_username</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_username</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">ise_password</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_password</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">ise_verify</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_verify</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">state</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">present</span>
-    <span class="nt">customFields</span><span class="p">:</span> <span class="p p-Indicator">{}</span>
-    <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">guestAccessInfo</span><span class="p">:</span>
-      <span class="nt">fromDate</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">groupTag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">location</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">ssid</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">toDate</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">validDays</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
-    <span class="nt">guestInfo</span><span class="p">:</span>
-      <span class="nt">company</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">creationTime</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">emailAddress</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-      <span class="nt">firstName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">lastName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">notificationLanguage</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">password</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">phoneNumber</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">smsServiceProvider</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">userName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">guestType</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">portalId</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">reasonForVisit</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">sponsorUserId</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">sponsorUserName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">status</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">statusReason</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Update by id</span><span class="w"></span>
+<span class="w">  </span><span class="nt">cisco.ise.guest_user</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_hostname</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_hostname</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_username</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_username</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_password</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_verify</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_verify</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
+<span class="w">    </span><span class="nt">customFields</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span><span class="w"></span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">guestAccessInfo</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">fromDate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">groupTag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">location</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">ssid</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">toDate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">validDays</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"></span>
+<span class="w">    </span><span class="nt">guestInfo</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">company</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">creationTime</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">emailAddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">      </span><span class="nt">firstName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">lastName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">notificationLanguage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">phoneNumber</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">smsServiceProvider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">userName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">guestType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">portalId</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">reasonForVisit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">sponsorUserId</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">sponsorUserName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">statusReason</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
 
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Delete by id</span>
-  <span class="nt">cisco.ise.guest_user</span><span class="p">:</span>
-    <span class="nt">ise_hostname</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_hostname</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">ise_username</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_username</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">ise_password</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_password</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">ise_verify</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_verify</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">state</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">absent</span>
-    <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Delete by id</span><span class="w"></span>
+<span class="w">  </span><span class="nt">cisco.ise.guest_user</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_hostname</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_hostname</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_username</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_username</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_password</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_verify</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_verify</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">absent</span><span class="w"></span>
+<span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
 
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Create</span>
-  <span class="nt">cisco.ise.guest_user</span><span class="p">:</span>
-    <span class="nt">ise_hostname</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_hostname</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">ise_username</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_username</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">ise_password</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_password</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">ise_verify</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_verify</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">state</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">present</span>
-    <span class="nt">customFields</span><span class="p">:</span> <span class="p p-Indicator">{}</span>
-    <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">guestAccessInfo</span><span class="p">:</span>
-      <span class="nt">fromDate</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">groupTag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">location</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">ssid</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">toDate</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">validDays</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
-    <span class="nt">guestInfo</span><span class="p">:</span>
-      <span class="nt">company</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">creationTime</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">emailAddress</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">enabled</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-      <span class="nt">firstName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">lastName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">notificationLanguage</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">password</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">phoneNumber</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">smsServiceProvider</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">userName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">guestType</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">portalId</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">reasonForVisit</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">sponsorUserId</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">sponsorUserName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">status</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">statusReason</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create</span><span class="w"></span>
+<span class="w">  </span><span class="nt">cisco.ise.guest_user</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_hostname</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_hostname</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_username</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_username</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_password</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_verify</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_verify</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
+<span class="w">    </span><span class="nt">customFields</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span><span class="w"></span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">guestAccessInfo</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">fromDate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">groupTag</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">location</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">ssid</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">toDate</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">validDays</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"></span>
+<span class="w">    </span><span class="nt">guestInfo</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">company</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">creationTime</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">emailAddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">      </span><span class="nt">firstName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">lastName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">notificationLanguage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">phoneNumber</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">smsServiceProvider</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">userName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">guestType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">portalId</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">reasonForVisit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">sponsorUserId</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">sponsorUserName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">status</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">statusReason</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="return-values">
-<h2><a class="toc-backref" href="#id7">Return Values</a><a class="headerlink" href="#return-values" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id6">Return Values</a><a class="headerlink" href="#return-values" title="Permalink to this headline"></a></h2>
 <p>Common return values are documented <a class="reference external" href="https://docs.ansible.com/ansible/latest/reference_appendices/common_return_values.html#common-return-values" title="(in Ansible v5)"><span class="xref std std-ref">here</span></a>, the following are the fields unique to this module:</p>
-<table border=0 cellpadding=0 class="documentation-table">
-    <tr>
-        <th colspan="1">Key</th>
-        <th>Returned</th>
-        <th width="100%">Description</th>
-    </tr>
-                <tr>
-                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="return-ise_response"></div>
-                <b>ise_response</b>
-                <a class="ansibleOptionLink" href="#return-ise_response" title="Permalink to this return value"></a>
-                <div style="font-size: small">
-                  <span style="color: purple">dictionary</span>
-                                      </div>
-                                </td>
-            <td>always</td>
-            <td>
-                                        <div>A dictionary or list with the response returned by the Cisco ISE Python SDK</div>
-                                    <br/>
-                                                            <div style="font-size: smaller"><b>Sample:</b></div>
-                                            <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">{
-  &quot;id&quot;: &quot;string&quot;,
-  &quot;name&quot;: &quot;string&quot;,
-  &quot;description&quot;: &quot;string&quot;,
-  &quot;guestType&quot;: &quot;string&quot;,
-  &quot;status&quot;: &quot;string&quot;,
-  &quot;statusReason&quot;: &quot;string&quot;,
-  &quot;reasonForVisit&quot;: &quot;string&quot;,
-  &quot;sponsorUserId&quot;: &quot;string&quot;,
-  &quot;sponsorUserName&quot;: &quot;string&quot;,
-  &quot;guestInfo&quot;: {
-    &quot;firstName&quot;: &quot;string&quot;,
-    &quot;lastName&quot;: &quot;string&quot;,
-    &quot;company&quot;: &quot;string&quot;,
-    &quot;creationTime&quot;: &quot;string&quot;,
-    &quot;notificationLanguage&quot;: &quot;string&quot;,
-    &quot;userName&quot;: &quot;string&quot;,
-    &quot;emailAddress&quot;: &quot;string&quot;,
-    &quot;phoneNumber&quot;: &quot;string&quot;,
-    &quot;password&quot;: &quot;string&quot;,
-    &quot;enabled&quot;: true,
-    &quot;smsServiceProvider&quot;: &quot;string&quot;
-  },
-  &quot;guestAccessInfo&quot;: {
-    &quot;validDays&quot;: 0,
-    &quot;fromDate&quot;: &quot;string&quot;,
-    &quot;toDate&quot;: &quot;string&quot;,
-    &quot;location&quot;: &quot;string&quot;,
-    &quot;ssid&quot;: &quot;string&quot;,
-    &quot;groupTag&quot;: &quot;string&quot;
-  },
-  &quot;portalId&quot;: &quot;string&quot;,
-  &quot;customFields&quot;: {},
-  &quot;link&quot;: {
-    &quot;rel&quot;: &quot;string&quot;,
-    &quot;href&quot;: &quot;string&quot;,
-    &quot;type&quot;: &quot;string&quot;
-  }
-}</div>
-                                </td>
-        </tr>
-                            <tr>
-                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="return-ise_update_response"></div>
-                <b>ise_update_response</b>
-                <a class="ansibleOptionLink" href="#return-ise_update_response" title="Permalink to this return value"></a>
-                <div style="font-size: small">
-                  <span style="color: purple">dictionary</span>
-                                      </div>
-                <div style="font-style: italic; font-size: small; color: darkgreen">added in 1.1.0 of cisco.ise</div>                </td>
-            <td>always</td>
-            <td>
-                                        <div>A dictionary or list with the response returned by the Cisco ISE Python SDK</div>
-                                    <br/>
-                                                            <div style="font-size: smaller"><b>Sample:</b></div>
-                                            <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">{
-  &quot;UpdatedFieldsList&quot;: {
-    &quot;updatedField&quot;: [
-      {
-        &quot;field&quot;: &quot;string&quot;,
-        &quot;oldValue&quot;: &quot;string&quot;,
-        &quot;newValue&quot;: &quot;string&quot;
-      }
-    ],
-    &quot;field&quot;: &quot;string&quot;,
-    &quot;oldValue&quot;: &quot;string&quot;,
-    &quot;newValue&quot;: &quot;string&quot;
-  }
-}</div>
-                                </td>
-        </tr>
-                    </table>
-<br/><br/><section id="authors">
+<table class="colwidths-auto ansible-option-table docutils align-default" style="width: 100%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-ise_response"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-return-ise-response"><strong>ise_response</strong></p>
+<a class="ansibleOptionLink" href="#return-ise_response" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>A dictionary or list with the response returned by the Cisco ISE Python SDK</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> always</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “{\n  \”id\”: \”string\”,\n  \”name\”: \”string\”,\n  \”description\”: \”string\”,\n  \”guestType\”: \”string\”,\n  \”status\”: \”string\”,\n  \”statusReason\”: \”string\”,\n  \”reasonForVisit\”: \”string\”,\n  \”sponsorUserId\”: \”string\”,\n  \”sponsorUserName\”: \”string\”,\n  \”guestInfo\”: {\n    \”firstName\”: \”string\”,\n    \”lastName\”: \”string\”,\n    \”company\”: \”string\”,\n    \”creationTime\”: \”string\”,\n    \”notificationLanguage\”: \”string\”,\n    \”userName\”: \”string\”,\n    \”emailAddress\”: \”string\”,\n    \”phoneNumber\”: \”string\”,\n    \”password\”: \”string\”,\n    \”enabled\”: true,\n    \”smsServiceProvider\”: \”string\”\n  },\n  \”guestAccessInfo\”: {\n    \”validDays\”: 0,\n    \”fromDate\”: \”string\”,\n    \”toDate\”: \”string\”,\n    \”location\”: \”string\”,\n    \”ssid\”: \”string\”,\n    \”groupTag\”: \”string\”\n  },\n  \”portalId\”: \”string\”,\n  \”customFields\”: {},\n  \”link\”: {\n    \”rel\”: \”string\”,\n    \”href\”: \”string\”,\n    \”type\”: \”string\”\n  }\n}\n”</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-ise_update_response"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-guest-user-module-return-ise-update-response"><strong>ise_update_response</strong></p>
+<a class="ansibleOptionLink" href="#return-ise_update_response" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
+<p><span class="ansible-option-versionadded">added in 1.1.0 of cisco.ise</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>A dictionary or list with the response returned by the Cisco ISE Python SDK</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> always</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “{\n  \”UpdatedFieldsList\”: {\n    \”updatedField\”: [\n      {\n        \”field\”: \”string\”,\n        \”oldValue\”: \”string\”,\n        \”newValue\”: \”string\”\n      }\n    ],\n    \”field\”: \”string\”,\n    \”oldValue\”: \”string\”,\n    \”newValue\”: \”string\”\n  }\n}\n”</p>
+</div></td>
+</tr>
+</tbody>
+</table>
+<section id="authors">
 <h3>Authors<a class="headerlink" href="#authors" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p>Rafael Campos (&#64;racampos)</p></li>

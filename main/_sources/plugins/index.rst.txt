@@ -1,10 +1,11 @@
 
+
 .. _plugins_in_cisco.ise:
 
 Cisco.Ise
 =========
 
-Collection version 2.1.1
+Collection version 2.2.0
 
 .. toctree::
     :maxdepth: 1
@@ -13,7 +14,7 @@ Collection version 2.1.1
 Plugin Index
 ------------
 
-These are the plugins in the cisco.ise collection
+These are the plugins in the cisco.ise collection:
 
 
 Modules

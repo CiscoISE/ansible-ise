@@ -459,7 +459,7 @@
 <h1>cisco.ise.active_directory – Resource module for Active Directory<a class="headerlink" href="#cisco-ise-active-directory-resource-module-for-active-directory" title="Permalink to this headline"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This plugin is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/ise">cisco.ise collection</a> (version 2.1.1).</p>
+<p>This plugin is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/ise">cisco.ise collection</a> (version 2.2.0).</p>
 <p>You might already have this collection installed if you are using the <code class="docutils literal notranslate"><span class="pre">ansible</span></code> package.
 It is not included in <code class="docutils literal notranslate"><span class="pre">ansible-core</span></code>.
 To check whether it is installed, run <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">list</span></code>.</p>
@@ -475,15 +475,16 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <li><p><a class="reference internal" href="#requirements" id="id2">Requirements</a></p></li>
 <li><p><a class="reference internal" href="#parameters" id="id3">Parameters</a></p></li>
 <li><p><a class="reference internal" href="#notes" id="id4">Notes</a></p></li>
-<li><p><a class="reference internal" href="#see-also" id="id5">See Also</a></p></li>
-<li><p><a class="reference internal" href="#examples" id="id6">Examples</a></p></li>
-<li><p><a class="reference internal" href="#return-values" id="id7">Return Values</a></p></li>
+<li><p><a class="reference internal" href="#examples" id="id5">Examples</a></p></li>
+<li><p><a class="reference internal" href="#return-values" id="id6">Return Values</a></p></li>
 </ul>
 </div>
 <section id="synopsis">
 <h2><a class="toc-backref" href="#id1">Synopsis</a><a class="headerlink" href="#synopsis" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p>Manage operations create and delete of the resource Active Directory.</p></li>
+<li><p>This API creates an AD join point in Cisco ISE.</p></li>
+<li><p>This API deletes an AD join point from Cisco ISE.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -494,1140 +495,579 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <h2><a class="toc-backref" href="#id2">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this headline"></a></h2>
 <p>The below requirements are needed on the host that executes this module.</p>
 <ul class="simple">
-<li><p>ciscoisesdk &gt;= 1.3.0</p></li>
+<li><p>ciscoisesdk &gt;= 1.4.0</p></li>
 <li><p>python &gt;= 3.5</p></li>
 </ul>
 </section>
 <section id="parameters">
 <h2><a class="toc-backref" href="#id3">Parameters</a><a class="headerlink" href="#parameters" title="Permalink to this headline"></a></h2>
-<table  border=0 cellpadding=0 class="documentation-table">
-    <tr>
-        <th colspan="3">Parameter</th>
-        <th>Choices/<font color="blue">Defaults</font></th>
-                    <th width="100%">Comments</th>
-    </tr>
-                <tr>
-                                                            <td colspan="3">
-                <div class="ansibleOptionAnchor" id="parameter-adAttributes"></div>
-                <b>adAttributes</b>
-                <a class="ansibleOptionLink" href="#parameter-adAttributes" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">dictionary</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Holds list of AD Attributes.</div>
-                                                    </td>
-        </tr>
-                                    <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-adAttributes/attributes"></div>
-                <b>attributes</b>
-                <a class="ansibleOptionLink" href="#parameter-adAttributes/attributes" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">list</span>
-                     / <span style="color: purple">elements=string</span>                                            </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>List of Attributes.</div>
-                                                    </td>
-        </tr>
-                                    <tr>
-                                                <td class="elbow-placeholder"></td>
-                                <td class="elbow-placeholder"></td>
-                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-adAttributes/attributes/defaultValue"></div>
-                <b>defaultValue</b>
-                <a class="ansibleOptionLink" href="#parameter-adAttributes/attributes/defaultValue" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Required for each attribute in the attribute list. Can contain an empty string. All characters are allowed except &lt;%&quot;.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                <td class="elbow-placeholder"></td>
-                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-adAttributes/attributes/internalName"></div>
-                <b>internalName</b>
-                <a class="ansibleOptionLink" href="#parameter-adAttributes/attributes/internalName" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Required for each attribute in the attribute list. All characters are allowed except &lt;%&quot;.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                <td class="elbow-placeholder"></td>
-                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-adAttributes/attributes/name"></div>
-                <b>name</b>
-                <a class="ansibleOptionLink" href="#parameter-adAttributes/attributes/name" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Required for each attribute in the attribute list with no duplication between attributes. All characters are allowed except &lt;%&quot;.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                <td class="elbow-placeholder"></td>
-                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-adAttributes/attributes/type"></div>
-                <b>type</b>
-                <a class="ansibleOptionLink" href="#parameter-adAttributes/attributes/type" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Required for each group in the group list. Allowed values STRING, IP, BOOLEAN, INT, OCTET_STRING.</div>
-                                                    </td>
-        </tr>
-
-
-                            <tr>
-                                                            <td colspan="3">
-                <div class="ansibleOptionAnchor" id="parameter-adgroups"></div>
-                <b>adgroups</b>
-                <a class="ansibleOptionLink" href="#parameter-adgroups" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">dictionary</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Holds list of AD Groups.</div>
-                                                    </td>
-        </tr>
-                                    <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-adgroups/groups"></div>
-                <b>groups</b>
-                <a class="ansibleOptionLink" href="#parameter-adgroups/groups" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">list</span>
-                     / <span style="color: purple">elements=string</span>                                            </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>List of Groups.</div>
-                                                    </td>
-        </tr>
-                                    <tr>
-                                                <td class="elbow-placeholder"></td>
-                                <td class="elbow-placeholder"></td>
-                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-adgroups/groups/name"></div>
-                <b>name</b>
-                <a class="ansibleOptionLink" href="#parameter-adgroups/groups/name" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Required for each group in the group list with no duplication between groups. All characters are allowed except %.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                <td class="elbow-placeholder"></td>
-                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-adgroups/groups/sid"></div>
-                <b>sid</b>
-                <a class="ansibleOptionLink" href="#parameter-adgroups/groups/sid" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Cisco ISE uses security identifiers (SIDs) for optimization of group membership evaluation. SIDs are useful for efficiency (speed) when the groups are evaluated. All characters are allowed except %.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                <td class="elbow-placeholder"></td>
-                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-adgroups/groups/type"></div>
-                <b>type</b>
-                <a class="ansibleOptionLink" href="#parameter-adgroups/groups/type" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>No character restriction.</div>
-                                                    </td>
-        </tr>
-
-
-                            <tr>
-                                                            <td colspan="3">
-                <div class="ansibleOptionAnchor" id="parameter-adScopesNames"></div>
-                <b>adScopesNames</b>
-                <a class="ansibleOptionLink" href="#parameter-adScopesNames" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>String that contains the names of the scopes that the active directory belongs to. Names are separated by comma. Alphanumeric, underscore (_) characters are allowed.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="3">
-                <div class="ansibleOptionAnchor" id="parameter-advancedSettings"></div>
-                <b>advancedSettings</b>
-                <a class="ansibleOptionLink" href="#parameter-advancedSettings" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">dictionary</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Active Directory&#x27;s advancedSettings.</div>
-                                                    </td>
-        </tr>
-                                    <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-advancedSettings/agingTime"></div>
-                <b>agingTime</b>
-                <a class="ansibleOptionLink" href="#parameter-advancedSettings/agingTime" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">integer</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Range 1-8760 hours.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-advancedSettings/authProtectionType"></div>
-                <b>authProtectionType</b>
-                <a class="ansibleOptionLink" href="#parameter-advancedSettings/authProtectionType" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Enable prevent AD account lockout. Allowed values - WIRELESS, - WIRED, - BOTH.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-advancedSettings/country"></div>
-                <b>country</b>
-                <a class="ansibleOptionLink" href="#parameter-advancedSettings/country" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>User info attribute. All characters are allowed except %.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-advancedSettings/department"></div>
-                <b>department</b>
-                <a class="ansibleOptionLink" href="#parameter-advancedSettings/department" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>User info attribute. All characters are allowed except %.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-advancedSettings/email"></div>
-                <b>email</b>
-                <a class="ansibleOptionLink" href="#parameter-advancedSettings/email" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>User info attribute. All characters are allowed except %.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-advancedSettings/enableCallbackForDialinClient"></div>
-                <b>enableCallbackForDialinClient</b>
-                <a class="ansibleOptionLink" href="#parameter-advancedSettings/enableCallbackForDialinClient" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">boolean</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                            <li>no</li>
-                                                                                                                                                                                            <li>yes</li>
-                                                                                </ul>
-                                                                        </td>
-                                                            <td>
-                                        <div>EnableCallbackForDialinClient flag.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-advancedSettings/enableDialinPermissionCheck"></div>
-                <b>enableDialinPermissionCheck</b>
-                <a class="ansibleOptionLink" href="#parameter-advancedSettings/enableDialinPermissionCheck" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">boolean</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                            <li>no</li>
-                                                                                                                                                                                            <li>yes</li>
-                                                                                </ul>
-                                                                        </td>
-                                                            <td>
-                                        <div>EnableDialinPermissionCheck flag.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-advancedSettings/enableFailedAuthProtection"></div>
-                <b>enableFailedAuthProtection</b>
-                <a class="ansibleOptionLink" href="#parameter-advancedSettings/enableFailedAuthProtection" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">boolean</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                            <li>no</li>
-                                                                                                                                                                                            <li>yes</li>
-                                                                                </ul>
-                                                                        </td>
-                                                            <td>
-                                        <div>Enable prevent AD account lockout due to too many bad password attempts.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-advancedSettings/enableMachineAccess"></div>
-                <b>enableMachineAccess</b>
-                <a class="ansibleOptionLink" href="#parameter-advancedSettings/enableMachineAccess" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">boolean</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                            <li>no</li>
-                                                                                                                                                                                            <li>yes</li>
-                                                                                </ul>
-                                                                        </td>
-                                                            <td>
-                                        <div>EnableMachineAccess flag.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-advancedSettings/enableMachineAuth"></div>
-                <b>enableMachineAuth</b>
-                <a class="ansibleOptionLink" href="#parameter-advancedSettings/enableMachineAuth" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">boolean</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                            <li>no</li>
-                                                                                                                                                                                            <li>yes</li>
-                                                                                </ul>
-                                                                        </td>
-                                                            <td>
-                                        <div>EnableMachineAuth flag.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-advancedSettings/enablePassChange"></div>
-                <b>enablePassChange</b>
-                <a class="ansibleOptionLink" href="#parameter-advancedSettings/enablePassChange" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">boolean</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                            <li>no</li>
-                                                                                                                                                                                            <li>yes</li>
-                                                                                </ul>
-                                                                        </td>
-                                                            <td>
-                                        <div>EnablePassChange flag.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-advancedSettings/enableRewrites"></div>
-                <b>enableRewrites</b>
-                <a class="ansibleOptionLink" href="#parameter-advancedSettings/enableRewrites" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">boolean</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                            <li>no</li>
-                                                                                                                                                                                            <li>yes</li>
-                                                                                </ul>
-                                                                        </td>
-                                                            <td>
-                                        <div>EnableRewrites flag.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-advancedSettings/failedAuthThreshold"></div>
-                <b>failedAuthThreshold</b>
-                <a class="ansibleOptionLink" href="#parameter-advancedSettings/failedAuthThreshold" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">integer</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Number of bad password attempts.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-advancedSettings/firstName"></div>
-                <b>firstName</b>
-                <a class="ansibleOptionLink" href="#parameter-advancedSettings/firstName" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>User info attribute. All characters are allowed except %.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-advancedSettings/identityNotInAdBehaviour"></div>
-                <b>identityNotInAdBehaviour</b>
-                <a class="ansibleOptionLink" href="#parameter-advancedSettings/identityNotInAdBehaviour" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Allowed values REJECT, SEARCH_JOINED_FOREST, SEARCH_ALL.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-advancedSettings/jobTitle"></div>
-                <b>jobTitle</b>
-                <a class="ansibleOptionLink" href="#parameter-advancedSettings/jobTitle" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>User info attribute. All characters are allowed except %.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-advancedSettings/lastName"></div>
-                <b>lastName</b>
-                <a class="ansibleOptionLink" href="#parameter-advancedSettings/lastName" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>User info attribute. All characters are allowed except %.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-advancedSettings/locality"></div>
-                <b>locality</b>
-                <a class="ansibleOptionLink" href="#parameter-advancedSettings/locality" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>User info attribute. All characters are allowed except %.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-advancedSettings/organizationalUnit"></div>
-                <b>organizationalUnit</b>
-                <a class="ansibleOptionLink" href="#parameter-advancedSettings/organizationalUnit" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>User info attribute. All characters are allowed except %.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-advancedSettings/plaintextAuth"></div>
-                <b>plaintextAuth</b>
-                <a class="ansibleOptionLink" href="#parameter-advancedSettings/plaintextAuth" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">boolean</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                            <li>no</li>
-                                                                                                                                                                                            <li>yes</li>
-                                                                                </ul>
-                                                                        </td>
-                                                            <td>
-                                        <div>PlaintextAuth flag.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-advancedSettings/rewriteRules"></div>
-                <b>rewriteRules</b>
-                <a class="ansibleOptionLink" href="#parameter-advancedSettings/rewriteRules" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">list</span>
-                     / <span style="color: purple">elements=string</span>                                            </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Identity rewrite is an advanced feature that directs Cisco ISE to manipulate the identity before it is passed to the external Active Directory system. You can create rules to change the identity to a desired format that includes or excludes a domain prefix and/or suffix or other additional markup of your choice.</div>
-                                                    </td>
-        </tr>
-                                    <tr>
-                                                <td class="elbow-placeholder"></td>
-                                <td class="elbow-placeholder"></td>
-                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-advancedSettings/rewriteRules/rewriteMatch"></div>
-                <b>rewriteMatch</b>
-                <a class="ansibleOptionLink" href="#parameter-advancedSettings/rewriteRules/rewriteMatch" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Required for each rule in the list with no duplication between rules. All characters are allowed except %&quot;.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                <td class="elbow-placeholder"></td>
-                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-advancedSettings/rewriteRules/rewriteResult"></div>
-                <b>rewriteResult</b>
-                <a class="ansibleOptionLink" href="#parameter-advancedSettings/rewriteRules/rewriteResult" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Required for each rule in the list. All characters are allowed except %&quot;.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                <td class="elbow-placeholder"></td>
-                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-advancedSettings/rewriteRules/rowId"></div>
-                <b>rowId</b>
-                <a class="ansibleOptionLink" href="#parameter-advancedSettings/rewriteRules/rowId" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">integer</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Required for each rule in the list in serial order.</div>
-                                                    </td>
-        </tr>
-
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-advancedSettings/schema"></div>
-                <b>schema</b>
-                <a class="ansibleOptionLink" href="#parameter-advancedSettings/schema" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Allowed values ACTIVE_DIRECTORY, CUSTOM. Choose ACTIVE_DIRECTORY schema when the AD attributes defined in AD can be copied to relevant attributes in Cisco ISE. If customization is needed, choose CUSTOM schema. All User info attributes are always set to default value if schema is ACTIVE_DIRECTORY. Values can be changed only for CUSTOM schema.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-advancedSettings/stateOrProvince"></div>
-                <b>stateOrProvince</b>
-                <a class="ansibleOptionLink" href="#parameter-advancedSettings/stateOrProvince" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>User info attribute. All characters are allowed except %.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-advancedSettings/streetAddress"></div>
-                <b>streetAddress</b>
-                <a class="ansibleOptionLink" href="#parameter-advancedSettings/streetAddress" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>User info attribute. All characters are allowed except %.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-advancedSettings/telephone"></div>
-                <b>telephone</b>
-                <a class="ansibleOptionLink" href="#parameter-advancedSettings/telephone" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>User info attribute. All characters are allowed except %.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                <td class="elbow-placeholder"></td>
-                                            <td colspan="2">
-                <div class="ansibleOptionAnchor" id="parameter-advancedSettings/unreachableDomainsBehaviour"></div>
-                <b>unreachableDomainsBehaviour</b>
-                <a class="ansibleOptionLink" href="#parameter-advancedSettings/unreachableDomainsBehaviour" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Allowed values PROCEED, DROP.</div>
-                                                    </td>
-        </tr>
-
-                            <tr>
-                                                            <td colspan="3">
-                <div class="ansibleOptionAnchor" id="parameter-description"></div>
-                <b>description</b>
-                <a class="ansibleOptionLink" href="#parameter-description" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>No character restriction.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="3">
-                <div class="ansibleOptionAnchor" id="parameter-domain"></div>
-                <b>domain</b>
-                <a class="ansibleOptionLink" href="#parameter-domain" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>The AD domain. Alphanumeric, hyphen (-) and dot (.) characters are allowed.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="3">
-                <div class="ansibleOptionAnchor" id="parameter-enableDomainWhiteList"></div>
-                <b>enableDomainWhiteList</b>
-                <a class="ansibleOptionLink" href="#parameter-enableDomainWhiteList" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">boolean</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                            <li>no</li>
-                                                                                                                                                                                            <li>yes</li>
-                                                                                </ul>
-                                                                        </td>
-                                                            <td>
-                                        <div>EnableDomainWhiteList flag.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="3">
-                <div class="ansibleOptionAnchor" id="parameter-id"></div>
-                <b>id</b>
-                <a class="ansibleOptionLink" href="#parameter-id" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Id path parameter.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="3">
-                <div class="ansibleOptionAnchor" id="parameter-ise_debug"></div>
-                <b>ise_debug</b>
-                <a class="ansibleOptionLink" href="#parameter-ise_debug" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">boolean</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                                                                                <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                            <li><div style="color: blue"><b>no</b>&nbsp;&larr;</div></li>
-                                                                                                                                                                                            <li>yes</li>
-                                                                                </ul>
-                                                                        </td>
-                                                            <td>
-                                        <div>Flag for Identity Services Engine SDK to enable debugging.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="3">
-                <div class="ansibleOptionAnchor" id="parameter-ise_hostname"></div>
-                <b>ise_hostname</b>
-                <a class="ansibleOptionLink" href="#parameter-ise_hostname" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                             / <span style="color: red">required</span>                    </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>The Identity Services Engine hostname.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="3">
-                <div class="ansibleOptionAnchor" id="parameter-ise_password"></div>
-                <b>ise_password</b>
-                <a class="ansibleOptionLink" href="#parameter-ise_password" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                             / <span style="color: red">required</span>                    </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>The Identity Services Engine password to authenticate.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="3">
-                <div class="ansibleOptionAnchor" id="parameter-ise_username"></div>
-                <b>ise_username</b>
-                <a class="ansibleOptionLink" href="#parameter-ise_username" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                             / <span style="color: red">required</span>                    </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>The Identity Services Engine username to authenticate.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="3">
-                <div class="ansibleOptionAnchor" id="parameter-ise_uses_api_gateway"></div>
-                <b>ise_uses_api_gateway</b>
-                <a class="ansibleOptionLink" href="#parameter-ise_uses_api_gateway" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">boolean</span>
-                                                                </div>
-                                      <div style="font-style: italic; font-size: small; color: darkgreen">
-                    added in 1.1.0 of cisco.ise
-                  </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                                                                                <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                            <li>no</li>
-                                                                                                                                                                                            <li><div style="color: blue"><b>yes</b>&nbsp;&larr;</div></li>
-                                                                                </ul>
-                                                                        </td>
-                                                            <td>
-                                        <div>Flag that informs the SDK whether to use the Identity Services Engine&#x27;s API Gateway to send requests.</div>
-                                        <div>If it is true, it uses the ISE&#x27;s API Gateway and sends requests to https://{{ise_hostname}}.</div>
-                                        <div>If it is false, it sends the requests to https://{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="3">
-                <div class="ansibleOptionAnchor" id="parameter-ise_verify"></div>
-                <b>ise_verify</b>
-                <a class="ansibleOptionLink" href="#parameter-ise_verify" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">boolean</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                                                                                <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                            <li>no</li>
-                                                                                                                                                                                            <li><div style="color: blue"><b>yes</b>&nbsp;&larr;</div></li>
-                                                                                </ul>
-                                                                        </td>
-                                                            <td>
-                                        <div>Flag to enable or disable SSL certificate verification.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="3">
-                <div class="ansibleOptionAnchor" id="parameter-ise_version"></div>
-                <b>ise_version</b>
-                <a class="ansibleOptionLink" href="#parameter-ise_version" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                                <b>Default:</b><br/><div style="color: blue">"3.1.1"</div>
-                                </td>
-                                                            <td>
-                                        <div>Informs the SDK which version of Identity Services Engine to use.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="3">
-                <div class="ansibleOptionAnchor" id="parameter-ise_wait_on_rate_limit"></div>
-                <b>ise_wait_on_rate_limit</b>
-                <a class="ansibleOptionLink" href="#parameter-ise_wait_on_rate_limit" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">boolean</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                                                                                <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                            <li>no</li>
-                                                                                                                                                                                            <li><div style="color: blue"><b>yes</b>&nbsp;&larr;</div></li>
-                                                                                </ul>
-                                                                        </td>
-                                                            <td>
-                                        <div>Flag for Identity Services Engine SDK to enable automatic rate-limit handling.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="3">
-                <div class="ansibleOptionAnchor" id="parameter-name"></div>
-                <b>name</b>
-                <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>Resource Name. Maximum 32 characters allowed. Allowed characters are alphanumeric and .-_/\\ characters.</div>
-                                                    </td>
-        </tr>
-                    </table>
-<br/></section>
+<table class="colwidths-auto ansible-option-table docutils align-default" style="width: 100%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-adAttributes"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-adattributes"><strong>adAttributes</strong></p>
+<a class="ansibleOptionLink" href="#parameter-adAttributes" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Holds list of AD Attributes.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-adAttributes/attributes"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-adattributes-attributes"><strong>attributes</strong></p>
+<a class="ansibleOptionLink" href="#parameter-adAttributes/attributes" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>List of Attributes.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-adAttributes/attributes/defaultValue"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-adattributes-attributes-defaultvalue"><strong>defaultValue</strong></p>
+<a class="ansibleOptionLink" href="#parameter-adAttributes/attributes/defaultValue" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Required for each attribute in the attribute list. Can contain an empty string. All characters are allowed except &lt;%”.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-adAttributes/attributes/internalName"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-adattributes-attributes-internalname"><strong>internalName</strong></p>
+<a class="ansibleOptionLink" href="#parameter-adAttributes/attributes/internalName" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Required for each attribute in the attribute list. All characters are allowed except &lt;%”.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-adAttributes/attributes/name"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-adattributes-attributes-name"><strong>name</strong></p>
+<a class="ansibleOptionLink" href="#parameter-adAttributes/attributes/name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Required for each attribute in the attribute list with no duplication between attributes. All characters are allowed except &lt;%”.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-adAttributes/attributes/type"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-adattributes-attributes-type"><strong>type</strong></p>
+<a class="ansibleOptionLink" href="#parameter-adAttributes/attributes/type" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Required for each group in the group list. Allowed values STRING, IP, BOOLEAN, INT, OCTET_STRING.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-adgroups"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-adgroups"><strong>adgroups</strong></p>
+<a class="ansibleOptionLink" href="#parameter-adgroups" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Holds list of AD Groups.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-adgroups/groups"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-adgroups-groups"><strong>groups</strong></p>
+<a class="ansibleOptionLink" href="#parameter-adgroups/groups" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>List of Groups.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-adgroups/groups/name"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-adgroups-groups-name"><strong>name</strong></p>
+<a class="ansibleOptionLink" href="#parameter-adgroups/groups/name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Required for each group in the group list with no duplication between groups. All characters are allowed except %.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-adgroups/groups/sid"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-adgroups-groups-sid"><strong>sid</strong></p>
+<a class="ansibleOptionLink" href="#parameter-adgroups/groups/sid" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Cisco ISE uses security identifiers (SIDs) for optimization of group membership evaluation. SIDs are useful for efficiency (speed) when the groups are evaluated. All characters are allowed except %.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-adgroups/groups/type"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-adgroups-groups-type"><strong>type</strong></p>
+<a class="ansibleOptionLink" href="#parameter-adgroups/groups/type" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>No character restriction.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-adScopesNames"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-adscopesnames"><strong>adScopesNames</strong></p>
+<a class="ansibleOptionLink" href="#parameter-adScopesNames" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>String that contains the names of the scopes that the active directory belongs to. Names are separated by comma. Alphanumeric, underscore (_) characters are allowed.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-advancedSettings"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-advancedsettings"><strong>advancedSettings</strong></p>
+<a class="ansibleOptionLink" href="#parameter-advancedSettings" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Active Directory’s advancedSettings.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-advancedSettings/agingTime"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-advancedsettings-agingtime"><strong>agingTime</strong></p>
+<a class="ansibleOptionLink" href="#parameter-advancedSettings/agingTime" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Range 1-8760 hours.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-advancedSettings/authProtectionType"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-advancedsettings-authprotectiontype"><strong>authProtectionType</strong></p>
+<a class="ansibleOptionLink" href="#parameter-advancedSettings/authProtectionType" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Enable prevent AD account lockout. Allowed values - WIRELESS, - WIRED, - BOTH.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-advancedSettings/country"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-advancedsettings-country"><strong>country</strong></p>
+<a class="ansibleOptionLink" href="#parameter-advancedSettings/country" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>User info attribute. All characters are allowed except %.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-advancedSettings/department"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-advancedsettings-department"><strong>department</strong></p>
+<a class="ansibleOptionLink" href="#parameter-advancedSettings/department" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>User info attribute. All characters are allowed except %.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-advancedSettings/email"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-advancedsettings-email"><strong>email</strong></p>
+<a class="ansibleOptionLink" href="#parameter-advancedSettings/email" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>User info attribute. All characters are allowed except %.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-advancedSettings/enableCallbackForDialinClient"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-advancedsettings-enablecallbackfordialinclient"><strong>enableCallbackForDialinClient</strong></p>
+<a class="ansibleOptionLink" href="#parameter-advancedSettings/enableCallbackForDialinClient" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>EnableCallbackForDialinClient flag.</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><span class="ansible-option-choices-entry">no</span></p></li>
+<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-advancedSettings/enableDialinPermissionCheck"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-advancedsettings-enabledialinpermissioncheck"><strong>enableDialinPermissionCheck</strong></p>
+<a class="ansibleOptionLink" href="#parameter-advancedSettings/enableDialinPermissionCheck" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>EnableDialinPermissionCheck flag.</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><span class="ansible-option-choices-entry">no</span></p></li>
+<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-advancedSettings/enableFailedAuthProtection"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-advancedsettings-enablefailedauthprotection"><strong>enableFailedAuthProtection</strong></p>
+<a class="ansibleOptionLink" href="#parameter-advancedSettings/enableFailedAuthProtection" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Enable prevent AD account lockout due to too many bad password attempts.</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><span class="ansible-option-choices-entry">no</span></p></li>
+<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-advancedSettings/enableMachineAccess"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-advancedsettings-enablemachineaccess"><strong>enableMachineAccess</strong></p>
+<a class="ansibleOptionLink" href="#parameter-advancedSettings/enableMachineAccess" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>EnableMachineAccess flag.</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><span class="ansible-option-choices-entry">no</span></p></li>
+<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-advancedSettings/enableMachineAuth"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-advancedsettings-enablemachineauth"><strong>enableMachineAuth</strong></p>
+<a class="ansibleOptionLink" href="#parameter-advancedSettings/enableMachineAuth" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>EnableMachineAuth flag.</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><span class="ansible-option-choices-entry">no</span></p></li>
+<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-advancedSettings/enablePassChange"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-advancedsettings-enablepasschange"><strong>enablePassChange</strong></p>
+<a class="ansibleOptionLink" href="#parameter-advancedSettings/enablePassChange" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>EnablePassChange flag.</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><span class="ansible-option-choices-entry">no</span></p></li>
+<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-advancedSettings/enableRewrites"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-advancedsettings-enablerewrites"><strong>enableRewrites</strong></p>
+<a class="ansibleOptionLink" href="#parameter-advancedSettings/enableRewrites" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>EnableRewrites flag.</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><span class="ansible-option-choices-entry">no</span></p></li>
+<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-advancedSettings/failedAuthThreshold"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-advancedsettings-failedauththreshold"><strong>failedAuthThreshold</strong></p>
+<a class="ansibleOptionLink" href="#parameter-advancedSettings/failedAuthThreshold" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Number of bad password attempts.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-advancedSettings/firstName"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-advancedsettings-firstname"><strong>firstName</strong></p>
+<a class="ansibleOptionLink" href="#parameter-advancedSettings/firstName" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>User info attribute. All characters are allowed except %.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-advancedSettings/identityNotInAdBehaviour"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-advancedsettings-identitynotinadbehaviour"><strong>identityNotInAdBehaviour</strong></p>
+<a class="ansibleOptionLink" href="#parameter-advancedSettings/identityNotInAdBehaviour" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Allowed values REJECT, SEARCH_JOINED_FOREST, SEARCH_ALL.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-advancedSettings/jobTitle"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-advancedsettings-jobtitle"><strong>jobTitle</strong></p>
+<a class="ansibleOptionLink" href="#parameter-advancedSettings/jobTitle" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>User info attribute. All characters are allowed except %.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-advancedSettings/lastName"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-advancedsettings-lastname"><strong>lastName</strong></p>
+<a class="ansibleOptionLink" href="#parameter-advancedSettings/lastName" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>User info attribute. All characters are allowed except %.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-advancedSettings/locality"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-advancedsettings-locality"><strong>locality</strong></p>
+<a class="ansibleOptionLink" href="#parameter-advancedSettings/locality" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>User info attribute. All characters are allowed except %.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-advancedSettings/organizationalUnit"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-advancedsettings-organizationalunit"><strong>organizationalUnit</strong></p>
+<a class="ansibleOptionLink" href="#parameter-advancedSettings/organizationalUnit" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>User info attribute. All characters are allowed except %.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-advancedSettings/plaintextAuth"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-advancedsettings-plaintextauth"><strong>plaintextAuth</strong></p>
+<a class="ansibleOptionLink" href="#parameter-advancedSettings/plaintextAuth" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>PlaintextAuth flag.</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><span class="ansible-option-choices-entry">no</span></p></li>
+<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-advancedSettings/rewriteRules"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-advancedsettings-rewriterules"><strong>rewriteRules</strong></p>
+<a class="ansibleOptionLink" href="#parameter-advancedSettings/rewriteRules" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Identity rewrite is an advanced feature that directs Cisco ISE to manipulate the identity before it is passed to the external Active Directory system. You can create rules to change the identity to a desired format that includes or excludes a domain prefix and/or suffix or other additional markup of your choice.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-advancedSettings/rewriteRules/rewriteMatch"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-advancedsettings-rewriterules-rewritematch"><strong>rewriteMatch</strong></p>
+<a class="ansibleOptionLink" href="#parameter-advancedSettings/rewriteRules/rewriteMatch" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Required for each rule in the list with no duplication between rules. All characters are allowed except %”.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-advancedSettings/rewriteRules/rewriteResult"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-advancedsettings-rewriterules-rewriteresult"><strong>rewriteResult</strong></p>
+<a class="ansibleOptionLink" href="#parameter-advancedSettings/rewriteRules/rewriteResult" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Required for each rule in the list. All characters are allowed except %”.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-advancedSettings/rewriteRules/rowId"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-advancedsettings-rewriterules-rowid"><strong>rowId</strong></p>
+<a class="ansibleOptionLink" href="#parameter-advancedSettings/rewriteRules/rowId" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Required for each rule in the list in serial order.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-advancedSettings/schema"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-advancedsettings-schema"><strong>schema</strong></p>
+<a class="ansibleOptionLink" href="#parameter-advancedSettings/schema" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Allowed values ACTIVE_DIRECTORY, CUSTOM. Choose ACTIVE_DIRECTORY schema when the AD attributes defined in AD can be copied to relevant attributes in Cisco ISE. If customization is needed, choose CUSTOM schema. All User info attributes are always set to default value if schema is ACTIVE_DIRECTORY. Values can be changed only for CUSTOM schema.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-advancedSettings/stateOrProvince"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-advancedsettings-stateorprovince"><strong>stateOrProvince</strong></p>
+<a class="ansibleOptionLink" href="#parameter-advancedSettings/stateOrProvince" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>User info attribute. All characters are allowed except %.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-advancedSettings/streetAddress"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-advancedsettings-streetaddress"><strong>streetAddress</strong></p>
+<a class="ansibleOptionLink" href="#parameter-advancedSettings/streetAddress" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>User info attribute. All characters are allowed except %.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-advancedSettings/telephone"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-advancedsettings-telephone"><strong>telephone</strong></p>
+<a class="ansibleOptionLink" href="#parameter-advancedSettings/telephone" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>User info attribute. All characters are allowed except %.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-advancedSettings/unreachableDomainsBehaviour"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-advancedsettings-unreachabledomainsbehaviour"><strong>unreachableDomainsBehaviour</strong></p>
+<a class="ansibleOptionLink" href="#parameter-advancedSettings/unreachableDomainsBehaviour" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Allowed values PROCEED, DROP.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-description"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-description"><strong>description</strong></p>
+<a class="ansibleOptionLink" href="#parameter-description" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>No character restriction.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-domain"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-domain"><strong>domain</strong></p>
+<a class="ansibleOptionLink" href="#parameter-domain" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>The AD domain. Alphanumeric, hyphen (-) and dot (.) characters are allowed.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-enableDomainWhiteList"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-enabledomainwhitelist"><strong>enableDomainWhiteList</strong></p>
+<a class="ansibleOptionLink" href="#parameter-enableDomainWhiteList" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>EnableDomainWhiteList flag.</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><span class="ansible-option-choices-entry">no</span></p></li>
+<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-id"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-id"><strong>id</strong></p>
+<a class="ansibleOptionLink" href="#parameter-id" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Id path parameter.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-ise_debug"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-ise-debug"><strong>ise_debug</strong></p>
+<a class="ansibleOptionLink" href="#parameter-ise_debug" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Flag for Identity Services Engine SDK to enable debugging.</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><span class="ansible-option-default-bold">no</span> <span class="ansible-option-default">← (default)</span></p></li>
+<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-ise_hostname"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-ise-hostname"><strong>ise_hostname</strong></p>
+<a class="ansibleOptionLink" href="#parameter-ise_hostname" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span> / <span class="ansible-option-required">required</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>The Identity Services Engine hostname.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-ise_password"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-ise-password"><strong>ise_password</strong></p>
+<a class="ansibleOptionLink" href="#parameter-ise_password" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span> / <span class="ansible-option-required">required</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>The Identity Services Engine password to authenticate.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-ise_username"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-ise-username"><strong>ise_username</strong></p>
+<a class="ansibleOptionLink" href="#parameter-ise_username" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span> / <span class="ansible-option-required">required</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>The Identity Services Engine username to authenticate.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-ise_uses_api_gateway"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-ise-uses-api-gateway"><strong>ise_uses_api_gateway</strong></p>
+<a class="ansibleOptionLink" href="#parameter-ise_uses_api_gateway" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+<p><span class="ansible-option-versionadded">added in 1.1.0 of cisco.ise</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Flag that informs the SDK whether to use the Identity Services Engine’s API Gateway to send requests.</p>
+<p>If it is true, it uses the ISE’s API Gateway and sends requests to <a class="reference external" href="https:/">https:/</a>/{{ise_hostname}}.</p>
+<p>If it is false, it sends the requests to <a class="reference external" href="https:/">https:/</a>/{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><span class="ansible-option-choices-entry">no</span></p></li>
+<li><p><span class="ansible-option-default-bold">yes</span> <span class="ansible-option-default">← (default)</span></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-ise_verify"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-ise-verify"><strong>ise_verify</strong></p>
+<a class="ansibleOptionLink" href="#parameter-ise_verify" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Flag to enable or disable SSL certificate verification.</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><span class="ansible-option-choices-entry">no</span></p></li>
+<li><p><span class="ansible-option-default-bold">yes</span> <span class="ansible-option-default">← (default)</span></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-ise_version"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-ise-version"><strong>ise_version</strong></p>
+<a class="ansibleOptionLink" href="#parameter-ise_version" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Informs the SDK which version of Identity Services Engine to use.</p>
+<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <span class="ansible-option-default">“3.1.1”</span></p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-ise_wait_on_rate_limit"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-ise-wait-on-rate-limit"><strong>ise_wait_on_rate_limit</strong></p>
+<a class="ansibleOptionLink" href="#parameter-ise_wait_on_rate_limit" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Flag for Identity Services Engine SDK to enable automatic rate-limit handling.</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><span class="ansible-option-choices-entry">no</span></p></li>
+<li><p><span class="ansible-option-default-bold">yes</span> <span class="ansible-option-default">← (default)</span></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-name"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-parameter-name"><strong>name</strong></p>
+<a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Resource Name. Maximum 32 characters allowed. Allowed characters are alphanumeric and .-_/\ characters.</p>
+</div></td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="notes">
 <h2><a class="toc-backref" href="#id4">Notes</a><a class="headerlink" href="#notes" title="Permalink to this headline"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
+<li><p>SDK Method used are active_directory.ActiveDirectory.create_active_directory, active_directory.ActiveDirectory.delete_active_directory_by_id,</p></li>
+<li><p>Paths used are post /ers/config/activedirectory, delete /ers/config/activedirectory/{id},</p></li>
 <li><p>Does not support <code class="docutils literal notranslate"><span class="pre">check_mode</span></code></p></li>
 <li><p>The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK</p></li>
-<li><p>The parameters starting with <a href="#id8"><span class="problematic" id="id9">ise_</span></a> are used by the Cisco ISE Python SDK to establish the connection</p></li>
+<li><p>The parameters starting with <a href="#id7"><span class="problematic" id="id8">ise_</span></a> are used by the Cisco ISE Python SDK to establish the connection</p></li>
 </ul>
 </div>
 </section>
-<section id="see-also">
-<h2><a class="toc-backref" href="#id5">See Also</a><a class="headerlink" href="#see-also" title="Permalink to this headline"></a></h2>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<dl class="simple">
-<dt><a class="reference external" href="https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary">Active Directory reference</a></dt><dd><p>Complete reference of the Active Directory object model.</p>
-</dd>
-</dl>
-</div>
-</section>
 <section id="examples">
-<h2><a class="toc-backref" href="#id6">Examples</a><a class="headerlink" href="#examples" title="Permalink to this headline"></a></h2>
-<div class="highlight-yaml+jinja notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Delete by id</span>
-  <span class="nt">cisco.ise.active_directory</span><span class="p">:</span>
-    <span class="nt">ise_hostname</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_hostname</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">ise_username</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_username</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">ise_password</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_password</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">ise_verify</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_verify</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">state</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">absent</span>
-    <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+<h2><a class="toc-backref" href="#id5">Examples</a><a class="headerlink" href="#examples" title="Permalink to this headline"></a></h2>
+<div class="highlight-yaml+jinja notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Delete by id</span><span class="w"></span>
+<span class="w">  </span><span class="nt">cisco.ise.active_directory</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_hostname</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_hostname</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_username</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_username</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_password</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_verify</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_verify</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">absent</span><span class="w"></span>
+<span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
 
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Create</span>
-  <span class="nt">cisco.ise.active_directory</span><span class="p">:</span>
-    <span class="nt">ise_hostname</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_hostname</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">ise_username</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_username</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">ise_password</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_password</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">ise_verify</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_verify</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">state</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">present</span>
-    <span class="nt">adAttributes</span><span class="p">:</span>
-      <span class="nt">attributes</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">defaultValue</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-        <span class="nt">internalName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-        <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-        <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">adScopesNames</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">adgroups</span><span class="p">:</span>
-      <span class="nt">groups</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-        <span class="nt">sid</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-        <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">advancedSettings</span><span class="p">:</span>
-      <span class="nt">agingTime</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
-      <span class="nt">authProtectionType</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">country</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">department</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">email</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">enableCallbackForDialinClient</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-      <span class="nt">enableDialinPermissionCheck</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-      <span class="nt">enableFailedAuthProtection</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-      <span class="nt">enableMachineAccess</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-      <span class="nt">enableMachineAuth</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-      <span class="nt">enablePassChange</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-      <span class="nt">enableRewrites</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-      <span class="nt">failedAuthThreshold</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
-      <span class="nt">firstName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">identityNotInAdBehaviour</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">jobTitle</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">lastName</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">locality</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">organizationalUnit</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">plaintextAuth</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-      <span class="nt">rewriteRules</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">rewriteMatch</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-        <span class="nt">rewriteResult</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-        <span class="nt">rowId</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
-      <span class="nt">schema</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">stateOrProvince</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">streetAddress</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">telephone</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-      <span class="nt">unreachableDomainsBehaviour</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">domain</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">enableDomainWhiteList</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
-    <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
-    <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Create</span><span class="w"></span>
+<span class="w">  </span><span class="nt">cisco.ise.active_directory</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_hostname</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_hostname</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_username</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_username</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_password</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_verify</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_verify</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
+<span class="w">    </span><span class="nt">adAttributes</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">attributes</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">defaultValue</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">        </span><span class="nt">internalName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">adScopesNames</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">adgroups</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">groups</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">        </span><span class="nt">sid</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">advancedSettings</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">agingTime</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"></span>
+<span class="w">      </span><span class="nt">authProtectionType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">country</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">department</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">email</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enableCallbackForDialinClient</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enableDialinPermissionCheck</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enableFailedAuthProtection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enableMachineAccess</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enableMachineAuth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enablePassChange</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">      </span><span class="nt">enableRewrites</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">      </span><span class="nt">failedAuthThreshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"></span>
+<span class="w">      </span><span class="nt">firstName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">identityNotInAdBehaviour</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">jobTitle</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">lastName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">locality</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">organizationalUnit</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">plaintextAuth</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">      </span><span class="nt">rewriteRules</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">rewriteMatch</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">        </span><span class="nt">rewriteResult</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">        </span><span class="nt">rowId</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"></span>
+<span class="w">      </span><span class="nt">schema</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">stateOrProvince</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">streetAddress</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">telephone</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">      </span><span class="nt">unreachableDomainsBehaviour</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">enableDomainWhiteList</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<span class="w">    </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="return-values">
-<h2><a class="toc-backref" href="#id7">Return Values</a><a class="headerlink" href="#return-values" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id6">Return Values</a><a class="headerlink" href="#return-values" title="Permalink to this headline"></a></h2>
 <p>Common return values are documented <a class="reference external" href="https://docs.ansible.com/ansible/latest/reference_appendices/common_return_values.html#common-return-values" title="(in Ansible v5)"><span class="xref std std-ref">here</span></a>, the following are the fields unique to this module:</p>
-<table border=0 cellpadding=0 class="documentation-table">
-    <tr>
-        <th colspan="1">Key</th>
-        <th>Returned</th>
-        <th width="100%">Description</th>
-    </tr>
-                <tr>
-                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="return-ise_response"></div>
-                <b>ise_response</b>
-                <a class="ansibleOptionLink" href="#return-ise_response" title="Permalink to this return value"></a>
-                <div style="font-size: small">
-                  <span style="color: purple">dictionary</span>
-                                      </div>
-                                </td>
-            <td>always</td>
-            <td>
-                                        <div>A dictionary or list with the response returned by the Cisco ISE Python SDK</div>
-                                    <br/>
-                                                            <div style="font-size: smaller"><b>Sample:</b></div>
-                                            <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">{
-  &quot;id&quot;: &quot;string&quot;,
-  &quot;name&quot;: &quot;string&quot;,
-  &quot;description&quot;: &quot;string&quot;,
-  &quot;domain&quot;: &quot;string&quot;,
-  &quot;enableDomainWhiteList&quot;: true,
-  &quot;enableDomainAllowedList&quot;: true,
-  &quot;adgroups&quot;: {
-    &quot;groups&quot;: [
-      {
-        &quot;name&quot;: &quot;string&quot;,
-        &quot;sid&quot;: &quot;string&quot;,
-        &quot;type&quot;: &quot;string&quot;
-      }
-    ]
-  },
-  &quot;advancedSettings&quot;: {
-    &quot;enablePassChange&quot;: true,
-    &quot;enableMachineAuth&quot;: true,
-    &quot;enableMachineAccess&quot;: true,
-    &quot;agingTime&quot;: 0,
-    &quot;enableDialinPermissionCheck&quot;: true,
-    &quot;enableCallbackForDialinClient&quot;: true,
-    &quot;plaintextAuth&quot;: true,
-    &quot;enableFailedAuthProtection&quot;: true,
-    &quot;authProtectionType&quot;: &quot;string&quot;,
-    &quot;failedAuthThreshold&quot;: 0,
-    &quot;identityNotInAdBehaviour&quot;: &quot;string&quot;,
-    &quot;unreachableDomainsBehaviour&quot;: &quot;string&quot;,
-    &quot;enableRewrites&quot;: true,
-    &quot;rewriteRules&quot;: [
-      {
-        &quot;rowId&quot;: 0,
-        &quot;rewriteMatch&quot;: &quot;string&quot;,
-        &quot;rewriteResult&quot;: &quot;string&quot;
-      }
-    ],
-    &quot;firstName&quot;: &quot;string&quot;,
-    &quot;department&quot;: &quot;string&quot;,
-    &quot;lastName&quot;: &quot;string&quot;,
-    &quot;organizationalUnit&quot;: &quot;string&quot;,
-    &quot;jobTitle&quot;: &quot;string&quot;,
-    &quot;locality&quot;: &quot;string&quot;,
-    &quot;email&quot;: &quot;string&quot;,
-    &quot;stateOrProvince&quot;: &quot;string&quot;,
-    &quot;telephone&quot;: &quot;string&quot;,
-    &quot;country&quot;: &quot;string&quot;,
-    &quot;streetAddress&quot;: &quot;string&quot;,
-    &quot;schema&quot;: &quot;string&quot;
-  },
-  &quot;adAttributes&quot;: {
-    &quot;attributes&quot;: [
-      {
-        &quot;name&quot;: &quot;string&quot;,
-        &quot;type&quot;: &quot;string&quot;,
-        &quot;internalName&quot;: &quot;string&quot;,
-        &quot;defaultValue&quot;: &quot;string&quot;
-      }
-    ]
-  },
-  &quot;adScopesNames&quot;: &quot;string&quot;,
-  &quot;link&quot;: {
-    &quot;rel&quot;: &quot;string&quot;,
-    &quot;href&quot;: &quot;string&quot;,
-    &quot;type&quot;: &quot;string&quot;
-  }
-}</div>
-                                </td>
-        </tr>
-                    </table>
-<br/><br/><section id="authors">
+<table class="colwidths-auto ansible-option-table docutils align-default" style="width: 100%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-ise_response"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-active-directory-module-return-ise-response"><strong>ise_response</strong></p>
+<a class="ansibleOptionLink" href="#return-ise_response" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>A dictionary or list with the response returned by the Cisco ISE Python SDK</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> always</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “{\n  \”id\”: \”string\”,\n  \”name\”: \”string\”,\n  \”description\”: \”string\”,\n  \”domain\”: \”string\”,\n  \”enableDomainWhiteList\”: true,\n  \”enableDomainAllowedList\”: true,\n  \”adgroups\”: {\n    \”groups\”: [\n      {\n        \”name\”: \”string\”,\n        \”sid\”: \”string\”,\n        \”type\”: \”string\”\n      }\n    ]\n  },\n  \”advancedSettings\”: {\n    \”enablePassChange\”: true,\n    \”enableMachineAuth\”: true,\n    \”enableMachineAccess\”: true,\n    \”agingTime\”: 0,\n    \”enableDialinPermissionCheck\”: true,\n    \”enableCallbackForDialinClient\”: true,\n    \”plaintextAuth\”: true,\n    \”enableFailedAuthProtection\”: true,\n    \”authProtectionType\”: \”string\”,\n    \”failedAuthThreshold\”: 0,\n    \”identityNotInAdBehaviour\”: \”string\”,\n    \”unreachableDomainsBehaviour\”: \”string\”,\n    \”enableRewrites\”: true,\n    \”rewriteRules\”: [\n      {\n        \”rowId\”: 0,\n        \”rewriteMatch\”: \”string\”,\n        \”rewriteResult\”: \”string\”\n      }\n    ],\n    \”firstName\”: \”string\”,\n    \”department\”: \”string\”,\n    \”lastName\”: \”string\”,\n    \”organizationalUnit\”: \”string\”,\n    \”jobTitle\”: \”string\”,\n    \”locality\”: \”string\”,\n    \”email\”: \”string\”,\n    \”stateOrProvince\”: \”string\”,\n    \”telephone\”: \”string\”,\n    \”country\”: \”string\”,\n    \”streetAddress\”: \”string\”,\n    \”schema\”: \”string\”\n  },\n  \”adAttributes\”: {\n    \”attributes\”: [\n      {\n        \”name\”: \”string\”,\n        \”type\”: \”string\”,\n        \”internalName\”: \”string\”,\n        \”defaultValue\”: \”string\”\n      }\n    ]\n  },\n  \”adScopesNames\”: \”string\”,\n  \”link\”: {\n    \”rel\”: \”string\”,\n    \”href\”: \”string\”,\n    \”type\”: \”string\”\n  }\n}\n”</p>
+</div></td>
+</tr>
+</tbody>
+</table>
+<section id="authors">
 <h3>Authors<a class="headerlink" href="#authors" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p>Rafael Campos (&#64;racampos)</p></li>

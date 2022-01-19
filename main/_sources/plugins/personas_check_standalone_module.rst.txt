@@ -11,6 +11,18 @@
 .. role:: ansible-attribute-support-partial
 .. role:: ansible-attribute-support-none
 .. role:: ansible-attribute-support-na
+.. role:: ansible-option-type
+.. role:: ansible-option-elements
+.. role:: ansible-option-required
+.. role:: ansible-option-versionadded
+.. role:: ansible-option-aliases
+.. role:: ansible-option-choices
+.. role:: ansible-option-choices-entry
+.. role:: ansible-option-default
+.. role:: ansible-option-default-bold
+.. role:: ansible-option-configuration
+.. role:: ansible-option-returned-bold
+.. role:: ansible-option-sample-bold
 
 .. Anchors
 
@@ -30,7 +42,7 @@ cisco.ise.personas_check_standalone -- Ensure the node is in standalone mode
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.1.1).
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.2.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -79,129 +91,268 @@ The below requirements are needed on the host that executes this module.
 Parameters
 ----------
 
-.. raw:: html
+.. rst-class:: ansible-option-table
 
-    <table  border=0 cellpadding=0 class="documentation-table">
-        <tr>
-            <th colspan="1">Parameter</th>
-            <th>Choices/<font color="blue">Defaults</font></th>
-                        <th width="100%">Comments</th>
-        </tr>
-                    <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-ip"></div>
-                    <b>ip</b>
-                    <a class="ansibleOptionLink" href="#parameter-ip" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>The public IP address of the node</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-ise_verify"></div>
-                    <b>ise_verify</b>
-                    <a class="ansibleOptionLink" href="#parameter-ise_verify" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Whether or not to verify the identity of the node.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-ise_version"></div>
-                    <b>ise_version</b>
-                    <a class="ansibleOptionLink" href="#parameter-ise_version" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>The version of the ISE node.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-ise_wait_on_rate_limit"></div>
-                    <b>ise_wait_on_rate_limit</b>
-                    <a class="ansibleOptionLink" href="#parameter-ise_wait_on_rate_limit" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Whether or not to wait on rate limit</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-name"></div>
-                    <b>name</b>
-                    <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>The name of the node.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-password"></div>
-                    <b>password</b>
-                    <a class="ansibleOptionLink" href="#parameter-password" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>The password for the node.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-username"></div>
-                    <b>username</b>
-                    <a class="ansibleOptionLink" href="#parameter-username" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>The username for the node.</div>
-                                                        </td>
-            </tr>
-                        </table>
-    <br/>
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Parameter
+    - Comments
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ip"></div>
+
+      .. _ansible_collections.cisco.ise.personas_check_standalone_module__parameter-ip:
+
+      .. rst-class:: ansible-option-title
+
+      **ip**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ip" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The public IP address of the node
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_verify"></div>
+
+      .. _ansible_collections.cisco.ise.personas_check_standalone_module__parameter-ise_verify:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_verify**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_verify" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Whether or not to verify the identity of the node.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`no`
+      - :ansible-option-choices-entry:`yes`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_version"></div>
+
+      .. _ansible_collections.cisco.ise.personas_check_standalone_module__parameter-ise_version:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_version**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_version" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The version of the ISE node.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_wait_on_rate_limit"></div>
+
+      .. _ansible_collections.cisco.ise.personas_check_standalone_module__parameter-ise_wait_on_rate_limit:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_wait_on_rate_limit**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_wait_on_rate_limit" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Whether or not to wait on rate limit
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`no`
+      - :ansible-option-choices-entry:`yes`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-name"></div>
+
+      .. _ansible_collections.cisco.ise.personas_check_standalone_module__parameter-name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The name of the node.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-password"></div>
+
+      .. _ansible_collections.cisco.ise.personas_check_standalone_module__parameter-password:
+
+      .. rst-class:: ansible-option-title
+
+      **password**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-password" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The password for the node.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-username"></div>
+
+      .. _ansible_collections.cisco.ise.personas_check_standalone_module__parameter-username:
+
+      .. rst-class:: ansible-option-title
+
+      **username**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-username" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The username for the node.
+
+
+      .. raw:: html
+
+        </div>
+
 
 .. Attributes
 
@@ -212,7 +363,7 @@ Notes
 -----
 
 .. note::
-   - Does not support ``check_mode``
+   - Does not support \ :literal:`check\_mode`\ 
 
 .. Seealso
 
@@ -221,7 +372,7 @@ See Also
 
 .. seealso::
 
-   :ref:`cisco.ise.plugins.modules.personas_check_standalone <ansible_collections.cisco.ise.plugins.modules.personas_check_standalone_module>`
+   \ :ref:`cisco.ise.plugins.modules.personas\_check\_standalone <ansible_collections.cisco.ise.plugins.modules.personas_check_standalone_module>`\ 
       The official documentation on the **cisco.ise.plugins.modules.personas_check_standalone** module.
 
 .. Examples
@@ -260,33 +411,61 @@ Return Values
 -------------
 Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
 
-.. raw:: html
+.. rst-class:: ansible-option-table
 
-    <table border=0 cellpadding=0 class="documentation-table">
-        <tr>
-            <th colspan="1">Key</th>
-            <th>Returned</th>
-            <th width="100%">Description</th>
-        </tr>
-                    <tr>
-                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="return-ise_response"></div>
-                    <b>ise_response</b>
-                    <a class="ansibleOptionLink" href="#return-ise_response" title="Permalink to this return value"></a>
-                    <div style="font-size: small">
-                      <span style="color: purple">string</span>
-                                          </div>
-                                    </td>
-                <td>always</td>
-                <td>
-                                            <div>A string stating that the node is in standalone mode</div>
-                                        <br/>
-                                                                <div style="font-size: smaller"><b>Sample:</b></div>
-                                                <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">Node ISE PAN Server 1 is in STANDALONE mode</div>
-                                    </td>
-            </tr>
-                        </table>
-    <br/><br/>
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Key
+    - Description
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-ise_response"></div>
+
+      .. _ansible_collections.cisco.ise.personas_check_standalone_module__return-ise_response:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_response**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-ise_response" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      A string stating that the node is in standalone mode
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` "Node ISE PAN Server 1 is in STANDALONE mode"
+
+
+      .. raw:: html
+
+        </div>
+
+
 
 ..  Status (Presently only deprecated)
 

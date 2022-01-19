@@ -11,6 +11,18 @@
 .. role:: ansible-attribute-support-partial
 .. role:: ansible-attribute-support-none
 .. role:: ansible-attribute-support-na
+.. role:: ansible-option-type
+.. role:: ansible-option-elements
+.. role:: ansible-option-required
+.. role:: ansible-option-versionadded
+.. role:: ansible-option-aliases
+.. role:: ansible-option-choices
+.. role:: ansible-option-choices-entry
+.. role:: ansible-option-default
+.. role:: ansible-option-default-bold
+.. role:: ansible-option-configuration
+.. role:: ansible-option-returned-bold
+.. role:: ansible-option-sample-bold
 
 .. Anchors
 
@@ -30,7 +42,7 @@ cisco.ise.aci_settings -- Resource module for Aci Settings
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.1.1).
+    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.2.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -57,6 +69,7 @@ Synopsis
 .. Description
 
 - Manage operation update of the resource Aci Settings.
+- This API allows the client to update ACI settings.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -70,7 +83,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 1.3.0
+- ciscoisesdk >= 1.4.0
 - python >= 3.5
 
 
@@ -79,531 +92,1158 @@ The below requirements are needed on the host that executes this module.
 Parameters
 ----------
 
-.. raw:: html
+.. rst-class:: ansible-option-table
 
-    <table  border=0 cellpadding=0 class="documentation-table">
-        <tr>
-            <th colspan="1">Parameter</th>
-            <th>Choices/<font color="blue">Defaults</font></th>
-                        <th width="100%">Comments</th>
-        </tr>
-                    <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-aci50"></div>
-                    <b>aci50</b>
-                    <a class="ansibleOptionLink" href="#parameter-aci50" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Enable 5.0 ACI Version.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-aci51"></div>
-                    <b>aci51</b>
-                    <a class="ansibleOptionLink" href="#parameter-aci51" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Enable 5.1 ACI Version.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-aciipaddress"></div>
-                    <b>aciipaddress</b>
-                    <a class="ansibleOptionLink" href="#parameter-aciipaddress" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>ACI Domain manager Ip Address.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-acipassword"></div>
-                    <b>acipassword</b>
-                    <a class="ansibleOptionLink" href="#parameter-acipassword" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>ACI Domain manager Password.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-aciuserName"></div>
-                    <b>aciuserName</b>
-                    <a class="ansibleOptionLink" href="#parameter-aciuserName" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>ACI Domain manager Username.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-adminName"></div>
-                    <b>adminName</b>
-                    <a class="ansibleOptionLink" href="#parameter-adminName" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>ACI Cluster Admin name.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-adminPassword"></div>
-                    <b>adminPassword</b>
-                    <a class="ansibleOptionLink" href="#parameter-adminPassword" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>ACI Cluster Admin password.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-allSxpDomain"></div>
-                    <b>allSxpDomain</b>
-                    <a class="ansibleOptionLink" href="#parameter-allSxpDomain" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>AllSxpDomain flag.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-defaultSgtName"></div>
-                    <b>defaultSgtName</b>
-                    <a class="ansibleOptionLink" href="#parameter-defaultSgtName" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Aci Settings&#x27;s defaultSgtName.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-enableAci"></div>
-                    <b>enableAci</b>
-                    <a class="ansibleOptionLink" href="#parameter-enableAci" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Enable ACI Integration.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-enableDataPlane"></div>
-                    <b>enableDataPlane</b>
-                    <a class="ansibleOptionLink" href="#parameter-enableDataPlane" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>EnableDataPlane flag.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-enableElementsLimit"></div>
-                    <b>enableElementsLimit</b>
-                    <a class="ansibleOptionLink" href="#parameter-enableElementsLimit" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>EnableElementsLimit flag.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-id"></div>
-                    <b>id</b>
-                    <a class="ansibleOptionLink" href="#parameter-id" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Resource UUID value.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-ipAddressHostName"></div>
-                    <b>ipAddressHostName</b>
-                    <a class="ansibleOptionLink" href="#parameter-ipAddressHostName" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>ACI Cluster IP Address / Host name.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-ise_debug"></div>
-                    <b>ise_debug</b>
-                    <a class="ansibleOptionLink" href="#parameter-ise_debug" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                                                                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li><div style="color: blue"><b>no</b>&nbsp;&larr;</div></li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Flag for Identity Services Engine SDK to enable debugging.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-ise_hostname"></div>
-                    <b>ise_hostname</b>
-                    <a class="ansibleOptionLink" href="#parameter-ise_hostname" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                 / <span style="color: red">required</span>                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>The Identity Services Engine hostname.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-ise_password"></div>
-                    <b>ise_password</b>
-                    <a class="ansibleOptionLink" href="#parameter-ise_password" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                 / <span style="color: red">required</span>                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>The Identity Services Engine password to authenticate.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-ise_username"></div>
-                    <b>ise_username</b>
-                    <a class="ansibleOptionLink" href="#parameter-ise_username" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                 / <span style="color: red">required</span>                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>The Identity Services Engine username to authenticate.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-ise_uses_api_gateway"></div>
-                    <b>ise_uses_api_gateway</b>
-                    <a class="ansibleOptionLink" href="#parameter-ise_uses_api_gateway" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                          <div style="font-style: italic; font-size: small; color: darkgreen">
-                        added in 1.1.0 of cisco.ise
-                      </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                                                                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li><div style="color: blue"><b>yes</b>&nbsp;&larr;</div></li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Flag that informs the SDK whether to use the Identity Services Engine&#x27;s API Gateway to send requests.</div>
-                                            <div>If it is true, it uses the ISE&#x27;s API Gateway and sends requests to https://{{ise_hostname}}.</div>
-                                            <div>If it is false, it sends the requests to https://{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-ise_verify"></div>
-                    <b>ise_verify</b>
-                    <a class="ansibleOptionLink" href="#parameter-ise_verify" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                                                                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li><div style="color: blue"><b>yes</b>&nbsp;&larr;</div></li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Flag to enable or disable SSL certificate verification.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-ise_version"></div>
-                    <b>ise_version</b>
-                    <a class="ansibleOptionLink" href="#parameter-ise_version" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                    <b>Default:</b><br/><div style="color: blue">"3.1.1"</div>
-                                    </td>
-                                                                <td>
-                                            <div>Informs the SDK which version of Identity Services Engine to use.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-ise_wait_on_rate_limit"></div>
-                    <b>ise_wait_on_rate_limit</b>
-                    <a class="ansibleOptionLink" href="#parameter-ise_wait_on_rate_limit" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                                                                    <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li><div style="color: blue"><b>yes</b>&nbsp;&larr;</div></li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>Flag for Identity Services Engine SDK to enable automatic rate-limit handling.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-l3RouteNetwork"></div>
-                    <b>l3RouteNetwork</b>
-                    <a class="ansibleOptionLink" href="#parameter-l3RouteNetwork" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Aci Settings&#x27;s l3RouteNetwork.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-maxNumIepgFromAci"></div>
-                    <b>maxNumIepgFromAci</b>
-                    <a class="ansibleOptionLink" href="#parameter-maxNumIepgFromAci" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">integer</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Aci Settings&#x27;s maxNumIepgFromAci.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-maxNumSgtToAci"></div>
-                    <b>maxNumSgtToAci</b>
-                    <a class="ansibleOptionLink" href="#parameter-maxNumSgtToAci" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">integer</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Aci Settings&#x27;s maxNumSgtToAci.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-specificSxpDomain"></div>
-                    <b>specificSxpDomain</b>
-                    <a class="ansibleOptionLink" href="#parameter-specificSxpDomain" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">boolean</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                                        <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                                <li>no</li>
-                                                                                                                                                                                                <li>yes</li>
-                                                                                    </ul>
-                                                                            </td>
-                                                                <td>
-                                            <div>SpecificSxpDomain flag.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-specifixSxpDomainList"></div>
-                    <b>specifixSxpDomainList</b>
-                    <a class="ansibleOptionLink" href="#parameter-specifixSxpDomainList" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">list</span>
-                         / <span style="color: purple">elements=string</span>                                            </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Aci Settings&#x27;s specifixSxpDomainList.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-suffixToEpg"></div>
-                    <b>suffixToEpg</b>
-                    <a class="ansibleOptionLink" href="#parameter-suffixToEpg" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Aci Settings&#x27;s suffixToEpg.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-suffixToSgt"></div>
-                    <b>suffixToSgt</b>
-                    <a class="ansibleOptionLink" href="#parameter-suffixToSgt" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Aci Settings&#x27;s suffixToSgt.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-tenantName"></div>
-                    <b>tenantName</b>
-                    <a class="ansibleOptionLink" href="#parameter-tenantName" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Aci Settings&#x27;s tenantName.</div>
-                                                        </td>
-            </tr>
-                                <tr>
-                                                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="parameter-untaggedPacketIepgName"></div>
-                    <b>untaggedPacketIepgName</b>
-                    <a class="ansibleOptionLink" href="#parameter-untaggedPacketIepgName" title="Permalink to this option"></a>
-                    <div style="font-size: small">
-                        <span style="color: purple">string</span>
-                                                                    </div>
-                                                        </td>
-                                <td>
-                                                                                                                                                            </td>
-                                                                <td>
-                                            <div>Aci Settings&#x27;s untaggedPacketIepgName.</div>
-                                                        </td>
-            </tr>
-                        </table>
-    <br/>
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Parameter
+    - Comments
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-aci50"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-aci50:
+
+      .. rst-class:: ansible-option-title
+
+      **aci50**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-aci50" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Enable 5.0 ACI Version.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`no`
+      - :ansible-option-choices-entry:`yes`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-aci51"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-aci51:
+
+      .. rst-class:: ansible-option-title
+
+      **aci51**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-aci51" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Enable 5.1 ACI Version.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`no`
+      - :ansible-option-choices-entry:`yes`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-aciipaddress"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-aciipaddress:
+
+      .. rst-class:: ansible-option-title
+
+      **aciipaddress**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-aciipaddress" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      ACI Domain manager Ip Address.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-acipassword"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-acipassword:
+
+      .. rst-class:: ansible-option-title
+
+      **acipassword**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-acipassword" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      ACI Domain manager Password.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-aciuserName"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-aciuserName:
+
+      .. rst-class:: ansible-option-title
+
+      **aciuserName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-aciuserName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      ACI Domain manager Username.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-adminName"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-adminName:
+
+      .. rst-class:: ansible-option-title
+
+      **adminName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-adminName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      ACI Cluster Admin name.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-adminPassword"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-adminPassword:
+
+      .. rst-class:: ansible-option-title
+
+      **adminPassword**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-adminPassword" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      ACI Cluster Admin password.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-allSxpDomain"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-allSxpDomain:
+
+      .. rst-class:: ansible-option-title
+
+      **allSxpDomain**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-allSxpDomain" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      AllSxpDomain flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`no`
+      - :ansible-option-choices-entry:`yes`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-defaultSgtName"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-defaultSgtName:
+
+      .. rst-class:: ansible-option-title
+
+      **defaultSgtName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-defaultSgtName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Aci Settings's defaultSgtName.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-enableAci"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-enableAci:
+
+      .. rst-class:: ansible-option-title
+
+      **enableAci**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-enableAci" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Enable ACI Integration.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`no`
+      - :ansible-option-choices-entry:`yes`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-enableDataPlane"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-enableDataPlane:
+
+      .. rst-class:: ansible-option-title
+
+      **enableDataPlane**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-enableDataPlane" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      EnableDataPlane flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`no`
+      - :ansible-option-choices-entry:`yes`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-enableElementsLimit"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-enableElementsLimit:
+
+      .. rst-class:: ansible-option-title
+
+      **enableElementsLimit**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-enableElementsLimit" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      EnableElementsLimit flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`no`
+      - :ansible-option-choices-entry:`yes`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-id"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Resource UUID value.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ipAddressHostName"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-ipAddressHostName:
+
+      .. rst-class:: ansible-option-title
+
+      **ipAddressHostName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ipAddressHostName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      ACI Cluster IP Address / Host name.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_debug"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-ise_debug:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_debug**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_debug" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag for Identity Services Engine SDK to enable debugging.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`yes`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_hostname"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-ise_hostname:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_hostname**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_hostname" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Identity Services Engine hostname.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_password"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-ise_password:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_password**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_password" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Identity Services Engine password to authenticate.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_username"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-ise_username:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_username**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_username" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Identity Services Engine username to authenticate.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_uses_api_gateway"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-ise_uses_api_gateway:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_uses_api_gateway**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_uses_api_gateway" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      :ansible-option-versionadded:`added in 1.1.0 of cisco.ise`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag that informs the SDK whether to use the Identity Services Engine's API Gateway to send requests.
+
+      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise_hostname}}.
+
+      If it is false, it sends the requests to https://{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`no`
+      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_verify"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-ise_verify:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_verify**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_verify" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag to enable or disable SSL certificate verification.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`no`
+      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_version"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-ise_version:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_version**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_version" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Informs the SDK which version of Identity Services Engine to use.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"3.1.1"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_wait_on_rate_limit"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-ise_wait_on_rate_limit:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_wait_on_rate_limit**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_wait_on_rate_limit" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag for Identity Services Engine SDK to enable automatic rate-limit handling.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`no`
+      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-l3RouteNetwork"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-l3RouteNetwork:
+
+      .. rst-class:: ansible-option-title
+
+      **l3RouteNetwork**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-l3RouteNetwork" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Aci Settings's l3RouteNetwork.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-maxNumIepgFromAci"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-maxNumIepgFromAci:
+
+      .. rst-class:: ansible-option-title
+
+      **maxNumIepgFromAci**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-maxNumIepgFromAci" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Aci Settings's maxNumIepgFromAci.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-maxNumSgtToAci"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-maxNumSgtToAci:
+
+      .. rst-class:: ansible-option-title
+
+      **maxNumSgtToAci**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-maxNumSgtToAci" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Aci Settings's maxNumSgtToAci.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-specificSxpDomain"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-specificSxpDomain:
+
+      .. rst-class:: ansible-option-title
+
+      **specificSxpDomain**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-specificSxpDomain" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      SpecificSxpDomain flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`no`
+      - :ansible-option-choices-entry:`yes`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-specifixSxpDomainList"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-specifixSxpDomainList:
+
+      .. rst-class:: ansible-option-title
+
+      **specifixSxpDomainList**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-specifixSxpDomainList" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Aci Settings's specifixSxpDomainList.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-suffixToEpg"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-suffixToEpg:
+
+      .. rst-class:: ansible-option-title
+
+      **suffixToEpg**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-suffixToEpg" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Aci Settings's suffixToEpg.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-suffixToSgt"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-suffixToSgt:
+
+      .. rst-class:: ansible-option-title
+
+      **suffixToSgt**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-suffixToSgt" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Aci Settings's suffixToSgt.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-tenantName"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-tenantName:
+
+      .. rst-class:: ansible-option-title
+
+      **tenantName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-tenantName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Aci Settings's tenantName.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-untaggedPacketIepgName"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__parameter-untaggedPacketIepgName:
+
+      .. rst-class:: ansible-option-title
+
+      **untaggedPacketIepgName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-untaggedPacketIepgName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Aci Settings's untaggedPacketIepgName.
+
+
+      .. raw:: html
+
+        </div>
+
 
 .. Attributes
 
@@ -614,19 +1254,14 @@ Notes
 -----
 
 .. note::
-   - Does not support ``check_mode``
+   - SDK Method used are aci_settings.AciSettings.update_aci_settings_by_id,
+   - Paths used are put /ers/config/acisettings/{id}
+   - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
-See Also
---------
-
-.. seealso::
-
-   `Aci Settings reference <https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary>`_
-       Complete reference of the Aci Settings object model.
 
 .. Examples
 
@@ -681,89 +1316,109 @@ Return Values
 -------------
 Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
 
-.. raw:: html
+.. rst-class:: ansible-option-table
 
-    <table border=0 cellpadding=0 class="documentation-table">
-        <tr>
-            <th colspan="1">Key</th>
-            <th>Returned</th>
-            <th width="100%">Description</th>
-        </tr>
-                    <tr>
-                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="return-ise_response"></div>
-                    <b>ise_response</b>
-                    <a class="ansibleOptionLink" href="#return-ise_response" title="Permalink to this return value"></a>
-                    <div style="font-size: small">
-                      <span style="color: purple">dictionary</span>
-                                          </div>
-                                    </td>
-                <td>always</td>
-                <td>
-                                            <div>A dictionary or list with the response returned by the Cisco ISE Python SDK</div>
-                                        <br/>
-                                                                <div style="font-size: smaller"><b>Sample:</b></div>
-                                                <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">{
-      &quot;id&quot;: &quot;string&quot;,
-      &quot;enableAci&quot;: true,
-      &quot;ipAddressHostName&quot;: &quot;string&quot;,
-      &quot;adminName&quot;: &quot;string&quot;,
-      &quot;adminPassword&quot;: &quot;string&quot;,
-      &quot;aciipaddress&quot;: &quot;string&quot;,
-      &quot;aciuserName&quot;: &quot;string&quot;,
-      &quot;acipassword&quot;: &quot;string&quot;,
-      &quot;tenantName&quot;: &quot;string&quot;,
-      &quot;l3RouteNetwork&quot;: &quot;string&quot;,
-      &quot;suffixToEpg&quot;: &quot;string&quot;,
-      &quot;suffixToSgt&quot;: &quot;string&quot;,
-      &quot;allSxpDomain&quot;: true,
-      &quot;specificSxpDomain&quot;: true,
-      &quot;specifixSxpDomainList&quot;: [
-        &quot;string&quot;
-      ],
-      &quot;enableDataPlane&quot;: true,
-      &quot;untaggedPacketIepgName&quot;: &quot;string&quot;,
-      &quot;defaultSgtName&quot;: &quot;string&quot;,
-      &quot;enableElementsLimit&quot;: true,
-      &quot;maxNumIepgFromAci&quot;: 0,
-      &quot;maxNumSgtToAci&quot;: 0,
-      &quot;aci50&quot;: true,
-      &quot;aci51&quot;: true
-    }</div>
-                                    </td>
-            </tr>
-                                <tr>
-                                <td colspan="1">
-                    <div class="ansibleOptionAnchor" id="return-ise_update_response"></div>
-                    <b>ise_update_response</b>
-                    <a class="ansibleOptionLink" href="#return-ise_update_response" title="Permalink to this return value"></a>
-                    <div style="font-size: small">
-                      <span style="color: purple">dictionary</span>
-                                          </div>
-                    <div style="font-style: italic; font-size: small; color: darkgreen">added in 1.1.0 of cisco.ise</div>                </td>
-                <td>always</td>
-                <td>
-                                            <div>A dictionary or list with the response returned by the Cisco ISE Python SDK</div>
-                                        <br/>
-                                                                <div style="font-size: smaller"><b>Sample:</b></div>
-                                                <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">{
-      &quot;UpdatedFieldsList&quot;: {
-        &quot;updatedField&quot;: [
-          {
-            &quot;field&quot;: &quot;string&quot;,
-            &quot;oldValue&quot;: &quot;string&quot;,
-            &quot;newValue&quot;: &quot;string&quot;
-          }
-        ],
-        &quot;field&quot;: &quot;string&quot;,
-        &quot;oldValue&quot;: &quot;string&quot;,
-        &quot;newValue&quot;: &quot;string&quot;
-      }
-    }</div>
-                                    </td>
-            </tr>
-                        </table>
-    <br/><br/>
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Key
+    - Description
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-ise_response"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__return-ise_response:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_response**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-ise_response" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      A dictionary or list with the response returned by the Cisco ISE Python SDK
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` "{\\n  \\"id\\": \\"string\\",\\n  \\"enableAci\\": true,\\n  \\"ipAddressHostName\\": \\"string\\",\\n  \\"adminName\\": \\"string\\",\\n  \\"adminPassword\\": \\"string\\",\\n  \\"aciipaddress\\": \\"string\\",\\n  \\"aciuserName\\": \\"string\\",\\n  \\"acipassword\\": \\"string\\",\\n  \\"tenantName\\": \\"string\\",\\n  \\"l3RouteNetwork\\": \\"string\\",\\n  \\"suffixToEpg\\": \\"string\\",\\n  \\"suffixToSgt\\": \\"string\\",\\n  \\"allSxpDomain\\": true,\\n  \\"specificSxpDomain\\": true,\\n  \\"specifixSxpDomainList\\": [\\n    \\"string\\"\\n  ],\\n  \\"enableDataPlane\\": true,\\n  \\"untaggedPacketIepgName\\": \\"string\\",\\n  \\"defaultSgtName\\": \\"string\\",\\n  \\"enableElementsLimit\\": true,\\n  \\"maxNumIepgFromAci\\": 0,\\n  \\"maxNumSgtToAci\\": 0,\\n  \\"aci50\\": true,\\n  \\"aci51\\": true\\n}\\n"
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-ise_update_response"></div>
+
+      .. _ansible_collections.cisco.ise.aci_settings_module__return-ise_update_response:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_update_response**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-ise_update_response" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      :ansible-option-versionadded:`added in 1.1.0 of cisco.ise`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      A dictionary or list with the response returned by the Cisco ISE Python SDK
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` "{\\n  \\"UpdatedFieldsList\\": {\\n    \\"updatedField\\": [\\n      {\\n        \\"field\\": \\"string\\",\\n        \\"oldValue\\": \\"string\\",\\n        \\"newValue\\": \\"string\\"\\n      }\\n    ],\\n    \\"field\\": \\"string\\",\\n    \\"oldValue\\": \\"string\\",\\n    \\"newValue\\": \\"string\\"\\n  }\\n}\\n"
+
+
+      .. raw:: html
+
+        </div>
+
+
 
 ..  Status (Presently only deprecated)
 

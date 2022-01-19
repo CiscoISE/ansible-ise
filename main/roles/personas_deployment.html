@@ -164,8 +164,8 @@
 <li><p><strong>mnt2_local_ip</strong>: Private IP address for the Standby Monitoring node</p></li>
 </ul>
 <p><strong>Note</strong>: This guide assumes that the playbook will be run from outside the AWS infrastructure, so both the public and private IP addresses are needed. If the playbook were to be run from within the AWS infrastructure or in an on-prem deployment, then the public and private IP addresses would be the same. For example:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">psn1_local_ip</span><span class="p">:</span> <span class="s">&quot;{{psn1_ip}}&quot;</span>
-<span class="nt">psn2_local_ip</span><span class="p">:</span> <span class="s">&quot;{{psn2_ip}}&quot;</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">psn1_local_ip</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{psn1_ip}}&quot;</span><span class="w"></span>
+<span class="nt">psn2_local_ip</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{psn2_ip}}&quot;</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
@@ -173,23 +173,23 @@
 <section id="role-usage">
 <h2>Role usage<a class="headerlink" href="#role-usage" title="Permalink to this headline"></a></h2>
 <p>Create a playbook that contains all the pertinent variables required by this role:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># playbooks/personas_deployment.yml</span>
-<span class="c1"># Example for a small deployment</span>
-<span class="nn">---</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ISE Personas Deployment Playbook</span>
-  <span class="nt">hosts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">localhost</span>
-  <span class="nt">connection</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">local</span>
-  <span class="nt">vars</span><span class="p">:</span>
-    <span class="nt">ise_deployment</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">small</span>
-    <span class="nt">ise_username</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">admin</span>
-    <span class="nt">ise_password</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">C1sco123</span>
-    <span class="nt">ise_domain</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">example.com</span>
-    <span class="nt">pan1_ip</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1.1.1.1</span>
-    <span class="nt">pan2_ip</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2.2.2.2</span>
-    <span class="nt">pan2_local_ip</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10.0.0.2</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># playbooks/personas_deployment.yml</span><span class="w"></span>
+<span class="c1"># Example for a small deployment</span><span class="w"></span>
+<span class="nn">---</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ISE Personas Deployment Playbook</span><span class="w"></span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span><span class="w"></span>
+<span class="w">  </span><span class="nt">connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span><span class="w"></span>
+<span class="w">  </span><span class="nt">vars</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_deployment</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">small</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">C1sco123</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example.com</span><span class="w"></span>
+<span class="w">    </span><span class="nt">pan1_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.1.1.1</span><span class="w"></span>
+<span class="w">    </span><span class="nt">pan2_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.2.2.2</span><span class="w"></span>
+<span class="w">    </span><span class="nt">pan2_local_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0.0.2</span><span class="w"></span>
 
-  <span class="nt">roles</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cisco.ise.personas_deployment</span>
+<span class="w">  </span><span class="nt">roles</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cisco.ise.personas_deployment</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Run the Ansible playbook:</p>
@@ -198,54 +198,54 @@
 </div>
 <section id="sample-playbooks-for-medium-and-large-deployments">
 <h3>Sample playbooks for medium and large deployments<a class="headerlink" href="#sample-playbooks-for-medium-and-large-deployments" title="Permalink to this headline"></a></h3>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># playbooks/personas_deployment.yml</span>
-<span class="c1"># Example for a medium deployment</span>
-<span class="nn">---</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ISE Personas Deployment Playbook</span>
-  <span class="nt">hosts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">localhost</span>
-  <span class="nt">connection</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">local</span>
-  <span class="nt">vars</span><span class="p">:</span>
-    <span class="nt">ise_deployment</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">medium</span>
-    <span class="nt">ise_username</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">admin</span>
-    <span class="nt">ise_password</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">C1sco123</span>
-    <span class="nt">ise_domain</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">example.com</span>
-    <span class="nt">pan1_ip</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1.1.1.1</span>
-    <span class="nt">pan2_ip</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2.2.2.2</span>
-    <span class="nt">pan2_local_ip</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10.0.0.2</span>
-    <span class="nt">psn1_ip</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3.3.3.3</span>
-    <span class="nt">psn1_local_ip</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10.0.0.3</span>
-    <span class="nt">psn2_ip</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4.4.4.4</span>
-    <span class="nt">psn2_local_ip</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10.0.0.4</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># playbooks/personas_deployment.yml</span><span class="w"></span>
+<span class="c1"># Example for a medium deployment</span><span class="w"></span>
+<span class="nn">---</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ISE Personas Deployment Playbook</span><span class="w"></span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span><span class="w"></span>
+<span class="w">  </span><span class="nt">connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span><span class="w"></span>
+<span class="w">  </span><span class="nt">vars</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_deployment</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">medium</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">C1sco123</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example.com</span><span class="w"></span>
+<span class="w">    </span><span class="nt">pan1_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.1.1.1</span><span class="w"></span>
+<span class="w">    </span><span class="nt">pan2_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.2.2.2</span><span class="w"></span>
+<span class="w">    </span><span class="nt">pan2_local_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0.0.2</span><span class="w"></span>
+<span class="w">    </span><span class="nt">psn1_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.3.3.3</span><span class="w"></span>
+<span class="w">    </span><span class="nt">psn1_local_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0.0.3</span><span class="w"></span>
+<span class="w">    </span><span class="nt">psn2_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4.4.4.4</span><span class="w"></span>
+<span class="w">    </span><span class="nt">psn2_local_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0.0.4</span><span class="w"></span>
 
-  <span class="nt">roles</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cisco.ise.personas_deployment</span>
+<span class="w">  </span><span class="nt">roles</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cisco.ise.personas_deployment</span><span class="w"></span>
 </pre></div>
 </div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># playbooks/personas_deployment.yml</span>
-<span class="c1"># Example for a large deployment</span>
-<span class="nn">---</span>
-<span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ISE Personas Deployment Playbook</span>
-  <span class="nt">hosts</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">localhost</span>
-  <span class="nt">connection</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">local</span>
-  <span class="nt">vars</span><span class="p">:</span>
-    <span class="nt">ise_deployment</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">large</span>
-    <span class="nt">ise_username</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">admin</span>
-    <span class="nt">ise_password</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">C1sco123</span>
-    <span class="nt">ise_domain</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">example.com</span>
-    <span class="nt">pan1_ip</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1.1.1.1</span>
-    <span class="nt">pan2_ip</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2.2.2.2</span>
-    <span class="nt">pan2_local_ip</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10.0.0.2</span>
-    <span class="nt">psn1_ip</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3.3.3.3</span>
-    <span class="nt">psn1_local_ip</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10.0.0.3</span>
-    <span class="nt">psn2_ip</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4.4.4.4</span>
-    <span class="nt">psn2_local_ip</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10.0.0.4</span>
-    <span class="nt">mnt1_ip</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">5.5.5.5</span>
-    <span class="nt">mnt1_local_ip</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10.0.0.5</span>
-    <span class="nt">mnt2_ip</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">6.6.6.6</span>
-    <span class="nt">mnt2_local_ip</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10.0.0.6</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># playbooks/personas_deployment.yml</span><span class="w"></span>
+<span class="c1"># Example for a large deployment</span><span class="w"></span>
+<span class="nn">---</span><span class="w"></span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ISE Personas Deployment Playbook</span><span class="w"></span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span><span class="w"></span>
+<span class="w">  </span><span class="nt">connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span><span class="w"></span>
+<span class="w">  </span><span class="nt">vars</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_deployment</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">large</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">C1sco123</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example.com</span><span class="w"></span>
+<span class="w">    </span><span class="nt">pan1_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.1.1.1</span><span class="w"></span>
+<span class="w">    </span><span class="nt">pan2_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.2.2.2</span><span class="w"></span>
+<span class="w">    </span><span class="nt">pan2_local_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0.0.2</span><span class="w"></span>
+<span class="w">    </span><span class="nt">psn1_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.3.3.3</span><span class="w"></span>
+<span class="w">    </span><span class="nt">psn1_local_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0.0.3</span><span class="w"></span>
+<span class="w">    </span><span class="nt">psn2_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4.4.4.4</span><span class="w"></span>
+<span class="w">    </span><span class="nt">psn2_local_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0.0.4</span><span class="w"></span>
+<span class="w">    </span><span class="nt">mnt1_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.5.5.5</span><span class="w"></span>
+<span class="w">    </span><span class="nt">mnt1_local_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0.0.5</span><span class="w"></span>
+<span class="w">    </span><span class="nt">mnt2_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6.6.6.6</span><span class="w"></span>
+<span class="w">    </span><span class="nt">mnt2_local_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0.0.6</span><span class="w"></span>
 
-  <span class="nt">roles</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cisco.ise.personas_deployment</span>
+<span class="w">  </span><span class="nt">roles</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cisco.ise.personas_deployment</span><span class="w"></span>
 </pre></div>
 </div>
 </section>

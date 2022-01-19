@@ -459,7 +459,7 @@
 <h1>cisco.ise.deployment_info – Information module for Deployment<a class="headerlink" href="#cisco-ise-deployment-info-information-module-for-deployment" title="Permalink to this headline"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This plugin is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/ise">cisco.ise collection</a> (version 2.1.1).</p>
+<p>This plugin is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/ise">cisco.ise collection</a> (version 2.2.0).</p>
 <p>You might already have this collection installed if you are using the <code class="docutils literal notranslate"><span class="pre">ansible</span></code> package.
 It is not included in <code class="docutils literal notranslate"><span class="pre">ansible-core</span></code>.
 To check whether it is installed, run <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">list</span></code>.</p>
@@ -475,15 +475,15 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <li><p><a class="reference internal" href="#requirements" id="id2">Requirements</a></p></li>
 <li><p><a class="reference internal" href="#parameters" id="id3">Parameters</a></p></li>
 <li><p><a class="reference internal" href="#notes" id="id4">Notes</a></p></li>
-<li><p><a class="reference internal" href="#see-also" id="id5">See Also</a></p></li>
-<li><p><a class="reference internal" href="#examples" id="id6">Examples</a></p></li>
-<li><p><a class="reference internal" href="#return-values" id="id7">Return Values</a></p></li>
+<li><p><a class="reference internal" href="#examples" id="id5">Examples</a></p></li>
+<li><p><a class="reference internal" href="#return-values" id="id6">Return Values</a></p></li>
 </ul>
 </div>
 <section id="synopsis">
 <h2><a class="toc-backref" href="#id1">Synopsis</a><a class="headerlink" href="#synopsis" title="Permalink to this headline"></a></h2>
 <ul class="simple">
 <li><p>Get all Deployment.</p></li>
+<li><p>This API allows the client to pull the deployment information.</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -494,364 +494,156 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <h2><a class="toc-backref" href="#id2">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this headline"></a></h2>
 <p>The below requirements are needed on the host that executes this module.</p>
 <ul class="simple">
-<li><p>ciscoisesdk &gt;= 1.3.0</p></li>
+<li><p>ciscoisesdk &gt;= 1.4.0</p></li>
 <li><p>python &gt;= 3.5</p></li>
 </ul>
 </section>
 <section id="parameters">
 <h2><a class="toc-backref" href="#id3">Parameters</a><a class="headerlink" href="#parameters" title="Permalink to this headline"></a></h2>
-<table  border=0 cellpadding=0 class="documentation-table">
-    <tr>
-        <th colspan="1">Parameter</th>
-        <th>Choices/<font color="blue">Defaults</font></th>
-                    <th width="100%">Comments</th>
-    </tr>
-                <tr>
-                                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-ise_debug"></div>
-                <b>ise_debug</b>
-                <a class="ansibleOptionLink" href="#parameter-ise_debug" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">boolean</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                                                                                <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                            <li><div style="color: blue"><b>no</b>&nbsp;&larr;</div></li>
-                                                                                                                                                                                            <li>yes</li>
-                                                                                </ul>
-                                                                        </td>
-                                                            <td>
-                                        <div>Flag for Identity Services Engine SDK to enable debugging.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-ise_hostname"></div>
-                <b>ise_hostname</b>
-                <a class="ansibleOptionLink" href="#parameter-ise_hostname" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                             / <span style="color: red">required</span>                    </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>The Identity Services Engine hostname.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-ise_password"></div>
-                <b>ise_password</b>
-                <a class="ansibleOptionLink" href="#parameter-ise_password" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                             / <span style="color: red">required</span>                    </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>The Identity Services Engine password to authenticate.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-ise_username"></div>
-                <b>ise_username</b>
-                <a class="ansibleOptionLink" href="#parameter-ise_username" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                             / <span style="color: red">required</span>                    </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>The Identity Services Engine username to authenticate.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-ise_uses_api_gateway"></div>
-                <b>ise_uses_api_gateway</b>
-                <a class="ansibleOptionLink" href="#parameter-ise_uses_api_gateway" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">boolean</span>
-                                                                </div>
-                                      <div style="font-style: italic; font-size: small; color: darkgreen">
-                    added in 1.1.0 of cisco.ise
-                  </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                                                                                <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                            <li>no</li>
-                                                                                                                                                                                            <li><div style="color: blue"><b>yes</b>&nbsp;&larr;</div></li>
-                                                                                </ul>
-                                                                        </td>
-                                                            <td>
-                                        <div>Flag that informs the SDK whether to use the Identity Services Engine&#x27;s API Gateway to send requests.</div>
-                                        <div>If it is true, it uses the ISE&#x27;s API Gateway and sends requests to https://{{ise_hostname}}.</div>
-                                        <div>If it is false, it sends the requests to https://{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-ise_verify"></div>
-                <b>ise_verify</b>
-                <a class="ansibleOptionLink" href="#parameter-ise_verify" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">boolean</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                                                                                <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                            <li>no</li>
-                                                                                                                                                                                            <li><div style="color: blue"><b>yes</b>&nbsp;&larr;</div></li>
-                                                                                </ul>
-                                                                        </td>
-                                                            <td>
-                                        <div>Flag to enable or disable SSL certificate verification.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-ise_version"></div>
-                <b>ise_version</b>
-                <a class="ansibleOptionLink" href="#parameter-ise_version" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">string</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                                <b>Default:</b><br/><div style="color: blue">"3.1.1"</div>
-                                </td>
-                                                            <td>
-                                        <div>Informs the SDK which version of Identity Services Engine to use.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-ise_wait_on_rate_limit"></div>
-                <b>ise_wait_on_rate_limit</b>
-                <a class="ansibleOptionLink" href="#parameter-ise_wait_on_rate_limit" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">boolean</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                                                                                <ul style="margin: 0; padding: 0"><b>Choices:</b>
-                                                                                                                                                            <li>no</li>
-                                                                                                                                                                                            <li><div style="color: blue"><b>yes</b>&nbsp;&larr;</div></li>
-                                                                                </ul>
-                                                                        </td>
-                                                            <td>
-                                        <div>Flag for Identity Services Engine SDK to enable automatic rate-limit handling.</div>
-                                                    </td>
-        </tr>
-                            <tr>
-                                                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="parameter-timeout"></div>
-                <b>timeout</b>
-                <a class="ansibleOptionLink" href="#parameter-timeout" title="Permalink to this option"></a>
-                <div style="font-size: small">
-                    <span style="color: purple">integer</span>
-                                                                </div>
-                                                    </td>
-                            <td>
-                                                                                                                                                        </td>
-                                                            <td>
-                                        <div>How long to wait for the server to send data before giving up.</div>
-                                                    </td>
-        </tr>
-                    </table>
-<br/></section>
+<table class="colwidths-auto ansible-option-table docutils align-default" style="width: 100%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Comments</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-ise_debug"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-deployment-info-module-parameter-ise-debug"><strong>ise_debug</strong></p>
+<a class="ansibleOptionLink" href="#parameter-ise_debug" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Flag for Identity Services Engine SDK to enable debugging.</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><span class="ansible-option-default-bold">no</span> <span class="ansible-option-default">← (default)</span></p></li>
+<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-ise_hostname"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-deployment-info-module-parameter-ise-hostname"><strong>ise_hostname</strong></p>
+<a class="ansibleOptionLink" href="#parameter-ise_hostname" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span> / <span class="ansible-option-required">required</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>The Identity Services Engine hostname.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-ise_password"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-deployment-info-module-parameter-ise-password"><strong>ise_password</strong></p>
+<a class="ansibleOptionLink" href="#parameter-ise_password" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span> / <span class="ansible-option-required">required</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>The Identity Services Engine password to authenticate.</p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-ise_username"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-deployment-info-module-parameter-ise-username"><strong>ise_username</strong></p>
+<a class="ansibleOptionLink" href="#parameter-ise_username" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span> / <span class="ansible-option-required">required</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>The Identity Services Engine username to authenticate.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-ise_uses_api_gateway"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-deployment-info-module-parameter-ise-uses-api-gateway"><strong>ise_uses_api_gateway</strong></p>
+<a class="ansibleOptionLink" href="#parameter-ise_uses_api_gateway" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+<p><span class="ansible-option-versionadded">added in 1.1.0 of cisco.ise</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Flag that informs the SDK whether to use the Identity Services Engine’s API Gateway to send requests.</p>
+<p>If it is true, it uses the ISE’s API Gateway and sends requests to <a class="reference external" href="https:/">https:/</a>/{{ise_hostname}}.</p>
+<p>If it is false, it sends the requests to <a class="reference external" href="https:/">https:/</a>/{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><span class="ansible-option-choices-entry">no</span></p></li>
+<li><p><span class="ansible-option-default-bold">yes</span> <span class="ansible-option-default">← (default)</span></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-ise_verify"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-deployment-info-module-parameter-ise-verify"><strong>ise_verify</strong></p>
+<a class="ansibleOptionLink" href="#parameter-ise_verify" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Flag to enable or disable SSL certificate verification.</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><span class="ansible-option-choices-entry">no</span></p></li>
+<li><p><span class="ansible-option-default-bold">yes</span> <span class="ansible-option-default">← (default)</span></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-ise_version"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-deployment-info-module-parameter-ise-version"><strong>ise_version</strong></p>
+<a class="ansibleOptionLink" href="#parameter-ise_version" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Informs the SDK which version of Identity Services Engine to use.</p>
+<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <span class="ansible-option-default">“3.1.1”</span></p>
+</div></td>
+</tr>
+<tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-ise_wait_on_rate_limit"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-deployment-info-module-parameter-ise-wait-on-rate-limit"><strong>ise_wait_on_rate_limit</strong></p>
+<a class="ansibleOptionLink" href="#parameter-ise_wait_on_rate_limit" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Flag for Identity Services Engine SDK to enable automatic rate-limit handling.</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><span class="ansible-option-choices-entry">no</span></p></li>
+<li><p><span class="ansible-option-default-bold">yes</span> <span class="ansible-option-default">← (default)</span></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-timeout"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-deployment-info-module-parameter-timeout"><strong>timeout</strong></p>
+<a class="ansibleOptionLink" href="#parameter-timeout" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>How long to wait for the server to send data before giving up.</p>
+</div></td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="notes">
 <h2><a class="toc-backref" href="#id4">Notes</a><a class="headerlink" href="#notes" title="Permalink to this headline"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
+<li><p>SDK Method used are pull_deployment_info.PullDeploymentInfo.get_deployment_info,</p></li>
+<li><p>Paths used are get /ers/config/deploymentinfo/getAllInfo,</p></li>
 <li><p>Supports <code class="docutils literal notranslate"><span class="pre">check_mode</span></code></p></li>
 <li><p>The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK</p></li>
-<li><p>The parameters starting with <a href="#id8"><span class="problematic" id="id9">ise_</span></a> are used by the Cisco ISE Python SDK to establish the connection</p></li>
+<li><p>The parameters starting with <a href="#id7"><span class="problematic" id="id8">ise_</span></a> are used by the Cisco ISE Python SDK to establish the connection</p></li>
 </ul>
 </div>
 </section>
-<section id="see-also">
-<h2><a class="toc-backref" href="#id5">See Also</a><a class="headerlink" href="#see-also" title="Permalink to this headline"></a></h2>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<dl class="simple">
-<dt><a class="reference external" href="https://ciscoisesdk.readthedocs.io/en/latest/api/api.html#v3-0-0-summary">Deployment reference</a></dt><dd><p>Complete reference of the Deployment object model.</p>
-</dd>
-</dl>
-</div>
-</section>
 <section id="examples">
-<h2><a class="toc-backref" href="#id6">Examples</a><a class="headerlink" href="#examples" title="Permalink to this headline"></a></h2>
-<div class="highlight-yaml+jinja notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Get all Deployment</span>
-  <span class="nt">cisco.ise.deployment_info</span><span class="p">:</span>
-    <span class="nt">ise_hostname</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_hostname</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">ise_username</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_username</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">ise_password</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_password</span><span class="cp">}}</span><span class="s">&quot;</span>
-    <span class="nt">ise_verify</span><span class="p">:</span> <span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_verify</span><span class="cp">}}</span><span class="s">&quot;</span>
-  <span class="nt">register</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">result</span>
+<h2><a class="toc-backref" href="#id5">Examples</a><a class="headerlink" href="#examples" title="Permalink to this headline"></a></h2>
+<div class="highlight-yaml+jinja notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Get all Deployment</span><span class="w"></span>
+<span class="w">  </span><span class="nt">cisco.ise.deployment_info</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_hostname</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_hostname</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_username</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_username</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_password</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="nt">ise_verify</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_verify</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">result</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="return-values">
-<h2><a class="toc-backref" href="#id7">Return Values</a><a class="headerlink" href="#return-values" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id6">Return Values</a><a class="headerlink" href="#return-values" title="Permalink to this headline"></a></h2>
 <p>Common return values are documented <a class="reference external" href="https://docs.ansible.com/ansible/latest/reference_appendices/common_return_values.html#common-return-values" title="(in Ansible v5)"><span class="xref std std-ref">here</span></a>, the following are the fields unique to this module:</p>
-<table border=0 cellpadding=0 class="documentation-table">
-    <tr>
-        <th colspan="1">Key</th>
-        <th>Returned</th>
-        <th width="100%">Description</th>
-    </tr>
-                <tr>
-                            <td colspan="1">
-                <div class="ansibleOptionAnchor" id="return-ise_response"></div>
-                <b>ise_response</b>
-                <a class="ansibleOptionLink" href="#return-ise_response" title="Permalink to this return value"></a>
-                <div style="font-size: small">
-                  <span style="color: purple">dictionary</span>
-                                      </div>
-                                </td>
-            <td>always</td>
-            <td>
-                                        <div>A dictionary or list with the response returned by the Cisco ISE Python SDK</div>
-                                    <br/>
-                                                            <div style="font-size: smaller"><b>Sample:</b></div>
-                                            <div style="font-size: smaller; color: blue; word-wrap: break-word; word-break: break-all;">{
-  &quot;networkAccessInfo&quot;: {
-    &quot;deploymentID&quot;: &quot;string&quot;,
-    &quot;isCsnEnabled&quot;: true,
-    &quot;nodeList&quot;: {
-      &quot;nodeAndScope&quot;: [
-        {}
-      ]
-    },
-    &quot;sdaVNs&quot;: [],
-    &quot;trustSecControl&quot;: &quot;string&quot;,
-    &quot;radius3RdParty&quot;: []
-  },
-  &quot;profilerInfo&quot;: {
-    &quot;deploymentID&quot;: &quot;string&quot;,
-    &quot;nodeList&quot;: {
-      &quot;node&quot;: [
-        {
-          &quot;onlineSubscriptionEnabled&quot;: true,
-          &quot;lastAppliedFeedDateTime&quot;: &quot;string&quot;,
-          &quot;scope&quot;: &quot;string&quot;,
-          &quot;profiles&quot;: [
-            {
-              &quot;profile&quot;: [],
-              &quot;customProfilesCount&quot;: 0,
-              &quot;endpointTypes&quot;: &quot;string&quot;,
-              &quot;totalProfilesCount&quot;: 0,
-              &quot;uniqueEndpointsCount&quot;: 0,
-              &quot;unknownEndpointsCount&quot;: 0,
-              &quot;totalEndpointsCount&quot;: 0,
-              &quot;unknownEndpointsPercentage&quot;: 0
-            }
-          ]
-        }
-      ]
-    }
-  },
-  &quot;deploymentInfo&quot;: {
-    &quot;deploymentID&quot;: &quot;string&quot;,
-    &quot;versionHistoryInfo&quot;: [
-      {
-        &quot;opType&quot;: &quot;string&quot;,
-        &quot;mainVersion&quot;: &quot;string&quot;,
-        &quot;epochTime&quot;: 0
-      }
-    ],
-    &quot;nodeList&quot;: {
-      &quot;nodeAndNodeCountAndCountInfo&quot;: [
-        {
-          &quot;name&quot;: &quot;string&quot;,
-          &quot;value&quot;: {},
-          &quot;declaredType&quot;: &quot;string&quot;,
-          &quot;scope&quot;: &quot;string&quot;,
-          &quot;nil&quot;: true,
-          &quot;globalScope&quot;: true,
-          &quot;typeSubstituted&quot;: true
-        }
-      ]
-    },
-    &quot;fipsstatus&quot;: &quot;string&quot;
-  },
-  &quot;nadInfo&quot;: {
-    &quot;nodeList&quot;: {
-      &quot;nodeAndScope&quot;: [
-        {}
-      ]
-    },
-    &quot;nadcountInfo&quot;: {
-      &quot;totalActiveNADCount&quot;: 0
-    }
-  },
-  &quot;mdmInfo&quot;: {
-    &quot;activeMdmServersCount&quot;: &quot;string&quot;,
-    &quot;activeDesktopMdmServersCount&quot;: &quot;string&quot;,
-    &quot;activeMobileMdmServersCount&quot;: &quot;string&quot;,
-    &quot;deploymentID&quot;: &quot;string&quot;,
-    &quot;nodeList&quot;: {
-      &quot;nodeAndScope&quot;: [
-        {}
-      ]
-    }
-  },
-  &quot;licensesInfo&quot;: {
-    &quot;deploymentID&quot;: &quot;string&quot;,
-    &quot;nodeList&quot;: {
-      &quot;node&quot;: [
-        {}
-      ]
-    }
-  },
-  &quot;postureInfo&quot;: {
-    &quot;content&quot;: [
-      {
-        &quot;name&quot;: &quot;string&quot;,
-        &quot;value&quot;: {},
-        &quot;declaredType&quot;: &quot;string&quot;,
-        &quot;scope&quot;: &quot;string&quot;,
-        &quot;nil&quot;: true,
-        &quot;globalScope&quot;: true,
-        &quot;typeSubstituted&quot;: true
-      }
-    ]
-  },
-  &quot;kongInfo&quot;: {
-    &quot;deploymentID&quot;: &quot;string&quot;,
-    &quot;nodeList&quot;: {
-      &quot;node&quot;: [
-        {
-          &quot;sn&quot;: &quot;string&quot;,
-          &quot;service&quot;: [
-            {
-              &quot;serviceName&quot;: &quot;string&quot;,
-              &quot;route&quot;: [
-                {
-                  &quot;routeName&quot;: &quot;string&quot;,
-                  &quot;httpCount&quot;: {},
-                  &quot;latencyCount&quot;: {},
-                  &quot;latencySum&quot;: {}
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    }
-  }
-}</div>
-                                </td>
-        </tr>
-                    </table>
-<br/><br/><section id="authors">
+<table class="colwidths-auto ansible-option-table docutils align-default" style="width: 100%">
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="return-ise_response"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-deployment-info-module-return-ise-response"><strong>ise_response</strong></p>
+<a class="ansibleOptionLink" href="#return-ise_response" title="Permalink to this return value"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>A dictionary or list with the response returned by the Cisco ISE Python SDK</p>
+<p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> always</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “{\n  \”networkAccessInfo\”: {\n    \”deploymentID\”: \”string\”,\n    \”isCsnEnabled\”: true,\n    \”nodeList\”: {\n      \”nodeAndScope\”: [\n        {}\n      ]\n    },\n    \”sdaVNs\”: [],\n    \”trustSecControl\”: \”string\”,\n    \”radius3RdParty\”: []\n  },\n  \”profilerInfo\”: {\n    \”deploymentID\”: \”string\”,\n    \”nodeList\”: {\n      \”node\”: [\n        {\n          \”onlineSubscriptionEnabled\”: true,\n          \”lastAppliedFeedDateTime\”: \”string\”,\n          \”scope\”: \”string\”,\n          \”profiles\”: [\n            {\n              \”profile\”: [],\n              \”customProfilesCount\”: 0,\n              \”endpointTypes\”: \”string\”,\n              \”totalProfilesCount\”: 0,\n              \”uniqueEndpointsCount\”: 0,\n              \”unknownEndpointsCount\”: 0,\n              \”totalEndpointsCount\”: 0,\n              \”unknownEndpointsPercentage\”: 0\n            }\n          ]\n        }\n      ]\n    }\n  },\n  \”deploymentInfo\”: {\n    \”deploymentID\”: \”string\”,\n    \”versionHistoryInfo\”: [\n      {\n        \”opType\”: \”string\”,\n        \”mainVersion\”: \”string\”,\n        \”epochTime\”: 0\n      }\n    ],\n    \”nodeList\”: {\n      \”nodeAndNodeCountAndCountInfo\”: [\n        {\n          \”name\”: \”string\”,\n          \”value\”: {},\n          \”declaredType\”: \”string\”,\n          \”scope\”: \”string\”,\n          \”nil\”: true,\n          \”globalScope\”: true,\n          \”typeSubstituted\”: true\n        }\n      ]\n    },\n    \”fipsstatus\”: \”string\”\n  },\n  \”nadInfo\”: {\n    \”nodeList\”: {\n      \”nodeAndScope\”: [\n        {}\n      ]\n    },\n    \”nadcountInfo\”: {\n      \”totalActiveNADCount\”: 0\n    }\n  },\n  \”mdmInfo\”: {\n    \”activeMdmServersCount\”: \”string\”,\n    \”activeDesktopMdmServersCount\”: \”string\”,\n    \”activeMobileMdmServersCount\”: \”string\”,\n    \”deploymentID\”: \”string\”,\n    \”nodeList\”: {\n      \”nodeAndScope\”: [\n        {}\n      ]\n    }\n  },\n  \”licensesInfo\”: {\n    \”deploymentID\”: \”string\”,\n    \”nodeList\”: {\n      \”node\”: [\n        {}\n      ]\n    }\n  },\n  \”postureInfo\”: {\n    \”content\”: [\n      {\n        \”name\”: \”string\”,\n        \”value\”: {},\n        \”declaredType\”: \”string\”,\n        \”scope\”: \”string\”,\n        \”nil\”: true,\n        \”globalScope\”: true,\n        \”typeSubstituted\”: true\n      }\n    ]\n  },\n  \”kongInfo\”: {\n    \”deploymentID\”: \”string\”,\n    \”nodeList\”: {\n      \”node\”: [\n        {\n          \”sn\”: \”string\”,\n          \”service\”: [\n            {\n              \”serviceName\”: \”string\”,\n              \”route\”: [\n                {\n                  \”routeName\”: \”string\”,\n                  \”httpCount\”: {},\n                  \”latencyCount\”: {},\n                  \”latencySum\”: {}\n                }\n              ]\n            }\n          ]\n        }\n      ]\n    }\n  }\n}\n”</p>
+</div></td>
+</tr>
+</tbody>
+</table>
+<section id="authors">
 <h3>Authors<a class="headerlink" href="#authors" title="Permalink to this headline"></a></h3>
 <ul class="simple">
 <li><p>Rafael Campos (&#64;racampos)</p></li>
