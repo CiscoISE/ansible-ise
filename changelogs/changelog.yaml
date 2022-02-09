@@ -1,10 +1,10 @@
 releases:
   0.0.1:
-    release_date: '2021-04-20'
+    release_date: "2021-04-20"
     changes:
       release_summary: This is the initial beta release of the collection.
   0.0.2:
-    release_date: '2021-05-25'
+    release_date: "2021-05-25"
     changes:
       release_summary: Added all idempotent modules. Most modules are still untested against a live ISE.
       minor_changes:
@@ -154,7 +154,7 @@ releases:
         - trusted_certificate_export_info - new module.
         - trusted_certificate_info - new module.
   0.0.3:
-    release_date: '2021-06-04'
+    release_date: "2021-06-04"
     changes:
       release_summary: Added other modules and playbooks. Most modules are still untested against a live ISE.
       bugfixes:
@@ -219,23 +219,23 @@ releases:
         - trusted_certificate - new module.
         - trusted_certificate_import - new module.
   0.0.4:
-    release_date: '2021-06-08'
+    release_date: "2021-06-08"
     changes:
       release_summary: Added network_access_conditions module. Most modules are still untested against a live ISE.
       minor_changes:
         - network_access_conditions - new module.
   0.0.5:
-    release_date: '2021-06-11'
+    release_date: "2021-06-11"
     changes:
       release_summary: Update sorting params for info_ modules.
       bugfixes:
         - Changes sortdec to sortdsc query param for _info modules.
   0.0.6:
-    release_date: '2021-06-18'
+    release_date: "2021-06-18"
     changes:
       release_summary: Fix README playbook example.
   0.0.7:
-    release_date: '2021-07-01'
+    release_date: "2021-07-01"
     changes:
       release_summary: >
         Adds more playbooks. Changes credentials.yml to group_vars. Adds ISE ER S modules.
@@ -309,14 +309,14 @@ releases:
         - system_config_version_info - new module.
         - threat_vulnerabilities_clear - new module.
   0.0.8:
-    release_date: '2021-07-09'
+    release_date: "2021-07-09"
     changes:
       release_summary: Fix Indentity Group modules.
       bugfixes:
         - Fixes Identity Group parameters.
         - Fixes Identity Group response recollection.
   0.0.9:
-    release_date: '2021-07-12'
+    release_date: "2021-07-12"
     changes:
       release_summary: Adds an Ansible role for the deployment of ISE to AWS as well as four modules for the deployment of personas to the ISE nodes.
       major_changes:
@@ -326,7 +326,7 @@ releases:
         - personas_promote_primary - Adds module for the deployment of personas to existing nodes in an ISE cluster.
         - personas_update_roles - Adds module for the deployment of personas to existing nodes in an ISE cluster.
   1.0.0:
-    release_date: '2021-07-21'
+    release_date: "2021-07-21"
     changes:
       release_summary: Update to use ciscoisesdk v1.0.0 or newer
       minor_changes:
@@ -422,14 +422,14 @@ releases:
         - Renamed module device_administration_authorization_global_exception_rules to device_administration_global_exception_rules.
         - Fixes inner logic of modules that have no get by name and have not working filter.
   1.0.1:
-    release_date: '2021-07-25'
+    release_date: "2021-07-25"
     changes:
       release_summary: Migrated the Personas Deployment playbooks to a role
       minor_changes:
         - Migrated the Personas Deployment playbooks to a role.
         - telemetry_info - fixes EXAMPLES documentation.
   1.0.2:
-    release_date: '2021-08-13'
+    release_date: "2021-08-13"
     changes:
       release_summary: Fix response of csr_info, system_certificate_info and trusted_certificate_info by accessing each page `response` property.
     bugfixes:
@@ -438,7 +438,7 @@ releases:
       - system_certificate_info - fixes response recollection.
       - trusted_certificate_info - fixes response recollection.
   1.0.3:
-    release_date: '2021-08-17'
+    release_date: "2021-08-17"
     changes:
       release_summary: Added backup & restore and certificate management sample playbooks
       minor_changes:
@@ -448,7 +448,7 @@ releases:
         - Added backup_schedule sample playbook.
         - Added certificate_management sample playbook.
   1.1.0:
-    release_date: '2021-10-22'
+    release_date: "2021-10-22"
     changes:
       release_summary: Adds mnt_authentication_status_info module
       bugfixes:
@@ -458,7 +458,7 @@ releases:
       minor_changes:
         - mnt_authentication_status_info - new module.
   1.2.0:
-    release_date: '2021-10-22'
+    release_date: "2021-10-22"
     changes:
       release_summary: Adds ise_responses, ise_update_response values
       major_changes:
@@ -468,14 +468,14 @@ releases:
       minor_changes:
         - Update requirements.
   1.2.1:
-    release_date: '2021-10-25'
+    release_date: "2021-10-25"
     changes:
       release_summary: Fixes check_mode behavior
       bugfixes:
         - On regular modules additional comparison of check_mode was removed as Ansible already handles it.
         - On info modules comparison was removed, because info modules should always run.
   2.0.0:
-    release_date: '2021-11-24'
+    release_date: "2021-11-24"
     changes:
       release_summary: Updates ISE responses and adds Trust_Sec modules
       minor_changes:
@@ -576,7 +576,7 @@ releases:
         - Update documentation of the modules.
         - Update ISE version to 3.1.0 on vars example
   2.1.0:
-    release_date: '2021-12-13'
+    release_date: "2021-12-13"
     changes:
       release_summary: Update to use ciscoisesdk v1.3.0 or newer
       minor_changes:
@@ -625,27 +625,27 @@ releases:
         - trustsec_nbar_app_info - change type from str to list.
         - trustsec_vn_info - change type from str to list.
   2.1.1:
-    release_date: '2021-12-16'
+    release_date: "2021-12-16"
     changes:
       release_summary: Fixes on trustsec and node_group modules
       bugfixes:
-      - trustsec_sg_vn_mapping - fix version_added to 2.0.0
-      - trustsec_sg_vn_mapping_bulk_create - fix version_added to 2.0.0
-      - trustsec_sg_vn_mapping_bulk_delete - fix version_added to 2.0.0
-      - trustsec_sg_vn_mapping_bulk_update - fix version_added to 2.0.0
-      - trustsec_sg_vn_mapping_info - fix version_added to 2.0.0
-      - trustsec_vn_vlan_mapping - fix version_added to 2.0.0
-      - trustsec_vn_vlan_mapping_bulk_create - fix version_added to 2.0.0
-      - trustsec_vn_vlan_mapping_bulk_delete - fix version_added to 2.0.0
-      - trustsec_vn_vlan_mapping_bulk_update - fix version_added to 2.0.0
-      - trustsec_vn_vlan_mapping_info - fix version_added to 2.0.0
-      - trustsec_sg_vn_mapping_info - change filter param type from str to list
-      - trustsec_vn_vlan_mapping_info - change filter param type from str to list
-      - node_group_node_create - fix family execution call from Node Deployment to Node Group.
-      - node_group_node_delete - fix family execution call from Node Deployment to Node Group.
-      - node_group_node_info - fix family execution call from Node Deployment to Node Group.
+        - trustsec_sg_vn_mapping - fix version_added to 2.0.0
+        - trustsec_sg_vn_mapping_bulk_create - fix version_added to 2.0.0
+        - trustsec_sg_vn_mapping_bulk_delete - fix version_added to 2.0.0
+        - trustsec_sg_vn_mapping_bulk_update - fix version_added to 2.0.0
+        - trustsec_sg_vn_mapping_info - fix version_added to 2.0.0
+        - trustsec_vn_vlan_mapping - fix version_added to 2.0.0
+        - trustsec_vn_vlan_mapping_bulk_create - fix version_added to 2.0.0
+        - trustsec_vn_vlan_mapping_bulk_delete - fix version_added to 2.0.0
+        - trustsec_vn_vlan_mapping_bulk_update - fix version_added to 2.0.0
+        - trustsec_vn_vlan_mapping_info - fix version_added to 2.0.0
+        - trustsec_sg_vn_mapping_info - change filter param type from str to list
+        - trustsec_vn_vlan_mapping_info - change filter param type from str to list
+        - node_group_node_create - fix family execution call from Node Deployment to Node Group.
+        - node_group_node_delete - fix family execution call from Node Deployment to Node Group.
+        - node_group_node_info - fix family execution call from Node Deployment to Node Group.
   2.1.2:
-    release_date: '2021-12-22'
+    release_date: "2021-12-22"
     changes:
       release_summary: Fixes params used for modules
       bugfixes:
@@ -654,7 +654,7 @@ releases:
         - repository - fixes params used for modules. Fix for issue 19.
         - repository_files_info - fixes params used for module.
   2.2.0:
-    release_date: '2022-01-18'
+    release_date: "2022-01-18"
     changes:
       release_summary: Update module doc & fix licensing_tier_state_create
       minor_changes:
@@ -663,3 +663,9 @@ releases:
       bugfixes:
         - plugin/modules - update documentation block.
         - update README.
+  2.2.1:
+    release_date: "2022-02-09"
+    changes:
+      release_summary: Update README links in galaxy
+      bugfixes:
+        - update README links in galaxy from relative to absolute links.
