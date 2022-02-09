@@ -134,7 +134,7 @@ ise_debug: False # optional, defaults to False
 ise_uses_api_gateway: True # optional, defaults to True
 ```
 
-Create a `hosts` ([example](https://github.com/CiscoISE/ansible-ise/tree/main/playbooks)) file that uses `[ise_servers]` with your Cisco ISE Settings:
+Create a `hosts` ([example](https://github.com/CiscoISE/ansible-ise/blob/main/playbooks/hosts)) file that uses `[ise_servers]` with your Cisco ISE Settings:
 ```
 [ise_servers]
 ise_server
