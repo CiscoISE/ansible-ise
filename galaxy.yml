@@ -1,21 +1,21 @@
 ---
 namespace: cisco
 name: ise
-version: 2.2.0
+version: 2.2.1
 readme: README.md
 authors:
-- Rafael Campos <rcampos@altus.cr>
-- William Astorga <wastorga@altus.cr>
-- Jose Bogarin <jbogarin@altus.cr>
+  - Rafael Campos <rcampos@altus.cr>
+  - William Astorga <wastorga@altus.cr>
+  - Jose Bogarin <jbogarin@altus.cr>
 description: Ansible Modules for Cisco ISE
-license_file: 'LICENSE'
+license_file: "LICENSE"
 tags:
-- cisco
-- ise
-- cloud
-- collection
-- networking
-- sdn
+  - cisco
+  - ise
+  - cloud
+  - collection
+  - networking
+  - sdn
 dependencies:
   ansible.utils: ">=2.0.0,<3.0"
 repository: https://github.com/CiscoISE/ansible-ise
