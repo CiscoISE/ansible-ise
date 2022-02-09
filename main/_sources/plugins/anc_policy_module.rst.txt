@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.anc_policy -- Resource module for Anc Policy
-++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.ise.anc_policy module -- Resource module for Anc Policy
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.2.0).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.2.1).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.

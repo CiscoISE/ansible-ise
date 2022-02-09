@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.internal_user_info -- Information module for Internal User
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.ise.internal_user_info module -- Information module for Internal User
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This plugin is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.2.0).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.2.1).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
