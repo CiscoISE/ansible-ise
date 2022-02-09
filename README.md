@@ -8,7 +8,7 @@ This collection has been tested and supports Cisco ISE 3.1.1.
 
 *Note: This collection is not compatible with versions of Ansible before v2.9.*
 
-Other versions of this collection have support for previous Cisco ISE versions. The recommended versions are listed on the [Compatibility matrix](#compatibility-matrix).
+Other versions of this collection have support for previous Cisco ISE versions. The recommended versions are listed on the [Compatibility matrix](https://github.com/CiscoISE/ansible-ise#compatibility-matrix).
 
 ## Requirements
 - Ansible >= 2.9
@@ -41,14 +41,14 @@ As stated before, the collection has been tested and supports Cisco ISE 3.1.1.
 
 It may work with Cisco ISE version 3.0, but it is not officially supported.
 
-The recommended versions are listed below on the [Compatibility matrix](#compatibility-matrix).
+The recommended versions are listed below on the [Compatibility matrix](https://github.com/CiscoISE/ansible-ise#compatibility-matrix).
 
 ## Compatibility matrix
 
-| Cisco ISE version | Ansible "cisco.ise" version | Python "ciscoisesdk" version |
-|-------------------|------------------------------|-----------------------------|
-| 3.1.0             | 2.0.0                        | 1.2.0                       |
-| 3.1.1             | 2.2.0                        | 1.4.0                       |
+| Cisco ISE version | Ansible "cisco.ise" version  | Python "ciscoisesdk" version |
+|-------------------|------------------------------|------------------------------|
+| 3.1.0             | 2.0.0                        | 1.2.0                        |
+| 3.1.1             | 2.2.0                        | 1.4.0                        |
 
 *Notes*:
 
@@ -74,7 +74,7 @@ ansible-galaxy collection install cisco.ise:2.0.0
 
 ### Using vars_files
 
-First, define a `credentials.yml` ([example](playbooks/credentials.template)) file where you specify your Cisco ISE credentials as ansible variables:
+First, define a `credentials.yml` ([example](https://github.com/CiscoISE/ansible-ise/blob/main/playbooks/credentials.template)) file where you specify your Cisco ISE credentials as ansible variables:
 ```
 ---
 ise_hostname: <A.B.C.D>
@@ -87,7 +87,7 @@ ise_debug: False # optional, defaults to False
 ise_uses_api_gateway: True # optional, defaults to True
 ```
 
-Create a `hosts` ([example](playbooks/hosts)) file that uses `[ise_servers]` with your Cisco ISE Settings:
+Create a `hosts` ([example](https://github.com/CiscoISE/ansible-ise/blob/main/playbooks/hosts)) file that uses `[ise_servers]` with your Cisco ISE Settings:
 ```
 [ise_servers]
 ise_server
@@ -115,13 +115,13 @@ Execute the playbook:
 ```
 ansible-playbook -i hosts myplaybook.yml
 ```
-In the `playbooks` [directory](playbooks/) directory you can find more examples and use cases.
+In the `playbooks` [directory](https://github.com/CiscoISE/ansible-ise/tree/main/playbooks) directory you can find more examples and use cases.
 
 **Note**: The examples found on the `playbooks` directory use the `group_vars` variables. Remember to make the appropiate changes when running the examples.
 
 ### Using group_vars directory
 
-First, define your group_vars for credentials `ise_servers` ([example](playbooks/group_vars/ise_servers)) file where you specify your Cisco ISE credentials as ansible variables:
+First, define your group_vars for credentials `ise_servers` ([example](https://github.com/CiscoISE/ansible-ise/blob/main/playbooks/group_vars/ise_servers)) file where you specify your Cisco ISE credentials as ansible variables:
 ```
 ---
 ise_hostname: <A.B.C.D>
@@ -134,13 +134,13 @@ ise_debug: False # optional, defaults to False
 ise_uses_api_gateway: True # optional, defaults to True
 ```
 
-Create a `hosts` ([example](playbooks/hosts)) file that uses `[ise_servers]` with your Cisco ISE Settings:
+Create a `hosts` ([example](https://github.com/CiscoISE/ansible-ise/tree/main/playbooks)) file that uses `[ise_servers]` with your Cisco ISE Settings:
 ```
 [ise_servers]
 ise_server
 ```
 
-Then, create a playbook `myplaybook.yml` ([example](playbooks/network_device.yml)) referencing the variables in your `group_vars/ise_servers` file and specifying the full namespace path to the module, plugin and/or role:
+Then, create a playbook `myplaybook.yml` ([example](https://github.com/CiscoISE/ansible-ise/blob/main/playbooks/network_device.yml)) referencing the variables in your `group_vars/ise_servers` file and specifying the full namespace path to the module, plugin and/or role:
 ```
 - hosts: ise_servers
   gather_facts: no
@@ -160,7 +160,7 @@ Execute the playbook:
 ```
 ansible-playbook -i hosts myplaybook.yml
 ```
-In the `playbooks` [directory](playbooks/)  directory you can find more examples and use cases.
+In the `playbooks` [directory](https://github.com/CiscoISE/ansible-ise/tree/main/playbooks)  directory you can find more examples and use cases.
 
 **Note**: The examples found on the `playbooks` directory use the `group_vars` variables. Consider using `ansible-vault` to encrypt the file that has the `ise_username` and `ise_password`.
 
