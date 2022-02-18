@@ -1,0 +1,3086 @@
+.. Document meta
+
+:orphan:
+
+.. |antsibull-internal-nbsp| unicode:: 0xA0
+    :trim:
+
+.. role:: ansible-attribute-support-label
+.. role:: ansible-attribute-support-property
+.. role:: ansible-attribute-support-full
+.. role:: ansible-attribute-support-partial
+.. role:: ansible-attribute-support-none
+.. role:: ansible-attribute-support-na
+.. role:: ansible-option-type
+.. role:: ansible-option-elements
+.. role:: ansible-option-required
+.. role:: ansible-option-versionadded
+.. role:: ansible-option-aliases
+.. role:: ansible-option-choices
+.. role:: ansible-option-choices-entry
+.. role:: ansible-option-default
+.. role:: ansible-option-default-bold
+.. role:: ansible-option-configuration
+.. role:: ansible-option-returned-bold
+.. role:: ansible-option-sample-bold
+
+.. Anchors
+
+.. _ansible_collections.cisco.ise.byod_portal_module:
+
+.. Anchors: short name for ansible.builtin
+
+.. Anchors: aliases
+
+
+
+.. Title
+
+cisco.ise.byod_portal module -- Resource module for Byod Portal
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. Collection note
+
+.. note::
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.2.2).
+
+    You might already have this collection installed if you are using the ``ansible`` package.
+    It is not included in ``ansible-core``.
+    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+
+    To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
+
+    To use it in a playbook, specify: :code:`cisco.ise.byod_portal`.
+
+.. version_added
+
+.. versionadded:: 1.0.0 of cisco.ise
+
+.. contents::
+   :local:
+   :depth: 1
+
+.. Deprecated
+
+
+Synopsis
+--------
+
+.. Description
+
+- Manage operations create, update and delete of the resource Byod Portal.
+- This API creates a BYOD portal.
+- This API deletes a BYOD portal by ID.
+
+.. note::
+    This module has a corresponding :ref:`action plugin <action_plugins>`.
+
+.. Aliases
+
+
+.. Requirements
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- ciscoisesdk >= 1.4.0
+- python >= 3.5
+
+
+.. Options
+
+Parameters
+----------
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Parameter
+    - Comments
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-customizations:
+
+      .. rst-class:: ansible-option-title
+
+      **customizations**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Defines all of the Portal Customizations available for a BYOD.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/globalCustomizations"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-customizations/globalCustomizations:
+
+      .. rst-class:: ansible-option-title
+
+      **globalCustomizations**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/globalCustomizations" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Represent the portal Global customizations.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/globalCustomizations/backgroundImage"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-customizations/globalCustomizations/backgroundImage:
+
+      .. rst-class:: ansible-option-title
+
+      **backgroundImage**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/globalCustomizations/backgroundImage" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Byod Portal's backgroundImage.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/globalCustomizations/backgroundImage/data"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-customizations/globalCustomizations/backgroundImage/data:
+
+      .. rst-class:: ansible-option-title
+
+      **data**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/globalCustomizations/backgroundImage/data" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Represented as base 64 encoded string of the image byte array.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/globalCustomizations/bannerImage"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-customizations/globalCustomizations/bannerImage:
+
+      .. rst-class:: ansible-option-title
+
+      **bannerImage**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/globalCustomizations/bannerImage" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Byod Portal's bannerImage.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/globalCustomizations/bannerImage/data"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-customizations/globalCustomizations/bannerImage/data:
+
+      .. rst-class:: ansible-option-title
+
+      **data**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/globalCustomizations/bannerImage/data" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Represented as base 64 encoded string of the image byte array.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/globalCustomizations/bannerTitle"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-customizations/globalCustomizations/bannerTitle:
+
+      .. rst-class:: ansible-option-title
+
+      **bannerTitle**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/globalCustomizations/bannerTitle" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Byod Portal's bannerTitle.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/globalCustomizations/contactText"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-customizations/globalCustomizations/contactText:
+
+      .. rst-class:: ansible-option-title
+
+      **contactText**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/globalCustomizations/contactText" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Byod Portal's contactText.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/globalCustomizations/desktopLogoImage"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-customizations/globalCustomizations/desktopLogoImage:
+
+      .. rst-class:: ansible-option-title
+
+      **desktopLogoImage**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/globalCustomizations/desktopLogoImage" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Byod Portal's desktopLogoImage.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/globalCustomizations/desktopLogoImage/data"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-customizations/globalCustomizations/desktopLogoImage/data:
+
+      .. rst-class:: ansible-option-title
+
+      **data**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/globalCustomizations/desktopLogoImage/data" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Represented as base 64 encoded string of the image byte array.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/globalCustomizations/footerElement"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-customizations/globalCustomizations/footerElement:
+
+      .. rst-class:: ansible-option-title
+
+      **footerElement**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/globalCustomizations/footerElement" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Byod Portal's footerElement.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/globalCustomizations/mobileLogoImage"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-customizations/globalCustomizations/mobileLogoImage:
+
+      .. rst-class:: ansible-option-title
+
+      **mobileLogoImage**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/globalCustomizations/mobileLogoImage" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Byod Portal's mobileLogoImage.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/globalCustomizations/mobileLogoImage/data"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-customizations/globalCustomizations/mobileLogoImage/data:
+
+      .. rst-class:: ansible-option-title
+
+      **data**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/globalCustomizations/mobileLogoImage/data" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Represented as base 64 encoded string of the image byte array.
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/language"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-customizations/language:
+
+      .. rst-class:: ansible-option-title
+
+      **language**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/language" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      This property is supported only for Read operation and it allows to show the customizations in English. Other languages are not supported.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/language/viewLanguage"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-customizations/language/viewLanguage:
+
+      .. rst-class:: ansible-option-title
+
+      **viewLanguage**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/language/viewLanguage" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Byod Portal's viewLanguage.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/pageCustomizations"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-customizations/pageCustomizations:
+
+      .. rst-class:: ansible-option-title
+
+      **pageCustomizations**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/pageCustomizations" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Represent the entire page customization as a giant dictionary.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/pageCustomizations/data"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-customizations/pageCustomizations/data:
+
+      .. rst-class:: ansible-option-title
+
+      **data**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/pageCustomizations/data" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The Dictionary will be exposed here as key value pair.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/pageCustomizations/data/key"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-customizations/pageCustomizations/data/key:
+
+      .. rst-class:: ansible-option-title
+
+      **key**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/pageCustomizations/data/key" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Byod Portal's key.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/pageCustomizations/data/value"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-customizations/pageCustomizations/data/value:
+
+      .. rst-class:: ansible-option-title
+
+      **value**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/pageCustomizations/data/value" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Byod Portal's value.
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/portalTheme"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-customizations/portalTheme:
+
+      .. rst-class:: ansible-option-title
+
+      **portalTheme**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/portalTheme" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Defines the configuration for portal theme.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/portalTheme/id"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-customizations/portalTheme/id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/portalTheme/id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The unique internal identifier of the portal theme.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/portalTheme/name"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-customizations/portalTheme/name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/portalTheme/name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The system- or user-assigned name of the portal theme.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/portalTheme/themeData"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-customizations/portalTheme/themeData:
+
+      .. rst-class:: ansible-option-title
+
+      **themeData**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/portalTheme/themeData" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A CSS file, represented as a Base64-encoded byte array.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/portalTweakSettings"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-customizations/portalTweakSettings:
+
+      .. rst-class:: ansible-option-title
+
+      **portalTweakSettings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/portalTweakSettings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The Tweak Settings are a customization of the Portal Theme that has been selected for the portal. When the Portal Theme selection is changed, the Tweak Settings are overwritten to match the values in the theme. The Tweak Settings can subsequently be changed by the user.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/portalTweakSettings/bannerColor"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-customizations/portalTweakSettings/bannerColor:
+
+      .. rst-class:: ansible-option-title
+
+      **bannerColor**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/portalTweakSettings/bannerColor" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Hex value of color.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/portalTweakSettings/bannerTextColor"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-customizations/portalTweakSettings/bannerTextColor:
+
+      .. rst-class:: ansible-option-title
+
+      **bannerTextColor**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/portalTweakSettings/bannerTextColor" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Byod Portal's bannerTextColor.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/portalTweakSettings/pageBackgroundColor"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-customizations/portalTweakSettings/pageBackgroundColor:
+
+      .. rst-class:: ansible-option-title
+
+      **pageBackgroundColor**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/portalTweakSettings/pageBackgroundColor" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Byod Portal's pageBackgroundColor.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/portalTweakSettings/pageLabelAndTextColor"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-customizations/portalTweakSettings/pageLabelAndTextColor:
+
+      .. rst-class:: ansible-option-title
+
+      **pageLabelAndTextColor**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/portalTweakSettings/pageLabelAndTextColor" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Byod Portal's pageLabelAndTextColor.
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-description"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-description:
+
+      .. rst-class:: ansible-option-title
+
+      **description**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-description" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Byod Portal's description.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-id"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Resource UUID, mandatory for update.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_debug"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-ise_debug:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_debug**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_debug" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag for Identity Services Engine SDK to enable debugging.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`yes`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_hostname"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-ise_hostname:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_hostname**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_hostname" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Identity Services Engine hostname.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_password"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-ise_password:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_password**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_password" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Identity Services Engine password to authenticate.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_username"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-ise_username:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_username**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_username" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Identity Services Engine username to authenticate.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_uses_api_gateway"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-ise_uses_api_gateway:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_uses_api_gateway**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_uses_api_gateway" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      :ansible-option-versionadded:`added in 1.1.0 of cisco.ise`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag that informs the SDK whether to use the Identity Services Engine's API Gateway to send requests.
+
+      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise_hostname}}.
+
+      If it is false, it sends the requests to https://{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`no`
+      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_verify"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-ise_verify:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_verify**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_verify" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag to enable or disable SSL certificate verification.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`no`
+      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_version"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-ise_version:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_version**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_version" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Informs the SDK which version of Identity Services Engine to use.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"3.1.1"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_wait_on_rate_limit"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-ise_wait_on_rate_limit:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_wait_on_rate_limit**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_wait_on_rate_limit" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag for Identity Services Engine SDK to enable automatic rate-limit handling.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`no`
+      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-name"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Resource Name.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-portalTestUrl"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-portalTestUrl:
+
+      .. rst-class:: ansible-option-title
+
+      **portalTestUrl**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-portalTestUrl" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      URL to bring up a test page for this portal.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-portalType"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-portalType:
+
+      .. rst-class:: ansible-option-title
+
+      **portalType**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-portalType" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Allowed values - BYOD, - HOTSPOTGUEST, - MYDEVICE, - SELFREGGUEST, - SPONSOR, - SPONSOREDGUEST.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings:
+
+      .. rst-class:: ansible-option-title
+
+      **settings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Defines all of the settings groups available for a BYOD.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/byodSettings"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/byodSettings:
+
+      .. rst-class:: ansible-option-title
+
+      **byodSettings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/byodSettings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Configuration of BYOD Device Welcome, Registration and Success steps.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/byodSettings/byodRegistrationSettings"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/byodSettings/byodRegistrationSettings:
+
+      .. rst-class:: ansible-option-title
+
+      **byodRegistrationSettings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/byodSettings/byodRegistrationSettings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Byod Portal's byodRegistrationSettings.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/byodSettings/byodRegistrationSettings/endPointIdentityGroupId"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/byodSettings/byodRegistrationSettings/endPointIdentityGroupId:
+
+      .. rst-class:: ansible-option-title
+
+      **endPointIdentityGroupId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/byodSettings/byodRegistrationSettings/endPointIdentityGroupId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Byod Portal's endPointIdentityGroupId.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/byodSettings/byodRegistrationSettings/showDeviceID"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/byodSettings/byodRegistrationSettings/showDeviceID:
+
+      .. rst-class:: ansible-option-title
+
+      **showDeviceID**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/byodSettings/byodRegistrationSettings/showDeviceID" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      ShowDeviceID flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`no`
+      - :ansible-option-choices-entry:`yes`
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/byodSettings/byodRegistrationSuccessSettings"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/byodSettings/byodRegistrationSuccessSettings:
+
+      .. rst-class:: ansible-option-title
+
+      **byodRegistrationSuccessSettings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/byodSettings/byodRegistrationSuccessSettings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Byod Portal's byodRegistrationSuccessSettings.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/byodSettings/byodRegistrationSuccessSettings/redirectUrl"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/byodSettings/byodRegistrationSuccessSettings/redirectUrl:
+
+      .. rst-class:: ansible-option-title
+
+      **redirectUrl**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/byodSettings/byodRegistrationSuccessSettings/redirectUrl" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Target URL for redirection, used when successRedirect = URL.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/byodSettings/byodRegistrationSuccessSettings/successRedirect"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/byodSettings/byodRegistrationSuccessSettings/successRedirect:
+
+      .. rst-class:: ansible-option-title
+
+      **successRedirect**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/byodSettings/byodRegistrationSuccessSettings/successRedirect" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      After an Authentication Success where should device be redirected. Allowed values.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/byodSettings/byodWelcomeSettings"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/byodSettings/byodWelcomeSettings:
+
+      .. rst-class:: ansible-option-title
+
+      **byodWelcomeSettings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/byodSettings/byodWelcomeSettings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Configuration of BYOD endpoint welcome step configuration.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/byodSettings/byodWelcomeSettings/aupDisplay"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/byodSettings/byodWelcomeSettings/aupDisplay:
+
+      .. rst-class:: ansible-option-title
+
+      **aupDisplay**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/byodSettings/byodWelcomeSettings/aupDisplay" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      How the AUP should be displayed, either on page or as a link. Only valid if includeAup = true. Allowed values - ONPAGE, - ASLINK.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/byodSettings/byodWelcomeSettings/enableBYOD"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/byodSettings/byodWelcomeSettings/enableBYOD:
+
+      .. rst-class:: ansible-option-title
+
+      **enableBYOD**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/byodSettings/byodWelcomeSettings/enableBYOD" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EnableBYOD flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`no`
+      - :ansible-option-choices-entry:`yes`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/byodSettings/byodWelcomeSettings/enableGuestAccess"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/byodSettings/byodWelcomeSettings/enableGuestAccess:
+
+      .. rst-class:: ansible-option-title
+
+      **enableGuestAccess**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/byodSettings/byodWelcomeSettings/enableGuestAccess" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EnableGuestAccess flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`no`
+      - :ansible-option-choices-entry:`yes`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/byodSettings/byodWelcomeSettings/includeAup"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/byodSettings/byodWelcomeSettings/includeAup:
+
+      .. rst-class:: ansible-option-title
+
+      **includeAup**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/byodSettings/byodWelcomeSettings/includeAup" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IncludeAup flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`no`
+      - :ansible-option-choices-entry:`yes`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/byodSettings/byodWelcomeSettings/requireAupAcceptance"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/byodSettings/byodWelcomeSettings/requireAupAcceptance:
+
+      .. rst-class:: ansible-option-title
+
+      **requireAupAcceptance**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/byodSettings/byodWelcomeSettings/requireAupAcceptance" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      RequireAupAcceptance flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`no`
+      - :ansible-option-choices-entry:`yes`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/byodSettings/byodWelcomeSettings/requireMDM"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/byodSettings/byodWelcomeSettings/requireMDM:
+
+      .. rst-class:: ansible-option-title
+
+      **requireMDM**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/byodSettings/byodWelcomeSettings/requireMDM" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      RequireMDM flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`no`
+      - :ansible-option-choices-entry:`yes`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/byodSettings/byodWelcomeSettings/requireScrolling"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/byodSettings/byodWelcomeSettings/requireScrolling:
+
+      .. rst-class:: ansible-option-title
+
+      **requireScrolling**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/byodSettings/byodWelcomeSettings/requireScrolling" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Require BYOD devices to scroll down to the bottom of the AUP, Only valid if includeAup = true.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`no`
+      - :ansible-option-choices-entry:`yes`
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/portalSettings"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/portalSettings:
+
+      .. rst-class:: ansible-option-title
+
+      **portalSettings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/portalSettings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The port, interface, certificate, and other basic settings of a portal.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/portalSettings/allowedInterfaces"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/portalSettings/allowedInterfaces:
+
+      .. rst-class:: ansible-option-title
+
+      **allowedInterfaces**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/portalSettings/allowedInterfaces" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Interfaces that the portal will be reachable on. Allowed values - eth0, - eth1, - eth2, - eth3, - eth4, - eth5, - bond0, - bond1, - bond2.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/portalSettings/alwaysUsedLanguage"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/portalSettings/alwaysUsedLanguage:
+
+      .. rst-class:: ansible-option-title
+
+      **alwaysUsedLanguage**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/portalSettings/alwaysUsedLanguage" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Used when displayLang = ALWAYSUSE.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/portalSettings/certificateGroupTag"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/portalSettings/certificateGroupTag:
+
+      .. rst-class:: ansible-option-title
+
+      **certificateGroupTag**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/portalSettings/certificateGroupTag" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Logical name of the x.509 server certificate that will be used for the portal.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/portalSettings/displayLang"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/portalSettings/displayLang:
+
+      .. rst-class:: ansible-option-title
+
+      **displayLang**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/portalSettings/displayLang" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Allowed values - USEBROWSERLOCALE, - ALWAYSUSE.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/portalSettings/endpointIdentityGroup"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/portalSettings/endpointIdentityGroup:
+
+      .. rst-class:: ansible-option-title
+
+      **endpointIdentityGroup**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/portalSettings/endpointIdentityGroup" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Unique Id of the endpoint identity group where user's devices will be added. Used only in Hotspot Portal.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/portalSettings/fallbackLanguage"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/portalSettings/fallbackLanguage:
+
+      .. rst-class:: ansible-option-title
+
+      **fallbackLanguage**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/portalSettings/fallbackLanguage" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Used when displayLang = USEBROWSERLOCALE.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/portalSettings/httpsPort"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/portalSettings/httpsPort:
+
+      .. rst-class:: ansible-option-title
+
+      **httpsPort**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/portalSettings/httpsPort" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The port number that the allowed interfaces will listen on. Range from 8000 to 8999.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/supportInfoSettings"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/supportInfoSettings:
+
+      .. rst-class:: ansible-option-title
+
+      **supportInfoSettings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/supportInfoSettings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Byod Portal's supportInfoSettings.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/supportInfoSettings/defaultEmptyFieldValue"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/supportInfoSettings/defaultEmptyFieldValue:
+
+      .. rst-class:: ansible-option-title
+
+      **defaultEmptyFieldValue**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/supportInfoSettings/defaultEmptyFieldValue" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The default value displayed for an empty field. Only valid when emptyFieldDisplay = DISPLAYWITHDEFAULTVALUE.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/supportInfoSettings/emptyFieldDisplay"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/supportInfoSettings/emptyFieldDisplay:
+
+      .. rst-class:: ansible-option-title
+
+      **emptyFieldDisplay**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/supportInfoSettings/emptyFieldDisplay" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Specifies how empty fields are handled on the Support Information Page. Allowed values - HIDE, - DISPLAYWITHNOVALUE, - DISPLAYWITHDEFAULTVALUE.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/supportInfoSettings/includeBrowserUserAgent"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/supportInfoSettings/includeBrowserUserAgent:
+
+      .. rst-class:: ansible-option-title
+
+      **includeBrowserUserAgent**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/supportInfoSettings/includeBrowserUserAgent" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IncludeBrowserUserAgent flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`no`
+      - :ansible-option-choices-entry:`yes`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/supportInfoSettings/includeFailureCode"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/supportInfoSettings/includeFailureCode:
+
+      .. rst-class:: ansible-option-title
+
+      **includeFailureCode**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/supportInfoSettings/includeFailureCode" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IncludeFailureCode flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`no`
+      - :ansible-option-choices-entry:`yes`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/supportInfoSettings/includeIpAddress"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/supportInfoSettings/includeIpAddress:
+
+      .. rst-class:: ansible-option-title
+
+      **includeIpAddress**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/supportInfoSettings/includeIpAddress" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IncludeIpAddress flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`no`
+      - :ansible-option-choices-entry:`yes`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/supportInfoSettings/includeMacAddr"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/supportInfoSettings/includeMacAddr:
+
+      .. rst-class:: ansible-option-title
+
+      **includeMacAddr**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/supportInfoSettings/includeMacAddr" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IncludeMacAddr flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`no`
+      - :ansible-option-choices-entry:`yes`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/supportInfoSettings/includePolicyServer"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/supportInfoSettings/includePolicyServer:
+
+      .. rst-class:: ansible-option-title
+
+      **includePolicyServer**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/supportInfoSettings/includePolicyServer" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IncludePolicyServer flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`no`
+      - :ansible-option-choices-entry:`yes`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/supportInfoSettings/includeSupportInfoPage"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__parameter-settings/supportInfoSettings/includeSupportInfoPage:
+
+      .. rst-class:: ansible-option-title
+
+      **includeSupportInfoPage**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/supportInfoSettings/includeSupportInfoPage" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IncludeSupportInfoPage flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`no`
+      - :ansible-option-choices-entry:`yes`
+
+      .. raw:: html
+
+        </div>
+
+
+
+
+.. Attributes
+
+
+.. Notes
+
+Notes
+-----
+
+.. note::
+   - SDK Method used are byod_portal.ByodPortal.create_byod_portal, byod_portal.ByodPortal.delete_byod_portal_by_id, byod_portal.ByodPortal.update_byod_portal_by_id,
+   - Paths used are post /ers/config/byodportal, delete /ers/config/byodportal/{id},
+   - Does not support \ :literal:`check\_mode`\ 
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
+   - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
+
+.. Seealso
+
+
+.. Examples
+
+Examples
+--------
+
+.. code-block:: yaml+jinja
+
+    
+    - name: Update by id
+      cisco.ise.byod_portal:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: present
+        customizations:
+          globalCustomizations:
+            backgroundImage:
+              data: string
+            bannerImage:
+              data: string
+            bannerTitle: string
+            contactText: string
+            desktopLogoImage:
+              data: string
+            footerElement: string
+            mobileLogoImage:
+              data: string
+          language:
+            viewLanguage: string
+          pageCustomizations:
+            data:
+            - key: string
+              value: string
+          portalTheme:
+            id: string
+            name: string
+            themeData: string
+          portalTweakSettings:
+            bannerColor: string
+            bannerTextColor: string
+            pageBackgroundColor: string
+            pageLabelAndTextColor: string
+        description: string
+        id: string
+        name: string
+        portalTestUrl: string
+        portalType: string
+        settings:
+          byodSettings:
+            byodRegistrationSettings:
+              endPointIdentityGroupId: string
+              showDeviceID: true
+            byodRegistrationSuccessSettings:
+              redirectUrl: string
+              successRedirect: string
+            byodWelcomeSettings:
+              aupDisplay: string
+              enableBYOD: true
+              enableGuestAccess: true
+              includeAup: true
+              requireAupAcceptance: true
+              requireMDM: true
+              requireScrolling: true
+          portalSettings:
+            allowedInterfaces:
+            - string
+            alwaysUsedLanguage: string
+            certificateGroupTag: string
+            displayLang: string
+            endpointIdentityGroup: string
+            fallbackLanguage: string
+            httpsPort: 0
+          supportInfoSettings:
+            defaultEmptyFieldValue: string
+            emptyFieldDisplay: string
+            includeBrowserUserAgent: true
+            includeFailureCode: true
+            includeIpAddress: true
+            includeMacAddr: true
+            includePolicyServer: true
+            includeSupportInfoPage: true
+
+    - name: Delete by id
+      cisco.ise.byod_portal:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: absent
+        id: string
+
+    - name: Create
+      cisco.ise.byod_portal:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: present
+        customizations:
+          globalCustomizations:
+            backgroundImage:
+              data: string
+            bannerImage:
+              data: string
+            bannerTitle: string
+            contactText: string
+            desktopLogoImage:
+              data: string
+            footerElement: string
+            mobileLogoImage:
+              data: string
+          language:
+            viewLanguage: string
+          pageCustomizations:
+            data:
+            - key: string
+              value: string
+          portalTheme:
+            id: string
+            name: string
+            themeData: string
+          portalTweakSettings:
+            bannerColor: string
+            bannerTextColor: string
+            pageBackgroundColor: string
+            pageLabelAndTextColor: string
+        description: string
+        id: string
+        name: string
+        portalTestUrl: string
+        portalType: string
+        settings:
+          byodSettings:
+            byodRegistrationSettings:
+              endPointIdentityGroupId: string
+              showDeviceID: true
+            byodRegistrationSuccessSettings:
+              redirectUrl: string
+              successRedirect: string
+            byodWelcomeSettings:
+              aupDisplay: string
+              enableBYOD: true
+              enableGuestAccess: true
+              includeAup: true
+              requireAupAcceptance: true
+              requireMDM: true
+              requireScrolling: true
+          portalSettings:
+            allowedInterfaces:
+            - string
+            alwaysUsedLanguage: string
+            certificateGroupTag: string
+            displayLang: string
+            endpointIdentityGroup: string
+            fallbackLanguage: string
+            httpsPort: 0
+          supportInfoSettings:
+            defaultEmptyFieldValue: string
+            emptyFieldDisplay: string
+            includeBrowserUserAgent: true
+            includeFailureCode: true
+            includeIpAddress: true
+            includeMacAddr: true
+            includePolicyServer: true
+            includeSupportInfoPage: true
+
+
+
+
+
+.. Facts
+
+
+.. Return values
+
+Return Values
+-------------
+Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Key
+    - Description
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-ise_response"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__return-ise_response:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_response**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-ise_response" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      A dictionary or list with the response returned by the Cisco ISE Python SDK
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` "{\\n  \\"id\\": \\"string\\",\\n  \\"name\\": \\"string\\",\\n  \\"description\\": \\"string\\",\\n  \\"portalType\\": \\"string\\",\\n  \\"portalTestUrl\\": \\"string\\",\\n  \\"settings\\": {\\n    \\"portalSettings\\": {\\n      \\"httpsPort\\": 0,\\n      \\"allowedInterfaces\\": [\\n        \\"string\\"\\n      ],\\n      \\"certificateGroupTag\\": \\"string\\",\\n      \\"endpointIdentityGroup\\": \\"string\\",\\n      \\"displayLang\\": \\"string\\",\\n      \\"fallbackLanguage\\": \\"string\\",\\n      \\"alwaysUsedLanguage\\": \\"string\\"\\n    },\\n    \\"byodSettings\\": {\\n      \\"byodWelcomeSettings\\": {\\n        \\"enableBYOD\\": true,\\n        \\"enableGuestAccess\\": true,\\n        \\"requireMDM\\": true,\\n        \\"includeAup\\": true,\\n        \\"aupDisplay\\": \\"string\\",\\n        \\"requireAupAcceptance\\": true,\\n        \\"requireScrolling\\": true\\n      },\\n      \\"byodRegistrationSettings\\": {\\n        \\"showDeviceID\\": true,\\n        \\"endPointIdentityGroupId\\": \\"string\\"\\n      },\\n      \\"byodRegistrationSuccessSettings\\": {\\n        \\"successRedirect\\": \\"string\\",\\n        \\"redirectUrl\\": \\"string\\"\\n      }\\n    },\\n    \\"supportInfoSettings\\": {\\n      \\"includeSupportInfoPage\\": true,\\n      \\"includeMacAddr\\": true,\\n      \\"includeIpAddress\\": true,\\n      \\"includeBrowserUserAgent\\": true,\\n      \\"includePolicyServer\\": true,\\n      \\"includeFailureCode\\": true,\\n      \\"emptyFieldDisplay\\": \\"string\\",\\n      \\"defaultEmptyFieldValue\\": \\"string\\"\\n    }\\n  },\\n  \\"customizations\\": {\\n    \\"portalTheme\\": {\\n      \\"id\\": \\"string\\",\\n      \\"name\\": \\"string\\",\\n      \\"themeData\\": \\"string\\"\\n    },\\n    \\"portalTweakSettings\\": {\\n      \\"bannerColor\\": \\"string\\",\\n      \\"bannerTextColor\\": \\"string\\",\\n      \\"pageBackgroundColor\\": \\"string\\",\\n      \\"pageLabelAndTextColor\\": \\"string\\"\\n    },\\n    \\"language\\": {\\n      \\"viewLanguage\\": \\"string\\"\\n    },\\n    \\"globalCustomizations\\": {\\n      \\"mobileLogoImage\\": {\\n        \\"data\\": \\"string\\"\\n      },\\n      \\"desktopLogoImage\\": {\\n        \\"data\\": \\"string\\"\\n      },\\n      \\"bannerImage\\": {\\n        \\"data\\": \\"string\\"\\n      },\\n      \\"backgroundImage\\": {\\n        \\"data\\": \\"string\\"\\n      },\\n      \\"bannerTitle\\": \\"string\\",\\n      \\"contactText\\": \\"string\\",\\n      \\"footerElement\\": \\"string\\"\\n    },\\n    \\"pageCustomizations\\": {\\n      \\"data\\": [\\n        {\\n          \\"key\\": \\"string\\",\\n          \\"value\\": \\"string\\"\\n        }\\n      ]\\n    }\\n  },\\n  \\"link\\": {\\n    \\"rel\\": \\"string\\",\\n    \\"href\\": \\"string\\",\\n    \\"type\\": \\"string\\"\\n  }\\n}\\n"
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-ise_update_response"></div>
+
+      .. _ansible_collections.cisco.ise.byod_portal_module__return-ise_update_response:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_update_response**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-ise_update_response" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      :ansible-option-versionadded:`added in 1.1.0 of cisco.ise`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      A dictionary or list with the response returned by the Cisco ISE Python SDK
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` "{\\n  \\"UpdatedFieldsList\\": {\\n    \\"updatedField\\": [\\n      {\\n        \\"field\\": \\"string\\",\\n        \\"oldValue\\": \\"string\\",\\n        \\"newValue\\": \\"string\\"\\n      }\\n    ],\\n    \\"field\\": \\"string\\",\\n    \\"oldValue\\": \\"string\\",\\n    \\"newValue\\": \\"string\\"\\n  }\\n}\\n"
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+..  Status (Presently only deprecated)
+
+
+.. Authors
+
+Authors
+~~~~~~~
+
+- Rafael Campos (@racampos)
+
+
+
+.. Parsing errors
+
