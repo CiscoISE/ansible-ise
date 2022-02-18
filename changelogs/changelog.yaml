@@ -669,3 +669,18 @@ releases:
       release_summary: Update README links in galaxy
       bugfixes:
         - update README links in galaxy from relative to absolute links.
+  2.2.2:
+    release_date: "2022-02-18"
+    changes:
+      release_summary: Update README recommended SDK version and module documentation
+      bugfixes:
+        - Update README recommended SDK version in compatibility matrix
+        - trustsec_sg_vn_mapping_bulk_create - update EXAMPLES block of module documentation
+        - trustsec_sg_vn_mapping_bulk_delete - update EXAMPLES block of module documentation
+        - trustsec_sg_vn_mapping_bulk_update - update EXAMPLES block of module documentation
+        - trustsec_vn_bulk_create - update EXAMPLES block of module documentation
+        - trustsec_vn_bulk_delete - update EXAMPLES block of module documentation
+        - trustsec_vn_bulk_update - update EXAMPLES block of module documentation
+        - trustsec_vn_vlan_mapping_bulk_create - update EXAMPLES block of module documentation
+        - trustsec_vn_vlan_mapping_bulk_delete - update EXAMPLES block of module documentation
+        - trustsec_vn_vlan_mapping_bulk_update - update EXAMPLES block of module documentation
