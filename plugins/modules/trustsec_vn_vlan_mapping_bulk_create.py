@@ -64,6 +64,15 @@ EXAMPLES = r"""
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
+    payload:
+    - id: string
+      isData: true
+      isDefaultVlan: true
+      lastUpdate: string
+      maxValue: 1
+      name: string
+      vnId: string
+      vnName: string
 
 """
 
