@@ -5,7 +5,7 @@
 Cisco.Ise
 =========
 
-Collection version 2.2.1
+Collection version 2.2.2
 
 .. toctree::
     :maxdepth: 1
