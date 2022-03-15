@@ -67,7 +67,7 @@ options:
     description: The id store where the internal user's password is kept.
     type: str
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 1.5.0
 - python >= 3.5
 notes:
   - SDK Method used are

@@ -23,7 +23,7 @@ options:
     description: Auto approve certificate based accounts when true.
     type: bool
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 1.5.0
 - python >= 3.5
 notes:
   - SDK Method used are

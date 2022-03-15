@@ -34,7 +34,7 @@ options:
     description: Virtual Network. At least one of subnet or sgt or vn should be defined.
     type: str
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 1.5.0
 - python >= 3.5
 notes:
   - SDK Method used are
