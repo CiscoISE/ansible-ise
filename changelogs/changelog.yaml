@@ -691,3 +691,13 @@ releases:
       bugfixes:
         - Update README, add ISE 3.1 + Patch 1 and ISE API Versioning notes
         - Update README, update Compatibility matrix.
+  2.3.0:
+    release_date: "2022-03-16"
+    changes:
+      release_summary: Add ise_uses_csrf_token parameter, and ISE CSRF Check support
+      minor_changes:
+        - Add ise_uses_csrf_token parameter to modules
+      bugfixes:
+        - Update recommended SDK version in modules from 1.4.0 to 1.5.0
+        - Update README recommended SDK version in compatibility matrix
+        - Update README, update Compatibility matrix.
