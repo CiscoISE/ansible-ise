@@ -50,12 +50,14 @@ The recommended versions are listed below on the [Compatibility matrix](https://
 | Cisco ISE version | Ansible "cisco.ise" version  | Python "ciscoisesdk" version |
 |-------------------|------------------------------|------------------------------|
 | 3.1.0             | 2.0.0                        | 1.2.0                        |
-| 3.1.1             | 2.2.2                        | 1.4.2                        |
+| 3.1.1             | 2.2.3                        | 1.4.2                        |
 
 *Notes*:
 
 1. The "Python 'ciscoisesdk' version" column has the minimum recommended version used when testing the Ansible collection. This means you could use later versions of the Python "ciscoisesdk" than those listed.
 2. The "Cisco ISE version" column has the value of the `ise_version` you should use for the Ansible collection.
+
+The "Cisco ISE version" value of '3.1.1' refers to Cisco ISE 3.1 + Patch 1.
 
 ## Installing according to Compatibility Matrix
 
