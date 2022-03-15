@@ -4,7 +4,9 @@
 
 The ise-ansible project provides an Ansible collection for managing and automating your Cisco Identity Services Engine (ISE) environment. It consists of a set of modules and roles for performing tasks related to Cisco ISE.
 
-This collection has been tested and supports Cisco ISE 3.1.1.
+This collection has been validated with Cisco ISE 3.1 + Patch 1.
+
+These Ansible modules will work with any version of ISE that supports the underlying REST API resources you want to configure. Please see the [ISE API Versioning](https://developer.cisco.com/docs/identity-services-engine/v1/#!versioning) reference for which REST Resources were first supported in which Cisco ISE Version.
 
 *Note: This collection is not compatible with versions of Ansible before v2.9.*
 
@@ -48,12 +50,14 @@ The recommended versions are listed below on the [Compatibility matrix](https://
 | Cisco ISE version | Ansible "cisco.ise" version  | Python "ciscoisesdk" version |
 |-------------------|------------------------------|------------------------------|
 | 3.1.0             | 2.0.0                        | 1.2.0                        |
-| 3.1.1             | 2.2.2                        | 1.4.2                        |
+| 3.1.1             | 2.2.3                        | 1.4.2                        |
 
 *Notes*:
 
 1. The "Python 'ciscoisesdk' version" column has the minimum recommended version used when testing the Ansible collection. This means you could use later versions of the Python "ciscoisesdk" than those listed.
 2. The "Cisco ISE version" column has the value of the `ise_version` you should use for the Ansible collection.
+
+The "Cisco ISE version" value of '3.1.1' refers to Cisco ISE 3.1 + Patch 1.
 
 ## Installing according to Compatibility Matrix
 
