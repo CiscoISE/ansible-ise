@@ -684,3 +684,10 @@ releases:
         - trustsec_vn_vlan_mapping_bulk_create - update EXAMPLES block of module documentation
         - trustsec_vn_vlan_mapping_bulk_delete - update EXAMPLES block of module documentation
         - trustsec_vn_vlan_mapping_bulk_update - update EXAMPLES block of module documentation
+  2.2.3:
+    release_date: "2022-03-15"
+    changes:
+      release_summary: Update README, add ISE API Versioning and ISE 3.1 + Patch 1 notes
+      bugfixes:
+        - Update README, add ISE 3.1 + Patch 1 and ISE API Versioning notes
+        - Update README, update Compatibility matrix.
