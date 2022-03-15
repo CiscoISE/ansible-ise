@@ -4,7 +4,8 @@
 # Copyright (c) 2021, Cisco Systems
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
-from __future__ import (absolute_import, division, print_function)
+from __future__ import absolute_import, division, print_function
+
 __metaclass__ = type
 
 
@@ -56,6 +57,14 @@ options:
         type: bool
         default: true
         version_added: '1.1.0'
+    ise_uses_csrf_token:
+        description:
+          - Flag that informs the SDK whether we send the CSRF token to ISE's ERS APIs.
+          - If it is True, the SDK assumes that your ISE CSRF Check is enabled.
+          - If it is True, it assumes you need the SDK to manage the CSRF token automatically for you.
+        type: bool
+        default: false
+        version_added: '3.0.0'
 notes:
     - "Supports C(check_mode)"
     - "The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK"
