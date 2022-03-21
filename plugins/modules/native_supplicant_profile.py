@@ -27,6 +27,7 @@ options:
     type: str
   wirelessProfiles:
     description: Native Supplicant Profile's wirelessProfiles.
+    elements: dict
     suboptions:
       actionType:
         description: Action type for WifiProfile. Allowed values - ADD, - UPDATE, -

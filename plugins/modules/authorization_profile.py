@@ -25,6 +25,7 @@ options:
     type: str
   advancedAttributes:
     description: Authorization Profile's advancedAttributes.
+    elements: dict
     suboptions:
       leftHandSideDictionaryAttribue:
         description: Authorization Profile's leftHandSideDictionaryAttribue.

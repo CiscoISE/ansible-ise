@@ -18,6 +18,7 @@ author: Rafael Campos (@racampos)
 options:
   additionalData:
     description: Active Directory Leave Domain With All Nodes's additionalData.
+    elements: dict
     suboptions:
       name:
         description: Active Directory Leave Domain With All Nodes's name.

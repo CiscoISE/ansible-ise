@@ -31,6 +31,7 @@ options:
     type: str
   idSeqItem:
     description: Id Store Sequence's idSeqItem.
+    elements: dict
     suboptions:
       idstore:
         description: Id Store Sequence's idstore.

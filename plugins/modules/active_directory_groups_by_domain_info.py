@@ -22,6 +22,7 @@ options:
     type: str
   additionalData:
     description: Active Directory Get Groups By Domain Info's additionalData.
+    elements: dict
     suboptions:
       name:
         description: Active Directory Get Groups By Domain Info's name.

@@ -23,6 +23,7 @@ options:
     type: str
   additionalData:
     description: Active Directory Get User Groups Info's additionalData.
+    elements: dict
     suboptions:
       name:
         description: Active Directory Get User Groups Info's name.

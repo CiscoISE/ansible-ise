@@ -18,6 +18,7 @@ author: Rafael Campos (@racampos)
 options:
   additionalData:
     description: Active Directory Join Domain's additionalData.
+    elements: dict
     suboptions:
       name:
         description: Active Directory Join Domain's name.

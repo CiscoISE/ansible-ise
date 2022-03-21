@@ -20,6 +20,7 @@ options:
   BeforeAcceptAttrManipulatorsList:
     description: The beforeAcceptAttrManipulators is required only if useAttrSetBeforeAcc
       is true.
+    elements: dict
     suboptions:
       action:
         description: Allowed Values - ADD, - UPDATE, - REMOVE, - REMOVEANY.
@@ -40,6 +41,7 @@ options:
   OnRequestAttrManipulatorList:
     description: The onRequestAttrManipulators is required only if useAttrSetOnRequest
       is true.
+    elements: dict
     suboptions:
       action:
         description: Allowed Values - ADD, - UPDATE, - REMOVE, - REMOVEANY.

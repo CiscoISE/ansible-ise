@@ -27,6 +27,7 @@ options:
     type: str
   networkIdentities:
     description: Array of NIs.
+    elements: dict
     suboptions:
       ports:
         description: Trustsec Nbar App's ports.

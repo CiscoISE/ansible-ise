@@ -18,6 +18,7 @@ author: Rafael Campos (@racampos)
 options:
   additionalData:
     description: Guest User Change Sponsor Password's additionalData.
+    elements: dict
     suboptions:
       name:
         description: Guest User Change Sponsor Password's name.

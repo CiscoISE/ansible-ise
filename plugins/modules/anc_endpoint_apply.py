@@ -18,6 +18,7 @@ author: Rafael Campos (@racampos)
 options:
   additionalData:
     description: Anc Endpoint Apply's additionalData.
+    elements: dict
     suboptions:
       name:
         description: Anc Endpoint Apply's name.

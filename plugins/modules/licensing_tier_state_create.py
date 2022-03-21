@@ -20,6 +20,7 @@ author: Rafael Campos (@racampos)
 options:
   payload:
     description: Licensing Tier State Create's payload.
+    elements: dict
     suboptions:
       name:
         description: Licensing Tier State Create's name.
@@ -49,6 +50,7 @@ EXAMPLES = r"""
     payload:
     - name: string
       status: string
+
 """
 
 RETURN = r"""

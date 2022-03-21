@@ -26,6 +26,7 @@ options:
     suboptions:
       headers:
         description: Rest Id Store's headers.
+        elements: dict
         suboptions:
           key:
             description: Rest Id Store's key.

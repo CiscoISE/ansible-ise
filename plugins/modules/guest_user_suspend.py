@@ -19,6 +19,7 @@ author: Rafael Campos (@racampos)
 options:
   additionalData:
     description: Guest User Suspend's additionalData.
+    elements: dict
     suboptions:
       name:
         description: Guest User Suspend's name.

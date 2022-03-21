@@ -19,6 +19,7 @@ author: Rafael Campos (@racampos)
 options:
   allowedValues:
     description: All of the allowed values for the dictionary attribute.
+    elements: dict
     suboptions:
       isDefault:
         description: True if this key value is the default between the allowed values

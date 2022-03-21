@@ -18,6 +18,7 @@ author: Rafael Campos (@racampos)
 options:
   additionalData:
     description: Guest User Email's additionalData.
+    elements: dict
     suboptions:
       name:
         description: Guest User Email's name.

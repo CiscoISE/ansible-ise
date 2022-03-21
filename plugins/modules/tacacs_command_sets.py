@@ -22,6 +22,7 @@ options:
     suboptions:
       commandList:
         description: Tacacs Command Sets's commandList.
+        elements: dict
         suboptions:
           arguments:
             description: Tacacs Command Sets's arguments.

@@ -17,6 +17,7 @@ author: Rafael Campos (@racampos)
 options:
   payload:
     description: Trustsec Vn Bulk Update's payload.
+    elements: dict
     suboptions:
       additionalAttributes:
         description: JSON String of additional attributes for the Virtual Network.

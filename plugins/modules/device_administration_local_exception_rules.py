@@ -62,6 +62,7 @@ options:
           children:
             description: In case type is andBlock or orBlock addtional conditions will
               be aggregated under this logical (OR/AND) condition.
+            elements: dict
             suboptions:
               conditionType:
                 description: <ul><li>Inidicates whether the record is the condition

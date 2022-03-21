@@ -78,6 +78,7 @@ options:
         suboptions:
           data:
             description: The Dictionary will be exposed here as key value pair.
+            elements: dict
             suboptions:
               key:
                 description: Self Registered Portal's key.
@@ -299,6 +300,7 @@ options:
             type: bool
           socialConfigs:
             description: Self Registered Portal's socialConfigs.
+            elements: dict
             suboptions:
               socialMediaType:
                 description: Self Registered Portal's socialMediaType.

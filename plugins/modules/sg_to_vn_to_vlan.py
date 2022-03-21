@@ -31,6 +31,7 @@ options:
     type: str
   virtualnetworklist:
     description: Sg To Vn To Vlan's virtualnetworklist.
+    elements: dict
     suboptions:
       defaultVirtualNetwork:
         description: DefaultVirtualNetwork flag.
@@ -46,6 +47,7 @@ options:
         type: str
       vlans:
         description: Sg To Vn To Vlan's vlans.
+        elements: dict
         suboptions:
           data:
             description: Data flag.

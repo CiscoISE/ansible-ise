@@ -17,6 +17,7 @@ author: Rafael Campos (@racampos)
 options:
   payload:
     description: Trustsec Vn Vlan Mapping Bulk Update's payload.
+    elements: dict
     suboptions:
       id:
         description: Identifier of the VN-Vlan Mapping.

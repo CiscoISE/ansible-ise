@@ -78,6 +78,7 @@ options:
         suboptions:
           data:
             description: The Dictionary will be exposed here as key value pair.
+            elements: dict
             suboptions:
               key:
                 description: My Device Portal's key.

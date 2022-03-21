@@ -31,6 +31,7 @@ options:
     suboptions:
       sessionAttributeList:
         description: Tacacs Profile's sessionAttributeList.
+        elements: dict
         suboptions:
           name:
             description: Tacacs Profile's name.

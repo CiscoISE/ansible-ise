@@ -18,6 +18,7 @@ author: Rafael Campos (@racampos)
 options:
   additionalData:
     description: Anc Endpoint Clear's additionalData.
+    elements: dict
     suboptions:
       name:
         description: Anc Endpoint Clear's name.

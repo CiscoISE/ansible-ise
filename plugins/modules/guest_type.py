@@ -25,6 +25,7 @@ options:
         type: bool
       dayTimeLimits:
         description: List of Time Ranges for account access.
+        elements: dict
         suboptions:
           days:
             description: List of Days Values should be one of Week day. Allowed values

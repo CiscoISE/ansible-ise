@@ -78,6 +78,7 @@ options:
         suboptions:
           data:
             description: Hotspot Portal's data.
+            elements: dict
             suboptions:
               key:
                 description: Hotspot Portal's key.

@@ -22,6 +22,7 @@ options:
     type: str
   additionalData:
     description: Active Directory Is User Member Of Group's additionalData.
+    elements: dict
     suboptions:
       name:
         description: Active Directory Is User Member Of Group's name.

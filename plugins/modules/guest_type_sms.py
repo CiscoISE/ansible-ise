@@ -18,6 +18,7 @@ author: Rafael Campos (@racampos)
 options:
   additionalData:
     description: Guest Type Sms's additionalData.
+    elements: dict
     suboptions:
       name:
         description: Guest Type Sms's name.

@@ -17,6 +17,7 @@ author: Rafael Campos (@racampos)
 options:
   payload:
     description: Trustsec Sg Vn Mapping Bulk Update's payload.
+    elements: dict
     suboptions:
       id:
         description: Identifier of the SG-VN mapping.
