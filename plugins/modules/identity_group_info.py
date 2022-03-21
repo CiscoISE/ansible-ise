@@ -56,6 +56,7 @@ options:
       Less Then <br/> STARTSW | Starts With <br/> NSTARTSW | Not Starts With <br/> ENDSW | Ends With <br/> NENDSW
       | Not Ends With <br/> CONTAINS | Contains <br/> NCONTAINS | Not Contains <br/>.
     type: list
+    elements: str
   filterType:
     description:
     - >

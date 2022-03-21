@@ -35,10 +35,12 @@ options:
   filterBy:
     description:
     - FilterBy query parameter.
+    elements: str
     type: list
   filterValue:
     description:
     - FilterValue query parameter.
+    elements: str
     type: list
 requirements:
 - ciscoisesdk >= 1.5.0

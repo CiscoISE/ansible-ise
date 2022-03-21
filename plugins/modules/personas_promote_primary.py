@@ -33,6 +33,7 @@ options:
     description:
     - The roles to be fulfilled by this node. Must contain at least PPAN and any of MNT-ACTIVE or MNT-STANDBY or PDP
     type: list
+    elements: str
   ise_verify:
     description:
     - Whether or not to verify the identity of the node.

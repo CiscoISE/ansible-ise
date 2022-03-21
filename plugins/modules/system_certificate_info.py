@@ -54,6 +54,7 @@ options:
       </tr> <tr> <td>NENDSW</td> <td>Not Ends With</td> </tr> <tr> <td>CONTAINS</td> <td>Contains</td> </tr> <tr>
       <td>NCONTAINS</td> <td>Not Contains</td> </tr> </tbody> </table> </div>.
     type: list
+    elements: str
   filterType:
     description:
     - >
