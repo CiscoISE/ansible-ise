@@ -86,7 +86,6 @@ options:
               value:
                 description: Self Registered Portal's value.
                 type: str
-            elements: dict
             type: list
         type: dict
       portalTheme:
@@ -310,7 +309,6 @@ options:
                 description: Self Registered Portal's socialMediaValue.
                 type: str
             type: list
-            elements: dict
           timeBetweenLoginsDuringRateLimit:
             description: Time between login attempts when rate limiting.
             type: int
