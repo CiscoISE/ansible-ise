@@ -86,6 +86,7 @@ options:
               value:
                 description: Self Registered Portal's value.
                 type: str
+            elements: dict
             type: list
         type: dict
       portalTheme:
@@ -586,6 +587,7 @@ options:
             type: str
           sponsorPortalList:
             description: Self Registered Portal's sponsorPortalList.
+            elements: str
             type: list
         type: dict
       selfRegSuccessSettings:

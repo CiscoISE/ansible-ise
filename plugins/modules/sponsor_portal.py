@@ -182,6 +182,7 @@ options:
             type: bool
           socialConfigs:
             description: Sponsor Portal's socialConfigs.
+            elements: dict
             type: list
           timeBetweenLoginsDuringRateLimit:
             description: Time between login attempts when rate limiting.
