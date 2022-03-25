@@ -25,7 +25,7 @@ options:
     - Duration path parameter.
     type: str
 requirements:
-- ciscoisesdk >= 1.5.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are

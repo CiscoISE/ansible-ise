@@ -21,7 +21,7 @@ options:
     - How long to wait for the server to send data before giving up.
     type: int
 requirements:
-- ciscoisesdk >= 1.5.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are

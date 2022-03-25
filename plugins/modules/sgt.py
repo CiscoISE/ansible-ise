@@ -43,7 +43,7 @@ options:
     description: Value range 2 ot 65519 or -1 to auto-generate.
     type: int
 requirements:
-- ciscoisesdk >= 1.5.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are
