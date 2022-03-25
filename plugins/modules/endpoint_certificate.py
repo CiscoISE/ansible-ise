@@ -79,5 +79,10 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "data": "filecontent",
+      "filename": "filename",
+      "dirpath": "download/directory",
+      "path": "download/directory/filename"
+    }
 """

@@ -4,9 +4,11 @@
 # Copyright (c) 2021, Cisco Systems
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
-from __future__ import (absolute_import, division, print_function)
+from __future__ import absolute_import, division, print_function
+
 __metaclass__ = type
 from ansible.plugins.action import ActionBase
+
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
         AnsibleArgSpecValidator,
@@ -28,6 +30,7 @@ argument_spec.update(dict(
     id=dict(type="str"),
     dirPath=dict(type="str"),
     saveFile=dict(type="bool"),
+    filename=dict(type="str"),
 ))
 
 required_if = []
@@ -68,6 +71,7 @@ class ActionModule(ActionBase):
             id=params.get("id"),
             dirpath=params.get("dirPath"),
             save_file=params.get("saveFile"),
+            filename=params.get("filename"),
         )
         return new_object
 
@@ -84,11 +88,17 @@ class ActionModule(ActionBase):
         id = self._task.args.get("id")
         name = self._task.args.get("name")
         if id:
-            response = ise.exec(
+            download_response = ise.exec(
                 family="certificates",
                 function='export_trusted_certificate',
                 params=self.get_object(self._task.args)
-            ).data
+            )
+            response = dict(
+                data=download_response.data.decode(encoding='utf-8'),
+                filename=download_response.filename,
+                dirpath=download_response.dirpath,
+                path=download_response.path,
+            )
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result
