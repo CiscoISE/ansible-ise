@@ -21,7 +21,7 @@ options:
     - TaskId path parameter. The id of the task executed before.
     type: str
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are

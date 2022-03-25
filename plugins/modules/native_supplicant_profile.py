@@ -27,6 +27,7 @@ options:
     type: str
   wirelessProfiles:
     description: Native Supplicant Profile's wirelessProfiles.
+    elements: dict
     suboptions:
       actionType:
         description: Action type for WifiProfile. Allowed values - ADD, - UPDATE, -
@@ -46,7 +47,7 @@ options:
         type: str
     type: list
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are

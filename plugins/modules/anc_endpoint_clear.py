@@ -18,6 +18,7 @@ author: Rafael Campos (@racampos)
 options:
   additionalData:
     description: Anc Endpoint Clear's additionalData.
+    elements: dict
     suboptions:
       name:
         description: Anc Endpoint Clear's name.
@@ -27,7 +28,7 @@ options:
         type: str
     type: list
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are

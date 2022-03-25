@@ -31,6 +31,7 @@ options:
     type: str
   virtualnetworklist:
     description: Sg To Vn To Vlan's virtualnetworklist.
+    elements: dict
     suboptions:
       defaultVirtualNetwork:
         description: DefaultVirtualNetwork flag.
@@ -46,6 +47,7 @@ options:
         type: str
       vlans:
         description: Sg To Vn To Vlan's vlans.
+        elements: dict
         suboptions:
           data:
             description: Data flag.
@@ -68,7 +70,7 @@ options:
         type: list
     type: list
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are

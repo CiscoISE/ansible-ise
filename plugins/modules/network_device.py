@@ -24,6 +24,7 @@ options:
     type: list
   NetworkDeviceIPList:
     description: List of IP Subnets for this node.
+    elements: dict
     suboptions:
       getIpaddressExclude:
         description: It can be either single IP address or IP range address.
@@ -188,7 +189,7 @@ options:
         type: dict
     type: dict
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are

@@ -17,6 +17,7 @@ author: Rafael Campos (@racampos)
 options:
   payload:
     description: Trustsec Sg Vn Mapping Bulk Update's payload.
+    elements: dict
     suboptions:
       id:
         description: Identifier of the SG-VN mapping.
@@ -42,7 +43,7 @@ options:
         type: str
     type: list
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are

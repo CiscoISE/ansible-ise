@@ -26,7 +26,7 @@ options:
     description: Enable or disable automatic file creation of raw response.
     type: bool
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are
@@ -56,5 +56,10 @@ ise_response:
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "data": "filecontent",
+      "filename": "filename",
+      "dirpath": "download/directory",
+      "path": "download/directory/filename"
+    }
 """

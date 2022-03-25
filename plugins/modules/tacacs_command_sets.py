@@ -22,6 +22,7 @@ options:
     suboptions:
       commandList:
         description: Tacacs Command Sets's commandList.
+        elements: dict
         suboptions:
           arguments:
             description: Tacacs Command Sets's arguments.
@@ -47,7 +48,7 @@ options:
     description: PermitUnmatched flag.
     type: bool
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are

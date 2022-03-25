@@ -18,6 +18,7 @@ author: Rafael Campos (@racampos)
 options:
   additionalData:
     description: Active Directory Leave Domain's additionalData.
+    elements: dict
     suboptions:
       name:
         description: Active Directory Leave Domain's name.
@@ -30,7 +31,7 @@ options:
     description: Id path parameter.
     type: str
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are

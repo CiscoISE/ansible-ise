@@ -50,7 +50,7 @@ The recommended versions are listed below on the [Compatibility matrix](https://
 | Cisco ISE version | Ansible "cisco.ise" version  | Python "ciscoisesdk" version |
 |-------------------|------------------------------|------------------------------|
 | 3.1.0             | 2.0.0                        | 1.2.0                        |
-| 3.1.1             | 2.2.3                        | 1.4.2                        |
+| 3.1.1             | 2.3.0                        | 1.5.1                        |
 
 *Notes*:
 
@@ -89,6 +89,7 @@ ise_version: 3.1.1 # optional, defaults to 3.1.1
 ise_wait_on_rate_limit: True # optional, defaults to True
 ise_debug: False # optional, defaults to False
 ise_uses_api_gateway: True # optional, defaults to True
+ise_uses_csrf_token: False # optional, defaults to False
 ```
 
 Create a `hosts` ([example](https://github.com/CiscoISE/ansible-ise/blob/main/playbooks/hosts)) file that uses `[ise_servers]` with your Cisco ISE Settings:
@@ -112,6 +113,7 @@ Then, create a playbook `myplaybook.yml` referencing the variables in your crede
       ise_verify: "{{ise_verify}}"
       ise_debug: "{{ise_debug}}"
       ise_uses_api_gateway: "{{ise_uses_api_gateway}}"
+      ise_uses_csrf_token: "{{ise_uses_csrf_token}}"
       id: "0667bc80-78a9-11eb-b987-005056aba98b"
 ```
 
@@ -136,6 +138,7 @@ ise_version: 3.1.1 # optional, defaults to 3.1.1
 ise_wait_on_rate_limit: True # optional, defaults to True
 ise_debug: False # optional, defaults to False
 ise_uses_api_gateway: True # optional, defaults to True
+ise_uses_csrf_token: False # optional, defaults to False
 ```
 
 Create a `hosts` ([example](https://github.com/CiscoISE/ansible-ise/blob/main/playbooks/hosts)) file that uses `[ise_servers]` with your Cisco ISE Settings:
@@ -157,6 +160,7 @@ Then, create a playbook `myplaybook.yml` ([example](https://github.com/CiscoISE/
       ise_verify: "{{ise_verify}}"
       ise_debug: "{{ise_debug}}"
       ise_uses_api_gateway: "{{ise_uses_api_gateway}}"
+      ise_uses_csrf_token: "{{ise_uses_csrf_token}}"
       id: "0667bc80-78a9-11eb-b987-005056aba98b"
 ```
 

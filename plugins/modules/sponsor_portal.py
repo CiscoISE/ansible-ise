@@ -78,6 +78,7 @@ options:
         suboptions:
           data:
             description: The Dictionary will be exposed here as key value pair.
+            elements: dict
             suboptions:
               key:
                 description: Sponsor Portal's key.
@@ -181,6 +182,7 @@ options:
             type: bool
           socialConfigs:
             description: Sponsor Portal's socialConfigs.
+            elements: dict
             type: list
           timeBetweenLoginsDuringRateLimit:
             description: Time between login attempts when rate limiting.
@@ -278,7 +280,7 @@ options:
         type: dict
     type: dict
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are

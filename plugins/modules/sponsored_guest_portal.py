@@ -78,6 +78,7 @@ options:
         suboptions:
           data:
             description: The Dictionary will be exposed here as key value pair.
+            elements: dict
             suboptions:
               key:
                 description: Sponsored Guest Portal's key.
@@ -290,6 +291,7 @@ options:
             type: bool
           socialConfigs:
             description: Sponsored Guest Portal's socialConfigs.
+            elements: dict
             suboptions:
               socialMediaType:
                 description: Sponsored Guest Portal's socialMediaType.
@@ -382,7 +384,7 @@ options:
         type: dict
     type: dict
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are

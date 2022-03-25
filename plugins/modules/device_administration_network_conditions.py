@@ -22,6 +22,7 @@ options:
     type: str
   conditions:
     description: Device Administration Network Conditions's conditions.
+    elements: dict
     suboptions:
       cliDnisList:
         description: <p>This field should contain a Caller ID (CLI), comma, and Called
@@ -102,7 +103,7 @@ options:
     description: Network Condition name.
     type: str
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are

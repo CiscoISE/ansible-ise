@@ -54,6 +54,7 @@ options:
       </tr> <tr> <td>NENDSW</td> <td>Not Ends With</td> </tr> <tr> <td>CONTAINS</td> <td>Contains</td> </tr> <tr>
       <td>NCONTAINS</td> <td>Not Contains</td> </tr> </tbody> </table> </div>.
     type: list
+    elements: str
   filterType:
     description:
     - >
@@ -65,7 +66,7 @@ options:
     - Id path parameter. ID of the system certificate.
     type: str
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are

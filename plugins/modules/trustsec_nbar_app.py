@@ -27,6 +27,7 @@ options:
     type: str
   networkIdentities:
     description: Array of NIs.
+    elements: dict
     suboptions:
       ports:
         description: Trustsec Nbar App's ports.
@@ -36,7 +37,7 @@ options:
         type: str
     type: list
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are

@@ -31,6 +31,7 @@ options:
     type: str
   idSeqItem:
     description: Id Store Sequence's idSeqItem.
+    elements: dict
     suboptions:
       idstore:
         description: Id Store Sequence's idstore.
@@ -46,7 +47,7 @@ options:
     description: Id Store Sequence's parent.
     type: str
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are

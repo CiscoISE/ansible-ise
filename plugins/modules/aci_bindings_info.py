@@ -35,13 +35,15 @@ options:
   filterBy:
     description:
     - FilterBy query parameter.
+    elements: str
     type: list
   filterValue:
     description:
     - FilterValue query parameter.
+    elements: str
     type: list
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are

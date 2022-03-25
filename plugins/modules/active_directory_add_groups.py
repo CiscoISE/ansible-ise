@@ -21,6 +21,7 @@ options:
     suboptions:
       attributes:
         description: List of Attributes.
+        elements: dict
         suboptions:
           defaultValue:
             description: Required for each attribute in the attribute list. Can contain
@@ -50,6 +51,7 @@ options:
     suboptions:
       groups:
         description: List of Groups.
+        elements: dict
         suboptions:
           name:
             description: Required for each group in the group list with no duplication
@@ -136,6 +138,7 @@ options:
           system. You can create rules to change the identity to a desired format that
           includes or excludes a domain prefix and/or suffix or other additional markup
           of your choice.
+        elements: dict
         suboptions:
           rewriteMatch:
             description: Required for each rule in the list with no duplication between
@@ -187,7 +190,7 @@ options:
       alphanumeric and .-_/\\ characters.
     type: str
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are

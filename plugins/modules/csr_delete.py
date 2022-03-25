@@ -24,7 +24,7 @@ options:
     description: Id path parameter. ID of the Certificate Signing Request to be deleted.
     type: str
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are

@@ -17,6 +17,7 @@ author: Rafael Campos (@racampos)
 options:
   payload:
     description: Trustsec Vn Vlan Mapping Bulk Create's payload.
+    elements: dict
     suboptions:
       id:
         description: Identifier of the VN-Vlan Mapping.
@@ -46,7 +47,7 @@ options:
         type: str
     type: list
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are

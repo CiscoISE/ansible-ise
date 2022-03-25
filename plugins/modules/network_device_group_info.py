@@ -58,6 +58,7 @@ options:
       Less Then <br/> STARTSW | Starts With <br/> NSTARTSW | Not Starts With <br/> ENDSW | Ends With <br/> NENDSW
       | Not Ends With <br/> CONTAINS | Contains <br/> NCONTAINS | Not Contains <br/>.
     type: list
+    elements: str
   filterType:
     description:
     - >
@@ -65,7 +66,7 @@ options:
       can be changed by using the parameter.
     type: str
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are

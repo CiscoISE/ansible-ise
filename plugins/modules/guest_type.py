@@ -25,6 +25,7 @@ options:
         type: bool
       dayTimeLimits:
         description: List of Time Ranges for account access.
+        elements: dict
         suboptions:
           days:
             description: List of Days Values should be one of Week day. Allowed values
@@ -118,7 +119,7 @@ options:
     elements: str
     type: list
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are

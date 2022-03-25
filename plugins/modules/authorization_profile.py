@@ -25,6 +25,7 @@ options:
     type: str
   advancedAttributes:
     description: Authorization Profile's advancedAttributes.
+    elements: dict
     suboptions:
       leftHandSideDictionaryAttribue:
         description: Authorization Profile's leftHandSideDictionaryAttribue.
@@ -172,7 +173,7 @@ options:
         type: str
     type: dict
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are

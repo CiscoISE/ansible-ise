@@ -90,7 +90,7 @@ options:
     description: Trust for authentication within Cisco ISE.
     type: bool
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are

@@ -78,6 +78,7 @@ options:
         suboptions:
           data:
             description: The Dictionary will be exposed here as key value pair.
+            elements: dict
             suboptions:
               key:
                 description: Self Registered Portal's key.
@@ -299,6 +300,7 @@ options:
             type: bool
           socialConfigs:
             description: Self Registered Portal's socialConfigs.
+            elements: dict
             suboptions:
               socialMediaType:
                 description: Self Registered Portal's socialMediaType.
@@ -583,6 +585,7 @@ options:
             type: str
           sponsorPortalList:
             description: Self Registered Portal's sponsorPortalList.
+            elements: str
             type: list
         type: dict
       selfRegSuccessSettings:
@@ -678,7 +681,7 @@ options:
         type: dict
     type: dict
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are

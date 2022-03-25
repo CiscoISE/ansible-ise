@@ -32,7 +32,7 @@ options:
     description: Enable or disable automatic file creation of raw response.
     type: bool
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are
@@ -62,7 +62,12 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: str
+  type: dict
   sample: >
-    "'string'"
+    {
+      "data": "filecontent",
+      "filename": "filename",
+      "dirpath": "download/directory",
+      "path": "download/directory/filename"
+    }
 """

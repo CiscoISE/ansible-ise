@@ -19,6 +19,7 @@ author: Rafael Campos (@racampos)
 options:
   allowedValues:
     description: All of the allowed values for the dictionary attribute.
+    elements: dict
     suboptions:
       isDefault:
         description: True if this key value is the default between the allowed values
@@ -53,7 +54,7 @@ options:
     description: The dictionary attribute's name.
     type: str
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are

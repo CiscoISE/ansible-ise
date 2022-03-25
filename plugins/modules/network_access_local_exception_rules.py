@@ -57,6 +57,7 @@ options:
           children:
             description: In case type is andBlock or orBlock addtional conditions will
               be aggregated under this logical (OR/AND) condition.
+            elements: dict
             suboptions:
               conditionType:
                 description: <ul><li>Inidicates whether the record is the condition
@@ -213,7 +214,7 @@ options:
     description: Security group used in authorization policies.
     type: str
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are

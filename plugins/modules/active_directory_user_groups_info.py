@@ -23,6 +23,7 @@ options:
     type: str
   additionalData:
     description: Active Directory Get User Groups Info's additionalData.
+    elements: dict
     suboptions:
       name:
         description: Active Directory Get User Groups Info's name.
@@ -32,7 +33,7 @@ options:
         type: str
     type: list
 requirements:
-- ciscoisesdk >= 1.4.0
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are

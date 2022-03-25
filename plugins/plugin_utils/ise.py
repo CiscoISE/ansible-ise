@@ -4,7 +4,8 @@
 # Copyright (c) 2021, Cisco Systems
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
-from __future__ import (absolute_import, division, print_function)
+from __future__ import absolute_import, division, print_function
+
 __metaclass__ = type
 try:
     from ciscoisesdk import api, exceptions
@@ -111,6 +112,7 @@ def ise_argument_spec():
         ise_version=dict(type="str", default="3.1.1"),
         ise_wait_on_rate_limit=dict(type="bool", default=True),
         ise_uses_api_gateway=dict(type="bool", default=True),
+        ise_uses_csrf_token=dict(type="bool", default=False),
         ise_debug=dict(type="bool", default=False),
     )
     return argument_spec
@@ -150,6 +152,7 @@ class ISESDK(object):
                 version=params.get("ise_version"),
                 wait_on_rate_limit=params.get("ise_wait_on_rate_limit"),
                 uses_api_gateway=ise_uses_api_gateway,
+                uses_csrf_token=params.get("ise_uses_csrf_token"),
                 debug=params.get("ise_debug"),
             )
             if params.get("ise_debug") and LOGGING_IN_STANDARD:
