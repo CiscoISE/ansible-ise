@@ -459,7 +459,7 @@
 <h1>cisco.ise.hotspot_portal module – Resource module for Hotspot Portal<a class="headerlink" href="#cisco-ise-hotspot-portal-module-resource-module-for-hotspot-portal" title="Permalink to this headline"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/ise">cisco.ise collection</a> (version 2.2.3).</p>
+<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/ise">cisco.ise collection</a> (version 2.3.0).</p>
 <p>You might already have this collection installed if you are using the <code class="docutils literal notranslate"><span class="pre">ansible</span></code> package.
 It is not included in <code class="docutils literal notranslate"><span class="pre">ansible-core</span></code>.
 To check whether it is installed, run <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">list</span></code>.</p>
@@ -495,7 +495,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <h2><a class="toc-backref" href="#id2">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this headline"></a></h2>
 <p>The below requirements are needed on the host that executes this module.</p>
 <ul class="simple">
-<li><p>ciscoisesdk &gt;= 1.4.0</p></li>
+<li><p>ciscoisesdk &gt;= 2.0.1</p></li>
 <li><p>python &gt;= 3.5</p></li>
 </ul>
 </section>
@@ -622,7 +622,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </tr>
 <tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-customizations/pageCustomizations/data"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-customizations-pagecustomizations-data"><strong>data</strong></p>
-<a class="ansibleOptionLink" href="#parameter-customizations/pageCustomizations/data" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
+<a class="ansibleOptionLink" href="#parameter-customizations/pageCustomizations/data" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=dictionary</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Hotspot Portal’s data.</p>
 </div></td>
@@ -767,6 +767,21 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-ise_uses_csrf_token"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-ise-uses-csrf-token"><strong>ise_uses_csrf_token</strong></p>
+<a class="ansibleOptionLink" href="#parameter-ise_uses_csrf_token" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
+<p><span class="ansible-option-versionadded">added in 3.0.0 of cisco.ise</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Flag that informs the SDK whether we send the CSRF token to ISE’s ERS APIs.</p>
+<p>If it is True, the SDK assumes that your ISE CSRF Check is enabled.</p>
+<p>If it is True, it assumes you need the SDK to manage the CSRF token automatically for you.</p>
+<p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
+<ul class="simple">
+<li><p><span class="ansible-option-default-bold">no</span> <span class="ansible-option-default">← (default)</span></p></li>
+<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+</ul>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-ise_verify"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-ise-verify"><strong>ise_verify</strong></p>
 <a class="ansibleOptionLink" href="#parameter-ise_verify" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -778,7 +793,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </ul>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-ise_version"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-ise-version"><strong>ise_version</strong></p>
 <a class="ansibleOptionLink" href="#parameter-ise_version" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
@@ -786,7 +801,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <span class="ansible-option-default">“3.1.1”</span></p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-ise_wait_on_rate_limit"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-ise-wait-on-rate-limit"><strong>ise_wait_on_rate_limit</strong></p>
 <a class="ansibleOptionLink" href="#parameter-ise_wait_on_rate_limit" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -798,49 +813,49 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </ul>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-name"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-name"><strong>name</strong></p>
 <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Hotspot Portal’s name.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-portalTestUrl"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-portaltesturl"><strong>portalTestUrl</strong></p>
 <a class="ansibleOptionLink" href="#parameter-portalTestUrl" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>URL to bring up a test page for this portal.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-portalType"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-portaltype"><strong>portalType</strong></p>
 <a class="ansibleOptionLink" href="#parameter-portalType" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Allowed values - BYOD, - HOTSPOTGUEST, - MYDEVICE, - SELFREGGUEST, - SPONSOR, - SPONSOREDGUEST.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings"><strong>settings</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Defines all of the settings groups available for a BYOD.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings/aupSettings"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings-aupsettings"><strong>aupSettings</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings/aupSettings" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Configuration of the Acceptable Use Policy (AUP) for a portal.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings/aupSettings/accessCode"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings-aupsettings-accesscode"><strong>accessCode</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings/aupSettings/accessCode" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Access code that must be entered by the portal user (only valid if requireAccessCode = true).</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings/aupSettings/includeAup"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings-aupsettings-includeaup"><strong>includeAup</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings/aupSettings/includeAup" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -852,7 +867,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </ul>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings/aupSettings/requireAccessCode"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings-aupsettings-requireaccesscode"><strong>requireAccessCode</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings/aupSettings/requireAccessCode" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -864,7 +879,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </ul>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings/aupSettings/requireScrolling"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings-aupsettings-requirescrolling"><strong>requireScrolling</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings/aupSettings/requireScrolling" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -876,98 +891,98 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </ul>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings/authSuccessSettings"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings-authsuccesssettings"><strong>authSuccessSettings</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings/authSuccessSettings" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Hotspot Portal’s authSuccessSettings.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings/authSuccessSettings/redirectUrl"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings-authsuccesssettings-redirecturl"><strong>redirectUrl</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings/authSuccessSettings/redirectUrl" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Target URL for redirection, used when successRedirect = URL.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings/authSuccessSettings/successRedirect"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings-authsuccesssettings-successredirect"><strong>successRedirect</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings/authSuccessSettings/successRedirect" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>After an Authentication Success where should device be redirected. Allowed values - AUTHSUCCESSPAGE, - ORIGINATINGURL, - URL.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings/portalSettings"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings-portalsettings"><strong>portalSettings</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings/portalSettings" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The port, interface, certificate, and other basic settings of a portal.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings/portalSettings/allowedInterfaces"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings-portalsettings-allowedinterfaces"><strong>allowedInterfaces</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings/portalSettings/allowedInterfaces" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">list</span> / <span class="ansible-option-elements">elements=string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Interfaces that the portal will be reachable on. Allowed values - eth0 - eth1 - eth2 - eth3 - eth4 - eth5 - bond0 - bond1 - bond2.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings/portalSettings/alwaysUsedLanguage"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings-portalsettings-alwaysusedlanguage"><strong>alwaysUsedLanguage</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings/portalSettings/alwaysUsedLanguage" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Used when displayLang = ALWAYSUSE.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings/portalSettings/certificateGroupTag"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings-portalsettings-certificategrouptag"><strong>certificateGroupTag</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings/portalSettings/certificateGroupTag" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Logical name of the x.509 server certificate that will be used for the portal.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings/portalSettings/coaType"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings-portalsettings-coatype"><strong>coaType</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings/portalSettings/coaType" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Allowed Values - COAREAUTHENTICATE, - COATERMINATE.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings/portalSettings/displayLang"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings-portalsettings-displaylang"><strong>displayLang</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings/portalSettings/displayLang" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Allowed values - USEBROWSERLOCALE, - ALWAYSUSE.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings/portalSettings/endpointIdentityGroup"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings-portalsettings-endpointidentitygroup"><strong>endpointIdentityGroup</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings/portalSettings/endpointIdentityGroup" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Unique Id of the endpoint identity group where user’s devices will be added. Used only in Hotspot Portal.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings/portalSettings/fallbackLanguage"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings-portalsettings-fallbacklanguage"><strong>fallbackLanguage</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings/portalSettings/fallbackLanguage" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Used when displayLang = USEBROWSERLOCALE.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings/portalSettings/httpsPort"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings-portalsettings-httpsport"><strong>httpsPort</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings/portalSettings/httpsPort" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The port number that the allowed interfaces will listen on. Range from 8000 to 8999.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings/postAccessBannerSettings"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings-postaccessbannersettings"><strong>postAccessBannerSettings</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings/postAccessBannerSettings" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Hotspot Portal’s postAccessBannerSettings.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings/postAccessBannerSettings/includePostAccessBanner"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings-postaccessbannersettings-includepostaccessbanner"><strong>includePostAccessBanner</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings/postAccessBannerSettings/includePostAccessBanner" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -979,14 +994,14 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </ul>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings/postLoginBannerSettings"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings-postloginbannersettings"><strong>postLoginBannerSettings</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings/postLoginBannerSettings" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Hotspot Portal’s postLoginBannerSettings.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings/postLoginBannerSettings/includePostAccessBanner"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings-postloginbannersettings-includepostaccessbanner"><strong>includePostAccessBanner</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings/postLoginBannerSettings/includePostAccessBanner" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -998,28 +1013,28 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </ul>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings/supportInfoSettings"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings-supportinfosettings"><strong>supportInfoSettings</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings/supportInfoSettings" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">dictionary</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Portal Support Information Settings.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings/supportInfoSettings/defaultEmptyFieldValue"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings-supportinfosettings-defaultemptyfieldvalue"><strong>defaultEmptyFieldValue</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings/supportInfoSettings/defaultEmptyFieldValue" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The default value displayed for an empty field. Only valid when emptyFieldDisplay = DISPLAYWITHDEFAULTVALUE.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings/supportInfoSettings/emptyFieldDisplay"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings-supportinfosettings-emptyfielddisplay"><strong>emptyFieldDisplay</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings/supportInfoSettings/emptyFieldDisplay" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Specifies how empty fields are handled on the Support Information Page. Allowed values - HIDE, - DISPLAYWITHNOVALUE, - DISPLAYWITHDEFAULTVALUE.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings/supportInfoSettings/includeBrowserUserAgent"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings-supportinfosettings-includebrowseruseragent"><strong>includeBrowserUserAgent</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings/supportInfoSettings/includeBrowserUserAgent" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -1031,7 +1046,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </ul>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings/supportInfoSettings/includeFailureCode"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings-supportinfosettings-includefailurecode"><strong>includeFailureCode</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings/supportInfoSettings/includeFailureCode" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -1043,7 +1058,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </ul>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings/supportInfoSettings/includeIpAddress"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings-supportinfosettings-includeipaddress"><strong>includeIpAddress</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings/supportInfoSettings/includeIpAddress" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -1055,7 +1070,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </ul>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings/supportInfoSettings/includeMacAddr"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings-supportinfosettings-includemacaddr"><strong>includeMacAddr</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings/supportInfoSettings/includeMacAddr" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -1067,7 +1082,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </ul>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings/supportInfoSettings/includePolicyServer"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings-supportinfosettings-includepolicyserver"><strong>includePolicyServer</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings/supportInfoSettings/includePolicyServer" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -1079,7 +1094,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </ul>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-settings/supportInfoSettings/includeSupportInfoPage"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-hotspot-portal-module-parameter-settings-supportinfosettings-includesupportinfopage"><strong>includeSupportInfoPage</strong></p>
 <a class="ansibleOptionLink" href="#parameter-settings/supportInfoSettings/includeSupportInfoPage" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
