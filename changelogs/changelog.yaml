@@ -701,3 +701,18 @@ releases:
         - Update recommended SDK version in modules from 1.4.0 to 1.5.0
         - Update README recommended SDK version in compatibility matrix
         - Update README, update Compatibility matrix.
+  2.4.0:
+    release_date: "2022-03-24"
+    changes:
+      release_summary: Change download modules response to include file details
+      minor_changes:
+        - csr_export_info - Instead of returning the data string, it now returns a dictionary. The dictionary has property data with the previous string value.
+        - csr_export_info - add parameter filename.
+        - endpoint_certificate - Instead of returning the data string, it now returns a dictionary. The dictionary has property data with the previous string value.
+        - endpoint_certificate - add parameter filename.
+        - support_bundle_download - Instead of returning the data string, it now returns a dictionary. The dictionary has property data with the previous string value.
+        - support_bundle_download - add parameter filename.
+        - system_certificate_export_info - Instead of returning the data string, it now returns a dictionary. The dictionary has property data with the previous string value.
+        - system_certificate_export_info - add parameter filename.
+        - trusted_certificate_export_info - Instead of returning the data string, it now returns a dictionary. The dictionary has property data with the previous string value.
+        - trusted_certificate_export_info - add parameter filename.
