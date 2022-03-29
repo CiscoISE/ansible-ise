@@ -7,6 +7,30 @@ Cisco.Ise
 
 Collection version 2.3.0
 
+.. contents::
+   :local:
+   :depth: 1
+
+Description
+-----------
+
+Ansible Modules for Cisco ISE
+
+**Authors:**
+
+* Rafael Campos <rcampos@altus.cr>
+* William Astorga <wastorga@altus.cr>
+* Jose Bogarin <jbogarin@altus.cr>
+
+.. raw:: html
+
+  <p class="ansible-links">
+    <a href="https://github.com/CiscoISE/ansible-ise/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
+    <a href="https://github.com/CiscoISE/ansible-ise" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
+  </p>
+
+
+
 .. toctree::
     :maxdepth: 1
 
