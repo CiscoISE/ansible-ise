@@ -106,13 +106,16 @@ class NetworkAccessAuthorizationRules(object):
         name_exists = False
         o_id = self.new_object.get("id") or self.new_object.get('rule', {}).get("id")
         policy_id = self.new_object.get("policy_id")
-        name = self.new_object.get('rule', {}).get("name")
+        name = False
+        rule = self.new_object.get('rule', {})
+        if rule:
+            name = self.new_object.get('rule', {}).get("name")
         if o_id:
             prev_obj = self.get_object_by_id(o_id, policy_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if not id_exists and name:
             prev_obj = self.get_object_by_name(name, policy_id)
-            name_exists = prev_obj is not None and isinstance(prev_obj, dict)
+            name_exists = prev_obj is not None and isinstance(prev_obj, dict) 
         if name_exists:
             _id = prev_obj.get('rule', {}).get("id")
             if id_exists and name_exists and o_id != _id:
@@ -149,10 +152,13 @@ class NetworkAccessAuthorizationRules(object):
 
     def update(self):
         id = self.new_object.get("id") or self.new_object.get('rule', {}).get("id")
-        name = self.new_object.get('rule', {}).get("name")
+        name = False
+        rule = self.new_object.get('rule', {})
+        if rule:
+            name = self.new_object.get('rule', {}).get("name")
         policy_id = self.new_object.get("policy_id")
         result = None
-        if not id:
+        if not id and name:
             id_ = self.get_object_by_name(name, policy_id).get('rule', {}).get("id")
             rule = self.new_object.get('rule', {})
             rule.update(dict(id=id_))
@@ -166,10 +172,13 @@ class NetworkAccessAuthorizationRules(object):
 
     def delete(self):
         id = self.new_object.get("id") or self.new_object.get('rule', {}).get("id")
-        name = self.new_object.get('rule', {}).get("name")
+        name = False
+        rule = self.new_object.get('rule', {})
+        if rule:
+            name = self.new_object.get('rule', {}).get("name")
         policy_id = self.new_object.get("policy_id")
         result = None
-        if not id:
+        if not id and name:
             id_ = self.get_object_by_name(name, policy_id).get('rule', {}).get("id")
             rule = self.new_object.get('rule', {})
             rule.update(dict(id=id_))
