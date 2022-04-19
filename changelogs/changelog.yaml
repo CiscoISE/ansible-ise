@@ -711,3 +711,9 @@ releases:
         - system_certificate_export_info - add parameter filename.
         - trusted_certificate_export_info - Instead of returning the data string, it now returns a dictionary. The dictionary has property data with the previous string value.
         - trusted_certificate_export_info - add parameter filename.
+  2.3.1:
+    release_date: "2022-04-19"
+    changes:
+      release_summary: Added a validation
+      bugfixes:
+        - network_access_authorization_rules - added a validation when reading the data
