@@ -115,7 +115,7 @@ class NetworkAccessAuthorizationRules(object):
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if not id_exists and name:
             prev_obj = self.get_object_by_name(name, policy_id)
-            name_exists = prev_obj is not None and isinstance(prev_obj, dict) 
+            name_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if name_exists:
             _id = prev_obj.get('rule', {}).get("id")
             if id_exists and name_exists and o_id != _id:
