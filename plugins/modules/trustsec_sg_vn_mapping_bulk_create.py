@@ -45,6 +45,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for sgVnMapping
+  description: Complete reference of the sgVnMapping API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!trustsec-openapi
 notes:
   - SDK Method used are
     sg_vn_mapping.SgVnMapping.bulk_create_sg_vn_mappings,

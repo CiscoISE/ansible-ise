@@ -35,6 +35,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for virtualNetwork
+  description: Complete reference of the virtualNetwork API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!trustsec-openapi
 notes:
   - SDK Method used are
     virtual_network.VirtualNetwork.bulk_create_virtual_networks,

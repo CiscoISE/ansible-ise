@@ -54,6 +54,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for Node Group
+  description: Complete reference of the Node Group API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!deployment-openapi
 notes:
   - SDK Method used are
     node_group.NodeGroup.create_node_group,

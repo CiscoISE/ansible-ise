@@ -73,6 +73,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for SecurityGroupToVirtualNetwork
+  description: Complete reference of the SecurityGroupToVirtualNetwork API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgtvnvlan
 notes:
   - SDK Method used are
     security_group_to_virtual_network.SecurityGroupToVirtualNetwork.create_security_groups_to_vn_to_vlan,

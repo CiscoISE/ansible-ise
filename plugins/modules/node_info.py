@@ -65,6 +65,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for NodeDetails
+  description: Complete reference of the NodeDetails API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!node
 notes:
   - SDK Method used are
     node_details.NodeDetails.get_node_detail_by_id,

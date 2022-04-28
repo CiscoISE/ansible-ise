@@ -22,6 +22,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for Device Administration - Authorization Rules
+  description: Complete reference of the Device Administration - Authorization Rules API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
   - SDK Method used are
     device_administration_authorization_rules.DeviceAdministrationAuthorizationRules.reset_hit_counts_device_admin_authorization_rules,

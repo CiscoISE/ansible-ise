@@ -49,6 +49,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for vnVlanMapping
+  description: Complete reference of the vnVlanMapping API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!trustsec-openapi
 notes:
   - SDK Method used are
     vn_vlan_mapping.VnVlanMapping.bulk_create_vn_vlan_mappings,

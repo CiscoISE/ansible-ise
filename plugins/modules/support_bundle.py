@@ -59,6 +59,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for SupportBundleTriggerConfiguration
+  description: Complete reference of the SupportBundleTriggerConfiguration API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!supportbundle
 notes:
   - SDK Method used are
     support_bundle_trigger_configuration.SupportBundleTriggerConfiguration.create_support_bundle,

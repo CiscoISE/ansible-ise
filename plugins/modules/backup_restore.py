@@ -32,6 +32,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for Backup And Restore
+  description: Complete reference of the Backup And Restore API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!backup-and-restore-open-api
 notes:
   - SDK Method used are
     backup_and_restore.BackupAndRestore.restore_config_backup,

@@ -50,6 +50,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for NativeSupplicantProfile
+  description: Complete reference of the NativeSupplicantProfile API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!nspprofile
 notes:
   - SDK Method used are
     native_supplicant_profile.NativeSupplicantProfile.delete_native_supplicant_profile_by_id,

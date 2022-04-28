@@ -25,6 +25,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for Network Access - Policy Set
+  description: Complete reference of the Network Access - Policy Set API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
   - SDK Method used are
     network_access_policy_set.NetworkAccessPolicySet.get_network_access_policy_set_by_id,

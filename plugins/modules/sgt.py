@@ -46,6 +46,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for SecurityGroups
+  description: Complete reference of the SecurityGroups API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgt
 notes:
   - SDK Method used are
     security_groups.SecurityGroups.create_security_group,
