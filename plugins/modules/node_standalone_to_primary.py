@@ -10,7 +10,7 @@ module: node_standalone_to_primary
 short_description: Resource module for Node Standalone To Primary
 description:
 - Manage operation create of the resource Node Standalone To Primary.
-- This API promotes the standalone node on which the API is invoked to the primary Policy Administration node (PAN).
+- This API promotes the standalone node on which the API is invoked to the primary Policy Administration node PAN .
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module

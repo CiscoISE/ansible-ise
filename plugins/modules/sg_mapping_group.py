@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Sg Mapping Group.
 - This API creates an IP to SGT mapping group.
 - This API deletes an IP to SGT mapping group.
+- This API allows the client to update an IP to SGT mapping group by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -44,6 +45,7 @@ notes:
   - Paths used are
     post /ers/config/sgmappinggroup,
     delete /ers/config/sgmappinggroup/{id},
+    put /ers/config/sgmappinggroup/{id},
 
 """
 

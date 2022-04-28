@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Portal Theme.
 - This API creates a portal theme.
 - This API deletes a portal theme by ID.
+- This API allows the client to update a portal theme by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -41,6 +42,7 @@ notes:
   - Paths used are
     post /ers/config/portaltheme,
     delete /ers/config/portaltheme/{id},
+    put /ers/config/portaltheme/{id},
 
 """
 

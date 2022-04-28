@@ -10,8 +10,7 @@ module: node_services_profiler_probe_config
 short_description: Resource module for Node Services Profiler Probe Config
 description:
 - Manage operation update of the resource Node Services Profiler Probe Config.
-- This API updates the profiler probe configuration of a PSN.  Set
-  probe value as  null  to disable probe.
+- This API updates the profiler probe configuration of a PSN.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -148,7 +147,8 @@ notes:
     node_services.NodeServices.set_profiler_probe_config,
 
   - Paths used are
-    put /api/v1/profile/{hostname}
+    put /api/v1/profile/{hostname},
+
 """
 
 EXAMPLES = r"""

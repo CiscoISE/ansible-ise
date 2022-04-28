@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Network Access Dictionary Attribute.
 - Create a new Dictionary Attribute for an existing Dictionary.
 - Delete a Dictionary Attribute.
+- Update a Dictionary Attribute.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -65,6 +66,7 @@ notes:
   - Paths used are
     post /network-access/dictionaries/{dictionaryName}/attribute,
     delete /network-access/dictionaries/{dictionaryName}/attribute/{name},
+    put /network-access/dictionaries/{dictionaryName}/attribute/{name},
 
 """
 

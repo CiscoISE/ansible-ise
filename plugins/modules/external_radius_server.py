@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource External Radius Server.
 - This API creates an external RADIUS server.
 - This API deletes an external RADIUS server.
+- This API allows the client to update an external RADIUS server.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -77,6 +78,7 @@ notes:
   - Paths used are
     post /ers/config/externalradiusserver,
     delete /ers/config/externalradiusserver/{id},
+    put /ers/config/externalradiusserver/{id},
 
 """
 

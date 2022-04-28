@@ -10,7 +10,6 @@ module: mnt_session_by_ip_info
 short_description: Information module for Mnt Session By Ip
 description:
 - Get Mnt Session By Ip by id.
-- Sessions by Endpoint IP.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info

@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Network Access Dictionary.
 - Network Access - Create a new Dictionary.
 - Network Access - Delete a Dictionary.
+- Network Access - Update a Dictionary.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -57,6 +58,7 @@ notes:
   - Paths used are
     post /network-access/dictionaries,
     delete /network-access/dictionaries/{name},
+    put /network-access/dictionaries/{name},
 
 """
 

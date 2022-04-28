@@ -11,6 +11,7 @@ short_description: Resource module for Trustsec Nbar App
 description:
 - Manage operations create, update and delete of the resource Trustsec Nbar App.
 - Create NBAR application.
+- Update NBAR Application.
 version_added: '2.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -48,6 +49,7 @@ notes:
   - Paths used are
     post /api/v1/trustsec/sgacl/nbarapp,
     delete /api/v1/trustsec/sgacl/nbarapp/{id},
+    put /api/v1/trustsec/sgacl/nbarapp/{id},
 
 """
 

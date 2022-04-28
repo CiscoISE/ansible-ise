@@ -49,7 +49,6 @@ options:
     description:
     - The roles to be fulfilled by this node. Possible roles are SPAN or MNT-ACTIVE or MNT-STANDBY or PDP
     type: list
-    elements: str
   ise_verify:
     description:
     - Whether or not to verify the identity of the node.

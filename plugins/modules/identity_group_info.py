@@ -47,16 +47,23 @@ options:
   filter:
     description:
     - >
-      Filter query parameter. <br/> **Simple filtering** should be available through the filter query string
-      parameter. The structure of a filter is a triplet of field operator and value separated with dots. More than
-      one filter can be sent. The logical operator common to ALL filter criteria will be by default AND, and can
-      be changed by using the "filterType=or" query string parameter. Each resource Data model description should
-      specify if an attribute is a filtered field. <br/> Operator | Description <br/>
-      ------------|----------------- <br/> EQ | Equals <br/> NEQ | Not Equals <br/> GT | Greater Than <br/> LT |
-      Less Then <br/> STARTSW | Starts With <br/> NSTARTSW | Not Starts With <br/> ENDSW | Ends With <br/> NENDSW
-      | Not Ends With <br/> CONTAINS | Contains <br/> NCONTAINS | Not Contains <br/>.
-    type: list
+      Filter query parameter. **Simple filtering** should be available through the filter query string parameter.
+      The structure of a filter is a triplet of field operator and value separated with dots. More than one filter
+      can be sent. The logical operator common to ALL filter criteria will be by default AND, and can be changed
+      by using the "filterType=or" query string parameter.
+    - Each resource Data model description should specify if an attribute is a filtered field.
+    - The 'EQ' operator describes 'Equals'.
+    - The 'NEQ' operator describes 'Not Equals'.
+    - The 'GT' operator describes 'Greater Than'.
+    - The 'LT' operator describes 'Less Than'.
+    - The 'STARTSW' operator describes 'Starts With'.
+    - The 'NSTARTSW' operator describes 'Not Starts With'.
+    - The 'ENDSW' operator describes 'Ends With'.
+    - The 'NENDSW' operator describes 'Not Ends With'.
+    - The 'CONTAINS' operator describes 'Contains'.
+    - The 'NCONTAINS' operator describes 'Not Contains'.
     elements: str
+    type: list
   filterType:
     description:
     - >

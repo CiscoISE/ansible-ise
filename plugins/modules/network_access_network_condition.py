@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Network Access Network Condition.
 - Network Access - Creates network condition.
 - Network Access - Delete network condition.
+- Network Access - Update network condition.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -114,6 +115,7 @@ notes:
   - Paths used are
     post /network-access/network-condition,
     delete /network-access/network-condition/{id},
+    put /network-access/network-condition/{id},
 
 """
 

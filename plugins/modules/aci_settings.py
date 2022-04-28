@@ -94,7 +94,8 @@ notes:
     aci_settings.AciSettings.update_aci_settings_by_id,
 
   - Paths used are
-    put /ers/config/acisettings/{id}
+    put /ers/config/acisettings/{id},
+
 """
 
 EXAMPLES = r"""

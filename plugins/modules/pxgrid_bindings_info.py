@@ -23,7 +23,7 @@ notes:
     trust_sec_sxp.TrustSecSxp.get_bindings,
 
   - Paths used are
-    post /pxgrid/ise/radius/ise/sxp/getBindings
+    post /ise/sxp/getBindings,
 
 """
 

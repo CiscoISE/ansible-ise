@@ -10,7 +10,7 @@ module: trusted_certificate_export_info
 short_description: Information module for Trusted Certificate Export
 description:
 - Get Trusted Certificate Export by id.
-- \#\#\# The response of this API carries a trusted certificate file mapped to the
+- The response of this API carries a trusted certificate file mapped to the.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -28,6 +28,10 @@ options:
     description:
     - Enable or disable automatic file creation of raw response.
     type: bool
+  filename:
+    description:
+    - The filename used to save the download file.
+    type: str
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5

@@ -10,7 +10,7 @@ module: device_administration_service_names_info
 short_description: Information module for Device Administration Service Names
 description:
 - Get all Device Administration Service Names.
-- Returns list of Allowed Protocols and Server Sequences for Device Admin Policy
+- Returns list of Allowed Protocols and Server Sequences for Device Admin Policy.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info

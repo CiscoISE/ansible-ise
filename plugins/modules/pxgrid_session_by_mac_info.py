@@ -20,10 +20,11 @@ requirements:
 - python >= 3.5
 notes:
   - SDK Method used are
-    session_directory.SessionDirectory.get_session_by_mac_address
+    session_directory.SessionDirectory.get_session_by_mac_address,
 
   - Paths used are
-    post /pxgrid/ise/radius/ise/session/getSessionByMacAddress
+    post /ise/session/getSessionByMacAddress,
+
 """
 
 EXAMPLES = r"""

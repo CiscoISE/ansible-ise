@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Self Registered Portal.
 - This API creates a self registered portal.
 - This API deletes a self registered portal by ID.
+- This API allows the client to update a self registered portal by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -585,7 +586,6 @@ options:
             type: str
           sponsorPortalList:
             description: Self Registered Portal's sponsorPortalList.
-            elements: str
             type: list
         type: dict
       selfRegSuccessSettings:
@@ -692,6 +692,7 @@ notes:
   - Paths used are
     post /ers/config/selfregportal,
     delete /ers/config/selfregportal/{id},
+    put /ers/config/selfregportal/{id},
 
 """
 

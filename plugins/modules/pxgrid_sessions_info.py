@@ -20,10 +20,11 @@ requirements:
 - python >= 3.5
 notes:
   - SDK Method used are
-    session_directory.SessionDirectory.get_sessions
+    session_directory.SessionDirectory.get_sessions,
 
   - Paths used are
-    post /pxgrid/ise/radius/ise/session/getSessions
+    post /ise/session/getSessions,
+
 """
 
 EXAMPLES = r"""

@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Byod Portal.
 - This API creates a BYOD portal.
 - This API deletes a BYOD portal by ID.
+- This API allows the client to update a BYOD portal by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -269,6 +270,7 @@ notes:
   - Paths used are
     post /ers/config/byodportal,
     delete /ers/config/byodportal/{id},
+    put /ers/config/byodportal/{id},
 
 """
 

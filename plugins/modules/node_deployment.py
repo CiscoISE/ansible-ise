@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Node Deployment.
 - This API registers a Cisco ISE node to form a multi-node deployment.
 - The deregistered node becomes a standalone Cisco ISE node.
+- This API updates the configuration of the Cisco ISE node with the.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -52,6 +53,7 @@ notes:
   - Paths used are
     post /api/v1/deployment/node,
     delete /api/v1/deployment/node/{hostname},
+    put /api/v1/deployment/node/{hostname},
 
 """
 

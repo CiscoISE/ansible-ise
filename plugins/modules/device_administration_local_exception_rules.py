@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Device Administration Local Exception Rules.
 - Device Admin - Create local authorization exception rule.
 - Device Admin - Delete local exception rule.
+- Device Admin - Update local exception rule.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -227,6 +228,7 @@ notes:
   - Paths used are
     post /device-admin/policy-set/{policyId}/exception,
     delete /device-admin/policy-set/{policyId}/exception/{id},
+    put /device-admin/policy-set/{policyId}/exception/{id},
 
 """
 

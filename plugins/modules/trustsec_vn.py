@@ -11,6 +11,7 @@ short_description: Resource module for Trustsec Vn
 description:
 - Manage operations create, update and delete of the resource Trustsec Vn.
 - Create Virtual Network.
+- Update Virtual Network.
 version_added: '2.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -40,6 +41,7 @@ notes:
   - Paths used are
     post /api/v1/trustsec/virtualnetwork,
     delete /api/v1/trustsec/virtualnetwork/{id},
+    put /api/v1/trustsec/virtualnetwork/{id},
 
 """
 

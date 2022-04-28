@@ -23,7 +23,7 @@ notes:
     mdm.Mdm.get_endpoint_by_mac_address,
 
   - Paths used are
-    post /pxgrid/ise/radius/ise/mdm/getEndpointByMacAddress
+    post /ise/mdm/getEndpointByMacAddress,
 
 """
 

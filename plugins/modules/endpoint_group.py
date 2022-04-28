@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Endpoint Group.
 - This API creates an endpoint identity group.
 - This API deletes an endpoint identity group.
+- This API allows the client to update an endpoint identity group.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -41,6 +42,7 @@ notes:
   - Paths used are
     post /ers/config/endpointgroup,
     delete /ers/config/endpointgroup/{id},
+    put /ers/config/endpointgroup/{id},
 
 """
 

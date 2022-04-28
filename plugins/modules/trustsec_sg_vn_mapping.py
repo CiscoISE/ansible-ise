@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Trustsec Sg Vn Mapping.
 - Create Security Group and Virtual Network mapping.
 - Delete Security Group and Virtual Network mapping.
+- Update Security Group and Virtual Network mapping.
 version_added: '2.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -51,6 +52,7 @@ notes:
   - Paths used are
     post /api/v1/trustsec/sgvnmapping,
     delete /api/v1/trustsec/sgvnmapping/{id},
+    put /api/v1/trustsec/sgvnmapping/{id},
 
 """
 

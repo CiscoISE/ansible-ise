@@ -10,7 +10,6 @@ module: mnt_account_status_info
 short_description: Information module for Mnt Account Status
 description:
 - Get Mnt Account Status by id.
-- AccountStatus by MAC.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info

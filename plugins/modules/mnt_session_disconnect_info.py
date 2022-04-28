@@ -10,7 +10,6 @@ module: mnt_session_disconnect_info
 short_description: Information module for Mnt Session Disconnect
 description:
 - Get Mnt Session Disconnect by id.
-- Session Disconnect.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info

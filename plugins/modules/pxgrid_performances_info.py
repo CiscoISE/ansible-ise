@@ -20,10 +20,10 @@ requirements:
 - python >= 3.5
 notes:
   - SDK Method used are
-    system_health.SystemHealth.get_performances
+    system_health.SystemHealth.get_performances,
 
   - Paths used are
-    post /pxgrid/ise/radius/ise/system/getPerformances
+    post /ise/system/getPerformances,
 
 """
 

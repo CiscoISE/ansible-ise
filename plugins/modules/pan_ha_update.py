@@ -10,7 +10,7 @@ module: pan_ha_update
 short_description: Resource module for Pan Ha Update
 description:
 - Manage operation update of the resource Pan Ha Update.
-- To deploy the auto-failover feature, you must have at least three nodes, where
+- To deploy the auto-failover feature, you must have at least three nodes, where.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module

@@ -10,7 +10,7 @@ module: network_access_identity_stores_info
 short_description: Information module for Network Access Identity Stores
 description:
 - Get all Network Access Identity Stores.
-- Network Access - Return list of identity stores for authentication policy
+- Network Access - Return list of identity stores for authentication policy.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info

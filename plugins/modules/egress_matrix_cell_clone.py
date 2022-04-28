@@ -33,7 +33,7 @@ notes:
     egress_matrix_cell.EgressMatrixCell.clone_matrix_cell,
 
   - Paths used are
-    put /ers/config/egressmatrixcell/clonecell/{id}/srcSgt/{srcSgtId}/dstSgt/{dstSgtId}
+    put /ers/config/egressmatrixcell/clonecell/{id}/srcSgt/{srcSgtId}/dstSgt/{dstSgtId},
 
 """
 

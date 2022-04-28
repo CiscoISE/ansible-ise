@@ -11,6 +11,7 @@ short_description: Resource module for Guest Smtp Notification Settings
 description:
 - Manage operations create and update of the resource Guest Smtp Notification Settings.
 - This API creates a guest SMTP notification configuration.
+- This API allows the client to update a SMTP configuration setting.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -62,6 +63,7 @@ notes:
 
   - Paths used are
     post /ers/config/guestsmtpnotificationsettings,
+    put /ers/config/guestsmtpnotificationsettings/{id},
 
 """
 

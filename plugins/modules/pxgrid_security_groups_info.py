@@ -20,10 +20,10 @@ requirements:
 - python >= 3.5
 notes:
   - SDK Method used are
-    trust_sec_configuration.TrustSecConfiguration.get_security_groups
+    trust_sec_configuration.TrustSecConfiguration.get_security_groups,
 
   - Paths used are
-    post /pxgrid/ise/radius/ise/config/trustsec/getSecurityGroups
+    post /ise/config/trustsec/getSecurityGroups,
 
 """
 

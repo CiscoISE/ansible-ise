@@ -10,7 +10,7 @@ module: system_certificate_export_info
 short_description: Information module for System Certificate Export Info
 description:
 - Get System Certificate Export Info.
-- \#\#\# Export System Certificate.
+- Export System Certificate.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -21,6 +21,9 @@ options:
     type: str
   export:
     description: System Certificate Export Info's export.
+    type: str
+  filename:
+    description: The filename used to save the download file.
     type: str
   id:
     description: System Certificate Export Info's id.
@@ -39,7 +42,6 @@ notes:
     certificates.Certificates.export_system_certificate,
 
   - Paths used are
-    post /api/v1/certs/system-certificate/export,
 
 """
 
@@ -52,6 +54,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     dirPath: /tmp/downloads/
     export: string
+    filename: download_filename.extension
     id: string
     password: string
     saveFile: true
@@ -62,12 +65,7 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: dict
+  type: str
   sample: >
-    {
-      "data": "filecontent",
-      "filename": "filename",
-      "dirpath": "download/directory",
-      "path": "download/directory/filename"
-    }
+    "'string'"
 """

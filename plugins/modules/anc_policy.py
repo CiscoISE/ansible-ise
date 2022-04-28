@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Anc Policy.
 - This API allows the client to create an ANC policy.
 - This API allows the client to delete an ANC policy.
+- This API allows the client to update an ANC policy.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -43,6 +44,7 @@ notes:
   - Paths used are
     post /ers/config/ancpolicy,
     delete /ers/config/ancpolicy/{id},
+    put /ers/config/ancpolicy/{id},
 
 """
 

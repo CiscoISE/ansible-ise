@@ -20,10 +20,10 @@ requirements:
 - python >= 3.5
 notes:
   - SDK Method used are
-    system_health.SystemHealth.get_healths
+    system_health.SystemHealth.get_healths,
 
   - Paths used are
-    post /pxgrid/ise/radius/ise/system/getHealths
+    post /ise/system/getHealths,
 
 """
 

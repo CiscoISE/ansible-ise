@@ -20,10 +20,10 @@ requirements:
 - python >= 3.5
 notes:
   - SDK Method used are
-    mdm.Mdm.get_endpoints
+    mdm.Mdm.get_endpoints,
 
   - Paths used are
-    post /pxgrid/ise/radius/ise/mdm/getEndpoints
+    post /ise/mdm/getEndpoints,
 
 """
 

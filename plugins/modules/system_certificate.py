@@ -11,6 +11,7 @@ short_description: Resource module for System Certificate
 description:
 - Manage operations update and delete of the resource System Certificate.
 - This API deletes a System Certificate of a particular node based on given HostName and ID.
+- Update a System Certificate.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -82,6 +83,7 @@ notes:
 
   - Paths used are
     delete /api/v1/certs/system-certificate/{hostName}/{id},
+    put /api/v1/certs/system-certificate/{hostName}/{id},
 
 """
 

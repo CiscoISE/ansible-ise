@@ -13,6 +13,8 @@ description:
 - This API creates a REST ID store.
 - This API deletes a REST ID store by name.
 - This API deletes a REST ID store.
+- This API allows the client to update a REST ID store by name.
+- This API allows the client to update a REST ID store.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -67,6 +69,8 @@ notes:
     post /ers/config/restidstore,
     delete /ers/config/restidstore/name/{name},
     delete /ers/config/restidstore/{id},
+    put /ers/config/restidstore/name/{name},
+    put /ers/config/restidstore/{id},
 
 """
 

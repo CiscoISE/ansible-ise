@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Sg Acl.
 - This API creates a security group ACL.
 - This API deletes a security group ACL.
+- This API allows the client to update a security group ACL.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -53,6 +54,7 @@ notes:
   - Paths used are
     post /ers/config/sgacl,
     delete /ers/config/sgacl/{id},
+    put /ers/config/sgacl/{id},
 
 """
 

@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Sponsor Group.
 - This API creates a sponsor group.
 - This API deletes a sponsor group by ID.
+- This API allows the client to update a sponsor group by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -130,6 +131,7 @@ notes:
   - Paths used are
     post /ers/config/sponsorgroup,
     delete /ers/config/sponsorgroup/{id},
+    put /ers/config/sponsorgroup/{id},
 
 """
 

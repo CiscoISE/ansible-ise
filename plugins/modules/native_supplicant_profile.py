@@ -11,6 +11,7 @@ short_description: Resource module for Native Supplicant Profile
 description:
 - Manage operations update and delete of the resource Native Supplicant Profile.
 - This API deletes a native supplicant profile.
+- This API allows the client to update a native supplicant profile.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -56,6 +57,7 @@ notes:
 
   - Paths used are
     delete /ers/config/nspprofile/{id},
+    put /ers/config/nspprofile/{id},
 
 """
 

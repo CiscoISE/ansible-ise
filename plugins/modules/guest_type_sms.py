@@ -38,7 +38,7 @@ notes:
     guest_type.GuestType.update_guest_type_sms,
 
   - Paths used are
-    put /ers/config/guesttype/sms/{id}
+    put /ers/config/guesttype/sms/{id},
 
 """
 

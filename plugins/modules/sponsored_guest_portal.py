@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Sponsored Guest Portal.
 - This API creates a sponsored guest portal.
 - This API deletes a sponsored guest portal by ID.
+- This API allows the client to update a sponsored guest portal by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -395,6 +396,7 @@ notes:
   - Paths used are
     post /ers/config/sponsoredguestportal,
     delete /ers/config/sponsoredguestportal/{id},
+    put /ers/config/sponsoredguestportal/{id},
 
 """
 

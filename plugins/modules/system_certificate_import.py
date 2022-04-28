@@ -10,7 +10,7 @@ module: system_certificate_import
 short_description: Resource module for System Certificate Import
 description:
 - Manage operation create of the resource System Certificate Import.
-- \#\#\# Import an X509 certificate as a system certificate.
+- Import an X509 certificate as a system certificate.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module

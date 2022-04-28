@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Network Access Time Date Conditions.
 - Network Access - Creates time/date condition.
 - Network Access - Delete Time/Date condition.
+- Network Access - Update network condition.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -167,6 +168,7 @@ notes:
   - Paths used are
     post /network-access/time-condition,
     delete /network-access/time-condition/{id},
+    put /network-access/time-condition/{id},
 
 """
 

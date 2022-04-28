@@ -27,7 +27,8 @@ notes:
     guest_user.GuestUser.approve_guest_user_by_id,
 
   - Paths used are
-    put /ers/config/guestuser/approve/{id}
+    put /ers/config/guestuser/approve/{id},
+
 """
 
 EXAMPLES = r"""

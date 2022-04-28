@@ -10,7 +10,7 @@ module: aci_bindings_info
 short_description: Information module for Aci Bindings
 description:
 - Get all Aci Bindings.
-- This API allows clients to retrieve all the bindings that were sent to Cisco
+- This API allows clients to retrieve all the bindings that were sent to Cisco.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info

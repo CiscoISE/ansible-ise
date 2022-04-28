@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Sxp Local Bindings.
 - This API creates a SXP local binding.
 - This API deletes a SXP local binding.
+- This API allows the client to update a SXP local binding.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -52,6 +53,7 @@ notes:
   - Paths used are
     post /ers/config/sxplocalbindings,
     delete /ers/config/sxplocalbindings/{id},
+    put /ers/config/sxplocalbindings/{id},
 
 """
 

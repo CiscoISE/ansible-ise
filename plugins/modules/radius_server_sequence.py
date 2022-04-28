@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Radius Server Sequence.
 - This API creates a RADIUS server sequence.
 - This API deletes a RADIUS server sequence.
+- This API allows the client to update a RADIUS server sequence.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -113,6 +114,7 @@ notes:
   - Paths used are
     post /ers/config/radiusserversequence,
     delete /ers/config/radiusserversequence/{id},
+    put /ers/config/radiusserversequence/{id},
 
 """
 

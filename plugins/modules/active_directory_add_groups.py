@@ -10,7 +10,7 @@ module: active_directory_add_groups
 short_description: Resource module for Active Directory Add Groups
 description:
 - Manage operation update of the resource Active Directory Add Groups.
-- This API loads domain groups configuration from Active Directory into Cisco
+- This API loads domain groups configuration from Active Directory into Cisco.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module

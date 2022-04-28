@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Egress Matrix Cell.
 - This API creates an egress matrix cell.
 - This API deletes an egress matrix cell.
+- This API allows the client to update an egress matrix cell.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -54,6 +55,7 @@ notes:
   - Paths used are
     post /ers/config/egressmatrixcell,
     delete /ers/config/egressmatrixcell/{id},
+    put /ers/config/egressmatrixcell/{id},
 
 """
 

@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Device Administration Network Conditions.
 - Device Admin- Creates network condition.
 - Device Admin - Delete network condition.
+- Device Admin - Update network condition.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -114,6 +115,7 @@ notes:
   - Paths used are
     post /device-admin/network-condition,
     delete /device-admin/network-condition/{id},
+    put /device-admin/network-condition/{id},
 
 """
 

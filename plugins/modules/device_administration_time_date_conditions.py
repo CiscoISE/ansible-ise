@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Device Administration Time Date Conditions.
 - Device Admin - Creates time/date condition.
 - Device Admin - Delete Time/Date condition.
+- Device Admin - Update network condition.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -167,6 +168,7 @@ notes:
   - Paths used are
     post /device-admin/time-condition,
     delete /device-admin/time-condition/{id},
+    put /device-admin/time-condition/{id},
 
 """
 

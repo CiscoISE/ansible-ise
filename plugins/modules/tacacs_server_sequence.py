@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Tacacs Server Sequence.
 - This API creates a TACACS server sequence.
 - This API deletes a TACACS server sequence.
+- This API allows the client to update a TACACS server sequence.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -60,6 +61,7 @@ notes:
   - Paths used are
     post /ers/config/tacacsserversequence,
     delete /ers/config/tacacsserversequence/{id},
+    put /ers/config/tacacsserversequence/{id},
 
 """
 

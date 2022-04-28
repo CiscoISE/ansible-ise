@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Id Store Sequence.
 - This API creates an identity sequence.
 - This API deletes an identity sequence.
+- This API allows the client to update an identity sequence.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -58,6 +59,7 @@ notes:
   - Paths used are
     post /ers/config/idstoresequence,
     delete /ers/config/idstoresequence/{id},
+    put /ers/config/idstoresequence/{id},
 
 """
 

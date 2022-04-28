@@ -10,8 +10,7 @@ module: active_directory_user_groups_info
 short_description: Information module for Active Directory User Groups
 description:
 - Get all Active Directory User Groups.
-- This API allows the client to get groups of which a given user
-  is a member.
+- This API allows the client to get groups of which a given user is a member.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -40,7 +39,7 @@ notes:
     active_directory.ActiveDirectory.get_user_groups,
 
   - Paths used are
-    put /ers/config/activedirectory/{id}/getUserGroups
+    put /ers/config/activedirectory/{id}/getUserGroups,
 
 """
 

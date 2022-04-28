@@ -70,7 +70,7 @@ EXAMPLES = r"""
       isData: true
       isDefaultVlan: true
       lastUpdate: string
-      maxValue: 1
+      maxValue: 0
       name: string
       vnId: string
       vnName: string

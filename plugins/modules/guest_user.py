@@ -13,6 +13,8 @@ description:
 - This API creates a guest user.
 - This API deletes a guest user by ID.
 - This API deletes a guest user.
+- This API allows the client to update a guest user by ID.
+- This API allows the client to update a guest user by name.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -127,6 +129,8 @@ notes:
     post /ers/config/guestuser,
     delete /ers/config/guestuser/name/{name},
     delete /ers/config/guestuser/{id},
+    put /ers/config/guestuser/name/{name},
+    put /ers/config/guestuser/{id},
 
 """
 

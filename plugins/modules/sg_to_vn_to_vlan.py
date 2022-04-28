@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Sg To Vn To Vlan.
 - This API creates a security group to virtual network.
 - This API deletes a security group ACL to virtual network.
+- This API allows the client to update a security group to virtual network.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -81,6 +82,7 @@ notes:
   - Paths used are
     post /ers/config/sgtvnvlan,
     delete /ers/config/sgtvnvlan/{id},
+    put /ers/config/sgtvnvlan/{id},
 
 """
 

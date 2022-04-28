@@ -30,7 +30,8 @@ notes:
     guest_user.GuestUser.update_guest_user_sms,
 
   - Paths used are
-    put /ers/config/guestuser/sms/{id}/portalId/{portalId}
+    put /ers/config/guestuser/sms/{id}/portalId/{portalId},
+
 """
 
 EXAMPLES = r"""

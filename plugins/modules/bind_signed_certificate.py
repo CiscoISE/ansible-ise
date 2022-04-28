@@ -10,7 +10,7 @@ module: bind_signed_certificate
 short_description: Resource module for Bind Signed Certificate
 description:
 - Manage operation create of the resource Bind Signed Certificate.
-- \#\#\# Bind CA Signed Certificate.
+- Bind CA Signed Certificate.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module

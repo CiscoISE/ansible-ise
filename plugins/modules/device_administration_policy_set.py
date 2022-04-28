@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Device Administration Policy Set.
 - Device Admin - Create a new policy set.
 - Device Admin - Delete a policy set.
+- Device Admin - Update a policy set.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -215,6 +216,7 @@ notes:
   - Paths used are
     post /device-admin/policy-set,
     delete /device-admin/policy-set/{id},
+    put /device-admin/policy-set/{id},
 
 """
 

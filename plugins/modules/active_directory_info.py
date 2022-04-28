@@ -13,7 +13,7 @@ description:
 - Get Active Directory by id.
 - Get Active Directory by name.
 - This API allows the client to get Active Directory by name.
-- This API fetchs the join point details by ID. The ID can be retrieved with the
+- This API fetchs the join point details by ID. The ID can be retrieved with the.
 - This API lists all the join points for Active Directory domains in Cisco ISE.
 version_added: '1.0.0'
 extends_documentation_fragment:

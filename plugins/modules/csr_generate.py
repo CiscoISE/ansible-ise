@@ -10,7 +10,7 @@ module: csr_generate
 short_description: Resource module for Csr Generate
 description:
 - Manage operation create of the resource Csr Generate.
-- \#\#\# Generate a certificate signing request for Multi-Use, Admin, EAP
+- Generate a certificate signing request for Multi-Use, Admin, EAP.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module

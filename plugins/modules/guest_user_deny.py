@@ -27,7 +27,8 @@ notes:
     guest_user.GuestUser.deny_guest_user_by_id,
 
   - Paths used are
-    put /ers/config/guestuser/deny/{id}
+    put /ers/config/guestuser/deny/{id},
+
 """
 
 EXAMPLES = r"""

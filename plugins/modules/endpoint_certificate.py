@@ -33,6 +33,9 @@ options:
   dirPath:
     description: Directory absolute path. Defaults to the current working directory.
     type: str
+  filename:
+    description: The filename used to save the download file.
+    type: str
   format:
     description: Allowed values - PKCS12, - PKCS12_CHAIN, - PKCS8, - PKCS8_CHAIN.
     type: str
@@ -52,7 +55,8 @@ notes:
     endpoint_certificate.EndpointCertificate.create_endpoint_certificate,
 
   - Paths used are
-    put /ers/config/endpointcert/certRequest
+    put /ers/config/endpointcert/certRequest,
+
 """
 
 EXAMPLES = r"""
@@ -67,6 +71,7 @@ EXAMPLES = r"""
       cn: string
       san: string
     dirPath: /tmp/downloads/
+    filename: download_filename.extension
     format: string
     password: string
     saveFile: true

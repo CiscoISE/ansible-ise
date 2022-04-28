@@ -10,8 +10,7 @@ module: active_directory_trusted_domains_info
 short_description: Information module for Active Directory Trusted Domains
 description:
 - Get all Active Directory Trusted Domains.
-- This API gets the list of domains that are accessible through
-  the given join point via trust relationships.
+- This API gets the list of domains that are accessible through the given join.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -29,7 +28,8 @@ notes:
     active_directory.ActiveDirectory.get_trusted_domains,
 
   - Paths used are
-    put /ers/config/activedirectory/{id}/getTrustedDomains
+    put /ers/config/activedirectory/{id}/getTrustedDomains,
+
 """
 
 EXAMPLES = r"""

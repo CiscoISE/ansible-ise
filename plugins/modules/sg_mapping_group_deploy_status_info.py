@@ -10,10 +10,7 @@ module: sg_mapping_group_deploy_status_info
 short_description: Information module for Sg Mapping Group Deploy Status
 description:
 - Get all Sg Mapping Group Deploy Status.
-- This API allows the client to get the IP to SGT mapping group
-  deployment status. Deploy Status will show last Deploy
-  command output. The information will be saved until the
-  next Deploy command.
+- This API allows the client to get the IP to SGT mapping group deployment.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -27,7 +24,8 @@ notes:
     ip_to_sgt_mapping_group.IpToSgtMappingGroup.get_deploy_status_ip_to_sgt_mapping_group,
 
   - Paths used are
-    put /ers/config/sgmappinggroup/deploy/status
+    put /ers/config/sgmappinggroup/deploy/status,
+
 """
 
 EXAMPLES = r"""

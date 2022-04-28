@@ -10,7 +10,6 @@ module: mnt_session_reauthentication_info
 short_description: Information module for Mnt Session Reauthentication
 description:
 - Get Mnt Session Reauthentication by id.
-- Session Reauthentication by MAC.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info

@@ -10,7 +10,6 @@ module: mnt_session_by_mac_info
 short_description: Information module for Mnt Session By Mac
 description:
 - Get Mnt Session By Mac by id.
-- Sessions by MAC.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info

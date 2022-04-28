@@ -10,7 +10,6 @@ module: mnt_session_delete_all
 short_description: Resource module for Mnt Session Delete All
 description:
 - Manage operation delete of the resource Mnt Session Delete All.
-- Delete All Sessions.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module

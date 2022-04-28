@@ -13,6 +13,8 @@ description:
 - Device Admin - Creates a library condition.
 - Device Admin - Delete a library condition.
 - NDevice Admin - Delete a library condition using condition Name.
+- Device Admin - Update library condition using condition name.
+- Device Admin - Update library condition.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -171,6 +173,8 @@ notes:
     post /device-admin/condition,
     delete /device-admin/condition/condition-by-name/{name},
     delete /device-admin/condition/{id},
+    put /device-admin/condition/condition-by-name/{name},
+    put /device-admin/condition/{id},
 
 """
 

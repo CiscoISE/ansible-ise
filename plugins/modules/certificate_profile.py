@@ -11,6 +11,7 @@ short_description: Resource module for Certificate Profile
 description:
 - Manage operations create and update of the resource Certificate Profile.
 - This API allows the client to create a certificate profile.
+- This API allows the client to update a certificate profile.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -59,6 +60,7 @@ notes:
 
   - Paths used are
     post /ers/config/certificateprofile,
+    put /ers/config/certificateprofile/{id},
 
 """
 

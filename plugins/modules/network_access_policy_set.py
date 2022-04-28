@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Network Access Policy Set.
 - Network Access - Create a new policy set.
 - Network Access - Delete a policy set.
+- Network Access - Update a policy set.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -215,6 +216,7 @@ notes:
   - Paths used are
     post /network-access/policy-set,
     delete /network-access/policy-set/{id},
+    put /network-access/policy-set/{id},
 
 """
 

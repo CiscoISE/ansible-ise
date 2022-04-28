@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Device Administration Authorization Rules.
 - Device Admin - Create authorization rule.
 - Device Admin - Delete authorization rule.
+- Device Admin - Update authorization rule.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -227,6 +228,7 @@ notes:
   - Paths used are
     post /device-admin/policy-set/{policyId}/authorization,
     delete /device-admin/policy-set/{policyId}/authorization/{id},
+    put /device-admin/policy-set/{policyId}/authorization/{id},
 
 """
 

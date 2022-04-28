@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Guest Type.
 - This API creates a guest type.
 - This API deletes a guest type.
+- This API allows the client to update a guest type.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -130,6 +131,7 @@ notes:
   - Paths used are
     post /ers/config/guesttype,
     delete /ers/config/guesttype/{id},
+    put /ers/config/guesttype/{id},
 
 """
 

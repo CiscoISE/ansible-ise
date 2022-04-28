@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Allowed Protocols.
 - This API creates an allowed protocol.
 - This API deletes an allowed protocol.
+- This API allows the client to update an allowed protocol.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -320,6 +321,7 @@ notes:
   - Paths used are
     post /ers/config/allowedprotocols,
     delete /ers/config/allowedprotocols/{id},
+    put /ers/config/allowedprotocols/{id},
 
 """
 

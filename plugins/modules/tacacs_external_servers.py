@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Tacacs External Servers.
 - This API creates TACACS external servers.
 - This API deletes TACACS external servers.
+- This API allows the client to update TACACS external servers.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -53,6 +54,7 @@ notes:
   - Paths used are
     post /ers/config/tacacsexternalservers,
     delete /ers/config/tacacsexternalservers/{id},
+    put /ers/config/tacacsexternalservers/{id},
 
 """
 

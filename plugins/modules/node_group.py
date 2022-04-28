@@ -10,8 +10,9 @@ module: node_group
 short_description: Resource module for Node Group
 description:
 - Manage operations create, update and delete of the resource Node Group.
-- This API creates a node group in the cluster. A node group is a group of PSNs,
+- This API creates a node group in the cluster. A node group is a group of PSNs,.
 - Delete an existing node group in the cluster. Deleting the node group does not delete the nodes, but failover is no longer carried out among the nodes.
+- Purpose of this API is to update an existing node group.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -62,6 +63,7 @@ notes:
   - Paths used are
     post /api/v1/deployment/node-group,
     delete /api/v1/deployment/node-group/{nodeGroupName},
+    put /api/v1/deployment/node-group/{nodeGroupName},
 
 """
 

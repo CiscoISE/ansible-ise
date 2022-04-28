@@ -20,10 +20,10 @@ requirements:
 - python >= 3.5
 notes:
   - SDK Method used are
-    session_directory.SessionDirectory.get_sessions_for_recovery
+    session_directory.SessionDirectory.get_sessions_for_recovery,
 
   - Paths used are
-    post /pxgrid/ise/radius/ise/session/getSessionsForRecovery
+    post /ise/session/getSessionsForRecovery,
 
 """
 

@@ -10,7 +10,7 @@ module: node_group_node_create
 short_description: Resource module for Node Group Node Create
 description:
 - Manage operation create of the resource Node Group Node Create.
-- This API adds a node to the node group in the cluster. When a node that
+- This API adds a node to the node group in the cluster. When a node that.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module

@@ -11,8 +11,8 @@ short_description: Resource module for Hotpatch Rollback
 description:
 - Manage operation create of the resource Hotpatch Rollback.
 - >
-   Triggers hot patch rollback on the Cisco ISE node. A task ID is returned which  can be used to monitor the progress of the hot patch rollback process.
-   As hot patch rollback triggers the Cisco ISE to restart, the task API becomes  unavailable for a certain period of time.
+   Triggers hot patch rollback on the Cisco ISE node. A task ID is returned which can be used to monitor the progress of the hot patch rollback process. As
+   hot patch rollback triggers the Cisco ISE to restart, the task API becomes unavailable for a certain period of time.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module

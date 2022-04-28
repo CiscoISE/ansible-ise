@@ -12,7 +12,7 @@ description:
 - Manage operation create of the resource Patch Install.
 - >
    Triggers patch installation on the Cisco ISE node. A task ID is returned which can be used to monitor the progress of the patch installation process. As
-   the patch   installation triggers the Cisco ISE to restart, the task API becomes unavailable for  a certain period of time.
+   the patch installation triggers the Cisco ISE to restart, the task API becomes unavailable for a certain period of time.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module

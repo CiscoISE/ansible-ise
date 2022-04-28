@@ -23,7 +23,8 @@ notes:
     trust_sec_configuration.TrustSecConfiguration.get_egress_policies,
 
   - Paths used are
-    post /pxgrid/ise/radius/ise/config/trustsec/getEgressPolicies
+    post /ise/config/trustsec/getEgressPolicies,
+
 """
 
 EXAMPLES = r"""

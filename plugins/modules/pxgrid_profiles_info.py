@@ -20,10 +20,10 @@ requirements:
 - python >= 3.5
 notes:
   - SDK Method used are
-    profiler.Profiler.get_profiles
+    profiler.Profiler.get_profiles,
 
   - Paths used are
-    post /pxgrid/ise/radius/ise/config/profiler/getProfiles
+    post /ise/config/profiler/getProfiles,
 
 """
 

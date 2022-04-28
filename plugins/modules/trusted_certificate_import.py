@@ -10,7 +10,7 @@ module: trusted_certificate_import
 short_description: Resource module for Trusted Certificate Import
 description:
 - Manage operation create of the resource Trusted Certificate Import.
-- \#\#\# Import an X509 certificate as a trust certificate.
+- Import an X509 certificate as a trust certificate.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module

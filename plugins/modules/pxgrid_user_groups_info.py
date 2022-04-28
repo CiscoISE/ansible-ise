@@ -20,10 +20,11 @@ requirements:
 - python >= 3.5
 notes:
   - SDK Method used are
-    session_directory.SessionDirectory.get_user_groups
+    session_directory.SessionDirectory.get_user_groups,
 
   - Paths used are
-    post /pxgrid/ise/radius/ise/session/getUserGroups
+    post /ise/session/getUserGroups,
+
 """
 
 EXAMPLES = r"""

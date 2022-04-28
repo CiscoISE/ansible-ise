@@ -13,6 +13,8 @@ description:
 - This API creates an internal user.
 - This API deletes an internal user by ID.
 - This API deletes an internal user by name.
+- This API allows the client to update an internal user by ID.
+- This API allows the client to update an internal user by name.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -81,6 +83,8 @@ notes:
     post /ers/config/internaluser,
     delete /ers/config/internaluser/name/{name},
     delete /ers/config/internaluser/{id},
+    put /ers/config/internaluser/name/{name},
+    put /ers/config/internaluser/{id},
 
 """
 

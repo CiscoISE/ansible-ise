@@ -10,7 +10,7 @@ module: node_secondary_to_primary
 short_description: Resource module for Node Secondary To Primary
 description:
 - Manage operation create of the resource Node Secondary To Primary.
-- Execute this API in the secondary PAN in the cluster to promote the node to
+- Execute this API in the secondary PAN in the cluster to promote the node to.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module

@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Downloadable Acl.
 - This API creates a downloadable ACL.
 - This API deletes a downloadable ACL.
+- This API allows the client to update a downloadable ACL.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -45,6 +46,7 @@ notes:
   - Paths used are
     post /ers/config/downloadableacl,
     delete /ers/config/downloadableacl/{id},
+    put /ers/config/downloadableacl/{id},
 
 """
 

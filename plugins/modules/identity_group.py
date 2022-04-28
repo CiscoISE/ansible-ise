@@ -11,6 +11,7 @@ short_description: Resource module for Identity Group
 description:
 - Manage operations create and update of the resource Identity Group.
 - This API creates an identity group.
+- This API allows the client to update an identity group.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -38,6 +39,7 @@ notes:
 
   - Paths used are
     post /ers/config/identitygroup,
+    put /ers/config/identitygroup/{id},
 
 """
 

@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Network Access Authorization Rules.
 - Network Access - Create authorization rule.
 - Network Access - Delete authorization rule.
+- Network Access - Update authorization rule.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -225,6 +226,7 @@ notes:
   - Paths used are
     post /network-access/policy-set/{policyId}/authorization,
     delete /network-access/policy-set/{policyId}/authorization/{id},
+    put /network-access/policy-set/{policyId}/authorization/{id},
 
 """
 

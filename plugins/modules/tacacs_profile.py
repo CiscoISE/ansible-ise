@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Tacacs Profile.
 - This API creates a TACACS profile.
 - This API deletes a TACACS profile.
+- This API allows the client to update a TACACS profile.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -56,6 +57,7 @@ notes:
   - Paths used are
     post /ers/config/tacacsprofile,
     delete /ers/config/tacacsprofile/{id},
+    put /ers/config/tacacsprofile/{id},
 
 """
 

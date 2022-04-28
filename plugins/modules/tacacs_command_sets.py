@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Tacacs Command Sets.
 - This API creates TACACS command sets.
 - This API deletes TACACS command sets.
+- This API allows the client to update TACACS command sets.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -59,6 +60,7 @@ notes:
   - Paths used are
     post /ers/config/tacacscommandsets,
     delete /ers/config/tacacscommandsets/{id},
+    put /ers/config/tacacscommandsets/{id},
 
 """
 

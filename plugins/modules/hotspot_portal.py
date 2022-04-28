@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Hotspot Portal.
 - This API creates a hotspot portal.
 - This API deletes a hotspot portal by ID.
+- This API allows the client to update a hotspot portal by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -261,6 +262,7 @@ notes:
   - Paths used are
     post /ers/config/hotspotportal,
     delete /ers/config/hotspotportal/{id},
+    put /ers/config/hotspotportal/{id},
 
 """
 

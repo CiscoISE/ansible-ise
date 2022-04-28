@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Sxp Connections.
 - This API creates a SXP connection.
 - This API deletes a SXP connection.
+- This API allows the client to update a SXP connection.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -56,6 +57,7 @@ notes:
   - Paths used are
     post /ers/config/sxpconnections,
     delete /ers/config/sxpconnections/{id},
+    put /ers/config/sxpconnections/{id},
 
 """
 

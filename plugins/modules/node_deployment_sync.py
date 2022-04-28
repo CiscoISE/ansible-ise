@@ -10,7 +10,7 @@ module: node_deployment_sync
 short_description: Resource module for Node Deployment Sync
 description:
 - Manage operation create of the resource Node Deployment Sync.
-- Performing a manual synchronization involves a reload of the target node, but
+- Performing a manual synchronization involves a reload of the target node, but.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module

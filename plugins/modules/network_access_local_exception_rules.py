@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Network Access Local Exception Rules.
 - Network Access - Create local authorization exception rule.
 - Network Access - Delete local exception rule.
+- Network Access - Update local exception rule.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -225,6 +226,7 @@ notes:
   - Paths used are
     post /network-access/policy-set/{policyId}/exception,
     delete /network-access/policy-set/{policyId}/exception/{id},
+    put /network-access/policy-set/{policyId}/exception/{id},
 
 """
 
