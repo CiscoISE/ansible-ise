@@ -586,6 +586,7 @@ options:
             type: str
           sponsorPortalList:
             description: Self Registered Portal's sponsorPortalList.
+            elements: str
             type: list
         type: dict
       selfRegSuccessSettings:
