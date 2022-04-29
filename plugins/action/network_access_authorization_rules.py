@@ -104,11 +104,10 @@ class NetworkAccessAuthorizationRules(object):
         prev_obj = None
         id_exists = False
         name_exists = False
+        name = False
         o_id = self.new_object.get("id") or self.new_object.get('rule', {}).get("id")
         policy_id = self.new_object.get("policy_id")
-        name = False
-        rule = self.new_object.get('rule', {})
-        if rule:
+        if self.new_object.get('rule', {}) is not None:
             name = self.new_object.get('rule', {}).get("name")
         if o_id:
             prev_obj = self.get_object_by_id(o_id, policy_id)
@@ -153,8 +152,7 @@ class NetworkAccessAuthorizationRules(object):
     def update(self):
         id = self.new_object.get("id") or self.new_object.get('rule', {}).get("id")
         name = False
-        rule = self.new_object.get('rule', {})
-        if rule:
+        if self.new_object.get('rule', {}) is not None:
             name = self.new_object.get('rule', {}).get("name")
         policy_id = self.new_object.get("policy_id")
         result = None
@@ -173,8 +171,7 @@ class NetworkAccessAuthorizationRules(object):
     def delete(self):
         id = self.new_object.get("id") or self.new_object.get('rule', {}).get("id")
         name = False
-        rule = self.new_object.get('rule', {})
-        if rule:
+        if self.new_object.get('rule', {}) is not None:
             name = self.new_object.get('rule', {}).get("name")
         policy_id = self.new_object.get("policy_id")
         result = None

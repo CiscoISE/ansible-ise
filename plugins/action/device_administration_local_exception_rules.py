@@ -104,9 +104,11 @@ class DeviceAdministrationLocalExceptionRules(object):
         prev_obj = None
         id_exists = False
         name_exists = False
+        name = False
         o_id = self.new_object.get("id") or self.new_object.get('rule', {}).get("id")
         policy_id = self.new_object.get("policy_id")
-        name = self.new_object.get('rule', {}).get("name")
+        if self.new_object.get('rule', {}) is not None:
+            name = self.new_object.get('rule', {}).get("name")
         if o_id:
             prev_obj = self.get_object_by_id(o_id, policy_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
@@ -149,7 +151,9 @@ class DeviceAdministrationLocalExceptionRules(object):
 
     def update(self):
         id = self.new_object.get("id") or self.new_object.get('rule', {}).get("id")
-        name = self.new_object.get('rule', {}).get("name")
+        name = False
+        if self.new_object.get('rule', {}) is not None:
+            name = self.new_object.get('rule', {}).get("name")
         policy_id = self.new_object.get("policy_id")
         result = None
         if not id:
@@ -166,7 +170,9 @@ class DeviceAdministrationLocalExceptionRules(object):
 
     def delete(self):
         id = self.new_object.get("id") or self.new_object.get('rule', {}).get("id")
-        name = self.new_object.get('rule', {}).get("name")
+        name = False
+        if self.new_object.get('rule', {}) is not None:
+            name = self.new_object.get('rule', {}).get("name")
         policy_id = self.new_object.get("policy_id")
         result = None
         if not id:
