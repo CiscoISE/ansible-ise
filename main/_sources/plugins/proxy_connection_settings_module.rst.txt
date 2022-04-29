@@ -42,7 +42,7 @@ cisco.ise.proxy_connection_settings module -- Resource module for Proxy Connecti
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.1).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -107,7 +107,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-bypassHosts"></div>
 
-      .. _ansible_collections.cisco.ise.proxy_connection_settings_module__parameter-bypassHosts:
+      .. _ansible_collections.cisco.ise.proxy_connection_settings_module__parameter-bypasshosts:
 
       .. rst-class:: ansible-option-title
 
@@ -568,7 +568,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-passwordRequired"></div>
 
-      .. _ansible_collections.cisco.ise.proxy_connection_settings_module__parameter-passwordRequired:
+      .. _ansible_collections.cisco.ise.proxy_connection_settings_module__parameter-passwordrequired:
 
       .. rst-class:: ansible-option-title
 
@@ -643,7 +643,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-userName"></div>
 
-      .. _ansible_collections.cisco.ise.proxy_connection_settings_module__parameter-userName:
+      .. _ansible_collections.cisco.ise.proxy_connection_settings_module__parameter-username:
 
       .. rst-class:: ansible-option-title
 

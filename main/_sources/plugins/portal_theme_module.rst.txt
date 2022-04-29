@@ -42,7 +42,7 @@ cisco.ise.portal_theme module -- Resource module for Portal Theme
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.1).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -569,7 +569,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-themeData"></div>
 
-      .. _ansible_collections.cisco.ise.portal_theme_module__parameter-themeData:
+      .. _ansible_collections.cisco.ise.portal_theme_module__parameter-themedata:
 
       .. rst-class:: ansible-option-title
 

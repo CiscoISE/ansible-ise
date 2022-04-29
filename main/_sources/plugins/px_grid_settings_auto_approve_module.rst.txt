@@ -42,7 +42,7 @@ cisco.ise.px_grid_settings_auto_approve module -- Resource module for Px Grid Se
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.1).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -107,7 +107,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-allowPasswordBasedAccounts"></div>
 
-      .. _ansible_collections.cisco.ise.px_grid_settings_auto_approve_module__parameter-allowPasswordBasedAccounts:
+      .. _ansible_collections.cisco.ise.px_grid_settings_auto_approve_module__parameter-allowpasswordbasedaccounts:
 
       .. rst-class:: ansible-option-title
 
@@ -148,7 +148,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-autoApproveCertBasedAccounts"></div>
 
-      .. _ansible_collections.cisco.ise.px_grid_settings_auto_approve_module__parameter-autoApproveCertBasedAccounts:
+      .. _ansible_collections.cisco.ise.px_grid_settings_auto_approve_module__parameter-autoapprovecertbasedaccounts:
 
       .. rst-class:: ansible-option-title
 

@@ -42,7 +42,7 @@ cisco.ise.hotpatch_rollback module -- Resource module for Hotpatch Rollback
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.1).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -108,7 +108,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-hotpatchName"></div>
 
-      .. _ansible_collections.cisco.ise.hotpatch_rollback_module__parameter-hotpatchName:
+      .. _ansible_collections.cisco.ise.hotpatch_rollback_module__parameter-hotpatchname:
 
       .. rst-class:: ansible-option-title
 
@@ -501,7 +501,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-repositoryName"></div>
 
-      .. _ansible_collections.cisco.ise.hotpatch_rollback_module__parameter-repositoryName:
+      .. _ansible_collections.cisco.ise.hotpatch_rollback_module__parameter-repositoryname:
 
       .. rst-class:: ansible-option-title
 

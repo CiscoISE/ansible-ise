@@ -42,7 +42,7 @@ cisco.ise.system_certificate_import module -- Resource module for System Certifi
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.1).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -148,7 +148,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-allowExtendedValidity"></div>
 
-      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-allowExtendedValidity:
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-allowextendedvalidity:
 
       .. rst-class:: ansible-option-title
 
@@ -189,7 +189,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-allowOutOfDateCert"></div>
 
-      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-allowOutOfDateCert:
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-allowoutofdatecert:
 
       .. rst-class:: ansible-option-title
 
@@ -230,7 +230,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-allowPortalTagTransferForSameSubject"></div>
 
-      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-allowPortalTagTransferForSameSubject:
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-allowportaltagtransferforsamesubject:
 
       .. rst-class:: ansible-option-title
 
@@ -271,7 +271,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-allowReplacementOfCertificates"></div>
 
-      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-allowReplacementOfCertificates:
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-allowreplacementofcertificates:
 
       .. rst-class:: ansible-option-title
 
@@ -312,7 +312,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-allowReplacementOfPortalGroupTag"></div>
 
-      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-allowReplacementOfPortalGroupTag:
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-allowreplacementofportalgrouptag:
 
       .. rst-class:: ansible-option-title
 
@@ -353,7 +353,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-allowRoleTransferForSameSubject"></div>
 
-      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-allowRoleTransferForSameSubject:
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-allowroletransferforsamesubject:
 
       .. rst-class:: ansible-option-title
 
@@ -394,7 +394,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-allowSHA1Certificates"></div>
 
-      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-allowSHA1Certificates:
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-allowsha1certificates:
 
       .. rst-class:: ansible-option-title
 
@@ -435,7 +435,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-allowWildCardCertificates"></div>
 
-      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-allowWildCardCertificates:
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-allowwildcardcertificates:
 
       .. rst-class:: ansible-option-title
 
@@ -1060,7 +1060,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-portalGroupTag"></div>
 
-      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-portalGroupTag:
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-portalgrouptag:
 
       .. rst-class:: ansible-option-title
 
@@ -1094,7 +1094,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-privateKeyData"></div>
 
-      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-privateKeyData:
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-privatekeydata:
 
       .. rst-class:: ansible-option-title
 
@@ -1251,7 +1251,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-validateCertificateExtensions"></div>
 
-      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-validateCertificateExtensions:
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-validatecertificateextensions:
 
       .. rst-class:: ansible-option-title
 

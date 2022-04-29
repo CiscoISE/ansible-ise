@@ -42,7 +42,7 @@ cisco.ise.endpoint_bulk_request module -- Resource module for Endpoint Bulk Requ
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.1).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -466,7 +466,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-operationType"></div>
 
-      .. _ansible_collections.cisco.ise.endpoint_bulk_request_module__parameter-operationType:
+      .. _ansible_collections.cisco.ise.endpoint_bulk_request_module__parameter-operationtype:
 
       .. rst-class:: ansible-option-title
 
@@ -500,7 +500,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-resourceMediaType"></div>
 
-      .. _ansible_collections.cisco.ise.endpoint_bulk_request_module__parameter-resourceMediaType:
+      .. _ansible_collections.cisco.ise.endpoint_bulk_request_module__parameter-resourcemediatype:
 
       .. rst-class:: ansible-option-title
 

@@ -42,7 +42,7 @@ cisco.ise.sxp_connections module -- Resource module for Sxp Connections
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.1).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -217,7 +217,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ipAddress"></div>
 
-      .. _ansible_collections.cisco.ise.sxp_connections_module__parameter-ipAddress:
+      .. _ansible_collections.cisco.ise.sxp_connections_module__parameter-ipaddress:
 
       .. rst-class:: ansible-option-title
 
@@ -610,7 +610,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-sxpMode"></div>
 
-      .. _ansible_collections.cisco.ise.sxp_connections_module__parameter-sxpMode:
+      .. _ansible_collections.cisco.ise.sxp_connections_module__parameter-sxpmode:
 
       .. rst-class:: ansible-option-title
 
@@ -644,7 +644,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-sxpNode"></div>
 
-      .. _ansible_collections.cisco.ise.sxp_connections_module__parameter-sxpNode:
+      .. _ansible_collections.cisco.ise.sxp_connections_module__parameter-sxpnode:
 
       .. rst-class:: ansible-option-title
 
@@ -678,7 +678,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-sxpPeer"></div>
 
-      .. _ansible_collections.cisco.ise.sxp_connections_module__parameter-sxpPeer:
+      .. _ansible_collections.cisco.ise.sxp_connections_module__parameter-sxppeer:
 
       .. rst-class:: ansible-option-title
 
@@ -712,7 +712,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-sxpVersion"></div>
 
-      .. _ansible_collections.cisco.ise.sxp_connections_module__parameter-sxpVersion:
+      .. _ansible_collections.cisco.ise.sxp_connections_module__parameter-sxpversion:
 
       .. rst-class:: ansible-option-title
 
@@ -746,7 +746,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-sxpVpn"></div>
 
-      .. _ansible_collections.cisco.ise.sxp_connections_module__parameter-sxpVpn:
+      .. _ansible_collections.cisco.ise.sxp_connections_module__parameter-sxpvpn:
 
       .. rst-class:: ansible-option-title
 

@@ -42,7 +42,7 @@ cisco.ise.egress_matrix_cell module -- Resource module for Egress Matrix Cell
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.1).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -108,7 +108,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-defaultRule"></div>
 
-      .. _ansible_collections.cisco.ise.egress_matrix_cell_module__parameter-defaultRule:
+      .. _ansible_collections.cisco.ise.egress_matrix_cell_module__parameter-defaultrule:
 
       .. rst-class:: ansible-option-title
 
@@ -176,7 +176,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-destinationSgtId"></div>
 
-      .. _ansible_collections.cisco.ise.egress_matrix_cell_module__parameter-destinationSgtId:
+      .. _ansible_collections.cisco.ise.egress_matrix_cell_module__parameter-destinationsgtid:
 
       .. rst-class:: ansible-option-title
 
@@ -603,7 +603,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-matrixCellStatus"></div>
 
-      .. _ansible_collections.cisco.ise.egress_matrix_cell_module__parameter-matrixCellStatus:
+      .. _ansible_collections.cisco.ise.egress_matrix_cell_module__parameter-matrixcellstatus:
 
       .. rst-class:: ansible-option-title
 
@@ -705,7 +705,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-sourceSgtId"></div>
 
-      .. _ansible_collections.cisco.ise.egress_matrix_cell_module__parameter-sourceSgtId:
+      .. _ansible_collections.cisco.ise.egress_matrix_cell_module__parameter-sourcesgtid:
 
       .. rst-class:: ansible-option-title
 

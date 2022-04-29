@@ -42,7 +42,7 @@ cisco.ise.certificate_profile module -- Resource module for Certificate Profile
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.1).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -107,7 +107,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-allowedAsUserName"></div>
 
-      .. _ansible_collections.cisco.ise.certificate_profile_module__parameter-allowedAsUserName:
+      .. _ansible_collections.cisco.ise.certificate_profile_module__parameter-allowedasusername:
 
       .. rst-class:: ansible-option-title
 
@@ -148,7 +148,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-certificateAttributeName"></div>
 
-      .. _ansible_collections.cisco.ise.certificate_profile_module__parameter-certificateAttributeName:
+      .. _ansible_collections.cisco.ise.certificate_profile_module__parameter-certificateattributename:
 
       .. rst-class:: ansible-option-title
 
@@ -216,7 +216,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-externalIdentityStoreName"></div>
 
-      .. _ansible_collections.cisco.ise.certificate_profile_module__parameter-externalIdentityStoreName:
+      .. _ansible_collections.cisco.ise.certificate_profile_module__parameter-externalidentitystorename:
 
       .. rst-class:: ansible-option-title
 
@@ -643,7 +643,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-matchMode"></div>
 
-      .. _ansible_collections.cisco.ise.certificate_profile_module__parameter-matchMode:
+      .. _ansible_collections.cisco.ise.certificate_profile_module__parameter-matchmode:
 
       .. rst-class:: ansible-option-title
 
@@ -711,7 +711,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-usernameFrom"></div>
 
-      .. _ansible_collections.cisco.ise.certificate_profile_module__parameter-usernameFrom:
+      .. _ansible_collections.cisco.ise.certificate_profile_module__parameter-usernamefrom:
 
       .. rst-class:: ansible-option-title
 

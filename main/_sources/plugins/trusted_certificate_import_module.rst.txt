@@ -42,7 +42,7 @@ cisco.ise.trusted_certificate_import module -- Resource module for Trusted Certi
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.1).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -107,7 +107,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-allowBasicConstraintCAFalse"></div>
 
-      .. _ansible_collections.cisco.ise.trusted_certificate_import_module__parameter-allowBasicConstraintCAFalse:
+      .. _ansible_collections.cisco.ise.trusted_certificate_import_module__parameter-allowbasicconstraintcafalse:
 
       .. rst-class:: ansible-option-title
 
@@ -148,7 +148,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-allowOutOfDateCert"></div>
 
-      .. _ansible_collections.cisco.ise.trusted_certificate_import_module__parameter-allowOutOfDateCert:
+      .. _ansible_collections.cisco.ise.trusted_certificate_import_module__parameter-allowoutofdatecert:
 
       .. rst-class:: ansible-option-title
 
@@ -189,7 +189,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-allowSHA1Certificates"></div>
 
-      .. _ansible_collections.cisco.ise.trusted_certificate_import_module__parameter-allowSHA1Certificates:
+      .. _ansible_collections.cisco.ise.trusted_certificate_import_module__parameter-allowsha1certificates:
 
       .. rst-class:: ansible-option-title
 
@@ -691,7 +691,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-trustForCertificateBasedAdminAuth"></div>
 
-      .. _ansible_collections.cisco.ise.trusted_certificate_import_module__parameter-trustForCertificateBasedAdminAuth:
+      .. _ansible_collections.cisco.ise.trusted_certificate_import_module__parameter-trustforcertificatebasedadminauth:
 
       .. rst-class:: ansible-option-title
 
@@ -732,7 +732,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-trustForCiscoServicesAuth"></div>
 
-      .. _ansible_collections.cisco.ise.trusted_certificate_import_module__parameter-trustForCiscoServicesAuth:
+      .. _ansible_collections.cisco.ise.trusted_certificate_import_module__parameter-trustforciscoservicesauth:
 
       .. rst-class:: ansible-option-title
 
@@ -773,7 +773,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-trustForClientAuth"></div>
 
-      .. _ansible_collections.cisco.ise.trusted_certificate_import_module__parameter-trustForClientAuth:
+      .. _ansible_collections.cisco.ise.trusted_certificate_import_module__parameter-trustforclientauth:
 
       .. rst-class:: ansible-option-title
 
@@ -814,7 +814,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-trustForIseAuth"></div>
 
-      .. _ansible_collections.cisco.ise.trusted_certificate_import_module__parameter-trustForIseAuth:
+      .. _ansible_collections.cisco.ise.trusted_certificate_import_module__parameter-trustforiseauth:
 
       .. rst-class:: ansible-option-title
 
@@ -855,7 +855,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-validateCertificateExtensions"></div>
 
-      .. _ansible_collections.cisco.ise.trusted_certificate_import_module__parameter-validateCertificateExtensions:
+      .. _ansible_collections.cisco.ise.trusted_certificate_import_module__parameter-validatecertificateextensions:
 
       .. rst-class:: ansible-option-title
 

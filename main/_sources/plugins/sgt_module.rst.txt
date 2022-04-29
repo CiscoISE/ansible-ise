@@ -42,7 +42,7 @@ cisco.ise.sgt module -- Resource module for Sgt
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.1).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -108,7 +108,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-defaultSGACLs"></div>
 
-      .. _ansible_collections.cisco.ise.sgt_module__parameter-defaultSGACLs:
+      .. _ansible_collections.cisco.ise.sgt_module__parameter-defaultsgacls:
 
       .. rst-class:: ansible-option-title
 
@@ -176,7 +176,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-generationId"></div>
 
-      .. _ansible_collections.cisco.ise.sgt_module__parameter-generationId:
+      .. _ansible_collections.cisco.ise.sgt_module__parameter-generationid:
 
       .. rst-class:: ansible-option-title
 
@@ -603,7 +603,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-isReadOnly"></div>
 
-      .. _ansible_collections.cisco.ise.sgt_module__parameter-isReadOnly:
+      .. _ansible_collections.cisco.ise.sgt_module__parameter-isreadonly:
 
       .. rst-class:: ansible-option-title
 
@@ -678,7 +678,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-propogateToApic"></div>
 
-      .. _ansible_collections.cisco.ise.sgt_module__parameter-propogateToApic:
+      .. _ansible_collections.cisco.ise.sgt_module__parameter-propogatetoapic:
 
       .. rst-class:: ansible-option-title
 

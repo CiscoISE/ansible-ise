@@ -42,7 +42,7 @@ cisco.ise.trustsec_nbar_app module -- Resource module for Trustsec Nbar App
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.1).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -568,7 +568,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-networkIdentities"></div>
 
-      .. _ansible_collections.cisco.ise.trustsec_nbar_app_module__parameter-networkIdentities:
+      .. _ansible_collections.cisco.ise.trustsec_nbar_app_module__parameter-networkidentities:
 
       .. rst-class:: ansible-option-title
 
@@ -602,7 +602,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-networkIdentities/ports"></div>
 
-      .. _ansible_collections.cisco.ise.trustsec_nbar_app_module__parameter-networkIdentities/ports:
+      .. _ansible_collections.cisco.ise.trustsec_nbar_app_module__parameter-networkidentities/ports:
 
       .. rst-class:: ansible-option-title
 
@@ -636,7 +636,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-networkIdentities/protocol"></div>
 
-      .. _ansible_collections.cisco.ise.trustsec_nbar_app_module__parameter-networkIdentities/protocol:
+      .. _ansible_collections.cisco.ise.trustsec_nbar_app_module__parameter-networkidentities/protocol:
 
       .. rst-class:: ansible-option-title
 

@@ -42,7 +42,7 @@ cisco.ise.sponsor_group module -- Resource module for Sponsor Group
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.1).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -108,7 +108,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-autoNotification"></div>
 
-      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-autoNotification:
+      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-autonotification:
 
       .. rst-class:: ansible-option-title
 
@@ -149,7 +149,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createPermissions"></div>
 
-      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-createPermissions:
+      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-createpermissions:
 
       .. rst-class:: ansible-option-title
 
@@ -183,7 +183,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createPermissions/canCreateRandomAccounts"></div>
 
-      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-createPermissions/canCreateRandomAccounts:
+      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-createpermissions/cancreaterandomaccounts:
 
       .. rst-class:: ansible-option-title
 
@@ -224,7 +224,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createPermissions/canImportMultipleAccounts"></div>
 
-      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-createPermissions/canImportMultipleAccounts:
+      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-createpermissions/canimportmultipleaccounts:
 
       .. rst-class:: ansible-option-title
 
@@ -265,7 +265,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createPermissions/canSetFutureStartDate"></div>
 
-      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-createPermissions/canSetFutureStartDate:
+      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-createpermissions/cansetfuturestartdate:
 
       .. rst-class:: ansible-option-title
 
@@ -306,7 +306,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createPermissions/canSpecifyUsernamePrefix"></div>
 
-      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-createPermissions/canSpecifyUsernamePrefix:
+      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-createpermissions/canspecifyusernameprefix:
 
       .. rst-class:: ansible-option-title
 
@@ -347,7 +347,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createPermissions/defaultUsernamePrefix"></div>
 
-      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-createPermissions/defaultUsernamePrefix:
+      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-createpermissions/defaultusernameprefix:
 
       .. rst-class:: ansible-option-title
 
@@ -381,7 +381,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createPermissions/importBatchSizeLimit"></div>
 
-      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-createPermissions/importBatchSizeLimit:
+      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-createpermissions/importbatchsizelimit:
 
       .. rst-class:: ansible-option-title
 
@@ -415,7 +415,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createPermissions/randomBatchSizeLimit"></div>
 
-      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-createPermissions/randomBatchSizeLimit:
+      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-createpermissions/randombatchsizelimit:
 
       .. rst-class:: ansible-option-title
 
@@ -449,7 +449,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-createPermissions/startDateFutureLimitDays"></div>
 
-      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-createPermissions/startDateFutureLimitDays:
+      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-createpermissions/startdatefuturelimitdays:
 
       .. rst-class:: ansible-option-title
 
@@ -518,7 +518,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-guestTypes"></div>
 
-      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-guestTypes:
+      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-guesttypes:
 
       .. rst-class:: ansible-option-title
 
@@ -586,7 +586,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-isDefaultGroup"></div>
 
-      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-isDefaultGroup:
+      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-isdefaultgroup:
 
       .. rst-class:: ansible-option-title
 
@@ -986,7 +986,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-isEnabled"></div>
 
-      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-isEnabled:
+      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-isenabled:
 
       .. rst-class:: ansible-option-title
 
@@ -1061,7 +1061,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-managePermission"></div>
 
-      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-managePermission:
+      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-managepermission:
 
       .. rst-class:: ansible-option-title
 
@@ -1095,7 +1095,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-memberGroups"></div>
 
-      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-memberGroups:
+      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-membergroups:
 
       .. rst-class:: ansible-option-title
 
@@ -1163,7 +1163,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-otherPermissions"></div>
 
-      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-otherPermissions:
+      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-otherpermissions:
 
       .. rst-class:: ansible-option-title
 
@@ -1197,7 +1197,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-otherPermissions/canAccessViaRest"></div>
 
-      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-otherPermissions/canAccessViaRest:
+      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-otherpermissions/canaccessviarest:
 
       .. rst-class:: ansible-option-title
 
@@ -1238,7 +1238,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-otherPermissions/canApproveSelfregGuests"></div>
 
-      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-otherPermissions/canApproveSelfregGuests:
+      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-otherpermissions/canapproveselfregguests:
 
       .. rst-class:: ansible-option-title
 
@@ -1279,7 +1279,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-otherPermissions/canDeleteGuestAccounts"></div>
 
-      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-otherPermissions/canDeleteGuestAccounts:
+      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-otherpermissions/candeleteguestaccounts:
 
       .. rst-class:: ansible-option-title
 
@@ -1320,7 +1320,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-otherPermissions/canExtendGuestAccounts"></div>
 
-      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-otherPermissions/canExtendGuestAccounts:
+      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-otherpermissions/canextendguestaccounts:
 
       .. rst-class:: ansible-option-title
 
@@ -1361,7 +1361,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-otherPermissions/canReinstateSuspendedAccounts"></div>
 
-      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-otherPermissions/canReinstateSuspendedAccounts:
+      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-otherpermissions/canreinstatesuspendedaccounts:
 
       .. rst-class:: ansible-option-title
 
@@ -1402,7 +1402,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-otherPermissions/canResetGuestPasswords"></div>
 
-      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-otherPermissions/canResetGuestPasswords:
+      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-otherpermissions/canresetguestpasswords:
 
       .. rst-class:: ansible-option-title
 
@@ -1443,7 +1443,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-otherPermissions/canSendSmsNotifications"></div>
 
-      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-otherPermissions/canSendSmsNotifications:
+      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-otherpermissions/cansendsmsnotifications:
 
       .. rst-class:: ansible-option-title
 
@@ -1484,7 +1484,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-otherPermissions/canSuspendGuestAccounts"></div>
 
-      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-otherPermissions/canSuspendGuestAccounts:
+      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-otherpermissions/cansuspendguestaccounts:
 
       .. rst-class:: ansible-option-title
 
@@ -1525,7 +1525,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-otherPermissions/canUpdateGuestContactInfo"></div>
 
-      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-otherPermissions/canUpdateGuestContactInfo:
+      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-otherpermissions/canupdateguestcontactinfo:
 
       .. rst-class:: ansible-option-title
 
@@ -1566,7 +1566,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-otherPermissions/canViewGuestPasswords"></div>
 
-      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-otherPermissions/canViewGuestPasswords:
+      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-otherpermissions/canviewguestpasswords:
 
       .. rst-class:: ansible-option-title
 
@@ -1607,7 +1607,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-otherPermissions/limitApprovalToSponsorsGuests"></div>
 
-      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-otherPermissions/limitApprovalToSponsorsGuests:
+      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-otherpermissions/limitapprovaltosponsorsguests:
 
       .. rst-class:: ansible-option-title
 
@@ -1648,7 +1648,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-otherPermissions/requireSuspensionReason"></div>
 
-      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-otherPermissions/requireSuspensionReason:
+      .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-otherpermissions/requiresuspensionreason:
 
       .. rst-class:: ansible-option-title
 

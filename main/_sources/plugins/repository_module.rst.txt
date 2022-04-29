@@ -42,7 +42,7 @@ cisco.ise.repository module -- Resource module for Repository
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.1).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -106,7 +106,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-enablePki"></div>
 
-      .. _ansible_collections.cisco.ise.repository_module__parameter-enablePki:
+      .. _ansible_collections.cisco.ise.repository_module__parameter-enablepki:
 
       .. rst-class:: ansible-option-title
 
@@ -642,7 +642,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-serverName"></div>
 
-      .. _ansible_collections.cisco.ise.repository_module__parameter-serverName:
+      .. _ansible_collections.cisco.ise.repository_module__parameter-servername:
 
       .. rst-class:: ansible-option-title
 
@@ -676,7 +676,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-userName"></div>
 
-      .. _ansible_collections.cisco.ise.repository_module__parameter-userName:
+      .. _ansible_collections.cisco.ise.repository_module__parameter-username:
 
       .. rst-class:: ansible-option-title
 

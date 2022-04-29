@@ -42,7 +42,7 @@ cisco.ise.sg_mapping module -- Resource module for Sg Mapping
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.1).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -108,7 +108,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-deployTo"></div>
 
-      .. _ansible_collections.cisco.ise.sg_mapping_module__parameter-deployTo:
+      .. _ansible_collections.cisco.ise.sg_mapping_module__parameter-deployto:
 
       .. rst-class:: ansible-option-title
 
@@ -142,7 +142,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-deployType"></div>
 
-      .. _ansible_collections.cisco.ise.sg_mapping_module__parameter-deployType:
+      .. _ansible_collections.cisco.ise.sg_mapping_module__parameter-deploytype:
 
       .. rst-class:: ansible-option-title
 
@@ -176,7 +176,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-hostIp"></div>
 
-      .. _ansible_collections.cisco.ise.sg_mapping_module__parameter-hostIp:
+      .. _ansible_collections.cisco.ise.sg_mapping_module__parameter-hostip:
 
       .. rst-class:: ansible-option-title
 
@@ -210,7 +210,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-hostName"></div>
 
-      .. _ansible_collections.cisco.ise.sg_mapping_module__parameter-hostName:
+      .. _ansible_collections.cisco.ise.sg_mapping_module__parameter-hostname:
 
       .. rst-class:: ansible-option-title
 
@@ -637,7 +637,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-mappingGroup"></div>
 
-      .. _ansible_collections.cisco.ise.sg_mapping_module__parameter-mappingGroup:
+      .. _ansible_collections.cisco.ise.sg_mapping_module__parameter-mappinggroup:
 
       .. rst-class:: ansible-option-title
 

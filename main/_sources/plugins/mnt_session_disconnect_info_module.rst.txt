@@ -42,7 +42,7 @@ cisco.ise.mnt_session_disconnect_info module -- Information module for Mnt Sessi
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.1).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -107,7 +107,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-DISCONNECT_TYPE"></div>
 
-      .. _ansible_collections.cisco.ise.mnt_session_disconnect_info_module__parameter-DISCONNECT_TYPE:
+      .. _ansible_collections.cisco.ise.mnt_session_disconnect_info_module__parameter-disconnect_type:
 
       .. rst-class:: ansible-option-title
 
@@ -141,7 +141,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ENDPOINT_IP"></div>
 
-      .. _ansible_collections.cisco.ise.mnt_session_disconnect_info_module__parameter-ENDPOINT_IP:
+      .. _ansible_collections.cisco.ise.mnt_session_disconnect_info_module__parameter-endpoint_ip:
 
       .. rst-class:: ansible-option-title
 
@@ -534,7 +534,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-MAC"></div>
 
-      .. _ansible_collections.cisco.ise.mnt_session_disconnect_info_module__parameter-MAC:
+      .. _ansible_collections.cisco.ise.mnt_session_disconnect_info_module__parameter-mac:
 
       .. rst-class:: ansible-option-title
 
@@ -568,7 +568,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-NAS_IPV4"></div>
 
-      .. _ansible_collections.cisco.ise.mnt_session_disconnect_info_module__parameter-NAS_IPV4:
+      .. _ansible_collections.cisco.ise.mnt_session_disconnect_info_module__parameter-nas_ipv4:
 
       .. rst-class:: ansible-option-title
 
@@ -602,7 +602,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-PSN_NAME"></div>
 
-      .. _ansible_collections.cisco.ise.mnt_session_disconnect_info_module__parameter-PSN_NAME:
+      .. _ansible_collections.cisco.ise.mnt_session_disconnect_info_module__parameter-psn_name:
 
       .. rst-class:: ansible-option-title
 

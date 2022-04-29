@@ -42,7 +42,7 @@ cisco.ise.trustsec_vn_bulk_create module -- Resource module for Trustsec Vn Bulk
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.1).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -499,7 +499,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-payload/additionalAttributes"></div>
 
-      .. _ansible_collections.cisco.ise.trustsec_vn_bulk_create_module__parameter-payload/additionalAttributes:
+      .. _ansible_collections.cisco.ise.trustsec_vn_bulk_create_module__parameter-payload/additionalattributes:
 
       .. rst-class:: ansible-option-title
 
@@ -567,7 +567,7 @@ Parameters
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-payload/lastUpdate"></div>
 
-      .. _ansible_collections.cisco.ise.trustsec_vn_bulk_create_module__parameter-payload/lastUpdate:
+      .. _ansible_collections.cisco.ise.trustsec_vn_bulk_create_module__parameter-payload/lastupdate:
 
       .. rst-class:: ansible-option-title
 

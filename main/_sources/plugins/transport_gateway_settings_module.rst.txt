@@ -42,7 +42,7 @@ cisco.ise.transport_gateway_settings module -- Resource module for Transport Gat
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.1).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -107,7 +107,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-enableTransportGateway"></div>
 
-      .. _ansible_collections.cisco.ise.transport_gateway_settings_module__parameter-enableTransportGateway:
+      .. _ansible_collections.cisco.ise.transport_gateway_settings_module__parameter-enabletransportgateway:
 
       .. rst-class:: ansible-option-title
 
