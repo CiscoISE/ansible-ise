@@ -730,4 +730,3 @@ releases:
         - network_access_authorization_rules - added a validation reading the data
         - network_access_global_exception_rules - added a validation reading the data
         - network_access_local_exception_rules - added a validation reading the data
-        

@@ -349,7 +349,8 @@ EXAMPLES = r"""
         maxFailedAttemptsBeforeRateLimit: 0
         requireAupAcceptance: true
         requireAupScrolling: true
-        socialConfigs: []
+        socialConfigs:
+        - {}
         timeBetweenLoginsDuringRateLimit: 0
       portalSettings:
         allowedInterfaces:
@@ -439,7 +440,8 @@ EXAMPLES = r"""
         maxFailedAttemptsBeforeRateLimit: 0
         requireAupAcceptance: true
         requireAupScrolling: true
-        socialConfigs: []
+        socialConfigs:
+        - {}
         timeBetweenLoginsDuringRateLimit: 0
       portalSettings:
         allowedInterfaces:
@@ -506,7 +508,9 @@ ise_response:
           "aupDisplay": "string",
           "requireAupAcceptance": true,
           "requireAupScrolling": true,
-          "socialConfigs": []
+          "socialConfigs": [
+            {}
+          ]
         },
         "aupSettings": {
           "includeAup": true,

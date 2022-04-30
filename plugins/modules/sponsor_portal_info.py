@@ -139,7 +139,9 @@ ise_response:
           "aupDisplay": "string",
           "requireAupAcceptance": true,
           "requireAupScrolling": true,
-          "socialConfigs": []
+          "socialConfigs": [
+            {}
+          ]
         },
         "aupSettings": {
           "includeAup": true,
@@ -252,7 +254,9 @@ ise_responses:
             "aupDisplay": "string",
             "requireAupAcceptance": true,
             "requireAupScrolling": true,
-            "socialConfigs": []
+            "socialConfigs": [
+              {}
+            ]
           },
           "aupSettings": {
             "includeAup": true,

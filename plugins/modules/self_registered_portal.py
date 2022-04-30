@@ -871,7 +871,8 @@ EXAMPLES = r"""
         selectableSmsProviders:
         - string
         sendApprovalRequestTo: string
-        sponsorPortalList: []
+        sponsorPortalList:
+        - string
       selfRegSuccessSettings:
         allowGuestLoginFromSelfregSuccessPage: true
         allowGuestSendSelfUsingEmail: true
@@ -1079,7 +1080,8 @@ EXAMPLES = r"""
         selectableSmsProviders:
         - string
         sendApprovalRequestTo: string
-        sponsorPortalList: []
+        sponsorPortalList:
+        - string
       selfRegSuccessSettings:
         allowGuestLoginFromSelfregSuccessPage: true
         allowGuestSendSelfUsingEmail: true
@@ -1238,7 +1240,9 @@ ise_response:
           "approveDenyLinksTimeUnits": "string",
           "requireApproverToAuthenticate": true,
           "authenticateSponsorsUsingPortalList": true,
-          "sponsorPortalList": []
+          "sponsorPortalList": [
+            "string"
+          ]
         },
         "selfRegSuccessSettings": {
           "includeUserName": true,

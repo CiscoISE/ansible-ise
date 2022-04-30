@@ -234,7 +234,9 @@ ise_response:
           "approveDenyLinksTimeUnits": "string",
           "requireApproverToAuthenticate": true,
           "authenticateSponsorsUsingPortalList": true,
-          "sponsorPortalList": []
+          "sponsorPortalList": [
+            "string"
+          ]
         },
         "selfRegSuccessSettings": {
           "includeUserName": true,
@@ -489,7 +491,9 @@ ise_responses:
             "approveDenyLinksTimeUnits": "string",
             "requireApproverToAuthenticate": true,
             "authenticateSponsorsUsingPortalList": true,
-            "sponsorPortalList": []
+            "sponsorPortalList": [
+              "string"
+            ]
           },
           "selfRegSuccessSettings": {
             "includeUserName": true,
