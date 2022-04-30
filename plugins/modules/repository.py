@@ -10,6 +10,9 @@ module: repository
 short_description: Resource module for Repository
 description:
 - Manage operations create, update and delete of the resource Repository.
+- Create a new repository in the system. The name provided for the repository must be unique.
+- Long description TBD.
+- Update the definition of a specific repository, providing ALL parameters for the repository.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -41,16 +44,21 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for Repository
+  description: Complete reference of the Repository API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!repository-openapi
 notes:
   - SDK Method used are
     repository.Repository.create_repository,
+    repository.Repository.delete_repository,
     repository.Repository.update_repository,
-    repository.Repository.delete_repository
 
   - Paths used are
     post /api/v1/repository,
+    delete /api/v1/repository/{name},
     put /api/v1/repository/{name},
-    delete /api/v1/repository/{name}
+
 """
 
 EXAMPLES = r"""

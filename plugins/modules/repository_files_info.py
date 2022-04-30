@@ -10,6 +10,7 @@ module: repository_files_info
 short_description: Information module for Repository Files
 description:
 - Get all Repository Files.
+- This will get the full list of files present in the named repository.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -22,12 +23,17 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for Repository
+  description: Complete reference of the Repository API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!repository-openapi
 notes:
   - SDK Method used are
     repository.Repository.get_repository_files,
 
   - Paths used are
-    get /api/v1/repository/{name}/files
+    get /api/v1/repository/{name}/files,
+
 """
 
 EXAMPLES = r"""
