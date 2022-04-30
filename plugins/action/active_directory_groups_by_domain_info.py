@@ -87,7 +87,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="active_directory",
                 function='get_groups_by_domain',
-                params=self.get_object(self._task.args),
+                params=self.get_object(self._task.args)
             ).response['ERSActiveDirectoryGroups']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

@@ -83,7 +83,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="licensing",
                 function='get_eval_license_info',
-                params=self.get_object(self._task.args),
+                params=self.get_object(self._task.args)
             ).response['daysRemaining']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

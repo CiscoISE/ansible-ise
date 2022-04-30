@@ -85,7 +85,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="active_directory",
                 function='get_trusted_domains',
-                params=self.get_object(self._task.args),
+                params=self.get_object(self._task.args)
             ).response['ERSActiveDirectoryDomains']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

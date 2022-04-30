@@ -83,7 +83,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="misc",
                 function='get_session_auth_list',
-                params=self.get_object(self._task.args),
+                params=self.get_object(self._task.args)
             ).response['noOfActiveSession']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

@@ -94,7 +94,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="network_access_time_date_conditions",
                 function='get_network_access_time_conditions',
-                params=self.get_object(self._task.args),
+                params=self.get_object(self._task.args)
             ).response['response']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

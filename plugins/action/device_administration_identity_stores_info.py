@@ -83,7 +83,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="device_administration_identity_stores",
                 function='get_device_admin_identity_stores',
-                params=self.get_object(self._task.args),
+                params=self.get_object(self._task.args)
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

@@ -83,7 +83,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="proxy",
                 function='get_proxy_connection',
-                params=self.get_object(self._task.args),
+                params=self.get_object(self._task.args)
             ).response['response']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

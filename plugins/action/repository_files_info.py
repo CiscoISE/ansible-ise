@@ -65,7 +65,7 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            repository_name=params.get("name"),
+            name=params.get("name"),
         )
         return new_object
 
@@ -85,7 +85,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="repository",
                 function='get_repository_files',
-                params=self.get_object(self._task.args),
+                params=self.get_object(self._task.args)
             ).response['response']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

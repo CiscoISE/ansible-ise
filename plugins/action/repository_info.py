@@ -94,7 +94,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="repository",
                 function='get_repositories',
-                params=self.get_object(self._task.args),
+                params=self.get_object(self._task.args)
             ).response['response']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

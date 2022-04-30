@@ -85,7 +85,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="pull_deployment_info",
                 function='get_deployment_info',
-                params=self.get_object(self._task.args),
+                params=self.get_object(self._task.args)
             ).response['ERSDeploymentInfo']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

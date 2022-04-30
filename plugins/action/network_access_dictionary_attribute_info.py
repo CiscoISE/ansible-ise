@@ -96,7 +96,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="network_access_dictionary_attribute",
                 function='get_network_access_dictionary_attributes_by_dictionary_name',
-                params=self.get_object(self._task.args),
+                params=self.get_object(self._task.args)
             ).response['response']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
