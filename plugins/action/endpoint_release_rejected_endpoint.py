@@ -79,7 +79,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="endpoint",
-            function='release_rejected_endpoint',
+            function="release_rejected_endpoint",
             params=self.get_object(self._task.args),
         ).response
 

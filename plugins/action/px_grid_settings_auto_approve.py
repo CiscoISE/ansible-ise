@@ -81,7 +81,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="px_grid_settings",
-            function='autoapprove_px_grid_settings',
+            function="autoapprove_px_grid_settings",
             params=self.get_object(self._task.args),
         ).response
 

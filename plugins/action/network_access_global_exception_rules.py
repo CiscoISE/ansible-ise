@@ -100,9 +100,10 @@ class NetworkAccessGlobalExceptionRules(object):
         id_exists = False
         name_exists = False
         name = False
-        o_id = self.new_object.get("id") or self.new_object.get('rule', {}).get("id")
+        o_id = self.new_object.get("id")
         if self.new_object.get('rule', {}) is not None:
             name = self.new_object.get('rule', {}).get("name")
+            o_id = o_id or self.new_object.get('rule', {}).get("id")
         if o_id:
             prev_obj = self.get_object_by_id(o_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
@@ -143,10 +144,11 @@ class NetworkAccessGlobalExceptionRules(object):
         return result
 
     def update(self):
-        id = self.new_object.get("id") or self.new_object.get('rule', {}).get("id")
+        id = self.new_object.get("id")
         name = False
         if self.new_object.get('rule', {}) is not None:
             name = self.new_object.get('rule', {}).get("name")
+            id = id or self.new_object.get('rule', {}).get("id")
         result = None
         if not id:
             id_ = self.get_object_by_name(name).get('rule', {}).get("id")
@@ -161,10 +163,11 @@ class NetworkAccessGlobalExceptionRules(object):
         return result
 
     def delete(self):
-        id = self.new_object.get("id") or self.new_object.get('rule', {}).get("id")
+        id = self.new_object.get("id")
         name = False
         if self.new_object.get('rule', {}) is not None:
             name = self.new_object.get('rule', {}).get("name")
+            id = id or self.new_object.get('rule', {}).get("id")
         result = None
         if not id:
             id_ = self.get_object_by_name(name).get('rule', {}).get("id")

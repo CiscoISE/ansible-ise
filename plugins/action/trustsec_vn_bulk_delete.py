@@ -79,7 +79,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="virtual_network",
-            function='bulk_delete_virtual_networks',
+            function="bulk_delete_virtual_networks",
             params=self.get_object(self._task.args),
         ).response
 

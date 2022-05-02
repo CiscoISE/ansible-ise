@@ -87,7 +87,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="licensing",
-            function='create_registration_info',
+            function="create_registration_info",
             params=self.get_object(self._task.args),
         ).response
 

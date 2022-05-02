@@ -77,7 +77,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="node_deployment",
-            function='make_standalone',
+            function="make_standalone",
             params=self.get_object(self._task.args),
         ).response
 

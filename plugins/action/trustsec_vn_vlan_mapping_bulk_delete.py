@@ -79,7 +79,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="vn_vlan_mapping",
-            function='bulk_delete_vn_vlan_mappings',
+            function="bulk_delete_vn_vlan_mappings",
             params=self.get_object(self._task.args),
         ).response
 

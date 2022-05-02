@@ -141,7 +141,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="certificates",
-            function='generate_self_signed_certificate',
+            function="generate_self_signed_certificate",
             params=self.get_object(self._task.args),
         ).response
 

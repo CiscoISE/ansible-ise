@@ -48,7 +48,9 @@ required_together = []
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
+            raise AnsibleActionFail(
+                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
+            )
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = False
@@ -78,17 +80,19 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-        primary_node = dict(ip=self._task.args.get("primary_ip"),
-                            username=self._task.args.get("primary_username"),
-                            password=self._task.args.get("primary_password"),
-                            )
+        primary_node = dict(
+            ip=self._task.args.get("primary_ip"),
+            username=self._task.args.get("primary_username"),
+            password=self._task.args.get("primary_password"),
+        )
 
-        other_node = dict(name=self._task.args.get("name"),
-                          ip=self._task.args.get("ip"),
-                          hostname=self._task.args.get("hostname"),
-                          username=self._task.args.get("username"),
-                          password=self._task.args.get("password"),
-                          )
+        other_node = dict(
+            name=self._task.args.get("name"),
+            ip=self._task.args.get("ip"),
+            hostname=self._task.args.get("hostname"),
+            username=self._task.args.get("username"),
+            password=self._task.args.get("password"),
+        )
 
         ise_deployment = ISEDeployment()
         ise_deployment.add_primary(primary_node)
@@ -96,7 +100,9 @@ class ActionModule(ActionBase):
 
         ise_deployment.export_import_default_self_signed_server_cert()
 
-        response = "The certificate for {name} was exported successfully to the primary node".format(name=self._task.args.get("name"))
+        response = "The certificate for {name} was exported successfully to the primary node".format(
+            name=self._task.args.get("name")
+        )
 
         self._result.update(dict(ise_response=response))
         return self._result

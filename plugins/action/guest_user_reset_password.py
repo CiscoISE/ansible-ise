@@ -79,7 +79,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="guest_user",
-            function='reset_guest_user_password_by_id',
+            function="reset_guest_user_password_by_id",
             params=self.get_object(self._task.args),
         ).response
 

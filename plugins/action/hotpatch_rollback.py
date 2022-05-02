@@ -81,7 +81,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="patching",
-            function='rollback_hotpatch',
+            function="rollback_hotpatch",
             params=self.get_object(self._task.args),
         ).response
 

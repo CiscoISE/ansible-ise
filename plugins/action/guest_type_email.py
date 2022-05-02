@@ -81,7 +81,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="guest_type",
-            function='update_guest_type_email',
+            function="update_guest_type_email",
             params=self.get_object(self._task.args),
         ).response
 

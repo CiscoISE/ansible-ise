@@ -99,7 +99,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="certificates",
-            function='import_trust_certificate',
+            function="import_trust_certificate",
             params=self.get_object(self._task.args),
         ).response
 

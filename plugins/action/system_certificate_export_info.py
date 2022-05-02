@@ -91,7 +91,7 @@ class ActionModule(ActionBase):
 
         download_response = ise.exec(
             family="certificates",
-            function='export_system_certificate',
+            function="export_system_certificate",
             params=self.get_object(self._task.args),
         )
         response = dict(

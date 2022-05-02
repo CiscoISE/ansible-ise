@@ -79,7 +79,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="guest_user",
-            function='deny_guest_user_by_id',
+            function="deny_guest_user_by_id",
             params=self.get_object(self._task.args),
         ).response
 

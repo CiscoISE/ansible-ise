@@ -50,7 +50,9 @@ required_together = []
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
+            raise AnsibleActionFail(
+                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
+            )
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = False
@@ -80,19 +82,21 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-        primary_node = dict(ip=self._task.args.get("primary_ip"),
-                            username=self._task.args.get("primary_username"),
-                            password=self._task.args.get("primary_password"),
-                            )
+        primary_node = dict(
+            ip=self._task.args.get("primary_ip"),
+            username=self._task.args.get("primary_username"),
+            password=self._task.args.get("primary_password"),
+        )
 
-        other_node = dict(name=self._task.args.get("name"),
-                          local_ip=self._task.args.get("local_ip"),
-                          hostname=self._task.args.get("hostname"),
-                          username=self._task.args.get("username"),
-                          password=self._task.args.get("password"),
-                          domain=self._task.args.get("domain"),
-                          roles=self._task.args.get("roles"),
-                          )
+        other_node = dict(
+            name=self._task.args.get("name"),
+            local_ip=self._task.args.get("local_ip"),
+            hostname=self._task.args.get("hostname"),
+            username=self._task.args.get("username"),
+            password=self._task.args.get("password"),
+            domain=self._task.args.get("domain"),
+            roles=self._task.args.get("roles"),
+        )
 
         if "PPAN" in other_node.get("roles"):
             raise AnsibleActionFail("Only the primary node can have the 'PPAN' role")
@@ -112,7 +116,9 @@ class ActionModule(ActionBase):
                 retries_left -= 1
                 time.sleep(wait_interval)
 
-        response = "Node {name} updated successfully".format(name=self._task.args.get("name"))
+        response = "Node {name} updated successfully".format(
+            name=self._task.args.get("name")
+        )
 
         self._result.update(dict(ise_response=response))
         return self._result

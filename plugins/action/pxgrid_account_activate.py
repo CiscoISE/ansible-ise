@@ -79,7 +79,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="consumer",
-            function='activate_account',
+            function="activate_account",
             params=self.get_object(self._task.args),
         ).response
 

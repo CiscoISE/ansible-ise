@@ -81,7 +81,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="network_device",
-            function='bulk_request_for_network_device',
+            function="bulk_request_for_network_device",
             params=self.get_object(self._task.args),
         ).response
 

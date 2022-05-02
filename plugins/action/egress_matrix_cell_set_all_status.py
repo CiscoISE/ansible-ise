@@ -79,7 +79,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="egress_matrix_cell",
-            function='set_all_cells_status',
+            function="set_all_cells_status",
             params=self.get_object(self._task.args),
         ).response
 

@@ -81,7 +81,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="active_directory",
-            function='join_domain_with_all_nodes',
+            function="join_domain_with_all_nodes",
             params=self.get_object(self._task.args),
         ).response
 

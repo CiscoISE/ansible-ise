@@ -87,7 +87,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="pan_ha",
-            function='update_pan_ha',
+            function="update_pan_ha",
             params=self.get_object(self._task.args),
         ).response
 

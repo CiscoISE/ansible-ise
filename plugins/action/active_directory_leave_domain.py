@@ -81,7 +81,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="active_directory",
-            function='leave_domain',
+            function="leave_domain",
             params=self.get_object(self._task.args),
         ).response
 

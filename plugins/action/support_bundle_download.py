@@ -85,7 +85,7 @@ class ActionModule(ActionBase):
 
         download_response = ise.exec(
             family="support_bundle_download",
-            function='download_support_bundle',
+            function="download_support_bundle",
             params=self.get_object(self._task.args),
         )
         response = dict(

@@ -77,7 +77,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="egress_matrix_cell",
-            function='clear_all_matrix_cells',
+            function="clear_all_matrix_cells",
             params=self.get_object(self._task.args),
         ).response
 

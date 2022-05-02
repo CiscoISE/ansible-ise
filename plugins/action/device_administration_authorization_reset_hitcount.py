@@ -79,7 +79,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="device_administration_authorization_rules",
-            function='reset_hit_counts_device_admin_authorization_rules',
+            function="reset_hit_counts_device_admin_authorization_rules",
             params=self.get_object(self._task.args),
         ).response
 

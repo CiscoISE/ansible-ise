@@ -77,7 +77,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="ip_to_sgt_mapping_group",
-            function='deploy_all_ip_to_sgt_mapping_group',
+            function="deploy_all_ip_to_sgt_mapping_group",
             params=self.get_object(self._task.args),
         ).response
 

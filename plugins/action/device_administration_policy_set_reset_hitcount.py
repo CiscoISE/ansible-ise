@@ -77,7 +77,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="device_administration_policy_set",
-            function='reset_hit_counts_device_admin_policy_sets',
+            function="reset_hit_counts_device_admin_policy_sets",
             params=self.get_object(self._task.args),
         ).response
 

@@ -77,7 +77,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="node_deployment",
-            function='make_primary',
+            function="make_primary",
             params=self.get_object(self._task.args),
         ).response
 

@@ -81,7 +81,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="endpoint",
-            function='bulk_request_for_endpoint',
+            function="bulk_request_for_endpoint",
             params=self.get_object(self._task.args),
         ).response
 

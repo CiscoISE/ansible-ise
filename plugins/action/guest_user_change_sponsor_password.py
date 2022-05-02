@@ -81,7 +81,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="guest_user",
-            function='change_sponsor_password',
+            function="change_sponsor_password",
             params=self.get_object(self._task.args),
         ).response
 

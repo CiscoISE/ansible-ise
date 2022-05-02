@@ -109,10 +109,11 @@ class DeviceAdministrationAuthenticationRules(object):
         id_exists = False
         name_exists = False
         name = False
-        o_id = self.new_object.get("id") or self.new_object.get('rule', {}).get("id")
+        o_id = self.new_object.get("id")
         policy_id = self.new_object.get("policy_id")
         if self.new_object.get('rule', {}) is not None:
             name = self.new_object.get('rule', {}).get("name")
+            o_id = o_id or self.new_object.get('rule', {}).get("id")
         if o_id:
             prev_obj = self.get_object_by_id(o_id, policy_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
@@ -156,10 +157,11 @@ class DeviceAdministrationAuthenticationRules(object):
         return result
 
     def update(self):
-        id = self.new_object.get("id") or self.new_object.get('rule', {}).get("id")
+        id = self.new_object.get("id")
         name = False
         if self.new_object.get('rule', {}) is not None:
             name = self.new_object.get('rule', {}).get("name")
+            id = id or self.new_object.get('rule', {}).get("id")
         policy_id = self.new_object.get("policy_id")
         result = None
         if not id:
@@ -175,10 +177,11 @@ class DeviceAdministrationAuthenticationRules(object):
         return result
 
     def delete(self):
-        id = self.new_object.get("id") or self.new_object.get('rule', {}).get("id")
+        id = self.new_object.get("id")
         name = False
         if self.new_object.get('rule', {}) is not None:
             name = self.new_object.get('rule', {}).get("name")
+            id = id or self.new_object.get('rule', {}).get("id")
         policy_id = self.new_object.get("policy_id")
         result = None
         if not id:

@@ -77,7 +77,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="licensing",
-            function='configure_smart_state',
+            function="configure_smart_state",
             params=self.get_object(self._task.args),
         ).response
 
