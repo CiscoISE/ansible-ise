@@ -250,6 +250,10 @@ plugins/action/px_grid_node_approve.py compile-2.6!skip # Python 2.6 is not supp
 plugins/action/px_grid_node_delete.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/px_grid_node_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/px_grid_settings_auto_approve.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
+plugins/action/pxgrid_node_approve.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
+plugins/action/pxgrid_node_delete.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
+plugins/action/pxgrid_node_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
+plugins/action/pxgrid_settings_auto_approve.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/pxgrid_access_secret.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/pxgrid_account_activate.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/pxgrid_account_create.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
@@ -628,6 +632,10 @@ plugins/action/px_grid_node_approve.py compile-2.7!skip # Python 2.7 is not supp
 plugins/action/px_grid_node_delete.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/px_grid_node_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/px_grid_settings_auto_approve.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
+plugins/action/pxgrid_node_approve.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
+plugins/action/pxgrid_node_delete.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
+plugins/action/pxgrid_node_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
+plugins/action/pxgrid_settings_auto_approve.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/pxgrid_access_secret.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/pxgrid_account_activate.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/pxgrid_account_create.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
@@ -1006,6 +1014,10 @@ plugins/action/px_grid_node_approve.py import-2.7 # Python 2.7 is not supported 
 plugins/action/px_grid_node_delete.py import-2.7 # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/px_grid_node_info.py import-2.7 # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/px_grid_settings_auto_approve.py import-2.7 # Python 2.7 is not supported by the Cisco ISE SDK
+plugins/action/pxgrid_node_approve.py import-2.7 # Python 2.7 is not supported by the Cisco ISE SDK
+plugins/action/pxgrid_node_delete.py import-2.7 # Python 2.7 is not supported by the Cisco ISE SDK
+plugins/action/pxgrid_node_info.py import-2.7 # Python 2.7 is not supported by the Cisco ISE SDK
+plugins/action/pxgrid_settings_auto_approve.py import-2.7 # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/pxgrid_access_secret.py import-2.7 # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/pxgrid_account_activate.py import-2.7 # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/pxgrid_account_create.py import-2.7 # Python 2.7 is not supported by the Cisco ISE SDK
