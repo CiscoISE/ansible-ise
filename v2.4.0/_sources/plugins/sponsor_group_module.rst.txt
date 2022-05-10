@@ -42,7 +42,7 @@ cisco.ise.sponsor_group module -- Resource module for Sponsor Group
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -71,6 +71,7 @@ Synopsis
 - Manage operations create, update and delete of the resource Sponsor Group.
 - This API creates a sponsor group.
 - This API deletes a sponsor group by ID.
+- This API allows the client to update a sponsor group by ID.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -1200,17 +1201,17 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-otherPermissions/canAccessViaRest"></div>
+        <div class="ansibleOptionAnchor" id="parameter-otherPermissions/canAccessViaREST"></div>
 
       .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-otherpermissions/canaccessviarest:
 
       .. rst-class:: ansible-option-title
 
-      **canAccessViaRest**
+      **canAccessViaREST**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-otherPermissions/canAccessViaRest" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-otherPermissions/canAccessViaREST" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -1224,7 +1225,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      CanAccessViaRest flag.
+      CanAccessViaREST flag.
 
 
       .. rst-class:: ansible-option-line
@@ -1446,17 +1447,17 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-otherPermissions/canSendSmsNotifications"></div>
+        <div class="ansibleOptionAnchor" id="parameter-otherPermissions/canSendSMSNotifications"></div>
 
       .. _ansible_collections.cisco.ise.sponsor_group_module__parameter-otherpermissions/cansendsmsnotifications:
 
       .. rst-class:: ansible-option-title
 
-      **canSendSmsNotifications**
+      **canSendSMSNotifications**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-otherPermissions/canSendSmsNotifications" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-otherPermissions/canSendSMSNotifications" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -1470,7 +1471,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      CanSendSmsNotifications flag.
+      CanSendSMSNotifications flag.
 
 
       .. rst-class:: ansible-option-line
@@ -1701,7 +1702,7 @@ Notes
 
 .. note::
    - SDK Method used are sponsor_group.SponsorGroup.create_sponsor_group, sponsor_group.SponsorGroup.delete_sponsor_group_by_id, sponsor_group.SponsorGroup.update_sponsor_group_by_id,
-   - Paths used are post /ers/config/sponsorgroup, delete /ers/config/sponsorgroup/{id},
+   - Paths used are post /ers/config/sponsorgroup, delete /ers/config/sponsorgroup/{id}, put /ers/config/sponsorgroup/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection

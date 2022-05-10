@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.trustsec_vn module -- Resource module for Trustsec Vn
+cisco.ise.trustsec_vn module -- Resource module for Trustsec VN
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -68,8 +68,9 @@ Synopsis
 
 .. Description
 
-- Manage operations create, update and delete of the resource Trustsec Vn.
+- Manage operations create, update and delete of the resource Trustsec VN.
 - Create Virtual Network.
+- Update Virtual Network.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -613,13 +614,20 @@ Notes
 
 .. note::
    - SDK Method used are virtual_network.VirtualNetwork.create_virtual_network, virtual_network.VirtualNetwork.delete_virtual_network_by_id, virtual_network.VirtualNetwork.update_virtual_network_by_id,
-   - Paths used are post /api/v1/trustsec/virtualnetwork, delete /api/v1/trustsec/virtualnetwork/{id},
+   - Paths used are post /api/v1/trustsec/virtualnetwork, delete /api/v1/trustsec/virtualnetwork/{id}, put /api/v1/trustsec/virtualnetwork/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco ISE documentation for virtualNetwork <https://developer.cisco.com/docs/identity-services-engine/v1/#!trustsec-openapi>`_
+       Complete reference of the virtualNetwork API.
 
 .. Examples
 

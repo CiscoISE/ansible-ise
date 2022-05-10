@@ -42,7 +42,7 @@ cisco.ise.network_access_global_exception_rules_info module -- Information modul
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -520,6 +520,13 @@ Notes
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco ISE documentation for Network Access - Authorization Global Exception Rules <https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi>`_
+       Complete reference of the Network Access - Authorization Global Exception Rules API.
 
 .. Examples
 

@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.csr_export_info module -- Information module for Csr Export
+cisco.ise.csr_export_info module -- Information module for CSR Export
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -68,8 +68,8 @@ Synopsis
 
 .. Description
 
-- Get Csr Export by id.
-- \#\#\# Response of this API carries a CSR corresponding to the requested ID.
+- Get CSR Export by id.
+- Response of this API carries a CSR corresponding to the requested ID.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -135,6 +135,40 @@ Parameters
         <div class="ansible-option-cell">
 
       Directory absolute path. Defaults to the current working directory.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-filename"></div>
+
+      .. _ansible_collections.cisco.ise.csr_export_info_module__parameter-filename:
+
+      .. rst-class:: ansible-option-title
+
+      **filename**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-filename" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The filename used to save the download file.
 
 
       .. raw:: html
@@ -627,6 +661,13 @@ Notes
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco ISE documentation for Certificates <https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi>`_
+       Complete reference of the Certificates API.
 
 .. Examples
 
@@ -636,7 +677,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Get Csr Export by id
+    - name: Get CSR Export by id
       cisco.ise.csr_export_info:
         ise_hostname: "{{ise_hostname}}"
         ise_username: "{{ise_username}}"

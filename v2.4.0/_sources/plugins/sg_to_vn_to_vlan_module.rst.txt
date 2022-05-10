@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.sg_to_vn_to_vlan module -- Resource module for Sg To Vn To Vlan
+cisco.ise.sg_to_vn_to_vlan module -- Resource module for SG To VN To VLAN
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -68,9 +68,10 @@ Synopsis
 
 .. Description
 
-- Manage operations create, update and delete of the resource Sg To Vn To Vlan.
+- Manage operations create, update and delete of the resource SG To VN To VLAN.
 - This API creates a security group to virtual network.
 - This API deletes a security group ACL to virtual network.
+- This API allows the client to update a security group to virtual network.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -135,7 +136,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Sg To Vn To Vlan's description.
+      SG To VN To VLAN's description.
 
 
       .. raw:: html
@@ -169,7 +170,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Sg To Vn To Vlan's id.
+      SG To VN To VLAN's id.
 
 
       .. raw:: html
@@ -562,7 +563,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Sg To Vn To Vlan's name.
+      SG To VN To VLAN's name.
 
 
       .. raw:: html
@@ -596,7 +597,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Sg To Vn To Vlan's sgtId.
+      SG To VN To VLAN's sgtId.
 
 
       .. raw:: html
@@ -630,7 +631,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Sg To Vn To Vlan's virtualnetworklist.
+      SG To VN To VLAN's virtualnetworklist.
 
 
       .. raw:: html
@@ -705,7 +706,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Sg To Vn To Vlan's description.
+      SG To VN To VLAN's description.
 
 
       .. raw:: html
@@ -739,7 +740,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Sg To Vn To Vlan's id.
+      SG To VN To VLAN's id.
 
 
       .. raw:: html
@@ -773,7 +774,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Sg To Vn To Vlan's name.
+      SG To VN To VLAN's name.
 
 
       .. raw:: html
@@ -807,7 +808,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Sg To Vn To Vlan's vlans.
+      SG To VN To VLAN's vlans.
 
 
       .. raw:: html
@@ -858,17 +859,17 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-virtualnetworklist/vlans/defaultVlan"></div>
+        <div class="ansibleOptionAnchor" id="parameter-virtualnetworklist/vlans/defaultVLAN"></div>
 
       .. _ansible_collections.cisco.ise.sg_to_vn_to_vlan_module__parameter-virtualnetworklist/vlans/defaultvlan:
 
       .. rst-class:: ansible-option-title
 
-      **defaultVlan**
+      **defaultVLAN**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-virtualnetworklist/vlans/defaultVlan" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-virtualnetworklist/vlans/defaultVLAN" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -882,7 +883,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      DefaultVlan flag.
+      DefaultVLAN flag.
 
 
       .. rst-class:: ansible-option-line
@@ -923,7 +924,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Sg To Vn To Vlan's description.
+      SG To VN To VLAN's description.
 
 
       .. raw:: html
@@ -957,7 +958,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Sg To Vn To Vlan's id.
+      SG To VN To VLAN's id.
 
 
       .. raw:: html
@@ -991,7 +992,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Sg To Vn To Vlan's maxValue.
+      SG To VN To VLAN's maxValue.
 
 
       .. raw:: html
@@ -1025,7 +1026,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Sg To Vn To Vlan's name.
+      SG To VN To VLAN's name.
 
 
       .. raw:: html
@@ -1045,13 +1046,20 @@ Notes
 
 .. note::
    - SDK Method used are security_group_to_virtual_network.SecurityGroupToVirtualNetwork.create_security_groups_to_vn_to_vlan, security_group_to_virtual_network.SecurityGroupToVirtualNetwork.delete_security_groups_to_vn_to_vlan_by_id, security_group_to_virtual_network.SecurityGroupToVirtualNetwork.update_security_groups_to_vn_to_vlan_by_id,
-   - Paths used are post /ers/config/sgtvnvlan, delete /ers/config/sgtvnvlan/{id},
+   - Paths used are post /ers/config/sgtvnvlan, delete /ers/config/sgtvnvlan/{id}, put /ers/config/sgtvnvlan/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco ISE documentation for SecurityGroupToVirtualNetwork <https://developer.cisco.com/docs/identity-services-engine/v1/#!sgtvnvlan>`_
+       Complete reference of the SecurityGroupToVirtualNetwork API.
 
 .. Examples
 

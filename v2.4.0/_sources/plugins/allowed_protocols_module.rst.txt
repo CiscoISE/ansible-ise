@@ -42,7 +42,7 @@ cisco.ise.allowed_protocols module -- Resource module for Allowed Protocols
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -71,6 +71,7 @@ Synopsis
 - Manage operations create, update and delete of the resource Allowed Protocols.
 - This API creates an allowed protocol.
 - This API deletes an allowed protocol.
+- This API allows the client to update an allowed protocol.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -3629,7 +3630,7 @@ Notes
 
 .. note::
    - SDK Method used are allowed_protocols.AllowedProtocols.create_allowed_protocol, allowed_protocols.AllowedProtocols.delete_allowed_protocol_by_id, allowed_protocols.AllowedProtocols.update_allowed_protocol_by_id,
-   - Paths used are post /ers/config/allowedprotocols, delete /ers/config/allowedprotocols/{id},
+   - Paths used are post /ers/config/allowedprotocols, delete /ers/config/allowedprotocols/{id}, put /ers/config/allowedprotocols/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection

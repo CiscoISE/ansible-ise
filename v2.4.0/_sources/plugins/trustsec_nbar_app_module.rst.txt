@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.trustsec_nbar_app module -- Resource module for Trustsec Nbar App
+cisco.ise.trustsec_nbar_app module -- Resource module for Trustsec NBAR App
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -68,8 +68,9 @@ Synopsis
 
 .. Description
 
-- Manage operations create, update and delete of the resource Trustsec Nbar App.
+- Manage operations create, update and delete of the resource Trustsec NBAR App.
 - Create NBAR application.
+- Update NBAR Application.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -134,7 +135,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Trustsec Nbar App's description.
+      Trustsec NBAR App's description.
 
 
       .. raw:: html
@@ -168,7 +169,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Trustsec Nbar App's id.
+      Trustsec NBAR App's id.
 
 
       .. raw:: html
@@ -561,7 +562,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Trustsec Nbar App's name.
+      Trustsec NBAR App's name.
 
 
       .. raw:: html
@@ -629,7 +630,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Trustsec Nbar App's ports.
+      Trustsec NBAR App's ports.
 
 
       .. raw:: html
@@ -663,7 +664,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Trustsec Nbar App's protocol.
+      Trustsec NBAR App's protocol.
 
 
       .. raw:: html
@@ -682,13 +683,20 @@ Notes
 
 .. note::
    - SDK Method used are nbar_app.NbarApp.create_nbar_app, nbar_app.NbarApp.delete_nbar_app_by_id, nbar_app.NbarApp.update_nbar_app_by_id,
-   - Paths used are post /api/v1/trustsec/sgacl/nbarapp, delete /api/v1/trustsec/sgacl/nbarapp/{id},
+   - Paths used are post /api/v1/trustsec/sgacl/nbarapp, delete /api/v1/trustsec/sgacl/nbarapp/{id}, put /api/v1/trustsec/sgacl/nbarapp/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco ISE documentation for nbarApp <https://developer.cisco.com/docs/identity-services-engine/v1/#!trustsec-openapi>`_
+       Complete reference of the nbarApp API.
 
 .. Examples
 

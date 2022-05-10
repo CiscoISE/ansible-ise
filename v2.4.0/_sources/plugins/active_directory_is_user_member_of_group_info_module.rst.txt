@@ -42,7 +42,7 @@ cisco.ise.active_directory_is_user_member_of_group_info module -- Information mo
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -614,7 +614,7 @@ Notes
 
 .. note::
    - SDK Method used are active_directory.ActiveDirectory.is_user_member_of_groups,
-   - Paths used are put /ers/config/activedirectory/{id}/isUserMemberOf
+   - Paths used are put /ers/config/activedirectory/{id}/isUserMemberOf,
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection

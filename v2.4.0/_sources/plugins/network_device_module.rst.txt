@@ -42,7 +42,7 @@ cisco.ise.network_device module -- Resource module for Network Device
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -72,6 +72,8 @@ Synopsis
 - This API creates a network device.
 - This API deletes a network device by ID.
 - This API deletes a network device by name.
+- This API allows the client to update a network device by ID.
+- This API allows the client to update a network device by name.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -473,17 +475,17 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-authenticationSettings/secondRadiusSharedSecret"></div>
+        <div class="ansibleOptionAnchor" id="parameter-authenticationSettings/secondRADIUSSharedSecret"></div>
 
       .. _ansible_collections.cisco.ise.network_device_module__parameter-authenticationsettings/secondradiussharedsecret:
 
       .. rst-class:: ansible-option-title
 
-      **secondRadiusSharedSecret**
+      **secondRADIUSSharedSecret**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-authenticationSettings/secondRadiusSharedSecret" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-authenticationSettings/secondRADIUSSharedSecret" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -497,7 +499,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Network Device's secondRadiusSharedSecret.
+      Network Device's secondRADIUSSharedSecret.
 
 
       .. raw:: html
@@ -2352,7 +2354,7 @@ Notes
 
 .. note::
    - SDK Method used are network_device.NetworkDevice.create_network_device, network_device.NetworkDevice.delete_network_device_by_id, network_device.NetworkDevice.delete_network_device_by_name, network_device.NetworkDevice.update_network_device_by_id, network_device.NetworkDevice.update_network_device_by_name,
-   - Paths used are post /ers/config/networkdevice, delete /ers/config/networkdevice/name/{name}, delete /ers/config/networkdevice/{id},
+   - Paths used are post /ers/config/networkdevice, delete /ers/config/networkdevice/name/{name}, delete /ers/config/networkdevice/{id}, put /ers/config/networkdevice/name/{name}, put /ers/config/networkdevice/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection

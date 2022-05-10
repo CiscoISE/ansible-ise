@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.tacacs_command_sets module -- Resource module for Tacacs Command Sets
+cisco.ise.tacacs_command_sets module -- Resource module for TACACS Command Sets
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -68,9 +68,10 @@ Synopsis
 
 .. Description
 
-- Manage operations create, update and delete of the resource Tacacs Command Sets.
+- Manage operations create, update and delete of the resource TACACS Command Sets.
 - This API creates TACACS command sets.
 - This API deletes TACACS command sets.
+- This API allows the client to update TACACS command sets.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -135,7 +136,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Tacacs Command Sets's commands.
+      TACACS Command Sets's commands.
 
 
       .. raw:: html
@@ -169,7 +170,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Tacacs Command Sets's commandList.
+      TACACS Command Sets's commandList.
 
 
       .. raw:: html
@@ -203,7 +204,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Tacacs Command Sets's arguments.
+      TACACS Command Sets's arguments.
 
 
       .. raw:: html
@@ -237,7 +238,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Tacacs Command Sets's command.
+      TACACS Command Sets's command.
 
 
       .. raw:: html
@@ -307,7 +308,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Tacacs Command Sets's description.
+      TACACS Command Sets's description.
 
 
       .. raw:: html
@@ -341,7 +342,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Tacacs Command Sets's id.
+      TACACS Command Sets's id.
 
 
       .. raw:: html
@@ -734,7 +735,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Tacacs Command Sets's name.
+      TACACS Command Sets's name.
 
 
       .. raw:: html
@@ -793,7 +794,7 @@ Notes
 
 .. note::
    - SDK Method used are tacacs_command_sets.TacacsCommandSets.create_tacacs_command_sets, tacacs_command_sets.TacacsCommandSets.delete_tacacs_command_sets_by_id, tacacs_command_sets.TacacsCommandSets.update_tacacs_command_sets_by_id,
-   - Paths used are post /ers/config/tacacscommandsets, delete /ers/config/tacacscommandsets/{id},
+   - Paths used are post /ers/config/tacacscommandsets, delete /ers/config/tacacscommandsets/{id}, put /ers/config/tacacscommandsets/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection

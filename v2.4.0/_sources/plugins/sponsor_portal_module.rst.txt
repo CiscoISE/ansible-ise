@@ -42,7 +42,7 @@ cisco.ise.sponsor_portal module -- Resource module for Sponsor Portal
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -71,6 +71,7 @@ Synopsis
 - Manage operations create, update and delete of the resource Sponsor Portal.
 - This API creates a sponsor portal.
 - This API deletes a sponsor portal by ID.
+- This API allows the client to update a sponsor portal by ID.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -2218,17 +2219,17 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-settings/portalSettings/availableSsids"></div>
+        <div class="ansibleOptionAnchor" id="parameter-settings/portalSettings/availableSSIDs"></div>
 
       .. _ansible_collections.cisco.ise.sponsor_portal_module__parameter-settings/portalsettings/availablessids:
 
       .. rst-class:: ansible-option-title
 
-      **availableSsids**
+      **availableSSIDs**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-settings/portalSettings/availableSsids" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-settings/portalSettings/availableSSIDs" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -3043,7 +3044,7 @@ Notes
 
 .. note::
    - SDK Method used are sponsor_portal.SponsorPortal.create_sponsor_portal, sponsor_portal.SponsorPortal.delete_sponsor_portal_by_id, sponsor_portal.SponsorPortal.update_sponsor_portal_by_id,
-   - Paths used are post /ers/config/sponsorportal, delete /ers/config/sponsorportal/{id},
+   - Paths used are post /ers/config/sponsorportal, delete /ers/config/sponsorportal/{id}, put /ers/config/sponsorportal/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
@@ -3111,7 +3112,8 @@ Examples
             maxFailedAttemptsBeforeRateLimit: 0
             requireAupAcceptance: true
             requireAupScrolling: true
-            socialConfigs: []
+            socialConfigs:
+            - {}
             timeBetweenLoginsDuringRateLimit: 0
           portalSettings:
             allowedInterfaces:
@@ -3201,7 +3203,8 @@ Examples
             maxFailedAttemptsBeforeRateLimit: 0
             requireAupAcceptance: true
             requireAupScrolling: true
-            socialConfigs: []
+            socialConfigs:
+            - {}
             timeBetweenLoginsDuringRateLimit: 0
           portalSettings:
             allowedInterfaces:
@@ -3291,7 +3294,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"id\\": \\"string\\",\\n  \\"name\\": \\"string\\",\\n  \\"description\\": \\"string\\",\\n  \\"portalType\\": \\"string\\",\\n  \\"portalTestUrl\\": \\"string\\",\\n  \\"settings\\": {\\n    \\"portalSettings\\": {\\n      \\"httpsPort\\": 0,\\n      \\"allowedInterfaces\\": [\\n        \\"string\\"\\n      ],\\n      \\"certificateGroupTag\\": \\"string\\",\\n      \\"fqdn\\": \\"string\\",\\n      \\"authenticationMethod\\": \\"string\\",\\n      \\"idleTimeout\\": 0,\\n      \\"displayLang\\": \\"string\\",\\n      \\"fallbackLanguage\\": \\"string\\",\\n      \\"availableSsids\\": [\\n        \\"string\\"\\n      ]\\n    },\\n    \\"loginPageSettings\\": {\\n      \\"maxFailedAttemptsBeforeRateLimit\\": 0,\\n      \\"timeBetweenLoginsDuringRateLimit\\": 0,\\n      \\"includeAup\\": true,\\n      \\"aupDisplay\\": \\"string\\",\\n      \\"requireAupAcceptance\\": true,\\n      \\"requireAupScrolling\\": true,\\n      \\"socialConfigs\\": []\\n    },\\n    \\"aupSettings\\": {\\n      \\"includeAup\\": true,\\n      \\"requireScrolling\\": true,\\n      \\"displayFrequency\\": \\"string\\",\\n      \\"displayFrequencyIntervalDays\\": 0\\n    },\\n    \\"sponsorChangePasswordSettings\\": {\\n      \\"allowSponsorToChangePwd\\": true\\n    },\\n    \\"postLoginBannerSettings\\": {\\n      \\"includePostAccessBanner\\": true\\n    },\\n    \\"postAccessBannerSettings\\": {\\n      \\"includePostAccessBanner\\": true\\n    },\\n    \\"supportInfoSettings\\": {\\n      \\"includeSupportInfoPage\\": true,\\n      \\"includeMacAddr\\": true,\\n      \\"includeIpAddress\\": true,\\n      \\"includeBrowserUserAgent\\": true,\\n      \\"includePolicyServer\\": true,\\n      \\"includeFailureCode\\": true,\\n      \\"emptyFieldDisplay\\": \\"string\\",\\n      \\"defaultEmptyFieldValue\\": \\"string\\"\\n    }\\n  },\\n  \\"customizations\\": {\\n    \\"portalTheme\\": {\\n      \\"id\\": \\"string\\",\\n      \\"name\\": \\"string\\",\\n      \\"themeData\\": \\"string\\"\\n    },\\n    \\"portalTweakSettings\\": {\\n      \\"bannerColor\\": \\"string\\",\\n      \\"bannerTextColor\\": \\"string\\",\\n      \\"pageBackgroundColor\\": \\"string\\",\\n      \\"pageLabelAndTextColor\\": \\"string\\"\\n    },\\n    \\"language\\": {\\n      \\"viewLanguage\\": \\"string\\"\\n    },\\n    \\"globalCustomizations\\": {\\n      \\"mobileLogoImage\\": {\\n        \\"data\\": \\"string\\"\\n      },\\n      \\"desktopLogoImage\\": {\\n        \\"data\\": \\"string\\"\\n      },\\n      \\"bannerImage\\": {\\n        \\"data\\": \\"string\\"\\n      },\\n      \\"backgroundImage\\": {\\n        \\"data\\": \\"string\\"\\n      },\\n      \\"bannerTitle\\": \\"string\\",\\n      \\"contactText\\": \\"string\\",\\n      \\"footerElement\\": \\"string\\"\\n    },\\n    \\"pageCustomizations\\": {\\n      \\"data\\": [\\n        {\\n          \\"key\\": \\"string\\",\\n          \\"value\\": \\"string\\"\\n        }\\n      ]\\n    }\\n  },\\n  \\"link\\": {\\n    \\"rel\\": \\"string\\",\\n    \\"href\\": \\"string\\",\\n    \\"type\\": \\"string\\"\\n  }\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` "{\\n  \\"id\\": \\"string\\",\\n  \\"name\\": \\"string\\",\\n  \\"description\\": \\"string\\",\\n  \\"portalType\\": \\"string\\",\\n  \\"portalTestUrl\\": \\"string\\",\\n  \\"settings\\": {\\n    \\"portalSettings\\": {\\n      \\"httpsPort\\": 0,\\n      \\"allowedInterfaces\\": [\\n        \\"string\\"\\n      ],\\n      \\"certificateGroupTag\\": \\"string\\",\\n      \\"fqdn\\": \\"string\\",\\n      \\"authenticationMethod\\": \\"string\\",\\n      \\"idleTimeout\\": 0,\\n      \\"displayLang\\": \\"string\\",\\n      \\"fallbackLanguage\\": \\"string\\",\\n      \\"availableSsids\\": [\\n        \\"string\\"\\n      ]\\n    },\\n    \\"loginPageSettings\\": {\\n      \\"maxFailedAttemptsBeforeRateLimit\\": 0,\\n      \\"timeBetweenLoginsDuringRateLimit\\": 0,\\n      \\"includeAup\\": true,\\n      \\"aupDisplay\\": \\"string\\",\\n      \\"requireAupAcceptance\\": true,\\n      \\"requireAupScrolling\\": true,\\n      \\"socialConfigs\\": [\\n        {}\\n      ]\\n    },\\n    \\"aupSettings\\": {\\n      \\"includeAup\\": true,\\n      \\"requireScrolling\\": true,\\n      \\"displayFrequency\\": \\"string\\",\\n      \\"displayFrequencyIntervalDays\\": 0\\n    },\\n    \\"sponsorChangePasswordSettings\\": {\\n      \\"allowSponsorToChangePwd\\": true\\n    },\\n    \\"postLoginBannerSettings\\": {\\n      \\"includePostAccessBanner\\": true\\n    },\\n    \\"postAccessBannerSettings\\": {\\n      \\"includePostAccessBanner\\": true\\n    },\\n    \\"supportInfoSettings\\": {\\n      \\"includeSupportInfoPage\\": true,\\n      \\"includeMacAddr\\": true,\\n      \\"includeIpAddress\\": true,\\n      \\"includeBrowserUserAgent\\": true,\\n      \\"includePolicyServer\\": true,\\n      \\"includeFailureCode\\": true,\\n      \\"emptyFieldDisplay\\": \\"string\\",\\n      \\"defaultEmptyFieldValue\\": \\"string\\"\\n    }\\n  },\\n  \\"customizations\\": {\\n    \\"portalTheme\\": {\\n      \\"id\\": \\"string\\",\\n      \\"name\\": \\"string\\",\\n      \\"themeData\\": \\"string\\"\\n    },\\n    \\"portalTweakSettings\\": {\\n      \\"bannerColor\\": \\"string\\",\\n      \\"bannerTextColor\\": \\"string\\",\\n      \\"pageBackgroundColor\\": \\"string\\",\\n      \\"pageLabelAndTextColor\\": \\"string\\"\\n    },\\n    \\"language\\": {\\n      \\"viewLanguage\\": \\"string\\"\\n    },\\n    \\"globalCustomizations\\": {\\n      \\"mobileLogoImage\\": {\\n        \\"data\\": \\"string\\"\\n      },\\n      \\"desktopLogoImage\\": {\\n        \\"data\\": \\"string\\"\\n      },\\n      \\"bannerImage\\": {\\n        \\"data\\": \\"string\\"\\n      },\\n      \\"backgroundImage\\": {\\n        \\"data\\": \\"string\\"\\n      },\\n      \\"bannerTitle\\": \\"string\\",\\n      \\"contactText\\": \\"string\\",\\n      \\"footerElement\\": \\"string\\"\\n    },\\n    \\"pageCustomizations\\": {\\n      \\"data\\": [\\n        {\\n          \\"key\\": \\"string\\",\\n          \\"value\\": \\"string\\"\\n        }\\n      ]\\n    }\\n  },\\n  \\"link\\": {\\n    \\"rel\\": \\"string\\",\\n    \\"href\\": \\"string\\",\\n    \\"type\\": \\"string\\"\\n  }\\n}\\n"
 
 
       .. raw:: html

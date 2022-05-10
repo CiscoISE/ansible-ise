@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.rest_id_store module -- Resource module for Rest Id Store
+cisco.ise.rest_id_store module -- Resource module for REST Id Store
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -68,10 +68,12 @@ Synopsis
 
 .. Description
 
-- Manage operations create, update and delete of the resource Rest Id Store.
+- Manage operations create, update and delete of the resource REST Id Store.
 - This API creates a REST ID store.
 - This API deletes a REST ID store by name.
 - This API deletes a REST ID store.
+- This API allows the client to update a REST ID store by name.
+- This API allows the client to update a REST ID store.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -136,7 +138,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Rest Id Store's description.
+      REST Id Store's description.
 
 
       .. raw:: html
@@ -146,17 +148,17 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-ersRestIDStoreAttributes"></div>
+        <div class="ansibleOptionAnchor" id="parameter-ersRESTIDStoreAttributes"></div>
 
       .. _ansible_collections.cisco.ise.rest_id_store_module__parameter-ersrestidstoreattributes:
 
       .. rst-class:: ansible-option-title
 
-      **ersRestIDStoreAttributes**
+      **ersRESTIDStoreAttributes**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-ersRestIDStoreAttributes" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-ersRESTIDStoreAttributes" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -170,7 +172,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Rest Id Store's ersRestIDStoreAttributes.
+      REST Id Store's ersRESTIDStoreAttributes.
 
 
       .. raw:: html
@@ -180,7 +182,7 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-ersRestIDStoreAttributes/headers"></div>
+        <div class="ansibleOptionAnchor" id="parameter-ersRESTIDStoreAttributes/headers"></div>
 
       .. _ansible_collections.cisco.ise.rest_id_store_module__parameter-ersrestidstoreattributes/headers:
 
@@ -190,7 +192,7 @@ Parameters
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-ersRestIDStoreAttributes/headers" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-ersRESTIDStoreAttributes/headers" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -204,7 +206,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Rest Id Store's headers.
+      REST Id Store's headers.
 
 
       .. raw:: html
@@ -214,7 +216,7 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-ersRestIDStoreAttributes/headers/key"></div>
+        <div class="ansibleOptionAnchor" id="parameter-ersRESTIDStoreAttributes/headers/key"></div>
 
       .. _ansible_collections.cisco.ise.rest_id_store_module__parameter-ersrestidstoreattributes/headers/key:
 
@@ -224,7 +226,7 @@ Parameters
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-ersRestIDStoreAttributes/headers/key" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-ersRESTIDStoreAttributes/headers/key" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -238,7 +240,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Rest Id Store's key.
+      REST Id Store's key.
 
 
       .. raw:: html
@@ -248,7 +250,7 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-ersRestIDStoreAttributes/headers/value"></div>
+        <div class="ansibleOptionAnchor" id="parameter-ersRESTIDStoreAttributes/headers/value"></div>
 
       .. _ansible_collections.cisco.ise.rest_id_store_module__parameter-ersrestidstoreattributes/headers/value:
 
@@ -258,7 +260,7 @@ Parameters
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-ersRestIDStoreAttributes/headers/value" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-ersRESTIDStoreAttributes/headers/value" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -272,7 +274,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Rest Id Store's value.
+      REST Id Store's value.
 
 
       .. raw:: html
@@ -283,7 +285,7 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-ersRestIDStoreAttributes/predefined"></div>
+        <div class="ansibleOptionAnchor" id="parameter-ersRESTIDStoreAttributes/predefined"></div>
 
       .. _ansible_collections.cisco.ise.rest_id_store_module__parameter-ersrestidstoreattributes/predefined:
 
@@ -293,7 +295,7 @@ Parameters
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-ersRestIDStoreAttributes/predefined" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-ersRESTIDStoreAttributes/predefined" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -307,7 +309,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      The cloud provider connected to of the RestIDStore. Options are - Azure, - Okta, - None.
+      The cloud provider connected to of the RESTIDStore. Options are - Azure, - Okta, - None.
 
 
       .. raw:: html
@@ -317,7 +319,7 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-ersRestIDStoreAttributes/rootUrl"></div>
+        <div class="ansibleOptionAnchor" id="parameter-ersRESTIDStoreAttributes/rootUrl"></div>
 
       .. _ansible_collections.cisco.ise.rest_id_store_module__parameter-ersrestidstoreattributes/rooturl:
 
@@ -327,7 +329,7 @@ Parameters
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-ersRestIDStoreAttributes/rootUrl" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-ersRESTIDStoreAttributes/rootUrl" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -341,7 +343,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Url of the root of the RestIDStore.
+      Url of the root of the RESTIDStore.
 
 
       .. raw:: html
@@ -351,7 +353,7 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-ersRestIDStoreAttributes/usernameSuffix"></div>
+        <div class="ansibleOptionAnchor" id="parameter-ersRESTIDStoreAttributes/usernameSuffix"></div>
 
       .. _ansible_collections.cisco.ise.rest_id_store_module__parameter-ersrestidstoreattributes/usernamesuffix:
 
@@ -361,7 +363,7 @@ Parameters
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-ersRestIDStoreAttributes/usernameSuffix" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-ersRESTIDStoreAttributes/usernameSuffix" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -410,7 +412,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Rest Id Store's id.
+      REST Id Store's id.
 
 
       .. raw:: html
@@ -803,7 +805,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Rest Id Store's name.
+      REST Id Store's name.
 
 
       .. raw:: html
@@ -821,7 +823,7 @@ Notes
 
 .. note::
    - SDK Method used are restid_store.RestidStore.create_rest_id_store, restid_store.RestidStore.delete_rest_id_store_by_id, restid_store.RestidStore.delete_rest_id_store_by_name, restid_store.RestidStore.update_rest_id_store_by_id, restid_store.RestidStore.update_rest_id_store_by_name,
-   - Paths used are post /ers/config/restidstore, delete /ers/config/restidstore/name/{name}, delete /ers/config/restidstore/{id},
+   - Paths used are post /ers/config/restidstore, delete /ers/config/restidstore/name/{name}, delete /ers/config/restidstore/{id}, put /ers/config/restidstore/name/{name}, put /ers/config/restidstore/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection

@@ -42,7 +42,7 @@ cisco.ise.device_administration_authentication_rules module -- Resource module f
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -71,6 +71,7 @@ Synopsis
 - Manage operations create, update and delete of the resource Device Administration Authentication Rules.
 - Device Admin - Create authentication rule.
 - Device Admin - Delete rule.
+- Device Admin - - Update rule.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -2311,13 +2312,20 @@ Notes
 
 .. note::
    - SDK Method used are device_administration_authentication_rules.DeviceAdministrationAuthenticationRules.create_device_admin_authentication_rule, device_administration_authentication_rules.DeviceAdministrationAuthenticationRules.delete_device_admin_authentication_rule_by_id, device_administration_authentication_rules.DeviceAdministrationAuthenticationRules.update_device_admin_authentication_rule_by_id,
-   - Paths used are post /device-admin/policy-set/{policyId}/authentication, delete /device-admin/policy-set/{policyId}/authentication/{id},
+   - Paths used are post /device-admin/policy-set/{policyId}/authentication, delete /device-admin/policy-set/{policyId}/authentication/{id}, put /device-admin/policy-set/{policyId}/authentication/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco ISE documentation for Device Administration - Authentication Rules <https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi>`_
+       Complete reference of the Device Administration - Authentication Rules API.
 
 .. Examples
 

@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.trustsec_vn_vlan_mapping_bulk_create module -- Resource module for Trustsec Vn Vlan Mapping Bulk Create
+cisco.ise.trustsec_vn_vlan_mapping_bulk_create module -- Resource module for Trustsec VN VLAN Mapping Bulk Create
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Manage operation create of the resource Trustsec Vn Vlan Mapping Bulk Create.
+- Manage operation create of the resource Trustsec VN VLAN Mapping Bulk Create.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -492,7 +492,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Trustsec Vn Vlan Mapping Bulk Create's payload.
+      Trustsec VN VLAN Mapping Bulk Create's payload.
 
 
       .. raw:: html
@@ -526,7 +526,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Identifier of the VN-Vlan Mapping.
+      Identifier of the VN-VLAN Mapping.
 
 
       .. raw:: html
@@ -560,7 +560,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Flag which indicates whether the Vlan is data or voice type.
+      Flag which indicates whether the VLAN is data or voice type.
 
 
       .. rst-class:: ansible-option-line
@@ -577,17 +577,17 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-payload/isDefaultVlan"></div>
+        <div class="ansibleOptionAnchor" id="parameter-payload/isDefaultVLAN"></div>
 
       .. _ansible_collections.cisco.ise.trustsec_vn_vlan_mapping_bulk_create_module__parameter-payload/isdefaultvlan:
 
       .. rst-class:: ansible-option-title
 
-      **isDefaultVlan**
+      **isDefaultVLAN**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-payload/isDefaultVlan" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-payload/isDefaultVLAN" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -601,7 +601,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Flag which indicates if the Vlan is default.
+      Flag which indicates if the VLAN is default.
 
 
       .. rst-class:: ansible-option-line
@@ -642,7 +642,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Timestamp for the last update of the VN-Vlan Mapping.
+      Timestamp for the last update of the VN-VLAN Mapping.
 
 
       .. raw:: html
@@ -710,7 +710,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Name of the Vlan.
+      Name of the VLAN.
 
 
       .. raw:: html
@@ -804,6 +804,13 @@ Notes
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco ISE documentation for vnVlanMapping <https://developer.cisco.com/docs/identity-services-engine/v1/#!trustsec-openapi>`_
+       Complete reference of the vnVlanMapping API.
 
 .. Examples
 
@@ -824,7 +831,7 @@ Examples
           isData: true
           isDefaultVlan: true
           lastUpdate: string
-          maxValue: 1
+          maxValue: 0
           name: string
           vnId: string
           vnName: string

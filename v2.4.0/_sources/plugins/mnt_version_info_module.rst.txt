@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.mnt_version_info module -- Information module for Mnt Version
+cisco.ise.mnt_version_info module -- Information module for MNT Version
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Get all Mnt Version.
+- Get all MNT Version.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -492,7 +492,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Get all Mnt Version
+    - name: Get all MNT Version
       cisco.ise.mnt_version_info:
         ise_hostname: "{{ise_hostname}}"
         ise_username: "{{ise_username}}"

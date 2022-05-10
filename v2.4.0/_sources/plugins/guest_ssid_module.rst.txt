@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.guest_ssid module -- Resource module for Guest Ssid
+cisco.ise.guest_ssid module -- Resource module for Guest SSID
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -68,9 +68,10 @@ Synopsis
 
 .. Description
 
-- Manage operations create, update and delete of the resource Guest Ssid.
+- Manage operations create, update and delete of the resource Guest SSID.
 - This API creates a guest SSID.
 - This API deletes a guest SSID by ID.
+- This API allows the client to update a guest SSID by ID.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -135,7 +136,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Guest Ssid's id.
+      Guest SSID's id.
 
 
       .. raw:: html
@@ -546,7 +547,7 @@ Notes
 
 .. note::
    - SDK Method used are guest_ssid.GuestSsid.create_guest_ssid, guest_ssid.GuestSsid.delete_guest_ssid_by_id, guest_ssid.GuestSsid.update_guest_ssid_by_id,
-   - Paths used are post /ers/config/guestssid, delete /ers/config/guestssid/{id},
+   - Paths used are post /ers/config/guestssid, delete /ers/config/guestssid/{id}, put /ers/config/guestssid/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection

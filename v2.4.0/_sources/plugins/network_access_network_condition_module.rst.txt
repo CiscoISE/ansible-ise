@@ -42,7 +42,7 @@ cisco.ise.network_access_network_condition module -- Resource module for Network
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -71,6 +71,7 @@ Synopsis
 - Manage operations create, update and delete of the resource Network Access Network Condition.
 - Network Access - Creates network condition.
 - Network Access - Delete network condition.
+- Network Access - Update network condition.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -1229,13 +1230,20 @@ Notes
 
 .. note::
    - SDK Method used are network_access_network_conditions.NetworkAccessNetworkConditions.create_network_access_network_condition, network_access_network_conditions.NetworkAccessNetworkConditions.delete_network_access_network_condition_by_id, network_access_network_conditions.NetworkAccessNetworkConditions.update_network_access_network_condition_by_id,
-   - Paths used are post /network-access/network-condition, delete /network-access/network-condition/{id},
+   - Paths used are post /network-access/network-condition, delete /network-access/network-condition/{id}, put /network-access/network-condition/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco ISE documentation for Network Access - Network Conditions <https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi>`_
+       Complete reference of the Network Access - Network Conditions API.
 
 .. Examples
 

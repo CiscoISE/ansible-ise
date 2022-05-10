@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.node_services_sxp_interfaces module -- Resource module for Node Services Sxp Interfaces
+cisco.ise.node_services_sxp_interfaces module -- Resource module for Node Services SXP Interfaces
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Manage operation update of the resource Node Services Sxp Interfaces.
+- Manage operation update of the resource Node Services SXP Interfaces.
 - This API configures the SXP interface.
 
 .. note::
@@ -168,7 +168,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Node Services Sxp Interfaces's interface.
+      Node Services SXP Interfaces's interface.
 
 
       .. raw:: html
@@ -552,6 +552,13 @@ Notes
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco ISE documentation for Node Services <https://developer.cisco.com/docs/identity-services-engine/v1/#!deployment-openapi>`_
+       Complete reference of the Node Services API.
 
 .. Examples
 

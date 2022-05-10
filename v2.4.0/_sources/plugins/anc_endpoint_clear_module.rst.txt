@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.anc_endpoint_clear module -- Resource module for Anc Endpoint Clear
+cisco.ise.anc_endpoint_clear module -- Resource module for ANC Endpoint Clear
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Manage operation update of the resource Anc Endpoint Clear.
+- Manage operation update of the resource ANC Endpoint Clear.
 - This API allows the client to clear the required configuration.
 
 .. note::
@@ -134,7 +134,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Anc Endpoint Clear's additionalData.
+      ANC Endpoint Clear's additionalData.
 
 
       .. raw:: html
@@ -168,7 +168,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Anc Endpoint Clear's name.
+      ANC Endpoint Clear's name.
 
 
       .. raw:: html
@@ -202,7 +202,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Anc Endpoint Clear's value.
+      ANC Endpoint Clear's value.
 
 
       .. raw:: html

@@ -42,7 +42,7 @@ cisco.ise.node_group module -- Resource module for Node Group
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -69,8 +69,9 @@ Synopsis
 .. Description
 
 - Manage operations create, update and delete of the resource Node Group.
-- This API creates a node group in the cluster. A node group is a group of PSNs,
+- This API creates a node group in the cluster. A node group is a group of PSNs,.
 - Delete an existing node group in the cluster. Deleting the node group does not delete the nodes, but failover is no longer carried out among the nodes.
+- Purpose of this API is to update an existing node group.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -792,13 +793,20 @@ Notes
 
 .. note::
    - SDK Method used are node_group.NodeGroup.create_node_group, node_group.NodeGroup.delete_node_group, node_group.NodeGroup.update_node_group,
-   - Paths used are post /api/v1/deployment/node-group, delete /api/v1/deployment/node-group/{nodeGroupName},
+   - Paths used are post /api/v1/deployment/node-group, delete /api/v1/deployment/node-group/{nodeGroupName}, put /api/v1/deployment/node-group/{nodeGroupName},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco ISE documentation for Node Group <https://developer.cisco.com/docs/identity-services-engine/v1/#!deployment-openapi>`_
+       Complete reference of the Node Group API.
 
 .. Examples
 

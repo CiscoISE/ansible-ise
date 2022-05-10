@@ -42,7 +42,7 @@ cisco.ise.id_store_sequence module -- Resource module for Id Store Sequence
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -71,6 +71,7 @@ Synopsis
 - Manage operations create, update and delete of the resource Id Store Sequence.
 - This API creates an identity sequence.
 - This API deletes an identity sequence.
+- This API allows the client to update an identity sequence.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -792,13 +793,20 @@ Notes
 
 .. note::
    - SDK Method used are identity_sequence.IdentitySequence.create_identity_sequence, identity_sequence.IdentitySequence.delete_identity_sequence_by_id, identity_sequence.IdentitySequence.update_identity_sequence_by_id,
-   - Paths used are post /ers/config/idstoresequence, delete /ers/config/idstoresequence/{id},
+   - Paths used are post /ers/config/idstoresequence, delete /ers/config/idstoresequence/{id}, put /ers/config/idstoresequence/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco ISE documentation for IdentitySequence <https://developer.cisco.com/docs/identity-services-engine/v1/#!idstoresequence>`_
+       Complete reference of the IdentitySequence API.
 
 .. Examples
 

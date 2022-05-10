@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.tacacs_external_servers module -- Resource module for Tacacs External Servers
+cisco.ise.tacacs_external_servers module -- Resource module for TACACS External Servers
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -68,9 +68,10 @@ Synopsis
 
 .. Description
 
-- Manage operations create, update and delete of the resource Tacacs External Servers.
+- Manage operations create, update and delete of the resource TACACS External Servers.
 - This API creates TACACS external servers.
 - This API deletes TACACS external servers.
+- This API allows the client to update TACACS external servers.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -169,7 +170,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Tacacs External Servers's description.
+      TACACS External Servers's description.
 
 
       .. raw:: html
@@ -237,7 +238,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Tacacs External Servers's id.
+      TACACS External Servers's id.
 
 
       .. raw:: html
@@ -630,7 +631,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Tacacs External Servers's name.
+      TACACS External Servers's name.
 
 
       .. raw:: html
@@ -757,7 +758,7 @@ Notes
 
 .. note::
    - SDK Method used are tacacs_external_servers.TacacsExternalServers.create_tacacs_external_servers, tacacs_external_servers.TacacsExternalServers.delete_tacacs_external_servers_by_id, tacacs_external_servers.TacacsExternalServers.update_tacacs_external_servers_by_id,
-   - Paths used are post /ers/config/tacacsexternalservers, delete /ers/config/tacacsexternalservers/{id},
+   - Paths used are post /ers/config/tacacsexternalservers, delete /ers/config/tacacsexternalservers/{id}, put /ers/config/tacacsexternalservers/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection

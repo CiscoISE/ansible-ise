@@ -42,7 +42,7 @@ cisco.ise.system_certificate module -- Resource module for System Certificate
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -70,6 +70,7 @@ Synopsis
 
 - Manage operations update and delete of the resource System Certificate.
 - This API deletes a System Certificate of a particular node based on given HostName and ID.
+- Update a System Certificate.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -1166,13 +1167,20 @@ Notes
 
 .. note::
    - SDK Method used are certificates.Certificates.delete_system_certificate_by_id, certificates.Certificates.update_system_certificate,
-   - Paths used are delete /api/v1/certs/system-certificate/{hostName}/{id},
+   - Paths used are delete /api/v1/certs/system-certificate/{hostName}/{id}, put /api/v1/certs/system-certificate/{hostName}/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco ISE documentation for Certificates <https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi>`_
+       Complete reference of the Certificates API.
 
 .. Examples
 

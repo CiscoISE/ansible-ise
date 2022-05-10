@@ -42,7 +42,7 @@ cisco.ise.patch_install module -- Resource module for Patch Install
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -69,7 +69,7 @@ Synopsis
 .. Description
 
 - Manage operation create of the resource Patch Install.
-- Triggers patch installation on the Cisco ISE node. A task ID is returned which can be used to monitor the progress of the patch installation process. As the patch   installation triggers the Cisco ISE to restart, the task API becomes unavailable for  a certain period of time.
+- Triggers patch installation on the Cisco ISE node. A task ID is returned which can be used to monitor the progress of the patch installation process. As the patch installation triggers the Cisco ISE to restart, the task API becomes unavailable for a certain period of time.
 
 
 .. note::
@@ -553,6 +553,13 @@ Notes
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco ISE documentation for Patching <https://developer.cisco.com/docs/identity-services-engine/v1/#!patch-and-hot-patch-openapi>`_
+       Complete reference of the Patching API.
 
 .. Examples
 

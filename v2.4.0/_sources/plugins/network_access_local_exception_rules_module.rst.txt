@@ -42,7 +42,7 @@ cisco.ise.network_access_local_exception_rules module -- Resource module for Net
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -71,6 +71,7 @@ Synopsis
 - Manage operations create, update and delete of the resource Network Access Local Exception Rules.
 - Network Access - Create local authorization exception rule.
 - Network Access - Delete local exception rule.
+- Network Access - Update local exception rule.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -2243,13 +2244,20 @@ Notes
 
 .. note::
    - SDK Method used are network_access_authorization_exception_rules.NetworkAccessAuthorizationExceptionRules.create_network_access_local_exception_rule, network_access_authorization_exception_rules.NetworkAccessAuthorizationExceptionRules.delete_network_access_local_exception_rule_by_id, network_access_authorization_exception_rules.NetworkAccessAuthorizationExceptionRules.update_network_access_local_exception_rule_by_id,
-   - Paths used are post /network-access/policy-set/{policyId}/exception, delete /network-access/policy-set/{policyId}/exception/{id},
+   - Paths used are post /network-access/policy-set/{policyId}/exception, delete /network-access/policy-set/{policyId}/exception/{id}, put /network-access/policy-set/{policyId}/exception/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco ISE documentation for Network Access - Authorization Exception Rules <https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi>`_
+       Complete reference of the Network Access - Authorization Exception Rules API.
 
 .. Examples
 

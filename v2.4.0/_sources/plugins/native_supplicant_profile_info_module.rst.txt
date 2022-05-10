@@ -42,7 +42,7 @@ cisco.ise.native_supplicant_profile_info module -- Information module for Native
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -588,6 +588,13 @@ Notes
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco ISE documentation for NativeSupplicantProfile <https://developer.cisco.com/docs/identity-services-engine/v1/#!nspprofile>`_
+       Complete reference of the NativeSupplicantProfile API.
 
 .. Examples
 

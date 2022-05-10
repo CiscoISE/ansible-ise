@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.csr_generate module -- Resource module for Csr Generate
+cisco.ise.csr_generate module -- Resource module for CSR Generate
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -68,8 +68,8 @@ Synopsis
 
 .. Description
 
-- Manage operation create of the resource Csr Generate.
-- \#\#\# Generate a certificate signing request for Multi-Use, Admin, EAP
+- Manage operation create of the resource CSR Generate.
+- Generate a certificate signing request for Multi-Use, Admin, EAP.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -175,7 +175,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Csr Generate's certificatePolicies.
+      CSR Generate's certificatePolicies.
 
 
       .. raw:: html
@@ -209,7 +209,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Csr Generate's digestType.
+      CSR Generate's digestType.
 
 
       .. raw:: html
@@ -243,7 +243,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Csr Generate's hostnames.
+      CSR Generate's hostnames.
 
 
       .. raw:: html
@@ -636,7 +636,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Csr Generate's keyLength.
+      CSR Generate's keyLength.
 
 
       .. raw:: html
@@ -670,7 +670,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Csr Generate's keyType.
+      CSR Generate's keyType.
 
 
       .. raw:: html
@@ -704,7 +704,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Csr Generate's portalGroupTag.
+      CSR Generate's portalGroupTag.
 
 
       .. raw:: html
@@ -738,7 +738,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Csr Generate's sanDir.
+      CSR Generate's sanDir.
 
 
       .. raw:: html
@@ -772,7 +772,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Csr Generate's sanDNS.
+      CSR Generate's sanDNS.
 
 
       .. raw:: html
@@ -806,7 +806,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Csr Generate's sanIP.
+      CSR Generate's sanIP.
 
 
       .. raw:: html
@@ -840,7 +840,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Csr Generate's sanURI.
+      CSR Generate's sanURI.
 
 
       .. raw:: html
@@ -874,7 +874,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Csr Generate's subjectCity.
+      CSR Generate's subjectCity.
 
 
       .. raw:: html
@@ -908,7 +908,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Csr Generate's subjectCommonName.
+      CSR Generate's subjectCommonName.
 
 
       .. raw:: html
@@ -942,7 +942,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Csr Generate's subjectCountry.
+      CSR Generate's subjectCountry.
 
 
       .. raw:: html
@@ -976,7 +976,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Csr Generate's subjectOrg.
+      CSR Generate's subjectOrg.
 
 
       .. raw:: html
@@ -1010,7 +1010,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Csr Generate's subjectOrgUnit.
+      CSR Generate's subjectOrgUnit.
 
 
       .. raw:: html
@@ -1044,7 +1044,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Csr Generate's subjectState.
+      CSR Generate's subjectState.
 
 
       .. raw:: html
@@ -1078,7 +1078,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Csr Generate's usedFor.
+      CSR Generate's usedFor.
 
 
       .. raw:: html
@@ -1103,6 +1103,13 @@ Notes
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco ISE documentation for Certificates <https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi>`_
+       Complete reference of the Certificates API.
 
 .. Examples
 

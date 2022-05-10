@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.trustsec_vn_vlan_mapping module -- Resource module for Trustsec Vn Vlan Mapping
+cisco.ise.trustsec_vn_vlan_mapping module -- Resource module for Trustsec VN VLAN Mapping
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -68,8 +68,9 @@ Synopsis
 
 .. Description
 
-- Manage operations create, update and delete of the resource Trustsec Vn Vlan Mapping.
+- Manage operations create, update and delete of the resource Trustsec VN VLAN Mapping.
 - Create VN-Vlan Mapping.
+- Update VN-Vlan Mapping.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -134,7 +135,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Identifier of the VN-Vlan Mapping.
+      Identifier of the VN-VLAN Mapping.
 
 
       .. raw:: html
@@ -168,7 +169,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Flag which indicates whether the Vlan is data or voice type.
+      Flag which indicates whether the VLAN is data or voice type.
 
 
       .. rst-class:: ansible-option-line
@@ -185,17 +186,17 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-isDefaultVlan"></div>
+        <div class="ansibleOptionAnchor" id="parameter-isDefaultVLAN"></div>
 
       .. _ansible_collections.cisco.ise.trustsec_vn_vlan_mapping_module__parameter-isdefaultvlan:
 
       .. rst-class:: ansible-option-title
 
-      **isDefaultVlan**
+      **isDefaultVLAN**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-isDefaultVlan" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-isDefaultVLAN" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -209,7 +210,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Flag which indicates if the Vlan is default.
+      Flag which indicates if the VLAN is default.
 
 
       .. rst-class:: ansible-option-line
@@ -609,7 +610,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Timestamp for the last update of the VN-Vlan Mapping.
+      Timestamp for the last update of the VN-VLAN Mapping.
 
 
       .. raw:: html
@@ -677,7 +678,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Name of the Vlan.
+      Name of the VLAN.
 
 
       .. raw:: html
@@ -763,13 +764,20 @@ Notes
 
 .. note::
    - SDK Method used are vn_vlan_mapping.VnVlanMapping.create_vn_vlan_mapping, vn_vlan_mapping.VnVlanMapping.delete_vn_vlan_mapping_by_id, vn_vlan_mapping.VnVlanMapping.update_vn_vlan_mapping_by_id,
-   - Paths used are post /api/v1/trustsec/vnvlanmapping, delete /api/v1/trustsec/vnvlanmapping/{id},
+   - Paths used are post /api/v1/trustsec/vnvlanmapping, delete /api/v1/trustsec/vnvlanmapping/{id}, put /api/v1/trustsec/vnvlanmapping/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco ISE documentation for vnVlanMapping <https://developer.cisco.com/docs/identity-services-engine/v1/#!trustsec-openapi>`_
+       Complete reference of the vnVlanMapping API.
 
 .. Examples
 

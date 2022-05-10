@@ -42,7 +42,7 @@ cisco.ise.device_administration_authorization_rules module -- Resource module fo
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -71,6 +71,7 @@ Synopsis
 - Manage operations create, update and delete of the resource Device Administration Authorization Rules.
 - Device Admin - Create authorization rule.
 - Device Admin - Delete authorization rule.
+- Device Admin - Update authorization rule.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -2243,13 +2244,20 @@ Notes
 
 .. note::
    - SDK Method used are device_administration_authorization_rules.DeviceAdministrationAuthorizationRules.create_device_admin_authorization_rule, device_administration_authorization_rules.DeviceAdministrationAuthorizationRules.delete_device_admin_authorization_rule_by_id, device_administration_authorization_rules.DeviceAdministrationAuthorizationRules.update_device_admin_authorization_rule_by_id,
-   - Paths used are post /device-admin/policy-set/{policyId}/authorization, delete /device-admin/policy-set/{policyId}/authorization/{id},
+   - Paths used are post /device-admin/policy-set/{policyId}/authorization, delete /device-admin/policy-set/{policyId}/authorization/{id}, put /device-admin/policy-set/{policyId}/authorization/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco ISE documentation for Device Administration - Authorization Rules <https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi>`_
+       Complete reference of the Device Administration - Authorization Rules API.
 
 .. Examples
 

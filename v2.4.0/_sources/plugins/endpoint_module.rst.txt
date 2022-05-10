@@ -42,7 +42,7 @@ cisco.ise.endpoint module -- Resource module for Endpoint
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -71,6 +71,7 @@ Synopsis
 - Manage operations create, update and delete of the resource Endpoint.
 - This API creates an endpoint.
 - This API deletes an endpoint.
+- This API allows the client to update an endpoint.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -1454,7 +1455,7 @@ Notes
 
 .. note::
    - SDK Method used are endpoint.Endpoint.create_endpoint, endpoint.Endpoint.delete_endpoint_by_id, endpoint.Endpoint.update_endpoint_by_id,
-   - Paths used are post /ers/config/endpoint, delete /ers/config/endpoint/{id},
+   - Paths used are post /ers/config/endpoint, delete /ers/config/endpoint/{id}, put /ers/config/endpoint/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection

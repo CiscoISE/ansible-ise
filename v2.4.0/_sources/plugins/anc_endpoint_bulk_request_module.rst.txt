@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.anc_endpoint_bulk_request module -- Resource module for Anc Endpoint Bulk Request
+cisco.ise.anc_endpoint_bulk_request module -- Resource module for ANC Endpoint Bulk Request
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Manage operation update of the resource Anc Endpoint Bulk Request.
+- Manage operation update of the resource ANC Endpoint Bulk Request.
 - This API allows the client to submit the bulk request.
 
 .. note::
@@ -493,7 +493,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Anc Endpoint Bulk Request's operationType.
+      ANC Endpoint Bulk Request's operationType.
 
 
       .. raw:: html
@@ -527,7 +527,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Anc Endpoint Bulk Request's resourceMediaType.
+      ANC Endpoint Bulk Request's resourceMediaType.
 
 
       .. raw:: html

@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.radius_server_sequence module -- Resource module for Radius Server Sequence
+cisco.ise.radius_server_sequence module -- Resource module for RADIUS Server Sequence
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -68,9 +68,10 @@ Synopsis
 
 .. Description
 
-- Manage operations create, update and delete of the resource Radius Server Sequence.
+- Manage operations create, update and delete of the resource RADIUS Server Sequence.
 - This API creates a RADIUS server sequence.
 - This API deletes a RADIUS server sequence.
+- This API allows the client to update a RADIUS server sequence.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -203,7 +204,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Radius Server Sequence's attributeName.
+      RADIUS Server Sequence's attributeName.
 
 
       .. raw:: html
@@ -271,7 +272,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Radius Server Sequence's dictionaryName.
+      RADIUS Server Sequence's dictionaryName.
 
 
       .. raw:: html
@@ -305,7 +306,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Radius Server Sequence's value.
+      RADIUS Server Sequence's value.
 
 
       .. raw:: html
@@ -381,7 +382,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Radius Server Sequence's description.
+      RADIUS Server Sequence's description.
 
 
       .. raw:: html
@@ -415,7 +416,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Radius Server Sequence's id.
+      RADIUS Server Sequence's id.
 
 
       .. raw:: html
@@ -849,7 +850,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Radius Server Sequence's name.
+      RADIUS Server Sequence's name.
 
 
       .. raw:: html
@@ -951,7 +952,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Radius Server Sequence's attributeName.
+      RADIUS Server Sequence's attributeName.
 
 
       .. raw:: html
@@ -1019,7 +1020,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Radius Server Sequence's dictionaryName.
+      RADIUS Server Sequence's dictionaryName.
 
 
       .. raw:: html
@@ -1053,7 +1054,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Radius Server Sequence's value.
+      RADIUS Server Sequence's value.
 
 
       .. raw:: html
@@ -1098,17 +1099,17 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-RadiusServerList"></div>
+        <div class="ansibleOptionAnchor" id="parameter-RADIUSServerList"></div>
 
       .. _ansible_collections.cisco.ise.radius_server_sequence_module__parameter-radiusserverlist:
 
       .. rst-class:: ansible-option-title
 
-      **RadiusServerList**
+      **RADIUSServerList**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-RadiusServerList" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-RADIUSServerList" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -1122,7 +1123,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Radius Server Sequence's RadiusServerList.
+      RADIUS Server Sequence's RADIUSServerList.
 
 
       .. raw:: html
@@ -1379,7 +1380,7 @@ Notes
 
 .. note::
    - SDK Method used are radius_server_sequence.RadiusServerSequence.create_radius_server_sequence, radius_server_sequence.RadiusServerSequence.delete_radius_server_sequence_by_id, radius_server_sequence.RadiusServerSequence.update_radius_server_sequence_by_id,
-   - Paths used are post /ers/config/radiusserversequence, delete /ers/config/radiusserversequence/{id},
+   - Paths used are post /ers/config/radiusserversequence, delete /ers/config/radiusserversequence/{id}, put /ers/config/radiusserversequence/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection

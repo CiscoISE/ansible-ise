@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.sgt_bulk_monitor_status_info module -- Information module for Sgt Bulk Monitor Status
+cisco.ise.sgt_bulk_monitor_status_info module -- Information module for SGt Bulk Monitor Status
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Get Sgt Bulk Monitor Status by id.
+- Get SGt Bulk Monitor Status by id.
 - This API allows the client to monitor the bulk request.
 
 .. note::
@@ -518,6 +518,13 @@ Notes
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco ISE documentation for SecurityGroups <https://developer.cisco.com/docs/identity-services-engine/v1/#!sgt>`_
+       Complete reference of the SecurityGroups API.
 
 .. Examples
 
@@ -527,7 +534,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Get Sgt Bulk Monitor Status by id
+    - name: Get SGt Bulk Monitor Status by id
       cisco.ise.sgt_bulk_monitor_status_info:
         ise_hostname: "{{ise_hostname}}"
         ise_username: "{{ise_username}}"

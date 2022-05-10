@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.sxp_local_bindings module -- Resource module for Sxp Local Bindings
+cisco.ise.sxp_local_bindings module -- Resource module for SXP Local Bindings
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -68,9 +68,10 @@ Synopsis
 
 .. Description
 
-- Manage operations create, update and delete of the resource Sxp Local Bindings.
+- Manage operations create, update and delete of the resource SXP Local Bindings.
 - This API creates a SXP local binding.
 - This API deletes a SXP local binding.
+- This API allows the client to update a SXP local binding.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -169,7 +170,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Sxp Local Bindings's description.
+      SXP Local Bindings's description.
 
 
       .. raw:: html
@@ -203,7 +204,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Sxp Local Bindings's id.
+      SXP Local Bindings's id.
 
 
       .. raw:: html
@@ -716,7 +717,7 @@ Notes
 
 .. note::
    - SDK Method used are sxp_local_bindings.SxpLocalBindings.create_sxp_local_bindings, sxp_local_bindings.SxpLocalBindings.delete_sxp_local_bindings_by_id, sxp_local_bindings.SxpLocalBindings.update_sxp_local_bindings_by_id,
-   - Paths used are post /ers/config/sxplocalbindings, delete /ers/config/sxplocalbindings/{id},
+   - Paths used are post /ers/config/sxplocalbindings, delete /ers/config/sxplocalbindings/{id}, put /ers/config/sxplocalbindings/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection

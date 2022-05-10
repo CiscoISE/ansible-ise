@@ -42,7 +42,7 @@ cisco.ise.certificate_profile module -- Resource module for Certificate Profile
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -70,6 +70,7 @@ Synopsis
 
 - Manage operations create and update of the resource Certificate Profile.
 - This API allows the client to create a certificate profile.
+- This API allows the client to update a certificate profile.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -756,7 +757,7 @@ Notes
 
 .. note::
    - SDK Method used are certificate_profile.CertificateProfile.create_certificate_profile, certificate_profile.CertificateProfile.update_certificate_profile_by_id,
-   - Paths used are post /ers/config/certificateprofile,
+   - Paths used are post /ers/config/certificateprofile, put /ers/config/certificateprofile/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
