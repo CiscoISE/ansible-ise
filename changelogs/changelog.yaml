@@ -730,3 +730,36 @@ releases:
         - network_access_authorization_rules - added a validation reading the data
         - network_access_global_exception_rules - added a validation reading the data
         - network_access_local_exception_rules - added a validation reading the data
+  2.4.0:
+    release_date: "2022-05-10"
+    changes:
+      release_summary: Add pxGrid modules & changes some module descriptions.
+      minor_changes:
+        - pxGrid_node_approve - new module
+        - pxGrid_node_delete - new module
+        - pxGrid_node_info - new module
+        - pxGrid_settings_auto_approve - new module
+      bugfixes:
+        - node_services_interfaces_info - change the validation.
+        - Change description from Aci to ACI
+        - Change description from Anc to ANC
+        - Change description from Csr to CSR
+        - Change description from Byod to BYOD
+        - Change description from Ca to CA
+        - Change description from Acl to ACL
+        - Change description from Radius to RADIUS
+        - Change description from Smtp to SMTP
+        - Change description from Ssid to SSID
+        - Change description from Mnt to MNT
+        - Change description from Rest to REST
+        - Change description from Sg to SG
+        - Change description from Sgt to SGT
+        - Change description from Sg Acl to SGACL
+        - Change description from Sms to SMS
+        - Change description from Vn to VN
+        - Change description from Vlan to VLAN
+        - Change description from Sxp to SXP
+        - Change description from Vpns to VPNs
+        - Change description from Tacacs to TACACS
+        - Change description from Nbar to NBAR
+        - Change description from Pxgrid to pxGrid
