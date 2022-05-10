@@ -13,6 +13,8 @@ description:
 - Network Access - Creates a library condition.
 - Network Access - Delete a library condition using condition Name.
 - Network Access - Delete a library condition.
+- Network Access - Update library condition using condition name.
+- Network Access - Update library condition.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -159,6 +161,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for Network Access - Conditions
+  description: Complete reference of the Network Access - Conditions API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
   - SDK Method used are
     network_access_conditions.NetworkAccessConditions.create_network_access_condition,
@@ -171,6 +177,8 @@ notes:
     post /network-access/condition,
     delete /network-access/condition/condition-by-name/{name},
     delete /network-access/condition/{id},
+    put /network-access/condition/condition-by-name/{name},
+    put /network-access/condition/{id},
 
 """
 

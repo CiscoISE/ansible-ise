@@ -11,9 +11,9 @@ short_description: Information module for Pan Ha
 description:
 - Get all Pan Ha.
 - >
-   In a high availability configuration, the primary PAN is in active state. The secondary PAN (backup PAN) is in standby state, which means that it
-   receives all the configuration updates from the primary PAN, but is not active in the Cisco ISE cluster. You can configure Cisco ISE to automatically
-   promote the secondary PAN when the primary PAN becomes unavailable.
+   In a high availability configuration, the primary PAN is in active state. The secondary PAN backup PAN is in standby state, which means that it receives
+   all the configuration updates from the primary PAN, but is not active in the Cisco ISE cluster. You can configure Cisco ISE to automatically promote the
+   secondary PAN when the primary PAN becomes unavailable.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -22,6 +22,10 @@ options: {}
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for PAN HA
+  description: Complete reference of the PAN HA API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!deployment-openapi
 notes:
   - SDK Method used are
     pan_ha.PanHa.get_pan_ha_status,

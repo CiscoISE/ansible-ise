@@ -7,10 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: mnt_account_status_info
-short_description: Information module for Mnt Account Status
+short_description: Information module for MNT Account Status
 description:
-- Get Mnt Account Status by id.
-- AccountStatus by MAC.
+- Get MNT Account Status by id.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -37,7 +36,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get Mnt Account Status by id
+- name: Get MNT Account Status by id
   cisco.ise.mnt_account_status_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

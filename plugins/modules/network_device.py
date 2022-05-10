@@ -13,6 +13,8 @@ description:
 - This API creates a network device.
 - This API deletes a network device by ID.
 - This API deletes a network device by name.
+- This API allows the client to update a network device by ID.
+- This API allows the client to update a network device by name.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -66,8 +68,8 @@ options:
       radiusSharedSecret:
         description: Network Device's radiusSharedSecret.
         type: str
-      secondRadiusSharedSecret:
-        description: Network Device's secondRadiusSharedSecret.
+      secondRADIUSSharedSecret:
+        description: Network Device's secondRADIUSSharedSecret.
         type: str
     type: dict
   coaPort:
@@ -203,6 +205,8 @@ notes:
     post /ers/config/networkdevice,
     delete /ers/config/networkdevice/name/{name},
     delete /ers/config/networkdevice/{id},
+    put /ers/config/networkdevice/name/{name},
+    put /ers/config/networkdevice/{id},
 
 """
 

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: sgt_bulk_request
-short_description: Resource module for Sgt Bulk Request
+short_description: Resource module for SGt Bulk Request
 description:
-- Manage operation update of the resource Sgt Bulk Request.
+- Manage operation update of the resource SGt Bulk Request.
 - This API allows the client to submit the bulk request.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -17,14 +17,18 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   operationType:
-    description: Sgt Bulk Request's operationType.
+    description: SGt Bulk Request's operationType.
     type: str
   resourceMediaType:
-    description: Sgt Bulk Request's resourceMediaType.
+    description: SGt Bulk Request's resourceMediaType.
     type: str
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for SecurityGroups
+  description: Complete reference of the SecurityGroups API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgt
 notes:
   - SDK Method used are
     security_groups.SecurityGroups.bulk_request_for_security_group,

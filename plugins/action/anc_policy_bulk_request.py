@@ -81,7 +81,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="anc_policy",
-            function='bulk_request_for_anc_policy',
+            function="bulk_request_for_anc_policy",
             params=self.get_object(self._task.args),
         ).response
 

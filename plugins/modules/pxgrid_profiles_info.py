@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: pxgrid_profiles_info
-short_description: Information module for Pxgrid Profiles Info
+short_description: Information module for pxGrid Profiles Info
 description:
-- Get Pxgrid Profiles Info.
+- Get pxGrid Profiles Info.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -20,15 +20,15 @@ requirements:
 - python >= 3.5
 notes:
   - SDK Method used are
-    profiler.Profiler.get_profiles
+    profiler.Profiler.get_profiles,
 
   - Paths used are
-    post /pxgrid/ise/radius/ise/config/profiler/getProfiles
+    post /ise/config/profiler/getProfiles,
 
 """
 
 EXAMPLES = r"""
-- name: Get all Pxgrid Profiles Info
+- name: Get all pxGrid Profiles Info
   cisco.ise.pxgrid_profiles_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

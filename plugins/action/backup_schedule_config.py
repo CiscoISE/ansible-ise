@@ -99,7 +99,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="backup_and_restore",
-            function='create_scheduled_config_backup',
+            function="create_scheduled_config_backup",
             params=self.get_object(self._task.args),
         ).response
 

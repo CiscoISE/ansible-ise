@@ -81,7 +81,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="node_group",
-            function='add_node',
+            function="add_node",
             params=self.get_object(self._task.args),
         ).response
 

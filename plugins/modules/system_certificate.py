@@ -11,6 +11,7 @@ short_description: Resource module for System Certificate
 description:
 - Manage operations update and delete of the resource System Certificate.
 - This API deletes a System Certificate of a particular node based on given HostName and ID.
+- Update a System Certificate.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -75,6 +76,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for Certificates
+  description: Complete reference of the Certificates API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
 notes:
   - SDK Method used are
     certificates.Certificates.delete_system_certificate_by_id,
@@ -82,6 +87,7 @@ notes:
 
   - Paths used are
     delete /api/v1/certs/system-certificate/{hostName}/{id},
+    put /api/v1/certs/system-certificate/{hostName}/{id},
 
 """
 

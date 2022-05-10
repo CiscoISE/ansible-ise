@@ -10,7 +10,7 @@ module: network_access_security_groups_info
 short_description: Information module for Network Access Security Groups
 description:
 - Get all Network Access Security Groups.
-- Network Access - Return list of available security groups for authorization
+- Network Access - Return list of available security groups for authorization.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -19,6 +19,10 @@ options: {}
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for Network Access - Security Groups
+  description: Complete reference of the Network Access - Security Groups API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
   - SDK Method used are
     network_access_security_groups.NetworkAccessSecurityGroups.get_network_access_security_groups,

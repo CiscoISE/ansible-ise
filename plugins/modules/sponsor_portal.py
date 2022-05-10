@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Sponsor Portal.
 - This API creates a sponsor portal.
 - This API deletes a sponsor portal by ID.
+- This API allows the client to update a sponsor portal by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -200,7 +201,7 @@ options:
           authenticationMethod:
             description: Unique Id of the identity source sequence.
             type: str
-          availableSsids:
+          availableSSIDs:
             description: Names of the SSIDs available for assignment to guest users
               by sponsors.
             elements: str
@@ -291,6 +292,7 @@ notes:
   - Paths used are
     post /ers/config/sponsorportal,
     delete /ers/config/sponsorportal/{id},
+    put /ers/config/sponsorportal/{id},
 
 """
 
@@ -347,7 +349,8 @@ EXAMPLES = r"""
         maxFailedAttemptsBeforeRateLimit: 0
         requireAupAcceptance: true
         requireAupScrolling: true
-        socialConfigs: []
+        socialConfigs:
+        - {}
         timeBetweenLoginsDuringRateLimit: 0
       portalSettings:
         allowedInterfaces:
@@ -437,7 +440,8 @@ EXAMPLES = r"""
         maxFailedAttemptsBeforeRateLimit: 0
         requireAupAcceptance: true
         requireAupScrolling: true
-        socialConfigs: []
+        socialConfigs:
+        - {}
         timeBetweenLoginsDuringRateLimit: 0
       portalSettings:
         allowedInterfaces:
@@ -504,7 +508,9 @@ ise_response:
           "aupDisplay": "string",
           "requireAupAcceptance": true,
           "requireAupScrolling": true,
-          "socialConfigs": []
+          "socialConfigs": [
+            {}
+          ]
         },
         "aupSettings": {
           "includeAup": true,

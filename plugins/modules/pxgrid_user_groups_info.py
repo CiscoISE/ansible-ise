@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: pxgrid_user_groups_info
-short_description: Information module for Pxgrid User Groups Info
+short_description: Information module for pxGrid User Groups Info
 description:
-- Get Pxgrid User Groups Info.
+- Get pxGrid User Groups Info.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -20,14 +20,15 @@ requirements:
 - python >= 3.5
 notes:
   - SDK Method used are
-    session_directory.SessionDirectory.get_user_groups
+    session_directory.SessionDirectory.get_user_groups,
 
   - Paths used are
-    post /pxgrid/ise/radius/ise/session/getUserGroups
+    post /ise/session/getUserGroups,
+
 """
 
 EXAMPLES = r"""
-- name: Get all Pxgrid User Groups Info
+- name: Get all pxGrid User Groups Info
   cisco.ise.pxgrid_user_groups_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

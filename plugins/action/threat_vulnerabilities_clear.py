@@ -79,7 +79,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="clear_threats_and_vulnerabilities",
-            function='clear_threats_and_vulnerabilities',
+            function="clear_threats_and_vulnerabilities",
             params=self.get_object(self._task.args),
         ).response
 

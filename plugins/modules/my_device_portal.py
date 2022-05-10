@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource My Device Portal.
 - This API creates a my device portal.
 - This API deletes a my device portal by ID.
+- This API allows the client to update a my device portal by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -285,6 +286,7 @@ notes:
   - Paths used are
     post /ers/config/mydeviceportal,
     delete /ers/config/mydeviceportal/{id},
+    put /ers/config/mydeviceportal/{id},
 
 """
 

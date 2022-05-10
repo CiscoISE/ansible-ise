@@ -127,7 +127,6 @@ class ActionModule(ActionBase):
                         responses += tmp_response
                     else:
                         responses.append(tmp_response)
-                self._result.update(dict(ise_responses=responses))
                 response = responses
             except (TypeError, AttributeError) as e:
                 ise.fail_json(

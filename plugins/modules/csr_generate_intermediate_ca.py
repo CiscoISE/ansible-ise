@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: csr_generate_intermediate_ca
-short_description: Resource module for Csr Generate Intermediate Ca
+short_description: Resource module for CSR Generate Intermediate CA
 description:
-- Manage operation create of the resource Csr Generate Intermediate Ca.
+- Manage operation create of the resource CSR Generate Intermediate CA.
 - CSR Generation for Intermediate Certificates.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -19,6 +19,10 @@ options: {}
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for Certificates
+  description: Complete reference of the Certificates API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
 notes:
   - SDK Method used are
     certificates.Certificates.generate_intermediate_ca_csr,

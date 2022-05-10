@@ -79,7 +79,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="network_access_authorization_exception_rules",
-            function='reset_hit_counts_network_access_local_exceptions',
+            function="reset_hit_counts_network_access_local_exceptions",
             params=self.get_object(self._task.args),
         ).response
 

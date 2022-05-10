@@ -11,6 +11,7 @@ short_description: Resource module for Native Supplicant Profile
 description:
 - Manage operations update and delete of the resource Native Supplicant Profile.
 - This API deletes a native supplicant profile.
+- This API allows the client to update a native supplicant profile.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -39,7 +40,7 @@ options:
       certificateTemplateId:
         description: Native Supplicant Profile's certificateTemplateId.
         type: str
-      previousSsid:
+      previousSSID:
         description: Previous ssid for WifiProfile (required for updating existing WirelessProfile).
         type: str
       ssid:
@@ -49,6 +50,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for NativeSupplicantProfile
+  description: Complete reference of the NativeSupplicantProfile API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!nspprofile
 notes:
   - SDK Method used are
     native_supplicant_profile.NativeSupplicantProfile.delete_native_supplicant_profile_by_id,
@@ -56,6 +61,7 @@ notes:
 
   - Paths used are
     delete /ers/config/nspprofile/{id},
+    put /ers/config/nspprofile/{id},
 
 """
 

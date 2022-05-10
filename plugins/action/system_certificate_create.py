@@ -81,7 +81,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="system_certificate",
-            function='create_system_certificate',
+            function="create_system_certificate",
             params=self.get_object(self._task.args),
         ).response
 

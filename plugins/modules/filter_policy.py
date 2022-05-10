@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Filter Policy.
 - This API creates a filter policy.
 - This API deletes a filter policy.
+- This API allows the client to update a filter policy.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -45,6 +46,7 @@ notes:
   - Paths used are
     post /ers/config/filterpolicy,
     delete /ers/config/filterpolicy/{id},
+    put /ers/config/filterpolicy/{id},
 
 """
 

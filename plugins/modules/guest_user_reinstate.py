@@ -32,8 +32,8 @@ notes:
     guest_user.GuestUser.reinstate_guest_user_by_name,
 
   - Paths used are
+    put /ers/config/guestuser/reinstate/name/{name},
     put /ers/config/guestuser/reinstate/{id},
-    put /ers/config/guestuser/reinstate/name/{name}
 
 """
 

@@ -111,7 +111,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="certificates",
-            function='bind_csr',
+            function="bind_csr",
             params=self.get_object(self._task.args),
         ).response
 

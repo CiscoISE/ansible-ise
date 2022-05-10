@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: pxgrid_performances_info
-short_description: Information module for Pxgrid Performances Info
+short_description: Information module for pxGrid Performances Info
 description:
-- Get Pxgrid Performances Info.
+- Get pxGrid Performances Info.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -20,15 +20,15 @@ requirements:
 - python >= 3.5
 notes:
   - SDK Method used are
-    system_health.SystemHealth.get_performances
+    system_health.SystemHealth.get_performances,
 
   - Paths used are
-    post /pxgrid/ise/radius/ise/system/getPerformances
+    post /ise/system/getPerformances,
 
 """
 
 EXAMPLES = r"""
-- name: Get all Pxgrid Performances Info
+- name: Get all pxGrid Performances Info
   cisco.ise.pxgrid_performances_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

@@ -37,6 +37,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for proxy
+  description: Complete reference of the proxy API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!system-settings-openapi
 notes:
   - SDK Method used are
     proxy.Proxy.update_proxy_connection,

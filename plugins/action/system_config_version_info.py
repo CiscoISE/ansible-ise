@@ -83,7 +83,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="version_and_patch",
                 function='get_ise_version_and_patch',
-                params=self.get_object(self._task.args),
+                params=self.get_object(self._task.args)
             ).response['OperationResult']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

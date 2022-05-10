@@ -7,11 +7,11 @@
 DOCUMENTATION = r"""
 ---
 module: tacacs_server_sequence_info
-short_description: Information module for Tacacs Server Sequence
+short_description: Information module for TACACS Server Sequence
 description:
-- Get all Tacacs Server Sequence.
-- Get Tacacs Server Sequence by id.
-- Get Tacacs Server Sequence by name.
+- Get all TACACS Server Sequence.
+- Get TACACS Server Sequence by id.
+- Get TACACS Server Sequence by name.
 - This API allows the client to get a TACACS server sequence by ID.
 - This API allows the client to get a TACACS server sequence by name.
 - This API allows the client to get all the TACACS server sequences.
@@ -53,7 +53,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Tacacs Server Sequence
+- name: Get all TACACS Server Sequence
   cisco.ise.tacacs_server_sequence_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -63,7 +63,7 @@ EXAMPLES = r"""
     size: 20
   register: result
 
-- name: Get Tacacs Server Sequence by id
+- name: Get TACACS Server Sequence by id
   cisco.ise.tacacs_server_sequence_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -72,7 +72,7 @@ EXAMPLES = r"""
     id: string
   register: result
 
-- name: Get Tacacs Server Sequence by name
+- name: Get TACACS Server Sequence by name
   cisco.ise.tacacs_server_sequence_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

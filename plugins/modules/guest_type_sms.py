@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: guest_type_sms
-short_description: Resource module for Guest Type Sms
+short_description: Resource module for Guest Type SMS
 description:
-- Manage operation update of the resource Guest Type Sms.
+- Manage operation update of the resource Guest Type SMS.
 - This API allows the client to update a guest type sms by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -17,14 +17,14 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   additionalData:
-    description: Guest Type Sms's additionalData.
+    description: Guest Type SMS's additionalData.
     elements: dict
     suboptions:
       name:
-        description: Guest Type Sms's name.
+        description: Guest Type SMS's name.
         type: str
       value:
-        description: Guest Type Sms's value.
+        description: Guest Type SMS's value.
         type: str
     type: list
   id:
@@ -38,7 +38,7 @@ notes:
     guest_type.GuestType.update_guest_type_sms,
 
   - Paths used are
-    put /ers/config/guesttype/sms/{id}
+    put /ers/config/guesttype/sms/{id},
 
 """
 

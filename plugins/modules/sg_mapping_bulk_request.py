@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: sg_mapping_bulk_request
-short_description: Resource module for Sg Mapping Bulk Request
+short_description: Resource module for SG Mapping Bulk Request
 description:
-- Manage operation update of the resource Sg Mapping Bulk Request.
+- Manage operation update of the resource SG Mapping Bulk Request.
 - This API allows the client to submit the bulk request.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -17,14 +17,18 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   operationType:
-    description: Sg Mapping Bulk Request's operationType.
+    description: SG Mapping Bulk Request's operationType.
     type: str
   resourceMediaType:
-    description: Sg Mapping Bulk Request's resourceMediaType.
+    description: SG Mapping Bulk Request's resourceMediaType.
     type: str
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for IPToSGTMapping
+  description: Complete reference of the IPToSGTMapping API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgmapping
 notes:
   - SDK Method used are
     ip_to_sgt_mapping.IpToSgtMapping.bulk_request_for_ip_to_sgt_mapping,

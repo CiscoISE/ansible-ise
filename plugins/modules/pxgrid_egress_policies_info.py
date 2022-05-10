@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: pxgrid_egress_policies_info
-short_description: Information module for Pxgrid Egress Policies Info
+short_description: Information module for pxGrid Egress Policies Info
 description:
-- Get Pxgrid Egress Policies Info.
+- Get pxGrid Egress Policies Info.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -23,11 +23,12 @@ notes:
     trust_sec_configuration.TrustSecConfiguration.get_egress_policies,
 
   - Paths used are
-    post /pxgrid/ise/radius/ise/config/trustsec/getEgressPolicies
+    post /ise/config/trustsec/getEgressPolicies,
+
 """
 
 EXAMPLES = r"""
-- name: Get all Pxgrid Egress Policies Info
+- name: Get all pxGrid Egress Policies Info
   cisco.ise.pxgrid_egress_policies_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

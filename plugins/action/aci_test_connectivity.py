@@ -77,7 +77,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="aci_settings",
-            function='test_aci_connectivity',
+            function="test_aci_connectivity",
             params=self.get_object(self._task.args),
         ).response
 

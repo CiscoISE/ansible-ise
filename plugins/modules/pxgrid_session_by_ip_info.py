@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: pxgrid_session_by_ip_info
-short_description: Information module for Pxgrid Session By Ip Info
+short_description: Information module for pxGrid Session By Ip Info
 description:
-- Get Pxgrid Session By Ip Info.
+- Get pxGrid Session By Ip Info.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -20,14 +20,15 @@ requirements:
 - python >= 3.5
 notes:
   - SDK Method used are
-    session_directory.SessionDirectory.get_session_by_ip_address
+    session_directory.SessionDirectory.get_session_by_ip_address,
 
   - Paths used are
-    post /pxgrid/ise/radius/ise/session/getSessionByIpAddress
+    post /ise/session/getSessionByIpAddress,
+
 """
 
 EXAMPLES = r"""
-- name: Get all Pxgrid Session By Ip Info
+- name: Get all pxGrid Session By Ip Info
   cisco.ise.pxgrid_session_by_ip_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

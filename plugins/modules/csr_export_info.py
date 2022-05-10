@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: csr_export_info
-short_description: Information module for Csr Export
+short_description: Information module for CSR Export
 description:
-- Get Csr Export by id.
-- \#\#\# Response of this API carries a CSR corresponding to the requested ID.
+- Get CSR Export by id.
+- Response of this API carries a CSR corresponding to the requested ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -32,9 +32,17 @@ options:
     description:
     - Enable or disable automatic file creation of raw response.
     type: bool
+  filename:
+    description:
+    - The filename used to save the download file.
+    type: str
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for Certificates
+  description: Complete reference of the Certificates API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
 notes:
   - SDK Method used are
     certificates.Certificates.export_csr,
@@ -45,7 +53,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get Csr Export by id
+- name: Get CSR Export by id
   cisco.ise.csr_export_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

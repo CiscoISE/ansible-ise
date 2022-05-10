@@ -7,27 +7,28 @@
 DOCUMENTATION = r"""
 ---
 module: sg_acl
-short_description: Resource module for Sg Acl
+short_description: Resource module for SGACL
 description:
-- Manage operations create, update and delete of the resource Sg Acl.
+- Manage operations create, update and delete of the resource SGACL.
 - This API creates a security group ACL.
 - This API deletes a security group ACL.
+- This API allows the client to update a security group ACL.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   aclcontent:
-    description: Sg Acl's aclcontent.
+    description: SGACL's aclcontent.
     type: str
   description:
-    description: Sg Acl's description.
+    description: SGACL's description.
     type: str
   generationId:
-    description: Sg Acl's generationId.
+    description: SGACL's generationId.
     type: str
   id:
-    description: Sg Acl's id.
+    description: SGACL's id.
     type: str
   ipVersion:
     description: Allowed values - IPV4, - IPV6, - IP_AGNOSTIC.
@@ -39,11 +40,15 @@ options:
     description: Modelled content of contract.
     type: dict
   name:
-    description: Sg Acl's name.
+    description: SGACL's name.
     type: str
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for SecurityGroupsACLs
+  description: Complete reference of the SecurityGroupsACLs API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgacl
 notes:
   - SDK Method used are
     security_groups_acls.SecurityGroupsAcls.create_security_groups_acl,
@@ -53,6 +58,7 @@ notes:
   - Paths used are
     post /ers/config/sgacl,
     delete /ers/config/sgacl/{id},
+    put /ers/config/sgacl/{id},
 
 """
 

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: sxp_vpns
-short_description: Resource module for Sxp Vpns
+short_description: Resource module for SXP VPNs
 description:
-- Manage operations create and delete of the resource Sxp Vpns.
+- Manage operations create and delete of the resource SXP VPNs.
 - This API creates a SXP VPN.
 - This API deletes a SXP VPN.
 version_added: '1.0.0'
@@ -21,7 +21,7 @@ options:
     description: Id path parameter.
     type: str
   sxpVpnName:
-    description: Sxp Vpns's sxpVpnName.
+    description: SXP VPNs's sxpVpnName.
     type: str
 requirements:
 - ciscoisesdk >= 2.0.1

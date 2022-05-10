@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: csr_delete
-short_description: Resource module for Csr Delete
+short_description: Resource module for CSR Delete
 description:
-- Manage operation delete of the resource Csr Delete.
+- Manage operation delete of the resource CSR Delete.
 - This API deletes a Certificate Signing Request of a particular node based on given HostName and ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -26,6 +26,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for Certificates
+  description: Complete reference of the Certificates API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
 notes:
   - SDK Method used are
     certificates.Certificates.delete_csr_by_id,

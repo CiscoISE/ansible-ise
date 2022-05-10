@@ -43,7 +43,9 @@ required_together = []
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
+            raise AnsibleActionFail(
+                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
+            )
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = False
@@ -73,16 +75,25 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-        node = Node(dict(name=self._task.args.get("name"),
-                         ip=self._task.args.get("ip"),
-                         username=self._task.args.get("username"),
-                         password=self._task.args.get("password"),
-                         ))
+        node = Node(
+            dict(
+                name=self._task.args.get("name"),
+                ip=self._task.args.get("ip"),
+                username=self._task.args.get("username"),
+                password=self._task.args.get("password"),
+            )
+        )
 
         if not (node.is_standalone() and node.app_server_is_running()):
-            raise AnsibleActionFail("Node {node_name} is not in STANDALONE state or application server is not running.".format(node_name=node.name))
+            raise AnsibleActionFail(
+                "Node {node_name} is not in STANDALONE state or application server is not running.".format(
+                    node_name=node.name
+                )
+            )
 
-        response = "Node {name} is in STANDALONE mode".format(name=self._task.args.get("name"))
+        response = "Node {name} is in STANDALONE mode".format(
+            name=self._task.args.get("name")
+        )
 
         self._result.update(dict(ise_response=response))
         return self._result

@@ -7,11 +7,12 @@
 DOCUMENTATION = r"""
 ---
 module: external_radius_server
-short_description: Resource module for External Radius Server
+short_description: Resource module for External RADIUS Server
 description:
-- Manage operations create, update and delete of the resource External Radius Server.
+- Manage operations create, update and delete of the resource External RADIUS Server.
 - This API creates an external RADIUS server.
 - This API deletes an external RADIUS server.
+- This API allows the client to update an external RADIUS server.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -29,7 +30,7 @@ options:
       characters (depend on selection in field 'keyInputFormat').
     type: str
   description:
-    description: External Radius Server's description.
+    description: External RADIUS Server's description.
     type: str
   enableKeyWrap:
     description: KeyWrap may only be enabled if it is supported on the device. When
@@ -44,7 +45,7 @@ options:
     description: The IP of the host - must be a valid IPV4 address.
     type: str
   id:
-    description: External Radius Server's id.
+    description: External RADIUS Server's id.
     type: str
   keyInputFormat:
     description: Specifies the format of the input for fields 'encryptionKey' and 'authenticatorKey'.
@@ -77,6 +78,7 @@ notes:
   - Paths used are
     post /ers/config/externalradiusserver,
     delete /ers/config/externalradiusserver/{id},
+    put /ers/config/externalradiusserver/{id},
 
 """
 

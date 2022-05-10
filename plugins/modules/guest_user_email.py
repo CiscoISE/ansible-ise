@@ -41,7 +41,8 @@ notes:
     guest_user.GuestUser.update_guest_user_email,
 
   - Paths used are
-    put /ers/config/guestuser/email/{id}/portalId/{portalId}
+    put /ers/config/guestuser/email/{id}/portalId/{portalId},
+
 """
 
 EXAMPLES = r"""

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: aci_settings_info
-short_description: Information module for Aci Settings
+short_description: Information module for ACI Settings
 description:
-- Get all Aci Settings.
+- Get all ACI Settings.
 - This API allows the client to get ACI Settings.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -29,7 +29,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Aci Settings
+- name: Get all ACI Settings
   cisco.ise.aci_settings_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

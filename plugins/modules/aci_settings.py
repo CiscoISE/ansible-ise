@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: aci_settings
-short_description: Resource module for Aci Settings
+short_description: Resource module for ACI Settings
 description:
-- Manage operation update of the resource Aci Settings.
+- Manage operation update of the resource ACI Settings.
 - This API allows the client to update ACI settings.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -37,13 +37,13 @@ options:
   adminPassword:
     description: ACI Cluster Admin password.
     type: str
-  allSxpDomain:
-    description: AllSxpDomain flag.
+  allSXPDomain:
+    description: AllSXPDomain flag.
     type: bool
-  defaultSgtName:
-    description: Aci Settings's defaultSgtName.
+  defaultSGtName:
+    description: ACI Settings's defaultSGtName.
     type: str
-  enableAci:
+  enableACI:
     description: Enable ACI Integration.
     type: bool
   enableDataPlane:
@@ -59,32 +59,32 @@ options:
     description: ACI Cluster IP Address / Host name.
     type: str
   l3RouteNetwork:
-    description: Aci Settings's l3RouteNetwork.
+    description: ACI Settings's l3RouteNetwork.
     type: str
-  maxNumIepgFromAci:
-    description: Aci Settings's maxNumIepgFromAci.
+  maxNumIepgFromACI:
+    description: ACI Settings's maxNumIepgFromACI.
     type: int
-  maxNumSgtToAci:
-    description: Aci Settings's maxNumSgtToAci.
+  maxNumSGtToACI:
+    description: ACI Settings's maxNumSGtToACI.
     type: int
-  specificSxpDomain:
-    description: SpecificSxpDomain flag.
+  specificSXPDomain:
+    description: SpecificSXPDomain flag.
     type: bool
-  specifixSxpDomainList:
-    description: Aci Settings's specifixSxpDomainList.
+  specifixSXPDomainList:
+    description: ACI Settings's specifixSXPDomainList.
     elements: str
     type: list
   suffixToEpg:
-    description: Aci Settings's suffixToEpg.
+    description: ACI Settings's suffixToEpg.
     type: str
-  suffixToSgt:
-    description: Aci Settings's suffixToSgt.
+  suffixToSGt:
+    description: ACI Settings's suffixToSGt.
     type: str
   tenantName:
-    description: Aci Settings's tenantName.
+    description: ACI Settings's tenantName.
     type: str
   untaggedPacketIepgName:
-    description: Aci Settings's untaggedPacketIepgName.
+    description: ACI Settings's untaggedPacketIepgName.
     type: str
 requirements:
 - ciscoisesdk >= 2.0.1
@@ -94,7 +94,8 @@ notes:
     aci_settings.AciSettings.update_aci_settings_by_id,
 
   - Paths used are
-    put /ers/config/acisettings/{id}
+    put /ers/config/acisettings/{id},
+
 """
 
 EXAMPLES = r"""

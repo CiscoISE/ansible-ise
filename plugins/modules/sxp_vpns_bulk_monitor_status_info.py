@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: sxp_vpns_bulk_monitor_status_info
-short_description: Information module for Sxp Vpns Bulk Monitor Status
+short_description: Information module for SXP VPNs Bulk Monitor Status
 description:
-- Get Sxp Vpns Bulk Monitor Status by id.
+- Get SXP VPNs Bulk Monitor Status by id.
 - This API allows the client to monitor the bulk request.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -33,7 +33,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get Sxp Vpns Bulk Monitor Status by id
+- name: Get SXP VPNs Bulk Monitor Status by id
   cisco.ise.sxp_vpns_bulk_monitor_status_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Endpoint.
 - This API creates an endpoint.
 - This API deletes an endpoint.
+- This API allows the client to update an endpoint.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -112,6 +113,7 @@ notes:
   - Paths used are
     post /ers/config/endpoint,
     delete /ers/config/endpoint/{id},
+    put /ers/config/endpoint/{id},
 
 """
 

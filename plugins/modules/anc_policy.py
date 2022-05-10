@@ -7,11 +7,12 @@
 DOCUMENTATION = r"""
 ---
 module: anc_policy
-short_description: Resource module for Anc Policy
+short_description: Resource module for ANC Policy
 description:
-- Manage operations create, update and delete of the resource Anc Policy.
+- Manage operations create, update and delete of the resource ANC Policy.
 - This API allows the client to create an ANC policy.
 - This API allows the client to delete an ANC policy.
+- This API allows the client to update an ANC policy.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -26,10 +27,10 @@ options:
     elements: str
     type: list
   id:
-    description: Anc Policy's id.
+    description: ANC Policy's id.
     type: str
   name:
-    description: Anc Policy's name.
+    description: ANC Policy's name.
     type: str
 requirements:
 - ciscoisesdk >= 2.0.1
@@ -43,6 +44,7 @@ notes:
   - Paths used are
     post /ers/config/ancpolicy,
     delete /ers/config/ancpolicy/{id},
+    put /ers/config/ancpolicy/{id},
 
 """
 

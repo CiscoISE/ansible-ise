@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: sg_mapping_info
-short_description: Information module for Sg Mapping
+short_description: Information module for SG Mapping
 description:
-- Get all Sg Mapping.
-- Get Sg Mapping by id.
+- Get all SG Mapping.
+- Get SG Mapping by id.
 - This API allows the client to get all the IP to SGT mappings.
 - This API allows the client to get an IP to SGT mapping by ID.
 version_added: '1.0.0'
@@ -41,16 +41,23 @@ options:
   filter:
     description:
     - >
-      Filter query parameter. <br/> **Simple filtering** should be available through the filter query string
-      parameter. The structure of a filter is a triplet of field operator and value separated with dots. More than
-      one filter can be sent. The logical operator common to ALL filter criteria will be by default AND, and can
-      be changed by using the "filterType=or" query string parameter. Each resource Data model description should
-      specify if an attribute is a filtered field. <br/> Operator | Description <br/>
-      ------------|----------------- <br/> EQ | Equals <br/> NEQ | Not Equals <br/> GT | Greater Than <br/> LT |
-      Less Then <br/> STARTSW | Starts With <br/> NSTARTSW | Not Starts With <br/> ENDSW | Ends With <br/> NENDSW
-      | Not Ends With <br/> CONTAINS | Contains <br/> NCONTAINS | Not Contains <br/>.
-    type: list
+      Filter query parameter. **Simple filtering** should be available through the filter query string parameter.
+      The structure of a filter is a triplet of field operator and value separated with dots. More than one filter
+      can be sent. The logical operator common to ALL filter criteria will be by default AND, and can be changed
+      by using the "filterType=or" query string parameter.
+    - Each resource Data model description should specify if an attribute is a filtered field.
+    - The 'EQ' operator describes 'Equals'.
+    - The 'NEQ' operator describes 'Not Equals'.
+    - The 'GT' operator describes 'Greater Than'.
+    - The 'LT' operator describes 'Less Than'.
+    - The 'STARTSW' operator describes 'Starts With'.
+    - The 'NSTARTSW' operator describes 'Not Starts With'.
+    - The 'ENDSW' operator describes 'Ends With'.
+    - The 'NENDSW' operator describes 'Not Ends With'.
+    - The 'CONTAINS' operator describes 'Contains'.
+    - The 'NCONTAINS' operator describes 'Not Contains'.
     elements: str
+    type: list
   filterType:
     description:
     - >
@@ -60,6 +67,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for IPToSGTMapping
+  description: Complete reference of the IPToSGTMapping API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgmapping
 notes:
   - SDK Method used are
     ip_to_sgt_mapping.IpToSgtMapping.get_ip_to_sgt_mapping_by_id,
@@ -72,7 +83,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Sg Mapping
+- name: Get all SG Mapping
   cisco.ise.sg_mapping_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -86,7 +97,7 @@ EXAMPLES = r"""
     filterType: AND
   register: result
 
-- name: Get Sg Mapping by id
+- name: Get SG Mapping by id
   cisco.ise.sg_mapping_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

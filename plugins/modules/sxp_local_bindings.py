@@ -7,11 +7,12 @@
 DOCUMENTATION = r"""
 ---
 module: sxp_local_bindings
-short_description: Resource module for Sxp Local Bindings
+short_description: Resource module for SXP Local Bindings
 description:
-- Manage operations create, update and delete of the resource Sxp Local Bindings.
+- Manage operations create, update and delete of the resource SXP Local Bindings.
 - This API creates a SXP local binding.
 - This API deletes a SXP local binding.
+- This API allows the client to update a SXP local binding.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -21,10 +22,10 @@ options:
     description: This field is depricated from Cisco ISE 3.0.
     type: str
   description:
-    description: Sxp Local Bindings's description.
+    description: SXP Local Bindings's description.
     type: str
   id:
-    description: Sxp Local Bindings's id.
+    description: SXP Local Bindings's id.
     type: str
   ipAddressOrHost:
     description: IP address for static mapping (hostname is not supported).
@@ -52,6 +53,7 @@ notes:
   - Paths used are
     post /ers/config/sxplocalbindings,
     delete /ers/config/sxplocalbindings/{id},
+    put /ers/config/sxplocalbindings/{id},
 
 """
 

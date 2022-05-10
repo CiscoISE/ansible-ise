@@ -13,6 +13,8 @@ description:
 - Device Admin - Creates a library condition.
 - Device Admin - Delete a library condition.
 - NDevice Admin - Delete a library condition using condition Name.
+- Device Admin - Update library condition using condition name.
+- Device Admin - Update library condition.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -159,6 +161,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for Device Administration - Conditions
+  description: Complete reference of the Device Administration - Conditions API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
   - SDK Method used are
     device_administration_conditions.DeviceAdministrationConditions.create_device_admin_condition,
@@ -171,6 +177,8 @@ notes:
     post /device-admin/condition,
     delete /device-admin/condition/condition-by-name/{name},
     delete /device-admin/condition/{id},
+    put /device-admin/condition/condition-by-name/{name},
+    put /device-admin/condition/{id},
 
 """
 

@@ -43,8 +43,8 @@ notes:
     guest_user.GuestUser.suspend_guest_user_by_name,
 
   - Paths used are
+    put /ers/config/guestuser/suspend/name/{name},
     put /ers/config/guestuser/suspend/{id},
-    put /ers/config/guestuser/suspend/name/{name}
 
 """
 

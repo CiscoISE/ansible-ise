@@ -79,7 +79,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="provider",
-            function='register_service',
+            function="register_service",
             params=self.get_object(self._task.args),
         ).response
 

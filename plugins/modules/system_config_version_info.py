@@ -19,6 +19,10 @@ options: {}
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for VersionAndPatch
+  description: Complete reference of the VersionAndPatch API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!iseversion
 notes:
   - SDK Method used are
     version_and_patch.VersionAndPatch.get_ise_version_and_patch,

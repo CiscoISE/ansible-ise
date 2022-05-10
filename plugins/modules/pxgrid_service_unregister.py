@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: pxgrid_service_unregister
-short_description: Resource module for Pxgrid Service Unregister
+short_description: Resource module for pxGrid Service Unregister
 description:
-- Manage operation create of the resource Pxgrid Service Unregister.
+- Manage operation create of the resource pxGrid Service Unregister.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module

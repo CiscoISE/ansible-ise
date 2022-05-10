@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Device Administration Policy Set.
 - Device Admin - Create a new policy set.
 - Device Admin - Delete a policy set.
+- Device Admin - Update a policy set.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -206,6 +207,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for Device Administration - Policy Set
+  description: Complete reference of the Device Administration - Policy Set API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
   - SDK Method used are
     device_administration_policy_set.DeviceAdministrationPolicySet.create_device_admin_policy_set,
@@ -215,6 +220,7 @@ notes:
   - Paths used are
     post /device-admin/policy-set,
     delete /device-admin/policy-set/{id},
+    put /device-admin/policy-set/{id},
 
 """
 

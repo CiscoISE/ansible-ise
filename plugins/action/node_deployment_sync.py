@@ -79,7 +79,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="node_deployment",
-            function='sync_node',
+            function="sync_node",
             params=self.get_object(self._task.args),
         ).response
 

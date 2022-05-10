@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: mnt_version_info
-short_description: Information module for Mnt Version
+short_description: Information module for MNT Version
 description:
-- Get all Mnt Version.
+- Get all MNT Version.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -28,7 +28,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Mnt Version
+- name: Get all MNT Version
   cisco.ise.mnt_version_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

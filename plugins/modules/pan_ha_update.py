@@ -10,7 +10,7 @@ module: pan_ha_update
 short_description: Resource module for Pan Ha Update
 description:
 - Manage operation update of the resource Pan Ha Update.
-- To deploy the auto-failover feature, you must have at least three nodes, where
+- To deploy the auto-failover feature, you must have at least three nodes, where.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -44,6 +44,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for PAN HA
+  description: Complete reference of the PAN HA API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!deployment-openapi
 notes:
   - SDK Method used are
     pan_ha.PanHa.update_pan_ha,

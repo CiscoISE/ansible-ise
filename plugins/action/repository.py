@@ -69,7 +69,7 @@ class Repository(object):
             result = self.ise.exec(
                 family="repository",
                 function="get_repository",
-                params={"repository_name": name},
+                params={"name": name},
                 handle_func_exception=False,
             ).response['response']
             result = get_dict_result(result, 'name', name)

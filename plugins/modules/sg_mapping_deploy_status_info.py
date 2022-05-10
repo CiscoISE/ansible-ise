@@ -7,13 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: sg_mapping_deploy_status_info
-short_description: Information module for Sg Mapping Deploy Status
+short_description: Information module for SG Mapping Deploy Status
 description:
-- Get all Sg Mapping Deploy Status.
-- This API allows the client to get the IP to SGT mapping
-  deployment status. Deploy Status will show last Deploy
-  command output. The information will be saved until the
-  next Deploy command.
+- Get all SG Mapping Deploy Status.
+- This API allows the client to get the IP to SGT mapping deployment status.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -22,17 +19,21 @@ options: {}
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for IPToSGTMapping
+  description: Complete reference of the IPToSGTMapping API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgmapping
 notes:
   - SDK Method used are
     ip_to_sgt_mapping.IpToSgtMapping.get_deploy_status_ip_to_sgt_mapping,
 
   - Paths used are
-    put /ers/config/sgmapping/deploy/status
+    put /ers/config/sgmapping/deploy/status,
 
 """
 
 EXAMPLES = r"""
-- name: Get all Sg Mapping Deploy Status
+- name: Get all SG Mapping Deploy Status
   cisco.ise.sg_mapping_deploy_status_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

@@ -30,7 +30,8 @@ notes:
     portal_global_setting.PortalGlobalSetting.update_portal_global_setting_by_id,
 
   - Paths used are
-    put /ers/config/portalglobalsetting/{id}
+    put /ers/config/portalglobalsetting/{id},
+
 """
 
 EXAMPLES = r"""

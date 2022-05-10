@@ -7,10 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: mnt_session_by_username_info
-short_description: Information module for Mnt Session By Username
+short_description: Information module for MNT Session By Username
 description:
-- Get Mnt Session By Username by name.
-- Sessions by Username.
+- Get MNT Session By Username by name.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -33,7 +32,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get Mnt Session By Username by name
+- name: Get MNT Session By Username by name
   cisco.ise.mnt_session_by_username_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

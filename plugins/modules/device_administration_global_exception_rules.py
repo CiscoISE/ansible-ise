@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Device Administration Global Exception Rules.
 - Device Admin - Create global exception authorization rule.
 - Device Admin - Delete global exception authorization rule.
+- Device Admin - Update global exception authorization rule.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -215,6 +216,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for Device Administration - Authorization Global Exception Rules
+  description: Complete reference of the Device Administration - Authorization Global Exception Rules API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
   - SDK Method used are
     device_administration_authorization_global_exception_rules.DeviceAdministrationAuthorizationGlobalExceptionRules.create_device_admin_policy_set_global_exception,
@@ -224,6 +229,7 @@ notes:
   - Paths used are
     post /device-admin/policy-set/global-exception,
     delete /device-admin/policy-set/global-exception/{id},
+    put /device-admin/policy-set/global-exception/{id},
 
 """
 

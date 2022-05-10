@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: pxgrid_bindings_info
-short_description: Information module for Pxgrid Bindings Info
+short_description: Information module for pxGrid Bindings Info
 description:
-- Get Pxgrid Bindings Info.
+- Get pxGrid Bindings Info.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -23,12 +23,12 @@ notes:
     trust_sec_sxp.TrustSecSxp.get_bindings,
 
   - Paths used are
-    post /pxgrid/ise/radius/ise/sxp/getBindings
+    post /ise/sxp/getBindings,
 
 """
 
 EXAMPLES = r"""
-- name: Get all Pxgrid Bindings Info
+- name: Get all pxGrid Bindings Info
   cisco.ise.pxgrid_bindings_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

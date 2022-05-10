@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: mnt_session_auth_list_info
-short_description: Information module for Mnt Session Auth List
+short_description: Information module for MNT Session Auth List
 description:
-- Get all Mnt Session Auth List.
+- Get all MNT Session Auth List.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -28,7 +28,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Mnt Session Auth List
+- name: Get all MNT Session Auth List
   cisco.ise.mnt_session_auth_list_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

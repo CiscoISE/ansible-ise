@@ -39,7 +39,8 @@ notes:
     active_directory.ActiveDirectory.is_user_member_of_groups,
 
   - Paths used are
-    put /ers/config/activedirectory/{id}/isUserMemberOf
+    put /ers/config/activedirectory/{id}/isUserMemberOf,
+
 """
 
 EXAMPLES = r"""

@@ -7,10 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: mnt_session_delete_all
-short_description: Resource module for Mnt Session Delete All
+short_description: Resource module for MNT Session Delete All
 description:
-- Manage operation delete of the resource Mnt Session Delete All.
-- Delete All Sessions.
+- Manage operation delete of the resource MNT Session Delete All.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module

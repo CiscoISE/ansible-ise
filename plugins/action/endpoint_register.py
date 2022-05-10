@@ -103,7 +103,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="endpoint",
-            function='register_endpoint',
+            function="register_endpoint",
             params=self.get_object(self._task.args),
         ).response
 

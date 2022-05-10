@@ -39,6 +39,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for PsnNodeDetailsWithRadiusService
+  description: Complete reference of the PsnNodeDetailsWithRadiusService API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sessionservicenode
 notes:
   - SDK Method used are
     psn_node_details_with_radius_service.PsnNodeDetailsWithRadiusService.get_session_service_node_by_id,

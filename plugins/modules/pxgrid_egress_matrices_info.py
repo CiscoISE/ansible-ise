@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: pxgrid_egress_matrices_info
-short_description: Information module for Pxgrid Egress Matrices Info
+short_description: Information module for pxGrid Egress Matrices Info
 description:
-- Get Pxgrid Egress Matrices Info.
+- Get pxGrid Egress Matrices Info.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -23,11 +23,12 @@ notes:
     trust_sec_configuration.TrustSecConfiguration.get_egress_matrices,
 
   - Paths used are
-    post /pxgrid/ise/radius/ise/config/trustsec/getEgressMatrices
+    post /ise/config/trustsec/getEgressMatrices,
+
 """
 
 EXAMPLES = r"""
-- name: Get all Pxgrid Egress Matrices Info
+- name: Get all pxGrid Egress Matrices Info
   cisco.ise.pxgrid_egress_matrices_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

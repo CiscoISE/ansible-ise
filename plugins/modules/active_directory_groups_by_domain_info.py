@@ -39,7 +39,7 @@ notes:
     active_directory.ActiveDirectory.get_groups_by_domain,
 
   - Paths used are
-    put /ers/config/activedirectory/{id}/getGroupsByDomain
+    put /ers/config/activedirectory/{id}/getGroupsByDomain,
 
 """
 

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: anc_endpoint_bulk_request
-short_description: Resource module for Anc Endpoint Bulk Request
+short_description: Resource module for ANC Endpoint Bulk Request
 description:
-- Manage operation update of the resource Anc Endpoint Bulk Request.
+- Manage operation update of the resource ANC Endpoint Bulk Request.
 - This API allows the client to submit the bulk request.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -17,10 +17,10 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   operationType:
-    description: Anc Endpoint Bulk Request's operationType.
+    description: ANC Endpoint Bulk Request's operationType.
     type: str
   resourceMediaType:
-    description: Anc Endpoint Bulk Request's resourceMediaType.
+    description: ANC Endpoint Bulk Request's resourceMediaType.
     type: str
 requirements:
 - ciscoisesdk >= 2.0.1

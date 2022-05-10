@@ -27,7 +27,8 @@ notes:
     guest_user.GuestUser.reset_guest_user_password_by_id,
 
   - Paths used are
-    put /ers/config/guestuser/resetpassword/{id}
+    put /ers/config/guestuser/resetpassword/{id},
+
 """
 
 EXAMPLES = r"""

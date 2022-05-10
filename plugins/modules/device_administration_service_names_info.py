@@ -10,7 +10,7 @@ module: device_administration_service_names_info
 short_description: Information module for Device Administration Service Names
 description:
 - Get all Device Administration Service Names.
-- Returns list of Allowed Protocols and Server Sequences for Device Admin Policy
+- Returns list of Allowed Protocols and Server Sequences for Device Admin Policy.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -19,6 +19,10 @@ options: {}
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for Device Administration - Service Names
+  description: Complete reference of the Device Administration - Service Names API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
   - SDK Method used are
     device_administration_service_names.DeviceAdministrationServiceNames.get_device_admin_service_names,

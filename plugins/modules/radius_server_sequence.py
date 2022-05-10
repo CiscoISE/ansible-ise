@@ -7,11 +7,12 @@
 DOCUMENTATION = r"""
 ---
 module: radius_server_sequence
-short_description: Resource module for Radius Server Sequence
+short_description: Resource module for RADIUS Server Sequence
 description:
-- Manage operations create, update and delete of the resource Radius Server Sequence.
+- Manage operations create, update and delete of the resource RADIUS Server Sequence.
 - This API creates a RADIUS server sequence.
 - This API deletes a RADIUS server sequence.
+- This API allows the client to update a RADIUS server sequence.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -26,16 +27,16 @@ options:
         description: Allowed Values - ADD, - UPDATE, - REMOVE, - REMOVEANY.
         type: str
       attributeName:
-        description: Radius Server Sequence's attributeName.
+        description: RADIUS Server Sequence's attributeName.
         type: str
       changedVal:
         description: The changedVal is required only if the action equals to 'UPDATE'.
         type: str
       dictionaryName:
-        description: Radius Server Sequence's dictionaryName.
+        description: RADIUS Server Sequence's dictionaryName.
         type: str
       value:
-        description: Radius Server Sequence's value.
+        description: RADIUS Server Sequence's value.
         type: str
     type: list
   OnRequestAttrManipulatorList:
@@ -47,36 +48,36 @@ options:
         description: Allowed Values - ADD, - UPDATE, - REMOVE, - REMOVEANY.
         type: str
       attributeName:
-        description: Radius Server Sequence's attributeName.
+        description: RADIUS Server Sequence's attributeName.
         type: str
       changedVal:
         description: The changedVal is required only if the action equals to 'UPDATE'.
         type: str
       dictionaryName:
-        description: Radius Server Sequence's dictionaryName.
+        description: RADIUS Server Sequence's dictionaryName.
         type: str
       value:
-        description: Radius Server Sequence's value.
+        description: RADIUS Server Sequence's value.
         type: str
     type: list
-  RadiusServerList:
-    description: Radius Server Sequence's RadiusServerList.
+  RADIUSServerList:
+    description: RADIUS Server Sequence's RADIUSServerList.
     elements: str
     type: list
   continueAuthorzPolicy:
     description: ContinueAuthorzPolicy flag.
     type: bool
   description:
-    description: Radius Server Sequence's description.
+    description: RADIUS Server Sequence's description.
     type: str
   id:
-    description: Radius Server Sequence's id.
+    description: RADIUS Server Sequence's id.
     type: str
   localAccounting:
     description: LocalAccounting flag.
     type: bool
   name:
-    description: Radius Server Sequence's name.
+    description: RADIUS Server Sequence's name.
     type: str
   prefixSeparator:
     description: The prefixSeparator is required only if stripPrefix is true. The maximum
@@ -113,6 +114,7 @@ notes:
   - Paths used are
     post /ers/config/radiusserversequence,
     delete /ers/config/radiusserversequence/{id},
+    put /ers/config/radiusserversequence/{id},
 
 """
 

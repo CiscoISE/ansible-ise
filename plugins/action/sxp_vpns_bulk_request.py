@@ -81,7 +81,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="sxp_vpns",
-            function='bulk_request_for_sxp_vpns',
+            function="bulk_request_for_sxp_vpns",
             params=self.get_object(self._task.args),
         ).response
 

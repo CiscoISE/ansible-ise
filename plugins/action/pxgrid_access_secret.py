@@ -79,7 +79,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="consumer",
-            function='access_secret',
+            function="access_secret",
             params=self.get_object(self._task.args),
         ).response
 

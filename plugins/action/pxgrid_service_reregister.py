@@ -77,7 +77,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="provider",
-            function='reregister_service',
+            function="reregister_service",
             params=self.get_object(self._task.args),
         ).response
 

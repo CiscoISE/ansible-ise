@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Network Access Network Condition.
 - Network Access - Creates network condition.
 - Network Access - Delete network condition.
+- Network Access - Update network condition.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -105,6 +106,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for Network Access - Network Conditions
+  description: Complete reference of the Network Access - Network Conditions API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
   - SDK Method used are
     network_access_network_conditions.NetworkAccessNetworkConditions.create_network_access_network_condition,
@@ -114,6 +119,7 @@ notes:
   - Paths used are
     post /network-access/network-condition,
     delete /network-access/network-condition/{id},
+    put /network-access/network-condition/{id},
 
 """
 

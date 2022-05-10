@@ -38,7 +38,8 @@ notes:
     guest_type.GuestType.update_guest_type_email,
 
   - Paths used are
-    put /ers/config/guesttype/email/{id}
+    put /ers/config/guesttype/email/{id},
+
 """
 
 EXAMPLES = r"""

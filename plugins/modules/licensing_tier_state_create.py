@@ -10,9 +10,7 @@ module: licensing_tier_state_create
 short_description: Resource module for Licensing Tier State Create
 description:
 - Manage operation create of the resource Licensing Tier State Create.
-- Applicable values for  name  &  status  parameters     name are
-  ESSENTIAL, ADVANTAGE, PREMIER, DEVICEADMIN,   status are
-  ENABLED, DISABLED.
+- Applicable values for **name** & **status** parameters.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -32,12 +30,17 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for Licensing
+  description: Complete reference of the Licensing API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!license-openapi
 notes:
   - SDK Method used are
     licensing.Licensing.update_tier_state_info,
 
   - Paths used are
-    post /api/v1/license/system/tier-state
+    post /api/v1/license/system/tier-state,
+
 """
 
 EXAMPLES = r"""

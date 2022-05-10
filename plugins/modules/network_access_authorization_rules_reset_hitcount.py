@@ -22,6 +22,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for Network Access - Authorization Rules
+  description: Complete reference of the Network Access - Authorization Rules API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
   - SDK Method used are
     network_access_authorization_rules.NetworkAccessAuthorizationRules.reset_hit_counts_network_access_authorization_rules,

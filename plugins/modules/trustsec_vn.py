@@ -7,10 +7,11 @@
 DOCUMENTATION = r"""
 ---
 module: trustsec_vn
-short_description: Resource module for Trustsec Vn
+short_description: Resource module for Trustsec VN
 description:
-- Manage operations create, update and delete of the resource Trustsec Vn.
+- Manage operations create, update and delete of the resource Trustsec VN.
 - Create Virtual Network.
+- Update Virtual Network.
 version_added: '2.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -31,6 +32,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for virtualNetwork
+  description: Complete reference of the virtualNetwork API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!trustsec-openapi
 notes:
   - SDK Method used are
     virtual_network.VirtualNetwork.create_virtual_network,
@@ -40,6 +45,7 @@ notes:
   - Paths used are
     post /api/v1/trustsec/virtualnetwork,
     delete /api/v1/trustsec/virtualnetwork/{id},
+    put /api/v1/trustsec/virtualnetwork/{id},
 
 """
 

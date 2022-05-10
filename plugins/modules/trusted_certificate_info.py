@@ -37,20 +37,23 @@ options:
   filter:
     description:
     - >
-      Filter query parameter. <div> <style type="text/css" scoped> .apiServiceTable td, .apiServiceTable th {
-      padding 5px 10px !important; text-align left; } </style> <span> <b>Simple filtering</b> should be available
-      through the filter query string parameter. The structure of a filter is a triplet of field operator and
-      value separated with dots. More than one filter can be sent. The logical operator common to ALL filter
-      criteria will be by default AND, and can be changed by using the <i>"filterType=or"</i> query string
-      parameter. Each resource Data model description should specify if an attribute is a filtered field. </span>
-      <br /> <table class="apiServiceTable"> <thead> <tr> <th>OPERATOR</th> <th>DESCRIPTION</th> </tr> </thead>
-      <tbody> <tr> <td>EQ</td> <td>Equals</td> </tr> <tr> <td>NEQ</td> <td>Not Equals</td> </tr> <tr> <td>GT</td>
-      <td>Greater Than</td> </tr> <tr> <td>LT</td> <td>Less Then</td> </tr> <tr> <td>STARTSW</td> <td>Starts
-      With</td> </tr> <tr> <td>NSTARTSW</td> <td>Not Starts With</td> </tr> <tr> <td>ENDSW</td> <td>Ends With</td>
-      </tr> <tr> <td>NENDSW</td> <td>Not Ends With</td> </tr> <tr> <td>CONTAINS</td> <td>Contains</td> </tr> <tr>
-      <td>NCONTAINS</td> <td>Not Contains</td> </tr> </tbody> </table> </div>.
-    type: list
+      Filter query parameter. .. Container **Simple filtering** should be available through the filter query
+      string parameter. The structure of a filter is a triplet of field operator and value separated with dots.
+      More than one filter can be sent. The logical operator common to ALL filter criteria will be by default AND,
+      and can be changed by using the *"filterType=or"* query string parameter.
+    - Each resource Data model description should specify if an attribute is a filtered field.
+    - The 'EQ' operator describes 'Equals'.
+    - The 'NEQ' operator describes 'Not Equals'.
+    - The 'GT' operator describes 'Greater Than'.
+    - The 'LT' operator describes 'Less Than'.
+    - The 'STARTSW' operator describes 'Starts With'.
+    - The 'NSTARTSW' operator describes 'Not Starts With'.
+    - The 'ENDSW' operator describes 'Ends With'.
+    - The 'NENDSW' operator describes 'Not Ends With'.
+    - The 'CONTAINS' operator describes 'Contains'.
+    - The 'NCONTAINS' operator describes 'Not Contains'.
     elements: str
+    type: list
   filterType:
     description:
     - >
@@ -64,6 +67,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for Certificates
+  description: Complete reference of the Certificates API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
 notes:
   - SDK Method used are
     certificates.Certificates.get_trusted_certificate_by_id,

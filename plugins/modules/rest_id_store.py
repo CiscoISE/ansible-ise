@@ -7,50 +7,52 @@
 DOCUMENTATION = r"""
 ---
 module: rest_id_store
-short_description: Resource module for Rest Id Store
+short_description: Resource module for REST Id Store
 description:
-- Manage operations create, update and delete of the resource Rest Id Store.
+- Manage operations create, update and delete of the resource REST Id Store.
 - This API creates a REST ID store.
 - This API deletes a REST ID store by name.
 - This API deletes a REST ID store.
+- This API allows the client to update a REST ID store by name.
+- This API allows the client to update a REST ID store.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   description:
-    description: Rest Id Store's description.
+    description: REST Id Store's description.
     type: str
-  ersRestIDStoreAttributes:
-    description: Rest Id Store's ersRestIDStoreAttributes.
+  ersRESTIDStoreAttributes:
+    description: REST Id Store's ersRESTIDStoreAttributes.
     suboptions:
       headers:
-        description: Rest Id Store's headers.
+        description: REST Id Store's headers.
         elements: dict
         suboptions:
           key:
-            description: Rest Id Store's key.
+            description: REST Id Store's key.
             type: str
           value:
-            description: Rest Id Store's value.
+            description: REST Id Store's value.
             type: str
         type: list
       predefined:
-        description: The cloud provider connected to of the RestIDStore. Options are
+        description: The cloud provider connected to of the RESTIDStore. Options are
           - Azure, - Okta, - None.
         type: str
       rootUrl:
-        description: Url of the root of the RestIDStore.
+        description: Url of the root of the RESTIDStore.
         type: str
       usernameSuffix:
         description: Suffix of the username domain.
         type: str
     type: dict
   id:
-    description: Rest Id Store's id.
+    description: REST Id Store's id.
     type: str
   name:
-    description: Rest Id Store's name.
+    description: REST Id Store's name.
     type: str
 requirements:
 - ciscoisesdk >= 2.0.1
@@ -67,6 +69,8 @@ notes:
     post /ers/config/restidstore,
     delete /ers/config/restidstore/name/{name},
     delete /ers/config/restidstore/{id},
+    put /ers/config/restidstore/name/{name},
+    put /ers/config/restidstore/{id},
 
 """
 

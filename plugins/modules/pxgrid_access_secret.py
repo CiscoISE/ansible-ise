@@ -7,16 +7,16 @@
 DOCUMENTATION = r"""
 ---
 module: pxgrid_access_secret
-short_description: Resource module for Pxgrid Access Secret
+short_description: Resource module for pxGrid Access Secret
 description:
-- Manage operation create of the resource Pxgrid Access Secret.
+- Manage operation create of the resource pxGrid Access Secret.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   peerNodeName:
-    description: Pxgrid Access Secret's peerNodeName.
+    description: pxGrid Access Secret's peerNodeName.
     type: str
 requirements:
 - ciscoisesdk >= 2.0.1

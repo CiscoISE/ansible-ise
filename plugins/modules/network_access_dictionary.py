@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Network Access Dictionary.
 - Network Access - Create a new Dictionary.
 - Network Access - Delete a Dictionary.
+- Network Access - Update a Dictionary.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -48,6 +49,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for Network Access - Dictionary
+  description: Complete reference of the Network Access - Dictionary API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
   - SDK Method used are
     network_access_dictionary.NetworkAccessDictionary.create_network_access_dictionaries,
@@ -57,6 +62,7 @@ notes:
   - Paths used are
     post /network-access/dictionaries,
     delete /network-access/dictionaries/{name},
+    put /network-access/dictionaries/{name},
 
 """
 

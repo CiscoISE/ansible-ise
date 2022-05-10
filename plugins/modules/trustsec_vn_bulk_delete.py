@@ -7,21 +7,25 @@
 DOCUMENTATION = r"""
 ---
 module: trustsec_vn_bulk_delete
-short_description: Resource module for Trustsec Vn Bulk Delete
+short_description: Resource module for Trustsec VN Bulk Delete
 description:
-- Manage operation create of the resource Trustsec Vn Bulk Delete.
+- Manage operation create of the resource Trustsec VN Bulk Delete.
 version_added: '2.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   payload:
-    description: Trustsec Vn Bulk Delete's payload.
+    description: Trustsec VN Bulk Delete's payload.
     elements: str
     type: list
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for virtualNetwork
+  description: Complete reference of the virtualNetwork API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!trustsec-openapi
 notes:
   - SDK Method used are
     virtual_network.VirtualNetwork.bulk_delete_virtual_networks,

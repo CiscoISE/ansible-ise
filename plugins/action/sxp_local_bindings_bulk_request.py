@@ -81,7 +81,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="sxp_local_bindings",
-            function='bulk_request_for_sxp_local_bindings',
+            function="bulk_request_for_sxp_local_bindings",
             params=self.get_object(self._task.args),
         ).response
 

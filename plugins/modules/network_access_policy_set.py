@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Network Access Policy Set.
 - Network Access - Create a new policy set.
 - Network Access - Delete a policy set.
+- Network Access - Update a policy set.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -206,6 +207,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for Network Access - Policy Set
+  description: Complete reference of the Network Access - Policy Set API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
   - SDK Method used are
     network_access_policy_set.NetworkAccessPolicySet.create_network_access_policy_set,
@@ -215,6 +220,7 @@ notes:
   - Paths used are
     post /network-access/policy-set,
     delete /network-access/policy-set/{id},
+    put /network-access/policy-set/{id},
 
 """
 

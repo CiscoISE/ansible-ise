@@ -77,7 +77,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="network_access_authorization_global_exception_rules",
-            function='reset_hit_counts_network_access_global_exceptions',
+            function="reset_hit_counts_network_access_global_exceptions",
             params=self.get_object(self._task.args),
         ).response
 

@@ -11,6 +11,7 @@ short_description: Resource module for Trusted Certificate
 description:
 - Manage operations update and delete of the resource Trusted Certificate.
 - This API deletes a Trust Certificate from Trusted Certificate Store based on a given ID.
+- Update a trusted certificate present in Cisco ISE trust store.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -92,6 +93,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for Certificates
+  description: Complete reference of the Certificates API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
 notes:
   - SDK Method used are
     certificates.Certificates.delete_trusted_certificate_by_id,
@@ -99,6 +104,7 @@ notes:
 
   - Paths used are
     delete /api/v1/certs/trusted-certificate/{id},
+    put /api/v1/certs/trusted-certificate/{id},
 
 """
 

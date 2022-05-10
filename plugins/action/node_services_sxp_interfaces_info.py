@@ -85,7 +85,7 @@ class ActionModule(ActionBase):
             response = ise.exec(
                 family="node_services",
                 function='get_sxp_interface',
-                params=self.get_object(self._task.args),
+                params=self.get_object(self._task.args)
             ).response['response']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

@@ -7,11 +7,11 @@
 DOCUMENTATION = r"""
 ---
 module: tacacs_command_sets_info
-short_description: Information module for Tacacs Command Sets
+short_description: Information module for TACACS Command Sets
 description:
-- Get all Tacacs Command Sets.
-- Get Tacacs Command Sets by id.
-- Get Tacacs Command Sets by name.
+- Get all TACACS Command Sets.
+- Get TACACS Command Sets by id.
+- Get TACACS Command Sets by name.
 - This API allows the client to get TACACS command sets by ID.
 - This API allows the client to get TACACS command sets by name.
 - This API allows the client to get all the TACACS command sets.
@@ -53,7 +53,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Tacacs Command Sets
+- name: Get all TACACS Command Sets
   cisco.ise.tacacs_command_sets_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -63,7 +63,7 @@ EXAMPLES = r"""
     size: 20
   register: result
 
-- name: Get Tacacs Command Sets by id
+- name: Get TACACS Command Sets by id
   cisco.ise.tacacs_command_sets_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -72,7 +72,7 @@ EXAMPLES = r"""
     id: string
   register: result
 
-- name: Get Tacacs Command Sets by name
+- name: Get TACACS Command Sets by name
   cisco.ise.tacacs_command_sets_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

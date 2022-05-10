@@ -45,7 +45,9 @@ required_together = []
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
+            raise AnsibleActionFail(
+                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
+            )
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = False
@@ -75,12 +77,13 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-        primary_node = dict(ip=self._task.args.get("ip"),
-                            hostname=self._task.args.get("hostname"),
-                            username=self._task.args.get("username"),
-                            password=self._task.args.get("password"),
-                            roles=self._task.args.get("roles"),
-                            )
+        primary_node = dict(
+            ip=self._task.args.get("ip"),
+            hostname=self._task.args.get("hostname"),
+            username=self._task.args.get("username"),
+            password=self._task.args.get("password"),
+            roles=self._task.args.get("roles"),
+        )
 
         if "PPAN" not in primary_node.get("roles"):
             raise AnsibleActionFail("Primary node must have at least the 'PPAN' role")

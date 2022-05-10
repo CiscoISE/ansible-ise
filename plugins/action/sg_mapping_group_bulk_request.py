@@ -81,7 +81,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="ip_to_sgt_mapping_group",
-            function='bulk_request_for_ip_to_sgt_mapping_group',
+            function="bulk_request_for_ip_to_sgt_mapping_group",
             params=self.get_object(self._task.args),
         ).response
 

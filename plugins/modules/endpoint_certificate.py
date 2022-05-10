@@ -33,6 +33,9 @@ options:
   dirPath:
     description: Directory absolute path. Defaults to the current working directory.
     type: str
+  filename:
+    description: The filename used to save the download file.
+    type: str
   format:
     description: Allowed values - PKCS12, - PKCS12_CHAIN, - PKCS8, - PKCS8_CHAIN.
     type: str
@@ -47,12 +50,17 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for EndpointCertificate
+  description: Complete reference of the EndpointCertificate API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!endpointcert
 notes:
   - SDK Method used are
     endpoint_certificate.EndpointCertificate.create_endpoint_certificate,
 
   - Paths used are
-    put /ers/config/endpointcert/certRequest
+    put /ers/config/endpointcert/certRequest,
+
 """
 
 EXAMPLES = r"""
@@ -67,6 +75,7 @@ EXAMPLES = r"""
       cn: string
       san: string
     dirPath: /tmp/downloads/
+    filename: download_filename.extension
     format: string
     password: string
     saveFile: true

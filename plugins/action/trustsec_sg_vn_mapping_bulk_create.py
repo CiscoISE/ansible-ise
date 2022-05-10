@@ -79,7 +79,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="sg_vn_mapping",
-            function='bulk_create_sg_vn_mappings',
+            function="bulk_create_sg_vn_mappings",
             params=self.get_object(self._task.args),
         ).response
 

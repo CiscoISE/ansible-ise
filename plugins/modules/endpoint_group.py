@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Endpoint Group.
 - This API creates an endpoint identity group.
 - This API deletes an endpoint identity group.
+- This API allows the client to update an endpoint identity group.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -32,6 +33,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for EndpointIdentityGroup
+  description: Complete reference of the EndpointIdentityGroup API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!endpointgroup
 notes:
   - SDK Method used are
     endpoint_identity_group.EndpointIdentityGroup.create_endpoint_group,
@@ -41,6 +46,7 @@ notes:
   - Paths used are
     post /ers/config/endpointgroup,
     delete /ers/config/endpointgroup/{id},
+    put /ers/config/endpointgroup/{id},
 
 """
 

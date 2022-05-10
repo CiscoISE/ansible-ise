@@ -7,16 +7,16 @@
 DOCUMENTATION = r"""
 ---
 module: pxgrid_service_lookup
-short_description: Resource module for Pxgrid Service Lookup
+short_description: Resource module for pxGrid Service Lookup
 description:
-- Manage operation create of the resource Pxgrid Service Lookup.
+- Manage operation create of the resource pxGrid Service Lookup.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   name:
-    description: Pxgrid Service Lookup's name.
+    description: pxGrid Service Lookup's name.
     type: str
 requirements:
 - ciscoisesdk >= 2.0.1

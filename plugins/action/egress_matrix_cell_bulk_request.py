@@ -81,7 +81,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="egress_matrix_cell",
-            function='bulk_request_for_egress_matrix_cell',
+            function="bulk_request_for_egress_matrix_cell",
             params=self.get_object(self._task.args),
         ).response
 

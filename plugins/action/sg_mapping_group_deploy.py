@@ -79,7 +79,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="ip_to_sgt_mapping_group",
-            function='deploy_ip_to_sgt_mapping_group_by_id',
+            function="deploy_ip_to_sgt_mapping_group_by_id",
             params=self.get_object(self._task.args),
         ).response
 

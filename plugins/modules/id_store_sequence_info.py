@@ -39,6 +39,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for IdentitySequence
+  description: Complete reference of the IdentitySequence API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!idstoresequence
 notes:
   - SDK Method used are
     identity_sequence.IdentitySequence.get_identity_sequence_by_id,

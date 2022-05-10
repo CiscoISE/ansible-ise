@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Self Registered Portal.
 - This API creates a self registered portal.
 - This API deletes a self registered portal by ID.
+- This API allows the client to update a self registered portal by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -411,7 +412,7 @@ options:
             description: If true, send credential notification upon approval using email.
               Only valid if requireGuestApproval = true.
             type: bool
-          credentialNotificationUsingSms:
+          credentialNotificationUsingSMS:
             description: If true, send credential notification upon approval using SMS.
               Only valid if requireGuestApproval = true.
             type: bool
@@ -501,8 +502,8 @@ options:
                 description: Only applicable if include = true.
                 type: bool
             type: dict
-          fieldSmsProvider:
-            description: Self Registered Portal's fieldSmsProvider.
+          fieldSMSProvider:
+            description: Self Registered Portal's fieldSMSProvider.
             suboptions:
               include:
                 description: Include flag.
@@ -575,7 +576,7 @@ options:
             description: Guests can choose from these locations to set their time zone.
             elements: str
             type: list
-          selectableSmsProviders:
+          selectableSMSProviders:
             description: This attribute is an array of SMS provider names.
             elements: str
             type: list
@@ -600,8 +601,8 @@ options:
           allowGuestSendSelfUsingPrint:
             description: AllowGuestSendSelfUsingPrint flag.
             type: bool
-          allowGuestSendSelfUsingSms:
-            description: AllowGuestSendSelfUsingSms flag.
+          allowGuestSendSelfUsingSMS:
+            description: AllowGuestSendSelfUsingSMS flag.
             type: bool
           aupOnPage:
             description: AupOnPage flag.
@@ -636,8 +637,8 @@ options:
           includeReasonForVisit:
             description: IncludeReasonForVisit flag.
             type: bool
-          includeSmsProvider:
-            description: IncludeSmsProvider flag.
+          includeSMSProvider:
+            description: IncludeSMSProvider flag.
             type: bool
           includeUserName:
             description: IncludeUserName flag.
@@ -683,6 +684,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for SelfRegisteredPortal
+  description: Complete reference of the SelfRegisteredPortal API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!selfregportal
 notes:
   - SDK Method used are
     self_registered_portal.SelfRegisteredPortal.create_self_registered_portal,
@@ -692,6 +697,7 @@ notes:
   - Paths used are
     post /ers/config/selfregportal,
     delete /ers/config/selfregportal/{id},
+    put /ers/config/selfregportal/{id},
 
 """
 
@@ -865,7 +871,8 @@ EXAMPLES = r"""
         selectableSmsProviders:
         - string
         sendApprovalRequestTo: string
-        sponsorPortalList: []
+        sponsorPortalList:
+        - string
       selfRegSuccessSettings:
         allowGuestLoginFromSelfregSuccessPage: true
         allowGuestSendSelfUsingEmail: true
@@ -1073,7 +1080,8 @@ EXAMPLES = r"""
         selectableSmsProviders:
         - string
         sendApprovalRequestTo: string
-        sponsorPortalList: []
+        sponsorPortalList:
+        - string
       selfRegSuccessSettings:
         allowGuestLoginFromSelfregSuccessPage: true
         allowGuestSendSelfUsingEmail: true
@@ -1232,7 +1240,9 @@ ise_response:
           "approveDenyLinksTimeUnits": "string",
           "requireApproverToAuthenticate": true,
           "authenticateSponsorsUsingPortalList": true,
-          "sponsorPortalList": []
+          "sponsorPortalList": [
+            "string"
+          ]
         },
         "selfRegSuccessSettings": {
           "includeUserName": true,

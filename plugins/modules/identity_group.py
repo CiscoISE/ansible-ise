@@ -11,6 +11,7 @@ short_description: Resource module for Identity Group
 description:
 - Manage operations create and update of the resource Identity Group.
 - This API creates an identity group.
+- This API allows the client to update an identity group.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -31,6 +32,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for IdentityGroups
+  description: Complete reference of the IdentityGroups API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!identitygroup
 notes:
   - SDK Method used are
     identity_groups.IdentityGroups.create_identity_group,
@@ -38,6 +43,7 @@ notes:
 
   - Paths used are
     post /ers/config/identitygroup,
+    put /ers/config/identitygroup/{id},
 
 """
 

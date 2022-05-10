@@ -83,7 +83,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="guest_user",
-            function='suspend_guest_user_by_id',
+            function="suspend_guest_user_by_id",
             params=self.get_object(self._task.args),
         ).response
 

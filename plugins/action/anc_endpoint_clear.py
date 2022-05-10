@@ -79,7 +79,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="anc_endpoint",
-            function='clear_anc_endpoint',
+            function="clear_anc_endpoint",
             params=self.get_object(self._task.args),
         ).response
 

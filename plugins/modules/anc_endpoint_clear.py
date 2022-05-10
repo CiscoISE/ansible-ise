@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: anc_endpoint_clear
-short_description: Resource module for Anc Endpoint Clear
+short_description: Resource module for ANC Endpoint Clear
 description:
-- Manage operation update of the resource Anc Endpoint Clear.
+- Manage operation update of the resource ANC Endpoint Clear.
 - This API allows the client to clear the required configuration.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -17,14 +17,14 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   additionalData:
-    description: Anc Endpoint Clear's additionalData.
+    description: ANC Endpoint Clear's additionalData.
     elements: dict
     suboptions:
       name:
-        description: Anc Endpoint Clear's name.
+        description: ANC Endpoint Clear's name.
         type: str
       value:
-        description: Anc Endpoint Clear's value.
+        description: ANC Endpoint Clear's value.
         type: str
     type: list
 requirements:

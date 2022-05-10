@@ -7,11 +7,11 @@
 DOCUMENTATION = r"""
 ---
 module: rest_id_store_info
-short_description: Information module for Rest Id Store
+short_description: Information module for REST Id Store
 description:
-- Get all Rest Id Store.
-- Get Rest Id Store by id.
-- Get Rest Id Store by name.
+- Get all REST Id Store.
+- Get REST Id Store by id.
+- Get REST Id Store by name.
 - This API allows the client to get a REST ID store by ID.
 - This API allows the client to get a REST ID store by name.
 - This API allows the client to get all the REST ID stores.
@@ -47,16 +47,23 @@ options:
   filter:
     description:
     - >
-      Filter query parameter. <br/> **Simple filtering** should be available through the filter query string
-      parameter. The structure of a filter is a triplet of field operator and value separated with dots. More than
-      one filter can be sent. The logical operator common to ALL filter criteria will be by default AND, and can
-      be changed by using the "filterType=or" query string parameter. Each resource Data model description should
-      specify if an attribute is a filtered field. <br/> Operator | Description <br/>
-      ------------|----------------- <br/> EQ | Equals <br/> NEQ | Not Equals <br/> GT | Greater Than <br/> LT |
-      Less Then <br/> STARTSW | Starts With <br/> NSTARTSW | Not Starts With <br/> ENDSW | Ends With <br/> NENDSW
-      | Not Ends With <br/> CONTAINS | Contains <br/> NCONTAINS | Not Contains <br/>.
-    type: list
+      Filter query parameter. **Simple filtering** should be available through the filter query string parameter.
+      The structure of a filter is a triplet of field operator and value separated with dots. More than one filter
+      can be sent. The logical operator common to ALL filter criteria will be by default AND, and can be changed
+      by using the "filterType=or" query string parameter.
+    - Each resource Data model description should specify if an attribute is a filtered field.
+    - The 'EQ' operator describes 'Equals'.
+    - The 'NEQ' operator describes 'Not Equals'.
+    - The 'GT' operator describes 'Greater Than'.
+    - The 'LT' operator describes 'Less Than'.
+    - The 'STARTSW' operator describes 'Starts With'.
+    - The 'NSTARTSW' operator describes 'Not Starts With'.
+    - The 'ENDSW' operator describes 'Ends With'.
+    - The 'NENDSW' operator describes 'Not Ends With'.
+    - The 'CONTAINS' operator describes 'Contains'.
+    - The 'NCONTAINS' operator describes 'Not Contains'.
     elements: str
+    type: list
   filterType:
     description:
     - >
@@ -80,7 +87,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Rest Id Store
+- name: Get all REST Id Store
   cisco.ise.rest_id_store_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -94,7 +101,7 @@ EXAMPLES = r"""
     filterType: AND
   register: result
 
-- name: Get Rest Id Store by id
+- name: Get REST Id Store by id
   cisco.ise.rest_id_store_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -103,7 +110,7 @@ EXAMPLES = r"""
     id: string
   register: result
 
-- name: Get Rest Id Store by name
+- name: Get REST Id Store by name
   cisco.ise.rest_id_store_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

@@ -7,16 +7,16 @@
 DOCUMENTATION = r"""
 ---
 module: trustsec_vn_bulk_create
-short_description: Resource module for Trustsec Vn Bulk Create
+short_description: Resource module for Trustsec VN Bulk Create
 description:
-- Manage operation create of the resource Trustsec Vn Bulk Create.
+- Manage operation create of the resource Trustsec VN Bulk Create.
 version_added: '2.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   payload:
-    description: Trustsec Vn Bulk Create's payload.
+    description: Trustsec VN Bulk Create's payload.
     elements: dict
     suboptions:
       additionalAttributes:
@@ -35,6 +35,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for virtualNetwork
+  description: Complete reference of the virtualNetwork API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!trustsec-openapi
 notes:
   - SDK Method used are
     virtual_network.VirtualNetwork.bulk_create_virtual_networks,

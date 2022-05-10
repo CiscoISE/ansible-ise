@@ -7,16 +7,16 @@
 DOCUMENTATION = r"""
 ---
 module: trustsec_sg_vn_mapping_bulk_update
-short_description: Resource module for Trustsec Sg Vn Mapping Bulk Update
+short_description: Resource module for Trustsec SG VN Mapping Bulk Update
 description:
-- Manage operation create of the resource Trustsec Sg Vn Mapping Bulk Update.
+- Manage operation create of the resource Trustsec SG VN Mapping Bulk Update.
 version_added: '2.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   payload:
-    description: Trustsec Sg Vn Mapping Bulk Update's payload.
+    description: Trustsec SG VN Mapping Bulk Update's payload.
     elements: dict
     suboptions:
       id:
@@ -45,6 +45,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for sgVnMapping
+  description: Complete reference of the sgVnMapping API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!trustsec-openapi
 notes:
   - SDK Method used are
     sg_vn_mapping.SgVnMapping.bulk_update_sg_vn_mappings,

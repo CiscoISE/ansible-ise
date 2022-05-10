@@ -38,7 +38,8 @@ notes:
     guest_user.GuestUser.change_sponsor_password,
 
   - Paths used are
-    put /ers/config/guestuser/changeSponsorPassword/{portalId}
+    put /ers/config/guestuser/changeSponsorPassword/{portalId},
+
 """
 
 EXAMPLES = r"""

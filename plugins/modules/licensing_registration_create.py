@@ -36,6 +36,10 @@ options:
 requirements:
 - ciscoisesdk >= 2.0.1
 - python >= 3.5
+seealso:
+- name: Cisco ISE documentation for Licensing
+  description: Complete reference of the Licensing API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!license-openapi
 notes:
   - SDK Method used are
     licensing.Licensing.create_registration_info,

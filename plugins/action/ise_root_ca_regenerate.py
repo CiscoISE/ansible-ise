@@ -79,7 +79,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="certificates",
-            function='regenerate_ise_root_ca',
+            function="regenerate_ise_root_ca",
             params=self.get_object(self._task.args),
         ).response
 

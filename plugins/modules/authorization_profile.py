@@ -12,6 +12,7 @@ description:
 - Manage operations create, update and delete of the resource Authorization Profile.
 - This API creates an authorization profile.
 - This API deletes an authorization profile.
+- This API allows the client to update an authorization profile.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -184,6 +185,7 @@ notes:
   - Paths used are
     post /ers/config/authorizationprofile,
     delete /ers/config/authorizationprofile/{id},
+    put /ers/config/authorizationprofile/{id},
 
 """
 

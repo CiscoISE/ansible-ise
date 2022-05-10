@@ -81,7 +81,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="patching",
-            function='install_hotpatch',
+            function="install_hotpatch",
             params=self.get_object(self._task.args),
         ).response
 

@@ -79,7 +79,7 @@ class ActionModule(ActionBase):
 
         response = ise.exec(
             family="consumer",
-            function='lookup_service',
+            function="lookup_service",
             params=self.get_object(self._task.args),
         ).response
 

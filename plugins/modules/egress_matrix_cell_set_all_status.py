@@ -10,8 +10,7 @@ module: egress_matrix_cell_set_all_status
 short_description: Resource module for Egress Matrix Cell Set All Status
 description:
 - Manage operation update of the resource Egress Matrix Cell Set All Status.
-- This API allows the client to set status of all the egress matrix
-  cells.
+- This API allows the client to set status of all the egress matrix cells.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -28,7 +27,7 @@ notes:
     egress_matrix_cell.EgressMatrixCell.set_all_cells_status,
 
   - Paths used are
-    put /ers/config/egressmatrixcell/status/{status}
+    put /ers/config/egressmatrixcell/status/{status},
 
 """
 
