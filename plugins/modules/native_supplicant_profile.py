@@ -40,7 +40,7 @@ options:
       certificateTemplateId:
         description: Native Supplicant Profile's certificateTemplateId.
         type: str
-      previousSsid:
+      previousSSID:
         description: Previous ssid for WifiProfile (required for updating existing WirelessProfile).
         type: str
       ssid:

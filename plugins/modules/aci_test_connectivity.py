@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: aci_test_connectivity
-short_description: Resource module for Aci Test Connectivity
+short_description: Resource module for ACI Test Connectivity
 description:
-- Manage operation update of the resource Aci Test Connectivity.
+- Manage operation update of the resource ACI Test Connectivity.
 - This API allows the client to test ACI Domain Manager connection.
 version_added: '1.0.0'
 extends_documentation_fragment:

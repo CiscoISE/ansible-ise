@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: sg_mapping_deploy
-short_description: Resource module for Sg Mapping Deploy
+short_description: Resource module for SG Mapping Deploy
 description:
-- Manage operation update of the resource Sg Mapping Deploy.
+- Manage operation update of the resource SG Mapping Deploy.
 - This API allows the client to deploy an IP to SGT mapping by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:

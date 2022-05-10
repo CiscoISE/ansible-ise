@@ -201,7 +201,7 @@ options:
           authenticationMethod:
             description: Unique Id of the identity source sequence.
             type: str
-          availableSsids:
+          availableSSIDs:
             description: Names of the SSIDs available for assignment to guest users
               by sponsors.
             elements: str

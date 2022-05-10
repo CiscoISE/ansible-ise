@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: anc_endpoint_bulk_monitor_status_info
-short_description: Information module for Anc Endpoint Bulk Monitor Status
+short_description: Information module for ANC Endpoint Bulk Monitor Status
 description:
-- Get Anc Endpoint Bulk Monitor Status by id.
+- Get ANC Endpoint Bulk Monitor Status by id.
 - This API allows the client to monitor the bulk request.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -33,7 +33,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get Anc Endpoint Bulk Monitor Status by id
+- name: Get ANC Endpoint Bulk Monitor Status by id
   cisco.ise.anc_endpoint_bulk_monitor_status_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

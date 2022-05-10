@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: mnt_session_active_count_info
-short_description: Information module for Mnt Session Active Count
+short_description: Information module for MNT Session Active Count
 description:
-- Get all Mnt Session Active Count.
+- Get all MNT Session Active Count.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -28,7 +28,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Mnt Session Active Count
+- name: Get all MNT Session Active Count
   cisco.ise.mnt_session_active_count_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

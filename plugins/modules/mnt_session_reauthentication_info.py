@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: mnt_session_reauthentication_info
-short_description: Information module for Mnt Session Reauthentication
+short_description: Information module for MNT Session Reauthentication
 description:
-- Get Mnt Session Reauthentication by id.
+- Get MNT Session Reauthentication by id.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -40,7 +40,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get Mnt Session Reauthentication by id
+- name: Get MNT Session Reauthentication by id
   cisco.ise.mnt_session_reauthentication_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

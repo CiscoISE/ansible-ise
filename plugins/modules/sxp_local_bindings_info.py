@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: sxp_local_bindings_info
-short_description: Information module for Sxp Local Bindings
+short_description: Information module for SXP Local Bindings
 description:
-- Get all Sxp Local Bindings.
-- Get Sxp Local Bindings by id.
+- Get all SXP Local Bindings.
+- Get SXP Local Bindings by id.
 - This API allows the client to get a SXP local binding by ID.
 - This API allows the client to get all the SXP local bindings.
 version_added: '1.0.0'
@@ -79,7 +79,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Sxp Local Bindings
+- name: Get all SXP Local Bindings
   cisco.ise.sxp_local_bindings_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -93,7 +93,7 @@ EXAMPLES = r"""
     filterType: AND
   register: result
 
-- name: Get Sxp Local Bindings by id
+- name: Get SXP Local Bindings by id
   cisco.ise.sxp_local_bindings_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

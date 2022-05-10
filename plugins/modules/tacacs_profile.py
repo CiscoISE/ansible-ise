@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: tacacs_profile
-short_description: Resource module for Tacacs Profile
+short_description: Resource module for TACACS Profile
 description:
-- Manage operations create, update and delete of the resource Tacacs Profile.
+- Manage operations create, update and delete of the resource TACACS Profile.
 - This API creates a TACACS profile.
 - This API deletes a TACACS profile.
 - This API allows the client to update a TACACS profile.
@@ -19,29 +19,29 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   description:
-    description: Tacacs Profile's description.
+    description: TACACS Profile's description.
     type: str
   id:
-    description: Tacacs Profile's id.
+    description: TACACS Profile's id.
     type: str
   name:
-    description: Tacacs Profile's name.
+    description: TACACS Profile's name.
     type: str
   sessionAttributes:
     description: Holds list of session attributes. View type for GUI is Shell by default.
     suboptions:
       sessionAttributeList:
-        description: Tacacs Profile's sessionAttributeList.
+        description: TACACS Profile's sessionAttributeList.
         elements: dict
         suboptions:
           name:
-            description: Tacacs Profile's name.
+            description: TACACS Profile's name.
             type: str
           type:
             description: Allowed values MANDATORY, OPTIONAL.
             type: str
           value:
-            description: Tacacs Profile's value.
+            description: TACACS Profile's value.
             type: str
         type: list
     type: dict

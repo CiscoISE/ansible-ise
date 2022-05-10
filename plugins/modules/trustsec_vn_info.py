@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: trustsec_vn_info
-short_description: Information module for Trustsec Vn
+short_description: Information module for Trustsec VN
 description:
-- Get all Trustsec Vn.
-- Get Trustsec Vn by id.
+- Get all Trustsec VN.
+- Get Trustsec VN by id.
 - Get Virtual Network by id.
 - Get all Virtual Networks.
 version_added: '2.0.0'
@@ -83,7 +83,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Trustsec Vn
+- name: Get all Trustsec VN
   cisco.ise.trustsec_vn_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -97,7 +97,7 @@ EXAMPLES = r"""
     filterType: string
   register: result
 
-- name: Get Trustsec Vn by id
+- name: Get Trustsec VN by id
   cisco.ise.trustsec_vn_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

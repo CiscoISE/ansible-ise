@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: sxp_vpns_bulk_request
-short_description: Resource module for Sxp Vpns Bulk Request
+short_description: Resource module for SXP VPNs Bulk Request
 description:
-- Manage operation update of the resource Sxp Vpns Bulk Request.
+- Manage operation update of the resource SXP VPNs Bulk Request.
 - This API allows the client to submit the bulk request.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -17,10 +17,10 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   operationType:
-    description: Sxp Vpns Bulk Request's operationType.
+    description: SXP VPNs Bulk Request's operationType.
     type: str
   resourceMediaType:
-    description: Sxp Vpns Bulk Request's resourceMediaType.
+    description: SXP VPNs Bulk Request's resourceMediaType.
     type: str
 requirements:
 - ciscoisesdk >= 2.0.1

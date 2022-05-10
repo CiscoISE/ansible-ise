@@ -68,8 +68,8 @@ options:
       radiusSharedSecret:
         description: Network Device's radiusSharedSecret.
         type: str
-      secondRadiusSharedSecret:
-        description: Network Device's secondRadiusSharedSecret.
+      secondRADIUSSharedSecret:
+        description: Network Device's secondRADIUSSharedSecret.
         type: str
     type: dict
   coaPort:

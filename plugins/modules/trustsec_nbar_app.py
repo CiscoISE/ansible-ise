@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: trustsec_nbar_app
-short_description: Resource module for Trustsec Nbar App
+short_description: Resource module for Trustsec NBAR App
 description:
-- Manage operations create, update and delete of the resource Trustsec Nbar App.
+- Manage operations create, update and delete of the resource Trustsec NBAR App.
 - Create NBAR application.
 - Update NBAR Application.
 version_added: '2.0.0'
@@ -18,23 +18,23 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   description:
-    description: Trustsec Nbar App's description.
+    description: Trustsec NBAR App's description.
     type: str
   id:
-    description: Trustsec Nbar App's id.
+    description: Trustsec NBAR App's id.
     type: str
   name:
-    description: Trustsec Nbar App's name.
+    description: Trustsec NBAR App's name.
     type: str
   networkIdentities:
     description: Array of NIs.
     elements: dict
     suboptions:
       ports:
-        description: Trustsec Nbar App's ports.
+        description: Trustsec NBAR App's ports.
         type: str
       protocol:
-        description: Trustsec Nbar App's protocol.
+        description: Trustsec NBAR App's protocol.
         type: str
     type: list
 requirements:

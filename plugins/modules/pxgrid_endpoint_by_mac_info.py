@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: pxgrid_endpoint_by_mac_info
-short_description: Information module for Pxgrid Endpoint By Mac Info
+short_description: Information module for pxGrid Endpoint By Mac Info
 description:
-- Get Pxgrid Endpoint By Mac Info.
+- Get pxGrid Endpoint By Mac Info.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -28,7 +28,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Pxgrid Endpoint By Mac Info
+- name: Get all pxGrid Endpoint By Mac Info
   cisco.ise.pxgrid_endpoint_by_mac_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

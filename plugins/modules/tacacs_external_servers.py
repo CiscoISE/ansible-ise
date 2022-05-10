@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: tacacs_external_servers
-short_description: Resource module for Tacacs External Servers
+short_description: Resource module for TACACS External Servers
 description:
-- Manage operations create, update and delete of the resource Tacacs External Servers.
+- Manage operations create, update and delete of the resource TACACS External Servers.
 - This API creates TACACS external servers.
 - This API deletes TACACS external servers.
 - This API allows the client to update TACACS external servers.
@@ -22,16 +22,16 @@ options:
     description: The port to connect the server.
     type: int
   description:
-    description: Tacacs External Servers's description.
+    description: TACACS External Servers's description.
     type: str
   hostIP:
     description: The server IPV4 address.
     type: str
   id:
-    description: Tacacs External Servers's id.
+    description: TACACS External Servers's id.
     type: str
   name:
-    description: Tacacs External Servers's name.
+    description: TACACS External Servers's name.
     type: str
   sharedSecret:
     description: The server shared secret.

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: backup_restore
-short_description: Resource module for Backup Restore
+short_description: Resource module for Backup RESTore
 description:
-- Manage operation create of the resource Backup Restore.
+- Manage operation create of the resource Backup RESTore.
 - Triggers a configuration DB restore job on the ISE node. The API returns the task ID. Use the Task Service status API to get the status of the backup job.
 version_added: '1.0.0'
 extends_documentation_fragment:

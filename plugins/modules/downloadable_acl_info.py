@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: downloadable_acl_info
-short_description: Information module for Downloadable Acl
+short_description: Information module for Downloadable ACL
 description:
-- Get all Downloadable Acl.
-- Get Downloadable Acl by id.
+- Get all Downloadable ACL.
+- Get Downloadable ACL by id.
 - This API allows the client to get a downloadable ACL by ID.
 - This API allows the client to get all downloadable ACLs.
 version_added: '1.0.0'
@@ -45,7 +45,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Downloadable Acl
+- name: Get all Downloadable ACL
   cisco.ise.downloadable_acl_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -55,7 +55,7 @@ EXAMPLES = r"""
     size: 20
   register: result
 
-- name: Get Downloadable Acl by id
+- name: Get Downloadable ACL by id
   cisco.ise.downloadable_acl_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

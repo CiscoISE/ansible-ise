@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: anc_endpoint_info
-short_description: Information module for Anc Endpoint
+short_description: Information module for ANC Endpoint
 description:
-- Get all Anc Endpoint.
-- Get Anc Endpoint by id.
+- Get all ANC Endpoint.
+- Get ANC Endpoint by id.
 - This API allows the client to get all the ANC endpoints.
 - This API allows the client to get an ANC endpoint by ID.
 version_added: '1.0.0'
@@ -79,7 +79,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Anc Endpoint
+- name: Get all ANC Endpoint
   cisco.ise.anc_endpoint_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -93,7 +93,7 @@ EXAMPLES = r"""
     filterType: AND
   register: result
 
-- name: Get Anc Endpoint by id
+- name: Get ANC Endpoint by id
   cisco.ise.anc_endpoint_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

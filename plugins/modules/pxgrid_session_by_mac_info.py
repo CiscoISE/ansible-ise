@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: pxgrid_session_by_mac_info
-short_description: Information module for Pxgrid Session By Mac Info
+short_description: Information module for pxGrid Session By Mac Info
 description:
-- Get Pxgrid Session By Mac Info.
+- Get pxGrid Session By Mac Info.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -28,7 +28,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Pxgrid Session By Mac Info
+- name: Get all pxGrid Session By Mac Info
   cisco.ise.pxgrid_session_by_mac_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

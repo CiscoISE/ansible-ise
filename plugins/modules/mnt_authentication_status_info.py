@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: mnt_authentication_status_info
-short_description: Information module for Mnt Authentication Status
+short_description: Information module for MNT Authentication Status
 description:
-- Get all Mnt Authentication Status.
+- Get all MNT Authentication Status.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -40,7 +40,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Mnt Authentication Status
+- name: Get all MNT Authentication Status
   cisco.ise.mnt_authentication_status_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

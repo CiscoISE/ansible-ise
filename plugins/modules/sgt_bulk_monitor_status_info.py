@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: sgt_bulk_monitor_status_info
-short_description: Information module for Sgt Bulk Monitor Status
+short_description: Information module for SGt Bulk Monitor Status
 description:
-- Get Sgt Bulk Monitor Status by id.
+- Get SGt Bulk Monitor Status by id.
 - This API allows the client to monitor the bulk request.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -37,7 +37,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get Sgt Bulk Monitor Status by id
+- name: Get SGt Bulk Monitor Status by id
   cisco.ise.sgt_bulk_monitor_status_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

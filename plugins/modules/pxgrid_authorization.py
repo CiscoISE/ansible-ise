@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: pxgrid_authorization
-short_description: Resource module for Pxgrid Authorization
+short_description: Resource module for pxGrid Authorization
 description:
-- Manage operation create of the resource Pxgrid Authorization.
+- Manage operation create of the resource pxGrid Authorization.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module

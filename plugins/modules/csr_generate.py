@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: csr_generate
-short_description: Resource module for Csr Generate
+short_description: Resource module for CSR Generate
 description:
-- Manage operation create of the resource Csr Generate.
+- Manage operation create of the resource CSR Generate.
 - Generate a certificate signing request for Multi-Use, Admin, EAP.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -20,60 +20,60 @@ options:
     description: AllowWildCardCert flag.
     type: bool
   certificatePolicies:
-    description: Csr Generate's certificatePolicies.
+    description: CSR Generate's certificatePolicies.
     type: str
   digestType:
-    description: Csr Generate's digestType.
+    description: CSR Generate's digestType.
     type: str
   hostnames:
-    description: Csr Generate's hostnames.
+    description: CSR Generate's hostnames.
     elements: str
     type: list
   keyLength:
-    description: Csr Generate's keyLength.
+    description: CSR Generate's keyLength.
     type: str
   keyType:
-    description: Csr Generate's keyType.
+    description: CSR Generate's keyType.
     type: str
   portalGroupTag:
-    description: Csr Generate's portalGroupTag.
+    description: CSR Generate's portalGroupTag.
     type: str
   sanDNS:
-    description: Csr Generate's sanDNS.
+    description: CSR Generate's sanDNS.
     elements: str
     type: list
   sanDir:
-    description: Csr Generate's sanDir.
+    description: CSR Generate's sanDir.
     elements: str
     type: list
   sanIP:
-    description: Csr Generate's sanIP.
+    description: CSR Generate's sanIP.
     elements: str
     type: list
   sanURI:
-    description: Csr Generate's sanURI.
+    description: CSR Generate's sanURI.
     elements: str
     type: list
   subjectCity:
-    description: Csr Generate's subjectCity.
+    description: CSR Generate's subjectCity.
     type: str
   subjectCommonName:
-    description: Csr Generate's subjectCommonName.
+    description: CSR Generate's subjectCommonName.
     type: str
   subjectCountry:
-    description: Csr Generate's subjectCountry.
+    description: CSR Generate's subjectCountry.
     type: str
   subjectOrg:
-    description: Csr Generate's subjectOrg.
+    description: CSR Generate's subjectOrg.
     type: str
   subjectOrgUnit:
-    description: Csr Generate's subjectOrgUnit.
+    description: CSR Generate's subjectOrgUnit.
     type: str
   subjectState:
-    description: Csr Generate's subjectState.
+    description: CSR Generate's subjectState.
     type: str
   usedFor:
-    description: Csr Generate's usedFor.
+    description: CSR Generate's usedFor.
     type: str
 requirements:
 - ciscoisesdk >= 2.0.1

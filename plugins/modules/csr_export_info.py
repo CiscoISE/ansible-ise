@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: csr_export_info
-short_description: Information module for Csr Export
+short_description: Information module for CSR Export
 description:
-- Get Csr Export by id.
+- Get CSR Export by id.
 - Response of this API carries a CSR corresponding to the requested ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -53,7 +53,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get Csr Export by id
+- name: Get CSR Export by id
   cisco.ise.csr_export_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

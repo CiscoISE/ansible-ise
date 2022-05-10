@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: anc_policy_bulk_request
-short_description: Resource module for Anc Policy Bulk Request
+short_description: Resource module for ANC Policy Bulk Request
 description:
-- Manage operation update of the resource Anc Policy Bulk Request.
+- Manage operation update of the resource ANC Policy Bulk Request.
 - This API allows the client to submit the bulk request.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -17,10 +17,10 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   operationType:
-    description: Anc Policy Bulk Request's operationType.
+    description: ANC Policy Bulk Request's operationType.
     type: str
   resourceMediaType:
-    description: Anc Policy Bulk Request's resourceMediaType.
+    description: ANC Policy Bulk Request's resourceMediaType.
     type: str
 requirements:
 - ciscoisesdk >= 2.0.1

@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: trustsec_vn_vlan_mapping_info
-short_description: Information module for Trustsec Vn Vlan Mapping
+short_description: Information module for Trustsec VN VLAN Mapping
 description:
-- Get all Trustsec Vn Vlan Mapping.
-- Get Trustsec Vn Vlan Mapping by id.
+- Get all Trustsec VN VLAN Mapping.
+- Get Trustsec VN VLAN Mapping by id.
 - Get VN-Vlan Mapping by id.
 - Get all VN-Vlan Mappings.
 version_added: '2.0.0'
@@ -83,7 +83,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Trustsec Vn Vlan Mapping
+- name: Get all Trustsec VN VLAN Mapping
   cisco.ise.trustsec_vn_vlan_mapping_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -97,7 +97,7 @@ EXAMPLES = r"""
     filterType: string
   register: result
 
-- name: Get Trustsec Vn Vlan Mapping by id
+- name: Get Trustsec VN VLAN Mapping by id
   cisco.ise.trustsec_vn_vlan_mapping_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

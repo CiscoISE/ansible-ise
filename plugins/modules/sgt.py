@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: sgt
-short_description: Resource module for Sgt
+short_description: Resource module for SGt
 description:
-- Manage operations create, update and delete of the resource Sgt.
+- Manage operations create, update and delete of the resource SGt.
 - This API creates a security group.
 - This API deletes a security group.
 - This API allows the client to update a security group.
@@ -19,23 +19,23 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   defaultSGACLs:
-    description: Sgt's defaultSGACLs.
+    description: SGt's defaultSGACLs.
     elements: dict
     type: list
   description:
-    description: Sgt's description.
+    description: SGt's description.
     type: str
   generationId:
-    description: Sgt's generationId.
+    description: SGt's generationId.
     type: str
   id:
-    description: Sgt's id.
+    description: SGt's id.
     type: str
   isReadOnly:
     description: IsReadOnly flag.
     type: bool
   name:
-    description: Sgt's name.
+    description: SGt's name.
     type: str
   propogateToApic:
     description: PropogateToApic flag.

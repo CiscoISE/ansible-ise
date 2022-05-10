@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: csr_generate_intermediate_ca
-short_description: Resource module for Csr Generate Intermediate Ca
+short_description: Resource module for CSR Generate Intermediate CA
 description:
-- Manage operation create of the resource Csr Generate Intermediate Ca.
+- Manage operation create of the resource CSR Generate Intermediate CA.
 - CSR Generation for Intermediate Certificates.
 version_added: '1.0.0'
 extends_documentation_fragment:

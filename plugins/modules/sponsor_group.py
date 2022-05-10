@@ -82,8 +82,8 @@ options:
   otherPermissions:
     description: Sponsor Group's otherPermissions.
     suboptions:
-      canAccessViaRest:
-        description: CanAccessViaRest flag.
+      canAccessViaREST:
+        description: CanAccessViaREST flag.
         type: bool
       canApproveSelfregGuests:
         description: CanApproveSelfregGuests flag.
@@ -100,8 +100,8 @@ options:
       canResetGuestPasswords:
         description: CanResetGuestPasswords flag.
         type: bool
-      canSendSmsNotifications:
-        description: CanSendSmsNotifications flag.
+      canSendSMSNotifications:
+        description: CanSendSMSNotifications flag.
         type: bool
       canSuspendGuestAccounts:
         description: CanSuspendGuestAccounts flag.

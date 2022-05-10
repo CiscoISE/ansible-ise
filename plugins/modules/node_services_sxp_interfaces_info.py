@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: node_services_sxp_interfaces_info
-short_description: Information module for Node Services Sxp Interfaces
+short_description: Information module for Node Services SXP Interfaces
 description:
-- Get all Node Services Sxp Interfaces.
+- Get all Node Services SXP Interfaces.
 - This API retrieves the SXP interface.
 version_added: '2.1.0'
 extends_documentation_fragment:
@@ -37,7 +37,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Node Services Sxp Interfaces
+- name: Get all Node Services SXP Interfaces
   cisco.ise.node_services_sxp_interfaces_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

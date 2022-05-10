@@ -7,16 +7,16 @@
 DOCUMENTATION = r"""
 ---
 module: trustsec_vn_vlan_mapping_bulk_delete
-short_description: Resource module for Trustsec Vn Vlan Mapping Bulk Delete
+short_description: Resource module for Trustsec VN VLAN Mapping Bulk Delete
 description:
-- Manage operation create of the resource Trustsec Vn Vlan Mapping Bulk Delete.
+- Manage operation create of the resource Trustsec VN VLAN Mapping Bulk Delete.
 version_added: '2.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   payload:
-    description: Trustsec Vn Vlan Mapping Bulk Delete's payload.
+    description: Trustsec VN VLAN Mapping Bulk Delete's payload.
     elements: str
     type: list
 requirements:

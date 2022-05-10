@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: tacacs_server_sequence
-short_description: Resource module for Tacacs Server Sequence
+short_description: Resource module for TACACS Server Sequence
 description:
-- Manage operations create, update and delete of the resource Tacacs Server Sequence.
+- Manage operations create, update and delete of the resource TACACS Server Sequence.
 - This API creates a TACACS server sequence.
 - This API deletes a TACACS server sequence.
 - This API allows the client to update a TACACS server sequence.
@@ -19,16 +19,16 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   description:
-    description: Tacacs Server Sequence's description.
+    description: TACACS Server Sequence's description.
     type: str
   id:
-    description: Tacacs Server Sequence's id.
+    description: TACACS Server Sequence's id.
     type: str
   localAccounting:
     description: LocalAccounting flag.
     type: bool
   name:
-    description: Tacacs Server Sequence's name.
+    description: TACACS Server Sequence's name.
     type: str
   prefixDelimiter:
     description: The delimiter that will be used for prefix strip.
@@ -40,7 +40,7 @@ options:
     description: RemoteAccounting flag.
     type: bool
   serverList:
-    description: The names of Tacacs external servers separated by commas. The order
+    description: The names of TACACS external servers separated by commas. The order
       of the names in the string is the order of servers that will be used during authentication.
     type: str
   suffixDelimiter:

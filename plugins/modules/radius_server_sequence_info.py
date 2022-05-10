@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: radius_server_sequence_info
-short_description: Information module for Radius Server Sequence
+short_description: Information module for RADIUS Server Sequence
 description:
-- Get all Radius Server Sequence.
-- Get Radius Server Sequence by id.
+- Get all RADIUS Server Sequence.
+- Get RADIUS Server Sequence by id.
 - This API allows the client to get a RADIUS server sequence by ID.
 - This API allows the client to get all the RADIUS server sequences.
 version_added: '1.0.0'
@@ -45,7 +45,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Radius Server Sequence
+- name: Get all RADIUS Server Sequence
   cisco.ise.radius_server_sequence_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -55,7 +55,7 @@ EXAMPLES = r"""
     size: 20
   register: result
 
-- name: Get Radius Server Sequence by id
+- name: Get RADIUS Server Sequence by id
   cisco.ise.radius_server_sequence_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

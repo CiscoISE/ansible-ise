@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: node_services_sxp_interfaces
-short_description: Resource module for Node Services Sxp Interfaces
+short_description: Resource module for Node Services SXP Interfaces
 description:
-- Manage operation update of the resource Node Services Sxp Interfaces.
+- Manage operation update of the resource Node Services SXP Interfaces.
 - This API configures the SXP interface.
 version_added: '2.1.0'
 extends_documentation_fragment:
@@ -20,7 +20,7 @@ options:
     description: Hostname path parameter. Hostname of the node.
     type: str
   interface:
-    description: Node Services Sxp Interfaces's interface.
+    description: Node Services SXP Interfaces's interface.
     type: str
 requirements:
 - ciscoisesdk >= 2.0.1

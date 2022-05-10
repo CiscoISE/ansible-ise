@@ -76,7 +76,7 @@ options:
       sendEmailNotification:
         description: Enable Email Notification.
         type: bool
-      sendSmsNotification:
+      sendSMSNotification:
         description: Maximum devices guests can register.
         type: bool
       smsText:

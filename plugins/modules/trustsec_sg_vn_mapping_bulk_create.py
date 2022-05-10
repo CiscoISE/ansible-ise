@@ -7,16 +7,16 @@
 DOCUMENTATION = r"""
 ---
 module: trustsec_sg_vn_mapping_bulk_create
-short_description: Resource module for Trustsec Sg Vn Mapping Bulk Create
+short_description: Resource module for Trustsec SG VN Mapping Bulk Create
 description:
-- Manage operation create of the resource Trustsec Sg Vn Mapping Bulk Create.
+- Manage operation create of the resource Trustsec SG VN Mapping Bulk Create.
 version_added: '2.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   payload:
-    description: Trustsec Sg Vn Mapping Bulk Create's payload.
+    description: Trustsec SG VN Mapping Bulk Create's payload.
     elements: dict
     suboptions:
       id:

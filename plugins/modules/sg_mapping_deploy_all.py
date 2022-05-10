@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: sg_mapping_deploy_all
-short_description: Resource module for Sg Mapping Deploy All
+short_description: Resource module for SG Mapping Deploy All
 description:
-- Manage operation update of the resource Sg Mapping Deploy All.
+- Manage operation update of the resource SG Mapping Deploy All.
 - This API allows the client to deploy all the IP to SGT mappings.
 version_added: '1.0.0'
 extends_documentation_fragment:

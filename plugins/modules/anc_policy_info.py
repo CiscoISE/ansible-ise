@@ -7,11 +7,11 @@
 DOCUMENTATION = r"""
 ---
 module: anc_policy_info
-short_description: Information module for Anc Policy
+short_description: Information module for ANC Policy
 description:
-- Get all Anc Policy.
-- Get Anc Policy by id.
-- Get Anc Policy by name.
+- Get all ANC Policy.
+- Get ANC Policy by id.
+- Get ANC Policy by name.
 - This API allows the client to get all the ANC policies.
 - This API allows the client to get an ANC policy by ID.
 - This API allows the client to get an ANC policy by name.
@@ -87,7 +87,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Anc Policy
+- name: Get all ANC Policy
   cisco.ise.anc_policy_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -101,7 +101,7 @@ EXAMPLES = r"""
     filterType: AND
   register: result
 
-- name: Get Anc Policy by id
+- name: Get ANC Policy by id
   cisco.ise.anc_policy_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -110,7 +110,7 @@ EXAMPLES = r"""
     id: string
   register: result
 
-- name: Get Anc Policy by name
+- name: Get ANC Policy by name
   cisco.ise.anc_policy_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

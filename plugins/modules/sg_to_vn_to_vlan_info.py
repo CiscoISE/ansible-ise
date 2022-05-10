@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: sg_to_vn_to_vlan_info
-short_description: Information module for Sg To Vn To Vlan
+short_description: Information module for SG To VN To VLAN
 description:
-- Get all Sg To Vn To Vlan.
-- Get Sg To Vn To Vlan by id.
+- Get all SG To VN To VLAN.
+- Get SG To VN To VLAN by id.
 - This API allows the client to get a security group to virtual network by ID.
 - This API allows the client to get all the security group ACL to virtual.
 version_added: '1.0.0'
@@ -75,7 +75,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Sg To Vn To Vlan
+- name: Get all SG To VN To VLAN
   cisco.ise.sg_to_vn_to_vlan_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -87,7 +87,7 @@ EXAMPLES = r"""
     filterType: AND
   register: result
 
-- name: Get Sg To Vn To Vlan by id
+- name: Get SG To VN To VLAN by id
   cisco.ise.sg_to_vn_to_vlan_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

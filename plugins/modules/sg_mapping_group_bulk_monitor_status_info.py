@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: sg_mapping_group_bulk_monitor_status_info
-short_description: Information module for Sg Mapping Group Bulk Monitor Status
+short_description: Information module for SG Mapping Group Bulk Monitor Status
 description:
-- Get Sg Mapping Group Bulk Monitor Status by id.
+- Get SG Mapping Group Bulk Monitor Status by id.
 - This API allows the client to monitor the bulk request.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -37,7 +37,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get Sg Mapping Group Bulk Monitor Status by id
+- name: Get SG Mapping Group Bulk Monitor Status by id
   cisco.ise.sg_mapping_group_bulk_monitor_status_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

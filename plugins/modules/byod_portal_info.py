@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: byod_portal_info
-short_description: Information module for Byod Portal
+short_description: Information module for BYOD Portal
 description:
-- Get all Byod Portal.
-- Get Byod Portal by id.
+- Get all BYOD Portal.
+- Get BYOD Portal by id.
 - This API allows the client to get a BYOD portal by ID.
 - This API allows the client to get all the BYOD portals.
 version_added: '1.0.0'
@@ -79,7 +79,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Byod Portal
+- name: Get all BYOD Portal
   cisco.ise.byod_portal_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -93,7 +93,7 @@ EXAMPLES = r"""
     filterType: AND
   register: result
 
-- name: Get Byod Portal by id
+- name: Get BYOD Portal by id
   cisco.ise.byod_portal_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

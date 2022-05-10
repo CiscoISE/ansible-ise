@@ -7,16 +7,16 @@
 DOCUMENTATION = r"""
 ---
 module: pxgrid_account_create
-short_description: Resource module for Pxgrid Account Create
+short_description: Resource module for pxGrid Account Create
 description:
-- Manage operation create of the resource Pxgrid Account Create.
+- Manage operation create of the resource pxGrid Account Create.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   nodeName:
-    description: Pxgrid Account Create's nodeName.
+    description: pxGrid Account Create's nodeName.
     type: str
 requirements:
 - ciscoisesdk >= 2.0.1

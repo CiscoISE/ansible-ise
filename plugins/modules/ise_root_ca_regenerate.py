@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: ise_root_ca_regenerate
-short_description: Resource module for Ise Root Ca Regenerate
+short_description: Resource module for Ise Root CA Regenerate
 description:
-- Manage operation create of the resource Ise Root Ca Regenerate.
+- Manage operation create of the resource Ise Root CA Regenerate.
 - This API initiates regeneration of Cisco ISE root CA certificate chain.
 version_added: '1.0.0'
 extends_documentation_fragment:

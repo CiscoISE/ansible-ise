@@ -7,11 +7,11 @@
 DOCUMENTATION = r"""
 ---
 module: rest_id_store_info
-short_description: Information module for Rest Id Store
+short_description: Information module for REST Id Store
 description:
-- Get all Rest Id Store.
-- Get Rest Id Store by id.
-- Get Rest Id Store by name.
+- Get all REST Id Store.
+- Get REST Id Store by id.
+- Get REST Id Store by name.
 - This API allows the client to get a REST ID store by ID.
 - This API allows the client to get a REST ID store by name.
 - This API allows the client to get all the REST ID stores.
@@ -87,7 +87,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Rest Id Store
+- name: Get all REST Id Store
   cisco.ise.rest_id_store_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -101,7 +101,7 @@ EXAMPLES = r"""
     filterType: AND
   register: result
 
-- name: Get Rest Id Store by id
+- name: Get REST Id Store by id
   cisco.ise.rest_id_store_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -110,7 +110,7 @@ EXAMPLES = r"""
     id: string
   register: result
 
-- name: Get Rest Id Store by name
+- name: Get REST Id Store by name
   cisco.ise.rest_id_store_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

@@ -7,16 +7,16 @@
 DOCUMENTATION = r"""
 ---
 module: trustsec_vn_bulk_delete
-short_description: Resource module for Trustsec Vn Bulk Delete
+short_description: Resource module for Trustsec VN Bulk Delete
 description:
-- Manage operation create of the resource Trustsec Vn Bulk Delete.
+- Manage operation create of the resource Trustsec VN Bulk Delete.
 version_added: '2.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   payload:
-    description: Trustsec Vn Bulk Delete's payload.
+    description: Trustsec VN Bulk Delete's payload.
     elements: str
     type: list
 requirements:

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: pxgrid_user_group_by_username_info
-short_description: Information module for Pxgrid User Group By Username Info
+short_description: Information module for pxGrid User Group By Username Info
 description:
-- Get Pxgrid User Group By Username Info.
+- Get pxGrid User Group By Username Info.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -28,7 +28,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Pxgrid User Group By Username Info
+- name: Get all pxGrid User Group By Username Info
   cisco.ise.pxgrid_user_group_by_username_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

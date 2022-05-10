@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: trustsec_sg_vn_mapping
-short_description: Resource module for Trustsec Sg Vn Mapping
+short_description: Resource module for Trustsec SG VN Mapping
 description:
-- Manage operations create, update and delete of the resource Trustsec Sg Vn Mapping.
+- Manage operations create, update and delete of the resource Trustsec SG VN Mapping.
 - Create Security Group and Virtual Network mapping.
 - Delete Security Group and Virtual Network mapping.
 - Update Security Group and Virtual Network mapping.

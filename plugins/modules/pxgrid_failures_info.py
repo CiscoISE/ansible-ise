@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: pxgrid_failures_info
-short_description: Information module for Pxgrid Failures
+short_description: Information module for pxGrid Failures
 description:
-- Get all Pxgrid Failures.
+- Get all pxGrid Failures.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -28,7 +28,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Pxgrid Failures
+- name: Get all pxGrid Failures
   cisco.ise.pxgrid_failures_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

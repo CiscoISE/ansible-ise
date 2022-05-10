@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: anc_endpoint_apply
-short_description: Resource module for Anc Endpoint Apply
+short_description: Resource module for ANC Endpoint Apply
 description:
-- Manage operation update of the resource Anc Endpoint Apply.
+- Manage operation update of the resource ANC Endpoint Apply.
 - This API allows the client to apply the required configuration.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -17,14 +17,14 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   additionalData:
-    description: Anc Endpoint Apply's additionalData.
+    description: ANC Endpoint Apply's additionalData.
     elements: dict
     suboptions:
       name:
-        description: Anc Endpoint Apply's name.
+        description: ANC Endpoint Apply's name.
         type: str
       value:
-        description: Anc Endpoint Apply's value.
+        description: ANC Endpoint Apply's value.
         type: str
     type: list
 requirements:

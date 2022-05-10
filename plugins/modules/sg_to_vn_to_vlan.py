@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: sg_to_vn_to_vlan
-short_description: Resource module for Sg To Vn To Vlan
+short_description: Resource module for SG To VN To VLAN
 description:
-- Manage operations create, update and delete of the resource Sg To Vn To Vlan.
+- Manage operations create, update and delete of the resource SG To VN To VLAN.
 - This API creates a security group to virtual network.
 - This API deletes a security group ACL to virtual network.
 - This API allows the client to update a security group to virtual network.
@@ -19,54 +19,54 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   description:
-    description: Sg To Vn To Vlan's description.
+    description: SG To VN To VLAN's description.
     type: str
   id:
-    description: Sg To Vn To Vlan's id.
+    description: SG To VN To VLAN's id.
     type: str
   name:
-    description: Sg To Vn To Vlan's name.
+    description: SG To VN To VLAN's name.
     type: str
   sgtId:
-    description: Sg To Vn To Vlan's sgtId.
+    description: SG To VN To VLAN's sgtId.
     type: str
   virtualnetworklist:
-    description: Sg To Vn To Vlan's virtualnetworklist.
+    description: SG To VN To VLAN's virtualnetworklist.
     elements: dict
     suboptions:
       defaultVirtualNetwork:
         description: DefaultVirtualNetwork flag.
         type: bool
       description:
-        description: Sg To Vn To Vlan's description.
+        description: SG To VN To VLAN's description.
         type: str
       id:
-        description: Sg To Vn To Vlan's id.
+        description: SG To VN To VLAN's id.
         type: str
       name:
-        description: Sg To Vn To Vlan's name.
+        description: SG To VN To VLAN's name.
         type: str
       vlans:
-        description: Sg To Vn To Vlan's vlans.
+        description: SG To VN To VLAN's vlans.
         elements: dict
         suboptions:
           data:
             description: Data flag.
             type: bool
-          defaultVlan:
-            description: DefaultVlan flag.
+          defaultVLAN:
+            description: DefaultVLAN flag.
             type: bool
           description:
-            description: Sg To Vn To Vlan's description.
+            description: SG To VN To VLAN's description.
             type: str
           id:
-            description: Sg To Vn To Vlan's id.
+            description: SG To VN To VLAN's id.
             type: str
           maxValue:
-            description: Sg To Vn To Vlan's maxValue.
+            description: SG To VN To VLAN's maxValue.
             type: int
           name:
-            description: Sg To Vn To Vlan's name.
+            description: SG To VN To VLAN's name.
             type: str
         type: list
     type: list

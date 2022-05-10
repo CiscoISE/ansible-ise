@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: tacacs_command_sets
-short_description: Resource module for Tacacs Command Sets
+short_description: Resource module for TACACS Command Sets
 description:
-- Manage operations create, update and delete of the resource Tacacs Command Sets.
+- Manage operations create, update and delete of the resource TACACS Command Sets.
 - This API creates TACACS command sets.
 - This API deletes TACACS command sets.
 - This API allows the client to update TACACS command sets.
@@ -19,17 +19,17 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   commands:
-    description: Tacacs Command Sets's commands.
+    description: TACACS Command Sets's commands.
     suboptions:
       commandList:
-        description: Tacacs Command Sets's commandList.
+        description: TACACS Command Sets's commandList.
         elements: dict
         suboptions:
           arguments:
-            description: Tacacs Command Sets's arguments.
+            description: TACACS Command Sets's arguments.
             type: str
           command:
-            description: Tacacs Command Sets's command.
+            description: TACACS Command Sets's command.
             type: str
           grant:
             description: Allowed values PERMIT, DENY, DENY_ALWAYS.
@@ -37,13 +37,13 @@ options:
         type: list
     type: dict
   description:
-    description: Tacacs Command Sets's description.
+    description: TACACS Command Sets's description.
     type: str
   id:
-    description: Tacacs Command Sets's id.
+    description: TACACS Command Sets's id.
     type: str
   name:
-    description: Tacacs Command Sets's name.
+    description: TACACS Command Sets's name.
     type: str
   permitUnmatched:
     description: PermitUnmatched flag.

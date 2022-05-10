@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: pxgrid_security_groups_info
-short_description: Information module for Pxgrid Security Groups Info
+short_description: Information module for pxGrid Security Groups Info
 description:
-- Get Pxgrid Security Groups Info.
+- Get pxGrid Security Groups Info.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -28,7 +28,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Pxgrid Security Groups Info
+- name: Get all pxGrid Security Groups Info
   cisco.ise.pxgrid_security_groups_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

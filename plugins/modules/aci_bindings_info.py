@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: aci_bindings_info
-short_description: Information module for Aci Bindings
+short_description: Information module for ACI Bindings
 description:
-- Get all Aci Bindings.
+- Get all ACI Bindings.
 - This API allows clients to retrieve all the bindings that were sent to Cisco.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -55,7 +55,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Aci Bindings
+- name: Get all ACI Bindings
   cisco.ise.aci_bindings_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

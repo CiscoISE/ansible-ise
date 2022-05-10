@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: sg_mapping_group
-short_description: Resource module for Sg Mapping Group
+short_description: Resource module for SG Mapping Group
 description:
-- Manage operations create, update and delete of the resource Sg Mapping Group.
+- Manage operations create, update and delete of the resource SG Mapping Group.
 - This API creates an IP to SGT mapping group.
 - This API deletes an IP to SGT mapping group.
 - This API allows the client to update an IP to SGT mapping group by ID.
@@ -28,7 +28,7 @@ options:
     description: Id path parameter.
     type: str
   name:
-    description: Sg Mapping Group's name.
+    description: SG Mapping Group's name.
     type: str
   sgt:
     description: Mandatory unless mappingGroup is set.

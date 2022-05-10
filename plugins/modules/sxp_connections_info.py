@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: sxp_connections_info
-short_description: Information module for Sxp Connections
+short_description: Information module for SXP Connections
 description:
-- Get all Sxp Connections.
-- Get Sxp Connections by id.
+- Get all SXP Connections.
+- Get SXP Connections by id.
 - This API allows the client to get a SXP connection by ID.
 - This API allows the client to get all the SXP connections.
 version_added: '1.0.0'
@@ -79,7 +79,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Sxp Connections
+- name: Get all SXP Connections
   cisco.ise.sxp_connections_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -93,7 +93,7 @@ EXAMPLES = r"""
     filterType: AND
   register: result
 
-- name: Get Sxp Connections by id
+- name: Get SXP Connections by id
   cisco.ise.sxp_connections_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

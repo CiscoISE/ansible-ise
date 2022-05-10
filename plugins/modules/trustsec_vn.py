@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: trustsec_vn
-short_description: Resource module for Trustsec Vn
+short_description: Resource module for Trustsec VN
 description:
-- Manage operations create, update and delete of the resource Trustsec Vn.
+- Manage operations create, update and delete of the resource Trustsec VN.
 - Create Virtual Network.
 - Update Virtual Network.
 version_added: '2.0.0'

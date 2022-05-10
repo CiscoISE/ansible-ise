@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: pxgrid_session_for_recovery_info
-short_description: Information module for Pxgrid Session For Recovery Info
+short_description: Information module for pxGrid Session For Recovery Info
 description:
-- Get Pxgrid Session For Recovery Info.
+- Get pxGrid Session For Recovery Info.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -28,7 +28,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Pxgrid Session For Recovery Info
+- name: Get all pxGrid Session For Recovery Info
   cisco.ise.pxgrid_session_for_recovery_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

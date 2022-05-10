@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: csr_delete
-short_description: Resource module for Csr Delete
+short_description: Resource module for CSR Delete
 description:
-- Manage operation delete of the resource Csr Delete.
+- Manage operation delete of the resource CSR Delete.
 - This API deletes a Certificate Signing Request of a particular node based on given HostName and ID.
 version_added: '1.0.0'
 extends_documentation_fragment:

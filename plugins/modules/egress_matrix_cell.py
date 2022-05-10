@@ -24,8 +24,8 @@ options:
   description:
     description: Egress Matrix Cell's description.
     type: str
-  destinationSgtId:
-    description: Egress Matrix Cell's destinationSgtId.
+  destinationSGtId:
+    description: Egress Matrix Cell's destinationSGtId.
     type: str
   id:
     description: Egress Matrix Cell's id.
@@ -40,8 +40,8 @@ options:
     description: Egress Matrix Cell's sgacls.
     elements: str
     type: list
-  sourceSgtId:
-    description: Egress Matrix Cell's sourceSgtId.
+  sourceSGtId:
+    description: Egress Matrix Cell's sourceSGtId.
     type: str
 requirements:
 - ciscoisesdk >= 2.0.1

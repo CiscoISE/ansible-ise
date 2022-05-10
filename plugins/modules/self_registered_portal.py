@@ -412,7 +412,7 @@ options:
             description: If true, send credential notification upon approval using email.
               Only valid if requireGuestApproval = true.
             type: bool
-          credentialNotificationUsingSms:
+          credentialNotificationUsingSMS:
             description: If true, send credential notification upon approval using SMS.
               Only valid if requireGuestApproval = true.
             type: bool
@@ -502,8 +502,8 @@ options:
                 description: Only applicable if include = true.
                 type: bool
             type: dict
-          fieldSmsProvider:
-            description: Self Registered Portal's fieldSmsProvider.
+          fieldSMSProvider:
+            description: Self Registered Portal's fieldSMSProvider.
             suboptions:
               include:
                 description: Include flag.
@@ -576,7 +576,7 @@ options:
             description: Guests can choose from these locations to set their time zone.
             elements: str
             type: list
-          selectableSmsProviders:
+          selectableSMSProviders:
             description: This attribute is an array of SMS provider names.
             elements: str
             type: list
@@ -601,8 +601,8 @@ options:
           allowGuestSendSelfUsingPrint:
             description: AllowGuestSendSelfUsingPrint flag.
             type: bool
-          allowGuestSendSelfUsingSms:
-            description: AllowGuestSendSelfUsingSms flag.
+          allowGuestSendSelfUsingSMS:
+            description: AllowGuestSendSelfUsingSMS flag.
             type: bool
           aupOnPage:
             description: AupOnPage flag.
@@ -637,8 +637,8 @@ options:
           includeReasonForVisit:
             description: IncludeReasonForVisit flag.
             type: bool
-          includeSmsProvider:
-            description: IncludeSmsProvider flag.
+          includeSMSProvider:
+            description: IncludeSMSProvider flag.
             type: bool
           includeUserName:
             description: IncludeUserName flag.

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: byod_portal
-short_description: Resource module for Byod Portal
+short_description: Resource module for BYOD Portal
 description:
-- Manage operations create, update and delete of the resource Byod Portal.
+- Manage operations create, update and delete of the resource BYOD Portal.
 - This API creates a BYOD portal.
 - This API deletes a BYOD portal by ID.
 - This API allows the client to update a BYOD portal by ID.
@@ -25,7 +25,7 @@ options:
         description: Represent the portal Global customizations.
         suboptions:
           backgroundImage:
-            description: Byod Portal's backgroundImage.
+            description: BYOD Portal's backgroundImage.
             suboptions:
               data:
                 description: Represented as base 64 encoded string of the image byte
@@ -33,7 +33,7 @@ options:
                 type: str
             type: dict
           bannerImage:
-            description: Byod Portal's bannerImage.
+            description: BYOD Portal's bannerImage.
             suboptions:
               data:
                 description: Represented as base 64 encoded string of the image byte
@@ -41,13 +41,13 @@ options:
                 type: str
             type: dict
           bannerTitle:
-            description: Byod Portal's bannerTitle.
+            description: BYOD Portal's bannerTitle.
             type: str
           contactText:
-            description: Byod Portal's contactText.
+            description: BYOD Portal's contactText.
             type: str
           desktopLogoImage:
-            description: Byod Portal's desktopLogoImage.
+            description: BYOD Portal's desktopLogoImage.
             suboptions:
               data:
                 description: Represented as base 64 encoded string of the image byte
@@ -55,10 +55,10 @@ options:
                 type: str
             type: dict
           footerElement:
-            description: Byod Portal's footerElement.
+            description: BYOD Portal's footerElement.
             type: str
           mobileLogoImage:
-            description: Byod Portal's mobileLogoImage.
+            description: BYOD Portal's mobileLogoImage.
             suboptions:
               data:
                 description: Represented as base 64 encoded string of the image byte
@@ -71,7 +71,7 @@ options:
           to show the customizations in English. Other languages are not supported.
         suboptions:
           viewLanguage:
-            description: Byod Portal's viewLanguage.
+            description: BYOD Portal's viewLanguage.
             type: str
         type: dict
       pageCustomizations:
@@ -82,10 +82,10 @@ options:
             elements: dict
             suboptions:
               key:
-                description: Byod Portal's key.
+                description: BYOD Portal's key.
                 type: str
               value:
-                description: Byod Portal's value.
+                description: BYOD Portal's value.
                 type: str
             type: list
         type: dict
@@ -112,18 +112,18 @@ options:
             description: Hex value of color.
             type: str
           bannerTextColor:
-            description: Byod Portal's bannerTextColor.
+            description: BYOD Portal's bannerTextColor.
             type: str
           pageBackgroundColor:
-            description: Byod Portal's pageBackgroundColor.
+            description: BYOD Portal's pageBackgroundColor.
             type: str
           pageLabelAndTextColor:
-            description: Byod Portal's pageLabelAndTextColor.
+            description: BYOD Portal's pageLabelAndTextColor.
             type: str
         type: dict
     type: dict
   description:
-    description: Byod Portal's description.
+    description: BYOD Portal's description.
     type: str
   id:
     description: Resource UUID, mandatory for update.
@@ -146,17 +146,17 @@ options:
           steps.
         suboptions:
           byodRegistrationSettings:
-            description: Byod Portal's byodRegistrationSettings.
+            description: BYOD Portal's byodRegistrationSettings.
             suboptions:
               endPointIdentityGroupId:
-                description: Byod Portal's endPointIdentityGroupId.
+                description: BYOD Portal's endPointIdentityGroupId.
                 type: str
               showDeviceID:
                 description: ShowDeviceID flag.
                 type: bool
             type: dict
           byodRegistrationSuccessSettings:
-            description: Byod Portal's byodRegistrationSuccessSettings.
+            description: BYOD Portal's byodRegistrationSuccessSettings.
             suboptions:
               redirectUrl:
                 description: Target URL for redirection, used when successRedirect =
@@ -228,7 +228,7 @@ options:
             type: int
         type: dict
       supportInfoSettings:
-        description: Byod Portal's supportInfoSettings.
+        description: BYOD Portal's supportInfoSettings.
         suboptions:
           defaultEmptyFieldValue:
             description: The default value displayed for an empty field. Only valid

@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: trustsec_vn_vlan_mapping
-short_description: Resource module for Trustsec Vn Vlan Mapping
+short_description: Resource module for Trustsec VN VLAN Mapping
 description:
-- Manage operations create, update and delete of the resource Trustsec Vn Vlan Mapping.
+- Manage operations create, update and delete of the resource Trustsec VN VLAN Mapping.
 - Create VN-Vlan Mapping.
 - Update VN-Vlan Mapping.
 version_added: '2.0.0'
@@ -18,22 +18,22 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   id:
-    description: Identifier of the VN-Vlan Mapping.
+    description: Identifier of the VN-VLAN Mapping.
     type: str
   isData:
-    description: Flag which indicates whether the Vlan is data or voice type.
+    description: Flag which indicates whether the VLAN is data or voice type.
     type: bool
-  isDefaultVlan:
-    description: Flag which indicates if the Vlan is default.
+  isDefaultVLAN:
+    description: Flag which indicates if the VLAN is default.
     type: bool
   lastUpdate:
-    description: Timestamp for the last update of the VN-Vlan Mapping.
+    description: Timestamp for the last update of the VN-VLAN Mapping.
     type: str
   maxValue:
     description: Max value.
     type: int
   name:
-    description: Name of the Vlan.
+    description: Name of the VLAN.
     type: str
   vnId:
     description: Identifier for the associated Virtual Network which is required unless

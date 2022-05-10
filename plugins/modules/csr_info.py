@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: csr_info
-short_description: Information module for Csr
+short_description: Information module for CSR
 description:
-- Get all Csr.
-- Get Csr by id.
+- Get all CSR.
+- Get CSR by id.
 - This API displays details of a Certificate Signing Request of a particular node for given HostName and ID.
 - This API supports Filtering, Sorting and Pagination.
 version_added: '1.0.0'
@@ -87,7 +87,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Csr
+- name: Get all CSR
   cisco.ise.csr_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -101,7 +101,7 @@ EXAMPLES = r"""
     filterType: string
   register: result
 
-- name: Get Csr by id
+- name: Get CSR by id
   cisco.ise.csr_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

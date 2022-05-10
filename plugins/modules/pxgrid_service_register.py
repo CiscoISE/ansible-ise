@@ -7,16 +7,16 @@
 DOCUMENTATION = r"""
 ---
 module: pxgrid_service_register
-short_description: Resource module for Pxgrid Service Register
+short_description: Resource module for pxGrid Service Register
 description:
-- Manage operation create of the resource Pxgrid Service Register.
+- Manage operation create of the resource pxGrid Service Register.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   name:
-    description: Pxgrid Service Register's name.
+    description: pxGrid Service Register's name.
     type: str
 requirements:
 - ciscoisesdk >= 2.0.1

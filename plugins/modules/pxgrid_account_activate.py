@@ -7,16 +7,16 @@
 DOCUMENTATION = r"""
 ---
 module: pxgrid_account_activate
-short_description: Resource module for Pxgrid Account Activate
+short_description: Resource module for pxGrid Account Activate
 description:
-- Manage operation create of the resource Pxgrid Account Activate.
+- Manage operation create of the resource pxGrid Account Activate.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   description:
-    description: Pxgrid Account Activate's description.
+    description: pxGrid Account Activate's description.
     type: str
 requirements:
 - ciscoisesdk >= 2.0.1

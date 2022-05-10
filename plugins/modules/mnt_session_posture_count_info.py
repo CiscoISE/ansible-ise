@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: mnt_session_posture_count_info
-short_description: Information module for Mnt Session Posture Count
+short_description: Information module for MNT Session Posture Count
 description:
-- Get all Mnt Session Posture Count.
+- Get all MNT Session Posture Count.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -28,7 +28,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Mnt Session Posture Count
+- name: Get all MNT Session Posture Count
   cisco.ise.mnt_session_posture_count_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: sgt_info
-short_description: Information module for Sgt
+short_description: Information module for SGt
 description:
-- Get all Sgt.
-- Get Sgt by id.
+- Get all SGt.
+- Get SGt by id.
 - This API allows the client to get a security group by ID.
 - This API allows the client to get all the security groups.
 version_added: '1.0.0'
@@ -83,7 +83,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Sgt
+- name: Get all SGt
   cisco.ise.sgt_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -97,7 +97,7 @@ EXAMPLES = r"""
     filterType: AND
   register: result
 
-- name: Get Sgt by id
+- name: Get SGt by id
   cisco.ise.sgt_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

@@ -7,11 +7,11 @@
 DOCUMENTATION = r"""
 ---
 module: tacacs_external_servers_info
-short_description: Information module for Tacacs External Servers
+short_description: Information module for TACACS External Servers
 description:
-- Get all Tacacs External Servers.
-- Get Tacacs External Servers by id.
-- Get Tacacs External Servers by name.
+- Get all TACACS External Servers.
+- Get TACACS External Servers by id.
+- Get TACACS External Servers by name.
 - This API allows the client to get TACACS external servers by ID.
 - This API allows the client to get TACACS external servers by name.
 - This API allows the client to get all the TACACS external servers.
@@ -53,7 +53,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Tacacs External Servers
+- name: Get all TACACS External Servers
   cisco.ise.tacacs_external_servers_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -63,7 +63,7 @@ EXAMPLES = r"""
     size: 20
   register: result
 
-- name: Get Tacacs External Servers by id
+- name: Get TACACS External Servers by id
   cisco.ise.tacacs_external_servers_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -72,7 +72,7 @@ EXAMPLES = r"""
     id: string
   register: result
 
-- name: Get Tacacs External Servers by name
+- name: Get TACACS External Servers by name
   cisco.ise.tacacs_external_servers_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

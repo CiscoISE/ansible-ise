@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: sg_acl_info
-short_description: Information module for Sg Acl
+short_description: Information module for SGACL
 description:
-- Get all Sg Acl.
-- Get Sg Acl by id.
+- Get all SGACL.
+- Get SGACL by id.
 - This API allows the client to get a security group ACL by ID.
 - This API allows the client to get all the security group ACLs.
 version_added: '1.0.0'
@@ -83,7 +83,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Sg Acl
+- name: Get all SGACL
   cisco.ise.sg_acl_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -97,7 +97,7 @@ EXAMPLES = r"""
     filterType: AND
   register: result
 
-- name: Get Sg Acl by id
+- name: Get SGACL by id
   cisco.ise.sg_acl_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

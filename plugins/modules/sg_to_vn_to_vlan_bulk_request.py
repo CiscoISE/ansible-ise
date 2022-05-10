@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: sg_to_vn_to_vlan_bulk_request
-short_description: Resource module for Sg To Vn To Vlan Bulk Request
+short_description: Resource module for SG To VN To VLAN Bulk Request
 description:
-- Manage operation update of the resource Sg To Vn To Vlan Bulk Request.
+- Manage operation update of the resource SG To VN To VLAN Bulk Request.
 - This API allows the client to submit the bulk request.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -17,10 +17,10 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   operationType:
-    description: Sg To Vn To Vlan Bulk Request's operationType.
+    description: SG To VN To VLAN Bulk Request's operationType.
     type: str
   resourceMediaType:
-    description: Sg To Vn To Vlan Bulk Request's resourceMediaType.
+    description: SG To VN To VLAN Bulk Request's resourceMediaType.
     type: str
 requirements:
 - ciscoisesdk >= 2.0.1

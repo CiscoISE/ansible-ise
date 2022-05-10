@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: guest_ssid
-short_description: Resource module for Guest Ssid
+short_description: Resource module for Guest SSID
 description:
-- Manage operations create, update and delete of the resource Guest Ssid.
+- Manage operations create, update and delete of the resource Guest SSID.
 - This API creates a guest SSID.
 - This API deletes a guest SSID by ID.
 - This API allows the client to update a guest SSID by ID.
@@ -19,7 +19,7 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   id:
-    description: Guest Ssid's id.
+    description: Guest SSID's id.
     type: str
   name:
     description: Resource Name. Name may contain alphanumeric or any of the following

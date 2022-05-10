@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: sxp_vpns_info
-short_description: Information module for Sxp Vpns
+short_description: Information module for SXP VPNs
 description:
-- Get all Sxp Vpns.
-- Get Sxp Vpns by id.
+- Get all SXP VPNs.
+- Get SXP VPNs by id.
 - This API allows the client to get a SXP VPN by ID.
 - This API allows the client to get all the SXP VPNs.
 version_added: '1.0.0'
@@ -79,7 +79,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Sxp Vpns
+- name: Get all SXP VPNs
   cisco.ise.sxp_vpns_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -93,7 +93,7 @@ EXAMPLES = r"""
     sortdsc: string
   register: result
 
-- name: Get Sxp Vpns by id
+- name: Get SXP VPNs by id
   cisco.ise.sxp_vpns_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

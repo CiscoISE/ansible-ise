@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: pxgrid_sessions_info
-short_description: Information module for Pxgrid Sessions Info
+short_description: Information module for pxGrid Sessions Info
 description:
-- Get Pxgrid Sessions Info.
+- Get pxGrid Sessions Info.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -28,7 +28,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Pxgrid Sessions Info
+- name: Get all pxGrid Sessions Info
   cisco.ise.pxgrid_sessions_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

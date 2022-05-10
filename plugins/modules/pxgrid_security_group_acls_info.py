@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: pxgrid_security_group_acls_info
-short_description: Information module for Pxgrid Security Group Acls Info
+short_description: Information module for pxGrid Security Group ACLs Info
 description:
-- Get Pxgrid Security Group Acls Info.
+- Get pxGrid Security Group ACLs Info.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -28,7 +28,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Pxgrid Security Group Acls Info
+- name: Get all pxGrid Security Group ACLs Info
   cisco.ise.pxgrid_security_group_acls_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

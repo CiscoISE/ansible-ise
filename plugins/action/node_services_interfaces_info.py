@@ -81,12 +81,18 @@ class ActionModule(ActionBase):
 
         id = self._task.args.get("id")
         name = self._task.args.get("hostname")
-        if not name and not id:
+        if name:
             response = ise.exec(
                 family="node_services",
                 function='get_interfaces',
                 params=self.get_object(self._task.args)
             ).response['response']
+            self._result.update(dict(ise_response=response))
+            self._result.update(ise.exit_json())
+            return self._result
+        if not name and not id:
+            # NOTICE: Does not have a get all method or it is in another action
+            response = None
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

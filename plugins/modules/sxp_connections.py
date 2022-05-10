@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: sxp_connections
-short_description: Resource module for Sxp Connections
+short_description: Resource module for SXP Connections
 description:
-- Manage operations create, update and delete of the resource Sxp Connections.
+- Manage operations create, update and delete of the resource SXP Connections.
 - This API creates a SXP connection.
 - This API deletes a SXP connection.
 - This API allows the client to update a SXP connection.
@@ -19,31 +19,31 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   description:
-    description: Sxp Connections's description.
+    description: SXP Connections's description.
     type: str
   enabled:
     description: Enabled flag.
     type: bool
   id:
-    description: Sxp Connections's id.
+    description: SXP Connections's id.
     type: str
   ipAddress:
-    description: Sxp Connections's ipAddress.
+    description: SXP Connections's ipAddress.
     type: str
   sxpMode:
-    description: Sxp Connections's sxpMode.
+    description: SXP Connections's sxpMode.
     type: str
   sxpNode:
-    description: Sxp Connections's sxpNode.
+    description: SXP Connections's sxpNode.
     type: str
   sxpPeer:
-    description: Sxp Connections's sxpPeer.
+    description: SXP Connections's sxpPeer.
     type: str
   sxpVersion:
-    description: Sxp Connections's sxpVersion.
+    description: SXP Connections's sxpVersion.
     type: str
   sxpVpn:
-    description: Sxp Connections's sxpVpn.
+    description: SXP Connections's sxpVpn.
     type: str
 requirements:
 - ciscoisesdk >= 2.0.1

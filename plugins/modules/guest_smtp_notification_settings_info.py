@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: guest_smtp_notification_settings_info
-short_description: Information module for Guest Smtp Notification Settings
+short_description: Information module for Guest SMTP Notification Settings
 description:
-- Get all Guest Smtp Notification Settings.
-- Get Guest Smtp Notification Settings by id.
+- Get all Guest SMTP Notification Settings.
+- Get Guest SMTP Notification Settings by id.
 - This API allows the client to get a guest SMTP notification configuration by.
 - This API allows the client to get all the guest SMTP notification.
 version_added: '1.0.0'
@@ -79,7 +79,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Guest Smtp Notification Settings
+- name: Get all Guest SMTP Notification Settings
   cisco.ise.guest_smtp_notification_settings_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -93,7 +93,7 @@ EXAMPLES = r"""
     filterType: AND
   register: result
 
-- name: Get Guest Smtp Notification Settings by id
+- name: Get Guest SMTP Notification Settings by id
   cisco.ise.guest_smtp_notification_settings_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

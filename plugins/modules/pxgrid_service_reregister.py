@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: pxgrid_service_reregister
-short_description: Resource module for Pxgrid Service Reregister
+short_description: Resource module for pxGrid Service Reregister
 description:
-- Manage operation create of the resource Pxgrid Service Reregister.
+- Manage operation create of the resource pxGrid Service Reregister.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module

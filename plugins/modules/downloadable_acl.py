@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: downloadable_acl
-short_description: Resource module for Downloadable Acl
+short_description: Resource module for Downloadable ACL
 description:
-- Manage operations create, update and delete of the resource Downloadable Acl.
+- Manage operations create, update and delete of the resource Downloadable ACL.
 - This API creates a downloadable ACL.
 - This API deletes a downloadable ACL.
 - This API allows the client to update a downloadable ACL.
@@ -28,7 +28,7 @@ options:
     description: Use the string \\n for a newline.
     type: str
   id:
-    description: Downloadable Acl's id.
+    description: Downloadable ACL's id.
     type: str
   name:
     description: Resource Name. Name may contain alphanumeric or any of the following

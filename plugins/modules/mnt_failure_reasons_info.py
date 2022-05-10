@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: mnt_failure_reasons_info
-short_description: Information module for Mnt Failure Reasons
+short_description: Information module for MNT Failure Reasons
 description:
-- Get all Mnt Failure Reasons.
+- Get all MNT Failure Reasons.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -28,7 +28,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Mnt Failure Reasons
+- name: Get all MNT Failure Reasons
   cisco.ise.mnt_failure_reasons_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

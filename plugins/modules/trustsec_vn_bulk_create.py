@@ -7,16 +7,16 @@
 DOCUMENTATION = r"""
 ---
 module: trustsec_vn_bulk_create
-short_description: Resource module for Trustsec Vn Bulk Create
+short_description: Resource module for Trustsec VN Bulk Create
 description:
-- Manage operation create of the resource Trustsec Vn Bulk Create.
+- Manage operation create of the resource Trustsec VN Bulk Create.
 version_added: '2.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   payload:
-    description: Trustsec Vn Bulk Create's payload.
+    description: Trustsec VN Bulk Create's payload.
     elements: dict
     suboptions:
       additionalAttributes:

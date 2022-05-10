@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: sg_mapping_group_bulk_request
-short_description: Resource module for Sg Mapping Group Bulk Request
+short_description: Resource module for SG Mapping Group Bulk Request
 description:
-- Manage operation update of the resource Sg Mapping Group Bulk Request.
+- Manage operation update of the resource SG Mapping Group Bulk Request.
 - This API allows the client to submit the bulk request.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -17,10 +17,10 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   operationType:
-    description: Sg Mapping Group Bulk Request's operationType.
+    description: SG Mapping Group Bulk Request's operationType.
     type: str
   resourceMediaType:
-    description: Sg Mapping Group Bulk Request's resourceMediaType.
+    description: SG Mapping Group Bulk Request's resourceMediaType.
     type: str
 requirements:
 - ciscoisesdk >= 2.0.1

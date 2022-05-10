@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: sg_mapping_group_info
-short_description: Information module for Sg Mapping Group
+short_description: Information module for SG Mapping Group
 description:
-- Get all Sg Mapping Group.
-- Get Sg Mapping Group by id.
+- Get all SG Mapping Group.
+- Get SG Mapping Group by id.
 - This API allows the client to get all the IP to SGT mapping groups.
 - This API allows the client to get an IP to SGT mapping group by ID.
 version_added: '1.0.0'
@@ -83,7 +83,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Sg Mapping Group
+- name: Get all SG Mapping Group
   cisco.ise.sg_mapping_group_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -97,7 +97,7 @@ EXAMPLES = r"""
     filterType: AND
   register: result
 
-- name: Get Sg Mapping Group by id
+- name: Get SG Mapping Group by id
   cisco.ise.sg_mapping_group_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

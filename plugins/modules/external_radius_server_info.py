@@ -7,11 +7,11 @@
 DOCUMENTATION = r"""
 ---
 module: external_radius_server_info
-short_description: Information module for External Radius Server
+short_description: Information module for External RADIUS Server
 description:
-- Get all External Radius Server.
-- Get External Radius Server by id.
-- Get External Radius Server by name.
+- Get all External RADIUS Server.
+- Get External RADIUS Server by id.
+- Get External RADIUS Server by name.
 - This API allows the client to get all the external RADIUS servers.
 - This API allows the client to get an external RADIUS server by ID.
 - This API allows the client to get an external RADIUS server by name.
@@ -53,7 +53,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all External Radius Server
+- name: Get all External RADIUS Server
   cisco.ise.external_radius_server_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -63,7 +63,7 @@ EXAMPLES = r"""
     size: 20
   register: result
 
-- name: Get External Radius Server by id
+- name: Get External RADIUS Server by id
   cisco.ise.external_radius_server_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -72,7 +72,7 @@ EXAMPLES = r"""
     id: string
   register: result
 
-- name: Get External Radius Server by name
+- name: Get External RADIUS Server by name
   cisco.ise.external_radius_server_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

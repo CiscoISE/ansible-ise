@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: guest_smtp_notification_settings
-short_description: Resource module for Guest Smtp Notification Settings
+short_description: Resource module for Guest SMTP Notification Settings
 description:
-- Manage operations create and update of the resource Guest Smtp Notification Settings.
+- Manage operations create and update of the resource Guest SMTP Notification Settings.
 - This API creates a guest SMTP notification configuration.
 - This API allows the client to update a SMTP configuration setting.
 version_added: '1.0.0'
@@ -24,7 +24,7 @@ options:
     description: The default from email address to be used to send emails from.
     type: str
   id:
-    description: Guest Smtp Notification Settings's id.
+    description: Guest SMTP Notification Settings's id.
     type: str
   notificationEnabled:
     description: Indicates if the email notification service is to be enabled.

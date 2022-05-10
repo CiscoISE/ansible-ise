@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: guest_user_sms
-short_description: Resource module for Guest User Sms
+short_description: Resource module for Guest User SMS
 description:
-- Manage operation update of the resource Guest User Sms.
+- Manage operation update of the resource Guest User SMS.
 - This API allows the client to update a guest user sms by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:

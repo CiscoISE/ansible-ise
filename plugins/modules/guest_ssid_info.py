@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: guest_ssid_info
-short_description: Information module for Guest Ssid
+short_description: Information module for Guest SSID
 description:
-- Get all Guest Ssid.
-- Get Guest Ssid by id.
+- Get all Guest SSID.
+- Get Guest SSID by id.
 - This API allows the client to get a guest SSID by ID.
 - This API allows the client to get all the guest SSIDs.
 version_added: '1.0.0'
@@ -79,7 +79,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Guest Ssid
+- name: Get all Guest SSID
   cisco.ise.guest_ssid_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -93,7 +93,7 @@ EXAMPLES = r"""
     filterType: AND
   register: result
 
-- name: Get Guest Ssid by id
+- name: Get Guest SSID by id
   cisco.ise.guest_ssid_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

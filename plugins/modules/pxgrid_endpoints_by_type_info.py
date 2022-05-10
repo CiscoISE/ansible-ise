@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: pxgrid_endpoints_by_type_info
-short_description: Information module for Pxgrid Endpoints By Type Info
+short_description: Information module for pxGrid Endpoints By Type Info
 description:
-- Get Pxgrid Endpoints By Type Info.
+- Get pxGrid Endpoints By Type Info.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -28,7 +28,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Pxgrid Endpoints By Type Info
+- name: Get all pxGrid Endpoints By Type Info
   cisco.ise.pxgrid_endpoints_by_type_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

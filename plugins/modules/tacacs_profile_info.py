@@ -7,11 +7,11 @@
 DOCUMENTATION = r"""
 ---
 module: tacacs_profile_info
-short_description: Information module for Tacacs Profile
+short_description: Information module for TACACS Profile
 description:
-- Get all Tacacs Profile.
-- Get Tacacs Profile by id.
-- Get Tacacs Profile by name.
+- Get all TACACS Profile.
+- Get TACACS Profile by id.
+- Get TACACS Profile by name.
 - This API allows the client to get a TACACS profile by ID.
 - This API allows the client to get a TACACS profile by name.
 - This API allows the client to get all the TACACS profiles.
@@ -53,7 +53,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Tacacs Profile
+- name: Get all TACACS Profile
   cisco.ise.tacacs_profile_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -63,7 +63,7 @@ EXAMPLES = r"""
     size: 20
   register: result
 
-- name: Get Tacacs Profile by id
+- name: Get TACACS Profile by id
   cisco.ise.tacacs_profile_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -72,7 +72,7 @@ EXAMPLES = r"""
     id: string
   register: result
 
-- name: Get Tacacs Profile by name
+- name: Get TACACS Profile by name
   cisco.ise.tacacs_profile_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

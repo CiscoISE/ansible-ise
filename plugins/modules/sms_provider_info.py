@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: sms_provider_info
-short_description: Information module for Sms Provider
+short_description: Information module for SMS Provider
 description:
-- Get all Sms Provider.
+- Get all SMS Provider.
 - This API allows the client to get all the SMS providers.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -71,7 +71,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Sms Provider
+- name: Get all SMS Provider
   cisco.ise.sms_provider_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

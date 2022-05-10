@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: trustsec_nbar_app_info
-short_description: Information module for Trustsec Nbar App
+short_description: Information module for Trustsec NBAR App
 description:
-- Get all Trustsec Nbar App.
-- Get Trustsec Nbar App by id.
+- Get all Trustsec NBAR App.
+- Get Trustsec NBAR App by id.
 - Get NBAR Application by id.
 - Get all NBAR Applications.
 version_added: '2.0.0'
@@ -83,7 +83,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Trustsec Nbar App
+- name: Get all Trustsec NBAR App
   cisco.ise.trustsec_nbar_app_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -97,7 +97,7 @@ EXAMPLES = r"""
     filterType: string
   register: result
 
-- name: Get Trustsec Nbar App by id
+- name: Get Trustsec NBAR App by id
   cisco.ise.trustsec_nbar_app_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

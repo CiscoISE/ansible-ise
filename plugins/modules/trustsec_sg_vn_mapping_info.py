@@ -7,10 +7,10 @@
 DOCUMENTATION = r"""
 ---
 module: trustsec_sg_vn_mapping_info
-short_description: Information module for Trustsec Sg Vn Mapping
+short_description: Information module for Trustsec SG VN Mapping
 description:
-- Get all Trustsec Sg Vn Mapping.
-- Get Trustsec Sg Vn Mapping by id.
+- Get all Trustsec SG VN Mapping.
+- Get Trustsec SG VN Mapping by id.
 - Get Security Group and Virtual Network mapping by id.
 - Get all Security Group and Virtual Network mappings.
 version_added: '2.0.0'
@@ -83,7 +83,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Trustsec Sg Vn Mapping
+- name: Get all Trustsec SG VN Mapping
   cisco.ise.trustsec_sg_vn_mapping_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -97,7 +97,7 @@ EXAMPLES = r"""
     filterType: string
   register: result
 
-- name: Get Trustsec Sg Vn Mapping by id
+- name: Get Trustsec SG VN Mapping by id
   cisco.ise.trustsec_sg_vn_mapping_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"

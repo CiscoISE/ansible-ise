@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: sg_mapping_deploy_status_info
-short_description: Information module for Sg Mapping Deploy Status
+short_description: Information module for SG Mapping Deploy Status
 description:
-- Get all Sg Mapping Deploy Status.
+- Get all SG Mapping Deploy Status.
 - This API allows the client to get the IP to SGT mapping deployment status.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -33,7 +33,7 @@ notes:
 """
 
 EXAMPLES = r"""
-- name: Get all Sg Mapping Deploy Status
+- name: Get all SG Mapping Deploy Status
   cisco.ise.sg_mapping_deploy_status_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
