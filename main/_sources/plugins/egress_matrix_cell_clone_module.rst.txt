@@ -42,7 +42,7 @@ cisco.ise.egress_matrix_cell_clone module -- Resource module for Egress Matrix C
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -87,10 +87,15 @@ The below requirements are needed on the host that executes this module.
 - python >= 3.5
 
 
+
+
+
+
 .. Options
 
 Parameters
 ----------
+
 
 .. rst-class:: ansible-option-table
 
@@ -105,17 +110,17 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-dstSgtId"></div>
+        <div class="ansibleOptionAnchor" id="parameter-dstSGtId"></div>
 
       .. _ansible_collections.cisco.ise.egress_matrix_cell_clone_module__parameter-dstsgtid:
 
       .. rst-class:: ansible-option-title
 
-      **dstSgtId**
+      **dstSGtId**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-dstSgtId" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-dstSGtId" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -129,7 +134,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      DstSgtId path parameter.
+      DstSGtId path parameter.
 
 
       .. raw:: html
@@ -532,17 +537,17 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-srcSgtId"></div>
+        <div class="ansibleOptionAnchor" id="parameter-srcSGtId"></div>
 
       .. _ansible_collections.cisco.ise.egress_matrix_cell_clone_module__parameter-srcsgtid:
 
       .. rst-class:: ansible-option-title
 
-      **srcSgtId**
+      **srcSGtId**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-srcSgtId" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-srcSGtId" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -556,7 +561,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      SrcSgtId path parameter.
+      SrcSGtId path parameter.
 
 
       .. raw:: html
@@ -574,7 +579,7 @@ Notes
 
 .. note::
    - SDK Method used are egress_matrix_cell.EgressMatrixCell.clone_matrix_cell,
-   - Paths used are put /ers/config/egressmatrixcell/clonecell/{id}/srcSgt/{srcSgtId}/dstSgt/{dstSgtId}
+   - Paths used are put /ers/config/egressmatrixcell/clonecell/{id}/srcSgt/{srcSgtId}/dstSgt/{dstSgtId},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection

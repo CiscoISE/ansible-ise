@@ -42,7 +42,7 @@ cisco.ise.system_certificate_export_info module -- Information module for System
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -69,7 +69,7 @@ Synopsis
 .. Description
 
 - Get System Certificate Export Info.
-- \#\#\# Export System Certificate.
+- Export System Certificate.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -87,10 +87,15 @@ The below requirements are needed on the host that executes this module.
 - python >= 3.5
 
 
+
+
+
+
 .. Options
 
 Parameters
 ----------
+
 
 .. rst-class:: ansible-option-table
 
@@ -164,6 +169,40 @@ Parameters
         <div class="ansible-option-cell">
 
       System Certificate Export Info's export.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-filename"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_export_info_module__parameter-filename:
+
+      .. rst-class:: ansible-option-title
+
+      **filename**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-filename" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The filename used to save the download file.
 
 
       .. raw:: html
@@ -649,13 +688,20 @@ Notes
 
 .. note::
    - SDK Method used are certificates.Certificates.export_system_certificate,
-   - Paths used are post /api/v1/certs/system-certificate/export,
+   - Paths used are
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco ISE documentation for Certificates <https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi>`_
+       Complete reference of the Certificates API.
 
 .. Examples
 
@@ -673,6 +719,7 @@ Examples
         ise_verify: "{{ise_verify}}"
         dirPath: /tmp/downloads/
         export: string
+        filename: download_filename.extension
         id: string
         password: string
         saveFile: true
@@ -717,7 +764,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`dictionary`
+      :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -737,7 +784,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"data\\": \\"filecontent\\",\\n  \\"filename\\": \\"filename\\",\\n  \\"dirpath\\": \\"download/directory\\",\\n  \\"path\\": \\"download/directory/filename\\"\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` "\\"\\u0027string\\u0027\\"\\n"
 
 
       .. raw:: html

@@ -42,7 +42,7 @@ cisco.ise.licensing_tier_state_create module -- Resource module for Licensing Ti
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -69,7 +69,7 @@ Synopsis
 .. Description
 
 - Manage operation create of the resource Licensing Tier State Create.
-- Applicable values for  name  &  status  parameters     name are ESSENTIAL, ADVANTAGE, PREMIER, DEVICEADMIN,   status are ENABLED, DISABLED.
+- Applicable values for **name** & **status** parameters.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -87,10 +87,15 @@ The below requirements are needed on the host that executes this module.
 - python >= 3.5
 
 
+
+
+
+
 .. Options
 
 Parameters
 ----------
+
 
 .. rst-class:: ansible-option-table
 
@@ -575,13 +580,20 @@ Notes
 
 .. note::
    - SDK Method used are licensing.Licensing.update_tier_state_info,
-   - Paths used are post /api/v1/license/system/tier-state
+   - Paths used are post /api/v1/license/system/tier-state,
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco ISE documentation for Licensing <https://developer.cisco.com/docs/identity-services-engine/v1/#!license-openapi>`_
+       Complete reference of the Licensing API.
 
 .. Examples
 

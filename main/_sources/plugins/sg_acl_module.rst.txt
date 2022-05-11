@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.sg_acl module -- Resource module for Sg Acl
-+++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.ise.sg_acl module -- Resource module for SGACL
+++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -68,9 +68,10 @@ Synopsis
 
 .. Description
 
-- Manage operations create, update and delete of the resource Sg Acl.
+- Manage operations create, update and delete of the resource SGACL.
 - This API creates a security group ACL.
 - This API deletes a security group ACL.
+- This API allows the client to update a security group ACL.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -88,10 +89,15 @@ The below requirements are needed on the host that executes this module.
 - python >= 3.5
 
 
+
+
+
+
 .. Options
 
 Parameters
 ----------
+
 
 .. rst-class:: ansible-option-table
 
@@ -130,7 +136,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Sg Acl's aclcontent.
+      SGACL's aclcontent.
 
 
       .. raw:: html
@@ -164,7 +170,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Sg Acl's description.
+      SGACL's description.
 
 
       .. raw:: html
@@ -198,7 +204,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Sg Acl's generationId.
+      SGACL's generationId.
 
 
       .. raw:: html
@@ -232,7 +238,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Sg Acl's id.
+      SGACL's id.
 
 
       .. raw:: html
@@ -734,7 +740,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Sg Acl's name.
+      SGACL's name.
 
 
       .. raw:: html
@@ -752,13 +758,20 @@ Notes
 
 .. note::
    - SDK Method used are security_groups_acls.SecurityGroupsAcls.create_security_groups_acl, security_groups_acls.SecurityGroupsAcls.delete_security_groups_acl_by_id, security_groups_acls.SecurityGroupsAcls.update_security_groups_acl_by_id,
-   - Paths used are post /ers/config/sgacl, delete /ers/config/sgacl/{id},
+   - Paths used are post /ers/config/sgacl, delete /ers/config/sgacl/{id}, put /ers/config/sgacl/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco ISE documentation for SecurityGroupsACLs <https://developer.cisco.com/docs/identity-services-engine/v1/#!sgacl>`_
+       Complete reference of the SecurityGroupsACLs API.
 
 .. Examples
 

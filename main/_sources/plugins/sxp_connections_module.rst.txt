@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.sxp_connections module -- Resource module for Sxp Connections
+cisco.ise.sxp_connections module -- Resource module for SXP Connections
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -68,9 +68,10 @@ Synopsis
 
 .. Description
 
-- Manage operations create, update and delete of the resource Sxp Connections.
+- Manage operations create, update and delete of the resource SXP Connections.
 - This API creates a SXP connection.
 - This API deletes a SXP connection.
+- This API allows the client to update a SXP connection.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -88,10 +89,15 @@ The below requirements are needed on the host that executes this module.
 - python >= 3.5
 
 
+
+
+
+
 .. Options
 
 Parameters
 ----------
+
 
 .. rst-class:: ansible-option-table
 
@@ -130,7 +136,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Sxp Connections's description.
+      SXP Connections's description.
 
 
       .. raw:: html
@@ -205,7 +211,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Sxp Connections's id.
+      SXP Connections's id.
 
 
       .. raw:: html
@@ -239,7 +245,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Sxp Connections's ipAddress.
+      SXP Connections's ipAddress.
 
 
       .. raw:: html
@@ -632,7 +638,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Sxp Connections's sxpMode.
+      SXP Connections's sxpMode.
 
 
       .. raw:: html
@@ -666,7 +672,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Sxp Connections's sxpNode.
+      SXP Connections's sxpNode.
 
 
       .. raw:: html
@@ -700,7 +706,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Sxp Connections's sxpPeer.
+      SXP Connections's sxpPeer.
 
 
       .. raw:: html
@@ -734,7 +740,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Sxp Connections's sxpVersion.
+      SXP Connections's sxpVersion.
 
 
       .. raw:: html
@@ -768,7 +774,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Sxp Connections's sxpVpn.
+      SXP Connections's sxpVpn.
 
 
       .. raw:: html
@@ -786,7 +792,7 @@ Notes
 
 .. note::
    - SDK Method used are sxp_connections.SxpConnections.create_sxp_connections, sxp_connections.SxpConnections.delete_sxp_connections_by_id, sxp_connections.SxpConnections.update_sxp_connections_by_id,
-   - Paths used are post /ers/config/sxpconnections, delete /ers/config/sxpconnections/{id},
+   - Paths used are post /ers/config/sxpconnections, delete /ers/config/sxpconnections/{id}, put /ers/config/sxpconnections/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection

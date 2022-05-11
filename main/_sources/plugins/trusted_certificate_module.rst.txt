@@ -42,7 +42,7 @@ cisco.ise.trusted_certificate module -- Resource module for Trusted Certificate
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -70,6 +70,7 @@ Synopsis
 
 - Manage operations update and delete of the resource Trusted Certificate.
 - This API deletes a Trust Certificate from Trusted Certificate Store based on a given ID.
+- Update a trusted certificate present in Cisco ISE trust store.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -87,10 +88,15 @@ The below requirements are needed on the host that executes this module.
 - python >= 3.5
 
 
+
+
+
+
 .. Options
 
 Parameters
 ----------
+
 
 .. rst-class:: ansible-option-table
 
@@ -1372,13 +1378,20 @@ Notes
 
 .. note::
    - SDK Method used are certificates.Certificates.delete_trusted_certificate_by_id, certificates.Certificates.update_trusted_certificate,
-   - Paths used are delete /api/v1/certs/trusted-certificate/{id},
+   - Paths used are delete /api/v1/certs/trusted-certificate/{id}, put /api/v1/certs/trusted-certificate/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco ISE documentation for Certificates <https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi>`_
+       Complete reference of the Certificates API.
 
 .. Examples
 

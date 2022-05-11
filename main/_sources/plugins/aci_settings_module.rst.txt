@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.aci_settings module -- Resource module for Aci Settings
+cisco.ise.aci_settings module -- Resource module for ACI Settings
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Manage operation update of the resource Aci Settings.
+- Manage operation update of the resource ACI Settings.
 - This API allows the client to update ACI settings.
 
 .. note::
@@ -87,10 +87,15 @@ The below requirements are needed on the host that executes this module.
 - python >= 3.5
 
 
+
+
+
+
 .. Options
 
 Parameters
 ----------
+
 
 .. rst-class:: ansible-option-table
 
@@ -357,17 +362,17 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-allSxpDomain"></div>
+        <div class="ansibleOptionAnchor" id="parameter-allSXPDomain"></div>
 
       .. _ansible_collections.cisco.ise.aci_settings_module__parameter-allsxpdomain:
 
       .. rst-class:: ansible-option-title
 
-      **allSxpDomain**
+      **allSXPDomain**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-allSxpDomain" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-allSXPDomain" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -381,7 +386,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      AllSxpDomain flag.
+      AllSXPDomain flag.
 
 
       .. rst-class:: ansible-option-line
@@ -398,17 +403,17 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-defaultSgtName"></div>
+        <div class="ansibleOptionAnchor" id="parameter-defaultSGtName"></div>
 
       .. _ansible_collections.cisco.ise.aci_settings_module__parameter-defaultsgtname:
 
       .. rst-class:: ansible-option-title
 
-      **defaultSgtName**
+      **defaultSGtName**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-defaultSgtName" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-defaultSGtName" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -422,7 +427,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Aci Settings's defaultSgtName.
+      ACI Settings's defaultSGtName.
 
 
       .. raw:: html
@@ -432,17 +437,17 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-enableAci"></div>
+        <div class="ansibleOptionAnchor" id="parameter-enableACI"></div>
 
       .. _ansible_collections.cisco.ise.aci_settings_module__parameter-enableaci:
 
       .. rst-class:: ansible-option-title
 
-      **enableAci**
+      **enableACI**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-enableAci" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-enableACI" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -1006,7 +1011,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Aci Settings's l3RouteNetwork.
+      ACI Settings's l3RouteNetwork.
 
 
       .. raw:: html
@@ -1016,17 +1021,17 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-maxNumIepgFromAci"></div>
+        <div class="ansibleOptionAnchor" id="parameter-maxNumIepgFromACI"></div>
 
       .. _ansible_collections.cisco.ise.aci_settings_module__parameter-maxnumiepgfromaci:
 
       .. rst-class:: ansible-option-title
 
-      **maxNumIepgFromAci**
+      **maxNumIepgFromACI**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-maxNumIepgFromAci" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-maxNumIepgFromACI" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -1040,7 +1045,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Aci Settings's maxNumIepgFromAci.
+      ACI Settings's maxNumIepgFromACI.
 
 
       .. raw:: html
@@ -1050,17 +1055,17 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-maxNumSgtToAci"></div>
+        <div class="ansibleOptionAnchor" id="parameter-maxNumSGtToACI"></div>
 
       .. _ansible_collections.cisco.ise.aci_settings_module__parameter-maxnumsgttoaci:
 
       .. rst-class:: ansible-option-title
 
-      **maxNumSgtToAci**
+      **maxNumSGtToACI**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-maxNumSgtToAci" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-maxNumSGtToACI" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -1074,7 +1079,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Aci Settings's maxNumSgtToAci.
+      ACI Settings's maxNumSGtToACI.
 
 
       .. raw:: html
@@ -1084,17 +1089,17 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-specificSxpDomain"></div>
+        <div class="ansibleOptionAnchor" id="parameter-specificSXPDomain"></div>
 
       .. _ansible_collections.cisco.ise.aci_settings_module__parameter-specificsxpdomain:
 
       .. rst-class:: ansible-option-title
 
-      **specificSxpDomain**
+      **specificSXPDomain**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-specificSxpDomain" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-specificSXPDomain" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -1108,7 +1113,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      SpecificSxpDomain flag.
+      SpecificSXPDomain flag.
 
 
       .. rst-class:: ansible-option-line
@@ -1125,17 +1130,17 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-specifixSxpDomainList"></div>
+        <div class="ansibleOptionAnchor" id="parameter-specifixSXPDomainList"></div>
 
       .. _ansible_collections.cisco.ise.aci_settings_module__parameter-specifixsxpdomainlist:
 
       .. rst-class:: ansible-option-title
 
-      **specifixSxpDomainList**
+      **specifixSXPDomainList**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-specifixSxpDomainList" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-specifixSXPDomainList" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -1149,7 +1154,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Aci Settings's specifixSxpDomainList.
+      ACI Settings's specifixSXPDomainList.
 
 
       .. raw:: html
@@ -1183,7 +1188,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Aci Settings's suffixToEpg.
+      ACI Settings's suffixToEpg.
 
 
       .. raw:: html
@@ -1193,17 +1198,17 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-suffixToSgt"></div>
+        <div class="ansibleOptionAnchor" id="parameter-suffixToSGt"></div>
 
       .. _ansible_collections.cisco.ise.aci_settings_module__parameter-suffixtosgt:
 
       .. rst-class:: ansible-option-title
 
-      **suffixToSgt**
+      **suffixToSGt**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-suffixToSgt" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-suffixToSGt" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -1217,7 +1222,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Aci Settings's suffixToSgt.
+      ACI Settings's suffixToSGt.
 
 
       .. raw:: html
@@ -1251,7 +1256,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Aci Settings's tenantName.
+      ACI Settings's tenantName.
 
 
       .. raw:: html
@@ -1285,7 +1290,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Aci Settings's untaggedPacketIepgName.
+      ACI Settings's untaggedPacketIepgName.
 
 
       .. raw:: html
@@ -1303,7 +1308,7 @@ Notes
 
 .. note::
    - SDK Method used are aci_settings.AciSettings.update_aci_settings_by_id,
-   - Paths used are put /ers/config/acisettings/{id}
+   - Paths used are put /ers/config/acisettings/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection

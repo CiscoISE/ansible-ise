@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.sg_acl_bulk_monitor_status_info module -- Information module for Sg Acl Bulk Monitor Status
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.ise.sg_acl_bulk_monitor_status_info module -- Information module for SGACL Bulk Monitor Status
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Get Sg Acl Bulk Monitor Status by id.
+- Get SGACL Bulk Monitor Status by id.
 - This API allows the client to monitor the bulk request.
 
 .. note::
@@ -87,10 +87,15 @@ The below requirements are needed on the host that executes this module.
 - python >= 3.5
 
 
+
+
+
+
 .. Options
 
 Parameters
 ----------
+
 
 .. rst-class:: ansible-option-table
 
@@ -513,6 +518,13 @@ Notes
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco ISE documentation for SecurityGroupsACLs <https://developer.cisco.com/docs/identity-services-engine/v1/#!sgacl>`_
+       Complete reference of the SecurityGroupsACLs API.
 
 .. Examples
 
@@ -522,7 +534,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Get Sg Acl Bulk Monitor Status by id
+    - name: Get SGACL Bulk Monitor Status by id
       cisco.ise.sg_acl_bulk_monitor_status_info:
         ise_hostname: "{{ise_hostname}}"
         ise_username: "{{ise_username}}"

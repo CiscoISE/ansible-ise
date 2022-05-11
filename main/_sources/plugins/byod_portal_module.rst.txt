@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.byod_portal module -- Resource module for Byod Portal
+cisco.ise.byod_portal module -- Resource module for BYOD Portal
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -68,9 +68,10 @@ Synopsis
 
 .. Description
 
-- Manage operations create, update and delete of the resource Byod Portal.
+- Manage operations create, update and delete of the resource BYOD Portal.
 - This API creates a BYOD portal.
 - This API deletes a BYOD portal by ID.
+- This API allows the client to update a BYOD portal by ID.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -88,10 +89,15 @@ The below requirements are needed on the host that executes this module.
 - python >= 3.5
 
 
+
+
+
+
 .. Options
 
 Parameters
 ----------
+
 
 .. rst-class:: ansible-option-table
 
@@ -198,7 +204,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Byod Portal's backgroundImage.
+      BYOD Portal's backgroundImage.
 
 
       .. raw:: html
@@ -267,7 +273,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Byod Portal's bannerImage.
+      BYOD Portal's bannerImage.
 
 
       .. raw:: html
@@ -336,7 +342,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Byod Portal's bannerTitle.
+      BYOD Portal's bannerTitle.
 
 
       .. raw:: html
@@ -370,7 +376,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Byod Portal's contactText.
+      BYOD Portal's contactText.
 
 
       .. raw:: html
@@ -404,7 +410,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Byod Portal's desktopLogoImage.
+      BYOD Portal's desktopLogoImage.
 
 
       .. raw:: html
@@ -473,7 +479,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Byod Portal's footerElement.
+      BYOD Portal's footerElement.
 
 
       .. raw:: html
@@ -507,7 +513,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Byod Portal's mobileLogoImage.
+      BYOD Portal's mobileLogoImage.
 
 
       .. raw:: html
@@ -611,7 +617,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Byod Portal's viewLanguage.
+      BYOD Portal's viewLanguage.
 
 
       .. raw:: html
@@ -714,7 +720,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Byod Portal's key.
+      BYOD Portal's key.
 
 
       .. raw:: html
@@ -748,7 +754,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Byod Portal's value.
+      BYOD Portal's value.
 
 
       .. raw:: html
@@ -989,7 +995,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Byod Portal's bannerTextColor.
+      BYOD Portal's bannerTextColor.
 
 
       .. raw:: html
@@ -1023,7 +1029,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Byod Portal's pageBackgroundColor.
+      BYOD Portal's pageBackgroundColor.
 
 
       .. raw:: html
@@ -1057,7 +1063,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Byod Portal's pageLabelAndTextColor.
+      BYOD Portal's pageLabelAndTextColor.
 
 
       .. raw:: html
@@ -1093,7 +1099,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Byod Portal's description.
+      BYOD Portal's description.
 
 
       .. raw:: html
@@ -1690,7 +1696,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Byod Portal's byodRegistrationSettings.
+      BYOD Portal's byodRegistrationSettings.
 
 
       .. raw:: html
@@ -1724,7 +1730,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Byod Portal's endPointIdentityGroupId.
+      BYOD Portal's endPointIdentityGroupId.
 
 
       .. raw:: html
@@ -1800,7 +1806,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Byod Portal's byodRegistrationSuccessSettings.
+      BYOD Portal's byodRegistrationSuccessSettings.
 
 
       .. raw:: html
@@ -2492,7 +2498,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Byod Portal's supportInfoSettings.
+      BYOD Portal's supportInfoSettings.
 
 
       .. raw:: html
@@ -2826,7 +2832,7 @@ Notes
 
 .. note::
    - SDK Method used are byod_portal.ByodPortal.create_byod_portal, byod_portal.ByodPortal.delete_byod_portal_by_id, byod_portal.ByodPortal.update_byod_portal_by_id,
-   - Paths used are post /ers/config/byodportal, delete /ers/config/byodportal/{id},
+   - Paths used are post /ers/config/byodportal, delete /ers/config/byodportal/{id}, put /ers/config/byodportal/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection

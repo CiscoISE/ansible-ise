@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.pxgrid_healths_info module -- Information module for Pxgrid Healths Info
+cisco.ise.pxgrid_healths_info module -- Information module for pxGrid Healths Info
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Get Pxgrid Healths Info.
+- Get pxGrid Healths Info.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -86,10 +86,15 @@ The below requirements are needed on the host that executes this module.
 - python >= 3.5
 
 
+
+
+
+
 .. Options
 
 Parameters
 ----------
+
 
 .. rst-class:: ansible-option-table
 
@@ -470,8 +475,8 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are system_health.SystemHealth.get_healths
-   - Paths used are post /pxgrid/ise/radius/ise/system/getHealths
+   - SDK Method used are system_health.SystemHealth.get_healths,
+   - Paths used are post /ise/system/getHealths,
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
@@ -487,7 +492,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Get all Pxgrid Healths Info
+    - name: Get all pxGrid Healths Info
       cisco.ise.pxgrid_healths_info:
         ise_hostname: "{{ise_hostname}}"
         ise_username: "{{ise_username}}"

@@ -42,7 +42,7 @@ cisco.ise.repository module -- Resource module for Repository
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -69,6 +69,9 @@ Synopsis
 .. Description
 
 - Manage operations create, update and delete of the resource Repository.
+- Create a new repository in the system. The name provided for the repository must be unique.
+- Long description TBD.
+- Update the definition of a specific repository, providing ALL parameters for the repository.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -86,10 +89,15 @@ The below requirements are needed on the host that executes this module.
 - python >= 3.5
 
 
+
+
+
+
 .. Options
 
 Parameters
 ----------
+
 
 .. rst-class:: ansible-option-table
 
@@ -715,14 +723,21 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are repository.Repository.create_repository, repository.Repository.update_repository, repository.Repository.delete_repository
-   - Paths used are post /api/v1/repository, put /api/v1/repository/{name}, delete /api/v1/repository/{name}
+   - SDK Method used are repository.Repository.create_repository, repository.Repository.delete_repository, repository.Repository.update_repository,
+   - Paths used are post /api/v1/repository, delete /api/v1/repository/{name}, put /api/v1/repository/{name},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco ISE documentation for Repository <https://developer.cisco.com/docs/identity-services-engine/v1/#!repository-openapi>`_
+       Complete reference of the Repository API.
 
 .. Examples
 

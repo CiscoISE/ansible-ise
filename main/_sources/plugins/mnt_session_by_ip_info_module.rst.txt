@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.mnt_session_by_ip_info module -- Information module for Mnt Session By Ip
+cisco.ise.mnt_session_by_ip_info module -- Information module for MNT Session By Ip
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -68,8 +68,7 @@ Synopsis
 
 .. Description
 
-- Get Mnt Session By Ip by id.
-- Sessions by Endpoint IP.
+- Get MNT Session By Ip by id.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -87,10 +86,15 @@ The below requirements are needed on the host that executes this module.
 - python >= 3.5
 
 
+
+
+
+
 .. Options
 
 Parameters
 ----------
+
 
 .. rst-class:: ansible-option-table
 
@@ -522,7 +526,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Get Mnt Session By Ip by id
+    - name: Get MNT Session By Ip by id
       cisco.ise.mnt_session_by_ip_info:
         ise_hostname: "{{ise_hostname}}"
         ise_username: "{{ise_username}}"

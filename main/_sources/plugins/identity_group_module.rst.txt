@@ -42,7 +42,7 @@ cisco.ise.identity_group module -- Resource module for Identity Group
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -70,6 +70,7 @@ Synopsis
 
 - Manage operations create and update of the resource Identity Group.
 - This API creates an identity group.
+- This API allows the client to update an identity group.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -87,10 +88,15 @@ The below requirements are needed on the host that executes this module.
 - python >= 3.5
 
 
+
+
+
+
 .. Options
 
 Parameters
 ----------
+
 
 .. rst-class:: ansible-option-table
 
@@ -608,13 +614,20 @@ Notes
 
 .. note::
    - SDK Method used are identity_groups.IdentityGroups.create_identity_group, identity_groups.IdentityGroups.update_identity_group_by_id,
-   - Paths used are post /ers/config/identitygroup,
+   - Paths used are post /ers/config/identitygroup, put /ers/config/identitygroup/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco ISE documentation for IdentityGroups <https://developer.cisco.com/docs/identity-services-engine/v1/#!identitygroup>`_
+       Complete reference of the IdentityGroups API.
 
 .. Examples
 

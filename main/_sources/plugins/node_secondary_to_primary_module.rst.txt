@@ -42,7 +42,7 @@ cisco.ise.node_secondary_to_primary module -- Resource module for Node Secondary
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -69,7 +69,7 @@ Synopsis
 .. Description
 
 - Manage operation create of the resource Node Secondary To Primary.
-- Execute this API in the secondary PAN in the cluster to promote the node to
+- Execute this API in the secondary PAN in the cluster to promote the node to.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -87,10 +87,15 @@ The below requirements are needed on the host that executes this module.
 - python >= 3.5
 
 
+
+
+
+
 .. Options
 
 Parameters
 ----------
+
 
 .. rst-class:: ansible-option-table
 
@@ -479,6 +484,13 @@ Notes
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco ISE documentation for Node Deployment <https://developer.cisco.com/docs/identity-services-engine/v1/#!deployment-openapi>`_
+       Complete reference of the Node Deployment API.
 
 .. Examples
 

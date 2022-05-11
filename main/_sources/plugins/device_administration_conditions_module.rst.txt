@@ -42,7 +42,7 @@ cisco.ise.device_administration_conditions module -- Resource module for Device 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -72,6 +72,8 @@ Synopsis
 - Device Admin - Creates a library condition.
 - Device Admin - Delete a library condition.
 - NDevice Admin - Delete a library condition using condition Name.
+- Device Admin - Update library condition using condition name.
+- Device Admin - Update library condition.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -89,10 +91,15 @@ The below requirements are needed on the host that executes this module.
 - python >= 3.5
 
 
+
+
+
+
 .. Options
 
 Parameters
 ----------
+
 
 .. rst-class:: ansible-option-table
 
@@ -1685,13 +1692,20 @@ Notes
 
 .. note::
    - SDK Method used are device_administration_conditions.DeviceAdministrationConditions.create_device_admin_condition, device_administration_conditions.DeviceAdministrationConditions.delete_device_admin_condition_by_id, device_administration_conditions.DeviceAdministrationConditions.delete_device_admin_condition_by_name, device_administration_conditions.DeviceAdministrationConditions.update_device_admin_condition_by_id, device_administration_conditions.DeviceAdministrationConditions.update_device_admin_condition_by_name,
-   - Paths used are post /device-admin/condition, delete /device-admin/condition/condition-by-name/{name}, delete /device-admin/condition/{id},
+   - Paths used are post /device-admin/condition, delete /device-admin/condition/condition-by-name/{name}, delete /device-admin/condition/{id}, put /device-admin/condition/condition-by-name/{name}, put /device-admin/condition/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco ISE documentation for Device Administration - Conditions <https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi>`_
+       Complete reference of the Device Administration - Conditions API.
 
 .. Examples
 

@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.tacacs_server_sequence module -- Resource module for Tacacs Server Sequence
+cisco.ise.tacacs_server_sequence module -- Resource module for TACACS Server Sequence
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -68,9 +68,10 @@ Synopsis
 
 .. Description
 
-- Manage operations create, update and delete of the resource Tacacs Server Sequence.
+- Manage operations create, update and delete of the resource TACACS Server Sequence.
 - This API creates a TACACS server sequence.
 - This API deletes a TACACS server sequence.
+- This API allows the client to update a TACACS server sequence.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -88,10 +89,15 @@ The below requirements are needed on the host that executes this module.
 - python >= 3.5
 
 
+
+
+
+
 .. Options
 
 Parameters
 ----------
+
 
 .. rst-class:: ansible-option-table
 
@@ -130,7 +136,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Tacacs Server Sequence's description.
+      TACACS Server Sequence's description.
 
 
       .. raw:: html
@@ -164,7 +170,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Tacacs Server Sequence's id.
+      TACACS Server Sequence's id.
 
 
       .. raw:: html
@@ -598,7 +604,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Tacacs Server Sequence's name.
+      TACACS Server Sequence's name.
 
 
       .. raw:: html
@@ -748,7 +754,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The names of Tacacs external servers separated by commas. The order of the names in the string is the order of servers that will be used during authentication.
+      The names of TACACS external servers separated by commas. The order of the names in the string is the order of servers that will be used during authentication.
 
 
       .. raw:: html
@@ -841,7 +847,7 @@ Notes
 
 .. note::
    - SDK Method used are tacacs_server_sequence.TacacsServerSequence.create_tacacs_server_sequence, tacacs_server_sequence.TacacsServerSequence.delete_tacacs_server_sequence_by_id, tacacs_server_sequence.TacacsServerSequence.update_tacacs_server_sequence_by_id,
-   - Paths used are post /ers/config/tacacsserversequence, delete /ers/config/tacacsserversequence/{id},
+   - Paths used are post /ers/config/tacacsserversequence, delete /ers/config/tacacsserversequence/{id}, put /ers/config/tacacsserversequence/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection

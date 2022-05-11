@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.trustsec_vn_info module -- Information module for Trustsec Vn
+cisco.ise.trustsec_vn_info module -- Information module for Trustsec VN
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -68,8 +68,8 @@ Synopsis
 
 .. Description
 
-- Get all Trustsec Vn.
-- Get Trustsec Vn by id.
+- Get all Trustsec VN.
+- Get Trustsec VN by id.
 - Get Virtual Network by id.
 - Get all Virtual Networks.
 
@@ -89,10 +89,15 @@ The below requirements are needed on the host that executes this module.
 - python >= 3.5
 
 
+
+
+
+
 .. Options
 
 Parameters
 ----------
+
 
 .. rst-class:: ansible-option-table
 
@@ -131,8 +136,30 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Filter query parameter. <div> <style type="text/css" scoped> .apiServiceTable td, .apiServiceTable th { padding 5px 10px !important; text-align left; } </style> <span> <b>Simple filtering</b> should be available through the filter query string parameter. The structure of a filter is a triplet of field operator and value separated with dots. More than one filter can be sent. The logical operator common to ALL filter criteria will be by default AND, and can be changed by using the <i>"filterType=or"</i> query string parameter. Each resource Data model description should specify if an attribute is a filtered field. </span> <br /> <table class="apiServiceTable"> <thead> <tr> <th>OPERATOR</th> <th>DESCRIPTION</th> </tr> </thead> <tbody> <tr> <td>EQ</td> <td>Equals</td> </tr> <tr> <td>NEQ</td> <td>Not Equals</td> </tr> <tr> <td>GT</td> <td>Greater Than</td> </tr> <tr> <td>LT</td> <td>Less Then</td> </tr> <tr> <td>STARTSW</td> <td>Starts With</td> </tr> <tr> <td>NSTARTSW</td> <td>Not Starts With</td> </tr> <tr> <td>ENDSW</td> <td>Ends With</td> </tr> <tr> <td>NENDSW</td> <td>Not Ends With</td> </tr> <tr> <td>CONTAINS</td> <td>Contains</td> </tr> <tr> <td>NCONTAINS</td> <td>Not Contains</td> </tr> </tbody> </table> </div>.
+      Filter query parameter. .. Container **Simple filtering** should be available through the filter query string parameter. The structure of a filter is a triplet of field operator and value separated with dots. More than one filter can be sent. The logical operator common to ALL filter criteria will be by default AND, and can be changed by using the *"filterType=or"* query string parameter.
           
+
+      Each resource Data model description should specify if an attribute is a filtered field.
+
+      The 'EQ' operator describes 'Equals'.
+
+      The 'NEQ' operator describes 'Not Equals'.
+
+      The 'GT' operator describes 'Greater Than'.
+
+      The 'LT' operator describes 'Less Than'.
+
+      The 'STARTSW' operator describes 'Starts With'.
+
+      The 'NSTARTSW' operator describes 'Not Starts With'.
+
+      The 'ENDSW' operator describes 'Ends With'.
+
+      The 'NENDSW' operator describes 'Not Ends With'.
+
+      The 'CONTAINS' operator describes 'Contains'.
+
+      The 'NCONTAINS' operator describes 'Not Contains'.
 
 
       .. raw:: html
@@ -721,6 +748,13 @@ Notes
 
 .. Seealso
 
+See Also
+--------
+
+.. seealso::
+
+   `Cisco ISE documentation for virtualNetwork <https://developer.cisco.com/docs/identity-services-engine/v1/#!trustsec-openapi>`_
+       Complete reference of the virtualNetwork API.
 
 .. Examples
 
@@ -730,7 +764,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Get all Trustsec Vn
+    - name: Get all Trustsec VN
       cisco.ise.trustsec_vn_info:
         ise_hostname: "{{ise_hostname}}"
         ise_username: "{{ise_username}}"
@@ -744,7 +778,7 @@ Examples
         filterType: string
       register: result
 
-    - name: Get Trustsec Vn by id
+    - name: Get Trustsec VN by id
       cisco.ise.trustsec_vn_info:
         ise_hostname: "{{ise_hostname}}"
         ise_username: "{{ise_username}}"

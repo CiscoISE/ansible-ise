@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.tacacs_command_sets_info module -- Information module for Tacacs Command Sets
+cisco.ise.tacacs_command_sets_info module -- Information module for TACACS Command Sets
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -68,9 +68,9 @@ Synopsis
 
 .. Description
 
-- Get all Tacacs Command Sets.
-- Get Tacacs Command Sets by id.
-- Get Tacacs Command Sets by name.
+- Get all TACACS Command Sets.
+- Get TACACS Command Sets by id.
+- Get TACACS Command Sets by name.
 - This API allows the client to get TACACS command sets by ID.
 - This API allows the client to get TACACS command sets by name.
 - This API allows the client to get all the TACACS command sets.
@@ -91,10 +91,15 @@ The below requirements are needed on the host that executes this module.
 - python >= 3.5
 
 
+
+
+
+
 .. Options
 
 Parameters
 ----------
+
 
 .. rst-class:: ansible-option-table
 
@@ -628,7 +633,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Get all Tacacs Command Sets
+    - name: Get all TACACS Command Sets
       cisco.ise.tacacs_command_sets_info:
         ise_hostname: "{{ise_hostname}}"
         ise_username: "{{ise_username}}"
@@ -638,7 +643,7 @@ Examples
         size: 20
       register: result
 
-    - name: Get Tacacs Command Sets by id
+    - name: Get TACACS Command Sets by id
       cisco.ise.tacacs_command_sets_info:
         ise_hostname: "{{ise_hostname}}"
         ise_username: "{{ise_username}}"
@@ -647,7 +652,7 @@ Examples
         id: string
       register: result
 
-    - name: Get Tacacs Command Sets by name
+    - name: Get TACACS Command Sets by name
       cisco.ise.tacacs_command_sets_info:
         ise_hostname: "{{ise_hostname}}"
         ise_username: "{{ise_username}}"

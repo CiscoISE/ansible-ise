@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.tacacs_profile module -- Resource module for Tacacs Profile
+cisco.ise.tacacs_profile module -- Resource module for TACACS Profile
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.3.2).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -68,9 +68,10 @@ Synopsis
 
 .. Description
 
-- Manage operations create, update and delete of the resource Tacacs Profile.
+- Manage operations create, update and delete of the resource TACACS Profile.
 - This API creates a TACACS profile.
 - This API deletes a TACACS profile.
+- This API allows the client to update a TACACS profile.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -88,10 +89,15 @@ The below requirements are needed on the host that executes this module.
 - python >= 3.5
 
 
+
+
+
+
 .. Options
 
 Parameters
 ----------
+
 
 .. rst-class:: ansible-option-table
 
@@ -130,7 +136,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Tacacs Profile's description.
+      TACACS Profile's description.
 
 
       .. raw:: html
@@ -164,7 +170,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Tacacs Profile's id.
+      TACACS Profile's id.
 
 
       .. raw:: html
@@ -557,7 +563,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Tacacs Profile's name.
+      TACACS Profile's name.
 
 
       .. raw:: html
@@ -625,7 +631,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Tacacs Profile's sessionAttributeList.
+      TACACS Profile's sessionAttributeList.
 
 
       .. raw:: html
@@ -659,7 +665,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Tacacs Profile's name.
+      TACACS Profile's name.
 
 
       .. raw:: html
@@ -727,7 +733,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Tacacs Profile's value.
+      TACACS Profile's value.
 
 
       .. raw:: html
@@ -747,7 +753,7 @@ Notes
 
 .. note::
    - SDK Method used are tacacs_profile.TacacsProfile.create_tacacs_profile, tacacs_profile.TacacsProfile.delete_tacacs_profile_by_id, tacacs_profile.TacacsProfile.update_tacacs_profile_by_id,
-   - Paths used are post /ers/config/tacacsprofile, delete /ers/config/tacacsprofile/{id},
+   - Paths used are post /ers/config/tacacsprofile, delete /ers/config/tacacsprofile/{id}, put /ers/config/tacacsprofile/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
