@@ -18,9 +18,9 @@ extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options:
-  name:
+  repositoryName:
     description:
-    - Name path parameter. Unique name for a repository.
+    - RepositoryName path parameter. Unique name for a repository.
     type: str
 requirements:
 - ciscoisesdk >= 2.0.1
@@ -36,7 +36,7 @@ notes:
 
   - Paths used are
     get /api/v1/repository,
-    get /api/v1/repository/{name},
+    get /api/v1/repository/{repositoryName},
 
 """
 
@@ -55,7 +55,7 @@ EXAMPLES = r"""
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
-    name: string
+    repositoryName: string
   register: result
 
 """

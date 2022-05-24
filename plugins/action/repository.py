@@ -40,11 +40,12 @@ argument_spec.update(dict(
     serverName=dict(type="str"),
     userName=dict(type="str"),
     enablePki=dict(type="bool"),
+    repositoryName=dict(type="str"),
 ))
 
 required_if = [
-    ("state", "present", ["name"], True),
-    ("state", "absent", ["name"], True),
+    ("state", "present", ["name", "repositoryName"], True),
+    ("state", "absent", ["name", "repositoryName"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -62,6 +63,7 @@ class Repository(object):
             server_name=params.get("serverName"),
             user_name=params.get("userName"),
             enable_pki=params.get("enablePki"),
+            repository_name=params.get("repositoryName"),
         )
 
     def get_object_by_name(self, name):
@@ -69,7 +71,7 @@ class Repository(object):
             result = self.ise.exec(
                 family="repository",
                 function="get_repository",
-                params={"name": name},
+                params={"repository_name": name},
                 handle_func_exception=False,
             ).response['response']
             result = get_dict_result(result, 'name', name)
@@ -97,7 +99,7 @@ class Repository(object):
         name_exists = False
         prev_obj = None
         o_id = self.new_object.get("id")
-        name = self.new_object.get("name")
+        name = self.new_object.get("repository_name")
         if o_id:
             prev_obj = self.get_object_by_id(o_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
@@ -122,6 +124,7 @@ class Repository(object):
             ("serverName", "server_name"),
             ("userName", "user_name"),
             ("enablePki", "enable_pki"),
+            ("repositoryName", "repository_name"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

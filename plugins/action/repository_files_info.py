@@ -27,7 +27,7 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    name=dict(type="str"),
+    repositoryName=dict(type="str"),
 ))
 
 required_if = []
@@ -65,7 +65,7 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            name=params.get("name"),
+            repository_name=params.get("repositoryName"),
         )
         return new_object
 
@@ -80,7 +80,7 @@ class ActionModule(ActionBase):
         ise = ISESDK(params=self._task.args)
 
         id = self._task.args.get("id")
-        name = self._task.args.get("name")
+        name = self._task.args.get("repositoryName")
         if not name and not id:
             response = ise.exec(
                 family="repository",
