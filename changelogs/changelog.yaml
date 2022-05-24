@@ -767,7 +767,7 @@ releases:
     release_date: "2022-05-24"
     changes:
       release_summary: Change path parameter.
-      minor_changes:
+      bugfixes:
         - repository_files_info - change path parameter from name to repositoryName
         - repository_info - change path parameter from name to repositoryName
         - repository - change path parameter from name to repositoryName
