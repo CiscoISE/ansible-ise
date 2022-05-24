@@ -42,7 +42,7 @@ cisco.ise.repository_files_info module -- Information module for Repository File
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.1).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -469,17 +469,17 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-name"></div>
+        <div class="ansibleOptionAnchor" id="parameter-repositoryName"></div>
 
-      .. _ansible_collections.cisco.ise.repository_files_info_module__parameter-name:
+      .. _ansible_collections.cisco.ise.repository_files_info_module__parameter-repositoryname:
 
       .. rst-class:: ansible-option-title
 
-      **name**
+      **repositoryName**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-repositoryName" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -493,7 +493,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Name path parameter. Unique name for a repository.
+      RepositoryName path parameter. Unique name for a repository.
 
 
       .. raw:: html
@@ -511,7 +511,7 @@ Notes
 
 .. note::
    - SDK Method used are repository.Repository.get_repository_files,
-   - Paths used are get /api/v1/repository/{name}/files,
+   - Paths used are get /api/v1/repository/{repositoryName}/files,
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
@@ -540,7 +540,7 @@ Examples
         ise_username: "{{ise_username}}"
         ise_password: "{{ise_password}}"
         ise_verify: "{{ise_verify}}"
-        name: string
+        repositoryName: string
       register: result
 
 

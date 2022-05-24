@@ -464,7 +464,7 @@
 <h1>cisco.ise.repository_files_info module – Information module for Repository Files<a class="headerlink" href="#cisco-ise-repository-files-info-module-information-module-for-repository-files" title="Permalink to this headline"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/ise">cisco.ise collection</a> (version 2.4.0).</p>
+<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/ise">cisco.ise collection</a> (version 2.4.1).</p>
 <p>You might already have this collection installed if you are using the <code class="docutils literal notranslate"><span class="pre">ansible</span></code> package.
 It is not included in <code class="docutils literal notranslate"><span class="pre">ansible-core</span></code>.
 To check whether it is installed, run <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">list</span></code>.</p>
@@ -609,10 +609,10 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-name"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-repository-files-info-module-parameter-name"><strong>name</strong></p>
-<a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+<div class="ansibleOptionAnchor" id="parameter-repositoryName"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-repository-files-info-module-parameter-repositoryname"><strong>repositoryName</strong></p>
+<a class="ansibleOptionLink" href="#parameter-repositoryName" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-cell"><p>Name path parameter. Unique name for a repository.</p>
+<td><div class="ansible-option-cell"><p>RepositoryName path parameter. Unique name for a repository.</p>
 </div></td>
 </tr>
 </tbody>
@@ -624,7 +624,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p class="admonition-title">Note</p>
 <ul class="simple">
 <li><p>SDK Method used are repository.Repository.get_repository_files,</p></li>
-<li><p>Paths used are get /api/v1/repository/{name}/files,</p></li>
+<li><p>Paths used are get /api/v1/repository/{repositoryName}/files,</p></li>
 <li><p>Supports <code class="docutils literal notranslate"><span class="pre">check_mode</span></code></p></li>
 <li><p>The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK</p></li>
 <li><p>The parameters starting with <a href="#id8"><span class="problematic" id="id9">ise_</span></a> are used by the Cisco ISE Python SDK to establish the connection</p></li>
@@ -649,7 +649,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <span class="w">    </span><span class="nt">ise_username</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_username</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="nt">ise_password</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_password</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
 <span class="w">    </span><span class="nt">ise_verify</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_verify</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
+<span class="w">    </span><span class="nt">repositoryName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span><span class="w"></span>
 <span class="w">  </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">result</span><span class="w"></span>
 </pre></div>
 </div>

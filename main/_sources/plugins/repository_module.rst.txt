@@ -42,7 +42,7 @@ cisco.ise.repository module -- Resource module for Repository
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.0).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.4.1).
 
     You might already have this collection installed if you are using the ``ansible`` package.
     It is not included in ``ansible-core``.
@@ -648,6 +648,40 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-repositoryName"></div>
+
+      .. _ansible_collections.cisco.ise.repository_module__parameter-repositoryname:
+
+      .. rst-class:: ansible-option-title
+
+      **repositoryName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-repositoryName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      RepositoryName path parameter. Unique name for a repository.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-serverName"></div>
 
       .. _ansible_collections.cisco.ise.repository_module__parameter-servername:
@@ -724,7 +758,7 @@ Notes
 
 .. note::
    - SDK Method used are repository.Repository.create_repository, repository.Repository.delete_repository, repository.Repository.update_repository,
-   - Paths used are post /api/v1/repository, delete /api/v1/repository/{name}, put /api/v1/repository/{name},
+   - Paths used are post /api/v1/repository, delete /api/v1/repository/{repositoryName}, put /api/v1/repository/{repositoryName},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
@@ -774,6 +808,7 @@ Examples
         password: string
         path: string
         protocol: string
+        repositoryName: string
         serverName: string
         userName: string
 
@@ -784,7 +819,7 @@ Examples
         ise_password: "{{ise_password}}"
         ise_verify: "{{ise_verify}}"
         state: absent
-        name: string
+        repositoryName: string
 
 
 
