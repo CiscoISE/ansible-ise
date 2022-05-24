@@ -35,6 +35,9 @@ options:
   protocol:
     description: Repository's protocol.
     type: str
+  repositoryName:
+    description: RepositoryName path parameter. Unique name for a repository.
+    type: str
   serverName:
     description: Repository's serverName.
     type: str
@@ -56,8 +59,8 @@ notes:
 
   - Paths used are
     post /api/v1/repository,
-    delete /api/v1/repository/{name},
-    put /api/v1/repository/{name},
+    delete /api/v1/repository/{repositoryName},
+    put /api/v1/repository/{repositoryName},
 
 """
 
@@ -89,6 +92,7 @@ EXAMPLES = r"""
     password: string
     path: string
     protocol: string
+    repositoryName: string
     serverName: string
     userName: string
 
@@ -99,7 +103,7 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: absent
-    name: string
+    repositoryName: string
 
 """
 

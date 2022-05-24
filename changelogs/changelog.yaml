@@ -763,3 +763,11 @@ releases:
         - Change description from Tacacs to TACACS
         - Change description from Nbar to NBAR
         - Change description from Pxgrid to pxGrid
+  2.4.1:
+    release_date: "2022-05-24"
+    changes:
+      release_summary: Change path parameter.
+      minor_changes:
+        - repository_files_info - change path parameter from name to repositoryName
+        - repository_info - change path parameter from name to repositoryName
+        - repository - change path parameter from name to repositoryName
