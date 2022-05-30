@@ -50,8 +50,8 @@ class Node(object):
         return "{name} <{ip}>".format(name=self.name, ip=self.ip)
 
     def is_standalone(self):
-        headers = {'Content-Type': 'text/xml'}
-        url = "https://{ip}/admin/API/Infra/Node/SimpleList".format(ip=self.ip)
+        headers = {'Content-Type': 'application/json'}
+        url = "https://{ip}/api/v1/deployment/node/{hostname}".format(ip=self.ip, hostname=self.hostname)
         response = False
         try:
             response = requests.get(url=url, headers=headers, auth=(self.username, self.password), verify=False)
@@ -59,8 +59,10 @@ class Node(object):
             raise AnsibleActionFail("Couldn't connect, the node might be still initializing, try again in a few minutes. Error received: {e}".format(e=e))
         if not response:
             raise AnsibleActionFail("Couldn't get a valid response from the API. Maybe the node is still initializing, try again in a few minutes.")
-        elif "STANDALONE" in response.text:  # TODO: Parse the XML to look for the nodeRoleStatus tag.
-            return True
+        else:
+            response = json.loads(response.text).get("response")
+            if "Standalone" in response.get("roles"):
+                return True
         return False
 
     def app_server_is_running(self):

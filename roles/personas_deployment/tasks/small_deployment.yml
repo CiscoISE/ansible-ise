@@ -4,11 +4,14 @@
     ip: "{{ item.ip }}"
     username: "{{ ise_username }}"
     password: "{{ ise_password }}"
+    hostname: "{{ item.hostname }}"
   loop:
     - name: ISE Server 1
       ip: "{{ pan1_ip }}"
+      hostname: "{{ ise_base_hostname | lower }}-server-1"
     - name: ISE Server 2
       ip: "{{ pan2_ip }}"
+      hostname: "{{ ise_base_hostname | lower }}-server-2"
 
 - name: Export trusted certificates into primary node
   cisco.ise.personas_export_certs:

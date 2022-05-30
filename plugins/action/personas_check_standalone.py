@@ -21,6 +21,7 @@ argument_spec = dict(
     ip=dict(type="str", required=True),
     username=dict(type="str", required=True),
     password=dict(type="str", required=True),
+    hostname=dict(type="str", required=True),
     ise_verify=dict(type="bool", default=True),
     ise_version=dict(type="str", default="3.0.0"),
     ise_wait_on_rate_limit=dict(type="bool", default=True),  # TODO: verify what the true default value should be
@@ -68,6 +69,7 @@ class ActionModule(ActionBase):
                          ip=self._task.args.get("ip"),
                          username=self._task.args.get("username"),
                          password=self._task.args.get("password"),
+                         hostname=self._task.args.get("hostname")
                          ))
 
         if not (node.is_standalone() and node.app_server_is_running()):
