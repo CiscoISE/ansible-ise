@@ -186,37 +186,13 @@ class ISEDeployment(object):
                     raise AnsibleActionFail("Unexpected response from API. Received response was {message}".format(message=return_message))
 
     def promote_primary_node(self):
-        headers = {'Content-Type': 'text/xml'}
-        url = "https://{ip}/admin/API/Infra/Edit".format(ip=self.primary.ip)
-        xml_template = ('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n'
-                        '   <infraDeployBean>\n'
-                        '       <displayname>{hostname}</displayname>\n'
-                        '       <gateway></gateway>\n'
-                        '       <hostname>{hostname}</hostname>\n'
-                        '       <nodeIPaddr>{ip}</nodeIPaddr>\n'
-                        '       <username>{username}</username>\n'
-                        '       <password>{password}</password>\n'
-                        '       {roles}\n'
-                        '   </infraDeployBean>')
-        roles_str = ""
-        for key in self.primary.roles.keys():
-            roles_str += "<roles>"
-            for value in self.primary.roles.get(key):
-                roles_str += "<item>{value}</item>".format(value=value)
-            roles_str += "</roles>"
-
-        data = xml_template.format(
-            hostname=self.primary.hostname,
-            ip=self.primary.ip,
-            username=self.primary.username,
-            password=self.primary.password,
-            roles=roles_str
-        )
-        response = None
+        headers = {'Content-Type': 'application/json'}
+        url = "https://{ip}/api/v1/deployment/primary".format(ip=self.primary.ip)
         try:
-            response = requests.put(url=url, data=data, headers=headers, auth=(self.primary.username, self.primary.password), verify=False, timeout=60)
-            if response:
-                if "Node updated successfully" not in response.text:
-                    raise AnsibleActionFail("Could not update node to PRIMARY")
+            response = requests.post(url=url, headers=headers, auth=(self.primary.username, self.primary.password), verify=False, timeout=60)
+            if response.status_code == 200:
+                return True
+            else:
+                raise AnsibleActionFail("Could not update node to PRIMARY")
         except Exception as e:
             raise AnsibleActionFail(e)

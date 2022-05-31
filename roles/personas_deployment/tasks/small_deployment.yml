@@ -34,14 +34,6 @@
     hostname: "{{ ise_base_hostname | lower }}-server-1"
     username: "{{ ise_username }}"
     password: "{{ ise_password }}"
-    roles:
-      - PPAN
-      - MNT-ACTIVE
-      - PDP
-
-- name: Wait for primary application server to come up again 
-  pause:
-    minutes: 10
 
 - name: Update roles on the rest of the nodes
   cisco.ise.personas_update_roles:

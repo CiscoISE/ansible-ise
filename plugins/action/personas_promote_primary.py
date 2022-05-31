@@ -22,7 +22,6 @@ argument_spec = dict(
     hostname=dict(type="str", required=True),
     username=dict(type="str", required=True),
     password=dict(type="str", required=True),
-    roles=dict(type="list", required=True),
     ise_verify=dict(type="bool", default=True),
     ise_version=dict(type="str", default="3.0.0"),
     ise_wait_on_rate_limit=dict(type="bool", default=True),  # TODO: verify what the true default value should be
@@ -70,11 +69,7 @@ class ActionModule(ActionBase):
                             hostname=self._task.args.get("hostname"),
                             username=self._task.args.get("username"),
                             password=self._task.args.get("password"),
-                            roles=self._task.args.get("roles"),
                             )
-
-        if "PPAN" not in primary_node.get("roles"):
-            raise AnsibleActionFail("Primary node must have at least the 'PPAN' role")
 
         ise_deployment = ISEDeployment()
         ise_deployment.add_primary(primary_node)
