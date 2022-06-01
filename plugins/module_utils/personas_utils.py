@@ -27,21 +27,8 @@ class Node(object):
         self.username = node.get("username")
         self.password = node.get("password")
         self.domain = node.get("domain")
-        self.roles = {}
-        if node.get("roles"):
-            for attribute in node.get("roles"):
-                if attribute == 'PPAN':
-                    self.roles[attribute] = ["PAP", "on", "on", "PRIMARY"]
-                if attribute == 'SPAN':
-                    self.roles[attribute] = ["PAP", "on", "on", "SECONDARY"]
-                elif attribute == 'MNT-ACTIVE':
-                    self.roles[attribute] = ["MNT", "ACTIVE", ""]
-                elif attribute == 'MNT-STANDBY':
-                    self.roles[attribute] = ["MNT", "STANDBY", ""]
-                elif attribute == 'PDP':
-                    self.roles[attribute] = ["PDP", "on", "on", "None"]
-                elif attribute == 'PXG':
-                    self.roles[attribute] = ["PXG"]
+        self.roles = node.get("roles")
+        self.services = node.get("services")
 
     def __str__(self):
         return "{name} <{ip}>".format(name=self.name, ip=self.ip)
@@ -98,33 +85,16 @@ class Node(object):
                 return item.get("id")
 
     def register_node(self, primary):
-        headers = {'Content-Type': 'application/xml'}
-        url = "https://{primary_ip}/admin/API/Infra/Register".format(primary_ip=primary.ip)
-        xml_template = ('<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n'
-                        '<infraDeployBean>\n'
-                        '    <displayname>{hostname}</displayname>\n'
-                        '    <gateway></gateway>\n'
-                        '    <hostname>{fqdn}</hostname>\n'
-                        '    <nodeIPaddr>{ip}</nodeIPaddr>\n'
-                        '    <username>{username}</username>\n'
-                        '    <password>{password}</password>\n'
-                        '    {roles}'
-                        '</infraDeployBean>')
-        roles_str = ""
-        for key in self.roles.keys():
-            roles_str += "<roles>"
-            for value in self.roles.get(key):
-                roles_str += "<item>{value}</item>".format(value=value)
-            roles_str += "</roles>"
-
-        data = xml_template.format(
-            hostname=self.hostname,
-            fqdn="{hostname}.{domain}".format(hostname=self.hostname, domain=self.domain),
-            ip=self.local_ip,
-            username=self.username,
-            password=self.password,
-            roles=roles_str
-        )
+        headers = {'Content-Type': 'application/json'}
+        url = "https://{primary_ip}/api/v1/deployment/node".format(primary_ip=primary.ip)
+        data = json.dumps({
+            "fqdn": "{hostname}.{domain}".format(hostname=self.hostname, domain=self.domain),
+            "userName": self.username,
+            "password": self.password,
+            "allowCertImport": True,
+            "roles": self.roles,
+            "services": self.services
+        })
         try:
             response = requests.post(url=url, timeout=300, auth=(primary.username, primary.password), headers=headers, data=data, verify=False)
         except Exception as e:
