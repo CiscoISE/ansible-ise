@@ -51,28 +51,26 @@
     primary_ip: "{{ pan1_ip }}"
     primary_username: "{{ ise_username }}"
     primary_password: "{{ ise_password }}"
-    name: "{{ item.name }}"
-    hostname: "{{ item.hostname }}"
+    fqdn: "{{ item.fqdn }}"
     username: "{{ ise_username }}"
     password: "{{ ise_password }}"
-    domain: "{{ ise_domain }}"
     roles: "{{ item.roles }}"
     services: "{{ item.services }}"
   loop:
-    - name: ISE PAN Server 2
-      hostname: "{{ ise_base_hostname | lower }}-pan-server-2"
+    # ISE PAN Server 2
+    - fqdn: "{{ ise_base_hostname | lower }}-pan-server-2.{{ ise_domain }}"
       roles:
         - SecondaryAdmin
         - SecondaryMonitoring
       services: []
-    - name: ISE PSN Server 1
-      hostname: "{{ ise_base_hostname | lower }}-psn-server-1"
+    # ISE PSN Server 1
+    - fqdn: "{{ ise_base_hostname | lower }}-psn-server-1.{{ ise_domain }}"
       roles: []
       services:
         - Session
         - Profiler 
-    - name: ISE PSN Server 2
-      hostname: "{{ ise_base_hostname | lower }}-psn-server-2"
+    # ISE PSN Server 2
+    - fqdn: "{{ ise_base_hostname | lower }}-psn-server-2.{{ ise_domain }}"
       roles: []
       services:
         - Session

@@ -22,10 +22,9 @@ class Node(object):
     def __init__(self, node):
         self.name = node.get("name")
         self.ip = node.get("ip")
-        self.hostname = node.get("hostname")
+        self.fqdn = node.get("fqdn")
         self.username = node.get("username")
         self.password = node.get("password")
-        self.domain = node.get("domain")
         self.roles = node.get("roles")
         self.services = node.get("services")
 
@@ -83,11 +82,11 @@ class Node(object):
             if item.get("friendlyName") == "Default self-signed server certificate":
                 return item.get("id")
 
-    def register_node(self, primary):
+    def register_to_primary(self, primary):
         headers = {'Content-Type': 'application/json'}
         url = "https://{primary_ip}/api/v1/deployment/node".format(primary_ip=primary.ip)
         data = json.dumps({
-            "fqdn": "{hostname}.{domain}".format(hostname=self.hostname, domain=self.domain),
+            "fqdn": self.fqdn,
             "userName": self.username,
             "password": self.password,
             "allowCertImport": True,

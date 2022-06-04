@@ -54,41 +54,38 @@
 - name: Promote primary node
   cisco.ise.personas_promote_primary:
     ip: "{{ pan1_ip }}"
-    # hostname: "{{ ise_base_hostname | lower }}-pan-server-1"
     username: "{{ ise_username }}"
     password: "{{ ise_password }}"
 
-- name: Update roles on the rest of the nodes except the standby MNT
+- name: Register the nodes to the cluster except the standby MNT
   cisco.ise.personas_register_node:
     primary_ip: "{{ pan1_ip }}"
     primary_username: "{{ ise_username }}"
     primary_password: "{{ ise_password }}"
-    # name: "{{ item.name }}"
-    hostname: "{{ item.hostname }}"
+    fqdn: "{{ item.fqdn }}"
     username: "{{ ise_username }}"
     password: "{{ ise_password }}"
-    domain: "{{ ise_domain }}"
     roles: "{{ item.roles }}"
     services: "{{ item.services }}"
   loop:
-    - name: ISE PAN Server 2
-      hostname: "{{ ise_base_hostname | lower }}-pan-server-2"
+    # ISE PAN Server 2
+    - fqdn: "{{ ise_base_hostname | lower }}-pan-server-2.{{ ise_domain }}"
       roles:
         - SecondaryAdmin
       services: []
-    - name: ISE MNT Server 1
-      hostname: "{{ ise_base_hostname | lower }}-mnt-server-1"
+    # ISE MNT Server 1
+    - fqdn: "{{ ise_base_hostname | lower }}-mnt-server-1.{{ ise_domain }}"
       roles:
         - PrimaryMonitoring
       services: []
-    - name: ISE PSN Server 1
-      hostname: "{{ ise_base_hostname | lower }}-psn-server-1"
+    # ISE PSN Server 1
+    - fqdn: "{{ ise_base_hostname | lower }}-psn-server-1.{{ ise_domain }}"
       roles: []
       services:
         - Session
         - Profiler 
-    - name: ISE PSN Server 2
-      hostname: "{{ ise_base_hostname | lower }}-psn-server-2"
+    # ISE PSN Server 2
+    - fqdn: "{{ ise_base_hostname | lower }}-psn-server-2.{{ ise_domain }}"
       roles: []
       services:
         - Session
@@ -108,21 +105,19 @@
   pause:
     minutes: 10
 
-- name: Update node 'MNT Server 2' as MNT-STANDBY
+- name: Register node 'MNT Server 2' as SecondaryMonitoring
   cisco.ise.personas_register_node:
     primary_ip: "{{ pan1_ip }}"
     primary_username: "{{ ise_username }}"
     primary_password: "{{ ise_password }}"
-    name: "{{ item.name }}"
-    hostname: "{{ item.hostname }}"
+    fqdn: "{{ item.fqdn }}"
     username: "{{ ise_username }}"
     password: "{{ ise_password }}"
-    domain: "{{ ise_domain }}"
     roles: "{{ item.roles }}"
     services: "{{ item.services }}"
   loop:
-    - name: ISE MNT Server 2
-      hostname: "{{ ise_base_hostname | lower }}-mnt-server-2"
+    # ISE MNT Server 2
+    - fqdn: "{{ ise_base_hostname | lower }}-mnt-server-2.{{ ise_domain }}"
       roles:
         - SecondaryMonitoring
       services: []

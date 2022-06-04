@@ -25,12 +25,11 @@
   loop:
     - name: ISE Server 2
       ip: "{{ pan2_ip }}"
-      hostname: "{{ ise_base_hostname | lower }}-server-2" q
+      hostname: "{{ ise_base_hostname | lower }}-server-2"
 
 - name: Promote primary node
   cisco.ise.personas_promote_primary:
     ip: "{{ pan1_ip }}"
-    # hostname: "{{ ise_base_hostname | lower }}-server-1"
     username: "{{ ise_username }}"
     password: "{{ ise_password }}"
 
@@ -39,16 +38,14 @@
     primary_ip: "{{ pan1_ip }}"
     primary_username: "{{ ise_username }}"
     primary_password: "{{ ise_password }}"
-    # name: "{{ item.name }}"
-    hostname: "{{ item.hostname }}"
+    fqdn: "{{ item.fqdn }}"
     username: "{{ ise_username }}"
     password: "{{ ise_password }}"
-    domain: "{{ ise_domain }}"
     roles: "{{ item.roles }}"
     services: "{{ item.services }}"
   loop:
-    - name: ISE Server 2
-      hostname: "{{ ise_base_hostname | lower }}-server-2"
+    # ISE Server 2
+    - fqdn: "{{ ise_base_hostname | lower }}-server-2.{{ ise_domain }}"
       roles:
         - SecondaryAdmin
         - SecondaryMonitoring
