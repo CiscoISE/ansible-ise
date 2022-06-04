@@ -4,19 +4,26 @@
     ip: "{{ item.ip }}"
     username: "{{ ise_username }}"
     password: "{{ ise_password }}"
+    hostname: "{{ item.hostname }}"
   loop:
     - name: ISE PAN Server 1
       ip: "{{ pan1_ip }}"
+      hostname: "{{ ise_base_hostname | lower }}-pan-server-1"
     - name: ISE PAN Server 2
       ip: "{{ pan2_ip }}"
+      hostname: "{{ ise_base_hostname | lower }}-pan-server-2"
     - name: ISE MNT Server 1
       ip: "{{ mnt1_ip }}"
+      hostname: "{{ ise_base_hostname | lower }}-mnt-server-1"
     - name: ISE MNT Server 2
       ip: "{{ mnt2_ip }}"
+      hostname: "{{ ise_base_hostname | lower }}-mnt-server-2"
     - name: ISE PSN Server 1
       ip: "{{ psn1_ip }}"
+      hostname: "{{ ise_base_hostname | lower }}-psn-server-1"
     - name: ISE PSN Server 2
       ip: "{{ psn2_ip }}"
+      hostname: "{{ ise_base_hostname | lower }}-psn-server-2"
 
 - name: Export trusted certificates into primary node
   cisco.ise.personas_export_certs:
@@ -51,76 +58,72 @@
     hostname: "{{ ise_base_hostname | lower }}-pan-server-1"
     username: "{{ ise_username }}"
     password: "{{ ise_password }}"
-    roles:
-      - PPAN
-      - MNT-ACTIVE
-
-- name: Wait for primary application server to come up again 
-  pause:
-    minutes: 10
 
 - name: Update roles on the rest of the nodes except the standby MNT
-  cisco.ise.personas_update_roles:
+  cisco.ise.personas_register_node:
     primary_ip: "{{ pan1_ip }}"
     primary_username: "{{ ise_username }}"
     primary_password: "{{ ise_password }}"
     name: "{{ item.name }}"
-    local_ip: "{{ item.local_ip }}"
     hostname: "{{ item.hostname }}"
     username: "{{ ise_username }}"
     password: "{{ ise_password }}"
     domain: "{{ ise_domain }}"
     roles: "{{ item.roles }}"
+    services: "{{ item.services }}"
   loop:
     - name: ISE PAN Server 2
-      local_ip: "{{ pan2_local_ip }}"
       hostname: "{{ ise_base_hostname | lower }}-pan-server-2"
       roles:
-        - SPAN
+        - SecondaryAdmin
+      services: []
     - name: ISE MNT Server 1
-      local_ip: "{{ mnt1_local_ip }}"
       hostname: "{{ ise_base_hostname | lower }}-mnt-server-1"
       roles:
-        - MNT-ACTIVE
+        - PrimaryMonitoring
+      services: []
     - name: ISE PSN Server 1
-      local_ip: "{{ psn1_local_ip }}"
       hostname: "{{ ise_base_hostname | lower }}-psn-server-1"
-      roles:
-        - PDP
+      roles: []
+      services:
+        - Session
+        - Profiler 
     - name: ISE PSN Server 2
-      local_ip: "{{ psn2_local_ip }}"
       hostname: "{{ ise_base_hostname | lower }}-psn-server-2"
-      roles:
-        - PDP
+      roles: []
+      services:
+        - Session
+        - Profiler
 
 - name: Delete the MNT role from the primary node
-  cisco.ise.personas_promote_primary:
+  cisco.ise.personas_update_roles_services:
     ip: "{{ pan1_ip }}"
-    hostname: "{{ ise_base_hostname | lower }}-pan-server-1"
     username: "{{ ise_username }}"
     password: "{{ ise_password }}"
+    hostname: "{{ ise_base_hostname | lower }}-pan-server-1"
     roles:
-      - PPAN
+      - PrimaryAdmin
+    services: []
 
 - name: Wait for primary application server to come up again 
   pause:
     minutes: 10
 
 - name: Update node 'MNT Server 2' as MNT-STANDBY
-  cisco.ise.personas_update_roles:
+  cisco.ise.personas_register_node:
     primary_ip: "{{ pan1_ip }}"
     primary_username: "{{ ise_username }}"
     primary_password: "{{ ise_password }}"
     name: "{{ item.name }}"
-    local_ip: "{{ item.local_ip }}"
     hostname: "{{ item.hostname }}"
     username: "{{ ise_username }}"
     password: "{{ ise_password }}"
     domain: "{{ ise_domain }}"
     roles: "{{ item.roles }}"
+    services: "{{ item.services }}"
   loop:
     - name: ISE MNT Server 2
-      local_ip: "{{ mnt2_local_ip }}"
       hostname: "{{ ise_base_hostname | lower }}-mnt-server-2"
       roles:
-        - MNT-STANDBY
+        - SecondaryMonitoring
+      services: []
