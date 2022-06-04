@@ -1,28 +1,27 @@
 - name: Check if all nodes are in STANDALONE state
   cisco.ise.personas_check_standalone:
-    name: "{{ item.name }}"
     ip: "{{ item.ip }}"
     username: "{{ ise_username }}"
     password: "{{ ise_password }}"
     hostname: "{{ item.hostname }}"
   loop:
-    - name: ISE PAN Server 1
-      ip: "{{ pan1_ip }}"
+    # ISE PAN Server 1
+    - ip: "{{ pan1_ip }}"
       hostname: "{{ ise_base_hostname | lower }}-pan-server-1"
-    - name: ISE PAN Server 2
-      ip: "{{ pan2_ip }}"
+    # ISE PAN Server 2
+    - ip: "{{ pan2_ip }}"
       hostname: "{{ ise_base_hostname | lower }}-pan-server-2"
-    - name: ISE MNT Server 1
-      ip: "{{ mnt1_ip }}"
+    # ISE MNT Server 1
+    - ip: "{{ mnt1_ip }}"
       hostname: "{{ ise_base_hostname | lower }}-mnt-server-1"
-    - name: ISE MNT Server 2
-      ip: "{{ mnt2_ip }}"
+    # ISE MNT Server 2
+    - ip: "{{ mnt2_ip }}"
       hostname: "{{ ise_base_hostname | lower }}-mnt-server-2"
-    - name: ISE PSN Server 1
-      ip: "{{ psn1_ip }}"
+    # ISE PSN Server 1
+    - ip: "{{ psn1_ip }}"
       hostname: "{{ ise_base_hostname | lower }}-psn-server-1"
-    - name: ISE PSN Server 2
-      ip: "{{ psn2_ip }}"
+    # ISE PSN Server 2
+    - ip: "{{ psn2_ip }}"
       hostname: "{{ ise_base_hostname | lower }}-psn-server-2"
 
 - name: Export trusted certificates into primary node
@@ -55,7 +54,7 @@
 - name: Promote primary node
   cisco.ise.personas_promote_primary:
     ip: "{{ pan1_ip }}"
-    hostname: "{{ ise_base_hostname | lower }}-pan-server-1"
+    # hostname: "{{ ise_base_hostname | lower }}-pan-server-1"
     username: "{{ ise_username }}"
     password: "{{ ise_password }}"
 
@@ -64,7 +63,7 @@
     primary_ip: "{{ pan1_ip }}"
     primary_username: "{{ ise_username }}"
     primary_password: "{{ ise_password }}"
-    name: "{{ item.name }}"
+    # name: "{{ item.name }}"
     hostname: "{{ item.hostname }}"
     username: "{{ ise_username }}"
     password: "{{ ise_password }}"
