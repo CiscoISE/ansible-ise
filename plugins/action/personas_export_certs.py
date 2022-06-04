@@ -12,10 +12,7 @@ else:
 from ansible.errors import AnsibleActionFail
 from urllib.parse import quote
 import time
-from ansible_collections.cisco.ise.plugins.module_utils.personas_utils import (
-    Node,
-    ISEDeployment,
-)
+from ansible_collections.cisco.ise.plugins.module_utils.personas_utils import Node
 
 argument_spec = dict(
     primary_ip=dict(type="str", required=True),
