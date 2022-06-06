@@ -6,8 +6,8 @@
     hostname: "{{ item.hostname }}"
   loop:
     # ISE PAN Server 1
-    - ip: "{{ pan1_ip }}"
-      hostname: "{{ ise_base_hostname | lower }}-pan-server-1"
+    # - ip: "{{ pan1_ip }}"
+    #   hostname: "{{ ise_base_hostname | lower }}-pan-server-1"
     # ISE PAN Server 2
     - ip: "{{ pan2_ip }}"
       hostname: "{{ ise_base_hostname | lower }}-pan-server-2"
@@ -42,7 +42,6 @@
 - name: Promote primary node
   cisco.ise.personas_promote_primary:
     ip: "{{ pan1_ip }}"
-    hostname: "{{ ise_base_hostname | lower }}-pan-server-1"
     username: "{{ ise_username }}"
     password: "{{ ise_password }}"
 
@@ -75,3 +74,14 @@
       services:
         - Session
         - Profiler
+  
+- name: Remove the Session and Profiler services from the primary node
+  cisco.ise.personas_update_roles_services:
+    ip: "{{ pan1_ip }}"
+    username: "{{ ise_username }}"
+    password: "{{ ise_password }}"
+    hostname: "{{ ise_base_hostname | lower }}-pan-server-1"
+    roles:
+      - PrimaryAdmin
+      - PrimaryMonitoring
+    services: []

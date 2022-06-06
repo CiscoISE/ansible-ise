@@ -23,6 +23,7 @@ class Node(object):
         self.name = node.get("name")
         self.ip = node.get("ip")
         self.fqdn = node.get("fqdn")
+        self.hostname = node.get("hostname")
         self.username = node.get("username")
         self.password = node.get("password")
         self.roles = node.get("roles")
