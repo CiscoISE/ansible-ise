@@ -1,14 +1,6 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-# Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
-
-from __future__ import absolute_import, division, print_function
-
+from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
 from ansible.plugins.action import ActionBase
-
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
         AnsibleArgSpecValidator,
@@ -23,17 +15,15 @@ import time
 from ansible_collections.cisco.ise.plugins.module_utils.personas_utils import Node
 
 argument_spec = dict(
-    primary_ip=dict(type="str", required=True),
-    primary_username=dict(type="str", required=True),
-    primary_password=dict(type="str", required=True),
-    name=dict(type="str", required=True),
     ip=dict(type="str", required=True),
-    hostname=dict(type="str", required=True),
     username=dict(type="str", required=True),
     password=dict(type="str", required=True),
+    hostname=dict(type="str", required=True),
+    roles=dict(type="list", required=True),
+    services=dict(type="list", required=True),
     ise_verify=dict(type="bool", default=True),
-    ise_version=dict(type="str", default="3.1.0"),
-    ise_wait_on_rate_limit=dict(type="bool", default=True),
+    ise_version=dict(type="str", default="3.0.0"),
+    ise_wait_on_rate_limit=dict(type="bool", default=True),  # TODO: verify what the true default value should be
 )
 
 required_if = []
@@ -45,12 +35,9 @@ required_together = []
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail(
-                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
-            )
+            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
-        self._supports_check_mode = False
         self._result = None
 
     # Checks the supplied parameters against the argument spec for this module
@@ -77,21 +64,23 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-        primary_node = Node(dict(ip=self._task.args.get("primary_ip"),
-                                 username=self._task.args.get("primary_username"),
-                                 password=self._task.args.get("primary_password"),
-                                ))
+        node = Node(
+                    dict(
+                        ip=self._task.args.get("ip"),
+                        username=self._task.args.get("username"),
+                        password=self._task.args.get("password"),
+                        hostname=self._task.args.get("hostname"),
+                        roles=self._task.args.get("roles"),
+                        services=self._task.args.get("services"),
+                        )
+                    )
 
-        this_node = Node(dict(name=self._task.args.get("name"),
-                              ip=self._task.args.get("ip"),
-                              hostname=self._task.args.get("hostname"),
-                              username=self._task.args.get("username"),
-                              password=self._task.args.get("password"),
-                            ))
+        try:
+            node.update_roles_services()
+        except Exception as e:
+            AnsibleActionFail(e)
 
-        this_node.import_certificate_into_primary(primary_node)
-
-        response = "The certificate for {hostname} was exported successfully to the primary node".format(hostname=this_node.hostname)
+        response = "Node updated successfully"
 
         self._result.update(dict(ise_response=response))
         return self._result

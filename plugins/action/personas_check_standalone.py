@@ -20,15 +20,13 @@ else:
 from ansible.errors import AnsibleActionFail
 from urllib.parse import quote
 import time
-from ansible_collections.cisco.ise.plugins.plugin_utils.personas_utils import (
-    Node,
-)
+from ansible_collections.cisco.ise.plugins.module_utils.personas_utils import Node
 
 argument_spec = dict(
-    name=dict(type="str", required=True),
     ip=dict(type="str", required=True),
     username=dict(type="str", required=True),
     password=dict(type="str", required=True),
+    hostname=dict(type="str", required=True),
     ise_verify=dict(type="bool", default=True),
     ise_version=dict(type="str", default="3.1.0"),
     ise_wait_on_rate_limit=dict(type="bool", default=True),
@@ -75,14 +73,11 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-        node = Node(
-            dict(
-                name=self._task.args.get("name"),
-                ip=self._task.args.get("ip"),
-                username=self._task.args.get("username"),
-                password=self._task.args.get("password"),
-            )
-        )
+        node = Node(dict(ip=self._task.args.get("ip"),
+                         username=self._task.args.get("username"),
+                         password=self._task.args.get("password"),
+                         hostname=self._task.args.get("hostname")
+                         ))
 
         if not (node.is_standalone() and node.app_server_is_running()):
             raise AnsibleActionFail(
@@ -91,9 +86,7 @@ class ActionModule(ActionBase):
                 )
             )
 
-        response = "Node {name} is in STANDALONE mode".format(
-            name=self._task.args.get("name")
-        )
+        response = "Node {hostname} is in STANDALONE mode".format(hostname=self._task.args.get("hostname"))
 
         self._result.update(dict(ise_response=response))
         return self._result

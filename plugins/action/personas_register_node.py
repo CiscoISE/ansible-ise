@@ -20,22 +20,17 @@ else:
 from ansible.errors import AnsibleActionFail
 from urllib.parse import quote
 import time
-from ansible_collections.cisco.ise.plugins.plugin_utils.personas_utils import (
-    Node,
-    ISEDeployment,
-)
+from ansible_collections.cisco.ise.plugins.module_utils.personas_utils import Node
 
 argument_spec = dict(
     primary_ip=dict(type="str", required=True),
     primary_username=dict(type="str", required=True),
     primary_password=dict(type="str", required=True),
-    name=dict(type="str", required=True),
-    local_ip=dict(type="str", required=True),
-    hostname=dict(type="str", required=True),
+    fqdn=dict(type="str", required=True),
     username=dict(type="str", required=True),
     password=dict(type="str", required=True),
-    domain=dict(type="str", required=True),
     roles=dict(type="list", required=True),
+    services=dict(type="list", required=True),
     ise_verify=dict(type="bool", default=True),
     ise_version=dict(type="str", default="3.1.0"),
     ise_wait_on_rate_limit=dict(type="bool", default=True),
@@ -82,43 +77,25 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-        primary_node = dict(
-            ip=self._task.args.get("primary_ip"),
-            username=self._task.args.get("primary_username"),
-            password=self._task.args.get("primary_password"),
-        )
+        primary_node = Node(dict(ip=self._task.args.get("primary_ip"),
+                            username=self._task.args.get("primary_username"),
+                            password=self._task.args.get("primary_password"),
+                            ))
 
-        other_node = dict(
-            name=self._task.args.get("name"),
-            local_ip=self._task.args.get("local_ip"),
-            hostname=self._task.args.get("hostname"),
-            username=self._task.args.get("username"),
-            password=self._task.args.get("password"),
-            domain=self._task.args.get("domain"),
-            roles=self._task.args.get("roles"),
-        )
+        this_node = Node(dict(name=self._task.args.get("name"),
+                          fqdn=self._task.args.get("fqdn"),
+                          username=self._task.args.get("username"),
+                          password=self._task.args.get("password"),
+                          roles=self._task.args.get("roles"),
+                          services=self._task.args.get("services"),
+                          ))
 
-        if "PPAN" in other_node.get("roles"):
-            raise AnsibleActionFail("Only the primary node can have the 'PPAN' role")
+        if primary_node.app_server_is_running():
+            this_node.register_to_primary(primary_node)
+        else:
+            raise AnsibleActionFail("Application server is not running.")
 
-        ise_deployment = ISEDeployment()
-        ise_deployment.add_primary(primary_node)
-        ise_deployment.add_node(other_node)
-        secondary_node = ise_deployment.nodes[0]
-
-        retries_left = 10
-        wait_interval = 120
-        while retries_left > 0:
-            if ise_deployment.primary.app_server_is_running():
-                secondary_node.register_node(ise_deployment.primary)
-                break
-            else:
-                retries_left -= 1
-                time.sleep(wait_interval)
-
-        response = "Node {name} updated successfully".format(
-            name=self._task.args.get("name")
-        )
+        response = "Node {fqdn} updated successfully".format(fqdn=self._task.args.get("fqdn"))
 
         self._result.update(dict(ise_response=response))
         return self._result

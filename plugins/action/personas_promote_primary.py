@@ -20,17 +20,12 @@ else:
 from ansible.errors import AnsibleActionFail
 from urllib.parse import quote
 import time
-from ansible_collections.cisco.ise.plugins.plugin_utils.personas_utils import (
-    Node,
-    ISEDeployment,
-)
+from ansible_collections.cisco.ise.plugins.module_utils.personas_utils import Node
 
 argument_spec = dict(
     ip=dict(type="str", required=True),
-    hostname=dict(type="str", required=True),
     username=dict(type="str", required=True),
     password=dict(type="str", required=True),
-    roles=dict(type="list", required=True),
     ise_verify=dict(type="bool", default=True),
     ise_version=dict(type="str", default="3.1.0"),
     ise_wait_on_rate_limit=dict(type="bool", default=True),
@@ -77,21 +72,12 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-        primary_node = dict(
-            ip=self._task.args.get("ip"),
-            hostname=self._task.args.get("hostname"),
-            username=self._task.args.get("username"),
-            password=self._task.args.get("password"),
-            roles=self._task.args.get("roles"),
-        )
+        node = Node(dict(ip=self._task.args.get("ip"),
+                         username=self._task.args.get("username"),
+                         password=self._task.args.get("password"),
+                        ))
 
-        if "PPAN" not in primary_node.get("roles"):
-            raise AnsibleActionFail("Primary node must have at least the 'PPAN' role")
-
-        ise_deployment = ISEDeployment()
-        ise_deployment.add_primary(primary_node)
-
-        ise_deployment.promote_primary_node()
+        node.promote_to_primary()
 
         response = "Primary node was successfully updated"
 
