@@ -83,8 +83,7 @@ class ActionModule(ActionBase):
                                  )
                             )
 
-        this_node = Node(
-                         dict(name=self._task.args.get("name"),
+        this_node = Node(dict(name=self._task.args.get("name"),
                               ip=self._task.args.get("ip"),
                               hostname=self._task.args.get("hostname"),
                               username=self._task.args.get("username"),
