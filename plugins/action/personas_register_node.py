@@ -78,10 +78,10 @@ class ActionModule(ActionBase):
         self._check_argspec()
 
         primary_node = Node(dict(ip=self._task.args.get("primary_ip"),
-                            username=self._task.args.get("primary_username"),
-                            password=self._task.args.get("primary_password"),
+                                 username=self._task.args.get("primary_username"),
+                                 password=self._task.args.get("primary_password"),
+                                 )
                             )
-                        )
 
         this_node = Node(dict(name=self._task.args.get("name"),
                               fqdn=self._task.args.get("fqdn"),
@@ -89,8 +89,8 @@ class ActionModule(ActionBase):
                               password=self._task.args.get("password"),
                               roles=self._task.args.get("roles"),
                               services=self._task.args.get("services"),
-                            )
-                        )
+                              )
+                         )
 
         if primary_node.app_server_is_running():
             this_node.register_to_primary(primary_node)

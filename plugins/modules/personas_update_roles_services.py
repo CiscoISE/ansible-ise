@@ -10,7 +10,7 @@ module: personas_update_roles_services
 short_description: Update the roles and services of a node
 description:
 - Update the roles and services of a node
-version_added: '2.4.1'
+version_added: '2.4.0'
 author: Rafael Campos (@racampos)
 options:
   ip:
@@ -31,7 +31,8 @@ options:
     type: str
   roles:
     description:
-    - The roles to be fulfilled by this node. Possible roles are PrimaryAdmin, SecondaryAdmin, PrimaryMonitoring, SecondaryMonitoring, PrimaryDedicatedMonitoring, SecondaryDedicatedMonitoring, Standalone
+    - "The roles to be fulfilled by this node. Possible roles are PrimaryAdmin, SecondaryAdmin, \
+      PrimaryMonitoring, SecondaryMonitoring, PrimaryDedicatedMonitoring, SecondaryDedicatedMonitoring, Standalone"
     type: list
     elements: str
   services:

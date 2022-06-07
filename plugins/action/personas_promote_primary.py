@@ -75,7 +75,7 @@ class ActionModule(ActionBase):
         node = Node(dict(ip=self._task.args.get("ip"),
                          username=self._task.args.get("username"),
                          password=self._task.args.get("password"),
-                        )
+                         )
                     )
 
         node.promote_to_primary()
