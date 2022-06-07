@@ -237,7 +237,7 @@ plugins/action/patch_rollback.py compile-2.6!skip # Python 2.6 is not supported 
 plugins/action/personas_check_standalone.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/personas_export_certs.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/personas_promote_primary.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
-plugins/action/personas_update_roles.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
+plugins/action/personas_update_roles_services.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/portal_global_setting.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/portal_global_setting_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
 plugins/action/portal_info.py compile-2.6!skip # Python 2.6 is not supported by the Cisco ISE SDK
@@ -619,7 +619,7 @@ plugins/action/patch_rollback.py compile-2.7!skip # Python 2.7 is not supported 
 plugins/action/personas_check_standalone.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/personas_export_certs.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/personas_promote_primary.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
-plugins/action/personas_update_roles.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
+plugins/action/personas_update_roles_services.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/portal_global_setting.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/portal_global_setting_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
 plugins/action/portal_info.py compile-2.7!skip # Python 2.7 is not supported by the Cisco ISE SDK
