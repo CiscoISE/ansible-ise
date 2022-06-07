@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -67,13 +68,13 @@
            <div itemprop="articleBody">
              
   <section id="aws-deployment-guide">
-<h1>AWS Deployment Guide<a class="headerlink" href="#aws-deployment-guide" title="Permalink to this headline"></a></h1>
+<h1>AWS Deployment Guide<a class="headerlink" href="#aws-deployment-guide" title="Permalink to this heading"></a></h1>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
 <p>It is possible to deploy the Cisco Identity Service Enginer (ISE) on AWS using the official Cisco ISE AMI. The following guide explains how to use the Ansible role created for such task.</p>
 </section>
 <section id="goal">
-<h2>Goal<a class="headerlink" href="#goal" title="Permalink to this headline"></a></h2>
+<h2>Goal<a class="headerlink" href="#goal" title="Permalink to this heading"></a></h2>
 <p>The goals of this guide are:</p>
 <ol class="simple">
 <li><p>Install the ansible role</p></li>
@@ -82,14 +83,14 @@
 </ol>
 </section>
 <section id="pre-requisites">
-<h2>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this headline"></a></h2>
+<h2>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this heading"></a></h2>
 <p>It is recommended that you review the following guide before starting this one:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="./ansible-start-guide">ISE Ansible Getting started guide</a></p></li>
 </ul>
 </section>
 <section id="role-information">
-<h2>Role information<a class="headerlink" href="#role-information" title="Permalink to this headline"></a></h2>
+<h2>Role information<a class="headerlink" href="#role-information" title="Permalink to this heading"></a></h2>
 <p>Within the recently installed Ansible collection, comes an AWS deployment role which can be configured using variables.</p>
 <p>The role can be used like this:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span><span class="w"></span>
@@ -111,7 +112,7 @@
 </ol>
 </section>
 <section id="variables">
-<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline"></a></h2>
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this heading"></a></h2>
 <p>The role behavior can be changed using the following variables:</p>
 <ul class="simple">
 <li><p><strong>ise_base_hostname</strong>: Servers base hostname. Default: ISE</p></li>
@@ -131,10 +132,10 @@
 <li><p><strong>aws_instance_type</strong>: AWS Instance type for ISE servers. Default: c5.4xlarge</p></li>
 </ul>
 <section id="using-variables-in-ansible">
-<h3>Using variables in Ansible<a class="headerlink" href="#using-variables-in-ansible" title="Permalink to this headline"></a></h3>
+<h3>Using variables in Ansible<a class="headerlink" href="#using-variables-in-ansible" title="Permalink to this heading"></a></h3>
 <p>There are several ways of modifying the default variables. You can check the <a class="reference external" href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html">Ansible documentation</a> for more information.</p>
 <section id="command-line">
-<h4>Command line<a class="headerlink" href="#command-line" title="Permalink to this headline"></a></h4>
+<h4>Command line<a class="headerlink" href="#command-line" title="Permalink to this heading"></a></h4>
 <p>From the command line, it can be done with the <code class="docutils literal notranslate"><span class="pre">-e</span> <span class="pre">EXTRA_VARS</span></code> or <code class="docutils literal notranslate"><span class="pre">--extra-vars</span> <span class="pre">EXTRA_VARS</span></code> flag:</p>
 <div class="highlight-cli notranslate"><div class="highlight"><pre><span></span>ansible-playbook -i hosts playbooks/aws_deployment.yml -e &quot;aws_ise_ami=&#39;ami-0a8b4f863885c3372&#39;&quot;
 </pre></div>
@@ -144,7 +145,7 @@
 </div>
 </section>
 <section id="variables-file">
-<h4>Variables file<a class="headerlink" href="#variables-file" title="Permalink to this headline"></a></h4>
+<h4>Variables file<a class="headerlink" href="#variables-file" title="Permalink to this heading"></a></h4>
 <p>It is possible to use a variables file:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span><span class="w"></span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ISE Deployment Playbook</span><span class="w"></span>
@@ -159,7 +160,7 @@
 </div>
 </section>
 <section id="playbook-variables">
-<h4>Playbook variables<a class="headerlink" href="#playbook-variables" title="Permalink to this headline"></a></h4>
+<h4>Playbook variables<a class="headerlink" href="#playbook-variables" title="Permalink to this heading"></a></h4>
 <p>You can define the variables in the playbook:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span><span class="w"></span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ISE Deployment Playbook</span><span class="w"></span>
@@ -176,7 +177,7 @@
 </section>
 </section>
 <section id="role-usage">
-<h2>Role usage<a class="headerlink" href="#role-usage" title="Permalink to this headline"></a></h2>
+<h2>Role usage<a class="headerlink" href="#role-usage" title="Permalink to this heading"></a></h2>
 <p>There are 4 possible deployment types supported by this role:</p>
 <ol class="simple">
 <li><p>Single</p></li>
@@ -185,28 +186,28 @@
 <li><p>Large</p></li>
 </ol>
 <section id="single-deployment">
-<h3>Single deployment<a class="headerlink" href="#single-deployment" title="Permalink to this headline"></a></h3>
+<h3>Single deployment<a class="headerlink" href="#single-deployment" title="Permalink to this heading"></a></h3>
 <p>Set the <code class="docutils literal notranslate"><span class="pre">ise_deployment_type</span></code> variable to <code class="docutils literal notranslate"><span class="pre">single</span></code>. This deployment type creates one ISE server.</p>
 <div class="highlight-cli notranslate"><div class="highlight"><pre><span></span>ansible-playbook -i hosts playbooks/aws_deployment.yml -e &quot;ise_deployment_type=single&quot;
 </pre></div>
 </div>
 </section>
 <section id="small-deployment">
-<h3>Small deployment<a class="headerlink" href="#small-deployment" title="Permalink to this headline"></a></h3>
+<h3>Small deployment<a class="headerlink" href="#small-deployment" title="Permalink to this heading"></a></h3>
 <p>Set the <code class="docutils literal notranslate"><span class="pre">ise_deployment_type</span></code> variable to <code class="docutils literal notranslate"><span class="pre">small</span></code>. This deployment type creates two ISE servers.</p>
 <div class="highlight-cli notranslate"><div class="highlight"><pre><span></span>ansible-playbook -i hosts playbooks/aws_deployment.yml -e &quot;ise_deployment_type=small&quot;
 </pre></div>
 </div>
 </section>
 <section id="medium-deployment">
-<h3>Medium deployment<a class="headerlink" href="#medium-deployment" title="Permalink to this headline"></a></h3>
+<h3>Medium deployment<a class="headerlink" href="#medium-deployment" title="Permalink to this heading"></a></h3>
 <p>Set the <code class="docutils literal notranslate"><span class="pre">ise_deployment_type</span></code> variable to <code class="docutils literal notranslate"><span class="pre">medium</span></code>. This deployment type creates two servers with the PAN and MNT roles and up to five servers with the PSN role. It takes the extra variable <code class="docutils literal notranslate"><span class="pre">ise_psn_instances</span></code> to specify how many PSN servers should be created . For example, this would be the command for a deployment with two PSN servers:</p>
 <div class="highlight-cli notranslate"><div class="highlight"><pre><span></span>ansible-playbook -i hosts playbooks/aws_deployment.yml -e &quot;ise_deployment_type=medium ise_psn_instances=2&quot;
 </pre></div>
 </div>
 </section>
 <section id="large-deployment">
-<h3>Large deployment<a class="headerlink" href="#large-deployment" title="Permalink to this headline"></a></h3>
+<h3>Large deployment<a class="headerlink" href="#large-deployment" title="Permalink to this heading"></a></h3>
 <p>Set the <code class="docutils literal notranslate"><span class="pre">ise_deployment_type</span></code> variable to <code class="docutils literal notranslate"><span class="pre">large</span></code>. This deployment type creates two servers with the PAN role, two servers with the MNT role and up to 50 servers with the PSN role. It takes the extra variable <code class="docutils literal notranslate"><span class="pre">ise_psn_instances</span></code> to specify how many PSN servers should be created . For example, this would be the command for a deployment with two PSN servers:</p>
 <div class="highlight-cli notranslate"><div class="highlight"><pre><span></span>ansible-playbook -i hosts playbooks/aws_deployment.yml -e &quot;ise_deployment_type=large ise_psn_instances=2&quot;
 </pre></div>

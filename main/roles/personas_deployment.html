@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -67,14 +68,14 @@
            <div itemprop="articleBody">
              
   <section id="personas-deployment-guide">
-<h1>Personas Deployment Guide<a class="headerlink" href="#personas-deployment-guide" title="Permalink to this headline"></a></h1>
+<h1>Personas Deployment Guide<a class="headerlink" href="#personas-deployment-guide" title="Permalink to this heading"></a></h1>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
 <p>Once all ISE nodes have been deployed to AWS, we can use Ansible to build a multi-node ISE cluster with distinct ISE personas, such as Policy Administration nodes (PAN), Monitoring and Troubleshooting nodes (MNT), and Policy Services nodes (PSN).</p>
 <p><strong>Note</strong>: This role assumes the nodes have already been deployed to the AWS platform using the AWS Deployment role included in this collection. However, the role can be easily modified to suit any other needs, such as an on-prem deployment.</p>
 </section>
 <section id="goal">
-<h2>Goal<a class="headerlink" href="#goal" title="Permalink to this headline"></a></h2>
+<h2>Goal<a class="headerlink" href="#goal" title="Permalink to this heading"></a></h2>
 <p>The goals of this guide are:</p>
 <ol class="simple">
 <li><p>Install the Ansible ISE collection</p></li>
@@ -83,7 +84,7 @@
 </ol>
 </section>
 <section id="pre-requisites">
-<h2>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this headline"></a></h2>
+<h2>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this heading"></a></h2>
 <p>It is recommended that you review the following guides before starting this one:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="./ansible_start_guide">ISE Ansible Getting Started Guide</a></p></li>
@@ -91,7 +92,7 @@
 </ul>
 </section>
 <section id="role-information">
-<h2>Role information<a class="headerlink" href="#role-information" title="Permalink to this headline"></a></h2>
+<h2>Role information<a class="headerlink" href="#role-information" title="Permalink to this heading"></a></h2>
 <p>The Personas Deployment Ansible role acomplishes the following tasks:</p>
 <ol class="simple">
 <li><p>Checks whether or not all the nodes are in standalone mode. If not, the playbook exits with an error message.</p></li>
@@ -101,7 +102,7 @@
 </ol>
 </section>
 <section id="deployment-types">
-<h2>Deployment types<a class="headerlink" href="#deployment-types" title="Permalink to this headline"></a></h2>
+<h2>Deployment types<a class="headerlink" href="#deployment-types" title="Permalink to this heading"></a></h2>
 <p>This role supports the following deployment types:</p>
 <ol class="simple">
 <li><p><strong>Small</strong>: Two nodes fulfilling the following roles:</p>
@@ -129,10 +130,10 @@
 </ol>
 </section>
 <section id="variables">
-<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline"></a></h2>
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this heading"></a></h2>
 <p>Depending on the deployment type, the variables that need to be set are different. It is assumed that all nodes share the same credentials, as this is the default behavior of the AWS Deployment role. There are no default values for IP addresses, so all IP address variables must be specified.</p>
 <section id="variables-common-to-all-deployment-types">
-<h3>Variables common to all deployment types<a class="headerlink" href="#variables-common-to-all-deployment-types" title="Permalink to this headline"></a></h3>
+<h3>Variables common to all deployment types<a class="headerlink" href="#variables-common-to-all-deployment-types" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p><strong>ise_deployment_type</strong>: Could be <code class="docutils literal notranslate"><span class="pre">small</span></code>, <code class="docutils literal notranslate"><span class="pre">medium</span></code> or <code class="docutils literal notranslate"><span class="pre">large</span></code>. Default: <code class="docutils literal notranslate"><span class="pre">small</span></code></p></li>
 <li><p><strong>ise_username</strong>: Username for the nodes. Default: <code class="docutils literal notranslate"><span class="pre">admin</span></code></p></li>
@@ -141,37 +142,26 @@
 <li><p><strong>ise_base_hostname</strong>: The base hostname for the nodes. Default: <code class="docutils literal notranslate"><span class="pre">ISE</span></code></p></li>
 <li><p><strong>pan1_ip</strong>: Public IP address for the Primary PAN node.</p></li>
 <li><p><strong>pan2_ip</strong>: Public IP address for the Secondary PAN node.</p></li>
-<li><p><strong>pan2_local_ip</strong>: Private IP address for the Secondary PAN node.</p></li>
 </ul>
 </section>
 <section id="additional-variables-for-medium-or-large-deployments">
-<h3>Additional variables for medium or large deployments<a class="headerlink" href="#additional-variables-for-medium-or-large-deployments" title="Permalink to this headline"></a></h3>
+<h3>Additional variables for medium or large deployments<a class="headerlink" href="#additional-variables-for-medium-or-large-deployments" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p><strong>psn1_ip</strong>: Public IP address for the first PSN node</p></li>
 <li><p><strong>psn2_ip</strong>: Public IP address for the second PSN node</p></li>
 <li><p><strong>psn<em>N</em>_ip</strong>: Public IP address for the Nth PSN node</p></li>
-<li><p><strong>psn1_ip_local</strong>: Private IP address for the first PSN node</p></li>
-<li><p><strong>psn2_ip_local</strong>: Private IP address for the second PSN node</p></li>
-<li><p><strong>psn<em>N</em>_local_ip</strong>: Private IP address for the Nth PSN node</p></li>
 </ul>
 </section>
 <section id="additional-variables-specific-for-large-deployments">
-<h3>Additional variables specific for large deployments<a class="headerlink" href="#additional-variables-specific-for-large-deployments" title="Permalink to this headline"></a></h3>
+<h3>Additional variables specific for large deployments<a class="headerlink" href="#additional-variables-specific-for-large-deployments" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p><strong>mnt1_ip</strong>: Public IP address for the Active Monitoring node</p></li>
 <li><p><strong>mnt2_ip</strong>: Public IP address for the Standby Monitoring node</p></li>
-<li><p><strong>mnt1_local_ip</strong>: Private IP address for the Active Monitoring node</p></li>
-<li><p><strong>mnt2_local_ip</strong>: Private IP address for the Standby Monitoring node</p></li>
 </ul>
-<p><strong>Note</strong>: This guide assumes that the playbook will be run from outside the AWS infrastructure, so both the public and private IP addresses are needed. If the playbook were to be run from within the AWS infrastructure or in an on-prem deployment, then the public and private IP addresses would be the same. For example:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">psn1_local_ip</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{psn1_ip}}&quot;</span><span class="w"></span>
-<span class="nt">psn2_local_ip</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;{{psn2_ip}}&quot;</span><span class="w"></span>
-</pre></div>
-</div>
 </section>
 </section>
 <section id="role-usage">
-<h2>Role usage<a class="headerlink" href="#role-usage" title="Permalink to this headline"></a></h2>
+<h2>Role usage<a class="headerlink" href="#role-usage" title="Permalink to this heading"></a></h2>
 <p>Create a playbook that contains all the pertinent variables required by this role:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># playbooks/personas_deployment.yml</span><span class="w"></span>
 <span class="c1"># Example for a small deployment</span><span class="w"></span>
@@ -186,7 +176,6 @@
 <span class="w">    </span><span class="nt">ise_domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example.com</span><span class="w"></span>
 <span class="w">    </span><span class="nt">pan1_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.1.1.1</span><span class="w"></span>
 <span class="w">    </span><span class="nt">pan2_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.2.2.2</span><span class="w"></span>
-<span class="w">    </span><span class="nt">pan2_local_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0.0.2</span><span class="w"></span>
 
 <span class="w">  </span><span class="nt">roles</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cisco.ise.personas_deployment</span><span class="w"></span>
@@ -197,7 +186,7 @@
 </pre></div>
 </div>
 <section id="sample-playbooks-for-medium-and-large-deployments">
-<h3>Sample playbooks for medium and large deployments<a class="headerlink" href="#sample-playbooks-for-medium-and-large-deployments" title="Permalink to this headline"></a></h3>
+<h3>Sample playbooks for medium and large deployments<a class="headerlink" href="#sample-playbooks-for-medium-and-large-deployments" title="Permalink to this heading"></a></h3>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># playbooks/personas_deployment.yml</span><span class="w"></span>
 <span class="c1"># Example for a medium deployment</span><span class="w"></span>
 <span class="nn">---</span><span class="w"></span>
@@ -211,11 +200,8 @@
 <span class="w">    </span><span class="nt">ise_domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example.com</span><span class="w"></span>
 <span class="w">    </span><span class="nt">pan1_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.1.1.1</span><span class="w"></span>
 <span class="w">    </span><span class="nt">pan2_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.2.2.2</span><span class="w"></span>
-<span class="w">    </span><span class="nt">pan2_local_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0.0.2</span><span class="w"></span>
 <span class="w">    </span><span class="nt">psn1_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.3.3.3</span><span class="w"></span>
-<span class="w">    </span><span class="nt">psn1_local_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0.0.3</span><span class="w"></span>
 <span class="w">    </span><span class="nt">psn2_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4.4.4.4</span><span class="w"></span>
-<span class="w">    </span><span class="nt">psn2_local_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0.0.4</span><span class="w"></span>
 
 <span class="w">  </span><span class="nt">roles</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cisco.ise.personas_deployment</span><span class="w"></span>
@@ -234,15 +220,10 @@
 <span class="w">    </span><span class="nt">ise_domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example.com</span><span class="w"></span>
 <span class="w">    </span><span class="nt">pan1_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.1.1.1</span><span class="w"></span>
 <span class="w">    </span><span class="nt">pan2_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.2.2.2</span><span class="w"></span>
-<span class="w">    </span><span class="nt">pan2_local_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0.0.2</span><span class="w"></span>
 <span class="w">    </span><span class="nt">psn1_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.3.3.3</span><span class="w"></span>
-<span class="w">    </span><span class="nt">psn1_local_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0.0.3</span><span class="w"></span>
 <span class="w">    </span><span class="nt">psn2_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4.4.4.4</span><span class="w"></span>
-<span class="w">    </span><span class="nt">psn2_local_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0.0.4</span><span class="w"></span>
 <span class="w">    </span><span class="nt">mnt1_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.5.5.5</span><span class="w"></span>
-<span class="w">    </span><span class="nt">mnt1_local_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0.0.5</span><span class="w"></span>
 <span class="w">    </span><span class="nt">mnt2_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6.6.6.6</span><span class="w"></span>
-<span class="w">    </span><span class="nt">mnt2_local_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10.0.0.6</span><span class="w"></span>
 
 <span class="w">  </span><span class="nt">roles</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cisco.ise.personas_deployment</span><span class="w"></span>

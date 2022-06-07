@@ -70,8 +70,6 @@ Synopsis
 
 - Update the roles of a node
 
-.. note::
-    This module has a corresponding :ref:`action plugin <action_plugins>`.
 
 .. Aliases
 
