@@ -60,30 +60,18 @@ Depending on the deployment type, the variables that need to be set are differen
 - **ise_base_hostname**: The base hostname for the nodes. Default: `ISE`
 - **pan1_ip**: Public IP address for the Primary PAN node.
 - **pan2_ip**: Public IP address for the Secondary PAN node.
-- **pan2_local_ip**: Private IP address for the Secondary PAN node.
 
 ### Additional variables for medium or large deployments
 
 - **psn1_ip**: Public IP address for the first PSN node
 - **psn2_ip**: Public IP address for the second PSN node
 - **psn*N*_ip**: Public IP address for the Nth PSN node
-- **psn1_ip_local**: Private IP address for the first PSN node
-- **psn2_ip_local**: Private IP address for the second PSN node
-- **psn*N*_local_ip**: Private IP address for the Nth PSN node
 
 ### Additional variables specific for large deployments
 
 - **mnt1_ip**: Public IP address for the Active Monitoring node
 - **mnt2_ip**: Public IP address for the Standby Monitoring node
-- **mnt1_local_ip**: Private IP address for the Active Monitoring node
-- **mnt2_local_ip**: Private IP address for the Standby Monitoring node
 
-**Note**: This guide assumes that the playbook will be run from outside the AWS infrastructure, so both the public and private IP addresses are needed. If the playbook were to be run from within the AWS infrastructure or in an on-prem deployment, then the public and private IP addresses would be the same. For example:
-
-```yaml
-psn1_local_ip: "{{psn1_ip}}"
-psn2_local_ip: "{{psn2_ip}}"
-```
 
 ## Role usage
 
@@ -103,7 +91,6 @@ Create a playbook that contains all the pertinent variables required by this rol
     ise_domain: example.com
     pan1_ip: 1.1.1.1
     pan2_ip: 2.2.2.2
-    pan2_local_ip: 10.0.0.2
 
   roles:
     - cisco.ise.personas_deployment
@@ -131,11 +118,8 @@ ansible-playbook -i hosts playbooks/personas_deployment.yml
     ise_domain: example.com
     pan1_ip: 1.1.1.1
     pan2_ip: 2.2.2.2
-    pan2_local_ip: 10.0.0.2
     psn1_ip: 3.3.3.3
-    psn1_local_ip: 10.0.0.3
     psn2_ip: 4.4.4.4
-    psn2_local_ip: 10.0.0.4
 
   roles:
     - cisco.ise.personas_deployment
@@ -155,15 +139,10 @@ ansible-playbook -i hosts playbooks/personas_deployment.yml
     ise_domain: example.com
     pan1_ip: 1.1.1.1
     pan2_ip: 2.2.2.2
-    pan2_local_ip: 10.0.0.2
     psn1_ip: 3.3.3.3
-    psn1_local_ip: 10.0.0.3
     psn2_ip: 4.4.4.4
-    psn2_local_ip: 10.0.0.4
     mnt1_ip: 5.5.5.5
-    mnt1_local_ip: 10.0.0.5
     mnt2_ip: 6.6.6.6
-    mnt2_local_ip: 10.0.0.6
 
   roles:
     - cisco.ise.personas_deployment
