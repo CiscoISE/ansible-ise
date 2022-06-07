@@ -15,11 +15,7 @@ author: Rafael Campos (@racampos)
 options:
   ip:
     description:
-    - The public IP address of the primary node
-    type: str
-  hostname:
-    description:
-    - The hostname of the primary node.
+    - The IP address of the primary node
     type: str
   username:
     description:
@@ -29,11 +25,6 @@ options:
     description:
     - The password to log into the primary node.
     type: str
-  roles:
-    description:
-    - The roles to be fulfilled by this node. Must contain at least PPAN and any of MNT-ACTIVE or MNT-STANDBY or PDP
-    type: list
-    elements: str
   ise_verify:
     description:
     - Whether or not to verify the identity of the node.
@@ -60,12 +51,8 @@ EXAMPLES = r"""
 - name: Promote primary node
   cisco.ise.personas_promote_primary:
     ip: 10.1.1.1
-    hostname: ise-pan-server-1
     username: admin
-    password: cisco123
-    roles:
-      - PPAN
-      - MNT-ACTIVE
+    password: Cisco123
 """
 
 RETURN = r"""

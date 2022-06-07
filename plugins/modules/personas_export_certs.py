@@ -15,7 +15,7 @@ author: Rafael Campos (@racampos)
 options:
   primary_ip:
     description:
-    - The public IP address of the primary node.
+    - The IP address of the primary node.
     type: str
   primary_username:
     description:
@@ -31,7 +31,11 @@ options:
     type: str
   ip:
     description:
-    - The public IP address of the node for which the certificate will be exported.
+    - The IP address of the node for which the certificate will be exported.
+    type: str
+  hostname:
+    description:
+    - The hostname for the node for which the certificate will be exported.
     type: str
   username:
     description:
