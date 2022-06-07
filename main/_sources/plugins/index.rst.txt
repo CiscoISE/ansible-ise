@@ -280,7 +280,8 @@ Modules
 * :ref:`personas_check_standalone module <ansible_collections.cisco.ise.personas_check_standalone_module>` -- Ensure the node is in standalone mode
 * :ref:`personas_export_certs module <ansible_collections.cisco.ise.personas_export_certs_module>` -- Export certificate into primary node
 * :ref:`personas_promote_primary module <ansible_collections.cisco.ise.personas_promote_primary_module>` -- Promote a node as the primary node
-* :ref:`personas_update_roles module <ansible_collections.cisco.ise.personas_update_roles_module>` -- Update the roles of a node
+* :ref:`personas_register_node module <ansible_collections.cisco.ise.personas_register_node_module>` -- Register a node to the primary
+* :ref:`personas_update_roles_services module <ansible_collections.cisco.ise.personas_update_roles_services_module>` -- Update the roles and services of a node
 * :ref:`portal_global_setting module <ansible_collections.cisco.ise.portal_global_setting_module>` -- Resource module for Portal Global Setting
 * :ref:`portal_global_setting_info module <ansible_collections.cisco.ise.portal_global_setting_info_module>` -- Information module for Portal Global Setting
 * :ref:`portal_info module <ansible_collections.cisco.ise.portal_info_module>` -- Information module for Portal
@@ -673,7 +674,8 @@ Modules
     personas_check_standalone_module
     personas_export_certs_module
     personas_promote_primary_module
-    personas_update_roles_module
+    personas_register_node_module
+    personas_update_roles_services_module
     portal_global_setting_module
     portal_global_setting_info_module
     portal_info_module

@@ -26,7 +26,7 @@
 
 .. Anchors
 
-.. _ansible_collections.cisco.ise.personas_check_standalone_module:
+.. _ansible_collections.cisco.ise.personas_update_roles_services_module:
 
 .. Anchors: short name for ansible.builtin
 
@@ -36,8 +36,8 @@
 
 .. Title
 
-cisco.ise.personas_check_standalone module -- Ensure the node is in standalone mode
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.ise.personas_update_roles_services module -- Update the roles and services of a node
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -50,11 +50,11 @@ cisco.ise.personas_check_standalone module -- Ensure the node is in standalone m
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
 
-    To use it in a playbook, specify: :code:`cisco.ise.personas_check_standalone`.
+    To use it in a playbook, specify: :code:`cisco.ise.personas_update_roles_services`.
 
 .. version_added
 
-.. versionadded:: 0.0.8 of cisco.ise
+.. versionadded:: 2.4.1 of cisco.ise
 
 .. contents::
    :local:
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Ensure the mode is in standalone mode
+- Update the roles and services of a node
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -111,7 +111,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-hostname"></div>
 
-      .. _ansible_collections.cisco.ise.personas_check_standalone_module__parameter-hostname:
+      .. _ansible_collections.cisco.ise.personas_update_roles_services_module__parameter-hostname:
 
       .. rst-class:: ansible-option-title
 
@@ -133,7 +133,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The hostname for the node for which the certificate will be exported.
+      The hostname of the node.
 
 
       .. raw:: html
@@ -145,7 +145,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ip"></div>
 
-      .. _ansible_collections.cisco.ise.personas_check_standalone_module__parameter-ip:
+      .. _ansible_collections.cisco.ise.personas_update_roles_services_module__parameter-ip:
 
       .. rst-class:: ansible-option-title
 
@@ -167,7 +167,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The IP address of the node
+      The IP address of the node to be updated.
 
 
       .. raw:: html
@@ -179,7 +179,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ise_verify"></div>
 
-      .. _ansible_collections.cisco.ise.personas_check_standalone_module__parameter-ise_verify:
+      .. _ansible_collections.cisco.ise.personas_update_roles_services_module__parameter-ise_verify:
 
       .. rst-class:: ansible-option-title
 
@@ -220,7 +220,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ise_version"></div>
 
-      .. _ansible_collections.cisco.ise.personas_check_standalone_module__parameter-ise_version:
+      .. _ansible_collections.cisco.ise.personas_update_roles_services_module__parameter-ise_version:
 
       .. rst-class:: ansible-option-title
 
@@ -254,7 +254,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ise_wait_on_rate_limit"></div>
 
-      .. _ansible_collections.cisco.ise.personas_check_standalone_module__parameter-ise_wait_on_rate_limit:
+      .. _ansible_collections.cisco.ise.personas_update_roles_services_module__parameter-ise_wait_on_rate_limit:
 
       .. rst-class:: ansible-option-title
 
@@ -295,7 +295,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-password"></div>
 
-      .. _ansible_collections.cisco.ise.personas_check_standalone_module__parameter-password:
+      .. _ansible_collections.cisco.ise.personas_update_roles_services_module__parameter-password:
 
       .. rst-class:: ansible-option-title
 
@@ -317,7 +317,75 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The password for the node.
+      The password to log into the node.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-roles"></div>
+
+      .. _ansible_collections.cisco.ise.personas_update_roles_services_module__parameter-roles:
+
+      .. rst-class:: ansible-option-title
+
+      **roles**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-roles" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The roles to be fulfilled by this node. Possible roles are PrimaryAdmin, SecondaryAdmin, PrimaryMonitoring, SecondaryMonitoring, PrimaryDedicatedMonitoring, SecondaryDedicatedMonitoring, Standalone
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-services"></div>
+
+      .. _ansible_collections.cisco.ise.personas_update_roles_services_module__parameter-services:
+
+      .. rst-class:: ansible-option-title
+
+      **services**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-services" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The services this node will run. Possible services are Session, Profiler, TC-NAC, SXP, DeviceAdmin, PassiveIdentity, pxGrid, pxGridCloud
 
 
       .. raw:: html
@@ -329,7 +397,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-username"></div>
 
-      .. _ansible_collections.cisco.ise.personas_check_standalone_module__parameter-username:
+      .. _ansible_collections.cisco.ise.personas_update_roles_services_module__parameter-username:
 
       .. rst-class:: ansible-option-title
 
@@ -351,7 +419,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The username for the node.
+      The username to log into the node.
 
 
       .. raw:: html
@@ -377,8 +445,8 @@ See Also
 
 .. seealso::
 
-   \ :ref:`cisco.ise.plugins.modules.personas\_check\_standalone <ansible_collections.cisco.ise.plugins.modules.personas_check_standalone_module>`\ 
-      The official documentation on the **cisco.ise.plugins.modules.personas_check_standalone** module.
+   \ :ref:`cisco.ise.plugins.modules.personas\_update\_roles\_services <ansible_collections.cisco.ise.plugins.modules.personas_update_roles_services_module>`\ 
+      The official documentation on the **cisco.ise.plugins.modules.personas_update_roles_services** module.
 
 .. Examples
 
@@ -388,21 +456,15 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Check if all nodes are in STANDALONE state
-      cisco.ise.personas_check_standalone:
-        ip: "{{ item.ip }}"
+    - name: Remove the Primary Monitoring role and the Session and Profiler services from the primary node
+      cisco.ise.personas_update_roles_services:
+        ip: 10.1.1.1
         username: admin
-        password: cisco123
-        hostname: "{{ item.hostname }}"
-      loop:
-        - ip: 10.1.1.1
-          hostname: ise-pan-server-1
-        - ip: 10.1.1.2
-          hostname: ise-pan-server-2
-        - ip: 10.1.1.3
-          hostname: ise-psn-server-1
-        - ip: 10.1.1.4
-          hostname: ise-psn-server-2
+        password: C1sco123
+        hostname: ise-pan-server-1
+        roles:
+          - PrimaryAdmin
+        services: []
 
 
 
@@ -431,7 +493,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="return-ise_response"></div>
 
-      .. _ansible_collections.cisco.ise.personas_check_standalone_module__return-ise_response:
+      .. _ansible_collections.cisco.ise.personas_update_roles_services_module__return-ise_response:
 
       .. rst-class:: ansible-option-title
 
@@ -453,7 +515,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
         <div class="ansible-option-cell">
 
-      A string stating that the node is in standalone mode
+      A string stating that the node was successfully updated
 
 
       .. rst-class:: ansible-option-line
@@ -463,7 +525,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "Node ise-pan-server-1 is in STANDALONE mode"
+      :ansible-option-sample-bold:`Sample:` "Node ise-pan-server-1 updated successfully"
 
 
       .. raw:: html

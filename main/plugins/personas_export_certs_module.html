@@ -281,7 +281,8 @@
 <li class="toctree-l4"><a class="reference internal" href="personas_check_standalone_module.html">cisco.ise.personas_check_standalone module – Ensure the node is in standalone mode</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">cisco.ise.personas_export_certs module – Export certificate into primary node</a></li>
 <li class="toctree-l4"><a class="reference internal" href="personas_promote_primary_module.html">cisco.ise.personas_promote_primary module – Promote a node as the primary node</a></li>
-<li class="toctree-l4"><a class="reference internal" href="personas_update_roles_module.html">cisco.ise.personas_update_roles module – Update the roles of a node</a></li>
+<li class="toctree-l4"><a class="reference internal" href="personas_register_node_module.html">cisco.ise.personas_register_node module – Register a node to the primary</a></li>
+<li class="toctree-l4"><a class="reference internal" href="personas_update_roles_services_module.html">cisco.ise.personas_update_roles_services module – Update the roles and services of a node</a></li>
 <li class="toctree-l4"><a class="reference internal" href="portal_global_setting_module.html">cisco.ise.portal_global_setting module – Resource module for Portal Global Setting</a></li>
 <li class="toctree-l4"><a class="reference internal" href="portal_global_setting_info_module.html">cisco.ise.portal_global_setting_info module – Information module for Portal Global Setting</a></li>
 <li class="toctree-l4"><a class="reference internal" href="portal_info_module.html">cisco.ise.portal_info module – Information module for Portal</a></li>
@@ -514,13 +515,20 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </thead>
 <tbody>
 <tr class="row-even"><td><div class="ansible-option-cell">
-<div class="ansibleOptionAnchor" id="parameter-ip"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-personas-export-certs-module-parameter-ip"><strong>ip</strong></p>
-<a class="ansibleOptionLink" href="#parameter-ip" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+<div class="ansibleOptionAnchor" id="parameter-hostname"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-personas-export-certs-module-parameter-hostname"><strong>hostname</strong></p>
+<a class="ansibleOptionLink" href="#parameter-hostname" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-cell"><p>The public IP address of the node for which the certificate will be exported.</p>
+<td><div class="ansible-option-cell"><p>The hostname for the node for which the certificate will be exported.</p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-ip"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-personas-export-certs-module-parameter-ip"><strong>ip</strong></p>
+<a class="ansibleOptionLink" href="#parameter-ip" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>The IP address of the node for which the certificate will be exported.</p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-ise_verify"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-personas-export-certs-module-parameter-ise-verify"><strong>ise_verify</strong></p>
 <a class="ansibleOptionLink" href="#parameter-ise_verify" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -532,14 +540,14 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </ul>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-ise_version"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-personas-export-certs-module-parameter-ise-version"><strong>ise_version</strong></p>
 <a class="ansibleOptionLink" href="#parameter-ise_version" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>The version of the ISE node.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-ise_wait_on_rate_limit"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-personas-export-certs-module-parameter-ise-wait-on-rate-limit"><strong>ise_wait_on_rate_limit</strong></p>
 <a class="ansibleOptionLink" href="#parameter-ise_wait_on_rate_limit" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
@@ -551,42 +559,42 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </ul>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-name"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-personas-export-certs-module-parameter-name"><strong>name</strong></p>
 <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>The name of the node for which the certificate will be exported.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-password"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-personas-export-certs-module-parameter-password"><strong>password</strong></p>
 <a class="ansibleOptionLink" href="#parameter-password" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>The password for the node for which the certificate will be exported.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-primary_ip"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-personas-export-certs-module-parameter-primary-ip"><strong>primary_ip</strong></p>
 <a class="ansibleOptionLink" href="#parameter-primary_ip" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
-<td><div class="ansible-option-cell"><p>The public IP address of the primary node.</p>
+<td><div class="ansible-option-cell"><p>The IP address of the primary node.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-primary_password"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-personas-export-certs-module-parameter-primary-password"><strong>primary_password</strong></p>
 <a class="ansibleOptionLink" href="#parameter-primary_password" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>The password for the primary node.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-primary_username"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-personas-export-certs-module-parameter-primary-username"><strong>primary_username</strong></p>
 <a class="ansibleOptionLink" href="#parameter-primary_username" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>The username for the primary node.</p>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-username"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-personas-export-certs-module-parameter-username"><strong>username</strong></p>
 <a class="ansibleOptionLink" href="#parameter-username" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>

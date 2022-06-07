@@ -109,40 +109,6 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-hostname"></div>
-
-      .. _ansible_collections.cisco.ise.personas_promote_primary_module__parameter-hostname:
-
-      .. rst-class:: ansible-option-title
-
-      **hostname**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-hostname" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      The hostname of the primary node.
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ip"></div>
 
       .. _ansible_collections.cisco.ise.personas_promote_primary_module__parameter-ip:
@@ -167,7 +133,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The public IP address of the primary node
+      The IP address of the primary node
 
 
       .. raw:: html
@@ -327,40 +293,6 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-roles"></div>
-
-      .. _ansible_collections.cisco.ise.personas_promote_primary_module__parameter-roles:
-
-      .. rst-class:: ansible-option-title
-
-      **roles**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-roles" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      The roles to be fulfilled by this node. Must contain at least PPAN and any of MNT-ACTIVE or MNT-STANDBY or PDP
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-username"></div>
 
       .. _ansible_collections.cisco.ise.personas_promote_primary_module__parameter-username:
@@ -425,12 +357,8 @@ Examples
     - name: Promote primary node
       cisco.ise.personas_promote_primary:
         ip: 10.1.1.1
-        hostname: ise-pan-server-1
         username: admin
-        password: cisco123
-        roles:
-          - PPAN
-          - MNT-ACTIVE
+        password: Cisco123
 
 
 

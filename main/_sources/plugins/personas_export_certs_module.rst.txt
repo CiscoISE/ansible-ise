@@ -109,6 +109,40 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-hostname"></div>
+
+      .. _ansible_collections.cisco.ise.personas_export_certs_module__parameter-hostname:
+
+      .. rst-class:: ansible-option-title
+
+      **hostname**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-hostname" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The hostname for the node for which the certificate will be exported.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ip"></div>
 
       .. _ansible_collections.cisco.ise.personas_export_certs_module__parameter-ip:
@@ -133,7 +167,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The public IP address of the node for which the certificate will be exported.
+      The IP address of the node for which the certificate will be exported.
 
 
       .. raw:: html
@@ -351,7 +385,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The public IP address of the primary node.
+      The IP address of the primary node.
 
 
       .. raw:: html

@@ -26,7 +26,7 @@
 
 .. Anchors
 
-.. _ansible_collections.cisco.ise.personas_update_roles_module:
+.. _ansible_collections.cisco.ise.personas_register_node_module:
 
 .. Anchors: short name for ansible.builtin
 
@@ -36,8 +36,8 @@
 
 .. Title
 
-cisco.ise.personas_update_roles module -- Update the roles of a node
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.ise.personas_register_node module -- Register a node to the primary
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -50,11 +50,11 @@ cisco.ise.personas_update_roles module -- Update the roles of a node
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
 
-    To use it in a playbook, specify: :code:`cisco.ise.personas_update_roles`.
+    To use it in a playbook, specify: :code:`cisco.ise.personas_register_node`.
 
 .. version_added
 
-.. versionadded:: 0.0.8 of cisco.ise
+.. versionadded:: 2.4.1 of cisco.ise
 
 .. contents::
    :local:
@@ -68,8 +68,10 @@ Synopsis
 
 .. Description
 
-- Update the roles of a node
+- Register a node to the primary
 
+.. note::
+    This module has a corresponding :ref:`action plugin <action_plugins>`.
 
 .. Aliases
 
@@ -107,17 +109,17 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-domain"></div>
+        <div class="ansibleOptionAnchor" id="parameter-fqdn"></div>
 
-      .. _ansible_collections.cisco.ise.personas_update_roles_module__parameter-domain:
+      .. _ansible_collections.cisco.ise.personas_register_node_module__parameter-fqdn:
 
       .. rst-class:: ansible-option-title
 
-      **domain**
+      **fqdn**
 
       .. raw:: html
 
-        <a class="ansibleOptionLink" href="#parameter-domain" title="Permalink to this option"></a>
+        <a class="ansibleOptionLink" href="#parameter-fqdn" title="Permalink to this option"></a>
 
       .. rst-class:: ansible-option-type-line
 
@@ -131,7 +133,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The domain of the node.
+      The fully qualified domain name of the node.
 
 
       .. raw:: html
@@ -143,7 +145,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ise_verify"></div>
 
-      .. _ansible_collections.cisco.ise.personas_update_roles_module__parameter-ise_verify:
+      .. _ansible_collections.cisco.ise.personas_register_node_module__parameter-ise_verify:
 
       .. rst-class:: ansible-option-title
 
@@ -184,7 +186,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ise_version"></div>
 
-      .. _ansible_collections.cisco.ise.personas_update_roles_module__parameter-ise_version:
+      .. _ansible_collections.cisco.ise.personas_register_node_module__parameter-ise_version:
 
       .. rst-class:: ansible-option-title
 
@@ -218,7 +220,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ise_wait_on_rate_limit"></div>
 
-      .. _ansible_collections.cisco.ise.personas_update_roles_module__parameter-ise_wait_on_rate_limit:
+      .. _ansible_collections.cisco.ise.personas_register_node_module__parameter-ise_wait_on_rate_limit:
 
       .. rst-class:: ansible-option-title
 
@@ -257,77 +259,9 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-local_ip"></div>
-
-      .. _ansible_collections.cisco.ise.personas_update_roles_module__parameter-local_ip:
-
-      .. rst-class:: ansible-option-title
-
-      **local_ip**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-local_ip" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      The local IP address of the node
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-name"></div>
-
-      .. _ansible_collections.cisco.ise.personas_update_roles_module__parameter-name:
-
-      .. rst-class:: ansible-option-title
-
-      **name**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      The name of the node.
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-password"></div>
 
-      .. _ansible_collections.cisco.ise.personas_update_roles_module__parameter-password:
+      .. _ansible_collections.cisco.ise.personas_register_node_module__parameter-password:
 
       .. rst-class:: ansible-option-title
 
@@ -361,7 +295,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-primary_ip"></div>
 
-      .. _ansible_collections.cisco.ise.personas_update_roles_module__parameter-primary_ip:
+      .. _ansible_collections.cisco.ise.personas_register_node_module__parameter-primary_ip:
 
       .. rst-class:: ansible-option-title
 
@@ -383,7 +317,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The public IP address of the primary node.
+      The IP address of the primary node.
 
 
       .. raw:: html
@@ -395,7 +329,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-primary_password"></div>
 
-      .. _ansible_collections.cisco.ise.personas_update_roles_module__parameter-primary_password:
+      .. _ansible_collections.cisco.ise.personas_register_node_module__parameter-primary_password:
 
       .. rst-class:: ansible-option-title
 
@@ -429,7 +363,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-primary_username"></div>
 
-      .. _ansible_collections.cisco.ise.personas_update_roles_module__parameter-primary_username:
+      .. _ansible_collections.cisco.ise.personas_register_node_module__parameter-primary_username:
 
       .. rst-class:: ansible-option-title
 
@@ -463,7 +397,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-roles"></div>
 
-      .. _ansible_collections.cisco.ise.personas_update_roles_module__parameter-roles:
+      .. _ansible_collections.cisco.ise.personas_register_node_module__parameter-roles:
 
       .. rst-class:: ansible-option-title
 
@@ -485,7 +419,41 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The roles to be fulfilled by this node. Possible roles are SPAN or MNT-ACTIVE or MNT-STANDBY or PDP
+      The roles to be fulfilled by this node. Possible roles are PrimaryAdmin, SecondaryAdmin, PrimaryMonitoring, SecondaryMonitoring, PrimaryDedicatedMonitoring, SecondaryDedicatedMonitoring, Standalone
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-services"></div>
+
+      .. _ansible_collections.cisco.ise.personas_register_node_module__parameter-services:
+
+      .. rst-class:: ansible-option-title
+
+      **services**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-services" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The services this node will run. Possible services are Session, Profiler, TC-NAC, SXP, DeviceAdmin, PassiveIdentity, pxGrid, pxGridCloud
 
 
       .. raw:: html
@@ -497,7 +465,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-username"></div>
 
-      .. _ansible_collections.cisco.ise.personas_update_roles_module__parameter-username:
+      .. _ansible_collections.cisco.ise.personas_register_node_module__parameter-username:
 
       .. rst-class:: ansible-option-title
 
@@ -545,8 +513,8 @@ See Also
 
 .. seealso::
 
-   \ :ref:`cisco.ise.plugins.modules.personas\_update\_roles <ansible_collections.cisco.ise.plugins.modules.personas_update_roles_module>`\ 
-      The official documentation on the **cisco.ise.plugins.modules.personas_update_roles** module.
+   \ :ref:`cisco.ise.plugins.modules.personas\_register\_node <ansible_collections.cisco.ise.plugins.modules.personas_register_node_module>`\ 
+      The official documentation on the **cisco.ise.plugins.modules.personas_register_node** module.
 
 .. Examples
 
@@ -556,35 +524,32 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Update roles on the rest of the nodes
-      cisco.ise.personas_update_roles:
+    - name: Register the secondary node and PSN nodes to the cluster
+      cisco.ise.personas_register_node:
         primary_ip: 10.1.1.1
         primary_username: admin
-        primary_password: cisco123
-        name: "{{ item.name }}"
-        local_ip: "{{ item.local_ip }}"
-        hostname: "{{ item.hostname }}"
+        primary_password: Cisco123
+        fqdn: "{{ item.fqdn }}"
         username: admin
         password: cisco123
-        domain: sstcloud.com
         roles: "{{ item.roles }}"
+        services: "{{ item.services }}"
       loop:
-        - name: ISE PAN Server 2
-          local_ip: 10.1.1.2
-          hostname: ise-pan-server-2
+        - fqdn: ise-pan-server-2.example.com
           roles:
-            - SPAN
-            - MNT-STANDBY
-        - name: ISE PSN Server 1
-          local_ip: 10.1.1.3
-          hostname: ise-psn-server-1
-          roles:
-            - PDP
-        - name: ISE PSN Server 2
-          local_ip: 10.1.1.4
-          hostname: ise-psn-server-2
-          roles:
-            - PDP
+            - SecondaryAdmin
+            - SecondaryMonitoring
+          services: []
+        - fqdn: ise-psn-server-1.example.com
+          roles: []
+          services:
+            - Session
+            - Profiler
+        - fqdn: ise-psn-server-2.example.com
+          roles: []
+          services:
+            - Session
+            - Profiler
 
 
 
@@ -613,7 +578,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="return-ise_response"></div>
 
-      .. _ansible_collections.cisco.ise.personas_update_roles_module__return-ise_response:
+      .. _ansible_collections.cisco.ise.personas_register_node_module__return-ise_response:
 
       .. rst-class:: ansible-option-title
 
@@ -635,7 +600,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
         <div class="ansible-option-cell">
 
-      A string stating that the node was successfully updated
+      A string stating that the node was successfully registered
 
 
       .. rst-class:: ansible-option-line
@@ -645,7 +610,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "Node ISE PAN Server 2 updated successfully"
+      :ansible-option-sample-bold:`Sample:` "Node ise-pan-server-2 updated successfully"
 
 
       .. raw:: html
