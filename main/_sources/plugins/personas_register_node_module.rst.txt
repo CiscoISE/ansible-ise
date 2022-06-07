@@ -54,7 +54,7 @@ cisco.ise.personas_register_node module -- Register a node to the primary
 
 .. version_added
 
-.. versionadded:: 2.4.1 of cisco.ise
+.. versionadded:: 2.4.0 of cisco.ise
 
 .. contents::
    :local:

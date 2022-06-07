@@ -54,7 +54,7 @@ cisco.ise.personas_update_roles_services module -- Update the roles and services
 
 .. version_added
 
-.. versionadded:: 2.4.1 of cisco.ise
+.. versionadded:: 2.4.0 of cisco.ise
 
 .. contents::
    :local:
