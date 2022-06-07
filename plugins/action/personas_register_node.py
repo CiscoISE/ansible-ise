@@ -20,7 +20,7 @@ else:
 from ansible.errors import AnsibleActionFail
 from urllib.parse import quote
 import time
-from ansible_collections.cisco.ise.plugins.module_utils.personas_utils import Node
+from ansible_collections.cisco.ise.plugins.plugin_utils.personas_utils import Node
 
 argument_spec = dict(
     primary_ip=dict(type="str", required=True),
@@ -80,15 +80,17 @@ class ActionModule(ActionBase):
         primary_node = Node(dict(ip=self._task.args.get("primary_ip"),
                             username=self._task.args.get("primary_username"),
                             password=self._task.args.get("primary_password"),
-                            ))
+                            )
+                        )
 
         this_node = Node(dict(name=self._task.args.get("name"),
-                          fqdn=self._task.args.get("fqdn"),
-                          username=self._task.args.get("username"),
-                          password=self._task.args.get("password"),
-                          roles=self._task.args.get("roles"),
-                          services=self._task.args.get("services"),
-                          ))
+                              fqdn=self._task.args.get("fqdn"),
+                              username=self._task.args.get("username"),
+                              password=self._task.args.get("password"),
+                              roles=self._task.args.get("roles"),
+                              services=self._task.args.get("services"),
+                            )
+                        )
 
         if primary_node.app_server_is_running():
             this_node.register_to_primary(primary_node)

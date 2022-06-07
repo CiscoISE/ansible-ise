@@ -20,7 +20,7 @@ else:
 from ansible.errors import AnsibleActionFail
 from urllib.parse import quote
 import time
-from ansible_collections.cisco.ise.plugins.module_utils.personas_utils import Node
+from ansible_collections.cisco.ise.plugins.plugin_utils.personas_utils import Node
 
 argument_spec = dict(
     ip=dict(type="str", required=True),

@@ -12,7 +12,7 @@ else:
 from ansible.errors import AnsibleActionFail
 from urllib.parse import quote
 import time
-from ansible_collections.cisco.ise.plugins.module_utils.personas_utils import Node
+from ansible_collections.cisco.ise.plugins.plugin_utils.personas_utils import Node
 
 argument_spec = dict(
     ip=dict(type="str", required=True),
@@ -64,15 +64,13 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-        node = Node(
-                    dict(
-                        ip=self._task.args.get("ip"),
-                        username=self._task.args.get("username"),
-                        password=self._task.args.get("password"),
-                        hostname=self._task.args.get("hostname"),
-                        roles=self._task.args.get("roles"),
-                        services=self._task.args.get("services"),
-                        )
+        node = Node(dict(ip=self._task.args.get("ip"),
+                         username=self._task.args.get("username"),
+                         password=self._task.args.get("password"),
+                         hostname=self._task.args.get("hostname"),
+                         roles=self._task.args.get("roles"),
+                         services=self._task.args.get("services"),
+                         )
                     )
 
         try:

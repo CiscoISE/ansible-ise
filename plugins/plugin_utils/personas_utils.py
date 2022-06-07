@@ -151,7 +151,14 @@ class Node(object):
         url = "https://{primary_ip}/api/v1/certs/trusted-certificate/import".format(primary_ip=primary_node.ip)
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
         try:
-            response = requests.post(url=url, timeout=15, data=data, headers=headers, auth=(self.primary_node.username, self.primary_node.password), verify=False)
+            response = requests.post(url=url, 
+                                     timeout=15, 
+                                     data=data, 
+                                     headers=headers, 
+                                     auth=(self.primary_node.username, 
+                                     self.primary_node.password), 
+                                     verify=False
+                                    )
             return_message = json.loads(response.text)["response"]["message"]
         except Exception as e:
             AnsibleActionFail(e)

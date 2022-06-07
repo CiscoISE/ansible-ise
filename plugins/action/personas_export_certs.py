@@ -20,7 +20,7 @@ else:
 from ansible.errors import AnsibleActionFail
 from urllib.parse import quote
 import time
-from ansible_collections.cisco.ise.plugins.module_utils.personas_utils import Node
+from ansible_collections.cisco.ise.plugins.plugin_utils.personas_utils import Node
 
 argument_spec = dict(
     primary_ip=dict(type="str", required=True),
@@ -80,14 +80,16 @@ class ActionModule(ActionBase):
         primary_node = Node(dict(ip=self._task.args.get("primary_ip"),
                                  username=self._task.args.get("primary_username"),
                                  password=self._task.args.get("primary_password"),
-                                ))
+                                )
+                            )
 
         this_node = Node(dict(name=self._task.args.get("name"),
                               ip=self._task.args.get("ip"),
                               hostname=self._task.args.get("hostname"),
                               username=self._task.args.get("username"),
                               password=self._task.args.get("password"),
-                            ))
+                            )
+                        )
 
         this_node.import_certificate_into_primary(primary_node)
 
