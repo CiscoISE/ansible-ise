@@ -6,16 +6,16 @@
 
 DOCUMENTATION = r"""
 ---
-module: personas_update_roles
-short_description: Update the roles of a node
+module: personas_register_node
+short_description: Register a node to the primary
 description:
-- Update the roles of a node
-version_added: '0.0.8'
+- Register a node to the primary
+version_added: '2.4.0'
 author: Rafael Campos (@racampos)
 options:
   primary_ip:
     description:
-    - The public IP address of the primary node.
+    - The IP address of the primary node.
     type: str
   primary_username:
     description:
@@ -25,13 +25,9 @@ options:
     description:
     - The password for the primary node.
     type: str
-  name:
+  fqdn:
     description:
-    - The name of the node.
-    type: str
-  local_ip:
-    description:
-    - The local IP address of the node
+    - The fully qualified domain name of the node.
     type: str
   username:
     description:
@@ -41,13 +37,15 @@ options:
     description:
     - The password to log into the node.
     type: str
-  domain:
-    description:
-    - The domain of the node.
-    type: str
   roles:
     description:
-    - The roles to be fulfilled by this node. Possible roles are SPAN or MNT-ACTIVE or MNT-STANDBY or PDP
+    - "The roles to be fulfilled by this node. Possible roles are PrimaryAdmin, SecondaryAdmin, \
+      PrimaryMonitoring, SecondaryMonitoring, PrimaryDedicatedMonitoring, SecondaryDedicatedMonitoring, Standalone"
+    type: list
+    elements: str
+  services:
+    description:
+    - The services this node will run. Possible services are Session, Profiler, TC-NAC, SXP, DeviceAdmin, PassiveIdentity, pxGrid, pxGridCloud
     type: list
     elements: str
   ise_verify:
@@ -67,47 +65,44 @@ requirements:
 - python >= 3.5
 seealso:
 # Reference by module name
-- module: cisco.ise.plugins.modules.personas_update_roles
+- module: cisco.ise.plugins.modules.personas_register_node
 notes:
     - "Does not support C(check_mode)"
 """
 
 EXAMPLES = r"""
-- name: Update roles on the rest of the nodes
-  cisco.ise.personas_update_roles:
+- name: Register the secondary node and PSN nodes to the cluster
+  cisco.ise.personas_register_node:
     primary_ip: 10.1.1.1
     primary_username: admin
-    primary_password: cisco123
-    name: "{{ item.name }}"
-    local_ip: "{{ item.local_ip }}"
-    hostname: "{{ item.hostname }}"
+    primary_password: Cisco123
+    fqdn: "{{ item.fqdn }}"
     username: admin
     password: cisco123
-    domain: sstcloud.com
     roles: "{{ item.roles }}"
+    services: "{{ item.services }}"
   loop:
-    - name: ISE PAN Server 2
-      local_ip: 10.1.1.2
-      hostname: ise-pan-server-2
+    - fqdn: ise-pan-server-2.example.com
       roles:
-        - SPAN
-        - MNT-STANDBY
-    - name: ISE PSN Server 1
-      local_ip: 10.1.1.3
-      hostname: ise-psn-server-1
-      roles:
-        - PDP
-    - name: ISE PSN Server 2
-      local_ip: 10.1.1.4
-      hostname: ise-psn-server-2
-      roles:
-        - PDP
+        - SecondaryAdmin
+        - SecondaryMonitoring
+      services: []
+    - fqdn: ise-psn-server-1.example.com
+      roles: []
+      services:
+        - Session
+        - Profiler
+    - fqdn: ise-psn-server-2.example.com
+      roles: []
+      services:
+        - Session
+        - Profiler
 """
 
 RETURN = r"""
 ise_response:
-  description: A string stating that the node was successfully updated
+  description: A string stating that the node was successfully registered
   returned: always
   type: str
-  sample: Node ISE PAN Server 2 updated successfully
+  sample: Node ise-pan-server-2 updated successfully
 """

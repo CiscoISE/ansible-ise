@@ -1,14 +1,6 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-# Copyright (c) 2021, Cisco Systems
-# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
-
-from __future__ import absolute_import, division, print_function
-
+from __future__ import (absolute_import, division, print_function)
 __metaclass__ = type
 from ansible.plugins.action import ActionBase
-
 try:
     from ansible_collections.ansible.utils.plugins.module_utils.common.argspec_validate import (
         AnsibleArgSpecValidator,
@@ -26,9 +18,12 @@ argument_spec = dict(
     ip=dict(type="str", required=True),
     username=dict(type="str", required=True),
     password=dict(type="str", required=True),
+    hostname=dict(type="str", required=True),
+    roles=dict(type="list", required=True),
+    services=dict(type="list", required=True),
     ise_verify=dict(type="bool", default=True),
-    ise_version=dict(type="str", default="3.1.0"),
-    ise_wait_on_rate_limit=dict(type="bool", default=True),
+    ise_version=dict(type="str", default="3.0.0"),
+    ise_wait_on_rate_limit=dict(type="bool", default=True),  # TODO: verify what the true default value should be
 )
 
 required_if = []
@@ -40,12 +35,9 @@ required_together = []
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail(
-                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
-            )
+            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
-        self._supports_check_mode = False
         self._result = None
 
     # Checks the supplied parameters against the argument spec for this module
@@ -75,12 +67,18 @@ class ActionModule(ActionBase):
         node = Node(dict(ip=self._task.args.get("ip"),
                          username=self._task.args.get("username"),
                          password=self._task.args.get("password"),
+                         hostname=self._task.args.get("hostname"),
+                         roles=self._task.args.get("roles"),
+                         services=self._task.args.get("services"),
                          )
                     )
 
-        node.promote_to_primary()
+        try:
+            node.update_roles_services()
+        except Exception as e:
+            AnsibleActionFail(e)
 
-        response = "Primary node was successfully updated"
+        response = "Node updated successfully"
 
         self._result.update(dict(ise_response=response))
         return self._result

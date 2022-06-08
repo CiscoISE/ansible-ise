@@ -13,13 +13,9 @@ description:
 version_added: '0.0.8'
 author: Rafael Campos (@racampos)
 options:
-  name:
-    description:
-    - The name of the node.
-    type: str
   ip:
     description:
-    - The public IP address of the node
+    - The IP address of the node
     type: str
   username:
     description:
@@ -28,6 +24,10 @@ options:
   password:
     description:
     - The password for the node.
+    type: str
+  hostname:
+    description:
+    - The hostname for the node for which the certificate will be exported.
     type: str
   ise_verify:
     description:
@@ -54,19 +54,19 @@ notes:
 EXAMPLES = r"""
 - name: Check if all nodes are in STANDALONE state
   cisco.ise.personas_check_standalone:
-    name: "{{ item.name }}"
     ip: "{{ item.ip }}"
     username: admin
     password: cisco123
+    hostname: "{{ item.hostname }}"
   loop:
-    - name: ISE PAN Server 1
-      ip: 10.1.1.1
-    - name: ISE PAN Server 2
-      ip: 10.1.1.2
-    - name: ISE PSN Server 1
-      ip: 10.1.1.3
-    - name: ISE PSN Server 2
-      ip: 10.1.1.4
+    - ip: 10.1.1.1
+      hostname: ise-pan-server-1
+    - ip: 10.1.1.2
+      hostname: ise-pan-server-2
+    - ip: 10.1.1.3
+      hostname: ise-psn-server-1
+    - ip: 10.1.1.4
+      hostname: ise-psn-server-2
 """
 
 RETURN = r"""
@@ -74,5 +74,5 @@ ise_response:
   description: A string stating that the node is in standalone mode
   returned: always
   type: str
-  sample: Node ISE PAN Server 1 is in STANDALONE mode
+  sample: Node ise-pan-server-1 is in STANDALONE mode
 """
