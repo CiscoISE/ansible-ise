@@ -45,7 +45,7 @@ options:
     description: Username may contain alphanumeric and _-./@\\$ characters.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.3
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for Repository

@@ -20,7 +20,7 @@ options:
     description: Threat Vulnerabilities Clear's macAddresses.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.3
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for ClearThreatsAndVulnerabilities
