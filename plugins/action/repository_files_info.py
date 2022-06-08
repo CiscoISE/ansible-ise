@@ -81,15 +81,6 @@ class ActionModule(ActionBase):
 
         id = self._task.args.get("id")
         name = self._task.args.get("repositoryName")
-        if name:
-            response = ise.exec(
-                family="repository",
-                function='get_repository_files',
-                params=self.get_object(self._task.args)
-            ).response['response']
-            self._result.update(dict(ise_response=response))
-            self._result.update(ise.exit_json())
-            return self._result
         if not name and not id:
             response = ise.exec(
                 family="repository",

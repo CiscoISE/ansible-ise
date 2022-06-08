@@ -63,7 +63,7 @@ class Repository(object):
             server_name=params.get("serverName"),
             user_name=params.get("userName"),
             enable_pki=params.get("enablePki"),
-            repository_name=params.get("repositoryName") or params.get("name"),
+            repository_name=params.get("repositoryName"),
         )
 
     def get_object_by_name(self, name):

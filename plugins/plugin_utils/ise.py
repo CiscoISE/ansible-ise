@@ -109,7 +109,7 @@ def ise_argument_spec():
         ise_username=dict(type="str", required=True),
         ise_password=dict(type="str", required=True, no_log=True),
         ise_verify=dict(type="bool", default=True),
-        ise_version=dict(type="str", default="3.1_Patch_1"),
+        ise_version=dict(type="str", default="3.1.1"),
         ise_wait_on_rate_limit=dict(type="bool", default=True),
         ise_uses_api_gateway=dict(type="bool", default=True),
         ise_uses_csrf_token=dict(type="bool", default=False),
