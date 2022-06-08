@@ -74,7 +74,7 @@ options:
     description: Use certificate for SAML Signing.
     type: bool
 requirements:
-- ciscoisesdk >= 2.0.1
+- ciscoisesdk >= 2.0.3
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for Certificates
