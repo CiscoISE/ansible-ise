@@ -1,3 +1,4 @@
+
 .. Document meta
 
 :orphan:
@@ -784,7 +785,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "\\"\\u0027string\\u0027\\"\\n"
+      :ansible-option-sample-bold:`Sample:` "\\"'string'\\"\\n"
 
 
       .. raw:: html

@@ -1,3 +1,4 @@
+
 .. Document meta
 
 :orphan:
@@ -678,6 +679,19 @@ Examples
         id: string
         name: string
 
+    - name: Update by id with multiline ACL
+      cisco.ise.downloadable_acl:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: present
+        dacl: "permit udp any eq bootpc any eq bootps\n permit tcp any host {{ise-ip}} eq www"
+        daclType: string
+        description: "this is my\n multiline\n ACL."
+        id: string
+        name: string
+
     - name: Delete by id
       cisco.ise.downloadable_acl:
         ise_hostname: "{{ise_hostname}}"
@@ -697,6 +711,18 @@ Examples
         dacl: string
         daclType: string
         description: string
+        name: string
+
+    - name: Create with multiline ACL
+      cisco.ise.downloadable_acl:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: present
+        dacl: "permit udp any eq bootpc any eq bootps\n permit tcp any host {{ise-ip}} eq www"
+        daclType: string
+        description: "this is my\n multiline\n ACL."
         name: string
 
 
