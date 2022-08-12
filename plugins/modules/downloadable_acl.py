@@ -64,6 +64,19 @@ EXAMPLES = r"""
     id: string
     name: string
 
+- name: Update by id with multiline ACL
+  cisco.ise.downloadable_acl:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    dacl: "permit udp any eq bootpc any eq bootps\n permit tcp any host {{ise-ip}} eq www\n permit tcp any host {{ise-ip}} eq 443\n permit tcp any host {{ise-ip}} eq 8443\n permit tcp any host {{ise-ip}} eq 8905\n permit icmp any any"
+    daclType: string
+    description: "this is my\n multiline\n ACL."
+    id: string
+    name: string
+
 - name: Delete by id
   cisco.ise.downloadable_acl:
     ise_hostname: "{{ise_hostname}}"
@@ -83,6 +96,18 @@ EXAMPLES = r"""
     dacl: string
     daclType: string
     description: string
+    name: string
+
+- name: Create with multiline ACL
+  cisco.ise.downloadable_acl:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    state: present
+    dacl: "permit udp any eq bootpc any eq bootps\n permit tcp any host {{ise-ip}} eq www\n permit tcp any host {{ise-ip}} eq 443\n permit tcp any host {{ise-ip}} eq 8443\n permit tcp any host {{ise-ip}} eq 8905\n permit icmp any any"
+    daclType: string
+    description: "this is my\n multiline\n ACL."
     name: string
 
 """
