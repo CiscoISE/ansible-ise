@@ -71,7 +71,7 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    dacl: "permit udp any eq bootpc any eq bootps\n permit tcp any host {{ise-ip}} eq www\n permit tcp any host {{ise-ip}} eq 443\n permit tcp any host {{ise-ip}} eq 8443\n permit tcp any host {{ise-ip}} eq 8905\n permit icmp any any"
+    dacl: "permit udp any eq bootpc any eq bootps\n permit tcp any host {{ise-ip}} eq www"
     daclType: string
     description: "this is my\n multiline\n ACL."
     id: string
@@ -105,7 +105,7 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
-    dacl: "permit udp any eq bootpc any eq bootps\n permit tcp any host {{ise-ip}} eq www\n permit tcp any host {{ise-ip}} eq 443\n permit tcp any host {{ise-ip}} eq 8443\n permit tcp any host {{ise-ip}} eq 8905\n permit icmp any any"
+    dacl: "permit udp any eq bootpc any eq bootps\n permit tcp any host {{ise-ip}} eq www"
     daclType: string
     description: "this is my\n multiline\n ACL."
     name: string
