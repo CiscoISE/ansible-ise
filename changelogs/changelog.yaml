@@ -780,4 +780,11 @@ releases:
       bugfixes:
         - repository_files_info - Fixed a bug that did not make the get call.
         - repository - Fixed a bug, now repositoryName and name are used to perform the search.
-        - Fixed ISE version 3.1.1 to 3.1_Patch_1 which is the correct version name. 
+        - Fixed ISE version 3.1.1 to 3.1_Patch_1 which is the correct version name.
+  2.5.1:
+    release_date: "2022-08-29"
+    changes:
+      release_summary: Update example of module documentation and added a new validation.
+      bugfixes:
+        - downloadable_acl - update EXAMPLES block of module documentation.
+        - sgt - added new validation when updating a stg auto generated.

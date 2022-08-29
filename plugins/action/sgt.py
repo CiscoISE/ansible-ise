@@ -139,7 +139,8 @@ class Sgt(object):
 
     def requires_update(self, current_obj):
         requested_obj = self.new_object
-
+        if requested_obj.get("value") and requested_obj.get("value") == -1:
+            requested_obj["value"] = current_obj.get("value")
         obj_params = [
             ("name", "name"),
             ("description", "description"),
