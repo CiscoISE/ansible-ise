@@ -788,3 +788,9 @@ releases:
       bugfixes:
         - downloadable_acl - update EXAMPLES block of module documentation.
         - sgt - added new validation when updating a stg auto generated.
+  2.5.2:
+    release_date: "2022-08-29"
+    changes:
+      release_summary: Fixed galaxy publication
+      bugfixes:
+        - An error was corrected in galaxy publication
