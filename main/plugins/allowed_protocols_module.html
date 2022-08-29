@@ -466,11 +466,10 @@
 <h1>cisco.ise.allowed_protocols module – Resource module for Allowed Protocols<a class="headerlink" href="#cisco-ise-allowed-protocols-module-resource-module-for-allowed-protocols" title="Permalink to this heading"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/ise">cisco.ise collection</a> (version 2.5.0).</p>
-<p>You might already have this collection installed if you are using the <code class="docutils literal notranslate"><span class="pre">ansible</span></code> package.
-It is not included in <code class="docutils literal notranslate"><span class="pre">ansible-core</span></code>.
-To check whether it is installed, run <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">list</span></code>.</p>
-<p>To install it, use: <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">install</span> <span class="pre">cisco.ise</span></code>.</p>
+<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/ise">cisco.ise collection</a> (version 2.5.1).</p>
+<p>To install it, use: <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">install</span> <span class="pre">cisco.ise</span></code>.
+You need further requirements to be able to use this module,
+see <a class="reference internal" href="#ansible-collections-cisco-ise-allowed-protocols-module-requirements"><span class="std std-ref">Requirements</span></a> for details.</p>
 <p>To use it in a playbook, specify: <code class="code docutils literal notranslate"><span class="pre">cisco.ise.allowed_protocols</span></code>.</p>
 </div>
 <div class="versionadded">
@@ -500,7 +499,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </div>
 </section>
 <section id="requirements">
-<h2><a class="toc-backref" href="#id2">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
+<span id="ansible-collections-cisco-ise-allowed-protocols-module-requirements"></span><h2><a class="toc-backref" href="#id2">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
 <p>The below requirements are needed on the host that executes this module.</p>
 <ul class="simple">
 <li><p>ciscoisesdk &gt;= 2.0.3</p></li>
@@ -523,8 +522,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>AllowChap flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -535,8 +534,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>AllowEapFast flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -547,8 +546,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>AllowEapMd5 flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -559,8 +558,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>AllowEapTls flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -571,8 +570,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>AllowEapTtls flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -583,8 +582,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>AllowLeap flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -595,8 +594,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>AllowMsChapV1 flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -607,8 +606,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>AllowMsChapV2 flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -619,8 +618,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>AllowPapAscii flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -631,8 +630,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>AllowPeap flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -643,8 +642,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>AllowPreferredEapProtocol flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -655,8 +654,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>AllowTeap flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -667,8 +666,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>AllowWeakCiphersForEap flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -693,8 +692,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>AllowEapFastEapGtc flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -705,8 +704,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The allowEapFastEapGtcPwdChange is required only if allowEapFastEapGtc is true, otherwise it must be ignored.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -724,8 +723,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>AllowEapFastEapMsChapV2 flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -736,8 +735,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The allowEapFastEapMsChapV2PwdChange is required only if allowEapFastEapMsChapV2 is true, otherwise it must be ignored.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -755,8 +754,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>AllowEapFastEapTls flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -767,8 +766,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The allowEapFastEapTlsAuthOfExpiredCerts is required only if allowEapFastEapTls is true, otherwise it must be ignored.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -779,8 +778,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The eapFastDontUsePacsAcceptClientCert is required only if eapFastUsePacs is FALSE, otherwise it must be ignored.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -791,8 +790,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The eapFastDontUsePacsAllowMachineAuthentication is required only if eapFastUsePacs is FALSE, otherwise it must be ignored.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -803,8 +802,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>EapFastEnableEAPChaining flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -815,8 +814,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>EapFastUsePacs flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -827,8 +826,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The eapFastUsePacsAcceptClientCert is required only if eapFastUsePacsAllowAuthenProvisioning is true, otherwise it must be ignored.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -839,8 +838,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The eapFastUsePacsAllowAnonymProvisioning is required only if eapFastUsePacs is true, otherwise it must be ignored.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -851,8 +850,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The eapFastUsePacsAllowAuthenProvisioning is required only if eapFastUsePacs is true, otherwise it must be ignored.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -863,8 +862,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>EapFastUsePacsAllowMachineAuthentication flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -903,8 +902,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The eapFastUsePacsReturnAccessAcceptAfterAuthenticatedProvisioning is required only if eapFastUsePacsAllowAuthenProvisioning is true, otherwise it must be ignored.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -915,8 +914,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The eapFastUsePacsStatelessSessionResume is required only if eapFastUsePacs is true, otherwise it must be ignored.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -955,8 +954,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>AllowEapTlsAuthOfExpiredCerts flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -967,8 +966,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>EapTlsEnableStatelessSessionResume flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1000,8 +999,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>EapTlsLBit flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1019,8 +1018,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>EapTtlsChap flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1031,8 +1030,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>EapTtlsEapMd5 flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1043,8 +1042,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>EapTtlsEapMsChapV2 flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1055,8 +1054,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The eapTtlsEapMsChapV2PwdChange is required only if eapTtlsEapMsChapV2 is true, otherwise it must be ignored.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1074,8 +1073,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>EapTtlsMsChapV1 flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1086,8 +1085,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>EapTtlsMsChapV2 flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1098,8 +1097,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>EapTtlsPapAscii flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1117,8 +1116,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>Flag for Identity Services Engine SDK to enable debugging.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-default-bold">no</span> <span class="ansible-option-default">← (default)</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-default-bold">false</span> <span class="ansible-option-default">← (default)</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1153,8 +1152,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p>If it is false, it sends the requests to <a class="reference external" href="https:/">https:/</a>/{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-default-bold">yes</span> <span class="ansible-option-default">← (default)</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-default-bold">true</span> <span class="ansible-option-default">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1168,8 +1167,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p>If it is True, it assumes you need the SDK to manage the CSRF token automatically for you.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-default-bold">no</span> <span class="ansible-option-default">← (default)</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-default-bold">false</span> <span class="ansible-option-default">← (default)</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1180,8 +1179,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>Flag to enable or disable SSL certificate verification.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-default-bold">yes</span> <span class="ansible-option-default">← (default)</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-default-bold">true</span> <span class="ansible-option-default">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1200,8 +1199,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>Flag for Identity Services Engine SDK to enable automatic rate-limit handling.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-default-bold">yes</span> <span class="ansible-option-default">← (default)</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-default-bold">true</span> <span class="ansible-option-default">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1226,8 +1225,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>AllowPeapEapGtc flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1238,8 +1237,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The allowPeapEapGtcPwdChange is required only if allowPeapEapGtc is true, otherwise it must be ignored.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1257,8 +1256,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>AllowPeapEapMsChapV2 flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1269,8 +1268,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The allowPeapEapMsChapV2PwdChange is required only if allowPeapEapMsChapV2 is true, otherwise it must be ignored.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1288,8 +1287,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>AllowPeapEapTls flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1300,8 +1299,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The allowPeapEapTlsAuthOfExpiredCerts is required only if allowPeapEapTls is true, otherwise it must be ignored.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1312,8 +1311,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>AllowPeapV0 flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1324,8 +1323,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>RequireCryptobinding flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1343,8 +1342,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>ProcessHostLookup flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1355,8 +1354,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>RequireMessageAuth flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1374,8 +1373,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>AcceptClientCertDuringTunnelEst flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1386,8 +1385,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>AllowDowngradeMsk flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1398,8 +1397,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>AllowTeapEapMsChapV2 flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1410,8 +1409,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The allowTeapEapMsChapV2PwdChange is required only if allowTeapEapMsChapV2 is true, otherwise it must be ignored.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1429,8 +1428,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>AllowTeapEapTls flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1441,8 +1440,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The allowTeapEapTlsAuthOfExpiredCerts is required only if allowTeapEapTls is true, otherwise it must be ignored.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1453,8 +1452,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>EnableEapChaining flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1470,7 +1469,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <li><p>Paths used are post /ers/config/allowedprotocols, delete /ers/config/allowedprotocols/{id}, put /ers/config/allowedprotocols/{id},</p></li>
 <li><p>Does not support <code class="docutils literal notranslate"><span class="pre">check_mode</span></code></p></li>
 <li><p>The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK</p></li>
-<li><p>The parameters starting with <a href="#id7"><span class="problematic" id="id8">ise_</span></a> are used by the Cisco ISE Python SDK to establish the connection</p></li>
+<li><p>The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection</p></li>
 </ul>
 </div>
 </section>
@@ -1680,7 +1679,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </div></td>
 <td><div class="ansible-option-cell"><p>A dictionary or list with the response returned by the Cisco ISE Python SDK</p>
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> always</p>
-<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “{\n  \”id\”: \”string\”,\n  \”name\”: \”string\”,\n  \”description\”: \”string\”,\n  \”eapTls\”: {\n    \”allowEapTlsAuthOfExpiredCerts\”: true,\n    \”eapTlsEnableStatelessSessionResume\”: true,\n    \”eapTlsSessionTicketTtl\”: 0,\n    \”eapTlsSessionTicketTtlUnits\”: \”string\”,\n    \”eapTlsSessionTicketPrecentage\”: 0\n  },\n  \”peap\”: {\n    \”allowPeapEapMsChapV2\”: true,\n    \”allowPeapEapMsChapV2PwdChange\”: true,\n    \”allowPeapEapMsChapV2PwdChangeRetries\”: 0,\n    \”allowPeapEapGtc\”: true,\n    \”allowPeapEapGtcPwdChange\”: true,\n    \”allowPeapEapGtcPwdChangeRetries\”: 0,\n    \”allowPeapEapTls\”: true,\n    \”allowPeapEapTlsAuthOfExpiredCerts\”: true,\n    \”requireCryptobinding\”: true,\n    \”allowPeapV0\”: true\n  },\n  \”eapFast\”: {\n    \”allowEapFastEapMsChapV2\”: true,\n    \”allowEapFastEapMsChapV2PwdChange\”: true,\n    \”allowEapFastEapMsChapV2PwdChangeRetries\”: 0,\n    \”allowEapFastEapGtc\”: true,\n    \”allowEapFastEapGtcPwdChange\”: true,\n    \”allowEapFastEapGtcPwdChangeRetries\”: 0,\n    \”allowEapFastEapTls\”: true,\n    \”allowEapFastEapTlsAuthOfExpiredCerts\”: true,\n    \”eapFastUsePacs\”: true,\n    \”eapFastUsePacsTunnelPacTtl\”: 0,\n    \”eapFastUsePacsTunnelPacTtlUnits\”: \”string\”,\n    \”eapFastUsePacsUseProactivePacUpdatePrecentage\”: 0,\n    \”eapFastUsePacsAllowAnonymProvisioning\”: true,\n    \”eapFastUsePacsAllowAuthenProvisioning\”: true,\n    \”eapFastUsePacsReturnAccessAcceptAfterAuthenticatedProvisioning\”: true,\n    \”eapFastUsePacsAcceptClientCert\”: true,\n    \”eapFastUsePacsMachinePacTtl\”: 0,\n    \”eapFastUsePacsMachinePacTtlUnits\”: \”string\”,\n    \”eapFastUsePacsAllowMachineAuthentication\”: true,\n    \”eapFastUsePacsStatelessSessionResume\”: true,\n    \”eapFastUsePacsAuthorizationPacTtl\”: 0,\n    \”eapFastUsePacsAuthorizationPacTtlUnits\”: \”string\”,\n    \”eapFastDontUsePacsAcceptClientCert\”: true,\n    \”eapFastDontUsePacsAllowMachineAuthentication\”: true,\n    \”eapFastEnableEAPChaining\”: true\n  },\n  \”eapTtls\”: {\n    \”eapTtlsPapAscii\”: true,\n    \”eapTtlsChap\”: true,\n    \”eapTtlsMsChapV1\”: true,\n    \”eapTtlsMsChapV2\”: true,\n    \”eapTtlsEapMd5\”: true,\n    \”eapTtlsEapMsChapV2\”: true,\n    \”eapTtlsEapMsChapV2PwdChange\”: true,\n    \”eapTtlsEapMsChapV2PwdChangeRetries\”: 0\n  },\n  \”teap\”: {\n    \”allowTeapEapMsChapV2\”: true,\n    \”allowTeapEapMsChapV2PwdChange\”: true,\n    \”allowTeapEapMsChapV2PwdChangeRetries\”: 0,\n    \”allowTeapEapTls\”: true,\n    \”allowTeapEapTlsAuthOfExpiredCerts\”: true,\n    \”acceptClientCertDuringTunnelEst\”: true,\n    \”enableEapChaining\”: true,\n    \”allowDowngradeMsk\”: true\n  },\n  \”processHostLookup\”: true,\n  \”allowPapAscii\”: true,\n  \”allowChap\”: true,\n  \”allowMsChapV1\”: true,\n  \”allowMsChapV2\”: true,\n  \”allowEapMd5\”: true,\n  \”allowLeap\”: true,\n  \”allowEapTls\”: true,\n  \”allowEapTtls\”: true,\n  \”allowEapFast\”: true,\n  \”allowPeap\”: true,\n  \”allowTeap\”: true,\n  \”allowPreferredEapProtocol\”: true,\n  \”preferredEapProtocol\”: \”string\”,\n  \”eapTlsLBit\”: true,\n  \”allowWeakCiphersForEap\”: true,\n  \”requireMessageAuth\”: true,\n  \”link\”: {\n    \”rel\”: \”string\”,\n    \”href\”: \”string\”,\n    \”type\”: \”string\”\n  }\n}\n”</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> {“allowChap”: true, “allowEapFast”: true, “allowEapMd5”: true, “allowEapTls”: true, “allowEapTtls”: true, “allowLeap”: true, “allowMsChapV1”: true, “allowMsChapV2”: true, “allowPapAscii”: true, “allowPeap”: true, “allowPreferredEapProtocol”: true, “allowTeap”: true, “allowWeakCiphersForEap”: true, “description”: “string”, “eapFast”: {“allowEapFastEapGtc”: true, “allowEapFastEapGtcPwdChange”: true, “allowEapFastEapGtcPwdChangeRetries”: 0, “allowEapFastEapMsChapV2”: true, “allowEapFastEapMsChapV2PwdChange”: true, “allowEapFastEapMsChapV2PwdChangeRetries”: 0, “allowEapFastEapTls”: true, “allowEapFastEapTlsAuthOfExpiredCerts”: true, “eapFastDontUsePacsAcceptClientCert”: true, “eapFastDontUsePacsAllowMachineAuthentication”: true, “eapFastEnableEAPChaining”: true, “eapFastUsePacs”: true, “eapFastUsePacsAcceptClientCert”: true, “eapFastUsePacsAllowAnonymProvisioning”: true, “eapFastUsePacsAllowAuthenProvisioning”: true, “eapFastUsePacsAllowMachineAuthentication”: true, “eapFastUsePacsAuthorizationPacTtl”: 0, “eapFastUsePacsAuthorizationPacTtlUnits”: “string”, “eapFastUsePacsMachinePacTtl”: 0, “eapFastUsePacsMachinePacTtlUnits”: “string”, “eapFastUsePacsReturnAccessAcceptAfterAuthenticatedProvisioning”: true, “eapFastUsePacsStatelessSessionResume”: true, “eapFastUsePacsTunnelPacTtl”: 0, “eapFastUsePacsTunnelPacTtlUnits”: “string”, “eapFastUsePacsUseProactivePacUpdatePrecentage”: 0}, “eapTls”: {“allowEapTlsAuthOfExpiredCerts”: true, “eapTlsEnableStatelessSessionResume”: true, “eapTlsSessionTicketPrecentage”: 0, “eapTlsSessionTicketTtl”: 0, “eapTlsSessionTicketTtlUnits”: “string”}, “eapTlsLBit”: true, “eapTtls”: {“eapTtlsChap”: true, “eapTtlsEapMd5”: true, “eapTtlsEapMsChapV2”: true, “eapTtlsEapMsChapV2PwdChange”: true, “eapTtlsEapMsChapV2PwdChangeRetries”: 0, “eapTtlsMsChapV1”: true, “eapTtlsMsChapV2”: true, “eapTtlsPapAscii”: true}, “id”: “string”, “link”: {“href”: “string”, “rel”: “string”, “type”: “string”}, “name”: “string”, “peap”: {“allowPeapEapGtc”: true, “allowPeapEapGtcPwdChange”: true, “allowPeapEapGtcPwdChangeRetries”: 0, “allowPeapEapMsChapV2”: true, “allowPeapEapMsChapV2PwdChange”: true, “allowPeapEapMsChapV2PwdChangeRetries”: 0, “allowPeapEapTls”: true, “allowPeapEapTlsAuthOfExpiredCerts”: true, “allowPeapV0”: true, “requireCryptobinding”: true}, “preferredEapProtocol”: “string”, “processHostLookup”: true, “requireMessageAuth”: true, “teap”: {“acceptClientCertDuringTunnelEst”: true, “allowDowngradeMsk”: true, “allowTeapEapMsChapV2”: true, “allowTeapEapMsChapV2PwdChange”: true, “allowTeapEapMsChapV2PwdChangeRetries”: 0, “allowTeapEapTls”: true, “allowTeapEapTlsAuthOfExpiredCerts”: true, “enableEapChaining”: true}}</p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-cell">
@@ -1690,7 +1689,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </div></td>
 <td><div class="ansible-option-cell"><p>A dictionary or list with the response returned by the Cisco ISE Python SDK</p>
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> always</p>
-<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “{\n  \”UpdatedFieldsList\”: {\n    \”updatedField\”: [\n      {\n        \”field\”: \”string\”,\n        \”oldValue\”: \”string\”,\n        \”newValue\”: \”string\”\n      }\n    ],\n    \”field\”: \”string\”,\n    \”oldValue\”: \”string\”,\n    \”newValue\”: \”string\”\n  }\n}\n”</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> {“UpdatedFieldsList”: {“field”: “string”, “newValue”: “string”, “oldValue”: “string”, “updatedField”: [{“field”: “string”, “newValue”: “string”, “oldValue”: “string”}]}}</p>
 </div></td>
 </tr>
 </tbody>

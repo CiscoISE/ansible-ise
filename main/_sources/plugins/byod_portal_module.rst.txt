@@ -43,13 +43,11 @@ cisco.ise.byod_portal module -- Resource module for BYOD Portal
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.1).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.ise.byod_portal_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.ise.byod_portal`.
 
@@ -82,12 +80,14 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.ise.byod_portal_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 2.0.3
-- python >= 3.5
+- ciscoisesdk \>= 2.0.3
+- python \>= 3.5
 
 
 
@@ -1175,8 +1175,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -1316,17 +1316,17 @@ Parameters
 
       Flag that informs the SDK whether to use the Identity Services Engine's API Gateway to send requests.
 
-      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise_hostname}}.
+      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise\_hostname}}.
 
-      If it is false, it sends the requests to https://{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
+      If it is false, it sends the requests to https://{{ise\_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
 
 
       .. rst-class:: ansible-option-line
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -1373,8 +1373,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -1414,8 +1414,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -1493,8 +1493,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -1772,8 +1772,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -1985,8 +1985,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -2026,8 +2026,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -2067,8 +2067,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -2108,8 +2108,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -2149,8 +2149,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -2190,8 +2190,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -2608,8 +2608,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -2649,8 +2649,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -2690,8 +2690,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -2731,8 +2731,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -2772,8 +2772,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -2813,8 +2813,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -2832,11 +2832,11 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are byod_portal.ByodPortal.create_byod_portal, byod_portal.ByodPortal.delete_byod_portal_by_id, byod_portal.ByodPortal.update_byod_portal_by_id,
+   - SDK Method used are byod\_portal.ByodPortal.create\_byod\_portal, byod\_portal.ByodPortal.delete\_byod\_portal\_by\_id, byod\_portal.ByodPortal.update\_byod\_portal\_by\_id,
    - Paths used are post /ers/config/byodportal, delete /ers/config/byodportal/{id}, put /ers/config/byodportal/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
-   - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
+   - The parameters starting with ise\_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
@@ -3068,7 +3068,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"id\\": \\"string\\",\\n  \\"name\\": \\"string\\",\\n  \\"description\\": \\"string\\",\\n  \\"portalType\\": \\"string\\",\\n  \\"portalTestUrl\\": \\"string\\",\\n  \\"settings\\": {\\n    \\"portalSettings\\": {\\n      \\"httpsPort\\": 0,\\n      \\"allowedInterfaces\\": [\\n        \\"string\\"\\n      ],\\n      \\"certificateGroupTag\\": \\"string\\",\\n      \\"endpointIdentityGroup\\": \\"string\\",\\n      \\"displayLang\\": \\"string\\",\\n      \\"fallbackLanguage\\": \\"string\\",\\n      \\"alwaysUsedLanguage\\": \\"string\\"\\n    },\\n    \\"byodSettings\\": {\\n      \\"byodWelcomeSettings\\": {\\n        \\"enableBYOD\\": true,\\n        \\"enableGuestAccess\\": true,\\n        \\"requireMDM\\": true,\\n        \\"includeAup\\": true,\\n        \\"aupDisplay\\": \\"string\\",\\n        \\"requireAupAcceptance\\": true,\\n        \\"requireScrolling\\": true\\n      },\\n      \\"byodRegistrationSettings\\": {\\n        \\"showDeviceID\\": true,\\n        \\"endPointIdentityGroupId\\": \\"string\\"\\n      },\\n      \\"byodRegistrationSuccessSettings\\": {\\n        \\"successRedirect\\": \\"string\\",\\n        \\"redirectUrl\\": \\"string\\"\\n      }\\n    },\\n    \\"supportInfoSettings\\": {\\n      \\"includeSupportInfoPage\\": true,\\n      \\"includeMacAddr\\": true,\\n      \\"includeIpAddress\\": true,\\n      \\"includeBrowserUserAgent\\": true,\\n      \\"includePolicyServer\\": true,\\n      \\"includeFailureCode\\": true,\\n      \\"emptyFieldDisplay\\": \\"string\\",\\n      \\"defaultEmptyFieldValue\\": \\"string\\"\\n    }\\n  },\\n  \\"customizations\\": {\\n    \\"portalTheme\\": {\\n      \\"id\\": \\"string\\",\\n      \\"name\\": \\"string\\",\\n      \\"themeData\\": \\"string\\"\\n    },\\n    \\"portalTweakSettings\\": {\\n      \\"bannerColor\\": \\"string\\",\\n      \\"bannerTextColor\\": \\"string\\",\\n      \\"pageBackgroundColor\\": \\"string\\",\\n      \\"pageLabelAndTextColor\\": \\"string\\"\\n    },\\n    \\"language\\": {\\n      \\"viewLanguage\\": \\"string\\"\\n    },\\n    \\"globalCustomizations\\": {\\n      \\"mobileLogoImage\\": {\\n        \\"data\\": \\"string\\"\\n      },\\n      \\"desktopLogoImage\\": {\\n        \\"data\\": \\"string\\"\\n      },\\n      \\"bannerImage\\": {\\n        \\"data\\": \\"string\\"\\n      },\\n      \\"backgroundImage\\": {\\n        \\"data\\": \\"string\\"\\n      },\\n      \\"bannerTitle\\": \\"string\\",\\n      \\"contactText\\": \\"string\\",\\n      \\"footerElement\\": \\"string\\"\\n    },\\n    \\"pageCustomizations\\": {\\n      \\"data\\": [\\n        {\\n          \\"key\\": \\"string\\",\\n          \\"value\\": \\"string\\"\\n        }\\n      ]\\n    }\\n  },\\n  \\"link\\": {\\n    \\"rel\\": \\"string\\",\\n    \\"href\\": \\"string\\",\\n    \\"type\\": \\"string\\"\\n  }\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` {"customizations": {"globalCustomizations": {"backgroundImage": {"data": "string"}, "bannerImage": {"data": "string"}, "bannerTitle": "string", "contactText": "string", "desktopLogoImage": {"data": "string"}, "footerElement": "string", "mobileLogoImage": {"data": "string"}}, "language": {"viewLanguage": "string"}, "pageCustomizations": {"data": [{"key": "string", "value": "string"}]}, "portalTheme": {"id": "string", "name": "string", "themeData": "string"}, "portalTweakSettings": {"bannerColor": "string", "bannerTextColor": "string", "pageBackgroundColor": "string", "pageLabelAndTextColor": "string"}}, "description": "string", "id": "string", "link": {"href": "string", "rel": "string", "type": "string"}, "name": "string", "portalTestUrl": "string", "portalType": "string", "settings": {"byodSettings": {"byodRegistrationSettings": {"endPointIdentityGroupId": "string", "showDeviceID": true}, "byodRegistrationSuccessSettings": {"redirectUrl": "string", "successRedirect": "string"}, "byodWelcomeSettings": {"aupDisplay": "string", "enableBYOD": true, "enableGuestAccess": true, "includeAup": true, "requireAupAcceptance": true, "requireMDM": true, "requireScrolling": true}}, "portalSettings": {"allowedInterfaces": ["string"], "alwaysUsedLanguage": "string", "certificateGroupTag": "string", "displayLang": "string", "endpointIdentityGroup": "string", "fallbackLanguage": "string", "httpsPort": 0}, "supportInfoSettings": {"defaultEmptyFieldValue": "string", "emptyFieldDisplay": "string", "includeBrowserUserAgent": true, "includeFailureCode": true, "includeIpAddress": true, "includeMacAddr": true, "includePolicyServer": true, "includeSupportInfoPage": true}}}
 
 
       .. raw:: html
@@ -3116,7 +3116,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"UpdatedFieldsList\\": {\\n    \\"updatedField\\": [\\n      {\\n        \\"field\\": \\"string\\",\\n        \\"oldValue\\": \\"string\\",\\n        \\"newValue\\": \\"string\\"\\n      }\\n    ],\\n    \\"field\\": \\"string\\",\\n    \\"oldValue\\": \\"string\\",\\n    \\"newValue\\": \\"string\\"\\n  }\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` {"UpdatedFieldsList": {"field": "string", "newValue": "string", "oldValue": "string", "updatedField": [{"field": "string", "newValue": "string", "oldValue": "string"}]}}
 
 
       .. raw:: html

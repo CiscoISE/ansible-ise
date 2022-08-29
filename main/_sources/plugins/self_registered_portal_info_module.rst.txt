@@ -43,13 +43,11 @@ cisco.ise.self_registered_portal_info module -- Information module for Self Regi
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.1).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.ise.self_registered_portal_info_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.ise.self_registered_portal_info`.
 
@@ -82,12 +80,14 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.ise.self_registered_portal_info_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 2.0.3
-- python >= 3.5
+- ciscoisesdk \>= 2.0.3
+- python \>= 3.5
 
 
 
@@ -137,7 +137,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Filter query parameter. **Simple filtering** should be available through the filter query string parameter. The structure of a filter is a triplet of field operator and value separated with dots. More than one filter can be sent. The logical operator common to ALL filter criteria will be by default AND, and can be changed by using the "filterType=or" query string parameter.
+      Filter query parameter. \*\*Simple filtering\*\* should be available through the filter query string parameter. The structure of a filter is a triplet of field operator and value separated with dots. More than one filter can be sent. The logical operator common to ALL filter criteria will be by default AND, and can be changed by using the "filterType=or" query string parameter.
           
 
       Each resource Data model description should specify if an attribute is a filtered field.
@@ -270,8 +270,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -411,17 +411,17 @@ Parameters
 
       Flag that informs the SDK whether to use the Identity Services Engine's API Gateway to send requests.
 
-      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise_hostname}}.
+      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise\_hostname}}.
 
-      If it is false, it sends the requests to https://{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
+      If it is false, it sends the requests to https://{{ise\_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
 
 
       .. rst-class:: ansible-option-line
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -468,8 +468,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -509,8 +509,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -588,8 +588,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -741,11 +741,11 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are self_registered_portal.SelfRegisteredPortal.get_self_registered_portal_by_id, self_registered_portal.SelfRegisteredPortal.get_self_registered_portals_generator,
+   - SDK Method used are self\_registered\_portal.SelfRegisteredPortal.get\_self\_registered\_portal\_by\_id, self\_registered\_portal.SelfRegisteredPortal.get\_self\_registered\_portals\_generator,
    - Paths used are get /ers/config/selfregportal, get /ers/config/selfregportal/{id},
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
-   - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
+   - The parameters starting with ise\_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
@@ -848,7 +848,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"id\\": \\"string\\",\\n  \\"name\\": \\"string\\",\\n  \\"description\\": \\"string\\",\\n  \\"portalType\\": \\"string\\",\\n  \\"portalTestUrl\\": \\"string\\",\\n  \\"settings\\": {\\n    \\"portalSettings\\": {\\n      \\"httpsPort\\": 0,\\n      \\"allowedInterfaces\\": [\\n        \\"string\\"\\n      ],\\n      \\"certificateGroupTag\\": \\"string\\",\\n      \\"authenticationMethod\\": \\"string\\",\\n      \\"assignedGuestTypeForEmployee\\": \\"string\\",\\n      \\"displayLang\\": \\"string\\",\\n      \\"fallbackLanguage\\": \\"string\\",\\n      \\"alwaysUsedLanguage\\": \\"string\\"\\n    },\\n    \\"loginPageSettings\\": {\\n      \\"requireAccessCode\\": true,\\n      \\"maxFailedAttemptsBeforeRateLimit\\": 0,\\n      \\"timeBetweenLoginsDuringRateLimit\\": 0,\\n      \\"includeAup\\": true,\\n      \\"aupDisplay\\": \\"string\\",\\n      \\"requireAupAcceptance\\": true,\\n      \\"accessCode\\": \\"string\\",\\n      \\"allowGuestToCreateAccounts\\": true,\\n      \\"allowForgotPassword\\": true,\\n      \\"allowGuestToChangePassword\\": true,\\n      \\"allowAlternateGuestPortal\\": true,\\n      \\"alternateGuestPortal\\": \\"string\\",\\n      \\"allowGuestToUseSocialAccounts\\": true,\\n      \\"allowShowGuestForm\\": true,\\n      \\"socialConfigs\\": [\\n        {\\n          \\"socialMediaType\\": \\"string\\",\\n          \\"socialMediaValue\\": \\"string\\"\\n        }\\n      ]\\n    },\\n    \\"selfRegPageSettings\\": {\\n      \\"assignGuestsToGuestType\\": \\"string\\",\\n      \\"accountValidityDuration\\": 0,\\n      \\"accountValidityTimeUnits\\": \\"string\\",\\n      \\"requireRegistrationCode\\": true,\\n      \\"registrationCode\\": \\"string\\",\\n      \\"fieldUserName\\": {\\n        \\"include\\": true,\\n        \\"require\\": true\\n      },\\n      \\"fieldFirstName\\": {\\n        \\"include\\": true,\\n        \\"require\\": true\\n      },\\n      \\"fieldLastName\\": {\\n        \\"include\\": true,\\n        \\"require\\": true\\n      },\\n      \\"fieldEmailAddr\\": {\\n        \\"include\\": true,\\n        \\"require\\": true\\n      },\\n      \\"fieldPhoneNo\\": {\\n        \\"include\\": true,\\n        \\"require\\": true\\n      },\\n      \\"fieldCompany\\": {\\n        \\"include\\": true,\\n        \\"require\\": true\\n      },\\n      \\"fieldLocation\\": {\\n        \\"include\\": true,\\n        \\"require\\": true\\n      },\\n      \\"selectableLocations\\": [\\n        \\"string\\"\\n      ],\\n      \\"fieldSmsProvider\\": {\\n        \\"include\\": true,\\n        \\"require\\": true\\n      },\\n      \\"selectableSmsProviders\\": [\\n        \\"string\\"\\n      ],\\n      \\"fieldPersonBeingVisited\\": {\\n        \\"include\\": true,\\n        \\"require\\": true\\n      },\\n      \\"fieldReasonForVisit\\": {\\n        \\"include\\": true,\\n        \\"require\\": true\\n      },\\n      \\"includeAup\\": true,\\n      \\"aupDisplay\\": \\"string\\",\\n      \\"requireAupAcceptance\\": true,\\n      \\"enableGuestEmailWhitelist\\": true,\\n      \\"guestEmailWhitelistDomains\\": [\\n        \\"string\\"\\n      ],\\n      \\"enableGuestEmailBlacklist\\": true,\\n      \\"guestEmailBlacklistDomains\\": [\\n        \\"string\\"\\n      ],\\n      \\"requireGuestApproval\\": true,\\n      \\"autoLoginSelfWait\\": true,\\n      \\"autoLoginTimePeriod\\": 0,\\n      \\"allowGraceAccess\\": true,\\n      \\"graceAccessExpireInterval\\": 0,\\n      \\"graceAccessSendAccountExpiration\\": true,\\n      \\"sendApprovalRequestTo\\": \\"string\\",\\n      \\"approvalEmailAddresses\\": \\"string\\",\\n      \\"postRegistrationRedirect\\": \\"string\\",\\n      \\"postRegistrationRedirectUrl\\": \\"string\\",\\n      \\"credentialNotificationUsingEmail\\": true,\\n      \\"credentialNotificationUsingSms\\": true,\\n      \\"approveDenyLinksValidFor\\": 0,\\n      \\"approveDenyLinksTimeUnits\\": \\"string\\",\\n      \\"requireApproverToAuthenticate\\": true,\\n      \\"authenticateSponsorsUsingPortalList\\": true,\\n      \\"sponsorPortalList\\": [\\n        \\"string\\"\\n      ]\\n    },\\n    \\"selfRegSuccessSettings\\": {\\n      \\"includeUserName\\": true,\\n      \\"includePassword\\": true,\\n      \\"includeFirstName\\": true,\\n      \\"includeLastName\\": true,\\n      \\"includeEmailAddr\\": true,\\n      \\"includePhoneNo\\": true,\\n      \\"includeCompany\\": true,\\n      \\"includeLocation\\": true,\\n      \\"includeSmsProvider\\": true,\\n      \\"includePersonBeingVisited\\": true,\\n      \\"includeReasonForVisit\\": true,\\n      \\"allowGuestSendSelfUsingPrint\\": true,\\n      \\"allowGuestSendSelfUsingEmail\\": true,\\n      \\"allowGuestSendSelfUsingSms\\": true,\\n      \\"includeAup\\": true,\\n      \\"aupOnPage\\": true,\\n      \\"requireAupAcceptance\\": true,\\n      \\"requireAupScrolling\\": true,\\n      \\"allowGuestLoginFromSelfregSuccessPage\\": true\\n    },\\n    \\"aupSettings\\": {\\n      \\"includeAup\\": true,\\n      \\"useDiffAupForEmployees\\": true,\\n      \\"skipAupForEmployees\\": true,\\n      \\"requireScrolling\\": true,\\n      \\"requireAupScrolling\\": true,\\n      \\"displayFrequency\\": \\"string\\",\\n      \\"displayFrequencyIntervalDays\\": 0\\n    },\\n    \\"guestChangePasswordSettings\\": {\\n      \\"allowChangePasswdAtFirstLogin\\": true\\n    },\\n    \\"guestDeviceRegistrationSettings\\": {\\n      \\"autoRegisterGuestDevices\\": true,\\n      \\"allowGuestsToRegisterDevices\\": true\\n    },\\n    \\"byodSettings\\": {\\n      \\"byodWelcomeSettings\\": {\\n        \\"enableBYOD\\": true,\\n        \\"enableGuestAccess\\": true,\\n        \\"requireMDM\\": true,\\n        \\"includeAup\\": true,\\n        \\"aupDisplay\\": \\"string\\",\\n        \\"requireAupAcceptance\\": true,\\n        \\"requireScrolling\\": true\\n      },\\n      \\"byodRegistrationSettings\\": {\\n        \\"showDeviceID\\": true,\\n        \\"endPointIdentityGroupId\\": \\"string\\"\\n      },\\n      \\"byodRegistrationSuccessSettings\\": {\\n        \\"successRedirect\\": \\"string\\",\\n        \\"redirectUrl\\": \\"string\\"\\n      }\\n    },\\n    \\"postLoginBannerSettings\\": {\\n      \\"includePostAccessBanner\\": true\\n    },\\n    \\"postAccessBannerSettings\\": {\\n      \\"includePostAccessBanner\\": true\\n    },\\n    \\"authSuccessSettings\\": {\\n      \\"successRedirect\\": \\"string\\",\\n      \\"redirectUrl\\": \\"string\\"\\n    },\\n    \\"supportInfoSettings\\": {\\n      \\"includeSupportInfoPage\\": true,\\n      \\"includeMacAddr\\": true,\\n      \\"includeIpAddress\\": true,\\n      \\"includeBrowserUserAgent\\": true,\\n      \\"includePolicyServer\\": true,\\n      \\"includeFailureCode\\": true,\\n      \\"emptyFieldDisplay\\": \\"string\\",\\n      \\"defaultEmptyFieldValue\\": \\"string\\"\\n    }\\n  },\\n  \\"customizations\\": {\\n    \\"portalTheme\\": {\\n      \\"id\\": \\"string\\",\\n      \\"name\\": \\"string\\",\\n      \\"themeData\\": \\"string\\"\\n    },\\n    \\"portalTweakSettings\\": {\\n      \\"bannerColor\\": \\"string\\",\\n      \\"bannerTextColor\\": \\"string\\",\\n      \\"pageBackgroundColor\\": \\"string\\",\\n      \\"pageLabelAndTextColor\\": \\"string\\"\\n    },\\n    \\"language\\": {\\n      \\"viewLanguage\\": \\"string\\"\\n    },\\n    \\"globalCustomizations\\": {\\n      \\"mobileLogoImage\\": {\\n        \\"data\\": \\"string\\"\\n      },\\n      \\"desktopLogoImage\\": {\\n        \\"data\\": \\"string\\"\\n      },\\n      \\"bannerImage\\": {\\n        \\"data\\": \\"string\\"\\n      },\\n      \\"backgroundImage\\": {\\n        \\"data\\": \\"string\\"\\n      },\\n      \\"bannerTitle\\": \\"string\\",\\n      \\"contactText\\": \\"string\\",\\n      \\"footerElement\\": \\"string\\"\\n    },\\n    \\"pageCustomizations\\": {\\n      \\"data\\": [\\n        {\\n          \\"key\\": \\"string\\",\\n          \\"value\\": \\"string\\"\\n        }\\n      ]\\n    }\\n  },\\n  \\"link\\": {\\n    \\"rel\\": \\"string\\",\\n    \\"href\\": \\"string\\",\\n    \\"type\\": \\"string\\"\\n  }\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` {"customizations": {"globalCustomizations": {"backgroundImage": {"data": "string"}, "bannerImage": {"data": "string"}, "bannerTitle": "string", "contactText": "string", "desktopLogoImage": {"data": "string"}, "footerElement": "string", "mobileLogoImage": {"data": "string"}}, "language": {"viewLanguage": "string"}, "pageCustomizations": {"data": [{"key": "string", "value": "string"}]}, "portalTheme": {"id": "string", "name": "string", "themeData": "string"}, "portalTweakSettings": {"bannerColor": "string", "bannerTextColor": "string", "pageBackgroundColor": "string", "pageLabelAndTextColor": "string"}}, "description": "string", "id": "string", "link": {"href": "string", "rel": "string", "type": "string"}, "name": "string", "portalTestUrl": "string", "portalType": "string", "settings": {"aupSettings": {"displayFrequency": "string", "displayFrequencyIntervalDays": 0, "includeAup": true, "requireAupScrolling": true, "requireScrolling": true, "skipAupForEmployees": true, "useDiffAupForEmployees": true}, "authSuccessSettings": {"redirectUrl": "string", "successRedirect": "string"}, "byodSettings": {"byodRegistrationSettings": {"endPointIdentityGroupId": "string", "showDeviceID": true}, "byodRegistrationSuccessSettings": {"redirectUrl": "string", "successRedirect": "string"}, "byodWelcomeSettings": {"aupDisplay": "string", "enableBYOD": true, "enableGuestAccess": true, "includeAup": true, "requireAupAcceptance": true, "requireMDM": true, "requireScrolling": true}}, "guestChangePasswordSettings": {"allowChangePasswdAtFirstLogin": true}, "guestDeviceRegistrationSettings": {"allowGuestsToRegisterDevices": true, "autoRegisterGuestDevices": true}, "loginPageSettings": {"accessCode": "string", "allowAlternateGuestPortal": true, "allowForgotPassword": true, "allowGuestToChangePassword": true, "allowGuestToCreateAccounts": true, "allowGuestToUseSocialAccounts": true, "allowShowGuestForm": true, "alternateGuestPortal": "string", "aupDisplay": "string", "includeAup": true, "maxFailedAttemptsBeforeRateLimit": 0, "requireAccessCode": true, "requireAupAcceptance": true, "socialConfigs": [{"socialMediaType": "string", "socialMediaValue": "string"}], "timeBetweenLoginsDuringRateLimit": 0}, "portalSettings": {"allowedInterfaces": ["string"], "alwaysUsedLanguage": "string", "assignedGuestTypeForEmployee": "string", "authenticationMethod": "string", "certificateGroupTag": "string", "displayLang": "string", "fallbackLanguage": "string", "httpsPort": 0}, "postAccessBannerSettings": {"includePostAccessBanner": true}, "postLoginBannerSettings": {"includePostAccessBanner": true}, "selfRegPageSettings": {"accountValidityDuration": 0, "accountValidityTimeUnits": "string", "allowGraceAccess": true, "approvalEmailAddresses": "string", "approveDenyLinksTimeUnits": "string", "approveDenyLinksValidFor": 0, "assignGuestsToGuestType": "string", "aupDisplay": "string", "authenticateSponsorsUsingPortalList": true, "autoLoginSelfWait": true, "autoLoginTimePeriod": 0, "credentialNotificationUsingEmail": true, "credentialNotificationUsingSms": true, "enableGuestEmailBlacklist": true, "enableGuestEmailWhitelist": true, "fieldCompany": {"include": true, "require": true}, "fieldEmailAddr": {"include": true, "require": true}, "fieldFirstName": {"include": true, "require": true}, "fieldLastName": {"include": true, "require": true}, "fieldLocation": {"include": true, "require": true}, "fieldPersonBeingVisited": {"include": true, "require": true}, "fieldPhoneNo": {"include": true, "require": true}, "fieldReasonForVisit": {"include": true, "require": true}, "fieldSmsProvider": {"include": true, "require": true}, "fieldUserName": {"include": true, "require": true}, "graceAccessExpireInterval": 0, "graceAccessSendAccountExpiration": true, "guestEmailBlacklistDomains": ["string"], "guestEmailWhitelistDomains": ["string"], "includeAup": true, "postRegistrationRedirect": "string", "postRegistrationRedirectUrl": "string", "registrationCode": "string", "requireApproverToAuthenticate": true, "requireAupAcceptance": true, "requireGuestApproval": true, "requireRegistrationCode": true, "selectableLocations": ["string"], "selectableSmsProviders": ["string"], "sendApprovalRequestTo": "string", "sponsorPortalList": ["string"]}, "selfRegSuccessSettings": {"allowGuestLoginFromSelfregSuccessPage": true, "allowGuestSendSelfUsingEmail": true, "allowGuestSendSelfUsingPrint": true, "allowGuestSendSelfUsingSms": true, "aupOnPage": true, "includeAup": true, "includeCompany": true, "includeEmailAddr": true, "includeFirstName": true, "includeLastName": true, "includeLocation": true, "includePassword": true, "includePersonBeingVisited": true, "includePhoneNo": true, "includeReasonForVisit": true, "includeSmsProvider": true, "includeUserName": true, "requireAupAcceptance": true, "requireAupScrolling": true}, "supportInfoSettings": {"defaultEmptyFieldValue": "string", "emptyFieldDisplay": "string", "includeBrowserUserAgent": true, "includeFailureCode": true, "includeIpAddress": true, "includeMacAddr": true, "includePolicyServer": true, "includeSupportInfoPage": true}}}
 
 
       .. raw:: html

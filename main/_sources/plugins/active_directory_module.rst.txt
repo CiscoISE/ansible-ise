@@ -43,13 +43,11 @@ cisco.ise.active_directory module -- Resource module for Active Directory
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.1).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.ise.active_directory_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.ise.active_directory`.
 
@@ -81,12 +79,14 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.ise.active_directory_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 2.0.3
-- python >= 3.5
+- ciscoisesdk \>= 2.0.3
+- python \>= 3.5
 
 
 
@@ -204,7 +204,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Required for each attribute in the attribute list. Can contain an empty string. All characters are allowed except <%".
+      Required for each attribute in the attribute list. Can contain an empty string. All characters are allowed except \<%".
 
 
       .. raw:: html
@@ -238,7 +238,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Required for each attribute in the attribute list. All characters are allowed except <%".
+      Required for each attribute in the attribute list. All characters are allowed except \<%".
 
 
       .. raw:: html
@@ -272,7 +272,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Required for each attribute in the attribute list with no duplication between attributes. All characters are allowed except <%".
+      Required for each attribute in the attribute list with no duplication between attributes. All characters are allowed except \<%".
 
 
       .. raw:: html
@@ -306,7 +306,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Required for each group in the group list. Allowed values STRING, IP, BOOLEAN, INT, OCTET_STRING.
+      Required for each group in the group list. Allowed values STRING, IP, BOOLEAN, INT, OCTET\_STRING.
 
 
       .. raw:: html
@@ -514,7 +514,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      String that contains the names of the scopes that the active directory belongs to. Names are separated by comma. Alphanumeric, underscore (_) characters are allowed.
+      String that contains the names of the scopes that the active directory belongs to. Names are separated by comma. Alphanumeric, underscore (\_) characters are allowed.
 
 
       .. raw:: html
@@ -759,8 +759,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -800,8 +800,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -841,8 +841,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -882,8 +882,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -923,8 +923,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -964,8 +964,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -1005,8 +1005,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -1107,7 +1107,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Allowed values REJECT, SEARCH_JOINED_FOREST, SEARCH_ALL.
+      Allowed values REJECT, SEARCH\_JOINED\_FOREST, SEARCH\_ALL.
 
 
       .. raw:: html
@@ -1284,8 +1284,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -1455,7 +1455,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Allowed values ACTIVE_DIRECTORY, CUSTOM. Choose ACTIVE_DIRECTORY schema when the AD attributes defined in AD can be copied to relevant attributes in Cisco ISE. If customization is needed, choose CUSTOM schema. All User info attributes are always set to default value if schema is ACTIVE_DIRECTORY. Values can be changed only for CUSTOM schema.
+      Allowed values ACTIVE\_DIRECTORY, CUSTOM. Choose ACTIVE\_DIRECTORY schema when the AD attributes defined in AD can be copied to relevant attributes in Cisco ISE. If customization is needed, choose CUSTOM schema. All User info attributes are always set to default value if schema is ACTIVE\_DIRECTORY. Values can be changed only for CUSTOM schema.
 
 
       .. raw:: html
@@ -1701,8 +1701,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -1776,8 +1776,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -1917,17 +1917,17 @@ Parameters
 
       Flag that informs the SDK whether to use the Identity Services Engine's API Gateway to send requests.
 
-      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise_hostname}}.
+      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise\_hostname}}.
 
-      If it is false, it sends the requests to https://{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
+      If it is false, it sends the requests to https://{{ise\_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
 
 
       .. rst-class:: ansible-option-line
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -1974,8 +1974,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -2015,8 +2015,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -2094,8 +2094,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -2128,7 +2128,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Resource Name. Maximum 32 characters allowed. Allowed characters are alphanumeric and .-_/\\ characters.
+      Resource Name. Maximum 32 characters allowed. Allowed characters are alphanumeric and .-\_/\\\\ characters.
 
 
       .. raw:: html
@@ -2145,11 +2145,11 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are active_directory.ActiveDirectory.create_active_directory, active_directory.ActiveDirectory.delete_active_directory_by_id,
+   - SDK Method used are active\_directory.ActiveDirectory.create\_active\_directory, active\_directory.ActiveDirectory.delete\_active\_directory\_by\_id,
    - Paths used are post /ers/config/activedirectory, delete /ers/config/activedirectory/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
-   - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
+   - The parameters starting with ise\_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
@@ -2286,7 +2286,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"id\\": \\"string\\",\\n  \\"name\\": \\"string\\",\\n  \\"description\\": \\"string\\",\\n  \\"domain\\": \\"string\\",\\n  \\"enableDomainWhiteList\\": true,\\n  \\"enableDomainAllowedList\\": true,\\n  \\"adgroups\\": {\\n    \\"groups\\": [\\n      {\\n        \\"name\\": \\"string\\",\\n        \\"sid\\": \\"string\\",\\n        \\"type\\": \\"string\\"\\n      }\\n    ]\\n  },\\n  \\"advancedSettings\\": {\\n    \\"enablePassChange\\": true,\\n    \\"enableMachineAuth\\": true,\\n    \\"enableMachineAccess\\": true,\\n    \\"agingTime\\": 0,\\n    \\"enableDialinPermissionCheck\\": true,\\n    \\"enableCallbackForDialinClient\\": true,\\n    \\"plaintextAuth\\": true,\\n    \\"enableFailedAuthProtection\\": true,\\n    \\"authProtectionType\\": \\"string\\",\\n    \\"failedAuthThreshold\\": 0,\\n    \\"identityNotInAdBehaviour\\": \\"string\\",\\n    \\"unreachableDomainsBehaviour\\": \\"string\\",\\n    \\"enableRewrites\\": true,\\n    \\"rewriteRules\\": [\\n      {\\n        \\"rowId\\": 0,\\n        \\"rewriteMatch\\": \\"string\\",\\n        \\"rewriteResult\\": \\"string\\"\\n      }\\n    ],\\n    \\"firstName\\": \\"string\\",\\n    \\"department\\": \\"string\\",\\n    \\"lastName\\": \\"string\\",\\n    \\"organizationalUnit\\": \\"string\\",\\n    \\"jobTitle\\": \\"string\\",\\n    \\"locality\\": \\"string\\",\\n    \\"email\\": \\"string\\",\\n    \\"stateOrProvince\\": \\"string\\",\\n    \\"telephone\\": \\"string\\",\\n    \\"country\\": \\"string\\",\\n    \\"streetAddress\\": \\"string\\",\\n    \\"schema\\": \\"string\\"\\n  },\\n  \\"adAttributes\\": {\\n    \\"attributes\\": [\\n      {\\n        \\"name\\": \\"string\\",\\n        \\"type\\": \\"string\\",\\n        \\"internalName\\": \\"string\\",\\n        \\"defaultValue\\": \\"string\\"\\n      }\\n    ]\\n  },\\n  \\"adScopesNames\\": \\"string\\",\\n  \\"link\\": {\\n    \\"rel\\": \\"string\\",\\n    \\"href\\": \\"string\\",\\n    \\"type\\": \\"string\\"\\n  }\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` {"adAttributes": {"attributes": [{"defaultValue": "string", "internalName": "string", "name": "string", "type": "string"}]}, "adScopesNames": "string", "adgroups": {"groups": [{"name": "string", "sid": "string", "type": "string"}]}, "advancedSettings": {"agingTime": 0, "authProtectionType": "string", "country": "string", "department": "string", "email": "string", "enableCallbackForDialinClient": true, "enableDialinPermissionCheck": true, "enableFailedAuthProtection": true, "enableMachineAccess": true, "enableMachineAuth": true, "enablePassChange": true, "enableRewrites": true, "failedAuthThreshold": 0, "firstName": "string", "identityNotInAdBehaviour": "string", "jobTitle": "string", "lastName": "string", "locality": "string", "organizationalUnit": "string", "plaintextAuth": true, "rewriteRules": [{"rewriteMatch": "string", "rewriteResult": "string", "rowId": 0}], "schema": "string", "stateOrProvince": "string", "streetAddress": "string", "telephone": "string", "unreachableDomainsBehaviour": "string"}, "description": "string", "domain": "string", "enableDomainAllowedList": true, "enableDomainWhiteList": true, "id": "string", "link": {"href": "string", "rel": "string", "type": "string"}, "name": "string"}
 
 
       .. raw:: html

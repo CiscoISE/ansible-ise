@@ -43,13 +43,11 @@ cisco.ise.aci_settings module -- Resource module for ACI Settings
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.1).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.ise.aci_settings_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.ise.aci_settings`.
 
@@ -80,12 +78,14 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.ise.aci_settings_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 2.0.3
-- python >= 3.5
+- ciscoisesdk \>= 2.0.3
+- python \>= 3.5
 
 
 
@@ -142,8 +142,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -183,8 +183,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -394,8 +394,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -469,8 +469,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -510,8 +510,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -551,8 +551,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -660,8 +660,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -801,17 +801,17 @@ Parameters
 
       Flag that informs the SDK whether to use the Identity Services Engine's API Gateway to send requests.
 
-      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise_hostname}}.
+      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise\_hostname}}.
 
-      If it is false, it sends the requests to https://{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
+      If it is false, it sends the requests to https://{{ise\_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
 
 
       .. rst-class:: ansible-option-line
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -858,8 +858,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -899,8 +899,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -978,8 +978,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -1121,8 +1121,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -1308,11 +1308,11 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are aci_settings.AciSettings.update_aci_settings_by_id,
+   - SDK Method used are aci\_settings.AciSettings.update\_aci\_settings\_by\_id,
    - Paths used are put /ers/config/acisettings/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
-   - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
+   - The parameters starting with ise\_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
@@ -1417,7 +1417,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"id\\": \\"string\\",\\n  \\"enableAci\\": true,\\n  \\"ipAddressHostName\\": \\"string\\",\\n  \\"adminName\\": \\"string\\",\\n  \\"adminPassword\\": \\"string\\",\\n  \\"aciipaddress\\": \\"string\\",\\n  \\"aciuserName\\": \\"string\\",\\n  \\"acipassword\\": \\"string\\",\\n  \\"tenantName\\": \\"string\\",\\n  \\"l3RouteNetwork\\": \\"string\\",\\n  \\"suffixToEpg\\": \\"string\\",\\n  \\"suffixToSgt\\": \\"string\\",\\n  \\"allSxpDomain\\": true,\\n  \\"specificSxpDomain\\": true,\\n  \\"specifixSxpDomainList\\": [\\n    \\"string\\"\\n  ],\\n  \\"enableDataPlane\\": true,\\n  \\"untaggedPacketIepgName\\": \\"string\\",\\n  \\"defaultSgtName\\": \\"string\\",\\n  \\"enableElementsLimit\\": true,\\n  \\"maxNumIepgFromAci\\": 0,\\n  \\"maxNumSgtToAci\\": 0,\\n  \\"aci50\\": true,\\n  \\"aci51\\": true\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` {"aci50": true, "aci51": true, "aciipaddress": "string", "acipassword": "string", "aciuserName": "string", "adminName": "string", "adminPassword": "string", "allSxpDomain": true, "defaultSgtName": "string", "enableAci": true, "enableDataPlane": true, "enableElementsLimit": true, "id": "string", "ipAddressHostName": "string", "l3RouteNetwork": "string", "maxNumIepgFromAci": 0, "maxNumSgtToAci": 0, "specificSxpDomain": true, "specifixSxpDomainList": ["string"], "suffixToEpg": "string", "suffixToSgt": "string", "tenantName": "string", "untaggedPacketIepgName": "string"}
 
 
       .. raw:: html
@@ -1465,7 +1465,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"UpdatedFieldsList\\": {\\n    \\"updatedField\\": [\\n      {\\n        \\"field\\": \\"string\\",\\n        \\"oldValue\\": \\"string\\",\\n        \\"newValue\\": \\"string\\"\\n      }\\n    ],\\n    \\"field\\": \\"string\\",\\n    \\"oldValue\\": \\"string\\",\\n    \\"newValue\\": \\"string\\"\\n  }\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` {"UpdatedFieldsList": {"field": "string", "newValue": "string", "oldValue": "string", "updatedField": [{"field": "string", "newValue": "string", "oldValue": "string"}]}}
 
 
       .. raw:: html

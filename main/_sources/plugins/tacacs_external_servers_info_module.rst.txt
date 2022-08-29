@@ -43,13 +43,11 @@ cisco.ise.tacacs_external_servers_info module -- Information module for TACACS E
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.1).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.ise.tacacs_external_servers_info_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.ise.tacacs_external_servers_info`.
 
@@ -84,12 +82,14 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.ise.tacacs_external_servers_info_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 2.0.3
-- python >= 3.5
+- ciscoisesdk \>= 2.0.3
+- python \>= 3.5
 
 
 
@@ -180,8 +180,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -321,17 +321,17 @@ Parameters
 
       Flag that informs the SDK whether to use the Identity Services Engine's API Gateway to send requests.
 
-      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise_hostname}}.
+      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise\_hostname}}.
 
-      If it is false, it sends the requests to https://{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
+      If it is false, it sends the requests to https://{{ise\_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
 
 
       .. rst-class:: ansible-option-line
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -378,8 +378,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -419,8 +419,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -498,8 +498,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -617,11 +617,11 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are tacacs_external_servers.TacacsExternalServers.get_tacacs_external_servers_by_id, tacacs_external_servers.TacacsExternalServers.get_tacacs_external_servers_by_name, tacacs_external_servers.TacacsExternalServers.get_tacacs_external_servers_generator,
+   - SDK Method used are tacacs\_external\_servers.TacacsExternalServers.get\_tacacs\_external\_servers\_by\_id, tacacs\_external\_servers.TacacsExternalServers.get\_tacacs\_external\_servers\_by\_name, tacacs\_external\_servers.TacacsExternalServers.get\_tacacs\_external\_servers\_generator,
    - Paths used are get /ers/config/tacacsexternalservers, get /ers/config/tacacsexternalservers/name/{name}, get /ers/config/tacacsexternalservers/{id},
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
-   - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
+   - The parameters starting with ise\_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
@@ -722,7 +722,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"id\\": \\"string\\",\\n  \\"name\\": \\"string\\",\\n  \\"description\\": \\"string\\",\\n  \\"hostIP\\": \\"string\\",\\n  \\"connectionPort\\": 0,\\n  \\"singleConnect\\": true,\\n  \\"sharedSecret\\": \\"string\\",\\n  \\"timeout\\": 0,\\n  \\"link\\": {\\n    \\"rel\\": \\"string\\",\\n    \\"href\\": \\"string\\",\\n    \\"type\\": \\"string\\"\\n  }\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` {"connectionPort": 0, "description": "string", "hostIP": "string", "id": "string", "link": {"href": "string", "rel": "string", "type": "string"}, "name": "string", "sharedSecret": "string", "singleConnect": true, "timeout": 0}
 
 
       .. raw:: html

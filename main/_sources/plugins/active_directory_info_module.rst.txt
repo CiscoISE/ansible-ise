@@ -43,13 +43,11 @@ cisco.ise.active_directory_info module -- Information module for Active Director
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.1).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.ise.active_directory_info_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.ise.active_directory_info`.
 
@@ -84,12 +82,14 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.ise.active_directory_info_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 2.0.3
-- python >= 3.5
+- ciscoisesdk \>= 2.0.3
+- python \>= 3.5
 
 
 
@@ -180,8 +180,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -321,17 +321,17 @@ Parameters
 
       Flag that informs the SDK whether to use the Identity Services Engine's API Gateway to send requests.
 
-      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise_hostname}}.
+      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise\_hostname}}.
 
-      If it is false, it sends the requests to https://{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
+      If it is false, it sends the requests to https://{{ise\_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
 
 
       .. rst-class:: ansible-option-line
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -378,8 +378,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -419,8 +419,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -498,8 +498,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -617,11 +617,11 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are active_directory.ActiveDirectory.get_active_directory_by_id, active_directory.ActiveDirectory.get_active_directory_by_name, active_directory.ActiveDirectory.get_active_directory_generator,
+   - SDK Method used are active\_directory.ActiveDirectory.get\_active\_directory\_by\_id, active\_directory.ActiveDirectory.get\_active\_directory\_by\_name, active\_directory.ActiveDirectory.get\_active\_directory\_generator,
    - Paths used are get /ers/config/activedirectory, get /ers/config/activedirectory/name/{name}, get /ers/config/activedirectory/{id},
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
-   - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
+   - The parameters starting with ise\_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
@@ -722,7 +722,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"id\\": \\"string\\",\\n  \\"name\\": \\"string\\",\\n  \\"description\\": \\"string\\",\\n  \\"domain\\": \\"string\\",\\n  \\"enableDomainWhiteList\\": true,\\n  \\"enableDomainAllowedList\\": true,\\n  \\"adgroups\\": {\\n    \\"groups\\": [\\n      {\\n        \\"name\\": \\"string\\",\\n        \\"sid\\": \\"string\\",\\n        \\"type\\": \\"string\\"\\n      }\\n    ]\\n  },\\n  \\"advancedSettings\\": {\\n    \\"enablePassChange\\": true,\\n    \\"enableMachineAuth\\": true,\\n    \\"enableMachineAccess\\": true,\\n    \\"agingTime\\": 0,\\n    \\"enableDialinPermissionCheck\\": true,\\n    \\"enableCallbackForDialinClient\\": true,\\n    \\"plaintextAuth\\": true,\\n    \\"enableFailedAuthProtection\\": true,\\n    \\"authProtectionType\\": \\"string\\",\\n    \\"failedAuthThreshold\\": 0,\\n    \\"identityNotInAdBehaviour\\": \\"string\\",\\n    \\"unreachableDomainsBehaviour\\": \\"string\\",\\n    \\"enableRewrites\\": true,\\n    \\"rewriteRules\\": [\\n      {\\n        \\"rowId\\": 0,\\n        \\"rewriteMatch\\": \\"string\\",\\n        \\"rewriteResult\\": \\"string\\"\\n      }\\n    ],\\n    \\"firstName\\": \\"string\\",\\n    \\"department\\": \\"string\\",\\n    \\"lastName\\": \\"string\\",\\n    \\"organizationalUnit\\": \\"string\\",\\n    \\"jobTitle\\": \\"string\\",\\n    \\"locality\\": \\"string\\",\\n    \\"email\\": \\"string\\",\\n    \\"stateOrProvince\\": \\"string\\",\\n    \\"telephone\\": \\"string\\",\\n    \\"country\\": \\"string\\",\\n    \\"streetAddress\\": \\"string\\",\\n    \\"schema\\": \\"string\\"\\n  },\\n  \\"adAttributes\\": {\\n    \\"attributes\\": [\\n      {\\n        \\"name\\": \\"string\\",\\n        \\"type\\": \\"string\\",\\n        \\"internalName\\": \\"string\\",\\n        \\"defaultValue\\": \\"string\\"\\n      }\\n    ]\\n  },\\n  \\"adScopesNames\\": \\"string\\",\\n  \\"link\\": {\\n    \\"rel\\": \\"string\\",\\n    \\"href\\": \\"string\\",\\n    \\"type\\": \\"string\\"\\n  }\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` {"adAttributes": {"attributes": [{"defaultValue": "string", "internalName": "string", "name": "string", "type": "string"}]}, "adScopesNames": "string", "adgroups": {"groups": [{"name": "string", "sid": "string", "type": "string"}]}, "advancedSettings": {"agingTime": 0, "authProtectionType": "string", "country": "string", "department": "string", "email": "string", "enableCallbackForDialinClient": true, "enableDialinPermissionCheck": true, "enableFailedAuthProtection": true, "enableMachineAccess": true, "enableMachineAuth": true, "enablePassChange": true, "enableRewrites": true, "failedAuthThreshold": 0, "firstName": "string", "identityNotInAdBehaviour": "string", "jobTitle": "string", "lastName": "string", "locality": "string", "organizationalUnit": "string", "plaintextAuth": true, "rewriteRules": [{"rewriteMatch": "string", "rewriteResult": "string", "rowId": 0}], "schema": "string", "stateOrProvince": "string", "streetAddress": "string", "telephone": "string", "unreachableDomainsBehaviour": "string"}, "description": "string", "domain": "string", "enableDomainAllowedList": true, "enableDomainWhiteList": true, "id": "string", "link": {"href": "string", "rel": "string", "type": "string"}, "name": "string"}
 
 
       .. raw:: html

@@ -43,13 +43,11 @@ cisco.ise.network_device module -- Resource module for Network Device
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.1).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.ise.network_device_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.ise.network_device`.
 
@@ -84,12 +82,14 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.ise.network_device_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 2.0.3
-- python >= 3.5
+- ciscoisesdk \>= 2.0.3
+- python \>= 3.5
 
 
 
@@ -180,8 +180,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -221,8 +221,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -262,8 +262,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -432,7 +432,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Allowed values - RADIUS, - TACACS_PLUS.
+      Allowed values - RADIUS, - TACACS\_PLUS.
 
 
       .. raw:: html
@@ -678,8 +678,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -819,17 +819,17 @@ Parameters
 
       Flag that informs the SDK whether to use the Identity Services Engine's API Gateway to send requests.
 
-      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise_hostname}}.
+      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise\_hostname}}.
 
-      If it is false, it sends the requests to https://{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
+      If it is false, it sends the requests to https://{{ise\_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
 
 
       .. rst-class:: ansible-option-line
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -876,8 +876,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -917,8 +917,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -996,8 +996,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -1344,8 +1344,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -1385,8 +1385,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -1624,7 +1624,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Allowed values - OFF, - ON_LEGACY, - ON_DRAFT_COMPLIANT.
+      Allowed values - OFF, - ON\_LEGACY, - ON\_DRAFT\_COMPLIANT.
 
 
       .. raw:: html
@@ -1973,8 +1973,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -2015,8 +2015,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -2226,8 +2226,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -2301,8 +2301,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -2335,7 +2335,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      Allowed values - ENABLE_USING_COA, - ENABLE_USING_CLI, - DISABLE_ALL.
+      Allowed values - ENABLE\_USING\_COA, - ENABLE\_USING\_CLI, - DISABLE\_ALL.
 
 
       .. raw:: html
@@ -2354,11 +2354,11 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are network_device.NetworkDevice.create_network_device, network_device.NetworkDevice.delete_network_device_by_id, network_device.NetworkDevice.delete_network_device_by_name, network_device.NetworkDevice.update_network_device_by_id, network_device.NetworkDevice.update_network_device_by_name,
+   - SDK Method used are network\_device.NetworkDevice.create\_network\_device, network\_device.NetworkDevice.delete\_network\_device\_by\_id, network\_device.NetworkDevice.delete\_network\_device\_by\_name, network\_device.NetworkDevice.update\_network\_device\_by\_id, network\_device.NetworkDevice.update\_network\_device\_by\_name,
    - Paths used are post /ers/config/networkdevice, delete /ers/config/networkdevice/name/{name}, delete /ers/config/networkdevice/{id}, put /ers/config/networkdevice/name/{name}, put /ers/config/networkdevice/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
-   - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
+   - The parameters starting with ise\_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
@@ -2634,7 +2634,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"id\\": \\"string\\",\\n  \\"name\\": \\"string\\",\\n  \\"description\\": \\"string\\",\\n  \\"authenticationSettings\\": {\\n    \\"networkProtocol\\": \\"string\\",\\n    \\"secondRadiusSharedSecret\\": \\"string\\",\\n    \\"radiusSharedSecret\\": \\"string\\",\\n    \\"enableKeyWrap\\": true,\\n    \\"enabled\\": true,\\n    \\"dtlsRequired\\": true,\\n    \\"enableMultiSecret\\": \\"string\\",\\n    \\"keyEncryptionKey\\": \\"string\\",\\n    \\"messageAuthenticatorCodeKey\\": \\"string\\",\\n    \\"keyInputFormat\\": \\"string\\"\\n  },\\n  \\"snmpsettings\\": {\\n    \\"version\\": \\"string\\",\\n    \\"roCommunity\\": \\"string\\",\\n    \\"pollingInterval\\": 0,\\n    \\"linkTrapQuery\\": true,\\n    \\"macTrapQuery\\": true,\\n    \\"originatingPolicyServicesNode\\": \\"string\\"\\n  },\\n  \\"trustsecsettings\\": {\\n    \\"deviceAuthenticationSettings\\": {\\n      \\"sgaDeviceId\\": \\"string\\",\\n      \\"sgaDevicePassword\\": \\"string\\"\\n    },\\n    \\"sgaNotificationAndUpdates\\": {\\n      \\"downlaodEnvironmentDataEveryXSeconds\\": 0,\\n      \\"downlaodPeerAuthorizationPolicyEveryXSeconds\\": 0,\\n      \\"reAuthenticationEveryXSeconds\\": 0,\\n      \\"downloadSGACLListsEveryXSeconds\\": 0,\\n      \\"otherSGADevicesToTrustThisDevice\\": true,\\n      \\"sendConfigurationToDevice\\": true,\\n      \\"sendConfigurationToDeviceUsing\\": \\"string\\",\\n      \\"coaSourceHost\\": \\"string\\"\\n    },\\n    \\"deviceConfigurationDeployment\\": {\\n      \\"includeWhenDeployingSGTUpdates\\": true,\\n      \\"enableModePassword\\": \\"string\\",\\n      \\"execModePassword\\": \\"string\\",\\n      \\"execModeUsername\\": \\"string\\"\\n    },\\n    \\"pushIdSupport\\": true\\n  },\\n  \\"tacacsSettings\\": {\\n    \\"sharedSecret\\": \\"string\\",\\n    \\"connectModeOptions\\": \\"string\\"\\n  },\\n  \\"profileName\\": \\"string\\",\\n  \\"coaPort\\": 0,\\n  \\"dtlsDnsName\\": \\"string\\",\\n  \\"modelName\\": \\"string\\",\\n  \\"softwareVersion\\": \\"string\\",\\n  \\"NetworkDeviceIPList\\": [\\n    {\\n      \\"ipaddress\\": \\"string\\",\\n      \\"mask\\": 0,\\n      \\"getIpaddressExclude\\": \\"string\\"\\n    }\\n  ],\\n  \\"NetworkDeviceGroupList\\": [\\n    \\"string\\"\\n  ],\\n  \\"link\\": {\\n    \\"rel\\": \\"string\\",\\n    \\"href\\": \\"string\\",\\n    \\"type\\": \\"string\\"\\n  }\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` {"NetworkDeviceGroupList": ["string"], "NetworkDeviceIPList": [{"getIpaddressExclude": "string", "ipaddress": "string", "mask": 0}], "authenticationSettings": {"dtlsRequired": true, "enableKeyWrap": true, "enableMultiSecret": "string", "enabled": true, "keyEncryptionKey": "string", "keyInputFormat": "string", "messageAuthenticatorCodeKey": "string", "networkProtocol": "string", "radiusSharedSecret": "string", "secondRadiusSharedSecret": "string"}, "coaPort": 0, "description": "string", "dtlsDnsName": "string", "id": "string", "link": {"href": "string", "rel": "string", "type": "string"}, "modelName": "string", "name": "string", "profileName": "string", "snmpsettings": {"linkTrapQuery": true, "macTrapQuery": true, "originatingPolicyServicesNode": "string", "pollingInterval": 0, "roCommunity": "string", "version": "string"}, "softwareVersion": "string", "tacacsSettings": {"connectModeOptions": "string", "sharedSecret": "string"}, "trustsecsettings": {"deviceAuthenticationSettings": {"sgaDeviceId": "string", "sgaDevicePassword": "string"}, "deviceConfigurationDeployment": {"enableModePassword": "string", "execModePassword": "string", "execModeUsername": "string", "includeWhenDeployingSGTUpdates": true}, "pushIdSupport": true, "sgaNotificationAndUpdates": {"coaSourceHost": "string", "downlaodEnvironmentDataEveryXSeconds": 0, "downlaodPeerAuthorizationPolicyEveryXSeconds": 0, "downloadSGACLListsEveryXSeconds": 0, "otherSGADevicesToTrustThisDevice": true, "reAuthenticationEveryXSeconds": 0, "sendConfigurationToDevice": true, "sendConfigurationToDeviceUsing": "string"}}}
 
 
       .. raw:: html
@@ -2682,7 +2682,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"UpdatedFieldsList\\": {\\n    \\"updatedField\\": [\\n      {\\n        \\"field\\": \\"string\\",\\n        \\"oldValue\\": \\"string\\",\\n        \\"newValue\\": \\"string\\"\\n      }\\n    ],\\n    \\"field\\": \\"string\\",\\n    \\"oldValue\\": \\"string\\",\\n    \\"newValue\\": \\"string\\"\\n  }\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` {"UpdatedFieldsList": {"field": "string", "newValue": "string", "oldValue": "string", "updatedField": [{"field": "string", "newValue": "string", "oldValue": "string"}]}}
 
 
       .. raw:: html

@@ -466,11 +466,10 @@
 <h1>cisco.ise.authorization_profile module – Resource module for Authorization Profile<a class="headerlink" href="#cisco-ise-authorization-profile-module-resource-module-for-authorization-profile" title="Permalink to this heading"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/ise">cisco.ise collection</a> (version 2.5.0).</p>
-<p>You might already have this collection installed if you are using the <code class="docutils literal notranslate"><span class="pre">ansible</span></code> package.
-It is not included in <code class="docutils literal notranslate"><span class="pre">ansible-core</span></code>.
-To check whether it is installed, run <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">list</span></code>.</p>
-<p>To install it, use: <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">install</span> <span class="pre">cisco.ise</span></code>.</p>
+<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/ise">cisco.ise collection</a> (version 2.5.1).</p>
+<p>To install it, use: <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">install</span> <span class="pre">cisco.ise</span></code>.
+You need further requirements to be able to use this module,
+see <a class="reference internal" href="#ansible-collections-cisco-ise-authorization-profile-module-requirements"><span class="std std-ref">Requirements</span></a> for details.</p>
 <p>To use it in a playbook, specify: <code class="code docutils literal notranslate"><span class="pre">cisco.ise.authorization_profile</span></code>.</p>
 </div>
 <div class="versionadded">
@@ -500,7 +499,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </div>
 </section>
 <section id="requirements">
-<h2><a class="toc-backref" href="#id2">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
+<span id="ansible-collections-cisco-ise-authorization-profile-module-requirements"></span><h2><a class="toc-backref" href="#id2">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
 <p>The below requirements are needed on the host that executes this module.</p>
 <ul class="simple">
 <li><p>ciscoisesdk &gt;= 2.0.3</p></li>
@@ -614,8 +613,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>AgentlessPosture flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -682,8 +681,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>EasywiredSessionCandidate flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -722,8 +721,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>Flag for Identity Services Engine SDK to enable debugging.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-default-bold">no</span> <span class="ansible-option-default">← (default)</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-default-bold">false</span> <span class="ansible-option-default">← (default)</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -758,8 +757,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p>If it is false, it sends the requests to <a class="reference external" href="https:/">https:/</a>/{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-default-bold">yes</span> <span class="ansible-option-default">← (default)</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-default-bold">true</span> <span class="ansible-option-default">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -773,8 +772,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p>If it is True, it assumes you need the SDK to manage the CSRF token automatically for you.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-default-bold">no</span> <span class="ansible-option-default">← (default)</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-default-bold">false</span> <span class="ansible-option-default">← (default)</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -785,8 +784,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>Flag to enable or disable SSL certificate verification.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-default-bold">yes</span> <span class="ansible-option-default">← (default)</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-default-bold">true</span> <span class="ansible-option-default">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -805,8 +804,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>Flag for Identity Services Engine SDK to enable automatic rate-limit handling.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-default-bold">yes</span> <span class="ansible-option-default">← (default)</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-default-bold">true</span> <span class="ansible-option-default">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -831,8 +830,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>Neat flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -871,8 +870,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>ServiceTemplate flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -883,8 +882,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>TrackMovement flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -916,8 +915,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>VoiceDomainPermission flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -928,8 +927,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>WebAuth flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -954,8 +953,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>The displayCertificatesRenewalMessages is mandatory when ‘WebRedirectionType’ value is ‘CentralizedWebAuth’. For all other ‘WebRedirectionType’ values the field must be ignored.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -992,7 +991,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <li><p>Paths used are post /ers/config/authorizationprofile, delete /ers/config/authorizationprofile/{id}, put /ers/config/authorizationprofile/{id},</p></li>
 <li><p>Does not support <code class="docutils literal notranslate"><span class="pre">check_mode</span></code></p></li>
 <li><p>The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK</p></li>
-<li><p>The parameters starting with <a href="#id7"><span class="problematic" id="id8">ise_</span></a> are used by the Cisco ISE Python SDK to establish the connection</p></li>
+<li><p>The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection</p></li>
 </ul>
 </div>
 </section>
@@ -1135,7 +1134,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </div></td>
 <td><div class="ansible-option-cell"><p>A dictionary or list with the response returned by the Cisco ISE Python SDK</p>
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> always</p>
-<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “{\n  \”id\”: \”string\”,\n  \”name\”: \”string\”,\n  \”description\”: \”string\”,\n  \”advancedAttributes\”: [\n    {\n      \”leftHandSideDictionaryAttribue\”: {\n        \”AdvancedAttributeValueType\”: \”string\”,\n        \”dictionaryName\”: \”string\”,\n        \”attributeName\”: \”string\”,\n        \”value\”: \”string\”\n      },\n      \”rightHandSideAttribueValue\”: {\n        \”AdvancedAttributeValueType\”: \”string\”,\n        \”dictionaryName\”: \”string\”,\n        \”attributeName\”: \”string\”,\n        \”value\”: \”string\”\n      }\n    }\n  ],\n  \”accessType\”: \”string\”,\n  \”authzProfileType\”: \”string\”,\n  \”vlan\”: {\n    \”nameID\”: \”string\”,\n    \”tagID\”: 0\n  },\n  \”reauth\”: {\n    \”timer\”: 0,\n    \”connectivity\”: \”string\”\n  },\n  \”airespaceACL\”: \”string\”,\n  \”airespaceIPv6ACL\”: \”string\”,\n  \”webRedirection\”: {\n    \”WebRedirectionType\”: \”string\”,\n    \”acl\”: \”string\”,\n    \”portalName\”: \”string\”,\n    \”staticIPHostNameFQDN\”: \”string\”,\n    \”displayCertificatesRenewalMessages\”: true\n  },\n  \”acl\”: \”string\”,\n  \”trackMovement\”: true,\n  \”agentlessPosture\”: true,\n  \”serviceTemplate\”: true,\n  \”easywiredSessionCandidate\”: true,\n  \”daclName\”: \”string\”,\n  \”voiceDomainPermission\”: true,\n  \”neat\”: true,\n  \”webAuth\”: true,\n  \”autoSmartPort\”: \”string\”,\n  \”interfaceTemplate\”: \”string\”,\n  \”ipv6ACLFilter\”: \”string\”,\n  \”avcProfile\”: \”string\”,\n  \”macSecPolicy\”: \”string\”,\n  \”asaVpn\”: \”string\”,\n  \”profileName\”: \”string\”,\n  \”ipv6DaclName\”: \”string\”,\n  \”link\”: {\n    \”rel\”: \”string\”,\n    \”href\”: \”string\”,\n    \”type\”: \”string\”\n  }\n}\n”</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> {“accessType”: “string”, “acl”: “string”, “advancedAttributes”: [{“leftHandSideDictionaryAttribue”: {“AdvancedAttributeValueType”: “string”, “attributeName”: “string”, “dictionaryName”: “string”, “value”: “string”}, “rightHandSideAttribueValue”: {“AdvancedAttributeValueType”: “string”, “attributeName”: “string”, “dictionaryName”: “string”, “value”: “string”}}], “agentlessPosture”: true, “airespaceACL”: “string”, “airespaceIPv6ACL”: “string”, “asaVpn”: “string”, “authzProfileType”: “string”, “autoSmartPort”: “string”, “avcProfile”: “string”, “daclName”: “string”, “description”: “string”, “easywiredSessionCandidate”: true, “id”: “string”, “interfaceTemplate”: “string”, “ipv6ACLFilter”: “string”, “ipv6DaclName”: “string”, “link”: {“href”: “string”, “rel”: “string”, “type”: “string”}, “macSecPolicy”: “string”, “name”: “string”, “neat”: true, “profileName”: “string”, “reauth”: {“connectivity”: “string”, “timer”: 0}, “serviceTemplate”: true, “trackMovement”: true, “vlan”: {“nameID”: “string”, “tagID”: 0}, “voiceDomainPermission”: true, “webAuth”: true, “webRedirection”: {“WebRedirectionType”: “string”, “acl”: “string”, “displayCertificatesRenewalMessages”: true, “portalName”: “string”, “staticIPHostNameFQDN”: “string”}}</p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-cell">
@@ -1145,7 +1144,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </div></td>
 <td><div class="ansible-option-cell"><p>A dictionary or list with the response returned by the Cisco ISE Python SDK</p>
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> always</p>
-<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “{\n  \”UpdatedFieldsList\”: {\n    \”updatedField\”: [\n      {\n        \”field\”: \”string\”,\n        \”oldValue\”: \”string\”,\n        \”newValue\”: \”string\”\n      }\n    ],\n    \”field\”: \”string\”,\n    \”oldValue\”: \”string\”,\n    \”newValue\”: \”string\”\n  }\n}\n”</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> {“UpdatedFieldsList”: {“field”: “string”, “newValue”: “string”, “oldValue”: “string”, “updatedField”: [{“field”: “string”, “newValue”: “string”, “oldValue”: “string”}]}}</p>
 </div></td>
 </tr>
 </tbody>

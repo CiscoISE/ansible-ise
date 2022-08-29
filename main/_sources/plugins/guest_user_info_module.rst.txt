@@ -43,13 +43,11 @@ cisco.ise.guest_user_info module -- Information module for Guest User
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.1).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.ise.guest_user_info_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.ise.guest_user_info`.
 
@@ -84,12 +82,14 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.ise.guest_user_info_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 2.0.3
-- python >= 3.5
+- ciscoisesdk \>= 2.0.3
+- python \>= 3.5
 
 
 
@@ -139,7 +139,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Filter query parameter. **Simple filtering** should be available through the filter query string parameter. The structure of a filter is a triplet of field operator and value separated with dots. More than one filter can be sent. The logical operator common to ALL filter criteria will be by default AND, and can be changed by using the "filterType=or" query string parameter.
+      Filter query parameter. \*\*Simple filtering\*\* should be available through the filter query string parameter. The structure of a filter is a triplet of field operator and value separated with dots. More than one filter can be sent. The logical operator common to ALL filter criteria will be by default AND, and can be changed by using the "filterType=or" query string parameter.
           
 
       Each resource Data model description should specify if an attribute is a filtered field.
@@ -272,8 +272,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -413,17 +413,17 @@ Parameters
 
       Flag that informs the SDK whether to use the Identity Services Engine's API Gateway to send requests.
 
-      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise_hostname}}.
+      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise\_hostname}}.
 
-      If it is false, it sends the requests to https://{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
+      If it is false, it sends the requests to https://{{ise\_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
 
 
       .. rst-class:: ansible-option-line
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -470,8 +470,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -511,8 +511,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -590,8 +590,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -777,11 +777,11 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are guest_user.GuestUser.get_guest_user_by_id, guest_user.GuestUser.get_guest_user_by_name, guest_user.GuestUser.get_guest_users_generator,
+   - SDK Method used are guest\_user.GuestUser.get\_guest\_user\_by\_id, guest\_user.GuestUser.get\_guest\_user\_by\_name, guest\_user.GuestUser.get\_guest\_users\_generator,
    - Paths used are get /ers/config/guestuser, get /ers/config/guestuser/name/{name}, get /ers/config/guestuser/{id},
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
-   - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
+   - The parameters starting with ise\_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
@@ -886,7 +886,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"id\\": \\"string\\",\\n  \\"name\\": \\"string\\",\\n  \\"description\\": \\"string\\",\\n  \\"guestType\\": \\"string\\",\\n  \\"status\\": \\"string\\",\\n  \\"statusReason\\": \\"string\\",\\n  \\"reasonForVisit\\": \\"string\\",\\n  \\"sponsorUserId\\": \\"string\\",\\n  \\"sponsorUserName\\": \\"string\\",\\n  \\"guestInfo\\": {\\n    \\"firstName\\": \\"string\\",\\n    \\"lastName\\": \\"string\\",\\n    \\"company\\": \\"string\\",\\n    \\"creationTime\\": \\"string\\",\\n    \\"notificationLanguage\\": \\"string\\",\\n    \\"userName\\": \\"string\\",\\n    \\"emailAddress\\": \\"string\\",\\n    \\"phoneNumber\\": \\"string\\",\\n    \\"password\\": \\"string\\",\\n    \\"enabled\\": true,\\n    \\"smsServiceProvider\\": \\"string\\"\\n  },\\n  \\"guestAccessInfo\\": {\\n    \\"validDays\\": 0,\\n    \\"fromDate\\": \\"string\\",\\n    \\"toDate\\": \\"string\\",\\n    \\"location\\": \\"string\\",\\n    \\"ssid\\": \\"string\\",\\n    \\"groupTag\\": \\"string\\"\\n  },\\n  \\"portalId\\": \\"string\\",\\n  \\"customFields\\": {},\\n  \\"link\\": {\\n    \\"rel\\": \\"string\\",\\n    \\"href\\": \\"string\\",\\n    \\"type\\": \\"string\\"\\n  }\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` {"customFields": {}, "description": "string", "guestAccessInfo": {"fromDate": "string", "groupTag": "string", "location": "string", "ssid": "string", "toDate": "string", "validDays": 0}, "guestInfo": {"company": "string", "creationTime": "string", "emailAddress": "string", "enabled": true, "firstName": "string", "lastName": "string", "notificationLanguage": "string", "password": "string", "phoneNumber": "string", "smsServiceProvider": "string", "userName": "string"}, "guestType": "string", "id": "string", "link": {"href": "string", "rel": "string", "type": "string"}, "name": "string", "portalId": "string", "reasonForVisit": "string", "sponsorUserId": "string", "sponsorUserName": "string", "status": "string", "statusReason": "string"}
 
 
       .. raw:: html

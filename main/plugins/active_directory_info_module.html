@@ -466,11 +466,10 @@
 <h1>cisco.ise.active_directory_info module – Information module for Active Directory<a class="headerlink" href="#cisco-ise-active-directory-info-module-information-module-for-active-directory" title="Permalink to this heading"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/ise">cisco.ise collection</a> (version 2.5.0).</p>
-<p>You might already have this collection installed if you are using the <code class="docutils literal notranslate"><span class="pre">ansible</span></code> package.
-It is not included in <code class="docutils literal notranslate"><span class="pre">ansible-core</span></code>.
-To check whether it is installed, run <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">list</span></code>.</p>
-<p>To install it, use: <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">install</span> <span class="pre">cisco.ise</span></code>.</p>
+<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/ise">cisco.ise collection</a> (version 2.5.1).</p>
+<p>To install it, use: <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">install</span> <span class="pre">cisco.ise</span></code>.
+You need further requirements to be able to use this module,
+see <a class="reference internal" href="#ansible-collections-cisco-ise-active-directory-info-module-requirements"><span class="std std-ref">Requirements</span></a> for details.</p>
 <p>To use it in a playbook, specify: <code class="code docutils literal notranslate"><span class="pre">cisco.ise.active_directory_info</span></code>.</p>
 </div>
 <div class="versionadded">
@@ -502,7 +501,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </div>
 </section>
 <section id="requirements">
-<h2><a class="toc-backref" href="#id2">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
+<span id="ansible-collections-cisco-ise-active-directory-info-module-requirements"></span><h2><a class="toc-backref" href="#id2">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
 <p>The below requirements are needed on the host that executes this module.</p>
 <ul class="simple">
 <li><p>ciscoisesdk &gt;= 2.0.3</p></li>
@@ -532,8 +531,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>Flag for Identity Services Engine SDK to enable debugging.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-default-bold">no</span> <span class="ansible-option-default">← (default)</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-default-bold">false</span> <span class="ansible-option-default">← (default)</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -568,8 +567,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p>If it is false, it sends the requests to <a class="reference external" href="https:/">https:/</a>/{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-default-bold">yes</span> <span class="ansible-option-default">← (default)</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-default-bold">true</span> <span class="ansible-option-default">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -583,8 +582,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <p>If it is True, it assumes you need the SDK to manage the CSRF token automatically for you.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-default-bold">no</span> <span class="ansible-option-default">← (default)</span></p></li>
-<li><p><span class="ansible-option-choices-entry">yes</span></p></li>
+<li><p><span class="ansible-option-default-bold">false</span> <span class="ansible-option-default">← (default)</span></p></li>
+<li><p><span class="ansible-option-choices-entry">true</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -595,8 +594,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>Flag to enable or disable SSL certificate verification.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-default-bold">yes</span> <span class="ansible-option-default">← (default)</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-default-bold">true</span> <span class="ansible-option-default">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -615,8 +614,8 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <td><div class="ansible-option-cell"><p>Flag for Identity Services Engine SDK to enable automatic rate-limit handling.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">no</span></p></li>
-<li><p><span class="ansible-option-default-bold">yes</span> <span class="ansible-option-default">← (default)</span></p></li>
+<li><p><span class="ansible-option-choices-entry">false</span></p></li>
+<li><p><span class="ansible-option-default-bold">true</span> <span class="ansible-option-default">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -653,7 +652,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 <li><p>Paths used are get /ers/config/activedirectory, get /ers/config/activedirectory/name/{name}, get /ers/config/activedirectory/{id},</p></li>
 <li><p>Supports <code class="docutils literal notranslate"><span class="pre">check_mode</span></code></p></li>
 <li><p>The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK</p></li>
-<li><p>The parameters starting with <a href="#id7"><span class="problematic" id="id8">ise_</span></a> are used by the Cisco ISE Python SDK to establish the connection</p></li>
+<li><p>The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection</p></li>
 </ul>
 </div>
 </section>
@@ -705,7 +704,7 @@ To check whether it is installed, run <code class="code docutils literal notrans
 </div></td>
 <td><div class="ansible-option-cell"><p>A dictionary or list with the response returned by the Cisco ISE Python SDK</p>
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> always</p>
-<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “{\n  \”id\”: \”string\”,\n  \”name\”: \”string\”,\n  \”description\”: \”string\”,\n  \”domain\”: \”string\”,\n  \”enableDomainWhiteList\”: true,\n  \”enableDomainAllowedList\”: true,\n  \”adgroups\”: {\n    \”groups\”: [\n      {\n        \”name\”: \”string\”,\n        \”sid\”: \”string\”,\n        \”type\”: \”string\”\n      }\n    ]\n  },\n  \”advancedSettings\”: {\n    \”enablePassChange\”: true,\n    \”enableMachineAuth\”: true,\n    \”enableMachineAccess\”: true,\n    \”agingTime\”: 0,\n    \”enableDialinPermissionCheck\”: true,\n    \”enableCallbackForDialinClient\”: true,\n    \”plaintextAuth\”: true,\n    \”enableFailedAuthProtection\”: true,\n    \”authProtectionType\”: \”string\”,\n    \”failedAuthThreshold\”: 0,\n    \”identityNotInAdBehaviour\”: \”string\”,\n    \”unreachableDomainsBehaviour\”: \”string\”,\n    \”enableRewrites\”: true,\n    \”rewriteRules\”: [\n      {\n        \”rowId\”: 0,\n        \”rewriteMatch\”: \”string\”,\n        \”rewriteResult\”: \”string\”\n      }\n    ],\n    \”firstName\”: \”string\”,\n    \”department\”: \”string\”,\n    \”lastName\”: \”string\”,\n    \”organizationalUnit\”: \”string\”,\n    \”jobTitle\”: \”string\”,\n    \”locality\”: \”string\”,\n    \”email\”: \”string\”,\n    \”stateOrProvince\”: \”string\”,\n    \”telephone\”: \”string\”,\n    \”country\”: \”string\”,\n    \”streetAddress\”: \”string\”,\n    \”schema\”: \”string\”\n  },\n  \”adAttributes\”: {\n    \”attributes\”: [\n      {\n        \”name\”: \”string\”,\n        \”type\”: \”string\”,\n        \”internalName\”: \”string\”,\n        \”defaultValue\”: \”string\”\n      }\n    ]\n  },\n  \”adScopesNames\”: \”string\”,\n  \”link\”: {\n    \”rel\”: \”string\”,\n    \”href\”: \”string\”,\n    \”type\”: \”string\”\n  }\n}\n”</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> {“adAttributes”: {“attributes”: [{“defaultValue”: “string”, “internalName”: “string”, “name”: “string”, “type”: “string”}]}, “adScopesNames”: “string”, “adgroups”: {“groups”: [{“name”: “string”, “sid”: “string”, “type”: “string”}]}, “advancedSettings”: {“agingTime”: 0, “authProtectionType”: “string”, “country”: “string”, “department”: “string”, “email”: “string”, “enableCallbackForDialinClient”: true, “enableDialinPermissionCheck”: true, “enableFailedAuthProtection”: true, “enableMachineAccess”: true, “enableMachineAuth”: true, “enablePassChange”: true, “enableRewrites”: true, “failedAuthThreshold”: 0, “firstName”: “string”, “identityNotInAdBehaviour”: “string”, “jobTitle”: “string”, “lastName”: “string”, “locality”: “string”, “organizationalUnit”: “string”, “plaintextAuth”: true, “rewriteRules”: [{“rewriteMatch”: “string”, “rewriteResult”: “string”, “rowId”: 0}], “schema”: “string”, “stateOrProvince”: “string”, “streetAddress”: “string”, “telephone”: “string”, “unreachableDomainsBehaviour”: “string”}, “description”: “string”, “domain”: “string”, “enableDomainAllowedList”: true, “enableDomainWhiteList”: true, “id”: “string”, “link”: {“href”: “string”, “rel”: “string”, “type”: “string”}, “name”: “string”}</p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-cell">

@@ -43,13 +43,11 @@ cisco.ise.network_access_policy_set module -- Resource module for Network Access
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.1).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.ise.network_access_policy_set_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.ise.network_access_policy_set`.
 
@@ -82,12 +80,14 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.ise.network_access_policy_set_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 2.0.3
-- python >= 3.5
+- ciscoisesdk \>= 2.0.3
+- python \>= 3.5
 
 
 
@@ -205,7 +205,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      <ul><li>Attribute value for condition</li> <li>Value type is specified in dictionary object</li> <li>if multiple values allowed is specified in dictionary object</li></ul>.
+      \<ul\>\<li\>Attribute value for condition\</li\> \<li\>Value type is specified in dictionary object\</li\> \<li\>if multiple values allowed is specified in dictionary object\</li\>\</ul\>.
 
 
       .. raw:: html
@@ -273,7 +273,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      <ul><li>Inidicates whether the record is the condition itself(data) or a logical(or,and) aggregation</li> <li>Data type enum(reference,single) indicates than "conditonId" OR "ConditionAttrs" fields should contain condition data but not both</li> <li>Logical aggreation(and,or) enum indicates that additional conditions are present under the children field</li></ul>.
+      \<ul\>\<li\>Inidicates whether the record is the condition itself(data) or a logical(or,and) aggregation\</li\> \<li\>Data type enum(reference,single) indicates than "conditonId" OR "ConditionAttrs" fields should contain condition data but not both\</li\> \<li\>Logical aggreation(and,or) enum indicates that additional conditions are present under the children field\</li\>\</ul\>.
 
 
       .. raw:: html
@@ -314,8 +314,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -486,7 +486,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      <ul><li>Inidicates whether the record is the condition itself(data) or a logical(or,and) aggregation</li> <li>Data type enum(reference,single) indicates than "conditonId" OR "ConditionAttrs" fields should contain condition data but not both</li> <li>Logical aggreation(and,or) enum indicates that additional conditions are present under the children field</li></ul>.
+      \<ul\>\<li\>Inidicates whether the record is the condition itself(data) or a logical(or,and) aggregation\</li\> \<li\>Data type enum(reference,single) indicates than "conditonId" OR "ConditionAttrs" fields should contain condition data but not both\</li\> \<li\>Logical aggreation(and,or) enum indicates that additional conditions are present under the children field\</li\>\</ul\>.
 
 
       .. raw:: html
@@ -520,7 +520,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      <p>Defines for which date/s TimeAndDate condition will be matched<br> Options are - Date range, for specific date, the same date should be used for start/end date <br> Default - no specific dates<br> In order to reset the dates to have no specific dates Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)</p>.
+      \<p\>Defines for which date/s TimeAndDate condition will be matched\<br\> Options are - Date range, for specific date, the same date should be used for start/end date \<br\> Default - no specific dates\<br\> In order to reset the dates to have no specific dates Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)\</p\>.
 
 
       .. raw:: html
@@ -623,7 +623,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      <p>Defines for which date/s TimeAndDate condition will be matched<br> Options are - Date range, for specific date, the same date should be used for start/end date <br> Default - no specific dates<br> In order to reset the dates to have no specific dates Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)</p>.
+      \<p\>Defines for which date/s TimeAndDate condition will be matched\<br\> Options are - Date range, for specific date, the same date should be used for start/end date \<br\> Default - no specific dates\<br\> In order to reset the dates to have no specific dates Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)\</p\>.
 
 
       .. raw:: html
@@ -828,7 +828,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      <p>Defines for which hours a TimeAndDate condition will be matched<br> Time format - hh mm ( h = hour , mm = minutes ) <br> Default - All Day </p>.
+      \<p\>Defines for which hours a TimeAndDate condition will be matched\<br\> Time format - hh mm ( h = hour , mm = minutes ) \<br\> Default - All Day \</p\>.
 
 
       .. raw:: html
@@ -931,7 +931,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      <p>Defines for which hours a TimeAndDate condition will be matched<br> Time format - hh mm ( h = hour , mm = minutes ) <br> Default - All Day </p>.
+      \<p\>Defines for which hours a TimeAndDate condition will be matched\<br\> Time format - hh mm ( h = hour , mm = minutes ) \<br\> Default - All Day \</p\>.
 
 
       .. raw:: html
@@ -1075,8 +1075,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -1314,7 +1314,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      <p>Defines for which days this condition will be matched<br> Days format - Arrays of WeekDay enums <br> Default - List of All week days</p>.
+      \<p\>Defines for which days this condition will be matched\<br\> Days format - Arrays of WeekDay enums \<br\> Default - List of All week days\</p\>.
 
 
       .. raw:: html
@@ -1348,7 +1348,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      <p>Defines for which days this condition will NOT be matched<br> Days format - Arrays of WeekDay enums <br> Default - Not enabled</p>.
+      \<p\>Defines for which days this condition will NOT be matched\<br\> Days format - Arrays of WeekDay enums \<br\> Default - Not enabled\</p\>.
 
 
       .. raw:: html
@@ -1390,8 +1390,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -1533,8 +1533,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -1674,17 +1674,17 @@ Parameters
 
       Flag that informs the SDK whether to use the Identity Services Engine's API Gateway to send requests.
 
-      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise_hostname}}.
+      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise\_hostname}}.
 
-      If it is false, it sends the requests to https://{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
+      If it is false, it sends the requests to https://{{ise\_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
 
 
       .. rst-class:: ansible-option-line
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -1731,8 +1731,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -1772,8 +1772,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -1851,8 +1851,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -1892,8 +1892,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -2182,11 +2182,11 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are network_access_policy_set.NetworkAccessPolicySet.create_network_access_policy_set, network_access_policy_set.NetworkAccessPolicySet.delete_network_access_policy_set_by_id, network_access_policy_set.NetworkAccessPolicySet.update_network_access_policy_set_by_id,
+   - SDK Method used are network\_access\_policy\_set.NetworkAccessPolicySet.create\_network\_access\_policy\_set, network\_access\_policy\_set.NetworkAccessPolicySet.delete\_network\_access\_policy\_set\_by\_id, network\_access\_policy\_set.NetworkAccessPolicySet.update\_network\_access\_policy\_set\_by\_id,
    - Paths used are post /network-access/policy-set, delete /network-access/policy-set/{id}, put /network-access/policy-set/{id},
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
-   - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
+   - The parameters starting with ise\_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
@@ -2393,7 +2393,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"condition\\": {\\n    \\"conditionType\\": \\"string\\",\\n    \\"isNegate\\": true,\\n    \\"link\\": {\\n      \\"href\\": \\"string\\",\\n      \\"rel\\": \\"string\\",\\n      \\"type\\": \\"string\\"\\n    },\\n    \\"description\\": \\"string\\",\\n    \\"id\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"attributeName\\": \\"string\\",\\n    \\"attributeValue\\": \\"string\\",\\n    \\"dictionaryName\\": \\"string\\",\\n    \\"dictionaryValue\\": \\"string\\",\\n    \\"operator\\": \\"string\\",\\n    \\"children\\": [\\n      {\\n        \\"conditionType\\": \\"string\\",\\n        \\"isNegate\\": true,\\n        \\"link\\": {\\n          \\"href\\": \\"string\\",\\n          \\"rel\\": \\"string\\",\\n          \\"type\\": \\"string\\"\\n        }\\n      }\\n    ],\\n    \\"datesRange\\": {\\n      \\"endDate\\": \\"string\\",\\n      \\"startDate\\": \\"string\\"\\n    },\\n    \\"datesRangeException\\": {\\n      \\"endDate\\": \\"string\\",\\n      \\"startDate\\": \\"string\\"\\n    },\\n    \\"hoursRange\\": {\\n      \\"endTime\\": \\"string\\",\\n      \\"startTime\\": \\"string\\"\\n    },\\n    \\"hoursRangeException\\": {\\n      \\"endTime\\": \\"string\\",\\n      \\"startTime\\": \\"string\\"\\n    },\\n    \\"weekDays\\": [\\n      \\"string\\"\\n    ],\\n    \\"weekDaysException\\": [\\n      \\"string\\"\\n    ]\\n  },\\n  \\"default\\": true,\\n  \\"description\\": \\"string\\",\\n  \\"hitCounts\\": 0,\\n  \\"id\\": \\"string\\",\\n  \\"isProxy\\": true,\\n  \\"link\\": {\\n    \\"href\\": \\"string\\",\\n    \\"rel\\": \\"string\\",\\n    \\"type\\": \\"string\\"\\n  },\\n  \\"name\\": \\"string\\",\\n  \\"rank\\": 0,\\n  \\"serviceName\\": \\"string\\",\\n  \\"state\\": \\"string\\"\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` {"condition": {"attributeName": "string", "attributeValue": "string", "children": [{"conditionType": "string", "isNegate": true, "link": {"href": "string", "rel": "string", "type": "string"}}], "conditionType": "string", "datesRange": {"endDate": "string", "startDate": "string"}, "datesRangeException": {"endDate": "string", "startDate": "string"}, "description": "string", "dictionaryName": "string", "dictionaryValue": "string", "hoursRange": {"endTime": "string", "startTime": "string"}, "hoursRangeException": {"endTime": "string", "startTime": "string"}, "id": "string", "isNegate": true, "link": {"href": "string", "rel": "string", "type": "string"}, "name": "string", "operator": "string", "weekDays": ["string"], "weekDaysException": ["string"]}, "default": true, "description": "string", "hitCounts": 0, "id": "string", "isProxy": true, "link": {"href": "string", "rel": "string", "type": "string"}, "name": "string", "rank": 0, "serviceName": "string", "state": "string"}
 
 
       .. raw:: html
@@ -2441,7 +2441,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"response\\": {\\n    \\"condition\\": {\\n      \\"conditionType\\": \\"string\\",\\n      \\"isNegate\\": true,\\n      \\"link\\": {\\n        \\"href\\": \\"string\\",\\n        \\"rel\\": \\"string\\",\\n        \\"type\\": \\"string\\"\\n      },\\n      \\"description\\": \\"string\\",\\n      \\"id\\": \\"string\\",\\n      \\"name\\": \\"string\\",\\n      \\"attributeName\\": \\"string\\",\\n      \\"attributeValue\\": \\"string\\",\\n      \\"dictionaryName\\": \\"string\\",\\n      \\"dictionaryValue\\": \\"string\\",\\n      \\"operator\\": \\"string\\",\\n      \\"children\\": [\\n        {\\n          \\"conditionType\\": \\"string\\",\\n          \\"isNegate\\": true,\\n          \\"link\\": {\\n            \\"href\\": \\"string\\",\\n            \\"rel\\": \\"string\\",\\n            \\"type\\": \\"string\\"\\n          }\\n        }\\n      ],\\n      \\"datesRange\\": {\\n        \\"endDate\\": \\"string\\",\\n        \\"startDate\\": \\"string\\"\\n      },\\n      \\"datesRangeException\\": {\\n        \\"endDate\\": \\"string\\",\\n        \\"startDate\\": \\"string\\"\\n      },\\n      \\"hoursRange\\": {\\n        \\"endTime\\": \\"string\\",\\n        \\"startTime\\": \\"string\\"\\n      },\\n      \\"hoursRangeException\\": {\\n        \\"endTime\\": \\"string\\",\\n        \\"startTime\\": \\"string\\"\\n      },\\n      \\"weekDays\\": [\\n        \\"string\\"\\n      ],\\n      \\"weekDaysException\\": [\\n        \\"string\\"\\n      ]\\n    },\\n    \\"default\\": true,\\n    \\"description\\": \\"string\\",\\n    \\"hitCounts\\": 0,\\n    \\"id\\": \\"string\\",\\n    \\"isProxy\\": true,\\n    \\"link\\": {\\n      \\"href\\": \\"string\\",\\n      \\"rel\\": \\"string\\",\\n      \\"type\\": \\"string\\"\\n    },\\n    \\"name\\": \\"string\\",\\n    \\"rank\\": 0,\\n    \\"serviceName\\": \\"string\\",\\n    \\"state\\": \\"string\\"\\n  },\\n  \\"version\\": \\"string\\"\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` {"response": {"condition": {"attributeName": "string", "attributeValue": "string", "children": [{"conditionType": "string", "isNegate": true, "link": {"href": "string", "rel": "string", "type": "string"}}], "conditionType": "string", "datesRange": {"endDate": "string", "startDate": "string"}, "datesRangeException": {"endDate": "string", "startDate": "string"}, "description": "string", "dictionaryName": "string", "dictionaryValue": "string", "hoursRange": {"endTime": "string", "startTime": "string"}, "hoursRangeException": {"endTime": "string", "startTime": "string"}, "id": "string", "isNegate": true, "link": {"href": "string", "rel": "string", "type": "string"}, "name": "string", "operator": "string", "weekDays": ["string"], "weekDaysException": ["string"]}, "default": true, "description": "string", "hitCounts": 0, "id": "string", "isProxy": true, "link": {"href": "string", "rel": "string", "type": "string"}, "name": "string", "rank": 0, "serviceName": "string", "state": "string"}, "version": "string"}
 
 
       .. raw:: html

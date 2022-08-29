@@ -43,13 +43,11 @@ cisco.ise.authorization_profile_info module -- Information module for Authorizat
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.1).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.ise.authorization_profile_info_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.ise.authorization_profile_info`.
 
@@ -84,12 +82,14 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.ise.authorization_profile_info_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 2.0.3
-- python >= 3.5
+- ciscoisesdk \>= 2.0.3
+- python \>= 3.5
 
 
 
@@ -180,8 +180,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -321,17 +321,17 @@ Parameters
 
       Flag that informs the SDK whether to use the Identity Services Engine's API Gateway to send requests.
 
-      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise_hostname}}.
+      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise\_hostname}}.
 
-      If it is false, it sends the requests to https://{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
+      If it is false, it sends the requests to https://{{ise\_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
 
 
       .. rst-class:: ansible-option-line
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -378,8 +378,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -419,8 +419,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -498,8 +498,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -617,11 +617,11 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are authorization_profile.AuthorizationProfile.get_authorization_profile_by_id, authorization_profile.AuthorizationProfile.get_authorization_profile_by_name, authorization_profile.AuthorizationProfile.get_authorization_profiles_generator,
+   - SDK Method used are authorization\_profile.AuthorizationProfile.get\_authorization\_profile\_by\_id, authorization\_profile.AuthorizationProfile.get\_authorization\_profile\_by\_name, authorization\_profile.AuthorizationProfile.get\_authorization\_profiles\_generator,
    - Paths used are get /ers/config/authorizationprofile, get /ers/config/authorizationprofile/name/{name}, get /ers/config/authorizationprofile/{id},
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
-   - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
+   - The parameters starting with ise\_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
@@ -722,7 +722,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"id\\": \\"string\\",\\n  \\"name\\": \\"string\\",\\n  \\"description\\": \\"string\\",\\n  \\"advancedAttributes\\": [\\n    {\\n      \\"leftHandSideDictionaryAttribue\\": {\\n        \\"AdvancedAttributeValueType\\": \\"string\\",\\n        \\"dictionaryName\\": \\"string\\",\\n        \\"attributeName\\": \\"string\\",\\n        \\"value\\": \\"string\\"\\n      },\\n      \\"rightHandSideAttribueValue\\": {\\n        \\"AdvancedAttributeValueType\\": \\"string\\",\\n        \\"dictionaryName\\": \\"string\\",\\n        \\"attributeName\\": \\"string\\",\\n        \\"value\\": \\"string\\"\\n      }\\n    }\\n  ],\\n  \\"accessType\\": \\"string\\",\\n  \\"authzProfileType\\": \\"string\\",\\n  \\"vlan\\": {\\n    \\"nameID\\": \\"string\\",\\n    \\"tagID\\": 0\\n  },\\n  \\"reauth\\": {\\n    \\"timer\\": 0,\\n    \\"connectivity\\": \\"string\\"\\n  },\\n  \\"airespaceACL\\": \\"string\\",\\n  \\"airespaceIPv6ACL\\": \\"string\\",\\n  \\"webRedirection\\": {\\n    \\"WebRedirectionType\\": \\"string\\",\\n    \\"acl\\": \\"string\\",\\n    \\"portalName\\": \\"string\\",\\n    \\"staticIPHostNameFQDN\\": \\"string\\",\\n    \\"displayCertificatesRenewalMessages\\": true\\n  },\\n  \\"acl\\": \\"string\\",\\n  \\"trackMovement\\": true,\\n  \\"agentlessPosture\\": true,\\n  \\"serviceTemplate\\": true,\\n  \\"easywiredSessionCandidate\\": true,\\n  \\"daclName\\": \\"string\\",\\n  \\"voiceDomainPermission\\": true,\\n  \\"neat\\": true,\\n  \\"webAuth\\": true,\\n  \\"autoSmartPort\\": \\"string\\",\\n  \\"interfaceTemplate\\": \\"string\\",\\n  \\"ipv6ACLFilter\\": \\"string\\",\\n  \\"avcProfile\\": \\"string\\",\\n  \\"macSecPolicy\\": \\"string\\",\\n  \\"asaVpn\\": \\"string\\",\\n  \\"profileName\\": \\"string\\",\\n  \\"ipv6DaclName\\": \\"string\\",\\n  \\"link\\": {\\n    \\"rel\\": \\"string\\",\\n    \\"href\\": \\"string\\",\\n    \\"type\\": \\"string\\"\\n  }\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` {"accessType": "string", "acl": "string", "advancedAttributes": [{"leftHandSideDictionaryAttribue": {"AdvancedAttributeValueType": "string", "attributeName": "string", "dictionaryName": "string", "value": "string"}, "rightHandSideAttribueValue": {"AdvancedAttributeValueType": "string", "attributeName": "string", "dictionaryName": "string", "value": "string"}}], "agentlessPosture": true, "airespaceACL": "string", "airespaceIPv6ACL": "string", "asaVpn": "string", "authzProfileType": "string", "autoSmartPort": "string", "avcProfile": "string", "daclName": "string", "description": "string", "easywiredSessionCandidate": true, "id": "string", "interfaceTemplate": "string", "ipv6ACLFilter": "string", "ipv6DaclName": "string", "link": {"href": "string", "rel": "string", "type": "string"}, "macSecPolicy": "string", "name": "string", "neat": true, "profileName": "string", "reauth": {"connectivity": "string", "timer": 0}, "serviceTemplate": true, "trackMovement": true, "vlan": {"nameID": "string", "tagID": 0}, "voiceDomainPermission": true, "webAuth": true, "webRedirection": {"WebRedirectionType": "string", "acl": "string", "displayCertificatesRenewalMessages": true, "portalName": "string", "staticIPHostNameFQDN": "string"}}
 
 
       .. raw:: html

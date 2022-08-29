@@ -43,13 +43,11 @@ cisco.ise.endpoint_info module -- Information module for Endpoint
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.0).
-
-    You might already have this collection installed if you are using the ``ansible`` package.
-    It is not included in ``ansible-core``.
-    To check whether it is installed, run :code:`ansible-galaxy collection list`.
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.1).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.ise.endpoint_info_module_requirements>` for details.
 
     To use it in a playbook, specify: :code:`cisco.ise.endpoint_info`.
 
@@ -84,12 +82,14 @@ Synopsis
 
 .. Requirements
 
+.. _ansible_collections.cisco.ise.endpoint_info_module_requirements:
+
 Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk >= 2.0.3
-- python >= 3.5
+- ciscoisesdk \>= 2.0.3
+- python \>= 3.5
 
 
 
@@ -139,7 +139,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Filter query parameter. **Simple filtering** should be available through the filter query string parameter. The structure of a filter is a triplet of field operator and value separated with dots. More than one filter can be sent. The logical operator common to ALL filter criteria will be by default AND, and can be changed by using the "filterType=or" query string parameter.
+      Filter query parameter. \*\*Simple filtering\*\* should be available through the filter query string parameter. The structure of a filter is a triplet of field operator and value separated with dots. More than one filter can be sent. The logical operator common to ALL filter criteria will be by default AND, and can be changed by using the "filterType=or" query string parameter.
           
 
       Each resource Data model description should specify if an attribute is a filtered field.
@@ -272,8 +272,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -413,17 +413,17 @@ Parameters
 
       Flag that informs the SDK whether to use the Identity Services Engine's API Gateway to send requests.
 
-      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise_hostname}}.
+      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise\_hostname}}.
 
-      If it is false, it sends the requests to https://{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
+      If it is false, it sends the requests to https://{{ise\_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
 
 
       .. rst-class:: ansible-option-line
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -470,8 +470,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`no` :ansible-option-default:`← (default)`
-      - :ansible-option-choices-entry:`yes`
+      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`true`
 
       .. raw:: html
 
@@ -511,8 +511,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -590,8 +590,8 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-choices-entry:`no`
-      - :ansible-option-default-bold:`yes` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
       .. raw:: html
 
@@ -777,11 +777,11 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are endpoint.Endpoint.get_endpoint_by_id, endpoint.Endpoint.get_endpoint_by_name, endpoint.Endpoint.get_endpoints_generator,
+   - SDK Method used are endpoint.Endpoint.get\_endpoint\_by\_id, endpoint.Endpoint.get\_endpoint\_by\_name, endpoint.Endpoint.get\_endpoints\_generator,
    - Paths used are get /ers/config/endpoint, get /ers/config/endpoint/name/{name}, get /ers/config/endpoint/{id},
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
-   - The parameters starting with ise_ are used by the Cisco ISE Python SDK to establish the connection
+   - The parameters starting with ise\_ are used by the Cisco ISE Python SDK to establish the connection
 
 .. Seealso
 
@@ -886,7 +886,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "{\\n  \\"id\\": \\"string\\",\\n  \\"name\\": \\"string\\",\\n  \\"description\\": \\"string\\",\\n  \\"mac\\": \\"string\\",\\n  \\"profileId\\": \\"string\\",\\n  \\"staticProfileAssignment\\": true,\\n  \\"groupId\\": \\"string\\",\\n  \\"staticGroupAssignment\\": true,\\n  \\"portalUser\\": \\"string\\",\\n  \\"identityStore\\": \\"string\\",\\n  \\"identityStoreId\\": \\"string\\",\\n  \\"mdmAttributes\\": {\\n    \\"mdmServerName\\": \\"string\\",\\n    \\"mdmReachable\\": true,\\n    \\"mdmEnrolled\\": true,\\n    \\"mdmComplianceStatus\\": true,\\n    \\"mdmOS\\": \\"string\\",\\n    \\"mdmManufacturer\\": \\"string\\",\\n    \\"mdmModel\\": \\"string\\",\\n    \\"mdmSerial\\": \\"string\\",\\n    \\"mdmEncrypted\\": true,\\n    \\"mdmPinlock\\": true,\\n    \\"mdmJailBroken\\": true,\\n    \\"mdmIMEI\\": \\"string\\",\\n    \\"mdmPhoneNumber\\": \\"string\\"\\n  },\\n  \\"customAttributes\\": {\\n    \\"customAttributes\\": {}\\n  },\\n  \\"link\\": {\\n    \\"rel\\": \\"string\\",\\n    \\"href\\": \\"string\\",\\n    \\"type\\": \\"string\\"\\n  }\\n}\\n"
+      :ansible-option-sample-bold:`Sample:` {"customAttributes": {"customAttributes": {}}, "description": "string", "groupId": "string", "id": "string", "identityStore": "string", "identityStoreId": "string", "link": {"href": "string", "rel": "string", "type": "string"}, "mac": "string", "mdmAttributes": {"mdmComplianceStatus": true, "mdmEncrypted": true, "mdmEnrolled": true, "mdmIMEI": "string", "mdmJailBroken": true, "mdmManufacturer": "string", "mdmModel": "string", "mdmOS": "string", "mdmPhoneNumber": "string", "mdmPinlock": true, "mdmReachable": true, "mdmSerial": "string", "mdmServerName": "string"}, "name": "string", "portalUser": "string", "profileId": "string", "staticGroupAssignment": true, "staticProfileAssignment": true}
 
 
       .. raw:: html
