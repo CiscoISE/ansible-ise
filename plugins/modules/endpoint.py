@@ -147,7 +147,6 @@ EXAMPLES = r"""
       mdmReachable: true
       mdmSerial: string
       mdmServerName: string
-    name: string
     portalUser: string
     profileId: string
     staticGroupAssignment: true
@@ -190,7 +189,6 @@ EXAMPLES = r"""
       mdmReachable: true
       mdmSerial: string
       mdmServerName: string
-    name: string
     portalUser: string
     profileId: string
     staticGroupAssignment: true
