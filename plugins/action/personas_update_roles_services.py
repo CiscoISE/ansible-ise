@@ -79,6 +79,7 @@ class ActionModule(ActionBase):
             AnsibleActionFail(e)
 
         response = "Node updated successfully"
-
+        result = {'changed': True, 'result': 'Object updated'}
         self._result.update(dict(ise_response=response))
+        self._result.update(result)
         return self._result
