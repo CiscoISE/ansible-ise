@@ -1,0 +1,3978 @@
+
+.. Document meta
+
+:orphan:
+
+.. |antsibull-internal-nbsp| unicode:: 0xA0
+    :trim:
+
+.. role:: ansible-attribute-support-label
+.. role:: ansible-attribute-support-property
+.. role:: ansible-attribute-support-full
+.. role:: ansible-attribute-support-partial
+.. role:: ansible-attribute-support-none
+.. role:: ansible-attribute-support-na
+.. role:: ansible-option-type
+.. role:: ansible-option-elements
+.. role:: ansible-option-required
+.. role:: ansible-option-versionadded
+.. role:: ansible-option-aliases
+.. role:: ansible-option-choices
+.. role:: ansible-option-choices-entry
+.. role:: ansible-option-default
+.. role:: ansible-option-default-bold
+.. role:: ansible-option-configuration
+.. role:: ansible-option-returned-bold
+.. role:: ansible-option-sample-bold
+
+.. Anchors
+
+.. _ansible_collections.cisco.ise.allowed_protocols_module:
+
+.. Anchors: short name for ansible.builtin
+
+.. Anchors: aliases
+
+
+
+.. Title
+
+cisco.ise.allowed_protocols module -- Resource module for Allowed Protocols
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. Collection note
+
+.. note::
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.3).
+
+    To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.ise.allowed_protocols_module_requirements>` for details.
+
+    To use it in a playbook, specify: :code:`cisco.ise.allowed_protocols`.
+
+.. version_added
+
+.. versionadded:: 1.0.0 of cisco.ise
+
+.. contents::
+   :local:
+   :depth: 1
+
+.. Deprecated
+
+
+Synopsis
+--------
+
+.. Description
+
+- Manage operations create, update and delete of the resource Allowed Protocols.
+- This API creates an allowed protocol.
+- This API deletes an allowed protocol.
+- This API allows the client to update an allowed protocol.
+
+.. note::
+    This module has a corresponding :ref:`action plugin <action_plugins>`.
+
+.. Aliases
+
+
+.. Requirements
+
+.. _ansible_collections.cisco.ise.allowed_protocols_module_requirements:
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- ciscoisesdk \>= 2.0.3
+- python \>= 3.5
+
+
+
+
+
+
+.. Options
+
+Parameters
+----------
+
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Parameter
+    - Comments
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-allowChap"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-allowchap:
+
+      .. rst-class:: ansible-option-title
+
+      **allowChap**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-allowChap" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      AllowChap flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-allowEapFast"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-alloweapfast:
+
+      .. rst-class:: ansible-option-title
+
+      **allowEapFast**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-allowEapFast" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      AllowEapFast flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-allowEapMd5"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-alloweapmd5:
+
+      .. rst-class:: ansible-option-title
+
+      **allowEapMd5**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-allowEapMd5" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      AllowEapMd5 flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-allowEapTls"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-alloweaptls:
+
+      .. rst-class:: ansible-option-title
+
+      **allowEapTls**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-allowEapTls" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      AllowEapTls flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-allowEapTtls"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-alloweapttls:
+
+      .. rst-class:: ansible-option-title
+
+      **allowEapTtls**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-allowEapTtls" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      AllowEapTtls flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-allowLeap"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-allowleap:
+
+      .. rst-class:: ansible-option-title
+
+      **allowLeap**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-allowLeap" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      AllowLeap flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-allowMsChapV1"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-allowmschapv1:
+
+      .. rst-class:: ansible-option-title
+
+      **allowMsChapV1**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-allowMsChapV1" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      AllowMsChapV1 flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-allowMsChapV2"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-allowmschapv2:
+
+      .. rst-class:: ansible-option-title
+
+      **allowMsChapV2**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-allowMsChapV2" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      AllowMsChapV2 flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-allowPapAscii"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-allowpapascii:
+
+      .. rst-class:: ansible-option-title
+
+      **allowPapAscii**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-allowPapAscii" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      AllowPapAscii flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-allowPeap"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-allowpeap:
+
+      .. rst-class:: ansible-option-title
+
+      **allowPeap**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-allowPeap" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      AllowPeap flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-allowPreferredEapProtocol"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-allowpreferredeapprotocol:
+
+      .. rst-class:: ansible-option-title
+
+      **allowPreferredEapProtocol**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-allowPreferredEapProtocol" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      AllowPreferredEapProtocol flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-allowTeap"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-allowteap:
+
+      .. rst-class:: ansible-option-title
+
+      **allowTeap**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-allowTeap" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      AllowTeap flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-allowWeakCiphersForEap"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-allowweakciphersforeap:
+
+      .. rst-class:: ansible-option-title
+
+      **allowWeakCiphersForEap**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-allowWeakCiphersForEap" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      AllowWeakCiphersForEap flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-description"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-description:
+
+      .. rst-class:: ansible-option-title
+
+      **description**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-description" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Allowed Protocols's description.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapFast"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapfast:
+
+      .. rst-class:: ansible-option-title
+
+      **eapFast**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapFast" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The eapFast is required only if allowEapFast is true, otherwise it must be ignored. The object eapFast contains the settings for EAP FAST protocol.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapFast/allowEapFastEapGtc"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapfast/alloweapfasteapgtc:
+
+      .. rst-class:: ansible-option-title
+
+      **allowEapFastEapGtc**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapFast/allowEapFastEapGtc" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      AllowEapFastEapGtc flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapFast/allowEapFastEapGtcPwdChange"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapfast/alloweapfasteapgtcpwdchange:
+
+      .. rst-class:: ansible-option-title
+
+      **allowEapFastEapGtcPwdChange**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapFast/allowEapFastEapGtcPwdChange" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The allowEapFastEapGtcPwdChange is required only if allowEapFastEapGtc is true, otherwise it must be ignored.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapFast/allowEapFastEapGtcPwdChangeRetries"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapfast/alloweapfasteapgtcpwdchangeretries:
+
+      .. rst-class:: ansible-option-title
+
+      **allowEapFastEapGtcPwdChangeRetries**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapFast/allowEapFastEapGtcPwdChangeRetries" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The allowEapFastEapGtcPwdChangeRetries is required only if allowEapFastEapGtc is true, otherwise it must be ignored. Valid range is 0-3.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapFast/allowEapFastEapMsChapV2"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapfast/alloweapfasteapmschapv2:
+
+      .. rst-class:: ansible-option-title
+
+      **allowEapFastEapMsChapV2**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapFast/allowEapFastEapMsChapV2" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      AllowEapFastEapMsChapV2 flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapFast/allowEapFastEapMsChapV2PwdChange"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapfast/alloweapfasteapmschapv2pwdchange:
+
+      .. rst-class:: ansible-option-title
+
+      **allowEapFastEapMsChapV2PwdChange**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapFast/allowEapFastEapMsChapV2PwdChange" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The allowEapFastEapMsChapV2PwdChange is required only if allowEapFastEapMsChapV2 is true, otherwise it must be ignored.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapFast/allowEapFastEapMsChapV2PwdChangeRetries"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapfast/alloweapfasteapmschapv2pwdchangeretries:
+
+      .. rst-class:: ansible-option-title
+
+      **allowEapFastEapMsChapV2PwdChangeRetries**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapFast/allowEapFastEapMsChapV2PwdChangeRetries" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The allowEapFastEapMsChapV2PwdChangeRetries is required only if eapTtlsEapMsChapV2 is true, otherwise it must be ignored. Valid range is 0-3.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapFast/allowEapFastEapTls"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapfast/alloweapfasteaptls:
+
+      .. rst-class:: ansible-option-title
+
+      **allowEapFastEapTls**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapFast/allowEapFastEapTls" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      AllowEapFastEapTls flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapFast/allowEapFastEapTlsAuthOfExpiredCerts"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapfast/alloweapfasteaptlsauthofexpiredcerts:
+
+      .. rst-class:: ansible-option-title
+
+      **allowEapFastEapTlsAuthOfExpiredCerts**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapFast/allowEapFastEapTlsAuthOfExpiredCerts" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The allowEapFastEapTlsAuthOfExpiredCerts is required only if allowEapFastEapTls is true, otherwise it must be ignored.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapFast/eapFastDontUsePacsAcceptClientCert"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapfast/eapfastdontusepacsacceptclientcert:
+
+      .. rst-class:: ansible-option-title
+
+      **eapFastDontUsePacsAcceptClientCert**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapFast/eapFastDontUsePacsAcceptClientCert" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The eapFastDontUsePacsAcceptClientCert is required only if eapFastUsePacs is FALSE, otherwise it must be ignored.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapFast/eapFastDontUsePacsAllowMachineAuthentication"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapfast/eapfastdontusepacsallowmachineauthentication:
+
+      .. rst-class:: ansible-option-title
+
+      **eapFastDontUsePacsAllowMachineAuthentication**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapFast/eapFastDontUsePacsAllowMachineAuthentication" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The eapFastDontUsePacsAllowMachineAuthentication is required only if eapFastUsePacs is FALSE, otherwise it must be ignored.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapFast/eapFastEnableEAPChaining"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapfast/eapfastenableeapchaining:
+
+      .. rst-class:: ansible-option-title
+
+      **eapFastEnableEAPChaining**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapFast/eapFastEnableEAPChaining" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EapFastEnableEAPChaining flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapFast/eapFastUsePacs"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapfast/eapfastusepacs:
+
+      .. rst-class:: ansible-option-title
+
+      **eapFastUsePacs**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapFast/eapFastUsePacs" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EapFastUsePacs flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapFast/eapFastUsePacsAcceptClientCert"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapfast/eapfastusepacsacceptclientcert:
+
+      .. rst-class:: ansible-option-title
+
+      **eapFastUsePacsAcceptClientCert**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapFast/eapFastUsePacsAcceptClientCert" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The eapFastUsePacsAcceptClientCert is required only if eapFastUsePacsAllowAuthenProvisioning is true, otherwise it must be ignored.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapFast/eapFastUsePacsAllowAnonymProvisioning"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapfast/eapfastusepacsallowanonymprovisioning:
+
+      .. rst-class:: ansible-option-title
+
+      **eapFastUsePacsAllowAnonymProvisioning**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapFast/eapFastUsePacsAllowAnonymProvisioning" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The eapFastUsePacsAllowAnonymProvisioning is required only if eapFastUsePacs is true, otherwise it must be ignored.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapFast/eapFastUsePacsAllowAuthenProvisioning"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapfast/eapfastusepacsallowauthenprovisioning:
+
+      .. rst-class:: ansible-option-title
+
+      **eapFastUsePacsAllowAuthenProvisioning**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapFast/eapFastUsePacsAllowAuthenProvisioning" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The eapFastUsePacsAllowAuthenProvisioning is required only if eapFastUsePacs is true, otherwise it must be ignored.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapFast/eapFastUsePacsAllowMachineAuthentication"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapfast/eapfastusepacsallowmachineauthentication:
+
+      .. rst-class:: ansible-option-title
+
+      **eapFastUsePacsAllowMachineAuthentication**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapFast/eapFastUsePacsAllowMachineAuthentication" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EapFastUsePacsAllowMachineAuthentication flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapFast/eapFastUsePacsAuthorizationPacTtl"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapfast/eapfastusepacsauthorizationpacttl:
+
+      .. rst-class:: ansible-option-title
+
+      **eapFastUsePacsAuthorizationPacTtl**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapFast/eapFastUsePacsAuthorizationPacTtl" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The eapFastUsePacsAuthorizationPacTtl is required only if eapFastUsePacsStatelessSessionResume is true, otherwise it must be ignored.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapFast/eapFastUsePacsAuthorizationPacTtlUnits"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapfast/eapfastusepacsauthorizationpacttlunits:
+
+      .. rst-class:: ansible-option-title
+
+      **eapFastUsePacsAuthorizationPacTtlUnits**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapFast/eapFastUsePacsAuthorizationPacTtlUnits" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The eapFastUsePacsAuthorizationPacTtlUnits is required only if eapFastUsePacsStatelessSessionResume is true, otherwise it must be ignored. Allowed Values - SECONDS, - MINUTES, - HOURS, - DAYS, - WEEKS.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapFast/eapFastUsePacsMachinePacTtl"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapfast/eapfastusepacsmachinepacttl:
+
+      .. rst-class:: ansible-option-title
+
+      **eapFastUsePacsMachinePacTtl**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapFast/eapFastUsePacsMachinePacTtl" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The eapFastUsePacsMachinePacTtl is required only if eapFastUsePacsAllowMachineAuthentication is true, otherwise it must be ignored.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapFast/eapFastUsePacsMachinePacTtlUnits"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapfast/eapfastusepacsmachinepacttlunits:
+
+      .. rst-class:: ansible-option-title
+
+      **eapFastUsePacsMachinePacTtlUnits**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapFast/eapFastUsePacsMachinePacTtlUnits" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The eapFastUsePacsMachinePacTtlUnits is required only if eapFastUsePacsAllowMachineAuthentication is true, otherwise it must be ignored. Allowed Values - SECONDS, - MINUTES, - HOURS, - DAYS, - WEEKS.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapFast/eapFastUsePacsReturnAccessAcceptAfterAuthenticatedProvisioning"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapfast/eapfastusepacsreturnaccessacceptafterauthenticatedprovisioning:
+
+      .. rst-class:: ansible-option-title
+
+      **eapFastUsePacsReturnAccessAcceptAfterAuthenticatedProvisioning**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapFast/eapFastUsePacsReturnAccessAcceptAfterAuthenticatedProvisioning" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The eapFastUsePacsReturnAccessAcceptAfterAuthenticatedProvisioning is required only if eapFastUsePacsAllowAuthenProvisioning is true, otherwise it must be ignored.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapFast/eapFastUsePacsStatelessSessionResume"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapfast/eapfastusepacsstatelesssessionresume:
+
+      .. rst-class:: ansible-option-title
+
+      **eapFastUsePacsStatelessSessionResume**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapFast/eapFastUsePacsStatelessSessionResume" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The eapFastUsePacsStatelessSessionResume is required only if eapFastUsePacs is true, otherwise it must be ignored.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapFast/eapFastUsePacsTunnelPacTtl"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapfast/eapfastusepacstunnelpacttl:
+
+      .. rst-class:: ansible-option-title
+
+      **eapFastUsePacsTunnelPacTtl**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapFast/eapFastUsePacsTunnelPacTtl" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The eapFastUsePacsTunnelPacTtl is required only if eapFastUsePacs is true, otherwise it must be ignored.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapFast/eapFastUsePacsTunnelPacTtlUnits"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapfast/eapfastusepacstunnelpacttlunits:
+
+      .. rst-class:: ansible-option-title
+
+      **eapFastUsePacsTunnelPacTtlUnits**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapFast/eapFastUsePacsTunnelPacTtlUnits" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The eapFastUsePacsTunnelPacTtlUnits is required only if eapFastUsePacs is true, otherwise it must be ignored. Allowed Values - SECONDS, - MINUTES, - HOURS, - DAYS, - WEEKS.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapFast/eapFastUsePacsUseProactivePacUpdatePrecentage"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapfast/eapfastusepacsuseproactivepacupdateprecentage:
+
+      .. rst-class:: ansible-option-title
+
+      **eapFastUsePacsUseProactivePacUpdatePrecentage**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapFast/eapFastUsePacsUseProactivePacUpdatePrecentage" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The eapFastUsePacsUseProactivePacUpdatePrecentage is required only if eapFastUsePacs is true, otherwise it must be ignored.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapTls"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eaptls:
+
+      .. rst-class:: ansible-option-title
+
+      **eapTls**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapTls" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The eapTls is required only if allowEapTls is true, otherwise it must be ignored. The object eapTls contains the settings for EAP TLS protocol.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapTls/allowEapTlsAuthOfExpiredCerts"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eaptls/alloweaptlsauthofexpiredcerts:
+
+      .. rst-class:: ansible-option-title
+
+      **allowEapTlsAuthOfExpiredCerts**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapTls/allowEapTlsAuthOfExpiredCerts" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      AllowEapTlsAuthOfExpiredCerts flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapTls/eapTlsEnableStatelessSessionResume"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eaptls/eaptlsenablestatelesssessionresume:
+
+      .. rst-class:: ansible-option-title
+
+      **eapTlsEnableStatelessSessionResume**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapTls/eapTlsEnableStatelessSessionResume" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EapTlsEnableStatelessSessionResume flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapTls/eapTlsSessionTicketPrecentage"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eaptls/eaptlssessionticketprecentage:
+
+      .. rst-class:: ansible-option-title
+
+      **eapTlsSessionTicketPrecentage**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapTls/eapTlsSessionTicketPrecentage" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The eapTlsSessionTicketPrecentage is required only if eapTlsEnableStatelessSessionResume is true, otherwise it must be ignored.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapTls/eapTlsSessionTicketTtl"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eaptls/eaptlssessionticketttl:
+
+      .. rst-class:: ansible-option-title
+
+      **eapTlsSessionTicketTtl**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapTls/eapTlsSessionTicketTtl" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Time to live. The eapTlsSessionTicketTtl is required only if eapTlsEnableStatelessSessionResume is true, otherwise it must be ignored.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapTls/eapTlsSessionTicketTtlUnits"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eaptls/eaptlssessionticketttlunits:
+
+      .. rst-class:: ansible-option-title
+
+      **eapTlsSessionTicketTtlUnits**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapTls/eapTlsSessionTicketTtlUnits" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Time to live time units. The eapTlsSessionTicketTtlUnits is required only if eapTlsEnableStatelessSessionResume is true, otherwise it must be ignored. Allowed Values - SECONDS, - MINUTES, - HOURS, - DAYS, - WEEKS.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapTlsLBit"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eaptlslbit:
+
+      .. rst-class:: ansible-option-title
+
+      **eapTlsLBit**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapTlsLBit" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      EapTlsLBit flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapTtls"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapttls:
+
+      .. rst-class:: ansible-option-title
+
+      **eapTtls**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapTtls" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The eapTtls is required only if allowEapTtls is true, otherwise it must be ignored. The object eapTtls contains the settings for EAP TTLS protocol.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapTtls/eapTtlsChap"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapttls/eapttlschap:
+
+      .. rst-class:: ansible-option-title
+
+      **eapTtlsChap**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapTtls/eapTtlsChap" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EapTtlsChap flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapTtls/eapTtlsEapMd5"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapttls/eapttlseapmd5:
+
+      .. rst-class:: ansible-option-title
+
+      **eapTtlsEapMd5**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapTtls/eapTtlsEapMd5" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EapTtlsEapMd5 flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapTtls/eapTtlsEapMsChapV2"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapttls/eapttlseapmschapv2:
+
+      .. rst-class:: ansible-option-title
+
+      **eapTtlsEapMsChapV2**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapTtls/eapTtlsEapMsChapV2" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EapTtlsEapMsChapV2 flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapTtls/eapTtlsEapMsChapV2PwdChange"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapttls/eapttlseapmschapv2pwdchange:
+
+      .. rst-class:: ansible-option-title
+
+      **eapTtlsEapMsChapV2PwdChange**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapTtls/eapTtlsEapMsChapV2PwdChange" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The eapTtlsEapMsChapV2PwdChange is required only if eapTtlsEapMsChapV2 is true, otherwise it must be ignored.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapTtls/eapTtlsEapMsChapV2PwdChangeRetries"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapttls/eapttlseapmschapv2pwdchangeretries:
+
+      .. rst-class:: ansible-option-title
+
+      **eapTtlsEapMsChapV2PwdChangeRetries**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapTtls/eapTtlsEapMsChapV2PwdChangeRetries" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The eapTtlsEapMsChapV2PwdChangeRetries is required only if eapTtlsEapMsChapV2 is true, otherwise it must be ignored. Valid range is 0-3.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapTtls/eapTtlsMsChapV1"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapttls/eapttlsmschapv1:
+
+      .. rst-class:: ansible-option-title
+
+      **eapTtlsMsChapV1**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapTtls/eapTtlsMsChapV1" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EapTtlsMsChapV1 flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapTtls/eapTtlsMsChapV2"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapttls/eapttlsmschapv2:
+
+      .. rst-class:: ansible-option-title
+
+      **eapTtlsMsChapV2**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapTtls/eapTtlsMsChapV2" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EapTtlsMsChapV2 flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eapTtls/eapTtlsPapAscii"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-eapttls/eapttlspapascii:
+
+      .. rst-class:: ansible-option-title
+
+      **eapTtlsPapAscii**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eapTtls/eapTtlsPapAscii" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EapTtlsPapAscii flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-id"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Resource UUID, Mandatory for update.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_debug"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-ise_debug:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_debug**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_debug" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag for Identity Services Engine SDK to enable debugging.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_hostname"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-ise_hostname:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_hostname**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_hostname" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Identity Services Engine hostname.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_password"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-ise_password:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_password**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_password" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Identity Services Engine password to authenticate.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_username"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-ise_username:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_username**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_username" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Identity Services Engine username to authenticate.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_uses_api_gateway"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-ise_uses_api_gateway:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_uses_api_gateway**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_uses_api_gateway" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      :ansible-option-versionadded:`added in 1.1.0 of cisco.ise`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag that informs the SDK whether to use the Identity Services Engine's API Gateway to send requests.
+
+      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise\_hostname}}.
+
+      If it is false, it sends the requests to https://{{ise\_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_uses_csrf_token"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-ise_uses_csrf_token:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_uses_csrf_token**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_uses_csrf_token" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      :ansible-option-versionadded:`added in 3.0.0 of cisco.ise`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag that informs the SDK whether we send the CSRF token to ISE's ERS APIs.
+
+      If it is True, the SDK assumes that your ISE CSRF Check is enabled.
+
+      If it is True, it assumes you need the SDK to manage the CSRF token automatically for you.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_verify"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-ise_verify:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_verify**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_verify" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag to enable or disable SSL certificate verification.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_version"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-ise_version:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_version**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_version" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Informs the SDK which version of Identity Services Engine to use.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"3.1\_Patch\_1"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_wait_on_rate_limit"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-ise_wait_on_rate_limit:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_wait_on_rate_limit**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_wait_on_rate_limit" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag for Identity Services Engine SDK to enable automatic rate-limit handling.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-name"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Resource Name.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peap"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-peap:
+
+      .. rst-class:: ansible-option-title
+
+      **peap**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peap" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Allowed Protocols's peap.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peap/allowPeapEapGtc"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-peap/allowpeapeapgtc:
+
+      .. rst-class:: ansible-option-title
+
+      **allowPeapEapGtc**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peap/allowPeapEapGtc" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      AllowPeapEapGtc flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peap/allowPeapEapGtcPwdChange"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-peap/allowpeapeapgtcpwdchange:
+
+      .. rst-class:: ansible-option-title
+
+      **allowPeapEapGtcPwdChange**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peap/allowPeapEapGtcPwdChange" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The allowPeapEapGtcPwdChange is required only if allowPeapEapGtc is true, otherwise it must be ignored.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peap/allowPeapEapGtcPwdChangeRetries"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-peap/allowpeapeapgtcpwdchangeretries:
+
+      .. rst-class:: ansible-option-title
+
+      **allowPeapEapGtcPwdChangeRetries**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peap/allowPeapEapGtcPwdChangeRetries" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The allowPeapEapGtcPwdChangeRetries is required only if allowPeapEapGtc is true, otherwise it must be ignored. Valid range is 0-3.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peap/allowPeapEapMsChapV2"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-peap/allowpeapeapmschapv2:
+
+      .. rst-class:: ansible-option-title
+
+      **allowPeapEapMsChapV2**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peap/allowPeapEapMsChapV2" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      AllowPeapEapMsChapV2 flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peap/allowPeapEapMsChapV2PwdChange"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-peap/allowpeapeapmschapv2pwdchange:
+
+      .. rst-class:: ansible-option-title
+
+      **allowPeapEapMsChapV2PwdChange**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peap/allowPeapEapMsChapV2PwdChange" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The allowPeapEapMsChapV2PwdChange is required only if allowPeapEapMsChapV2 is true, otherwise it must be ignored.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peap/allowPeapEapMsChapV2PwdChangeRetries"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-peap/allowpeapeapmschapv2pwdchangeretries:
+
+      .. rst-class:: ansible-option-title
+
+      **allowPeapEapMsChapV2PwdChangeRetries**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peap/allowPeapEapMsChapV2PwdChangeRetries" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The allowPeapEapMsChapV2PwdChangeRetries is required only if allowPeapEapMsChapV2 is true, otherwise it must be ignored. Valid range is 0-3.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peap/allowPeapEapTls"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-peap/allowpeapeaptls:
+
+      .. rst-class:: ansible-option-title
+
+      **allowPeapEapTls**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peap/allowPeapEapTls" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      AllowPeapEapTls flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peap/allowPeapEapTlsAuthOfExpiredCerts"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-peap/allowpeapeaptlsauthofexpiredcerts:
+
+      .. rst-class:: ansible-option-title
+
+      **allowPeapEapTlsAuthOfExpiredCerts**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peap/allowPeapEapTlsAuthOfExpiredCerts" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The allowPeapEapTlsAuthOfExpiredCerts is required only if allowPeapEapTls is true, otherwise it must be ignored.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peap/allowPeapV0"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-peap/allowpeapv0:
+
+      .. rst-class:: ansible-option-title
+
+      **allowPeapV0**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peap/allowPeapV0" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      AllowPeapV0 flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-peap/requireCryptobinding"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-peap/requirecryptobinding:
+
+      .. rst-class:: ansible-option-title
+
+      **requireCryptobinding**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-peap/requireCryptobinding" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      RequireCryptobinding flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-preferredEapProtocol"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-preferredeapprotocol:
+
+      .. rst-class:: ansible-option-title
+
+      **preferredEapProtocol**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-preferredEapProtocol" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The preferredEapProtocol is required only if allowPreferredEapProtocol is true, otherwise it must be ignored. Allowed Values - EAP\_FAST, - PEAP, - LEAP, - EAP\_MD5, - EAP\_TLS, - EAP\_TTLS, - TEAP.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-processHostLookup"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-processhostlookup:
+
+      .. rst-class:: ansible-option-title
+
+      **processHostLookup**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-processHostLookup" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      ProcessHostLookup flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-requireMessageAuth"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-requiremessageauth:
+
+      .. rst-class:: ansible-option-title
+
+      **requireMessageAuth**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-requireMessageAuth" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      RequireMessageAuth flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-teap"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-teap:
+
+      .. rst-class:: ansible-option-title
+
+      **teap**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-teap" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The teap is required only if allowTeap is true, otherwise it must be ignored. The object teap contains the settings for TEAP protocol.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-teap/acceptClientCertDuringTunnelEst"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-teap/acceptclientcertduringtunnelest:
+
+      .. rst-class:: ansible-option-title
+
+      **acceptClientCertDuringTunnelEst**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-teap/acceptClientCertDuringTunnelEst" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      AcceptClientCertDuringTunnelEst flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-teap/allowDowngradeMsk"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-teap/allowdowngrademsk:
+
+      .. rst-class:: ansible-option-title
+
+      **allowDowngradeMsk**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-teap/allowDowngradeMsk" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      AllowDowngradeMsk flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-teap/allowTeapEapMsChapV2"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-teap/allowteapeapmschapv2:
+
+      .. rst-class:: ansible-option-title
+
+      **allowTeapEapMsChapV2**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-teap/allowTeapEapMsChapV2" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      AllowTeapEapMsChapV2 flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-teap/allowTeapEapMsChapV2PwdChange"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-teap/allowteapeapmschapv2pwdchange:
+
+      .. rst-class:: ansible-option-title
+
+      **allowTeapEapMsChapV2PwdChange**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-teap/allowTeapEapMsChapV2PwdChange" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The allowTeapEapMsChapV2PwdChange is required only if allowTeapEapMsChapV2 is true, otherwise it must be ignored.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-teap/allowTeapEapMsChapV2PwdChangeRetries"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-teap/allowteapeapmschapv2pwdchangeretries:
+
+      .. rst-class:: ansible-option-title
+
+      **allowTeapEapMsChapV2PwdChangeRetries**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-teap/allowTeapEapMsChapV2PwdChangeRetries" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The allowTeapEapMsChapV2PwdChangeRetries is required only if allowTeapEapMsChapV2 is true, otherwise it must be ignored. Valid range is 0-3.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-teap/allowTeapEapTls"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-teap/allowteapeaptls:
+
+      .. rst-class:: ansible-option-title
+
+      **allowTeapEapTls**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-teap/allowTeapEapTls" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      AllowTeapEapTls flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-teap/allowTeapEapTlsAuthOfExpiredCerts"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-teap/allowteapeaptlsauthofexpiredcerts:
+
+      .. rst-class:: ansible-option-title
+
+      **allowTeapEapTlsAuthOfExpiredCerts**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-teap/allowTeapEapTlsAuthOfExpiredCerts" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The allowTeapEapTlsAuthOfExpiredCerts is required only if allowTeapEapTls is true, otherwise it must be ignored.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-teap/enableEapChaining"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__parameter-teap/enableeapchaining:
+
+      .. rst-class:: ansible-option-title
+
+      **enableEapChaining**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-teap/enableEapChaining" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EnableEapChaining flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+      .. raw:: html
+
+        </div>
+
+
+
+.. Attributes
+
+
+.. Notes
+
+Notes
+-----
+
+.. note::
+   - SDK Method used are allowed\_protocols.AllowedProtocols.create\_allowed\_protocol, allowed\_protocols.AllowedProtocols.delete\_allowed\_protocol\_by\_id, allowed\_protocols.AllowedProtocols.update\_allowed\_protocol\_by\_id,
+   - Paths used are post /ers/config/allowedprotocols, delete /ers/config/allowedprotocols/{id}, put /ers/config/allowedprotocols/{id},
+   - Does not support \ :literal:`check\_mode`\ 
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
+   - The parameters starting with ise\_ are used by the Cisco ISE Python SDK to establish the connection
+
+.. Seealso
+
+
+.. Examples
+
+Examples
+--------
+
+.. code-block:: yaml+jinja
+
+    
+    - name: Update by id
+      cisco.ise.allowed_protocols:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: present
+        allowChap: true
+        allowEapFast: true
+        allowEapMd5: true
+        allowEapTls: true
+        allowEapTtls: true
+        allowLeap: true
+        allowMsChapV1: true
+        allowMsChapV2: true
+        allowPapAscii: true
+        allowPeap: true
+        allowPreferredEapProtocol: true
+        allowTeap: true
+        allowWeakCiphersForEap: true
+        description: string
+        eapFast:
+          allowEapFastEapGtc: true
+          allowEapFastEapGtcPwdChange: true
+          allowEapFastEapGtcPwdChangeRetries: 0
+          allowEapFastEapMsChapV2: true
+          allowEapFastEapMsChapV2PwdChange: true
+          allowEapFastEapMsChapV2PwdChangeRetries: 0
+          allowEapFastEapTls: true
+          allowEapFastEapTlsAuthOfExpiredCerts: true
+          eapFastDontUsePacsAcceptClientCert: true
+          eapFastDontUsePacsAllowMachineAuthentication: true
+          eapFastEnableEAPChaining: true
+          eapFastUsePacs: true
+          eapFastUsePacsAcceptClientCert: true
+          eapFastUsePacsAllowAnonymProvisioning: true
+          eapFastUsePacsAllowAuthenProvisioning: true
+          eapFastUsePacsAllowMachineAuthentication: true
+          eapFastUsePacsAuthorizationPacTtl: 0
+          eapFastUsePacsAuthorizationPacTtlUnits: string
+          eapFastUsePacsMachinePacTtl: 0
+          eapFastUsePacsMachinePacTtlUnits: string
+          eapFastUsePacsReturnAccessAcceptAfterAuthenticatedProvisioning: true
+          eapFastUsePacsStatelessSessionResume: true
+          eapFastUsePacsTunnelPacTtl: 0
+          eapFastUsePacsTunnelPacTtlUnits: string
+          eapFastUsePacsUseProactivePacUpdatePrecentage: 0
+        eapTls:
+          allowEapTlsAuthOfExpiredCerts: true
+          eapTlsEnableStatelessSessionResume: true
+          eapTlsSessionTicketPrecentage: 0
+          eapTlsSessionTicketTtl: 0
+          eapTlsSessionTicketTtlUnits: string
+        eapTlsLBit: true
+        eapTtls:
+          eapTtlsChap: true
+          eapTtlsEapMd5: true
+          eapTtlsEapMsChapV2: true
+          eapTtlsEapMsChapV2PwdChange: true
+          eapTtlsEapMsChapV2PwdChangeRetries: 0
+          eapTtlsMsChapV1: true
+          eapTtlsMsChapV2: true
+          eapTtlsPapAscii: true
+        id: string
+        name: string
+        peap:
+          allowPeapEapGtc: true
+          allowPeapEapGtcPwdChange: true
+          allowPeapEapGtcPwdChangeRetries: 0
+          allowPeapEapMsChapV2: true
+          allowPeapEapMsChapV2PwdChange: true
+          allowPeapEapMsChapV2PwdChangeRetries: 0
+          allowPeapEapTls: true
+          allowPeapEapTlsAuthOfExpiredCerts: true
+          allowPeapV0: true
+          requireCryptobinding: true
+        preferredEapProtocol: string
+        processHostLookup: true
+        requireMessageAuth: true
+        teap:
+          acceptClientCertDuringTunnelEst: true
+          allowDowngradeMsk: true
+          allowTeapEapMsChapV2: true
+          allowTeapEapMsChapV2PwdChange: true
+          allowTeapEapMsChapV2PwdChangeRetries: 0
+          allowTeapEapTls: true
+          allowTeapEapTlsAuthOfExpiredCerts: true
+          enableEapChaining: true
+
+    - name: Delete by id
+      cisco.ise.allowed_protocols:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: absent
+        id: string
+
+    - name: Create
+      cisco.ise.allowed_protocols:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: present
+        allowChap: true
+        allowEapFast: true
+        allowEapMd5: true
+        allowEapTls: true
+        allowEapTtls: true
+        allowLeap: true
+        allowMsChapV1: true
+        allowMsChapV2: true
+        allowPapAscii: true
+        allowPeap: true
+        allowPreferredEapProtocol: true
+        allowTeap: true
+        allowWeakCiphersForEap: true
+        description: string
+        eapFast:
+          allowEapFastEapGtc: true
+          allowEapFastEapGtcPwdChange: true
+          allowEapFastEapGtcPwdChangeRetries: 0
+          allowEapFastEapMsChapV2: true
+          allowEapFastEapMsChapV2PwdChange: true
+          allowEapFastEapMsChapV2PwdChangeRetries: 0
+          allowEapFastEapTls: true
+          allowEapFastEapTlsAuthOfExpiredCerts: true
+          eapFastDontUsePacsAcceptClientCert: true
+          eapFastDontUsePacsAllowMachineAuthentication: true
+          eapFastEnableEAPChaining: true
+          eapFastUsePacs: true
+          eapFastUsePacsAcceptClientCert: true
+          eapFastUsePacsAllowAnonymProvisioning: true
+          eapFastUsePacsAllowAuthenProvisioning: true
+          eapFastUsePacsAllowMachineAuthentication: true
+          eapFastUsePacsAuthorizationPacTtl: 0
+          eapFastUsePacsAuthorizationPacTtlUnits: string
+          eapFastUsePacsMachinePacTtl: 0
+          eapFastUsePacsMachinePacTtlUnits: string
+          eapFastUsePacsReturnAccessAcceptAfterAuthenticatedProvisioning: true
+          eapFastUsePacsStatelessSessionResume: true
+          eapFastUsePacsTunnelPacTtl: 0
+          eapFastUsePacsTunnelPacTtlUnits: string
+          eapFastUsePacsUseProactivePacUpdatePrecentage: 0
+        eapTls:
+          allowEapTlsAuthOfExpiredCerts: true
+          eapTlsEnableStatelessSessionResume: true
+          eapTlsSessionTicketPrecentage: 0
+          eapTlsSessionTicketTtl: 0
+          eapTlsSessionTicketTtlUnits: string
+        eapTlsLBit: true
+        eapTtls:
+          eapTtlsChap: true
+          eapTtlsEapMd5: true
+          eapTtlsEapMsChapV2: true
+          eapTtlsEapMsChapV2PwdChange: true
+          eapTtlsEapMsChapV2PwdChangeRetries: 0
+          eapTtlsMsChapV1: true
+          eapTtlsMsChapV2: true
+          eapTtlsPapAscii: true
+        name: string
+        peap:
+          allowPeapEapGtc: true
+          allowPeapEapGtcPwdChange: true
+          allowPeapEapGtcPwdChangeRetries: 0
+          allowPeapEapMsChapV2: true
+          allowPeapEapMsChapV2PwdChange: true
+          allowPeapEapMsChapV2PwdChangeRetries: 0
+          allowPeapEapTls: true
+          allowPeapEapTlsAuthOfExpiredCerts: true
+          allowPeapV0: true
+          requireCryptobinding: true
+        preferredEapProtocol: string
+        processHostLookup: true
+        requireMessageAuth: true
+        teap:
+          acceptClientCertDuringTunnelEst: true
+          allowDowngradeMsk: true
+          allowTeapEapMsChapV2: true
+          allowTeapEapMsChapV2PwdChange: true
+          allowTeapEapMsChapV2PwdChangeRetries: 0
+          allowTeapEapTls: true
+          allowTeapEapTlsAuthOfExpiredCerts: true
+          enableEapChaining: true
+
+
+
+
+
+.. Facts
+
+
+.. Return values
+
+Return Values
+-------------
+Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Key
+    - Description
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-ise_response"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__return-ise_response:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_response**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-ise_response" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      A dictionary or list with the response returned by the Cisco ISE Python SDK
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` {"allowChap": true, "allowEapFast": true, "allowEapMd5": true, "allowEapTls": true, "allowEapTtls": true, "allowLeap": true, "allowMsChapV1": true, "allowMsChapV2": true, "allowPapAscii": true, "allowPeap": true, "allowPreferredEapProtocol": true, "allowTeap": true, "allowWeakCiphersForEap": true, "description": "string", "eapFast": {"allowEapFastEapGtc": true, "allowEapFastEapGtcPwdChange": true, "allowEapFastEapGtcPwdChangeRetries": 0, "allowEapFastEapMsChapV2": true, "allowEapFastEapMsChapV2PwdChange": true, "allowEapFastEapMsChapV2PwdChangeRetries": 0, "allowEapFastEapTls": true, "allowEapFastEapTlsAuthOfExpiredCerts": true, "eapFastDontUsePacsAcceptClientCert": true, "eapFastDontUsePacsAllowMachineAuthentication": true, "eapFastEnableEAPChaining": true, "eapFastUsePacs": true, "eapFastUsePacsAcceptClientCert": true, "eapFastUsePacsAllowAnonymProvisioning": true, "eapFastUsePacsAllowAuthenProvisioning": true, "eapFastUsePacsAllowMachineAuthentication": true, "eapFastUsePacsAuthorizationPacTtl": 0, "eapFastUsePacsAuthorizationPacTtlUnits": "string", "eapFastUsePacsMachinePacTtl": 0, "eapFastUsePacsMachinePacTtlUnits": "string", "eapFastUsePacsReturnAccessAcceptAfterAuthenticatedProvisioning": true, "eapFastUsePacsStatelessSessionResume": true, "eapFastUsePacsTunnelPacTtl": 0, "eapFastUsePacsTunnelPacTtlUnits": "string", "eapFastUsePacsUseProactivePacUpdatePrecentage": 0}, "eapTls": {"allowEapTlsAuthOfExpiredCerts": true, "eapTlsEnableStatelessSessionResume": true, "eapTlsSessionTicketPrecentage": 0, "eapTlsSessionTicketTtl": 0, "eapTlsSessionTicketTtlUnits": "string"}, "eapTlsLBit": true, "eapTtls": {"eapTtlsChap": true, "eapTtlsEapMd5": true, "eapTtlsEapMsChapV2": true, "eapTtlsEapMsChapV2PwdChange": true, "eapTtlsEapMsChapV2PwdChangeRetries": 0, "eapTtlsMsChapV1": true, "eapTtlsMsChapV2": true, "eapTtlsPapAscii": true}, "id": "string", "link": {"href": "string", "rel": "string", "type": "string"}, "name": "string", "peap": {"allowPeapEapGtc": true, "allowPeapEapGtcPwdChange": true, "allowPeapEapGtcPwdChangeRetries": 0, "allowPeapEapMsChapV2": true, "allowPeapEapMsChapV2PwdChange": true, "allowPeapEapMsChapV2PwdChangeRetries": 0, "allowPeapEapTls": true, "allowPeapEapTlsAuthOfExpiredCerts": true, "allowPeapV0": true, "requireCryptobinding": true}, "preferredEapProtocol": "string", "processHostLookup": true, "requireMessageAuth": true, "teap": {"acceptClientCertDuringTunnelEst": true, "allowDowngradeMsk": true, "allowTeapEapMsChapV2": true, "allowTeapEapMsChapV2PwdChange": true, "allowTeapEapMsChapV2PwdChangeRetries": 0, "allowTeapEapTls": true, "allowTeapEapTlsAuthOfExpiredCerts": true, "enableEapChaining": true}}
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-ise_update_response"></div>
+
+      .. _ansible_collections.cisco.ise.allowed_protocols_module__return-ise_update_response:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_update_response**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-ise_update_response" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      :ansible-option-versionadded:`added in 1.1.0 of cisco.ise`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      A dictionary or list with the response returned by the Cisco ISE Python SDK
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` {"UpdatedFieldsList": {"field": "string", "newValue": "string", "oldValue": "string", "updatedField": [{"field": "string", "newValue": "string", "oldValue": "string"}]}}
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+..  Status (Presently only deprecated)
+
+
+.. Authors
+
+Authors
+~~~~~~~
+
+- Rafael Campos (@racampos)
+
+
+
+.. Extra links
+
+Collection links
+~~~~~~~~~~~~~~~~
+
+.. raw:: html
+
+  <p class="ansible-links">
+    <a href="https://github.com/CiscoISE/ansible-ise/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
+    <a href="https://github.com/CiscoISE/ansible-ise" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
+  </p>
+
+.. Parsing errors
+
