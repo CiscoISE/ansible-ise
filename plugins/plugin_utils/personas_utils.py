@@ -26,6 +26,7 @@ import io
 
 class Node(object):
     def __init__(self, node):
+        requests.packages.urllib3.disable_warnings()
         self.name = node.get("name")
         self.ip = node.get("ip")
         self.fqdn = node.get("fqdn")
