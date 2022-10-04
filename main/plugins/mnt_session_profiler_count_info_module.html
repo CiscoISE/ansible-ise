@@ -17,6 +17,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -466,15 +467,13 @@
 <h1>cisco.ise.mnt_session_profiler_count_info module – Information module for MNT Session Profiler Count<a class="headerlink" href="#cisco-ise-mnt-session-profiler-count-info-module-information-module-for-mnt-session-profiler-count" title="Permalink to this heading"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/ise">cisco.ise collection</a> (version 2.5.3).</p>
+<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/ise">cisco.ise collection</a> (version 2.5.4).</p>
 <p>To install it, use: <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">install</span> <span class="pre">cisco.ise</span></code>.
 You need further requirements to be able to use this module,
 see <a class="reference internal" href="#ansible-collections-cisco-ise-mnt-session-profiler-count-info-module-requirements"><span class="std std-ref">Requirements</span></a> for details.</p>
 <p>To use it in a playbook, specify: <code class="code docutils literal notranslate"><span class="pre">cisco.ise.mnt_session_profiler_count_info</span></code>.</p>
 </div>
-<div class="versionadded">
-<p><span class="versionmodified added">New in version 1.0.0: </span>of cisco.ise</p>
-</div>
+<p class="ansible-version-added">New in cisco.ise 1.0.0</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#synopsis" id="id1">Synopsis</a></p></li>
@@ -548,7 +547,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-mnt-sessi
 <tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-ise_uses_api_gateway"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-mnt-session-profiler-count-info-module-parameter-ise-uses-api-gateway"><strong>ise_uses_api_gateway</strong></p>
 <a class="ansibleOptionLink" href="#parameter-ise_uses_api_gateway" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
-<p><span class="ansible-option-versionadded">added in 1.1.0 of cisco.ise</span></p>
+<p><span class="ansible-option-versionadded">added in cisco.ise 1.1.0</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Flag that informs the SDK whether to use the Identity Services Engine’s API Gateway to send requests.</p>
 <p>If it is true, it uses the ISE’s API Gateway and sends requests to <a class="reference external" href="https:/">https:/</a>/{{ise_hostname}}.</p>
@@ -563,7 +562,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-mnt-sessi
 <tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-ise_uses_csrf_token"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-mnt-session-profiler-count-info-module-parameter-ise-uses-csrf-token"><strong>ise_uses_csrf_token</strong></p>
 <a class="ansibleOptionLink" href="#parameter-ise_uses_csrf_token" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
-<p><span class="ansible-option-versionadded">added in 3.0.0 of cisco.ise</span></p>
+<p><span class="ansible-option-versionadded">added in cisco.ise 3.0.0</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Flag that informs the SDK whether we send the CSRF token to ISE’s ERS APIs.</p>
 <p>If it is True, the SDK assumes that your ISE CSRF Check is enabled.</p>

@@ -43,7 +43,7 @@ cisco.ise.certificate_profile module -- Resource module for Certificate Profile
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.3).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.4).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -53,7 +53,9 @@ cisco.ise.certificate_profile module -- Resource module for Certificate Profile
 
 .. version_added
 
-.. versionadded:: 1.0.0 of cisco.ise
+.. rst-class:: ansible-version-added
+
+New in cisco.ise 1.0.0
 
 .. contents::
    :local:
@@ -145,6 +147,7 @@ Parameters
 
       - :ansible-option-choices-entry:`false`
       - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -323,6 +326,7 @@ Parameters
       - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
       - :ansible-option-choices-entry:`true`
 
+
       .. raw:: html
 
         </div>
@@ -448,7 +452,7 @@ Parameters
 
       :ansible-option-type:`boolean`
 
-      :ansible-option-versionadded:`added in 1.1.0 of cisco.ise`
+      :ansible-option-versionadded:`added in cisco.ise 1.1.0`
 
 
       .. raw:: html
@@ -473,6 +477,7 @@ Parameters
       - :ansible-option-choices-entry:`false`
       - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
 
+
       .. raw:: html
 
         </div>
@@ -496,7 +501,7 @@ Parameters
 
       :ansible-option-type:`boolean`
 
-      :ansible-option-versionadded:`added in 3.0.0 of cisco.ise`
+      :ansible-option-versionadded:`added in cisco.ise 3.0.0`
 
 
       .. raw:: html
@@ -520,6 +525,7 @@ Parameters
 
       - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
       - :ansible-option-choices-entry:`true`
+
 
       .. raw:: html
 
@@ -561,6 +567,7 @@ Parameters
 
       - :ansible-option-choices-entry:`false`
       - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
+
 
       .. raw:: html
 
@@ -640,6 +647,7 @@ Parameters
 
       - :ansible-option-choices-entry:`false`
       - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
+
 
       .. raw:: html
 
@@ -893,7 +901,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
       :ansible-option-type:`dictionary`
 
-      :ansible-option-versionadded:`added in 1.1.0 of cisco.ise`
+      :ansible-option-versionadded:`added in cisco.ise 1.1.0`
 
 
       .. raw:: html
