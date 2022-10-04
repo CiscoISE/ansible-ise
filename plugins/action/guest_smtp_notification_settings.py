@@ -242,7 +242,7 @@ class ActionModule(ActionBase):
                         self._result.pop("ise_update_response", None)
                         ise.object_already_present()
                     else:
-                        ise.object_updat
+                        ise.object_updated()
                 else:
                     response = prev_obj
                     ise.object_already_present()
