@@ -210,13 +210,13 @@ class ActionModule(ActionBase):
                     self._result.update(dict(ise_update_response=ise_update_response))
                     (obj_exists, updated_obj) = obj.exists()
                     response = updated_obj
-                    has_changed= None
-                    has_changed= ise_update_response.get("UpdatedFieldsList").get("updatedField")
-                    if (len(has_changed) == 0
-                        or has_changed[0].get("newValue") == ""
-                        and has_changed[0].get("newValue") == has_changed[0].get("oldValue")):
-                            self._result.pop("ise_update_response", None)
-                            ise.object_already_present()
+                    has_changed = None
+                    has_changed = ise_update_response.get("UpdatedFieldsList").get("updatedField")
+                    if (len(has_changed) == 0 or
+                       has_changed[0].get("newValue") == "" and
+                       has_changed[0].get("newValue") == has_changed[0].get("oldValue")):
+                        self._result.pop("ise_update_response", None)
+                        ise.object_already_present()
                     else:
                         ise.object_updat
                 else:
