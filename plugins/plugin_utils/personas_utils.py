@@ -108,6 +108,21 @@ class Node(object):
         if not response:
             raise AnsibleActionFail("Failed to receive a valid response from the API. The actual response was: {response}".format(response=response.text))
 
+    def get_roles_services(self):
+        headers = {'Content-Type': 'application/json'}
+        url = "https://{ip}/api/v1/deployment/node/{hostname}".format(ip=self.ip, hostname=self.hostname)
+        response = False
+        try:
+            response = requests.get(url=url, headers=headers, auth=(self.username, self.password), verify=False)
+        except Exception as e:
+            raise AnsibleActionFail("Couldn't connect, the node might be still initializing, try again in a few minutes. Error received: {e}".format(e=e))
+        if not response:
+            raise AnsibleActionFail("Couldn't get a valid response from the API. Maybe the node is still initializing, try again in a few minutes.")
+        else:
+            response = json.loads(response.text).get("response")
+        return response
+
+
     def update_roles_services(self):
         headers = {'Content-Type': 'application/json'}
         url = "https://{ip}/api/v1/deployment/node/{hostname}".format(ip=self.ip, hostname=self.hostname)
