@@ -849,3 +849,8 @@ releases:
         - tacacs_server_sequence - A validation has been added to the update method.
         - network_device - A validation has been added to the update method.
         - personas_utils - Warning message removed.
+  2.5.5:
+    release_date: "2022-10-07"
+    changes:
+      release_summary: A check has been added to identify if there really are any changes
+      bugfixes: personas_update_roles_services - is now idempotent.

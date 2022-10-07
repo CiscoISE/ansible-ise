@@ -13,6 +13,9 @@ from ansible.errors import AnsibleActionFail
 from urllib.parse import quote
 import time
 from ansible_collections.cisco.ise.plugins.plugin_utils.personas_utils import Node
+from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
+    ise_compare_equality,
+)
 
 argument_spec = dict(
     ip=dict(type="str", required=True),
@@ -32,12 +35,26 @@ mutually_exclusive = []
 required_together = []
 
 
+class NodeDeployment(object):
+    def requires_update(self, current_obj, requested_obj):
+        obj_params = [
+            ("roles", "roles"),
+            ("services", "services"),
+        ]
+        # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
+        # If any does not have eq params, it requires update
+        return any(not ise_compare_equality(current_obj.get(ise_param),
+                                            requested_obj.get(ansible_param))
+                   for (ise_param, ansible_param) in obj_params)
+
+
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
             raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
+        self._supports_check_mode = False
         self._result = None
 
     # Checks the supplied parameters against the argument spec for this module
@@ -63,23 +80,36 @@ class ActionModule(ActionBase):
         self._result = super(ActionModule, self).run(tmp, task_vars)
         self._result["changed"] = False
         self._check_argspec()
-
-        node = Node(dict(ip=self._task.args.get("ip"),
-                         username=self._task.args.get("username"),
-                         password=self._task.args.get("password"),
-                         hostname=self._task.args.get("hostname"),
-                         roles=self._task.args.get("roles"),
-                         services=self._task.args.get("services"),
-                         )
-                    )
-
+        obj = NodeDeployment()
+        request_obj = dict(ip=self._task.args.get("ip"),
+                           username=self._task.args.get("username"),
+                           password=self._task.args.get("password"),
+                           hostname=self._task.args.get("hostname"),
+                           roles=self._task.args.get("roles"),
+                           services=self._task.args.get("services"),
+                           )
+        node = Node(request_obj)
+        prev_obj = False
+        result = dict(changed=False, result="")
+        response = None
+        if not node.app_server_is_running():
+            raise AnsibleActionFail("Couldn't connect, the node might be still initializing, try again in a few minutes. Error received: 502")
         try:
-            node.update_roles_services()
+            prev_obj = node.get_roles_services()
         except Exception as e:
             AnsibleActionFail(e)
-
-        response = "Node updated successfully"
-        result = {'changed': True, 'result': 'Object updated'}
+        if prev_obj:
+            if obj.requires_update(prev_obj, request_obj):
+                try:
+                    node.update_roles_services()
+                    response = node.get_roles_services()
+                    result["changed"] = True
+                    result["result"] = "Object updated"
+                except Exception as e:
+                    raise AnsibleActionFail("The node might be still initializing. Error received: {e}".format(e=e))
+            else:
+                response = prev_obj
+                result["result"] = "Object already present"
         self._result.update(dict(ise_response=response))
         self._result.update(result)
         return self._result
