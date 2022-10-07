@@ -122,7 +122,6 @@ class Node(object):
             response = json.loads(response.text).get("response")
         return response
 
-
     def update_roles_services(self):
         headers = {'Content-Type': 'application/json'}
         url = "https://{ip}/api/v1/deployment/node/{hostname}".format(ip=self.ip, hostname=self.hostname)

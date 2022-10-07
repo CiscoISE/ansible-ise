@@ -34,6 +34,7 @@ required_one_of = []
 mutually_exclusive = []
 required_together = []
 
+
 class NodeDeployment(object):
     def requires_update(self, current_obj, requested_obj):
         obj_params = [
@@ -45,6 +46,7 @@ class NodeDeployment(object):
         return any(not ise_compare_equality(current_obj.get(ise_param),
                                             requested_obj.get(ansible_param))
                    for (ise_param, ansible_param) in obj_params)
+
 
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
@@ -78,7 +80,6 @@ class ActionModule(ActionBase):
         self._result = super(ActionModule, self).run(tmp, task_vars)
         self._result["changed"] = False
         self._check_argspec()
-
         obj = NodeDeployment()
         request_obj = dict(ip=self._task.args.get("ip"),
                            username=self._task.args.get("username"),
@@ -90,7 +91,6 @@ class ActionModule(ActionBase):
         node = Node(request_obj)
         prev_obj = False
         result = dict(changed=False, result="")
-       
         response = None
         if not node.app_server_is_running():
             raise AnsibleActionFail("Couldn't connect, the node might be still initializing, try again in a few minutes. Error received: 502")
