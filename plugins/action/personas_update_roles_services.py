@@ -106,7 +106,7 @@ class ActionModule(ActionBase):
                     result["changed"] = True
                     result["result"] = "Object updated"
                 except Exception as e:
-                    raise AnsibleActionFail("Couldn't connect, the node might be still initializing, try again in a few minutes. Error received: {e}".format(e=e))
+                    raise AnsibleActionFail("The node might be still initializing. Error received: {e}".format(e=e))
             else:
                 response = prev_obj
                 result["result"] = "Object already present"
