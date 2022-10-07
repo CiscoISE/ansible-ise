@@ -18,8 +18,7 @@
 .. role:: ansible-option-versionadded
 .. role:: ansible-option-aliases
 .. role:: ansible-option-choices
-.. role:: ansible-option-choices-entry
-.. role:: ansible-option-default
+.. role:: ansible-option-choices-default-mark
 .. role:: ansible-option-default-bold
 .. role:: ansible-option-configuration
 .. role:: ansible-option-returned-bold
@@ -43,7 +42,7 @@ cisco.ise.hotspot_portal_info module -- Information module for Hotspot Portal
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.4).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.5).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -272,7 +271,7 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
       - :ansible-option-choices-entry:`true`
 
 
@@ -424,7 +423,7 @@ Parameters
       :ansible-option-choices:`Choices:`
 
       - :ansible-option-choices-entry:`false`
-      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
 
 
       .. raw:: html
@@ -472,7 +471,7 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
       - :ansible-option-choices-entry:`true`
 
 
@@ -515,7 +514,7 @@ Parameters
       :ansible-option-choices:`Choices:`
 
       - :ansible-option-choices-entry:`false`
-      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
 
 
       .. raw:: html
@@ -595,7 +594,7 @@ Parameters
       :ansible-option-choices:`Choices:`
 
       - :ansible-option-choices-entry:`false`
-      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
 
 
       .. raw:: html
@@ -848,7 +847,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` {"customizations": {"globalCustomizations": {"backgroundImage": {"data": "string"}, "bannerImage": {"data": "string"}, "bannerTitle": "string", "contactText": "string", "desktopLogoImage": {"data": "string"}, "footerElement": "string", "mobileLogoImage": {"data": "string"}}, "language": {"viewLanguage": "string"}, "pageCustomizations": {"data": [{"key": "string", "value": "string"}]}, "portalTheme": {"id": "string", "name": "string", "themeData": "string"}, "portalTweakSettings": {"bannerColor": "string", "bannerTextColor": "string", "pageBackgroundColor": "string", "pageLabelAndTextColor": "string"}}, "description": "string", "id": "string", "link": {"href": "string", "rel": "string", "type": "string"}, "name": "string", "portalTestUrl": "string", "portalType": "string", "settings": {"aupSettings": {"accessCode": "string", "includeAup": true, "requireAccessCode": true, "requireScrolling": true}, "authSuccessSettings": {"redirectUrl": "string", "successRedirect": "string"}, "portalSettings": {"allowedInterfaces": ["string"], "alwaysUsedLanguage": "string", "certificateGroupTag": "string", "coaType": "string", "displayLang": "string", "endpointIdentityGroup": "string", "fallbackLanguage": "string", "httpsPort": 0}, "postAccessBannerSettings": {"includePostAccessBanner": true}, "postLoginBannerSettings": {"includePostAccessBanner": true}, "supportInfoSettings": {"defaultEmptyFieldValue": "string", "emptyFieldDisplay": "string", "includeBrowserUserAgent": true, "includeFailureCode": true, "includeIpAddress": true, "includeMacAddr": true, "includePolicyServer": true, "includeSupportInfoPage": true}}}
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"customizations": {"globalCustomizations": {"backgroundImage": {"data": "string"}, "bannerImage": {"data": "string"}, "bannerTitle": "string", "contactText": "string", "desktopLogoImage": {"data": "string"}, "footerElement": "string", "mobileLogoImage": {"data": "string"}}, "language": {"viewLanguage": "string"}, "pageCustomizations": {"data": [{"key": "string", "value": "string"}]}, "portalTheme": {"id": "string", "name": "string", "themeData": "string"}, "portalTweakSettings": {"bannerColor": "string", "bannerTextColor": "string", "pageBackgroundColor": "string", "pageLabelAndTextColor": "string"}}, "description": "string", "id": "string", "link": {"href": "string", "rel": "string", "type": "string"}, "name": "string", "portalTestUrl": "string", "portalType": "string", "settings": {"aupSettings": {"accessCode": "string", "includeAup": true, "requireAccessCode": true, "requireScrolling": true}, "authSuccessSettings": {"redirectUrl": "string", "successRedirect": "string"}, "portalSettings": {"allowedInterfaces": ["string"], "alwaysUsedLanguage": "string", "certificateGroupTag": "string", "coaType": "string", "displayLang": "string", "endpointIdentityGroup": "string", "fallbackLanguage": "string", "httpsPort": 0}, "postAccessBannerSettings": {"includePostAccessBanner": true}, "postLoginBannerSettings": {"includePostAccessBanner": true}, "supportInfoSettings": {"defaultEmptyFieldValue": "string", "emptyFieldDisplay": "string", "includeBrowserUserAgent": true, "includeFailureCode": true, "includeIpAddress": true, "includeMacAddr": true, "includePolicyServer": true, "includeSupportInfoPage": true}}}`
 
 
       .. raw:: html
@@ -896,7 +895,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "[\\n  {\\n    \\"id\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"description\\": \\"string\\",\\n    \\"portalType\\": \\"string\\",\\n    \\"portalTestUrl\\": \\"string\\",\\n    \\"settings\\": {\\n      \\"portalSettings\\": {\\n        \\"httpsPort\\": 0,\\n        \\"allowedInterfaces\\": [\\n          \\"string\\"\\n        ],\\n        \\"certificateGroupTag\\": \\"string\\",\\n        \\"endpointIdentityGroup\\": \\"string\\",\\n        \\"coaType\\": \\"string\\",\\n        \\"displayLang\\": \\"string\\",\\n        \\"fallbackLanguage\\": \\"string\\",\\n        \\"alwaysUsedLanguage\\": \\"string\\"\\n      },\\n      \\"aupSettings\\": {\\n        \\"requireAccessCode\\": true,\\n        \\"accessCode\\": \\"string\\",\\n        \\"includeAup\\": true,\\n        \\"requireScrolling\\": true\\n      },\\n      \\"postAccessBannerSettings\\": {\\n        \\"includePostAccessBanner\\": true\\n      },\\n      \\"authSuccessSettings\\": {\\n        \\"successRedirect\\": \\"string\\",\\n        \\"redirectUrl\\": \\"string\\"\\n      },\\n      \\"postLoginBannerSettings\\": {\\n        \\"includePostAccessBanner\\": true\\n      },\\n      \\"supportInfoSettings\\": {\\n        \\"includeSupportInfoPage\\": true,\\n        \\"includeMacAddr\\": true,\\n        \\"includeIpAddress\\": true,\\n        \\"includeBrowserUserAgent\\": true,\\n        \\"includePolicyServer\\": true,\\n        \\"includeFailureCode\\": true,\\n        \\"emptyFieldDisplay\\": \\"string\\",\\n        \\"defaultEmptyFieldValue\\": \\"string\\"\\n      }\\n    },\\n    \\"customizations\\": {\\n      \\"portalTheme\\": {\\n        \\"id\\": \\"string\\",\\n        \\"name\\": \\"string\\",\\n        \\"themeData\\": \\"string\\"\\n      },\\n      \\"portalTweakSettings\\": {\\n        \\"bannerColor\\": \\"string\\",\\n        \\"bannerTextColor\\": \\"string\\",\\n        \\"pageBackgroundColor\\": \\"string\\",\\n        \\"pageLabelAndTextColor\\": \\"string\\"\\n      },\\n      \\"language\\": {\\n        \\"viewLanguage\\": \\"string\\"\\n      },\\n      \\"globalCustomizations\\": {\\n        \\"mobileLogoImage\\": {\\n          \\"data\\": \\"string\\"\\n        },\\n        \\"desktopLogoImage\\": {\\n          \\"data\\": \\"string\\"\\n        },\\n        \\"backgroundImage\\": {\\n          \\"data\\": \\"string\\"\\n        },\\n        \\"bannerImage\\": {\\n          \\"data\\": \\"string\\"\\n        },\\n        \\"bannerTitle\\": \\"string\\",\\n        \\"contactText\\": \\"string\\",\\n        \\"footerElement\\": \\"string\\"\\n      },\\n      \\"pageCustomizations\\": {\\n        \\"data\\": [\\n          {\\n            \\"key\\": \\"string\\",\\n            \\"value\\": \\"string\\"\\n          }\\n        ]\\n      }\\n    },\\n    \\"link\\": {\\n      \\"rel\\": \\"string\\",\\n      \\"href\\": \\"string\\",\\n      \\"type\\": \\"string\\"\\n    }\\n  }\\n]\\n"
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"id\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"description\\": \\"string\\",\\n    \\"portalType\\": \\"string\\",\\n    \\"portalTestUrl\\": \\"string\\",\\n    \\"settings\\": {\\n      \\"portalSettings\\": {\\n        \\"httpsPort\\": 0,\\n        \\"allowedInterfaces\\": [\\n          \\"string\\"\\n        ],\\n        \\"certificateGroupTag\\": \\"string\\",\\n        \\"endpointIdentityGroup\\": \\"string\\",\\n        \\"coaType\\": \\"string\\",\\n        \\"displayLang\\": \\"string\\",\\n        \\"fallbackLanguage\\": \\"string\\",\\n        \\"alwaysUsedLanguage\\": \\"string\\"\\n      },\\n      \\"aupSettings\\": {\\n        \\"requireAccessCode\\": true,\\n        \\"accessCode\\": \\"string\\",\\n        \\"includeAup\\": true,\\n        \\"requireScrolling\\": true\\n      },\\n      \\"postAccessBannerSettings\\": {\\n        \\"includePostAccessBanner\\": true\\n      },\\n      \\"authSuccessSettings\\": {\\n        \\"successRedirect\\": \\"string\\",\\n        \\"redirectUrl\\": \\"string\\"\\n      },\\n      \\"postLoginBannerSettings\\": {\\n        \\"includePostAccessBanner\\": true\\n      },\\n      \\"supportInfoSettings\\": {\\n        \\"includeSupportInfoPage\\": true,\\n        \\"includeMacAddr\\": true,\\n        \\"includeIpAddress\\": true,\\n        \\"includeBrowserUserAgent\\": true,\\n        \\"includePolicyServer\\": true,\\n        \\"includeFailureCode\\": true,\\n        \\"emptyFieldDisplay\\": \\"string\\",\\n        \\"defaultEmptyFieldValue\\": \\"string\\"\\n      }\\n    },\\n    \\"customizations\\": {\\n      \\"portalTheme\\": {\\n        \\"id\\": \\"string\\",\\n        \\"name\\": \\"string\\",\\n        \\"themeData\\": \\"string\\"\\n      },\\n      \\"portalTweakSettings\\": {\\n        \\"bannerColor\\": \\"string\\",\\n        \\"bannerTextColor\\": \\"string\\",\\n        \\"pageBackgroundColor\\": \\"string\\",\\n        \\"pageLabelAndTextColor\\": \\"string\\"\\n      },\\n      \\"language\\": {\\n        \\"viewLanguage\\": \\"string\\"\\n      },\\n      \\"globalCustomizations\\": {\\n        \\"mobileLogoImage\\": {\\n          \\"data\\": \\"string\\"\\n        },\\n        \\"desktopLogoImage\\": {\\n          \\"data\\": \\"string\\"\\n        },\\n        \\"backgroundImage\\": {\\n          \\"data\\": \\"string\\"\\n        },\\n        \\"bannerImage\\": {\\n          \\"data\\": \\"string\\"\\n        },\\n        \\"bannerTitle\\": \\"string\\",\\n        \\"contactText\\": \\"string\\",\\n        \\"footerElement\\": \\"string\\"\\n      },\\n      \\"pageCustomizations\\": {\\n        \\"data\\": [\\n          {\\n            \\"key\\": \\"string\\",\\n            \\"value\\": \\"string\\"\\n          }\\n        ]\\n      }\\n    },\\n    \\"link\\": {\\n      \\"rel\\": \\"string\\",\\n      \\"href\\": \\"string\\",\\n      \\"type\\": \\"string\\"\\n    }\\n  }\\n]\\n"`
 
 
       .. raw:: html

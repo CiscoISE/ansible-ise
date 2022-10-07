@@ -6,7 +6,7 @@
 Cisco.Ise
 =========
 
-Collection version 2.5.4
+Collection version 2.5.5
 
 .. contents::
    :local:
@@ -22,6 +22,10 @@ Ansible Modules for Cisco ISE
 * Rafael Campos <rcampos@altus.cr>
 * William Astorga <wastorga@altus.cr>
 * Jose Bogarin <jbogarin@altus.cr>
+
+**Supported ansible-core versions:**
+
+* 2.9.10 or newer
 
 .. raw:: html
 

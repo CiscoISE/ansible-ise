@@ -18,8 +18,7 @@
 .. role:: ansible-option-versionadded
 .. role:: ansible-option-aliases
 .. role:: ansible-option-choices
-.. role:: ansible-option-choices-entry
-.. role:: ansible-option-default
+.. role:: ansible-option-choices-default-mark
 .. role:: ansible-option-default-bold
 .. role:: ansible-option-configuration
 .. role:: ansible-option-returned-bold
@@ -43,7 +42,7 @@ cisco.ise.sponsored_guest_portal module -- Resource module for Sponsored Guest P
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.4).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.5).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -1177,7 +1176,7 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
       - :ansible-option-choices-entry:`true`
 
 
@@ -1329,7 +1328,7 @@ Parameters
       :ansible-option-choices:`Choices:`
 
       - :ansible-option-choices-entry:`false`
-      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
 
 
       .. raw:: html
@@ -1377,7 +1376,7 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
       - :ansible-option-choices-entry:`true`
 
 
@@ -1420,7 +1419,7 @@ Parameters
       :ansible-option-choices:`Choices:`
 
       - :ansible-option-choices-entry:`false`
-      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
 
 
       .. raw:: html
@@ -1500,7 +1499,7 @@ Parameters
       :ansible-option-choices:`Choices:`
 
       - :ansible-option-choices-entry:`false`
-      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
 
 
       .. raw:: html
@@ -4527,7 +4526,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` {"customizations": {"globalCustomizations": {"backgroundImage": {"data": "string"}, "bannerImage": {"data": "string"}, "bannerTitle": "string", "contactText": "string", "desktopLogoImage": {"data": "string"}, "footerElement": "string", "mobileLogoImage": {"data": "string"}}, "language": {"viewLanguage": "string"}, "pageCustomizations": {"data": [{"key": "string", "value": "string"}]}, "portalTheme": {"id": "string", "name": "string", "themeData": "string"}, "portalTweakSettings": {"bannerColor": "string", "bannerTextColor": "string", "pageBackgroundColor": "string", "pageLabelAndTextColor": "string"}}, "description": "string", "id": "string", "link": {"href": "string", "rel": "string", "type": "string"}, "name": "string", "portalTestUrl": "string", "portalType": "string", "settings": {"aupSettings": {"displayFrequency": "string", "displayFrequencyIntervalDays": 0, "includeAup": true, "requireAupScrolling": true, "requireScrolling": true, "skipAupForEmployees": true, "useDiffAupForEmployees": true}, "authSuccessSettings": {"redirectUrl": "string", "successRedirect": "string"}, "byodSettings": {"byodRegistrationSettings": {"endPointIdentityGroupId": "string", "showDeviceID": true}, "byodRegistrationSuccessSettings": {"redirectUrl": "string", "successRedirect": "string"}, "byodWelcomeSettings": {"aupDisplay": "string", "enableBYOD": true, "enableGuestAccess": true, "includeAup": true, "requireAupAcceptance": true, "requireMDM": true, "requireScrolling": true}}, "guestChangePasswordSettings": {"allowChangePasswdAtFirstLogin": true}, "guestDeviceRegistrationSettings": {"allowGuestsToRegisterDevices": true, "autoRegisterGuestDevices": true}, "loginPageSettings": {"accessCode": "string", "allowAlternateGuestPortal": true, "allowForgotPassword": true, "allowGuestToChangePassword": true, "allowGuestToCreateAccounts": true, "aupDisplay": "string", "includeAup": true, "maxFailedAttemptsBeforeRateLimit": 0, "requireAccessCode": true, "requireAupAcceptance": true, "socialConfigs": [{"socialMediaType": "string", "socialMediaValue": "string"}], "timeBetweenLoginsDuringRateLimit": 0}, "portalSettings": {"allowedInterfaces": ["string"], "alwaysUsedLanguage": "string", "assignedGuestTypeForEmployee": "string", "authenticationMethod": "string", "certificateGroupTag": "string", "displayLang": "string", "fallbackLanguage": "string", "httpsPort": 0}, "postAccessBannerSettings": {"includePostAccessBanner": true}, "postLoginBannerSettings": {"includePostAccessBanner": true}, "supportInfoSettings": {"defaultEmptyFieldValue": "string", "emptyFieldDisplay": "string", "includeBrowserUserAgent": true, "includeFailureCode": true, "includeIpAddress": true, "includeMacAddr": true, "includePolicyServer": true, "includeSupportInfoPage": true}}}
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"customizations": {"globalCustomizations": {"backgroundImage": {"data": "string"}, "bannerImage": {"data": "string"}, "bannerTitle": "string", "contactText": "string", "desktopLogoImage": {"data": "string"}, "footerElement": "string", "mobileLogoImage": {"data": "string"}}, "language": {"viewLanguage": "string"}, "pageCustomizations": {"data": [{"key": "string", "value": "string"}]}, "portalTheme": {"id": "string", "name": "string", "themeData": "string"}, "portalTweakSettings": {"bannerColor": "string", "bannerTextColor": "string", "pageBackgroundColor": "string", "pageLabelAndTextColor": "string"}}, "description": "string", "id": "string", "link": {"href": "string", "rel": "string", "type": "string"}, "name": "string", "portalTestUrl": "string", "portalType": "string", "settings": {"aupSettings": {"displayFrequency": "string", "displayFrequencyIntervalDays": 0, "includeAup": true, "requireAupScrolling": true, "requireScrolling": true, "skipAupForEmployees": true, "useDiffAupForEmployees": true}, "authSuccessSettings": {"redirectUrl": "string", "successRedirect": "string"}, "byodSettings": {"byodRegistrationSettings": {"endPointIdentityGroupId": "string", "showDeviceID": true}, "byodRegistrationSuccessSettings": {"redirectUrl": "string", "successRedirect": "string"}, "byodWelcomeSettings": {"aupDisplay": "string", "enableBYOD": true, "enableGuestAccess": true, "includeAup": true, "requireAupAcceptance": true, "requireMDM": true, "requireScrolling": true}}, "guestChangePasswordSettings": {"allowChangePasswdAtFirstLogin": true}, "guestDeviceRegistrationSettings": {"allowGuestsToRegisterDevices": true, "autoRegisterGuestDevices": true}, "loginPageSettings": {"accessCode": "string", "allowAlternateGuestPortal": true, "allowForgotPassword": true, "allowGuestToChangePassword": true, "allowGuestToCreateAccounts": true, "aupDisplay": "string", "includeAup": true, "maxFailedAttemptsBeforeRateLimit": 0, "requireAccessCode": true, "requireAupAcceptance": true, "socialConfigs": [{"socialMediaType": "string", "socialMediaValue": "string"}], "timeBetweenLoginsDuringRateLimit": 0}, "portalSettings": {"allowedInterfaces": ["string"], "alwaysUsedLanguage": "string", "assignedGuestTypeForEmployee": "string", "authenticationMethod": "string", "certificateGroupTag": "string", "displayLang": "string", "fallbackLanguage": "string", "httpsPort": 0}, "postAccessBannerSettings": {"includePostAccessBanner": true}, "postLoginBannerSettings": {"includePostAccessBanner": true}, "supportInfoSettings": {"defaultEmptyFieldValue": "string", "emptyFieldDisplay": "string", "includeBrowserUserAgent": true, "includeFailureCode": true, "includeIpAddress": true, "includeMacAddr": true, "includePolicyServer": true, "includeSupportInfoPage": true}}}`
 
 
       .. raw:: html
@@ -4575,7 +4574,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` {"UpdatedFieldsList": {"field": "string", "newValue": "string", "oldValue": "string", "updatedField": [{"field": "string", "newValue": "string", "oldValue": "string"}]}}
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"UpdatedFieldsList": {"field": "string", "newValue": "string", "oldValue": "string", "updatedField": [{"field": "string", "newValue": "string", "oldValue": "string"}]}}`
 
 
       .. raw:: html

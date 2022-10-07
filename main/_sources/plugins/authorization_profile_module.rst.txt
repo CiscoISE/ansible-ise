@@ -18,8 +18,7 @@
 .. role:: ansible-option-versionadded
 .. role:: ansible-option-aliases
 .. role:: ansible-option-choices
-.. role:: ansible-option-choices-entry
-.. role:: ansible-option-default
+.. role:: ansible-option-choices-default-mark
 .. role:: ansible-option-default-bold
 .. role:: ansible-option-configuration
 .. role:: ansible-option-returned-bold
@@ -43,7 +42,7 @@ cisco.ise.authorization_profile module -- Resource module for Authorization Prof
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.4).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.5).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -1083,7 +1082,7 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
       - :ansible-option-choices-entry:`true`
 
 
@@ -1235,7 +1234,7 @@ Parameters
       :ansible-option-choices:`Choices:`
 
       - :ansible-option-choices-entry:`false`
-      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
 
 
       .. raw:: html
@@ -1283,7 +1282,7 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
       - :ansible-option-choices-entry:`true`
 
 
@@ -1326,7 +1325,7 @@ Parameters
       :ansible-option-choices:`Choices:`
 
       - :ansible-option-choices-entry:`false`
-      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
 
 
       .. raw:: html
@@ -1406,7 +1405,7 @@ Parameters
       :ansible-option-choices:`Choices:`
 
       - :ansible-option-choices-entry:`false`
-      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
 
 
       .. raw:: html
@@ -2350,7 +2349,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` {"accessType": "string", "acl": "string", "advancedAttributes": [{"leftHandSideDictionaryAttribue": {"AdvancedAttributeValueType": "string", "attributeName": "string", "dictionaryName": "string", "value": "string"}, "rightHandSideAttribueValue": {"AdvancedAttributeValueType": "string", "attributeName": "string", "dictionaryName": "string", "value": "string"}}], "agentlessPosture": true, "airespaceACL": "string", "airespaceIPv6ACL": "string", "asaVpn": "string", "authzProfileType": "string", "autoSmartPort": "string", "avcProfile": "string", "daclName": "string", "description": "string", "easywiredSessionCandidate": true, "id": "string", "interfaceTemplate": "string", "ipv6ACLFilter": "string", "ipv6DaclName": "string", "link": {"href": "string", "rel": "string", "type": "string"}, "macSecPolicy": "string", "name": "string", "neat": true, "profileName": "string", "reauth": {"connectivity": "string", "timer": 0}, "serviceTemplate": true, "trackMovement": true, "vlan": {"nameID": "string", "tagID": 0}, "voiceDomainPermission": true, "webAuth": true, "webRedirection": {"WebRedirectionType": "string", "acl": "string", "displayCertificatesRenewalMessages": true, "portalName": "string", "staticIPHostNameFQDN": "string"}}
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"accessType": "string", "acl": "string", "advancedAttributes": [{"leftHandSideDictionaryAttribue": {"AdvancedAttributeValueType": "string", "attributeName": "string", "dictionaryName": "string", "value": "string"}, "rightHandSideAttribueValue": {"AdvancedAttributeValueType": "string", "attributeName": "string", "dictionaryName": "string", "value": "string"}}], "agentlessPosture": true, "airespaceACL": "string", "airespaceIPv6ACL": "string", "asaVpn": "string", "authzProfileType": "string", "autoSmartPort": "string", "avcProfile": "string", "daclName": "string", "description": "string", "easywiredSessionCandidate": true, "id": "string", "interfaceTemplate": "string", "ipv6ACLFilter": "string", "ipv6DaclName": "string", "link": {"href": "string", "rel": "string", "type": "string"}, "macSecPolicy": "string", "name": "string", "neat": true, "profileName": "string", "reauth": {"connectivity": "string", "timer": 0}, "serviceTemplate": true, "trackMovement": true, "vlan": {"nameID": "string", "tagID": 0}, "voiceDomainPermission": true, "webAuth": true, "webRedirection": {"WebRedirectionType": "string", "acl": "string", "displayCertificatesRenewalMessages": true, "portalName": "string", "staticIPHostNameFQDN": "string"}}`
 
 
       .. raw:: html
@@ -2398,7 +2397,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` {"UpdatedFieldsList": {"field": "string", "newValue": "string", "oldValue": "string", "updatedField": [{"field": "string", "newValue": "string", "oldValue": "string"}]}}
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"UpdatedFieldsList": {"field": "string", "newValue": "string", "oldValue": "string", "updatedField": [{"field": "string", "newValue": "string", "oldValue": "string"}]}}`
 
 
       .. raw:: html

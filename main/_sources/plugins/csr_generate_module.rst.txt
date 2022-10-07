@@ -18,8 +18,7 @@
 .. role:: ansible-option-versionadded
 .. role:: ansible-option-aliases
 .. role:: ansible-option-choices
-.. role:: ansible-option-choices-entry
-.. role:: ansible-option-default
+.. role:: ansible-option-choices-default-mark
 .. role:: ansible-option-default-bold
 .. role:: ansible-option-configuration
 .. role:: ansible-option-returned-bold
@@ -43,7 +42,7 @@ cisco.ise.csr_generate module -- Resource module for CSR Generate
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.4).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.5).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -288,7 +287,7 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
       - :ansible-option-choices-entry:`true`
 
 
@@ -440,7 +439,7 @@ Parameters
       :ansible-option-choices:`Choices:`
 
       - :ansible-option-choices-entry:`false`
-      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
 
 
       .. raw:: html
@@ -488,7 +487,7 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
       - :ansible-option-choices-entry:`true`
 
 
@@ -531,7 +530,7 @@ Parameters
       :ansible-option-choices:`Choices:`
 
       - :ansible-option-choices-entry:`false`
-      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
 
 
       .. raw:: html
@@ -611,7 +610,7 @@ Parameters
       :ansible-option-choices:`Choices:`
 
       - :ansible-option-choices-entry:`false`
-      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
 
 
       .. raw:: html
@@ -1218,7 +1217,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` {"response": [{"id": "string", "link": {"href": "string", "rel": "string", "type": "string"}, "message": "string"}], "version": "string"}
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"response": [{"id": "string", "link": {"href": "string", "rel": "string", "type": "string"}, "message": "string"}], "version": "string"}`
 
 
       .. raw:: html

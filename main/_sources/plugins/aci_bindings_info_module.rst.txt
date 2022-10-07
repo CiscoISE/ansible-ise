@@ -18,8 +18,7 @@
 .. role:: ansible-option-versionadded
 .. role:: ansible-option-aliases
 .. role:: ansible-option-choices
-.. role:: ansible-option-choices-entry
-.. role:: ansible-option-default
+.. role:: ansible-option-choices-default-mark
 .. role:: ansible-option-default-bold
 .. role:: ansible-option-configuration
 .. role:: ansible-option-returned-bold
@@ -43,7 +42,7 @@ cisco.ise.aci_bindings_info module -- Information module for ACI Bindings
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.4).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.5).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -212,7 +211,7 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
       - :ansible-option-choices-entry:`true`
 
 
@@ -364,7 +363,7 @@ Parameters
       :ansible-option-choices:`Choices:`
 
       - :ansible-option-choices-entry:`false`
-      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
 
 
       .. raw:: html
@@ -412,7 +411,7 @@ Parameters
 
       :ansible-option-choices:`Choices:`
 
-      - :ansible-option-default-bold:`false` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
       - :ansible-option-choices-entry:`true`
 
 
@@ -455,7 +454,7 @@ Parameters
       :ansible-option-choices:`Choices:`
 
       - :ansible-option-choices-entry:`false`
-      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
 
 
       .. raw:: html
@@ -535,7 +534,7 @@ Parameters
       :ansible-option-choices:`Choices:`
 
       - :ansible-option-choices-entry:`false`
-      - :ansible-option-default-bold:`true` :ansible-option-default:`← (default)`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
 
 
       .. raw:: html
@@ -779,7 +778,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` {"description": "string", "id": "string", "ip": "string", "learnedBy": "string", "learnedFrom": "string", "name": "string", "psn": "string", "sgtValue": "string", "vn": "string"}
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"description": "string", "id": "string", "ip": "string", "learnedBy": "string", "learnedFrom": "string", "name": "string", "psn": "string", "sgtValue": "string", "vn": "string"}`
 
 
       .. raw:: html
@@ -827,7 +826,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` "[\\n  {\\n    \\"id\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"description\\": \\"string\\",\\n    \\"ip\\": \\"string\\",\\n    \\"sgtValue\\": \\"string\\",\\n    \\"vn\\": \\"string\\",\\n    \\"psn\\": \\"string\\",\\n    \\"learnedFrom\\": \\"string\\",\\n    \\"learnedBy\\": \\"string\\"\\n  }\\n]\\n"
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"id\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"description\\": \\"string\\",\\n    \\"ip\\": \\"string\\",\\n    \\"sgtValue\\": \\"string\\",\\n    \\"vn\\": \\"string\\",\\n    \\"psn\\": \\"string\\",\\n    \\"learnedFrom\\": \\"string\\",\\n    \\"learnedBy\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

@@ -467,7 +467,7 @@
 <h1>cisco.ise.allowed_protocols_info module – Information module for Allowed Protocols<a class="headerlink" href="#cisco-ise-allowed-protocols-info-module-information-module-for-allowed-protocols" title="Permalink to this heading"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/ise">cisco.ise collection</a> (version 2.5.4).</p>
+<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/ise">cisco.ise collection</a> (version 2.5.5).</p>
 <p>To install it, use: <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">install</span> <span class="pre">cisco.ise</span></code>.
 You need further requirements to be able to use this module,
 see <a class="reference internal" href="#ansible-collections-cisco-ise-allowed-protocols-info-module-requirements"><span class="std std-ref">Requirements</span></a> for details.</p>
@@ -476,16 +476,16 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-allowed-p
 <p class="ansible-version-added">New in cisco.ise 1.0.0</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#synopsis" id="id1">Synopsis</a></p></li>
-<li><p><a class="reference internal" href="#requirements" id="id2">Requirements</a></p></li>
-<li><p><a class="reference internal" href="#parameters" id="id3">Parameters</a></p></li>
-<li><p><a class="reference internal" href="#notes" id="id4">Notes</a></p></li>
-<li><p><a class="reference internal" href="#examples" id="id5">Examples</a></p></li>
-<li><p><a class="reference internal" href="#return-values" id="id6">Return Values</a></p></li>
+<li><p><a class="reference internal" href="#synopsis" id="id27">Synopsis</a></p></li>
+<li><p><a class="reference internal" href="#requirements" id="id28">Requirements</a></p></li>
+<li><p><a class="reference internal" href="#parameters" id="id29">Parameters</a></p></li>
+<li><p><a class="reference internal" href="#notes" id="id30">Notes</a></p></li>
+<li><p><a class="reference internal" href="#examples" id="id31">Examples</a></p></li>
+<li><p><a class="reference internal" href="#return-values" id="id32">Return Values</a></p></li>
 </ul>
 </div>
 <section id="synopsis">
-<h2><a class="toc-backref" href="#id1">Synopsis</a><a class="headerlink" href="#synopsis" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id27">Synopsis</a><a class="headerlink" href="#synopsis" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>Get all Allowed Protocols.</p></li>
 <li><p>Get Allowed Protocols by id.</p></li>
@@ -500,7 +500,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-allowed-p
 </div>
 </section>
 <section id="requirements">
-<span id="ansible-collections-cisco-ise-allowed-protocols-info-module-requirements"></span><h2><a class="toc-backref" href="#id2">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
+<span id="ansible-collections-cisco-ise-allowed-protocols-info-module-requirements"></span><h2><a class="toc-backref" href="#id28">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
 <p>The below requirements are needed on the host that executes this module.</p>
 <ul class="simple">
 <li><p>ciscoisesdk &gt;= 2.0.3</p></li>
@@ -508,7 +508,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-allowed-p
 </ul>
 </section>
 <section id="parameters">
-<h2><a class="toc-backref" href="#id3">Parameters</a><a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id29">Parameters</a><a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
 <table class="colwidths-auto ansible-option-table docutils align-default" style="width: 100%">
 <thead>
 <tr class="row-odd"><th class="head"><p>Parameter</p></th>
@@ -530,8 +530,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-allowed-p
 <td><div class="ansible-option-cell"><p>Flag for Identity Services Engine SDK to enable debugging.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-default-bold">false</span> <span class="ansible-option-default">← (default)</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id1"><span class="problematic" id="id2">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id3"><span class="problematic" id="id4">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -566,8 +566,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-allowed-p
 <p>If it is false, it sends the requests to <a class="reference external" href="https:/">https:/</a>/{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-default-bold">true</span> <span class="ansible-option-default">← (default)</span></p></li>
+<li><p><a href="#id5"><span class="problematic" id="id6">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id7"><span class="problematic" id="id8">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -581,8 +581,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-allowed-p
 <p>If it is True, it assumes you need the SDK to manage the CSRF token automatically for you.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-default-bold">false</span> <span class="ansible-option-default">← (default)</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id9"><span class="problematic" id="id10">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id11"><span class="problematic" id="id12">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -593,8 +593,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-allowed-p
 <td><div class="ansible-option-cell"><p>Flag to enable or disable SSL certificate verification.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-default-bold">true</span> <span class="ansible-option-default">← (default)</span></p></li>
+<li><p><a href="#id13"><span class="problematic" id="id14">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id15"><span class="problematic" id="id16">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -603,7 +603,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-allowed-p
 <a class="ansibleOptionLink" href="#parameter-ise_version" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Informs the SDK which version of Identity Services Engine to use.</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <span class="ansible-option-default">“3.1_Patch_1”</span></p>
+<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id17"><span class="problematic" id="id18">:ansible-option-default:`&quot;3.1\_Patch\_1&quot;`</span></a></p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-cell">
@@ -613,8 +613,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-allowed-p
 <td><div class="ansible-option-cell"><p>Flag for Identity Services Engine SDK to enable automatic rate-limit handling.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-default-bold">true</span> <span class="ansible-option-default">← (default)</span></p></li>
+<li><p><a href="#id19"><span class="problematic" id="id20">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id21"><span class="problematic" id="id22">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -643,7 +643,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-allowed-p
 </table>
 </section>
 <section id="notes">
-<h2><a class="toc-backref" href="#id4">Notes</a><a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id30">Notes</a><a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
@@ -656,7 +656,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-allowed-p
 </div>
 </section>
 <section id="examples">
-<h2><a class="toc-backref" href="#id5">Examples</a><a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id31">Examples</a><a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
 <div class="highlight-yaml+jinja notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Get all Allowed Protocols</span><span class="w"></span>
 <span class="w">  </span><span class="nt">cisco.ise.allowed_protocols_info</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">ise_hostname</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_hostname</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
@@ -688,7 +688,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-allowed-p
 </div>
 </section>
 <section id="return-values">
-<h2><a class="toc-backref" href="#id6">Return Values</a><a class="headerlink" href="#return-values" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id32">Return Values</a><a class="headerlink" href="#return-values" title="Permalink to this heading"></a></h2>
 <p>Common return values are documented <a class="reference external" href="https://docs.ansible.com/ansible/latest/reference_appendices/common_return_values.html#common-return-values" title="(in Ansible v6)"><span class="xref std std-ref">here</span></a>, the following are the fields unique to this module:</p>
 <table class="colwidths-auto ansible-option-table docutils align-default" style="width: 100%">
 <thead>
@@ -703,7 +703,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-allowed-p
 </div></td>
 <td><div class="ansible-option-cell"><p>A dictionary or list with the response returned by the Cisco ISE Python SDK</p>
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> always</p>
-<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> {“allowChap”: true, “allowEapFast”: true, “allowEapMd5”: true, “allowEapTls”: true, “allowEapTtls”: true, “allowLeap”: true, “allowMsChapV1”: true, “allowMsChapV2”: true, “allowPapAscii”: true, “allowPeap”: true, “allowPreferredEapProtocol”: true, “allowTeap”: true, “allowWeakCiphersForEap”: true, “description”: “string”, “eapFast”: {“allowEapFastEapGtc”: true, “allowEapFastEapGtcPwdChange”: true, “allowEapFastEapGtcPwdChangeRetries”: 0, “allowEapFastEapMsChapV2”: true, “allowEapFastEapMsChapV2PwdChange”: true, “allowEapFastEapMsChapV2PwdChangeRetries”: 0, “allowEapFastEapTls”: true, “allowEapFastEapTlsAuthOfExpiredCerts”: true, “eapFastDontUsePacsAcceptClientCert”: true, “eapFastDontUsePacsAllowMachineAuthentication”: true, “eapFastEnableEAPChaining”: true, “eapFastUsePacs”: true, “eapFastUsePacsAcceptClientCert”: true, “eapFastUsePacsAllowAnonymProvisioning”: true, “eapFastUsePacsAllowAuthenProvisioning”: true, “eapFastUsePacsAllowMachineAuthentication”: true, “eapFastUsePacsAuthorizationPacTtl”: 0, “eapFastUsePacsAuthorizationPacTtlUnits”: “string”, “eapFastUsePacsMachinePacTtl”: 0, “eapFastUsePacsMachinePacTtlUnits”: “string”, “eapFastUsePacsReturnAccessAcceptAfterAuthenticatedProvisioning”: true, “eapFastUsePacsStatelessSessionResume”: true, “eapFastUsePacsTunnelPacTtl”: 0, “eapFastUsePacsTunnelPacTtlUnits”: “string”, “eapFastUsePacsUseProactivePacUpdatePrecentage”: 0}, “eapTls”: {“allowEapTlsAuthOfExpiredCerts”: true, “eapTlsEnableStatelessSessionResume”: true, “eapTlsSessionTicketPrecentage”: 0, “eapTlsSessionTicketTtl”: 0, “eapTlsSessionTicketTtlUnits”: “string”}, “eapTlsLBit”: true, “eapTtls”: {“eapTtlsChap”: true, “eapTtlsEapMd5”: true, “eapTtlsEapMsChapV2”: true, “eapTtlsEapMsChapV2PwdChange”: true, “eapTtlsEapMsChapV2PwdChangeRetries”: 0, “eapTtlsMsChapV1”: true, “eapTtlsMsChapV2”: true, “eapTtlsPapAscii”: true}, “id”: “string”, “link”: {“href”: “string”, “rel”: “string”, “type”: “string”}, “name”: “string”, “peap”: {“allowPeapEapGtc”: true, “allowPeapEapGtcPwdChange”: true, “allowPeapEapGtcPwdChangeRetries”: 0, “allowPeapEapMsChapV2”: true, “allowPeapEapMsChapV2PwdChange”: true, “allowPeapEapMsChapV2PwdChangeRetries”: 0, “allowPeapEapTls”: true, “allowPeapEapTlsAuthOfExpiredCerts”: true, “allowPeapV0”: true, “requireCryptobinding”: true}, “preferredEapProtocol”: “string”, “processHostLookup”: true, “requireMessageAuth”: true, “teap”: {“acceptClientCertDuringTunnelEst”: true, “allowDowngradeMsk”: true, “allowTeapEapMsChapV2”: true, “allowTeapEapMsChapV2PwdChange”: true, “allowTeapEapMsChapV2PwdChangeRetries”: 0, “allowTeapEapTls”: true, “allowTeapEapTlsAuthOfExpiredCerts”: true, “enableEapChaining”: true}}</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id23"><span class="problematic" id="id24">:ansible-rv-sample-value:`{&quot;allowChap&quot;: true, &quot;allowEapFast&quot;: true, &quot;allowEapMd5&quot;: true, &quot;allowEapTls&quot;: true, &quot;allowEapTtls&quot;: true, &quot;allowLeap&quot;: true, &quot;allowMsChapV1&quot;: true, &quot;allowMsChapV2&quot;: true, &quot;allowPapAscii&quot;: true, &quot;allowPeap&quot;: true, &quot;allowPreferredEapProtocol&quot;: true, &quot;allowTeap&quot;: true, &quot;allowWeakCiphersForEap&quot;: true, &quot;description&quot;: &quot;string&quot;, &quot;eapFast&quot;: {&quot;allowEapFastEapGtc&quot;: true, &quot;allowEapFastEapGtcPwdChange&quot;: true, &quot;allowEapFastEapGtcPwdChangeRetries&quot;: 0, &quot;allowEapFastEapMsChapV2&quot;: true, &quot;allowEapFastEapMsChapV2PwdChange&quot;: true, &quot;allowEapFastEapMsChapV2PwdChangeRetries&quot;: 0, &quot;allowEapFastEapTls&quot;: true, &quot;allowEapFastEapTlsAuthOfExpiredCerts&quot;: true, &quot;eapFastDontUsePacsAcceptClientCert&quot;: true, &quot;eapFastDontUsePacsAllowMachineAuthentication&quot;: true, &quot;eapFastEnableEAPChaining&quot;: true, &quot;eapFastUsePacs&quot;: true, &quot;eapFastUsePacsAcceptClientCert&quot;: true, &quot;eapFastUsePacsAllowAnonymProvisioning&quot;: true, &quot;eapFastUsePacsAllowAuthenProvisioning&quot;: true, &quot;eapFastUsePacsAllowMachineAuthentication&quot;: true, &quot;eapFastUsePacsAuthorizationPacTtl&quot;: 0, &quot;eapFastUsePacsAuthorizationPacTtlUnits&quot;: &quot;string&quot;, &quot;eapFastUsePacsMachinePacTtl&quot;: 0, &quot;eapFastUsePacsMachinePacTtlUnits&quot;: &quot;string&quot;, &quot;eapFastUsePacsReturnAccessAcceptAfterAuthenticatedProvisioning&quot;: true, &quot;eapFastUsePacsStatelessSessionResume&quot;: true, &quot;eapFastUsePacsTunnelPacTtl&quot;: 0, &quot;eapFastUsePacsTunnelPacTtlUnits&quot;: &quot;string&quot;, &quot;eapFastUsePacsUseProactivePacUpdatePrecentage&quot;: 0}, &quot;eapTls&quot;: {&quot;allowEapTlsAuthOfExpiredCerts&quot;: true, &quot;eapTlsEnableStatelessSessionResume&quot;: true, &quot;eapTlsSessionTicketPrecentage&quot;: 0, &quot;eapTlsSessionTicketTtl&quot;: 0, &quot;eapTlsSessionTicketTtlUnits&quot;: &quot;string&quot;}, &quot;eapTlsLBit&quot;: true, &quot;eapTtls&quot;: {&quot;eapTtlsChap&quot;: true, &quot;eapTtlsEapMd5&quot;: true, &quot;eapTtlsEapMsChapV2&quot;: true, &quot;eapTtlsEapMsChapV2PwdChange&quot;: true, &quot;eapTtlsEapMsChapV2PwdChangeRetries&quot;: 0, &quot;eapTtlsMsChapV1&quot;: true, &quot;eapTtlsMsChapV2&quot;: true, &quot;eapTtlsPapAscii&quot;: true}, &quot;id&quot;: &quot;string&quot;, &quot;link&quot;: {&quot;href&quot;: &quot;string&quot;, &quot;rel&quot;: &quot;string&quot;, &quot;type&quot;: &quot;string&quot;}, &quot;name&quot;: &quot;string&quot;, &quot;peap&quot;: {&quot;allowPeapEapGtc&quot;: true, &quot;allowPeapEapGtcPwdChange&quot;: true, &quot;allowPeapEapGtcPwdChangeRetries&quot;: 0, &quot;allowPeapEapMsChapV2&quot;: true, &quot;allowPeapEapMsChapV2PwdChange&quot;: true, &quot;allowPeapEapMsChapV2PwdChangeRetries&quot;: 0, &quot;allowPeapEapTls&quot;: true, &quot;allowPeapEapTlsAuthOfExpiredCerts&quot;: true, &quot;allowPeapV0&quot;: true, &quot;requireCryptobinding&quot;: true}, &quot;preferredEapProtocol&quot;: &quot;string&quot;, &quot;processHostLookup&quot;: true, &quot;requireMessageAuth&quot;: true, &quot;teap&quot;: {&quot;acceptClientCertDuringTunnelEst&quot;: true, &quot;allowDowngradeMsk&quot;: true, &quot;allowTeapEapMsChapV2&quot;: true, &quot;allowTeapEapMsChapV2PwdChange&quot;: true, &quot;allowTeapEapMsChapV2PwdChangeRetries&quot;: 0, &quot;allowTeapEapTls&quot;: true, &quot;allowTeapEapTlsAuthOfExpiredCerts&quot;: true, &quot;enableEapChaining&quot;: true}}`</span></a></p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-cell">
@@ -713,7 +713,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-allowed-p
 </div></td>
 <td><div class="ansible-option-cell"><p>A dictionary or list with the response returned by the Cisco ISE Python SDK</p>
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> always</p>
-<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> “[\n  {\n    \”id\”: \”string\”,\n    \”name\”: \”string\”,\n    \”description\”: \”string\”,\n    \”eapTls\”: {\n      \”allowEapTlsAuthOfExpiredCerts\”: true,\n      \”eapTlsEnableStatelessSessionResume\”: true,\n      \”eapTlsSessionTicketTtl\”: 0,\n      \”eapTlsSessionTicketTtlUnits\”: \”string\”,\n      \”eapTlsSessionTicketPrecentage\”: 0\n    },\n    \”peap\”: {\n      \”allowPeapEapMsChapV2\”: true,\n      \”allowPeapEapMsChapV2PwdChange\”: true,\n      \”allowPeapEapMsChapV2PwdChangeRetries\”: 0,\n      \”allowPeapEapGtc\”: true,\n      \”allowPeapEapGtcPwdChange\”: true,\n      \”allowPeapEapGtcPwdChangeRetries\”: 0,\n      \”allowPeapEapTls\”: true,\n      \”allowPeapEapTlsAuthOfExpiredCerts\”: true,\n      \”requireCryptobinding\”: true,\n      \”allowPeapV0\”: true\n    },\n    \”eapFast\”: {\n      \”allowEapFastEapMsChapV2\”: true,\n      \”allowEapFastEapMsChapV2PwdChange\”: true,\n      \”allowEapFastEapMsChapV2PwdChangeRetries\”: 0,\n      \”allowEapFastEapGtc\”: true,\n      \”allowEapFastEapGtcPwdChange\”: true,\n      \”allowEapFastEapGtcPwdChangeRetries\”: 0,\n      \”allowEapFastEapTls\”: true,\n      \”allowEapFastEapTlsAuthOfExpiredCerts\”: true,\n      \”eapFastUsePacs\”: true,\n      \”eapFastUsePacsTunnelPacTtl\”: 0,\n      \”eapFastUsePacsTunnelPacTtlUnits\”: \”string\”,\n      \”eapFastUsePacsUseProactivePacUpdatePrecentage\”: 0,\n      \”eapFastUsePacsAllowAnonymProvisioning\”: true,\n      \”eapFastUsePacsAllowAuthenProvisioning\”: true,\n      \”eapFastUsePacsReturnAccessAcceptAfterAuthenticatedProvisioning\”: true,\n      \”eapFastUsePacsAcceptClientCert\”: true,\n      \”eapFastUsePacsMachinePacTtl\”: 0,\n      \”eapFastUsePacsMachinePacTtlUnits\”: \”string\”,\n      \”eapFastUsePacsAllowMachineAuthentication\”: true,\n      \”eapFastUsePacsStatelessSessionResume\”: true,\n      \”eapFastUsePacsAuthorizationPacTtl\”: 0,\n      \”eapFastUsePacsAuthorizationPacTtlUnits\”: \”string\”,\n      \”eapFastDontUsePacsAcceptClientCert\”: true,\n      \”eapFastDontUsePacsAllowMachineAuthentication\”: true,\n      \”eapFastEnableEAPChaining\”: true\n    },\n    \”eapTtls\”: {\n      \”eapTtlsPapAscii\”: true,\n      \”eapTtlsChap\”: true,\n      \”eapTtlsMsChapV1\”: true,\n      \”eapTtlsMsChapV2\”: true,\n      \”eapTtlsEapMd5\”: true,\n      \”eapTtlsEapMsChapV2\”: true,\n      \”eapTtlsEapMsChapV2PwdChange\”: true,\n      \”eapTtlsEapMsChapV2PwdChangeRetries\”: 0\n    },\n    \”teap\”: {\n      \”allowTeapEapMsChapV2\”: true,\n      \”allowTeapEapMsChapV2PwdChange\”: true,\n      \”allowTeapEapMsChapV2PwdChangeRetries\”: 0,\n      \”allowTeapEapTls\”: true,\n      \”allowTeapEapTlsAuthOfExpiredCerts\”: true,\n      \”acceptClientCertDuringTunnelEst\”: true,\n      \”enableEapChaining\”: true,\n      \”allowDowngradeMsk\”: true\n    },\n    \”processHostLookup\”: true,\n    \”allowPapAscii\”: true,\n    \”allowChap\”: true,\n    \”allowMsChapV1\”: true,\n    \”allowMsChapV2\”: true,\n    \”allowEapMd5\”: true,\n    \”allowLeap\”: true,\n    \”allowEapTls\”: true,\n    \”allowEapTtls\”: true,\n    \”allowEapFast\”: true,\n    \”allowPeap\”: true,\n    \”allowTeap\”: true,\n    \”allowPreferredEapProtocol\”: true,\n    \”preferredEapProtocol\”: \”string\”,\n    \”eapTlsLBit\”: true,\n    \”allowWeakCiphersForEap\”: true,\n    \”requireMessageAuth\”: true,\n    \”link\”: {\n      \”rel\”: \”string\”,\n      \”href\”: \”string\”,\n      \”type\”: \”string\”\n    }\n  }\n]\n”</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id25"><span class="problematic" id="id26">:ansible-rv-sample-value:`&quot;[\\n  {\\n    \\&quot;id\\&quot;: \\&quot;string\\&quot;,\\n    \\&quot;name\\&quot;: \\&quot;string\\&quot;,\\n    \\&quot;description\\&quot;: \\&quot;string\\&quot;,\\n    \\&quot;eapTls\\&quot;: {\\n      \\&quot;allowEapTlsAuthOfExpiredCerts\\&quot;: true,\\n      \\&quot;eapTlsEnableStatelessSessionResume\\&quot;: true,\\n      \\&quot;eapTlsSessionTicketTtl\\&quot;: 0,\\n      \\&quot;eapTlsSessionTicketTtlUnits\\&quot;: \\&quot;string\\&quot;,\\n      \\&quot;eapTlsSessionTicketPrecentage\\&quot;: 0\\n    },\\n    \\&quot;peap\\&quot;: {\\n      \\&quot;allowPeapEapMsChapV2\\&quot;: true,\\n      \\&quot;allowPeapEapMsChapV2PwdChange\\&quot;: true,\\n      \\&quot;allowPeapEapMsChapV2PwdChangeRetries\\&quot;: 0,\\n      \\&quot;allowPeapEapGtc\\&quot;: true,\\n      \\&quot;allowPeapEapGtcPwdChange\\&quot;: true,\\n      \\&quot;allowPeapEapGtcPwdChangeRetries\\&quot;: 0,\\n      \\&quot;allowPeapEapTls\\&quot;: true,\\n      \\&quot;allowPeapEapTlsAuthOfExpiredCerts\\&quot;: true,\\n      \\&quot;requireCryptobinding\\&quot;: true,\\n      \\&quot;allowPeapV0\\&quot;: true\\n    },\\n    \\&quot;eapFast\\&quot;: {\\n      \\&quot;allowEapFastEapMsChapV2\\&quot;: true,\\n      \\&quot;allowEapFastEapMsChapV2PwdChange\\&quot;: true,\\n      \\&quot;allowEapFastEapMsChapV2PwdChangeRetries\\&quot;: 0,\\n      \\&quot;allowEapFastEapGtc\\&quot;: true,\\n      \\&quot;allowEapFastEapGtcPwdChange\\&quot;: true,\\n      \\&quot;allowEapFastEapGtcPwdChangeRetries\\&quot;: 0,\\n      \\&quot;allowEapFastEapTls\\&quot;: true,\\n      \\&quot;allowEapFastEapTlsAuthOfExpiredCerts\\&quot;: true,\\n      \\&quot;eapFastUsePacs\\&quot;: true,\\n      \\&quot;eapFastUsePacsTunnelPacTtl\\&quot;: 0,\\n      \\&quot;eapFastUsePacsTunnelPacTtlUnits\\&quot;: \\&quot;string\\&quot;,\\n      \\&quot;eapFastUsePacsUseProactivePacUpdatePrecentage\\&quot;: 0,\\n      \\&quot;eapFastUsePacsAllowAnonymProvisioning\\&quot;: true,\\n      \\&quot;eapFastUsePacsAllowAuthenProvisioning\\&quot;: true,\\n      \\&quot;eapFastUsePacsReturnAccessAcceptAfterAuthenticatedProvisioning\\&quot;: true,\\n      \\&quot;eapFastUsePacsAcceptClientCert\\&quot;: true,\\n      \\&quot;eapFastUsePacsMachinePacTtl\\&quot;: 0,\\n      \\&quot;eapFastUsePacsMachinePacTtlUnits\\&quot;: \\&quot;string\\&quot;,\\n      \\&quot;eapFastUsePacsAllowMachineAuthentication\\&quot;: true,\\n      \\&quot;eapFastUsePacsStatelessSessionResume\\&quot;: true,\\n      \\&quot;eapFastUsePacsAuthorizationPacTtl\\&quot;: 0,\\n      \\&quot;eapFastUsePacsAuthorizationPacTtlUnits\\&quot;: \\&quot;string\\&quot;,\\n      \\&quot;eapFastDontUsePacsAcceptClientCert\\&quot;: true,\\n      \\&quot;eapFastDontUsePacsAllowMachineAuthentication\\&quot;: true,\\n      \\&quot;eapFastEnableEAPChaining\\&quot;: true\\n    },\\n    \\&quot;eapTtls\\&quot;: {\\n      \\&quot;eapTtlsPapAscii\\&quot;: true,\\n      \\&quot;eapTtlsChap\\&quot;: true,\\n      \\&quot;eapTtlsMsChapV1\\&quot;: true,\\n      \\&quot;eapTtlsMsChapV2\\&quot;: true,\\n      \\&quot;eapTtlsEapMd5\\&quot;: true,\\n      \\&quot;eapTtlsEapMsChapV2\\&quot;: true,\\n      \\&quot;eapTtlsEapMsChapV2PwdChange\\&quot;: true,\\n      \\&quot;eapTtlsEapMsChapV2PwdChangeRetries\\&quot;: 0\\n    },\\n    \\&quot;teap\\&quot;: {\\n      \\&quot;allowTeapEapMsChapV2\\&quot;: true,\\n      \\&quot;allowTeapEapMsChapV2PwdChange\\&quot;: true,\\n      \\&quot;allowTeapEapMsChapV2PwdChangeRetries\\&quot;: 0,\\n      \\&quot;allowTeapEapTls\\&quot;: true,\\n      \\&quot;allowTeapEapTlsAuthOfExpiredCerts\\&quot;: true,\\n      \\&quot;acceptClientCertDuringTunnelEst\\&quot;: true,\\n      \\&quot;enableEapChaining\\&quot;: true,\\n      \\&quot;allowDowngradeMsk\\&quot;: true\\n    },\\n    \\&quot;processHostLookup\\&quot;: true,\\n    \\&quot;allowPapAscii\\&quot;: true,\\n    \\&quot;allowChap\\&quot;: true,\\n    \\&quot;allowMsChapV1\\&quot;: true,\\n    \\&quot;allowMsChapV2\\&quot;: true,\\n    \\&quot;allowEapMd5\\&quot;: true,\\n    \\&quot;allowLeap\\&quot;: true,\\n    \\&quot;allowEapTls\\&quot;: true,\\n    \\&quot;allowEapTtls\\&quot;: true,\\n    \\&quot;allowEapFast\\&quot;: true,\\n    \\&quot;allowPeap\\&quot;: true,\\n    \\&quot;allowTeap\\&quot;: true,\\n    \\&quot;allowPreferredEapProtocol\\&quot;: true,\\n    \\&quot;preferredEapProtocol\\&quot;: \\&quot;string\\&quot;,\\n    \\&quot;eapTlsLBit\\&quot;: true,\\n    \\&quot;allowWeakCiphersForEap\\&quot;: true,\\n    \\&quot;requireMessageAuth\\&quot;: true,\\n    \\&quot;link\\&quot;: {\\n      \\&quot;rel\\&quot;: \\&quot;string\\&quot;,\\n      \\&quot;href\\&quot;: \\&quot;string\\&quot;,\\n      \\&quot;type\\&quot;: \\&quot;string\\&quot;\\n    }\\n  }\\n]\\n&quot;`</span></a></p>
 </div></td>
 </tr>
 </tbody>

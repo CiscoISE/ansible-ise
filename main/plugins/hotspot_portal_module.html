@@ -467,7 +467,7 @@
 <h1>cisco.ise.hotspot_portal module – Resource module for Hotspot Portal<a class="headerlink" href="#cisco-ise-hotspot-portal-module-resource-module-for-hotspot-portal" title="Permalink to this heading"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/ise">cisco.ise collection</a> (version 2.5.4).</p>
+<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/ise">cisco.ise collection</a> (version 2.5.5).</p>
 <p>To install it, use: <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">install</span> <span class="pre">cisco.ise</span></code>.
 You need further requirements to be able to use this module,
 see <a class="reference internal" href="#ansible-collections-cisco-ise-hotspot-portal-module-requirements"><span class="std std-ref">Requirements</span></a> for details.</p>
@@ -476,16 +476,16 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-hotspot-p
 <p class="ansible-version-added">New in cisco.ise 1.0.0</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#synopsis" id="id1">Synopsis</a></p></li>
-<li><p><a class="reference internal" href="#requirements" id="id2">Requirements</a></p></li>
-<li><p><a class="reference internal" href="#parameters" id="id3">Parameters</a></p></li>
-<li><p><a class="reference internal" href="#notes" id="id4">Notes</a></p></li>
-<li><p><a class="reference internal" href="#examples" id="id5">Examples</a></p></li>
-<li><p><a class="reference internal" href="#return-values" id="id6">Return Values</a></p></li>
+<li><p><a class="reference internal" href="#synopsis" id="id71">Synopsis</a></p></li>
+<li><p><a class="reference internal" href="#requirements" id="id72">Requirements</a></p></li>
+<li><p><a class="reference internal" href="#parameters" id="id73">Parameters</a></p></li>
+<li><p><a class="reference internal" href="#notes" id="id74">Notes</a></p></li>
+<li><p><a class="reference internal" href="#examples" id="id75">Examples</a></p></li>
+<li><p><a class="reference internal" href="#return-values" id="id76">Return Values</a></p></li>
 </ul>
 </div>
 <section id="synopsis">
-<h2><a class="toc-backref" href="#id1">Synopsis</a><a class="headerlink" href="#synopsis" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id71">Synopsis</a><a class="headerlink" href="#synopsis" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>Manage operations create, update and delete of the resource Hotspot Portal.</p></li>
 <li><p>This API creates a hotspot portal.</p></li>
@@ -498,7 +498,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-hotspot-p
 </div>
 </section>
 <section id="requirements">
-<span id="ansible-collections-cisco-ise-hotspot-portal-module-requirements"></span><h2><a class="toc-backref" href="#id2">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
+<span id="ansible-collections-cisco-ise-hotspot-portal-module-requirements"></span><h2><a class="toc-backref" href="#id72">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
 <p>The below requirements are needed on the host that executes this module.</p>
 <ul class="simple">
 <li><p>ciscoisesdk &gt;= 2.0.3</p></li>
@@ -506,7 +506,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-hotspot-p
 </ul>
 </section>
 <section id="parameters">
-<h2><a class="toc-backref" href="#id3">Parameters</a><a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id73">Parameters</a><a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
 <table class="colwidths-auto ansible-option-table docutils align-default" style="width: 100%">
 <thead>
 <tr class="row-odd"><th class="head"><p>Parameter</p></th>
@@ -731,8 +731,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-hotspot-p
 <td><div class="ansible-option-cell"><p>Flag for Identity Services Engine SDK to enable debugging.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-default-bold">false</span> <span class="ansible-option-default">← (default)</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id1"><span class="problematic" id="id2">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id3"><span class="problematic" id="id4">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -767,8 +767,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-hotspot-p
 <p>If it is false, it sends the requests to <a class="reference external" href="https:/">https:/</a>/{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-default-bold">true</span> <span class="ansible-option-default">← (default)</span></p></li>
+<li><p><a href="#id5"><span class="problematic" id="id6">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id7"><span class="problematic" id="id8">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -782,8 +782,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-hotspot-p
 <p>If it is True, it assumes you need the SDK to manage the CSRF token automatically for you.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-default-bold">false</span> <span class="ansible-option-default">← (default)</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id9"><span class="problematic" id="id10">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id11"><span class="problematic" id="id12">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -794,8 +794,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-hotspot-p
 <td><div class="ansible-option-cell"><p>Flag to enable or disable SSL certificate verification.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-default-bold">true</span> <span class="ansible-option-default">← (default)</span></p></li>
+<li><p><a href="#id13"><span class="problematic" id="id14">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id15"><span class="problematic" id="id16">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -804,7 +804,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-hotspot-p
 <a class="ansibleOptionLink" href="#parameter-ise_version" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Informs the SDK which version of Identity Services Engine to use.</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <span class="ansible-option-default">“3.1_Patch_1”</span></p>
+<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id17"><span class="problematic" id="id18">:ansible-option-default:`&quot;3.1\_Patch\_1&quot;`</span></a></p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-cell">
@@ -814,8 +814,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-hotspot-p
 <td><div class="ansible-option-cell"><p>Flag for Identity Services Engine SDK to enable automatic rate-limit handling.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-default-bold">true</span> <span class="ansible-option-default">← (default)</span></p></li>
+<li><p><a href="#id19"><span class="problematic" id="id20">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id21"><span class="problematic" id="id22">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -868,8 +868,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-hotspot-p
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Require the portal user to read and accept an AUP.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id23"><span class="problematic" id="id24">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id25"><span class="problematic" id="id26">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -880,8 +880,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-hotspot-p
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Require the portal user to enter an access code. Only used in Hotspot portal.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id27"><span class="problematic" id="id28">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id29"><span class="problematic" id="id30">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -892,8 +892,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-hotspot-p
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Require the portal user to scroll to the end of the AUP. Only valid if requireAupAcceptance = true.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id31"><span class="problematic" id="id32">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id33"><span class="problematic" id="id34">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -995,8 +995,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-hotspot-p
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IncludePostAccessBanner flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id35"><span class="problematic" id="id36">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id37"><span class="problematic" id="id38">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1014,8 +1014,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-hotspot-p
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>Include a Post-Login Banner page.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id39"><span class="problematic" id="id40">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id41"><span class="problematic" id="id42">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1047,8 +1047,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-hotspot-p
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IncludeBrowserUserAgent flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id43"><span class="problematic" id="id44">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id45"><span class="problematic" id="id46">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1059,8 +1059,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-hotspot-p
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IncludeFailureCode flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id47"><span class="problematic" id="id48">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id49"><span class="problematic" id="id50">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1071,8 +1071,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-hotspot-p
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IncludeIpAddress flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id51"><span class="problematic" id="id52">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id53"><span class="problematic" id="id54">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1083,8 +1083,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-hotspot-p
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IncludeMacAddr flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id55"><span class="problematic" id="id56">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id57"><span class="problematic" id="id58">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1095,8 +1095,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-hotspot-p
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IncludePolicyServer flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id59"><span class="problematic" id="id60">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id61"><span class="problematic" id="id62">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1107,8 +1107,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-hotspot-p
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>IncludeSupportInfoPage flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id63"><span class="problematic" id="id64">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id65"><span class="problematic" id="id66">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -1116,7 +1116,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-hotspot-p
 </table>
 </section>
 <section id="notes">
-<h2><a class="toc-backref" href="#id4">Notes</a><a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id74">Notes</a><a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
@@ -1129,7 +1129,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-hotspot-p
 </div>
 </section>
 <section id="examples">
-<h2><a class="toc-backref" href="#id5">Examples</a><a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id75">Examples</a><a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
 <div class="highlight-yaml+jinja notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Update by id</span><span class="w"></span>
 <span class="w">  </span><span class="nt">cisco.ise.hotspot_portal</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">ise_hostname</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_hostname</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
@@ -1287,7 +1287,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-hotspot-p
 </div>
 </section>
 <section id="return-values">
-<h2><a class="toc-backref" href="#id6">Return Values</a><a class="headerlink" href="#return-values" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id76">Return Values</a><a class="headerlink" href="#return-values" title="Permalink to this heading"></a></h2>
 <p>Common return values are documented <a class="reference external" href="https://docs.ansible.com/ansible/latest/reference_appendices/common_return_values.html#common-return-values" title="(in Ansible v6)"><span class="xref std std-ref">here</span></a>, the following are the fields unique to this module:</p>
 <table class="colwidths-auto ansible-option-table docutils align-default" style="width: 100%">
 <thead>
@@ -1302,7 +1302,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-hotspot-p
 </div></td>
 <td><div class="ansible-option-cell"><p>A dictionary or list with the response returned by the Cisco ISE Python SDK</p>
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> always</p>
-<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> {“customizations”: {“globalCustomizations”: {“backgroundImage”: {“data”: “string”}, “bannerImage”: {“data”: “string”}, “bannerTitle”: “string”, “contactText”: “string”, “desktopLogoImage”: {“data”: “string”}, “footerElement”: “string”, “mobileLogoImage”: {“data”: “string”}}, “language”: {“viewLanguage”: “string”}, “pageCustomizations”: {“data”: [{“key”: “string”, “value”: “string”}]}, “portalTheme”: {“id”: “string”, “name”: “string”, “themeData”: “string”}, “portalTweakSettings”: {“bannerColor”: “string”, “bannerTextColor”: “string”, “pageBackgroundColor”: “string”, “pageLabelAndTextColor”: “string”}}, “description”: “string”, “id”: “string”, “link”: {“href”: “string”, “rel”: “string”, “type”: “string”}, “name”: “string”, “portalTestUrl”: “string”, “portalType”: “string”, “settings”: {“aupSettings”: {“accessCode”: “string”, “includeAup”: true, “requireAccessCode”: true, “requireScrolling”: true}, “authSuccessSettings”: {“redirectUrl”: “string”, “successRedirect”: “string”}, “portalSettings”: {“allowedInterfaces”: [“string”], “alwaysUsedLanguage”: “string”, “certificateGroupTag”: “string”, “coaType”: “string”, “displayLang”: “string”, “endpointIdentityGroup”: “string”, “fallbackLanguage”: “string”, “httpsPort”: 0}, “postAccessBannerSettings”: {“includePostAccessBanner”: true}, “postLoginBannerSettings”: {“includePostAccessBanner”: true}, “supportInfoSettings”: {“defaultEmptyFieldValue”: “string”, “emptyFieldDisplay”: “string”, “includeBrowserUserAgent”: true, “includeFailureCode”: true, “includeIpAddress”: true, “includeMacAddr”: true, “includePolicyServer”: true, “includeSupportInfoPage”: true}}}</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id67"><span class="problematic" id="id68">:ansible-rv-sample-value:`{&quot;customizations&quot;: {&quot;globalCustomizations&quot;: {&quot;backgroundImage&quot;: {&quot;data&quot;: &quot;string&quot;}, &quot;bannerImage&quot;: {&quot;data&quot;: &quot;string&quot;}, &quot;bannerTitle&quot;: &quot;string&quot;, &quot;contactText&quot;: &quot;string&quot;, &quot;desktopLogoImage&quot;: {&quot;data&quot;: &quot;string&quot;}, &quot;footerElement&quot;: &quot;string&quot;, &quot;mobileLogoImage&quot;: {&quot;data&quot;: &quot;string&quot;}}, &quot;language&quot;: {&quot;viewLanguage&quot;: &quot;string&quot;}, &quot;pageCustomizations&quot;: {&quot;data&quot;: [{&quot;key&quot;: &quot;string&quot;, &quot;value&quot;: &quot;string&quot;}]}, &quot;portalTheme&quot;: {&quot;id&quot;: &quot;string&quot;, &quot;name&quot;: &quot;string&quot;, &quot;themeData&quot;: &quot;string&quot;}, &quot;portalTweakSettings&quot;: {&quot;bannerColor&quot;: &quot;string&quot;, &quot;bannerTextColor&quot;: &quot;string&quot;, &quot;pageBackgroundColor&quot;: &quot;string&quot;, &quot;pageLabelAndTextColor&quot;: &quot;string&quot;}}, &quot;description&quot;: &quot;string&quot;, &quot;id&quot;: &quot;string&quot;, &quot;link&quot;: {&quot;href&quot;: &quot;string&quot;, &quot;rel&quot;: &quot;string&quot;, &quot;type&quot;: &quot;string&quot;}, &quot;name&quot;: &quot;string&quot;, &quot;portalTestUrl&quot;: &quot;string&quot;, &quot;portalType&quot;: &quot;string&quot;, &quot;settings&quot;: {&quot;aupSettings&quot;: {&quot;accessCode&quot;: &quot;string&quot;, &quot;includeAup&quot;: true, &quot;requireAccessCode&quot;: true, &quot;requireScrolling&quot;: true}, &quot;authSuccessSettings&quot;: {&quot;redirectUrl&quot;: &quot;string&quot;, &quot;successRedirect&quot;: &quot;string&quot;}, &quot;portalSettings&quot;: {&quot;allowedInterfaces&quot;: [&quot;string&quot;], &quot;alwaysUsedLanguage&quot;: &quot;string&quot;, &quot;certificateGroupTag&quot;: &quot;string&quot;, &quot;coaType&quot;: &quot;string&quot;, &quot;displayLang&quot;: &quot;string&quot;, &quot;endpointIdentityGroup&quot;: &quot;string&quot;, &quot;fallbackLanguage&quot;: &quot;string&quot;, &quot;httpsPort&quot;: 0}, &quot;postAccessBannerSettings&quot;: {&quot;includePostAccessBanner&quot;: true}, &quot;postLoginBannerSettings&quot;: {&quot;includePostAccessBanner&quot;: true}, &quot;supportInfoSettings&quot;: {&quot;defaultEmptyFieldValue&quot;: &quot;string&quot;, &quot;emptyFieldDisplay&quot;: &quot;string&quot;, &quot;includeBrowserUserAgent&quot;: true, &quot;includeFailureCode&quot;: true, &quot;includeIpAddress&quot;: true, &quot;includeMacAddr&quot;: true, &quot;includePolicyServer&quot;: true, &quot;includeSupportInfoPage&quot;: true}}}`</span></a></p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-cell">
@@ -1312,7 +1312,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-hotspot-p
 </div></td>
 <td><div class="ansible-option-cell"><p>A dictionary or list with the response returned by the Cisco ISE Python SDK</p>
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> always</p>
-<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> {“UpdatedFieldsList”: {“field”: “string”, “newValue”: “string”, “oldValue”: “string”, “updatedField”: [{“field”: “string”, “newValue”: “string”, “oldValue”: “string”}]}}</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id69"><span class="problematic" id="id70">:ansible-rv-sample-value:`{&quot;UpdatedFieldsList&quot;: {&quot;field&quot;: &quot;string&quot;, &quot;newValue&quot;: &quot;string&quot;, &quot;oldValue&quot;: &quot;string&quot;, &quot;updatedField&quot;: [{&quot;field&quot;: &quot;string&quot;, &quot;newValue&quot;: &quot;string&quot;, &quot;oldValue&quot;: &quot;string&quot;}]}}`</span></a></p>
 </div></td>
 </tr>
 </tbody>

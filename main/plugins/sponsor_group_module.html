@@ -467,7 +467,7 @@
 <h1>cisco.ise.sponsor_group module – Resource module for Sponsor Group<a class="headerlink" href="#cisco-ise-sponsor-group-module-resource-module-for-sponsor-group" title="Permalink to this heading"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/ise">cisco.ise collection</a> (version 2.5.4).</p>
+<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/ise">cisco.ise collection</a> (version 2.5.5).</p>
 <p>To install it, use: <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">install</span> <span class="pre">cisco.ise</span></code>.
 You need further requirements to be able to use this module,
 see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-group-module-requirements"><span class="std std-ref">Requirements</span></a> for details.</p>
@@ -476,16 +476,16 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 <p class="ansible-version-added">New in cisco.ise 1.0.0</p>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#synopsis" id="id1">Synopsis</a></p></li>
-<li><p><a class="reference internal" href="#requirements" id="id2">Requirements</a></p></li>
-<li><p><a class="reference internal" href="#parameters" id="id3">Parameters</a></p></li>
-<li><p><a class="reference internal" href="#notes" id="id4">Notes</a></p></li>
-<li><p><a class="reference internal" href="#examples" id="id5">Examples</a></p></li>
-<li><p><a class="reference internal" href="#return-values" id="id6">Return Values</a></p></li>
+<li><p><a class="reference internal" href="#synopsis" id="id103">Synopsis</a></p></li>
+<li><p><a class="reference internal" href="#requirements" id="id104">Requirements</a></p></li>
+<li><p><a class="reference internal" href="#parameters" id="id105">Parameters</a></p></li>
+<li><p><a class="reference internal" href="#notes" id="id106">Notes</a></p></li>
+<li><p><a class="reference internal" href="#examples" id="id107">Examples</a></p></li>
+<li><p><a class="reference internal" href="#return-values" id="id108">Return Values</a></p></li>
 </ul>
 </div>
 <section id="synopsis">
-<h2><a class="toc-backref" href="#id1">Synopsis</a><a class="headerlink" href="#synopsis" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id103">Synopsis</a><a class="headerlink" href="#synopsis" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>Manage operations create, update and delete of the resource Sponsor Group.</p></li>
 <li><p>This API creates a sponsor group.</p></li>
@@ -498,7 +498,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 </div>
 </section>
 <section id="requirements">
-<span id="ansible-collections-cisco-ise-sponsor-group-module-requirements"></span><h2><a class="toc-backref" href="#id2">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
+<span id="ansible-collections-cisco-ise-sponsor-group-module-requirements"></span><h2><a class="toc-backref" href="#id104">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
 <p>The below requirements are needed on the host that executes this module.</p>
 <ul class="simple">
 <li><p>ciscoisesdk &gt;= 2.0.3</p></li>
@@ -506,7 +506,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 </ul>
 </section>
 <section id="parameters">
-<h2><a class="toc-backref" href="#id3">Parameters</a><a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id105">Parameters</a><a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
 <table class="colwidths-auto ansible-option-table docutils align-default" style="width: 100%">
 <thead>
 <tr class="row-odd"><th class="head"><p>Parameter</p></th>
@@ -521,8 +521,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 <td><div class="ansible-option-cell"><p>AutoNotification flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id1"><span class="problematic" id="id2">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id3"><span class="problematic" id="id4">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -540,8 +540,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>CanCreateRandomAccounts flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id5"><span class="problematic" id="id6">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id7"><span class="problematic" id="id8">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -552,8 +552,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>CanImportMultipleAccounts flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id9"><span class="problematic" id="id10">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id11"><span class="problematic" id="id12">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -564,8 +564,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>CanSetFutureStartDate flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id13"><span class="problematic" id="id14">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id15"><span class="problematic" id="id16">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -576,8 +576,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>CanSpecifyUsernamePrefix flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id17"><span class="problematic" id="id18">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id19"><span class="problematic" id="id20">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -637,8 +637,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 <td><div class="ansible-option-cell"><p>IsDefaultGroup flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id21"><span class="problematic" id="id22">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id23"><span class="problematic" id="id24">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -649,8 +649,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 <td><div class="ansible-option-cell"><p>Flag for Identity Services Engine SDK to enable debugging.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-default-bold">false</span> <span class="ansible-option-default">← (default)</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id25"><span class="problematic" id="id26">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id27"><span class="problematic" id="id28">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -685,8 +685,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 <p>If it is false, it sends the requests to <a class="reference external" href="https:/">https:/</a>/{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-default-bold">true</span> <span class="ansible-option-default">← (default)</span></p></li>
+<li><p><a href="#id29"><span class="problematic" id="id30">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id31"><span class="problematic" id="id32">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -700,8 +700,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 <p>If it is True, it assumes you need the SDK to manage the CSRF token automatically for you.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-default-bold">false</span> <span class="ansible-option-default">← (default)</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id33"><span class="problematic" id="id34">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id35"><span class="problematic" id="id36">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -712,8 +712,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 <td><div class="ansible-option-cell"><p>Flag to enable or disable SSL certificate verification.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-default-bold">true</span> <span class="ansible-option-default">← (default)</span></p></li>
+<li><p><a href="#id37"><span class="problematic" id="id38">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id39"><span class="problematic" id="id40">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -722,7 +722,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 <a class="ansibleOptionLink" href="#parameter-ise_version" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Informs the SDK which version of Identity Services Engine to use.</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <span class="ansible-option-default">“3.1_Patch_1”</span></p>
+<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id41"><span class="problematic" id="id42">:ansible-option-default:`&quot;3.1\_Patch\_1&quot;`</span></a></p>
 </div></td>
 </tr>
 <tr class="row-even"><td><div class="ansible-option-cell">
@@ -732,8 +732,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 <td><div class="ansible-option-cell"><p>Flag for Identity Services Engine SDK to enable automatic rate-limit handling.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-default-bold">true</span> <span class="ansible-option-default">← (default)</span></p></li>
+<li><p><a href="#id43"><span class="problematic" id="id44">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id45"><span class="problematic" id="id46">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
@@ -744,8 +744,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 <td><div class="ansible-option-cell"><p>IsEnabled flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id47"><span class="problematic" id="id48">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id49"><span class="problematic" id="id50">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -791,8 +791,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>CanAccessViaREST flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id51"><span class="problematic" id="id52">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id53"><span class="problematic" id="id54">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -803,8 +803,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>CanApproveSelfregGuests flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id55"><span class="problematic" id="id56">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id57"><span class="problematic" id="id58">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -815,8 +815,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>CanDeleteGuestAccounts flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id59"><span class="problematic" id="id60">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id61"><span class="problematic" id="id62">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -827,8 +827,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>CanExtendGuestAccounts flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id63"><span class="problematic" id="id64">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id65"><span class="problematic" id="id66">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -839,8 +839,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>CanReinstateSuspendedAccounts flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id67"><span class="problematic" id="id68">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id69"><span class="problematic" id="id70">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -851,8 +851,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>CanResetGuestPasswords flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id71"><span class="problematic" id="id72">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id73"><span class="problematic" id="id74">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -863,8 +863,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>CanSendSMSNotifications flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id75"><span class="problematic" id="id76">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id77"><span class="problematic" id="id78">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -875,8 +875,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>CanSuspendGuestAccounts flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id79"><span class="problematic" id="id80">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id81"><span class="problematic" id="id82">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -887,8 +887,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>CanUpdateGuestContactInfo flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id83"><span class="problematic" id="id84">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id85"><span class="problematic" id="id86">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -899,8 +899,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>CanViewGuestPasswords flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id87"><span class="problematic" id="id88">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id89"><span class="problematic" id="id90">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -911,8 +911,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>LimitApprovalToSponsorsGuests flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id91"><span class="problematic" id="id92">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id93"><span class="problematic" id="id94">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -923,8 +923,8 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 <td><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell"><p>RequireSuspensionReason flag.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><span class="ansible-option-choices-entry">false</span></p></li>
-<li><p><span class="ansible-option-choices-entry">true</span></p></li>
+<li><p><a href="#id95"><span class="problematic" id="id96">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id97"><span class="problematic" id="id98">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -932,7 +932,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 </table>
 </section>
 <section id="notes">
-<h2><a class="toc-backref" href="#id4">Notes</a><a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id106">Notes</a><a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
@@ -945,7 +945,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 </div>
 </section>
 <section id="examples">
-<h2><a class="toc-backref" href="#id5">Examples</a><a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id107">Examples</a><a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
 <div class="highlight-yaml+jinja notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Update by id</span><span class="w"></span>
 <span class="w">  </span><span class="nt">cisco.ise.sponsor_group</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">ise_hostname</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_hostname</span><span class="cp">}}</span><span class="s">&quot;</span><span class="w"></span>
@@ -1043,7 +1043,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 </div>
 </section>
 <section id="return-values">
-<h2><a class="toc-backref" href="#id6">Return Values</a><a class="headerlink" href="#return-values" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id108">Return Values</a><a class="headerlink" href="#return-values" title="Permalink to this heading"></a></h2>
 <p>Common return values are documented <a class="reference external" href="https://docs.ansible.com/ansible/latest/reference_appendices/common_return_values.html#common-return-values" title="(in Ansible v6)"><span class="xref std std-ref">here</span></a>, the following are the fields unique to this module:</p>
 <table class="colwidths-auto ansible-option-table docutils align-default" style="width: 100%">
 <thead>
@@ -1058,7 +1058,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 </div></td>
 <td><div class="ansible-option-cell"><p>A dictionary or list with the response returned by the Cisco ISE Python SDK</p>
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> always</p>
-<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> {“autoNotification”: true, “createPermissions”: {“canCreateRandomAccounts”: true, “canImportMultipleAccounts”: true, “canSetFutureStartDate”: true, “canSpecifyUsernamePrefix”: true, “defaultUsernamePrefix”: “string”, “importBatchSizeLimit”: 0, “randomBatchSizeLimit”: 0, “startDateFutureLimitDays”: 0}, “description”: “string”, “guestTypes”: [“string”], “id”: “string”, “isDefaultGroup”: true, “isEnabled”: true, “link”: {“href”: “string”, “rel”: “string”, “type”: “string”}, “locations”: [“string”], “managePermission”: “string”, “memberGroups”: [“string”], “name”: “string”, “otherPermissions”: {“canAccessViaRest”: true, “canApproveSelfregGuests”: true, “canDeleteGuestAccounts”: true, “canExtendGuestAccounts”: true, “canReinstateSuspendedAccounts”: true, “canResetGuestPasswords”: true, “canSendSmsNotifications”: true, “canSuspendGuestAccounts”: true, “canUpdateGuestContactInfo”: true, “canViewGuestPasswords”: true, “limitApprovalToSponsorsGuests”: true, “requireSuspensionReason”: true}}</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id99"><span class="problematic" id="id100">:ansible-rv-sample-value:`{&quot;autoNotification&quot;: true, &quot;createPermissions&quot;: {&quot;canCreateRandomAccounts&quot;: true, &quot;canImportMultipleAccounts&quot;: true, &quot;canSetFutureStartDate&quot;: true, &quot;canSpecifyUsernamePrefix&quot;: true, &quot;defaultUsernamePrefix&quot;: &quot;string&quot;, &quot;importBatchSizeLimit&quot;: 0, &quot;randomBatchSizeLimit&quot;: 0, &quot;startDateFutureLimitDays&quot;: 0}, &quot;description&quot;: &quot;string&quot;, &quot;guestTypes&quot;: [&quot;string&quot;], &quot;id&quot;: &quot;string&quot;, &quot;isDefaultGroup&quot;: true, &quot;isEnabled&quot;: true, &quot;link&quot;: {&quot;href&quot;: &quot;string&quot;, &quot;rel&quot;: &quot;string&quot;, &quot;type&quot;: &quot;string&quot;}, &quot;locations&quot;: [&quot;string&quot;], &quot;managePermission&quot;: &quot;string&quot;, &quot;memberGroups&quot;: [&quot;string&quot;], &quot;name&quot;: &quot;string&quot;, &quot;otherPermissions&quot;: {&quot;canAccessViaRest&quot;: true, &quot;canApproveSelfregGuests&quot;: true, &quot;canDeleteGuestAccounts&quot;: true, &quot;canExtendGuestAccounts&quot;: true, &quot;canReinstateSuspendedAccounts&quot;: true, &quot;canResetGuestPasswords&quot;: true, &quot;canSendSmsNotifications&quot;: true, &quot;canSuspendGuestAccounts&quot;: true, &quot;canUpdateGuestContactInfo&quot;: true, &quot;canViewGuestPasswords&quot;: true, &quot;limitApprovalToSponsorsGuests&quot;: true, &quot;requireSuspensionReason&quot;: true}}`</span></a></p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-cell">
@@ -1068,7 +1068,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-sponsor-g
 </div></td>
 <td><div class="ansible-option-cell"><p>A dictionary or list with the response returned by the Cisco ISE Python SDK</p>
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> always</p>
-<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> {“UpdatedFieldsList”: {“field”: “string”, “newValue”: “string”, “oldValue”: “string”, “updatedField”: [{“field”: “string”, “newValue”: “string”, “oldValue”: “string”}]}}</p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id101"><span class="problematic" id="id102">:ansible-rv-sample-value:`{&quot;UpdatedFieldsList&quot;: {&quot;field&quot;: &quot;string&quot;, &quot;newValue&quot;: &quot;string&quot;, &quot;oldValue&quot;: &quot;string&quot;, &quot;updatedField&quot;: [{&quot;field&quot;: &quot;string&quot;, &quot;newValue&quot;: &quot;string&quot;, &quot;oldValue&quot;: &quot;string&quot;}]}}`</span></a></p>
 </div></td>
 </tr>
 </tbody>
