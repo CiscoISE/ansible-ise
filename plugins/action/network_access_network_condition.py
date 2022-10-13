@@ -39,8 +39,10 @@ argument_spec.update(dict(
     link=dict(type="dict"),
     name=dict(type="str"),
     deviceList=dict(type="list"),
+    cliDnisList=dict(type="list"),
     ipAddrList=dict(type="list"),
     macAddrList=dict(type="list"),
+    deviceGroupList=dict(type="list"),
 ))
 
 required_if = [
@@ -62,8 +64,10 @@ class NetworkAccessNetworkCondition(object):
             link=params.get("link"),
             name=params.get("name"),
             device_list=params.get("deviceList"),
+            cli_dnis_list=params.get("cliDnisList"),
             ip_addr_list=params.get("ipAddrList"),
             mac_addr_list=params.get("macAddrList"),
+            device_group_list=params.get("deviceGroupList"),
         )
 
     def get_object_by_name(self, name):
@@ -129,8 +133,10 @@ class NetworkAccessNetworkCondition(object):
             ("link", "link"),
             ("name", "name"),
             ("deviceList", "device_list"),
+            ("cliDnisList", "cli_dnis_list"),
             ("ipAddrList", "ip_addr_list"),
             ("macAddrList", "mac_addr_list"),
+            ("deviceGroupList", "device_group_list"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

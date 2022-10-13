@@ -18,12 +18,22 @@ extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
+  cliDnisList:
+    description: <p>This field should contain a Caller ID (CLI), comma, and Called ID
+      (DNIS).<br> Line format - Caller ID (CLI), Called ID (DNIS)</p>.
+    elements: str
+    type: list
   conditionType:
     description: This field determines the content of the conditions field.
     type: str
   description:
     description: Network Access Network Condition's description.
     type: str
+  deviceGroupList:
+    description: <p>This field should contain a tuple with NDG Root, comma, and an NDG
+      (that it under the root).<br> Line format - NDG Root Name, NDG, Port</p>.
+    elements: str
+    type: list
   deviceList:
     description: <p>This field should contain Device-Name,port-number. The device
       name must be the same as the name field in a Network Device object.<br> Line
@@ -91,8 +101,12 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
+    cliDnisList:
+    - string
     conditionType: string
     description: string
+    deviceGroupList:
+    - string
     deviceList:
     - string
     id: string
@@ -113,8 +127,12 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
+    cliDnisList:
+    - string
     conditionType: string
     description: string
+    deviceGroupList:
+    - string
     deviceList:
     - string
     id: string
@@ -158,10 +176,16 @@ ise_response:
       "deviceList": [
         "string"
       ],
+      "cliDnisList": [
+        "string"
+      ],
       "ipAddrList": [
         "string"
       ],
       "macAddrList": [
+        "string"
+      ],
+      "deviceGroupList": [
         "string"
       ]
     }
@@ -186,10 +210,16 @@ ise_update_response:
         "deviceList": [
           "string"
         ],
+        "cliDnisList": [
+          "string"
+        ],
         "ipAddrList": [
           "string"
         ],
         "macAddrList": [
+          "string"
+        ],
+        "deviceGroupList": [
           "string"
         ]
       },
