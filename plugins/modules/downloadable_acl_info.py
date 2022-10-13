@@ -31,7 +31,7 @@ options:
     - Size query parameter. Number of objects returned per page.
     type: int
 requirements:
-- ciscoisesdk >= 2.0.3
+- ciscoisesdk >= 2.0.5
 - python >= 3.5
 notes:
   - SDK Method used are

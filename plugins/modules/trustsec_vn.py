@@ -30,7 +30,7 @@ options:
     description: Name of the Virtual Network.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.3
+- ciscoisesdk >= 2.0.5
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for virtualNetwork
