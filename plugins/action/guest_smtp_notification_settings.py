@@ -46,9 +46,7 @@ argument_spec.update(dict(
     id=dict(type="str"),
 ))
 
-required_if = [
-    ("state", "present", ["id"], True),
-]
+required_if = []
 required_one_of = []
 mutually_exclusive = []
 required_together = []

@@ -48,7 +48,6 @@ argument_spec.update(dict(
 ))
 
 required_if = [
-    ("state", "present", ["id"], True),
     ("state", "absent", ["id"], True),
 ]
 required_one_of = []
