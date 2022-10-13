@@ -33,16 +33,15 @@
         name: Endstation condition 1
         description: Optional description
         conditionType: EndstationCondition
-        conditions:
-          - ipAddrList:
-              - 1.1.1.1
-              - 2.2.2.2
-          - macAddrList:
-              - 00-0E-A6-A7-63-F7,00-0E-A6-A7-63-F8
-              - 00-0E-A6-A7-63-F7,-ANY-
-              - -ANY-,00-0E-A6-A7-63-F8
-          - cliDnisList:
-              - TBD
+        ipAddrList:
+          - 1.1.1.1
+          - 2.2.2.2
+        macAddrList:
+          - 00-0E-A6-A7-63-F7,00-0E-A6-A7-63-F8
+          - 00-0E-A6-A7-63-F7,-ANY-
+          - -ANY-,00-0E-A6-A7-63-F8
+        cliDnisList:
+            - TBD
       register: result
 
     - name: Print result

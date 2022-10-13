@@ -217,7 +217,7 @@ options:
         type: str
     type: dict
 requirements:
-- ciscoisesdk >= 2.0.3
+- ciscoisesdk >= 2.0.5
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for Device Administration - Authorization Rules

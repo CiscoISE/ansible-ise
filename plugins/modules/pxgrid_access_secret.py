@@ -19,7 +19,7 @@ options:
     description: pxGrid Access Secret's peerNodeName.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.3
+- ciscoisesdk >= 2.0.5
 - python >= 3.5
 notes:
   - SDK Method used are

@@ -48,7 +48,7 @@ options:
     description: Enable or disable automatic file creation of raw response.
     type: bool
 requirements:
-- ciscoisesdk >= 2.0.3
+- ciscoisesdk >= 2.0.5
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for EndpointCertificate

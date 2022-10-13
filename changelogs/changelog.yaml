@@ -854,3 +854,13 @@ releases:
     changes:
       release_summary: A check has been added to identify if there really are any changes
       bugfixes: personas_update_roles_services - is now idempotent.
+  2.5.6:
+    release_date: "2022-10-13"
+    changes:
+      release_summary: Update to use ciscoisesdk v2.0.5 or newer, fixed a request body
+      bugfixes:
+        - network_access_network_condition -  fixed a request body of the post and put method.
+        - filter_policy - removed the required id when it is a post method.
+        - guest_smtp_notification_settings - removed the required id when it is a post method.
+        - sxp_connections - removed the required id when it is a post method.
+        - sxp_vpns - removed the required id when it is a post method.
