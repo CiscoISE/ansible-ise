@@ -83,6 +83,28 @@ def ise_compare_equality(current_value, requested_value):
         return current_value == requested_value
 
 
+def fn_comp_key2(k, dict1, dict2):
+    return ise_compare_equality2(dict1.get(k), dict2.get(k))
+
+
+def ise_compare_equality2(current_value, requested_value, is_query_param=False):
+    if is_query_param:
+        return True
+    if requested_value is None and current_value is None:
+        return True
+    if requested_value is None:
+        return False
+    if current_value is None:
+        return False
+    if isinstance(current_value, dict) and isinstance(requested_value, dict):
+        all_dict_params = list(current_value.keys()) + list(requested_value.keys())
+        return not any((not fn_comp_key2(param, current_value, requested_value) for param in all_dict_params))
+    elif isinstance(current_value, list) and isinstance(requested_value, list):
+        return compare_list(current_value, requested_value)
+    else:
+        return current_value == requested_value
+
+
 def get_dict_result(result, key, value):
     if isinstance(result, list):
         if len(result) == 1:
