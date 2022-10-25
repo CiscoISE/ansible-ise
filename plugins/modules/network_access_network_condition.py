@@ -30,7 +30,7 @@ options:
     description: Network Access Network Condition's description.
     type: str
   deviceGroupList:
-    description: <p>This field should contain a tuple with NDG Root, comma, and an NDG
+    description: <p>This field should contain a NDG Root, comma, and an NDG
       (that it under the root).<br> Line format - NDG Root Name, NDG, Port</p>.
     elements: str
     type: list
