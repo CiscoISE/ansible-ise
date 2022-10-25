@@ -37,12 +37,14 @@ options:
   name:
     description: SGt's name.
     type: str
+    required: true
   propogateToApic:
     description: PropogateToApic flag.
     type: bool
   value:
     description: Value range 2 ot 65519 or -1 to auto-generate.
     type: int
+    required: true
 requirements:
 - ciscoisesdk >= 2.0.5
 - python >= 3.5
