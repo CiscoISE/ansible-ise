@@ -22,6 +22,7 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
     ISESDK,
     ise_argument_spec,
     ise_compare_equality,
+    ise_compare_equality2,
     get_dict_result,
 )
 from ansible_collections.cisco.ise.plugins.plugin_utils.exceptions import (
@@ -124,24 +125,24 @@ class NodeServicesProfilerProbeConfig(object):
         requested_obj = self.new_object
 
         obj_params = [
-            ("activeDirectory", "active_directory"),
-            ("dhcp", "dhcp"),
-            ("dhcpSpan", "dhcp_span"),
-            ("dns", "dns"),
-            ("http", "http"),
-            ("netflow", "netflow"),
-            ("nmap", "nmap"),
-            ("pxgrid", "pxgrid"),
-            ("radius", "radius"),
-            ("snmpQuery", "snmp_query"),
-            ("snmpTrap", "snmp_trap"),
-            ("hostname", "hostname"),
+            ("activeDirectory", "active_directory", False),
+            ("dhcp", "dhcp", False),
+            ("dhcpSpan", "dhcp_span", False),
+            ("dns", "dns", False),
+            ("http", "http", False),
+            ("netflow", "netflow", False),
+            ("nmap", "nmap", False),
+            ("pxgrid", "pxgrid", False),
+            ("radius", "radius", False),
+            ("snmpQuery", "snmp_query", False),
+            ("snmpTrap", "snmp_trap", False),
+            ("hostname", "hostname", True),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not ise_compare_equality(current_obj.get(ise_param),
-                                            requested_obj.get(ansible_param))
-                   for (ise_param, ansible_param) in obj_params)
+        return any(not ise_compare_equality2(current_obj.get(ise_param),
+                                            requested_obj.get(ansible_param), is_query_param)
+                   for (ise_param, ansible_param, is_query_param) in obj_params)
 
     def update(self):
         id = self.new_object.get("id")
