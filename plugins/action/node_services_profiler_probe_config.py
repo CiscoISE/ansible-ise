@@ -141,7 +141,8 @@ class NodeServicesProfilerProbeConfig(object):
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(not ise_compare_equality2(current_obj.get(ise_param),
-                                            requested_obj.get(ansible_param), is_query_param)
+                                             requested_obj.get(ansible_param),
+                                             is_query_param)
                    for (ise_param, ansible_param, is_query_param) in obj_params)
 
     def update(self):
