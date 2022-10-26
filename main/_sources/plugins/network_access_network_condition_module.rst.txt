@@ -42,7 +42,7 @@ cisco.ise.network_access_network_condition module -- Resource module for Network
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.6).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.7).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -240,7 +240,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      \<p\>This field should contain a tuple with NDG Root, comma, and an NDG (that it under the root).\<br\> Line format - NDG Root Name, NDG, Port\</p\>.
+      \<p\>This field should contain a NDG Root, comma, and an NDG (that it under the root).\<br\> Line format - NDG Root Name, NDG, Port\</p\>.
 
 
       .. raw:: html
