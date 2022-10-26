@@ -50,7 +50,7 @@ The recommended versions are listed below on the [Compatibility matrix](https://
 | Cisco ISE version | Ansible "cisco.ise" version  | Python "ciscoisesdk" version |
 |-------------------|------------------------------|------------------------------|
 | 3.1.0             | 2.0.0                        | 1.2.0                        |
-| 3.1_Patch_1       | 2.5.6                        | 2.0.6                        |
+| 3.1_Patch_1       | 2.5.7                        | 2.0.6                        |
 
 *Notes*:
 

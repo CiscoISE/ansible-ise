@@ -864,3 +864,12 @@ releases:
         - guest_smtp_notification_settings - removed the required id when it is a post method.
         - sxp_connections - removed the required id when it is a post method.
         - sxp_vpns - removed the required id when it is a post method.
+  2.5.7:
+    release_date: "2022-10-25"
+    changes:
+      release_summary: New method to compare changes
+      bugfixes:
+        - A new method to compare changes for specific cases has been added.
+        - node_services_profiler_probe_config - Used a new method to compare changes.
+        - sgt - Updated the fields required for creation.
+        - network_access_network_condition - Updated description of deviceGroupList.

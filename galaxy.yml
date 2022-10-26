@@ -1,7 +1,7 @@
 ---
 namespace: cisco
 name: ise
-version: 2.5.6
+version: 2.5.7
 readme: README.md
 authors:
   - Rafael Campos <rcampos@altus.cr>
