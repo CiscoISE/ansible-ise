@@ -13,7 +13,7 @@ except ImportError:
     ISE_SDK_IS_INSTALLED = False
 else:
     ISE_SDK_IS_INSTALLED = True
-from ansible.module_utils.basic import AnsibleModule
+from ansible.module_utils.basic import AnsibleModule, env_fallback
 
 try:
     from ansible.errors import AnsibleActionFail
@@ -129,15 +129,15 @@ def get_dict_result(result, key, value):
 
 def ise_argument_spec():
     argument_spec = dict(
-        ise_hostname=dict(type="str", required=True),
-        ise_username=dict(type="str", required=True),
-        ise_password=dict(type="str", required=True, no_log=True),
-        ise_verify=dict(type="bool", default=True),
-        ise_version=dict(type="str", default="3.1_Patch_1"),
-        ise_wait_on_rate_limit=dict(type="bool", default=True),
-        ise_uses_api_gateway=dict(type="bool", default=True),
-        ise_uses_csrf_token=dict(type="bool", default=False),
-        ise_debug=dict(type="bool", default=False),
+        ise_hostname=dict(type="str", fallback=(env_fallback, ['ISE_HOSTNAME']),required=True),
+        ise_username=dict(type="str", fallback=(env_fallback, ['ISE_USERNAME']), required=True),
+        ise_password=dict(type="str", fallback=(env_fallback, ['ISE_PASSWORD']), required=True, no_log=True),
+        ise_verify=dict(type="bool", default=True, fallback=(env_fallback, ['ISE_VERIFY'])),
+        ise_version=dict(type="str", default="3.1_Patch_1", fallback=(env_fallback, ['ISE_VERSION'])),
+        ise_wait_on_rate_limit=dict(type="bool", default=True, fallback=(env_fallback, ['ISE_WAIT_ON_RATE_LIMIT'])),
+        ise_uses_api_gateway=dict(type="bool", default=True, fallback=(env_fallback, ['ISE_USES_API_GATEWAY'])),
+        ise_uses_csrf_token=dict(type="bool", default=False, fallback=(env_fallback, ['ISE_USES_CSRF_TOKEN'])),
+        ise_debug=dict(type="bool", default=False, fallback=(env_fallback, ['ISE_DEBUG'])),
     )
     return argument_spec
 

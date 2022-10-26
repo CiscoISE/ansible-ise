@@ -873,3 +873,9 @@ releases:
         - node_services_profiler_probe_config - Used a new method to compare changes.
         - sgt - Updated the fields required for creation.
         - network_access_network_condition - Updated description of deviceGroupList.
+  2.5.8:
+    release_date: "2022-10-26"
+    changes:
+      release_summary: Added the ability to export Cisco ISE credentials as environment variables.
+      bugfixes:
+        - Cisco ISE credentials can now be exported and used as env vars.

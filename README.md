@@ -50,7 +50,7 @@ The recommended versions are listed below on the [Compatibility matrix](https://
 | Cisco ISE version | Ansible "cisco.ise" version  | Python "ciscoisesdk" version |
 |-------------------|------------------------------|------------------------------|
 | 3.1.0             | 2.0.0                        | 1.2.0                        |
-| 3.1_Patch_1       | 2.5.7                        | 2.0.6                        |
+| 3.1_Patch_1       | 2.5.8                        | 2.0.6                        |
 
 *Notes*:
 
@@ -73,6 +73,41 @@ ansible-galaxy collection install cisco.ise:2.0.0
 
 
 ## Use
+
+
+### Using environment variables
+First, export the environment variables where you specify your Cisco ISE credentials as ansible variables:
+```
+export ISE_HOSTNAME=<A.B.C.D>
+export ISE_USERNAME=<username>
+export ISE_PASSWORD=<password>
+export ISE_VERIFY=False # optional, defaults to True
+export ISE_VERSION=3.1_Patch_1 # optional, defaults to 3.1_Patch_1
+export ISE_WAIT_ON_RATE_LIMIT=True # optional, defaults to True
+export ISE_USES_API_GATEWAY=True # optional, defaults to True
+export ISE_DEBUG=False # optional, defaults to False
+```
+
+Create a `hosts` ([example](https://github.com/CiscoISE/ansible-ise/blob/main/playbooks/hosts)) file that uses `[ise_servers]` with your Cisco ISE Settings:
+```
+[ise_servers]
+ise_server
+```
+
+Then, create a playbook `myplaybook.yml` ([example](https://github.com/CiscoISE/ansible-ise/blob/main/playbooks/network_device.yml)) referencing the variables in your `group_vars/ise_servers` file and specifying the full namespace path to the module, plugin and/or role:
+```
+- hosts: ise_servers
+  gather_facts: no
+  tasks:
+  - name: Get network device by id
+    cisco.ise.network_device_info:
+      id: "0667bc80-78a9-11eb-b987-005056aba98b"
+```
+
+Execute the playbook:
+```
+ansible-playbook -i hosts myplaybook.yml
+```
 
 ### Using vars_files
 
