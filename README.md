@@ -94,7 +94,7 @@ Create a `hosts` ([example](https://github.com/CiscoISE/ansible-ise/blob/main/pl
 ise_server
 ```
 
-Then, create a playbook `myplaybook.yml` ([example](https://github.com/CiscoISE/ansible-ise/blob/main/playbooks/network_device.yml)) referencing the variables in your `group_vars/ise_servers` file and specifying the full namespace path to the module, plugin and/or role:
+Then, create a playbook `myplaybook.yml` ([example](https://github.com/CiscoISE/ansible-ise/blob/main/playbooks/network_device.yml)) specifying the full namespace path to the module, plugin and/or role:
 ```
 - hosts: ise_servers
   gather_facts: no
