@@ -212,7 +212,7 @@ options:
     description: Security group used in authorization policies.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.5
+- ciscoisesdk >= 2.0.6
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for Network Access - Authorization Global Exception Rules

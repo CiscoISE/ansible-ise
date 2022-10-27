@@ -67,9 +67,9 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            psn_nam_e=params.get("PSN_NAME"),
-            end_poi_ntm_ac=params.get("ENDPOINT_MAC"),
-            rea_uth_typ_e=params.get("REAUTH_TYPE"),
+            psn_name=params.get("PSN_NAME"),
+            endpoint_mac=params.get("ENDPOINT_MAC"),
+            reauth_type=params.get("REAUTH_TYPE"),
         )
         return new_object
 

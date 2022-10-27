@@ -23,7 +23,7 @@ options:
     - RepositoryName path parameter. Unique name for a repository.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.5
+- ciscoisesdk >= 2.0.6
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for Repository

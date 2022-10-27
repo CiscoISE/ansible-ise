@@ -36,14 +36,14 @@ options:
     - NAS_IPV4 path parameter.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.5
+- ciscoisesdk >= 2.0.6
 - python >= 3.5
 notes:
   - SDK Method used are
     misc.Misc.session_disconnect,
 
   - Paths used are
-    get /CoA/Disconnect>/{PSN_NAME}/{MAC}/{DISCONNECT_TYPE}/{NAS_IPV4}/{{ENDPOINT_IP}},
+    get /CoA/Disconnect/{PSN_NAME}/{MAC}/{DISCONNECT_TYPE}/{NAS_IPV4}/{{ENDPOINT_IP}},
 
 """
 
