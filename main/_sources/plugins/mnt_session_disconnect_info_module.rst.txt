@@ -42,7 +42,7 @@ cisco.ise.mnt_session_disconnect_info module -- Information module for MNT Sessi
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.7).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.8).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -84,7 +84,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk \>= 2.0.5
+- ciscoisesdk \>= 2.0.6
 - python \>= 3.5
 
 
@@ -653,7 +653,7 @@ Notes
 
 .. note::
    - SDK Method used are misc.Misc.session\_disconnect,
-   - Paths used are get /CoA/Disconnect\>/{PSN\_NAME}/{MAC}/{DISCONNECT\_TYPE}/{NAS\_IPV4}/{{ENDPOINT\_IP}},
+   - Paths used are get /CoA/Disconnect/{PSN\_NAME}/{MAC}/{DISCONNECT\_TYPE}/{NAS\_IPV4}/{{ENDPOINT\_IP}},
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise\_ are used by the Cisco ISE Python SDK to establish the connection
