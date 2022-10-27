@@ -43,7 +43,7 @@ notes:
     misc.Misc.session_disconnect,
 
   - Paths used are
-    get /CoA/Disconnect>/{PSN_NAME}/{MAC}/{DISCONNECT_TYPE}/{NAS_IPV4}/{{ENDPOINT_IP}},
+    get /CoA/Disconnect/{PSN_NAME}/{MAC}/{DISCONNECT_TYPE}/{NAS_IPV4}/{{ENDPOINT_IP}},
 
 """
 

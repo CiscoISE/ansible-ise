@@ -69,10 +69,10 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            end_poi_nti_p=params.get("ENDPOINT_IP"),
-            psn_nam_e=params.get("PSN_NAME"),
+            endpoint_ip=params.get("ENDPOINT_IP"),
+            psn_name=params.get("PSN_NAME"),
             mac=params.get("MAC"),
-            dis_con_nec_tty_pe=params.get("DISCONNECT_TYPE"),
+            disconnect_type=params.get("DISCONNECT_TYPE"),
             nas_ipv4=params.get("NAS_IPV4"),
         )
         return new_object

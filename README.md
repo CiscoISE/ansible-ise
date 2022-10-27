@@ -72,8 +72,12 @@ ansible-galaxy collection install cisco.ise:2.0.0
 ```
 
 
-## Use
+## Using this collection
 
+There are three ways to use it:
+- [Using environment variables](#using-environment-variables)
+- [Using vars_files](#using-vars_files)
+- [Using group_vars directory](#using-group_vars-directory)
 
 ### Using environment variables
 First, export the environment variables where you specify your Cisco ISE credentials as ansible variables:

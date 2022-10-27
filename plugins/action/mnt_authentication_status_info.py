@@ -68,8 +68,8 @@ class ActionModule(ActionBase):
     def get_object(self, params):
         new_object = dict(
             mac=params.get("MAC"),
-            sec_ond_s=params.get("SECONDS"),
-            rec_ord_s=params.get("RECORDS"),
+            seconds=params.get("SECONDS"),
+            records=params.get("RECORDS"),
         )
         return new_object
 

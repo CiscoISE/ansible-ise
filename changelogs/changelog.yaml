@@ -874,8 +874,18 @@ releases:
         - sgt - Updated the fields required for creation.
         - network_access_network_condition - Updated description of deviceGroupList.
   2.5.8:
-    release_date: "2022-10-26"
+    release_date: "2022-10-27"
     changes:
-      release_summary: Added the ability to export Cisco ISE credentials as environment variables.
+      release_summary: Added the ability to export Cisco ISE credentials as environment variables and rennamed some vars.
       bugfixes:
         - Cisco ISE credentials can now be exported and used as env vars.
+        - mnt_athentication_status_info - the following variable was renamed from rec_ord_s to records.
+        - mnt_athentication_status_info - the following variable was renamed from sec_ond_s to seconds.
+        - mnt_authentication_status_info - the following variable was renamed from rec_ord_s to records.
+        - mnt_authentication_status_info - the following variable was renamed from sec_ond_s to seconds.
+        - mnt_session_disconnect_info - the following variable was renamed from end_poi_nti_p to endpoint_ip.
+        - mnt_session_disconnect_info - the following variable was renamed from psn_nam_e to psn_name.
+        - mnt_session_disconnect_info - the following variable was renamed from dis_con_nec_tty_pe to disconnect_type.
+        - mnt_session_reauthentication_info - the following variable was renamed from end_poi_ntm_ac to endpoint_mac.
+        - mnt_session_reauthentication_info - the following variable was renamed from rea_uth_typ_e to reauth_type.
+        - mnt_session_reauthentication_info - the following variable was renamed from psn_nam_e to psn_name.
