@@ -142,6 +142,8 @@ class ActionModule(ActionBase):
         ise = ISESDK(params=self._task.args)
         obj = NodeStandaloneToPrimary(self._task.args, ise)
 
+        name = self._task.args.get("hostname")
+
         response = None
         (obj_exists, prev_obj) = obj.exists()
         if obj_exists:
@@ -153,9 +155,12 @@ class ActionModule(ActionBase):
                 ).response
                 ise.object_updated()
             else:
-                ise.result["result"] = "Node is not stanlone"
+                if "PrimaryAdmin" in prev_obj.roles:
+                    ise.result["result"] = "Node is already Primary"
+                else:
+                    ise.fail_json("Invoke this API on Standalone Node only")
         else:
-            ise.fail_json("Node does not exists")
+            ise.fail_json("No such HostConfig with hostName [{}]".format(name))
 
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
