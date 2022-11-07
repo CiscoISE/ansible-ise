@@ -97,7 +97,7 @@ class NodePrimaryToStandalone(object):
         return (it_exists, prev_obj)
 
     def requires_update(self, current_obj):
-        if any(i in current_obj.roles for i in ("PrimaryAdmin", "PrimaryMonitoring", "PrimaryDedicatedMonitoring")):
+        if "PrimaryAdmin" in current_obj.roles:
             return True
         return False
 
@@ -154,8 +154,7 @@ class ActionModule(ActionBase):
                 ).response
                 ise.object_updated()
             else:
-                    response = prev_obj
-                    ise.result["result"] = "Node is not primary"
+                ise.result["result"] = "Node is not primary"
         else:
             ise.fail_json("Node does not exists")
 

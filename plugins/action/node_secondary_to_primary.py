@@ -97,7 +97,7 @@ class NodeSecondaryToPrimary(object):
         return (it_exists, prev_obj)
 
     def requires_update(self, current_obj):
-        if any(i in current_obj.roles for i in ("SecondaryAdmin", "SecondaryMonitoring", "SecondaryDedicatedMonitoring")):
+        if "SecondaryAdmin" in current_obj.roles:
             return True
         return False
 
@@ -152,11 +152,11 @@ class ActionModule(ActionBase):
                     function="promote_node",
                     params=self.get_object(self._task.args),
                 ).response
+                ise.object_updated()
             else:
-                    response = prev_obj
-                    ise.result["result"] = "Node is not secondary"
+                ise.result["result"] = "Node is not secondary"
         else:
-            ise.fail_json("Nose does not exists")
+            ise.fail_json("Node does not exists")
 
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())

@@ -153,8 +153,7 @@ class ActionModule(ActionBase):
                 ).response
                 ise.object_updated()
             else:
-                    response = prev_obj
-                    ise.result["result"] = "Node is not stanalone"
+                ise.result["result"] = "Node is not stanalone"
         else:
             ise.fail_json("Node does not exists")
 
