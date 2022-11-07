@@ -889,3 +889,13 @@ releases:
         - mnt_session_reauthentication_info - the following variable was renamed from end_poi_ntm_ac to endpoint_mac.
         - mnt_session_reauthentication_info - the following variable was renamed from rea_uth_typ_e to reauth_type.
         - mnt_session_reauthentication_info - the following variable was renamed from psn_nam_e to psn_name.
+  2.5.9:
+    release_date: "2022-11-07"
+    changes:
+      release_summary: Fixed some ansible statuses, added a missing parameter and corrected a response.
+      bugfixes:
+        - licensing_eval_license_info - corrected the response
+        - system_certificate - a missing parameter was added allowWildcardDelete
+        - node_standalone_to_primary - fixed ansible changed response
+        - node_primary_to_standalone - fixed ansible changed response
+        - node_secondary_to_primary - fixed ansible changed response

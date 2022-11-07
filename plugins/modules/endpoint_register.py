@@ -100,7 +100,7 @@ options:
     description: StaticProfileAssignment flag.
     type: bool
 requirements:
-- ciscoisesdk >= 2.0.6
+- ciscoisesdk >= 2.0.8
 - python >= 3.5
 notes:
   - SDK Method used are

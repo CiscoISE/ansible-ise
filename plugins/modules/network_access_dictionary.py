@@ -47,7 +47,7 @@ options:
     description: The dictionary version.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.6
+- ciscoisesdk >= 2.0.8
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for Network Access - Dictionary

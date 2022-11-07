@@ -31,7 +31,7 @@ options:
     description: Pan Ha's secondaryHealthCheckNode.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.6
+- ciscoisesdk >= 2.0.8
 - python >= 3.5
 notes:
   - SDK Method used are
