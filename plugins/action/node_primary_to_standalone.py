@@ -161,7 +161,7 @@ class ActionModule(ActionBase):
                 else:
                     ise.fail_json("Invoke this API on Primary Node only")
         else:
-            ise.fail_json("No such HostConfig with hostName [{}]".format(name))
+            ise.fail_json("No such HostConfig with hostName [{hostname}]".format(hostname=name))
 
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
