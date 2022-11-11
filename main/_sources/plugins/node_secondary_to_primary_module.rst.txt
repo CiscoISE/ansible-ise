@@ -42,7 +42,7 @@ cisco.ise.node_secondary_to_primary module -- Resource module for Node Secondary
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.8).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.9).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -85,7 +85,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk \>= 2.0.6
+- ciscoisesdk \>= 2.0.8
 - python \>= 3.5
 
 
@@ -108,6 +108,40 @@ Parameters
 
   * - Parameter
     - Comments
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-hostname"></div>
+
+      .. _ansible_collections.cisco.ise.node_secondary_to_primary_module__parameter-hostname:
+
+      .. rst-class:: ansible-option-title
+
+      **hostname**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-hostname" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Hostname path parameter. Hostname of the node.
+
+
+      .. raw:: html
+
+        </div>
 
   * - .. raw:: html
 
@@ -513,6 +547,7 @@ Examples
         ise_username: "{{ise_username}}"
         ise_password: "{{ise_password}}"
         ise_verify: "{{ise_verify}}"
+        hostname: string
 
 
 
