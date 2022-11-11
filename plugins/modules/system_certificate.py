@@ -30,6 +30,10 @@ options:
   allowRoleTransferForSameSubject:
     description: Allow transfer of roles for certificate with matching subject.
     type: bool
+  allowWildcardDelete:
+    description: If the given certificate to be deleted is a wildcard certificate, corresponding
+      certificate gets deleted on rest of the nodes in the deployment as well.
+    type: bool
   description:
     description: Description of System Certificate.
     type: str
@@ -74,7 +78,7 @@ options:
     description: Use certificate for SAML Signing.
     type: bool
 requirements:
-- ciscoisesdk >= 2.0.6
+- ciscoisesdk >= 2.0.8
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for Certificates
@@ -125,6 +129,7 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: absent
+    allowWildcardDelete: true
     hostName: string
     id: string
 

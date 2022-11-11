@@ -15,9 +15,13 @@ version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
-options: {}
+options:
+  hostname:
+    description: Hostname path parameter. Hostname of the node.
+    type: str
+    required: true
 requirements:
-- ciscoisesdk >= 2.0.6
+- ciscoisesdk >= 2.0.8
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for Node Deployment
@@ -39,6 +43,7 @@ EXAMPLES = r"""
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
+    hostname: string
 
 """
 

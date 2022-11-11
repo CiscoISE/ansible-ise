@@ -48,6 +48,7 @@ argument_spec.update(dict(
     saml=dict(type="bool"),
     id=dict(type="str"),
     hostName=dict(type="str"),
+    allowWildcardDelete=dict(type="bool"),
 ))
 
 required_if = [
@@ -83,6 +84,7 @@ class SystemCertificate(object):
             saml=params.get("saml"),
             id=params.get("id"),
             host_name=params.get("hostName"),
+            allow_wildcard_delete=params.get("allowWildcardDelete"),
         )
 
     def get_object_by_name(self, name, host_name):
@@ -160,6 +162,7 @@ class SystemCertificate(object):
             ("saml", "saml"),
             ("id", "id"),
             ("hostName", "host_name"),
+            ("allowWildcardDelete", "allow_wildcard_delete"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
