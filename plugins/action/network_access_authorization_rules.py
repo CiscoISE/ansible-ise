@@ -236,10 +236,14 @@ class ActionModule(ActionBase):
             if obj_exists:
                 if obj.requires_update(prev_obj):
                     ise_update_response = obj.update()
-                    self._result.update(dict(ise_update_response=ise_update_response))
-                    (obj_exists, updated_obj) = obj.exists()
-                    response = updated_obj
-                    ise.object_updated()
+                    if prev_obj == ise_update_response.response:
+                        response = prev_obj
+                        ise.object_already_present()
+                    else:
+                        self._result.update(dict(ise_update_response=ise_update_response))
+                        (obj_exists, updated_obj) = obj.exists()
+                        response = updated_obj
+                        ise.object_updated()
                 else:
                     response = prev_obj
                     ise.object_already_present()

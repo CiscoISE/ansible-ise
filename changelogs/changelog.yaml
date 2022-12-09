@@ -899,3 +899,9 @@ releases:
         - node_standalone_to_primary - fixed ansible changed response
         - node_primary_to_standalone - fixed ansible changed response
         - node_secondary_to_primary - fixed ansible changed response
+  2.5.10:
+    release_date: "2022-12-09"
+    changes:
+      release_summary: A check has been added to identify if there really are any changes
+      bugfixes:
+        - network_access_authorization_rules - is now idempotent.

@@ -14,14 +14,11 @@ jobs:
     strategy:
       matrix:
         ansible:
-          - stable-2.9
-          - stable-2.10
-          - stable-2.11
           - stable-2.12
           - stable-2.13
           - stable-2.14
           - devel
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Check out code
         uses: actions/checkout@v3
