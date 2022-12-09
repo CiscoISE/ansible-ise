@@ -6,7 +6,7 @@
 Cisco.Ise
 =========
 
-Collection version 2.5.9
+Collection version 2.5.10
 
 .. contents::
    :local:
@@ -434,10 +434,6 @@ Modules
 * :ref:`trustsec_vn_vlan_mapping_info module <ansible_collections.cisco.ise.trustsec_vn_vlan_mapping_info_module>` -- Information module for Trustsec VN VLAN Mapping
 
 
-
-.. seealso::
-
-    List of :ref:`collections <list_of_collections>` with docs hosted here.
 
 .. toctree::
     :maxdepth: 1
