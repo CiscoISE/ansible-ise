@@ -56,7 +56,7 @@ class NodeGroup(object):
             description=params.get("description"),
             mar_cache=params.get("marCache"),
             name=params.get("name"),
-            node_group_name=params.get("nodeGroupName"),
+            node_group_name=params.get("nodeGroupName") or params.get("name"),
             force_delete=params.get("forceDelete"),
         )
 

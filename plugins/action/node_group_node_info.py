@@ -81,7 +81,7 @@ class ActionModule(ActionBase):
 
         id = self._task.args.get("id")
         name = self._task.args.get("nodeGroupName")
-        if not name and not id:
+        if name and not id:
             response = ise.exec(
                 family="node_group",
                 function='get_nodes',

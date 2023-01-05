@@ -905,3 +905,12 @@ releases:
       release_summary: A check has been added to identify if there really are any changes
       bugfixes:
         - network_access_authorization_rules - is now idempotent.
+  2.5.11:
+    release_date: "2023-01-05"
+    changes:
+      release_summary: Some errors have been corrected when reading the playbook and a validation was removed.
+      bugfixes:
+        - network_access_authentication_rules - now read the ID correctly.
+        - network_access_authorization_rules - now read the ID correctly.
+        - node_group_node_info - removed a validation that caused a failure.
+        - node_group - search was repaired.
