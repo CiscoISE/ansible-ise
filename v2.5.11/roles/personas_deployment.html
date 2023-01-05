@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personas Deployment Guide &mdash; ISEAnsibleActions  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/ansible-basic-sphinx-ext.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> ISEAnsibleActions
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/index.html">Cisco.Ise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Role Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ISEAnsibleActions</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">Personas Deployment Guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/roles/personas_deployment.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="personas-deployment-guide">
+<h1>Personas Deployment Guide<a class="headerlink" href="#personas-deployment-guide" title="Permalink to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+<p>Once all ISE nodes have been deployed to AWS, we can use Ansible to build a multi-node ISE cluster with distinct ISE personas, such as Policy Administration nodes (PAN), Monitoring and Troubleshooting nodes (MNT), and Policy Services nodes (PSN).</p>
+<p><strong>Note</strong>: This role assumes the nodes have already been deployed to the AWS platform using the AWS Deployment role included in this collection. However, the role can be easily modified to suit any other needs, such as an on-prem deployment.</p>
+</section>
+<section id="goal">
+<h2>Goal<a class="headerlink" href="#goal" title="Permalink to this heading"></a></h2>
+<p>The goals of this guide are:</p>
+<ol class="simple">
+<li><p>Install the Ansible ISE collection</p></li>
+<li><p>Configure the Personas Deployment role</p></li>
+<li><p>Build a cluster and assign the correspondent personas to each node</p></li>
+</ol>
+</section>
+<section id="pre-requisites">
+<h2>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this heading"></a></h2>
+<p>It is recommended that you review the following guides before starting this one:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="./ansible_start_guide">ISE Ansible Getting Started Guide</a></p></li>
+<li><p><a class="reference internal" href="#"><span class="doc">AWS Deployment Guide</span></a></p></li>
+</ul>
+</section>
+<section id="role-information">
+<h2>Role information<a class="headerlink" href="#role-information" title="Permalink to this heading"></a></h2>
+<p>The Personas Deployment Ansible role acomplishes the following tasks:</p>
+<ol class="simple">
+<li><p>Checks whether or not all the nodes are in standalone mode. If not, the playbook exits with an error message.</p></li>
+<li><p>Exports into the primary node the certificates of all the other nodes</p></li>
+<li><p>Assigns the Primary PAN persona to one of the nodes</p></li>
+<li><p>Assigns the corresponding personas to the rest of the nodes</p></li>
+</ol>
+</section>
+<section id="deployment-types">
+<h2>Deployment types<a class="headerlink" href="#deployment-types" title="Permalink to this heading"></a></h2>
+<p>This role supports the following deployment types:</p>
+<ol class="simple">
+<li><p><strong>Small</strong>: Two nodes fulfilling the following roles:</p>
+<ul class="simple">
+<li><p><strong>Node 1</strong>: PPAN, MNT-ACTIVE and PSN</p></li>
+<li><p><strong>Node 2</strong>: SPAN, MNT-STANDBY and PSN</p></li>
+</ul>
+</li>
+<li><p><strong>Medium</strong>: Up to seven nodes fulfilling the following roles:</p>
+<ul class="simple">
+<li><p><strong>Node 1</strong>: PPAN and MNT-ACTIVE</p></li>
+<li><p><strong>Node 2</strong>: SPAN and MNT-STANDBY</p></li>
+<li><p><strong>Node 3 through Node 7</strong>: PSN</p></li>
+</ul>
+</li>
+<li><p><strong>Large</strong>: Up to 54 nodes fulfilling the following roles:</p>
+<ul class="simple">
+<li><p><strong>Node 1</strong>: PPAN</p></li>
+<li><p><strong>Node 2</strong>: SPAN</p></li>
+<li><p><strong>Node 3</strong>: MNT-ACTIVE</p></li>
+<li><p><strong>Node 4</strong>: MNT-STANDBY</p></li>
+<li><p><strong>Node 5 to Node 54</strong>: PSN</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this heading"></a></h2>
+<p>Depending on the deployment type, the variables that need to be set are different. It is assumed that all nodes share the same credentials, as this is the default behavior of the AWS Deployment role. There are no default values for IP addresses, so all IP address variables must be specified.</p>
+<section id="variables-common-to-all-deployment-types">
+<h3>Variables common to all deployment types<a class="headerlink" href="#variables-common-to-all-deployment-types" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>ise_deployment_type</strong>: Could be <code class="docutils literal notranslate"><span class="pre">small</span></code>, <code class="docutils literal notranslate"><span class="pre">medium</span></code> or <code class="docutils literal notranslate"><span class="pre">large</span></code>. Default: <code class="docutils literal notranslate"><span class="pre">small</span></code></p></li>
+<li><p><strong>ise_username</strong>: Username for the nodes. Default: <code class="docutils literal notranslate"><span class="pre">admin</span></code></p></li>
+<li><p><strong>ise_password</strong>: Password for the nodes. Default: <code class="docutils literal notranslate"><span class="pre">C1sco12345</span></code></p></li>
+<li><p><strong>ise_domain</strong>: Domain name. Default: <code class="docutils literal notranslate"><span class="pre">example.com</span></code></p></li>
+<li><p><strong>ise_base_hostname</strong>: The base hostname for the nodes. Default: <code class="docutils literal notranslate"><span class="pre">ISE</span></code></p></li>
+<li><p><strong>pan1_ip</strong>: Public IP address for the Primary PAN node.</p></li>
+<li><p><strong>pan2_ip</strong>: Public IP address for the Secondary PAN node.</p></li>
+</ul>
+</section>
+<section id="additional-variables-for-medium-or-large-deployments">
+<h3>Additional variables for medium or large deployments<a class="headerlink" href="#additional-variables-for-medium-or-large-deployments" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>psn1_ip</strong>: Public IP address for the first PSN node</p></li>
+<li><p><strong>psn2_ip</strong>: Public IP address for the second PSN node</p></li>
+<li><p><strong>psn<em>N</em>_ip</strong>: Public IP address for the Nth PSN node</p></li>
+</ul>
+</section>
+<section id="additional-variables-specific-for-large-deployments">
+<h3>Additional variables specific for large deployments<a class="headerlink" href="#additional-variables-specific-for-large-deployments" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><strong>mnt1_ip</strong>: Public IP address for the Active Monitoring node</p></li>
+<li><p><strong>mnt2_ip</strong>: Public IP address for the Standby Monitoring node</p></li>
+</ul>
+</section>
+</section>
+<section id="role-usage">
+<h2>Role usage<a class="headerlink" href="#role-usage" title="Permalink to this heading"></a></h2>
+<p>Create a playbook that contains all the pertinent variables required by this role:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># playbooks/personas_deployment.yml</span>
+<span class="c1"># Example for a small deployment</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ISE Personas Deployment Playbook</span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">  </span><span class="nt">connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">  </span><span class="nt">vars</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">ise_deployment</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">small</span>
+<span class="w">    </span><span class="nt">ise_username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span>
+<span class="w">    </span><span class="nt">ise_password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">C1sco123</span>
+<span class="w">    </span><span class="nt">ise_domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example.com</span>
+<span class="w">    </span><span class="nt">pan1_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.1.1.1</span>
+<span class="w">    </span><span class="nt">pan2_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.2.2.2</span>
+
+<span class="w">  </span><span class="nt">roles</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cisco.ise.personas_deployment</span>
+</pre></div>
+</div>
+<p>Run the Ansible playbook:</p>
+<div class="highlight-cli notranslate"><div class="highlight"><pre><span></span>ansible-playbook -i hosts playbooks/personas_deployment.yml
+</pre></div>
+</div>
+<section id="sample-playbooks-for-medium-and-large-deployments">
+<h3>Sample playbooks for medium and large deployments<a class="headerlink" href="#sample-playbooks-for-medium-and-large-deployments" title="Permalink to this heading"></a></h3>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># playbooks/personas_deployment.yml</span>
+<span class="c1"># Example for a medium deployment</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ISE Personas Deployment Playbook</span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">  </span><span class="nt">connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">  </span><span class="nt">vars</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">ise_deployment</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">medium</span>
+<span class="w">    </span><span class="nt">ise_username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span>
+<span class="w">    </span><span class="nt">ise_password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">C1sco123</span>
+<span class="w">    </span><span class="nt">ise_domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example.com</span>
+<span class="w">    </span><span class="nt">pan1_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.1.1.1</span>
+<span class="w">    </span><span class="nt">pan2_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.2.2.2</span>
+<span class="w">    </span><span class="nt">psn1_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.3.3.3</span>
+<span class="w">    </span><span class="nt">psn2_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4.4.4.4</span>
+
+<span class="w">  </span><span class="nt">roles</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cisco.ise.personas_deployment</span>
+</pre></div>
+</div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># playbooks/personas_deployment.yml</span>
+<span class="c1"># Example for a large deployment</span>
+<span class="nn">---</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ISE Personas Deployment Playbook</span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">  </span><span class="nt">connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">  </span><span class="nt">vars</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">ise_deployment</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">large</span>
+<span class="w">    </span><span class="nt">ise_username</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">admin</span>
+<span class="w">    </span><span class="nt">ise_password</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">C1sco123</span>
+<span class="w">    </span><span class="nt">ise_domain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example.com</span>
+<span class="w">    </span><span class="nt">pan1_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.1.1.1</span>
+<span class="w">    </span><span class="nt">pan2_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.2.2.2</span>
+<span class="w">    </span><span class="nt">psn1_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.3.3.3</span>
+<span class="w">    </span><span class="nt">psn2_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4.4.4.4</span>
+<span class="w">    </span><span class="nt">mnt1_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5.5.5.5</span>
+<span class="w">    </span><span class="nt">mnt2_ip</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6.6.6.6</span>
+
+<span class="w">  </span><span class="nt">roles</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cisco.ise.personas_deployment</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Copyright (c) 2021 Cisco Systems.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
