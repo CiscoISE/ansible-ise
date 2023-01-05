@@ -65,7 +65,7 @@ class NetworkAccessAuthenticationRules(object):
             link=params.get("link"),
             rule=params.get("rule"),
             policy_id=params.get("policyId"),
-            id=params.get("id"),
+            id=params.get("id") or params.get("rule", {}).get("id"),
         )
 
     def get_object_by_name(self, name, policy_id):
