@@ -6,7 +6,7 @@
 Cisco.Ise
 =========
 
-Collection version 2.5.10
+Collection version 2.5.11
 
 .. contents::
    :local:
@@ -433,8 +433,6 @@ Modules
 * :ref:`trustsec_vn_vlan_mapping_bulk_update module <ansible_collections.cisco.ise.trustsec_vn_vlan_mapping_bulk_update_module>` -- Resource module for Trustsec VN VLAN Mapping Bulk Update
 * :ref:`trustsec_vn_vlan_mapping_info module <ansible_collections.cisco.ise.trustsec_vn_vlan_mapping_info_module>` -- Information module for Trustsec VN VLAN Mapping
 
-
-
 .. toctree::
     :maxdepth: 1
     :hidden:
@@ -822,3 +820,5 @@ Modules
     trustsec_vn_vlan_mapping_bulk_delete_module
     trustsec_vn_vlan_mapping_bulk_update_module
     trustsec_vn_vlan_mapping_info_module
+
+
