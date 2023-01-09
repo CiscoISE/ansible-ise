@@ -10,6 +10,7 @@ assignees: ''
 **Prerequisites**
 * [ ] Have you tested the operation in the API directly?
 * [ ] Do you have the latest ISE Collection version?
+* [ ] Review the [compatibility matrix](https://github.com/CiscoISE/ansible-ise/tree/main#compatibility-matrix) before opening an issue.
 
 **Describe the bug**
 A clear and concise description of what the bug is.
