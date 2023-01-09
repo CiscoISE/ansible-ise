@@ -46,12 +46,13 @@ It may work with Cisco ISE version 3.0, but it is not officially supported.
 The recommended versions are listed below on the [Compatibility matrix](https://github.com/CiscoISE/ansible-ise#compatibility-matrix).
 
 ## Compatibility matrix
-
+The following table shows the supported versions.
 | Cisco ISE version | Ansible "cisco.ise" version  | Python "ciscoisesdk" version |
 |-------------------|------------------------------|------------------------------|
 | 3.1.0             | 2.0.0                        | 1.2.0                        |
-| 3.1_Patch_1       | 2.5.11                        | 2.0.8                        |
+| 3.1_Patch_1       | 2.5.12                        | 2.0.8                        |
 
+If your Ansible collection is older please consider updating it first.
 *Notes*:
 
 1. The "Python 'ciscoisesdk' version" column has the minimum recommended version used when testing the Ansible collection. This means you could use later versions of the Python "ciscoisesdk" than those listed.

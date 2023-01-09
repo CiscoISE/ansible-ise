@@ -914,3 +914,9 @@ releases:
         - network_access_authorization_rules - now read the ID correctly.
         - node_group_node_info - removed a validation that caused a failure.
         - node_group - search was repaired.
+  2.5.12:
+    release_date: "2023-01-09"
+    changes:
+      release_date: Change is detected in a better way.
+      bugfixes:
+        - network_access_authorization_rules - recognizes when there are changes.
