@@ -144,7 +144,7 @@ class Node(object):
         try:
             response = requests.post(url=url, timeout=15, data=data, headers=headers, auth=(self.username, self.password), verify=False)
         except Exception as e:
-            AnsibleActionFail(e)
+            raise AnsibleActionFail(e)
 
         if not response.status_code == 200:
             raise AnsibleActionFail("Received status code {status_code} when exporting certificate.".format(status_code=str(response.status_code)))
@@ -175,7 +175,7 @@ class Node(object):
                                      )
             return_message = json.loads(response.text)["response"]["message"]
         except Exception as e:
-            AnsibleActionFail(e)
+            raise AnsibleActionFail(e)
 
         if not response.status_code == 200:
             if not (return_message == 'Trust certificate was added successfully' or

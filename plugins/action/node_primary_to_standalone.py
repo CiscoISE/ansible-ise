@@ -37,7 +37,7 @@ argument_spec.update(dict(
 required_if = []
 required_one_of = [
     ("hostname"),
-],
+]
 mutually_exclusive = []
 required_together = []
 
