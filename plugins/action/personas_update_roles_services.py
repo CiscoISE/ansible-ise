@@ -97,7 +97,7 @@ class ActionModule(ActionBase):
         try:
             prev_obj = node.get_roles_services()
         except Exception as e:
-            AnsibleActionFail(e)
+            raise AnsibleActionFail(e)
         if prev_obj:
             if obj.requires_update(prev_obj, request_obj):
                 try:
