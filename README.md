@@ -91,6 +91,7 @@ export ISE_VERSION=3.1_Patch_1 # optional, defaults to 3.1_Patch_1
 export ISE_WAIT_ON_RATE_LIMIT=True # optional, defaults to True
 export ISE_USES_API_GATEWAY=True # optional, defaults to True
 export ISE_DEBUG=False # optional, defaults to False
+export ISE_SINGLE_REQUEST_TIMEOUT:60 # optional, defaults to 60
 ```
 
 Create a `hosts` ([example](https://github.com/CiscoISE/ansible-ise/blob/main/playbooks/hosts)) file that uses `[ise_servers]` with your Cisco ISE Settings:
@@ -128,6 +129,7 @@ ise_wait_on_rate_limit: True # optional, defaults to True
 ise_debug: False # optional, defaults to False
 ise_uses_api_gateway: True # optional, defaults to True
 ise_uses_csrf_token: False # optional, defaults to False
+ise_single_request_timeout: 60 # optional, defaults to 60
 ```
 
 Create a `hosts` ([example](https://github.com/CiscoISE/ansible-ise/blob/main/playbooks/hosts)) file that uses `[ise_servers]` with your Cisco ISE Settings:
@@ -177,6 +179,7 @@ ise_wait_on_rate_limit: True # optional, defaults to True
 ise_debug: False # optional, defaults to False
 ise_uses_api_gateway: True # optional, defaults to True
 ise_uses_csrf_token: False # optional, defaults to False
+ise_single_request_timeout: 60 # optional, defaults to 60
 ```
 
 Create a `hosts` ([example](https://github.com/CiscoISE/ansible-ise/blob/main/playbooks/hosts)) file that uses `[ise_servers]` with your Cisco ISE Settings:
