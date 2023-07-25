@@ -142,7 +142,10 @@ class SystemCertificate(object):
 
     def requires_update(self, current_obj):
         requested_obj = self.new_object
-
+        current_obj["eap"] = "eap" in current_obj["usedBy"].lower()
+        current_obj["pxgrid"] = "pxgrid" in current_obj["usedBy"].lower()
+        current_obj["radius"] = "radius" in current_obj["usedBy"].lower()
+        current_obj["ims"] = "ims" in current_obj["usedBy"].lower()
         obj_params = [
             ("admin", "admin"),
             ("allowPortalTagTransferForSameSubject", "allow_portal_tag_transfer_for_same_subject"),
@@ -153,7 +156,7 @@ class SystemCertificate(object):
             ("expirationTTLPeriod", "expiration_ttl_period"),
             ("expirationTTLUnits", "expiration_ttl_units"),
             ("ims", "ims"),
-            ("name", "name"),
+            ("friendlyName", "name"),
             ("portal", "portal"),
             ("portalGroupTag", "portal_group_tag"),
             ("pxgrid", "pxgrid"),
