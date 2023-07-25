@@ -917,6 +917,15 @@ releases:
   2.5.12:
     release_date: "2023-01-09"
     changes:
-      release_date: Change is detected in a better way.
+      release_summary: Change is detected in a better way.
       bugfixes:
         - network_access_authorization_rules - recognizes when there are changes.
+  2.5.13:
+    release_date: "2023-07-25"
+    changes:
+      release_summary: Several bugfixes in modules.
+      bugfixes:
+        - cisco.ise.mnt_session_active_count_info ise_reponse is null fixed.
+        - Cannot get cisco.ise.rest_id_store to work fixed.
+        - System Certificate Update does not work but always reports Object already present temporary solution.
+        - node_deployment tasks fail because of timeout, adding new collection param. 
