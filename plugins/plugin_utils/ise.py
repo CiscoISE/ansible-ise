@@ -138,6 +138,7 @@ def ise_argument_spec():
         ise_uses_api_gateway=dict(type="bool", default=True, fallback=(env_fallback, ['ISE_USES_API_GATEWAY'])),
         ise_uses_csrf_token=dict(type="bool", default=False, fallback=(env_fallback, ['ISE_USES_CSRF_TOKEN'])),
         ise_debug=dict(type="bool", default=False, fallback=(env_fallback, ['ISE_DEBUG'])),
+        ise_single_request_timeout=dict(type="int", default=60, fallback=(env_fallback, ['ISE_SINGLE_REQUEST_TIMEOUT'])),
     )
     return argument_spec
 
@@ -172,6 +173,7 @@ class ISESDK(object):
                 ers_base_url=ers_base_url,
                 mnt_base_url=mnt_base_url,
                 px_grid_base_url=px_grid_base_url,
+                single_request_timeout=params.get("ise_single_request_timeout"),
                 verify=params.get("ise_verify"),
                 version=params.get("ise_version"),
                 wait_on_rate_limit=params.get("ise_wait_on_rate_limit"),

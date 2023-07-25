@@ -48,6 +48,14 @@ options:
         description: Suffix of the username domain.
         type: str
     type: dict
+  ersRESTIDStoreUserAttributes:
+    description: REST Id Store's ersRESTIDStoreUserAttributes.
+    suboptions:
+      attributes:
+        description: REST Id Store's attributes.
+        elements: str
+        type: list
+    type: dict
   id:
     description: REST Id Store's id.
     type: str
@@ -55,7 +63,7 @@ options:
     description: REST Id Store's name.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.8
+- ciscoisesdk >= 2.0.1
 - python >= 3.5
 notes:
   - SDK Method used are
@@ -144,6 +152,9 @@ EXAMPLES = r"""
       predefined: string
       rootUrl: string
       usernameSuffix: string
+    ersRestIDStoreUserAttributes:
+      attributes:
+      - string
     name: string
 
 """

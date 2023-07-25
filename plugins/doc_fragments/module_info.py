@@ -65,6 +65,12 @@ options:
         type: bool
         default: false
         version_added: '3.0.0'
+    ise_single_request_timeout:
+        description:
+          -  Timeout (in seconds) for RESTful HTTP requests.
+        type: int
+        default: 60
+        version_added: '3.0.0'
 notes:
     - "Supports C(check_mode)"
     - "The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK"

@@ -33,6 +33,7 @@ argument_spec.update(dict(
     name=dict(type="str"),
     description=dict(type="str"),
     ersRestIDStoreAttributes=dict(type="dict"),
+    ersRestIDStoreUserAttributes=dict(type="dict"),
     id=dict(type="str"),
 ))
 
@@ -52,6 +53,7 @@ class RestIdStore(object):
             name=params.get("name"),
             description=params.get("description"),
             ers_rest_idstore_attributes=params.get("ersRestIDStoreAttributes"),
+            ers_rest_idstore_user_attributes=params.get("ersRestIDStoreUserAttributes"),
             id=params.get("id"),
         )
 
@@ -120,6 +122,7 @@ class RestIdStore(object):
             ("name", "name"),
             ("description", "description"),
             ("ersRestIDStoreAttributes", "ers_rest_idstore_attributes"),
+            ("ersRestIDStoreUserAttributes", "ers_rest_idstore_user_attributes"),
             ("id", "id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
@@ -129,6 +132,7 @@ class RestIdStore(object):
                    for (ise_param, ansible_param) in obj_params)
 
     def create(self):
+        print(self.new_object)
         result = self.ise.exec(
             family="restid_store",
             function="create_rest_id_store",
@@ -221,6 +225,7 @@ class ActionModule(ActionBase):
                     self._result.update(dict(ise_update_response=ise_update_response))
                     (obj_exists, updated_obj) = obj.exists()
                     response = updated_obj
+                    ise.object_updated()
                     has_changed = None
                     has_changed = ise_update_response.get("UpdatedFieldsList").get("updatedField")
                     if (len(has_changed) == 0 or
