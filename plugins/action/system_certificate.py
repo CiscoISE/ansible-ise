@@ -142,10 +142,19 @@ class SystemCertificate(object):
 
     def requires_update(self, current_obj):
         requested_obj = self.new_object
-        current_obj["eap"] = "eap" in current_obj["usedBy"].lower()
-        current_obj["pxgrid"] = "pxgrid" in current_obj["usedBy"].lower()
-        current_obj["radius"] = "radius" in current_obj["usedBy"].lower()
-        current_obj["ims"] = "ims" in current_obj["usedBy"].lower()
+        
+        used_by_value = current_obj.get("usedBy")
+        if used_by_value is None or used_by_value.lower() == "not in use":
+            current_obj["eap"] = False
+            current_obj["pxgrid"] = False
+            current_obj["radius"] = False
+            current_obj["ims"] = False
+        else:
+            current_obj["eap"] = "eap" in used_by_value.lower()
+            current_obj["pxgrid"] = "pxgrid" in used_by_value.lower()
+            current_obj["radius"] = "radius" in used_by_value.lower()
+            current_obj["ims"] = "ims" in used_by_value.lower()
+
         obj_params = [
             ("admin", "admin"),
             ("allowPortalTagTransferForSameSubject", "allow_portal_tag_transfer_for_same_subject"),
