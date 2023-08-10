@@ -471,7 +471,7 @@
 <h1>cisco.ise.system_certificate module – Resource module for System Certificate<a class="headerlink" href="#cisco-ise-system-certificate-module-resource-module-for-system-certificate" title="Permalink to this heading"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/ise">cisco.ise collection</a> (version 2.5.12).</p>
+<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/ise">cisco.ise collection</a> (version 2.5.14).</p>
 <p>To install it, use: <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">install</span> <span class="pre">cisco.ise</span></code>.
 You need further requirements to be able to use this module,
 see <a class="reference internal" href="#ansible-collections-cisco-ise-system-certificate-module-requirements"><span class="std std-ref">Requirements</span></a> for details.</p>
@@ -480,17 +480,17 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-system-ce
 <p class="ansible-version-added">New in cisco.ise 1.0.0</p>
 <nav class="contents local" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#synopsis" id="id75">Synopsis</a></p></li>
-<li><p><a class="reference internal" href="#requirements" id="id76">Requirements</a></p></li>
-<li><p><a class="reference internal" href="#parameters" id="id77">Parameters</a></p></li>
-<li><p><a class="reference internal" href="#notes" id="id78">Notes</a></p></li>
-<li><p><a class="reference internal" href="#see-also" id="id79">See Also</a></p></li>
-<li><p><a class="reference internal" href="#examples" id="id80">Examples</a></p></li>
-<li><p><a class="reference internal" href="#return-values" id="id81">Return Values</a></p></li>
+<li><p><a class="reference internal" href="#synopsis" id="id77">Synopsis</a></p></li>
+<li><p><a class="reference internal" href="#requirements" id="id78">Requirements</a></p></li>
+<li><p><a class="reference internal" href="#parameters" id="id79">Parameters</a></p></li>
+<li><p><a class="reference internal" href="#notes" id="id80">Notes</a></p></li>
+<li><p><a class="reference internal" href="#see-also" id="id81">See Also</a></p></li>
+<li><p><a class="reference internal" href="#examples" id="id82">Examples</a></p></li>
+<li><p><a class="reference internal" href="#return-values" id="id83">Return Values</a></p></li>
 </ul>
 </nav>
 <section id="synopsis">
-<h2><a class="toc-backref" href="#id75" role="doc-backlink">Synopsis</a><a class="headerlink" href="#synopsis" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id77" role="doc-backlink">Synopsis</a><a class="headerlink" href="#synopsis" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>Manage operations update and delete of the resource System Certificate.</p></li>
 <li><p>This API deletes a System Certificate of a particular node based on given HostName and ID.</p></li>
@@ -502,7 +502,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-system-ce
 </div>
 </section>
 <section id="requirements">
-<span id="ansible-collections-cisco-ise-system-certificate-module-requirements"></span><h2><a class="toc-backref" href="#id76" role="doc-backlink">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
+<span id="ansible-collections-cisco-ise-system-certificate-module-requirements"></span><h2><a class="toc-backref" href="#id78" role="doc-backlink">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
 <p>The below requirements are needed on the host that executes this module.</p>
 <ul class="simple">
 <li><p>ciscoisesdk &gt;= 2.0.8</p></li>
@@ -510,7 +510,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-system-ce
 </ul>
 </section>
 <section id="parameters">
-<h2><a class="toc-backref" href="#id77" role="doc-backlink">Parameters</a><a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id79" role="doc-backlink">Parameters</a><a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h2>
 <table class="ansible-option-table docutils align-default" style="width: 100%">
 <thead>
 <tr class="row-odd"><th class="head"><p>Parameter</p></th>
@@ -664,13 +664,22 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-system-ce
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-cell">
+<div class="ansibleOptionAnchor" id="parameter-ise_single_request_timeout"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-system-certificate-module-parameter-ise-single-request-timeout"><strong>ise_single_request_timeout</strong></p>
+<a class="ansibleOptionLink" href="#parameter-ise_single_request_timeout" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">integer</span></p>
+<p><span class="ansible-option-versionadded">added in cisco.ise 3.0.0</span></p>
+</div></td>
+<td><div class="ansible-option-cell"><p>Timeout (in seconds) for RESTful HTTP requests.</p>
+<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id33"><span class="problematic" id="id34">:ansible-option-default:`60`</span></a></p>
+</div></td>
+</tr>
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-ise_username"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-system-certificate-module-parameter-ise-username"><strong>ise_username</strong></p>
 <a class="ansibleOptionLink" href="#parameter-ise_username" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span> / <span class="ansible-option-required">required</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>The Identity Services Engine username to authenticate.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-ise_uses_api_gateway"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-system-certificate-module-parameter-ise-uses-api-gateway"><strong>ise_uses_api_gateway</strong></p>
 <a class="ansibleOptionLink" href="#parameter-ise_uses_api_gateway" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 <p><span class="ansible-option-versionadded">added in cisco.ise 1.1.0</span></p>
@@ -680,12 +689,12 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-system-ce
 <p>If it is false, it sends the requests to <a class="reference external" href="https:/">https:/</a>/{{ise_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id33"><span class="problematic" id="id34">:ansible-option-choices-entry:`false`</span></a></p></li>
-<li><p><a href="#id35"><span class="problematic" id="id36">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id35"><span class="problematic" id="id36">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id37"><span class="problematic" id="id38">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-ise_uses_csrf_token"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-system-certificate-module-parameter-ise-uses-csrf-token"><strong>ise_uses_csrf_token</strong></p>
 <a class="ansibleOptionLink" href="#parameter-ise_uses_csrf_token" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 <p><span class="ansible-option-versionadded">added in cisco.ise 3.0.0</span></p>
@@ -695,114 +704,114 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-system-ce
 <p>If it is True, it assumes you need the SDK to manage the CSRF token automatically for you.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id37"><span class="problematic" id="id38">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
-<li><p><a href="#id39"><span class="problematic" id="id40">:ansible-option-choices-entry:`true`</span></a></p></li>
+<li><p><a href="#id39"><span class="problematic" id="id40">:ansible-option-choices-entry-default:`false`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id41"><span class="problematic" id="id42">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-ise_verify"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-system-certificate-module-parameter-ise-verify"><strong>ise_verify</strong></p>
 <a class="ansibleOptionLink" href="#parameter-ise_verify" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Flag to enable or disable SSL certificate verification.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id41"><span class="problematic" id="id42">:ansible-option-choices-entry:`false`</span></a></p></li>
-<li><p><a href="#id43"><span class="problematic" id="id44">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id43"><span class="problematic" id="id44">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id45"><span class="problematic" id="id46">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-ise_version"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-system-certificate-module-parameter-ise-version"><strong>ise_version</strong></p>
 <a class="ansibleOptionLink" href="#parameter-ise_version" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Informs the SDK which version of Identity Services Engine to use.</p>
-<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id45"><span class="problematic" id="id46">:ansible-option-default:`&quot;3.1\_Patch\_1&quot;`</span></a></p>
+<p class="ansible-option-line"><span class="ansible-option-default-bold">Default:</span> <a href="#id47"><span class="problematic" id="id48">:ansible-option-default:`&quot;3.1\_Patch\_1&quot;`</span></a></p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-ise_wait_on_rate_limit"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-system-certificate-module-parameter-ise-wait-on-rate-limit"><strong>ise_wait_on_rate_limit</strong></p>
 <a class="ansibleOptionLink" href="#parameter-ise_wait_on_rate_limit" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Flag for Identity Services Engine SDK to enable automatic rate-limit handling.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id47"><span class="problematic" id="id48">:ansible-option-choices-entry:`false`</span></a></p></li>
-<li><p><a href="#id49"><span class="problematic" id="id50">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
+<li><p><a href="#id49"><span class="problematic" id="id50">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id51"><span class="problematic" id="id52">:ansible-option-choices-entry-default:`true`</span></a> <span class="ansible-option-choices-default-mark">← (default)</span></p></li>
 </ul>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-name"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-system-certificate-module-parameter-name"><strong>name</strong></p>
 <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Name of the certificate.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-portal"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-system-certificate-module-parameter-portal"><strong>portal</strong></p>
 <a class="ansibleOptionLink" href="#parameter-portal" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Use for portal.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id51"><span class="problematic" id="id52">:ansible-option-choices-entry:`false`</span></a></p></li>
-<li><p><a href="#id53"><span class="problematic" id="id54">:ansible-option-choices-entry:`true`</span></a></p></li>
+<li><p><a href="#id53"><span class="problematic" id="id54">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id55"><span class="problematic" id="id56">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-portalGroupTag"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-system-certificate-module-parameter-portalgrouptag"><strong>portalGroupTag</strong></p>
 <a class="ansibleOptionLink" href="#parameter-portalGroupTag" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">string</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Set Group tag.</p>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-pxgrid"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-system-certificate-module-parameter-pxgrid"><strong>pxgrid</strong></p>
 <a class="ansibleOptionLink" href="#parameter-pxgrid" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Use certificate for the pxGrid Controller.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id55"><span class="problematic" id="id56">:ansible-option-choices-entry:`false`</span></a></p></li>
-<li><p><a href="#id57"><span class="problematic" id="id58">:ansible-option-choices-entry:`true`</span></a></p></li>
+<li><p><a href="#id57"><span class="problematic" id="id58">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id59"><span class="problematic" id="id60">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-radius"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-system-certificate-module-parameter-radius"><strong>radius</strong></p>
 <a class="ansibleOptionLink" href="#parameter-radius" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Use certificate for the RADSec server.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id59"><span class="problematic" id="id60">:ansible-option-choices-entry:`false`</span></a></p></li>
-<li><p><a href="#id61"><span class="problematic" id="id62">:ansible-option-choices-entry:`true`</span></a></p></li>
+<li><p><a href="#id61"><span class="problematic" id="id62">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id63"><span class="problematic" id="id64">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
-<tr class="row-even"><td><div class="ansible-option-cell">
+<tr class="row-odd"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-renewSelfSignedCertificate"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-system-certificate-module-parameter-renewselfsignedcertificate"><strong>renewSelfSignedCertificate</strong></p>
 <a class="ansibleOptionLink" href="#parameter-renewSelfSignedCertificate" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Renew Self-signed Certificate.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id63"><span class="problematic" id="id64">:ansible-option-choices-entry:`false`</span></a></p></li>
-<li><p><a href="#id65"><span class="problematic" id="id66">:ansible-option-choices-entry:`true`</span></a></p></li>
+<li><p><a href="#id65"><span class="problematic" id="id66">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id67"><span class="problematic" id="id68">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
-<tr class="row-odd"><td><div class="ansible-option-cell">
+<tr class="row-even"><td><div class="ansible-option-cell">
 <div class="ansibleOptionAnchor" id="parameter-saml"></div><p class="ansible-option-title" id="ansible-collections-cisco-ise-system-certificate-module-parameter-saml"><strong>saml</strong></p>
 <a class="ansibleOptionLink" href="#parameter-saml" title="Permalink to this option"></a><p class="ansible-option-type-line"><span class="ansible-option-type">boolean</span></p>
 </div></td>
 <td><div class="ansible-option-cell"><p>Use certificate for SAML Signing.</p>
 <p class="ansible-option-line"><span class="ansible-option-choices">Choices:</span></p>
 <ul class="simple">
-<li><p><a href="#id67"><span class="problematic" id="id68">:ansible-option-choices-entry:`false`</span></a></p></li>
-<li><p><a href="#id69"><span class="problematic" id="id70">:ansible-option-choices-entry:`true`</span></a></p></li>
+<li><p><a href="#id69"><span class="problematic" id="id70">:ansible-option-choices-entry:`false`</span></a></p></li>
+<li><p><a href="#id71"><span class="problematic" id="id72">:ansible-option-choices-entry:`true`</span></a></p></li>
 </ul>
 </div></td>
 </tr>
@@ -810,7 +819,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-system-ce
 </table>
 </section>
 <section id="notes">
-<h2><a class="toc-backref" href="#id78" role="doc-backlink">Notes</a><a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id80" role="doc-backlink">Notes</a><a class="headerlink" href="#notes" title="Permalink to this heading"></a></h2>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <ul class="simple">
@@ -823,7 +832,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-system-ce
 </div>
 </section>
 <section id="see-also">
-<h2><a class="toc-backref" href="#id79" role="doc-backlink">See Also</a><a class="headerlink" href="#see-also" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id81" role="doc-backlink">See Also</a><a class="headerlink" href="#see-also" title="Permalink to this heading"></a></h2>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <dl class="simple">
@@ -833,7 +842,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-system-ce
 </div>
 </section>
 <section id="examples">
-<h2><a class="toc-backref" href="#id80" role="doc-backlink">Examples</a><a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id82" role="doc-backlink">Examples</a><a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
 <div class="highlight-yaml+jinja notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Update by id</span>
 <span class="w">  </span><span class="nt">cisco.ise.system_certificate</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">ise_hostname</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;</span><span class="cp">{{</span><span class="nv">ise_hostname</span><span class="cp">}}</span><span class="s">&quot;</span>
@@ -874,7 +883,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-system-ce
 </div>
 </section>
 <section id="return-values">
-<h2><a class="toc-backref" href="#id81" role="doc-backlink">Return Values</a><a class="headerlink" href="#return-values" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id83" role="doc-backlink">Return Values</a><a class="headerlink" href="#return-values" title="Permalink to this heading"></a></h2>
 <p>Common return values are documented <a class="reference external" href="https://docs.ansible.com/ansible/latest/reference_appendices/common_return_values.html#common-return-values" title="(in Ansible v8)"><span class="xref std std-ref">here</span></a>, the following are the fields unique to this module:</p>
 <table class="ansible-option-table docutils align-default" style="width: 100%">
 <thead>
@@ -889,7 +898,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-system-ce
 </div></td>
 <td><div class="ansible-option-cell"><p>A dictionary or list with the response returned by the Cisco ISE Python SDK</p>
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> always</p>
-<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id71"><span class="problematic" id="id72">:ansible-rv-sample-value:`{&quot;expirationDate&quot;: &quot;string&quot;, &quot;friendlyName&quot;: &quot;string&quot;, &quot;groupTag&quot;: &quot;string&quot;, &quot;id&quot;: &quot;string&quot;, &quot;issuedBy&quot;: &quot;string&quot;, &quot;issuedTo&quot;: &quot;string&quot;, &quot;keySize&quot;: 0, &quot;link&quot;: {&quot;href&quot;: &quot;string&quot;, &quot;rel&quot;: &quot;string&quot;, &quot;type&quot;: &quot;string&quot;}, &quot;portalsUsingTheTag&quot;: &quot;string&quot;, &quot;selfSigned&quot;: true, &quot;serialNumberDecimalFormat&quot;: &quot;string&quot;, &quot;sha256Fingerprint&quot;: &quot;string&quot;, &quot;signatureAlgorithm&quot;: &quot;string&quot;, &quot;usedBy&quot;: &quot;string&quot;, &quot;validFrom&quot;: &quot;string&quot;}`</span></a></p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id73"><span class="problematic" id="id74">:ansible-rv-sample-value:`{&quot;expirationDate&quot;: &quot;string&quot;, &quot;friendlyName&quot;: &quot;string&quot;, &quot;groupTag&quot;: &quot;string&quot;, &quot;id&quot;: &quot;string&quot;, &quot;issuedBy&quot;: &quot;string&quot;, &quot;issuedTo&quot;: &quot;string&quot;, &quot;keySize&quot;: 0, &quot;link&quot;: {&quot;href&quot;: &quot;string&quot;, &quot;rel&quot;: &quot;string&quot;, &quot;type&quot;: &quot;string&quot;}, &quot;portalsUsingTheTag&quot;: &quot;string&quot;, &quot;selfSigned&quot;: true, &quot;serialNumberDecimalFormat&quot;: &quot;string&quot;, &quot;sha256Fingerprint&quot;: &quot;string&quot;, &quot;signatureAlgorithm&quot;: &quot;string&quot;, &quot;usedBy&quot;: &quot;string&quot;, &quot;validFrom&quot;: &quot;string&quot;}`</span></a></p>
 </div></td>
 </tr>
 <tr class="row-odd"><td><div class="ansible-option-cell">
@@ -899,7 +908,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-system-ce
 </div></td>
 <td><div class="ansible-option-cell"><p>A dictionary or list with the response returned by the Cisco ISE Python SDK</p>
 <p class="ansible-option-line"><span class="ansible-option-returned-bold">Returned:</span> always</p>
-<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id73"><span class="problematic" id="id74">:ansible-rv-sample-value:`{&quot;response&quot;: {&quot;id&quot;: &quot;string&quot;, &quot;link&quot;: {&quot;href&quot;: &quot;string&quot;, &quot;rel&quot;: &quot;string&quot;, &quot;type&quot;: &quot;string&quot;}, &quot;message&quot;: &quot;string&quot;, &quot;status&quot;: &quot;string&quot;}, &quot;version&quot;: &quot;string&quot;}`</span></a></p>
+<p class="ansible-option-line ansible-option-sample"><span class="ansible-option-sample-bold">Sample:</span> <a href="#id75"><span class="problematic" id="id76">:ansible-rv-sample-value:`{&quot;response&quot;: {&quot;id&quot;: &quot;string&quot;, &quot;link&quot;: {&quot;href&quot;: &quot;string&quot;, &quot;rel&quot;: &quot;string&quot;, &quot;type&quot;: &quot;string&quot;}, &quot;message&quot;: &quot;string&quot;, &quot;status&quot;: &quot;string&quot;}, &quot;version&quot;: &quot;string&quot;}`</span></a></p>
 </div></td>
 </tr>
 </tbody>

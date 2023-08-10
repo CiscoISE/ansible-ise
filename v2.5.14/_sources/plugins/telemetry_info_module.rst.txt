@@ -42,7 +42,7 @@ cisco.ise.telemetry_info module -- Information module for Telemetry Info
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.12).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.14).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -341,6 +341,47 @@ Parameters
 
       The Identity Services Engine password to authenticate.
 
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_single_request_timeout"></div>
+
+      .. _ansible_collections.cisco.ise.telemetry_info_module__parameter-ise_single_request_timeout:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_single_request_timeout**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_single_request_timeout" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      :ansible-option-versionadded:`added in cisco.ise 3.0.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Timeout (in seconds) for RESTful HTTP requests.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
 
       .. raw:: html
 
