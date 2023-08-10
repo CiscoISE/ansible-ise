@@ -929,3 +929,9 @@ releases:
         - Cannot get cisco.ise.rest_id_store to work fixed.
         - System Certificate Update does not work but always reports Object already present temporary solution.
         - node_deployment tasks fail because of timeout, adding new collection param. 
+  2.5.14:
+    release_date: "2023-08-10"
+    changes:
+      release_summary: support for none value.
+      bugfixes:
+        - system_certificate - added support for none value in the used_by param.
