@@ -935,3 +935,9 @@ releases:
       release_summary: support for none value.
       bugfixes:
         - system_certificate - added support for none value in the used_by param.
+  2.5.15:
+    release_date: "2023-08-16"
+    changes:
+      release_summary: Fixed get_object_by_id.
+      bugfixes:
+        - system_certificate - fixed get_object_by_id response.
