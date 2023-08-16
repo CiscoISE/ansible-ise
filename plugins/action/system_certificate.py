@@ -121,7 +121,7 @@ class SystemCertificate(object):
                 function="get_system_certificate_by_id",
                 params={"id": id, "host_name": host_name},
                 handle_func_exception=False,
-            ).response
+            ).response['response']
         except Exception as e:
             result = None
         return result
