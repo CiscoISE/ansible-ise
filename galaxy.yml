@@ -1,7 +1,7 @@
 ---
 namespace: cisco
 name: ise
-version: 2.5.14
+version: 2.5.15
 readme: README.md
 authors:
   - Rafael Campos <rcampos@altus.cr>
