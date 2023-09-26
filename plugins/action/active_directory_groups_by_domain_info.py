@@ -80,15 +80,12 @@ class ActionModule(ActionBase):
         self._result.update(dict(ise_response={}))
 
         ise = ISESDK(params=self._task.args)
-
-        id = self._task.args.get("id")
-        name = self._task.args.get("name")
-        if not name and not id:
-            response = ise.exec(
-                family="active_directory",
-                function='get_groups_by_domain',
-                params=self.get_object(self._task.args)
-            ).response['ERSActiveDirectoryGroups']
-            self._result.update(dict(ise_response=response))
-            self._result.update(ise.exit_json())
-            return self._result
+        response = ise.exec(
+            family="active_directory",
+            function='get_groups_by_domain',
+            params=self.get_object(self._task.args)
+        ).response['ERSActiveDirectoryGroups']
+        
+        self._result.update(dict(ise_response=response))
+        self._result.update(ise.exit_json())
+        return self._result

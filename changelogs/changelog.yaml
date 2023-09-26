@@ -941,3 +941,9 @@ releases:
       release_summary: Fixed get_object_by_id.
       bugfixes:
         - system_certificate - fixed get_object_by_id response.
+  2.5.16:
+    release_date: "2023-09-26"
+    changes:
+      release_summary: Fixed active_directory_groups_by_domain_Info.
+      bugfixes:
+        - Cannot get cisco.ise.active_directory_groups_by_domain_info to work.
