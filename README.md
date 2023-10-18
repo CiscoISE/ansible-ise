@@ -50,7 +50,7 @@ The following table shows the supported versions.
 | Cisco ISE version | Ansible "cisco.ise" version  | Python "ciscoisesdk" version |
 |-------------------|------------------------------|------------------------------|
 | 3.1.0             | 2.0.0                        | 1.2.0                        |
-| 3.1_Patch_1       | 2.5.15                       | 2.0.10                       |
+| 3.1_Patch_1       | 2.5.16                       | 2.0.10                       |
 
 If your Ansible collection is older please consider updating it first.
 *Notes*:
