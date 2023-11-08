@@ -64,17 +64,17 @@ options:
         type: str
     type: dict
   macAddrList:
-    description: <p>This field should contain Endstation MAC address, comma, and
-      Destination MAC addresses.<br> Each Max address must include twelve hexadecimal
-      digits using formats nn nn nn nn nn nn or nn-nn-nn-nn-nn-nn or nnnn.nnnn.nnnn
-      or nnnnnnnnnnnn.<br> Line format - Endstation MAC,Destination MAC </p>.
+    description: <p>This field should contain Endstation MAC address, comma, and Destination
+      MAC addresses.<br> Each Max address must include twelve hexadecimal digits using
+      formats nn nn nn nn nn nn or nn-nn-nn-nn-nn-nn or nnnn.nnnn.nnnn or nnnnnnnnnnnn.<br>
+      Line format - Endstation MAC,Destination MAC </p>.
     elements: str
     type: list
   name:
     description: Network Condition name.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.8
+- ciscoisesdk >= 2.1.0
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for Network Access - Network Conditions

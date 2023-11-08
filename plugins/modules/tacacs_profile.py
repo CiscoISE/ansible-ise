@@ -46,7 +46,7 @@ options:
         type: list
     type: dict
 requirements:
-- ciscoisesdk >= 2.0.8
+- ciscoisesdk >= 2.1.0
 - python >= 3.5
 notes:
   - SDK Method used are

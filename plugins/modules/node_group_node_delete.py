@@ -23,7 +23,7 @@ options:
     description: NodeGroupName path parameter. Name of the existing node group.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.8
+- ciscoisesdk >= 2.1.0
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for Node Group

@@ -39,7 +39,7 @@ This collection assumes that the API Gateway, the ERS APIs and OpenAPIs are enab
 
 ### Using the collection on previous Cisco ISE versions 
 
-As stated before, the collection has been tested and supports Cisco ISE 3.1_Patch_1.
+As stated before, the collection has been tested and supports Cisco ISE 3.2_beta.
 
 It may work with Cisco ISE version 3.0, but it is not officially supported.
 
@@ -51,6 +51,7 @@ The following table shows the supported versions.
 |-------------------|------------------------------|------------------------------|
 | 3.1.0             | 2.0.0                        | 1.2.0                        |
 | 3.1_Patch_1       | 2.5.16                       | 2.0.10                       |
+| 3.2_beta          | 2.6.0                        | 2.1.0                        |
 
 If your Ansible collection is older please consider updating it first.
 *Notes*:
@@ -87,7 +88,7 @@ export ISE_HOSTNAME=<A.B.C.D>
 export ISE_USERNAME=<username>
 export ISE_PASSWORD=<password>
 export ISE_VERIFY=False # optional, defaults to True
-export ISE_VERSION=3.1_Patch_1 # optional, defaults to 3.1_Patch_1
+export ISE_VERSION=3.2_beta # optional, defaults to 3.2_beta
 export ISE_WAIT_ON_RATE_LIMIT=True # optional, defaults to True
 export ISE_USES_API_GATEWAY=True # optional, defaults to True
 export ISE_DEBUG=False # optional, defaults to False
@@ -124,7 +125,7 @@ ise_hostname: <A.B.C.D>
 ise_username: <username>
 ise_password: <password>
 ise_verify: False # optional, defaults to True
-ise_version: 3.1_Patch_1 # optional, defaults to 3.1_Patch_1
+ise_version: 3.2_beta # optional, defaults to 3.2_beta
 ise_wait_on_rate_limit: True # optional, defaults to True
 ise_debug: False # optional, defaults to False
 ise_uses_api_gateway: True # optional, defaults to True
@@ -174,7 +175,7 @@ ise_hostname: <A.B.C.D>
 ise_username: <username>
 ise_password: <password>
 ise_verify: False # optional, defaults to True
-ise_version: 3.1_Patch_1 # optional, defaults to 3.1_Patch_1
+ise_version: 3.2_beta # optional, defaults to 3.2_beta
 ise_wait_on_rate_limit: True # optional, defaults to True
 ise_debug: False # optional, defaults to False
 ise_uses_api_gateway: True # optional, defaults to True
