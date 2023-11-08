@@ -42,7 +42,7 @@ cisco.ise.device_administration_global_exception_rules module -- Resource module
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.16).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.6.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -87,7 +87,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk \>= 2.0.8
+- ciscoisesdk \>= 2.1.0
 - python \>= 3.5
 
 
@@ -825,6 +825,40 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-rule/condition/attributeId"></div>
+
+      .. _ansible_collections.cisco.ise.device_administration_global_exception_rules_module__parameter-rule/condition/attributeid:
+
+      .. rst-class:: ansible-option-title
+
+      **attributeId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-rule/condition/attributeId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Dictionary attribute id (Optional), used for additional verification.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-rule/condition/attributeName"></div>
 
       .. _ansible_collections.cisco.ise.device_administration_global_exception_rules_module__parameter-rule/condition/attributename:
@@ -1199,7 +1233,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      \<p\>Defines for which date/s TimeAndDate condition will be matched\<br\> Options are - Date range, for specific date, the same date should be used for start/end date \<br\> Default - no specific dates\<br\> In order to reset the dates to have no specific dates Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)\</p\>.
+      \<p\>Defines for which date/s TimeAndDate condition will be matched or NOT matched if used in exceptionDates prooperty\<br\> Options are - Date range, for specific date, the same date should be used for start/end date \<br\> Default - no specific dates\<br\> In order to reset the dates to have no specific dates Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)\</p\>.
 
 
       .. raw:: html
@@ -1302,7 +1336,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      \<p\>Defines for which date/s TimeAndDate condition will be matched\<br\> Options are - Date range, for specific date, the same date should be used for start/end date \<br\> Default - no specific dates\<br\> In order to reset the dates to have no specific dates Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)\</p\>.
+      \<p\>Defines for which date/s TimeAndDate condition will be matched or NOT matched if used in exceptionDates prooperty\<br\> Options are - Date range, for specific date, the same date should be used for start/end date \<br\> Default - no specific dates\<br\> In order to reset the dates to have no specific dates Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)\</p\>.
 
 
       .. raw:: html
@@ -1507,7 +1541,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      \<p\>Defines for which hours a TimeAndDate condition will be matched\<br\> Time format - hh mm ( h = hour , mm = minutes ) \<br\> Default - All Day \</p\>.
+      \<p\>Defines for which hours a TimeAndDate condition will be matched or not matched if used in exceptionHours property\<br\> Time foramt - hh mm ( h = hour , mm = minutes ) \<br\> Default - All Day \</p\>.
 
 
       .. raw:: html
@@ -1610,7 +1644,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      \<p\>Defines for which hours a TimeAndDate condition will be matched\<br\> Time format - hh mm ( h = hour , mm = minutes ) \<br\> Default - All Day \</p\>.
+      \<p\>Defines for which hours a TimeAndDate condition will be matched or not matched if used in exceptionHours property\<br\> Time foramt - hh mm ( h = hour , mm = minutes ) \<br\> Default - All Day \</p\>.
 
 
       .. raw:: html
@@ -2299,6 +2333,7 @@ Examples
         profile: string
         rule:
           condition:
+            attributeId: string
             attributeName: string
             attributeValue: string
             children:
@@ -2360,6 +2395,7 @@ Examples
         profile: string
         rule:
           condition:
+            attributeId: string
             attributeName: string
             attributeValue: string
             children:
@@ -2473,7 +2509,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"commands": ["string"], "link": {"href": "string", "rel": "string", "type": "string"}, "profile": "string", "rule": {"condition": {"attributeName": "string", "attributeValue": "string", "children": [{"conditionType": "string", "isNegate": true, "link": {"href": "string", "rel": "string", "type": "string"}}], "conditionType": "string", "datesRange": {"endDate": "string", "startDate": "string"}, "datesRangeException": {"endDate": "string", "startDate": "string"}, "description": "string", "dictionaryName": "string", "dictionaryValue": "string", "hoursRange": {"endTime": "string", "startTime": "string"}, "hoursRangeException": {"endTime": "string", "startTime": "string"}, "id": "string", "isNegate": true, "link": {"href": "string", "rel": "string", "type": "string"}, "name": "string", "operator": "string", "weekDays": ["string"], "weekDaysException": ["string"]}, "default": true, "hitCounts": 0, "id": "string", "name": "string", "rank": 0, "state": "string"}}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"commands": ["string"], "link": {"href": "string", "rel": "string", "type": "string"}, "profile": "string", "rule": {"condition": {"attributeId": "string", "attributeName": "string", "attributeValue": "string", "children": [{"conditionType": "string", "isNegate": true, "link": {"href": "string", "rel": "string", "type": "string"}}], "conditionType": "string", "datesRange": {"endDate": "string", "startDate": "string"}, "datesRangeException": {"endDate": "string", "startDate": "string"}, "description": "string", "dictionaryName": "string", "dictionaryValue": "string", "hoursRange": {"endTime": "string", "startTime": "string"}, "hoursRangeException": {"endTime": "string", "startTime": "string"}, "id": "string", "isNegate": true, "link": {"href": "string", "rel": "string", "type": "string"}, "name": "string", "operator": "string", "weekDays": ["string"], "weekDaysException": ["string"]}, "default": true, "hitCounts": 0, "id": "string", "name": "string", "rank": 0, "state": "string"}}`
 
 
       .. raw:: html
@@ -2521,7 +2557,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"response": {"commands": ["string"], "link": {"href": "string", "rel": "string", "type": "string"}, "profile": "string", "rule": {"condition": {"attributeName": "string", "attributeValue": "string", "children": [{"conditionType": "string", "isNegate": true, "link": {"href": "string", "rel": "string", "type": "string"}}], "conditionType": "string", "datesRange": {"endDate": "string", "startDate": "string"}, "datesRangeException": {"endDate": "string", "startDate": "string"}, "description": "string", "dictionaryName": "string", "dictionaryValue": "string", "hoursRange": {"endTime": "string", "startTime": "string"}, "hoursRangeException": {"endTime": "string", "startTime": "string"}, "id": "string", "isNegate": true, "link": {"href": "string", "rel": "string", "type": "string"}, "name": "string", "operator": "string", "weekDays": ["string"], "weekDaysException": ["string"]}, "default": true, "hitCounts": 0, "id": "string", "name": "string", "rank": 0, "state": "string"}}, "version": "string"}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"response": {"commands": ["string"], "link": {"href": "string", "rel": "string", "type": "string"}, "profile": "string", "rule": {"condition": {"attributeId": "string", "attributeName": "string", "attributeValue": "string", "children": [{"conditionType": "string", "isNegate": true, "link": {"href": "string", "rel": "string", "type": "string"}}], "conditionType": "string", "datesRange": {"endDate": "string", "startDate": "string"}, "datesRangeException": {"endDate": "string", "startDate": "string"}, "description": "string", "dictionaryName": "string", "dictionaryValue": "string", "hoursRange": {"endTime": "string", "startTime": "string"}, "hoursRangeException": {"endTime": "string", "startTime": "string"}, "id": "string", "isNegate": true, "link": {"href": "string", "rel": "string", "type": "string"}, "name": "string", "operator": "string", "weekDays": ["string"], "weekDaysException": ["string"]}, "default": true, "hitCounts": 0, "id": "string", "name": "string", "rank": 0, "state": "string"}}, "version": "string"}`
 
 
       .. raw:: html

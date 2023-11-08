@@ -42,7 +42,7 @@ cisco.ise.network_access_conditions_for_authentication_rule_info module -- Infor
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.5.16).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.6.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -85,7 +85,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk \>= 2.0.8
+- ciscoisesdk \>= 2.1.0
 - python \>= 3.5
 
 
@@ -615,7 +615,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"conditionType\\": \\"string\\",\\n    \\"isNegate\\": true,\\n    \\"link\\": {\\n      \\"href\\": \\"string\\",\\n      \\"rel\\": \\"string\\",\\n      \\"type\\": \\"string\\"\\n    },\\n    \\"description\\": \\"string\\",\\n    \\"id\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"attributeName\\": \\"string\\",\\n    \\"attributeValue\\": \\"string\\",\\n    \\"dictionaryName\\": \\"string\\",\\n    \\"dictionaryValue\\": \\"string\\",\\n    \\"operator\\": \\"string\\",\\n    \\"children\\": [\\n      {\\n        \\"conditionType\\": \\"string\\",\\n        \\"isNegate\\": true,\\n        \\"link\\": {\\n          \\"href\\": \\"string\\",\\n          \\"rel\\": \\"string\\",\\n          \\"type\\": \\"string\\"\\n        }\\n      }\\n    ],\\n    \\"datesRange\\": {\\n      \\"endDate\\": \\"string\\",\\n      \\"startDate\\": \\"string\\"\\n    },\\n    \\"datesRangeException\\": {\\n      \\"endDate\\": \\"string\\",\\n      \\"startDate\\": \\"string\\"\\n    },\\n    \\"hoursRange\\": {\\n      \\"endTime\\": \\"string\\",\\n      \\"startTime\\": \\"string\\"\\n    },\\n    \\"hoursRangeException\\": {\\n      \\"endTime\\": \\"string\\",\\n      \\"startTime\\": \\"string\\"\\n    },\\n    \\"weekDays\\": [\\n      \\"string\\"\\n    ],\\n    \\"weekDaysException\\": [\\n      \\"string\\"\\n    ]\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"conditionType\\": \\"string\\",\\n    \\"isNegate\\": true,\\n    \\"link\\": {\\n      \\"href\\": \\"string\\",\\n      \\"rel\\": \\"string\\",\\n      \\"type\\": \\"string\\"\\n    },\\n    \\"description\\": \\"string\\",\\n    \\"id\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"attributeName\\": \\"string\\",\\n    \\"attributeId\\": \\"string\\",\\n    \\"attributeValue\\": \\"string\\",\\n    \\"dictionaryName\\": \\"string\\",\\n    \\"dictionaryValue\\": \\"string\\",\\n    \\"operator\\": \\"string\\",\\n    \\"children\\": [\\n      {\\n        \\"conditionType\\": \\"string\\",\\n        \\"isNegate\\": true,\\n        \\"link\\": {\\n          \\"href\\": \\"string\\",\\n          \\"rel\\": \\"string\\",\\n          \\"type\\": \\"string\\"\\n        }\\n      }\\n    ],\\n    \\"datesRange\\": {\\n      \\"endDate\\": \\"string\\",\\n      \\"startDate\\": \\"string\\"\\n    },\\n    \\"datesRangeException\\": {\\n      \\"endDate\\": \\"string\\",\\n      \\"startDate\\": \\"string\\"\\n    },\\n    \\"hoursRange\\": {\\n      \\"endTime\\": \\"string\\",\\n      \\"startTime\\": \\"string\\"\\n    },\\n    \\"hoursRangeException\\": {\\n      \\"endTime\\": \\"string\\",\\n      \\"startTime\\": \\"string\\"\\n    },\\n    \\"weekDays\\": [\\n      \\"string\\"\\n    ],\\n    \\"weekDaysException\\": [\\n      \\"string\\"\\n    ]\\n  }\\n]\\n"`
 
 
       .. raw:: html

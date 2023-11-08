@@ -6,7 +6,7 @@
 Cisco.Ise
 =========
 
-Collection version 2.5.16
+Collection version 2.6.0
 
 .. contents::
    :local:
@@ -55,7 +55,7 @@ Modules
 * :ref:`aci_test_connectivity module <ansible_collections.cisco.ise.aci_test_connectivity_module>` -- Resource module for ACI Test Connectivity
 * :ref:`active_directory module <ansible_collections.cisco.ise.active_directory_module>` -- Resource module for Active Directory
 * :ref:`active_directory_add_groups module <ansible_collections.cisco.ise.active_directory_add_groups_module>` -- Resource module for Active Directory Add Groups
-* :ref:`active_directory_groups_by_domain_info module <ansible_collections.cisco.ise.active_directory_groups_by_domain_info_module>` -- Information module for Active Directory Groups By Domain
+* :ref:`active_directory_groups_by_domain_info module <ansible_collections.cisco.ise.active_directory_groups_by_domain_info_module>` -- 
 * :ref:`active_directory_info module <ansible_collections.cisco.ise.active_directory_info_module>` -- Information module for Active Directory
 * :ref:`active_directory_is_user_member_of_group_info module <ansible_collections.cisco.ise.active_directory_is_user_member_of_group_info_module>` -- Information module for Active Directory Is User Member Of Group
 * :ref:`active_directory_join_domain module <ansible_collections.cisco.ise.active_directory_join_domain_module>` -- Resource module for Active Directory Join Domain
@@ -90,11 +90,20 @@ Modules
 * :ref:`certificate_profile module <ansible_collections.cisco.ise.certificate_profile_module>` -- Resource module for Certificate Profile
 * :ref:`certificate_profile_info module <ansible_collections.cisco.ise.certificate_profile_info_module>` -- Information module for Certificate Profile
 * :ref:`certificate_template_info module <ansible_collections.cisco.ise.certificate_template_info_module>` -- Information module for Certificate Template
+* :ref:`configuration module <ansible_collections.cisco.ise.configuration_module>` -- Resource module for Configuration
+* :ref:`configuration_info module <ansible_collections.cisco.ise.configuration_info_module>` -- Information module for Configuration
+* :ref:`connector_config module <ansible_collections.cisco.ise.connector_config_module>` -- Resource module for Connector Config
+* :ref:`connector_config_info module <ansible_collections.cisco.ise.connector_config_info_module>` -- Information module for Connector Config
 * :ref:`csr_delete module <ansible_collections.cisco.ise.csr_delete_module>` -- Resource module for CSR Delete
 * :ref:`csr_export_info module <ansible_collections.cisco.ise.csr_export_info_module>` -- Information module for CSR Export
 * :ref:`csr_generate module <ansible_collections.cisco.ise.csr_generate_module>` -- Resource module for CSR Generate
 * :ref:`csr_generate_intermediate_ca module <ansible_collections.cisco.ise.csr_generate_intermediate_ca_module>` -- Resource module for CSR Generate Intermediate CA
 * :ref:`csr_info module <ansible_collections.cisco.ise.csr_info_module>` -- Information module for CSR
+* :ref:`dataconnect_info module <ansible_collections.cisco.ise.dataconnect_info_module>` -- Information module for Dataconnect Info
+* :ref:`dataconnect_settings_info module <ansible_collections.cisco.ise.dataconnect_settings_info_module>` -- Information module for Dataconnect Settings
+* :ref:`dataconnect_settings_password module <ansible_collections.cisco.ise.dataconnect_settings_password_module>` -- Resource module for Dataconnect Settings Password
+* :ref:`dataconnect_settings_password_expiry module <ansible_collections.cisco.ise.dataconnect_settings_password_expiry_module>` -- Resource module for Dataconnect Settings Password Expiry
+* :ref:`dataconnect_settings_status module <ansible_collections.cisco.ise.dataconnect_settings_status_module>` -- Resource module for Dataconnect Settings Status
 * :ref:`deployment_info module <ansible_collections.cisco.ise.deployment_info_module>` -- Information module for Deployment
 * :ref:`device_administration_authentication_reset_hitcount module <ansible_collections.cisco.ise.device_administration_authentication_reset_hitcount_module>` -- Resource module for Device Administration Authentication Reset Hitcount
 * :ref:`device_administration_authentication_rules module <ansible_collections.cisco.ise.device_administration_authentication_rules_module>` -- Resource module for Device Administration Authentication Rules
@@ -127,6 +136,7 @@ Modules
 * :ref:`device_administration_service_names_info module <ansible_collections.cisco.ise.device_administration_service_names_info_module>` -- Information module for Device Administration Service Names
 * :ref:`device_administration_time_date_conditions module <ansible_collections.cisco.ise.device_administration_time_date_conditions_module>` -- Resource module for Device Administration Time Date Conditions
 * :ref:`device_administration_time_date_conditions_info module <ansible_collections.cisco.ise.device_administration_time_date_conditions_info_module>` -- Information module for Device Administration Time Date Conditions
+* :ref:`dictionary_references_info module <ansible_collections.cisco.ise.dictionary_references_info_module>` -- Information module for Dictionary References Info
 * :ref:`downloadable_acl module <ansible_collections.cisco.ise.downloadable_acl_module>` -- Resource module for Downloadable ACL
 * :ref:`downloadable_acl_info module <ansible_collections.cisco.ise.downloadable_acl_info_module>` -- Information module for Downloadable ACL
 * :ref:`egress_matrix_cell module <ansible_collections.cisco.ise.egress_matrix_cell_module>` -- Resource module for Egress Matrix Cell
@@ -377,6 +387,10 @@ Modules
 * :ref:`sponsor_portal_info module <ansible_collections.cisco.ise.sponsor_portal_info_module>` -- Information module for Sponsor Portal
 * :ref:`sponsored_guest_portal module <ansible_collections.cisco.ise.sponsored_guest_portal_module>` -- Resource module for Sponsored Guest Portal
 * :ref:`sponsored_guest_portal_info module <ansible_collections.cisco.ise.sponsored_guest_portal_info_module>` -- Information module for Sponsored Guest Portal
+* :ref:`subscriber module <ansible_collections.cisco.ise.subscriber_module>` -- Resource module for Subscriber
+* :ref:`subscriber_bulk module <ansible_collections.cisco.ise.subscriber_bulk_module>` -- Resource module for Subscriber Bulk
+* :ref:`subscriber_imsi_info module <ansible_collections.cisco.ise.subscriber_imsi_info_module>` -- Information module for Subscriber Imsi Info
+* :ref:`subscriber_info module <ansible_collections.cisco.ise.subscriber_info_module>` -- Information module for Subscriber
 * :ref:`support_bundle module <ansible_collections.cisco.ise.support_bundle_module>` -- Resource module for Support Bundle
 * :ref:`support_bundle_download module <ansible_collections.cisco.ise.support_bundle_download_module>` -- Resource module for Support Bundle Download
 * :ref:`support_bundle_status_info module <ansible_collections.cisco.ise.support_bundle_status_info_module>` -- Information module for Support Bundle Status
@@ -408,6 +422,7 @@ Modules
 * :ref:`tacacs_server_sequence_info module <ansible_collections.cisco.ise.tacacs_server_sequence_info_module>` -- Information module for TACACS Server Sequence
 * :ref:`tasks_info module <ansible_collections.cisco.ise.tasks_info_module>` -- Information module for Tasks
 * :ref:`telemetry_info module <ansible_collections.cisco.ise.telemetry_info_module>` -- Information module for Telemetry Info
+* :ref:`test_connector module <ansible_collections.cisco.ise.test_connector_module>` -- Resource module for Test Connector
 * :ref:`threat_vulnerabilities_clear module <ansible_collections.cisco.ise.threat_vulnerabilities_clear_module>` -- Resource module for Threat Vulnerabilities Clear
 * :ref:`transport_gateway_settings module <ansible_collections.cisco.ise.transport_gateway_settings_module>` -- Resource module for Transport Gateway Settings
 * :ref:`transport_gateway_settings_info module <ansible_collections.cisco.ise.transport_gateway_settings_info_module>` -- Information module for Transport Gateway Settings
@@ -415,23 +430,6 @@ Modules
 * :ref:`trusted_certificate_export_info module <ansible_collections.cisco.ise.trusted_certificate_export_info_module>` -- Information module for Trusted Certificate Export
 * :ref:`trusted_certificate_import module <ansible_collections.cisco.ise.trusted_certificate_import_module>` -- Resource module for Trusted Certificate Import
 * :ref:`trusted_certificate_info module <ansible_collections.cisco.ise.trusted_certificate_info_module>` -- Information module for Trusted Certificate
-* :ref:`trustsec_nbar_app module <ansible_collections.cisco.ise.trustsec_nbar_app_module>` -- Resource module for Trustsec NBAR App
-* :ref:`trustsec_nbar_app_info module <ansible_collections.cisco.ise.trustsec_nbar_app_info_module>` -- Information module for Trustsec NBAR App
-* :ref:`trustsec_sg_vn_mapping module <ansible_collections.cisco.ise.trustsec_sg_vn_mapping_module>` -- Resource module for Trustsec SG VN Mapping
-* :ref:`trustsec_sg_vn_mapping_bulk_create module <ansible_collections.cisco.ise.trustsec_sg_vn_mapping_bulk_create_module>` -- Resource module for Trustsec SG VN Mapping Bulk Create
-* :ref:`trustsec_sg_vn_mapping_bulk_delete module <ansible_collections.cisco.ise.trustsec_sg_vn_mapping_bulk_delete_module>` -- Resource module for Trustsec SG VN Mapping Bulk Delete
-* :ref:`trustsec_sg_vn_mapping_bulk_update module <ansible_collections.cisco.ise.trustsec_sg_vn_mapping_bulk_update_module>` -- Resource module for Trustsec SG VN Mapping Bulk Update
-* :ref:`trustsec_sg_vn_mapping_info module <ansible_collections.cisco.ise.trustsec_sg_vn_mapping_info_module>` -- Information module for Trustsec SG VN Mapping
-* :ref:`trustsec_vn module <ansible_collections.cisco.ise.trustsec_vn_module>` -- Resource module for Trustsec VN
-* :ref:`trustsec_vn_bulk_create module <ansible_collections.cisco.ise.trustsec_vn_bulk_create_module>` -- Resource module for Trustsec VN Bulk Create
-* :ref:`trustsec_vn_bulk_delete module <ansible_collections.cisco.ise.trustsec_vn_bulk_delete_module>` -- Resource module for Trustsec VN Bulk Delete
-* :ref:`trustsec_vn_bulk_update module <ansible_collections.cisco.ise.trustsec_vn_bulk_update_module>` -- Resource module for Trustsec VN Bulk Update
-* :ref:`trustsec_vn_info module <ansible_collections.cisco.ise.trustsec_vn_info_module>` -- Information module for Trustsec VN
-* :ref:`trustsec_vn_vlan_mapping module <ansible_collections.cisco.ise.trustsec_vn_vlan_mapping_module>` -- Resource module for Trustsec VN VLAN Mapping
-* :ref:`trustsec_vn_vlan_mapping_bulk_create module <ansible_collections.cisco.ise.trustsec_vn_vlan_mapping_bulk_create_module>` -- Resource module for Trustsec VN VLAN Mapping Bulk Create
-* :ref:`trustsec_vn_vlan_mapping_bulk_delete module <ansible_collections.cisco.ise.trustsec_vn_vlan_mapping_bulk_delete_module>` -- Resource module for Trustsec VN VLAN Mapping Bulk Delete
-* :ref:`trustsec_vn_vlan_mapping_bulk_update module <ansible_collections.cisco.ise.trustsec_vn_vlan_mapping_bulk_update_module>` -- Resource module for Trustsec VN VLAN Mapping Bulk Update
-* :ref:`trustsec_vn_vlan_mapping_info module <ansible_collections.cisco.ise.trustsec_vn_vlan_mapping_info_module>` -- Information module for Trustsec VN VLAN Mapping
 
 .. toctree::
     :maxdepth: 1
@@ -478,11 +476,20 @@ Modules
     certificate_profile_module
     certificate_profile_info_module
     certificate_template_info_module
+    configuration_module
+    configuration_info_module
+    connector_config_module
+    connector_config_info_module
     csr_delete_module
     csr_export_info_module
     csr_generate_module
     csr_generate_intermediate_ca_module
     csr_info_module
+    dataconnect_info_module
+    dataconnect_settings_info_module
+    dataconnect_settings_password_module
+    dataconnect_settings_password_expiry_module
+    dataconnect_settings_status_module
     deployment_info_module
     device_administration_authentication_reset_hitcount_module
     device_administration_authentication_rules_module
@@ -515,6 +522,7 @@ Modules
     device_administration_service_names_info_module
     device_administration_time_date_conditions_module
     device_administration_time_date_conditions_info_module
+    dictionary_references_info_module
     downloadable_acl_module
     downloadable_acl_info_module
     egress_matrix_cell_module
@@ -765,6 +773,10 @@ Modules
     sponsor_portal_info_module
     sponsored_guest_portal_module
     sponsored_guest_portal_info_module
+    subscriber_module
+    subscriber_bulk_module
+    subscriber_imsi_info_module
+    subscriber_info_module
     support_bundle_module
     support_bundle_download_module
     support_bundle_status_info_module
@@ -796,6 +808,7 @@ Modules
     tacacs_server_sequence_info_module
     tasks_info_module
     telemetry_info_module
+    test_connector_module
     threat_vulnerabilities_clear_module
     transport_gateway_settings_module
     transport_gateway_settings_info_module
@@ -803,22 +816,5 @@ Modules
     trusted_certificate_export_info_module
     trusted_certificate_import_module
     trusted_certificate_info_module
-    trustsec_nbar_app_module
-    trustsec_nbar_app_info_module
-    trustsec_sg_vn_mapping_module
-    trustsec_sg_vn_mapping_bulk_create_module
-    trustsec_sg_vn_mapping_bulk_delete_module
-    trustsec_sg_vn_mapping_bulk_update_module
-    trustsec_sg_vn_mapping_info_module
-    trustsec_vn_module
-    trustsec_vn_bulk_create_module
-    trustsec_vn_bulk_delete_module
-    trustsec_vn_bulk_update_module
-    trustsec_vn_info_module
-    trustsec_vn_vlan_mapping_module
-    trustsec_vn_vlan_mapping_bulk_create_module
-    trustsec_vn_vlan_mapping_bulk_delete_module
-    trustsec_vn_vlan_mapping_bulk_update_module
-    trustsec_vn_vlan_mapping_info_module
 
 
