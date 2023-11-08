@@ -947,7 +947,7 @@ releases:
       release_summary: Fixed active_directory_groups_by_domain_Info.
       bugfixes:
         - Cannot get cisco.ise.active_directory_groups_by_domain_info to work.
-  2.6.16:
+  2.6.0:
     release_date: "2023-11-07"
     changes:
       release_summary: ansible-ise now support 3.2_beta
