@@ -18,75 +18,37 @@ extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
+  cliDnisList:
+    description: <p>This field should contain a Caller ID (CLI), comma, and Called ID
+      (DNIS).<br> Line format - Caller ID (CLI), Called ID (DNIS)</p>.
+    elements: str
+    type: list
   conditionType:
     description: This field determines the content of the conditions field.
     type: str
-  conditions:
-    description: Device Administration Network Conditions's conditions.
-    elements: dict
-    suboptions:
-      cliDnisList:
-        description: <p>This field should contain a Caller ID (CLI), comma, and Called
-          ID (DNIS).<br> Line format - Caller ID (CLI), Called ID (DNIS)</p>.
-        elements: str
-        type: list
-      conditionType:
-        description: This field determines the content of the conditions field.
-        type: str
-      description:
-        description: Device Administration Network Conditions's description.
-        type: str
-      deviceGroupList:
-        description: <p>This field should contain a tuple with NDG Root, comma, and
-          an NDG (that it under the root).<br> Line format - NDG Root Name, NDG, Port</p>.
-        elements: str
-        type: list
-      deviceList:
-        description: <p>This field should contain Device-Name,port-number. The device
-          name must be the same as the name field in a Network Device object.<br> Line
-          format - Device Name,Port</p>.
-        elements: str
-        type: list
-      id:
-        description: Device Administration Network Conditions's id.
-        type: str
-      ipAddrList:
-        description: <p>This field should contain IP-address-or-subnet,port number<br>
-          IP address can be IPV4 format (n.n.n.n) or IPV6 format (n n n n n n n n).<br>
-          IP subnet can be IPV4 format (n.n.n.n/m) or IPV6 format (n n n n n n n n/m).<br>
-          Line format - IP Address or subnet,Port</p>.
-        elements: str
-        type: list
-      link:
-        description: Device Administration Network Conditions's link.
-        suboptions:
-          href:
-            description: Device Administration Network Conditions's href.
-            type: str
-          rel:
-            description: Device Administration Network Conditions's rel.
-            type: str
-          type:
-            description: Device Administration Network Conditions's type.
-            type: str
-        type: dict
-      macAddrList:
-        description: <p>This field should contain Endstation MAC address, comma, and
-          Destination MAC addresses.<br> Each Max address must include twelve hexadecimal
-          digits using formats nn nn nn nn nn nn or nn-nn-nn-nn-nn-nn or nnnn.nnnn.nnnn
-          or nnnnnnnnnnnn.<br> Line format - Endstation MAC,Destination MAC </p>.
-        elements: str
-        type: list
-      name:
-        description: Network Condition name.
-        type: str
-    type: list
   description:
     description: Device Administration Network Conditions's description.
     type: str
+  deviceGroupList:
+    description: <p>This field should contain a tuple with NDG Root, comma, and an NDG
+      (that it under the root).<br> Line format - NDG Root Name, NDG, Port</p>.
+    elements: str
+    type: list
+  deviceList:
+    description: <p>This field should contain Device Name. The device name must be the
+      same as the name field in a Network Device object. Line format - Device Name</p>.
+    elements: str
+    type: list
   id:
     description: Device Administration Network Conditions's id.
     type: str
+  ipAddrList:
+    description: <p>This field should contain IP address or subnet.<br> IP address can
+      be IPV4 format (n.n.n.n) or IPV6 format (n n n n n n n n).<br> IP subnet can be
+      IPV4 format (n.n.n.n/m) or IPV6 format (n n n n n n n n/m).<br> Line format -
+      IP Address or subnet</p>.
+    elements: str
+    type: list
   link:
     description: Device Administration Network Conditions's link.
     suboptions:
@@ -100,11 +62,18 @@ options:
         description: Device Administration Network Conditions's type.
         type: str
     type: dict
+  macAddrList:
+    description: <p>This field should contain Endstation MAC address, comma, and Destination
+      MAC addresses.<br> Each Max address must include twelve hexadecimal digits using
+      formats nn nn nn nn nn nn or nn-nn-nn-nn-nn-nn or nnnn.nnnn.nnnn or nnnnnnnnnnnn.<br>
+      Line format - Endstation MAC,Destination MAC </p>.
+    elements: str
+    type: list
   name:
     description: Network Condition name.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.8
+- ciscoisesdk >= 2.1.0
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for Device Administration - Network Conditions
@@ -131,32 +100,23 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
+    cliDnisList:
+    - string
     conditionType: string
-    conditions:
-    - cliDnisList:
-      - string
-      conditionType: string
-      description: string
-      deviceGroupList:
-      - string
-      deviceList:
-      - string
-      id: string
-      ipAddrList:
-      - string
-      link:
-        href: string
-        rel: string
-        type: string
-      macAddrList:
-      - string
-      name: string
     description: string
+    deviceGroupList:
+    - string
+    deviceList:
+    - string
     id: string
+    ipAddrList:
+    - string
     link:
       href: string
       rel: string
       type: string
+    macAddrList:
+    - string
     name: string
 
 - name: Update by id
@@ -166,32 +126,23 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
+    cliDnisList:
+    - string
     conditionType: string
-    conditions:
-    - cliDnisList:
-      - string
-      conditionType: string
-      description: string
-      deviceGroupList:
-      - string
-      deviceList:
-      - string
-      id: string
-      ipAddrList:
-      - string
-      link:
-        href: string
-        rel: string
-        type: string
-      macAddrList:
-      - string
-      name: string
     description: string
+    deviceGroupList:
+    - string
+    deviceList:
+    - string
     id: string
+    ipAddrList:
+    - string
     link:
       href: string
       rel: string
       type: string
+    macAddrList:
+    - string
     name: string
 
 - name: Delete by id
@@ -221,33 +172,20 @@ ise_response:
         "type": "string"
       },
       "name": "string",
-      "conditions": [
-        {
-          "cliDnisList": [
-            "string"
-          ],
-          "conditionType": "string",
-          "description": "string",
-          "id": "string",
-          "ipAddrList": [
-            "string"
-          ],
-          "link": {
-            "href": "string",
-            "rel": "string",
-            "type": "string"
-          },
-          "macAddrList": [
-            "string"
-          ],
-          "name": "string",
-          "deviceGroupList": [
-            "string"
-          ],
-          "deviceList": [
-            "string"
-          ]
-        }
+      "deviceList": [
+        "string"
+      ],
+      "cliDnisList": [
+        "string"
+      ],
+      "ipAddrList": [
+        "string"
+      ],
+      "macAddrList": [
+        "string"
+      ],
+      "deviceGroupList": [
+        "string"
       ]
     }
 
@@ -268,33 +206,20 @@ ise_update_response:
           "type": "string"
         },
         "name": "string",
-        "conditions": [
-          {
-            "cliDnisList": [
-              "string"
-            ],
-            "conditionType": "string",
-            "description": "string",
-            "id": "string",
-            "ipAddrList": [
-              "string"
-            ],
-            "link": {
-              "href": "string",
-              "rel": "string",
-              "type": "string"
-            },
-            "macAddrList": [
-              "string"
-            ],
-            "name": "string",
-            "deviceGroupList": [
-              "string"
-            ],
-            "deviceList": [
-              "string"
-            ]
-          }
+        "deviceList": [
+          "string"
+        ],
+        "cliDnisList": [
+          "string"
+        ],
+        "ipAddrList": [
+          "string"
+        ],
+        "macAddrList": [
+          "string"
+        ],
+        "deviceGroupList": [
+          "string"
         ]
       },
       "version": "string"

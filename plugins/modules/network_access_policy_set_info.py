@@ -23,7 +23,7 @@ options:
     - Id path parameter. Policy id.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.8
+- ciscoisesdk >= 2.1.0
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for Network Access - Policy Set
@@ -79,6 +79,7 @@ ise_response:
         "id": "string",
         "name": "string",
         "attributeName": "string",
+        "attributeId": "string",
         "attributeValue": "string",
         "dictionaryName": "string",
         "dictionaryValue": "string",

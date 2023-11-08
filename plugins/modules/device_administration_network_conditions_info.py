@@ -23,7 +23,7 @@ options:
     - Id path parameter. Condition id.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.8
+- ciscoisesdk >= 2.1.0
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for Device Administration - Network Conditions
@@ -76,33 +76,20 @@ ise_response:
         "type": "string"
       },
       "name": "string",
-      "conditions": [
-        {
-          "cliDnisList": [
-            "string"
-          ],
-          "conditionType": "string",
-          "description": "string",
-          "id": "string",
-          "ipAddrList": [
-            "string"
-          ],
-          "link": {
-            "href": "string",
-            "rel": "string",
-            "type": "string"
-          },
-          "macAddrList": [
-            "string"
-          ],
-          "name": "string",
-          "deviceGroupList": [
-            "string"
-          ],
-          "deviceList": [
-            "string"
-          ]
-        }
+      "deviceList": [
+        "string"
+      ],
+      "cliDnisList": [
+        "string"
+      ],
+      "ipAddrList": [
+        "string"
+      ],
+      "macAddrList": [
+        "string"
+      ],
+      "deviceGroupList": [
+        "string"
       ]
     }
 """
