@@ -18,7 +18,6 @@ except ImportError:
 else:
     ANSIBLE_UTILS_IS_INSTALLED = True
 from ansible.errors import AnsibleActionFail
-import re
 from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
     ISESDK,
     ise_argument_spec,
@@ -31,6 +30,7 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
+    name=dict(type="str"),
     description=dict(type="str"),
     mac=dict(type="str"),
     profileId=dict(type="str"),
@@ -46,8 +46,8 @@ argument_spec.update(dict(
 ))
 
 required_if = [
-    ("state", "present", ["id", "mac"], True),
-    ("state", "absent", ["id", "mac"], True),
+    ("state", "present", ["id", "name"], True),
+    ("state", "absent", ["id", "name"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -58,6 +58,7 @@ class Endpoint(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
+            name=params.get("name"),
             description=params.get("description"),
             mac=params.get("mac"),
             profile_id=params.get("profileId"),
@@ -123,10 +124,7 @@ class Endpoint(object):
         result = False
         prev_obj = None
         id = self.new_object.get("id")
-        name = self.new_object.get("mac")
-        if name:
-            name = re.sub("[-:.]", "", name).lower()
-            self.new_object.update(dict(mac=name))
+        name = self.new_object.get("name")
         if id:
             prev_obj = self.get_object_by_id(id)
             result = prev_obj is not None and isinstance(prev_obj, dict)
@@ -139,6 +137,7 @@ class Endpoint(object):
         requested_obj = self.new_object
 
         obj_params = [
+            ("name", "name"),
             ("description", "description"),
             ("mac", "mac"),
             ("profileId", "profile_id"),
@@ -168,7 +167,7 @@ class Endpoint(object):
 
     def update(self):
         id = self.new_object.get("id")
-        name = self.new_object.get("mac")
+        name = self.new_object.get("name")
         result = None
         if not id:
             id_ = self.get_object_by_name(name).get("id")
@@ -182,7 +181,7 @@ class Endpoint(object):
 
     def delete(self):
         id = self.new_object.get("id")
-        name = self.new_object.get("mac")
+        name = self.new_object.get("name")
         result = None
         if not id:
             id_ = self.get_object_by_name(name).get("id")

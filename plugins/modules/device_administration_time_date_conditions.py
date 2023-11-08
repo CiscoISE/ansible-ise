@@ -18,6 +18,9 @@ extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
+  attributeId:
+    description: Dictionary attribute id (Optional), used for additional verification.
+    type: str
   attributeName:
     description: Dictionary attribute name.
     type: str
@@ -63,11 +66,11 @@ options:
       are present under the children field</li></ul>.
     type: str
   datesRange:
-    description: <p>Defines for which date/s TimeAndDate condition will be matched<br>
-      Options are - Date range, for specific date, the same date should be used for
-      start/end date <br> Default - no specific dates<br> In order to reset the dates
-      to have no specific dates Date format - yyyy-mm-dd (MM = month, dd = day, yyyy
-      = year)</p>.
+    description: <p>Defines for which date/s TimeAndDate condition will be matched or
+      NOT matched if used in exceptionDates prooperty<br> Options are - Date range,
+      for specific date, the same date should be used for start/end date <br> Default
+      - no specific dates<br> In order to reset the dates to have no specific dates
+      Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)</p>.
     suboptions:
       endDate:
         description: Device Administration Time Date Conditions's endDate.
@@ -77,11 +80,11 @@ options:
         type: str
     type: dict
   datesRangeException:
-    description: <p>Defines for which date/s TimeAndDate condition will be matched<br>
-      Options are - Date range, for specific date, the same date should be used for
-      start/end date <br> Default - no specific dates<br> In order to reset the dates
-      to have no specific dates Date format - yyyy-mm-dd (MM = month, dd = day, yyyy
-      = year)</p>.
+    description: <p>Defines for which date/s TimeAndDate condition will be matched or
+      NOT matched if used in exceptionDates prooperty<br> Options are - Date range,
+      for specific date, the same date should be used for start/end date <br> Default
+      - no specific dates<br> In order to reset the dates to have no specific dates
+      Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)</p>.
     suboptions:
       endDate:
         description: Device Administration Time Date Conditions's endDate.
@@ -100,8 +103,9 @@ options:
     description: Dictionary value.
     type: str
   hoursRange:
-    description: <p>Defines for which hours a TimeAndDate condition will be matched<br>
-      Time format - hh mm ( h = hour , mm = minutes ) <br> Default - All Day </p>.
+    description: <p>Defines for which hours a TimeAndDate condition will be matched
+      or not matched if used in exceptionHours property<br> Time foramt - hh mm ( h
+      = hour , mm = minutes ) <br> Default - All Day </p>.
     suboptions:
       endTime:
         description: Device Administration Time Date Conditions's endTime.
@@ -111,8 +115,9 @@ options:
         type: str
     type: dict
   hoursRangeException:
-    description: <p>Defines for which hours a TimeAndDate condition will be matched<br>
-      Time format - hh mm ( h = hour , mm = minutes ) <br> Default - All Day </p>.
+    description: <p>Defines for which hours a TimeAndDate condition will be matched
+      or not matched if used in exceptionHours property<br> Time foramt - hh mm ( h
+      = hour , mm = minutes ) <br> Default - All Day </p>.
     suboptions:
       endTime:
         description: Device Administration Time Date Conditions's endTime.
@@ -157,7 +162,7 @@ options:
     elements: str
     type: list
 requirements:
-- ciscoisesdk >= 2.0.8
+- ciscoisesdk >= 2.1.0
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for Device Administration - Time/Date Conditions
@@ -184,6 +189,7 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
+    attributeId: string
     attributeName: string
     attributeValue: string
     children:
@@ -229,6 +235,7 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: present
+    attributeId: string
     attributeName: string
     attributeValue: string
     children:

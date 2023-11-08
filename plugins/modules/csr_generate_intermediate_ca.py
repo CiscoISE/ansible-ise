@@ -10,14 +10,14 @@ module: csr_generate_intermediate_ca
 short_description: Resource module for CSR Generate Intermediate CA
 description:
 - Manage operation create of the resource CSR Generate Intermediate CA.
-- CSR Generation for Intermediate Certificates.
+- CSR generation for Intermediate Certificates.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 2.0.8
+- ciscoisesdk >= 2.1.0
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for Certificates

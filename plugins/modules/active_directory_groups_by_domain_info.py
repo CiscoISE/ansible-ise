@@ -31,8 +31,11 @@ options:
         description: Active Directory Get Groups By Domain Info's value.
         type: str
     type: list
+  id:
+    description: Active Directory Get Groups By Domain Info's id.
+    type: null
 requirements:
-- ciscoisesdk >= 2.0.8
+- ciscoisesdk >= 2.1.0
 - python >= 3.5
 notes:
   - SDK Method used are
@@ -74,7 +77,7 @@ ise_response:
     {
       "groups": [
         {
-          "groupName": "string",
+          "name": "string",
           "sid": "string",
           "type": "string"
         }

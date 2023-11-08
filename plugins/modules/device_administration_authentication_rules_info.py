@@ -27,7 +27,7 @@ options:
     - Id path parameter. Rule id.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.8
+- ciscoisesdk >= 2.1.0
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for Device Administration - Authentication Rules
@@ -73,6 +73,7 @@ ise_response:
   type: dict
   sample: >
     {
+      "identitySourceId": "string",
       "identitySourceName": "string",
       "ifAuthFail": "string",
       "ifProcessFail": "string",
@@ -95,6 +96,7 @@ ise_response:
           "id": "string",
           "name": "string",
           "attributeName": "string",
+          "attributeId": "string",
           "attributeValue": "string",
           "dictionaryName": "string",
           "dictionaryValue": "string",

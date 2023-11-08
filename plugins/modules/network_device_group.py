@@ -27,11 +27,11 @@ options:
   name:
     description: Network Device Group's name.
     type: str
-  othername:
-    description: Network Device Group's othername.
+  ndgtype:
+    description: Network Device Group's ndgtype.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.8
+- ciscoisesdk >= 2.1.0
 - python >= 3.5
 notes:
   - SDK Method used are
@@ -57,7 +57,7 @@ EXAMPLES = r"""
     description: string
     id: string
     name: string
-    othername: string
+    ndgtype: string
 
 - name: Delete by id
   cisco.ise.network_device_group:
@@ -77,7 +77,7 @@ EXAMPLES = r"""
     state: present
     description: string
     name: string
-    othername: string
+    ndgtype: string
 
 """
 
@@ -96,7 +96,7 @@ ise_response:
         "href": "string",
         "type": "string"
       },
-      "othername": "string"
+      "ndgtype": "string"
     }
 
 ise_update_response:

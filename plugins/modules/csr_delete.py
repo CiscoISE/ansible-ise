@@ -10,7 +10,7 @@ module: csr_delete
 short_description: Resource module for CSR Delete
 description:
 - Manage operation delete of the resource CSR Delete.
-- This API deletes a Certificate Signing Request of a particular node based on given HostName and ID.
+- This API deletes the certificate signing request of a particular node based on a given hostname and ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -24,7 +24,7 @@ options:
     description: Id path parameter. ID of the Certificate Signing Request to be deleted.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.8
+- ciscoisesdk >= 2.1.0
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for Certificates

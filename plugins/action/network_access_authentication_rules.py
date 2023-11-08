@@ -33,6 +33,7 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
+    identitySourceId=dict(type="str"),
     identitySourceName=dict(type="str"),
     ifAuthFail=dict(type="str"),
     ifProcessFail=dict(type="str"),
@@ -58,6 +59,7 @@ class NetworkAccessAuthenticationRules(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
+            identity_source_id=params.get("identitySourceId"),
             identity_source_name=params.get("identitySourceName"),
             if_auth_fail=params.get("ifAuthFail"),
             if_process_fail=params.get("ifProcessFail"),
@@ -133,6 +135,7 @@ class NetworkAccessAuthenticationRules(object):
         requested_obj = self.new_object
 
         obj_params = [
+            ("identitySourceId", "identity_source_id"),
             ("identitySourceName", "identity_source_name"),
             ("ifAuthFail", "if_auth_fail"),
             ("ifProcessFail", "if_process_fail"),

@@ -14,4 +14,3 @@ plugins/action/personas_export_certs.py pylint:unused-import
 plugins/action/personas_promote_primary.py pylint:unused-import
 plugins/action/personas_register_node.py pylint:unused-import
 plugins/action/personas_update_roles_services.py pylint:unused-import
-plugins/action/trustsec_sg_vn_mapping.py pylint:unused-import
