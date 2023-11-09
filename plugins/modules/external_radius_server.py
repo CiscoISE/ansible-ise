@@ -67,7 +67,7 @@ options:
     description: Valid Range 1 to 120.
     type: int
 requirements:
-- ciscoisesdk >= 2.1.0
+- ciscoisesdk >= 2.1.1
 - python >= 3.5
 notes:
   - SDK Method used are

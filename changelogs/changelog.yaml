@@ -953,3 +953,9 @@ releases:
       release_summary: ansible-ise now support 3.2_beta
       minor_changes:
         - Services included configuration, edda, dataconnect_services, subscriber.
+  2.6.1:
+    release_date: "2023-11-09"
+    changes:
+      release_summary: Update to use ciscoisesdk v2.1.1 or newer
+      bugfixes:
+        - Updated to use ciscoisesdk v2.1.1 or newer fixing ciscoisesdk problem.

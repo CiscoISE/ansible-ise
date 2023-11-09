@@ -35,7 +35,7 @@ options:
       characters _.-.
     type: str
 requirements:
-- ciscoisesdk >= 2.1.0
+- ciscoisesdk >= 2.1.1
 - python >= 3.5
 notes:
   - SDK Method used are

@@ -35,7 +35,7 @@ options:
     description: User name for the proxy connection.
     type: str
 requirements:
-- ciscoisesdk >= 2.1.0
+- ciscoisesdk >= 2.1.1
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for proxy
