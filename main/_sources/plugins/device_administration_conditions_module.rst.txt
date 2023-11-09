@@ -89,7 +89,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk \>= 2.1.0
+- ciscoisesdk \>= 2.1.1
 - python \>= 3.5
 
 
