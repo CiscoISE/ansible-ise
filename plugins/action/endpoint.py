@@ -18,6 +18,7 @@ except ImportError:
 else:
     ANSIBLE_UTILS_IS_INSTALLED = True
 from ansible.errors import AnsibleActionFail
+import re
 from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
     ISESDK,
     ise_argument_spec,
