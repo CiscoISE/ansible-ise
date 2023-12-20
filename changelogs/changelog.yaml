@@ -960,8 +960,14 @@ releases:
       bugfixes:
         - Updated to use ciscoisesdk v2.1.1 or newer fixing ciscoisesdk problem.
   2.6.2:
-  release_date: "2023-11-21"
-  changes:
-    release_summary: Added missing import
-    bugfixes:
-      - Added missing import re in endpoint module
+    release_date: "2023-11-21"
+    changes:
+      release_summary: Added missing import
+      bugfixes:
+        - Added missing import re in endpoint module
+  2.7.0:
+    release_date: "2023-11-21"
+    changes:
+      release_summary: Galaxy updated.
+      minor_changes:
+        - cisco.ise collection now supports ansible.utils v3
