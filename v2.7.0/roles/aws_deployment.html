@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AWS Deployment Guide &mdash; ISEAnsibleActions  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/ansible-basic-sphinx-ext.css" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            ISEAnsibleActions
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">User documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../plugins/index.html">Cisco.Ise</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Role Index</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">ISEAnsibleActions</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">AWS Deployment Guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/roles/aws_deployment.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="aws-deployment-guide">
+<h1>AWS Deployment Guide<a class="headerlink" href="#aws-deployment-guide" title="Permalink to this heading"></a></h1>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+<p>It is possible to deploy the Cisco Identity Service Enginer (ISE) on AWS using the official Cisco ISE AMI. The following guide explains how to use the Ansible role created for such task.</p>
+</section>
+<section id="goal">
+<h2>Goal<a class="headerlink" href="#goal" title="Permalink to this heading"></a></h2>
+<p>The goals of this guide are:</p>
+<ol class="simple">
+<li><p>Install the ansible role</p></li>
+<li><p>Configure the role</p></li>
+<li><p>Deploy to AWS</p></li>
+</ol>
+</section>
+<section id="pre-requisites">
+<h2>Pre-requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this heading"></a></h2>
+<p>It is recommended that you review the following guide before starting this one:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="./ansible-start-guide">ISE Ansible Getting started guide</a></p></li>
+</ul>
+</section>
+<section id="role-information">
+<h2>Role information<a class="headerlink" href="#role-information" title="Permalink to this heading"></a></h2>
+<p>Within the recently installed Ansible collection, comes an AWS deployment role which can be configured using variables.</p>
+<p>The role can be used like this:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ISE Deployment Playbook</span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">  </span><span class="nt">connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+
+<span class="w">  </span><span class="nt">roles</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cisco.ise.aws_deployment</span>
+</pre></div>
+</div>
+<p>The role accomplishes the following tasks:</p>
+<ol class="simple">
+<li><p>Create an AWS Virtual Private Cloud (VPC)</p></li>
+<li><p>Create an AWS subnet within the previously created VPC</p></li>
+<li><p>Create an AWS Security Group (SG) on the VPC .</p></li>
+<li><p>Create and store in the local filesystem an AWS key pair.</p></li>
+<li><p>Deploy the selected ISE servers configuration.</p></li>
+</ol>
+</section>
+<section id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this heading"></a></h2>
+<p>The role behavior can be changed using the following variables:</p>
+<ul class="simple">
+<li><p><strong>ise_base_hostname</strong>: Servers base hostname. Default: ISE</p></li>
+<li><p><strong>ise_username</strong>: Servers default username. Default: admin</p></li>
+<li><p><strong>ise_password</strong>: Servers default password. Default: C1sco12345</p></li>
+<li><p><strong>ise_ntp_server</strong>: NTP server. Default: 10.10.0.1</p></li>
+<li><p><strong>ise_dns_server</strong>: DNS Server. Default: 10.10.0.1</p></li>
+<li><p><strong>ise_domain</strong>: Domain name. Default: example.com</p></li>
+<li><p><strong>ise_timezone</strong>: Timezones based on RFC. Default: Etc/UTC</p></li>
+<li><p><strong>aws_ise_ami</strong>: Cisco ISE AWS AMI ID, for example, ami-0a8b4f863885c3372</p></li>
+<li><p><strong>aws_vpc_name</strong>: AWS VPC. Default: ISE VPC</p></li>
+<li><p><strong>aws_vpc_cidr</strong>: AWS VPC CIDR. Default: 10.10.0.0/16</p></li>
+<li><p><strong>aws_subnet_cidr</strong>: AWS Subnet CIDR. Default: 10.10.1.0/24</p></li>
+<li><p><strong>aws_region</strong>: AWS deployment region. Default: us-west-2</p></li>
+<li><p><strong>aws_public_access_cidr</strong>: Network from where public access will be available. Default: 0.0.0.0/0</p></li>
+<li><p><strong>aws_keypair_name</strong>: AWS SSH Key Pair name. Default: ISE-Deployment</p></li>
+<li><p><strong>aws_instance_type</strong>: AWS Instance type for ISE servers. Default: c5.4xlarge</p></li>
+</ul>
+<section id="using-variables-in-ansible">
+<h3>Using variables in Ansible<a class="headerlink" href="#using-variables-in-ansible" title="Permalink to this heading"></a></h3>
+<p>There are several ways of modifying the default variables. You can check the <a class="reference external" href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html">Ansible documentation</a> for more information.</p>
+<section id="command-line">
+<h4>Command line<a class="headerlink" href="#command-line" title="Permalink to this heading"></a></h4>
+<p>From the command line, it can be done with the <code class="docutils literal notranslate"><span class="pre">-e</span> <span class="pre">EXTRA_VARS</span></code> or <code class="docutils literal notranslate"><span class="pre">--extra-vars</span> <span class="pre">EXTRA_VARS</span></code> flag:</p>
+<div class="highlight-cli notranslate"><div class="highlight"><pre><span></span>ansible-playbook -i hosts playbooks/aws_deployment.yml -e &quot;aws_ise_ami=&#39;ami-0a8b4f863885c3372&#39;&quot;
+</pre></div>
+</div>
+<div class="highlight-cli notranslate"><div class="highlight"><pre><span></span>ansible-playbook -i hosts playbooks/aws_deployment.yml --extra-vars &quot;aws_ise_ami=&#39;ami-0a8b4f863885c3372&#39;&quot;
+</pre></div>
+</div>
+</section>
+<section id="variables-file">
+<h4>Variables file<a class="headerlink" href="#variables-file" title="Permalink to this heading"></a></h4>
+<p>It is possible to use a variables file:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ISE Deployment Playbook</span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">  </span><span class="nt">connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">  </span><span class="nt">vars_files</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_vars.yml</span>
+
+<span class="w">  </span><span class="nt">roles</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cisco.ise.aws_deployment</span>
+</pre></div>
+</div>
+</section>
+<section id="playbook-variables">
+<h4>Playbook variables<a class="headerlink" href="#playbook-variables" title="Permalink to this heading"></a></h4>
+<p>You can define the variables in the playbook:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nn">---</span>
+<span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ISE Deployment Playbook</span>
+<span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span>
+<span class="w">  </span><span class="nt">connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span>
+<span class="w">  </span><span class="nt">vars</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">aws_ise_ami</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ami-0a8b4f863885c3372</span>
+
+<span class="w">  </span><span class="nt">roles</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cisco.ise.aws_deployment</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="role-usage">
+<h2>Role usage<a class="headerlink" href="#role-usage" title="Permalink to this heading"></a></h2>
+<p>There are 4 possible deployment types supported by this role:</p>
+<ol class="simple">
+<li><p>Single</p></li>
+<li><p>Small</p></li>
+<li><p>Medium</p></li>
+<li><p>Large</p></li>
+</ol>
+<section id="single-deployment">
+<h3>Single deployment<a class="headerlink" href="#single-deployment" title="Permalink to this heading"></a></h3>
+<p>Set the <code class="docutils literal notranslate"><span class="pre">ise_deployment_type</span></code> variable to <code class="docutils literal notranslate"><span class="pre">single</span></code>. This deployment type creates one ISE server.</p>
+<div class="highlight-cli notranslate"><div class="highlight"><pre><span></span>ansible-playbook -i hosts playbooks/aws_deployment.yml -e &quot;ise_deployment_type=single&quot;
+</pre></div>
+</div>
+</section>
+<section id="small-deployment">
+<h3>Small deployment<a class="headerlink" href="#small-deployment" title="Permalink to this heading"></a></h3>
+<p>Set the <code class="docutils literal notranslate"><span class="pre">ise_deployment_type</span></code> variable to <code class="docutils literal notranslate"><span class="pre">small</span></code>. This deployment type creates two ISE servers.</p>
+<div class="highlight-cli notranslate"><div class="highlight"><pre><span></span>ansible-playbook -i hosts playbooks/aws_deployment.yml -e &quot;ise_deployment_type=small&quot;
+</pre></div>
+</div>
+</section>
+<section id="medium-deployment">
+<h3>Medium deployment<a class="headerlink" href="#medium-deployment" title="Permalink to this heading"></a></h3>
+<p>Set the <code class="docutils literal notranslate"><span class="pre">ise_deployment_type</span></code> variable to <code class="docutils literal notranslate"><span class="pre">medium</span></code>. This deployment type creates two servers with the PAN and MNT roles and up to five servers with the PSN role. It takes the extra variable <code class="docutils literal notranslate"><span class="pre">ise_psn_instances</span></code> to specify how many PSN servers should be created . For example, this would be the command for a deployment with two PSN servers:</p>
+<div class="highlight-cli notranslate"><div class="highlight"><pre><span></span>ansible-playbook -i hosts playbooks/aws_deployment.yml -e &quot;ise_deployment_type=medium ise_psn_instances=2&quot;
+</pre></div>
+</div>
+</section>
+<section id="large-deployment">
+<h3>Large deployment<a class="headerlink" href="#large-deployment" title="Permalink to this heading"></a></h3>
+<p>Set the <code class="docutils literal notranslate"><span class="pre">ise_deployment_type</span></code> variable to <code class="docutils literal notranslate"><span class="pre">large</span></code>. This deployment type creates two servers with the PAN role, two servers with the MNT role and up to 50 servers with the PSN role. It takes the extra variable <code class="docutils literal notranslate"><span class="pre">ise_psn_instances</span></code> to specify how many PSN servers should be created . For example, this would be the command for a deployment with two PSN servers:</p>
+<div class="highlight-cli notranslate"><div class="highlight"><pre><span></span>ansible-playbook -i hosts playbooks/aws_deployment.yml -e &quot;ise_deployment_type=large ise_psn_instances=2&quot;
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Copyright (c) 2021 Cisco Systems.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+
+.. Document meta section
+
+:orphan:
+
+.. Document body
+
+.. Anchors
+
+.. _ansible_collections.cisco.ise.active_directory_groups_by_domain_info_module:
+
+.. Title
+
+cisco.ise.active_directory_groups_by_domain_info module
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+The documentation for the module plugin, cisco.ise.active_directory_groups_by_domain_info,  was malformed.
+
+The errors were:
+
+* ::
+
+        1 validation error for ModuleDocSchema
+        doc -> options -> id -> type
+          none is not an allowed value (type=type_error.none.not_allowed)
+
+
+File a bug with the `cisco.ise collection <https://github.com/CiscoISE/ansible-ise/issues>`_ in order to have it corrected.
