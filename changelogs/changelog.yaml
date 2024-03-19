@@ -971,3 +971,9 @@ releases:
       release_summary: Galaxy updated.
       minor_changes:
         - cisco.ise collection now supports ansible.utils v3
+  2.8.0:
+    release_date: "2024-03-19"
+    changes:
+      release_summary: Changes the minimum supported version of Ansible to v2.14.0
+      minor_changes:
+        - Changes the minimum supported version from Ansible v2.9.10 to v2.14.0
