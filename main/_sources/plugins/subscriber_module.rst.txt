@@ -54,7 +54,7 @@ cisco.ise.subscriber module -- Resource module for Subscriber
 
 .. rst-class:: ansible-version-added
 
-New in cisco.ise 3.2\_beta
+New in cisco.ise 2.8.0
 
 .. contents::
    :local:

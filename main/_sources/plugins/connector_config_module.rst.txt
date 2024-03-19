@@ -54,7 +54,7 @@ cisco.ise.connector_config module -- Resource module for Connector Config
 
 .. rst-class:: ansible-version-added
 
-New in cisco.ise 3.2\_beta
+New in cisco.ise 2.8.0
 
 .. contents::
    :local:

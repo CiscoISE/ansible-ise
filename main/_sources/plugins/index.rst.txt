@@ -55,7 +55,7 @@ Modules
 * :ref:`aci_test_connectivity module <ansible_collections.cisco.ise.aci_test_connectivity_module>` -- Resource module for ACI Test Connectivity
 * :ref:`active_directory module <ansible_collections.cisco.ise.active_directory_module>` -- Resource module for Active Directory
 * :ref:`active_directory_add_groups module <ansible_collections.cisco.ise.active_directory_add_groups_module>` -- Resource module for Active Directory Add Groups
-* :ref:`active_directory_groups_by_domain_info module <ansible_collections.cisco.ise.active_directory_groups_by_domain_info_module>` -- 
+* :ref:`active_directory_groups_by_domain_info module <ansible_collections.cisco.ise.active_directory_groups_by_domain_info_module>` -- Information module for Active Directory Groups By Domain
 * :ref:`active_directory_info module <ansible_collections.cisco.ise.active_directory_info_module>` -- Information module for Active Directory
 * :ref:`active_directory_is_user_member_of_group_info module <ansible_collections.cisco.ise.active_directory_is_user_member_of_group_info_module>` -- Information module for Active Directory Is User Member Of Group
 * :ref:`active_directory_join_domain module <ansible_collections.cisco.ise.active_directory_join_domain_module>` -- Resource module for Active Directory Join Domain

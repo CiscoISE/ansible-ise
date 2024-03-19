@@ -54,7 +54,7 @@ cisco.ise.connector_config_info module -- Information module for Connector Confi
 
 .. rst-class:: ansible-version-added
 
-New in cisco.ise 3.2\_beta
+New in cisco.ise 2.8.0
 
 .. contents::
    :local:

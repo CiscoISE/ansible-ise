@@ -54,7 +54,7 @@ cisco.ise.configuration_info module -- Information module for Configuration
 
 .. rst-class:: ansible-version-added
 
-New in cisco.ise 3.2\_beta
+New in cisco.ise 2.8.0
 
 .. contents::
    :local:
