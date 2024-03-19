@@ -31,9 +31,6 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
     ise_compare_equality,
     get_dict_result,
 )
-from ansible_collections.cisco.ise.plugins.plugin_utils.exceptions import (
-    InconsistentParameters,
-)
 
 # Get common arguments specification
 argument_spec = ise_argument_spec()
