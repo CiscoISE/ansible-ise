@@ -142,7 +142,7 @@ class SystemCertificate(object):
 
     def requires_update(self, current_obj):
         requested_obj = self.new_object
-        
+
         used_by_value = current_obj.get("usedBy")
         if used_by_value is None or used_by_value.lower() == "not in use":
             current_obj["eap"] = False

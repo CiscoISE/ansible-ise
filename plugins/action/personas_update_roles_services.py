@@ -10,8 +10,6 @@ except ImportError:
 else:
     ANSIBLE_UTILS_IS_INSTALLED = True
 from ansible.errors import AnsibleActionFail
-from urllib.parse import quote
-import time
 from ansible_collections.cisco.ise.plugins.plugin_utils.personas_utils import Node
 from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
     ise_compare_equality,

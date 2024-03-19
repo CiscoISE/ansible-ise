@@ -11,7 +11,7 @@ short_description: Resource module for Test Connector
 description:
 - Manage operation create of the resource Test Connector.
 - EDDA - test the Connector.
-version_added: '3.2_beta'
+version_added: '2.8.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)

@@ -21,7 +21,6 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
     ISESDK,
     ise_argument_spec,
-    ise_compare_equality,
     ise_compare_equality2,
     get_dict_result,
 )

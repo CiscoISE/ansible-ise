@@ -11,7 +11,7 @@ short_description: Resource module for Configuration
 description:
 - Manage operation update of the resource Configuration.
 - API to enable/disable LSD settings.
-version_added: '3.2_beta'
+version_added: '2.8.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)

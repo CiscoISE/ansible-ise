@@ -11,7 +11,7 @@ short_description: Information module for Dataconnect Settings
 description:
 - Get all Dataconnect Settings.
 - This API retrieves the status of the Dataconnect feature.
-version_added: '3.2_beta'
+version_added: '2.8.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)

@@ -13,7 +13,7 @@ description:
 - EDDA - Configure connectorconfig information.
 - EDDA - Delete Configure connectorConfig information based on ConnectorName.
 - EDDA - update Configure connectorConfig information based on ConnectorName.
-version_added: '3.2_beta'
+version_added: '2.8.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)

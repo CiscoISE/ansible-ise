@@ -22,7 +22,6 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
     ISESDK,
     ise_argument_spec,
     ise_compare_equality,
-    get_dict_result,
 )
 from ansible_collections.cisco.ise.plugins.plugin_utils.exceptions import (
     InconsistentParameters,
