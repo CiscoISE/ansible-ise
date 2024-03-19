@@ -10,7 +10,7 @@ module: subscriber_bulk
 short_description: Resource module for Subscriber Bulk
 description:
 - Manage operation create of the resource Subscriber Bulk.
-version_added: '3.2_beta'
+version_added: '2.8.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)

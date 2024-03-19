@@ -13,7 +13,7 @@ description:
 - Get Connector Config by name.
 - EDDA - Get ALL connectorConfig information.
 - EDDA - Get connectorConfig information based on ConnectorName.
-version_added: '3.2_beta'
+version_added: '2.8.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)

@@ -10,7 +10,7 @@ module: subscriber_imsi_info
 short_description: Information module for Subscriber Imsi Info
 description:
 - Get Subscriber Imsi Info by id.
-version_added: '3.2_beta'
+version_added: '2.8.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)
