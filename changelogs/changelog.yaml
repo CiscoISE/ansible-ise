@@ -977,3 +977,9 @@ releases:
       release_summary: Changes the minimum supported version of Ansible to v2.14.0
       minor_changes:
         - Changes the minimum supported version from Ansible v2.9.10 to v2.14.0
+  2.8.1:
+    release_date: "2024-04-02"
+    changes:
+      release_summary: Changes the requirements of ansible.utils to allow > 4.0.0 versions.
+      bugfixes:
+        - ansible.utils changes to `">=2.0.0,<5.0"` in galaxy.yml dependencies.
