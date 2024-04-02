@@ -6,7 +6,7 @@
 Cisco.Ise
 =========
 
-Collection version 2.8.0
+Collection version 2.8.1
 
 .. contents::
    :local:
