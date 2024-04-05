@@ -13,9 +13,9 @@ These Ansible modules will work with any version of ISE that supports the underl
 Other versions of this collection have support for previous Cisco ISE versions. The recommended versions are listed on the [Compatibility matrix](https://github.com/CiscoISE/ansible-ise#compatibility-matrix).
 
 ## Requirements
-- Ansible >= 2.9
-- [Cisco ISE SDK](https://github.com/CiscoISE/ciscoisesdk) v1.4.0 or newer
-- Python >= 3.6, as the Cisco ISE SDK doesn't support Python version 2.x
+- Ansible >= 2.15
+- [Cisco ISE SDK](https://github.com/CiscoISE/ciscoisesdk) v2.1.0 or newer
+- Python >= 3.9, as the Cisco ISE SDK doesn't support Python version 2.x
 - requests >= 2.25.1, for the personas modules and personas_deployment role.
 
 ## Install
@@ -51,7 +51,7 @@ The following table shows the supported versions.
 |-------------------|------------------------------|------------------------------|
 | 3.1.0             | 2.0.0                        | 1.2.0                        |
 | 3.1_Patch_1       | 2.5.16                       | 2.0.10                       |
-| 3.2_beta          | 2.8.0                        | 2.1.1                        |
+| 3.2_beta          | ^2.8.0                       | ^2.1.0                       |
 
 If your Ansible collection is older please consider updating it first.
 *Notes*:
