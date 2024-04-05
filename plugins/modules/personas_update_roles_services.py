@@ -54,7 +54,7 @@ options:
     type: bool
 requirements:
 - requests >= 2.25.1
-- python >= 3.5
+- python >= 3.9
 seealso:
 # Reference by module name
 - module: cisco.ise.plugins.modules.personas_update_roles_services

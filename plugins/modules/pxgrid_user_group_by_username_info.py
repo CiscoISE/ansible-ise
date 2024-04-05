@@ -17,7 +17,7 @@ author: Rafael Campos (@racampos)
 options: {}
 requirements:
 - ciscoisesdk >= 2.1.1
-- python >= 3.5
+- python >= 3.9
 notes:
   - SDK Method used are
     session_directory.SessionDirectory.get_user_group_by_user_name,

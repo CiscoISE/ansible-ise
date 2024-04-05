@@ -24,7 +24,7 @@ options:
     type: bool
 requirements:
 - ciscoisesdk >= 2.1.1
-- python >= 3.5
+- python >= 3.9
 notes:
   - SDK Method used are
     px_grid_settings.PxGridSettings.autoapprove_px_grid_settings,

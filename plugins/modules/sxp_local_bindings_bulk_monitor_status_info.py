@@ -22,7 +22,7 @@ options:
     type: str
 requirements:
 - ciscoisesdk >= 2.1.1
-- python >= 3.5
+- python >= 3.9
 notes:
   - SDK Method used are
     sxp_local_bindings.SxpLocalBindings.monitor_bulk_status_sxp_local_bindings,

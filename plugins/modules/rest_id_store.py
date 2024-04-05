@@ -64,7 +64,7 @@ options:
     type: str
 requirements:
 - ciscoisesdk >= 2.0.1
-- python >= 3.5
+- python >= 3.9
 notes:
   - SDK Method used are
     restid_store.RestidStore.create_rest_id_store,

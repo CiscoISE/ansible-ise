@@ -66,7 +66,7 @@ options:
     type: str
 requirements:
 - ciscoisesdk >= 2.1.1
-- python >= 3.5
+- python >= 3.9
 notes:
   - SDK Method used are
     portal_global_setting.PortalGlobalSetting.get_portal_global_setting_by_id,

@@ -47,7 +47,7 @@ options:
     required: true
 requirements:
 - ciscoisesdk >= 2.1.1
-- python >= 3.5
+- python >= 3.9
 seealso:
 - name: Cisco ISE documentation for SecurityGroups
   description: Complete reference of the SecurityGroups API.

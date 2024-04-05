@@ -32,7 +32,7 @@ options:
     type: int
 requirements:
 - ciscoisesdk >= 2.1.1
-- python >= 3.5
+- python >= 3.9
 seealso:
 - name: Cisco ISE documentation for NativeSupplicantProfile
   description: Complete reference of the NativeSupplicantProfile API.

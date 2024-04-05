@@ -29,7 +29,7 @@ options:
     type: list
 requirements:
 - ciscoisesdk >= 2.1.1
-- python >= 3.5
+- python >= 3.9
 notes:
   - SDK Method used are
     anc_endpoint.AncEndpoint.apply_anc_endpoint,

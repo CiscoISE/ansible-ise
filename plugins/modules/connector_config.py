@@ -131,7 +131,7 @@ options:
     type: dict
 requirements:
 - ciscoisesdk >= 2.0.1
-- python >= 3.5
+- python >= 3.9
 notes:
   - SDK Method used are
     edda.Edda.create_connector_config,

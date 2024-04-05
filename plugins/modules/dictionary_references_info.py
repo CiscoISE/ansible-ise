@@ -18,7 +18,7 @@ author: Rafael Campos (@racampos)
 options: {}
 requirements:
 - ciscoisesdk >= 2.0.1
-- python >= 3.5
+- python >= 3.9
 notes:
   - SDK Method used are
     edda.Edda.get_edda_dictionary_references,

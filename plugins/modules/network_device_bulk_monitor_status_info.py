@@ -22,7 +22,7 @@ options:
     type: str
 requirements:
 - ciscoisesdk >= 2.1.1
-- python >= 3.5
+- python >= 3.9
 notes:
   - SDK Method used are
     network_device.NetworkDevice.monitor_bulk_status_network_device,

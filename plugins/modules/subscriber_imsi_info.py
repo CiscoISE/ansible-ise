@@ -21,7 +21,7 @@ options:
     type: str
 requirements:
 - ciscoisesdk >= 2.0.1
-- python >= 3.5
+- python >= 3.9
 notes:
   - SDK Method used are
     subscriber.Subscriber.get_subscriber_by_i_m_s_i,
