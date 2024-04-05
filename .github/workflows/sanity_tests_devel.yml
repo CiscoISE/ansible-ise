@@ -1,30 +1,16 @@
-name: CI
+name: CI Devel
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-  schedule:
-    - cron: '0 6 * * *'
   workflow_dispatch:
 env:
   NAMESPACE: cisco
   COLLECTION_NAME: ise 
 jobs:
-  # https://docs.ansible.com/ansible/latest/reference_appendices/release_and_maintenance.html#ansible-core-support-matrix
-  # 2.14 supports Python 3.9-3.11
-  # 2.15 supports Python 3.9-3.11
-  # 2.16 supports Python 3.10-3.12
-  # https://docs.ansible.com/ansible/devel/roadmap/ROADMAP_2_17.html
-  # milestone is 2.17 until after 2.17 branches from devel
-  # devel is 2.17 until 2024-04-01
   sanity:
     name: Sanity (Ⓐ${{ matrix.ansible }})
     strategy:
       matrix:
         ansible:
-          - stable-2.15
-          - stable-2.16
-          - stable-2.17
+          - devel
     runs-on: ubuntu-22.04
     steps:
       - name: Check out code

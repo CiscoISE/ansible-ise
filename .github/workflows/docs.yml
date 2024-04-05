@@ -6,21 +6,21 @@ on:
       - v[0-9]+.[0-9]+.[0-9]+
     branches:
       - main
-
+  workflow_dispatch:
 jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - name: configure git
         run: |
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@bots.github.com"
           git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/*
       - name: Set up Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
-          python-version: "3.7"
+          python-version: "3.11"
       - name: Install dependencies
         run: make doc-setup
       - name: Build docs
