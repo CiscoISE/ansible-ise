@@ -59,6 +59,9 @@ source_suffix = {
     '.md': 'markdown',
 }
 
+# Avoid substitution of smartquotes
+smartquotes = False
+
 # The master toctree document.
 master_doc = 'index'
 
