@@ -10,7 +10,7 @@ module: transport_gateway_settings
 short_description: Resource module for Transport Gateway Settings
 description:
 - Manage operation update of the resource Transport Gateway Settings.
-- Transport Gateway acts a proxy for the communication between the ISE servers in your network and the Telemetry servers in case of air-gapped network.
+- Transport Gateway acts a proxy for the communication between the ISE servers in your network and the telemetry servers in case of air-gapped network.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -23,7 +23,7 @@ options:
     description: URL of transport gateway.
     type: str
 requirements:
-- ciscoisesdk >= 2.1.1
+- ciscoisesdk >= 2.2.0
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for telemetry

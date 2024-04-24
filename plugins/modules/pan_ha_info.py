@@ -20,7 +20,7 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 2.1.1
+- ciscoisesdk >= 2.2.0
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for PAN HA
@@ -53,14 +53,14 @@ ise_response:
   type: dict
   sample: >
     {
-      "failedAttempts": 0,
       "isEnabled": true,
-      "pollingInterval": 0,
       "primaryHealthCheckNode": {
         "hostname": "string"
       },
       "secondaryHealthCheckNode": {
         "hostname": "string"
-      }
+      },
+      "pollingInterval": 0,
+      "failedAttempts": 0
     }
 """

@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Copyright (c) 2023, Cisco Systems
+# Copyright (c) 2024, Cisco Systems
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
@@ -37,9 +37,9 @@ argument_spec.update(dict(
     friendlyName=dict(type="str"),
     identityGroups=dict(type="str"),
     imeis=dict(type="str"),
-    imsi=dict(type="str"),
-    ki=dict(type="str"),
     opc=dict(type="str"),
+    ki=dict(type="str"),
+    imsi=dict(type="str"),
     subscriberId=dict(type="str"),
 ))
 
@@ -57,9 +57,9 @@ class Subscriber(object):
             friendly_name=params.get("friendlyName"),
             identity_groups=params.get("identityGroups"),
             imeis=params.get("imeis"),
-            imsi=params.get("imsi"),
-            ki=params.get("ki"),
             opc=params.get("opc"),
+            ki=params.get("ki"),
+            imsi=params.get("imsi"),
             subscriber_id=params.get("subscriberId"),
         )
 
@@ -97,7 +97,7 @@ class Subscriber(object):
                 family="subscriber",
                 function="get_subscriber_by_id",
                 handle_func_exception=False,
-                params={"subscriber_id": id}
+                params={"id": id}
             ).response['response']
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(
@@ -117,7 +117,7 @@ class Subscriber(object):
         id_exists = False
         name_exists = False
         prev_obj = None
-        o_id = self.new_object.get("subscriberId")
+        o_id = self.new_object.get("id")
         name = self.new_object.get("name")
         if o_id:
             prev_obj = self.get_object_by_id(o_id)
@@ -142,9 +142,9 @@ class Subscriber(object):
             ("friendlyName", "friendly_name"),
             ("identityGroups", "identity_groups"),
             ("imeis", "imeis"),
-            ("imsi", "imsi"),
-            ("ki", "ki"),
             ("opc", "opc"),
+            ("ki", "ki"),
+            ("imsi", "imsi"),
             ("subscriberId", "subscriber_id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params

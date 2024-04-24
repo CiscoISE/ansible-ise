@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Copyright (c) 2021, Cisco Systems
+# Copyright (c) 2024, Cisco Systems
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
@@ -28,6 +28,7 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     hotpatchName=dict(type="str"),
+    isDirectoryListed=dict(type="bool"),
     repositoryName=dict(type="str"),
 ))
 
@@ -67,6 +68,7 @@ class ActionModule(ActionBase):
     def get_object(self, params):
         new_object = dict(
             hotpatch_name=params.get("hotpatchName"),
+            is_directory_listed=params.get("isDirectoryListed"),
             repository_name=params.get("repositoryName"),
         )
         return new_object

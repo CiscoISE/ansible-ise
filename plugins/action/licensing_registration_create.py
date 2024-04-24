@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Copyright (c) 2021, Cisco Systems
+# Copyright (c) 2024, Cisco Systems
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
@@ -27,11 +27,11 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
+    token=dict(type="str"),
+    tier=dict(type="list"),
     connectionType=dict(type="str"),
     registrationType=dict(type="str"),
     ssmOnPremServer=dict(type="str"),
-    tier=dict(type="list"),
-    token=dict(type="str"),
 ))
 
 required_if = []
@@ -69,11 +69,11 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
+            token=params.get("token"),
+            tier=params.get("tier"),
             connection_type=params.get("connectionType"),
             registration_type=params.get("registrationType"),
             ssm_on_prem_server=params.get("ssmOnPremServer"),
-            tier=params.get("tier"),
-            token=params.get("token"),
         )
         return new_object
 

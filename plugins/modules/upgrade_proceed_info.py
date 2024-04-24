@@ -1,0 +1,38 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+# Copyright (c) 2021, Cisco Systems
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+
+DOCUMENTATION = r"""
+---
+module: upgrade_proceed_info
+short_description: Information module for Upgrade Proceed
+description:
+version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module_info
+author: Rafael Campos (@racampos)
+options: {}
+requirements:
+- ciscoisesdk >= 2.2.0
+- python >= 3.5
+notes:
+  - Paths used are
+
+"""
+
+EXAMPLES = r"""
+"""
+
+RETURN = r"""
+ise_response:
+  description: A dictionary or list with the response returned by the Cisco ISE Python SDK
+  returned: always
+  type: dict
+  sample: >
+    {
+      "message": "string",
+      "preCheckReportID": "string"
+    }
+"""

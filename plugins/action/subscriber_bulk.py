@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Copyright (c) 2023, Cisco Systems
+# Copyright (c) 2024, Cisco Systems
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
@@ -27,8 +27,8 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    ItemList=dict(type="list"),
     operation=dict(type="str"),
+    ItemList=dict(type="list"),
 ))
 
 required_if = []
@@ -66,8 +66,8 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            item_list=params.get("ItemList"),
             operation=params.get("operation"),
+            item_list=params.get("ItemList"),
         )
         return new_object
 

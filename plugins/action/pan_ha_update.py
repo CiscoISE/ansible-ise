@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Copyright (c) 2021, Cisco Systems
+# Copyright (c) 2024, Cisco Systems
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
@@ -27,11 +27,11 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    failedAttempts=dict(type="int"),
     isEnabled=dict(type="bool"),
-    pollingInterval=dict(type="int"),
     primaryHealthCheckNode=dict(type="dict"),
     secondaryHealthCheckNode=dict(type="dict"),
+    pollingInterval=dict(type="int"),
+    failedAttempts=dict(type="int"),
 ))
 
 required_if = []
@@ -69,11 +69,11 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            failed_attempts=params.get("failedAttempts"),
             is_enabled=params.get("isEnabled"),
-            polling_interval=params.get("pollingInterval"),
             primary_health_check_node=params.get("primaryHealthCheckNode"),
             secondary_health_check_node=params.get("secondaryHealthCheckNode"),
+            polling_interval=params.get("pollingInterval"),
+            failed_attempts=params.get("failedAttempts"),
         )
         return new_object
 

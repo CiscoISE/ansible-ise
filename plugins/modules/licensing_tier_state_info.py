@@ -17,7 +17,7 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 2.1.1
+- ciscoisesdk >= 2.2.0
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for Licensing
@@ -52,12 +52,12 @@ ise_response:
   sample: >
     [
       {
+        "name": "string",
+        "status": "string",
         "compliance": "string",
         "consumptionCounter": 0,
         "daysOutOfCompliance": "string",
-        "lastAuthorization": "string",
-        "name": "string",
-        "status": "string"
+        "lastAuthorization": "string"
       }
     ]
 """
