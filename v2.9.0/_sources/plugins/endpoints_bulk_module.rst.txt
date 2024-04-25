@@ -1,0 +1,2391 @@
+
+.. Document meta
+
+:orphan:
+
+.. |antsibull-internal-nbsp| unicode:: 0xA0
+    :trim:
+
+.. role:: ansible-attribute-support-label
+.. role:: ansible-attribute-support-property
+.. role:: ansible-attribute-support-full
+.. role:: ansible-attribute-support-partial
+.. role:: ansible-attribute-support-none
+.. role:: ansible-attribute-support-na
+.. role:: ansible-option-type
+.. role:: ansible-option-elements
+.. role:: ansible-option-required
+.. role:: ansible-option-versionadded
+.. role:: ansible-option-aliases
+.. role:: ansible-option-choices
+.. role:: ansible-option-choices-default-mark
+.. role:: ansible-option-default-bold
+.. role:: ansible-option-configuration
+.. role:: ansible-option-returned-bold
+.. role:: ansible-option-sample-bold
+
+.. Anchors
+
+.. _ansible_collections.cisco.ise.endpoints_bulk_module:
+
+.. Anchors: short name for ansible.builtin
+
+.. Anchors: aliases
+
+
+
+.. Title
+
+cisco.ise.endpoints_bulk module -- Resource module for Endpoints Bulk
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. Collection note
+
+.. note::
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.0).
+
+    To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.ise.endpoints_bulk_module_requirements>` for details.
+
+    To use it in a playbook, specify: :code:`cisco.ise.endpoints_bulk`.
+
+.. version_added
+
+.. rst-class:: ansible-version-added
+
+New in cisco.ise 1.0.0
+
+.. contents::
+   :local:
+   :depth: 1
+
+.. Deprecated
+
+
+Synopsis
+--------
+
+.. Description
+
+- Manage operations create, update and delete of the resource Endpoints Bulk.
+
+.. note::
+    This module has a corresponding :ref:`action plugin <action_plugins>`.
+
+.. Aliases
+
+
+.. Requirements
+
+.. _ansible_collections.cisco.ise.endpoints_bulk_module_requirements:
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- ciscoisesdk \>= 2.2.0
+- python \>= 3.5
+
+
+
+
+
+
+.. Options
+
+Parameters
+----------
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Parameter
+    - Comments
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectedLinks"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-connectedlinks:
+
+      .. rst-class:: ansible-option-title
+
+      **connectedLinks**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectedLinks" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Endpoints Bulk's connectedLinks.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customAttributes"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-customattributes:
+
+      .. rst-class:: ansible-option-title
+
+      **customAttributes**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customAttributes" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Endpoints Bulk's customAttributes.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-description"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-description:
+
+      .. rst-class:: ansible-option-title
+
+      **description**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-description" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Endpoints Bulk's description.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-deviceType"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-devicetype:
+
+      .. rst-class:: ansible-option-title
+
+      **deviceType**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-deviceType" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Endpoints Bulk's deviceType.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-groupId"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-groupid:
+
+      .. rst-class:: ansible-option-title
+
+      **groupId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-groupId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Endpoints Bulk's groupId.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-hardwareRevision"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-hardwarerevision:
+
+      .. rst-class:: ansible-option-title
+
+      **hardwareRevision**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-hardwareRevision" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Endpoints Bulk's hardwareRevision.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-id"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Endpoints Bulk's id.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-identityStore"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-identitystore:
+
+      .. rst-class:: ansible-option-title
+
+      **identityStore**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-identityStore" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Endpoints Bulk's identityStore.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-identityStoreId"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-identitystoreid:
+
+      .. rst-class:: ansible-option-title
+
+      **identityStoreId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-identityStoreId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Endpoints Bulk's identityStoreId.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ipAddress"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-ipaddress:
+
+      .. rst-class:: ansible-option-title
+
+      **ipAddress**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ipAddress" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Endpoints Bulk's ipAddress.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_debug"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-ise_debug:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_debug**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_debug" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag for Identity Services Engine SDK to enable debugging.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_hostname"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-ise_hostname:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_hostname**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_hostname" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Identity Services Engine hostname.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_password"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-ise_password:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_password**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_password" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Identity Services Engine password to authenticate.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_single_request_timeout"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-ise_single_request_timeout:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_single_request_timeout**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_single_request_timeout" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      :ansible-option-versionadded:`added in cisco.ise 3.0.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Timeout (in seconds) for RESTful HTTP requests.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_username"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-ise_username:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_username**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_username" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Identity Services Engine username to authenticate.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_uses_api_gateway"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-ise_uses_api_gateway:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_uses_api_gateway**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_uses_api_gateway" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      :ansible-option-versionadded:`added in cisco.ise 1.1.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag that informs the SDK whether to use the Identity Services Engine's API Gateway to send requests.
+
+      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise\_hostname}}.
+
+      If it is false, it sends the requests to https://{{ise\_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_uses_csrf_token"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-ise_uses_csrf_token:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_uses_csrf_token**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_uses_csrf_token" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      :ansible-option-versionadded:`added in cisco.ise 3.0.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag that informs the SDK whether we send the CSRF token to ISE's ERS APIs.
+
+      If it is True, the SDK assumes that your ISE CSRF Check is enabled.
+
+      If it is True, it assumes you need the SDK to manage the CSRF token automatically for you.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_verify"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-ise_verify:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_verify**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_verify" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag to enable or disable SSL certificate verification.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_version"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-ise_version:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_version**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_version" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Informs the SDK which version of Identity Services Engine to use.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"3.1\_Patch\_1"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_wait_on_rate_limit"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-ise_wait_on_rate_limit:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_wait_on_rate_limit**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_wait_on_rate_limit" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag for Identity Services Engine SDK to enable automatic rate-limit handling.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-mac"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-mac:
+
+      .. rst-class:: ansible-option-title
+
+      **mac**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-mac" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Endpoints Bulk's mac.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-mdmAttributes"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-mdmattributes:
+
+      .. rst-class:: ansible-option-title
+
+      **mdmAttributes**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-mdmAttributes" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Endpoints Bulk's mdmAttributes.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-name"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Endpoints Bulk's name.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-payload:
+
+      .. rst-class:: ansible-option-title
+
+      **payload**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Endpoints Bulk's payload.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/connectedLinks"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-payload/connectedlinks:
+
+      .. rst-class:: ansible-option-title
+
+      **connectedLinks**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/connectedLinks" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Endpoints Bulk's connectedLinks.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/customAttributes"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-payload/customattributes:
+
+      .. rst-class:: ansible-option-title
+
+      **customAttributes**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/customAttributes" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Endpoints Bulk's customAttributes.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/description"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-payload/description:
+
+      .. rst-class:: ansible-option-title
+
+      **description**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/description" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Endpoints Bulk's description.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/deviceType"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-payload/devicetype:
+
+      .. rst-class:: ansible-option-title
+
+      **deviceType**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/deviceType" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Endpoints Bulk's deviceType.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/groupId"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-payload/groupid:
+
+      .. rst-class:: ansible-option-title
+
+      **groupId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/groupId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Endpoints Bulk's groupId.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/hardwareRevision"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-payload/hardwarerevision:
+
+      .. rst-class:: ansible-option-title
+
+      **hardwareRevision**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/hardwareRevision" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Endpoints Bulk's hardwareRevision.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/id"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-payload/id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Endpoints Bulk's id.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/identityStore"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-payload/identitystore:
+
+      .. rst-class:: ansible-option-title
+
+      **identityStore**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/identityStore" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Endpoints Bulk's identityStore.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/identityStoreId"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-payload/identitystoreid:
+
+      .. rst-class:: ansible-option-title
+
+      **identityStoreId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/identityStoreId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Endpoints Bulk's identityStoreId.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/ipAddress"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-payload/ipaddress:
+
+      .. rst-class:: ansible-option-title
+
+      **ipAddress**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/ipAddress" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Endpoints Bulk's ipAddress.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/mac"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-payload/mac:
+
+      .. rst-class:: ansible-option-title
+
+      **mac**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/mac" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Endpoints Bulk's mac.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/mdmAttributes"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-payload/mdmattributes:
+
+      .. rst-class:: ansible-option-title
+
+      **mdmAttributes**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/mdmAttributes" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Endpoints Bulk's mdmAttributes.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/name"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-payload/name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Endpoints Bulk's name.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/portalUser"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-payload/portaluser:
+
+      .. rst-class:: ansible-option-title
+
+      **portalUser**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/portalUser" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Endpoints Bulk's portalUser.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/productId"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-payload/productid:
+
+      .. rst-class:: ansible-option-title
+
+      **productId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/productId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Endpoints Bulk's productId.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/profileId"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-payload/profileid:
+
+      .. rst-class:: ansible-option-title
+
+      **profileId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/profileId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Endpoints Bulk's profileId.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/protocol"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-payload/protocol:
+
+      .. rst-class:: ansible-option-title
+
+      **protocol**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/protocol" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Endpoints Bulk's protocol.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/serialNumber"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-payload/serialnumber:
+
+      .. rst-class:: ansible-option-title
+
+      **serialNumber**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/serialNumber" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Endpoints Bulk's serialNumber.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/softwareRevision"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-payload/softwarerevision:
+
+      .. rst-class:: ansible-option-title
+
+      **softwareRevision**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/softwareRevision" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Endpoints Bulk's softwareRevision.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/staticGroupAssignment"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-payload/staticgroupassignment:
+
+      .. rst-class:: ansible-option-title
+
+      **staticGroupAssignment**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/staticGroupAssignment" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      StaticGroupAssignment flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/staticProfileAssignment"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-payload/staticprofileassignment:
+
+      .. rst-class:: ansible-option-title
+
+      **staticProfileAssignment**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/staticProfileAssignment" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      StaticProfileAssignment flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-payload/vendor"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-payload/vendor:
+
+      .. rst-class:: ansible-option-title
+
+      **vendor**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-payload/vendor" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Endpoints Bulk's vendor.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-portalUser"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-portaluser:
+
+      .. rst-class:: ansible-option-title
+
+      **portalUser**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-portalUser" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Endpoints Bulk's portalUser.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-productId"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-productid:
+
+      .. rst-class:: ansible-option-title
+
+      **productId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-productId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Endpoints Bulk's productId.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-profileId"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-profileid:
+
+      .. rst-class:: ansible-option-title
+
+      **profileId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-profileId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Endpoints Bulk's profileId.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-protocol"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-protocol:
+
+      .. rst-class:: ansible-option-title
+
+      **protocol**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-protocol" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Endpoints Bulk's protocol.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-serialNumber"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-serialnumber:
+
+      .. rst-class:: ansible-option-title
+
+      **serialNumber**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-serialNumber" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Endpoints Bulk's serialNumber.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-softwareRevision"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-softwarerevision:
+
+      .. rst-class:: ansible-option-title
+
+      **softwareRevision**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-softwareRevision" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Endpoints Bulk's softwareRevision.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-staticGroupAssignment"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-staticgroupassignment:
+
+      .. rst-class:: ansible-option-title
+
+      **staticGroupAssignment**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-staticGroupAssignment" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      StaticGroupAssignment flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-staticProfileAssignment"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-staticprofileassignment:
+
+      .. rst-class:: ansible-option-title
+
+      **staticProfileAssignment**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-staticProfileAssignment" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      StaticProfileAssignment flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-value"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-value:
+
+      .. rst-class:: ansible-option-title
+
+      **value**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-value" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Value path parameter. The id or MAC of the endpoint.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-vendor"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__parameter-vendor:
+
+      .. rst-class:: ansible-option-title
+
+      **vendor**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-vendor" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Endpoints Bulk's vendor.
+
+
+      .. raw:: html
+
+        </div>
+
+
+.. Attributes
+
+
+.. Notes
+
+Notes
+-----
+
+.. note::
+   - SDK Method used are endpoints.Endpoints.create\_bulk\_end\_points, endpoints.Endpoints.delete\_endpoint, endpoints.Endpoints.update\_bulk\_end\_points, endpoints.Endpoints.update\_endpoint,
+   - Paths used are post /api/v1/endpoint, post /api/v1/endpoint/bulk, delete /api/v1/endpoint/bulk, delete /api/v1/endpoint/{value}, put /api/v1/endpoint/bulk, put /api/v1/endpoint/{value},
+   - Does not support \ :literal:`check\_mode`\ 
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
+   - The parameters starting with ise\_ are used by the Cisco ISE Python SDK to establish the connection
+
+.. Seealso
+
+
+.. Examples
+
+Examples
+--------
+
+.. code-block:: yaml+jinja
+
+    
+    - name: Create
+      cisco.ise.endpoints_bulk:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: present
+        payload:
+        - connectedLinks: {}
+          customAttributes: {}
+          description: string
+          deviceType: string
+          groupId: string
+          hardwareRevision: string
+          id: string
+          identityStore: string
+          identityStoreId: string
+          ipAddress: string
+          mac: string
+          mdmAttributes: {}
+          name: string
+          portalUser: string
+          productId: string
+          profileId: string
+          protocol: string
+          serialNumber: string
+          softwareRevision: string
+          staticGroupAssignment: true
+          staticProfileAssignment: true
+          vendor: string
+
+    - name: Update all
+      cisco.ise.endpoints_bulk:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: present
+        payload:
+        - connectedLinks: {}
+          customAttributes: {}
+          description: string
+          deviceType: string
+          groupId: string
+          hardwareRevision: string
+          id: string
+          identityStore: string
+          identityStoreId: string
+          ipAddress: string
+          mac: string
+          mdmAttributes: {}
+          name: string
+          portalUser: string
+          productId: string
+          profileId: string
+          protocol: string
+          serialNumber: string
+          softwareRevision: string
+          staticGroupAssignment: true
+          staticProfileAssignment: true
+          vendor: string
+
+    - name: Delete all
+      cisco.ise.endpoints_bulk:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: absent
+
+    - name: Update by id
+      cisco.ise.endpoints_bulk:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: present
+        connectedLinks: {}
+        customAttributes: {}
+        description: string
+        deviceType: string
+        groupId: string
+        hardwareRevision: string
+        id: string
+        identityStore: string
+        identityStoreId: string
+        ipAddress: string
+        mac: string
+        mdmAttributes: {}
+        name: string
+        portalUser: string
+        productId: string
+        profileId: string
+        protocol: string
+        serialNumber: string
+        softwareRevision: string
+        staticGroupAssignment: true
+        staticProfileAssignment: true
+        value: string
+        vendor: string
+
+    - name: Delete by id
+      cisco.ise.endpoints_bulk:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: absent
+        value: string
+
+
+
+
+
+.. Facts
+
+
+.. Return values
+
+Return Values
+-------------
+Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Key
+    - Description
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-ise_response"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__return-ise_response:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_response**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-ise_response" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      A dictionary or list with the response returned by the Cisco ISE Python SDK
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"connectedLinks": {}, "customAttributes": {}, "description": "string", "deviceType": "string", "groupId": "string", "hardwareRevision": "string", "id": "string", "identityStore": "string", "identityStoreId": "string", "ipAddress": "string", "mac": "string", "mdmAttributes": {}, "name": "string", "portalUser": "string", "productId": "string", "profileId": "string", "protocol": "string", "serialNumber": "string", "softwareRevision": "string", "staticGroupAssignment": true, "staticProfileAssignment": true, "vendor": "string"}`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-ise_update_response"></div>
+
+      .. _ansible_collections.cisco.ise.endpoints_bulk_module__return-ise_update_response:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_update_response**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-ise_update_response" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      :ansible-option-versionadded:`added in cisco.ise 1.1.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      A dictionary or list with the response returned by the Cisco ISE Python SDK
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"connectedLinks": {}, "customAttributes": {}, "description": "string", "deviceType": "string", "groupId": "string", "hardwareRevision": "string", "id": "string", "identityStore": "string", "identityStoreId": "string", "ipAddress": "string", "mac": "string", "mdmAttributes": {}, "name": "string", "portalUser": "string", "productId": "string", "profileId": "string", "protocol": "string", "serialNumber": "string", "softwareRevision": "string", "staticGroupAssignment": true, "staticProfileAssignment": true, "vendor": "string"}`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+..  Status (Presently only deprecated)
+
+
+.. Authors
+
+Authors
+~~~~~~~
+
+- Rafael Campos (@racampos)
+
+
+
+.. Extra links
+
+Collection links
+~~~~~~~~~~~~~~~~
+
+.. raw:: html
+
+  <p class="ansible-links">
+    <a href="https://github.com/CiscoISE/ansible-ise/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
+    <a href="https://github.com/CiscoISE/ansible-ise" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
+  </p>
+
+.. Parsing errors
+
