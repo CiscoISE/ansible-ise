@@ -42,7 +42,7 @@ cisco.ise.csr_info module -- Information module for CSR
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.8.1).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -70,8 +70,8 @@ Synopsis
 
 - Get all CSR.
 - Get CSR by id.
-- This API displays details of a Certificate Signing Request of a particular node for given HostName and ID.
-- This API supports Filtering, Sorting and Pagination.
+- This API displays details of a certificate signing request of a particular node for a given hostname and ID.
+- This API supports filtering, sorting and pagination.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -87,7 +87,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk \>= 2.1.1
+- ciscoisesdk \>= 2.2.0
 - python \>= 3.5
 
 
@@ -127,7 +127,7 @@ Parameters
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+      :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -855,7 +855,7 @@ Examples
         size: 0
         sort: string
         sortBy: string
-        filter: []
+        filter: string
         filterType: string
       register: result
 
@@ -929,7 +929,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"csrContents": "string", "friendlyName": "string", "groupTag": "string", "hostName": "string", "id": "string", "keySize": "string", "link": {"href": "string", "rel": "string", "type": "string"}, "signatureAlgorithm": "string", "subject": "string", "timeStamp": "string", "usedFor": "string"}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"csrContents": "string", "friendlyName": "string", "groupTag": "string", "hostName": "string", "id": "string", "keySize": "string", "link": {"href": "string", "rel": "string", "type": "string"}, "sanNames": "string", "signatureAlgorithm": "string", "subject": "string", "timeStamp": "string", "usedFor": "string"}`
 
 
       .. raw:: html
@@ -977,7 +977,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"csrContents\\": \\"string\\",\\n    \\"friendlyName\\": \\"string\\",\\n    \\"groupTag\\": \\"string\\",\\n    \\"hostName\\": \\"string\\",\\n    \\"id\\": \\"string\\",\\n    \\"keySize\\": \\"string\\",\\n    \\"link\\": {\\n      \\"href\\": \\"string\\",\\n      \\"rel\\": \\"string\\",\\n      \\"type\\": \\"string\\"\\n    },\\n    \\"signatureAlgorithm\\": \\"string\\",\\n    \\"subject\\": \\"string\\",\\n    \\"timeStamp\\": \\"string\\",\\n    \\"usedFor\\": \\"string\\"\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"csrContents\\": \\"string\\",\\n    \\"friendlyName\\": \\"string\\",\\n    \\"groupTag\\": \\"string\\",\\n    \\"hostName\\": \\"string\\",\\n    \\"id\\": \\"string\\",\\n    \\"keySize\\": \\"string\\",\\n    \\"link\\": {\\n      \\"href\\": \\"string\\",\\n      \\"rel\\": \\"string\\",\\n      \\"type\\": \\"string\\"\\n    },\\n    \\"sanNames\\": \\"string\\",\\n    \\"signatureAlgorithm\\": \\"string\\",\\n    \\"subject\\": \\"string\\",\\n    \\"timeStamp\\": \\"string\\",\\n    \\"usedFor\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html

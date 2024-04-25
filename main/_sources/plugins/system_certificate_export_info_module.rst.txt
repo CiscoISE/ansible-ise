@@ -42,7 +42,7 @@ cisco.ise.system_certificate_export_info module -- Information module for System
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.8.1).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -85,7 +85,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk \>= 2.1.1
+- ciscoisesdk \>= 2.2.0
 - python \>= 3.5
 
 
@@ -204,6 +204,40 @@ Parameters
         <div class="ansible-option-cell">
 
       The filename used to save the download file.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-hostName"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_export_info_module__parameter-hostname:
+
+      .. rst-class:: ansible-option-title
+
+      **hostName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-hostName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Hostname of the Cisco ISE node in which self-signed certificate should be generated.
 
 
       .. raw:: html
@@ -768,6 +802,7 @@ Examples
         dirPath: /tmp/downloads/
         export: string
         filename: download_filename.extension
+        hostName: string
         id: string
         password: string
         saveFile: true
@@ -812,7 +847,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`string`
+      :ansible-option-type:`dictionary`
 
       .. raw:: html
 
@@ -832,7 +867,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"\\"'string'\\"\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"description": "string", "file": "string", "filename": "string", "inputStream": {}, "open": true, "readable": true, "uri": "string", "url": "string"}`
 
 
       .. raw:: html

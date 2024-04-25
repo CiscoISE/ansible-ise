@@ -42,7 +42,7 @@ cisco.ise.system_certificate_info module -- Information module for System Certif
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.8.1).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -70,8 +70,8 @@ Synopsis
 
 - Get System Certificate by id.
 - Get System Certificate by name.
-- This API provides details of a System Certificate of a particular node based on given HostName and ID.
-- This API supports Filtering, Sorting and Pagination.
+- This API provides details of a system certificate of a particular node based on given hostname and ID.
+- This API supports filtering, sorting and pagination.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -87,7 +87,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk \>= 2.1.1
+- ciscoisesdk \>= 2.2.0
 - python \>= 3.5
 
 
@@ -127,7 +127,7 @@ Parameters
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+      :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -229,7 +229,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      HostName path parameter. Name of the host of which system certificates should be returned.
+      HostName path parameter. Name of the host for which the system certificates should be returned.
 
 
       .. raw:: html
@@ -865,7 +865,7 @@ Examples
         size: 0
         sort: string
         sortBy: string
-        filter: []
+        filter: string
         filterType: string
         hostName: string
       register: result

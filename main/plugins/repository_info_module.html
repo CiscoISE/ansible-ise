@@ -23,7 +23,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="cisco.ise.resource_version_info module – Information module for Resource Version" href="resource_version_info_module.html" />
+    <link rel="next" title="cisco.ise.reservation module – Resource module for Reservation" href="reservation_module.html" />
     <link rel="prev" title="cisco.ise.repository_files_info module – Information module for Repository Files" href="repository_files_info_module.html" /> 
 </head>
 
@@ -56,6 +56,7 @@
 <li class="toctree-l4"><a class="reference internal" href="aci_settings_module.html">cisco.ise.aci_settings module – Resource module for ACI Settings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_settings_info_module.html">cisco.ise.aci_settings_info module – Information module for ACI Settings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="aci_test_connectivity_module.html">cisco.ise.aci_test_connectivity module – Resource module for ACI Test Connectivity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="active_directories_info_module.html">cisco.ise.active_directories_info module – Information module for Active Directories Info</a></li>
 <li class="toctree-l4"><a class="reference internal" href="active_directory_module.html">cisco.ise.active_directory module – Resource module for Active Directory</a></li>
 <li class="toctree-l4"><a class="reference internal" href="active_directory_add_groups_module.html">cisco.ise.active_directory_add_groups module – Resource module for Active Directory Add Groups</a></li>
 <li class="toctree-l4"><a class="reference internal" href="active_directory_groups_by_domain_info_module.html">cisco.ise.active_directory_groups_by_domain_info module – Information module for Active Directory Groups By Domain</a></li>
@@ -67,6 +68,7 @@
 <li class="toctree-l4"><a class="reference internal" href="active_directory_leave_domain_with_all_nodes_module.html">cisco.ise.active_directory_leave_domain_with_all_nodes module – Resource module for Active Directory Leave Domain With All Nodes</a></li>
 <li class="toctree-l4"><a class="reference internal" href="active_directory_trusted_domains_info_module.html">cisco.ise.active_directory_trusted_domains_info module – Information module for Active Directory Trusted Domains</a></li>
 <li class="toctree-l4"><a class="reference internal" href="active_directory_user_groups_info_module.html">cisco.ise.active_directory_user_groups_info module – Information module for Active Directory User Groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ad_groups_info_module.html">cisco.ise.ad_groups_info module – Information module for Ad Groups Info</a></li>
 <li class="toctree-l4"><a class="reference internal" href="admin_user_info_module.html">cisco.ise.admin_user_info module – Information module for Admin User</a></li>
 <li class="toctree-l4"><a class="reference internal" href="allowed_protocols_module.html">cisco.ise.allowed_protocols module – Resource module for Allowed Protocols</a></li>
 <li class="toctree-l4"><a class="reference internal" href="allowed_protocols_info_module.html">cisco.ise.allowed_protocols_info module – Information module for Allowed Protocols</a></li>
@@ -95,13 +97,14 @@
 <li class="toctree-l4"><a class="reference internal" href="certificate_template_info_module.html">cisco.ise.certificate_template_info module – Information module for Certificate Template</a></li>
 <li class="toctree-l4"><a class="reference internal" href="configuration_module.html">cisco.ise.configuration module – Resource module for Configuration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="configuration_info_module.html">cisco.ise.configuration_info module – Information module for Configuration</a></li>
-<li class="toctree-l4"><a class="reference internal" href="connector_config_module.html">cisco.ise.connector_config module – Resource module for Connector Config</a></li>
-<li class="toctree-l4"><a class="reference internal" href="connector_config_info_module.html">cisco.ise.connector_config_info module – Information module for Connector Config</a></li>
 <li class="toctree-l4"><a class="reference internal" href="csr_delete_module.html">cisco.ise.csr_delete module – Resource module for CSR Delete</a></li>
 <li class="toctree-l4"><a class="reference internal" href="csr_export_info_module.html">cisco.ise.csr_export_info module – Information module for CSR Export</a></li>
 <li class="toctree-l4"><a class="reference internal" href="csr_generate_module.html">cisco.ise.csr_generate module – Resource module for CSR Generate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="csr_generate_intermediate_ca_module.html">cisco.ise.csr_generate_intermediate_ca module – Resource module for CSR Generate Intermediate CA</a></li>
 <li class="toctree-l4"><a class="reference internal" href="csr_info_module.html">cisco.ise.csr_info module – Information module for CSR</a></li>
+<li class="toctree-l4"><a class="reference internal" href="custom_attributes_module.html">cisco.ise.custom_attributes module – Resource module for Custom Attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="custom_attributes_info_module.html">cisco.ise.custom_attributes_info module – Information module for Custom Attributes Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="custom_attributes_rename_module.html">cisco.ise.custom_attributes_rename module – Resource module for Custom Attributes Rename</a></li>
 <li class="toctree-l4"><a class="reference internal" href="dataconnect_info_module.html">cisco.ise.dataconnect_info module – Information module for Dataconnect Info</a></li>
 <li class="toctree-l4"><a class="reference internal" href="dataconnect_settings_info_module.html">cisco.ise.dataconnect_settings_info module – Information module for Dataconnect Settings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="dataconnect_settings_password_module.html">cisco.ise.dataconnect_settings_password module – Resource module for Dataconnect Settings Password</a></li>
@@ -139,9 +142,16 @@
 <li class="toctree-l4"><a class="reference internal" href="device_administration_service_names_info_module.html">cisco.ise.device_administration_service_names_info module – Information module for Device Administration Service Names</a></li>
 <li class="toctree-l4"><a class="reference internal" href="device_administration_time_date_conditions_module.html">cisco.ise.device_administration_time_date_conditions module – Resource module for Device Administration Time Date Conditions</a></li>
 <li class="toctree-l4"><a class="reference internal" href="device_administration_time_date_conditions_info_module.html">cisco.ise.device_administration_time_date_conditions_info module – Information module for Device Administration Time Date Conditions</a></li>
-<li class="toctree-l4"><a class="reference internal" href="dictionary_references_info_module.html">cisco.ise.dictionary_references_info module – Information module for Dictionary References Info</a></li>
 <li class="toctree-l4"><a class="reference internal" href="downloadable_acl_module.html">cisco.ise.downloadable_acl module – Resource module for Downloadable ACL</a></li>
 <li class="toctree-l4"><a class="reference internal" href="downloadable_acl_info_module.html">cisco.ise.downloadable_acl_info module – Information module for Downloadable ACL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="duo_identity_sync_module.html">cisco.ise.duo_identity_sync module – Resource module for Duo Identity Sync</a></li>
+<li class="toctree-l4"><a class="reference internal" href="duo_identity_sync_cancel_info_module.html">cisco.ise.duo_identity_sync_cancel_info module – Information module for Duo Identity Sync Cancel Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="duo_identity_sync_info_module.html">cisco.ise.duo_identity_sync_info module – Information module for Duo Identity Sync Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="duo_identity_sync_status_module.html">cisco.ise.duo_identity_sync_status module – Resource module for Duo Identity Sync Status</a></li>
+<li class="toctree-l4"><a class="reference internal" href="duo_identitysync_sync_info_module.html">cisco.ise.duo_identitysync_sync_info module – Information module for Duo Identitysync Sync Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="duo_mfa_module.html">cisco.ise.duo_mfa module – Resource module for Duo Mfa</a></li>
+<li class="toctree-l4"><a class="reference internal" href="duo_mfa_info_module.html">cisco.ise.duo_mfa_info module – Information module for Duo Mfa Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="duo_mfa_testconnection_module.html">cisco.ise.duo_mfa_testconnection module – Resource module for Duo Mfa Testconnection</a></li>
 <li class="toctree-l4"><a class="reference internal" href="egress_matrix_cell_module.html">cisco.ise.egress_matrix_cell module – Resource module for Egress Matrix Cell</a></li>
 <li class="toctree-l4"><a class="reference internal" href="egress_matrix_cell_bulk_monitor_status_info_module.html">cisco.ise.egress_matrix_cell_bulk_monitor_status_info module – Information module for Egress Matrix Cell Bulk Monitor Status</a></li>
 <li class="toctree-l4"><a class="reference internal" href="egress_matrix_cell_bulk_request_module.html">cisco.ise.egress_matrix_cell_bulk_request module – Resource module for Egress Matrix Cell Bulk Request</a></li>
@@ -160,6 +170,12 @@
 <li class="toctree-l4"><a class="reference internal" href="endpoint_info_module.html">cisco.ise.endpoint_info module – Information module for Endpoint</a></li>
 <li class="toctree-l4"><a class="reference internal" href="endpoint_register_module.html">cisco.ise.endpoint_register module – Resource module for Endpoint Register</a></li>
 <li class="toctree-l4"><a class="reference internal" href="endpoint_release_rejected_endpoint_module.html">cisco.ise.endpoint_release_rejected_endpoint module – Resource module for Endpoint Release Rejected Endpoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="endpoints_module.html">cisco.ise.endpoints module – Resource module for Endpoints</a></li>
+<li class="toctree-l4"><a class="reference internal" href="endpoints_bulk_module.html">cisco.ise.endpoints_bulk module – Resource module for Endpoints Bulk</a></li>
+<li class="toctree-l4"><a class="reference internal" href="endpoints_bulk_info_module.html">cisco.ise.endpoints_bulk_info module – Information module for Endpoints Bulk</a></li>
+<li class="toctree-l4"><a class="reference internal" href="endpoints_device_type_info_module.html">cisco.ise.endpoints_device_type_info module – Information module for Endpoints Device Type Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="endpoints_info_module.html">cisco.ise.endpoints_info module – Information module for Endpoints Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="endpoints_task_module.html">cisco.ise.endpoints_task module – Resource module for Endpoints Task</a></li>
 <li class="toctree-l4"><a class="reference internal" href="external_radius_server_module.html">cisco.ise.external_radius_server module – Resource module for External RADIUS Server</a></li>
 <li class="toctree-l4"><a class="reference internal" href="external_radius_server_info_module.html">cisco.ise.external_radius_server_info module – Information module for External RADIUS Server</a></li>
 <li class="toctree-l4"><a class="reference internal" href="filter_policy_module.html">cisco.ise.filter_policy module – Resource module for Filter Policy</a></li>
@@ -196,6 +212,16 @@
 <li class="toctree-l4"><a class="reference internal" href="identity_group_info_module.html">cisco.ise.identity_group_info module – Information module for Identity Group</a></li>
 <li class="toctree-l4"><a class="reference internal" href="internal_user_module.html">cisco.ise.internal_user module – Resource module for Internal User</a></li>
 <li class="toctree-l4"><a class="reference internal" href="internal_user_info_module.html">cisco.ise.internal_user_info module – Information module for Internal User</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ipsec_module.html">cisco.ise.ipsec module – Resource module for Ipsec</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ipsec_bulk_module.html">cisco.ise.ipsec_bulk module – Resource module for Ipsec Bulk</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ipsec_certificates_info_module.html">cisco.ise.ipsec_certificates_info module – Information module for Ipsec Certificates Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ipsec_delete_module.html">cisco.ise.ipsec_delete module – Resource module for Ipsec Delete</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ipsec_delete_info_module.html">cisco.ise.ipsec_delete_info module – Information module for Ipsec Delete</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ipsec_disable_module.html">cisco.ise.ipsec_disable module – Resource module for Ipsec Disable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ipsec_disable_info_module.html">cisco.ise.ipsec_disable_info module – Information module for Ipsec Disable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ipsec_enable_module.html">cisco.ise.ipsec_enable module – Resource module for Ipsec Enable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ipsec_enable_info_module.html">cisco.ise.ipsec_enable_info module – Information module for Ipsec Enable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ipsec_info_module.html">cisco.ise.ipsec_info module – Information module for Ipsec Info</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ise_root_ca_regenerate_module.html">cisco.ise.ise_root_ca_regenerate module – Resource module for Ise Root CA Regenerate</a></li>
 <li class="toctree-l4"><a class="reference internal" href="licensing_connection_type_info_module.html">cisco.ise.licensing_connection_type_info module – Information module for Licensing Connection Type</a></li>
 <li class="toctree-l4"><a class="reference internal" href="licensing_eval_license_info_module.html">cisco.ise.licensing_eval_license_info module – Information module for Licensing Eval License</a></li>
@@ -308,6 +334,12 @@
 <li class="toctree-l4"><a class="reference internal" href="profiler_profile_info_module.html">cisco.ise.profiler_profile_info module – Information module for Profiler Profile</a></li>
 <li class="toctree-l4"><a class="reference internal" href="proxy_connection_settings_module.html">cisco.ise.proxy_connection_settings module – Resource module for Proxy Connection Settings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="proxy_connection_settings_info_module.html">cisco.ise.proxy_connection_settings_info module – Information module for Proxy Connection Settings</a></li>
+<li class="toctree-l4"><a class="reference internal" href="px_grid_direct_module.html">cisco.ise.px_grid_direct module – Resource module for Px Grid Direct</a></li>
+<li class="toctree-l4"><a class="reference internal" href="px_grid_direct_dictionary_info_module.html">cisco.ise.px_grid_direct_dictionary_info module – Information module for Px Grid Direct Dictionary Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="px_grid_direct_info_module.html">cisco.ise.px_grid_direct_info module – Information module for Px Grid Direct Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="px_grid_direct_sync_module.html">cisco.ise.px_grid_direct_sync module – Resource module for Px Grid Direct Sync</a></li>
+<li class="toctree-l4"><a class="reference internal" href="px_grid_direct_sync_info_module.html">cisco.ise.px_grid_direct_sync_info module – Information module for Px Grid Direct Sync</a></li>
+<li class="toctree-l4"><a class="reference internal" href="px_grid_direct_test_connector_module.html">cisco.ise.px_grid_direct_test_connector module – Resource module for Px Grid Direct Test Connector</a></li>
 <li class="toctree-l4"><a class="reference internal" href="px_grid_node_approve_module.html">cisco.ise.px_grid_node_approve module – Resource module for Px Grid Node Approve</a></li>
 <li class="toctree-l4"><a class="reference internal" href="px_grid_node_delete_module.html">cisco.ise.px_grid_node_delete module – Resource module for Px Grid Node Delete</a></li>
 <li class="toctree-l4"><a class="reference internal" href="px_grid_node_info_module.html">cisco.ise.px_grid_node_info module – Information module for Px Grid Node</a></li>
@@ -349,6 +381,8 @@
 <li class="toctree-l4"><a class="reference internal" href="repository_module.html">cisco.ise.repository module – Resource module for Repository</a></li>
 <li class="toctree-l4"><a class="reference internal" href="repository_files_info_module.html">cisco.ise.repository_files_info module – Information module for Repository Files</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">cisco.ise.repository_info module – Information module for Repository</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reservation_module.html">cisco.ise.reservation module – Resource module for Reservation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="reservation_info_module.html">cisco.ise.reservation_info module – Information module for Reservation Info</a></li>
 <li class="toctree-l4"><a class="reference internal" href="resource_version_info_module.html">cisco.ise.resource_version_info module – Information module for Resource Version</a></li>
 <li class="toctree-l4"><a class="reference internal" href="rest_id_store_module.html">cisco.ise.rest_id_store module – Resource module for REST Id Store</a></li>
 <li class="toctree-l4"><a class="reference internal" href="rest_id_store_info_module.html">cisco.ise.rest_id_store_info module – Information module for REST Id Store</a></li>
@@ -390,6 +424,8 @@
 <li class="toctree-l4"><a class="reference internal" href="sponsor_portal_info_module.html">cisco.ise.sponsor_portal_info module – Information module for Sponsor Portal</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sponsored_guest_portal_module.html">cisco.ise.sponsored_guest_portal module – Resource module for Sponsored Guest Portal</a></li>
 <li class="toctree-l4"><a class="reference internal" href="sponsored_guest_portal_info_module.html">cisco.ise.sponsored_guest_portal_info module – Information module for Sponsored Guest Portal</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stop_replication_module.html">cisco.ise.stop_replication module – Resource module for Stop Replication</a></li>
+<li class="toctree-l4"><a class="reference internal" href="stop_replication_info_module.html">cisco.ise.stop_replication_info module – Information module for Stop Replication Info</a></li>
 <li class="toctree-l4"><a class="reference internal" href="subscriber_module.html">cisco.ise.subscriber module – Resource module for Subscriber</a></li>
 <li class="toctree-l4"><a class="reference internal" href="subscriber_bulk_module.html">cisco.ise.subscriber_bulk module – Resource module for Subscriber Bulk</a></li>
 <li class="toctree-l4"><a class="reference internal" href="subscriber_imsi_info_module.html">cisco.ise.subscriber_imsi_info module – Information module for Subscriber Imsi Info</a></li>
@@ -425,7 +461,6 @@
 <li class="toctree-l4"><a class="reference internal" href="tacacs_server_sequence_info_module.html">cisco.ise.tacacs_server_sequence_info module – Information module for TACACS Server Sequence</a></li>
 <li class="toctree-l4"><a class="reference internal" href="tasks_info_module.html">cisco.ise.tasks_info module – Information module for Tasks</a></li>
 <li class="toctree-l4"><a class="reference internal" href="telemetry_info_module.html">cisco.ise.telemetry_info module – Information module for Telemetry Info</a></li>
-<li class="toctree-l4"><a class="reference internal" href="test_connector_module.html">cisco.ise.test_connector module – Resource module for Test Connector</a></li>
 <li class="toctree-l4"><a class="reference internal" href="threat_vulnerabilities_clear_module.html">cisco.ise.threat_vulnerabilities_clear module – Resource module for Threat Vulnerabilities Clear</a></li>
 <li class="toctree-l4"><a class="reference internal" href="transport_gateway_settings_module.html">cisco.ise.transport_gateway_settings module – Resource module for Transport Gateway Settings</a></li>
 <li class="toctree-l4"><a class="reference internal" href="transport_gateway_settings_info_module.html">cisco.ise.transport_gateway_settings_info module – Information module for Transport Gateway Settings</a></li>
@@ -433,6 +468,35 @@
 <li class="toctree-l4"><a class="reference internal" href="trusted_certificate_export_info_module.html">cisco.ise.trusted_certificate_export_info module – Information module for Trusted Certificate Export</a></li>
 <li class="toctree-l4"><a class="reference internal" href="trusted_certificate_import_module.html">cisco.ise.trusted_certificate_import module – Resource module for Trusted Certificate Import</a></li>
 <li class="toctree-l4"><a class="reference internal" href="trusted_certificate_info_module.html">cisco.ise.trusted_certificate_info module – Information module for Trusted Certificate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trustsec_nbar_app_module.html">cisco.ise.trustsec_nbar_app module – Resource module for Trustsec NBAR App</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trustsec_nbar_app_info_module.html">cisco.ise.trustsec_nbar_app_info module – Information module for Trustsec NBAR App</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trustsec_sg_vn_mapping_module.html">cisco.ise.trustsec_sg_vn_mapping module – Resource module for Trustsec SG VN Mapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trustsec_sg_vn_mapping_bulk_create_module.html">cisco.ise.trustsec_sg_vn_mapping_bulk_create module – Resource module for Trustsec SG VN Mapping Bulk Create</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trustsec_sg_vn_mapping_bulk_delete_module.html">cisco.ise.trustsec_sg_vn_mapping_bulk_delete module – Resource module for Trustsec SG VN Mapping Bulk Delete</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trustsec_sg_vn_mapping_bulk_update_module.html">cisco.ise.trustsec_sg_vn_mapping_bulk_update module – Resource module for Trustsec SG VN Mapping Bulk Update</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trustsec_sg_vn_mapping_info_module.html">cisco.ise.trustsec_sg_vn_mapping_info module – Information module for Trustsec SG VN Mapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trustsec_vn_module.html">cisco.ise.trustsec_vn module – Resource module for Trustsec VN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trustsec_vn_bulk_create_module.html">cisco.ise.trustsec_vn_bulk_create module – Resource module for Trustsec VN Bulk Create</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trustsec_vn_bulk_delete_module.html">cisco.ise.trustsec_vn_bulk_delete module – Resource module for Trustsec VN Bulk Delete</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trustsec_vn_bulk_update_module.html">cisco.ise.trustsec_vn_bulk_update module – Resource module for Trustsec VN Bulk Update</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trustsec_vn_info_module.html">cisco.ise.trustsec_vn_info module – Information module for Trustsec VN</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trustsec_vn_vlan_mapping_module.html">cisco.ise.trustsec_vn_vlan_mapping module – Resource module for Trustsec VN VLAN Mapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trustsec_vn_vlan_mapping_bulk_create_module.html">cisco.ise.trustsec_vn_vlan_mapping_bulk_create module – Resource module for Trustsec VN VLAN Mapping Bulk Create</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trustsec_vn_vlan_mapping_bulk_delete_module.html">cisco.ise.trustsec_vn_vlan_mapping_bulk_delete module – Resource module for Trustsec VN VLAN Mapping Bulk Delete</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trustsec_vn_vlan_mapping_bulk_update_module.html">cisco.ise.trustsec_vn_vlan_mapping_bulk_update module – Resource module for Trustsec VN VLAN Mapping Bulk Update</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trustsec_vn_vlan_mapping_info_module.html">cisco.ise.trustsec_vn_vlan_mapping_info module – Information module for Trustsec VN VLAN Mapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="upgrade_proceed_module.html">cisco.ise.upgrade_proceed module – Resource module for Upgrade Proceed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="upgrade_proceed_info_module.html">cisco.ise.upgrade_proceed_info module – Information module for Upgrade Proceed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="upgrade_stage_cancel_module.html">cisco.ise.upgrade_stage_cancel module – Resource module for Upgrade Stage Cancel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="upgrade_stage_cancel_info_module.html">cisco.ise.upgrade_stage_cancel_info module – Information module for Upgrade Stage Cancel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="upgrade_stage_start_module.html">cisco.ise.upgrade_stage_start module – Resource module for Upgrade Stage Start</a></li>
+<li class="toctree-l4"><a class="reference internal" href="upgrade_stage_start_info_module.html">cisco.ise.upgrade_stage_start_info module – Information module for Upgrade Stage Start</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_equipment_module.html">cisco.ise.user_equipment module – Resource module for User Equipment</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_equipment_bulk_module.html">cisco.ise.user_equipment_bulk module – Resource module for User Equipment Bulk</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_equipment_csv_module.html">cisco.ise.user_equipment_csv module – Resource module for User Equipment Csv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_equipment_imei_info_module.html">cisco.ise.user_equipment_imei_info module – Information module for User Equipment Imei Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_equipment_info_module.html">cisco.ise.user_equipment_info module – Information module for User Equipment Info</a></li>
+<li class="toctree-l4"><a class="reference internal" href="user_equipment_subscriber_info_module.html">cisco.ise.user_equipment_subscriber_info module – Information module for User Equipment Subscriber Info</a></li>
 </ul>
 </li>
 </ul>
@@ -471,7 +535,7 @@
 <h1>cisco.ise.repository_info module – Information module for Repository<a class="headerlink" href="#cisco-ise-repository-info-module-information-module-for-repository" title="Permalink to this heading"></a></h1>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/ise">cisco.ise collection</a> (version 2.8.1).</p>
+<p>This module is part of the <a class="reference external" href="https://galaxy.ansible.com/cisco/ise">cisco.ise collection</a> (version 2.9.0).</p>
 <p>To install it, use: <code class="code docutils literal notranslate"><span class="pre">ansible-galaxy</span> <span class="pre">collection</span> <span class="pre">install</span> <span class="pre">cisco.ise</span></code>.
 You need further requirements to be able to use this module,
 see <a class="reference internal" href="#ansible-collections-cisco-ise-repository-info-module-requirements"><span class="std std-ref">Requirements</span></a> for details.</p>
@@ -506,7 +570,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-repositor
 <span id="ansible-collections-cisco-ise-repository-info-module-requirements"></span><h2><a class="toc-backref" href="#id28" role="doc-backlink">Requirements</a><a class="headerlink" href="#requirements" title="Permalink to this heading"></a></h2>
 <p>The below requirements are needed on the host that executes this module.</p>
 <ul class="simple">
-<li><p>ciscoisesdk &gt;= 2.1.1</p></li>
+<li><p>ciscoisesdk &gt;= 2.2.0</p></li>
 <li><p>python &gt;= 3.5</p></li>
 </ul>
 </section>
@@ -718,7 +782,7 @@ see <a class="reference internal" href="#ansible-collections-cisco-ise-repositor
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="repository_files_info_module.html" class="btn btn-neutral float-left" title="cisco.ise.repository_files_info module – Information module for Repository Files" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="resource_version_info_module.html" class="btn btn-neutral float-right" title="cisco.ise.resource_version_info module – Information module for Resource Version" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="reservation_module.html" class="btn btn-neutral float-right" title="cisco.ise.reservation module – Resource module for Reservation" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
