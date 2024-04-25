@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Copyright (c) 2021, Cisco Systems
+# Copyright (c) 2024, Cisco Systems
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
@@ -31,7 +31,7 @@ argument_spec.update(dict(
     size=dict(type="int"),
     sort=dict(type="str"),
     sortBy=dict(type="str"),
-    filter=dict(type="list"),
+    filter=dict(type="str"),
     filterType=dict(type="str"),
     id=dict(type="str"),
 ))

@@ -62,7 +62,7 @@ options:
     - SubscriberId path parameter. Unique id for a subscriber object.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.1
+- ciscoisesdk >= 2.2.0
 - python >= 3.5
 notes:
   - SDK Method used are

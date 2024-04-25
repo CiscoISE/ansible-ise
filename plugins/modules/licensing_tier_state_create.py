@@ -21,14 +21,14 @@ options:
     elements: dict
     suboptions:
       name:
-        description: Licensing Tier State Create's name.
+        description: License tier list.
         type: str
       status:
-        description: Licensing Tier State Create's status.
+        description: Current Smart Licensing State.
         type: str
     type: list
 requirements:
-- ciscoisesdk >= 2.1.1
+- ciscoisesdk >= 2.2.0
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for Licensing
@@ -63,13 +63,13 @@ ise_response:
   type: dict
   sample: >
     {
+      "version": "string",
       "response": [
         {
-          "message": "string",
           "name": "string",
-          "status": "string"
+          "status": "string",
+          "message": "string"
         }
-      ],
-      "version": "string"
+      ]
     }
 """

@@ -983,3 +983,22 @@ releases:
       release_summary: Changes the requirements of ansible.utils to allow > 4.0.0 versions.
       bugfixes:
         - ansible.utils changes to `">=2.0.0,<5.0"` in galaxy.yml dependencies.
+  2.9.0:
+    release_date: "2024-04-24"
+    changes:
+      release_summary: ansible-ise now support 3.3 patch 1.
+      bugfixes:
+        - Service included active_directories.
+        - Service included ad_groups.
+        - Service included custom_attributes.
+        - Service included duo_identity_sync.
+        - Service included duo_mfa.
+        - Service included enable_mfa.
+        - Service included endpoint_stop_replication_service.
+        - Service included endpoints.
+        - Service included full_upgrade.
+        - Service included is_mfa_enabled.
+        - Service included native_ipsec.
+        - Service included px_grid_direct.
+        - Service included sgt_range_reservation.
+        - Service included user_equipment.

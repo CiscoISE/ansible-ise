@@ -11,8 +11,8 @@ short_description: Information module for System Certificate
 description:
 - Get System Certificate by id.
 - Get System Certificate by name.
-- This API provides details of a System Certificate of a particular node based on given HostName and ID.
-- This API supports Filtering, Sorting and Pagination.
+- This API provides details of a system certificate of a particular node based on given hostname and ID.
+- This API supports filtering, sorting and pagination.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -20,7 +20,7 @@ author: Rafael Campos (@racampos)
 options:
   hostName:
     description:
-    - HostName path parameter. Name of the host of which system certificates should be returned.
+    - HostName path parameter. Name of the host for which the system certificates should be returned.
     type: str
   page:
     description:
@@ -56,8 +56,7 @@ options:
     - The 'NENDSW' operator describes 'Not Ends With'.
     - The 'CONTAINS' operator describes 'Contains'.
     - The 'NCONTAINS' operator describes 'Not Contains'.
-    elements: str
-    type: list
+    type: str
   filterType:
     description:
     - >
@@ -69,7 +68,7 @@ options:
     - Id path parameter. ID of the system certificate.
     type: str
 requirements:
-- ciscoisesdk >= 2.1.1
+- ciscoisesdk >= 2.2.0
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for Certificates
@@ -107,7 +106,7 @@ EXAMPLES = r"""
     size: 0
     sort: string
     sortBy: string
-    filter: []
+    filter: string
     filterType: string
     hostName: string
   register: result
