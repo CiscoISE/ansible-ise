@@ -174,8 +174,7 @@ class ActionModule(ActionBase):
         state = self._task.args.get("state")
 
         response = None
-        if state == "present":
-        elif state == "absent":
+        if state == "absent":
             (obj_exists, prev_obj) = obj.exists()
             if obj_exists:
                 obj.delete()
