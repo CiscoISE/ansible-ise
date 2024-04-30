@@ -50,7 +50,7 @@ options:
     type: bool
 requirements:
 - ciscoisesdk >= 2.2.0
-- python >= 3.5
+- python >= 3.9
 notes:
   - SDK Method used are
     tacacs_command_sets.TacacsCommandSets.create_tacacs_command_sets,

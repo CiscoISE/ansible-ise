@@ -21,7 +21,7 @@ options:
     type: bool
 requirements:
 - ciscoisesdk >= 2.2.0
-- python >= 3.5
+- python >= 3.9
 notes:
   - SDK Method used are
     endpoint_stop_replication_service.EndpointStopReplicationService.set_stop_replication_service,

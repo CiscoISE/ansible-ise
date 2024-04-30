@@ -65,7 +65,7 @@ options:
     type: str
 requirements:
 - ciscoisesdk >= 2.2.0
-- python >= 3.5
+- python >= 3.9
 seealso:
 - name: Cisco ISE documentation for sgVnMapping
   description: Complete reference of the sgVnMapping API.

@@ -38,7 +38,7 @@ options:
     type: int
 requirements:
 - ciscoisesdk >= 2.2.0
-- python >= 3.5
+- python >= 3.9
 notes:
   - SDK Method used are
     px_grid_node.PxGridNode.get_px_grid_node_by_id,

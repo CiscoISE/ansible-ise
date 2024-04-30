@@ -30,7 +30,7 @@ options:
     type: bool
 requirements:
 - ciscoisesdk >= 2.2.0
-- python >= 3.5
+- python >= 3.9
 notes:
   - SDK Method used are
     support_bundle_download.SupportBundleDownload.download_support_bundle,

@@ -72,7 +72,7 @@ options:
     type: str
 requirements:
 - ciscoisesdk >= 2.2.0
-- python >= 3.5
+- python >= 3.9
 notes:
   - SDK Method used are
     internal_user.InternalUser.get_internal_user_by_id,

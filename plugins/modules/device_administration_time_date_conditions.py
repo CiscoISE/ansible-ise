@@ -163,7 +163,7 @@ options:
     type: list
 requirements:
 - ciscoisesdk >= 2.2.0
-- python >= 3.5
+- python >= 3.9
 seealso:
 - name: Cisco ISE documentation for Device Administration - Time/Date Conditions
   description: Complete reference of the Device Administration - Time/Date Conditions API.

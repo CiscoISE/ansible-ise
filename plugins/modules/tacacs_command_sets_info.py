@@ -38,7 +38,7 @@ options:
     type: int
 requirements:
 - ciscoisesdk >= 2.2.0
-- python >= 3.5
+- python >= 3.9
 notes:
   - SDK Method used are
     tacacs_command_sets.TacacsCommandSets.get_tacacs_command_sets_by_id,

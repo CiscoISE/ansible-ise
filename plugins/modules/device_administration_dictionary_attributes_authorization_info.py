@@ -18,7 +18,7 @@ author: Rafael Campos (@racampos)
 options: {}
 requirements:
 - ciscoisesdk >= 2.2.0
-- python >= 3.5
+- python >= 3.9
 seealso:
 - name: Cisco ISE documentation for Device Administration - Dictionary Attributes List
   description: Complete reference of the Device Administration - Dictionary Attributes List API.

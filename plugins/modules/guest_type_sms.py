@@ -32,7 +32,7 @@ options:
     type: str
 requirements:
 - ciscoisesdk >= 2.2.0
-- python >= 3.5
+- python >= 3.9
 notes:
   - SDK Method used are
     guest_type.GuestType.update_guest_type_sms,

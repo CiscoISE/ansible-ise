@@ -101,7 +101,7 @@ options:
     type: bool
 requirements:
 - ciscoisesdk >= 2.2.0
-- python >= 3.5
+- python >= 3.9
 notes:
   - SDK Method used are
     endpoint.Endpoint.register_endpoint,

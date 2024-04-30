@@ -192,7 +192,7 @@ options:
     type: str
 requirements:
 - ciscoisesdk >= 2.2.0
-- python >= 3.5
+- python >= 3.9
 notes:
   - SDK Method used are
     active_directory.ActiveDirectory.create_active_directory,
