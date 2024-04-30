@@ -281,8 +281,8 @@ options:
         type: dict
     type: dict
 requirements:
-- ciscoisesdk >= 2.1.1
-- python >= 3.9
+- ciscoisesdk >= 2.2.0
+- python >= 3.5
 notes:
   - SDK Method used are
     sponsor_portal.SponsorPortal.create_sponsor_portal,

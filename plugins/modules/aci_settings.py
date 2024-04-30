@@ -87,8 +87,8 @@ options:
     description: ACI Settings's untaggedPacketIepgName.
     type: str
 requirements:
-- ciscoisesdk >= 2.1.1
-- python >= 3.9
+- ciscoisesdk >= 2.2.0
+- python >= 3.5
 notes:
   - SDK Method used are
     aci_settings.AciSettings.update_aci_settings_by_id,

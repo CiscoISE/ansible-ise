@@ -57,8 +57,8 @@ options:
       can be changed by using the parameter.
     type: str
 requirements:
-- ciscoisesdk >= 2.1.1
-- python >= 3.9
+- ciscoisesdk >= 2.2.0
+- python >= 3.5
 seealso:
 - name: Cisco ISE documentation for SecurityGroupToVirtualNetwork
   description: Complete reference of the SecurityGroupToVirtualNetwork API.

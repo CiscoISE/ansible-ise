@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Copyright (c) 2021, Cisco Systems
+# Copyright (c) 2024, Cisco Systems
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
@@ -22,8 +22,10 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.personas_utils import No
 
 argument_spec = dict(
     ip=dict(type="str", required=True),
+    hostname=dict(type="str", required=True),
     username=dict(type="str", required=True),
     password=dict(type="str", required=True),
+    roles=dict(type="list", required=True),
     ise_verify=dict(type="bool", default=True),
     ise_version=dict(type="str", default="3.1.0"),
     ise_wait_on_rate_limit=dict(type="bool", default=True),
@@ -71,8 +73,10 @@ class ActionModule(ActionBase):
         self._check_argspec()
 
         node = Node(dict(ip=self._task.args.get("ip"),
+                         hostname=self._task.args.get("hostname"),
                          username=self._task.args.get("username"),
                          password=self._task.args.get("password"),
+                         roles=self._task.args.get("roles"),
                          )
                     )
 

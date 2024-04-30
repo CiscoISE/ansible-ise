@@ -10,21 +10,22 @@ module: licensing_registration_create
 short_description: Resource module for Licensing Registration Create
 description:
 - Manage operation create of the resource Licensing Registration Create.
-- License - Configure registration information.
+- Configure registration information.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   connectionType:
-    description: Licensing Registration Create's connectionType.
+    description: Type of connection for the registration.
     type: str
   registrationType:
-    description: Licensing Registration Create's registrationType.
+    description: Register, deregister, renew or update.
     type: str
   ssmOnPremServer:
-    description: If connection type is selected as SSM_ONPREM_SERVER, then IP address
-      or the hostname (or FQDN) of the SSM On-Prem server Host.
+    description: If the connection type is selected as SSM_ONPREM_SERVER, then this
+      field consists of IP address or the hostname (or FQDN) of the SSM On-Prem server
+      host.
     type: str
   tier:
     description: Licensing Registration Create's tier.
@@ -34,8 +35,8 @@ options:
     description: Token.
     type: str
 requirements:
-- ciscoisesdk >= 2.1.1
-- python >= 3.9
+- ciscoisesdk >= 2.2.0
+- python >= 3.5
 seealso:
 - name: Cisco ISE documentation for Licensing
   description: Complete reference of the Licensing API.

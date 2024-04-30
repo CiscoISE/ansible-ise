@@ -37,8 +37,8 @@ options:
     - Size query parameter. Number of objects returned per page.
     type: int
 requirements:
-- ciscoisesdk >= 2.1.1
-- python >= 3.9
+- ciscoisesdk >= 2.2.0
+- python >= 3.5
 notes:
   - SDK Method used are
     active_directory.ActiveDirectory.get_active_directory_by_id,

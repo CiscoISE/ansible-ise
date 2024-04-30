@@ -25,6 +25,10 @@ options:
   filename:
     description: The filename used to save the download file.
     type: str
+  hostName:
+    description: Hostname of the Cisco ISE node in which self-signed certificate should
+      be generated.
+    type: str
   id:
     description: System Certificate Export Info's id.
     type: str
@@ -35,8 +39,8 @@ options:
     description: Enable or disable automatic file creation of raw response.
     type: bool
 requirements:
-- ciscoisesdk >= 2.1.1
-- python >= 3.9
+- ciscoisesdk >= 2.2.0
+- python >= 3.5
 seealso:
 - name: Cisco ISE documentation for Certificates
   description: Complete reference of the Certificates API.
@@ -59,6 +63,7 @@ EXAMPLES = r"""
     dirPath: /tmp/downloads/
     export: string
     filename: download_filename.extension
+    hostName: string
     id: string
     password: string
     saveFile: true
@@ -69,7 +74,16 @@ RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: str
+  type: dict
   sample: >
-    "'string'"
+    {
+      "description": "string",
+      "file": "string",
+      "filename": "string",
+      "inputStream": {},
+      "open": true,
+      "readable": true,
+      "uri": "string",
+      "url": "string"
+    }
 """

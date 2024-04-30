@@ -10,15 +10,15 @@ module: licensing_smart_state_create
 short_description: Resource module for Licensing Smart State Create
 description:
 - Manage operation create of the resource Licensing Smart State Create.
-- License - Configure smart state information.
+- Configure smart state information.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 2.1.1
-- python >= 3.9
+- ciscoisesdk >= 2.2.0
+- python >= 3.5
 seealso:
 - name: Cisco ISE documentation for Licensing
   description: Complete reference of the Licensing API.

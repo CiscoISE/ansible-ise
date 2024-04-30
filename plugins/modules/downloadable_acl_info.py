@@ -31,8 +31,8 @@ options:
     - Size query parameter. Number of objects returned per page.
     type: int
 requirements:
-- ciscoisesdk >= 2.1.1
-- python >= 3.9
+- ciscoisesdk >= 2.2.0
+- python >= 3.5
 notes:
   - SDK Method used are
     downloadable_acl.DownloadableAcl.get_downloadable_acl_by_id,

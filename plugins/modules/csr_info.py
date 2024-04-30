@@ -11,8 +11,8 @@ short_description: Information module for CSR
 description:
 - Get all CSR.
 - Get CSR by id.
-- This API displays details of a Certificate Signing Request of a particular node for given HostName and ID.
-- This API supports Filtering, Sorting and Pagination.
+- This API displays details of a certificate signing request of a particular node for a given hostname and ID.
+- This API supports filtering, sorting and pagination.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -52,8 +52,7 @@ options:
     - The 'NENDSW' operator describes 'Not Ends With'.
     - The 'CONTAINS' operator describes 'Contains'.
     - The 'NCONTAINS' operator describes 'Not Contains'.
-    elements: str
-    type: list
+    type: str
   filterType:
     description:
     - >
@@ -69,8 +68,8 @@ options:
     - Id path parameter. ID of the Certificate Signing Request returned.
     type: str
 requirements:
-- ciscoisesdk >= 2.1.1
-- python >= 3.9
+- ciscoisesdk >= 2.2.0
+- python >= 3.5
 seealso:
 - name: Cisco ISE documentation for Certificates
   description: Complete reference of the Certificates API.
@@ -97,7 +96,7 @@ EXAMPLES = r"""
     size: 0
     sort: string
     sortBy: string
-    filter: []
+    filter: string
     filterType: string
   register: result
 
@@ -131,6 +130,7 @@ ise_response:
         "rel": "string",
         "type": "string"
       },
+      "sanNames": "string",
       "signatureAlgorithm": "string",
       "subject": "string",
       "timeStamp": "string",
@@ -157,6 +157,7 @@ ise_responses:
           "rel": "string",
           "type": "string"
         },
+        "sanNames": "string",
         "signatureAlgorithm": "string",
         "subject": "string",
         "timeStamp": "string",

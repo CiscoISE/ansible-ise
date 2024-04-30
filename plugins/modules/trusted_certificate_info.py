@@ -52,8 +52,7 @@ options:
     - The 'NENDSW' operator describes 'Not Ends With'.
     - The 'CONTAINS' operator describes 'Contains'.
     - The 'NCONTAINS' operator describes 'Not Contains'.
-    elements: str
-    type: list
+    type: str
   filterType:
     description:
     - >
@@ -65,8 +64,8 @@ options:
     - Id path parameter. ID of the trust certificate.
     type: str
 requirements:
-- ciscoisesdk >= 2.1.1
-- python >= 3.9
+- ciscoisesdk >= 2.2.0
+- python >= 3.5
 seealso:
 - name: Cisco ISE documentation for Certificates
   description: Complete reference of the Certificates API.
@@ -93,7 +92,7 @@ EXAMPLES = r"""
     size: 0
     sort: string
     sortBy: string
-    filter: []
+    filter: string
     filterType: string
   register: result
 

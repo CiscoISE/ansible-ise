@@ -23,8 +23,8 @@ options:
     description: Auto approve certificate based accounts when true.
     type: bool
 requirements:
-- ciscoisesdk >= 2.1.1
-- python >= 3.9
+- ciscoisesdk >= 2.2.0
+- python >= 3.5
 notes:
   - SDK Method used are
     px_grid_settings.PxGridSettings.autoapprove_px_grid_settings,

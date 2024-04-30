@@ -67,8 +67,8 @@ options:
     description: Valid Range 1 to 120.
     type: int
 requirements:
-- ciscoisesdk >= 2.1.1
-- python >= 3.9
+- ciscoisesdk >= 2.2.0
+- python >= 3.5
 notes:
   - SDK Method used are
     external_radius_server.ExternalRadiusServer.create_external_radius_server,

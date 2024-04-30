@@ -10,7 +10,7 @@ module: node_deployment_sync
 short_description: Resource module for Node Deployment Sync
 description:
 - Manage operation create of the resource Node Deployment Sync.
-- Performing a manual synchronization involves a reload of the target node, but.
+- Performing a manual synchronization involves a reload of the target node, but not the primary PAN.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -20,8 +20,8 @@ options:
     description: Hostname path parameter. Hostname of the node.
     type: str
 requirements:
-- ciscoisesdk >= 2.1.1
-- python >= 3.9
+- ciscoisesdk >= 2.2.0
+- python >= 3.5
 seealso:
 - name: Cisco ISE documentation for Node Deployment
   description: Complete reference of the Node Deployment API.

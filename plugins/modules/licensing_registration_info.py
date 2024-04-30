@@ -10,15 +10,15 @@ module: licensing_registration_info
 short_description: Information module for Licensing Registration
 description:
 - Get all Licensing Registration.
-- Get registration information.
+- Get the registration information.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 2.1.1
-- python >= 3.9
+- ciscoisesdk >= 2.2.0
+- python >= 3.5
 seealso:
 - name: Cisco ISE documentation for Licensing
   description: Complete reference of the Licensing API.
@@ -50,11 +50,11 @@ ise_response:
   type: dict
   sample: >
     {
-      "connectionType": "string",
-      "registrationState": "string",
-      "ssmOnPremServer": "string",
       "tier": [
         "string"
-      ]
+      ],
+      "connectionType": "string",
+      "registrationState": "string",
+      "ssmOnPremServer": "string"
     }
 """

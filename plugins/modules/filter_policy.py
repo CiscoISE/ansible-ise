@@ -35,8 +35,8 @@ options:
     description: Virtual Network. At least one of subnet or sgt or vn should be defined.
     type: str
 requirements:
-- ciscoisesdk >= 2.1.1
-- python >= 3.9
+- ciscoisesdk >= 2.2.0
+- python >= 3.5
 notes:
   - SDK Method used are
     filter_policy.FilterPolicy.create_filter_policy,

@@ -30,24 +30,23 @@ options:
     description: Network Access Network Condition's description.
     type: str
   deviceGroupList:
-    description: <p>This field should contain a NDG Root, comma, and an NDG
+    description: <p>This field should contain a tuple with NDG Root, comma, and an NDG
       (that it under the root).<br> Line format - NDG Root Name, NDG, Port</p>.
     elements: str
     type: list
   deviceList:
-    description: <p>This field should contain Device-Name,port-number. The device
-      name must be the same as the name field in a Network Device object.<br> Line
-      format - Device Name,Port</p>.
+    description: <p>This field should contain Device Name. The device name must be the
+      same as the name field in a Network Device object. Line format - Device Name</p>.
     elements: str
     type: list
   id:
     description: Network Access Network Condition's id.
     type: str
   ipAddrList:
-    description: <p>This field should contain IP-address-or-subnet,port number<br>
-      IP address can be IPV4 format (n.n.n.n) or IPV6 format (n n n n n n n n).<br>
-      IP subnet can be IPV4 format (n.n.n.n/m) or IPV6 format (n n n n n n n n/m).<br>
-      Line format - IP Address or subnet,Port</p>.
+    description: <p>This field should contain IP address or subnet.<br> IP address can
+      be IPV4 format (n.n.n.n) or IPV6 format (n n n n n n n n).<br> IP subnet can be
+      IPV4 format (n.n.n.n/m) or IPV6 format (n n n n n n n n/m).<br> Line format -
+      IP Address or subnet</p>.
     elements: str
     type: list
   link:
@@ -74,8 +73,8 @@ options:
     description: Network Condition name.
     type: str
 requirements:
-- ciscoisesdk >= 2.1.1
-- python >= 3.9
+- ciscoisesdk >= 2.2.0
+- python >= 3.5
 seealso:
 - name: Cisco ISE documentation for Network Access - Network Conditions
   description: Complete reference of the Network Access - Network Conditions API.
