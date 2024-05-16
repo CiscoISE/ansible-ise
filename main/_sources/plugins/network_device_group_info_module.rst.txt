@@ -42,7 +42,7 @@ cisco.ise.network_device_group_info module -- Information module for Network Dev
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.0).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.1).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -89,7 +89,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk \>= 2.2.0
+- ciscoisesdk \>= 2.2.1
 - python \>= 3.5
 
 
@@ -933,7 +933,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"description": "string", "id": "string", "link": {"href": "string", "rel": "string", "type": "string"}, "name": "string", "ndgtype": "string"}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"description": "string", "id": "string", "link": {"href": "string", "rel": "string", "type": "string"}, "name": "string", "othername": "string"}`
 
 
       .. raw:: html
@@ -981,7 +981,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"id\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"description\\": \\"string\\",\\n    \\"link\\": {\\n      \\"rel\\": \\"string\\",\\n      \\"href\\": \\"string\\",\\n      \\"type\\": \\"string\\"\\n    },\\n    \\"ndgtype\\": \\"string\\"\\n  }\\n]\\n"`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"id\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"description\\": \\"string\\",\\n    \\"link\\": {\\n      \\"rel\\": \\"string\\",\\n      \\"href\\": \\"string\\",\\n      \\"type\\": \\"string\\"\\n    },\\n    \\"othername\\": \\"string\\"\\n  }\\n]\\n"`
 
 
       .. raw:: html
