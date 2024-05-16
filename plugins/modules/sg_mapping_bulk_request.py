@@ -23,7 +23,7 @@ options:
     description: SG Mapping Bulk Request's resourceMediaType.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.0
+- ciscoisesdk >= 2.2.1
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for IPToSGTMapping

@@ -20,7 +20,7 @@ options:
     description: Dataconnect Settings Password Expiry's passwordExpiresInDays.
     type: int
 requirements:
-- ciscoisesdk >= 2.2.0
+- ciscoisesdk >= 2.2.1
 - python >= 3.5
 notes:
   - SDK Method used are
