@@ -1002,3 +1002,10 @@ releases:
         - Service included px_grid_direct.
         - Service included sgt_range_reservation.
         - Service included user_equipment.
+  2.9.1:
+    release_date: "2024-05-15"
+    changes:
+      release_summary: Update network_device_group module.
+      bugfixes:
+        - network_device_group - change parameter name from ndgtype to othername.
+        - network_device_group_info - change parameter name from ndgtype to othername.

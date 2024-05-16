@@ -32,7 +32,7 @@ argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
     name=dict(type="str"),
     description=dict(type="str"),
-    ndgtype=dict(type="str"),
+    othername=dict(type="str"),
     id=dict(type="str"),
 ))
 
@@ -51,7 +51,7 @@ class NetworkDeviceGroup(object):
         self.new_object = dict(
             name=params.get("name"),
             description=params.get("description"),
-            ndgtype=params.get("ndgtype"),
+            othername=params.get("othername"),
             id=params.get("id"),
         )
 
@@ -122,7 +122,7 @@ class NetworkDeviceGroup(object):
         obj_params = [
             ("name", "name"),
             ("description", "description"),
-            ("ndgtype", "ndgtype"),
+            ("othername", "othername"),
             ("id", "id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params

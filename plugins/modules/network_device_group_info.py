@@ -138,7 +138,7 @@ ise_response:
         "href": "string",
         "type": "string"
       },
-      "ndgtype": "string"
+      "othername": "string"
     }
 
 ise_responses:
@@ -158,7 +158,7 @@ ise_responses:
           "href": "string",
           "type": "string"
         },
-        "ndgtype": "string"
+        "othername": "string"
       }
     ]
 """
