@@ -23,7 +23,7 @@ options:
     - ConnectionName path parameter. This name is used to update, delete or retrieve the specific Duo-MFA configuration.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.0
+- ciscoisesdk >= 2.2.1
 - python >= 3.5
 notes:
   - SDK Method used are

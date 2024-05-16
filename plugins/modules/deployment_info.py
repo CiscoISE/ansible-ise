@@ -21,7 +21,7 @@ options:
     - How long to wait for the server to send data before giving up.
     type: int
 requirements:
-- ciscoisesdk >= 2.2.0
+- ciscoisesdk >= 2.2.1
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for PullDeploymentInfo
