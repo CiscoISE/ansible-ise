@@ -73,7 +73,7 @@ options:
       can be changed by using the parameter.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.0
+- ciscoisesdk >= 2.2.1
 - python >= 3.9
 notes:
   - SDK Method used are
@@ -138,7 +138,7 @@ ise_response:
         "href": "string",
         "type": "string"
       },
-      "ndgtype": "string"
+      "othername": "string"
     }
 
 ise_responses:
@@ -158,7 +158,7 @@ ise_responses:
           "href": "string",
           "type": "string"
         },
-        "ndgtype": "string"
+        "othername": "string"
       }
     ]
 """

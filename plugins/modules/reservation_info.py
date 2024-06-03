@@ -31,7 +31,7 @@ options:
     - ClientID path parameter. Unique name for a Client.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.0
+- ciscoisesdk >= 2.2.1
 - python >= 3.9
 notes:
   - SDK Method used are

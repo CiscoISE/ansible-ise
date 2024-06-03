@@ -39,7 +39,7 @@ options:
     description: Enable or disable automatic file creation of raw response.
     type: bool
 requirements:
-- ciscoisesdk >= 2.2.0
+- ciscoisesdk >= 2.2.1
 - python >= 3.9
 seealso:
 - name: Cisco ISE documentation for Certificates

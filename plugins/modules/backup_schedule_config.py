@@ -57,7 +57,7 @@ options:
     description: Backup Schedule Config's weekDay.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.0
+- ciscoisesdk >= 2.2.1
 - python >= 3.9
 seealso:
 - name: Cisco ISE documentation for Backup And Restore
