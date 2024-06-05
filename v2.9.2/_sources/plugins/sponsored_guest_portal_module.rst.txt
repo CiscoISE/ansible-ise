@@ -1,0 +1,4651 @@
+
+.. Document meta
+
+:orphan:
+
+.. |antsibull-internal-nbsp| unicode:: 0xA0
+    :trim:
+
+.. role:: ansible-attribute-support-label
+.. role:: ansible-attribute-support-property
+.. role:: ansible-attribute-support-full
+.. role:: ansible-attribute-support-partial
+.. role:: ansible-attribute-support-none
+.. role:: ansible-attribute-support-na
+.. role:: ansible-option-type
+.. role:: ansible-option-elements
+.. role:: ansible-option-required
+.. role:: ansible-option-versionadded
+.. role:: ansible-option-aliases
+.. role:: ansible-option-choices
+.. role:: ansible-option-choices-default-mark
+.. role:: ansible-option-default-bold
+.. role:: ansible-option-configuration
+.. role:: ansible-option-returned-bold
+.. role:: ansible-option-sample-bold
+
+.. Anchors
+
+.. _ansible_collections.cisco.ise.sponsored_guest_portal_module:
+
+.. Anchors: short name for ansible.builtin
+
+.. Anchors: aliases
+
+
+
+.. Title
+
+cisco.ise.sponsored_guest_portal module -- Resource module for Sponsored Guest Portal
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. Collection note
+
+.. note::
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.2).
+
+    To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.ise.sponsored_guest_portal_module_requirements>` for details.
+
+    To use it in a playbook, specify: :code:`cisco.ise.sponsored_guest_portal`.
+
+.. version_added
+
+.. rst-class:: ansible-version-added
+
+New in cisco.ise 1.0.0
+
+.. contents::
+   :local:
+   :depth: 1
+
+.. Deprecated
+
+
+Synopsis
+--------
+
+.. Description
+
+- Manage operations create, update and delete of the resource Sponsored Guest Portal.
+- This API creates a sponsored guest portal.
+- This API deletes a sponsored guest portal by ID.
+- This API allows the client to update a sponsored guest portal by ID.
+
+.. note::
+    This module has a corresponding :ref:`action plugin <action_plugins>`.
+
+.. Aliases
+
+
+.. Requirements
+
+.. _ansible_collections.cisco.ise.sponsored_guest_portal_module_requirements:
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- ciscoisesdk \>= 2.2.1
+- python \>= 3.5
+
+
+
+
+
+
+.. Options
+
+Parameters
+----------
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Parameter
+    - Comments
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-customizations:
+
+      .. rst-class:: ansible-option-title
+
+      **customizations**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Defines all of the Portal Customizations available.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/globalCustomizations"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-customizations/globalcustomizations:
+
+      .. rst-class:: ansible-option-title
+
+      **globalCustomizations**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/globalCustomizations" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sponsored Guest Portal's globalCustomizations.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/globalCustomizations/backgroundImage"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-customizations/globalcustomizations/backgroundimage:
+
+      .. rst-class:: ansible-option-title
+
+      **backgroundImage**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/globalCustomizations/backgroundImage" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sponsored Guest Portal's backgroundImage.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/globalCustomizations/backgroundImage/data"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-customizations/globalcustomizations/backgroundimage/data:
+
+      .. rst-class:: ansible-option-title
+
+      **data**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/globalCustomizations/backgroundImage/data" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Represented as base 64 encoded string of the image byte array.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/globalCustomizations/bannerImage"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-customizations/globalcustomizations/bannerimage:
+
+      .. rst-class:: ansible-option-title
+
+      **bannerImage**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/globalCustomizations/bannerImage" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sponsored Guest Portal's bannerImage.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/globalCustomizations/bannerImage/data"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-customizations/globalcustomizations/bannerimage/data:
+
+      .. rst-class:: ansible-option-title
+
+      **data**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/globalCustomizations/bannerImage/data" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Represented as base 64 encoded string of the image byte array.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/globalCustomizations/bannerTitle"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-customizations/globalcustomizations/bannertitle:
+
+      .. rst-class:: ansible-option-title
+
+      **bannerTitle**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/globalCustomizations/bannerTitle" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sponsored Guest Portal's bannerTitle.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/globalCustomizations/contactText"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-customizations/globalcustomizations/contacttext:
+
+      .. rst-class:: ansible-option-title
+
+      **contactText**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/globalCustomizations/contactText" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sponsored Guest Portal's contactText.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/globalCustomizations/desktopLogoImage"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-customizations/globalcustomizations/desktoplogoimage:
+
+      .. rst-class:: ansible-option-title
+
+      **desktopLogoImage**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/globalCustomizations/desktopLogoImage" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sponsored Guest Portal's desktopLogoImage.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/globalCustomizations/desktopLogoImage/data"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-customizations/globalcustomizations/desktoplogoimage/data:
+
+      .. rst-class:: ansible-option-title
+
+      **data**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/globalCustomizations/desktopLogoImage/data" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Represented as base 64 encoded string of the image byte array.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/globalCustomizations/footerElement"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-customizations/globalcustomizations/footerelement:
+
+      .. rst-class:: ansible-option-title
+
+      **footerElement**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/globalCustomizations/footerElement" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sponsored Guest Portal's footerElement.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/globalCustomizations/mobileLogoImage"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-customizations/globalcustomizations/mobilelogoimage:
+
+      .. rst-class:: ansible-option-title
+
+      **mobileLogoImage**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/globalCustomizations/mobileLogoImage" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sponsored Guest Portal's mobileLogoImage.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/globalCustomizations/mobileLogoImage/data"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-customizations/globalcustomizations/mobilelogoimage/data:
+
+      .. rst-class:: ansible-option-title
+
+      **data**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/globalCustomizations/mobileLogoImage/data" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Represented as base 64 encoded string of the image byte array.
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/language"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-customizations/language:
+
+      .. rst-class:: ansible-option-title
+
+      **language**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/language" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      This property is supported only for Read operation and it allows to show the customizations in English. Other languages are not supported.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/language/viewLanguage"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-customizations/language/viewlanguage:
+
+      .. rst-class:: ansible-option-title
+
+      **viewLanguage**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/language/viewLanguage" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sponsored Guest Portal's viewLanguage.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/pageCustomizations"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-customizations/pagecustomizations:
+
+      .. rst-class:: ansible-option-title
+
+      **pageCustomizations**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/pageCustomizations" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Represent the entire page customization as a giant dictionary.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/pageCustomizations/data"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-customizations/pagecustomizations/data:
+
+      .. rst-class:: ansible-option-title
+
+      **data**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/pageCustomizations/data" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The Dictionary will be exposed here as key value pair.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/pageCustomizations/data/key"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-customizations/pagecustomizations/data/key:
+
+      .. rst-class:: ansible-option-title
+
+      **key**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/pageCustomizations/data/key" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sponsored Guest Portal's key.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/pageCustomizations/data/value"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-customizations/pagecustomizations/data/value:
+
+      .. rst-class:: ansible-option-title
+
+      **value**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/pageCustomizations/data/value" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sponsored Guest Portal's value.
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/portalTheme"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-customizations/portaltheme:
+
+      .. rst-class:: ansible-option-title
+
+      **portalTheme**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/portalTheme" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sponsored Guest Portal's portalTheme.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/portalTheme/id"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-customizations/portaltheme/id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/portalTheme/id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sponsored Guest Portal's id.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/portalTheme/name"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-customizations/portaltheme/name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/portalTheme/name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The system- or user-assigned name of the portal theme.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/portalTheme/themeData"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-customizations/portaltheme/themedata:
+
+      .. rst-class:: ansible-option-title
+
+      **themeData**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/portalTheme/themeData" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A CSS file, represented as a Base64-encoded byte array.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/portalTweakSettings"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-customizations/portaltweaksettings:
+
+      .. rst-class:: ansible-option-title
+
+      **portalTweakSettings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/portalTweakSettings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The Tweak Settings are a customization of the Portal Theme that has been selected for the portal. When the Portal Theme selection is changed, the Tweak Settings are overwritten to match the values in the theme. The Tweak Settings can subsequently be changed by the user.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/portalTweakSettings/bannerColor"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-customizations/portaltweaksettings/bannercolor:
+
+      .. rst-class:: ansible-option-title
+
+      **bannerColor**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/portalTweakSettings/bannerColor" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Hex value of color.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/portalTweakSettings/bannerTextColor"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-customizations/portaltweaksettings/bannertextcolor:
+
+      .. rst-class:: ansible-option-title
+
+      **bannerTextColor**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/portalTweakSettings/bannerTextColor" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sponsored Guest Portal's bannerTextColor.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/portalTweakSettings/pageBackgroundColor"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-customizations/portaltweaksettings/pagebackgroundcolor:
+
+      .. rst-class:: ansible-option-title
+
+      **pageBackgroundColor**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/portalTweakSettings/pageBackgroundColor" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sponsored Guest Portal's pageBackgroundColor.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-customizations/portalTweakSettings/pageLabelAndTextColor"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-customizations/portaltweaksettings/pagelabelandtextcolor:
+
+      .. rst-class:: ansible-option-title
+
+      **pageLabelAndTextColor**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-customizations/portalTweakSettings/pageLabelAndTextColor" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sponsored Guest Portal's pageLabelAndTextColor.
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-description"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-description:
+
+      .. rst-class:: ansible-option-title
+
+      **description**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-description" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Sponsored Guest Portal's description.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-id"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Sponsored Guest Portal's id.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_debug"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-ise_debug:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_debug**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_debug" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag for Identity Services Engine SDK to enable debugging.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_hostname"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-ise_hostname:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_hostname**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_hostname" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Identity Services Engine hostname.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_password"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-ise_password:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_password**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_password" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Identity Services Engine password to authenticate.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_single_request_timeout"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-ise_single_request_timeout:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_single_request_timeout**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_single_request_timeout" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      :ansible-option-versionadded:`added in cisco.ise 3.0.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Timeout (in seconds) for RESTful HTTP requests.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_username"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-ise_username:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_username**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_username" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Identity Services Engine username to authenticate.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_uses_api_gateway"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-ise_uses_api_gateway:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_uses_api_gateway**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_uses_api_gateway" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      :ansible-option-versionadded:`added in cisco.ise 1.1.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag that informs the SDK whether to use the Identity Services Engine's API Gateway to send requests.
+
+      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise\_hostname}}.
+
+      If it is false, it sends the requests to https://{{ise\_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_uses_csrf_token"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-ise_uses_csrf_token:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_uses_csrf_token**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_uses_csrf_token" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      :ansible-option-versionadded:`added in cisco.ise 3.0.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag that informs the SDK whether we send the CSRF token to ISE's ERS APIs.
+
+      If it is True, the SDK assumes that your ISE CSRF Check is enabled.
+
+      If it is True, it assumes you need the SDK to manage the CSRF token automatically for you.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_verify"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-ise_verify:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_verify**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_verify" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag to enable or disable SSL certificate verification.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_version"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-ise_version:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_version**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_version" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Informs the SDK which version of Identity Services Engine to use.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"3.1\_Patch\_1"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_wait_on_rate_limit"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-ise_wait_on_rate_limit:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_wait_on_rate_limit**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_wait_on_rate_limit" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag for Identity Services Engine SDK to enable automatic rate-limit handling.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-name"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Sponsored Guest Portal's name.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-portalTestUrl"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-portaltesturl:
+
+      .. rst-class:: ansible-option-title
+
+      **portalTestUrl**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-portalTestUrl" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      URL to bring up a test page for this portal.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-portalType"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-portaltype:
+
+      .. rst-class:: ansible-option-title
+
+      **portalType**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-portalType" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Allowed values - BYOD, - HOTSPOTGUEST, - MYDEVICE, - SELFREGGUEST, - SPONSOR, - SPONSOREDGUEST.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings:
+
+      .. rst-class:: ansible-option-title
+
+      **settings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Defines all of the settings groups available for a portal.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/aupSettings"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/aupsettings:
+
+      .. rst-class:: ansible-option-title
+
+      **aupSettings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/aupSettings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sponsored Guest Portal's aupSettings.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/aupSettings/displayFrequency"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/aupsettings/displayfrequency:
+
+      .. rst-class:: ansible-option-title
+
+      **displayFrequency**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/aupSettings/displayFrequency" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      How the AUP should be displayed, either on page or as a link. Only valid if includeAup = true. Allowed Values - FIRSTLOGIN, - EVERYLOGIN, - RECURRING.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/aupSettings/displayFrequencyIntervalDays"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/aupsettings/displayfrequencyintervaldays:
+
+      .. rst-class:: ansible-option-title
+
+      **displayFrequencyIntervalDays**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/aupSettings/displayFrequencyIntervalDays" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Number of days between AUP confirmations (when displayFrequency = recurring).
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/aupSettings/includeAup"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/aupsettings/includeaup:
+
+      .. rst-class:: ansible-option-title
+
+      **includeAup**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/aupSettings/includeAup" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IncludeAup flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/aupSettings/requireAupScrolling"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/aupsettings/requireaupscrolling:
+
+      .. rst-class:: ansible-option-title
+
+      **requireAupScrolling**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/aupSettings/requireAupScrolling" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Require the portal user to scroll to the end of the AUP. Only valid if requireAupAcceptance = true.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/aupSettings/requireScrolling"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/aupsettings/requirescrolling:
+
+      .. rst-class:: ansible-option-title
+
+      **requireScrolling**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/aupSettings/requireScrolling" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      RequireScrolling flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/aupSettings/skipAupForEmployees"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/aupsettings/skipaupforemployees:
+
+      .. rst-class:: ansible-option-title
+
+      **skipAupForEmployees**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/aupSettings/skipAupForEmployees" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Only valid if requireAupAcceptance = true.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/aupSettings/useDiffAupForEmployees"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/aupsettings/usediffaupforemployees:
+
+      .. rst-class:: ansible-option-title
+
+      **useDiffAupForEmployees**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/aupSettings/useDiffAupForEmployees" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Only valid if requireAupAcceptance = true.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/authSuccessSettings"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/authsuccesssettings:
+
+      .. rst-class:: ansible-option-title
+
+      **authSuccessSettings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/authSuccessSettings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sponsored Guest Portal's authSuccessSettings.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/authSuccessSettings/redirectUrl"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/authsuccesssettings/redirecturl:
+
+      .. rst-class:: ansible-option-title
+
+      **redirectUrl**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/authSuccessSettings/redirectUrl" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Target URL for redirection, used when successRedirect = URL.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/authSuccessSettings/successRedirect"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/authsuccesssettings/successredirect:
+
+      .. rst-class:: ansible-option-title
+
+      **successRedirect**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/authSuccessSettings/successRedirect" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      After an Authentication Success where should device be redirected. Allowed values - AUTHSUCCESSPAGE, - ORIGINATINGURL, - URL.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/byodSettings"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/byodsettings:
+
+      .. rst-class:: ansible-option-title
+
+      **byodSettings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/byodSettings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sponsored Guest Portal's byodSettings.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/byodSettings/byodRegistrationSettings"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/byodsettings/byodregistrationsettings:
+
+      .. rst-class:: ansible-option-title
+
+      **byodRegistrationSettings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/byodSettings/byodRegistrationSettings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Configuration of BYOD endpoint Registration step configuration.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/byodSettings/byodRegistrationSettings/endPointIdentityGroupId"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/byodsettings/byodregistrationsettings/endpointidentitygroupid:
+
+      .. rst-class:: ansible-option-title
+
+      **endPointIdentityGroupId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/byodSettings/byodRegistrationSettings/endPointIdentityGroupId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Identity group id for which endpoint belongs.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/byodSettings/byodRegistrationSettings/showDeviceID"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/byodsettings/byodregistrationsettings/showdeviceid:
+
+      .. rst-class:: ansible-option-title
+
+      **showDeviceID**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/byodSettings/byodRegistrationSettings/showDeviceID" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Display Device ID field during registration.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/byodSettings/byodRegistrationSuccessSettings"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/byodsettings/byodregistrationsuccesssettings:
+
+      .. rst-class:: ansible-option-title
+
+      **byodRegistrationSuccessSettings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/byodSettings/byodRegistrationSuccessSettings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sponsored Guest Portal's byodRegistrationSuccessSettings.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/byodSettings/byodRegistrationSuccessSettings/redirectUrl"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/byodsettings/byodregistrationsuccesssettings/redirecturl:
+
+      .. rst-class:: ansible-option-title
+
+      **redirectUrl**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/byodSettings/byodRegistrationSuccessSettings/redirectUrl" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Target URL for redirection, used when successRedirect = URL.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/byodSettings/byodRegistrationSuccessSettings/successRedirect"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/byodsettings/byodregistrationsuccesssettings/successredirect:
+
+      .. rst-class:: ansible-option-title
+
+      **successRedirect**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/byodSettings/byodRegistrationSuccessSettings/successRedirect" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      After an Authentication Success where should device be redirected. Allowed values - AUTHSUCCESSPAGE, - ORIGINATINGURL, - URL.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/byodSettings/byodWelcomeSettings"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/byodsettings/byodwelcomesettings:
+
+      .. rst-class:: ansible-option-title
+
+      **byodWelcomeSettings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/byodSettings/byodWelcomeSettings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sponsored Guest Portal's byodWelcomeSettings.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/byodSettings/byodWelcomeSettings/aupDisplay"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/byodsettings/byodwelcomesettings/aupdisplay:
+
+      .. rst-class:: ansible-option-title
+
+      **aupDisplay**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/byodSettings/byodWelcomeSettings/aupDisplay" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      How the AUP should be displayed, either on page or as a link. Only valid if includeAup = true. Allowed values - ONPAGE, - ASLINK.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/byodSettings/byodWelcomeSettings/enableBYOD"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/byodsettings/byodwelcomesettings/enablebyod:
+
+      .. rst-class:: ansible-option-title
+
+      **enableBYOD**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/byodSettings/byodWelcomeSettings/enableBYOD" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EnableBYOD flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/byodSettings/byodWelcomeSettings/enableGuestAccess"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/byodsettings/byodwelcomesettings/enableguestaccess:
+
+      .. rst-class:: ansible-option-title
+
+      **enableGuestAccess**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/byodSettings/byodWelcomeSettings/enableGuestAccess" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EnableGuestAccess flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/byodSettings/byodWelcomeSettings/includeAup"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/byodsettings/byodwelcomesettings/includeaup:
+
+      .. rst-class:: ansible-option-title
+
+      **includeAup**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/byodSettings/byodWelcomeSettings/includeAup" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IncludeAup flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/byodSettings/byodWelcomeSettings/requireAupAcceptance"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/byodsettings/byodwelcomesettings/requireaupacceptance:
+
+      .. rst-class:: ansible-option-title
+
+      **requireAupAcceptance**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/byodSettings/byodWelcomeSettings/requireAupAcceptance" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      RequireAupAcceptance flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/byodSettings/byodWelcomeSettings/requireMDM"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/byodsettings/byodwelcomesettings/requiremdm:
+
+      .. rst-class:: ansible-option-title
+
+      **requireMDM**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/byodSettings/byodWelcomeSettings/requireMDM" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      RequireMDM flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/byodSettings/byodWelcomeSettings/requireScrolling"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/byodsettings/byodwelcomesettings/requirescrolling:
+
+      .. rst-class:: ansible-option-title
+
+      **requireScrolling**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/byodSettings/byodWelcomeSettings/requireScrolling" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Require BYOD devices to scroll down to the bottom of the AUP. Only valid if includeAup = true.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/guestChangePasswordSettings"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/guestchangepasswordsettings:
+
+      .. rst-class:: ansible-option-title
+
+      **guestChangePasswordSettings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/guestChangePasswordSettings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sponsored Guest Portal's guestChangePasswordSettings.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/guestChangePasswordSettings/allowChangePasswdAtFirstLogin"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/guestchangepasswordsettings/allowchangepasswdatfirstlogin:
+
+      .. rst-class:: ansible-option-title
+
+      **allowChangePasswdAtFirstLogin**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/guestChangePasswordSettings/allowChangePasswdAtFirstLogin" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Allow guest to change their own passwords.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/guestDeviceRegistrationSettings"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/guestdeviceregistrationsettings:
+
+      .. rst-class:: ansible-option-title
+
+      **guestDeviceRegistrationSettings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/guestDeviceRegistrationSettings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sponsored Guest Portal's guestDeviceRegistrationSettings.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/guestDeviceRegistrationSettings/allowGuestsToRegisterDevices"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/guestdeviceregistrationsettings/allowgueststoregisterdevices:
+
+      .. rst-class:: ansible-option-title
+
+      **allowGuestsToRegisterDevices**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/guestDeviceRegistrationSettings/allowGuestsToRegisterDevices" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Allow guests to register devices.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/guestDeviceRegistrationSettings/autoRegisterGuestDevices"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/guestdeviceregistrationsettings/autoregisterguestdevices:
+
+      .. rst-class:: ansible-option-title
+
+      **autoRegisterGuestDevices**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/guestDeviceRegistrationSettings/autoRegisterGuestDevices" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Automatically register guest devices.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/loginPageSettings"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/loginpagesettings:
+
+      .. rst-class:: ansible-option-title
+
+      **loginPageSettings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/loginPageSettings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Portal Login Page settings groups follow.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/loginPageSettings/accessCode"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/loginpagesettings/accesscode:
+
+      .. rst-class:: ansible-option-title
+
+      **accessCode**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/loginPageSettings/accessCode" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Access code that must be entered by the portal user (only valid if requireAccessCode = true).
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/loginPageSettings/allowAlternateGuestPortal"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/loginpagesettings/allowalternateguestportal:
+
+      .. rst-class:: ansible-option-title
+
+      **allowAlternateGuestPortal**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/loginPageSettings/allowAlternateGuestPortal" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      AllowAlternateGuestPortal flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/loginPageSettings/allowForgotPassword"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/loginpagesettings/allowforgotpassword:
+
+      .. rst-class:: ansible-option-title
+
+      **allowForgotPassword**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/loginPageSettings/allowForgotPassword" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      AllowForgotPassword flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/loginPageSettings/allowGuestToChangePassword"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/loginpagesettings/allowguesttochangepassword:
+
+      .. rst-class:: ansible-option-title
+
+      **allowGuestToChangePassword**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/loginPageSettings/allowGuestToChangePassword" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Require the portal user to enter an access code.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/loginPageSettings/allowGuestToCreateAccounts"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/loginpagesettings/allowguesttocreateaccounts:
+
+      .. rst-class:: ansible-option-title
+
+      **allowGuestToCreateAccounts**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/loginPageSettings/allowGuestToCreateAccounts" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      AllowGuestToCreateAccounts flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/loginPageSettings/aupDisplay"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/loginpagesettings/aupdisplay:
+
+      .. rst-class:: ansible-option-title
+
+      **aupDisplay**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/loginPageSettings/aupDisplay" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      How the AUP should be displayed, either on page or as a link. Only valid if includeAup = true. Allowed values - ONPAGE, - ASLINK.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/loginPageSettings/includeAup"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/loginpagesettings/includeaup:
+
+      .. rst-class:: ansible-option-title
+
+      **includeAup**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/loginPageSettings/includeAup" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Include an Acceptable Use Policy (AUP) that should be displayed during login.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/loginPageSettings/maxFailedAttemptsBeforeRateLimit"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/loginpagesettings/maxfailedattemptsbeforeratelimit:
+
+      .. rst-class:: ansible-option-title
+
+      **maxFailedAttemptsBeforeRateLimit**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/loginPageSettings/maxFailedAttemptsBeforeRateLimit" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Maximum failed login attempts before rate limiting.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/loginPageSettings/requireAccessCode"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/loginpagesettings/requireaccesscode:
+
+      .. rst-class:: ansible-option-title
+
+      **requireAccessCode**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/loginPageSettings/requireAccessCode" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      RequireAccessCode flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/loginPageSettings/requireAupAcceptance"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/loginpagesettings/requireaupacceptance:
+
+      .. rst-class:: ansible-option-title
+
+      **requireAupAcceptance**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/loginPageSettings/requireAupAcceptance" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Require the portal user to accept the AUP. Only valid if includeAup = true.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/loginPageSettings/socialConfigs"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/loginpagesettings/socialconfigs:
+
+      .. rst-class:: ansible-option-title
+
+      **socialConfigs**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/loginPageSettings/socialConfigs" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sponsored Guest Portal's socialConfigs.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/loginPageSettings/socialConfigs/socialMediaType"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/loginpagesettings/socialconfigs/socialmediatype:
+
+      .. rst-class:: ansible-option-title
+
+      **socialMediaType**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/loginPageSettings/socialConfigs/socialMediaType" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sponsored Guest Portal's socialMediaType.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/loginPageSettings/socialConfigs/socialMediaValue"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/loginpagesettings/socialconfigs/socialmediavalue:
+
+      .. rst-class:: ansible-option-title
+
+      **socialMediaValue**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/loginPageSettings/socialConfigs/socialMediaValue" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sponsored Guest Portal's socialMediaValue.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/loginPageSettings/timeBetweenLoginsDuringRateLimit"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/loginpagesettings/timebetweenloginsduringratelimit:
+
+      .. rst-class:: ansible-option-title
+
+      **timeBetweenLoginsDuringRateLimit**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/loginPageSettings/timeBetweenLoginsDuringRateLimit" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Time between login attempts when rate limiting.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/portalSettings"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/portalsettings:
+
+      .. rst-class:: ansible-option-title
+
+      **portalSettings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/portalSettings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The port, interface, certificate, and other basic settings of a portal.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/portalSettings/allowedInterfaces"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/portalsettings/allowedinterfaces:
+
+      .. rst-class:: ansible-option-title
+
+      **allowedInterfaces**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/portalSettings/allowedInterfaces" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Interfaces that the portal will be reachable on. Allowed values - eth0, - eth1, - eth2, - eth3, - eth4, - eth5, - bond0, - bond1, - bond2.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/portalSettings/alwaysUsedLanguage"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/portalsettings/alwaysusedlanguage:
+
+      .. rst-class:: ansible-option-title
+
+      **alwaysUsedLanguage**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/portalSettings/alwaysUsedLanguage" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sponsored Guest Portal's alwaysUsedLanguage.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/portalSettings/assignedGuestTypeForEmployee"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/portalsettings/assignedguesttypeforemployee:
+
+      .. rst-class:: ansible-option-title
+
+      **assignedGuestTypeForEmployee**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/portalSettings/assignedGuestTypeForEmployee" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Unique Id of a guest type. Employees using this portal as a guest inherit login options from the guest type.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/portalSettings/authenticationMethod"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/portalsettings/authenticationmethod:
+
+      .. rst-class:: ansible-option-title
+
+      **authenticationMethod**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/portalSettings/authenticationMethod" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Unique Id of the identity source sequence.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/portalSettings/certificateGroupTag"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/portalsettings/certificategrouptag:
+
+      .. rst-class:: ansible-option-title
+
+      **certificateGroupTag**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/portalSettings/certificateGroupTag" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Logical name of the x.509 server certificate that will be used for the portal.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/portalSettings/displayLang"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/portalsettings/displaylang:
+
+      .. rst-class:: ansible-option-title
+
+      **displayLang**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/portalSettings/displayLang" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Allowed values - USEBROWSERLOCALE, - ALWAYSUSE.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/portalSettings/fallbackLanguage"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/portalsettings/fallbacklanguage:
+
+      .. rst-class:: ansible-option-title
+
+      **fallbackLanguage**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/portalSettings/fallbackLanguage" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Used when displayLang = USEBROWSERLOCALE.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/portalSettings/httpsPort"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/portalsettings/httpsport:
+
+      .. rst-class:: ansible-option-title
+
+      **httpsPort**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/portalSettings/httpsPort" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The port number that the allowed interfaces will listen on. Range from 8000 to 8999.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/postAccessBannerSettings"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/postaccessbannersettings:
+
+      .. rst-class:: ansible-option-title
+
+      **postAccessBannerSettings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/postAccessBannerSettings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sponsored Guest Portal's postAccessBannerSettings.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/postAccessBannerSettings/includePostAccessBanner"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/postaccessbannersettings/includepostaccessbanner:
+
+      .. rst-class:: ansible-option-title
+
+      **includePostAccessBanner**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/postAccessBannerSettings/includePostAccessBanner" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IncludePostAccessBanner flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/postLoginBannerSettings"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/postloginbannersettings:
+
+      .. rst-class:: ansible-option-title
+
+      **postLoginBannerSettings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/postLoginBannerSettings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sponsored Guest Portal's postLoginBannerSettings.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/postLoginBannerSettings/includePostAccessBanner"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/postloginbannersettings/includepostaccessbanner:
+
+      .. rst-class:: ansible-option-title
+
+      **includePostAccessBanner**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/postLoginBannerSettings/includePostAccessBanner" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Include a Post-Login Banner page.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/supportInfoSettings"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/supportinfosettings:
+
+      .. rst-class:: ansible-option-title
+
+      **supportInfoSettings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/supportInfoSettings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Sponsored Guest Portal's supportInfoSettings.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/supportInfoSettings/defaultEmptyFieldValue"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/supportinfosettings/defaultemptyfieldvalue:
+
+      .. rst-class:: ansible-option-title
+
+      **defaultEmptyFieldValue**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/supportInfoSettings/defaultEmptyFieldValue" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The default value displayed for an empty field. Only valid when emptyFieldDisplay = DISPLAYWITHDEFAULTVALUE.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/supportInfoSettings/emptyFieldDisplay"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/supportinfosettings/emptyfielddisplay:
+
+      .. rst-class:: ansible-option-title
+
+      **emptyFieldDisplay**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/supportInfoSettings/emptyFieldDisplay" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Specifies how empty fields are handled on the Support Information Page. Allowed values - HIDE, - DISPLAYWITHNOVALUE, - DISPLAYWITHDEFAULTVALUE.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/supportInfoSettings/includeBrowserUserAgent"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/supportinfosettings/includebrowseruseragent:
+
+      .. rst-class:: ansible-option-title
+
+      **includeBrowserUserAgent**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/supportInfoSettings/includeBrowserUserAgent" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IncludeBrowserUserAgent flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/supportInfoSettings/includeFailureCode"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/supportinfosettings/includefailurecode:
+
+      .. rst-class:: ansible-option-title
+
+      **includeFailureCode**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/supportInfoSettings/includeFailureCode" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IncludeFailureCode flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/supportInfoSettings/includeIpAddress"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/supportinfosettings/includeipaddress:
+
+      .. rst-class:: ansible-option-title
+
+      **includeIpAddress**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/supportInfoSettings/includeIpAddress" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IncludeIpAddress flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/supportInfoSettings/includeMacAddr"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/supportinfosettings/includemacaddr:
+
+      .. rst-class:: ansible-option-title
+
+      **includeMacAddr**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/supportInfoSettings/includeMacAddr" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IncludeMacAddr flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/supportInfoSettings/includePolicyServer"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/supportinfosettings/includepolicyserver:
+
+      .. rst-class:: ansible-option-title
+
+      **includePolicyServer**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/supportInfoSettings/includePolicyServer" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IncludePolicyServer flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-settings/supportInfoSettings/includeSupportInfoPage"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__parameter-settings/supportinfosettings/includesupportinfopage:
+
+      .. rst-class:: ansible-option-title
+
+      **includeSupportInfoPage**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-settings/supportInfoSettings/includeSupportInfoPage" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IncludeSupportInfoPage flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+
+.. Attributes
+
+
+.. Notes
+
+Notes
+-----
+
+.. note::
+   - SDK Method used are sponsored\_guest\_portal.SponsoredGuestPortal.create\_sponsored\_guest\_portal, sponsored\_guest\_portal.SponsoredGuestPortal.delete\_sponsored\_guest\_portal\_by\_id, sponsored\_guest\_portal.SponsoredGuestPortal.update\_sponsored\_guest\_portal\_by\_id,
+   - Paths used are post /ers/config/sponsoredguestportal, delete /ers/config/sponsoredguestportal/{id}, put /ers/config/sponsoredguestportal/{id},
+   - Does not support \ :literal:`check\_mode`\ 
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
+   - The parameters starting with ise\_ are used by the Cisco ISE Python SDK to establish the connection
+
+.. Seealso
+
+
+.. Examples
+
+Examples
+--------
+
+.. code-block:: yaml+jinja
+
+    
+    - name: Update by id
+      cisco.ise.sponsored_guest_portal:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: present
+        customizations:
+          globalCustomizations:
+            backgroundImage:
+              data: string
+            bannerImage:
+              data: string
+            bannerTitle: string
+            contactText: string
+            desktopLogoImage:
+              data: string
+            footerElement: string
+            mobileLogoImage:
+              data: string
+          language:
+            viewLanguage: string
+          pageCustomizations:
+            data:
+            - key: string
+              value: string
+          portalTheme:
+            id: string
+            name: string
+            themeData: string
+          portalTweakSettings:
+            bannerColor: string
+            bannerTextColor: string
+            pageBackgroundColor: string
+            pageLabelAndTextColor: string
+        description: string
+        id: string
+        name: string
+        portalTestUrl: string
+        portalType: string
+        settings:
+          aupSettings:
+            displayFrequency: string
+            displayFrequencyIntervalDays: 0
+            includeAup: true
+            requireAupScrolling: true
+            requireScrolling: true
+            skipAupForEmployees: true
+            useDiffAupForEmployees: true
+          authSuccessSettings:
+            redirectUrl: string
+            successRedirect: string
+          byodSettings:
+            byodRegistrationSettings:
+              endPointIdentityGroupId: string
+              showDeviceID: true
+            byodRegistrationSuccessSettings:
+              redirectUrl: string
+              successRedirect: string
+            byodWelcomeSettings:
+              aupDisplay: string
+              enableBYOD: true
+              enableGuestAccess: true
+              includeAup: true
+              requireAupAcceptance: true
+              requireMDM: true
+              requireScrolling: true
+          guestChangePasswordSettings:
+            allowChangePasswdAtFirstLogin: true
+          guestDeviceRegistrationSettings:
+            allowGuestsToRegisterDevices: true
+            autoRegisterGuestDevices: true
+          loginPageSettings:
+            accessCode: string
+            allowAlternateGuestPortal: true
+            allowForgotPassword: true
+            allowGuestToChangePassword: true
+            allowGuestToCreateAccounts: true
+            aupDisplay: string
+            includeAup: true
+            maxFailedAttemptsBeforeRateLimit: 0
+            requireAccessCode: true
+            requireAupAcceptance: true
+            socialConfigs:
+            - socialMediaType: string
+              socialMediaValue: string
+            timeBetweenLoginsDuringRateLimit: 0
+          portalSettings:
+            allowedInterfaces:
+            - string
+            alwaysUsedLanguage: string
+            assignedGuestTypeForEmployee: string
+            authenticationMethod: string
+            certificateGroupTag: string
+            displayLang: string
+            fallbackLanguage: string
+            httpsPort: 0
+          postAccessBannerSettings:
+            includePostAccessBanner: true
+          postLoginBannerSettings:
+            includePostAccessBanner: true
+          supportInfoSettings:
+            defaultEmptyFieldValue: string
+            emptyFieldDisplay: string
+            includeBrowserUserAgent: true
+            includeFailureCode: true
+            includeIpAddress: true
+            includeMacAddr: true
+            includePolicyServer: true
+            includeSupportInfoPage: true
+
+    - name: Delete by id
+      cisco.ise.sponsored_guest_portal:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: absent
+        id: string
+
+    - name: Create
+      cisco.ise.sponsored_guest_portal:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: present
+        customizations:
+          globalCustomizations:
+            backgroundImage:
+              data: string
+            bannerImage:
+              data: string
+            bannerTitle: string
+            contactText: string
+            desktopLogoImage:
+              data: string
+            footerElement: string
+            mobileLogoImage:
+              data: string
+          language:
+            viewLanguage: string
+          pageCustomizations:
+            data:
+            - key: string
+              value: string
+          portalTheme:
+            id: string
+            name: string
+            themeData: string
+          portalTweakSettings:
+            bannerColor: string
+            bannerTextColor: string
+            pageBackgroundColor: string
+            pageLabelAndTextColor: string
+        description: string
+        name: string
+        portalTestUrl: string
+        portalType: string
+        settings:
+          aupSettings:
+            displayFrequency: string
+            displayFrequencyIntervalDays: 0
+            includeAup: true
+            requireAupScrolling: true
+            requireScrolling: true
+            skipAupForEmployees: true
+            useDiffAupForEmployees: true
+          authSuccessSettings:
+            redirectUrl: string
+            successRedirect: string
+          byodSettings:
+            byodRegistrationSettings:
+              endPointIdentityGroupId: string
+              showDeviceID: true
+            byodRegistrationSuccessSettings:
+              redirectUrl: string
+              successRedirect: string
+            byodWelcomeSettings:
+              aupDisplay: string
+              enableBYOD: true
+              enableGuestAccess: true
+              includeAup: true
+              requireAupAcceptance: true
+              requireMDM: true
+              requireScrolling: true
+          guestChangePasswordSettings:
+            allowChangePasswdAtFirstLogin: true
+          guestDeviceRegistrationSettings:
+            allowGuestsToRegisterDevices: true
+            autoRegisterGuestDevices: true
+          loginPageSettings:
+            accessCode: string
+            allowAlternateGuestPortal: true
+            allowForgotPassword: true
+            allowGuestToChangePassword: true
+            allowGuestToCreateAccounts: true
+            aupDisplay: string
+            includeAup: true
+            maxFailedAttemptsBeforeRateLimit: 0
+            requireAccessCode: true
+            requireAupAcceptance: true
+            socialConfigs:
+            - socialMediaType: string
+              socialMediaValue: string
+            timeBetweenLoginsDuringRateLimit: 0
+          portalSettings:
+            allowedInterfaces:
+            - string
+            alwaysUsedLanguage: string
+            assignedGuestTypeForEmployee: string
+            authenticationMethod: string
+            certificateGroupTag: string
+            displayLang: string
+            fallbackLanguage: string
+            httpsPort: 0
+          postAccessBannerSettings:
+            includePostAccessBanner: true
+          postLoginBannerSettings:
+            includePostAccessBanner: true
+          supportInfoSettings:
+            defaultEmptyFieldValue: string
+            emptyFieldDisplay: string
+            includeBrowserUserAgent: true
+            includeFailureCode: true
+            includeIpAddress: true
+            includeMacAddr: true
+            includePolicyServer: true
+            includeSupportInfoPage: true
+
+
+
+
+
+.. Facts
+
+
+.. Return values
+
+Return Values
+-------------
+Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Key
+    - Description
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-ise_response"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__return-ise_response:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_response**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-ise_response" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      A dictionary or list with the response returned by the Cisco ISE Python SDK
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"customizations": {"globalCustomizations": {"backgroundImage": {"data": "string"}, "bannerImage": {"data": "string"}, "bannerTitle": "string", "contactText": "string", "desktopLogoImage": {"data": "string"}, "footerElement": "string", "mobileLogoImage": {"data": "string"}}, "language": {"viewLanguage": "string"}, "pageCustomizations": {"data": [{"key": "string", "value": "string"}]}, "portalTheme": {"id": "string", "name": "string", "themeData": "string"}, "portalTweakSettings": {"bannerColor": "string", "bannerTextColor": "string", "pageBackgroundColor": "string", "pageLabelAndTextColor": "string"}}, "description": "string", "id": "string", "link": {"href": "string", "rel": "string", "type": "string"}, "name": "string", "portalTestUrl": "string", "portalType": "string", "settings": {"aupSettings": {"displayFrequency": "string", "displayFrequencyIntervalDays": 0, "includeAup": true, "requireAupScrolling": true, "requireScrolling": true, "skipAupForEmployees": true, "useDiffAupForEmployees": true}, "authSuccessSettings": {"redirectUrl": "string", "successRedirect": "string"}, "byodSettings": {"byodRegistrationSettings": {"endPointIdentityGroupId": "string", "showDeviceID": true}, "byodRegistrationSuccessSettings": {"redirectUrl": "string", "successRedirect": "string"}, "byodWelcomeSettings": {"aupDisplay": "string", "enableBYOD": true, "enableGuestAccess": true, "includeAup": true, "requireAupAcceptance": true, "requireMDM": true, "requireScrolling": true}}, "guestChangePasswordSettings": {"allowChangePasswdAtFirstLogin": true}, "guestDeviceRegistrationSettings": {"allowGuestsToRegisterDevices": true, "autoRegisterGuestDevices": true}, "loginPageSettings": {"accessCode": "string", "allowAlternateGuestPortal": true, "allowForgotPassword": true, "allowGuestToChangePassword": true, "allowGuestToCreateAccounts": true, "aupDisplay": "string", "includeAup": true, "maxFailedAttemptsBeforeRateLimit": 0, "requireAccessCode": true, "requireAupAcceptance": true, "socialConfigs": [{"socialMediaType": "string", "socialMediaValue": "string"}], "timeBetweenLoginsDuringRateLimit": 0}, "portalSettings": {"allowedInterfaces": ["string"], "alwaysUsedLanguage": "string", "assignedGuestTypeForEmployee": "string", "authenticationMethod": "string", "certificateGroupTag": "string", "displayLang": "string", "fallbackLanguage": "string", "httpsPort": 0}, "postAccessBannerSettings": {"includePostAccessBanner": true}, "postLoginBannerSettings": {"includePostAccessBanner": true}, "supportInfoSettings": {"defaultEmptyFieldValue": "string", "emptyFieldDisplay": "string", "includeBrowserUserAgent": true, "includeFailureCode": true, "includeIpAddress": true, "includeMacAddr": true, "includePolicyServer": true, "includeSupportInfoPage": true}}}`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-ise_update_response"></div>
+
+      .. _ansible_collections.cisco.ise.sponsored_guest_portal_module__return-ise_update_response:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_update_response**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-ise_update_response" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      :ansible-option-versionadded:`added in cisco.ise 1.1.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      A dictionary or list with the response returned by the Cisco ISE Python SDK
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"UpdatedFieldsList": {"field": "string", "newValue": "string", "oldValue": "string", "updatedField": [{"field": "string", "newValue": "string", "oldValue": "string"}]}}`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+..  Status (Presently only deprecated)
+
+
+.. Authors
+
+Authors
+~~~~~~~
+
+- Rafael Campos (@racampos)
+
+
+
+.. Extra links
+
+Collection links
+~~~~~~~~~~~~~~~~
+
+.. raw:: html
+
+  <p class="ansible-links">
+    <a href="https://github.com/CiscoISE/ansible-ise/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
+    <a href="https://github.com/CiscoISE/ansible-ise" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
+  </p>
+
+.. Parsing errors
+
