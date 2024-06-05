@@ -1009,3 +1009,10 @@ releases:
       bugfixes:
         - network_device_group - change parameter name from ndgtype to othername.
         - network_device_group_info - change parameter name from ndgtype to othername.
+  2.9.2:
+    release_date: "2024-06-06"
+    changes:
+      release_summary: Update min ansible version.
+      bugfixes:
+        - Update min_ansible_version to 2.15.0 in runtime.yml and roles
+        - Added main.yml to aws_deployment role
