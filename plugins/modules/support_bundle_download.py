@@ -22,9 +22,6 @@ options:
   fileName:
     description: Support Bundle Download's fileName.
     type: str
-  filename:
-    description: The filename used to save the download file.
-    type: str
   saveFile:
     description: Enable or disable automatic file creation of raw response.
     type: bool
@@ -48,8 +45,7 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     dirPath: /tmp/downloads/
-    fileName: string
-    filename: download_filename.extension
+    fileName: download_filename.extension
     saveFile: true
 
 """
@@ -61,9 +57,9 @@ ise_response:
   type: dict
   sample: >
     {
-      "data": "filecontent",
-      "filename": "filename",
+      "data": "fileContent",
+      "fileName": "fileName",
       "dirpath": "download/directory",
-      "path": "download/directory/filename"
+      "path": "download/directory/fileName"
     }
 """
