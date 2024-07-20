@@ -5,6 +5,7 @@ on:
   pull_request:
   schedule:
     - cron: '0 6 * * *'
+  workflow_dispatch:
 env:
   NAMESPACE: cisco
   COLLECTION_NAME: ise 
@@ -21,7 +22,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Check out code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           path: CiscoISE/ansible-ise
       - name: Create directory
@@ -29,7 +30,7 @@ jobs:
       - name: Move repository
         run: mv ./CiscoISE/ansible-ise ./ansible_collections/${{env.NAMESPACE}}/${{env.COLLECTION_NAME}}
       - name: Set up Python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v5
         with:
           python-version: '3.11'
       - name: Install ansible-base (${{ matrix.ansible }})
