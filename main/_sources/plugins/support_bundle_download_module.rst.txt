@@ -179,40 +179,6 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-filename"></div>
-
-      .. _ansible_collections.cisco.ise.support_bundle_download_module__parameter-filename:
-
-      .. rst-class:: ansible-option-title
-
-      **filename**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-filename" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      The filename used to save the download file.
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ise_debug"></div>
 
       .. _ansible_collections.cisco.ise.support_bundle_download_module__parameter-ise_debug:
@@ -691,8 +657,7 @@ Examples
         ise_password: "{{ise_password}}"
         ise_verify: "{{ise_verify}}"
         dirPath: /tmp/downloads/
-        fileName: string
-        filename: download_filename.extension
+        fileName: download_filename.extension
         saveFile: true
 
 
@@ -755,7 +720,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"data": "filecontent", "dirpath": "download/directory", "filename": "filename", "path": "download/directory/filename"}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"data": "fileContent", "dirpath": "download/directory", "fileName": "fileName", "path": "download/directory/fileName"}`
 
 
       .. raw:: html

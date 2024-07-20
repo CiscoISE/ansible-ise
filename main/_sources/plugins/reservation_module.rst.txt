@@ -147,40 +147,6 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-clientId"></div>
-
-      .. _ansible_collections.cisco.ise.reservation_module__parameter-clientid:
-
-      .. rst-class:: ansible-option-title
-
-      **clientId**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-clientId" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      Unique ID of the given client.
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-clientName"></div>
 
       .. _ansible_collections.cisco.ise.reservation_module__parameter-clientname:
@@ -764,7 +730,6 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: present
         clientID: string
-        clientId: string
         endIndex: 0
         startIndex: 0
 
@@ -837,7 +802,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"clientId": "string", "clientName": "string", "endIndex": 0, "startIndex": 0}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"clientID": "string", "clientName": "string", "endIndex": 0, "startIndex": 0}`
 
 
       .. raw:: html
