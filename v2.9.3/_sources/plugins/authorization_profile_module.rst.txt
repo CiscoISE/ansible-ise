@@ -1,0 +1,2474 @@
+
+.. Document meta
+
+:orphan:
+
+.. |antsibull-internal-nbsp| unicode:: 0xA0
+    :trim:
+
+.. role:: ansible-attribute-support-label
+.. role:: ansible-attribute-support-property
+.. role:: ansible-attribute-support-full
+.. role:: ansible-attribute-support-partial
+.. role:: ansible-attribute-support-none
+.. role:: ansible-attribute-support-na
+.. role:: ansible-option-type
+.. role:: ansible-option-elements
+.. role:: ansible-option-required
+.. role:: ansible-option-versionadded
+.. role:: ansible-option-aliases
+.. role:: ansible-option-choices
+.. role:: ansible-option-choices-default-mark
+.. role:: ansible-option-default-bold
+.. role:: ansible-option-configuration
+.. role:: ansible-option-returned-bold
+.. role:: ansible-option-sample-bold
+
+.. Anchors
+
+.. _ansible_collections.cisco.ise.authorization_profile_module:
+
+.. Anchors: short name for ansible.builtin
+
+.. Anchors: aliases
+
+
+
+.. Title
+
+cisco.ise.authorization_profile module -- Resource module for Authorization Profile
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. Collection note
+
+.. note::
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.3).
+
+    To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.ise.authorization_profile_module_requirements>` for details.
+
+    To use it in a playbook, specify: :code:`cisco.ise.authorization_profile`.
+
+.. version_added
+
+.. rst-class:: ansible-version-added
+
+New in cisco.ise 1.0.0
+
+.. contents::
+   :local:
+   :depth: 1
+
+.. Deprecated
+
+
+Synopsis
+--------
+
+.. Description
+
+- Manage operations create, update and delete of the resource Authorization Profile.
+- This API creates an authorization profile.
+- This API deletes an authorization profile.
+- This API allows the client to update an authorization profile.
+
+.. note::
+    This module has a corresponding :ref:`action plugin <action_plugins>`.
+
+.. Aliases
+
+
+.. Requirements
+
+.. _ansible_collections.cisco.ise.authorization_profile_module_requirements:
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- ciscoisesdk \>= 2.2.3
+- python \>= 3.5
+
+
+
+
+
+
+.. Options
+
+Parameters
+----------
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Parameter
+    - Comments
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-accessType"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-accesstype:
+
+      .. rst-class:: ansible-option-title
+
+      **accessType**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-accessType" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Allowed Values - ACCESS\_ACCEPT, - ACCESS\_REJECT.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-acl"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-acl:
+
+      .. rst-class:: ansible-option-title
+
+      **acl**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-acl" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Authorization Profile's acl.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedAttributes"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-advancedattributes:
+
+      .. rst-class:: ansible-option-title
+
+      **advancedAttributes**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedAttributes" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Authorization Profile's advancedAttributes.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedAttributes/leftHandSideDictionaryAttribue"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-advancedattributes/lefthandsidedictionaryattribue:
+
+      .. rst-class:: ansible-option-title
+
+      **leftHandSideDictionaryAttribue**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedAttributes/leftHandSideDictionaryAttribue" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Authorization Profile's leftHandSideDictionaryAttribue.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedAttributes/leftHandSideDictionaryAttribue/AdvancedAttributeValueType"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-advancedattributes/lefthandsidedictionaryattribue/advancedattributevaluetype:
+
+      .. rst-class:: ansible-option-title
+
+      **AdvancedAttributeValueType**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedAttributes/leftHandSideDictionaryAttribue/AdvancedAttributeValueType" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Authorization Profile's AdvancedAttributeValueType.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedAttributes/leftHandSideDictionaryAttribue/attributeName"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-advancedattributes/lefthandsidedictionaryattribue/attributename:
+
+      .. rst-class:: ansible-option-title
+
+      **attributeName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedAttributes/leftHandSideDictionaryAttribue/attributeName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Authorization Profile's attributeName.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedAttributes/leftHandSideDictionaryAttribue/dictionaryName"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-advancedattributes/lefthandsidedictionaryattribue/dictionaryname:
+
+      .. rst-class:: ansible-option-title
+
+      **dictionaryName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedAttributes/leftHandSideDictionaryAttribue/dictionaryName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Authorization Profile's dictionaryName.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedAttributes/leftHandSideDictionaryAttribue/value"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-advancedattributes/lefthandsidedictionaryattribue/value:
+
+      .. rst-class:: ansible-option-title
+
+      **value**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedAttributes/leftHandSideDictionaryAttribue/value" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Authorization Profile's value.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedAttributes/rightHandSideAttribueValue"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-advancedattributes/righthandsideattribuevalue:
+
+      .. rst-class:: ansible-option-title
+
+      **rightHandSideAttribueValue**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedAttributes/rightHandSideAttribueValue" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Attribute value can be of type AttributeValue or AdvancedDictionaryAttribute. For AttributeValue the value is String, For AdvancedDictionaryAttribute the value is dictionaryName and attributeName properties.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedAttributes/rightHandSideAttribueValue/AdvancedAttributeValueType"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-advancedattributes/righthandsideattribuevalue/advancedattributevaluetype:
+
+      .. rst-class:: ansible-option-title
+
+      **AdvancedAttributeValueType**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedAttributes/rightHandSideAttribueValue/AdvancedAttributeValueType" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Authorization Profile's AdvancedAttributeValueType.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedAttributes/rightHandSideAttribueValue/attributeName"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-advancedattributes/righthandsideattribuevalue/attributename:
+
+      .. rst-class:: ansible-option-title
+
+      **attributeName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedAttributes/rightHandSideAttribueValue/attributeName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Authorization Profile's attributeName.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedAttributes/rightHandSideAttribueValue/dictionaryName"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-advancedattributes/righthandsideattribuevalue/dictionaryname:
+
+      .. rst-class:: ansible-option-title
+
+      **dictionaryName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedAttributes/rightHandSideAttribueValue/dictionaryName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Authorization Profile's dictionaryName.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedAttributes/rightHandSideAttribueValue/value"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-advancedattributes/righthandsideattribuevalue/value:
+
+      .. rst-class:: ansible-option-title
+
+      **value**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedAttributes/rightHandSideAttribueValue/value" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Authorization Profile's value.
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-agentlessPosture"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-agentlessposture:
+
+      .. rst-class:: ansible-option-title
+
+      **agentlessPosture**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-agentlessPosture" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      AgentlessPosture flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-airespaceACL"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-airespaceacl:
+
+      .. rst-class:: ansible-option-title
+
+      **airespaceACL**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-airespaceACL" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Authorization Profile's airespaceACL.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-airespaceIPv6ACL"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-airespaceipv6acl:
+
+      .. rst-class:: ansible-option-title
+
+      **airespaceIPv6ACL**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-airespaceIPv6ACL" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Authorization Profile's airespaceIPv6ACL.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-asaVpn"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-asavpn:
+
+      .. rst-class:: ansible-option-title
+
+      **asaVpn**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-asaVpn" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Authorization Profile's asaVpn.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-authzProfileType"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-authzprofiletype:
+
+      .. rst-class:: ansible-option-title
+
+      **authzProfileType**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-authzProfileType" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Allowed Values - SWITCH, - TRUSTSEC, - TACACS SWITCH is used for Standard Authorization Profiles.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-autoSmartPort"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-autosmartport:
+
+      .. rst-class:: ansible-option-title
+
+      **autoSmartPort**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-autoSmartPort" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Authorization Profile's autoSmartPort.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-avcProfile"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-avcprofile:
+
+      .. rst-class:: ansible-option-title
+
+      **avcProfile**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-avcProfile" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Authorization Profile's avcProfile.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-daclName"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-daclname:
+
+      .. rst-class:: ansible-option-title
+
+      **daclName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-daclName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Authorization Profile's daclName.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-description"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-description:
+
+      .. rst-class:: ansible-option-title
+
+      **description**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-description" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Authorization Profile's description.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-easywiredSessionCandidate"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-easywiredsessioncandidate:
+
+      .. rst-class:: ansible-option-title
+
+      **easywiredSessionCandidate**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-easywiredSessionCandidate" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      EasywiredSessionCandidate flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-id"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Resource UUID value.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-interfaceTemplate"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-interfacetemplate:
+
+      .. rst-class:: ansible-option-title
+
+      **interfaceTemplate**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-interfaceTemplate" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Authorization Profile's interfaceTemplate.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ipv6ACLFilter"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-ipv6aclfilter:
+
+      .. rst-class:: ansible-option-title
+
+      **ipv6ACLFilter**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ipv6ACLFilter" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Authorization Profile's ipv6ACLFilter.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ipv6DaclName"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-ipv6daclname:
+
+      .. rst-class:: ansible-option-title
+
+      **ipv6DaclName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ipv6DaclName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Authorization Profile's ipv6DaclName.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_debug"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-ise_debug:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_debug**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_debug" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag for Identity Services Engine SDK to enable debugging.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_hostname"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-ise_hostname:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_hostname**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_hostname" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Identity Services Engine hostname.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_password"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-ise_password:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_password**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_password" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Identity Services Engine password to authenticate.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_single_request_timeout"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-ise_single_request_timeout:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_single_request_timeout**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_single_request_timeout" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      :ansible-option-versionadded:`added in cisco.ise 3.0.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Timeout (in seconds) for RESTful HTTP requests.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_username"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-ise_username:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_username**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_username" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Identity Services Engine username to authenticate.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_uses_api_gateway"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-ise_uses_api_gateway:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_uses_api_gateway**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_uses_api_gateway" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      :ansible-option-versionadded:`added in cisco.ise 1.1.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag that informs the SDK whether to use the Identity Services Engine's API Gateway to send requests.
+
+      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise\_hostname}}.
+
+      If it is false, it sends the requests to https://{{ise\_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_uses_csrf_token"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-ise_uses_csrf_token:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_uses_csrf_token**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_uses_csrf_token" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      :ansible-option-versionadded:`added in cisco.ise 3.0.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag that informs the SDK whether we send the CSRF token to ISE's ERS APIs.
+
+      If it is True, the SDK assumes that your ISE CSRF Check is enabled.
+
+      If it is True, it assumes you need the SDK to manage the CSRF token automatically for you.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_verify"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-ise_verify:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_verify**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_verify" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag to enable or disable SSL certificate verification.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_version"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-ise_version:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_version**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_version" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Informs the SDK which version of Identity Services Engine to use.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"3.1\_Patch\_1"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_wait_on_rate_limit"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-ise_wait_on_rate_limit:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_wait_on_rate_limit**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_wait_on_rate_limit" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag for Identity Services Engine SDK to enable automatic rate-limit handling.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-macSecPolicy"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-macsecpolicy:
+
+      .. rst-class:: ansible-option-title
+
+      **macSecPolicy**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-macSecPolicy" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Allowed Values - MUST\_SECURE, - MUST\_NOT\_SECURE, - SHOULD\_SECURE.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-name"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Resource Name.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-neat"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-neat:
+
+      .. rst-class:: ansible-option-title
+
+      **neat**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-neat" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Neat flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-profileName"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-profilename:
+
+      .. rst-class:: ansible-option-title
+
+      **profileName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-profileName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Authorization Profile's profileName.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-reauth"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-reauth:
+
+      .. rst-class:: ansible-option-title
+
+      **reauth**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-reauth" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Authorization Profile's reauth.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-reauth/connectivity"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-reauth/connectivity:
+
+      .. rst-class:: ansible-option-title
+
+      **connectivity**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-reauth/connectivity" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Allowed Values - DEFAULT, - RADIUS\_REQUEST.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-reauth/timer"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-reauth/timer:
+
+      .. rst-class:: ansible-option-title
+
+      **timer**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-reauth/timer" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Valid range is 1-65535.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-serviceTemplate"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-servicetemplate:
+
+      .. rst-class:: ansible-option-title
+
+      **serviceTemplate**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-serviceTemplate" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      ServiceTemplate flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-trackMovement"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-trackmovement:
+
+      .. rst-class:: ansible-option-title
+
+      **trackMovement**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-trackMovement" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      TrackMovement flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-vlan"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-vlan:
+
+      .. rst-class:: ansible-option-title
+
+      **vlan**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-vlan" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Authorization Profile's vlan.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-vlan/nameID"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-vlan/nameid:
+
+      .. rst-class:: ansible-option-title
+
+      **nameID**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-vlan/nameID" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Authorization Profile's nameID.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-vlan/tagID"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-vlan/tagid:
+
+      .. rst-class:: ansible-option-title
+
+      **tagID**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-vlan/tagID" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Valid range is 0-31.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-voiceDomainPermission"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-voicedomainpermission:
+
+      .. rst-class:: ansible-option-title
+
+      **voiceDomainPermission**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-voiceDomainPermission" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      VoiceDomainPermission flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-webAuth"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-webauth:
+
+      .. rst-class:: ansible-option-title
+
+      **webAuth**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-webAuth" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      WebAuth flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-webRedirection"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-webredirection:
+
+      .. rst-class:: ansible-option-title
+
+      **webRedirection**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-webRedirection" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Authorization Profile's webRedirection.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-webRedirection/acl"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-webredirection/acl:
+
+      .. rst-class:: ansible-option-title
+
+      **acl**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-webRedirection/acl" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Authorization Profile's acl.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-webRedirection/displayCertificatesRenewalMessages"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-webredirection/displaycertificatesrenewalmessages:
+
+      .. rst-class:: ansible-option-title
+
+      **displayCertificatesRenewalMessages**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-webRedirection/displayCertificatesRenewalMessages" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The displayCertificatesRenewalMessages is mandatory when 'WebRedirectionType' value is 'CentralizedWebAuth'. For all other 'WebRedirectionType' values the field must be ignored.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-webRedirection/portalName"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-webredirection/portalname:
+
+      .. rst-class:: ansible-option-title
+
+      **portalName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-webRedirection/portalName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      A portal that exist in the DB and fits the WebRedirectionType.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-webRedirection/staticIPHostNameFQDN"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-webredirection/staticiphostnamefqdn:
+
+      .. rst-class:: ansible-option-title
+
+      **staticIPHostNameFQDN**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-webRedirection/staticIPHostNameFQDN" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Authorization Profile's staticIPHostNameFQDN.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-webRedirection/WebRedirectionType"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__parameter-webredirection/webredirectiontype:
+
+      .. rst-class:: ansible-option-title
+
+      **WebRedirectionType**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-webRedirection/WebRedirectionType" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Value MUST be one of the following CentralizedWebAuth, HotSpot, NativeSupplicanProvisioning, ClientProvisioning. The WebRedirectionType must fit the portalName.
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+.. Attributes
+
+
+.. Notes
+
+Notes
+-----
+
+.. note::
+   - SDK Method used are authorization\_profile.AuthorizationProfile.create\_authorization\_profile, authorization\_profile.AuthorizationProfile.delete\_authorization\_profile\_by\_id, authorization\_profile.AuthorizationProfile.update\_authorization\_profile\_by\_id,
+   - Paths used are post /ers/config/authorizationprofile, delete /ers/config/authorizationprofile/{id}, put /ers/config/authorizationprofile/{id},
+   - Does not support \ :literal:`check\_mode`\ 
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
+   - The parameters starting with ise\_ are used by the Cisco ISE Python SDK to establish the connection
+
+.. Seealso
+
+
+.. Examples
+
+Examples
+--------
+
+.. code-block:: yaml+jinja
+
+    
+    - name: Update by id
+      cisco.ise.authorization_profile:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: present
+        accessType: string
+        acl: string
+        advancedAttributes:
+        - leftHandSideDictionaryAttribue:
+            AdvancedAttributeValueType: string
+            attributeName: string
+            dictionaryName: string
+            value: string
+          rightHandSideAttribueValue:
+            AdvancedAttributeValueType: string
+            attributeName: string
+            dictionaryName: string
+            value: string
+        agentlessPosture: true
+        airespaceACL: string
+        airespaceIPv6ACL: string
+        asaVpn: string
+        authzProfileType: string
+        autoSmartPort: string
+        avcProfile: string
+        daclName: string
+        description: string
+        easywiredSessionCandidate: true
+        id: string
+        interfaceTemplate: string
+        ipv6ACLFilter: string
+        ipv6DaclName: string
+        macSecPolicy: string
+        name: string
+        neat: true
+        profileName: string
+        reauth:
+          connectivity: string
+          timer: 0
+        serviceTemplate: true
+        trackMovement: true
+        vlan:
+          nameID: string
+          tagID: 0
+        voiceDomainPermission: true
+        webAuth: true
+        webRedirection:
+          WebRedirectionType: string
+          acl: string
+          displayCertificatesRenewalMessages: true
+          portalName: string
+          staticIPHostNameFQDN: string
+
+    - name: Delete by id
+      cisco.ise.authorization_profile:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: absent
+        id: string
+
+    - name: Create
+      cisco.ise.authorization_profile:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: present
+        accessType: string
+        acl: string
+        advancedAttributes:
+        - leftHandSideDictionaryAttribue:
+            AdvancedAttributeValueType: string
+            attributeName: string
+            dictionaryName: string
+            value: string
+          rightHandSideAttribueValue:
+            AdvancedAttributeValueType: string
+            attributeName: string
+            dictionaryName: string
+            value: string
+        agentlessPosture: true
+        airespaceACL: string
+        airespaceIPv6ACL: string
+        asaVpn: string
+        authzProfileType: string
+        autoSmartPort: string
+        avcProfile: string
+        daclName: string
+        description: string
+        easywiredSessionCandidate: true
+        id: string
+        interfaceTemplate: string
+        ipv6ACLFilter: string
+        ipv6DaclName: string
+        macSecPolicy: string
+        name: string
+        neat: true
+        profileName: string
+        reauth:
+          connectivity: string
+          timer: 0
+        serviceTemplate: true
+        trackMovement: true
+        vlan:
+          nameID: string
+          tagID: 0
+        voiceDomainPermission: true
+        webAuth: true
+        webRedirection:
+          WebRedirectionType: string
+          acl: string
+          displayCertificatesRenewalMessages: true
+          portalName: string
+          staticIPHostNameFQDN: string
+
+
+
+
+
+.. Facts
+
+
+.. Return values
+
+Return Values
+-------------
+Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Key
+    - Description
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-ise_response"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__return-ise_response:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_response**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-ise_response" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      A dictionary or list with the response returned by the Cisco ISE Python SDK
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"accessType": "string", "acl": "string", "advancedAttributes": [{"leftHandSideDictionaryAttribue": {"AdvancedAttributeValueType": "string", "attributeName": "string", "dictionaryName": "string", "value": "string"}, "rightHandSideAttribueValue": {"AdvancedAttributeValueType": "string", "attributeName": "string", "dictionaryName": "string", "value": "string"}}], "agentlessPosture": true, "airespaceACL": "string", "airespaceIPv6ACL": "string", "asaVpn": "string", "authzProfileType": "string", "autoSmartPort": "string", "avcProfile": "string", "daclName": "string", "description": "string", "easywiredSessionCandidate": true, "id": "string", "interfaceTemplate": "string", "ipv6ACLFilter": "string", "ipv6DaclName": "string", "link": {"href": "string", "rel": "string", "type": "string"}, "macSecPolicy": "string", "name": "string", "neat": true, "profileName": "string", "reauth": {"connectivity": "string", "timer": 0}, "serviceTemplate": true, "trackMovement": true, "vlan": {"nameID": "string", "tagID": 0}, "voiceDomainPermission": true, "webAuth": true, "webRedirection": {"WebRedirectionType": "string", "acl": "string", "displayCertificatesRenewalMessages": true, "portalName": "string", "staticIPHostNameFQDN": "string"}}`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-ise_update_response"></div>
+
+      .. _ansible_collections.cisco.ise.authorization_profile_module__return-ise_update_response:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_update_response**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-ise_update_response" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      :ansible-option-versionadded:`added in cisco.ise 1.1.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      A dictionary or list with the response returned by the Cisco ISE Python SDK
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"UpdatedFieldsList": {"field": "string", "newValue": "string", "oldValue": "string", "updatedField": [{"field": "string", "newValue": "string", "oldValue": "string"}]}}`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+..  Status (Presently only deprecated)
+
+
+.. Authors
+
+Authors
+~~~~~~~
+
+- Rafael Campos (@racampos)
+
+
+
+.. Extra links
+
+Collection links
+~~~~~~~~~~~~~~~~
+
+.. raw:: html
+
+  <p class="ansible-links">
+    <a href="https://github.com/CiscoISE/ansible-ise/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
+    <a href="https://github.com/CiscoISE/ansible-ise" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
+  </p>
+
+.. Parsing errors
+
