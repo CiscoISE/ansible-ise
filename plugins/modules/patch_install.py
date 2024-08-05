@@ -29,7 +29,7 @@ options:
     description: Patch Install's repositoryName.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.1
+- ciscoisesdk >= 2.2.3
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for Patching

@@ -151,7 +151,7 @@ class Reservation(object):
             family="sgt_range_reservation",
             function="reserve_sgt_range",
             params=self.new_object,
-        ).response ## Check if response is correct
+        ).response
         return result
 
     def update(self):
