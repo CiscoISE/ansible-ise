@@ -59,7 +59,6 @@ class NetworkDevice(object):
     def __init__(self, params, ise):
         self.ise = ise
         network_device_iplist = params.get("NetworkDeviceIPList", [])
-        
         # Ensure mask is always an integer
         for ip in network_device_iplist:
             try:
@@ -72,7 +71,6 @@ class NetworkDevice(object):
                         " Please provide a valid integer value."
                     )
                 )
-        
         self.new_object = dict(
             name=params.get("name"),
             description=params.get("description"),
