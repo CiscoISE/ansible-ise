@@ -54,7 +54,7 @@ class Reservation(object):
         self.new_object = dict(
             client_name=params.get("clientName"),
             number_of_tags=params.get("numberOfTags"),
-            client_id=params.get("clientID"),
+            client_id=params.get("clientID") or params.get("clientId"),
             end_index=params.get("endIndex"),
             start_index=params.get("startIndex"),
         )
@@ -93,7 +93,7 @@ class Reservation(object):
                 family="sgt_range_reservation",
                 function="get_sgt_reserved_range",
                 handle_func_exception=False,
-                params={"id": id}
+                params={"client_id": id}
             ).response['response']
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(
@@ -113,8 +113,8 @@ class Reservation(object):
         id_exists = False
         name_exists = False
         prev_obj = None
-        o_id = self.new_object.get("id")
-        name = self.new_object.get("name")
+        o_id = self.new_object.get("client_id")
+        name = self.new_object.get("client_name")
         if o_id:
             prev_obj = self.get_object_by_id(o_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)

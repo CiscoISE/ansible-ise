@@ -84,7 +84,7 @@ class ActionModule(ActionBase):
                 family="misc",
                 function='get_active_list',
                 params=self.get_object(self._task.args)
-            ).response['noOfActiveSession']
+            ).response['activeList']['@noOfActiveSession']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

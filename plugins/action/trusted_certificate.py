@@ -108,7 +108,7 @@ class TrustedCertificate(object):
         try:
             for items_response in gen_items_responses:
                 items = items_response.response.get('response', [])
-                result = get_dict_result(items, 'name', name)
+                result = get_dict_result(items, 'friendlyName', name)
                 if result:
                     return result
         except (TypeError, AttributeError) as e:
@@ -185,7 +185,7 @@ class TrustedCertificate(object):
             ("enableOCSPValidation", "enable_ocsp_validation"),
             ("enableServerIdentityCheck", "enable_server_identity_check"),
             ("ignoreCRLExpiration", "ignore_crl_expiration"),
-            ("name", "name"),
+            ("friendlyName ", "name"),
             ("nonAutomaticCRLUpdatePeriod", "non_automatic_crl_update_period"),
             ("nonAutomaticCRLUpdateUnits", "non_automatic_crl_update_units"),
             ("rejectIfNoStatusFromOCSP", "reject_if_no_status_from_ocs_p"),

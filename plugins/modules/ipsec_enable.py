@@ -23,7 +23,7 @@ options:
     description: NadIp path parameter. IP address of the NAD.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.1
+- ciscoisesdk >= 2.2.3
 - python >= 3.5
 notes:
   - SDK Method used are

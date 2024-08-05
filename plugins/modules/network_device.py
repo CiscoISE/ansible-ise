@@ -35,7 +35,7 @@ options:
         description: Network Device's ipaddress.
         type: str
       mask:
-        description: Network Device's mask.
+        description: Network Device's mask. Can be a string, but will be cast to an integer.
         type: int
     type: list
   authenticationSettings:
@@ -191,7 +191,7 @@ options:
         type: dict
     type: dict
 requirements:
-- ciscoisesdk >= 2.2.1
+- ciscoisesdk >= 2.2.3
 - python >= 3.5
 notes:
   - SDK Method used are

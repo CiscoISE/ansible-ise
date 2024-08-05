@@ -30,8 +30,11 @@ options:
   systemDefined:
     description: SystemDefined flag.
     type: bool
+  parentID:
+    description: Endpoint Group's parent.
+    type: str
 requirements:
-- ciscoisesdk >= 2.2.1
+- ciscoisesdk >= 2.2.3
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for EndpointIdentityGroup
@@ -62,6 +65,7 @@ EXAMPLES = r"""
     id: string
     name: string
     systemDefined: true
+    parentID: string
 
 - name: Delete by id
   cisco.ise.endpoint_group:
@@ -82,6 +86,7 @@ EXAMPLES = r"""
     description: string
     name: string
     systemDefined: true
+    parentID: string
 
 """
 
@@ -96,6 +101,7 @@ ise_response:
       "name": "string",
       "description": "string",
       "systemDefined": true,
+      "parentId": "string",
       "link": {
         "rel": "string",
         "href": "string",

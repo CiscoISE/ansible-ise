@@ -58,6 +58,19 @@ required_together = []
 class NetworkDevice(object):
     def __init__(self, params, ise):
         self.ise = ise
+        network_device_iplist = params.get("NetworkDeviceIPList", [])
+        # Ensure mask is always an integer
+        for ip in network_device_iplist:
+            try:
+                if isinstance(ip.get("mask"), str):
+                    ip["mask"] = int(ip["mask"])
+            except ValueError:
+                self.ise.fail_json(
+                    msg=(
+                        "The mask value for the IP address is not an integer."
+                        " Please provide a valid integer value."
+                    )
+                )
         self.new_object = dict(
             name=params.get("name"),
             description=params.get("description"),
@@ -70,7 +83,7 @@ class NetworkDevice(object):
             dtls_dns_name=params.get("dtlsDnsName"),
             model_name=params.get("modelName"),
             software_version=params.get("softwareVersion"),
-            network_device_iplist=params.get("NetworkDeviceIPList"),
+            network_device_iplist=network_device_iplist,
             network_device_group_list=params.get("NetworkDeviceGroupList"),
             id=params.get("id"),
         )

@@ -1016,3 +1016,14 @@ releases:
       bugfixes:
         - Update min_ansible_version to 2.15.0 in runtime.yml and roles
         - Added main.yml to aws_deployment role
+  2.9.3:
+    release_date: "2024-08-05"
+    changes:
+      release_summary: Update.
+      bugfixes:
+        - endpoint_group - add missing parameter parentID.
+        - mnt_session_active_list_info - fix response xml.
+        - network_device - mask param can be string or int, cast to int at the end.
+        - reservation - remove duplicate parameter.
+        - support_bundle_download - remove duplicate parameter.
+        - trusted_certificate - fix comparison between request and current object.

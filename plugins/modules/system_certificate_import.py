@@ -81,7 +81,7 @@ options:
     description: Validate certificate extensions.
     type: bool
 requirements:
-- ciscoisesdk >= 2.2.1
+- ciscoisesdk >= 2.2.3
 - python >= 3.5
 seealso:
 - name: Cisco ISE documentation for Certificates

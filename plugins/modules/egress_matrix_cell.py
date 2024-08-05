@@ -44,7 +44,7 @@ options:
     description: Egress Matrix Cell's sourceSGtId.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.1
+- ciscoisesdk >= 2.2.3
 - python >= 3.5
 notes:
   - SDK Method used are
