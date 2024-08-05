@@ -58,7 +58,7 @@ ise_response:
   sample: >
     {
       "data": "fileContent",
-      "fileName": "fileName",
+      "filename": "fileName",
       "dirpath": "download/directory",
       "path": "download/directory/fileName"
     }

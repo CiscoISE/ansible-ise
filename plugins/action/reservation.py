@@ -54,7 +54,7 @@ class Reservation(object):
         self.new_object = dict(
             client_name=params.get("clientName"),
             number_of_tags=params.get("numberOfTags"),
-            client_id=params.get("clientID"),
+            client_id=params.get("clientID") or params.get("clientId"),
             end_index=params.get("endIndex"),
             start_index=params.get("startIndex"),
         )
@@ -151,7 +151,7 @@ class Reservation(object):
             family="sgt_range_reservation",
             function="reserve_sgt_range",
             params=self.new_object,
-        ).response
+        ).response ## Check if response is correct
         return result
 
     def update(self):

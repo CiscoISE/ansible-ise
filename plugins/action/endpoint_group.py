@@ -34,6 +34,7 @@ argument_spec.update(dict(
     description=dict(type="str"),
     systemDefined=dict(type="bool"),
     id=dict(type="str"),
+    parentID=dict(type="str"),
 ))
 
 required_if = [
@@ -53,6 +54,7 @@ class EndpointGroup(object):
             description=params.get("description"),
             system_defined=params.get("systemDefined"),
             id=params.get("id"),
+            parent_id=params.get("parentID"),
         )
 
     def get_object_by_name(self, name):
@@ -121,6 +123,7 @@ class EndpointGroup(object):
             ("description", "description"),
             ("systemDefined", "system_defined"),
             ("id", "id"),
+            ("parentID", "parent_id"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update

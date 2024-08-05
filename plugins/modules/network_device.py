@@ -35,7 +35,7 @@ options:
         description: Network Device's ipaddress.
         type: str
       mask:
-        description: Network Device's mask.
+        description: Network Device's mask. Can be a string, but will be cast to an integer.
         type: int
     type: list
   authenticationSettings:

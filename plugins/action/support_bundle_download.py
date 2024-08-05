@@ -30,8 +30,8 @@ argument_spec.update(dict(
     fileName=dict(type="str"),
     dirPath=dict(type="str"),
     saveFile=dict(type="bool"),
-    filename=dict(type="str"),
 ))
+#filename=dict(type="str"), issue #133 and sanity
 
 required_if = []
 required_one_of = []
@@ -68,10 +68,9 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            file_name=params.get("fileName"),
+            file_name=params.get("fileName") or params.get("filename"),
             dirpath=params.get("dirPath"),
             save_file=params.get("saveFile"),
-            filename=params.get("filename"),
         )
         return new_object
 

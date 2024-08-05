@@ -52,7 +52,7 @@ The following table shows the supported versions.
 | 3.1.0             | 2.0.0                        | 1.2.0                        |
 | 3.1_Patch_1       | 2.5.16                       | 2.0.10                       |
 | 3.2_beta          | 2.8.0                        | 2.1.1                        |
-| 3.3_patch_1       | 2.9.2                        | 2.2.1                        |
+| 3.3_patch_1       | 2.9.3                        | 2.2.3                        |
 
 If your Ansible collection is older please consider updating it first.
 *Notes*:
