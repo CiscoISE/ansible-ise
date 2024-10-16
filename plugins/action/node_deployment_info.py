@@ -97,7 +97,7 @@ class ActionModule(ActionBase):
         if not name and not id:
             response = ise.exec(
                 family="node_deployment",
-                function='get_nodes',
+                function='get_deployment_nodes',
                 params=self.get_object(self._task.args)
             ).response['response']
             self._result.update(dict(ise_response=response))

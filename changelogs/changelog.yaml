@@ -1027,3 +1027,12 @@ releases:
         - reservation - remove duplicate parameter.
         - support_bundle_download - remove duplicate parameter.
         - trusted_certificate - fix comparison between request and current object.
+  2.9.4:
+    release_date: "2024-10-16"
+    changes:
+      release_summary: Update.
+      bugfixes:
+        - Collection not compatible with ansible.utils 5.x.y
+        - Getting deployment info for entire deployment does not work
+        - cisco.ise.pan_ha object has no attribute 'enable_pan_ha'
+        
