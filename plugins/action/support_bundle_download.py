@@ -42,7 +42,8 @@ required_together = []
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
+            raise AnsibleActionFail(
+                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = False
@@ -94,7 +95,8 @@ class ActionModule(ActionBase):
             response_data = download_response.data.decode('utf-8')
         else:
             # Save binary data to a file
-            filename = os.path.join(download_response.dirpath,download_response.filename) or 'default_filename.bin'
+            filename = os.path.join(
+                download_response.dirpath, download_response.filename) or 'default_filename.bin'
             with open(filename, 'wb') as f:
                 f.write(download_response.data)
             response_data = f"Data saved in: {filename}"
