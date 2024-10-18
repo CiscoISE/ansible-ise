@@ -1035,4 +1035,9 @@ releases:
         - Collection not compatible with ansible.utils 5.x.y
         - Getting deployment info for entire deployment does not work
         - cisco.ise.pan_ha object has no attribute 'enable_pan_ha'
-        
+  2.9.5:
+    release_date: "2024-10-18"
+    changes:
+      release_summary: Update.
+      bugfixes:
+        - cisco.ise.support_bundle_download keeps failing after downloading the file
