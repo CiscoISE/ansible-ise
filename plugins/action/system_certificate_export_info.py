@@ -27,9 +27,9 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    export=dict(type="str"),
-    hostName=dict(type="str"),
-    id=dict(type="str"),
+    export=dict(type="str", choices=['CERTIFICATE', 'CERTIFICATE_WITH_PRIVATE_KEY']),
+    hostName=dict(type="str", required=True),
+    id=dict(type="str", required=True),
     password=dict(type="str", no_log=True),
     dirPath=dict(type="str"),
     saveFile=dict(type="bool"),
