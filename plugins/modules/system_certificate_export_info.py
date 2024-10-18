@@ -14,7 +14,9 @@ description:
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
-author: Rafael Campos (@racampos)
+author:
+  - Rafael Campos (@racampos)
+  - Matthew Dennett (@matthewdennett)
 options:
   dirPath:
     description: Directory absolute path. Defaults to the current working directory.
@@ -22,6 +24,9 @@ options:
   export:
     description: System Certificate Export Info's export.
     type: str
+    choices:
+      - CERTIFICATE
+      - CERTIFICATE_WITH_PRIVATE_KEY
   filename:
     description: The filename used to save the download file.
     type: str
@@ -29,9 +34,11 @@ options:
     description: Hostname of the Cisco ISE node in which self-signed certificate should
       be generated.
     type: str
+    required: true
   id:
     description: System Certificate Export Info's id.
     type: str
+    required: true
   password:
     description: System Certificate Export Info's password.
     type: str
@@ -66,6 +73,34 @@ EXAMPLES = r"""
     hostName: string
     id: string
     password: string
+    saveFile: true
+
+- name: Export Certificate
+  cisco.ise.system_certificate_export_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    dirPath: /tmp/downloads/
+    export: CERTIFICATE
+    filename: certificate.zip
+    hostName: ise-node-001
+    id: "{{certificate_id}}"
+    password: "{{certificate_password}}"
+    saveFile: true
+
+- name: Export Certificate and private key
+  cisco.ise.system_certificate_export_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    dirPath: /tmp/downloads/
+    export: CERTIFICATE_WITH_PRIVATE_KEY
+    filename: certificate_and_key.zip
+    hostName: ise-node-001
+    id: "{{certificate_id}}"
+    password: "{{certificate_password}}"
     saveFile: true
 
 """
