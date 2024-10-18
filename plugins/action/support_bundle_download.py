@@ -22,7 +22,7 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
     ISESDK,
     ise_argument_spec,
 )
-
+import os.path
 # Get common arguements specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
@@ -87,8 +87,20 @@ class ActionModule(ActionBase):
             function="download_support_bundle",
             params=self.get_object(self._task.args),
         )
+
+        # Check if the data is in binary format
+        if download_response.headers.get('Content-Type') == 'application/json':
+            # Attempt to decode if JSON is expected
+            response_data = download_response.data.decode('utf-8')
+        else:
+            # Save binary data to a file
+            filename = os.path.join(download_response.dirpath,download_response.filename) or 'default_filename.bin'
+            with open(filename, 'wb') as f:
+                f.write(download_response.data)
+            response_data = f"Data saved in: {filename}"
+
         response = dict(
-            data=download_response.data.decode(encoding='utf-8'),
+            data=response_data,
             filename=download_response.filename,
             dirpath=download_response.dirpath,
             path=download_response.path,
