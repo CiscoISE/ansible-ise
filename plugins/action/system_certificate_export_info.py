@@ -23,7 +23,7 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
     ise_argument_spec,
 )
 
-# Get common arguements specification
+# Get common arguments specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
