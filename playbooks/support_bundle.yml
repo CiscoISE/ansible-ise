@@ -29,6 +29,7 @@
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
         ise_verify: "{{ ise_verify }}"
+        ise_debug: true
         id: ise
       register: support_bundle_status_result
 
@@ -42,16 +43,12 @@
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
         ise_verify: "{{ ise_verify }}"
-        dirPath: /Users/wilhelm32/Downloads/result/
-        fileName: "{{ support_bundle_status_result['ise_response']['fileName']}}"
-        saveFile: true
-      when:
-        - support_bundle_status_result['ise_response'] is defined
-        - support_bundle_status_result['ise_response']['status'] == "complete"
-        - support_bundle_status_result['ise_response']['fileName']
+        ise_debug: true
+        dirPath: /Users/fmunoz/Desktop/Work/Github/ISE/ansible-ise/
+        fileName: "Name.jpg"
       register: support_bundle_download_result
 
-    - name: Print support_bundle_download_result
-      ansible.builtin.debug:
-        var: support_bundle_status_result
-      when: support_bundle_download_result
+    # - name: Print support_bundle_download_result
+    #   ansible.builtin.debug:
+    #     var: support_bundle_status_result
+    #   when: support_bundle_download_result

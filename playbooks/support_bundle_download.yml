@@ -1,0 +1,14 @@
+---
+- hosts: ise_servers
+  gather_facts: false
+  tasks:
+  - name: Update all
+    cisco.ise.support_bundle_download:
+      ise_hostname: "{{ise_hostname}}"
+      ise_username: "{{ise_username}}"
+      ise_password: "{{ise_password}}"
+      ise_verify: "{{ise_verify}}"
+      ise_debug: true
+      dirPath: /tmp/downloads/
+      fileName: ise-support-bundle-pk-ise-admin.tar.gpg
+      saveFile: true
