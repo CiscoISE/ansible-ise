@@ -1,0 +1,2774 @@
+
+.. Document meta
+
+:orphan:
+
+.. |antsibull-internal-nbsp| unicode:: 0xA0
+    :trim:
+
+.. role:: ansible-attribute-support-label
+.. role:: ansible-attribute-support-property
+.. role:: ansible-attribute-support-full
+.. role:: ansible-attribute-support-partial
+.. role:: ansible-attribute-support-none
+.. role:: ansible-attribute-support-na
+.. role:: ansible-option-type
+.. role:: ansible-option-elements
+.. role:: ansible-option-required
+.. role:: ansible-option-versionadded
+.. role:: ansible-option-aliases
+.. role:: ansible-option-choices
+.. role:: ansible-option-choices-default-mark
+.. role:: ansible-option-default-bold
+.. role:: ansible-option-configuration
+.. role:: ansible-option-returned-bold
+.. role:: ansible-option-sample-bold
+
+.. Anchors
+
+.. _ansible_collections.cisco.ise.network_device_module:
+
+.. Anchors: short name for ansible.builtin
+
+.. Anchors: aliases
+
+
+
+.. Title
+
+cisco.ise.network_device module -- Resource module for Network Device
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. Collection note
+
+.. note::
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.5).
+
+    To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.ise.network_device_module_requirements>` for details.
+
+    To use it in a playbook, specify: :code:`cisco.ise.network_device`.
+
+.. version_added
+
+.. rst-class:: ansible-version-added
+
+New in cisco.ise 1.0.0
+
+.. contents::
+   :local:
+   :depth: 1
+
+.. Deprecated
+
+
+Synopsis
+--------
+
+.. Description
+
+- Manage operations create, update and delete of the resource Network Device.
+- This API creates a network device.
+- This API deletes a network device by ID.
+- This API deletes a network device by name.
+- This API allows the client to update a network device by ID.
+- This API allows the client to update a network device by name.
+
+.. note::
+    This module has a corresponding :ref:`action plugin <action_plugins>`.
+
+.. Aliases
+
+
+.. Requirements
+
+.. _ansible_collections.cisco.ise.network_device_module_requirements:
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- ciscoisesdk \>= 2.2.3
+- python \>= 3.5
+
+
+
+
+
+
+.. Options
+
+Parameters
+----------
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Parameter
+    - Comments
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-authenticationSettings"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-authenticationsettings:
+
+      .. rst-class:: ansible-option-title
+
+      **authenticationSettings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-authenticationSettings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Network Device's authenticationSettings.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-authenticationSettings/dtlsRequired"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-authenticationsettings/dtlsrequired:
+
+      .. rst-class:: ansible-option-title
+
+      **dtlsRequired**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-authenticationSettings/dtlsRequired" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      This value enforces use of dtls.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-authenticationSettings/enabled"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-authenticationsettings/enabled:
+
+      .. rst-class:: ansible-option-title
+
+      **enabled**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-authenticationSettings/enabled" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Enabled flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-authenticationSettings/enableKeyWrap"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-authenticationsettings/enablekeywrap:
+
+      .. rst-class:: ansible-option-title
+
+      **enableKeyWrap**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-authenticationSettings/enableKeyWrap" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EnableKeyWrap flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-authenticationSettings/enableMultiSecret"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-authenticationsettings/enablemultisecret:
+
+      .. rst-class:: ansible-option-title
+
+      **enableMultiSecret**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-authenticationSettings/enableMultiSecret" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Network Device's enableMultiSecret.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-authenticationSettings/keyEncryptionKey"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-authenticationsettings/keyencryptionkey:
+
+      .. rst-class:: ansible-option-title
+
+      **keyEncryptionKey**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-authenticationSettings/keyEncryptionKey" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Network Device's keyEncryptionKey.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-authenticationSettings/keyInputFormat"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-authenticationsettings/keyinputformat:
+
+      .. rst-class:: ansible-option-title
+
+      **keyInputFormat**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-authenticationSettings/keyInputFormat" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Allowed values - ASCII, - HEXADECIMAL.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-authenticationSettings/messageAuthenticatorCodeKey"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-authenticationsettings/messageauthenticatorcodekey:
+
+      .. rst-class:: ansible-option-title
+
+      **messageAuthenticatorCodeKey**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-authenticationSettings/messageAuthenticatorCodeKey" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Network Device's messageAuthenticatorCodeKey.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-authenticationSettings/networkProtocol"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-authenticationsettings/networkprotocol:
+
+      .. rst-class:: ansible-option-title
+
+      **networkProtocol**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-authenticationSettings/networkProtocol" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Allowed values - RADIUS, - TACACS\_PLUS.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-authenticationSettings/radiusSharedSecret"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-authenticationsettings/radiussharedsecret:
+
+      .. rst-class:: ansible-option-title
+
+      **radiusSharedSecret**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-authenticationSettings/radiusSharedSecret" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Network Device's radiusSharedSecret.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-authenticationSettings/secondRADIUSSharedSecret"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-authenticationsettings/secondradiussharedsecret:
+
+      .. rst-class:: ansible-option-title
+
+      **secondRADIUSSharedSecret**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-authenticationSettings/secondRADIUSSharedSecret" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Network Device's secondRADIUSSharedSecret.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-coaPort"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-coaport:
+
+      .. rst-class:: ansible-option-title
+
+      **coaPort**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-coaPort" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Network Device's coaPort.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-description"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-description:
+
+      .. rst-class:: ansible-option-title
+
+      **description**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-description" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Network Device's description.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-dtlsDnsName"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-dtlsdnsname:
+
+      .. rst-class:: ansible-option-title
+
+      **dtlsDnsName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-dtlsDnsName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      This value is used to verify the client identity contained in the X.509 RADIUS/DTLS client certificate.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-id"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Network Device's id.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_debug"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-ise_debug:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_debug**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_debug" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag for Identity Services Engine SDK to enable debugging.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_hostname"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-ise_hostname:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_hostname**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_hostname" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Identity Services Engine hostname.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_password"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-ise_password:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_password**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_password" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Identity Services Engine password to authenticate.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_single_request_timeout"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-ise_single_request_timeout:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_single_request_timeout**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_single_request_timeout" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      :ansible-option-versionadded:`added in cisco.ise 3.0.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Timeout (in seconds) for RESTful HTTP requests.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_username"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-ise_username:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_username**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_username" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Identity Services Engine username to authenticate.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_uses_api_gateway"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-ise_uses_api_gateway:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_uses_api_gateway**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_uses_api_gateway" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      :ansible-option-versionadded:`added in cisco.ise 1.1.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag that informs the SDK whether to use the Identity Services Engine's API Gateway to send requests.
+
+      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise\_hostname}}.
+
+      If it is false, it sends the requests to https://{{ise\_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_uses_csrf_token"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-ise_uses_csrf_token:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_uses_csrf_token**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_uses_csrf_token" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      :ansible-option-versionadded:`added in cisco.ise 3.0.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag that informs the SDK whether we send the CSRF token to ISE's ERS APIs.
+
+      If it is True, the SDK assumes that your ISE CSRF Check is enabled.
+
+      If it is True, it assumes you need the SDK to manage the CSRF token automatically for you.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_verify"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-ise_verify:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_verify**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_verify" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag to enable or disable SSL certificate verification.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_version"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-ise_version:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_version**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_version" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Informs the SDK which version of Identity Services Engine to use.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"3.1\_Patch\_1"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_wait_on_rate_limit"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-ise_wait_on_rate_limit:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_wait_on_rate_limit**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_wait_on_rate_limit" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag for Identity Services Engine SDK to enable automatic rate-limit handling.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-modelName"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-modelname:
+
+      .. rst-class:: ansible-option-title
+
+      **modelName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-modelName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Network Device's modelName.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-name"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Network Device's name.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-NetworkDeviceGroupList"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-networkdevicegrouplist:
+
+      .. rst-class:: ansible-option-title
+
+      **NetworkDeviceGroupList**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-NetworkDeviceGroupList" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      List of Network Device Group names for this node.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-NetworkDeviceIPList"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-networkdeviceiplist:
+
+      .. rst-class:: ansible-option-title
+
+      **NetworkDeviceIPList**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-NetworkDeviceIPList" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      List of IP Subnets for this node.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-NetworkDeviceIPList/getIpaddressExclude"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-networkdeviceiplist/getipaddressexclude:
+
+      .. rst-class:: ansible-option-title
+
+      **getIpaddressExclude**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-NetworkDeviceIPList/getIpaddressExclude" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      It can be either single IP address or IP range address.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-NetworkDeviceIPList/ipaddress"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-networkdeviceiplist/ipaddress:
+
+      .. rst-class:: ansible-option-title
+
+      **ipaddress**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-NetworkDeviceIPList/ipaddress" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Network Device's ipaddress.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-NetworkDeviceIPList/mask"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-networkdeviceiplist/mask:
+
+      .. rst-class:: ansible-option-title
+
+      **mask**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-NetworkDeviceIPList/mask" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Network Device's mask. Can be a string, but will be cast to an integer.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-profileName"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-profilename:
+
+      .. rst-class:: ansible-option-title
+
+      **profileName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-profileName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Network Device's profileName.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-snmpsettings"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-snmpsettings:
+
+      .. rst-class:: ansible-option-title
+
+      **snmpsettings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-snmpsettings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Network Device's snmpsettings.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-snmpsettings/linkTrapQuery"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-snmpsettings/linktrapquery:
+
+      .. rst-class:: ansible-option-title
+
+      **linkTrapQuery**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-snmpsettings/linkTrapQuery" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      LinkTrapQuery flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-snmpsettings/macTrapQuery"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-snmpsettings/mactrapquery:
+
+      .. rst-class:: ansible-option-title
+
+      **macTrapQuery**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-snmpsettings/macTrapQuery" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      MacTrapQuery flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-snmpsettings/originatingPolicyServicesNode"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-snmpsettings/originatingpolicyservicesnode:
+
+      .. rst-class:: ansible-option-title
+
+      **originatingPolicyServicesNode**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-snmpsettings/originatingPolicyServicesNode" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Network Device's originatingPolicyServicesNode.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-snmpsettings/pollingInterval"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-snmpsettings/pollinginterval:
+
+      .. rst-class:: ansible-option-title
+
+      **pollingInterval**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-snmpsettings/pollingInterval" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Network Device's pollingInterval.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-snmpsettings/roCommunity"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-snmpsettings/rocommunity:
+
+      .. rst-class:: ansible-option-title
+
+      **roCommunity**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-snmpsettings/roCommunity" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Network Device's roCommunity.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-snmpsettings/version"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-snmpsettings/version:
+
+      .. rst-class:: ansible-option-title
+
+      **version**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-snmpsettings/version" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Network Device's version.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-softwareVersion"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-softwareversion:
+
+      .. rst-class:: ansible-option-title
+
+      **softwareVersion**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-softwareVersion" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Network Device's softwareVersion.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-tacacsSettings"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-tacacssettings:
+
+      .. rst-class:: ansible-option-title
+
+      **tacacsSettings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-tacacsSettings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Network Device's tacacsSettings.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-tacacsSettings/connectModeOptions"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-tacacssettings/connectmodeoptions:
+
+      .. rst-class:: ansible-option-title
+
+      **connectModeOptions**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-tacacsSettings/connectModeOptions" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Allowed values - OFF, - ON\_LEGACY, - ON\_DRAFT\_COMPLIANT.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-tacacsSettings/sharedSecret"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-tacacssettings/sharedsecret:
+
+      .. rst-class:: ansible-option-title
+
+      **sharedSecret**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-tacacsSettings/sharedSecret" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Network Device's sharedSecret.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-trustsecsettings"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-trustsecsettings:
+
+      .. rst-class:: ansible-option-title
+
+      **trustsecsettings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-trustsecsettings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Network Device's trustsecsettings.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-trustsecsettings/deviceAuthenticationSettings"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-trustsecsettings/deviceauthenticationsettings:
+
+      .. rst-class:: ansible-option-title
+
+      **deviceAuthenticationSettings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-trustsecsettings/deviceAuthenticationSettings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Network Device's deviceAuthenticationSettings.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-trustsecsettings/deviceAuthenticationSettings/sgaDeviceId"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-trustsecsettings/deviceauthenticationsettings/sgadeviceid:
+
+      .. rst-class:: ansible-option-title
+
+      **sgaDeviceId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-trustsecsettings/deviceAuthenticationSettings/sgaDeviceId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Network Device's sgaDeviceId.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-trustsecsettings/deviceAuthenticationSettings/sgaDevicePassword"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-trustsecsettings/deviceauthenticationsettings/sgadevicepassword:
+
+      .. rst-class:: ansible-option-title
+
+      **sgaDevicePassword**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-trustsecsettings/deviceAuthenticationSettings/sgaDevicePassword" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Network Device's sgaDevicePassword.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-trustsecsettings/deviceConfigurationDeployment"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-trustsecsettings/deviceconfigurationdeployment:
+
+      .. rst-class:: ansible-option-title
+
+      **deviceConfigurationDeployment**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-trustsecsettings/deviceConfigurationDeployment" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Network Device's deviceConfigurationDeployment.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-trustsecsettings/deviceConfigurationDeployment/enableModePassword"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-trustsecsettings/deviceconfigurationdeployment/enablemodepassword:
+
+      .. rst-class:: ansible-option-title
+
+      **enableModePassword**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-trustsecsettings/deviceConfigurationDeployment/enableModePassword" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Network Device's enableModePassword.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-trustsecsettings/deviceConfigurationDeployment/execModePassword"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-trustsecsettings/deviceconfigurationdeployment/execmodepassword:
+
+      .. rst-class:: ansible-option-title
+
+      **execModePassword**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-trustsecsettings/deviceConfigurationDeployment/execModePassword" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Network Device's execModePassword.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-trustsecsettings/deviceConfigurationDeployment/execModeUsername"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-trustsecsettings/deviceconfigurationdeployment/execmodeusername:
+
+      .. rst-class:: ansible-option-title
+
+      **execModeUsername**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-trustsecsettings/deviceConfigurationDeployment/execModeUsername" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Network Device's execModeUsername.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-trustsecsettings/deviceConfigurationDeployment/includeWhenDeployingSGTUpdates"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-trustsecsettings/deviceconfigurationdeployment/includewhendeployingsgtupdates:
+
+      .. rst-class:: ansible-option-title
+
+      **includeWhenDeployingSGTUpdates**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-trustsecsettings/deviceConfigurationDeployment/includeWhenDeployingSGTUpdates" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IncludeWhenDeployingSGTUpdates flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-trustsecsettings/pushIdSupport"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-trustsecsettings/pushidsupport:
+
+      .. rst-class:: ansible-option-title
+
+      **pushIdSupport**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-trustsecsettings/pushIdSupport" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      PushIdSupport flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-trustsecsettings/sgaNotificationAndUpdates"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-trustsecsettings/sganotificationandupdates:
+
+      .. rst-class:: ansible-option-title
+
+      **sgaNotificationAndUpdates**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-trustsecsettings/sgaNotificationAndUpdates" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Network Device's sgaNotificationAndUpdates.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-trustsecsettings/sgaNotificationAndUpdates/coaSourceHost"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-trustsecsettings/sganotificationandupdates/coasourcehost:
+
+      .. rst-class:: ansible-option-title
+
+      **coaSourceHost**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-trustsecsettings/sgaNotificationAndUpdates/coaSourceHost" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Network Device's coaSourceHost.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-trustsecsettings/sgaNotificationAndUpdates/downlaodEnvironmentDataEveryXSeconds"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-trustsecsettings/sganotificationandupdates/downlaodenvironmentdataeveryxseconds:
+
+      .. rst-class:: ansible-option-title
+
+      **downlaodEnvironmentDataEveryXSeconds**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-trustsecsettings/sgaNotificationAndUpdates/downlaodEnvironmentDataEveryXSeconds" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Network Device's downlaodEnvironmentDataEveryXSeconds.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-trustsecsettings/sgaNotificationAndUpdates/downlaodPeerAuthorizationPolicyEveryXSeconds"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-trustsecsettings/sganotificationandupdates/downlaodpeerauthorizationpolicyeveryxseconds:
+
+      .. rst-class:: ansible-option-title
+
+      **downlaodPeerAuthorizationPolicyEveryXSeconds**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-trustsecsettings/sgaNotificationAndUpdates/downlaodPeerAuthorizationPolicyEveryXSeconds" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Network Device's downlaodPeerAuthorizationPolicyEveryXSeconds.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-trustsecsettings/sgaNotificationAndUpdates/downloadSGACLListsEveryXSeconds"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-trustsecsettings/sganotificationandupdates/downloadsgacllistseveryxseconds:
+
+      .. rst-class:: ansible-option-title
+
+      **downloadSGACLListsEveryXSeconds**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-trustsecsettings/sgaNotificationAndUpdates/downloadSGACLListsEveryXSeconds" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Network Device's downloadSGACLListsEveryXSeconds.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-trustsecsettings/sgaNotificationAndUpdates/otherSGADevicesToTrustThisDevice"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-trustsecsettings/sganotificationandupdates/othersgadevicestotrustthisdevice:
+
+      .. rst-class:: ansible-option-title
+
+      **otherSGADevicesToTrustThisDevice**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-trustsecsettings/sgaNotificationAndUpdates/otherSGADevicesToTrustThisDevice" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      OtherSGADevicesToTrustThisDevice flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-trustsecsettings/sgaNotificationAndUpdates/reAuthenticationEveryXSeconds"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-trustsecsettings/sganotificationandupdates/reauthenticationeveryxseconds:
+
+      .. rst-class:: ansible-option-title
+
+      **reAuthenticationEveryXSeconds**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-trustsecsettings/sgaNotificationAndUpdates/reAuthenticationEveryXSeconds" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Network Device's reAuthenticationEveryXSeconds.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-trustsecsettings/sgaNotificationAndUpdates/sendConfigurationToDevice"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-trustsecsettings/sganotificationandupdates/sendconfigurationtodevice:
+
+      .. rst-class:: ansible-option-title
+
+      **sendConfigurationToDevice**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-trustsecsettings/sgaNotificationAndUpdates/sendConfigurationToDevice" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      SendConfigurationToDevice flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-trustsecsettings/sgaNotificationAndUpdates/sendConfigurationToDeviceUsing"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__parameter-trustsecsettings/sganotificationandupdates/sendconfigurationtodeviceusing:
+
+      .. rst-class:: ansible-option-title
+
+      **sendConfigurationToDeviceUsing**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-trustsecsettings/sgaNotificationAndUpdates/sendConfigurationToDeviceUsing" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Allowed values - ENABLE\_USING\_COA, - ENABLE\_USING\_CLI, - DISABLE\_ALL.
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+
+.. Attributes
+
+
+.. Notes
+
+Notes
+-----
+
+.. note::
+   - SDK Method used are network\_device.NetworkDevice.create\_network\_device, network\_device.NetworkDevice.delete\_network\_device\_by\_id, network\_device.NetworkDevice.delete\_network\_device\_by\_name, network\_device.NetworkDevice.update\_network\_device\_by\_id, network\_device.NetworkDevice.update\_network\_device\_by\_name,
+   - Paths used are post /ers/config/networkdevice, delete /ers/config/networkdevice/name/{name}, delete /ers/config/networkdevice/{id}, put /ers/config/networkdevice/name/{name}, put /ers/config/networkdevice/{id},
+   - Does not support \ :literal:`check\_mode`\ 
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
+   - The parameters starting with ise\_ are used by the Cisco ISE Python SDK to establish the connection
+
+.. Seealso
+
+
+.. Examples
+
+Examples
+--------
+
+.. code-block:: yaml+jinja
+
+    
+    - name: Update by name
+      cisco.ise.network_device:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: present
+        NetworkDeviceGroupList:
+        - string
+        NetworkDeviceIPList:
+        - getIpaddressExclude: string
+          ipaddress: string
+          mask: 0
+        authenticationSettings:
+          dtlsRequired: true
+          enableKeyWrap: true
+          enableMultiSecret: string
+          enabled: true
+          keyEncryptionKey: string
+          keyInputFormat: string
+          messageAuthenticatorCodeKey: string
+          networkProtocol: string
+          radiusSharedSecret: string
+          secondRadiusSharedSecret: string
+        coaPort: 0
+        description: string
+        dtlsDnsName: string
+        id: string
+        modelName: string
+        name: string
+        profileName: string
+        snmpsettings:
+          linkTrapQuery: true
+          macTrapQuery: true
+          originatingPolicyServicesNode: string
+          pollingInterval: 0
+          roCommunity: string
+          version: string
+        softwareVersion: string
+        tacacsSettings:
+          connectModeOptions: string
+          sharedSecret: string
+        trustsecsettings:
+          deviceAuthenticationSettings:
+            sgaDeviceId: string
+            sgaDevicePassword: string
+          deviceConfigurationDeployment:
+            enableModePassword: string
+            execModePassword: string
+            execModeUsername: string
+            includeWhenDeployingSGTUpdates: true
+          pushIdSupport: true
+          sgaNotificationAndUpdates:
+            coaSourceHost: string
+            downlaodEnvironmentDataEveryXSeconds: 0
+            downlaodPeerAuthorizationPolicyEveryXSeconds: 0
+            downloadSGACLListsEveryXSeconds: 0
+            otherSGADevicesToTrustThisDevice: true
+            reAuthenticationEveryXSeconds: 0
+            sendConfigurationToDevice: true
+            sendConfigurationToDeviceUsing: string
+
+    - name: Delete by name
+      cisco.ise.network_device:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: absent
+        name: string
+
+    - name: Update by id
+      cisco.ise.network_device:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: present
+        NetworkDeviceGroupList:
+        - string
+        NetworkDeviceIPList:
+        - getIpaddressExclude: string
+          ipaddress: string
+          mask: 0
+        authenticationSettings:
+          dtlsRequired: true
+          enableKeyWrap: true
+          enableMultiSecret: string
+          enabled: true
+          keyEncryptionKey: string
+          keyInputFormat: string
+          messageAuthenticatorCodeKey: string
+          networkProtocol: string
+          radiusSharedSecret: string
+          secondRadiusSharedSecret: string
+        coaPort: 0
+        description: string
+        dtlsDnsName: string
+        id: string
+        modelName: string
+        name: string
+        profileName: string
+        snmpsettings:
+          linkTrapQuery: true
+          macTrapQuery: true
+          originatingPolicyServicesNode: string
+          pollingInterval: 0
+          roCommunity: string
+          version: string
+        softwareVersion: string
+        tacacsSettings:
+          connectModeOptions: string
+          sharedSecret: string
+        trustsecsettings:
+          deviceAuthenticationSettings:
+            sgaDeviceId: string
+            sgaDevicePassword: string
+          deviceConfigurationDeployment:
+            enableModePassword: string
+            execModePassword: string
+            execModeUsername: string
+            includeWhenDeployingSGTUpdates: true
+          pushIdSupport: true
+          sgaNotificationAndUpdates:
+            coaSourceHost: string
+            downlaodEnvironmentDataEveryXSeconds: 0
+            downlaodPeerAuthorizationPolicyEveryXSeconds: 0
+            downloadSGACLListsEveryXSeconds: 0
+            otherSGADevicesToTrustThisDevice: true
+            reAuthenticationEveryXSeconds: 0
+            sendConfigurationToDevice: true
+            sendConfigurationToDeviceUsing: string
+
+    - name: Delete by id
+      cisco.ise.network_device:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: absent
+        id: string
+
+    - name: Create
+      cisco.ise.network_device:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: present
+        NetworkDeviceGroupList:
+        - string
+        NetworkDeviceIPList:
+        - getIpaddressExclude: string
+          ipaddress: string
+          mask: 0
+        authenticationSettings:
+          dtlsRequired: true
+          enableKeyWrap: true
+          enableMultiSecret: string
+          enabled: true
+          keyEncryptionKey: string
+          keyInputFormat: string
+          messageAuthenticatorCodeKey: string
+          networkProtocol: string
+          radiusSharedSecret: string
+          secondRadiusSharedSecret: string
+        coaPort: 0
+        description: string
+        dtlsDnsName: string
+        modelName: string
+        name: string
+        profileName: string
+        snmpsettings:
+          linkTrapQuery: true
+          macTrapQuery: true
+          originatingPolicyServicesNode: string
+          pollingInterval: 0
+          roCommunity: string
+          version: string
+        softwareVersion: string
+        tacacsSettings:
+          connectModeOptions: string
+          sharedSecret: string
+        trustsecsettings:
+          deviceAuthenticationSettings:
+            sgaDeviceId: string
+            sgaDevicePassword: string
+          deviceConfigurationDeployment:
+            enableModePassword: string
+            execModePassword: string
+            execModeUsername: string
+            includeWhenDeployingSGTUpdates: true
+          pushIdSupport: true
+          sgaNotificationAndUpdates:
+            coaSourceHost: string
+            downlaodEnvironmentDataEveryXSeconds: 0
+            downlaodPeerAuthorizationPolicyEveryXSeconds: 0
+            downloadSGACLListsEveryXSeconds: 0
+            otherSGADevicesToTrustThisDevice: true
+            reAuthenticationEveryXSeconds: 0
+            sendConfigurationToDevice: true
+            sendConfigurationToDeviceUsing: string
+
+
+
+
+
+.. Facts
+
+
+.. Return values
+
+Return Values
+-------------
+Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Key
+    - Description
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-ise_response"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__return-ise_response:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_response**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-ise_response" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      A dictionary or list with the response returned by the Cisco ISE Python SDK
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"NetworkDeviceGroupList": ["string"], "NetworkDeviceIPList": [{"getIpaddressExclude": "string", "ipaddress": "string", "mask": 0}], "authenticationSettings": {"dtlsRequired": true, "enableKeyWrap": true, "enableMultiSecret": "string", "enabled": true, "keyEncryptionKey": "string", "keyInputFormat": "string", "messageAuthenticatorCodeKey": "string", "networkProtocol": "string", "radiusSharedSecret": "string", "secondRadiusSharedSecret": "string"}, "coaPort": 0, "description": "string", "dtlsDnsName": "string", "id": "string", "link": {"href": "string", "rel": "string", "type": "string"}, "modelName": "string", "name": "string", "profileName": "string", "snmpsettings": {"linkTrapQuery": true, "macTrapQuery": true, "originatingPolicyServicesNode": "string", "pollingInterval": 0, "roCommunity": "string", "version": "string"}, "softwareVersion": "string", "tacacsSettings": {"connectModeOptions": "string", "sharedSecret": "string"}, "trustsecsettings": {"deviceAuthenticationSettings": {"sgaDeviceId": "string", "sgaDevicePassword": "string"}, "deviceConfigurationDeployment": {"enableModePassword": "string", "execModePassword": "string", "execModeUsername": "string", "includeWhenDeployingSGTUpdates": true}, "pushIdSupport": true, "sgaNotificationAndUpdates": {"coaSourceHost": "string", "downlaodEnvironmentDataEveryXSeconds": 0, "downlaodPeerAuthorizationPolicyEveryXSeconds": 0, "downloadSGACLListsEveryXSeconds": 0, "otherSGADevicesToTrustThisDevice": true, "reAuthenticationEveryXSeconds": 0, "sendConfigurationToDevice": true, "sendConfigurationToDeviceUsing": "string"}}}`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-ise_update_response"></div>
+
+      .. _ansible_collections.cisco.ise.network_device_module__return-ise_update_response:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_update_response**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-ise_update_response" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      :ansible-option-versionadded:`added in cisco.ise 1.1.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      A dictionary or list with the response returned by the Cisco ISE Python SDK
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"UpdatedFieldsList": {"field": "string", "newValue": "string", "oldValue": "string", "updatedField": [{"field": "string", "newValue": "string", "oldValue": "string"}]}}`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+..  Status (Presently only deprecated)
+
+
+.. Authors
+
+Authors
+~~~~~~~
+
+- Rafael Campos (@racampos)
+
+
+
+.. Extra links
+
+Collection links
+~~~~~~~~~~~~~~~~
+
+.. raw:: html
+
+  <p class="ansible-links">
+    <a href="https://github.com/CiscoISE/ansible-ise/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
+    <a href="https://github.com/CiscoISE/ansible-ise" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
+  </p>
+
+.. Parsing errors
+
