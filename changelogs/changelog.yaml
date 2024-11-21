@@ -1041,3 +1041,9 @@ releases:
       release_summary: Update.
       bugfixes:
         - cisco.ise.support_bundle_download keeps failing after downloading the file
+  2.9.6:
+    release_date: "2024-11-21"
+    changes:
+      release_summary: Update network_device module.
+      bugfixes:
+        - network_device - Fix mask validation to handle None values in NetworkDeviceIPList
