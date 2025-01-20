@@ -5,14 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: sg_to_vn_to_vlan
 short_description: Resource module for SG To VN To VLAN
 description:
-- Manage operations create, update and delete of the resource SG To VN To VLAN.
-- This API creates a security group to virtual network.
-- This API deletes a security group ACL to virtual network.
-- This API allows the client to update a security group to virtual network.
+  - Manage operations create, update and delete of the resource SG To VN To VLAN.
+  - This API creates a security group to virtual network.
+  - This API deletes a security group ACL to virtual network.
+  - This API allows the client to update a security group to virtual network.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -71,23 +70,15 @@ options:
         type: list
     type: list
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for SecurityGroupToVirtualNetwork
-  description: Complete reference of the SecurityGroupToVirtualNetwork API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgtvnvlan
+  - name: Cisco ISE documentation for SecurityGroupToVirtualNetwork
+    description: Complete reference of the SecurityGroupToVirtualNetwork API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgtvnvlan
 notes:
-  - SDK Method used are
-    security_group_to_virtual_network.SecurityGroupToVirtualNetwork.create_security_groups_to_vn_to_vlan,
-    security_group_to_virtual_network.SecurityGroupToVirtualNetwork.delete_security_groups_to_vn_to_vlan_by_id,
-    security_group_to_virtual_network.SecurityGroupToVirtualNetwork.update_security_groups_to_vn_to_vlan_by_id,
-
-  - Paths used are
-    post /ers/config/sgtvnvlan,
-    delete /ers/config/sgtvnvlan/{id},
-    put /ers/config/sgtvnvlan/{id},
-
+  - SDK Method used are security_group_to_virtual_network.SecurityGroupToVirtualNetwork.create_security_groups_to_vn_to_vlan, security_group_to_virtual_network.SecurityGroupToVirtualNetwork.delete_security_groups_to_vn_to_vlan_by_id, security_group_to_virtual_network.SecurityGroupToVirtualNetwork.update_security_groups_to_vn_to_vlan_by_id,
+  - Paths used are post /ers/config/sgtvnvlan, delete /ers/config/sgtvnvlan/{id}, put /ers/config/sgtvnvlan/{id},
 """
 
 EXAMPLES = r"""
@@ -103,18 +94,17 @@ EXAMPLES = r"""
     name: string
     sgtId: string
     virtualnetworklist:
-    - defaultVirtualNetwork: true
-      description: string
-      id: string
-      name: string
-      vlans:
-      - data: true
-        defaultVlan: true
+      - defaultVirtualNetwork: true
         description: string
         id: string
-        maxValue: 0
         name: string
-
+        vlans:
+          - data: true
+            defaultVlan: true
+            description: string
+            id: string
+            maxValue: 0
+            name: string
 - name: Delete by id
   cisco.ise.sg_to_vn_to_vlan:
     ise_hostname: "{{ise_hostname}}"
@@ -123,7 +113,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-
 - name: Create
   cisco.ise.sg_to_vn_to_vlan:
     ise_hostname: "{{ise_hostname}}"
@@ -136,18 +125,17 @@ EXAMPLES = r"""
     name: string
     sgtId: string
     virtualnetworklist:
-    - defaultVirtualNetwork: true
-      description: string
-      id: string
-      name: string
-      vlans:
-      - data: true
-        defaultVlan: true
+      - defaultVirtualNetwork: true
         description: string
         id: string
-        maxValue: 0
         name: string
-
+        vlans:
+          - data: true
+            defaultVlan: true
+            description: string
+            id: string
+            maxValue: 0
+            name: string
 """
 
 RETURN = r"""
@@ -185,7 +173,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

@@ -23,14 +23,17 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
     ise_argument_spec,
 )
 import os.path
+
 # Get common arguements specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
-argument_spec.update(dict(
-    fileName=dict(type="str"),
-    dirPath=dict(type="str"),
-    saveFile=dict(type="bool"),
-))
+argument_spec.update(
+    dict(
+        fileName=dict(type="str"),
+        dirPath=dict(type="str"),
+        saveFile=dict(type="bool"),
+    )
+)
 # filename=dict(type="str"), issue #133 and sanity
 
 required_if = []
@@ -43,7 +46,8 @@ class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
             raise AnsibleActionFail(
-                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
+                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
+            )
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = False
@@ -90,14 +94,16 @@ class ActionModule(ActionBase):
         )
 
         # Check if the data is in binary format
-        if download_response.headers.get('Content-Type') == 'application/json':
+        if download_response.headers.get("Content-Type") == "application/json":
             # Attempt to decode if JSON is expected
-            response_data = download_response.data.decode('utf-8')
+            response_data = download_response.data.decode("utf-8")
         else:
             # Save binary data to a file
-            filename = os.path.join(
-                download_response.dirpath, download_response.filename) or 'default_filename.bin'
-            with open(filename, 'wb') as f:
+            filename = (
+                os.path.join(download_response.dirpath, download_response.filename)
+                or "default_filename.bin"
+            )
+            with open(filename, "wb") as f:
                 f.write(download_response.data)
             response_data = f"Data saved in: {filename}"
 

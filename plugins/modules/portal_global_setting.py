@@ -5,12 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: portal_global_setting
 short_description: Resource module for Portal Global Setting
 description:
-- Manage operation update of the resource Portal Global Setting.
-- This API allows the client to update the portal global settings by id.
+  - Manage operation update of the resource Portal Global Setting.
+  - This API allows the client to update the portal global settings by id.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -23,15 +22,11 @@ options:
     description: Portal Global Setting's id.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    portal_global_setting.PortalGlobalSetting.update_portal_global_setting_by_id,
-
-  - Paths used are
-    put /ers/config/portalglobalsetting/{id},
-
+  - SDK Method used are portal_global_setting.PortalGlobalSetting.update_portal_global_setting_by_id,
+  - Paths used are put /ers/config/portalglobalsetting/{id},
 """
 
 EXAMPLES = r"""
@@ -44,7 +39,6 @@ EXAMPLES = r"""
     state: present
     customization: string
     id: string
-
 """
 
 RETURN = r"""
@@ -62,7 +56,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

@@ -5,31 +5,26 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: licensing_feature_to_tier_mapping_info
 short_description: Information module for Licensing Feature To Tier Mapping
 description:
-- Get all Licensing Feature To Tier Mapping.
-- Get feature to tier mapping information.
+  - Get all Licensing Feature To Tier Mapping.
+  - Get feature to tier mapping information.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for Licensing
-  description: Complete reference of the Licensing API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!license-openapi
+  - name: Cisco ISE documentation for Licensing
+    description: Complete reference of the Licensing API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!license-openapi
 notes:
-  - SDK Method used are
-    licensing.Licensing.get_feature_to_tier_mapping,
-
-  - Paths used are
-    get /api/v1/license/system/feature-to-tier-mapping,
-
+  - SDK Method used are licensing.Licensing.get_feature_to_tier_mapping,
+  - Paths used are get /api/v1/license/system/feature-to-tier-mapping,
 """
 
 EXAMPLES = r"""
@@ -40,7 +35,6 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
   register: result
-
 """
 
 RETURN = r"""

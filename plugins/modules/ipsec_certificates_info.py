@@ -5,27 +5,22 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: ipsec_certificates_info
 short_description: Information module for Ipsec Certificates Info
 description:
-- Get all Ipsec Certificates Info.
-- Returns all the certificates for IPsec role.
+  - Get all Ipsec Certificates Info.
+  - Returns all the certificates for IPsec role.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    native_ipsec.NativeIpsec.get_ip_sec_certificates,
-
-  - Paths used are
-    get /api/v1/ipsec/certificates,
-
+  - SDK Method used are native_ipsec.NativeIpsec.get_ip_sec_certificates,
+  - Paths used are get /api/v1/ipsec/certificates,
 """
 
 EXAMPLES = r"""
@@ -36,7 +31,6 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
   register: result
-
 """
 
 RETURN = r"""

@@ -5,11 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: mnt_sessions_by_session_id_info
 short_description: Information module for MNT Sessions By Session Id
 description:
-- Get all MNT Sessions By Session Id.
+  - Get all MNT Sessions By Session Id.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -17,18 +16,14 @@ author: Rafael Campos (@racampos)
 options:
   session_id:
     description:
-    - Session_id path parameter.
+      - Session_id path parameter.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    misc.Misc.get_sessions_by_session_id,
-
-  - Paths used are
-    get /Session/Active/SessionID/{session_id}/0,
-
+  - SDK Method used are misc.Misc.get_sessions_by_session_id,
+  - Paths used are get /Session/Active/SessionID/{session_id}/0,
 """
 
 EXAMPLES = r"""
@@ -40,7 +35,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     session_id: string
   register: result
-
 """
 
 RETURN = r"""

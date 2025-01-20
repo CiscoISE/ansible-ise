@@ -19,6 +19,7 @@ else:
     ANSIBLE_UTILS_IS_INSTALLED = True
 from ansible.errors import AnsibleActionFail
 import re
+
 try:
     import ipaddress
 except ImportError:
@@ -35,14 +36,16 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
 # Get common arguments specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
-argument_spec.update(dict(
-    state=dict(type="str", default="present", choices=["present", "absent"]),
-    subnet=dict(type="str"),
-    domains=dict(type="str"),
-    sgt=dict(type="str"),
-    vn=dict(type="str"),
-    id=dict(type="str"),
-))
+argument_spec.update(
+    dict(
+        state=dict(type="str", default="present", choices=["present", "absent"]),
+        subnet=dict(type="str"),
+        domains=dict(type="str"),
+        sgt=dict(type="str"),
+        vn=dict(type="str"),
+        id=dict(type="str"),
+    )
+)
 
 required_if = [
     ("state", "absent", ["id"], True),
@@ -76,7 +79,9 @@ class FilterPolicy(object):
             except ValueError:
                 current_net = None
             if new_net and current_net:
-                conflict = current_net.overlaps(new_net) or new_net.overlaps(current_net)
+                conflict = current_net.overlaps(new_net) or new_net.overlaps(
+                    current_net
+                )
                 # conflict = current_net.subnet_of(new_net) or new_net.subnet_of(current_net)
                 # They are the mostly the same, both have overlapping net
                 return conflict
@@ -95,12 +100,11 @@ class FilterPolicy(object):
             return None
         try:
             gen_items_responses = self.ise.exec(
-                family="filter_policy",
-                function="get_filter_policy_generator"
+                family="filter_policy", function="get_filter_policy_generator"
             )
             for items_response in gen_items_responses:
-                items = items_response.response['SearchResult']['resources']
-                result = get_dict_result(items, 'name', name)
+                items = items_response.response["SearchResult"]["resources"]
+                result = get_dict_result(items, "name", name)
                 if result:
                     return result
         except (TypeError, AttributeError) as e:
@@ -126,7 +130,7 @@ class FilterPolicy(object):
                 function="get_security_group_by_id",
                 params={"id": id},
                 handle_func_exception=False,
-            ).response['Sgt']
+            ).response["Sgt"]
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(
                 msg=(
@@ -148,8 +152,11 @@ class FilterPolicy(object):
                 return re.sub(r"\s*\(.*\)$", "", name)
             else:
                 return name
+
         has_new = self.get_sgt_by_id(new) or self.get_sgt_by_name(clean_excess(new))
-        has_current = self.get_sgt_by_id(current) or self.get_sgt_by_name(clean_excess(current))
+        has_current = self.get_sgt_by_id(current) or self.get_sgt_by_name(
+            clean_excess(current)
+        )
         if has_new and has_current:
             return has_new.get("id") == has_current.get("id")
         else:
@@ -165,18 +172,19 @@ class FilterPolicy(object):
         # NOTICE: Does not have a get by name method or it is in another action
         result = None
         gen_items_responses = self.ise.exec(
-            family="filter_policy",
-            function="get_filter_policy_generator"
+            family="filter_policy", function="get_filter_policy_generator"
         )
         try:
             for items_response in gen_items_responses:
-                items = items_response.response['SearchResult']['resources']
+                items = items_response.response["SearchResult"]["resources"]
                 for item in items:
-                    current = self.get_object_by_id(item.get('id'))
+                    current = self.get_object_by_id(item.get("id"))
                     if current:
-                        has_same_subnet = self.is_same_subnet(new_subnet, current.get('subnet'))
-                        has_same_sgt = self.is_same_sgt(new_sgt, current.get('sgt'))
-                        has_same_vn = self.is_same_vn(new_vn, current.get('vn'))
+                        has_same_subnet = self.is_same_subnet(
+                            new_subnet, current.get("subnet")
+                        )
+                        has_same_sgt = self.is_same_sgt(new_sgt, current.get("sgt"))
+                        has_same_vn = self.is_same_vn(new_vn, current.get("vn"))
                     if has_same_subnet and has_same_sgt and has_same_vn:
                         result = dict(current)
                         return result
@@ -201,8 +209,8 @@ class FilterPolicy(object):
                 family="filter_policy",
                 function="get_filter_policy_by_id",
                 handle_func_exception=False,
-                params={"id": id}
-            ).response['ERSFilterPolicy']
+                params={"id": id},
+            ).response["ERSFilterPolicy"]
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(
                 msg=(
@@ -250,9 +258,12 @@ class FilterPolicy(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not ise_compare_equality(current_obj.get(ise_param),
-                                            requested_obj.get(ansible_param))
-                   for (ise_param, ansible_param) in obj_params)
+        return any(
+            not ise_compare_equality(
+                current_obj.get(ise_param), requested_obj.get(ansible_param)
+            )
+            for (ise_param, ansible_param) in obj_params
+        )
 
     def create(self):
         result = self.ise.exec(
@@ -266,7 +277,7 @@ class FilterPolicy(object):
         result = self.ise.exec(
             family="filter_policy",
             function="update_filter_policy_by_id",
-            params=self.new_object
+            params=self.new_object,
         ).response
         return result
 
@@ -274,7 +285,7 @@ class FilterPolicy(object):
         result = self.ise.exec(
             family="filter_policy",
             function="delete_filter_policy_by_id",
-            params=self.new_object
+            params=self.new_object,
         ).response
         return result
 
@@ -282,7 +293,9 @@ class FilterPolicy(object):
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
+            raise AnsibleActionFail(
+                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
+            )
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = False
@@ -328,10 +341,15 @@ class ActionModule(ActionBase):
                     (obj_exists, updated_obj) = obj.exists()
                     response = updated_obj
                     has_changed = None
-                    has_changed = ise_update_response.get("UpdatedFieldsList").get("updatedField")
-                    if (len(has_changed) == 0 or
-                       has_changed[0].get("newValue") == "" and
-                       has_changed[0].get("newValue") == has_changed[0].get("oldValue")):
+                    has_changed = ise_update_response.get("UpdatedFieldsList").get(
+                        "updatedField"
+                    )
+                    if (
+                        len(has_changed) == 0
+                        or has_changed[0].get("newValue") == ""
+                        and has_changed[0].get("newValue")
+                        == has_changed[0].get("oldValue")
+                    ):
                         self._result.pop("ise_update_response", None)
                         ise.object_already_present()
                     else:

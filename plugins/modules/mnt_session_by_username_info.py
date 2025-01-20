@@ -5,11 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: mnt_session_by_username_info
 short_description: Information module for MNT Session By Username
 description:
-- Get MNT Session By Username by name.
+  - Get MNT Session By Username by name.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -17,18 +16,14 @@ author: Rafael Campos (@racampos)
 options:
   username:
     description:
-    - Username path parameter.
+      - Username path parameter.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    misc.Misc.get_sessions_by_username,
-
-  - Paths used are
-    get /Session/UserName/{username},
-
+  - SDK Method used are misc.Misc.get_sessions_by_username,
+  - Paths used are get /Session/UserName/{username},
 """
 
 EXAMPLES = r"""
@@ -40,7 +35,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     username: string
   register: result
-
 """
 
 RETURN = r"""

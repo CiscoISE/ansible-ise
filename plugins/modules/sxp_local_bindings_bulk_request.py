@@ -5,12 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: sxp_local_bindings_bulk_request
 short_description: Resource module for SXP Local Bindings Bulk Request
 description:
-- Manage operation update of the resource SXP Local Bindings Bulk Request.
-- This API allows the client to submit the bulk request.
+  - Manage operation update of the resource SXP Local Bindings Bulk Request.
+  - This API allows the client to submit the bulk request.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -23,15 +22,11 @@ options:
     description: SXP Local Bindings Bulk Request's resourceMediaType.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    sxp_local_bindings.SxpLocalBindings.bulk_request_for_sxp_local_bindings,
-
-  - Paths used are
-    put /ers/config/sxplocalbindings/bulk/submit,
-
+  - SDK Method used are sxp_local_bindings.SxpLocalBindings.bulk_request_for_sxp_local_bindings,
+  - Paths used are put /ers/config/sxplocalbindings/bulk/submit,
 """
 
 EXAMPLES = r"""
@@ -43,7 +38,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     operationType: string
     resourceMediaType: string
-
 """
 
 RETURN = r"""

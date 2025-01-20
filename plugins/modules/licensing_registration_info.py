@@ -5,31 +5,26 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: licensing_registration_info
 short_description: Information module for Licensing Registration
 description:
-- Get all Licensing Registration.
-- Get the registration information.
+  - Get all Licensing Registration.
+  - Get the registration information.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for Licensing
-  description: Complete reference of the Licensing API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!license-openapi
+  - name: Cisco ISE documentation for Licensing
+    description: Complete reference of the Licensing API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!license-openapi
 notes:
-  - SDK Method used are
-    licensing.Licensing.get_registration_info,
-
-  - Paths used are
-    get /api/v1/license/system/register,
-
+  - SDK Method used are licensing.Licensing.get_registration_info,
+  - Paths used are get /api/v1/license/system/register,
 """
 
 EXAMPLES = r"""
@@ -40,7 +35,6 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
   register: result
-
 """
 
 RETURN = r"""

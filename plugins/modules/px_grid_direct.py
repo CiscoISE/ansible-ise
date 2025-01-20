@@ -5,14 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: px_grid_direct
 short_description: Resource module for Px Grid Direct
 description:
-- Manage operations create, update and delete of the resource Px Grid Direct.
-- PxGrid Direct - Configure connectorconfig information.
-- PxGrid Direct - Delete Configure connectorConfig information based on ConnectorName.
-- PxGrid Direct - update Configure connectorConfig information based on ConnectorName.
+  - Manage operations create, update and delete of the resource Px Grid Direct.
+  - PxGrid Direct - Configure connectorconfig information.
+  - PxGrid Direct - Delete Configure connectorConfig information based on ConnectorName.
+  - PxGrid Direct - update Configure connectorConfig information based on ConnectorName.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -115,19 +114,11 @@ options:
         type: str
     type: dict
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    px_grid_direct.PxGridDirect.create_connector_config,
-    px_grid_direct.PxGridDirect.delete_connector_config_by_connector_name,
-    px_grid_direct.PxGridDirect.update_connector_config_by_connector_name,
-
-  - Paths used are
-    post /api/v1/pxgrid-direct/connector-config,
-    delete /api/v1/pxgrid-direct/connector-config/{connectorName},
-    put /api/v1/pxgrid-direct/connector-config/{connectorName},
-
+  - SDK Method used are px_grid_direct.PxGridDirect.create_connector_config, px_grid_direct.PxGridDirect.delete_connector_config_by_connector_name, px_grid_direct.PxGridDirect.update_connector_config_by_connector_name,
+  - Paths used are post /api/v1/pxgrid-direct/connector-config, delete /api/v1/pxgrid-direct/connector-config/{connectorName}, put /api/v1/pxgrid-direct/connector-config/{connectorName},
 """
 
 EXAMPLES = r"""
@@ -141,9 +132,9 @@ EXAMPLES = r"""
     additionalProperties: {}
     attributes:
       attributeMapping:
-      - dictionaryAttribute: string
-        includeInDictionary: true
-        jsonAttribute: string
+        - dictionaryAttribute: string
+          includeInDictionary: true
+          jsonAttribute: string
       correlationIdentifier: string
       topLevelObject: string
       uniqueIdentifier: string
@@ -168,7 +159,6 @@ EXAMPLES = r"""
       incrementalUrl: string
       password: string
       userName: string
-
 - name: Update by name
   cisco.ise.px_grid_direct:
     ise_hostname: "{{ise_hostname}}"
@@ -179,9 +169,9 @@ EXAMPLES = r"""
     additionalProperties: {}
     attributes:
       attributeMapping:
-      - dictionaryAttribute: string
-        includeInDictionary: true
-        jsonAttribute: string
+        - dictionaryAttribute: string
+          includeInDictionary: true
+          jsonAttribute: string
       correlationIdentifier: string
       topLevelObject: string
       uniqueIdentifier: string
@@ -206,7 +196,6 @@ EXAMPLES = r"""
       incrementalUrl: string
       password: string
       userName: string
-
 - name: Delete by name
   cisco.ise.px_grid_direct:
     ise_hostname: "{{ise_hostname}}"
@@ -215,7 +204,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     connectorName: string
-
 """
 
 RETURN = r"""
@@ -265,7 +253,6 @@ ise_response:
         }
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

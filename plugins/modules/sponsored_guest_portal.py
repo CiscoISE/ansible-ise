@@ -5,14 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: sponsored_guest_portal
 short_description: Resource module for Sponsored Guest Portal
 description:
-- Manage operations create, update and delete of the resource Sponsored Guest Portal.
-- This API creates a sponsored guest portal.
-- This API deletes a sponsored guest portal by ID.
-- This API allows the client to update a sponsored guest portal by ID.
+  - Manage operations create, update and delete of the resource Sponsored Guest Portal.
+  - This API creates a sponsored guest portal.
+  - This API deletes a sponsored guest portal by ID.
+  - This API allows the client to update a sponsored guest portal by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -28,16 +27,14 @@ options:
             description: Sponsored Guest Portal's backgroundImage.
             suboptions:
               data:
-                description: Represented as base 64 encoded string of the image byte
-                  array.
+                description: Represented as base 64 encoded string of the image byte array.
                 type: str
             type: dict
           bannerImage:
             description: Sponsored Guest Portal's bannerImage.
             suboptions:
               data:
-                description: Represented as base 64 encoded string of the image byte
-                  array.
+                description: Represented as base 64 encoded string of the image byte array.
                 type: str
             type: dict
           bannerTitle:
@@ -50,8 +47,7 @@ options:
             description: Sponsored Guest Portal's desktopLogoImage.
             suboptions:
               data:
-                description: Represented as base 64 encoded string of the image byte
-                  array.
+                description: Represented as base 64 encoded string of the image byte array.
                 type: str
             type: dict
           footerElement:
@@ -61,14 +57,12 @@ options:
             description: Sponsored Guest Portal's mobileLogoImage.
             suboptions:
               data:
-                description: Represented as base 64 encoded string of the image byte
-                  array.
+                description: Represented as base 64 encoded string of the image byte array.
                 type: str
             type: dict
         type: dict
       language:
-        description: This property is supported only for Read operation and it allows
-          to show the customizations in English. Other languages are not supported.
+        description: This property is supported only for Read operation and it allows to show the customizations in English. Other languages are not supported.
         suboptions:
           viewLanguage:
             description: Sponsored Guest Portal's viewLanguage.
@@ -103,10 +97,7 @@ options:
             type: str
         type: dict
       portalTweakSettings:
-        description: The Tweak Settings are a customization of the Portal Theme that
-          has been selected for the portal. When the Portal Theme selection is changed,
-          the Tweak Settings are overwritten to match the values in the theme. The Tweak
-          Settings can subsequently be changed by the user.
+        description: The Tweak Settings are a customization of the Portal Theme that has been selected for the portal. When the Portal Theme selection is changed, the Tweak Settings are overwritten to match the values in the theme. The Tweak Settings can subsequently be changed by the user.
         suboptions:
           bannerColor:
             description: Hex value of color.
@@ -135,8 +126,7 @@ options:
     description: URL to bring up a test page for this portal.
     type: str
   portalType:
-    description: Allowed values - BYOD, - HOTSPOTGUEST, - MYDEVICE, - SELFREGGUEST,
-      - SPONSOR, - SPONSOREDGUEST.
+    description: Allowed values - BYOD, - HOTSPOTGUEST, - MYDEVICE, - SELFREGGUEST, - SPONSOR, - SPONSOREDGUEST.
     type: str
   settings:
     description: Defines all of the settings groups available for a portal.
@@ -145,20 +135,16 @@ options:
         description: Sponsored Guest Portal's aupSettings.
         suboptions:
           displayFrequency:
-            description: How the AUP should be displayed, either on page or as a link.
-              Only valid if includeAup = true. Allowed Values - FIRSTLOGIN, - EVERYLOGIN,
-              - RECURRING.
+            description: How the AUP should be displayed, either on page or as a link. Only valid if includeAup = true. Allowed Values - FIRSTLOGIN, - EVERYLOGIN, - RECURRING.
             type: str
           displayFrequencyIntervalDays:
-            description: Number of days between AUP confirmations (when displayFrequency
-              = recurring).
+            description: Number of days between AUP confirmations (when displayFrequency = recurring).
             type: int
           includeAup:
             description: IncludeAup flag.
             type: bool
           requireAupScrolling:
-            description: Require the portal user to scroll to the end of the AUP. Only
-              valid if requireAupAcceptance = true.
+            description: Require the portal user to scroll to the end of the AUP. Only valid if requireAupAcceptance = true.
             type: bool
           requireScrolling:
             description: RequireScrolling flag.
@@ -177,8 +163,7 @@ options:
             description: Target URL for redirection, used when successRedirect = URL.
             type: str
           successRedirect:
-            description: After an Authentication Success where should device be redirected.
-              Allowed values - AUTHSUCCESSPAGE, - ORIGINATINGURL, - URL.
+            description: After an Authentication Success where should device be redirected. Allowed values - AUTHSUCCESSPAGE, - ORIGINATINGURL, - URL.
             type: str
         type: dict
       byodSettings:
@@ -198,22 +183,17 @@ options:
             description: Sponsored Guest Portal's byodRegistrationSuccessSettings.
             suboptions:
               redirectUrl:
-                description: Target URL for redirection, used when successRedirect =
-                  URL.
+                description: Target URL for redirection, used when successRedirect = URL.
                 type: str
               successRedirect:
-                description: After an Authentication Success where should device be
-                  redirected. Allowed values - AUTHSUCCESSPAGE, - ORIGINATINGURL, -
-                  URL.
+                description: After an Authentication Success where should device be redirected. Allowed values - AUTHSUCCESSPAGE, - ORIGINATINGURL, - URL.
                 type: str
             type: dict
           byodWelcomeSettings:
             description: Sponsored Guest Portal's byodWelcomeSettings.
             suboptions:
               aupDisplay:
-                description: How the AUP should be displayed, either on page or as a
-                  link. Only valid if includeAup = true. Allowed values - ONPAGE, -
-                  ASLINK.
+                description: How the AUP should be displayed, either on page or as a link. Only valid if includeAup = true. Allowed values - ONPAGE, - ASLINK.
                 type: str
               enableBYOD:
                 description: EnableBYOD flag.
@@ -231,8 +211,7 @@ options:
                 description: RequireMDM flag.
                 type: bool
               requireScrolling:
-                description: Require BYOD devices to scroll down to the bottom of the
-                  AUP. Only valid if includeAup = true.
+                description: Require BYOD devices to scroll down to the bottom of the AUP. Only valid if includeAup = true.
                 type: bool
             type: dict
         type: dict
@@ -257,8 +236,7 @@ options:
         description: Portal Login Page settings groups follow.
         suboptions:
           accessCode:
-            description: Access code that must be entered by the portal user (only valid
-              if requireAccessCode = true).
+            description: Access code that must be entered by the portal user (only valid if requireAccessCode = true).
             type: str
           allowAlternateGuestPortal:
             description: AllowAlternateGuestPortal flag.
@@ -273,12 +251,10 @@ options:
             description: AllowGuestToCreateAccounts flag.
             type: bool
           aupDisplay:
-            description: How the AUP should be displayed, either on page or as a link.
-              Only valid if includeAup = true. Allowed values - ONPAGE, - ASLINK.
+            description: How the AUP should be displayed, either on page or as a link. Only valid if includeAup = true. Allowed values - ONPAGE, - ASLINK.
             type: str
           includeAup:
-            description: Include an Acceptable Use Policy (AUP) that should be displayed
-              during login.
+            description: Include an Acceptable Use Policy (AUP) that should be displayed during login.
             type: bool
           maxFailedAttemptsBeforeRateLimit:
             description: Maximum failed login attempts before rate limiting.
@@ -287,8 +263,7 @@ options:
             description: RequireAccessCode flag.
             type: bool
           requireAupAcceptance:
-            description: Require the portal user to accept the AUP. Only valid if includeAup
-              = true.
+            description: Require the portal user to accept the AUP. Only valid if includeAup = true.
             type: bool
           socialConfigs:
             description: Sponsored Guest Portal's socialConfigs.
@@ -306,27 +281,23 @@ options:
             type: int
         type: dict
       portalSettings:
-        description: The port, interface, certificate, and other basic settings of a
-          portal.
+        description: The port, interface, certificate, and other basic settings of a portal.
         suboptions:
           allowedInterfaces:
-            description: Interfaces that the portal will be reachable on. Allowed values
-              - eth0, - eth1, - eth2, - eth3, - eth4, - eth5, - bond0, - bond1, - bond2.
+            description: Interfaces that the portal will be reachable on. Allowed values - eth0, - eth1, - eth2, - eth3, - eth4, - eth5, - bond0, - bond1, - bond2.
             elements: str
             type: list
           alwaysUsedLanguage:
             description: Sponsored Guest Portal's alwaysUsedLanguage.
             type: str
           assignedGuestTypeForEmployee:
-            description: Unique Id of a guest type. Employees using this portal as a
-              guest inherit login options from the guest type.
+            description: Unique Id of a guest type. Employees using this portal as a guest inherit login options from the guest type.
             type: str
           authenticationMethod:
             description: Unique Id of the identity source sequence.
             type: str
           certificateGroupTag:
-            description: Logical name of the x.509 server certificate that will be used
-              for the portal.
+            description: Logical name of the x.509 server certificate that will be used for the portal.
             type: str
           displayLang:
             description: Allowed values - USEBROWSERLOCALE, - ALWAYSUSE.
@@ -335,8 +306,7 @@ options:
             description: Used when displayLang = USEBROWSERLOCALE.
             type: str
           httpsPort:
-            description: The port number that the allowed interfaces will listen on.
-              Range from 8000 to 8999.
+            description: The port number that the allowed interfaces will listen on. Range from 8000 to 8999.
             type: int
         type: dict
       postAccessBannerSettings:
@@ -357,12 +327,10 @@ options:
         description: Sponsored Guest Portal's supportInfoSettings.
         suboptions:
           defaultEmptyFieldValue:
-            description: The default value displayed for an empty field. Only valid
-              when emptyFieldDisplay = DISPLAYWITHDEFAULTVALUE.
+            description: The default value displayed for an empty field. Only valid when emptyFieldDisplay = DISPLAYWITHDEFAULTVALUE.
             type: str
           emptyFieldDisplay:
-            description: Specifies how empty fields are handled on the Support Information
-              Page. Allowed values - HIDE, - DISPLAYWITHNOVALUE, - DISPLAYWITHDEFAULTVALUE.
+            description: Specifies how empty fields are handled on the Support Information Page. Allowed values - HIDE, - DISPLAYWITHNOVALUE, - DISPLAYWITHDEFAULTVALUE.
             type: str
           includeBrowserUserAgent:
             description: IncludeBrowserUserAgent flag.
@@ -385,19 +353,11 @@ options:
         type: dict
     type: dict
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    sponsored_guest_portal.SponsoredGuestPortal.create_sponsored_guest_portal,
-    sponsored_guest_portal.SponsoredGuestPortal.delete_sponsored_guest_portal_by_id,
-    sponsored_guest_portal.SponsoredGuestPortal.update_sponsored_guest_portal_by_id,
-
-  - Paths used are
-    post /ers/config/sponsoredguestportal,
-    delete /ers/config/sponsoredguestportal/{id},
-    put /ers/config/sponsoredguestportal/{id},
-
+  - SDK Method used are sponsored_guest_portal.SponsoredGuestPortal.create_sponsored_guest_portal, sponsored_guest_portal.SponsoredGuestPortal.delete_sponsored_guest_portal_by_id, sponsored_guest_portal.SponsoredGuestPortal.update_sponsored_guest_portal_by_id,
+  - Paths used are post /ers/config/sponsoredguestportal, delete /ers/config/sponsoredguestportal/{id}, put /ers/config/sponsoredguestportal/{id},
 """
 
 EXAMPLES = r"""
@@ -425,8 +385,8 @@ EXAMPLES = r"""
         viewLanguage: string
       pageCustomizations:
         data:
-        - key: string
-          value: string
+          - key: string
+            value: string
       portalTheme:
         id: string
         name: string
@@ -485,12 +445,12 @@ EXAMPLES = r"""
         requireAccessCode: true
         requireAupAcceptance: true
         socialConfigs:
-        - socialMediaType: string
-          socialMediaValue: string
+          - socialMediaType: string
+            socialMediaValue: string
         timeBetweenLoginsDuringRateLimit: 0
       portalSettings:
         allowedInterfaces:
-        - string
+          - string
         alwaysUsedLanguage: string
         assignedGuestTypeForEmployee: string
         authenticationMethod: string
@@ -511,7 +471,6 @@ EXAMPLES = r"""
         includeMacAddr: true
         includePolicyServer: true
         includeSupportInfoPage: true
-
 - name: Delete by id
   cisco.ise.sponsored_guest_portal:
     ise_hostname: "{{ise_hostname}}"
@@ -520,7 +479,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-
 - name: Create
   cisco.ise.sponsored_guest_portal:
     ise_hostname: "{{ise_hostname}}"
@@ -545,8 +503,8 @@ EXAMPLES = r"""
         viewLanguage: string
       pageCustomizations:
         data:
-        - key: string
-          value: string
+          - key: string
+            value: string
       portalTheme:
         id: string
         name: string
@@ -604,12 +562,12 @@ EXAMPLES = r"""
         requireAccessCode: true
         requireAupAcceptance: true
         socialConfigs:
-        - socialMediaType: string
-          socialMediaValue: string
+          - socialMediaType: string
+            socialMediaValue: string
         timeBetweenLoginsDuringRateLimit: 0
       portalSettings:
         allowedInterfaces:
-        - string
+          - string
         alwaysUsedLanguage: string
         assignedGuestTypeForEmployee: string
         authenticationMethod: string
@@ -630,7 +588,6 @@ EXAMPLES = r"""
         includeMacAddr: true
         includePolicyServer: true
         includeSupportInfoPage: true
-
 """
 
 RETURN = r"""
@@ -780,7 +737,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

@@ -5,14 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: trustsec_sg_vn_mapping
 short_description: Resource module for Trustsec SG VN Mapping
 description:
-- Manage operations create, update and delete of the resource Trustsec SG VN Mapping.
-- Create Security Group and Virtual Network mapping.
-- Delete Security Group and Virtual Network mapping.
-- Update Security Group and Virtual Network mapping.
+  - Manage operations create, update and delete of the resource Trustsec SG VN Mapping.
+  - Create Security Group and Virtual Network mapping.
+  - Delete Security Group and Virtual Network mapping.
+  - Update Security Group and Virtual Network mapping.
 version_added: '2.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -25,39 +24,27 @@ options:
     description: Timestamp for the last update of the SG-VN mapping.
     type: str
   sgName:
-    description: Name of the associated Security Group to be used for identity if id
-      is not provided.
+    description: Name of the associated Security Group to be used for identity if id is not provided.
     type: str
   sgtId:
-    description: Identifier of the associated Security Group which is required unless
-      its name is provided.
+    description: Identifier of the associated Security Group which is required unless its name is provided.
     type: str
   vnId:
-    description: Identifier for the associated Virtual Network which is required unless
-      its name is provided.
+    description: Identifier for the associated Virtual Network which is required unless its name is provided.
     type: str
   vnName:
-    description: Name of the associated Virtual Network to be used for identity if id
-      is not provided.
+    description: Name of the associated Virtual Network to be used for identity if id is not provided.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for sgVnMapping
-  description: Complete reference of the sgVnMapping API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!trustsec-openapi
+  - name: Cisco ISE documentation for sgVnMapping
+    description: Complete reference of the sgVnMapping API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!trustsec-openapi
 notes:
-  - SDK Method used are
-    sg_vn_mapping.SgVnMapping.create_sg_vn_mapping,
-    sg_vn_mapping.SgVnMapping.delete_sg_vn_mapping,
-    sg_vn_mapping.SgVnMapping.update_sg_vn_mapping,
-
-  - Paths used are
-    post /api/v1/trustsec/sgvnmapping,
-    delete /api/v1/trustsec/sgvnmapping/{id},
-    put /api/v1/trustsec/sgvnmapping/{id},
-
+  - SDK Method used are sg_vn_mapping.SgVnMapping.create_sg_vn_mapping, sg_vn_mapping.SgVnMapping.delete_sg_vn_mapping, sg_vn_mapping.SgVnMapping.update_sg_vn_mapping,
+  - Paths used are post /api/v1/trustsec/sgvnmapping, delete /api/v1/trustsec/sgvnmapping/{id}, put /api/v1/trustsec/sgvnmapping/{id},
 """
 
 EXAMPLES = r"""
@@ -74,7 +61,6 @@ EXAMPLES = r"""
     sgtId: string
     vnId: string
     vnName: string
-
 - name: Update by id
   cisco.ise.trustsec_sg_vn_mapping:
     ise_hostname: "{{ise_hostname}}"
@@ -88,7 +74,6 @@ EXAMPLES = r"""
     sgtId: string
     vnId: string
     vnName: string
-
 - name: Delete by id
   cisco.ise.trustsec_sg_vn_mapping:
     ise_hostname: "{{ise_hostname}}"
@@ -97,7 +82,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-
 """
 
 RETURN = r"""
@@ -117,7 +101,6 @@ ise_response:
         "vnName": "string"
       }
     ]
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

@@ -5,14 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: radius_server_sequence_info
 short_description: Information module for RADIUS Server Sequence
 description:
-- Get all RADIUS Server Sequence.
-- Get RADIUS Server Sequence by id.
-- This API allows the client to get a RADIUS server sequence by ID.
-- This API allows the client to get all the RADIUS server sequences.
+  - Get all RADIUS Server Sequence.
+  - Get RADIUS Server Sequence by id.
+  - This API allows the client to get a RADIUS server sequence by ID.
+  - This API allows the client to get all the RADIUS server sequences.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -20,28 +19,22 @@ author: Rafael Campos (@racampos)
 options:
   id:
     description:
-    - Id path parameter.
+      - Id path parameter.
     type: str
   page:
     description:
-    - Page query parameter. Page number.
+      - Page query parameter. Page number.
     type: int
   size:
     description:
-    - Size query parameter. Number of objects returned per page.
+      - Size query parameter. Number of objects returned per page.
     type: int
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    radius_server_sequence.RadiusServerSequence.get_radius_server_sequence_by_id,
-    radius_server_sequence.RadiusServerSequence.get_radius_server_sequence_generator,
-
-  - Paths used are
-    get /ers/config/radiusserversequence,
-    get /ers/config/radiusserversequence/{id},
-
+  - SDK Method used are radius_server_sequence.RadiusServerSequence.get_radius_server_sequence_by_id, radius_server_sequence.RadiusServerSequence.get_radius_server_sequence_generator,
+  - Paths used are get /ers/config/radiusserversequence, get /ers/config/radiusserversequence/{id},
 """
 
 EXAMPLES = r"""
@@ -54,7 +47,6 @@ EXAMPLES = r"""
     page: 1
     size: 20
   register: result
-
 - name: Get RADIUS Server Sequence by id
   cisco.ise.radius_server_sequence_info:
     ise_hostname: "{{ise_hostname}}"
@@ -63,7 +55,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     id: string
   register: result
-
 """
 
 RETURN = r"""
@@ -112,7 +103,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_responses:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

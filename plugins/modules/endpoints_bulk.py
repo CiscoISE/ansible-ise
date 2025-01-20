@@ -5,11 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: endpoints_bulk
 short_description: Resource module for Endpoints Bulk
 description:
-- Manage operations create, update and delete of the resource Endpoints Bulk.
+  - Manage operations create, update and delete of the resource Endpoints Bulk.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -156,23 +155,11 @@ options:
     description: Endpoints Bulk's vendor.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    endpoints.Endpoints.create_bulk_end_points,
-    endpoints.Endpoints.delete_endpoint,
-    endpoints.Endpoints.update_bulk_end_points,
-    endpoints.Endpoints.update_endpoint,
-
-  - Paths used are
-    post /api/v1/endpoint,
-    post /api/v1/endpoint/bulk,
-    delete /api/v1/endpoint/bulk,
-    delete /api/v1/endpoint/{value},
-    put /api/v1/endpoint/bulk,
-    put /api/v1/endpoint/{value},
-
+  - SDK Method used are endpoints.Endpoints.create_bulk_end_points, endpoints.Endpoints.delete_endpoint, endpoints.Endpoints.update_bulk_end_points, endpoints.Endpoints.update_endpoint,
+  - Paths used are post /api/v1/endpoint, post /api/v1/endpoint/bulk, delete /api/v1/endpoint/bulk, delete /api/v1/endpoint/{value}, put /api/v1/endpoint/bulk, put /api/v1/endpoint/{value},
 """
 
 EXAMPLES = r"""
@@ -184,29 +171,28 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     payload:
-    - connectedLinks: {}
-      customAttributes: {}
-      description: string
-      deviceType: string
-      groupId: string
-      hardwareRevision: string
-      id: string
-      identityStore: string
-      identityStoreId: string
-      ipAddress: string
-      mac: string
-      mdmAttributes: {}
-      name: string
-      portalUser: string
-      productId: string
-      profileId: string
-      protocol: string
-      serialNumber: string
-      softwareRevision: string
-      staticGroupAssignment: true
-      staticProfileAssignment: true
-      vendor: string
-
+      - connectedLinks: {}
+        customAttributes: {}
+        description: string
+        deviceType: string
+        groupId: string
+        hardwareRevision: string
+        id: string
+        identityStore: string
+        identityStoreId: string
+        ipAddress: string
+        mac: string
+        mdmAttributes: {}
+        name: string
+        portalUser: string
+        productId: string
+        profileId: string
+        protocol: string
+        serialNumber: string
+        softwareRevision: string
+        staticGroupAssignment: true
+        staticProfileAssignment: true
+        vendor: string
 - name: Update all
   cisco.ise.endpoints_bulk:
     ise_hostname: "{{ise_hostname}}"
@@ -215,29 +201,28 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     payload:
-    - connectedLinks: {}
-      customAttributes: {}
-      description: string
-      deviceType: string
-      groupId: string
-      hardwareRevision: string
-      id: string
-      identityStore: string
-      identityStoreId: string
-      ipAddress: string
-      mac: string
-      mdmAttributes: {}
-      name: string
-      portalUser: string
-      productId: string
-      profileId: string
-      protocol: string
-      serialNumber: string
-      softwareRevision: string
-      staticGroupAssignment: true
-      staticProfileAssignment: true
-      vendor: string
-
+      - connectedLinks: {}
+        customAttributes: {}
+        description: string
+        deviceType: string
+        groupId: string
+        hardwareRevision: string
+        id: string
+        identityStore: string
+        identityStoreId: string
+        ipAddress: string
+        mac: string
+        mdmAttributes: {}
+        name: string
+        portalUser: string
+        productId: string
+        profileId: string
+        protocol: string
+        serialNumber: string
+        softwareRevision: string
+        staticGroupAssignment: true
+        staticProfileAssignment: true
+        vendor: string
 - name: Delete all
   cisco.ise.endpoints_bulk:
     ise_hostname: "{{ise_hostname}}"
@@ -245,7 +230,6 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: absent
-
 - name: Update by id
   cisco.ise.endpoints_bulk:
     ise_hostname: "{{ise_hostname}}"
@@ -276,7 +260,6 @@ EXAMPLES = r"""
     staticProfileAssignment: true
     value: string
     vendor: string
-
 - name: Delete by id
   cisco.ise.endpoints_bulk:
     ise_hostname: "{{ise_hostname}}"
@@ -285,7 +268,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     value: string
-
 """
 
 RETURN = r"""
@@ -318,7 +300,6 @@ ise_response:
       "staticProfileAssignment": true,
       "vendor": "string"
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

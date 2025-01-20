@@ -5,14 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: downloadable_acl
 short_description: Resource module for Downloadable ACL
 description:
-- Manage operations create, update and delete of the resource Downloadable ACL.
-- This API creates a downloadable ACL.
-- This API deletes a downloadable ACL.
-- This API allows the client to update a downloadable ACL.
+  - Manage operations create, update and delete of the resource Downloadable ACL.
+  - This API creates a downloadable ACL.
+  - This API deletes a downloadable ACL.
+  - This API allows the client to update a downloadable ACL.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -31,23 +30,14 @@ options:
     description: Downloadable ACL's id.
     type: str
   name:
-    description: Resource Name. Name may contain alphanumeric or any of the following
-      characters _.-.
+    description: Resource Name. Name may contain alphanumeric or any of the following characters _.-.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    downloadable_acl.DownloadableAcl.create_downloadable_acl,
-    downloadable_acl.DownloadableAcl.delete_downloadable_acl_by_id,
-    downloadable_acl.DownloadableAcl.update_downloadable_acl_by_id,
-
-  - Paths used are
-    post /ers/config/downloadableacl,
-    delete /ers/config/downloadableacl/{id},
-    put /ers/config/downloadableacl/{id},
-
+  - SDK Method used are downloadable_acl.DownloadableAcl.create_downloadable_acl, downloadable_acl.DownloadableAcl.delete_downloadable_acl_by_id, downloadable_acl.DownloadableAcl.update_downloadable_acl_by_id,
+  - Paths used are post /ers/config/downloadableacl, delete /ers/config/downloadableacl/{id}, put /ers/config/downloadableacl/{id},
 """
 
 EXAMPLES = r"""
@@ -63,7 +53,6 @@ EXAMPLES = r"""
     description: string
     id: string
     name: string
-
 - name: Update by id with multiline ACL
   cisco.ise.downloadable_acl:
     ise_hostname: "{{ise_hostname}}"
@@ -76,7 +65,6 @@ EXAMPLES = r"""
     description: "this is my\n multiline\n ACL."
     id: string
     name: string
-
 - name: Delete by id
   cisco.ise.downloadable_acl:
     ise_hostname: "{{ise_hostname}}"
@@ -85,7 +73,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-
 - name: Create
   cisco.ise.downloadable_acl:
     ise_hostname: "{{ise_hostname}}"
@@ -97,7 +84,6 @@ EXAMPLES = r"""
     daclType: string
     description: string
     name: string
-
 - name: Create with multiline ACL
   cisco.ise.downloadable_acl:
     ise_hostname: "{{ise_hostname}}"
@@ -109,7 +95,6 @@ EXAMPLES = r"""
     daclType: string
     description: "this is my\n multiline\n ACL."
     name: string
-
 """
 
 RETURN = r"""
@@ -130,7 +115,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

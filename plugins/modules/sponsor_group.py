@@ -5,14 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: sponsor_group
 short_description: Resource module for Sponsor Group
 description:
-- Manage operations create, update and delete of the resource Sponsor Group.
-- This API creates a sponsor group.
-- This API deletes a sponsor group by ID.
-- This API allows the client to update a sponsor group by ID.
+  - Manage operations create, update and delete of the resource Sponsor Group.
+  - This API creates a sponsor group.
+  - This API deletes a sponsor group by ID.
+  - This API allows the client to update a sponsor group by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -120,19 +119,11 @@ options:
         type: bool
     type: dict
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    sponsor_group.SponsorGroup.create_sponsor_group,
-    sponsor_group.SponsorGroup.delete_sponsor_group_by_id,
-    sponsor_group.SponsorGroup.update_sponsor_group_by_id,
-
-  - Paths used are
-    post /ers/config/sponsorgroup,
-    delete /ers/config/sponsorgroup/{id},
-    put /ers/config/sponsorgroup/{id},
-
+  - SDK Method used are sponsor_group.SponsorGroup.create_sponsor_group, sponsor_group.SponsorGroup.delete_sponsor_group_by_id, sponsor_group.SponsorGroup.update_sponsor_group_by_id,
+  - Paths used are post /ers/config/sponsorgroup, delete /ers/config/sponsorgroup/{id}, put /ers/config/sponsorgroup/{id},
 """
 
 EXAMPLES = r"""
@@ -155,15 +146,15 @@ EXAMPLES = r"""
       startDateFutureLimitDays: 0
     description: string
     guestTypes:
-    - string
+      - string
     id: string
     isDefaultGroup: true
     isEnabled: true
     locations:
-    - string
+      - string
     managePermission: string
     memberGroups:
-    - string
+      - string
     name: string
     otherPermissions:
       canAccessViaRest: true
@@ -178,7 +169,6 @@ EXAMPLES = r"""
       canViewGuestPasswords: true
       limitApprovalToSponsorsGuests: true
       requireSuspensionReason: true
-
 - name: Delete by id
   cisco.ise.sponsor_group:
     ise_hostname: "{{ise_hostname}}"
@@ -187,7 +177,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-
 - name: Create
   cisco.ise.sponsor_group:
     ise_hostname: "{{ise_hostname}}"
@@ -207,14 +196,14 @@ EXAMPLES = r"""
       startDateFutureLimitDays: 0
     description: string
     guestTypes:
-    - string
+      - string
     isDefaultGroup: true
     isEnabled: true
     locations:
-    - string
+      - string
     managePermission: string
     memberGroups:
-    - string
+      - string
     name: string
     otherPermissions:
       canAccessViaRest: true
@@ -229,7 +218,6 @@ EXAMPLES = r"""
       canViewGuestPasswords: true
       limitApprovalToSponsorsGuests: true
       requireSuspensionReason: true
-
 """
 
 RETURN = r"""
@@ -285,7 +273,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

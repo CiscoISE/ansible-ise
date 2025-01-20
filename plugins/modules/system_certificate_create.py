@@ -5,12 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: system_certificate_create
 short_description: Resource module for System Certificate Create
 description:
-- Manage operation create of the resource System Certificate Create.
-- This API allows the client to create a system certificate.
+  - Manage operation create of the resource System Certificate Create.
+  - This API allows the client to create a system certificate.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -88,15 +87,11 @@ options:
     description: NodeId of Cisco ISE application.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    system_certificate.SystemCertificate.create_system_certificate,
-
-  - Paths used are
-    post /ers/config/systemcertificate,
-
+  - SDK Method used are system_certificate.SystemCertificate.create_system_certificate,
+  - Paths used are post /ers/config/systemcertificate,
 """
 
 EXAMPLES = r"""
@@ -129,7 +124,6 @@ EXAMPLES = r"""
       selectedExpirationTTLUnit: string
       xgridCertificate: string
     nodeId: string
-
 """
 
 RETURN = r"""

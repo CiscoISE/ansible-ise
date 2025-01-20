@@ -5,12 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: threat_vulnerabilities_clear
 short_description: Resource module for Threat Vulnerabilities Clear
 description:
-- Manage operation update of the resource Threat Vulnerabilities Clear.
-- This API allows the client to delete the ThreatContext and Threat events that.
+  - Manage operation update of the resource Threat Vulnerabilities Clear.
+  - This API allows the client to delete the ThreatContext and Threat events that.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -20,19 +19,15 @@ options:
     description: Threat Vulnerabilities Clear's macAddresses.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for ClearThreatsAndVulnerabilities
-  description: Complete reference of the ClearThreatsAndVulnerabilities API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!clearthreatsandvulneribilities
+  - name: Cisco ISE documentation for ClearThreatsAndVulnerabilities
+    description: Complete reference of the ClearThreatsAndVulnerabilities API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!clearthreatsandvulneribilities
 notes:
-  - SDK Method used are
-    clear_threats_and_vulnerabilities.ClearThreatsAndVulnerabilities.clear_threats_and_vulnerabilities,
-
-  - Paths used are
-    put /ers/config/threat/clearThreatsAndVulneribilities,
-
+  - SDK Method used are clear_threats_and_vulnerabilities.ClearThreatsAndVulnerabilities.clear_threats_and_vulnerabilities,
+  - Paths used are put /ers/config/threat/clearThreatsAndVulneribilities,
 """
 
 EXAMPLES = r"""
@@ -43,7 +38,6 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     macAddresses: string
-
 """
 
 RETURN = r"""

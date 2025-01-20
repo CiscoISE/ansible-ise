@@ -5,31 +5,26 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: device_administration_dictionary_attributes_authentication_info
 short_description: Information module for Device Administration Dictionary Attributes Authentication
 description:
-- Get all Device Administration Dictionary Attributes Authentication.
-- Network Access - Returns list of dictionary attributes for authentication.
+  - Get all Device Administration Dictionary Attributes Authentication.
+  - Network Access - Returns list of dictionary attributes for authentication.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for Device Administration - Dictionary Attributes List
-  description: Complete reference of the Device Administration - Dictionary Attributes List API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
+  - name: Cisco ISE documentation for Device Administration - Dictionary Attributes List
+    description: Complete reference of the Device Administration - Dictionary Attributes List API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are
-    device_administration_dictionary_attributes_list.DeviceAdministrationDictionaryAttributesList.get_device_admin_dictionaries_authentication,
-
-  - Paths used are
-    get /device-admin/dictionaries/authentication,
-
+  - SDK Method used are device_administration_dictionary_attributes_list.DeviceAdministrationDictionaryAttributesList.get_device_admin_dictionaries_authentication,
+  - Paths used are get /device-admin/dictionaries/authentication,
 """
 
 EXAMPLES = r"""
@@ -40,7 +35,6 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
   register: result
-
 """
 
 RETURN = r"""

@@ -5,12 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: dataconnect_settings_status
 short_description: Resource module for Dataconnect Settings Status
 description:
-- Manage operation update of the resource Dataconnect Settings Status.
-- This API updates the DataConnect feature status.
+  - Manage operation update of the resource Dataconnect Settings Status.
+  - This API updates the DataConnect feature status.
 version_added: '2.8.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -20,15 +19,11 @@ options:
     description: IsEnabled flag.
     type: bool
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    dataconnect_services.DataconnectServices.set_data_connect_service,
-
-  - Paths used are
-    put /api/v1/mnt/data-connect/settings/status,
-
+  - SDK Method used are dataconnect_services.DataconnectServices.set_data_connect_service,
+  - Paths used are put /api/v1/mnt/data-connect/settings/status,
 """
 
 EXAMPLES = r"""
@@ -39,7 +34,6 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     isEnabled: true
-
 """
 
 RETURN = r"""

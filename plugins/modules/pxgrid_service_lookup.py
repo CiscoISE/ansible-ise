@@ -5,11 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: pxgrid_service_lookup
 short_description: Resource module for pxGrid Service Lookup
 description:
-- Manage operation create of the resource pxGrid Service Lookup.
+  - Manage operation create of the resource pxGrid Service Lookup.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -19,15 +18,11 @@ options:
     description: pxGrid Service Lookup's name.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    consumer.Consumer.lookup_service,
-
-  - Paths used are
-    post /control/ServiceLookup,
-
+  - SDK Method used are consumer.Consumer.lookup_service,
+  - Paths used are post /control/ServiceLookup,
 """
 
 EXAMPLES = r"""
@@ -38,7 +33,6 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     name: com.cisco.ise.pubsub
-
 """
 
 RETURN = r"""

@@ -5,12 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: guest_user_reset_password
 short_description: Resource module for Guest User Reset Password
 description:
-- Manage operation update of the resource Guest User Reset Password.
-- This API allows the client to reset the guest user password.
+  - Manage operation update of the resource Guest User Reset Password.
+  - This API allows the client to reset the guest user password.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -20,15 +19,11 @@ options:
     description: Id path parameter.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    guest_user.GuestUser.reset_guest_user_password_by_id,
-
-  - Paths used are
-    put /ers/config/guestuser/resetpassword/{id},
-
+  - SDK Method used are guest_user.GuestUser.reset_guest_user_password_by_id,
+  - Paths used are put /ers/config/guestuser/resetpassword/{id},
 """
 
 EXAMPLES = r"""
@@ -39,7 +34,6 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     id: string
-
 """
 
 RETURN = r"""

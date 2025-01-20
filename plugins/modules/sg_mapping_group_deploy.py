@@ -5,12 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: sg_mapping_group_deploy
 short_description: Resource module for SG Mapping Group Deploy
 description:
-- Manage operation update of the resource SG Mapping Group Deploy.
-- This API allows the client to deploy an IP to SGT mapping group by ID.
+  - Manage operation update of the resource SG Mapping Group Deploy.
+  - This API allows the client to deploy an IP to SGT mapping group by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -20,19 +19,15 @@ options:
     description: Id path parameter.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for IPToSGTMappingGroup
-  description: Complete reference of the IPToSGTMappingGroup API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgmappinggroup
+  - name: Cisco ISE documentation for IPToSGTMappingGroup
+    description: Complete reference of the IPToSGTMappingGroup API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgmappinggroup
 notes:
-  - SDK Method used are
-    ip_to_sgt_mapping_group.IpToSgtMappingGroup.deploy_ip_to_sgt_mapping_group_by_id,
-
-  - Paths used are
-    put /ers/config/sgmappinggroup/{id}/deploy,
-
+  - SDK Method used are ip_to_sgt_mapping_group.IpToSgtMappingGroup.deploy_ip_to_sgt_mapping_group_by_id,
+  - Paths used are put /ers/config/sgmappinggroup/{id}/deploy,
 """
 
 EXAMPLES = r"""
@@ -43,7 +38,6 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     id: string
-
 """
 
 RETURN = r"""

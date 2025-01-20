@@ -31,16 +31,18 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.exceptions import (
 # Get common arguments specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
-argument_spec.update(dict(
-    state=dict(type="str", default="present", choices=["present", "absent"]),
-    name=dict(type="str"),
-    description=dict(type="str"),
-    portalType=dict(type="str"),
-    portalTestUrl=dict(type="str"),
-    settings=dict(type="dict"),
-    customizations=dict(type="dict"),
-    id=dict(type="str"),
-))
+argument_spec.update(
+    dict(
+        state=dict(type="str", default="present", choices=["present", "absent"]),
+        name=dict(type="str"),
+        description=dict(type="str"),
+        portalType=dict(type="str"),
+        portalTestUrl=dict(type="str"),
+        settings=dict(type="dict"),
+        customizations=dict(type="dict"),
+        id=dict(type="str"),
+    )
+)
 
 required_if = [
     ("state", "present", ["id", "name", "settings"], True),
@@ -68,13 +70,12 @@ class SponsorPortal(object):
         # NOTICE: Get does not support/work for filter by name with EQ
         result = None
         gen_items_responses = self.ise.exec(
-            family="sponsor_portal",
-            function="get_sponsor_portal_generator"
+            family="sponsor_portal", function="get_sponsor_portal_generator"
         )
         try:
             for items_response in gen_items_responses:
-                items = items_response.response['SearchResult']['resources']
-                result = get_dict_result(items, 'name', name)
+                items = items_response.response["SearchResult"]["resources"]
+                result = get_dict_result(items, "name", name)
                 if result:
                     return result
         except (TypeError, AttributeError) as e:
@@ -98,8 +99,8 @@ class SponsorPortal(object):
                 family="sponsor_portal",
                 function="get_sponsor_portal_by_id",
                 handle_func_exception=False,
-                params={"id": id}
-            ).response['SponsorPortal']
+                params={"id": id},
+            ).response["SponsorPortal"]
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(
                 msg=(
@@ -129,7 +130,9 @@ class SponsorPortal(object):
         if name_exists:
             _id = prev_obj.get("id")
             if id_exists and name_exists and o_id != _id:
-                raise InconsistentParameters("The 'id' and 'name' params don't refer to the same object")
+                raise InconsistentParameters(
+                    "The 'id' and 'name' params don't refer to the same object"
+                )
             if _id:
                 prev_obj = self.get_object_by_id(_id)
         it_exists = prev_obj is not None and isinstance(prev_obj, dict)
@@ -149,9 +152,12 @@ class SponsorPortal(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not ise_compare_equality(current_obj.get(ise_param),
-                                            requested_obj.get(ansible_param))
-                   for (ise_param, ansible_param) in obj_params)
+        return any(
+            not ise_compare_equality(
+                current_obj.get(ise_param), requested_obj.get(ansible_param)
+            )
+            for (ise_param, ansible_param) in obj_params
+        )
 
     def create(self):
         result = self.ise.exec(
@@ -171,7 +177,7 @@ class SponsorPortal(object):
         result = self.ise.exec(
             family="sponsor_portal",
             function="update_sponsor_portal_by_id",
-            params=self.new_object
+            params=self.new_object,
         ).response
         return result
 
@@ -185,7 +191,7 @@ class SponsorPortal(object):
         result = self.ise.exec(
             family="sponsor_portal",
             function="delete_sponsor_portal_by_id",
-            params=self.new_object
+            params=self.new_object,
         ).response
         return result
 
@@ -193,7 +199,9 @@ class SponsorPortal(object):
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
+            raise AnsibleActionFail(
+                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
+            )
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = False
@@ -239,10 +247,15 @@ class ActionModule(ActionBase):
                     (obj_exists, updated_obj) = obj.exists()
                     response = updated_obj
                     has_changed = None
-                    has_changed = ise_update_response.get("UpdatedFieldsList").get("updatedField")
-                    if (len(has_changed) == 0 or
-                       has_changed[0].get("newValue") == "" and
-                       has_changed[0].get("newValue") == has_changed[0].get("oldValue")):
+                    has_changed = ise_update_response.get("UpdatedFieldsList").get(
+                        "updatedField"
+                    )
+                    if (
+                        len(has_changed) == 0
+                        or has_changed[0].get("newValue") == ""
+                        and has_changed[0].get("newValue")
+                        == has_changed[0].get("oldValue")
+                    ):
                         self._result.pop("ise_update_response", None)
                         ise.object_already_present()
                     else:

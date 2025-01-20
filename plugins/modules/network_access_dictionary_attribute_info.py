@@ -5,14 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: network_access_dictionary_attribute_info
 short_description: Information module for Network Access Dictionary Attribute
 description:
-- Get all Network Access Dictionary Attribute.
-- Get Network Access Dictionary Attribute by name.
-- Get a Dictionary Attribute.
-- Returns a list of Dictionary Attributes for an existing Dictionary.
+  - Get all Network Access Dictionary Attribute.
+  - Get Network Access Dictionary Attribute by name.
+  - Get a Dictionary Attribute.
+  - Returns a list of Dictionary Attributes for an existing Dictionary.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -20,28 +19,22 @@ author: Rafael Campos (@racampos)
 options:
   dictionaryName:
     description:
-    - DictionaryName path parameter. The name of the dictionary the dictionary attribute belongs to.
+      - DictionaryName path parameter. The name of the dictionary the dictionary attribute belongs to.
     type: str
   name:
     description:
-    - Name path parameter. The dictionary attribute name.
+      - Name path parameter. The dictionary attribute name.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for Network Access - Dictionary Attribute
-  description: Complete reference of the Network Access - Dictionary Attribute API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
+  - name: Cisco ISE documentation for Network Access - Dictionary Attribute
+    description: Complete reference of the Network Access - Dictionary Attribute API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are
-    network_access_dictionary_attribute.NetworkAccessDictionaryAttribute.get_network_access_dictionary_attribute_by_name,
-    network_access_dictionary_attribute.NetworkAccessDictionaryAttribute.get_network_access_dictionary_attributes_by_dictionary_name,
-
-  - Paths used are
-    get /network-access/dictionaries/{dictionaryName}/attribute,
-    get /network-access/dictionaries/{dictionaryName}/attribute/{name},
-
+  - SDK Method used are network_access_dictionary_attribute.NetworkAccessDictionaryAttribute.get_network_access_dictionary_attribute_by_name, network_access_dictionary_attribute.NetworkAccessDictionaryAttribute.get_network_access_dictionary_attributes_by_dictionary_name,
+  - Paths used are get /network-access/dictionaries/{dictionaryName}/attribute, get /network-access/dictionaries/{dictionaryName}/attribute/{name},
 """
 
 EXAMPLES = r"""
@@ -53,7 +46,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     dictionaryName: string
   register: result
-
 - name: Get Network Access Dictionary Attribute by name
   cisco.ise.network_access_dictionary_attribute_info:
     ise_hostname: "{{ise_hostname}}"
@@ -63,7 +55,6 @@ EXAMPLES = r"""
     name: string
     dictionaryName: string
   register: result
-
 """
 
 RETURN = r"""

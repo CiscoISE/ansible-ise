@@ -5,12 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: sgt_bulk_monitor_status_info
 short_description: Information module for SGt Bulk Monitor Status
 description:
-- Get SGt Bulk Monitor Status by id.
-- This API allows the client to monitor the bulk request.
+  - Get SGt Bulk Monitor Status by id.
+  - This API allows the client to monitor the bulk request.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -18,22 +17,18 @@ author: Rafael Campos (@racampos)
 options:
   bulkid:
     description:
-    - Bulkid path parameter.
+      - Bulkid path parameter.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for SecurityGroups
-  description: Complete reference of the SecurityGroups API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgt
+  - name: Cisco ISE documentation for SecurityGroups
+    description: Complete reference of the SecurityGroups API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgt
 notes:
-  - SDK Method used are
-    security_groups.SecurityGroups.monitor_bulk_status_security_group,
-
-  - Paths used are
-    get /ers/config/sgt/bulk/{bulkid},
-
+  - SDK Method used are security_groups.SecurityGroups.monitor_bulk_status_security_group,
+  - Paths used are get /ers/config/sgt/bulk/{bulkid},
 """
 
 EXAMPLES = r"""
@@ -45,7 +40,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     bulkid: string
   register: result
-
 """
 
 RETURN = r"""

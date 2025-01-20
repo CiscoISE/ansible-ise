@@ -5,12 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: anc_endpoint_apply
 short_description: Resource module for ANC Endpoint Apply
 description:
-- Manage operation update of the resource ANC Endpoint Apply.
-- This API allows the client to apply the required configuration.
+  - Manage operation update of the resource ANC Endpoint Apply.
+  - This API allows the client to apply the required configuration.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -28,15 +27,11 @@ options:
         type: str
     type: list
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    anc_endpoint.AncEndpoint.apply_anc_endpoint,
-
-  - Paths used are
-    put /ers/config/ancendpoint/apply,
-
+  - SDK Method used are anc_endpoint.AncEndpoint.apply_anc_endpoint,
+  - Paths used are put /ers/config/ancendpoint/apply,
 """
 
 EXAMPLES = r"""
@@ -47,13 +42,12 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     additionalData:
-    - name: macAddress
-      value: MAC address
-    - name: ipAddress
-      value: IP address
-    - name: policyName
-      value: Policy Name
-
+      - name: macAddress
+        value: MAC address
+      - name: ipAddress
+        value: IP address
+      - name: policyName
+        value: Policy Name
 """
 
 RETURN = r"""

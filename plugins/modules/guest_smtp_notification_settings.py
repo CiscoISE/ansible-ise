@@ -5,13 +5,12 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: guest_smtp_notification_settings
 short_description: Resource module for Guest SMTP Notification Settings
 description:
-- Manage operations create and update of the resource Guest SMTP Notification Settings.
-- This API creates a guest SMTP notification configuration.
-- This API allows the client to update a SMTP configuration setting.
+  - Manage operations create and update of the resource Guest SMTP Notification Settings.
+  - This API creates a guest SMTP notification configuration.
+  - This API allows the client to update a SMTP configuration setting.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -39,32 +38,23 @@ options:
     description: The SMTP server ip address or fqdn such as outbound.mycompany.com.
     type: str
   useDefaultFromAddress:
-    description: If the default from address should be used rather than using a sponsor
-      user email address.
+    description: If the default from address should be used rather than using a sponsor user email address.
     type: bool
   usePasswordAuthentication:
-    description: If configured to true, SMTP server authentication will happen using
-      username/password.
+    description: If configured to true, SMTP server authentication will happen using username/password.
     type: bool
   useTLSorSSLEncryption:
-    description: If configured to true, SMTP server authentication will happen using
-      TLS/SSL.
+    description: If configured to true, SMTP server authentication will happen using TLS/SSL.
     type: bool
   userName:
     description: Username of Secure SMTP server.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    guest_smtp_notification_configuration.GuestSmtpNotificationConfiguration.create_guest_smtp_notification_settings,
-    guest_smtp_notification_configuration.GuestSmtpNotificationConfiguration.update_guest_smtp_notification_settings_by_id,
-
-  - Paths used are
-    post /ers/config/guestsmtpnotificationsettings,
-    put /ers/config/guestsmtpnotificationsettings/{id},
-
+  - SDK Method used are guest_smtp_notification_configuration.GuestSmtpNotificationConfiguration.create_guest_smtp_notification_settings, guest_smtp_notification_configuration.GuestSmtpNotificationConfiguration.update_guest_smtp_notification_settings_by_id,
+  - Paths used are post /ers/config/guestsmtpnotificationsettings, put /ers/config/guestsmtpnotificationsettings/{id},
 """
 
 EXAMPLES = r"""
@@ -86,7 +76,6 @@ EXAMPLES = r"""
     usePasswordAuthentication: true
     useTLSorSSLEncryption: true
     userName: string
-
 - name: Create
   cisco.ise.guest_smtp_notification_settings:
     ise_hostname: "{{ise_hostname}}"
@@ -104,7 +93,6 @@ EXAMPLES = r"""
     usePasswordAuthentication: true
     useTLSorSSLEncryption: true
     userName: string
-
 """
 
 RETURN = r"""
@@ -131,7 +119,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

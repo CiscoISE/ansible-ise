@@ -5,11 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: endpoints_task
 short_description: Resource module for Endpoints Task
 description:
-- Manage operation create of the resource Endpoints Task.
+  - Manage operation create of the resource Endpoints Task.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -82,15 +81,11 @@ options:
     description: Endpoints Task's vendor.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    endpoints.Endpoints.create_end_point_task,
-
-  - Paths used are
-    post /api/v1/endpointTask,
-
+  - SDK Method used are endpoints.Endpoints.create_end_point_task,
+  - Paths used are post /api/v1/endpointTask,
 """
 
 EXAMPLES = r"""
@@ -122,7 +117,6 @@ EXAMPLES = r"""
     staticGroupAssignment: true
     staticProfileAssignment: true
     vendor: string
-
 """
 
 RETURN = r"""

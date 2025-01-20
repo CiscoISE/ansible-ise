@@ -5,14 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: network_access_dictionary
 short_description: Resource module for Network Access Dictionary
 description:
-- Manage operations create, update and delete of the resource Network Access Dictionary.
-- Network Access - Create a new Dictionary.
-- Network Access - Delete a Dictionary.
-- Network Access - Update a Dictionary.
+  - Manage operations create, update and delete of the resource Network Access Dictionary.
+  - Network Access - Create a new Dictionary.
+  - Network Access - Delete a Dictionary.
+  - Network Access - Update a Dictionary.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -47,23 +46,15 @@ options:
     description: The dictionary version.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for Network Access - Dictionary
-  description: Complete reference of the Network Access - Dictionary API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
+  - name: Cisco ISE documentation for Network Access - Dictionary
+    description: Complete reference of the Network Access - Dictionary API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are
-    network_access_dictionary.NetworkAccessDictionary.create_network_access_dictionaries,
-    network_access_dictionary.NetworkAccessDictionary.delete_network_access_dictionary_by_name,
-    network_access_dictionary.NetworkAccessDictionary.update_network_access_dictionary_by_name,
-
-  - Paths used are
-    post /network-access/dictionaries,
-    delete /network-access/dictionaries/{name},
-    put /network-access/dictionaries/{name},
-
+  - SDK Method used are network_access_dictionary.NetworkAccessDictionary.create_network_access_dictionaries, network_access_dictionary.NetworkAccessDictionary.delete_network_access_dictionary_by_name, network_access_dictionary.NetworkAccessDictionary.update_network_access_dictionary_by_name,
+  - Paths used are post /network-access/dictionaries, delete /network-access/dictionaries/{name}, put /network-access/dictionaries/{name},
 """
 
 EXAMPLES = r"""
@@ -83,7 +74,6 @@ EXAMPLES = r"""
       type: string
     name: string
     version: string
-
 - name: Update by name
   cisco.ise.network_access_dictionary:
     ise_hostname: "{{ise_hostname}}"
@@ -100,7 +90,6 @@ EXAMPLES = r"""
       type: string
     name: string
     version: string
-
 - name: Delete by name
   cisco.ise.network_access_dictionary:
     ise_hostname: "{{ise_hostname}}"
@@ -109,7 +98,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     name: string
-
 """
 
 RETURN = r"""
@@ -130,7 +118,6 @@ ise_response:
       "name": "string",
       "version": "string"
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

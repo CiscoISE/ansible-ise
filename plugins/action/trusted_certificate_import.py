@@ -26,19 +26,21 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
 # Get common arguements specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
-argument_spec.update(dict(
-    allowBasicConstraintCAFalse=dict(type="bool"),
-    allowOutOfDateCert=dict(type="bool"),
-    allowSHA1Certificates=dict(type="bool"),
-    data=dict(type="str"),
-    description=dict(type="str"),
-    name=dict(type="str"),
-    trustForCertificateBasedAdminAuth=dict(type="bool"),
-    trustForCiscoServicesAuth=dict(type="bool"),
-    trustForClientAuth=dict(type="bool"),
-    trustForIseAuth=dict(type="bool"),
-    validateCertificateExtensions=dict(type="bool"),
-))
+argument_spec.update(
+    dict(
+        allowBasicConstraintCAFalse=dict(type="bool"),
+        allowOutOfDateCert=dict(type="bool"),
+        allowSHA1Certificates=dict(type="bool"),
+        data=dict(type="str"),
+        description=dict(type="str"),
+        name=dict(type="str"),
+        trustForCertificateBasedAdminAuth=dict(type="bool"),
+        trustForCiscoServicesAuth=dict(type="bool"),
+        trustForClientAuth=dict(type="bool"),
+        trustForIseAuth=dict(type="bool"),
+        validateCertificateExtensions=dict(type="bool"),
+    )
+)
 
 required_if = []
 required_one_of = []
@@ -49,7 +51,9 @@ required_together = []
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
+            raise AnsibleActionFail(
+                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
+            )
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = False
@@ -81,7 +85,9 @@ class ActionModule(ActionBase):
             data=params.get("data"),
             description=params.get("description"),
             name=params.get("name"),
-            trust_for_certificate_based_admin_auth=params.get("trustForCertificateBasedAdminAuth"),
+            trust_for_certificate_based_admin_auth=params.get(
+                "trustForCertificateBasedAdminAuth"
+            ),
             trust_for_cisco_services_auth=params.get("trustForCiscoServicesAuth"),
             trust_for_client_auth=params.get("trustForClientAuth"),
             trust_for_ise_auth=params.get("trustForIseAuth"),

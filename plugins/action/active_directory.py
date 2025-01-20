@@ -28,18 +28,20 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
 # Get common arguments specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
-argument_spec.update(dict(
-    state=dict(type="str", default="present", choices=["present", "absent"]),
-    id=dict(type="str"),
-    name=dict(type="str"),
-    description=dict(type="str"),
-    domain=dict(type="str"),
-    enableDomainWhiteList=dict(type="bool"),
-    adgroups=dict(type="dict"),
-    advancedSettings=dict(type="dict"),
-    adAttributes=dict(type="dict"),
-    adScopesNames=dict(type="str"),
-))
+argument_spec.update(
+    dict(
+        state=dict(type="str", default="present", choices=["present", "absent"]),
+        id=dict(type="str"),
+        name=dict(type="str"),
+        description=dict(type="str"),
+        domain=dict(type="str"),
+        enableDomainWhiteList=dict(type="bool"),
+        adgroups=dict(type="dict"),
+        advancedSettings=dict(type="dict"),
+        adAttributes=dict(type="dict"),
+        adScopesNames=dict(type="str"),
+    )
+)
 
 required_if = [
     ("state", "present", ["id", "name"], True),
@@ -72,8 +74,8 @@ class ActiveDirectory(object):
                 function="get_active_directory_by_name",
                 params={"name": name},
                 handle_func_exception=False,
-            ).response['ERSActiveDirectory']
-            result = get_dict_result(result, 'name', name)
+            ).response["ERSActiveDirectory"]
+            result = get_dict_result(result, "name", name)
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(
                 msg=(
@@ -95,7 +97,7 @@ class ActiveDirectory(object):
                 function="get_active_directory_by_id",
                 params={"id": id},
                 handle_func_exception=False,
-            ).response['ERSActiveDirectory']
+            ).response["ERSActiveDirectory"]
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(
                 msg=(
@@ -139,9 +141,12 @@ class ActiveDirectory(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not ise_compare_equality(current_obj.get(ise_param),
-                                            requested_obj.get(ansible_param))
-                   for (ise_param, ansible_param) in obj_params)
+        return any(
+            not ise_compare_equality(
+                current_obj.get(ise_param), requested_obj.get(ansible_param)
+            )
+            for (ise_param, ansible_param) in obj_params
+        )
 
     def create(self):
         result = self.ise.exec(
@@ -161,7 +166,7 @@ class ActiveDirectory(object):
         result = self.ise.exec(
             family="active_directory",
             function="delete_active_directory_by_id",
-            params=self.new_object
+            params=self.new_object,
         ).response
         return result
 
@@ -169,7 +174,9 @@ class ActiveDirectory(object):
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
+            raise AnsibleActionFail(
+                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
+            )
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = False

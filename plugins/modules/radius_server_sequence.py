@@ -5,22 +5,20 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: radius_server_sequence
 short_description: Resource module for RADIUS Server Sequence
 description:
-- Manage operations create, update and delete of the resource RADIUS Server Sequence.
-- This API creates a RADIUS server sequence.
-- This API deletes a RADIUS server sequence.
-- This API allows the client to update a RADIUS server sequence.
+  - Manage operations create, update and delete of the resource RADIUS Server Sequence.
+  - This API creates a RADIUS server sequence.
+  - This API deletes a RADIUS server sequence.
+  - This API allows the client to update a RADIUS server sequence.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   BeforeAcceptAttrManipulatorsList:
-    description: The beforeAcceptAttrManipulators is required only if useAttrSetBeforeAcc
-      is true.
+    description: The beforeAcceptAttrManipulators is required only if useAttrSetBeforeAcc is true.
     elements: dict
     suboptions:
       action:
@@ -40,8 +38,7 @@ options:
         type: str
     type: list
   OnRequestAttrManipulatorList:
-    description: The onRequestAttrManipulators is required only if useAttrSetOnRequest
-      is true.
+    description: The onRequestAttrManipulators is required only if useAttrSetOnRequest is true.
     elements: dict
     suboptions:
       action:
@@ -80,8 +77,7 @@ options:
     description: RADIUS Server Sequence's name.
     type: str
   prefixSeparator:
-    description: The prefixSeparator is required only if stripPrefix is true. The maximum
-      length is 1 character.
+    description: The prefixSeparator is required only if stripPrefix is true. The maximum length is 1 character.
     type: str
   remoteAccounting:
     description: RemoteAccounting flag.
@@ -93,8 +89,7 @@ options:
     description: StripSuffix flag.
     type: bool
   suffixSeparator:
-    description: The suffixSeparator is required only if stripSuffix is true. The maximum
-      length is 1 character.
+    description: The suffixSeparator is required only if stripSuffix is true. The maximum length is 1 character.
     type: str
   useAttrSetBeforeAcc:
     description: UseAttrSetBeforeAcc flag.
@@ -103,19 +98,11 @@ options:
     description: UseAttrSetOnRequest flag.
     type: bool
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    radius_server_sequence.RadiusServerSequence.create_radius_server_sequence,
-    radius_server_sequence.RadiusServerSequence.delete_radius_server_sequence_by_id,
-    radius_server_sequence.RadiusServerSequence.update_radius_server_sequence_by_id,
-
-  - Paths used are
-    post /ers/config/radiusserversequence,
-    delete /ers/config/radiusserversequence/{id},
-    put /ers/config/radiusserversequence/{id},
-
+  - SDK Method used are radius_server_sequence.RadiusServerSequence.create_radius_server_sequence, radius_server_sequence.RadiusServerSequence.delete_radius_server_sequence_by_id, radius_server_sequence.RadiusServerSequence.update_radius_server_sequence_by_id,
+  - Paths used are post /ers/config/radiusserversequence, delete /ers/config/radiusserversequence/{id}, put /ers/config/radiusserversequence/{id},
 """
 
 EXAMPLES = r"""
@@ -127,19 +114,19 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     BeforeAcceptAttrManipulatorsList:
-    - action: string
-      attributeName: string
-      changedVal: string
-      dictionaryName: string
-      value: string
+      - action: string
+        attributeName: string
+        changedVal: string
+        dictionaryName: string
+        value: string
     OnRequestAttrManipulatorList:
-    - action: string
-      attributeName: string
-      changedVal: string
-      dictionaryName: string
-      value: string
+      - action: string
+        attributeName: string
+        changedVal: string
+        dictionaryName: string
+        value: string
     RadiusServerList:
-    - string
+      - string
     continueAuthorzPolicy: true
     description: string
     id: string
@@ -152,7 +139,6 @@ EXAMPLES = r"""
     suffixSeparator: string
     useAttrSetBeforeAcc: true
     useAttrSetOnRequest: true
-
 - name: Delete by id
   cisco.ise.radius_server_sequence:
     ise_hostname: "{{ise_hostname}}"
@@ -161,7 +147,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-
 - name: Create
   cisco.ise.radius_server_sequence:
     ise_hostname: "{{ise_hostname}}"
@@ -170,19 +155,19 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     BeforeAcceptAttrManipulatorsList:
-    - action: string
-      attributeName: string
-      changedVal: string
-      dictionaryName: string
-      value: string
+      - action: string
+        attributeName: string
+        changedVal: string
+        dictionaryName: string
+        value: string
     OnRequestAttrManipulatorList:
-    - action: string
-      attributeName: string
-      changedVal: string
-      dictionaryName: string
-      value: string
+      - action: string
+        attributeName: string
+        changedVal: string
+        dictionaryName: string
+        value: string
     RadiusServerList:
-    - string
+      - string
     continueAuthorzPolicy: true
     description: string
     localAccounting: true
@@ -194,7 +179,6 @@ EXAMPLES = r"""
     suffixSeparator: string
     useAttrSetBeforeAcc: true
     useAttrSetOnRequest: true
-
 """
 
 RETURN = r"""
@@ -243,7 +227,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

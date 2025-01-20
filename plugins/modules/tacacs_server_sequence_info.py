@@ -5,16 +5,15 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: tacacs_server_sequence_info
 short_description: Information module for TACACS Server Sequence
 description:
-- Get all TACACS Server Sequence.
-- Get TACACS Server Sequence by id.
-- Get TACACS Server Sequence by name.
-- This API allows the client to get a TACACS server sequence by ID.
-- This API allows the client to get a TACACS server sequence by name.
-- This API allows the client to get all the TACACS server sequences.
+  - Get all TACACS Server Sequence.
+  - Get TACACS Server Sequence by id.
+  - Get TACACS Server Sequence by name.
+  - This API allows the client to get a TACACS server sequence by ID.
+  - This API allows the client to get a TACACS server sequence by name.
+  - This API allows the client to get all the TACACS server sequences.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -22,34 +21,26 @@ author: Rafael Campos (@racampos)
 options:
   name:
     description:
-    - Name path parameter.
+      - Name path parameter.
     type: str
   id:
     description:
-    - Id path parameter.
+      - Id path parameter.
     type: str
   page:
     description:
-    - Page query parameter. Page number.
+      - Page query parameter. Page number.
     type: int
   size:
     description:
-    - Size query parameter. Number of objects returned per page.
+      - Size query parameter. Number of objects returned per page.
     type: int
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    tacacs_server_sequence.TacacsServerSequence.get_tacacs_server_sequence_by_id,
-    tacacs_server_sequence.TacacsServerSequence.get_tacacs_server_sequence_by_name,
-    tacacs_server_sequence.TacacsServerSequence.get_tacacs_server_sequence_generator,
-
-  - Paths used are
-    get /ers/config/tacacsserversequence,
-    get /ers/config/tacacsserversequence/name/{name},
-    get /ers/config/tacacsserversequence/{id},
-
+  - SDK Method used are tacacs_server_sequence.TacacsServerSequence.get_tacacs_server_sequence_by_id, tacacs_server_sequence.TacacsServerSequence.get_tacacs_server_sequence_by_name, tacacs_server_sequence.TacacsServerSequence.get_tacacs_server_sequence_generator,
+  - Paths used are get /ers/config/tacacsserversequence, get /ers/config/tacacsserversequence/name/{name}, get /ers/config/tacacsserversequence/{id},
 """
 
 EXAMPLES = r"""
@@ -62,7 +53,6 @@ EXAMPLES = r"""
     page: 1
     size: 20
   register: result
-
 - name: Get TACACS Server Sequence by id
   cisco.ise.tacacs_server_sequence_info:
     ise_hostname: "{{ise_hostname}}"
@@ -71,7 +61,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     id: string
   register: result
-
 - name: Get TACACS Server Sequence by name
   cisco.ise.tacacs_server_sequence_info:
     ise_hostname: "{{ise_hostname}}"
@@ -80,7 +69,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     name: string
   register: result
-
 """
 
 RETURN = r"""
@@ -106,7 +94,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_responses:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

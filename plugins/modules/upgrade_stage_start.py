@@ -5,12 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: upgrade_stage_start
 short_description: Resource module for Upgrade Stage Start
 description:
-- Manage operation create of the resource Upgrade Stage Start.
-- API to initiate staging orcheastration from PPAN.
+  - Manage operation create of the resource Upgrade Stage Start.
+  - API to initiate staging orcheastration from PPAN.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -30,15 +29,11 @@ options:
     description: Upgrade Stage Start's upgradeType.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    fullupgrade.Fullupgrade.initiate_staging_on_p_p_a_n,
-
-  - Paths used are
-    post /api/v1/upgrade/stage/start-stage,
-
+  - SDK Method used are fullupgrade.Fullupgrade.initiate_staging_on_p_p_a_n,
+  - Paths used are post /api/v1/upgrade/stage/start-stage,
 """
 
 EXAMPLES = r"""
@@ -50,11 +45,10 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     hostnames:
-    - string
+      - string
     preCheckReportID: string
     reTrigger: true
     upgradeType: string
-
 """
 
 RETURN = r"""

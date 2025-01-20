@@ -5,12 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: active_directory_join_domain_with_all_nodes
 short_description: Resource module for Active Directory Join Domain With All Nodes
 description:
-- Manage operation update of the resource Active Directory Join Domain With All Nodes.
-- This API joins all Cisco ISE Nodes to an Active Directory domain.
+  - Manage operation update of the resource Active Directory Join Domain With All Nodes.
+  - This API joins all Cisco ISE Nodes to an Active Directory domain.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -31,15 +30,11 @@ options:
     description: Id path parameter.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    active_directory.ActiveDirectory.join_domain_with_all_nodes,
-
-  - Paths used are
-    put /ers/config/activedirectory/{id}/joinAllNodes,
-
+  - SDK Method used are active_directory.ActiveDirectory.join_domain_with_all_nodes,
+  - Paths used are put /ers/config/activedirectory/{id}/joinAllNodes,
 """
 
 EXAMPLES = r"""
@@ -50,12 +45,11 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     additionalData:
-    - name: username
-      value: Required. The domain user to use
-    - name: password
-      value: Required. The domain user's password
+      - name: username
+        value: Required. The domain user to use
+      - name: password
+        value: Required. The domain user's password
     id: string
-
 """
 
 RETURN = r"""

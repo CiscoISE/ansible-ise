@@ -28,14 +28,16 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
 # Get common arguments specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
-argument_spec.update(dict(
-    state=dict(type="str", default="present", choices=["present", "absent"]),
-    name=dict(type="str"),
-    description=dict(type="str"),
-    ersRestIDStoreAttributes=dict(type="dict"),
-    ersRestIDStoreUserAttributes=dict(type="dict"),
-    id=dict(type="str"),
-))
+argument_spec.update(
+    dict(
+        state=dict(type="str", default="present", choices=["present", "absent"]),
+        name=dict(type="str"),
+        description=dict(type="str"),
+        ersRestIDStoreAttributes=dict(type="dict"),
+        ersRestIDStoreUserAttributes=dict(type="dict"),
+        id=dict(type="str"),
+    )
+)
 
 required_if = [
     ("state", "present", ["id", "name"], True),
@@ -64,8 +66,8 @@ class RestIdStore(object):
                 function="get_rest_id_store_by_name",
                 params={"name": name},
                 handle_func_exception=False,
-            ).response['ERSRestIDStore']
-            result = get_dict_result(result, 'name', name)
+            ).response["ERSRestIDStore"]
+            result = get_dict_result(result, "name", name)
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(
                 msg=(
@@ -86,8 +88,8 @@ class RestIdStore(object):
                 family="restid_store",
                 function="get_rest_id_store_by_id",
                 handle_func_exception=False,
-                params={"id": id}
-            ).response['ERSRestIDStore']
+                params={"id": id},
+            ).response["ERSRestIDStore"]
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(
                 msg=(
@@ -127,9 +129,12 @@ class RestIdStore(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not ise_compare_equality(current_obj.get(ise_param),
-                                            requested_obj.get(ansible_param))
-                   for (ise_param, ansible_param) in obj_params)
+        return any(
+            not ise_compare_equality(
+                current_obj.get(ise_param), requested_obj.get(ansible_param)
+            )
+            for (ise_param, ansible_param) in obj_params
+        )
 
     def create(self):
         print(self.new_object)
@@ -148,13 +153,13 @@ class RestIdStore(object):
             result = self.ise.exec(
                 family="restid_store",
                 function="update_rest_id_store_by_id",
-                params=self.new_object
+                params=self.new_object,
             ).response
         elif name:
             result = self.ise.exec(
                 family="restid_store",
                 function="update_rest_id_store_by_name",
-                params=self.new_object
+                params=self.new_object,
             ).response
         return result
 
@@ -166,13 +171,13 @@ class RestIdStore(object):
             result = self.ise.exec(
                 family="restid_store",
                 function="delete_rest_id_store_by_id",
-                params=self.new_object
+                params=self.new_object,
             ).response
         elif name:
             result = self.ise.exec(
                 family="restid_store",
                 function="delete_rest_id_store_by_name",
-                params=self.new_object
+                params=self.new_object,
             ).response
         return result
 
@@ -180,7 +185,9 @@ class RestIdStore(object):
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
+            raise AnsibleActionFail(
+                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
+            )
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = False
@@ -227,10 +234,15 @@ class ActionModule(ActionBase):
                     response = updated_obj
                     ise.object_updated()
                     has_changed = None
-                    has_changed = ise_update_response.get("UpdatedFieldsList").get("updatedField")
-                    if (len(has_changed) == 0 or
-                       has_changed[0].get("newValue") == "" and
-                       has_changed[0].get("newValue") == has_changed[0].get("oldValue")):
+                    has_changed = ise_update_response.get("UpdatedFieldsList").get(
+                        "updatedField"
+                    )
+                    if (
+                        len(has_changed) == 0
+                        or has_changed[0].get("newValue") == ""
+                        and has_changed[0].get("newValue")
+                        == has_changed[0].get("oldValue")
+                    ):
                         self._result.pop("ise_update_response", None)
                         ise.object_already_present()
                     else:

@@ -5,12 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: support_bundle_download
 short_description: Resource module for Support Bundle Download
 description:
-- Manage operation update of the resource Support Bundle Download.
-- This API allows the client to upload a support bundle.
+  - Manage operation update of the resource Support Bundle Download.
+  - This API allows the client to upload a support bundle.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -26,15 +25,11 @@ options:
     description: Enable or disable automatic file creation of raw response.
     type: bool
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    support_bundle_download.SupportBundleDownload.download_support_bundle,
-
-  - Paths used are
-    put /ers/config/supportbundledownload,
-
+  - SDK Method used are support_bundle_download.SupportBundleDownload.download_support_bundle,
+  - Paths used are put /ers/config/supportbundledownload,
 """
 
 EXAMPLES = r"""
@@ -47,7 +42,6 @@ EXAMPLES = r"""
     dirPath: /tmp/downloads/
     fileName: download_filename.extension
     saveFile: true
-
 """
 
 RETURN = r"""

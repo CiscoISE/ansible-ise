@@ -5,12 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: upgrade_stage_cancel
 short_description: Resource module for Upgrade Stage Cancel
 description:
-- Manage operation create of the resource Upgrade Stage Cancel.
-- API to cancel staging process of specified nodes from PPAN.
+  - Manage operation create of the resource Upgrade Stage Cancel.
+  - API to cancel staging process of specified nodes from PPAN.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -27,15 +26,11 @@ options:
     description: Upgrade Stage Cancel's upgradeType.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    fullupgrade.Fullupgrade.cancel_staging_on_p_p_a_n,
-
-  - Paths used are
-    post /api/v1/upgrade/stage/cancel-stage,
-
+  - SDK Method used are fullupgrade.Fullupgrade.cancel_staging_on_p_p_a_n,
+  - Paths used are post /api/v1/upgrade/stage/cancel-stage,
 """
 
 EXAMPLES = r"""
@@ -47,10 +42,9 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     hostnames:
-    - string
+      - string
     preCheckReportID: string
     upgradeType: string
-
 """
 
 RETURN = r"""

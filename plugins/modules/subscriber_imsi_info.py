@@ -5,11 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: subscriber_imsi_info
 short_description: Information module for Subscriber Imsi Info
 description:
-- Get Subscriber Imsi Info by id.
+  - Get Subscriber Imsi Info by id.
 version_added: '2.8.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -17,18 +16,14 @@ author: Rafael Campos (@racampos)
 options:
   imsi:
     description:
-    - Imsi path parameter. IMSI parameter.
+      - Imsi path parameter. IMSI parameter.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    subscriber.Subscriber.get_subscriber_by_i_m_s_i,
-
-  - Paths used are
-    get /api/v1/fiveg/subscriber/imsi/{imsi},
-
+  - SDK Method used are subscriber.Subscriber.get_subscriber_by_i_m_s_i,
+  - Paths used are get /api/v1/fiveg/subscriber/imsi/{imsi},
 """
 
 EXAMPLES = r"""
@@ -40,7 +35,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     imsi: string
   register: result
-
 """
 
 RETURN = r"""

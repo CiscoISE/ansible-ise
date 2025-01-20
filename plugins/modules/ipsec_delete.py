@@ -5,12 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: ipsec_delete
 short_description: Resource module for Ipsec Delete
 description:
-- Manage operation delete of the resource Ipsec Delete.
-- Removes an enabled IPsec node connection.
+  - Manage operation delete of the resource Ipsec Delete.
+  - Removes an enabled IPsec node connection.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -23,15 +22,11 @@ options:
     description: NadIp path parameter. IP address of the NAD.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    native_ipsec.NativeIpsec.remove_ipsec_connection,
-
-  - Paths used are
-    delete /api/v1/ipsec/{hostName}/{nadIp},
-
+  - SDK Method used are native_ipsec.NativeIpsec.remove_ipsec_connection,
+  - Paths used are delete /api/v1/ipsec/{hostName}/{nadIp},
 """
 
 EXAMPLES = r"""
@@ -44,7 +39,6 @@ EXAMPLES = r"""
     state: absent
     hostName: string
     nadIp: string
-
 """
 
 RETURN = r"""

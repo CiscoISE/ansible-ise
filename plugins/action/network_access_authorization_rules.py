@@ -30,15 +30,17 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.exceptions import (
 # Get common arguments specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
-argument_spec.update(dict(
-    state=dict(type="str", default="present", choices=["present", "absent"]),
-    link=dict(type="dict"),
-    profile=dict(type="list"),
-    rule=dict(type="dict"),
-    securityGroup=dict(type="str"),
-    policyId=dict(type="str"),
-    id=dict(type="str"),
-))
+argument_spec.update(
+    dict(
+        state=dict(type="str", default="present", choices=["present", "absent"]),
+        link=dict(type="dict"),
+        profile=dict(type="list"),
+        rule=dict(type="dict"),
+        securityGroup=dict(type="str"),
+        policyId=dict(type="str"),
+        id=dict(type="str"),
+    )
+)
 
 required_if = [
     ("state", "present", ["id", "rule"], True),
@@ -66,13 +68,20 @@ class NetworkAccessAuthorizationRules(object):
     def get_object_by_name(self, name, policy_id):
         # NOTICE: Does not have a get by name method or it is in another action
         result = None
-        items = self.ise.exec(
-            family="network_access_authorization_rules",
-            function="get_network_access_authorization_rules",
-            params={"policy_id": policy_id}
-        ).response.get('response', []) or []
+        items = (
+            self.ise.exec(
+                family="network_access_authorization_rules",
+                function="get_network_access_authorization_rules",
+                params={"policy_id": policy_id},
+            ).response.get("response", [])
+            or []
+        )
         for item in items:
-            if item.get('rule') and item['rule'].get('name') == name and item['rule'].get('id'):
+            if (
+                item.get("rule")
+                and item["rule"].get("name") == name
+                and item["rule"].get("id")
+            ):
                 result = dict(item)
                 return result
         return result
@@ -83,8 +92,8 @@ class NetworkAccessAuthorizationRules(object):
                 family="network_access_authorization_rules",
                 function="get_network_access_authorization_rule_by_id",
                 handle_func_exception=False,
-                params={"id": id, "policy_id": policy_id}
-            ).response['response']
+                params={"id": id, "policy_id": policy_id},
+            ).response["response"]
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(
                 msg=(
@@ -106,9 +115,9 @@ class NetworkAccessAuthorizationRules(object):
         name = False
         o_id = self.new_object.get("id")
         policy_id = self.new_object.get("policy_id")
-        if self.new_object.get('rule', {}) is not None:
-            name = self.new_object.get('rule', {}).get("name")
-            o_id = o_id or self.new_object.get('rule', {}).get("id")
+        if self.new_object.get("rule", {}) is not None:
+            name = self.new_object.get("rule", {}).get("name")
+            o_id = o_id or self.new_object.get("rule", {}).get("id")
         if o_id:
             prev_obj = self.get_object_by_id(o_id, policy_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
@@ -116,9 +125,11 @@ class NetworkAccessAuthorizationRules(object):
             prev_obj = self.get_object_by_name(name, policy_id)
             name_exists = prev_obj is not None and isinstance(prev_obj, dict)
         if name_exists:
-            _id = prev_obj.get('rule', {}).get("id")
+            _id = prev_obj.get("rule", {}).get("id")
             if id_exists and name_exists and o_id != _id:
-                raise InconsistentParameters("The 'id' and 'name' params don't refer to the same object")
+                raise InconsistentParameters(
+                    "The 'id' and 'name' params don't refer to the same object"
+                )
             if _id:
                 prev_obj = self.get_object_by_id(_id, policy_id)
         it_exists = prev_obj is not None and isinstance(prev_obj, dict)
@@ -137,10 +148,14 @@ class NetworkAccessAuthorizationRules(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not ise_compare_equality2(current_obj.get(ise_param),
-                                             requested_obj.get(ansible_param),
-                                             is_query_param)
-                   for (ise_param, ansible_param, is_query_param) in obj_params)
+        return any(
+            not ise_compare_equality2(
+                current_obj.get(ise_param),
+                requested_obj.get(ansible_param),
+                is_query_param,
+            )
+            for (ise_param, ansible_param, is_query_param) in obj_params
+        )
 
     def create(self):
         result = self.ise.exec(
@@ -153,40 +168,40 @@ class NetworkAccessAuthorizationRules(object):
     def update(self):
         id = self.new_object.get("id")
         name = False
-        if self.new_object.get('rule', {}) is not None:
-            name = self.new_object.get('rule', {}).get("name")
-            id = id or self.new_object.get('rule', {}).get("id")
+        if self.new_object.get("rule", {}) is not None:
+            name = self.new_object.get("rule", {}).get("name")
+            id = id or self.new_object.get("rule", {}).get("id")
         policy_id = self.new_object.get("policy_id")
         result = None
         if not id:
-            id_ = self.get_object_by_name(name, policy_id).get('rule', {}).get("id")
-            rule = self.new_object.get('rule', {})
+            id_ = self.get_object_by_name(name, policy_id).get("rule", {}).get("id")
+            rule = self.new_object.get("rule", {})
             rule.update(dict(id=id_))
             self.new_object.update(dict(rule=rule, id=id_))
         result = self.ise.exec(
             family="network_access_authorization_rules",
             function="update_network_access_authorization_rule_by_id",
-            params=self.new_object
+            params=self.new_object,
         ).response
         return result
 
     def delete(self):
         id = self.new_object.get("id")
         name = False
-        if self.new_object.get('rule', {}) is not None:
-            name = self.new_object.get('rule', {}).get("name")
-            id = id or self.new_object.get('rule', {}).get("id")
+        if self.new_object.get("rule", {}) is not None:
+            name = self.new_object.get("rule", {}).get("name")
+            id = id or self.new_object.get("rule", {}).get("id")
         policy_id = self.new_object.get("policy_id")
         result = None
         if not id:
-            id_ = self.get_object_by_name(name, policy_id).get('rule', {}).get("id")
-            rule = self.new_object.get('rule', {})
+            id_ = self.get_object_by_name(name, policy_id).get("rule", {}).get("id")
+            rule = self.new_object.get("rule", {})
             rule.update(dict(id=id_))
             self.new_object.update(dict(rule=rule, id=id_))
         result = self.ise.exec(
             family="network_access_authorization_rules",
             function="delete_network_access_authorization_rule_by_id",
-            params=self.new_object
+            params=self.new_object,
         ).response
         return result
 
@@ -194,7 +209,9 @@ class NetworkAccessAuthorizationRules(object):
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
+            raise AnsibleActionFail(
+                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
+            )
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = False
@@ -240,7 +257,9 @@ class ActionModule(ActionBase):
                         response = prev_obj
                         ise.object_already_present()
                     else:
-                        self._result.update(dict(ise_update_response=ise_update_response))
+                        self._result.update(
+                            dict(ise_update_response=ise_update_response)
+                        )
                         (obj_exists, updated_obj) = obj.exists()
                         response = updated_obj
                         ise.object_updated()

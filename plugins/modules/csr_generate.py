@@ -5,12 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: csr_generate
 short_description: Resource module for CSR Generate
 description:
-- Manage operation create of the resource CSR Generate.
-- Generate a certificate signing request for Multi-Use, Admin, EAP.
+  - Manage operation create of the resource CSR Generate.
+  - Generate a certificate signing request for Multi-Use, Admin, EAP.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -76,19 +75,15 @@ options:
     description: CSR Generate's usedFor.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for Certificates
-  description: Complete reference of the Certificates API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
+  - name: Cisco ISE documentation for Certificates
+    description: Complete reference of the Certificates API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
 notes:
-  - SDK Method used are
-    certificates.Certificates.generate_csr,
-
-  - Paths used are
-    post /api/v1/certs/certificate-signing-request,
-
+  - SDK Method used are certificates.Certificates.generate_csr,
+  - Paths used are post /api/v1/certs/certificate-signing-request,
 """
 
 EXAMPLES = r"""
@@ -102,18 +97,18 @@ EXAMPLES = r"""
     certificatePolicies: string
     digestType: string
     hostnames:
-    - string
+      - string
     keyLength: string
     keyType: string
     portalGroupTag: string
     sanDNS:
-    - string
+      - string
     sanDir:
-    - string
+      - string
     sanIP:
-    - string
+      - string
     sanURI:
-    - string
+      - string
     subjectCity: string
     subjectCommonName: string
     subjectCountry: string
@@ -121,7 +116,6 @@ EXAMPLES = r"""
     subjectOrgUnit: string
     subjectState: string
     usedFor: string
-
 """
 
 RETURN = r"""

@@ -5,31 +5,26 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: patch_info
 short_description: Information module for Patch
 description:
-- Get all Patch.
-- List all the installed patches in the system, with the patch number for rollback.
+  - Get all Patch.
+  - List all the installed patches in the system, with the patch number for rollback.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for Patching
-  description: Complete reference of the Patching API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!patch-and-hot-patch-openapi
+  - name: Cisco ISE documentation for Patching
+    description: Complete reference of the Patching API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!patch-and-hot-patch-openapi
 notes:
-  - SDK Method used are
-    patching.Patching.list_installed_patches,
-
-  - Paths used are
-    get /api/v1/patch,
-
+  - SDK Method used are patching.Patching.list_installed_patches,
+  - Paths used are get /api/v1/patch,
 """
 
 EXAMPLES = r"""
@@ -40,7 +35,6 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
   register: result
-
 """
 
 RETURN = r"""

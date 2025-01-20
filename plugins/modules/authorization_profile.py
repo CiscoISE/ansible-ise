@@ -5,14 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: authorization_profile
 short_description: Resource module for Authorization Profile
 description:
-- Manage operations create, update and delete of the resource Authorization Profile.
-- This API creates an authorization profile.
-- This API deletes an authorization profile.
-- This API allows the client to update an authorization profile.
+  - Manage operations create, update and delete of the resource Authorization Profile.
+  - This API creates an authorization profile.
+  - This API deletes an authorization profile.
+  - This API allows the client to update an authorization profile.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -45,9 +44,7 @@ options:
             type: str
         type: dict
       rightHandSideAttribueValue:
-        description: Attribute value can be of type AttributeValue or AdvancedDictionaryAttribute.
-          For AttributeValue the value is String, For AdvancedDictionaryAttribute the
-          value is dictionaryName and attributeName properties.
+        description: Attribute value can be of type AttributeValue or AdvancedDictionaryAttribute. For AttributeValue the value is String, For AdvancedDictionaryAttribute the value is dictionaryName and attributeName properties.
         suboptions:
           AdvancedAttributeValueType:
             description: Authorization Profile's AdvancedAttributeValueType.
@@ -76,8 +73,7 @@ options:
     description: Authorization Profile's asaVpn.
     type: str
   authzProfileType:
-    description: Allowed Values - SWITCH, - TRUSTSEC, - TACACS SWITCH is used for Standard
-      Authorization Profiles.
+    description: Allowed Values - SWITCH, - TRUSTSEC, - TACACS SWITCH is used for Standard Authorization Profiles.
     type: str
   autoSmartPort:
     description: Authorization Profile's autoSmartPort.
@@ -154,17 +150,13 @@ options:
     description: Authorization Profile's webRedirection.
     suboptions:
       WebRedirectionType:
-        description: Value MUST be one of the following CentralizedWebAuth, HotSpot,
-          NativeSupplicanProvisioning, ClientProvisioning. The WebRedirectionType must
-          fit the portalName.
+        description: Value MUST be one of the following CentralizedWebAuth, HotSpot, NativeSupplicanProvisioning, ClientProvisioning. The WebRedirectionType must fit the portalName.
         type: str
       acl:
         description: Authorization Profile's acl.
         type: str
       displayCertificatesRenewalMessages:
-        description: The displayCertificatesRenewalMessages is mandatory when 'WebRedirectionType'
-          value is 'CentralizedWebAuth'. For all other 'WebRedirectionType' values the
-          field must be ignored.
+        description: The displayCertificatesRenewalMessages is mandatory when 'WebRedirectionType' value is 'CentralizedWebAuth'. For all other 'WebRedirectionType' values the field must be ignored.
         type: bool
       portalName:
         description: A portal that exist in the DB and fits the WebRedirectionType.
@@ -174,19 +166,11 @@ options:
         type: str
     type: dict
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    authorization_profile.AuthorizationProfile.create_authorization_profile,
-    authorization_profile.AuthorizationProfile.delete_authorization_profile_by_id,
-    authorization_profile.AuthorizationProfile.update_authorization_profile_by_id,
-
-  - Paths used are
-    post /ers/config/authorizationprofile,
-    delete /ers/config/authorizationprofile/{id},
-    put /ers/config/authorizationprofile/{id},
-
+  - SDK Method used are authorization_profile.AuthorizationProfile.create_authorization_profile, authorization_profile.AuthorizationProfile.delete_authorization_profile_by_id, authorization_profile.AuthorizationProfile.update_authorization_profile_by_id,
+  - Paths used are post /ers/config/authorizationprofile, delete /ers/config/authorizationprofile/{id}, put /ers/config/authorizationprofile/{id},
 """
 
 EXAMPLES = r"""
@@ -200,16 +184,16 @@ EXAMPLES = r"""
     accessType: string
     acl: string
     advancedAttributes:
-    - leftHandSideDictionaryAttribue:
-        AdvancedAttributeValueType: string
-        attributeName: string
-        dictionaryName: string
-        value: string
-      rightHandSideAttribueValue:
-        AdvancedAttributeValueType: string
-        attributeName: string
-        dictionaryName: string
-        value: string
+      - leftHandSideDictionaryAttribue:
+          AdvancedAttributeValueType: string
+          attributeName: string
+          dictionaryName: string
+          value: string
+        rightHandSideAttribueValue:
+          AdvancedAttributeValueType: string
+          attributeName: string
+          dictionaryName: string
+          value: string
     agentlessPosture: true
     airespaceACL: string
     airespaceIPv6ACL: string
@@ -244,7 +228,6 @@ EXAMPLES = r"""
       displayCertificatesRenewalMessages: true
       portalName: string
       staticIPHostNameFQDN: string
-
 - name: Delete by id
   cisco.ise.authorization_profile:
     ise_hostname: "{{ise_hostname}}"
@@ -253,7 +236,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-
 - name: Create
   cisco.ise.authorization_profile:
     ise_hostname: "{{ise_hostname}}"
@@ -264,16 +246,16 @@ EXAMPLES = r"""
     accessType: string
     acl: string
     advancedAttributes:
-    - leftHandSideDictionaryAttribue:
-        AdvancedAttributeValueType: string
-        attributeName: string
-        dictionaryName: string
-        value: string
-      rightHandSideAttribueValue:
-        AdvancedAttributeValueType: string
-        attributeName: string
-        dictionaryName: string
-        value: string
+      - leftHandSideDictionaryAttribue:
+          AdvancedAttributeValueType: string
+          attributeName: string
+          dictionaryName: string
+          value: string
+        rightHandSideAttribueValue:
+          AdvancedAttributeValueType: string
+          attributeName: string
+          dictionaryName: string
+          value: string
     agentlessPosture: true
     airespaceACL: string
     airespaceIPv6ACL: string
@@ -308,7 +290,6 @@ EXAMPLES = r"""
       displayCertificatesRenewalMessages: true
       portalName: string
       staticIPHostNameFQDN: string
-
 """
 
 RETURN = r"""
@@ -379,7 +360,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

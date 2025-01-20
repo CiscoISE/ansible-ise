@@ -5,12 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: px_grid_node_delete
 short_description: Resource module for Px Grid Node Delete
 description:
-- Manage operation delete of the resource Px Grid Node Delete.
-- This API deletes a pxGrid node by name.
+  - Manage operation delete of the resource Px Grid Node Delete.
+  - This API deletes a pxGrid node by name.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -20,15 +19,11 @@ options:
     description: Name path parameter.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    px_grid_node.PxGridNode.delete_px_grid_node_by_name,
-
-  - Paths used are
-    delete /ers/config/pxgridnode/name/{name},
-
+  - SDK Method used are px_grid_node.PxGridNode.delete_px_grid_node_by_name,
+  - Paths used are delete /ers/config/pxgridnode/name/{name},
 """
 
 EXAMPLES = r"""
@@ -39,7 +34,6 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     name: string
-
 """
 
 RETURN = r"""

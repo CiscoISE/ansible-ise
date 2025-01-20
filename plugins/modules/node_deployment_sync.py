@@ -5,12 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: node_deployment_sync
 short_description: Resource module for Node Deployment Sync
 description:
-- Manage operation create of the resource Node Deployment Sync.
-- Performing a manual synchronization involves a reload of the target node, but not the primary PAN.
+  - Manage operation create of the resource Node Deployment Sync.
+  - Performing a manual synchronization involves a reload of the target node, but not the primary PAN.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -20,19 +19,15 @@ options:
     description: Hostname path parameter. Hostname of the node.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for Node Deployment
-  description: Complete reference of the Node Deployment API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!deployment-openapi
+  - name: Cisco ISE documentation for Node Deployment
+    description: Complete reference of the Node Deployment API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!deployment-openapi
 notes:
-  - SDK Method used are
-    node_deployment.NodeDeployment.sync_node,
-
-  - Paths used are
-    post /api/v1/deployment/sync-node/{hostname},
-
+  - SDK Method used are node_deployment.NodeDeployment.sync_node,
+  - Paths used are post /api/v1/deployment/sync-node/{hostname},
 """
 
 EXAMPLES = r"""
@@ -43,7 +38,6 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     hostname: string
-
 """
 
 RETURN = r"""

@@ -5,15 +5,12 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: patch_install
 short_description: Resource module for Patch Install
 description:
-- Manage operation create of the resource Patch Install.
-- >
-   Triggers patch installation on the Cisco ISE node. A task ID is returned which can be used to monitor the progress of the patch installation process. As
-   the patch installation triggers the Cisco ISE to restart, the task API becomes unavailable for a certain period of time. For installation of patch on
-   secondary nodes, request needs to be sent to individual node instead of the Primary Administration Node.
+  - Manage operation create of the resource Patch Install.
+  - >
+    Triggers patch installation on the Cisco ISE node. A task ID is returned which can be used to monitor the progress of the patch installation process. As the patch installation triggers the Cisco ISE to restart, the task API becomes unavailable for a certain period of time. For installation of patch on secondary nodes, request needs to be sent to individual node instead of the Primary Administration Node.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -29,19 +26,15 @@ options:
     description: Patch Install's repositoryName.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for Patching
-  description: Complete reference of the Patching API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!patch-and-hot-patch-openapi
+  - name: Cisco ISE documentation for Patching
+    description: Complete reference of the Patching API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!patch-and-hot-patch-openapi
 notes:
-  - SDK Method used are
-    patching.Patching.install_patch,
-
-  - Paths used are
-    post /api/v1/patch/install,
-
+  - SDK Method used are patching.Patching.install_patch,
+  - Paths used are post /api/v1/patch/install,
 """
 
 EXAMPLES = r"""
@@ -54,7 +47,6 @@ EXAMPLES = r"""
     isDirectoryListed: true
     patchName: string
     repositoryName: string
-
 """
 
 RETURN = r"""

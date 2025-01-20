@@ -28,34 +28,36 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
 # Get common arguments specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
-argument_spec.update(dict(
-    state=dict(type="str", default="present", choices=["present", "absent"]),
-    name=dict(type="str"),
-    description=dict(type="str"),
-    eapTls=dict(type="dict"),
-    peap=dict(type="dict"),
-    eapFast=dict(type="dict"),
-    eapTtls=dict(type="dict"),
-    teap=dict(type="dict"),
-    processHostLookup=dict(type="bool"),
-    allowPapAscii=dict(type="bool"),
-    allowChap=dict(type="bool"),
-    allowMsChapV1=dict(type="bool"),
-    allowMsChapV2=dict(type="bool"),
-    allowEapMd5=dict(type="bool"),
-    allowLeap=dict(type="bool"),
-    allowEapTls=dict(type="bool"),
-    allowEapTtls=dict(type="bool"),
-    allowEapFast=dict(type="bool"),
-    allowPeap=dict(type="bool"),
-    allowTeap=dict(type="bool"),
-    allowPreferredEapProtocol=dict(type="bool"),
-    preferredEapProtocol=dict(type="str"),
-    eapTlsLBit=dict(type="bool"),
-    allowWeakCiphersForEap=dict(type="bool"),
-    requireMessageAuth=dict(type="bool"),
-    id=dict(type="str"),
-))
+argument_spec.update(
+    dict(
+        state=dict(type="str", default="present", choices=["present", "absent"]),
+        name=dict(type="str"),
+        description=dict(type="str"),
+        eapTls=dict(type="dict"),
+        peap=dict(type="dict"),
+        eapFast=dict(type="dict"),
+        eapTtls=dict(type="dict"),
+        teap=dict(type="dict"),
+        processHostLookup=dict(type="bool"),
+        allowPapAscii=dict(type="bool"),
+        allowChap=dict(type="bool"),
+        allowMsChapV1=dict(type="bool"),
+        allowMsChapV2=dict(type="bool"),
+        allowEapMd5=dict(type="bool"),
+        allowLeap=dict(type="bool"),
+        allowEapTls=dict(type="bool"),
+        allowEapTtls=dict(type="bool"),
+        allowEapFast=dict(type="bool"),
+        allowPeap=dict(type="bool"),
+        allowTeap=dict(type="bool"),
+        allowPreferredEapProtocol=dict(type="bool"),
+        preferredEapProtocol=dict(type="str"),
+        eapTlsLBit=dict(type="bool"),
+        allowWeakCiphersForEap=dict(type="bool"),
+        requireMessageAuth=dict(type="bool"),
+        id=dict(type="str"),
+    )
+)
 
 required_if = [
     ("state", "present", ["id", "name"], True),
@@ -104,8 +106,8 @@ class AllowedProtocols(object):
                 function="get_allowed_protocol_by_name",
                 params={"name": name},
                 handle_func_exception=False,
-            ).response['AllowedProtocols']
-            result = get_dict_result(result, 'name', name)
+            ).response["AllowedProtocols"]
+            result = get_dict_result(result, "name", name)
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(
                 msg=(
@@ -126,8 +128,8 @@ class AllowedProtocols(object):
                 family="allowed_protocols",
                 function="get_allowed_protocol_by_id",
                 handle_func_exception=False,
-                params={"id": id}
-            ).response['AllowedProtocols']
+                params={"id": id},
+            ).response["AllowedProtocols"]
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(
                 msg=(
@@ -187,9 +189,12 @@ class AllowedProtocols(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not ise_compare_equality(current_obj.get(ise_param),
-                                            requested_obj.get(ansible_param))
-                   for (ise_param, ansible_param) in obj_params)
+        return any(
+            not ise_compare_equality(
+                current_obj.get(ise_param), requested_obj.get(ansible_param)
+            )
+            for (ise_param, ansible_param) in obj_params
+        )
 
     def create(self):
         result = self.ise.exec(
@@ -209,7 +214,7 @@ class AllowedProtocols(object):
         result = self.ise.exec(
             family="allowed_protocols",
             function="update_allowed_protocol_by_id",
-            params=self.new_object
+            params=self.new_object,
         ).response
         return result
 
@@ -223,7 +228,7 @@ class AllowedProtocols(object):
         result = self.ise.exec(
             family="allowed_protocols",
             function="delete_allowed_protocol_by_id",
-            params=self.new_object
+            params=self.new_object,
         ).response
         return result
 
@@ -231,7 +236,9 @@ class AllowedProtocols(object):
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
+            raise AnsibleActionFail(
+                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
+            )
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = False
@@ -277,10 +284,15 @@ class ActionModule(ActionBase):
                     (obj_exists, updated_obj) = obj.exists()
                     response = updated_obj
                     has_changed = None
-                    has_changed = ise_update_response.get("UpdatedFieldsList").get("updatedField")
-                    if (len(has_changed) == 0 or
-                       has_changed[0].get("newValue") == "" and
-                       has_changed[0].get("newValue") == has_changed[0].get("oldValue")):
+                    has_changed = ise_update_response.get("UpdatedFieldsList").get(
+                        "updatedField"
+                    )
+                    if (
+                        len(has_changed) == 0
+                        or has_changed[0].get("newValue") == ""
+                        and has_changed[0].get("newValue")
+                        == has_changed[0].get("oldValue")
+                    ):
                         self._result.pop("ise_update_response", None)
                         ise.object_already_present()
                     else:

@@ -5,12 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: endpoint_register
 short_description: Resource module for Endpoint Register
 description:
-- Manage operation update of the resource Endpoint Register.
-- This API allows the client to register an endpoint.
+  - Manage operation update of the resource Endpoint Register.
+  - This API allows the client to register an endpoint.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -100,15 +99,11 @@ options:
     description: StaticProfileAssignment flag.
     type: bool
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    endpoint.Endpoint.register_endpoint,
-
-  - Paths used are
-    put /ers/config/endpoint/register,
-
+  - SDK Method used are endpoint.Endpoint.register_endpoint,
+  - Paths used are put /ers/config/endpoint/register,
 """
 
 EXAMPLES = r"""
@@ -145,7 +140,6 @@ EXAMPLES = r"""
     profileId: string
     staticGroupAssignment: true
     staticProfileAssignment: true
-
 """
 
 RETURN = r"""

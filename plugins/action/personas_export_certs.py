@@ -75,23 +75,29 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-        primary_node = Node(dict(ip=self._task.args.get("primary_ip"),
-                                 username=self._task.args.get("primary_username"),
-                                 password=self._task.args.get("primary_password"),
-                                 )
-                            )
+        primary_node = Node(
+            dict(
+                ip=self._task.args.get("primary_ip"),
+                username=self._task.args.get("primary_username"),
+                password=self._task.args.get("primary_password"),
+            )
+        )
 
-        this_node = Node(dict(name=self._task.args.get("name"),
-                              ip=self._task.args.get("ip"),
-                              hostname=self._task.args.get("hostname"),
-                              username=self._task.args.get("username"),
-                              password=self._task.args.get("password"),
-                              )
-                         )
+        this_node = Node(
+            dict(
+                name=self._task.args.get("name"),
+                ip=self._task.args.get("ip"),
+                hostname=self._task.args.get("hostname"),
+                username=self._task.args.get("username"),
+                password=self._task.args.get("password"),
+            )
+        )
 
         this_node.import_certificate_into_primary(primary_node)
 
-        response = "The certificate for {hostname} was exported successfully to the primary node".format(hostname=this_node.hostname)
+        response = "The certificate for {hostname} was exported successfully to the primary node".format(
+            hostname=this_node.hostname
+        )
 
         self._result.update(dict(ise_response=response))
         return self._result

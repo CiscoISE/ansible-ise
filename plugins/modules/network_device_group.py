@@ -5,14 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: network_device_group
 short_description: Resource module for Network Device Group
 description:
-- Manage operations create, update and delete of the resource Network Device Group.
-- This API creates a network device group.
-- This API deletes a network device group.
-- This API allows the client to update a network device group.
+  - Manage operations create, update and delete of the resource Network Device Group.
+  - This API creates a network device group.
+  - This API deletes a network device group.
+  - This API allows the client to update a network device group.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -31,19 +30,11 @@ options:
     description: Network Device Group's othername.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    network_device_group.NetworkDeviceGroup.create_network_device_group,
-    network_device_group.NetworkDeviceGroup.delete_network_device_group_by_id,
-    network_device_group.NetworkDeviceGroup.update_network_device_group_by_id,
-
-  - Paths used are
-    post /ers/config/networkdevicegroup,
-    delete /ers/config/networkdevicegroup/{id},
-    put /ers/config/networkdevicegroup/{id},
-
+  - SDK Method used are network_device_group.NetworkDeviceGroup.create_network_device_group, network_device_group.NetworkDeviceGroup.delete_network_device_group_by_id, network_device_group.NetworkDeviceGroup.update_network_device_group_by_id,
+  - Paths used are post /ers/config/networkdevicegroup, delete /ers/config/networkdevicegroup/{id}, put /ers/config/networkdevicegroup/{id},
 """
 
 EXAMPLES = r"""
@@ -58,7 +49,6 @@ EXAMPLES = r"""
     id: string
     name: string
     othername: string
-
 - name: Delete by id
   cisco.ise.network_device_group:
     ise_hostname: "{{ise_hostname}}"
@@ -67,7 +57,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-
 - name: Create
   cisco.ise.network_device_group:
     ise_hostname: "{{ise_hostname}}"
@@ -78,7 +67,6 @@ EXAMPLES = r"""
     description: string
     name: string
     othername: string
-
 """
 
 RETURN = r"""
@@ -98,7 +86,6 @@ ise_response:
       },
       "othername": "string"
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

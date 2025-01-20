@@ -5,12 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: active_directory_trusted_domains_info
 short_description: Information module for Active Directory Trusted Domains
 description:
-- Get all Active Directory Trusted Domains.
-- This API gets the list of domains that are accessible through the given join.
+  - Get all Active Directory Trusted Domains.
+  - This API gets the list of domains that are accessible through the given join.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -18,18 +17,14 @@ author: Rafael Campos (@racampos)
 options:
   id:
     description:
-    - Id path parameter.
+      - Id path parameter.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    active_directory.ActiveDirectory.get_trusted_domains,
-
-  - Paths used are
-    put /ers/config/activedirectory/{id}/getTrustedDomains,
-
+  - SDK Method used are active_directory.ActiveDirectory.get_trusted_domains,
+  - Paths used are put /ers/config/activedirectory/{id}/getTrustedDomains,
 """
 
 EXAMPLES = r"""
@@ -41,7 +36,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     id: string
   register: result
-
 """
 
 RETURN = r"""

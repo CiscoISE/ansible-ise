@@ -31,32 +31,34 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.exceptions import (
 # Get common arguments specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
-argument_spec.update(dict(
-    state=dict(type="str", default="present", choices=["present"]),
-    id=dict(type="str"),
-    enableAci=dict(type="bool"),
-    ipAddressHostName=dict(type="str"),
-    adminName=dict(type="str"),
-    adminPassword=dict(type="str"),
-    aciipaddress=dict(type="str"),
-    aciuserName=dict(type="str"),
-    acipassword=dict(type="str"),
-    tenantName=dict(type="str"),
-    l3RouteNetwork=dict(type="str"),
-    suffixToEpg=dict(type="str"),
-    suffixToSgt=dict(type="str"),
-    allSxpDomain=dict(type="bool"),
-    specificSxpDomain=dict(type="bool"),
-    specifixSxpDomainList=dict(type="list"),
-    enableDataPlane=dict(type="bool"),
-    untaggedPacketIepgName=dict(type="str"),
-    defaultSgtName=dict(type="str"),
-    enableElementsLimit=dict(type="bool"),
-    maxNumIepgFromAci=dict(type="int"),
-    maxNumSgtToAci=dict(type="int"),
-    aci50=dict(type="bool"),
-    aci51=dict(type="bool"),
-))
+argument_spec.update(
+    dict(
+        state=dict(type="str", default="present", choices=["present"]),
+        id=dict(type="str"),
+        enableAci=dict(type="bool"),
+        ipAddressHostName=dict(type="str"),
+        adminName=dict(type="str"),
+        adminPassword=dict(type="str"),
+        aciipaddress=dict(type="str"),
+        aciuserName=dict(type="str"),
+        acipassword=dict(type="str"),
+        tenantName=dict(type="str"),
+        l3RouteNetwork=dict(type="str"),
+        suffixToEpg=dict(type="str"),
+        suffixToSgt=dict(type="str"),
+        allSxpDomain=dict(type="bool"),
+        specificSxpDomain=dict(type="bool"),
+        specifixSxpDomainList=dict(type="list"),
+        enableDataPlane=dict(type="bool"),
+        untaggedPacketIepgName=dict(type="str"),
+        defaultSgtName=dict(type="str"),
+        enableElementsLimit=dict(type="bool"),
+        maxNumIepgFromAci=dict(type="int"),
+        maxNumSgtToAci=dict(type="int"),
+        aci50=dict(type="bool"),
+        aci51=dict(type="bool"),
+    )
+)
 
 required_if = [
     ("state", "present", ["id"], True),
@@ -99,10 +101,9 @@ class AciSettings(object):
         # NOTICE: Does not have a get by name method or it is in another action
         result = None
         items = self.ise.exec(
-            family="aci_settings",
-            function="get_aci_settings"
-        ).response['AciSettings']
-        result = get_dict_result(items, 'name', name)
+            family="aci_settings", function="get_aci_settings"
+        ).response["AciSettings"]
+        result = get_dict_result(items, "name", name)
         return result
 
     def get_object_by_id(self, id):
@@ -112,7 +113,7 @@ class AciSettings(object):
                 family="aci_settings",
                 function="get_aci_settings",
                 handle_func_exception=False,
-            ).response['AciSettings']
+            ).response["AciSettings"]
             # result = get_dict_result(result, 'id', id)
         except Exception as e:
             result = None
@@ -133,7 +134,9 @@ class AciSettings(object):
         if name_exists:
             _id = prev_obj.get("id")
             if id_exists and name_exists and o_id != _id:
-                raise InconsistentParameters("The 'id' and 'name' params don't refer to the same object")
+                raise InconsistentParameters(
+                    "The 'id' and 'name' params don't refer to the same object"
+                )
         it_exists = prev_obj is not None and isinstance(prev_obj, dict)
         return (it_exists, prev_obj)
 
@@ -167,9 +170,12 @@ class AciSettings(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not ise_compare_equality(current_obj.get(ise_param),
-                                            requested_obj.get(ansible_param))
-                   for (ise_param, ansible_param) in obj_params)
+        return any(
+            not ise_compare_equality(
+                current_obj.get(ise_param), requested_obj.get(ansible_param)
+            )
+            for (ise_param, ansible_param) in obj_params
+        )
 
     def update(self):
         id = self.new_object.get("id")
@@ -181,7 +187,7 @@ class AciSettings(object):
         result = self.ise.exec(
             family="aci_settings",
             function="update_aci_settings_by_id",
-            params=self.new_object
+            params=self.new_object,
         ).response
         return result
 
@@ -189,7 +195,9 @@ class AciSettings(object):
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
+            raise AnsibleActionFail(
+                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
+            )
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = False
@@ -234,10 +242,15 @@ class ActionModule(ActionBase):
                     (obj_exists, updated_obj) = obj.exists()
                     response = updated_obj
                     has_changed = None
-                    has_changed = ise_update_response.get("UpdatedFieldsList").get("updatedField")
-                    if (len(has_changed) == 0 or
-                       has_changed[0].get("newValue") == "" and
-                       has_changed[0].get("newValue") == has_changed[0].get("oldValue")):
+                    has_changed = ise_update_response.get("UpdatedFieldsList").get(
+                        "updatedField"
+                    )
+                    if (
+                        len(has_changed) == 0
+                        or has_changed[0].get("newValue") == ""
+                        and has_changed[0].get("newValue")
+                        == has_changed[0].get("oldValue")
+                    ):
                         self._result.pop("ise_update_response", None)
                         ise.object_already_present()
                     else:

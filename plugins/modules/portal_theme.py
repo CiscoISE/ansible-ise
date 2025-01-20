@@ -5,14 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: portal_theme
 short_description: Resource module for Portal Theme
 description:
-- Manage operations create, update and delete of the resource Portal Theme.
-- This API creates a portal theme.
-- This API deletes a portal theme by ID.
-- This API allows the client to update a portal theme by ID.
+  - Manage operations create, update and delete of the resource Portal Theme.
+  - This API creates a portal theme.
+  - This API deletes a portal theme by ID.
+  - This API allows the client to update a portal theme by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -31,19 +30,11 @@ options:
     description: Portal Theme for all portals.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    portal_theme.PortalTheme.create_portal_theme,
-    portal_theme.PortalTheme.delete_portal_theme_by_id,
-    portal_theme.PortalTheme.update_portal_theme_by_id,
-
-  - Paths used are
-    post /ers/config/portaltheme,
-    delete /ers/config/portaltheme/{id},
-    put /ers/config/portaltheme/{id},
-
+  - SDK Method used are portal_theme.PortalTheme.create_portal_theme, portal_theme.PortalTheme.delete_portal_theme_by_id, portal_theme.PortalTheme.update_portal_theme_by_id,
+  - Paths used are post /ers/config/portaltheme, delete /ers/config/portaltheme/{id}, put /ers/config/portaltheme/{id},
 """
 
 EXAMPLES = r"""
@@ -58,7 +49,6 @@ EXAMPLES = r"""
     id: string
     name: string
     themeData: string
-
 - name: Delete by id
   cisco.ise.portal_theme:
     ise_hostname: "{{ise_hostname}}"
@@ -67,7 +57,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-
 - name: Create
   cisco.ise.portal_theme:
     ise_hostname: "{{ise_hostname}}"
@@ -78,7 +67,6 @@ EXAMPLES = r"""
     description: string
     name: string
     themeData: string
-
 """
 
 RETURN = r"""
@@ -98,7 +86,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

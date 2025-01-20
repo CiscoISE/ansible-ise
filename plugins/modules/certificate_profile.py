@@ -5,13 +5,12 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: certificate_profile
 short_description: Resource module for Certificate Profile
 description:
-- Manage operations create and update of the resource Certificate Profile.
-- This API allows the client to create a certificate profile.
-- This API allows the client to update a certificate profile.
+  - Manage operations create and update of the resource Certificate Profile.
+  - This API allows the client to create a certificate profile.
+  - This API allows the client to update a certificate profile.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -21,47 +20,32 @@ options:
     description: AllowedAsUserName flag.
     type: bool
   certificateAttributeName:
-    description: Attribute name of the Certificate Profile - used only when CERTIFICATE
-      is chosen in usernameFrom. Allowed values - SUBJECT_COMMON_NAME - SUBJECT_ALTERNATIVE_NAME
-      - SUBJECT_SERIAL_NUMBER - SUBJECT - SUBJECT_ALTERNATIVE_NAME_OTHER_NAME - SUBJECT_ALTERNATIVE_NAME_EMAIL
-      - SUBJECT_ALTERNATIVE_NAME_DNS. - Additional internal value ALL_SUBJECT_AND_ALTERNATIVE_NAMES
-      is used automatically when usernameFrom=UPN.
+    description: Attribute name of the Certificate Profile - used only when CERTIFICATE is chosen in usernameFrom. Allowed values - SUBJECT_COMMON_NAME - SUBJECT_ALTERNATIVE_NAME - SUBJECT_SERIAL_NUMBER - SUBJECT - SUBJECT_ALTERNATIVE_NAME_OTHER_NAME - SUBJECT_ALTERNATIVE_NAME_EMAIL - SUBJECT_ALTERNATIVE_NAME_DNS. - Additional internal value ALL_SUBJECT_AND_ALTERNATIVE_NAMES is used automatically when usernameFrom=UPN.
     type: str
   description:
     description: Certificate Profile's description.
     type: str
   externalIdentityStoreName:
-    description: Referred IDStore name for the Certificate Profile or not applicable
-      in case no identity store is chosen.
+    description: Referred IDStore name for the Certificate Profile or not applicable in case no identity store is chosen.
     type: str
   id:
     description: Certificate Profile's id.
     type: str
   matchMode:
-    description: Match mode of the Certificate Profile. Allowed values - NEVER - RESOLVE_IDENTITY_AMBIGUITY
-      - BINARY_COMPARISON.
+    description: Match mode of the Certificate Profile. Allowed values - NEVER - RESOLVE_IDENTITY_AMBIGUITY - BINARY_COMPARISON.
     type: str
   name:
     description: Certificate Profile's name.
     type: str
   usernameFrom:
-    description: The attribute in the certificate where the user name should be taken
-      from. Allowed values - CERTIFICATE (for a specific attribute as defined in certificateAttributeName)
-      - UPN (for using any Subject or Alternative Name Attributes in the Certificate
-      - an option only in AD).
+    description: The attribute in the certificate where the user name should be taken from. Allowed values - CERTIFICATE (for a specific attribute as defined in certificateAttributeName) - UPN (for using any Subject or Alternative Name Attributes in the Certificate - an option only in AD).
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    certificate_profile.CertificateProfile.create_certificate_profile,
-    certificate_profile.CertificateProfile.update_certificate_profile_by_id,
-
-  - Paths used are
-    post /ers/config/certificateprofile,
-    put /ers/config/certificateprofile/{id},
-
+  - SDK Method used are certificate_profile.CertificateProfile.create_certificate_profile, certificate_profile.CertificateProfile.update_certificate_profile_by_id,
+  - Paths used are post /ers/config/certificateprofile, put /ers/config/certificateprofile/{id},
 """
 
 EXAMPLES = r"""
@@ -80,7 +64,6 @@ EXAMPLES = r"""
     matchMode: string
     name: string
     usernameFrom: string
-
 - name: Create
   cisco.ise.certificate_profile:
     ise_hostname: "{{ise_hostname}}"
@@ -96,7 +79,6 @@ EXAMPLES = r"""
     matchMode: string
     name: string
     usernameFrom: string
-
 """
 
 RETURN = r"""
@@ -120,7 +102,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

@@ -26,9 +26,11 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
 # Get common arguements specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
-argument_spec.update(dict(
-    username=dict(type="str"),
-))
+argument_spec.update(
+    dict(
+        username=dict(type="str"),
+    )
+)
 
 required_if = []
 required_one_of = []
@@ -39,7 +41,9 @@ required_together = []
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
+            raise AnsibleActionFail(
+                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
+            )
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = True
@@ -84,8 +88,8 @@ class ActionModule(ActionBase):
         if name:
             response = ise.exec(
                 family="misc",
-                function='get_sessions_by_username',
-                params=self.get_object(self._task.args)
+                function="get_sessions_by_username",
+                params=self.get_object(self._task.args),
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())

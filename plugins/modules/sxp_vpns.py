@@ -5,13 +5,12 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: sxp_vpns
 short_description: Resource module for SXP VPNs
 description:
-- Manage operations create and delete of the resource SXP VPNs.
-- This API creates a SXP VPN.
-- This API deletes a SXP VPN.
+  - Manage operations create and delete of the resource SXP VPNs.
+  - This API creates a SXP VPN.
+  - This API deletes a SXP VPN.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -24,17 +23,11 @@ options:
     description: SXP VPNs's sxpVpnName.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    sxp_vpns.SxpVpns.create_sxp_vpn,
-    sxp_vpns.SxpVpns.delete_sxp_vpn_by_id,
-
-  - Paths used are
-    post /ers/config/sxpvpns,
-    delete /ers/config/sxpvpns/{id},
-
+  - SDK Method used are sxp_vpns.SxpVpns.create_sxp_vpn, sxp_vpns.SxpVpns.delete_sxp_vpn_by_id,
+  - Paths used are post /ers/config/sxpvpns, delete /ers/config/sxpvpns/{id},
 """
 
 EXAMPLES = r"""
@@ -46,7 +39,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-
 - name: Create
   cisco.ise.sxp_vpns:
     ise_hostname: "{{ise_hostname}}"
@@ -55,7 +47,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     sxpVpnName: string
-
 """
 
 RETURN = r"""

@@ -5,11 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: trustsec_sg_vn_mapping_bulk_delete
 short_description: Resource module for Trustsec SG VN Mapping Bulk Delete
 description:
-- Manage operation create of the resource Trustsec SG VN Mapping Bulk Delete.
+  - Manage operation create of the resource Trustsec SG VN Mapping Bulk Delete.
 version_added: '2.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -20,19 +19,15 @@ options:
     elements: str
     type: list
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for sgVnMapping
-  description: Complete reference of the sgVnMapping API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!trustsec-openapi
+  - name: Cisco ISE documentation for sgVnMapping
+    description: Complete reference of the sgVnMapping API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!trustsec-openapi
 notes:
-  - SDK Method used are
-    sg_vn_mapping.SgVnMapping.bulk_delete_sg_vn_mappings,
-
-  - Paths used are
-    post /api/v1/trustsec/sgvnmapping/bulk/delete,
-
+  - SDK Method used are sg_vn_mapping.SgVnMapping.bulk_delete_sg_vn_mappings,
+  - Paths used are post /api/v1/trustsec/sgvnmapping/bulk/delete,
 """
 
 EXAMPLES = r"""
@@ -43,8 +38,7 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     payload:
-    - string
-
+      - string
 """
 
 RETURN = r"""

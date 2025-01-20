@@ -5,16 +5,15 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: rest_id_store
 short_description: Resource module for REST Id Store
 description:
-- Manage operations create, update and delete of the resource REST Id Store.
-- This API creates a REST ID store.
-- This API deletes a REST ID store by name.
-- This API deletes a REST ID store.
-- This API allows the client to update a REST ID store by name.
-- This API allows the client to update a REST ID store.
+  - Manage operations create, update and delete of the resource REST Id Store.
+  - This API creates a REST ID store.
+  - This API deletes a REST ID store by name.
+  - This API deletes a REST ID store.
+  - This API allows the client to update a REST ID store by name.
+  - This API allows the client to update a REST ID store.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -38,8 +37,7 @@ options:
             type: str
         type: list
       predefined:
-        description: The cloud provider connected to of the RESTIDStore. Options are
-          - Azure, - Okta, - None.
+        description: The cloud provider connected to of the RESTIDStore. Options are - Azure, - Okta, - None.
         type: str
       rootUrl:
         description: Url of the root of the RESTIDStore.
@@ -63,23 +61,11 @@ options:
     description: REST Id Store's name.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
-  - SDK Method used are
-    restid_store.RestidStore.create_rest_id_store,
-    restid_store.RestidStore.delete_rest_id_store_by_id,
-    restid_store.RestidStore.delete_rest_id_store_by_name,
-    restid_store.RestidStore.update_rest_id_store_by_id,
-    restid_store.RestidStore.update_rest_id_store_by_name,
-
-  - Paths used are
-    post /ers/config/restidstore,
-    delete /ers/config/restidstore/name/{name},
-    delete /ers/config/restidstore/{id},
-    put /ers/config/restidstore/name/{name},
-    put /ers/config/restidstore/{id},
-
+  - SDK Method used are restid_store.RestidStore.create_rest_id_store, restid_store.RestidStore.delete_rest_id_store_by_id, restid_store.RestidStore.delete_rest_id_store_by_name, restid_store.RestidStore.update_rest_id_store_by_id, restid_store.RestidStore.update_rest_id_store_by_name,
+  - Paths used are post /ers/config/restidstore, delete /ers/config/restidstore/name/{name}, delete /ers/config/restidstore/{id}, put /ers/config/restidstore/name/{name}, put /ers/config/restidstore/{id},
 """
 
 EXAMPLES = r"""
@@ -93,14 +79,13 @@ EXAMPLES = r"""
     description: string
     ersRestIDStoreAttributes:
       headers:
-      - key: string
-        value: string
+        - key: string
+          value: string
       predefined: string
       rootUrl: string
       usernameSuffix: string
     id: string
     name: string
-
 - name: Delete by name
   cisco.ise.rest_id_store:
     ise_hostname: "{{ise_hostname}}"
@@ -109,7 +94,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     name: string
-
 - name: Update by id
   cisco.ise.rest_id_store:
     ise_hostname: "{{ise_hostname}}"
@@ -120,14 +104,13 @@ EXAMPLES = r"""
     description: string
     ersRestIDStoreAttributes:
       headers:
-      - key: string
-        value: string
+        - key: string
+          value: string
       predefined: string
       rootUrl: string
       usernameSuffix: string
     id: string
     name: string
-
 - name: Delete by id
   cisco.ise.rest_id_store:
     ise_hostname: "{{ise_hostname}}"
@@ -136,7 +119,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-
 - name: Create
   cisco.ise.rest_id_store:
     ise_hostname: "{{ise_hostname}}"
@@ -147,16 +129,15 @@ EXAMPLES = r"""
     description: string
     ersRestIDStoreAttributes:
       headers:
-      - key: string
-        value: string
+        - key: string
+          value: string
       predefined: string
       rootUrl: string
       usernameSuffix: string
     ersRestIDStoreUserAttributes:
       attributes:
-      - string
+        - string
     name: string
-
 """
 
 RETURN = r"""
@@ -186,7 +167,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
