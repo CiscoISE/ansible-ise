@@ -45,21 +45,21 @@ The role accomplishes the following tasks:
 
 The role behavior can be changed using the following variables:
 
-- **ise_base_hostname**: Servers base hostname. Default: ISE
-- **ise_username**: Servers default username. Default: admin
-- **ise_password**: Servers default password. Default: C1sco12345
-- **ise_ntp_server**: NTP server. Default: 10.10.0.1
-- **ise_dns_server**: DNS Server. Default: 10.10.0.1
-- **ise_domain**: Domain name. Default: example.com
-- **ise_timezone**: Timezones based on RFC. Default: Etc/UTC
-- **aws_ise_ami**: Cisco ISE AWS AMI ID, for example, ami-0a8b4f863885c3372
-- **aws_vpc_name**: AWS VPC. Default: ISE VPC
-- **aws_vpc_cidr**: AWS VPC CIDR. Default: 10.10.0.0/16
-- **aws_subnet_cidr**: AWS Subnet CIDR. Default: 10.10.1.0/24
-- **aws_region**: AWS deployment region. Default: us-west-2
-- **aws_public_access_cidr**: Network from where public access will be available. Default: 0.0.0.0/0
-- **aws_keypair_name**: AWS SSH Key Pair name. Default: ISE-Deployment
-- **aws_instance_type**: AWS Instance type for ISE servers. Default: c5.4xlarge
+- **aws_deployment_ise_base_hostname**: Servers base hostname. Default: ISE
+- **aws_deployment_ise_username**: Servers default username. Default: admin
+- **aws_deployment_ise_password**: Servers default password. Default: C1sco12345
+- **aws_deployment_ise_ntp_server**: NTP server. Default: 10.10.0.1
+- **aws_deployment_ise_dns_server**: DNS Server. Default: 10.10.0.1
+- **aws_deployment_ise_domain**: Domain name. Default: example.com
+- **aws_deployment_ise_timezone**: Timezones based on RFC. Default: Etc/UTC
+- **aws_deployment_aws_ise_ami**: Cisco ISE AWS AMI ID, for example, ami-0a8b4f863885c3372
+- **aws_deployment_aws_vpc_name**: AWS VPC. Default: ISE VPC
+- **aws_deployment_aws_vpc_cidr**: AWS VPC CIDR. Default: 10.10.0.0/16
+- **aws_deployment_aws_subnet_cidr**: AWS Subnet CIDR. Default: 10.10.1.0/24
+- **aws_deployment_aws_region**: AWS deployment region. Default: us-west-2
+- **aws_deployment_aws_public_access_cidr**: Network from where public access will be available. Default: 0.0.0.0/0
+- **aws_deployment_aws_keypair_name**: AWS SSH Key Pair name. Default: ISE-Deployment
+- **aws_deployment_aws_instance_type**: AWS Instance type for ISE servers. Default: c5.4xlarge
 
 ### Using variables in Ansible
 
@@ -118,32 +118,32 @@ There are 4 possible deployment types supported by this role:
 
 ### Single deployment
 
-Set the `ise_deployment_type` variable to `single`. This deployment type creates one ISE server.
+Set the `aws_deployment_ise_deployment_type` variable to `single`. This deployment type creates one ISE server.
 
 ```cli
-ansible-playbook -i hosts playbooks/aws_deployment.yml -e "ise_deployment_type=single"
+ansible-playbook -i hosts playbooks/aws_deployment.yml -e "aws_deployment_ise_deployment_type=single"
 ```
 
 ### Small deployment
 
-Set the `ise_deployment_type` variable to `small`. This deployment type creates two ISE servers.
+Set the `aws_deployment_ise_deployment_type` variable to `small`. This deployment type creates two ISE servers.
 
 ```cli
-ansible-playbook -i hosts playbooks/aws_deployment.yml -e "ise_deployment_type=small"
+ansible-playbook -i hosts playbooks/aws_deployment.yml -e "aws_deployment_ise_deployment_type=small"
 ```
 
 ### Medium deployment
 
-Set the `ise_deployment_type` variable to `medium`. This deployment type creates two servers with the PAN and MNT roles and up to five servers with the PSN role. It takes the extra variable `ise_psn_instances` to specify how many PSN servers should be created . For example, this would be the command for a deployment with two PSN servers:
+Set the `aws_deployment_ise_deployment_type` variable to `medium`. This deployment type creates two servers with the PAN and MNT roles and up to five servers with the PSN role. It takes the extra variable `aws_deployment_ise_psn_instances` to specify how many PSN servers should be created . For example, this would be the command for a deployment with two PSN servers:
 
 ```cli
-ansible-playbook -i hosts playbooks/aws_deployment.yml -e "ise_deployment_type=medium ise_psn_instances=2"
+ansible-playbook -i hosts playbooks/aws_deployment.yml -e "aws_deployment_ise_deployment_type=medium aws_deployment_ise_psn_instances=2"
 ```
 
 ### Large deployment
 
-Set the `ise_deployment_type` variable to `large`. This deployment type creates two servers with the PAN role, two servers with the MNT role and up to 50 servers with the PSN role. It takes the extra variable `ise_psn_instances` to specify how many PSN servers should be created . For example, this would be the command for a deployment with two PSN servers:
+Set the `aws_deployment_ise_deployment_type` variable to `large`. This deployment type creates two servers with the PAN role, two servers with the MNT role and up to 50 servers with the PSN role. It takes the extra variable `aws_deployment_ise_psn_instances` to specify how many PSN servers should be created . For example, this would be the command for a deployment with two PSN servers:
 
 ```cli
-ansible-playbook -i hosts playbooks/aws_deployment.yml -e "ise_deployment_type=large ise_psn_instances=2"
+ansible-playbook -i hosts playbooks/aws_deployment.yml -e "aws_deployment_ise_deployment_type=large aws_deployment_ise_psn_instances=2"
 ```

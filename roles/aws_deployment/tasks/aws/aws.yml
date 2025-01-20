@@ -1,75 +1,80 @@
-    - name: Create ISE VPC
-      amazon.aws.ec2_vpc_net:
-        name: "{{ aws_vpc_name }}"
-        cidr_block:  "{{ aws_vpc_cidr }}"
-        region: "{{ aws_region }}"
-        tags:
-          name: ISE VPC
-      register: vpc
+- name: Create ISE VPC
+  amazon.aws.ec2_vpc_net:
+    name: "{{ aws_deployment_aws_vpc_name }}"
+    cidr_block: "{{ aws_deployment_aws_vpc_cidr }}"
+    region: "{{ aws_deployment_aws_region }}"
+    tags:
+      Name: ISE VPC
+  register: vpc
 
-    - name: Create subnet for ISE servers
-      amazon.aws.ec2_vpc_subnet:
-        state: present
-        vpc_id: "{{ vpc.vpc.id }}"
-        cidr: "{{ aws_subnet_cidr }}"
-        region: "{{ aws_region }}"
-        tags:
-          Name: ISE Subnet
-      register: subnet
+- name: Create subnet for ISE servers
+  amazon.aws.ec2_vpc_subnet:
+    state: present
+    vpc_id: "{{ vpc.vpc.id }}"
+    cidr: "{{ aws_deployment_aws_subnet_cidr }}"
+    region: "{{ aws_deployment_aws_region }}"
+    tags:
+      Name: ISE Subnet
+  register: subnet
 
-    - name: ISE VPC SG Group
-      amazon.aws.ec2_group:
-        name: ISE Public Access
-        description: ISE Security Group
-        vpc_id: "{{ vpc.vpc.id }}"
-        region: "{{ aws_region }}"
-        rules:
-          - proto: tcp
-            from_port: 443
-            to_port: 443
-            cidr_ip: "{{ aws_public_access_cidr}}"
-            rule_desc: Allow HTTPS access
-          - proto: tcp
-            from_port: 0
-            to_port: 65535
-            cidr_ip: "{{ aws_public_access_cidr}}"
-            rule_desc: Allow everything TCP
-          - proto: udp
-            from_port: 0
-            to_port: 65535
-            cidr_ip: "{{ aws_public_access_cidr}}"
-            rule_desc: Allow everything UDP
-          - proto: icmp
-            from_port: -1
-            to_port:  -1
-            cidr_ip: "{{ aws_public_access_cidr}}"
-        tags:
-          Name: ISE VPC SG Group
-      register: public_sg
+- name: ISE VPC SG Group
+  amazon.aws.ec2_security_group:
+    name: ISE Public Access
+    description: ISE Security Group
+    vpc_id: "{{ vpc.vpc.id }}"
+    region: "{{ aws_deployment_aws_region }}"
+    rules:
+      - proto: tcp
+        from_port: 443
+        to_port: 443
+        cidr_ip: "{{ aws_deployment_aws_public_access_cidr }}"
+        rule_desc: Allow HTTPS access
+      - proto: tcp
+        from_port: 0
+        to_port: 65535
+        cidr_ip: "{{ aws_deployment_aws_public_access_cidr }}"
+        rule_desc: Allow everything TCP
+      - proto: udp
+        from_port: 0
+        to_port: 65535
+        cidr_ip: "{{ aws_deployment_aws_public_access_cidr }}"
+        rule_desc: Allow everything UDP
+      - proto: icmp
+        from_port: -1
+        to_port: -1
+        cidr_ip: "{{ aws_deployment_aws_public_access_cidr }}"
+    tags:
+      Name: ISE VPC SG Group
+  register: public_sg
 
-    - name: ISE ec2 key pair
-      amazon.aws.ec2_key:
-        name: "{{ aws_keypair_name }}"
-      register: keypair
+- name: ISE ec2 key pair
+  amazon.aws.ec2_key:
+    name: "{{ aws_deployment_aws_keypair_name }}"
+  register: keypair
 
-    - name: Show keypair
-      ansible.builtin.debug:
-        var: keypair
+- name: Show keypair
+  ansible.builtin.debug:
+    var: keypair
 
-    - name: Copy keypair to local file
-      copy:
-        dest: "./{{ aws_keypair_name }}.id_rsa"
-        content: "{{ keypair.key.private_key }}"
-      when: keypair.key.private_key is defined
+- name: Copy keypair to local file
+  ansible.builtin.copy:
+    dest: "./{{ aws_deployment_aws_keypair_name }}.id_rsa"
+    content: "{{ keypair.key.private_key }}"
+    mode: '0600'
+  when: keypair.key.private_key is defined
 
-    - include_tasks: single_node.yml
-      when: ise_deployment_type == "single"
+- name: Include single node tasks
+  ansible.builtin.include_tasks: single_node.yml
+  when: aws_deployment_ise_deployment_type == "single"
 
-    - include_tasks: small_deployment.yml
-      when: ise_deployment_type == "small"
+- name: Include small deployment tasks
+  ansible.builtin.include_tasks: small_deployment.yml
+  when: aws_deployment_ise_deployment_type == "small"
 
-    - include_tasks: medium_deployment.yml
-      when: ise_deployment_type == "medium"
+- name: Include medium deployment tasks
+  ansible.builtin.include_tasks: medium_deployment.yml
+  when: aws_deployment_ise_deployment_type == "medium"
 
-    - include_tasks: large_deployment.yml
-      when: ise_deployment_type == "large"
+- name: Include large deployment tasks
+  ansible.builtin.include_tasks: large_deployment.yml
+  when: aws_deployment_ise_deployment_type == "large"

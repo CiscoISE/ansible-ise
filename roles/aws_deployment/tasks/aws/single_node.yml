@@ -1,14 +1,21 @@
 - name: Provision ISE Server
   amazon.aws.ec2:
-    key_name: "{{ aws_keypair_name }}"
-    instance_type: "{{ aws_instance_type }}"
-    image: "{{ aws_ise_ami }}"
-    wait: yes
+    key_name: "{{ aws_deployment_aws_keypair_name }}"
+    instance_type: "{{ aws_deployment_aws_instance_type }}"
+    image: "{{ aws_deployment_aws_ise_ami }}"
+    wait: true
     group: "ISE Public Access"
     count: 1
     vpc_subnet_id: "{{ subnet.subnet.id }}"
-    assign_public_ip: yes
-    region: "{{ aws_region }}"
+    assign_public_ip: true
+    region: "{{ aws_deployment_aws_region }}"
     instance_tags:
-      Name: "{{ ise_base_hostname }} Server"
-    user_data: "hostname={{ ise_base_hostname | lower }}-server\nprimarynameserver={{ ise_dns_server }}\ndnsdomain={{ ise_domain }}\nntpserver={{ ise_ntp_server }}\ntimezone={{ ise_timezone }}\nusername={{ ise_username }}\npassword={{ ise_password }}"
+      Name: "{{ aws_deployment_ise_base_hostname }} Server"
+    user_data: |
+      hostname={{ aws_deployment_ise_base_hostname | lower }}-server
+      primarynameserver={{ aws_deployment_ise_dns_server }}
+      dnsdomain={{ aws_deployment_ise_domain }}
+      ntpserver={{ aws_deployment_ise_ntp_server }}
+      timezone={{ aws_deployment_ise_timezone }}
+      username={{ aws_deployment_ise_username }}
+      password={{ aws_deployment_ise_password }}
