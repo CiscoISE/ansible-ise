@@ -1,5 +1,6 @@
 ---
-- hosts: ise_servers
+- name: Manage Filter Policy on ISE
+  hosts: ise_servers
   gather_facts: false
   tasks:
     # - name: Get all
@@ -46,12 +47,12 @@
         state: present
         subnet: 121.12.8.0/22
         domains: default
-        sgt: "{{ sgt_src['ise_response'][0]['name']}}"
+        sgt: "{{ sgt_src['ise_response'][0]['name'] }}"
         id: ""
       when:
         - sgt_src['ise_response'] is defined
-        - sgt_src['ise_response']|length == 1
-        - sgt_src['ise_response'][0]['name']
+        - sgt_src['ise_response'] | length == 1
+        - sgt_src['ise_response'][0]['name'] is defined
       register: result
 
     - name: Print result

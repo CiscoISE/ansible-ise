@@ -1,5 +1,6 @@
 ---
-- hosts: ise_servers
+- name: System Certificate Playbook
+  hosts: ise_servers
   gather_facts: false
   tasks:
     # - name: Get all

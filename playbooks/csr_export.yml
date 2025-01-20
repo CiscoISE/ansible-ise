@@ -1,5 +1,6 @@
 ---
-- hosts: ise_servers
+- name: Export CSR from ISE
+  hosts: ise_servers
   gather_facts: false
   tasks:
     # - name: CSR Generate
@@ -28,11 +29,11 @@
         ise_verify: "{{ ise_verify }}"
         ise_debug: "{{ ise_debug }}"
         hostname: ise
-        id: "{{ csr_info_result.ise_responses[0]['id']}}"
+        id: "{{ csr_info_result.ise_responses[0]['id'] }}"
         dirPath: /tmp/certificates/
         saveFile: true
       when:
-        - csr_info_result['ise_responses']|length >= 1
+        - csr_info_result['ise_responses'] | length >= 1
       register: csr_export_info_result
 
     - name: Print generate result
@@ -47,10 +48,10 @@
     #     ise_password: "{{ ise_password }}"
     #     ise_verify: "{{ ise_verify }}"
     #     ise_debug: "{{ ise_debug }}"
-    #     id: "{{ csr_info_result['ise_response'][0]['response'][0]['id']}}"
+    #     id: "{{ csr_info_result['ise_response'][0]['response'][0]['id'] }}"
     #   when:
-    #     - csr_info_result['ise_response']|length == 1
-    #     - csr_info_result['ise_response'][0]['response']|length == 1
+    #     - csr_info_result['ise_response'] | length == 1
+    #     - csr_info_result['ise_response'][0]['response'] | length == 1
     #   register: csr_delete_result
 
     # - name: Print delete result

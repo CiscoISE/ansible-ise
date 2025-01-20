@@ -1,5 +1,6 @@
 ---
-- hosts: ise_servers
+- name: Manage Allowed Protocols on ISE
+  hosts: ise_servers
   gather_facts: false
   tasks:
     # - name: Get allowed protocols, skip first one

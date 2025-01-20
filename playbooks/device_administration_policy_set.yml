@@ -1,5 +1,6 @@
 ---
-- hosts: ise_servers
+- name: Create or update a network policy set
+  hosts: ise_servers
   gather_facts: false
   tasks:
     # - name: Get all network policy set
@@ -38,8 +39,8 @@
         id: cfa2063a-5292-466b-8841-901dd3f9d03f
         name: New Policy Set 1
         description: New Policy Set test
-        hitCounts: 00
-        rank: 00
+        hitCounts: 0
+        rank: 0
         state_: disabled
         condition:
           conditionType: ConditionReference

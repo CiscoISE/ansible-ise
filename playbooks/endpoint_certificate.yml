@@ -1,5 +1,6 @@
 ---
-- hosts: ise_servers
+- name: Get endpoint certificate
+  hosts: ise_servers
   gather_facts: false
   tasks:
     - name: Get cert

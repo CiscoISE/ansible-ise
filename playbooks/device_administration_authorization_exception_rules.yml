@@ -1,5 +1,6 @@
 ---
-- hosts: ise_servers
+- name: Test device_administration_authorization_exception_rules
+  hosts: ise_servers
   gather_facts: false
   tasks:
     # - name: Get all
@@ -35,8 +36,8 @@
         rule:
           default: false
           name: Test3
-          hitCounts: 00
-          rank: 00
+          hitCounts: 0
+          rank: 0
           state: disabled
           condition:
             conditionType: ConditionReference

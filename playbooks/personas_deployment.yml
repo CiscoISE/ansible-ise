@@ -8,11 +8,11 @@
     ise_username: admin
     ise_password: C1sco12
     ise_domain: example.com
-    pan1_ip: 
-    pan2_ip: 
+    pan1_ip:
+    pan2_ip:
     # Variables for medium or large deployments
-    psn1_ip: 
-    psn2_ip: 
+    psn1_ip:
+    psn2_ip:
     # Variables specific for large deployments
     mnt1_ip:
     mnt2_ip:

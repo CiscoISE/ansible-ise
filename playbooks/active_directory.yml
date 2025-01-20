@@ -1,5 +1,6 @@
 ---
-- hosts: ise_servers
+- name: Manage Active Directory on ISE
+  hosts: ise_servers
   gather_facts: false
   tasks:
     # - name: Get active directory
@@ -44,7 +45,7 @@
           unreachableDomainsBehaviour: PROCEED
           enableRewrites: false
           rewriteRules:
-            - rowId: 00
+            - rowId: 0
               rewriteMatch: host/[HOSTNAME].[DOMAIN]
               rewriteResult: host/[HOSTNAME].[DOMAIN]
             - rowId: 1

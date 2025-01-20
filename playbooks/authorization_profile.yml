@@ -1,5 +1,6 @@
 ---
-- hosts: ise_servers
+- name: Manage Authorization Profile on ISE
+  hosts: ise_servers
   gather_facts: false
   tasks:
     - name: Get Authorization profile

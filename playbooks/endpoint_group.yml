@@ -1,5 +1,6 @@
 ---
-- hosts: ise_servers
+- name: Manage endpoint groups on ISE
+  hosts: ise_servers
   gather_facts: false
   tasks:
     - name: Create endpoint group

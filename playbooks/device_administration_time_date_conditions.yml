@@ -1,5 +1,6 @@
 ---
-- hosts: ise_servers
+- name: Create or update an device_administration_time_date_conditions
+  hosts: ise_servers
   vars_files:
     - vars/device_administration_time_date_conditions.yml
   gather_facts: false
@@ -34,7 +35,7 @@
         state: present
         conditionType: "{{ condition_type }}"
         isNegate: false
-        name: "{{ name }}"
+        name: "{{ condition_name }}"
         description:
         hoursRange:
           startTime: "{{ hours_range_start_time }}"

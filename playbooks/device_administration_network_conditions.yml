@@ -1,5 +1,6 @@
 ---
-- hosts: ise_servers
+- name: Create or update an device_administration_network_conditions
+  hosts: ise_servers
   gather_facts: false
   tasks:
     # - name: Get all

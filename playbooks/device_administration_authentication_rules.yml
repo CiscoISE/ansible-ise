@@ -1,5 +1,6 @@
 ---
-- hosts: ise_servers
+- name: Manage device administration authentication rules on ISE
+  hosts: ise_servers
   gather_facts: false
   tasks:
     - name: Get all
@@ -41,8 +42,8 @@
           default: false
           # id: fc67fb89-7611-4e8c-b3fa-7ea18e62d44f
           name: Test2
-          hitCounts: 00
-          rank: 00
+          hitCounts: 0
+          rank: 0
           state: disabled
           condition:
             conditionType: ConditionReference

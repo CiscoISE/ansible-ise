@@ -1,6 +1,6 @@
 ---
 condition_type: TimeAndDateCondition
-name: Test2
+condition_name: Test2
 hours_range_start_time: "22:02"
 hours_range_end_time: "13:02"
 hours_range_exception_start_time: "23:02"
