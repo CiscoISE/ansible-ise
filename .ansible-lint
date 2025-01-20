@@ -1,0 +1,2 @@
+exclude_paths:
+  - roles/aws_deployment/tasks/aws/aws.yml
