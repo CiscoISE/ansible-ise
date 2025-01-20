@@ -45,6 +45,10 @@ options:
     description:
       - Whether or not to wait on rate limit
     type: bool
+  timeout:
+    description:
+      - The timeout for the request in seconds. Default is 60 seconds.
+    type: int
 requirements:
   - requests >= 2.25.1
   - python >= 3.5
@@ -65,6 +69,7 @@ EXAMPLES = r"""
     roles:
       - PPAN
       - MNT-ACTIVE
+    timeout: 60
 """
 
 RETURN = r"""
