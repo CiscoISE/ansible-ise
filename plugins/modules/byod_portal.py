@@ -62,7 +62,8 @@ options:
             type: dict
         type: dict
       language:
-        description: This property is supported only for Read operation and it allows to show the customizations in English. Other languages are not supported.
+        description: This property is supported only for Read operation and it allows to show the customizations in English. Other languages
+          are not supported.
         suboptions:
           viewLanguage:
             description: BYOD Portal's viewLanguage.
@@ -97,8 +98,9 @@ options:
             type: str
         type: dict
       portalTweakSettings:
-        description: The Tweak Settings are a customization of the Portal Theme that has been selected for the portal. When the Portal Theme selection is changed,
-          the Tweak Settings are overwritten to match the values in the theme. The Tweak Settings can subsequently be changed by the user.
+        description: The Tweak Settings are a customization of the Portal Theme that has been selected for the portal. When the Portal Theme
+          selection is changed, the Tweak Settings are overwritten to match the values in the theme. The Tweak Settings can subsequently
+          be changed by the user.
         suboptions:
           bannerColor:
             description: Hex value of color.
@@ -159,7 +161,8 @@ options:
             description: Configuration of BYOD endpoint welcome step configuration.
             suboptions:
               aupDisplay:
-                description: How the AUP should be displayed, either on page or as a link. Only valid if includeAup = true. Allowed values - ONPAGE, - ASLINK.
+                description: How the AUP should be displayed, either on page or as a link. Only valid if includeAup = true. Allowed values
+                  - ONPAGE, - ASLINK.
                 type: str
               enableBYOD:
                 description: EnableBYOD flag.
@@ -185,7 +188,8 @@ options:
         description: The port, interface, certificate, and other basic settings of a portal.
         suboptions:
           allowedInterfaces:
-            description: Interfaces that the portal will be reachable on. Allowed values - eth0, - eth1, - eth2, - eth3, - eth4, - eth5, - bond0, - bond1, - bond2.
+            description: Interfaces that the portal will be reachable on. Allowed values - eth0, - eth1, - eth2, - eth3, - eth4, - eth5,
+              - bond0, - bond1, - bond2.
             elements: str
             type: list
           alwaysUsedLanguage:
@@ -214,7 +218,8 @@ options:
             description: The default value displayed for an empty field. Only valid when emptyFieldDisplay = DISPLAYWITHDEFAULTVALUE.
             type: str
           emptyFieldDisplay:
-            description: Specifies how empty fields are handled on the Support Information Page. Allowed values - HIDE, - DISPLAYWITHNOVALUE, - DISPLAYWITHDEFAULTVALUE.
+            description: Specifies how empty fields are handled on the Support Information Page. Allowed values - HIDE, - DISPLAYWITHNOVALUE,
+              - DISPLAYWITHDEFAULTVALUE.
             type: str
           includeBrowserUserAgent:
             description: IncludeBrowserUserAgent flag.

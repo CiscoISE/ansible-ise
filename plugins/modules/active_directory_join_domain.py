@@ -50,7 +50,8 @@ EXAMPLES = r"""
       - name: password
         value: Required. The domain user's password
       - name: node
-        value: Required. The name of the ISE node to join the domain. The node names can be retrieved with the "Node Details/Get All" ERS operation
+        value: Required. The name of the ISE node to join the domain. The node names can be retrieved with the "Node Details/Get All" ERS
+          operation
       - name: orgunit
         value: Optional. The organizational unit in AD where the machine object for the joined ISE will be stored.
     id: string

@@ -42,7 +42,8 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are sxp_local_bindings.SxpLocalBindings.create_sxp_local_bindings, sxp_local_bindings.SxpLocalBindings.delete_sxp_local_bindings_by_id, sxp_local_bindings.SxpLocalBindings.update_sxp_local_bindings_by_id,
+  - SDK Method used are sxp_local_bindings.SxpLocalBindings.create_sxp_local_bindings, sxp_local_bindings.SxpLocalBindings.delete_sxp_local_bindings_by_id,
+    sxp_local_bindings.SxpLocalBindings.update_sxp_local_bindings_by_id,
   - Paths used are post /ers/config/sxplocalbindings, delete /ers/config/sxplocalbindings/{id}, put /ers/config/sxplocalbindings/{id},
 """
 

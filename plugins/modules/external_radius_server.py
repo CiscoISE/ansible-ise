@@ -24,18 +24,19 @@ options:
     description: Valid Range 1 to 65535.
     type: int
   authenticatorKey:
-    description: The authenticatorKey is required only if enableKeyWrap is true, otherwise it must be ignored or empty. The maximum length is 20 ASCII characters
-      or 40 HEXADECIMAL characters (depend on selection in field 'keyInputFormat').
+    description: The authenticatorKey is required only if enableKeyWrap is true, otherwise it must be ignored or empty. The maximum length
+      is 20 ASCII characters or 40 HEXADECIMAL characters (depend on selection in field 'keyInputFormat').
     type: str
   description:
     description: External RADIUS Server's description.
     type: str
   enableKeyWrap:
-    description: KeyWrap may only be enabled if it is supported on the device. When running in FIPS mode this option should be enabled for such devices.
+    description: KeyWrap may only be enabled if it is supported on the device. When running in FIPS mode this option should be enabled for
+      such devices.
     type: bool
   encryptionKey:
-    description: The encryptionKey is required only if enableKeyWrap is true, otherwise it must be ignored or empty. The maximum length is 16 ASCII characters or
-      32 HEXADECIMAL characters (depend on selection in field 'keyInputFormat').
+    description: The encryptionKey is required only if enableKeyWrap is true, otherwise it must be ignored or empty. The maximum length is
+      16 ASCII characters or 32 HEXADECIMAL characters (depend on selection in field 'keyInputFormat').
     type: str
   hostIP:
     description: The IP of the host - must be a valid IPV4 address.

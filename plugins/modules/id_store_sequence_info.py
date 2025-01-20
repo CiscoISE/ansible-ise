@@ -43,7 +43,8 @@ seealso:
     description: Complete reference of the IdentitySequence API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!idstoresequence
 notes:
-  - SDK Method used are identity_sequence.IdentitySequence.get_identity_sequence_by_id, identity_sequence.IdentitySequence.get_identity_sequence_by_name, identity_sequence.IdentitySequence.get_identity_sequence_generator,
+  - SDK Method used are identity_sequence.IdentitySequence.get_identity_sequence_by_id, identity_sequence.IdentitySequence.get_identity_sequence_by_name,
+    identity_sequence.IdentitySequence.get_identity_sequence_generator,
   - Paths used are get /ers/config/idstoresequence, get /ers/config/idstoresequence/name/{name}, get /ers/config/idstoresequence/{id},
 """
 

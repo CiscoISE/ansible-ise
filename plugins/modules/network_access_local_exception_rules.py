@@ -53,17 +53,17 @@ options:
             description: Dictionary attribute name.
             type: str
           attributeValue:
-            description: <ul><li>Attribute value for condition</li> <li>Value type is specified in dictionary object</li> <li>if multiple values allowed is specified
-              in dictionary object</li></ul>.
+            description: <ul><li>Attribute value for condition</li> <li>Value type is specified in dictionary object</li> <li>if multiple
+              values allowed is specified in dictionary object</li></ul>.
             type: str
           children:
             description: In case type is andBlock or orBlock addtional conditions will be aggregated under this logical (OR/AND) condition.
             elements: dict
             suboptions:
               conditionType:
-                description: <ul><li>Inidicates whether the record is the condition itself(data) or a logical(or,and) aggregation</li> <li>Data type enum(reference,single)
-                  indicates than "conditonId" OR "ConditionAttrs" fields should contain condition data but not both</li> <li>Logical aggreation(and,or) enum indicates
-                  that additional conditions are present under the children field</li></ul>.
+                description: <ul><li>Inidicates whether the record is the condition itself(data) or a logical(or,and) aggregation</li> <li>Data
+                  type enum(reference,single) indicates than "conditonId" OR "ConditionAttrs" fields should contain condition data but not
+                  both</li> <li>Logical aggreation(and,or) enum indicates that additional conditions are present under the children field</li></ul>.
                 type: str
               isNegate:
                 description: Indicates whereas this condition is in negate mode.
@@ -83,14 +83,14 @@ options:
                 type: dict
             type: list
           conditionType:
-            description: <ul><li>Inidicates whether the record is the condition itself(data) or a logical(or,and) aggregation</li> <li>Data type enum(reference,single)
-              indicates than "conditonId" OR "ConditionAttrs" fields should contain condition data but not both</li> <li>Logical aggreation(and,or) enum indicates
-              that additional conditions are present under the children field</li></ul>.
+            description: <ul><li>Inidicates whether the record is the condition itself(data) or a logical(or,and) aggregation</li> <li>Data
+              type enum(reference,single) indicates than "conditonId" OR "ConditionAttrs" fields should contain condition data but not both</li>
+              <li>Logical aggreation(and,or) enum indicates that additional conditions are present under the children field</li></ul>.
             type: str
           datesRange:
-            description: <p>Defines for which date/s TimeAndDate condition will be matched or NOT matched if used in exceptionDates prooperty<br> Options are - Date
-              range, for specific date, the same date should be used for start/end date <br> Default - no specific dates<br> In order to reset the dates to have no
-              specific dates Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)</p>.
+            description: <p>Defines for which date/s TimeAndDate condition will be matched or NOT matched if used in exceptionDates prooperty<br>
+              Options are - Date range, for specific date, the same date should be used for start/end date <br> Default - no specific dates<br>
+              In order to reset the dates to have no specific dates Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)</p>.
             suboptions:
               endDate:
                 description: Network Access Local Exception Rules's endDate.
@@ -100,9 +100,9 @@ options:
                 type: str
             type: dict
           datesRangeException:
-            description: <p>Defines for which date/s TimeAndDate condition will be matched or NOT matched if used in exceptionDates prooperty<br> Options are - Date
-              range, for specific date, the same date should be used for start/end date <br> Default - no specific dates<br> In order to reset the dates to have no
-              specific dates Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)</p>.
+            description: <p>Defines for which date/s TimeAndDate condition will be matched or NOT matched if used in exceptionDates prooperty<br>
+              Options are - Date range, for specific date, the same date should be used for start/end date <br> Default - no specific dates<br>
+              In order to reset the dates to have no specific dates Date format - yyyy-mm-dd (MM = month, dd = day, yyyy = year)</p>.
             suboptions:
               endDate:
                 description: Network Access Local Exception Rules's endDate.
@@ -121,8 +121,8 @@ options:
             description: Dictionary value.
             type: str
           hoursRange:
-            description: <p>Defines for which hours a TimeAndDate condition will be matched or not matched if used in exceptionHours property<br> Time foramt - hh
-              mm ( h = hour , mm = minutes ) <br> Default - All Day </p>.
+            description: <p>Defines for which hours a TimeAndDate condition will be matched or not matched if used in exceptionHours property<br>
+              Time foramt - hh mm ( h = hour , mm = minutes ) <br> Default - All Day </p>.
             suboptions:
               endTime:
                 description: Network Access Local Exception Rules's endTime.
@@ -132,8 +132,8 @@ options:
                 type: str
             type: dict
           hoursRangeException:
-            description: <p>Defines for which hours a TimeAndDate condition will be matched or not matched if used in exceptionHours property<br> Time foramt - hh
-              mm ( h = hour , mm = minutes ) <br> Default - All Day </p>.
+            description: <p>Defines for which hours a TimeAndDate condition will be matched or not matched if used in exceptionHours property<br>
+              Time foramt - hh mm ( h = hour , mm = minutes ) <br> Default - All Day </p>.
             suboptions:
               endTime:
                 description: Network Access Local Exception Rules's endTime.
@@ -168,11 +168,13 @@ options:
             description: Equality operator.
             type: str
           weekDays:
-            description: <p>Defines for which days this condition will be matched<br> Days format - Arrays of WeekDay enums <br> Default - List of All week days</p>.
+            description: <p>Defines for which days this condition will be matched<br> Days format - Arrays of WeekDay enums <br> Default
+              - List of All week days</p>.
             elements: str
             type: list
           weekDaysException:
-            description: <p>Defines for which days this condition will NOT be matched<br> Days format - Arrays of WeekDay enums <br> Default - Not enabled</p>.
+            description: <p>Defines for which days this condition will NOT be matched<br> Days format - Arrays of WeekDay enums <br> Default
+              - Not enabled</p>.
             elements: str
             type: list
         type: dict
@@ -206,9 +208,11 @@ seealso:
     description: Complete reference of the Network Access - Authorization Exception Rules API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are network_access_authorization_exception_rules.NetworkAccessAuthorizationExceptionRules.create_network_access_local_exception_rule, network_access_authorization_exception_rules.NetworkAccessAuthorizationExceptionRules.delete_network_access_local_exception_rule_by_id,
+  - SDK Method used are network_access_authorization_exception_rules.NetworkAccessAuthorizationExceptionRules.create_network_access_local_exception_rule,
+    network_access_authorization_exception_rules.NetworkAccessAuthorizationExceptionRules.delete_network_access_local_exception_rule_by_id,
     network_access_authorization_exception_rules.NetworkAccessAuthorizationExceptionRules.update_network_access_local_exception_rule_by_id,
-  - Paths used are post /network-access/policy-set/{policyId}/exception, delete /network-access/policy-set/{policyId}/exception/{id}, put /network-access/policy-set/{policyId}/exception/{id},
+  - Paths used are post /network-access/policy-set/{policyId}/exception, delete /network-access/policy-set/{policyId}/exception/{id}, put
+    /network-access/policy-set/{policyId}/exception/{id},
 """
 
 EXAMPLES = r"""

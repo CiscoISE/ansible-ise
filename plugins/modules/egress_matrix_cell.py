@@ -46,7 +46,8 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are egress_matrix_cell.EgressMatrixCell.create_egress_matrix_cell, egress_matrix_cell.EgressMatrixCell.delete_egress_matrix_cell_by_id, egress_matrix_cell.EgressMatrixCell.update_egress_matrix_cell_by_id,
+  - SDK Method used are egress_matrix_cell.EgressMatrixCell.create_egress_matrix_cell, egress_matrix_cell.EgressMatrixCell.delete_egress_matrix_cell_by_id,
+    egress_matrix_cell.EgressMatrixCell.update_egress_matrix_cell_by_id,
   - Paths used are post /ers/config/egressmatrixcell, delete /ers/config/egressmatrixcell/{id}, put /ers/config/egressmatrixcell/{id},
 """
 

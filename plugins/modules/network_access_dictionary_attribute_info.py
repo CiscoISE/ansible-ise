@@ -33,7 +33,8 @@ seealso:
     description: Complete reference of the Network Access - Dictionary Attribute API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are network_access_dictionary_attribute.NetworkAccessDictionaryAttribute.get_network_access_dictionary_attribute_by_name, network_access_dictionary_attribute.NetworkAccessDictionaryAttribute.get_network_access_dictionary_attributes_by_dictionary_name,
+  - SDK Method used are network_access_dictionary_attribute.NetworkAccessDictionaryAttribute.get_network_access_dictionary_attribute_by_name,
+    network_access_dictionary_attribute.NetworkAccessDictionaryAttribute.get_network_access_dictionary_attributes_by_dictionary_name,
   - Paths used are get /network-access/dictionaries/{dictionaryName}/attribute, get /network-access/dictionaries/{dictionaryName}/attribute/{name},
 """
 

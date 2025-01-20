@@ -29,8 +29,8 @@ options:
     description: Allow transfer of roles for certificate with matching subject.
     type: bool
   allowWildcardDelete:
-    description: If the given certificate to be deleted is a wildcard certificate, corresponding certificate gets deleted on rest of the nodes in the deployment as
-      well.
+    description: If the given certificate to be deleted is a wildcard certificate, corresponding certificate gets deleted on rest of the
+      nodes in the deployment as well.
     type: bool
   description:
     description: Description of System Certificate.

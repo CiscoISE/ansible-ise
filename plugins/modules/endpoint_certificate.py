@@ -22,7 +22,8 @@ options:
     description: Key value map. Must have CN and SAN entries.
     suboptions:
       cn:
-        description: Matches the requester's User Name, unless the Requester is an ERS Admin. ERS Admins are allowed to create requests for any CN.
+        description: Matches the requester's User Name, unless the Requester is an ERS Admin. ERS Admins are allowed to create requests for
+          any CN.
         type: str
       san:
         description: Valid MAC Address, delimited by '-'.
@@ -38,8 +39,8 @@ options:
     description: Allowed values - PKCS12, - PKCS12_CHAIN, - PKCS8, - PKCS8_CHAIN.
     type: str
   password:
-    description: Protects the private key. Must have more than 8 characters, less than 15 characters, at least one upper case letter, at least one lower case letter,
-      at least one digit, and can only contain A-Za-z0-9_#.
+    description: Protects the private key. Must have more than 8 characters, less than 15 characters, at least one upper case letter, at
+      least one lower case letter, at least one digit, and can only contain A-Za-z0-9_#.
     type: str
   saveFile:
     description: Enable or disable automatic file creation of raw response.

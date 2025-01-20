@@ -39,7 +39,8 @@ options:
     description: RemoteAccounting flag.
     type: bool
   serverList:
-    description: The names of TACACS external servers separated by commas. The order of the names in the string is the order of servers that will be used during authentication.
+    description: The names of TACACS external servers separated by commas. The order of the names in the string is the order of servers that
+      will be used during authentication.
     type: str
   suffixDelimiter:
     description: The delimiter that will be used for suffix strip.

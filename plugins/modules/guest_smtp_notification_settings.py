@@ -53,7 +53,8 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are guest_smtp_notification_configuration.GuestSmtpNotificationConfiguration.create_guest_smtp_notification_settings, guest_smtp_notification_configuration.GuestSmtpNotificationConfiguration.update_guest_smtp_notification_settings_by_id,
+  - SDK Method used are guest_smtp_notification_configuration.GuestSmtpNotificationConfiguration.create_guest_smtp_notification_settings,
+    guest_smtp_notification_configuration.GuestSmtpNotificationConfiguration.update_guest_smtp_notification_settings_by_id,
   - Paths used are post /ers/config/guestsmtpnotificationsettings, put /ers/config/guestsmtpnotificationsettings/{id},
 """
 

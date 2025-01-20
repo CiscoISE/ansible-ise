@@ -35,8 +35,8 @@ options:
     description: Internal User's enablePassword.
     type: str
   enabled:
-    description: Whether the user is enabled/disabled. To use it as filter, the values should be 'Enabled' or 'Disabled'. The values are case sensitive. For example,
-      'ERSObjectURL?filter=enabled.EQ.Enabled'.
+    description: Whether the user is enabled/disabled. To use it as filter, the values should be 'Enabled' or 'Disabled'. The values are
+      case sensitive. For example, 'ERSObjectURL?filter=enabled.EQ.Enabled'.
     type: bool
   expiryDate:
     description: To store the internal user's expiry date information. It's format is = 'YYYY-MM-DD'.
@@ -71,8 +71,8 @@ requirements:
 notes:
   - SDK Method used are internal_user.InternalUser.create_internal_user, internal_user.InternalUser.delete_internal_user_by_id, internal_user.InternalUser.delete_internal_user_by_name,
     internal_user.InternalUser.update_internal_user_by_id, internal_user.InternalUser.update_internal_user_by_name,
-  - Paths used are post /ers/config/internaluser, delete /ers/config/internaluser/name/{name}, delete /ers/config/internaluser/{id}, put /ers/config/internaluser/name/{name},
-    put /ers/config/internaluser/{id},
+  - Paths used are post /ers/config/internaluser, delete /ers/config/internaluser/name/{name}, delete /ers/config/internaluser/{id}, put
+    /ers/config/internaluser/name/{name}, put /ers/config/internaluser/{id},
 """
 
 EXAMPLES = r"""

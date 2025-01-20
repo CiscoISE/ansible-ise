@@ -22,8 +22,8 @@ options:
     description: Register, deregister, renew or update.
     type: str
   ssmOnPremServer:
-    description: If the connection type is selected as SSM_ONPREM_SERVER, then this field consists of IP address or the hostname (or FQDN) of the SSM On-Prem server
-      host.
+    description: If the connection type is selected as SSM_ONPREM_SERVER, then this field consists of IP address or the hostname (or FQDN)
+      of the SSM On-Prem server host.
     type: str
   tier:
     description: Licensing Registration Create's tier.

@@ -39,7 +39,8 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are active_directory.ActiveDirectory.get_active_directory_by_id, active_directory.ActiveDirectory.get_active_directory_by_name, active_directory.ActiveDirectory.get_active_directory_generator,
+  - SDK Method used are active_directory.ActiveDirectory.get_active_directory_by_id, active_directory.ActiveDirectory.get_active_directory_by_name,
+    active_directory.ActiveDirectory.get_active_directory_generator,
   - Paths used are get /ers/config/activedirectory, get /ers/config/activedirectory/name/{name}, get /ers/config/activedirectory/{id},
 """
 

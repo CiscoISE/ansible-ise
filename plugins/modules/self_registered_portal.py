@@ -62,7 +62,8 @@ options:
             type: dict
         type: dict
       language:
-        description: This property is supported only for Read operation and it allows to show the customizations in English. Other languages are not supported.
+        description: This property is supported only for Read operation and it allows to show the customizations in English. Other languages
+          are not supported.
         suboptions:
           viewLanguage:
             description: Self Registered Portal's viewLanguage.
@@ -97,8 +98,9 @@ options:
             type: str
         type: dict
       portalTweakSettings:
-        description: The Tweak Settings are a customization of the Portal Theme that has been selected for the portal. When the Portal Theme selection is changed,
-          the Tweak Settings are overwritten to match the values in the theme. The Tweak Settings can subsequently be changed by the user.
+        description: The Tweak Settings are a customization of the Portal Theme that has been selected for the portal. When the Portal Theme
+          selection is changed, the Tweak Settings are overwritten to match the values in the theme. The Tweak Settings can subsequently
+          be changed by the user.
         suboptions:
           bannerColor:
             description: Hex value of color.
@@ -136,8 +138,8 @@ options:
         description: Self Registered Portal's aupSettings.
         suboptions:
           displayFrequency:
-            description: How the AUP should be displayed, either on page or as a link. Only valid if includeAup = true. Allowed Values - FIRSTLOGIN, - EVERYLOGIN,
-              - RECURRING.
+            description: How the AUP should be displayed, either on page or as a link. Only valid if includeAup = true. Allowed Values -
+              FIRSTLOGIN, - EVERYLOGIN, - RECURRING.
             type: str
           displayFrequencyIntervalDays:
             description: Number of days between AUP confirmations (when displayFrequency = recurring).
@@ -188,14 +190,16 @@ options:
                 description: Target URL for redirection, used when successRedirect = URL.
                 type: str
               successRedirect:
-                description: After an Authentication Success where should device be redirected. Allowed values - AUTHSUCCESSPAGE, - ORIGINATINGURL, - URL.
+                description: After an Authentication Success where should device be redirected. Allowed values - AUTHSUCCESSPAGE, - ORIGINATINGURL,
+                  - URL.
                 type: str
             type: dict
           byodWelcomeSettings:
             description: Configuration of BYOD endpoint welcome step configuration.
             suboptions:
               aupDisplay:
-                description: How the AUP should be displayed, either on page or as a link. Only valid if includeAup = true. Allowed values - ONPAGE, - ASLINK.
+                description: How the AUP should be displayed, either on page or as a link. Only valid if includeAup = true. Allowed values
+                  - ONPAGE, - ASLINK.
                 type: str
               enableBYOD:
                 description: EnableBYOD flag.
@@ -262,7 +266,8 @@ options:
             description: Self Registered Portal's alternateGuestPortal.
             type: str
           aupDisplay:
-            description: How the AUP should be displayed, either on page or as a link. Only valid if includeAup = true. Allowed values - ONPAGE, - ASLINK.
+            description: How the AUP should be displayed, either on page or as a link. Only valid if includeAup = true. Allowed values -
+              ONPAGE, - ASLINK.
             type: str
           includeAup:
             description: Include an Acceptable Use Policy (AUP) that should be displayed during login.
@@ -295,7 +300,8 @@ options:
         description: The port, interface, certificate, and other basic settings of a portal.
         suboptions:
           allowedInterfaces:
-            description: Interfaces that the portal will be reachable on. Allowed values - eth0, - eth1, - eth2, - eth3, - eth4, - eth5, - bond0, - bond1, - bond2.
+            description: Interfaces that the portal will be reachable on. Allowed values - eth0, - eth1, - eth2, - eth3, - eth4, - eth5,
+              - bond0, - bond1, - bond2.
             elements: str
             type: list
           alwaysUsedLanguage:
@@ -350,27 +356,30 @@ options:
             description: Only valid if requireGuestApproval = true and sendApprovalRequestTo = SELECTEDEMAILADDRESSES.
             type: str
           approveDenyLinksTimeUnits:
-            description: This attribute, along with approveDenyLinksValidFor, specifies how long the link can be used. Only valid if requireGuestApproval = true.
-              Allowed Values - DAYS, - HOURS, - MINUTES.
+            description: This attribute, along with approveDenyLinksValidFor, specifies how long the link can be used. Only valid if requireGuestApproval
+              = true. Allowed Values - DAYS, - HOURS, - MINUTES.
             type: str
           approveDenyLinksValidFor:
-            description: This attribute, along with approveDenyLinksTimeUnits, specifies how long the link can be used. Only valid if requireGuestApproval = true.
+            description: This attribute, along with approveDenyLinksTimeUnits, specifies how long the link can be used. Only valid if requireGuestApproval
+              = true.
             type: int
           assignGuestsToGuestType:
             description: Guests are assigned to this guest type.
             type: str
           aupDisplay:
-            description: How the AUP should be displayed, either on page or as a link. Only valid if includeAup = true. Allowed values - ONPAGE, - ASLINK.
+            description: How the AUP should be displayed, either on page or as a link. Only valid if includeAup = true. Allowed values -
+              ONPAGE, - ASLINK.
             type: str
           authenticateSponsorsUsingPortalList:
             description: AuthenticateSponsorsUsingPortalList flag.
             type: bool
           autoLoginSelfWait:
-            description: Allow guests to login automatically from self-registration after sponsor's approval. No need to provide the credentials by guest to login.
+            description: Allow guests to login automatically from self-registration after sponsor's approval. No need to provide the credentials
+              by guest to login.
             type: bool
           autoLoginTimePeriod:
-            description: Waiting period for auto login until sponsor's approval. If time exceeds, guest has to login manually by providing the credentials. Default
-              value is 5 minutes.
+            description: Waiting period for auto login until sponsor's approval. If time exceeds, guest has to login manually by providing
+              the credentials. Default value is 5 minutes.
             type: int
           credentialNotificationUsingEmail:
             description: If true, send credential notification upon approval using email. Only valid if requireGuestApproval = true.
@@ -495,26 +504,28 @@ options:
             elements: str
             type: list
           guestEmailWhitelistDomains:
-            description: Self-registered guests whose e-mail address is in one of these domains will be allowed. Only valid if enableGuestEmailWhitelist = true.
+            description: Self-registered guests whose e-mail address is in one of these domains will be allowed. Only valid if enableGuestEmailWhitelist
+              = true.
             elements: str
             type: list
           includeAup:
             description: Include an Acceptable Use Policy (AUP) that should be displayed during login.
             type: bool
           postRegistrationRedirect:
-            description: After the registration submission direct the guest user to one of the following pages. Only valid if requireGuestApproval = true. Allowed
-              Values - SELFREGISTRATIONSUCCESS, - LOGINPAGEWITHINSTRUCTIONS - URL.
+            description: After the registration submission direct the guest user to one of the following pages. Only valid if requireGuestApproval
+              = true. Allowed Values - SELFREGISTRATIONSUCCESS, - LOGINPAGEWITHINSTRUCTIONS - URL.
             type: str
           postRegistrationRedirectUrl:
-            description: URL where guest user is redirected after registration. Only valid if requireGuestApproval = true and postRegistrationRedirect = URL.
+            description: URL where guest user is redirected after registration. Only valid if requireGuestApproval = true and postRegistrationRedirect
+              = URL.
             type: str
           registrationCode:
             description: The registration code that the guest user must enter.
             type: str
           requireApproverToAuthenticate:
-            description: When self-registered guests require approval, an approval request is e-mailed to one or more sponsor users. If the Cisco ISE Administrator
-              chooses to include an approval link in the e-mail, a sponsor user who clicks the link will be required to enter their username and password if this
-              attribute is true. Only valid if requireGuestApproval = true.
+            description: When self-registered guests require approval, an approval request is e-mailed to one or more sponsor users. If the
+              Cisco ISE Administrator chooses to include an approval link in the e-mail, a sponsor user who clicks the link will be required
+              to enter their username and password if this attribute is true. Only valid if requireGuestApproval = true.
             type: bool
           requireAupAcceptance:
             description: Require the portal user to accept the AUP. Only valid if includeAup = true.
@@ -534,7 +545,8 @@ options:
             elements: str
             type: list
           sendApprovalRequestTo:
-            description: Specifies where approval requests are sent. Only valid if requireGuestApproval = true. Allowed Values - SELECTEDEMAILADDRESSES, - PERSONBEINGVISITED.
+            description: Specifies where approval requests are sent. Only valid if requireGuestApproval = true. Allowed Values - SELECTEDEMAILADDRESSES,
+              - PERSONBEINGVISITED.
             type: str
           sponsorPortalList:
             description: Self Registered Portal's sponsorPortalList.
@@ -609,7 +621,8 @@ options:
             description: The default value displayed for an empty field. Only valid when emptyFieldDisplay = DISPLAYWITHDEFAULTVALUE.
             type: str
           emptyFieldDisplay:
-            description: Specifies how empty fields are handled on the Support Information Page. Allowed values - HIDE, - DISPLAYWITHNOVALUE, - DISPLAYWITHDEFAULTVALUE.
+            description: Specifies how empty fields are handled on the Support Information Page. Allowed values - HIDE, - DISPLAYWITHNOVALUE,
+              - DISPLAYWITHDEFAULTVALUE.
             type: str
           includeBrowserUserAgent:
             description: IncludeBrowserUserAgent flag.

@@ -29,7 +29,8 @@ seealso:
     description: Complete reference of the Device Administration - Time/Date Conditions API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are device_administration_time_date_conditions.DeviceAdministrationTimeDateConditions.get_device_admin_time_condition_by_id, device_administration_time_date_conditions.DeviceAdministrationTimeDateConditions.get_device_admin_time_conditions,
+  - SDK Method used are device_administration_time_date_conditions.DeviceAdministrationTimeDateConditions.get_device_admin_time_condition_by_id,
+    device_administration_time_date_conditions.DeviceAdministrationTimeDateConditions.get_device_admin_time_conditions,
   - Paths used are get /device-admin/time-condition, get /device-admin/time-condition/{id},
 """
 

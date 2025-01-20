@@ -33,7 +33,8 @@ seealso:
     description: Complete reference of the Network Access - Authorization Exception Rules API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are network_access_authorization_exception_rules.NetworkAccessAuthorizationExceptionRules.get_network_access_local_exception_rule_by_id, network_access_authorization_exception_rules.NetworkAccessAuthorizationExceptionRules.get_network_access_local_exception_rules,
+  - SDK Method used are network_access_authorization_exception_rules.NetworkAccessAuthorizationExceptionRules.get_network_access_local_exception_rule_by_id,
+    network_access_authorization_exception_rules.NetworkAccessAuthorizationExceptionRules.get_network_access_local_exception_rules,
   - Paths used are get /network-access/policy-set/{policyId}/exception, get /network-access/policy-set/{policyId}/exception/{id},
 """
 

@@ -49,7 +49,8 @@ seealso:
     description: Complete reference of the IPToSGTMapping API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgmapping
 notes:
-  - SDK Method used are ip_to_sgt_mapping.IpToSgtMapping.create_ip_to_sgt_mapping, ip_to_sgt_mapping.IpToSgtMapping.delete_ip_to_sgt_mapping_by_id, ip_to_sgt_mapping.IpToSgtMapping.update_ip_to_sgt_mapping_by_id,
+  - SDK Method used are ip_to_sgt_mapping.IpToSgtMapping.create_ip_to_sgt_mapping, ip_to_sgt_mapping.IpToSgtMapping.delete_ip_to_sgt_mapping_by_id,
+    ip_to_sgt_mapping.IpToSgtMapping.update_ip_to_sgt_mapping_by_id,
   - Paths used are post /ers/config/sgmapping, delete /ers/config/sgmapping/{id}, put /ers/config/sgmapping/{id},
 """
 

@@ -28,7 +28,8 @@ options:
         elements: dict
         suboptions:
           days:
-            description: List of Days Values should be one of Week day. Allowed values are - Sunday, - Monday, - Tuesday, - Wednesday, - Thursday, - Friday, - Saturday.
+            description: List of Days Values should be one of Week day. Allowed values are - Sunday, - Monday, - Tuesday, - Wednesday, -
+              Thursday, - Friday, - Saturday.
             elements: str
             type: list
           endTime:

@@ -16,7 +16,8 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   failedAttempts:
-    description: Failover occurs if the primary PAN is down for the specified number of failure polls. Count (2 - 60).<br> The default value is 5.
+    description: Failover occurs if the primary PAN is down for the specified number of failure polls. Count (2 - 60).<br> The default value
+      is 5.
     type: int
   isEnabled:
     description: IsEnabled flag.

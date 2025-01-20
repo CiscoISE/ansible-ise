@@ -52,7 +52,8 @@ seealso:
     description: Complete reference of the SecurityGroups API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgt
 notes:
-  - SDK Method used are security_groups.SecurityGroups.create_security_group, security_groups.SecurityGroups.delete_security_group_by_id, security_groups.SecurityGroups.update_security_group_by_id,
+  - SDK Method used are security_groups.SecurityGroups.create_security_group, security_groups.SecurityGroups.delete_security_group_by_id,
+    security_groups.SecurityGroups.update_security_group_by_id,
   - Paths used are post /ers/config/sgt, delete /ers/config/sgt/{id}, put /ers/config/sgt/{id},
 """
 

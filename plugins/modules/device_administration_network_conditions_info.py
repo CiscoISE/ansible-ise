@@ -29,7 +29,8 @@ seealso:
     description: Complete reference of the Device Administration - Network Conditions API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are device_administration_network_conditions.DeviceAdministrationNetworkConditions.get_device_admin_network_condition_by_id, device_administration_network_conditions.DeviceAdministrationNetworkConditions.get_device_admin_network_conditions,
+  - SDK Method used are device_administration_network_conditions.DeviceAdministrationNetworkConditions.get_device_admin_network_condition_by_id,
+    device_administration_network_conditions.DeviceAdministrationNetworkConditions.get_device_admin_network_conditions,
   - Paths used are get /device-admin/network-condition, get /device-admin/network-condition/{id},
 """
 

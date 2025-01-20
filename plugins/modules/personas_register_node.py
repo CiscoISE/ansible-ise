@@ -38,8 +38,8 @@ options:
     type: str
   roles:
     description:
-      - "The roles to be fulfilled by this node. Possible roles are PrimaryAdmin, SecondaryAdmin, PrimaryMonitoring, SecondaryMonitoring, PrimaryDedicatedMonitoring,
-        SecondaryDedicatedMonitoring, Standalone"
+      - "The roles to be fulfilled by this node. Possible roles are PrimaryAdmin, SecondaryAdmin, PrimaryMonitoring, SecondaryMonitoring,
+        PrimaryDedicatedMonitoring, SecondaryDedicatedMonitoring, Standalone"
     type: list
     elements: str
   services:

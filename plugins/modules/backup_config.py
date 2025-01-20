@@ -9,16 +9,17 @@ module: backup_config
 short_description: Resource module for Backup Config
 description:
   - Manage operation create of the resource Backup Config.
-  - Triggers on demand configuration backup on the ISE node. The API returns the task ID. Use the Task Service status API to get the status of the backup job.
+  - Triggers on demand configuration backup on the ISE node. The API returns the task ID. Use the Task Service status API to get the status
+    of the backup job.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   backupEncryptionKey:
-    description: The encyption key for the backed up file. Encryption key must satisfy the following criteria - Contains at least one uppercase letter A-Z, Contains
-      at least one lowercase letter a-z, Contains at least one digit 0-9, Contain only A-Za-z0-9_#, Has at least 8 characters, Has not more than 15 characters, Must
-      not contain 'CcIiSsCco', Must not begin with.
+    description: The encyption key for the backed up file. Encryption key must satisfy the following criteria - Contains at least one uppercase
+      letter A-Z, Contains at least one lowercase letter a-z, Contains at least one digit 0-9, Contain only A-Za-z0-9_#, Has at least 8 characters,
+      Has not more than 15 characters, Must not contain 'CcIiSsCco', Must not begin with.
     type: str
   backupName:
     description: The backup file will get saved with this name.

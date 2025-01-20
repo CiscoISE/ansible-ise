@@ -52,7 +52,8 @@ EXAMPLES = r"""
       - name: filter
         value: Optional. Exact match filter on group's CN
       - name: sidFilter
-        value: Optional. Exact match filter on group's SID, optionally specifying the domain as prefix. e.g. S-1-5-33-544 and R1.dom/S-1-5-33-544 are legal
+        value: Optional. Exact match filter on group's SID, optionally specifying the domain as prefix. e.g. S-1-5-33-544 and R1.dom/S-1-5-33-544
+          are legal
       - name: typeFilter
         value: Optional. Can be exactly one of:BUILTIN, DOMAIN LOCAL, GLOBAL, UNIVERSAL
   register: result

@@ -75,7 +75,8 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are duo_identity_sync.DuoIdentitySync.create_identitysync, duo_identity_sync.DuoIdentitySync.delete_identity_sync_by_sync_name, duo_identity_sync.DuoIdentitySync.update_identitysync_by_sync_name,
+  - SDK Method used are duo_identity_sync.DuoIdentitySync.create_identitysync, duo_identity_sync.DuoIdentitySync.delete_identity_sync_by_sync_name,
+    duo_identity_sync.DuoIdentitySync.update_identitysync_by_sync_name,
   - Paths used are post /api/v1/duo-identitysync/identitysync, delete /api/v1/duo-identitysync/identitysync/{syncName}, put /api/v1/duo-identitysync/identitysync/{syncName},
 """
 
