@@ -39,7 +39,8 @@ options:
     description: Device Administration Network Conditions's id.
     type: str
   ipAddrList:
-    description: <p>This field should contain IP address or subnet.<br> IP address can be IPV4 format (n.n.n.n) or IPV6 format (n n n n n n n n).<br> IP subnet can be IPV4 format (n.n.n.n/m) or IPV6 format (n n n n n n n n/m).<br> Line format - IP Address or subnet</p>.
+    description: <p>This field should contain IP address or subnet.<br> IP address can be IPV4 format (n.n.n.n) or IPV6 format (n n n n n n n n).<br> IP subnet can
+      be IPV4 format (n.n.n.n/m) or IPV6 format (n n n n n n n n/m).<br> Line format - IP Address or subnet</p>.
     elements: str
     type: list
   link:
@@ -56,7 +57,8 @@ options:
         type: str
     type: dict
   macAddrList:
-    description: <p>This field should contain Endstation MAC address, comma, and Destination MAC addresses.<br> Each Max address must include twelve hexadecimal digits using formats nn nn nn nn nn nn or nn-nn-nn-nn-nn-nn or nnnn.nnnn.nnnn or nnnnnnnnnnnn.<br> Line format - Endstation MAC,Destination MAC </p>.
+    description: <p>This field should contain Endstation MAC address, comma, and Destination MAC addresses.<br> Each Max address must include twelve hexadecimal digits
+      using formats nn nn nn nn nn nn or nn-nn-nn-nn-nn-nn or nnnn.nnnn.nnnn or nnnnnnnnnnnn.<br> Line format - Endstation MAC,Destination MAC </p>.
     elements: str
     type: list
   name:
@@ -70,7 +72,8 @@ seealso:
     description: Complete reference of the Device Administration - Network Conditions API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are device_administration_network_conditions.DeviceAdministrationNetworkConditions.create_device_admin_network_condition, device_administration_network_conditions.DeviceAdministrationNetworkConditions.delete_device_admin_network_condition_by_id, device_administration_network_conditions.DeviceAdministrationNetworkConditions.update_device_admin_network_condition_by_id,
+  - SDK Method used are device_administration_network_conditions.DeviceAdministrationNetworkConditions.create_device_admin_network_condition, device_administration_network_conditions.DeviceAdministrationNetworkConditions.delete_device_admin_network_condition_by_id,
+    device_administration_network_conditions.DeviceAdministrationNetworkConditions.update_device_admin_network_condition_by_id,
   - Paths used are post /device-admin/network-condition, delete /device-admin/network-condition/{id}, put /device-admin/network-condition/{id},
 """
 

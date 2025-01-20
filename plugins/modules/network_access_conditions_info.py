@@ -35,7 +35,8 @@ seealso:
     description: Complete reference of the Network Access - Conditions API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are network_access_conditions.NetworkAccessConditions.get_network_access_condition_by_id, network_access_conditions.NetworkAccessConditions.get_network_access_condition_by_name, network_access_conditions.NetworkAccessConditions.get_network_access_conditions,
+  - SDK Method used are network_access_conditions.NetworkAccessConditions.get_network_access_condition_by_id, network_access_conditions.NetworkAccessConditions.get_network_access_condition_by_name,
+    network_access_conditions.NetworkAccessConditions.get_network_access_conditions,
   - Paths used are get /network-access/condition, get /network-access/condition/condition-by-name/{name}, get /network-access/condition/{id},
 """
 

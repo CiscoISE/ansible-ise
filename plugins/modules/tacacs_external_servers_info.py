@@ -39,7 +39,8 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are tacacs_external_servers.TacacsExternalServers.get_tacacs_external_servers_by_id, tacacs_external_servers.TacacsExternalServers.get_tacacs_external_servers_by_name, tacacs_external_servers.TacacsExternalServers.get_tacacs_external_servers_generator,
+  - SDK Method used are tacacs_external_servers.TacacsExternalServers.get_tacacs_external_servers_by_id, tacacs_external_servers.TacacsExternalServers.get_tacacs_external_servers_by_name,
+    tacacs_external_servers.TacacsExternalServers.get_tacacs_external_servers_generator,
   - Paths used are get /ers/config/tacacsexternalservers, get /ers/config/tacacsexternalservers/name/{name}, get /ers/config/tacacsexternalservers/{id},
 """
 

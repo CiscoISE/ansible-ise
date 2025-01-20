@@ -19,7 +19,9 @@ options:
     description: Description of the backup.
     type: str
   backupEncryptionKey:
-    description: The encyption key for the backed up file. Encryption key must satisfy the following criteria - Contains at least one uppercase letter A-Z, Contains at least one lowercase letter a-z, Contains at least one digit 0-9, Contain only A-Za-z0-9_#, Has at least 8 characters, Has not more than 15 characters, Must not contain 'CcIiSsCco', Must not begin with.
+    description: The encyption key for the backed up file. Encryption key must satisfy the following criteria - Contains at least one uppercase letter A-Z, Contains
+      at least one lowercase letter a-z, Contains at least one digit 0-9, Contain only A-Za-z0-9_#, Has at least 8 characters, Has not more than 15 characters, Must
+      not contain 'CcIiSsCco', Must not begin with.
     type: str
   backupName:
     description: The backup file will get saved with this name.

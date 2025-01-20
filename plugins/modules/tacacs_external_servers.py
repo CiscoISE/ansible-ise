@@ -45,7 +45,8 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are tacacs_external_servers.TacacsExternalServers.create_tacacs_external_servers, tacacs_external_servers.TacacsExternalServers.delete_tacacs_external_servers_by_id, tacacs_external_servers.TacacsExternalServers.update_tacacs_external_servers_by_id,
+  - SDK Method used are tacacs_external_servers.TacacsExternalServers.create_tacacs_external_servers, tacacs_external_servers.TacacsExternalServers.delete_tacacs_external_servers_by_id,
+    tacacs_external_servers.TacacsExternalServers.update_tacacs_external_servers_by_id,
   - Paths used are post /ers/config/tacacsexternalservers, delete /ers/config/tacacsexternalservers/{id}, put /ers/config/tacacsexternalservers/{id},
 """
 

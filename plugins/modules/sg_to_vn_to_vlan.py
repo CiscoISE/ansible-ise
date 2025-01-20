@@ -77,7 +77,8 @@ seealso:
     description: Complete reference of the SecurityGroupToVirtualNetwork API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgtvnvlan
 notes:
-  - SDK Method used are security_group_to_virtual_network.SecurityGroupToVirtualNetwork.create_security_groups_to_vn_to_vlan, security_group_to_virtual_network.SecurityGroupToVirtualNetwork.delete_security_groups_to_vn_to_vlan_by_id, security_group_to_virtual_network.SecurityGroupToVirtualNetwork.update_security_groups_to_vn_to_vlan_by_id,
+  - SDK Method used are security_group_to_virtual_network.SecurityGroupToVirtualNetwork.create_security_groups_to_vn_to_vlan, security_group_to_virtual_network.SecurityGroupToVirtualNetwork.delete_security_groups_to_vn_to_vlan_by_id,
+    security_group_to_virtual_network.SecurityGroupToVirtualNetwork.update_security_groups_to_vn_to_vlan_by_id,
   - Paths used are post /ers/config/sgtvnvlan, delete /ers/config/sgtvnvlan/{id}, put /ers/config/sgtvnvlan/{id},
 """
 

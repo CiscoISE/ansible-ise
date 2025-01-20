@@ -33,7 +33,8 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are network_device_group.NetworkDeviceGroup.create_network_device_group, network_device_group.NetworkDeviceGroup.delete_network_device_group_by_id, network_device_group.NetworkDeviceGroup.update_network_device_group_by_id,
+  - SDK Method used are network_device_group.NetworkDeviceGroup.create_network_device_group, network_device_group.NetworkDeviceGroup.delete_network_device_group_by_id,
+    network_device_group.NetworkDeviceGroup.update_network_device_group_by_id,
   - Paths used are post /ers/config/networkdevicegroup, delete /ers/config/networkdevicegroup/{id}, put /ers/config/networkdevicegroup/{id},
 """
 

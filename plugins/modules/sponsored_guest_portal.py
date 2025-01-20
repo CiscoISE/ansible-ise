@@ -97,7 +97,8 @@ options:
             type: str
         type: dict
       portalTweakSettings:
-        description: The Tweak Settings are a customization of the Portal Theme that has been selected for the portal. When the Portal Theme selection is changed, the Tweak Settings are overwritten to match the values in the theme. The Tweak Settings can subsequently be changed by the user.
+        description: The Tweak Settings are a customization of the Portal Theme that has been selected for the portal. When the Portal Theme selection is changed,
+          the Tweak Settings are overwritten to match the values in the theme. The Tweak Settings can subsequently be changed by the user.
         suboptions:
           bannerColor:
             description: Hex value of color.
@@ -135,7 +136,8 @@ options:
         description: Sponsored Guest Portal's aupSettings.
         suboptions:
           displayFrequency:
-            description: How the AUP should be displayed, either on page or as a link. Only valid if includeAup = true. Allowed Values - FIRSTLOGIN, - EVERYLOGIN, - RECURRING.
+            description: How the AUP should be displayed, either on page or as a link. Only valid if includeAup = true. Allowed Values - FIRSTLOGIN, - EVERYLOGIN,
+              - RECURRING.
             type: str
           displayFrequencyIntervalDays:
             description: Number of days between AUP confirmations (when displayFrequency = recurring).
@@ -356,7 +358,8 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are sponsored_guest_portal.SponsoredGuestPortal.create_sponsored_guest_portal, sponsored_guest_portal.SponsoredGuestPortal.delete_sponsored_guest_portal_by_id, sponsored_guest_portal.SponsoredGuestPortal.update_sponsored_guest_portal_by_id,
+  - SDK Method used are sponsored_guest_portal.SponsoredGuestPortal.create_sponsored_guest_portal, sponsored_guest_portal.SponsoredGuestPortal.delete_sponsored_guest_portal_by_id,
+    sponsored_guest_portal.SponsoredGuestPortal.update_sponsored_guest_portal_by_id,
   - Paths used are post /ers/config/sponsoredguestportal, delete /ers/config/sponsoredguestportal/{id}, put /ers/config/sponsoredguestportal/{id},
 """
 

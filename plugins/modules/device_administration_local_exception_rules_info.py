@@ -33,7 +33,8 @@ seealso:
     description: Complete reference of the Device Administration - Authorization Exception Rules API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are device_administration_authorization_exception_rules.DeviceAdministrationAuthorizationExceptionRules.get_device_admin_local_exception_rule_by_id, device_administration_authorization_exception_rules.DeviceAdministrationAuthorizationExceptionRules.get_device_admin_local_exception_rules,
+  - SDK Method used are device_administration_authorization_exception_rules.DeviceAdministrationAuthorizationExceptionRules.get_device_admin_local_exception_rule_by_id,
+    device_administration_authorization_exception_rules.DeviceAdministrationAuthorizationExceptionRules.get_device_admin_local_exception_rules,
   - Paths used are get /device-admin/policy-set/{policyId}/exception, get /device-admin/policy-set/{policyId}/exception/{id},
 """
 

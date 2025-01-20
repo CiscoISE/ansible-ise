@@ -39,7 +39,8 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are certificate_template.CertificateTemplate.get_certificate_template_by_id, certificate_template.CertificateTemplate.get_certificate_template_by_name, certificate_template.CertificateTemplate.get_certificate_template_generator,
+  - SDK Method used are certificate_template.CertificateTemplate.get_certificate_template_by_id, certificate_template.CertificateTemplate.get_certificate_template_by_name,
+    certificate_template.CertificateTemplate.get_certificate_template_generator,
   - Paths used are get /ers/config/certificatetemplate/, get /ers/config/certificatetemplate/name/{name}, get /ers/config/certificatetemplate/{id},
 """
 

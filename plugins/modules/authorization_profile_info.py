@@ -39,7 +39,8 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are authorization_profile.AuthorizationProfile.get_authorization_profile_by_id, authorization_profile.AuthorizationProfile.get_authorization_profile_by_name, authorization_profile.AuthorizationProfile.get_authorization_profiles_generator,
+  - SDK Method used are authorization_profile.AuthorizationProfile.get_authorization_profile_by_id, authorization_profile.AuthorizationProfile.get_authorization_profile_by_name,
+    authorization_profile.AuthorizationProfile.get_authorization_profiles_generator,
   - Paths used are get /ers/config/authorizationprofile, get /ers/config/authorizationprofile/name/{name}, get /ers/config/authorizationprofile/{id},
 """
 

@@ -114,16 +114,19 @@ options:
         description: The eapFastUsePacsAuthorizationPacTtl is required only if eapFastUsePacsStatelessSessionResume is true, otherwise it must be ignored.
         type: int
       eapFastUsePacsAuthorizationPacTtlUnits:
-        description: The eapFastUsePacsAuthorizationPacTtlUnits is required only if eapFastUsePacsStatelessSessionResume is true, otherwise it must be ignored. Allowed Values - SECONDS, - MINUTES, - HOURS, - DAYS, - WEEKS.
+        description: The eapFastUsePacsAuthorizationPacTtlUnits is required only if eapFastUsePacsStatelessSessionResume is true, otherwise it must be ignored. Allowed
+          Values - SECONDS, - MINUTES, - HOURS, - DAYS, - WEEKS.
         type: str
       eapFastUsePacsMachinePacTtl:
         description: The eapFastUsePacsMachinePacTtl is required only if eapFastUsePacsAllowMachineAuthentication is true, otherwise it must be ignored.
         type: int
       eapFastUsePacsMachinePacTtlUnits:
-        description: The eapFastUsePacsMachinePacTtlUnits is required only if eapFastUsePacsAllowMachineAuthentication is true, otherwise it must be ignored. Allowed Values - SECONDS, - MINUTES, - HOURS, - DAYS, - WEEKS.
+        description: The eapFastUsePacsMachinePacTtlUnits is required only if eapFastUsePacsAllowMachineAuthentication is true, otherwise it must be ignored. Allowed
+          Values - SECONDS, - MINUTES, - HOURS, - DAYS, - WEEKS.
         type: str
       eapFastUsePacsReturnAccessAcceptAfterAuthenticatedProvisioning:
-        description: The eapFastUsePacsReturnAccessAcceptAfterAuthenticatedProvisioning is required only if eapFastUsePacsAllowAuthenProvisioning is true, otherwise it must be ignored.
+        description: The eapFastUsePacsReturnAccessAcceptAfterAuthenticatedProvisioning is required only if eapFastUsePacsAllowAuthenProvisioning is true, otherwise
+          it must be ignored.
         type: bool
       eapFastUsePacsStatelessSessionResume:
         description: The eapFastUsePacsStatelessSessionResume is required only if eapFastUsePacs is true, otherwise it must be ignored.
@@ -132,7 +135,8 @@ options:
         description: The eapFastUsePacsTunnelPacTtl is required only if eapFastUsePacs is true, otherwise it must be ignored.
         type: int
       eapFastUsePacsTunnelPacTtlUnits:
-        description: The eapFastUsePacsTunnelPacTtlUnits is required only if eapFastUsePacs is true, otherwise it must be ignored. Allowed Values - SECONDS, - MINUTES, - HOURS, - DAYS, - WEEKS.
+        description: The eapFastUsePacsTunnelPacTtlUnits is required only if eapFastUsePacs is true, otherwise it must be ignored. Allowed Values - SECONDS, - MINUTES,
+          - HOURS, - DAYS, - WEEKS.
         type: str
       eapFastUsePacsUseProactivePacUpdatePrecentage:
         description: The eapFastUsePacsUseProactivePacUpdatePrecentage is required only if eapFastUsePacs is true, otherwise it must be ignored.
@@ -154,7 +158,8 @@ options:
         description: Time to live. The eapTlsSessionTicketTtl is required only if eapTlsEnableStatelessSessionResume is true, otherwise it must be ignored.
         type: int
       eapTlsSessionTicketTtlUnits:
-        description: Time to live time units. The eapTlsSessionTicketTtlUnits is required only if eapTlsEnableStatelessSessionResume is true, otherwise it must be ignored. Allowed Values - SECONDS, - MINUTES, - HOURS, - DAYS, - WEEKS.
+        description: Time to live time units. The eapTlsSessionTicketTtlUnits is required only if eapTlsEnableStatelessSessionResume is true, otherwise it must be
+          ignored. Allowed Values - SECONDS, - MINUTES, - HOURS, - DAYS, - WEEKS.
         type: str
     type: dict
   eapTlsLBit:
@@ -229,7 +234,8 @@ options:
         type: bool
     type: dict
   preferredEapProtocol:
-    description: The preferredEapProtocol is required only if allowPreferredEapProtocol is true, otherwise it must be ignored. Allowed Values - EAP_FAST, - PEAP, - LEAP, - EAP_MD5, - EAP_TLS, - EAP_TTLS, - TEAP.
+    description: The preferredEapProtocol is required only if allowPreferredEapProtocol is true, otherwise it must be ignored. Allowed Values - EAP_FAST, - PEAP,
+      - LEAP, - EAP_MD5, - EAP_TLS, - EAP_TTLS, - TEAP.
     type: str
   processHostLookup:
     description: ProcessHostLookup flag.

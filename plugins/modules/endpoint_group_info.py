@@ -46,7 +46,9 @@ options:
   filter:
     description:
       - >
-        Filter query parameter. **Simple filtering** should be available through the filter query string parameter. The structure of a filter is a triplet of field operator and value separated with dots. More than one filter can be sent. The logical operator common to ALL filter criteria will be by default AND, and can be changed by using the "filterType=or" query string parameter.
+        Filter query parameter. **Simple filtering** should be available through the filter query string parameter. The structure of a filter is a triplet of field
+        operator and value separated with dots. More than one filter can be sent. The logical operator common to ALL filter criteria will be by default AND, and can
+        be changed by using the "filterType=or" query string parameter.
       - Each resource Data model description should specify if an attribute is a filtered field.
       - The 'EQ' operator describes 'Equals'.
       - The 'NEQ' operator describes 'Not Equals'.
@@ -73,7 +75,8 @@ seealso:
     description: Complete reference of the EndpointIdentityGroup API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!endpointgroup
 notes:
-  - SDK Method used are endpoint_identity_group.EndpointIdentityGroup.get_endpoint_group_by_id, endpoint_identity_group.EndpointIdentityGroup.get_endpoint_group_by_name, endpoint_identity_group.EndpointIdentityGroup.get_endpoint_groups_generator,
+  - SDK Method used are endpoint_identity_group.EndpointIdentityGroup.get_endpoint_group_by_id, endpoint_identity_group.EndpointIdentityGroup.get_endpoint_group_by_name,
+    endpoint_identity_group.EndpointIdentityGroup.get_endpoint_groups_generator,
   - Paths used are get /ers/config/endpointgroup, get /ers/config/endpointgroup/name/{name}, get /ers/config/endpointgroup/{id},
 """
 

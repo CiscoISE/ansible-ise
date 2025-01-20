@@ -97,7 +97,8 @@ options:
             type: str
         type: dict
       portalTweakSettings:
-        description: The Tweak Settings are a customization of the Portal Theme that has been selected for the portal. When the Portal Theme selection is changed, the Tweak Settings are overwritten to match the values in the theme. The Tweak Settings can subsequently be changed by the user.
+        description: The Tweak Settings are a customization of the Portal Theme that has been selected for the portal. When the Portal Theme selection is changed,
+          the Tweak Settings are overwritten to match the values in the theme. The Tweak Settings can subsequently be changed by the user.
         suboptions:
           bannerColor:
             description: Hex value of color.
@@ -135,7 +136,8 @@ options:
         description: Self Registered Portal's aupSettings.
         suboptions:
           displayFrequency:
-            description: How the AUP should be displayed, either on page or as a link. Only valid if includeAup = true. Allowed Values - FIRSTLOGIN, - EVERYLOGIN, - RECURRING.
+            description: How the AUP should be displayed, either on page or as a link. Only valid if includeAup = true. Allowed Values - FIRSTLOGIN, - EVERYLOGIN,
+              - RECURRING.
             type: str
           displayFrequencyIntervalDays:
             description: Number of days between AUP confirmations (when displayFrequency = recurring).
@@ -348,7 +350,8 @@ options:
             description: Only valid if requireGuestApproval = true and sendApprovalRequestTo = SELECTEDEMAILADDRESSES.
             type: str
           approveDenyLinksTimeUnits:
-            description: This attribute, along with approveDenyLinksValidFor, specifies how long the link can be used. Only valid if requireGuestApproval = true. Allowed Values - DAYS, - HOURS, - MINUTES.
+            description: This attribute, along with approveDenyLinksValidFor, specifies how long the link can be used. Only valid if requireGuestApproval = true.
+              Allowed Values - DAYS, - HOURS, - MINUTES.
             type: str
           approveDenyLinksValidFor:
             description: This attribute, along with approveDenyLinksTimeUnits, specifies how long the link can be used. Only valid if requireGuestApproval = true.
@@ -366,7 +369,8 @@ options:
             description: Allow guests to login automatically from self-registration after sponsor's approval. No need to provide the credentials by guest to login.
             type: bool
           autoLoginTimePeriod:
-            description: Waiting period for auto login until sponsor's approval. If time exceeds, guest has to login manually by providing the credentials. Default value is 5 minutes.
+            description: Waiting period for auto login until sponsor's approval. If time exceeds, guest has to login manually by providing the credentials. Default
+              value is 5 minutes.
             type: int
           credentialNotificationUsingEmail:
             description: If true, send credential notification upon approval using email. Only valid if requireGuestApproval = true.
@@ -498,7 +502,8 @@ options:
             description: Include an Acceptable Use Policy (AUP) that should be displayed during login.
             type: bool
           postRegistrationRedirect:
-            description: After the registration submission direct the guest user to one of the following pages. Only valid if requireGuestApproval = true. Allowed Values - SELFREGISTRATIONSUCCESS, - LOGINPAGEWITHINSTRUCTIONS - URL.
+            description: After the registration submission direct the guest user to one of the following pages. Only valid if requireGuestApproval = true. Allowed
+              Values - SELFREGISTRATIONSUCCESS, - LOGINPAGEWITHINSTRUCTIONS - URL.
             type: str
           postRegistrationRedirectUrl:
             description: URL where guest user is redirected after registration. Only valid if requireGuestApproval = true and postRegistrationRedirect = URL.
@@ -507,7 +512,9 @@ options:
             description: The registration code that the guest user must enter.
             type: str
           requireApproverToAuthenticate:
-            description: When self-registered guests require approval, an approval request is e-mailed to one or more sponsor users. If the Cisco ISE Administrator chooses to include an approval link in the e-mail, a sponsor user who clicks the link will be required to enter their username and password if this attribute is true. Only valid if requireGuestApproval = true.
+            description: When self-registered guests require approval, an approval request is e-mailed to one or more sponsor users. If the Cisco ISE Administrator
+              chooses to include an approval link in the e-mail, a sponsor user who clicks the link will be required to enter their username and password if this
+              attribute is true. Only valid if requireGuestApproval = true.
             type: bool
           requireAupAcceptance:
             description: Require the portal user to accept the AUP. Only valid if includeAup = true.
@@ -632,7 +639,8 @@ seealso:
     description: Complete reference of the SelfRegisteredPortal API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!selfregportal
 notes:
-  - SDK Method used are self_registered_portal.SelfRegisteredPortal.create_self_registered_portal, self_registered_portal.SelfRegisteredPortal.delete_self_registered_portal_by_id, self_registered_portal.SelfRegisteredPortal.update_self_registered_portal_by_id,
+  - SDK Method used are self_registered_portal.SelfRegisteredPortal.create_self_registered_portal, self_registered_portal.SelfRegisteredPortal.delete_self_registered_portal_by_id,
+    self_registered_portal.SelfRegisteredPortal.update_self_registered_portal_by_id,
   - Paths used are post /ers/config/selfregportal, delete /ers/config/selfregportal/{id}, put /ers/config/selfregportal/{id},
 """
 

@@ -40,7 +40,8 @@ seealso:
     description: Complete reference of the IPToSGTMappingGroup API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgmappinggroup
 notes:
-  - SDK Method used are ip_to_sgt_mapping_group.IpToSgtMappingGroup.create_ip_to_sgt_mapping_group, ip_to_sgt_mapping_group.IpToSgtMappingGroup.delete_ip_to_sgt_mapping_group_by_id, ip_to_sgt_mapping_group.IpToSgtMappingGroup.update_ip_to_sgt_mapping_group_by_id,
+  - SDK Method used are ip_to_sgt_mapping_group.IpToSgtMappingGroup.create_ip_to_sgt_mapping_group, ip_to_sgt_mapping_group.IpToSgtMappingGroup.delete_ip_to_sgt_mapping_group_by_id,
+    ip_to_sgt_mapping_group.IpToSgtMappingGroup.update_ip_to_sgt_mapping_group_by_id,
   - Paths used are post /ers/config/sgmappinggroup, delete /ers/config/sgmappinggroup/{id}, put /ers/config/sgmappinggroup/{id},
 """
 

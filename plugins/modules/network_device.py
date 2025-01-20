@@ -192,8 +192,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are network_device.NetworkDevice.create_network_device, network_device.NetworkDevice.delete_network_device_by_id, network_device.NetworkDevice.delete_network_device_by_name, network_device.NetworkDevice.update_network_device_by_id, network_device.NetworkDevice.update_network_device_by_name,
-  - Paths used are post /ers/config/networkdevice, delete /ers/config/networkdevice/name/{name}, delete /ers/config/networkdevice/{id}, put /ers/config/networkdevice/name/{name}, put /ers/config/networkdevice/{id},
+  - SDK Method used are network_device.NetworkDevice.create_network_device, network_device.NetworkDevice.delete_network_device_by_id, network_device.NetworkDevice.delete_network_device_by_name,
+    network_device.NetworkDevice.update_network_device_by_id, network_device.NetworkDevice.update_network_device_by_name,
+  - Paths used are post /ers/config/networkdevice, delete /ers/config/networkdevice/name/{name}, delete /ers/config/networkdevice/{id}, put /ers/config/networkdevice/name/{name},
+    put /ers/config/networkdevice/{id},
 """
 
 EXAMPLES = r"""

@@ -115,8 +115,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are guest_user.GuestUser.create_guest_user, guest_user.GuestUser.delete_guest_user_by_id, guest_user.GuestUser.delete_guest_user_by_name, guest_user.GuestUser.update_guest_user_by_id, guest_user.GuestUser.update_guest_user_by_name,
-  - Paths used are post /ers/config/guestuser, delete /ers/config/guestuser/name/{name}, delete /ers/config/guestuser/{id}, put /ers/config/guestuser/name/{name}, put /ers/config/guestuser/{id},
+  - SDK Method used are guest_user.GuestUser.create_guest_user, guest_user.GuestUser.delete_guest_user_by_id, guest_user.GuestUser.delete_guest_user_by_name, guest_user.GuestUser.update_guest_user_by_id,
+    guest_user.GuestUser.update_guest_user_by_name,
+  - Paths used are post /ers/config/guestuser, delete /ers/config/guestuser/name/{name}, delete /ers/config/guestuser/{id}, put /ers/config/guestuser/name/{name},
+    put /ers/config/guestuser/{id},
 """
 
 EXAMPLES = r"""

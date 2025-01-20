@@ -44,7 +44,8 @@ options:
             type: str
         type: dict
       rightHandSideAttribueValue:
-        description: Attribute value can be of type AttributeValue or AdvancedDictionaryAttribute. For AttributeValue the value is String, For AdvancedDictionaryAttribute the value is dictionaryName and attributeName properties.
+        description: Attribute value can be of type AttributeValue or AdvancedDictionaryAttribute. For AttributeValue the value is String, For AdvancedDictionaryAttribute
+          the value is dictionaryName and attributeName properties.
         suboptions:
           AdvancedAttributeValueType:
             description: Authorization Profile's AdvancedAttributeValueType.
@@ -150,13 +151,15 @@ options:
     description: Authorization Profile's webRedirection.
     suboptions:
       WebRedirectionType:
-        description: Value MUST be one of the following CentralizedWebAuth, HotSpot, NativeSupplicanProvisioning, ClientProvisioning. The WebRedirectionType must fit the portalName.
+        description: Value MUST be one of the following CentralizedWebAuth, HotSpot, NativeSupplicanProvisioning, ClientProvisioning. The WebRedirectionType must
+          fit the portalName.
         type: str
       acl:
         description: Authorization Profile's acl.
         type: str
       displayCertificatesRenewalMessages:
-        description: The displayCertificatesRenewalMessages is mandatory when 'WebRedirectionType' value is 'CentralizedWebAuth'. For all other 'WebRedirectionType' values the field must be ignored.
+        description: The displayCertificatesRenewalMessages is mandatory when 'WebRedirectionType' value is 'CentralizedWebAuth'. For all other 'WebRedirectionType'
+          values the field must be ignored.
         type: bool
       portalName:
         description: A portal that exist in the DB and fits the WebRedirectionType.
@@ -169,7 +172,8 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are authorization_profile.AuthorizationProfile.create_authorization_profile, authorization_profile.AuthorizationProfile.delete_authorization_profile_by_id, authorization_profile.AuthorizationProfile.update_authorization_profile_by_id,
+  - SDK Method used are authorization_profile.AuthorizationProfile.create_authorization_profile, authorization_profile.AuthorizationProfile.delete_authorization_profile_by_id,
+    authorization_profile.AuthorizationProfile.update_authorization_profile_by_id,
   - Paths used are post /ers/config/authorizationprofile, delete /ers/config/authorizationprofile/{id}, put /ers/config/authorizationprofile/{id},
 """
 

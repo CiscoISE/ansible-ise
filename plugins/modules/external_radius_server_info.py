@@ -39,7 +39,8 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are external_radius_server.ExternalRadiusServer.get_external_radius_server_by_id, external_radius_server.ExternalRadiusServer.get_external_radius_server_by_name, external_radius_server.ExternalRadiusServer.get_external_radius_server_generator,
+  - SDK Method used are external_radius_server.ExternalRadiusServer.get_external_radius_server_by_id, external_radius_server.ExternalRadiusServer.get_external_radius_server_by_name,
+    external_radius_server.ExternalRadiusServer.get_external_radius_server_generator,
   - Paths used are get /ers/config/externalradiusserver, get /ers/config/externalradiusserver/name/{name}, get /ers/config/externalradiusserver/{id},
 """
 

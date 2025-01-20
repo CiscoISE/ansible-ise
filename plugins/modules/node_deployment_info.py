@@ -20,7 +20,9 @@ options:
   filter:
     description:
       - >
-        Filter query parameter. .. Container **Simple filtering** is available through the filter query string parameter. The structure of a filter is a triplet of field operator and value, separated by dots. More than one filter can be sent. The logical operator common to all filter criteria is AND by default, and can be changed by using the *"filterType=or"* query string parameter.
+        Filter query parameter. .. Container **Simple filtering** is available through the filter query string parameter. The structure of a filter is a triplet of
+        field operator and value, separated by dots. More than one filter can be sent. The logical operator common to all filter criteria is AND by default, and can
+        be changed by using the *"filterType=or"* query string parameter.
       - Each resource Data model description should specify if an attribute is a filtered field.
       - The 'EQ' operator describes 'Equals'.
       - The 'NEQ' operator describes 'Not Equals'.

@@ -159,7 +159,8 @@ requirements:
   - python >= 3.5
 notes:
   - SDK Method used are endpoints.Endpoints.create_bulk_end_points, endpoints.Endpoints.delete_endpoint, endpoints.Endpoints.update_bulk_end_points, endpoints.Endpoints.update_endpoint,
-  - Paths used are post /api/v1/endpoint, post /api/v1/endpoint/bulk, delete /api/v1/endpoint/bulk, delete /api/v1/endpoint/{value}, put /api/v1/endpoint/bulk, put /api/v1/endpoint/{value},
+  - Paths used are post /api/v1/endpoint, post /api/v1/endpoint/bulk, delete /api/v1/endpoint/bulk, delete /api/v1/endpoint/{value}, put /api/v1/endpoint/bulk, put
+    /api/v1/endpoint/{value},
 """
 
 EXAMPLES = r"""

@@ -18,7 +18,9 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   actions:
-    description: '- QUARANTINE Allows you to use Exception policies (authorization policies) to limit or deny an endpoint access to the network. - PORTBOUNCE Resets the port on the network device to which the endpoint is connected. - SHUTDOWN Shuts down the port on the network device to which the endpoint is connected. - RE_AUTHENTICATE Re-authenticates the session from the endpoint.'
+    description: '- QUARANTINE Allows you to use Exception policies (authorization policies) to limit or deny an endpoint access to the network. - PORTBOUNCE Resets
+      the port on the network device to which the endpoint is connected. - SHUTDOWN Shuts down the port on the network device to which the endpoint is connected.
+      - RE_AUTHENTICATE Re-authenticates the session from the endpoint.'
     elements: str
     type: list
   id:

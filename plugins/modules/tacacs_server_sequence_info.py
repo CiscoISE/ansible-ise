@@ -39,7 +39,8 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are tacacs_server_sequence.TacacsServerSequence.get_tacacs_server_sequence_by_id, tacacs_server_sequence.TacacsServerSequence.get_tacacs_server_sequence_by_name, tacacs_server_sequence.TacacsServerSequence.get_tacacs_server_sequence_generator,
+  - SDK Method used are tacacs_server_sequence.TacacsServerSequence.get_tacacs_server_sequence_by_id, tacacs_server_sequence.TacacsServerSequence.get_tacacs_server_sequence_by_name,
+    tacacs_server_sequence.TacacsServerSequence.get_tacacs_server_sequence_generator,
   - Paths used are get /ers/config/tacacsserversequence, get /ers/config/tacacsserversequence/name/{name}, get /ers/config/tacacsserversequence/{id},
 """
 

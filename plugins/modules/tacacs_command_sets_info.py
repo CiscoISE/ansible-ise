@@ -39,7 +39,8 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are tacacs_command_sets.TacacsCommandSets.get_tacacs_command_sets_by_id, tacacs_command_sets.TacacsCommandSets.get_tacacs_command_sets_by_name, tacacs_command_sets.TacacsCommandSets.get_tacacs_command_sets_generator,
+  - SDK Method used are tacacs_command_sets.TacacsCommandSets.get_tacacs_command_sets_by_id, tacacs_command_sets.TacacsCommandSets.get_tacacs_command_sets_by_name,
+    tacacs_command_sets.TacacsCommandSets.get_tacacs_command_sets_generator,
   - Paths used are get /ers/config/tacacscommandsets, get /ers/config/tacacscommandsets/name/{name}, get /ers/config/tacacscommandsets/{id},
 """
 

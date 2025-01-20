@@ -51,7 +51,8 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are tacacs_server_sequence.TacacsServerSequence.create_tacacs_server_sequence, tacacs_server_sequence.TacacsServerSequence.delete_tacacs_server_sequence_by_id, tacacs_server_sequence.TacacsServerSequence.update_tacacs_server_sequence_by_id,
+  - SDK Method used are tacacs_server_sequence.TacacsServerSequence.create_tacacs_server_sequence, tacacs_server_sequence.TacacsServerSequence.delete_tacacs_server_sequence_by_id,
+    tacacs_server_sequence.TacacsServerSequence.update_tacacs_server_sequence_by_id,
   - Paths used are post /ers/config/tacacsserversequence, delete /ers/config/tacacsserversequence/{id}, put /ers/config/tacacsserversequence/{id},
 """
 
