@@ -1054,7 +1054,7 @@ releases:
       bugfixes:
         - network_device - Fix mask validation to handle None values in NetworkDeviceIPList
   2.10.0:
-    release_date: "2025-01-20"
+    release_date: "2025-01-21"
     changes:
       release_summary: Fix linting issues.
       bugfixes:
