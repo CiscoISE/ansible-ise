@@ -5,14 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: allowed_protocols
 short_description: Resource module for Allowed Protocols
 description:
-- Manage operations create, update and delete of the resource Allowed Protocols.
-- This API creates an allowed protocol.
-- This API deletes an allowed protocol.
-- This API allows the client to update an allowed protocol.
+  - Manage operations create, update and delete of the resource Allowed Protocols.
+  - This API creates an allowed protocol.
+  - This API deletes an allowed protocol.
+  - This API allows the client to update an allowed protocol.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -61,45 +60,40 @@ options:
     description: Allowed Protocols's description.
     type: str
   eapFast:
-    description: The eapFast is required only if allowEapFast is true, otherwise it
-      must be ignored. The object eapFast contains the settings for EAP FAST protocol.
+    description: The eapFast is required only if allowEapFast is true, otherwise it must be ignored. The object eapFast contains the settings
+      for EAP FAST protocol.
     suboptions:
       allowEapFastEapGtc:
         description: AllowEapFastEapGtc flag.
         type: bool
       allowEapFastEapGtcPwdChange:
-        description: The allowEapFastEapGtcPwdChange is required only if allowEapFastEapGtc
-          is true, otherwise it must be ignored.
+        description: The allowEapFastEapGtcPwdChange is required only if allowEapFastEapGtc is true, otherwise it must be ignored.
         type: bool
       allowEapFastEapGtcPwdChangeRetries:
-        description: The allowEapFastEapGtcPwdChangeRetries is required only if allowEapFastEapGtc
-          is true, otherwise it must be ignored. Valid range is 0-3.
+        description: The allowEapFastEapGtcPwdChangeRetries is required only if allowEapFastEapGtc is true, otherwise it must be ignored. Valid
+          range is 0-3.
         type: int
       allowEapFastEapMsChapV2:
         description: AllowEapFastEapMsChapV2 flag.
         type: bool
       allowEapFastEapMsChapV2PwdChange:
-        description: The allowEapFastEapMsChapV2PwdChange is required only if allowEapFastEapMsChapV2
-          is true, otherwise it must be ignored.
+        description: The allowEapFastEapMsChapV2PwdChange is required only if allowEapFastEapMsChapV2 is true, otherwise it must be ignored.
         type: bool
       allowEapFastEapMsChapV2PwdChangeRetries:
-        description: The allowEapFastEapMsChapV2PwdChangeRetries is required only if
-          eapTtlsEapMsChapV2 is true, otherwise it must be ignored. Valid range is 0-3.
+        description: The allowEapFastEapMsChapV2PwdChangeRetries is required only if eapTtlsEapMsChapV2 is true, otherwise it must be ignored.
+          Valid range is 0-3.
         type: int
       allowEapFastEapTls:
         description: AllowEapFastEapTls flag.
         type: bool
       allowEapFastEapTlsAuthOfExpiredCerts:
-        description: The allowEapFastEapTlsAuthOfExpiredCerts is required only if allowEapFastEapTls
-          is true, otherwise it must be ignored.
+        description: The allowEapFastEapTlsAuthOfExpiredCerts is required only if allowEapFastEapTls is true, otherwise it must be ignored.
         type: bool
       eapFastDontUsePacsAcceptClientCert:
-        description: The eapFastDontUsePacsAcceptClientCert is required only if eapFastUsePacs
-          is FALSE, otherwise it must be ignored.
+        description: The eapFastDontUsePacsAcceptClientCert is required only if eapFastUsePacs is FALSE, otherwise it must be ignored.
         type: bool
       eapFastDontUsePacsAllowMachineAuthentication:
-        description: The eapFastDontUsePacsAllowMachineAuthentication is required only
-          if eapFastUsePacs is FALSE, otherwise it must be ignored.
+        description: The eapFastDontUsePacsAllowMachineAuthentication is required only if eapFastUsePacs is FALSE, otherwise it must be ignored.
         type: bool
       eapFastEnableEAPChaining:
         description: EapFastEnableEAPChaining flag.
@@ -108,64 +102,55 @@ options:
         description: EapFastUsePacs flag.
         type: bool
       eapFastUsePacsAcceptClientCert:
-        description: The eapFastUsePacsAcceptClientCert is required only if eapFastUsePacsAllowAuthenProvisioning
-          is true, otherwise it must be ignored.
+        description: The eapFastUsePacsAcceptClientCert is required only if eapFastUsePacsAllowAuthenProvisioning is true, otherwise it must be
+          ignored.
         type: bool
       eapFastUsePacsAllowAnonymProvisioning:
-        description: The eapFastUsePacsAllowAnonymProvisioning is required only if eapFastUsePacs
-          is true, otherwise it must be ignored.
+        description: The eapFastUsePacsAllowAnonymProvisioning is required only if eapFastUsePacs is true, otherwise it must be ignored.
         type: bool
       eapFastUsePacsAllowAuthenProvisioning:
-        description: The eapFastUsePacsAllowAuthenProvisioning is required only if eapFastUsePacs
-          is true, otherwise it must be ignored.
+        description: The eapFastUsePacsAllowAuthenProvisioning is required only if eapFastUsePacs is true, otherwise it must be ignored.
         type: bool
       eapFastUsePacsAllowMachineAuthentication:
         description: EapFastUsePacsAllowMachineAuthentication flag.
         type: bool
       eapFastUsePacsAuthorizationPacTtl:
-        description: The eapFastUsePacsAuthorizationPacTtl is required only if eapFastUsePacsStatelessSessionResume
-          is true, otherwise it must be ignored.
+        description: The eapFastUsePacsAuthorizationPacTtl is required only if eapFastUsePacsStatelessSessionResume is true, otherwise it must
+          be ignored.
         type: int
       eapFastUsePacsAuthorizationPacTtlUnits:
-        description: The eapFastUsePacsAuthorizationPacTtlUnits is required only if
-          eapFastUsePacsStatelessSessionResume is true, otherwise it must be ignored.
-          Allowed Values - SECONDS, - MINUTES, - HOURS, - DAYS, - WEEKS.
+        description: The eapFastUsePacsAuthorizationPacTtlUnits is required only if eapFastUsePacsStatelessSessionResume is true, otherwise it
+          must be ignored. Allowed Values - SECONDS, - MINUTES, - HOURS, - DAYS, - WEEKS.
         type: str
       eapFastUsePacsMachinePacTtl:
-        description: The eapFastUsePacsMachinePacTtl is required only if eapFastUsePacsAllowMachineAuthentication
-          is true, otherwise it must be ignored.
+        description: The eapFastUsePacsMachinePacTtl is required only if eapFastUsePacsAllowMachineAuthentication is true, otherwise it must be
+          ignored.
         type: int
       eapFastUsePacsMachinePacTtlUnits:
-        description: The eapFastUsePacsMachinePacTtlUnits is required only if eapFastUsePacsAllowMachineAuthentication
-          is true, otherwise it must be ignored. Allowed Values - SECONDS, - MINUTES,
-          - HOURS, - DAYS, - WEEKS.
+        description: The eapFastUsePacsMachinePacTtlUnits is required only if eapFastUsePacsAllowMachineAuthentication is true, otherwise it must
+          be ignored. Allowed Values - SECONDS, - MINUTES, - HOURS, - DAYS, - WEEKS.
         type: str
       eapFastUsePacsReturnAccessAcceptAfterAuthenticatedProvisioning:
-        description: The eapFastUsePacsReturnAccessAcceptAfterAuthenticatedProvisioning
-          is required only if eapFastUsePacsAllowAuthenProvisioning is true, otherwise
-          it must be ignored.
+        description: The eapFastUsePacsReturnAccessAcceptAfterAuthenticatedProvisioning is required only if eapFastUsePacsAllowAuthenProvisioning
+          is true, otherwise it must be ignored.
         type: bool
       eapFastUsePacsStatelessSessionResume:
-        description: The eapFastUsePacsStatelessSessionResume is required only if eapFastUsePacs
-          is true, otherwise it must be ignored.
+        description: The eapFastUsePacsStatelessSessionResume is required only if eapFastUsePacs is true, otherwise it must be ignored.
         type: bool
       eapFastUsePacsTunnelPacTtl:
-        description: The eapFastUsePacsTunnelPacTtl is required only if eapFastUsePacs
-          is true, otherwise it must be ignored.
+        description: The eapFastUsePacsTunnelPacTtl is required only if eapFastUsePacs is true, otherwise it must be ignored.
         type: int
       eapFastUsePacsTunnelPacTtlUnits:
-        description: The eapFastUsePacsTunnelPacTtlUnits is required only if eapFastUsePacs
-          is true, otherwise it must be ignored. Allowed Values - SECONDS, - MINUTES,
-          - HOURS, - DAYS, - WEEKS.
+        description: The eapFastUsePacsTunnelPacTtlUnits is required only if eapFastUsePacs is true, otherwise it must be ignored. Allowed Values
+          - SECONDS, - MINUTES, - HOURS, - DAYS, - WEEKS.
         type: str
       eapFastUsePacsUseProactivePacUpdatePrecentage:
-        description: The eapFastUsePacsUseProactivePacUpdatePrecentage is required only
-          if eapFastUsePacs is true, otherwise it must be ignored.
+        description: The eapFastUsePacsUseProactivePacUpdatePrecentage is required only if eapFastUsePacs is true, otherwise it must be ignored.
         type: int
     type: dict
   eapTls:
-    description: The eapTls is required only if allowEapTls is true, otherwise it must
-      be ignored. The object eapTls contains the settings for EAP TLS protocol.
+    description: The eapTls is required only if allowEapTls is true, otherwise it must be ignored. The object eapTls contains the settings for
+      EAP TLS protocol.
     suboptions:
       allowEapTlsAuthOfExpiredCerts:
         description: AllowEapTlsAuthOfExpiredCerts flag.
@@ -174,25 +159,23 @@ options:
         description: EapTlsEnableStatelessSessionResume flag.
         type: bool
       eapTlsSessionTicketPrecentage:
-        description: The eapTlsSessionTicketPrecentage is required only if eapTlsEnableStatelessSessionResume
-          is true, otherwise it must be ignored.
+        description: The eapTlsSessionTicketPrecentage is required only if eapTlsEnableStatelessSessionResume is true, otherwise it must be ignored.
         type: int
       eapTlsSessionTicketTtl:
-        description: Time to live. The eapTlsSessionTicketTtl is required only if eapTlsEnableStatelessSessionResume
-          is true, otherwise it must be ignored.
+        description: Time to live. The eapTlsSessionTicketTtl is required only if eapTlsEnableStatelessSessionResume is true, otherwise it must
+          be ignored.
         type: int
       eapTlsSessionTicketTtlUnits:
-        description: Time to live time units. The eapTlsSessionTicketTtlUnits is required
-          only if eapTlsEnableStatelessSessionResume is true, otherwise it must be ignored.
-          Allowed Values - SECONDS, - MINUTES, - HOURS, - DAYS, - WEEKS.
+        description: Time to live time units. The eapTlsSessionTicketTtlUnits is required only if eapTlsEnableStatelessSessionResume is true,
+          otherwise it must be ignored. Allowed Values - SECONDS, - MINUTES, - HOURS, - DAYS, - WEEKS.
         type: str
     type: dict
   eapTlsLBit:
     description: EapTlsLBit flag.
     type: bool
   eapTtls:
-    description: The eapTtls is required only if allowEapTtls is true, otherwise it
-      must be ignored. The object eapTtls contains the settings for EAP TTLS protocol.
+    description: The eapTtls is required only if allowEapTtls is true, otherwise it must be ignored. The object eapTtls contains the settings
+      for EAP TTLS protocol.
     suboptions:
       eapTtlsChap:
         description: EapTtlsChap flag.
@@ -204,12 +187,11 @@ options:
         description: EapTtlsEapMsChapV2 flag.
         type: bool
       eapTtlsEapMsChapV2PwdChange:
-        description: The eapTtlsEapMsChapV2PwdChange is required only if eapTtlsEapMsChapV2
-          is true, otherwise it must be ignored.
+        description: The eapTtlsEapMsChapV2PwdChange is required only if eapTtlsEapMsChapV2 is true, otherwise it must be ignored.
         type: bool
       eapTtlsEapMsChapV2PwdChangeRetries:
-        description: The eapTtlsEapMsChapV2PwdChangeRetries is required only if eapTtlsEapMsChapV2
-          is true, otherwise it must be ignored. Valid range is 0-3.
+        description: The eapTtlsEapMsChapV2PwdChangeRetries is required only if eapTtlsEapMsChapV2 is true, otherwise it must be ignored. Valid
+          range is 0-3.
         type: int
       eapTtlsMsChapV1:
         description: EapTtlsMsChapV1 flag.
@@ -234,30 +216,27 @@ options:
         description: AllowPeapEapGtc flag.
         type: bool
       allowPeapEapGtcPwdChange:
-        description: The allowPeapEapGtcPwdChange is required only if allowPeapEapGtc
-          is true, otherwise it must be ignored.
+        description: The allowPeapEapGtcPwdChange is required only if allowPeapEapGtc is true, otherwise it must be ignored.
         type: bool
       allowPeapEapGtcPwdChangeRetries:
-        description: The allowPeapEapGtcPwdChangeRetries is required only if allowPeapEapGtc
-          is true, otherwise it must be ignored. Valid range is 0-3.
+        description: The allowPeapEapGtcPwdChangeRetries is required only if allowPeapEapGtc is true, otherwise it must be ignored. Valid range
+          is 0-3.
         type: int
       allowPeapEapMsChapV2:
         description: AllowPeapEapMsChapV2 flag.
         type: bool
       allowPeapEapMsChapV2PwdChange:
-        description: The allowPeapEapMsChapV2PwdChange is required only if allowPeapEapMsChapV2
-          is true, otherwise it must be ignored.
+        description: The allowPeapEapMsChapV2PwdChange is required only if allowPeapEapMsChapV2 is true, otherwise it must be ignored.
         type: bool
       allowPeapEapMsChapV2PwdChangeRetries:
-        description: The allowPeapEapMsChapV2PwdChangeRetries is required only if allowPeapEapMsChapV2
-          is true, otherwise it must be ignored. Valid range is 0-3.
+        description: The allowPeapEapMsChapV2PwdChangeRetries is required only if allowPeapEapMsChapV2 is true, otherwise it must be ignored.
+          Valid range is 0-3.
         type: int
       allowPeapEapTls:
         description: AllowPeapEapTls flag.
         type: bool
       allowPeapEapTlsAuthOfExpiredCerts:
-        description: The allowPeapEapTlsAuthOfExpiredCerts is required only if allowPeapEapTls
-          is true, otherwise it must be ignored.
+        description: The allowPeapEapTlsAuthOfExpiredCerts is required only if allowPeapEapTls is true, otherwise it must be ignored.
         type: bool
       allowPeapV0:
         description: AllowPeapV0 flag.
@@ -267,9 +246,8 @@ options:
         type: bool
     type: dict
   preferredEapProtocol:
-    description: The preferredEapProtocol is required only if allowPreferredEapProtocol
-      is true, otherwise it must be ignored. Allowed Values - EAP_FAST, - PEAP, - LEAP,
-      - EAP_MD5, - EAP_TLS, - EAP_TTLS, - TEAP.
+    description: The preferredEapProtocol is required only if allowPreferredEapProtocol is true, otherwise it must be ignored. Allowed Values
+      - EAP_FAST, - PEAP, - LEAP, - EAP_MD5, - EAP_TLS, - EAP_TTLS, - TEAP.
     type: str
   processHostLookup:
     description: ProcessHostLookup flag.
@@ -278,8 +256,8 @@ options:
     description: RequireMessageAuth flag.
     type: bool
   teap:
-    description: The teap is required only if allowTeap is true, otherwise it must be
-      ignored. The object teap contains the settings for TEAP protocol.
+    description: The teap is required only if allowTeap is true, otherwise it must be ignored. The object teap contains the settings for TEAP
+      protocol.
     suboptions:
       acceptClientCertDuringTunnelEst:
         description: AcceptClientCertDuringTunnelEst flag.
@@ -291,38 +269,34 @@ options:
         description: AllowTeapEapMsChapV2 flag.
         type: bool
       allowTeapEapMsChapV2PwdChange:
-        description: The allowTeapEapMsChapV2PwdChange is required only if allowTeapEapMsChapV2
-          is true, otherwise it must be ignored.
+        description: The allowTeapEapMsChapV2PwdChange is required only if allowTeapEapMsChapV2 is true, otherwise it must be ignored.
         type: bool
       allowTeapEapMsChapV2PwdChangeRetries:
-        description: The allowTeapEapMsChapV2PwdChangeRetries is required only if allowTeapEapMsChapV2
-          is true, otherwise it must be ignored. Valid range is 0-3.
+        description: The allowTeapEapMsChapV2PwdChangeRetries is required only if allowTeapEapMsChapV2 is true, otherwise it must be ignored.
+          Valid range is 0-3.
         type: int
       allowTeapEapTls:
         description: AllowTeapEapTls flag.
         type: bool
       allowTeapEapTlsAuthOfExpiredCerts:
-        description: The allowTeapEapTlsAuthOfExpiredCerts is required only if allowTeapEapTls
-          is true, otherwise it must be ignored.
+        description: The allowTeapEapTlsAuthOfExpiredCerts is required only if allowTeapEapTls is true, otherwise it must be ignored.
         type: bool
       enableEapChaining:
         description: EnableEapChaining flag.
         type: bool
     type: dict
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
   - SDK Method used are
     allowed_protocols.AllowedProtocols.create_allowed_protocol,
     allowed_protocols.AllowedProtocols.delete_allowed_protocol_by_id,
     allowed_protocols.AllowedProtocols.update_allowed_protocol_by_id,
-
   - Paths used are
     post /ers/config/allowedprotocols,
     delete /ers/config/allowedprotocols/{id},
     put /ers/config/allowedprotocols/{id},
-
 """
 
 EXAMPLES = r"""
@@ -414,7 +388,6 @@ EXAMPLES = r"""
       allowTeapEapTls: true
       allowTeapEapTlsAuthOfExpiredCerts: true
       enableEapChaining: true
-
 - name: Delete by id
   cisco.ise.allowed_protocols:
     ise_hostname: "{{ise_hostname}}"
@@ -423,7 +396,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-
 - name: Create
   cisco.ise.allowed_protocols:
     ise_hostname: "{{ise_hostname}}"
@@ -511,7 +483,6 @@ EXAMPLES = r"""
       allowTeapEapTls: true
       allowTeapEapTlsAuthOfExpiredCerts: true
       enableEapChaining: true
-
 """
 
 RETURN = r"""
@@ -613,7 +584,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

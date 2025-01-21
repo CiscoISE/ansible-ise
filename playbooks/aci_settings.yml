@@ -1,8 +1,9 @@
 ---
-- hosts: ise_servers
+- name: Manage ACI Settings on ISE
+  hosts: ise_servers
   gather_facts: false
   tasks:
-    - name: Get Aci Settings
+    - name: Get ACI Settings
       cisco.ise.aci_settings_info:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
@@ -10,18 +11,18 @@
         ise_verify: "{{ ise_verify }}"
       register: aci_settings_info
 
-    - name: Print
+    - name: Print ACI Settings Info
       ansible.builtin.debug:
-        var: aci_settings_info['ise_response']
+        var: aci_settings_info.ise_response
 
-    - name: Update by id
+    - name: Update ACI Settings by ID
       cisco.ise.aci_settings:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
         ise_verify: "{{ ise_verify }}"
         state: present
-        id: "{{ aci_settings_info['ise_response']['id']}}"
+        id: "{{ aci_settings_info.ise_response.id }}"
         enableAci: false
         ipAddressHostName: 10.0.0.1
         adminName: admin name
@@ -42,10 +43,10 @@
         aci50: false
         aci51: false
       when:
-        - aci_settings_info['ise_response'] is defined
-        - aci_settings_info['ise_response']['id'] is defined
+        - aci_settings_info.ise_response is defined
+        - aci_settings_info.ise_response.id is defined
       register: result
 
-    - name: Print update response
+    - name: Print Update Response
       ansible.builtin.debug:
         var: result

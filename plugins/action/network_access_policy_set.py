@@ -31,20 +31,22 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.exceptions import (
 # Get common arguments specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
-argument_spec.update(dict(
-    state=dict(type="str", default="present", choices=["present", "absent"]),
-    condition=dict(type="dict"),
-    default=dict(type="bool"),
-    description=dict(type="str"),
-    hitCounts=dict(type="int"),
-    id=dict(type="str"),
-    isProxy=dict(type="bool"),
-    link=dict(type="dict"),
-    name=dict(type="str"),
-    rank=dict(type="int"),
-    serviceName=dict(type="str"),
-    state_=dict(type="str"),
-))
+argument_spec.update(
+    dict(
+        state=dict(type="str", default="present", choices=["present", "absent"]),
+        condition=dict(type="dict"),
+        default=dict(type="bool"),
+        description=dict(type="str"),
+        hitCounts=dict(type="int"),
+        id=dict(type="str"),
+        isProxy=dict(type="bool"),
+        link=dict(type="dict"),
+        name=dict(type="str"),
+        rank=dict(type="int"),
+        serviceName=dict(type="str"),
+        state_=dict(type="str"),
+    )
+)
 
 required_if = [
     ("state", "present", ["id", "name"], True),
@@ -75,11 +77,14 @@ class NetworkAccessPolicySet(object):
     def get_object_by_name(self, name):
         # NOTICE: Does not have a get by name method or it is in another action
         result = None
-        items = self.ise.exec(
-            family="network_access_policy_set",
-            function="get_network_access_policy_sets",
-        ).response.get('response', []) or []
-        result = get_dict_result(items, 'name', name)
+        items = (
+            self.ise.exec(
+                family="network_access_policy_set",
+                function="get_network_access_policy_sets",
+            ).response.get("response", [])
+            or []
+        )
+        result = get_dict_result(items, "name", name)
         return result
 
     def get_object_by_id(self, id):
@@ -89,7 +94,7 @@ class NetworkAccessPolicySet(object):
                 function="get_network_access_policy_set_by_id",
                 params={"id": id},
                 handle_func_exception=False,
-            ).response['response']
+            ).response["response"]
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(
                 msg=(
@@ -119,7 +124,9 @@ class NetworkAccessPolicySet(object):
         if name_exists:
             _id = prev_obj.get("id")
             if id_exists and name_exists and o_id != _id:
-                raise InconsistentParameters("The 'id' and 'name' params don't refer to the same object")
+                raise InconsistentParameters(
+                    "The 'id' and 'name' params don't refer to the same object"
+                )
             if _id:
                 prev_obj = self.get_object_by_id(_id)
         it_exists = prev_obj is not None and isinstance(prev_obj, dict)
@@ -143,9 +150,12 @@ class NetworkAccessPolicySet(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not ise_compare_equality(current_obj.get(ise_param),
-                                            requested_obj.get(ansible_param))
-                   for (ise_param, ansible_param) in obj_params)
+        return any(
+            not ise_compare_equality(
+                current_obj.get(ise_param), requested_obj.get(ansible_param)
+            )
+            for (ise_param, ansible_param) in obj_params
+        )
 
     def create(self):
         result = self.ise.exec(
@@ -165,7 +175,7 @@ class NetworkAccessPolicySet(object):
         result = self.ise.exec(
             family="network_access_policy_set",
             function="update_network_access_policy_set_by_id",
-            params=self.new_object
+            params=self.new_object,
         ).response
         return result
 
@@ -179,7 +189,7 @@ class NetworkAccessPolicySet(object):
         result = self.ise.exec(
             family="network_access_policy_set",
             function="delete_network_access_policy_set_by_id",
-            params=self.new_object
+            params=self.new_object,
         ).response
         return result
 
@@ -187,7 +197,9 @@ class NetworkAccessPolicySet(object):
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
+            raise AnsibleActionFail(
+                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
+            )
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = False

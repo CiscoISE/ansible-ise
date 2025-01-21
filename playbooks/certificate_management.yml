@@ -1,7 +1,7 @@
 ---
-- hosts: ise_servers
+- name: Certificate management
+  hosts: ise_servers
   gather_facts: false
-  name: Certificate management
   tasks:
     # - name: Import certificate into ISE node
     #   cisco.ise.trusted_certificate_import:
@@ -39,16 +39,17 @@
         keyType: ECDSA
         keyLength: 1024
         digestType: SHA-256
-        usedFor: MULTI-USEw
+        usedFor: MULTI-USE
       register: result
 
     - name: Set ID value to variable
       ansible.builtin.set_fact:
-        csr_id: "{{ result['ise_response']['response'][0]['id']}}"
+        csr_id: "{{ result['ise_response']['response'][0]['id'] }}"
       when: not ansible_check_mode
 
     - name: Pause until the CSR has been signed by the CA
       ansible.builtin.pause:
+
     - name: Bind Signed Certificate
       cisco.ise.bind_signed_certificate:
         ise_hostname: "{{ ise_hostname }}"

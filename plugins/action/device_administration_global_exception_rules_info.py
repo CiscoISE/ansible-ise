@@ -26,9 +26,11 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
 # Get common arguements specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
-argument_spec.update(dict(
-    id=dict(type="str"),
-))
+argument_spec.update(
+    dict(
+        id=dict(type="str"),
+    )
+)
 
 required_if = []
 required_one_of = []
@@ -39,7 +41,9 @@ required_together = []
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
+            raise AnsibleActionFail(
+                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
+            )
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = True
@@ -84,18 +88,18 @@ class ActionModule(ActionBase):
         if id:
             response = ise.exec(
                 family="device_administration_authorization_global_exception_rules",
-                function='get_device_admin_policy_set_global_exception_by_rule_id',
-                params=self.get_object(self._task.args)
-            ).response['response']
+                function="get_device_admin_policy_set_global_exception_by_rule_id",
+                params=self.get_object(self._task.args),
+            ).response["response"]
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result
         if not name and not id:
             response = ise.exec(
                 family="device_administration_authorization_global_exception_rules",
-                function='get_device_admin_policy_set_global_exception_rules',
-                params=self.get_object(self._task.args)
-            ).response['response']
+                function="get_device_admin_policy_set_global_exception_rules",
+                params=self.get_object(self._task.args),
+            ).response["response"]
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

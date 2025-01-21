@@ -5,16 +5,15 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: guest_user
 short_description: Resource module for Guest User
 description:
-- Manage operations create, update and delete of the resource Guest User.
-- This API creates a guest user.
-- This API deletes a guest user by ID.
-- This API deletes a guest user.
-- This API allows the client to update a guest user by ID.
-- This API allows the client to update a guest user by name.
+  - Manage operations create, update and delete of the resource Guest User.
+  - This API creates a guest user.
+  - This API deletes a guest user by ID.
+  - This API deletes a guest user.
+  - This API allows the client to update a guest user by ID.
+  - This API allows the client to update a guest user by name.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -61,8 +60,7 @@ options:
         description: Guest User's emailAddress.
         type: str
       enabled:
-        description: This field is only for Get operation not applicable for Create,
-          Update operations.
+        description: This field is only for Get operation not applicable for Create, Update operations.
         type: bool
       firstName:
         description: Guest User's firstName.
@@ -83,8 +81,7 @@ options:
         description: Guest User's smsServiceProvider.
         type: str
       userName:
-        description: If account needs be created with mobile number, please provide
-          mobile number here.
+        description: If account needs be created with mobile number, please provide mobile number here.
         type: str
     type: dict
   guestType:
@@ -115,8 +112,8 @@ options:
     description: Guest User's statusReason.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
   - SDK Method used are
     guest_user.GuestUser.create_guest_user,
@@ -124,14 +121,12 @@ notes:
     guest_user.GuestUser.delete_guest_user_by_name,
     guest_user.GuestUser.update_guest_user_by_id,
     guest_user.GuestUser.update_guest_user_by_name,
-
   - Paths used are
     post /ers/config/guestuser,
     delete /ers/config/guestuser/name/{name},
     delete /ers/config/guestuser/{id},
     put /ers/config/guestuser/name/{name},
     put /ers/config/guestuser/{id},
-
 """
 
 EXAMPLES = r"""
@@ -172,7 +167,6 @@ EXAMPLES = r"""
     sponsorUserName: string
     status: string
     statusReason: string
-
 - name: Delete by name
   cisco.ise.guest_user:
     ise_hostname: "{{ise_hostname}}"
@@ -181,7 +175,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     name: string
-
 - name: Update by id
   cisco.ise.guest_user:
     ise_hostname: "{{ise_hostname}}"
@@ -219,7 +212,6 @@ EXAMPLES = r"""
     sponsorUserName: string
     status: string
     statusReason: string
-
 - name: Delete by id
   cisco.ise.guest_user:
     ise_hostname: "{{ise_hostname}}"
@@ -228,7 +220,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-
 - name: Create
   cisco.ise.guest_user:
     ise_hostname: "{{ise_hostname}}"
@@ -265,7 +256,6 @@ EXAMPLES = r"""
     sponsorUserName: string
     status: string
     statusReason: string
-
 """
 
 RETURN = r"""
@@ -313,7 +303,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

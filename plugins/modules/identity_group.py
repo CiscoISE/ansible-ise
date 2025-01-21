@@ -5,13 +5,12 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: identity_group
 short_description: Resource module for Identity Group
 description:
-- Manage operations create and update of the resource Identity Group.
-- This API creates an identity group.
-- This API allows the client to update an identity group.
+  - Manage operations create and update of the resource Identity Group.
+  - This API creates an identity group.
+  - This API allows the client to update an identity group.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -30,21 +29,19 @@ options:
     description: Identity Group's parent.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for IdentityGroups
-  description: Complete reference of the IdentityGroups API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!identitygroup
+  - name: Cisco ISE documentation for IdentityGroups
+    description: Complete reference of the IdentityGroups API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!identitygroup
 notes:
   - SDK Method used are
     identity_groups.IdentityGroups.create_identity_group,
     identity_groups.IdentityGroups.update_identity_group_by_id,
-
   - Paths used are
     post /ers/config/identitygroup,
     put /ers/config/identitygroup/{id},
-
 """
 
 EXAMPLES = r"""
@@ -59,7 +56,6 @@ EXAMPLES = r"""
     id: string
     name: string
     parent: string
-
 - name: Create
   cisco.ise.identity_group:
     ise_hostname: "{{ise_hostname}}"
@@ -70,7 +66,6 @@ EXAMPLES = r"""
     description: string
     name: string
     parent: string
-
 """
 
 RETURN = r"""
@@ -90,7 +85,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

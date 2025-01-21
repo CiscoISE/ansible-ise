@@ -31,11 +31,13 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.exceptions import (
 # Get common arguments specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
-argument_spec.update(dict(
-    state=dict(type="str", default="present", choices=["present", "absent"]),
-    sxpVpnName=dict(type="str"),
-    id=dict(type="str"),
-))
+argument_spec.update(
+    dict(
+        state=dict(type="str", default="present", choices=["present", "absent"]),
+        sxpVpnName=dict(type="str"),
+        id=dict(type="str"),
+    )
+)
 
 required_if = [
     ("state", "absent", ["id"], True),
@@ -57,13 +59,12 @@ class SxpVpns(object):
         # NOTICE: Get does not support/work for filter by name with EQ
         result = None
         gen_items_responses = self.ise.exec(
-            family="sxp_vpns",
-            function="get_sxp_vpns_generator"
+            family="sxp_vpns", function="get_sxp_vpns_generator"
         )
         try:
             for items_response in gen_items_responses:
-                items = items_response.response['SearchResult']['resources']
-                result = get_dict_result(items, 'name', name)
+                items = items_response.response["SearchResult"]["resources"]
+                result = get_dict_result(items, "name", name)
                 if result:
                     return result
         except (TypeError, AttributeError) as e:
@@ -88,7 +89,7 @@ class SxpVpns(object):
                 function="get_sxp_vpn_by_id",
                 params={"id": id},
                 handle_func_exception=False,
-            ).response['ERSSxpVpn']
+            ).response["ERSSxpVpn"]
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(
                 msg=(
@@ -118,7 +119,9 @@ class SxpVpns(object):
         if name_exists:
             _id = prev_obj.get("id")
             if id_exists and name_exists and o_id != _id:
-                raise InconsistentParameters("The 'id' and 'name' params don't refer to the same object")
+                raise InconsistentParameters(
+                    "The 'id' and 'name' params don't refer to the same object"
+                )
             if _id:
                 prev_obj = self.get_object_by_id(_id)
         it_exists = prev_obj is not None and isinstance(prev_obj, dict)
@@ -133,9 +136,12 @@ class SxpVpns(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not ise_compare_equality(current_obj.get(ise_param),
-                                            requested_obj.get(ansible_param))
-                   for (ise_param, ansible_param) in obj_params)
+        return any(
+            not ise_compare_equality(
+                current_obj.get(ise_param), requested_obj.get(ansible_param)
+            )
+            for (ise_param, ansible_param) in obj_params
+        )
 
     def create(self):
         result = self.ise.exec(
@@ -153,9 +159,7 @@ class SxpVpns(object):
             id_ = self.get_object_by_name(name).get("id")
             self.new_object.update(dict(id=id_))
         result = self.ise.exec(
-            family="sxp_vpns",
-            function="delete_sxp_vpn_by_id",
-            params=self.new_object
+            family="sxp_vpns", function="delete_sxp_vpn_by_id", params=self.new_object
         ).response
         return result
 
@@ -163,7 +167,9 @@ class SxpVpns(object):
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
+            raise AnsibleActionFail(
+                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
+            )
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = False

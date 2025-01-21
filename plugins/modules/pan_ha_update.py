@@ -5,27 +5,25 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: pan_ha_update
 short_description: Resource module for Pan Ha Update
 description:
-- Manage operation update of the resource Pan Ha Update.
-- To deploy the auto-failover feature, you must have at least three nodes, where.
+  - Manage operation update of the resource Pan Ha Update.
+  - To deploy the auto-failover feature, you must have at least three nodes, where.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   failedAttempts:
-    description: Failover occurs if the primary PAN is down for the specified number
-      of failure polls. Count (2 - 60).<br> The default value is 5.
+    description: Failover occurs if the primary PAN is down for the specified number of failure polls. Count (2 - 60).<br> The default value is
+      5.
     type: int
   isEnabled:
     description: IsEnabled flag.
     type: bool
   pollingInterval:
-    description: Administration nodes are checked after each interval. Seconds (30 -
-      300) <br> The default value is 120.
+    description: Administration nodes are checked after each interval. Seconds (30 - 300) <br> The default value is 120.
     type: int
   primaryHealthCheckNode:
     description: Pan Ha Update's primaryHealthCheckNode.
@@ -42,19 +40,17 @@ options:
         type: str
     type: dict
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for PAN HA
-  description: Complete reference of the PAN HA API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!deployment-openapi
+  - name: Cisco ISE documentation for PAN HA
+    description: Complete reference of the PAN HA API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!deployment-openapi
 notes:
   - SDK Method used are
     pan_ha.PanHa.update_pan_ha,
-
   - Paths used are
     put /api/v1/deployment/pan-ha,
-
 """
 
 EXAMPLES = r"""
@@ -71,7 +67,6 @@ EXAMPLES = r"""
       hostname: string
     secondaryHealthCheckNode:
       hostname: string
-
 """
 
 RETURN = r"""

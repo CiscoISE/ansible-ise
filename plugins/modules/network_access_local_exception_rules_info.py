@@ -5,14 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: network_access_local_exception_rules_info
 short_description: Information module for Network Access Local Exception Rules
 description:
-- Get all Network Access Local Exception Rules.
-- Get Network Access Local Exception Rules by id.
-- Network Access - Get local exception rule attributes.
-- Network Access - Get local exception rules.
+  - Get all Network Access Local Exception Rules.
+  - Get Network Access Local Exception Rules by id.
+  - Network Access - Get local exception rule attributes.
+  - Network Access - Get local exception rules.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -20,28 +19,26 @@ author: Rafael Campos (@racampos)
 options:
   policyId:
     description:
-    - PolicyId path parameter. Policy id.
+      - PolicyId path parameter. Policy id.
     type: str
   id:
     description:
-    - Id path parameter. Rule id.
+      - Id path parameter. Rule id.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for Network Access - Authorization Exception Rules
-  description: Complete reference of the Network Access - Authorization Exception Rules API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
+  - name: Cisco ISE documentation for Network Access - Authorization Exception Rules
+    description: Complete reference of the Network Access - Authorization Exception Rules API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
   - SDK Method used are
     network_access_authorization_exception_rules.NetworkAccessAuthorizationExceptionRules.get_network_access_local_exception_rule_by_id,
     network_access_authorization_exception_rules.NetworkAccessAuthorizationExceptionRules.get_network_access_local_exception_rules,
-
   - Paths used are
     get /network-access/policy-set/{policyId}/exception,
     get /network-access/policy-set/{policyId}/exception/{id},
-
 """
 
 EXAMPLES = r"""
@@ -53,7 +50,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     policyId: string
   register: result
-
 - name: Get Network Access Local Exception Rules by id
   cisco.ise.network_access_local_exception_rules_info:
     ise_hostname: "{{ise_hostname}}"
@@ -63,7 +59,6 @@ EXAMPLES = r"""
     policyId: string
     id: string
   register: result
-
 """
 
 RETURN = r"""

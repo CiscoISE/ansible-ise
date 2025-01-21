@@ -1,5 +1,6 @@
 ---
-- hosts: ise_servers
+- name: Manage support bundle on ISE
+  hosts: ise_servers
   gather_facts: false
   tasks:
     # - name: Create or update an support_bundle

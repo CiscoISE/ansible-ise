@@ -31,14 +31,16 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.exceptions import (
 # Get common arguments specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
-argument_spec.update(dict(
-    state=dict(type="str", default="present", choices=["present", "absent"]),
-    description=dict(type="str"),
-    marCache=dict(type="dict"),
-    name=dict(type="str"),
-    nodeGroupName=dict(type="str"),
-    forceDelete=dict(type="bool"),
-))
+argument_spec.update(
+    dict(
+        state=dict(type="str", default="present", choices=["present", "absent"]),
+        description=dict(type="str"),
+        marCache=dict(type="dict"),
+        name=dict(type="str"),
+        nodeGroupName=dict(type="str"),
+        forceDelete=dict(type="bool"),
+    )
+)
 
 required_if = [
     ("state", "present", ["name", "nodeGroupName"], True),
@@ -66,9 +68,9 @@ class NodeGroup(object):
                 family="node_group",
                 function="get_node_group",
                 handle_func_exception=False,
-                params={"node_group_name": name}
-            ).response['response']
-            result = get_dict_result(result, 'name', name)
+                params={"node_group_name": name},
+            ).response["response"]
+            result = get_dict_result(result, "name", name)
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(
                 msg=(
@@ -103,7 +105,9 @@ class NodeGroup(object):
         if name_exists:
             _id = prev_obj.get("id")
             if id_exists and name_exists and o_id != _id:
-                raise InconsistentParameters("The 'id' and 'name' params don't refer to the same object")
+                raise InconsistentParameters(
+                    "The 'id' and 'name' params don't refer to the same object"
+                )
         it_exists = prev_obj is not None and isinstance(prev_obj, dict)
         return (it_exists, prev_obj)
 
@@ -119,9 +123,12 @@ class NodeGroup(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not ise_compare_equality(current_obj.get(ise_param),
-                                            requested_obj.get(ansible_param))
-                   for (ise_param, ansible_param) in obj_params)
+        return any(
+            not ise_compare_equality(
+                current_obj.get(ise_param), requested_obj.get(ansible_param)
+            )
+            for (ise_param, ansible_param) in obj_params
+        )
 
     def create(self):
         result = self.ise.exec(
@@ -133,17 +140,13 @@ class NodeGroup(object):
 
     def update(self):
         result = self.ise.exec(
-            family="node_group",
-            function="update_node_group",
-            params=self.new_object
+            family="node_group", function="update_node_group", params=self.new_object
         ).response
         return result
 
     def delete(self):
         result = self.ise.exec(
-            family="node_group",
-            function="delete_node_group",
-            params=self.new_object
+            family="node_group", function="delete_node_group", params=self.new_object
         ).response
         return result
 
@@ -151,7 +154,9 @@ class NodeGroup(object):
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
+            raise AnsibleActionFail(
+                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
+            )
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = False

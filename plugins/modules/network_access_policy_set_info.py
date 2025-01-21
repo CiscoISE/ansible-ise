@@ -5,14 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: network_access_policy_set_info
 short_description: Information module for Network Access Policy Set
 description:
-- Get all Network Access Policy Set.
-- Get Network Access Policy Set by id.
-- Get all network access policy sets.
-- Network Access - Get policy set attributes.
+  - Get all Network Access Policy Set.
+  - Get Network Access Policy Set by id.
+  - Get all network access policy sets.
+  - Network Access - Get policy set attributes.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -20,24 +19,22 @@ author: Rafael Campos (@racampos)
 options:
   id:
     description:
-    - Id path parameter. Policy id.
+      - Id path parameter. Policy id.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for Network Access - Policy Set
-  description: Complete reference of the Network Access - Policy Set API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
+  - name: Cisco ISE documentation for Network Access - Policy Set
+    description: Complete reference of the Network Access - Policy Set API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
   - SDK Method used are
     network_access_policy_set.NetworkAccessPolicySet.get_network_access_policy_set_by_id,
     network_access_policy_set.NetworkAccessPolicySet.get_network_access_policy_sets,
-
   - Paths used are
     get /network-access/policy-set,
     get /network-access/policy-set/{id},
-
 """
 
 EXAMPLES = r"""
@@ -48,7 +45,6 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
   register: result
-
 - name: Get Network Access Policy Set by id
   cisco.ise.network_access_policy_set_info:
     ise_hostname: "{{ise_hostname}}"
@@ -57,7 +53,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     id: string
   register: result
-
 """
 
 RETURN = r"""

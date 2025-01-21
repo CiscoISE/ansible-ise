@@ -5,11 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: subscriber_bulk
 short_description: Resource module for Subscriber Bulk
 description:
-- Manage operation create of the resource Subscriber Bulk.
+  - Manage operation create of the resource Subscriber Bulk.
 version_added: '2.8.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -29,8 +28,7 @@ options:
         description: Subscriber Bulk's id.
         type: str
       identityGroups:
-        description: Identity Group(s). With more than one idGroups it needs to be comma
-          seperated.
+        description: Identity Group(s). With more than one idGroups it needs to be comma seperated.
         type: str
       imeis:
         description: Comma separated IMEIs to be attached to the subscriber.
@@ -49,15 +47,13 @@ options:
     description: Subscriber Bulk's operation.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
   - SDK Method used are
     subscriber.Subscriber.bulk_subscriber_operation,
-
   - Paths used are
     post /api/v1/fiveg/subscriber/bulk,
-
 """
 
 EXAMPLES = r"""
@@ -68,16 +64,15 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     ItemList:
-    - enabled: true
-      friendlyName: string
-      id: string
-      identityGroups: string
-      imeis: string
-      imsi: string
-      ki: string
-      opc: string
+      - enabled: true
+        friendlyName: string
+        id: string
+        identityGroups: string
+        imeis: string
+        imsi: string
+        ki: string
+        opc: string
     operation: string
-
 """
 
 RETURN = r"""

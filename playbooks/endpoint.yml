@@ -1,5 +1,6 @@
 ---
-- hosts: ise_servers
+- name: Manage endpoints on ISE
+  hosts: ise_servers
   gather_facts: false
   tasks:
     - name: Get endpoint group
@@ -27,7 +28,7 @@
         description: MyEndpoint
         mac: 11:22:33:44:55:66
         profileId: 67a6ca50-edc9-4236-ada4-225559ed54d6
-        groupId: "{{ endpoint_group['ise_response']['id']}}"
+        groupId: "{{ endpoint_group['ise_response']['id'] }}"
         staticProfileAssignment: true
         staticGroupAssignment: true
         portalUser: portalUser

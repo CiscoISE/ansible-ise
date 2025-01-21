@@ -1,5 +1,6 @@
 ---
-- hosts: ise_servers
+- name: Network Device Group
+  hosts: ise_servers
   gather_facts: false
   tasks:
     # - name: Get all network device groups

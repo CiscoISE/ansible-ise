@@ -5,14 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: guest_type
 short_description: Resource module for Guest Type
 description:
-- Manage operations create, update and delete of the resource Guest Type.
-- This API creates a guest type.
-- This API deletes a guest type.
-- This API allows the client to update a guest type.
+  - Manage operations create, update and delete of the resource Guest Type.
+  - This API creates a guest type.
+  - This API deletes a guest type.
+  - This API allows the client to update a guest type.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -29,9 +28,8 @@ options:
         elements: dict
         suboptions:
           days:
-            description: List of Days Values should be one of Week day. Allowed values
-              are - Sunday, - Monday, - Tuesday, - Wednesday, - Thursday, - Friday,
-              - Saturday.
+            description: List of Days Values should be one of Week day. Allowed values are - Sunday, - Monday, - Tuesday, - Wednesday, - Thursday,
+              - Friday, - Saturday.
             elements: str
             type: list
           endTime:
@@ -61,8 +59,7 @@ options:
     description: Expiration Notification Settings.
     suboptions:
       advanceNotificationDuration:
-        description: Send Account Expiration Notification Duration before ( Days, Hours,
-          Minutes ).
+        description: Send Account Expiration Notification Duration before ( Days, Hours, Minutes ).
         type: int
       advanceNotificationUnits:
         description: Allowed values are - DAYS, - HOURS, - MINUTES.
@@ -96,8 +93,7 @@ options:
         description: AllowGuestPortalBypass flag.
         type: bool
       failureAction:
-        description: When Guest Exceeds limit this action will be invoked. Allowed values
-          are - Disconnect_Oldest_Connection, - Disconnect_Newest_Connection.
+        description: When Guest Exceeds limit this action will be invoked. Allowed values are - Disconnect_Oldest_Connection, - Disconnect_Newest_Connection.
         type: str
       identityGroupId:
         description: Guest Type's identityGroupId.
@@ -120,19 +116,17 @@ options:
     elements: str
     type: list
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
   - SDK Method used are
     guest_type.GuestType.create_guest_type,
     guest_type.GuestType.delete_guest_type_by_id,
     guest_type.GuestType.update_guest_type_by_id,
-
   - Paths used are
     post /ers/config/guesttype,
     delete /ers/config/guesttype/{id},
     put /ers/config/guesttype/{id},
-
 """
 
 EXAMPLES = r"""
@@ -146,10 +140,10 @@ EXAMPLES = r"""
     accessTime:
       allowAccessOnSpecificDaysTimes: true
       dayTimeLimits:
-      - days:
-        - string
-        endTime: string
-        startTime: string
+        - days:
+            - string
+          endTime: string
+          startTime: string
       defaultDuration: 0
       durationTimeUnit: string
       fromFirstLogin: true
@@ -174,8 +168,7 @@ EXAMPLES = r"""
       maxSimultaneousLogins: 0
     name: string
     sponsorGroups:
-    - string
-
+      - string
 - name: Delete by id
   cisco.ise.guest_type:
     ise_hostname: "{{ise_hostname}}"
@@ -184,7 +177,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-
 - name: Create
   cisco.ise.guest_type:
     ise_hostname: "{{ise_hostname}}"
@@ -195,10 +187,10 @@ EXAMPLES = r"""
     accessTime:
       allowAccessOnSpecificDaysTimes: true
       dayTimeLimits:
-      - days:
-        - string
-        endTime: string
-        startTime: string
+        - days:
+            - string
+          endTime: string
+          startTime: string
       defaultDuration: 0
       durationTimeUnit: string
       fromFirstLogin: true
@@ -222,8 +214,7 @@ EXAMPLES = r"""
       maxSimultaneousLogins: 0
     name: string
     sponsorGroups:
-    - string
-
+      - string
 """
 
 RETURN = r"""
@@ -279,7 +270,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

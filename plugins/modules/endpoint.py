@@ -5,14 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: endpoint
 short_description: Resource module for Endpoint
 description:
-- Manage operations create, update and delete of the resource Endpoint.
-- This API creates an endpoint.
-- This API deletes an endpoint.
-- This API allows the client to update an endpoint.
+  - Manage operations create, update and delete of the resource Endpoint.
+  - This API creates an endpoint.
+  - This API deletes an endpoint.
+  - This API allows the client to update an endpoint.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -102,19 +101,17 @@ options:
     description: StaticProfileAssignment flag.
     type: bool
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
   - SDK Method used are
     endpoint.Endpoint.create_endpoint,
     endpoint.Endpoint.delete_endpoint_by_id,
     endpoint.Endpoint.update_endpoint_by_id,
-
   - Paths used are
     post /ers/config/endpoint,
     delete /ers/config/endpoint/{id},
     put /ers/config/endpoint/{id},
-
 """
 
 EXAMPLES = r"""
@@ -152,7 +149,6 @@ EXAMPLES = r"""
     profileId: string
     staticGroupAssignment: true
     staticProfileAssignment: true
-
 - name: Delete by id
   cisco.ise.endpoint:
     ise_hostname: "{{ise_hostname}}"
@@ -161,7 +157,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-
 - name: Create
   cisco.ise.endpoint:
     ise_hostname: "{{ise_hostname}}"
@@ -195,7 +190,6 @@ EXAMPLES = r"""
     profileId: string
     staticGroupAssignment: true
     staticProfileAssignment: true
-
 """
 
 RETURN = r"""
@@ -240,7 +234,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

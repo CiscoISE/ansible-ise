@@ -1,7 +1,7 @@
 ---
-- hosts: ise_servers
+- name: Schedule configuration backup
+  hosts: ise_servers
   gather_facts: false
-  name: Schedule configuration backup
   tasks:
     - name: Schedule backup
       cisco.ise.backup_schedule_config:

@@ -5,16 +5,15 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: active_directory_info
 short_description: Information module for Active Directory
 description:
-- Get all Active Directory.
-- Get Active Directory by id.
-- Get Active Directory by name.
-- This API allows the client to get Active Directory by name.
-- This API fetchs the join point details by ID. The ID can be retrieved with the.
-- This API lists all the join points for Active Directory domains in Cisco ISE.
+  - Get all Active Directory.
+  - Get Active Directory by id.
+  - Get Active Directory by name.
+  - This API allows the client to get Active Directory by name.
+  - This API fetchs the join point details by ID. The ID can be retrieved with the.
+  - This API lists all the join points for Active Directory domains in Cisco ISE.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -22,34 +21,32 @@ author: Rafael Campos (@racampos)
 options:
   name:
     description:
-    - Name path parameter.
+      - Name path parameter.
     type: str
   id:
     description:
-    - Id path parameter.
+      - Id path parameter.
     type: str
   page:
     description:
-    - Page query parameter. Page number.
+      - Page query parameter. Page number.
     type: int
   size:
     description:
-    - Size query parameter. Number of objects returned per page.
+      - Size query parameter. Number of objects returned per page.
     type: int
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
   - SDK Method used are
     active_directory.ActiveDirectory.get_active_directory_by_id,
     active_directory.ActiveDirectory.get_active_directory_by_name,
     active_directory.ActiveDirectory.get_active_directory_generator,
-
   - Paths used are
     get /ers/config/activedirectory,
     get /ers/config/activedirectory/name/{name},
     get /ers/config/activedirectory/{id},
-
 """
 
 EXAMPLES = r"""
@@ -62,7 +59,6 @@ EXAMPLES = r"""
     page: 1
     size: 20
   register: result
-
 - name: Get Active Directory by id
   cisco.ise.active_directory_info:
     ise_hostname: "{{ise_hostname}}"
@@ -71,7 +67,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     id: string
   register: result
-
 - name: Get Active Directory by name
   cisco.ise.active_directory_info:
     ise_hostname: "{{ise_hostname}}"
@@ -80,7 +75,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     name: string
   register: result
-
 """
 
 RETURN = r"""
@@ -156,7 +150,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_responses:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

@@ -5,14 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: tacacs_profile
 short_description: Resource module for TACACS Profile
 description:
-- Manage operations create, update and delete of the resource TACACS Profile.
-- This API creates a TACACS profile.
-- This API deletes a TACACS profile.
-- This API allows the client to update a TACACS profile.
+  - Manage operations create, update and delete of the resource TACACS Profile.
+  - This API creates a TACACS profile.
+  - This API deletes a TACACS profile.
+  - This API allows the client to update a TACACS profile.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -46,19 +45,17 @@ options:
         type: list
     type: dict
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
   - SDK Method used are
     tacacs_profile.TacacsProfile.create_tacacs_profile,
     tacacs_profile.TacacsProfile.delete_tacacs_profile_by_id,
     tacacs_profile.TacacsProfile.update_tacacs_profile_by_id,
-
   - Paths used are
     post /ers/config/tacacsprofile,
     delete /ers/config/tacacsprofile/{id},
     put /ers/config/tacacsprofile/{id},
-
 """
 
 EXAMPLES = r"""
@@ -74,10 +71,9 @@ EXAMPLES = r"""
     name: string
     sessionAttributes:
       sessionAttributeList:
-      - name: string
-        type: string
-        value: string
-
+        - name: string
+          type: string
+          value: string
 - name: Delete by id
   cisco.ise.tacacs_profile:
     ise_hostname: "{{ise_hostname}}"
@@ -86,7 +82,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-
 - name: Create
   cisco.ise.tacacs_profile:
     ise_hostname: "{{ise_hostname}}"
@@ -98,10 +93,9 @@ EXAMPLES = r"""
     name: string
     sessionAttributes:
       sessionAttributeList:
-      - name: string
-        type: string
-        value: string
-
+        - name: string
+          type: string
+          value: string
 """
 
 RETURN = r"""
@@ -129,7 +123,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

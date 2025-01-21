@@ -182,14 +182,27 @@ class Node(object):
                     return_message == "Certificates are having same subject, same serial number and they are binary equal. Hence skipping the replace"):
                 raise AnsibleActionFail("Unexpected response from API. Received response was {message}".format(message=return_message))
 
-    def promote_to_primary(self):
+    def promote_to_primary(self, timeout):
         headers = {'Content-Type': 'application/json'}
         url = "https://{ip}/api/v1/deployment/primary".format(ip=self.ip)
         try:
-            response = requests.post(url=url, headers=headers, auth=(self.username, self.password), verify=False, timeout=60)
+            response = requests.post(url=url, headers=headers, auth=(self.username, self.password), verify=False, timeout=timeout)
             if response.status_code == 200:
                 return True
             else:
                 raise AnsibleActionFail("Could not update node to PRIMARY")
+        except Exception as e:
+            raise AnsibleActionFail(e)
+
+    def is_primary(self, timeout):
+        headers = {'Content-Type': 'application/json'}
+        url = "https://{ip}/api/v1/deployment/node/{hostname}".format(ip=self.ip, hostname=self.hostname)
+        try:
+            response = requests.get(url=url, headers=headers, auth=(self.username, self.password), verify=False, timeout=timeout)
+            if response.status_code == 200:
+                response_data = json.loads(response.text).get("response")
+                if "PrimaryAdmin" in response_data.get("roles"):
+                    return True
+            return False
         except Exception as e:
             raise AnsibleActionFail(e)

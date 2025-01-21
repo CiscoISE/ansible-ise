@@ -5,12 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: endpoint_deregister
 short_description: Resource module for Endpoint Deregister
 description:
-- Manage operation update of the resource Endpoint Deregister.
-- This API allows the client to de-register an endpoint.
+  - Manage operation update of the resource Endpoint Deregister.
+  - This API allows the client to de-register an endpoint.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -20,15 +19,13 @@ options:
     description: Id path parameter.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
   - SDK Method used are
     endpoint.Endpoint.deregister_endpoint,
-
   - Paths used are
     put /ers/config/endpoint/{id}/deregister,
-
 """
 
 EXAMPLES = r"""
@@ -39,7 +36,6 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     id: string
-
 """
 
 RETURN = r"""

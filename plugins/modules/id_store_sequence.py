@@ -5,14 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: id_store_sequence
 short_description: Resource module for Id Store Sequence
 description:
-- Manage operations create, update and delete of the resource Id Store Sequence.
-- This API creates an identity sequence.
-- This API deletes an identity sequence.
-- This API allows the client to update an identity sequence.
+  - Manage operations create, update and delete of the resource Id Store Sequence.
+  - This API creates an identity sequence.
+  - This API deletes an identity sequence.
+  - This API allows the client to update an identity sequence.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -48,23 +47,21 @@ options:
     description: Id Store Sequence's parent.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for IdentitySequence
-  description: Complete reference of the IdentitySequence API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!idstoresequence
+  - name: Cisco ISE documentation for IdentitySequence
+    description: Complete reference of the IdentitySequence API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!idstoresequence
 notes:
   - SDK Method used are
     identity_sequence.IdentitySequence.create_identity_sequence,
     identity_sequence.IdentitySequence.delete_identity_sequence_by_id,
     identity_sequence.IdentitySequence.update_identity_sequence_by_id,
-
   - Paths used are
     post /ers/config/idstoresequence,
     delete /ers/config/idstoresequence/{id},
     put /ers/config/idstoresequence/{id},
-
 """
 
 EXAMPLES = r"""
@@ -80,11 +77,10 @@ EXAMPLES = r"""
     description: string
     id: string
     idSeqItem:
-    - idstore: string
-      order: 0
+      - idstore: string
+        order: 0
     name: string
     parent: string
-
 - name: Delete by id
   cisco.ise.id_store_sequence:
     ise_hostname: "{{ise_hostname}}"
@@ -93,7 +89,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-
 - name: Create
   cisco.ise.id_store_sequence:
     ise_hostname: "{{ise_hostname}}"
@@ -105,11 +100,10 @@ EXAMPLES = r"""
     certificateAuthenticationProfile: string
     description: string
     idSeqItem:
-    - idstore: string
-      order: 0
+      - idstore: string
+        order: 0
     name: string
     parent: string
-
 """
 
 RETURN = r"""
@@ -137,7 +131,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

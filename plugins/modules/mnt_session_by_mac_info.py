@@ -5,11 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: mnt_session_by_mac_info
 short_description: Information module for MNT Session By Mac
 description:
-- Get MNT Session By Mac by id.
+  - Get MNT Session By Mac by id.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -17,18 +16,16 @@ author: Rafael Campos (@racampos)
 options:
   mac:
     description:
-    - Mac path parameter.
+      - Mac path parameter.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
   - SDK Method used are
     misc.Misc.get_sessions_by_mac,
-
   - Paths used are
     get /Session/MACAddress/{mac},
-
 """
 
 EXAMPLES = r"""
@@ -40,7 +37,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     mac: string
   register: result
-
 """
 
 RETURN = r"""

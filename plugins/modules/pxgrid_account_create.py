@@ -5,11 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: pxgrid_account_create
 short_description: Resource module for pxGrid Account Create
 description:
-- Manage operation create of the resource pxGrid Account Create.
+  - Manage operation create of the resource pxGrid Account Create.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -19,15 +18,13 @@ options:
     description: pxGrid Account Create's nodeName.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
   - SDK Method used are
     consumer.Consumer.create_account,
-
   - Paths used are
     post /control/AccountCreate,
-
 """
 
 EXAMPLES = r"""
@@ -38,7 +35,6 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     nodeName: MyName01
-
 """
 
 RETURN = r"""

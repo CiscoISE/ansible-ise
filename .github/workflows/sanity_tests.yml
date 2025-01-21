@@ -1,14 +1,14 @@
 name: CI
 on:
   push:
-    branches: [ main ]
+    branches: ["main"]
   pull_request:
   schedule:
     - cron: '0 6 * * *'
   workflow_dispatch:
 env:
   NAMESPACE: cisco
-  COLLECTION_NAME: ise 
+  COLLECTION_NAME: ise
 jobs:
   sanity:
     name: Sanity (Ⓐ${{ matrix.ansible }})

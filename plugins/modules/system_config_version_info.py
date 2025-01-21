@@ -5,31 +5,28 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: system_config_version_info
 short_description: Information module for System Config Version
 description:
-- Get all System Config Version.
-- This API allows the client to get Cisco ISE version and patch information.
+  - Get all System Config Version.
+  - This API allows the client to get Cisco ISE version and patch information.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for VersionAndPatch
-  description: Complete reference of the VersionAndPatch API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!iseversion
+  - name: Cisco ISE documentation for VersionAndPatch
+    description: Complete reference of the VersionAndPatch API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!iseversion
 notes:
   - SDK Method used are
     version_and_patch.VersionAndPatch.get_ise_version_and_patch,
-
   - Paths used are
     get /ers/config/op/systemconfig/iseversion,
-
 """
 
 EXAMPLES = r"""
@@ -40,7 +37,6 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
   register: result
-
 """
 
 RETURN = r"""

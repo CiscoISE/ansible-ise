@@ -5,14 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: tacacs_server_sequence
 short_description: Resource module for TACACS Server Sequence
 description:
-- Manage operations create, update and delete of the resource TACACS Server Sequence.
-- This API creates a TACACS server sequence.
-- This API deletes a TACACS server sequence.
-- This API allows the client to update a TACACS server sequence.
+  - Manage operations create, update and delete of the resource TACACS Server Sequence.
+  - This API creates a TACACS server sequence.
+  - This API deletes a TACACS server sequence.
+  - This API allows the client to update a TACACS server sequence.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -40,8 +39,8 @@ options:
     description: RemoteAccounting flag.
     type: bool
   serverList:
-    description: The names of TACACS external servers separated by commas. The order
-      of the names in the string is the order of servers that will be used during authentication.
+    description: The names of TACACS external servers separated by commas. The order of the names in the string is the order of servers that will
+      be used during authentication.
     type: str
   suffixDelimiter:
     description: The delimiter that will be used for suffix strip.
@@ -50,19 +49,17 @@ options:
     description: Define if a delimiter will be used for suffix strip.
     type: bool
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
   - SDK Method used are
     tacacs_server_sequence.TacacsServerSequence.create_tacacs_server_sequence,
     tacacs_server_sequence.TacacsServerSequence.delete_tacacs_server_sequence_by_id,
     tacacs_server_sequence.TacacsServerSequence.update_tacacs_server_sequence_by_id,
-
   - Paths used are
     post /ers/config/tacacsserversequence,
     delete /ers/config/tacacsserversequence/{id},
     put /ers/config/tacacsserversequence/{id},
-
 """
 
 EXAMPLES = r"""
@@ -83,7 +80,6 @@ EXAMPLES = r"""
     serverList: string
     suffixDelimiter: string
     suffixStrip: true
-
 - name: Delete by id
   cisco.ise.tacacs_server_sequence:
     ise_hostname: "{{ise_hostname}}"
@@ -92,7 +88,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-
 - name: Create
   cisco.ise.tacacs_server_sequence:
     ise_hostname: "{{ise_hostname}}"
@@ -109,7 +104,6 @@ EXAMPLES = r"""
     serverList: string
     suffixDelimiter: string
     suffixStrip: true
-
 """
 
 RETURN = r"""
@@ -135,7 +129,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

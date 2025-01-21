@@ -5,12 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: guest_type_email
 short_description: Resource module for Guest Type Email
 description:
-- Manage operation update of the resource Guest Type Email.
-- This API allows the client to update a guest type email by ID.
+  - Manage operation update of the resource Guest Type Email.
+  - This API allows the client to update a guest type email by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -31,15 +30,13 @@ options:
     description: Id path parameter.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
   - SDK Method used are
     guest_type.GuestType.update_guest_type_email,
-
   - Paths used are
     put /ers/config/guesttype/email/{id},
-
 """
 
 EXAMPLES = r"""
@@ -50,10 +47,9 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     additionalData:
-    - name: emailAddress
-      value: emailAddress
+      - name: emailAddress
+        value: emailAddress
     id: string
-
 """
 
 RETURN = r"""

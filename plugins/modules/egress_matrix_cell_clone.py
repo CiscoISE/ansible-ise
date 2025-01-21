@@ -5,12 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: egress_matrix_cell_clone
 short_description: Resource module for Egress Matrix Cell Clone
 description:
-- Manage operation update of the resource Egress Matrix Cell Clone.
-- This API allows the client to clone an egress matrix cell.
+  - Manage operation update of the resource Egress Matrix Cell Clone.
+  - This API allows the client to clone an egress matrix cell.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -26,15 +25,13 @@ options:
     description: SrcSGtId path parameter.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
   - SDK Method used are
     egress_matrix_cell.EgressMatrixCell.clone_matrix_cell,
-
   - Paths used are
     put /ers/config/egressmatrixcell/clonecell/{id}/srcSgt/{srcSgtId}/dstSgt/{dstSgtId},
-
 """
 
 EXAMPLES = r"""
@@ -47,7 +44,6 @@ EXAMPLES = r"""
     dstSgtId: string
     id: string
     srcSgtId: string
-
 """
 
 RETURN = r"""

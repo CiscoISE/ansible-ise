@@ -5,14 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: sgt
 short_description: Resource module for SGt
 description:
-- Manage operations create, update and delete of the resource SGt.
-- This API creates a security group.
-- This API deletes a security group.
-- This API allows the client to update a security group.
+  - Manage operations create, update and delete of the resource SGt.
+  - This API creates a security group.
+  - This API deletes a security group.
+  - This API allows the client to update a security group.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -46,23 +45,21 @@ options:
     type: int
     required: true
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for SecurityGroups
-  description: Complete reference of the SecurityGroups API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgt
+  - name: Cisco ISE documentation for SecurityGroups
+    description: Complete reference of the SecurityGroups API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgt
 notes:
   - SDK Method used are
     security_groups.SecurityGroups.create_security_group,
     security_groups.SecurityGroups.delete_security_group_by_id,
     security_groups.SecurityGroups.update_security_group_by_id,
-
   - Paths used are
     post /ers/config/sgt,
     delete /ers/config/sgt/{id},
     put /ers/config/sgt/{id},
-
 """
 
 EXAMPLES = r"""
@@ -74,7 +71,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     defaultSGACLs:
-    - {}
+      - {}
     description: string
     generationId: string
     id: string
@@ -82,7 +79,6 @@ EXAMPLES = r"""
     name: string
     propogateToApic: true
     value: 0
-
 - name: Delete by id
   cisco.ise.sgt:
     ise_hostname: "{{ise_hostname}}"
@@ -91,7 +87,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-
 - name: Create
   cisco.ise.sgt:
     ise_hostname: "{{ise_hostname}}"
@@ -100,14 +95,13 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     defaultSGACLs:
-    - {}
+      - {}
     description: string
     generationId: string
     isReadOnly: true
     name: string
     propogateToApic: true
     value: 0
-
 """
 
 RETURN = r"""
@@ -133,7 +127,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

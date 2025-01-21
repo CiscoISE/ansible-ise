@@ -5,16 +5,15 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: device_administration_conditions_info
 short_description: Information module for Device Administration Conditions
 description:
-- Get all Device Administration Conditions.
-- Get Device Administration Conditions by id.
-- Get Device Administration Conditions by name.
-- Device Admin - Returns a library condition.
-- Device Admin - Returns a library condition.
-- Device Admin - Returns list of library conditions.
+  - Get all Device Administration Conditions.
+  - Get Device Administration Conditions by id.
+  - Get Device Administration Conditions by name.
+  - Device Admin - Returns a library condition.
+  - Device Admin - Returns a library condition.
+  - Device Admin - Returns list of library conditions.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -22,30 +21,28 @@ author: Rafael Campos (@racampos)
 options:
   name:
     description:
-    - Name path parameter. Condition name.
+      - Name path parameter. Condition name.
     type: str
   id:
     description:
-    - Id path parameter. Condition id.
+      - Id path parameter. Condition id.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for Device Administration - Conditions
-  description: Complete reference of the Device Administration - Conditions API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
+  - name: Cisco ISE documentation for Device Administration - Conditions
+    description: Complete reference of the Device Administration - Conditions API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
   - SDK Method used are
     device_administration_conditions.DeviceAdministrationConditions.get_device_admin_condition_by_id,
     device_administration_conditions.DeviceAdministrationConditions.get_device_admin_condition_by_name,
     device_administration_conditions.DeviceAdministrationConditions.get_device_admin_conditions,
-
   - Paths used are
     get /device-admin/condition,
     get /device-admin/condition/condition-by-name/{name},
     get /device-admin/condition/{id},
-
 """
 
 EXAMPLES = r"""
@@ -56,7 +53,6 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
   register: result
-
 - name: Get Device Administration Conditions by id
   cisco.ise.device_administration_conditions_info:
     ise_hostname: "{{ise_hostname}}"
@@ -65,7 +61,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     id: string
   register: result
-
 - name: Get Device Administration Conditions by name
   cisco.ise.device_administration_conditions_info:
     ise_hostname: "{{ise_hostname}}"
@@ -74,7 +69,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     name: string
   register: result
-
 """
 
 RETURN = r"""

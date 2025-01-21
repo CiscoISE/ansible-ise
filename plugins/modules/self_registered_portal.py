@@ -5,14 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: self_registered_portal
 short_description: Resource module for Self Registered Portal
 description:
-- Manage operations create, update and delete of the resource Self Registered Portal.
-- This API creates a self registered portal.
-- This API deletes a self registered portal by ID.
-- This API allows the client to update a self registered portal by ID.
+  - Manage operations create, update and delete of the resource Self Registered Portal.
+  - This API creates a self registered portal.
+  - This API deletes a self registered portal by ID.
+  - This API allows the client to update a self registered portal by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -28,16 +27,14 @@ options:
             description: Self Registered Portal's backgroundImage.
             suboptions:
               data:
-                description: Represented as base 64 encoded string of the image byte
-                  array.
+                description: Represented as base 64 encoded string of the image byte array.
                 type: str
             type: dict
           bannerImage:
             description: Self Registered Portal's bannerImage.
             suboptions:
               data:
-                description: Represented as base 64 encoded string of the image byte
-                  array.
+                description: Represented as base 64 encoded string of the image byte array.
                 type: str
             type: dict
           bannerTitle:
@@ -50,8 +47,7 @@ options:
             description: Self Registered Portal's desktopLogoImage.
             suboptions:
               data:
-                description: Represented as base 64 encoded string of the image byte
-                  array.
+                description: Represented as base 64 encoded string of the image byte array.
                 type: str
             type: dict
           footerElement:
@@ -61,14 +57,13 @@ options:
             description: Self Registered Portal's mobileLogoImage.
             suboptions:
               data:
-                description: Represented as base 64 encoded string of the image byte
-                  array.
+                description: Represented as base 64 encoded string of the image byte array.
                 type: str
             type: dict
         type: dict
       language:
-        description: This property is supported only for Read operation and it allows
-          to show the customizations in English. Other languages are not supported.
+        description: This property is supported only for Read operation and it allows to show the customizations in English. Other languages are
+          not supported.
         suboptions:
           viewLanguage:
             description: Self Registered Portal's viewLanguage.
@@ -103,10 +98,9 @@ options:
             type: str
         type: dict
       portalTweakSettings:
-        description: The Tweak Settings are a customization of the Portal Theme that
-          has been selected for the portal. When the Portal Theme selection is changed,
-          the Tweak Settings are overwritten to match the values in the theme. The Tweak
-          Settings can subsequently be changed by the user.
+        description: The Tweak Settings are a customization of the Portal Theme that has been selected for the portal. When the Portal Theme selection
+          is changed, the Tweak Settings are overwritten to match the values in the theme. The Tweak Settings can subsequently be changed by the
+          user.
         suboptions:
           bannerColor:
             description: Hex value of color.
@@ -135,8 +129,7 @@ options:
     description: URL to bring up a test page for this portal.
     type: str
   portalType:
-    description: Allowed values - BYOD, - HOTSPOTGUEST, - MYDEVICE, - SELFREGGUEST,
-      - SPONSOR, - SPONSOREDGUEST.
+    description: Allowed values - BYOD, - HOTSPOTGUEST, - MYDEVICE, - SELFREGGUEST, - SPONSOR, - SPONSOREDGUEST.
     type: str
   settings:
     description: Defines all of the settings groups available for a portal.
@@ -145,20 +138,17 @@ options:
         description: Self Registered Portal's aupSettings.
         suboptions:
           displayFrequency:
-            description: How the AUP should be displayed, either on page or as a link.
-              Only valid if includeAup = true. Allowed Values - FIRSTLOGIN, - EVERYLOGIN,
-              - RECURRING.
+            description: How the AUP should be displayed, either on page or as a link. Only valid if includeAup = true. Allowed Values - FIRSTLOGIN,
+              - EVERYLOGIN, - RECURRING.
             type: str
           displayFrequencyIntervalDays:
-            description: Number of days between AUP confirmations (when displayFrequency
-              = recurring).
+            description: Number of days between AUP confirmations (when displayFrequency = recurring).
             type: int
           includeAup:
             description: Require the portal user to read and accept an AUP.
             type: bool
           requireAupScrolling:
-            description: Require the portal user to scroll to the end of the AUP. Only
-              valid if requireAupAcceptance = true.
+            description: Require the portal user to scroll to the end of the AUP. Only valid if requireAupAcceptance = true.
             type: bool
           requireScrolling:
             description: RequireScrolling flag.
@@ -181,8 +171,7 @@ options:
             type: str
         type: dict
       byodSettings:
-        description: Configuration of BYOD Device Welcome, Registration and Success
-          steps.
+        description: Configuration of BYOD Device Welcome, Registration and Success steps.
         suboptions:
           byodRegistrationSettings:
             description: Configuration of BYOD endpoint Registration step configuration.
@@ -198,22 +187,19 @@ options:
             description: Configuration of BYOD endpoint Registration Success step configuration.
             suboptions:
               redirectUrl:
-                description: Target URL for redirection, used when successRedirect =
-                  URL.
+                description: Target URL for redirection, used when successRedirect = URL.
                 type: str
               successRedirect:
-                description: After an Authentication Success where should device be
-                  redirected. Allowed values - AUTHSUCCESSPAGE, - ORIGINATINGURL, -
-                  URL.
+                description: After an Authentication Success where should device be redirected. Allowed values - AUTHSUCCESSPAGE, - ORIGINATINGURL,
+                  - URL.
                 type: str
             type: dict
           byodWelcomeSettings:
             description: Configuration of BYOD endpoint welcome step configuration.
             suboptions:
               aupDisplay:
-                description: How the AUP should be displayed, either on page or as a
-                  link. Only valid if includeAup = true. Allowed values - ONPAGE, -
-                  ASLINK.
+                description: How the AUP should be displayed, either on page or as a link. Only valid if includeAup = true. Allowed values - ONPAGE,
+                  - ASLINK.
                 type: str
               enableBYOD:
                 description: EnableBYOD flag.
@@ -231,8 +217,7 @@ options:
                 description: RequireMDM flag.
                 type: bool
               requireScrolling:
-                description: Require BYOD devices to scroll down to the bottom of the
-                  AUP, Only valid if includeAup = true.
+                description: Require BYOD devices to scroll down to the bottom of the AUP, Only valid if includeAup = true.
                 type: bool
             type: dict
         type: dict
@@ -257,8 +242,7 @@ options:
         description: Portal Login Page settings groups follow.
         suboptions:
           accessCode:
-            description: Access code that must be entered by the portal user (only valid
-              if requireAccessCode = true).
+            description: Access code that must be entered by the portal user (only valid if requireAccessCode = true).
             type: str
           allowAlternateGuestPortal:
             description: AllowAlternateGuestPortal flag.
@@ -282,12 +266,11 @@ options:
             description: Self Registered Portal's alternateGuestPortal.
             type: str
           aupDisplay:
-            description: How the AUP should be displayed, either on page or as a link.
-              Only valid if includeAup = true. Allowed values - ONPAGE, - ASLINK.
+            description: How the AUP should be displayed, either on page or as a link. Only valid if includeAup = true. Allowed values - ONPAGE,
+              - ASLINK.
             type: str
           includeAup:
-            description: Include an Acceptable Use Policy (AUP) that should be displayed
-              during login.
+            description: Include an Acceptable Use Policy (AUP) that should be displayed during login.
             type: bool
           maxFailedAttemptsBeforeRateLimit:
             description: Maximum failed login attempts before rate limiting.
@@ -296,8 +279,7 @@ options:
             description: Require the portal user to enter an access code.
             type: bool
           requireAupAcceptance:
-            description: Require the portal user to accept the AUP. Only valid if includeAup
-              = true.
+            description: Require the portal user to accept the AUP. Only valid if includeAup = true.
             type: bool
           socialConfigs:
             description: Self Registered Portal's socialConfigs.
@@ -315,27 +297,24 @@ options:
             type: int
         type: dict
       portalSettings:
-        description: The port, interface, certificate, and other basic settings of a
-          portal.
+        description: The port, interface, certificate, and other basic settings of a portal.
         suboptions:
           allowedInterfaces:
-            description: Interfaces that the portal will be reachable on. Allowed values
-              - eth0, - eth1, - eth2, - eth3, - eth4, - eth5, - bond0, - bond1, - bond2.
+            description: Interfaces that the portal will be reachable on. Allowed values - eth0, - eth1, - eth2, - eth3, - eth4, - eth5, - bond0,
+              - bond1, - bond2.
             elements: str
             type: list
           alwaysUsedLanguage:
             description: Self Registered Portal's alwaysUsedLanguage.
             type: str
           assignedGuestTypeForEmployee:
-            description: Unique Id of a guest type. Employees using this portal as a
-              guest inherit login options from the guest type.
+            description: Unique Id of a guest type. Employees using this portal as a guest inherit login options from the guest type.
             type: str
           authenticationMethod:
             description: Unique Id of the identity source sequence.
             type: str
           certificateGroupTag:
-            description: Logical name of the x.509 server certificate that will be used
-              for the portal.
+            description: Logical name of the x.509 server certificate that will be used for the portal.
             type: str
           displayLang:
             description: Allowed values - USEBROWSERLOCALE, - ALWAYSUSE.
@@ -344,8 +323,7 @@ options:
             description: Used when displayLang = USEBROWSERLOCALE.
             type: str
           httpsPort:
-            description: The port number that the allowed interfaces will listen on.
-              Range from 8000 to 8999.
+            description: The port number that the allowed interfaces will listen on. Range from 8000 to 8999.
             type: int
         type: dict
       postAccessBannerSettings:
@@ -369,52 +347,45 @@ options:
             description: Self-registered guest account is valid for this many account_validity_time_units.
             type: int
           accountValidityTimeUnits:
-            description: Time units for account_validity_duration. Allowed Values -
-              DAYS, - HOURS, - MINUTES.
+            description: Time units for account_validity_duration. Allowed Values - DAYS, - HOURS, - MINUTES.
             type: str
           allowGraceAccess:
             description: AllowGraceAccess flag.
             type: bool
           approvalEmailAddresses:
-            description: Only valid if requireGuestApproval = true and sendApprovalRequestTo
-              = SELECTEDEMAILADDRESSES.
+            description: Only valid if requireGuestApproval = true and sendApprovalRequestTo = SELECTEDEMAILADDRESSES.
             type: str
           approveDenyLinksTimeUnits:
-            description: This attribute, along with approveDenyLinksValidFor, specifies
-              how long the link can be used. Only valid if requireGuestApproval = true.
-              Allowed Values - DAYS, - HOURS, - MINUTES.
+            description: This attribute, along with approveDenyLinksValidFor, specifies how long the link can be used. Only valid if requireGuestApproval
+              = true. Allowed Values - DAYS, - HOURS, - MINUTES.
             type: str
           approveDenyLinksValidFor:
-            description: This attribute, along with approveDenyLinksTimeUnits, specifies
-              how long the link can be used. Only valid if requireGuestApproval = true.
+            description: This attribute, along with approveDenyLinksTimeUnits, specifies how long the link can be used. Only valid if requireGuestApproval
+              = true.
             type: int
           assignGuestsToGuestType:
             description: Guests are assigned to this guest type.
             type: str
           aupDisplay:
-            description: How the AUP should be displayed, either on page or as a link.
-              Only valid if includeAup = true. Allowed values - ONPAGE, - ASLINK.
+            description: How the AUP should be displayed, either on page or as a link. Only valid if includeAup = true. Allowed values - ONPAGE,
+              - ASLINK.
             type: str
           authenticateSponsorsUsingPortalList:
             description: AuthenticateSponsorsUsingPortalList flag.
             type: bool
           autoLoginSelfWait:
-            description: Allow guests to login automatically from self-registration
-              after sponsor's approval. No need to provide the credentials by guest
-              to login.
+            description: Allow guests to login automatically from self-registration after sponsor's approval. No need to provide the credentials
+              by guest to login.
             type: bool
           autoLoginTimePeriod:
-            description: Waiting period for auto login until sponsor's approval. If
-              time exceeds, guest has to login manually by providing the credentials.
-              Default value is 5 minutes.
+            description: Waiting period for auto login until sponsor's approval. If time exceeds, guest has to login manually by providing the
+              credentials. Default value is 5 minutes.
             type: int
           credentialNotificationUsingEmail:
-            description: If true, send credential notification upon approval using email.
-              Only valid if requireGuestApproval = true.
+            description: If true, send credential notification upon approval using email. Only valid if requireGuestApproval = true.
             type: bool
           credentialNotificationUsingSMS:
-            description: If true, send credential notification upon approval using SMS.
-              Only valid if requireGuestApproval = true.
+            description: If true, send credential notification upon approval using SMS. Only valid if requireGuestApproval = true.
             type: bool
           enableGuestEmailBlacklist:
             description: Disallow guests with an e-mail address from selected domains.
@@ -533,44 +504,37 @@ options:
             elements: str
             type: list
           guestEmailWhitelistDomains:
-            description: Self-registered guests whose e-mail address is in one of these
-              domains will be allowed. Only valid if enableGuestEmailWhitelist = true.
+            description: Self-registered guests whose e-mail address is in one of these domains will be allowed. Only valid if enableGuestEmailWhitelist
+              = true.
             elements: str
             type: list
           includeAup:
-            description: Include an Acceptable Use Policy (AUP) that should be displayed
-              during login.
+            description: Include an Acceptable Use Policy (AUP) that should be displayed during login.
             type: bool
           postRegistrationRedirect:
-            description: After the registration submission direct the guest user to
-              one of the following pages. Only valid if requireGuestApproval = true.
-              Allowed Values - SELFREGISTRATIONSUCCESS, - LOGINPAGEWITHINSTRUCTIONS
-              - URL.
+            description: After the registration submission direct the guest user to one of the following pages. Only valid if requireGuestApproval
+              = true. Allowed Values - SELFREGISTRATIONSUCCESS, - LOGINPAGEWITHINSTRUCTIONS - URL.
             type: str
           postRegistrationRedirectUrl:
-            description: URL where guest user is redirected after registration. Only
-              valid if requireGuestApproval = true and postRegistrationRedirect = URL.
+            description: URL where guest user is redirected after registration. Only valid if requireGuestApproval = true and postRegistrationRedirect
+              = URL.
             type: str
           registrationCode:
             description: The registration code that the guest user must enter.
             type: str
           requireApproverToAuthenticate:
-            description: When self-registered guests require approval, an approval request
-              is e-mailed to one or more sponsor users. If the Cisco ISE Administrator
-              chooses to include an approval link in the e-mail, a sponsor user who
-              clicks the link will be required to enter their username and password
-              if this attribute is true. Only valid if requireGuestApproval = true.
+            description: When self-registered guests require approval, an approval request is e-mailed to one or more sponsor users. If the Cisco
+              ISE Administrator chooses to include an approval link in the e-mail, a sponsor user who clicks the link will be required to enter
+              their username and password if this attribute is true. Only valid if requireGuestApproval = true.
             type: bool
           requireAupAcceptance:
-            description: Require the portal user to accept the AUP. Only valid if includeAup
-              = true.
+            description: Require the portal user to accept the AUP. Only valid if includeAup = true.
             type: bool
           requireGuestApproval:
             description: Require self-registered guests to be approved if true.
             type: bool
           requireRegistrationCode:
-            description: Self-registered guests are required to enter a registration
-              code.
+            description: Self-registered guests are required to enter a registration code.
             type: bool
           selectableLocations:
             description: Guests can choose from these locations to set their time zone.
@@ -581,8 +545,8 @@ options:
             elements: str
             type: list
           sendApprovalRequestTo:
-            description: Specifies where approval requests are sent. Only valid if requireGuestApproval
-              = true. Allowed Values - SELECTEDEMAILADDRESSES, - PERSONBEINGVISITED.
+            description: Specifies where approval requests are sent. Only valid if requireGuestApproval = true. Allowed Values - SELECTEDEMAILADDRESSES,
+              - PERSONBEINGVISITED.
             type: str
           sponsorPortalList:
             description: Self Registered Portal's sponsorPortalList.
@@ -654,12 +618,11 @@ options:
         description: Self Registered Portal's supportInfoSettings.
         suboptions:
           defaultEmptyFieldValue:
-            description: The default value displayed for an empty field. Only valid
-              when emptyFieldDisplay = DISPLAYWITHDEFAULTVALUE.
+            description: The default value displayed for an empty field. Only valid when emptyFieldDisplay = DISPLAYWITHDEFAULTVALUE.
             type: str
           emptyFieldDisplay:
-            description: Specifies how empty fields are handled on the Support Information
-              Page. Allowed values - HIDE, - DISPLAYWITHNOVALUE, - DISPLAYWITHDEFAULTVALUE.
+            description: Specifies how empty fields are handled on the Support Information Page. Allowed values - HIDE, - DISPLAYWITHNOVALUE,
+              - DISPLAYWITHDEFAULTVALUE.
             type: str
           includeBrowserUserAgent:
             description: IncludeBrowserUserAgent flag.
@@ -682,23 +645,21 @@ options:
         type: dict
     type: dict
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for SelfRegisteredPortal
-  description: Complete reference of the SelfRegisteredPortal API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!selfregportal
+  - name: Cisco ISE documentation for SelfRegisteredPortal
+    description: Complete reference of the SelfRegisteredPortal API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!selfregportal
 notes:
   - SDK Method used are
     self_registered_portal.SelfRegisteredPortal.create_self_registered_portal,
     self_registered_portal.SelfRegisteredPortal.delete_self_registered_portal_by_id,
     self_registered_portal.SelfRegisteredPortal.update_self_registered_portal_by_id,
-
   - Paths used are
     post /ers/config/selfregportal,
     delete /ers/config/selfregportal/{id},
     put /ers/config/selfregportal/{id},
-
 """
 
 EXAMPLES = r"""
@@ -726,8 +687,8 @@ EXAMPLES = r"""
         viewLanguage: string
       pageCustomizations:
         data:
-        - key: string
-          value: string
+          - key: string
+            value: string
       portalTheme:
         id: string
         name: string
@@ -789,12 +750,12 @@ EXAMPLES = r"""
         requireAccessCode: true
         requireAupAcceptance: true
         socialConfigs:
-        - socialMediaType: string
-          socialMediaValue: string
+          - socialMediaType: string
+            socialMediaValue: string
         timeBetweenLoginsDuringRateLimit: 0
       portalSettings:
         allowedInterfaces:
-        - string
+          - string
         alwaysUsedLanguage: string
         assignedGuestTypeForEmployee: string
         authenticationMethod: string
@@ -855,9 +816,9 @@ EXAMPLES = r"""
         graceAccessExpireInterval: 0
         graceAccessSendAccountExpiration: true
         guestEmailBlacklistDomains:
-        - string
+          - string
         guestEmailWhitelistDomains:
-        - string
+          - string
         includeAup: true
         postRegistrationRedirect: string
         postRegistrationRedirectUrl: string
@@ -867,12 +828,12 @@ EXAMPLES = r"""
         requireGuestApproval: true
         requireRegistrationCode: true
         selectableLocations:
-        - string
+          - string
         selectableSmsProviders:
-        - string
+          - string
         sendApprovalRequestTo: string
         sponsorPortalList:
-        - string
+          - string
       selfRegSuccessSettings:
         allowGuestLoginFromSelfregSuccessPage: true
         allowGuestSendSelfUsingEmail: true
@@ -902,7 +863,6 @@ EXAMPLES = r"""
         includeMacAddr: true
         includePolicyServer: true
         includeSupportInfoPage: true
-
 - name: Delete by id
   cisco.ise.self_registered_portal:
     ise_hostname: "{{ise_hostname}}"
@@ -911,7 +871,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-
 - name: Create
   cisco.ise.self_registered_portal:
     ise_hostname: "{{ise_hostname}}"
@@ -936,8 +895,8 @@ EXAMPLES = r"""
         viewLanguage: string
       pageCustomizations:
         data:
-        - key: string
-          value: string
+          - key: string
+            value: string
       portalTheme:
         id: string
         name: string
@@ -998,12 +957,12 @@ EXAMPLES = r"""
         requireAccessCode: true
         requireAupAcceptance: true
         socialConfigs:
-        - socialMediaType: string
-          socialMediaValue: string
+          - socialMediaType: string
+            socialMediaValue: string
         timeBetweenLoginsDuringRateLimit: 0
       portalSettings:
         allowedInterfaces:
-        - string
+          - string
         alwaysUsedLanguage: string
         assignedGuestTypeForEmployee: string
         authenticationMethod: string
@@ -1064,9 +1023,9 @@ EXAMPLES = r"""
         graceAccessExpireInterval: 0
         graceAccessSendAccountExpiration: true
         guestEmailBlacklistDomains:
-        - string
+          - string
         guestEmailWhitelistDomains:
-        - string
+          - string
         includeAup: true
         postRegistrationRedirect: string
         postRegistrationRedirectUrl: string
@@ -1076,12 +1035,12 @@ EXAMPLES = r"""
         requireGuestApproval: true
         requireRegistrationCode: true
         selectableLocations:
-        - string
+          - string
         selectableSmsProviders:
-        - string
+          - string
         sendApprovalRequestTo: string
         sponsorPortalList:
-        - string
+          - string
       selfRegSuccessSettings:
         allowGuestLoginFromSelfregSuccessPage: true
         allowGuestSendSelfUsingEmail: true
@@ -1111,7 +1070,6 @@ EXAMPLES = r"""
         includeMacAddr: true
         includePolicyServer: true
         includeSupportInfoPage: true
-
 """
 
 RETURN = r"""
@@ -1368,7 +1326,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

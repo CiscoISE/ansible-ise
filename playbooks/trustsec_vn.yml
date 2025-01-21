@@ -1,7 +1,7 @@
 ---
-- hosts: ise_servers
+- name: ISE TrustSec Virtual Network Playbook
+  hosts: ise_servers
   gather_facts: false
-
   vars:
     ise_login: &ise_login
       ise_hostname: "{{ ise_hostname }}"
@@ -9,7 +9,6 @@
       ise_password: "{{ ise_password }}"
       ise_verify: "{{ ise_verify }}"
       ise_debug: "{{ ise_debug }}"
-
   tasks:
     # - name: '[Get Virtual Network]'
     #   cisco.ise.trustsec_vn_info:

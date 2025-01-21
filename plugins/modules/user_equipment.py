@@ -5,11 +5,10 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: user_equipment
 short_description: Resource module for User Equipment
 description:
-- Manage operations create, update and delete of the resource User Equipment.
+  - Manage operations create, update and delete of the resource User Equipment.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -28,19 +27,17 @@ options:
     description: UserEquipmentId path parameter. Unique ID for a user equipment object.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
   - SDK Method used are
     user_equipment.UserEquipment.create_user_equipment,
     user_equipment.UserEquipment.delete_user_equipment,
     user_equipment.UserEquipment.update_user_equipment,
-
   - Paths used are
     post /api/v1/fiveg/user-equipment,
     delete /api/v1/fiveg/user-equipment/{userEquipmentId},
     put /api/v1/fiveg/user-equipment/{userEquipmentId},
-
 """
 
 EXAMPLES = r"""
@@ -54,7 +51,6 @@ EXAMPLES = r"""
     description: string
     deviceGroup: string
     imei: string
-
 - name: Update by id
   cisco.ise.user_equipment:
     ise_hostname: "{{ise_hostname}}"
@@ -65,7 +61,6 @@ EXAMPLES = r"""
     description: string
     deviceGroup: string
     userEquipmentId: 7c9484cf-0ebc-47ad-a9ef-bc12729ed73b
-
 - name: Delete by id
   cisco.ise.user_equipment:
     ise_hostname: "{{ise_hostname}}"
@@ -74,7 +69,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     userEquipmentId: 7c9484cf-0ebc-47ad-a9ef-bc12729ed73b
-
 """
 
 RETURN = r"""
@@ -84,7 +78,6 @@ ise_response:
   type: dict
   sample: >
     {}
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

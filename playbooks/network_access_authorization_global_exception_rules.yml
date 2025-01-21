@@ -1,5 +1,6 @@
 ---
-- hosts: ise_servers
+- name: Manage network access authorization global exception rules on ISE
+  hosts: ise_servers
   gather_facts: false
   tasks:
     # - name: Get all

@@ -5,20 +5,18 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: node_services_profiler_probe_config
 short_description: Resource module for Node Services Profiler Probe Config
 description:
-- Manage operation update of the resource Node Services Profiler Probe Config.
-- This API updates the profiler probe configuration of a PSN.
+  - Manage operation update of the resource Node Services Profiler Probe Config.
+  - This API updates the profiler probe configuration of a PSN.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   activeDirectory:
-    description: The Active Directory probe queries the Active Directory for Windows
-      information.
+    description: The Active Directory probe queries the Active Directory for Windows information.
     suboptions:
       daysBeforeRescan:
         description: Node Services Profiler Probe Config's daysBeforeRescan.
@@ -74,8 +72,7 @@ options:
         type: list
     type: dict
   netflow:
-    description: The NetFlow probe collects the NetFlow packets that are sent to it
-      from routers.
+    description: The NetFlow probe collects the NetFlow packets that are sent to it from routers.
     suboptions:
       interfaces:
         description: Node Services Profiler Probe Config's interfaces.
@@ -94,18 +91,15 @@ options:
     elements: dict
     type: list
   pxgrid:
-    description: The pxGrid probe fetches attributes of MAC address or IP address as
-      a subscriber from the pxGrid queue.
+    description: The pxGrid probe fetches attributes of MAC address or IP address as a subscriber from the pxGrid queue.
     elements: dict
     type: list
   radius:
-    description: The RADIUS probe collects RADIUS session attributes as well as CDP,
-      LLDP, DHCP, HTTP, and MDM attributes from IOS Sensors.
+    description: The RADIUS probe collects RADIUS session attributes as well as CDP, LLDP, DHCP, HTTP, and MDM attributes from IOS Sensors.
     elements: dict
     type: list
   snmpQuery:
-    description: The SNMP query probe collects details from network devices such as
-      interface, CDP, LLDP, and ARP.
+    description: The SNMP query probe collects details from network devices such as interface, CDP, LLDP, and ARP.
     suboptions:
       eventTimeout:
         description: Node Services Profiler Probe Config's eventTimeout.
@@ -118,8 +112,7 @@ options:
         type: int
     type: dict
   snmpTrap:
-    description: The SNMP trap probe receives linkup, linkdown, and MAC notification
-      traps from network devices.
+    description: The SNMP trap probe receives linkup, linkdown, and MAC notification traps from network devices.
     suboptions:
       interfaces:
         description: Node Services Profiler Probe Config's interfaces.
@@ -140,19 +133,17 @@ options:
         type: int
     type: dict
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for Node Services
-  description: Complete reference of the Node Services API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!deployment-openapi
+  - name: Cisco ISE documentation for Node Services
+    description: Complete reference of the Node Services API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!deployment-openapi
 notes:
   - SDK Method used are
     node_services.NodeServices.set_profiler_probe_config,
-
   - Paths used are
     put /api/v1/profile/{hostname},
-
 """
 
 EXAMPLES = r"""
@@ -167,38 +158,37 @@ EXAMPLES = r"""
       daysBeforeRescan: 0
     dhcp:
       interfaces:
-      - interface: string
+        - interface: string
       port: 0
     dhcpSpan:
       interfaces:
-      - interface: string
+        - interface: string
     dns:
       timeout: 0
     hostname: string
     http:
       interfaces:
-      - interface: string
+        - interface: string
     netflow:
       interfaces:
-      - interface: string
+        - interface: string
       port: 0
     nmap:
-    - {}
+      - {}
     pxgrid:
-    - {}
+      - {}
     radius:
-    - {}
+      - {}
     snmpQuery:
       eventTimeout: 0
       retries: 0
       timeout: 0
     snmpTrap:
       interfaces:
-      - interface: string
+        - interface: string
       linkTrapQuery: true
       macTrapQuery: true
       port: 0
-
 """
 
 RETURN = r"""
@@ -269,7 +259,6 @@ ise_response:
         "port": 0
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

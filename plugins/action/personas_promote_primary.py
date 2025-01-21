@@ -29,6 +29,7 @@ argument_spec = dict(
     ise_verify=dict(type="bool", default=True),
     ise_version=dict(type="str", default="3.1.0"),
     ise_wait_on_rate_limit=dict(type="bool", default=True),
+    timeout=dict(type="int", default=60),
 )
 
 required_if = []
@@ -72,17 +73,23 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-        node = Node(dict(ip=self._task.args.get("ip"),
-                         hostname=self._task.args.get("hostname"),
-                         username=self._task.args.get("username"),
-                         password=self._task.args.get("password"),
-                         roles=self._task.args.get("roles"),
-                         )
-                    )
+        node = Node(
+            dict(
+                ip=self._task.args.get("ip"),
+                hostname=self._task.args.get("hostname"),
+                username=self._task.args.get("username"),
+                password=self._task.args.get("password"),
+                roles=self._task.args.get("roles"),
+            )
+        )
 
-        node.promote_to_primary()
-
-        response = "Primary node was successfully updated"
+        timeout = self._task.args.get("timeout")
+        if node.is_primary(timeout=timeout):
+            response = "Node is already primary"
+            self._result.update(dict(result="Object already present"))
+        else:
+            node.promote_to_primary(timeout=timeout)
+            response = "Primary node was successfully updated"
 
         self._result.update(dict(ise_response=response))
         return self._result

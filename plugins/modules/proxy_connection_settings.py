@@ -5,12 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: proxy_connection_settings
 short_description: Resource module for Proxy Connection Settings
 description:
-- Manage operation update of the resource Proxy Connection Settings.
-- The following functionalities are impacted by the proxy settings.
+  - Manage operation update of the resource Proxy Connection Settings.
+  - The following functionalities are impacted by the proxy settings.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -35,19 +34,17 @@ options:
     description: User name for the proxy connection.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for proxy
-  description: Complete reference of the proxy API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!system-settings-openapi
+  - name: Cisco ISE documentation for proxy
+    description: Complete reference of the proxy API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!system-settings-openapi
 notes:
   - SDK Method used are
     proxy.Proxy.update_proxy_connection,
-
   - Paths used are
     put /api/v1/system-settings/proxy,
-
 """
 
 EXAMPLES = r"""
@@ -64,7 +61,6 @@ EXAMPLES = r"""
     passwordRequired: true
     port: 0
     userName: string
-
 """
 
 RETURN = r"""
@@ -81,7 +77,6 @@ ise_response:
       "port": 0,
       "userName": "string"
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

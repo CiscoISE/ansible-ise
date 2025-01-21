@@ -1,5 +1,6 @@
 ---
-- hosts: ise_servers
+- name: ISE TrustSec SG_VN Mapping Playbook
+  hosts: ise_servers
   gather_facts: false
 
   vars:

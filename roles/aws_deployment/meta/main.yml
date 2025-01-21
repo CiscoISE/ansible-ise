@@ -1,7 +1,7 @@
 galaxy_info:
   author: Jose Bogarín
   description: Cisco ISE deployment in AWS
-  company: your company (optional)
+  company: Cisco Systems
 
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
@@ -14,7 +14,7 @@ galaxy_info:
   # - GPL-3.0-only
   # - Apache-2.0
   # - CC-BY-4.0
-  license: license (GPL-2.0-or-later, MIT, etc)
+  license: Apache-2.0
 
   min_ansible_version: 2.15.0
 
@@ -36,7 +36,7 @@ galaxy_info:
   #   versions:
   #   - all
   #   - 1.0
-  #   - 7 
+  #   - 7
   #   - 99.99
 
   galaxy_tags: []

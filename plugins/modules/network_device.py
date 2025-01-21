@@ -5,16 +5,15 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: network_device
 short_description: Resource module for Network Device
 description:
-- Manage operations create, update and delete of the resource Network Device.
-- This API creates a network device.
-- This API deletes a network device by ID.
-- This API deletes a network device by name.
-- This API allows the client to update a network device by ID.
-- This API allows the client to update a network device by name.
+  - Manage operations create, update and delete of the resource Network Device.
+  - This API creates a network device.
+  - This API deletes a network device by ID.
+  - This API deletes a network device by name.
+  - This API allows the client to update a network device by ID.
+  - This API allows the client to update a network device by name.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -79,8 +78,7 @@ options:
     description: Network Device's description.
     type: str
   dtlsDnsName:
-    description: This value is used to verify the client identity contained in the X.509
-      RADIUS/DTLS client certificate.
+    description: This value is used to verify the client identity contained in the X.509 RADIUS/DTLS client certificate.
     type: str
   id:
     description: Network Device's id.
@@ -191,8 +189,8 @@ options:
         type: dict
     type: dict
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
   - SDK Method used are
     network_device.NetworkDevice.create_network_device,
@@ -200,14 +198,12 @@ notes:
     network_device.NetworkDevice.delete_network_device_by_name,
     network_device.NetworkDevice.update_network_device_by_id,
     network_device.NetworkDevice.update_network_device_by_name,
-
   - Paths used are
     post /ers/config/networkdevice,
     delete /ers/config/networkdevice/name/{name},
     delete /ers/config/networkdevice/{id},
     put /ers/config/networkdevice/name/{name},
     put /ers/config/networkdevice/{id},
-
 """
 
 EXAMPLES = r"""
@@ -219,11 +215,11 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     NetworkDeviceGroupList:
-    - string
+      - string
     NetworkDeviceIPList:
-    - getIpaddressExclude: string
-      ipaddress: string
-      mask: 0
+      - getIpaddressExclude: string
+        ipaddress: string
+        mask: 0
     authenticationSettings:
       dtlsRequired: true
       enableKeyWrap: true
@@ -272,7 +268,6 @@ EXAMPLES = r"""
         reAuthenticationEveryXSeconds: 0
         sendConfigurationToDevice: true
         sendConfigurationToDeviceUsing: string
-
 - name: Delete by name
   cisco.ise.network_device:
     ise_hostname: "{{ise_hostname}}"
@@ -281,7 +276,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     name: string
-
 - name: Update by id
   cisco.ise.network_device:
     ise_hostname: "{{ise_hostname}}"
@@ -290,11 +284,11 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     NetworkDeviceGroupList:
-    - string
+      - string
     NetworkDeviceIPList:
-    - getIpaddressExclude: string
-      ipaddress: string
-      mask: 0
+      - getIpaddressExclude: string
+        ipaddress: string
+        mask: 0
     authenticationSettings:
       dtlsRequired: true
       enableKeyWrap: true
@@ -343,7 +337,6 @@ EXAMPLES = r"""
         reAuthenticationEveryXSeconds: 0
         sendConfigurationToDevice: true
         sendConfigurationToDeviceUsing: string
-
 - name: Delete by id
   cisco.ise.network_device:
     ise_hostname: "{{ise_hostname}}"
@@ -352,7 +345,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-
 - name: Create
   cisco.ise.network_device:
     ise_hostname: "{{ise_hostname}}"
@@ -361,11 +353,11 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     NetworkDeviceGroupList:
-    - string
+      - string
     NetworkDeviceIPList:
-    - getIpaddressExclude: string
-      ipaddress: string
-      mask: 0
+      - getIpaddressExclude: string
+        ipaddress: string
+        mask: 0
     authenticationSettings:
       dtlsRequired: true
       enableKeyWrap: true
@@ -413,7 +405,6 @@ EXAMPLES = r"""
         reAuthenticationEveryXSeconds: 0
         sendConfigurationToDevice: true
         sendConfigurationToDeviceUsing: string
-
 """
 
 RETURN = r"""
@@ -494,7 +485,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

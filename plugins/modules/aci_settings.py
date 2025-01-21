@@ -5,12 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: aci_settings
 short_description: Resource module for ACI Settings
 description:
-- Manage operation update of the resource ACI Settings.
-- This API allows the client to update ACI settings.
+  - Manage operation update of the resource ACI Settings.
+  - This API allows the client to update ACI settings.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -87,15 +86,13 @@ options:
     description: ACI Settings's untaggedPacketIepgName.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
   - SDK Method used are
     aci_settings.AciSettings.update_aci_settings_by_id,
-
   - Paths used are
     put /ers/config/acisettings/{id},
-
 """
 
 EXAMPLES = r"""
@@ -125,12 +122,11 @@ EXAMPLES = r"""
     maxNumSgtToAci: 0
     specificSxpDomain: true
     specifixSxpDomainList:
-    - string
+      - string
     suffixToEpg: string
     suffixToSgt: string
     tenantName: string
     untaggedPacketIepgName: string
-
 """
 
 RETURN = r"""
@@ -166,7 +162,6 @@ ise_response:
       "aci50": true,
       "aci51": true
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

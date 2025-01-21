@@ -5,26 +5,23 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: pxgrid_endpoint_by_mac_info
 short_description: Information module for pxGrid Endpoint By Mac Info
 description:
-- Get pxGrid Endpoint By Mac Info.
+  - Get pxGrid Endpoint By Mac Info.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
   - SDK Method used are
     mdm.Mdm.get_endpoint_by_mac_address,
-
   - Paths used are
     post /ise/mdm/getEndpointByMacAddress,
-
 """
 
 EXAMPLES = r"""
@@ -35,7 +32,6 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
   register: result
-
 """
 
 RETURN = r"""

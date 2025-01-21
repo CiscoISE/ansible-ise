@@ -5,12 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: resource_version_info
 short_description: Information module for Resource Version
 description:
-- Get all Resource Version.
-- Get all VersionInfo.
+  - Get all Resource Version.
+  - Get all VersionInfo.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -18,18 +17,16 @@ author: Rafael Campos (@racampos)
 options:
   resource:
     description:
-    - Resource path parameter.
+      - Resource path parameter.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
   - SDK Method used are
     version_info.VersionInfo.get_version_info,
-
   - Paths used are
     get /ers/config/{resource}/versioninfo,
-
 """
 
 EXAMPLES = r"""
@@ -41,7 +38,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     resource: string
   register: result
-
 """
 
 RETURN = r"""

@@ -1,5 +1,6 @@
 ---
-- hosts: ise_servers
+- name: Manage TrustSec NBAR Apps on ISE
+  hosts: ise_servers
   gather_facts: false
 
   vars:
@@ -46,12 +47,12 @@
       cisco.ise.trustsec_nbar_app:
         <<: *ise_login
         state: present
-        name: "{{ nbar_app_by_id.ise_response[0].name}}-2"
-        description: "{{ nbar_app_by_id.ise_response[0].description|int + 1 }}"
+        name: "{{ nbar_app_by_id.ise_response[0].name }}-2"
+        description: "{{ nbar_app_by_id.ise_response[0].description | int + 1 }}"
         networkIdentities:
-          - ports: "{{ nbar_app_by_id.ise_response[0].networkIdentities[0].ports|int +1 }}"
+          - ports: "{{ nbar_app_by_id.ise_response[0].networkIdentities[0].ports | int + 1 }}"
             protocol: "{{ nbar_app_by_id.ise_response[0].networkIdentities[0].protocol }}"
-          - ports: "{{ nbar_app_by_id.ise_response[0].networkIdentities[1].ports|int +1 }}"
+          - ports: "{{ nbar_app_by_id.ise_response[0].networkIdentities[1].ports | int + 1 }}"
             protocol: "{{ nbar_app_by_id.ise_response[0].networkIdentities[1].protocol }}"
       when:
         - nbar_app_by_id is defined
@@ -67,12 +68,12 @@
       cisco.ise.trustsec_nbar_app:
         <<: *ise_login
         state: present
-        name: "{{ nbar_app_by_id.ise_response[0].name}}-2"
-        description: "{{ nbar_app_by_id.ise_response[0].description|int + 1 }}"
+        name: "{{ nbar_app_by_id.ise_response[0].name }}-2"
+        description: "{{ nbar_app_by_id.ise_response[0].description | int + 1 }}"
         networkIdentities:
-          - ports: "{{ nbar_app_by_id.ise_response[0].networkIdentities[0].ports|int +2 }}"
+          - ports: "{{ nbar_app_by_id.ise_response[0].networkIdentities[0].ports | int + 2 }}"
             protocol: "{{ nbar_app_by_id.ise_response[0].networkIdentities[0].protocol }}"
-          - ports: "{{ nbar_app_by_id.ise_response[0].networkIdentities[1].ports|int +2 }}"
+          - ports: "{{ nbar_app_by_id.ise_response[0].networkIdentities[1].ports | int + 2 }}"
             protocol: "{{ nbar_app_by_id.ise_response[0].networkIdentities[1].protocol }}"
       when:
         - nbar_app_by_id is defined
@@ -88,12 +89,12 @@
       cisco.ise.trustsec_nbar_app:
         <<: *ise_login
         state: absent
-        name: "{{ nbar_app_by_id.ise_response[0].name}}-2"
-        description: "{{ nbar_app_by_id.ise_response[0].description|int + 1 }}"
+        name: "{{ nbar_app_by_id.ise_response[0].name }}-2"
+        description: "{{ nbar_app_by_id.ise_response[0].description | int + 1 }}"
         networkIdentities:
-          - ports: "{{ nbar_app_by_id.ise_response[0].networkIdentities[0].ports|int +1 }}"
+          - ports: "{{ nbar_app_by_id.ise_response[0].networkIdentities[0].ports | int + 1 }}"
             protocol: "{{ nbar_app_by_id.ise_response[0].networkIdentities[0].protocol }}"
-          - ports: "{{ nbar_app_by_id.ise_response[0].networkIdentities[1].ports|int +1 }}"
+          - ports: "{{ nbar_app_by_id.ise_response[0].networkIdentities[1].ports | int + 1 }}"
             protocol: "{{ nbar_app_by_id.ise_response[0].networkIdentities[1].protocol }}"
       when:
         - nbar_app_by_id is defined
@@ -101,6 +102,6 @@
         - nbar_app_by_id.ise_response | length == 1
       register: nbar_app_manage
 
-    - name: "Print Delete Nbar"
+    - name: Print Delete Nbar
       ansible.builtin.debug:
         var: nbar_app_manage

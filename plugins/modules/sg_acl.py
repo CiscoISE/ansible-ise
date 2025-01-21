@@ -5,14 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: sg_acl
 short_description: Resource module for SGACL
 description:
-- Manage operations create, update and delete of the resource SGACL.
-- This API creates a security group ACL.
-- This API deletes a security group ACL.
-- This API allows the client to update a security group ACL.
+  - Manage operations create, update and delete of the resource SGACL.
+  - This API creates a security group ACL.
+  - This API deletes a security group ACL.
+  - This API allows the client to update a security group ACL.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -43,23 +42,21 @@ options:
     description: SGACL's name.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for SecurityGroupsACLs
-  description: Complete reference of the SecurityGroupsACLs API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgacl
+  - name: Cisco ISE documentation for SecurityGroupsACLs
+    description: Complete reference of the SecurityGroupsACLs API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgacl
 notes:
   - SDK Method used are
     security_groups_acls.SecurityGroupsAcls.create_security_groups_acl,
     security_groups_acls.SecurityGroupsAcls.delete_security_groups_acl_by_id,
     security_groups_acls.SecurityGroupsAcls.update_security_groups_acl_by_id,
-
   - Paths used are
     post /ers/config/sgacl,
     delete /ers/config/sgacl/{id},
     put /ers/config/sgacl/{id},
-
 """
 
 EXAMPLES = r"""
@@ -78,7 +75,6 @@ EXAMPLES = r"""
     isReadOnly: true
     modelledContent: {}
     name: string
-
 - name: Delete by id
   cisco.ise.sg_acl:
     ise_hostname: "{{ise_hostname}}"
@@ -87,7 +83,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-
 - name: Create
   cisco.ise.sg_acl:
     ise_hostname: "{{ise_hostname}}"
@@ -102,7 +97,6 @@ EXAMPLES = r"""
     isReadOnly: true
     modelledContent: {}
     name: string
-
 """
 
 RETURN = r"""
@@ -126,7 +120,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

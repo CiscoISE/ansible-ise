@@ -5,14 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: external_radius_server
 short_description: Resource module for External RADIUS Server
 description:
-- Manage operations create, update and delete of the resource External RADIUS Server.
-- This API creates an external RADIUS server.
-- This API deletes an external RADIUS server.
-- This API allows the client to update an external RADIUS server.
+  - Manage operations create, update and delete of the resource External RADIUS Server.
+  - This API creates an external RADIUS server.
+  - This API deletes an external RADIUS server.
+  - This API allows the client to update an external RADIUS server.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -25,21 +24,19 @@ options:
     description: Valid Range 1 to 65535.
     type: int
   authenticatorKey:
-    description: The authenticatorKey is required only if enableKeyWrap is true, otherwise
-      it must be ignored or empty. The maximum length is 20 ASCII characters or 40 HEXADECIMAL
-      characters (depend on selection in field 'keyInputFormat').
+    description: The authenticatorKey is required only if enableKeyWrap is true, otherwise it must be ignored or empty. The maximum length is
+      20 ASCII characters or 40 HEXADECIMAL characters (depend on selection in field 'keyInputFormat').
     type: str
   description:
     description: External RADIUS Server's description.
     type: str
   enableKeyWrap:
-    description: KeyWrap may only be enabled if it is supported on the device. When
-      running in FIPS mode this option should be enabled for such devices.
+    description: KeyWrap may only be enabled if it is supported on the device. When running in FIPS mode this option should be enabled for such
+      devices.
     type: bool
   encryptionKey:
-    description: The encryptionKey is required only if enableKeyWrap is true, otherwise
-      it must be ignored or empty. The maximum length is 16 ASCII characters or 32 HEXADECIMAL
-      characters (depend on selection in field 'keyInputFormat').
+    description: The encryptionKey is required only if enableKeyWrap is true, otherwise it must be ignored or empty. The maximum length is 16
+      ASCII characters or 32 HEXADECIMAL characters (depend on selection in field 'keyInputFormat').
     type: str
   hostIP:
     description: The IP of the host - must be a valid IPV4 address.
@@ -48,8 +45,7 @@ options:
     description: External RADIUS Server's id.
     type: str
   keyInputFormat:
-    description: Specifies the format of the input for fields 'encryptionKey' and 'authenticatorKey'.
-      Allowed Values - ASCII - HEXADECIMAL.
+    description: Specifies the format of the input for fields 'encryptionKey' and 'authenticatorKey'. Allowed Values - ASCII - HEXADECIMAL.
     type: str
   name:
     description: Resource Name. Allowed charactera are alphanumeric and _ (underscore).
@@ -67,19 +63,17 @@ options:
     description: Valid Range 1 to 120.
     type: int
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
   - SDK Method used are
     external_radius_server.ExternalRadiusServer.create_external_radius_server,
     external_radius_server.ExternalRadiusServer.delete_external_radius_server_by_id,
     external_radius_server.ExternalRadiusServer.update_external_radius_server_by_id,
-
   - Paths used are
     post /ers/config/externalradiusserver,
     delete /ers/config/externalradiusserver/{id},
     put /ers/config/externalradiusserver/{id},
-
 """
 
 EXAMPLES = r"""
@@ -104,7 +98,6 @@ EXAMPLES = r"""
     retries: 0
     sharedSecret: string
     timeout: 0
-
 - name: Delete by id
   cisco.ise.external_radius_server:
     ise_hostname: "{{ise_hostname}}"
@@ -113,7 +106,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-
 - name: Create
   cisco.ise.external_radius_server:
     ise_hostname: "{{ise_hostname}}"
@@ -134,7 +126,6 @@ EXAMPLES = r"""
     retries: 0
     sharedSecret: string
     timeout: 0
-
 """
 
 RETURN = r"""
@@ -164,7 +155,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

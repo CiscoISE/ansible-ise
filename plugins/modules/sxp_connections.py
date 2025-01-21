@@ -5,14 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: sxp_connections
 short_description: Resource module for SXP Connections
 description:
-- Manage operations create, update and delete of the resource SXP Connections.
-- This API creates a SXP connection.
-- This API deletes a SXP connection.
-- This API allows the client to update a SXP connection.
+  - Manage operations create, update and delete of the resource SXP Connections.
+  - This API creates a SXP connection.
+  - This API deletes a SXP connection.
+  - This API allows the client to update a SXP connection.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -46,19 +45,17 @@ options:
     description: SXP Connections's sxpVpn.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
   - SDK Method used are
     sxp_connections.SxpConnections.create_sxp_connections,
     sxp_connections.SxpConnections.delete_sxp_connections_by_id,
     sxp_connections.SxpConnections.update_sxp_connections_by_id,
-
   - Paths used are
     post /ers/config/sxpconnections,
     delete /ers/config/sxpconnections/{id},
     put /ers/config/sxpconnections/{id},
-
 """
 
 EXAMPLES = r"""
@@ -78,7 +75,6 @@ EXAMPLES = r"""
     sxpPeer: string
     sxpVersion: string
     sxpVpn: string
-
 - name: Delete by id
   cisco.ise.sxp_connections:
     ise_hostname: "{{ise_hostname}}"
@@ -87,7 +83,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-
 - name: Create
   cisco.ise.sxp_connections:
     ise_hostname: "{{ise_hostname}}"
@@ -103,7 +98,6 @@ EXAMPLES = r"""
     sxpPeer: string
     sxpVersion: string
     sxpVpn: string
-
 """
 
 RETURN = r"""
@@ -128,7 +122,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

@@ -5,12 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: deployment_info
 short_description: Information module for Deployment
 description:
-- Get all Deployment.
-- This API allows the client to pull the deployment information.
+  - Get all Deployment.
+  - This API allows the client to pull the deployment information.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -18,22 +17,20 @@ author: Rafael Campos (@racampos)
 options:
   timeout:
     description:
-    - How long to wait for the server to send data before giving up.
+      - How long to wait for the server to send data before giving up.
     type: int
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for PullDeploymentInfo
-  description: Complete reference of the PullDeploymentInfo API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!deploymentinfo
+  - name: Cisco ISE documentation for PullDeploymentInfo
+    description: Complete reference of the PullDeploymentInfo API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!deploymentinfo
 notes:
   - SDK Method used are
     pull_deployment_info.PullDeploymentInfo.get_deployment_info,
-
   - Paths used are
     get /ers/config/deploymentinfo/getAllInfo,
-
 """
 
 EXAMPLES = r"""
@@ -44,7 +41,6 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
   register: result
-
 """
 
 RETURN = r"""

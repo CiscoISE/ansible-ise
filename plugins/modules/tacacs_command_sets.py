@@ -5,14 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: tacacs_command_sets
 short_description: Resource module for TACACS Command Sets
 description:
-- Manage operations create, update and delete of the resource TACACS Command Sets.
-- This API creates TACACS command sets.
-- This API deletes TACACS command sets.
-- This API allows the client to update TACACS command sets.
+  - Manage operations create, update and delete of the resource TACACS Command Sets.
+  - This API creates TACACS command sets.
+  - This API deletes TACACS command sets.
+  - This API allows the client to update TACACS command sets.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -49,19 +48,17 @@ options:
     description: PermitUnmatched flag.
     type: bool
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
   - SDK Method used are
     tacacs_command_sets.TacacsCommandSets.create_tacacs_command_sets,
     tacacs_command_sets.TacacsCommandSets.delete_tacacs_command_sets_by_id,
     tacacs_command_sets.TacacsCommandSets.update_tacacs_command_sets_by_id,
-
   - Paths used are
     post /ers/config/tacacscommandsets,
     delete /ers/config/tacacscommandsets/{id},
     put /ers/config/tacacscommandsets/{id},
-
 """
 
 EXAMPLES = r"""
@@ -74,14 +71,13 @@ EXAMPLES = r"""
     state: present
     commands:
       commandList:
-      - arguments: string
-        command: string
-        grant: string
+        - arguments: string
+          command: string
+          grant: string
     description: string
     id: string
     name: string
     permitUnmatched: true
-
 - name: Delete by id
   cisco.ise.tacacs_command_sets:
     ise_hostname: "{{ise_hostname}}"
@@ -90,7 +86,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-
 - name: Create
   cisco.ise.tacacs_command_sets:
     ise_hostname: "{{ise_hostname}}"
@@ -100,13 +95,12 @@ EXAMPLES = r"""
     state: present
     commands:
       commandList:
-      - arguments: string
-        command: string
-        grant: string
+        - arguments: string
+          command: string
+          grant: string
     description: string
     name: string
     permitUnmatched: true
-
 """
 
 RETURN = r"""
@@ -135,7 +129,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

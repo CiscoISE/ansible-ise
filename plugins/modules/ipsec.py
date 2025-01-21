@@ -5,13 +5,12 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: ipsec
 short_description: Resource module for Ipsec
 description:
-- Manage operations create and update of the resource Ipsec.
-- Creates an IPsec connection.
-- Updates the configuration of existing IPsec connection.
+  - Manage operations create and update of the resource Ipsec.
+  - Creates an IPsec connection.
+  - Updates the configuration of existing IPsec connection.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -81,17 +80,15 @@ options:
     description: Remote Tunnel IP address.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
   - SDK Method used are
     native_ipsec.NativeIpsec.create_ipsec_connection,
     native_ipsec.NativeIpsec.update_ipsec_connection_config,
-
   - Paths used are
     post /api/v1/ipsec,
     put /api/v1/ipsec,
-
 """
 
 EXAMPLES = r"""
@@ -123,7 +120,6 @@ EXAMPLES = r"""
     phaseTwoLifeTime: 0
     psk: string
     remotePeerInternalIp: string
-
 - name: Create
   cisco.ise.ipsec:
     ise_hostname: "{{ise_hostname}}"
@@ -152,7 +148,6 @@ EXAMPLES = r"""
     phaseTwoLifeTime: 0
     psk: string
     remotePeerInternalIp: string
-
 """
 
 RETURN = r"""
@@ -191,7 +186,6 @@ ise_response:
         "updateTime": "string"
       }
     ]
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

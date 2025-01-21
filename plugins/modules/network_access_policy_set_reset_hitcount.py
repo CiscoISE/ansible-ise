@@ -5,31 +5,28 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: network_access_policy_set_reset_hitcount
 short_description: Resource module for Network Access Policy Set Reset Hitcount
 description:
-- Manage operation create of the resource Network Access Policy Set Reset Hitcount.
-- Network Access - Reset HitCount for PolicySets.
+  - Manage operation create of the resource Network Access Policy Set Reset Hitcount.
+  - Network Access - Reset HitCount for PolicySets.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for Network Access - Policy Set
-  description: Complete reference of the Network Access - Policy Set API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
+  - name: Cisco ISE documentation for Network Access - Policy Set
+    description: Complete reference of the Network Access - Policy Set API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
   - SDK Method used are
     network_access_policy_set.NetworkAccessPolicySet.reset_hit_counts_network_access_policy_sets,
-
   - Paths used are
     post /network-access/policy-set/reset-hitcount,
-
 """
 
 EXAMPLES = r"""
@@ -39,7 +36,6 @@ EXAMPLES = r"""
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
-
 """
 
 RETURN = r"""

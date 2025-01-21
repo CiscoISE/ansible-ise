@@ -432,11 +432,11 @@ releases:
     release_date: "2021-08-13"
     changes:
       release_summary: Fix response of csr_info, system_certificate_info and trusted_certificate_info by accessing each page `response` property.
-    bugfixes:
-      - Updates exception handling.
-      - csr_info - fixes response recollection.
-      - system_certificate_info - fixes response recollection.
-      - trusted_certificate_info - fixes response recollection.
+      bugfixes:
+        - Updates exception handling.
+        - csr_info - fixes response recollection.
+        - system_certificate_info - fixes response recollection.
+        - trusted_certificate_info - fixes response recollection.
   1.0.3:
     release_date: "2021-08-17"
     changes:
@@ -701,15 +701,20 @@ releases:
         - Update README, update Compatibility matrix.
       minor_changes:
         - Add ise_uses_csrf_token parameter to modules
-        - csr_export_info - Instead of returning the data string, it now returns a dictionary. The dictionary has property data with the previous string value.
+        - csr_export_info - Instead of returning the data string, it now returns a dictionary.
+          The dictionary has property data with the previous string value.
         - csr_export_info - add parameter filename.
-        - endpoint_certificate - Instead of returning the data string, it now returns a dictionary. The dictionary has property data with the previous string value.
+        - endpoint_certificate - Instead of returning the data string, it now returns a dictionary.
+          The dictionary has property data with the previous string value.
         - endpoint_certificate - add parameter filename.
-        - support_bundle_download - Instead of returning the data string, it now returns a dictionary. The dictionary has property data with the previous string value.
+        - support_bundle_download - Instead of returning the data string, it now returns a dictionary.
+          The dictionary has property data with the previous string value.
         - support_bundle_download - add parameter filename.
-        - system_certificate_export_info - Instead of returning the data string, it now returns a dictionary. The dictionary has property data with the previous string value.
+        - system_certificate_export_info - Instead of returning the data string, it now returns a dictionary.
+          The dictionary has property data with the previous string value.
         - system_certificate_export_info - add parameter filename.
-        - trusted_certificate_export_info - Instead of returning the data string, it now returns a dictionary. The dictionary has property data with the previous string value.
+        - trusted_certificate_export_info - Instead of returning the data string, it now returns a dictionary.
+          The dictionary has property data with the previous string value.
         - trusted_certificate_export_info - add parameter filename.
   2.3.1:
     release_date: "2022-04-19"
@@ -853,7 +858,8 @@ releases:
     release_date: "2022-10-07"
     changes:
       release_summary: A check has been added to identify if there really are any changes
-      bugfixes: personas_update_roles_services - is now idempotent.
+      bugfixes:
+        - personas_update_roles_services - is now idempotent.
   2.5.6:
     release_date: "2022-10-13"
     changes:
@@ -928,7 +934,7 @@ releases:
         - cisco.ise.mnt_session_active_count_info ise_reponse is null fixed.
         - Cannot get cisco.ise.rest_id_store to work fixed.
         - System Certificate Update does not work but always reports Object already present temporary solution.
-        - node_deployment tasks fail because of timeout, adding new collection param. 
+        - node_deployment tasks fail because of timeout, adding new collection param.
   2.5.14:
     release_date: "2023-08-10"
     changes:
@@ -1047,3 +1053,11 @@ releases:
       release_summary: Update network_device module.
       bugfixes:
         - network_device - Fix mask validation to handle None values in NetworkDeviceIPList
+  2.10.0:
+    release_date: "2025-01-21"
+    changes:
+      release_summary: Fix linting issues.
+      bugfixes:
+        - personas_promote_primary - fix timeout issue.
+      minor_changes:
+        - Fix linting issues.

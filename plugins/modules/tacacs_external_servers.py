@@ -5,14 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: tacacs_external_servers
 short_description: Resource module for TACACS External Servers
 description:
-- Manage operations create, update and delete of the resource TACACS External Servers.
-- This API creates TACACS external servers.
-- This API deletes TACACS external servers.
-- This API allows the client to update TACACS external servers.
+  - Manage operations create, update and delete of the resource TACACS External Servers.
+  - This API creates TACACS external servers.
+  - This API deletes TACACS external servers.
+  - This API allows the client to update TACACS external servers.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -43,19 +42,17 @@ options:
     description: The server timeout.
     type: int
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
   - SDK Method used are
     tacacs_external_servers.TacacsExternalServers.create_tacacs_external_servers,
     tacacs_external_servers.TacacsExternalServers.delete_tacacs_external_servers_by_id,
     tacacs_external_servers.TacacsExternalServers.update_tacacs_external_servers_by_id,
-
   - Paths used are
     post /ers/config/tacacsexternalservers,
     delete /ers/config/tacacsexternalservers/{id},
     put /ers/config/tacacsexternalservers/{id},
-
 """
 
 EXAMPLES = r"""
@@ -74,7 +71,6 @@ EXAMPLES = r"""
     sharedSecret: string
     singleConnect: true
     timeout: 0
-
 - name: Delete by id
   cisco.ise.tacacs_external_servers:
     ise_hostname: "{{ise_hostname}}"
@@ -83,7 +79,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-
 - name: Create
   cisco.ise.tacacs_external_servers:
     ise_hostname: "{{ise_hostname}}"
@@ -98,7 +93,6 @@ EXAMPLES = r"""
     sharedSecret: string
     singleConnect: true
     timeout: 0
-
 """
 
 RETURN = r"""
@@ -122,7 +116,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

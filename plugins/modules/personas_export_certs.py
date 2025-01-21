@@ -5,66 +5,65 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: personas_export_certs
 short_description: Export certificate into primary node
 description:
-- Export certificate into primary node
+  - Export certificate into primary node
 version_added: '0.0.8'
 author: Rafael Campos (@racampos)
 options:
   primary_ip:
     description:
-    - The IP address of the primary node.
+      - The IP address of the primary node.
     type: str
   primary_username:
     description:
-    - The username for the primary node.
+      - The username for the primary node.
     type: str
   primary_password:
     description:
-    - The password for the primary node.
+      - The password for the primary node.
     type: str
   name:
     description:
-    - The name of the node for which the certificate will be exported.
+      - The name of the node for which the certificate will be exported.
     type: str
   ip:
     description:
-    - The IP address of the node for which the certificate will be exported.
+      - The IP address of the node for which the certificate will be exported.
     type: str
   hostname:
     description:
-    - The hostname for the node for which the certificate will be exported.
+      - The hostname for the node for which the certificate will be exported.
     type: str
   username:
     description:
-    - The username for the node for which the certificate will be exported.
+      - The username for the node for which the certificate will be exported.
     type: str
   password:
     description:
-    - The password for the node for which the certificate will be exported.
+      - The password for the node for which the certificate will be exported.
     type: str
   ise_verify:
     description:
-    - Whether or not to verify the identity of the node.
+      - Whether or not to verify the identity of the node.
     type: bool
   ise_version:
     description:
-    - The version of the ISE node.
+      - The version of the ISE node.
     type: str
   ise_wait_on_rate_limit:
     description:
-    - Whether or not to wait on rate limit
+      - Whether or not to wait on rate limit
     type: bool
 requirements:
-- requests >= 2.25.1
-- python >= 3.5
+  - requests >= 2.25.1
+  - python >= 3.5
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.modules.personas_export_certs
+  # Reference by module name
+  - module: cisco.ise.plugins.modules.personas_export_certs
 notes:
-    - "Does not support C(check_mode)"
+  - "Does not support C(check_mode)"
 """
 
 EXAMPLES = r"""

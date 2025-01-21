@@ -5,8 +5,8 @@
 - name: Create Internal User(s) Play
   hosts: ise_servers
   vars:
-    - default_password: C1sco1234!5
-    - users:
+    default_password: C1sco1234!5
+    users: []
 
   gather_facts: false
   tasks:
@@ -32,7 +32,8 @@
 
     # - name: Debug results
     #   ansible.builtin.debug: var=results
-    - name: internal_user thomas
+
+    - name: Create internal user thomas
       cisco.ise.internal_user:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
@@ -53,7 +54,7 @@
       ansible.builtin.debug:
         var: result
 
-  # - name: internal_user employee
+  # - name: Create internal user employee
   #   cisco.ise.internal_user:
   #     ise_hostname: "{{ ise_hostname }}"
   #     ise_username: "{{ ise_username }}"
@@ -69,7 +70,7 @@
   #     passwordIDStore: Internal Users
   #     identityGroups: a1740510-8c01-11e6-996c-525400b48521  # Employee
 
-  # - name: internal_user radius-probe
+  # - name: Create internal user radius-probe
   #   cisco.ise.internal_user:
   #     ise_hostname: "{{ ise_hostname }}"
   #     ise_username: "{{ ise_username }}"
@@ -84,7 +85,7 @@
   #     passwordIDStore: Internal Users
   #     identityGroups: a1740510-8c01-11e6-996c-525400b48521  # Employee
 
-  # - name: internal_user meraki_8021x_test
+  # - name: Create internal user meraki_8021x_test
   #   cisco.ise.internal_user:
   #     ise_hostname: "{{ ise_hostname }}"
   #     ise_username: "{{ ise_username }}"

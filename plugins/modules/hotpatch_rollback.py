@@ -5,15 +5,14 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: hotpatch_rollback
 short_description: Resource module for Hotpatch Rollback
 description:
-- Manage operation create of the resource Hotpatch Rollback.
-- >
-   Triggers hot patch rollback on the Cisco ISE node. A task ID is returned which can be used to monitor the progress of the hot patch rollback process. As
-   hot patch rollback triggers the Cisco ISE to restart, the task API becomes unavailable for a certain period of time. For rollback of hotpatch on
-   secondary nodes , request needs to be sent on individual node instead of the Primary Administration Node.
+  - Manage operation create of the resource Hotpatch Rollback.
+  - >
+    Triggers hot patch rollback on the Cisco ISE node. A task ID is returned which can be used to monitor the progress of the hot patch rollback
+    process. As hot patch rollback triggers the Cisco ISE to restart, the task API becomes unavailable for a certain period of time. For rollback
+    of hotpatch on secondary nodes , request needs to be sent on individual node instead of the Primary Administration Node.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -29,19 +28,17 @@ options:
     description: Hotpatch Rollback's repositoryName.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for Patching
-  description: Complete reference of the Patching API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!patch-and-hot-patch-openapi
+  - name: Cisco ISE documentation for Patching
+    description: Complete reference of the Patching API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!patch-and-hot-patch-openapi
 notes:
   - SDK Method used are
     patching.Patching.rollback_hotpatch,
-
   - Paths used are
     post /api/v1/hotpatch/rollback,
-
 """
 
 EXAMPLES = r"""
@@ -54,7 +51,6 @@ EXAMPLES = r"""
     hotpatchName: string
     isDirectoryListed: true
     repositoryName: string
-
 """
 
 RETURN = r"""

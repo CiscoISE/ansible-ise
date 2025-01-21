@@ -34,24 +34,26 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
 # Get common arguments specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
-argument_spec.update(dict(
-    state=dict(type="str", default="present", choices=["present", "absent"]),
-    name=dict(type="str"),
-    description=dict(type="str"),
-    enabled=dict(type="bool"),
-    email=dict(type="str"),
-    password=dict(type="str", no_log=True),
-    firstName=dict(type="str"),
-    lastName=dict(type="str"),
-    changePassword=dict(type="bool"),
-    identityGroups=dict(type="str"),
-    expiryDateEnabled=dict(type="bool"),
-    expiryDate=dict(type="str"),
-    enablePassword=dict(type="str"),
-    customAttributes=dict(type="dict"),
-    passwordIDStore=dict(type="str"),
-    id=dict(type="str"),
-))
+argument_spec.update(
+    dict(
+        state=dict(type="str", default="present", choices=["present", "absent"]),
+        name=dict(type="str"),
+        description=dict(type="str"),
+        enabled=dict(type="bool"),
+        email=dict(type="str"),
+        password=dict(type="str", no_log=True),
+        firstName=dict(type="str"),
+        lastName=dict(type="str"),
+        changePassword=dict(type="bool"),
+        identityGroups=dict(type="str"),
+        expiryDateEnabled=dict(type="bool"),
+        expiryDate=dict(type="str"),
+        enablePassword=dict(type="str"),
+        customAttributes=dict(type="dict"),
+        passwordIDStore=dict(type="str"),
+        id=dict(type="str"),
+    )
+)
 
 required_if = [
     ("state", "present", ["id", "name"], True),
@@ -90,8 +92,8 @@ class InternalUser(object):
                 function="get_internal_user_by_name",
                 params={"name": name},
                 handle_func_exception=False,
-            ).response['InternalUser']
-            result = get_dict_result(result, 'name', name)
+            ).response["InternalUser"]
+            result = get_dict_result(result, "name", name)
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(
                 msg=(
@@ -113,7 +115,7 @@ class InternalUser(object):
                 function="get_internal_user_by_id",
                 params={"id": id},
                 handle_func_exception=False,
-            ).response['InternalUser']
+            ).response["InternalUser"]
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(
                 msg=(
@@ -145,10 +147,8 @@ class InternalUser(object):
         requested_obj = self.new_object
 
         force_change = False
-        change_params = [
-            ("change_password", bool)
-        ]
-        for (change_param, type_) in change_params:
+        change_params = [("change_password", bool)]
+        for change_param, type_ in change_params:
             requested_obj_value = requested_obj.get(change_param)
             if isinstance(requested_obj_value, type_):
                 # Next line checks if value is evaluated as True
@@ -182,9 +182,12 @@ class InternalUser(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not ise_compare_equality(current_obj.get(ise_param),
-                                            requested_obj.get(ansible_param))
-                   for (ise_param, ansible_param) in obj_params)
+        return any(
+            not ise_compare_equality(
+                current_obj.get(ise_param), requested_obj.get(ansible_param)
+            )
+            for (ise_param, ansible_param) in obj_params
+        )
 
     def create(self):
         result = self.ise.exec(
@@ -208,12 +211,24 @@ class InternalUser(object):
                     handle_func_exception=False,
                 ).response
             except exceptions.ApiError as e:
-                if not change_password and "Password can't be set to one of the earlier" in e.message:
-                    self.ise.object_modify_result(changed=False, result="Object already present, update was attempted but failed because of password")
-                    result = {'_changed_': True}
-                elif not change_password and "Password can't be set to one of the earlier" in e.details_str:
-                    self.ise.object_modify_result(changed=False, result="Object already present, update was attempted but failed because of password")
-                    result = {'_changed_': True}
+                if (
+                    not change_password
+                    and "Password can't be set to one of the earlier" in e.message
+                ):
+                    self.ise.object_modify_result(
+                        changed=False,
+                        result="Object already present, update was attempted but failed because of password",
+                    )
+                    result = {"_changed_": True}
+                elif (
+                    not change_password
+                    and "Password can't be set to one of the earlier" in e.details_str
+                ):
+                    self.ise.object_modify_result(
+                        changed=False,
+                        result="Object already present, update was attempted but failed because of password",
+                    )
+                    result = {"_changed_": True}
                 else:
                     raise e
         elif name:
@@ -225,12 +240,24 @@ class InternalUser(object):
                     handle_func_exception=False,
                 ).response
             except exceptions.ApiError as e:
-                if not change_password and "Password can't be set to one of the earlier" in e.message:
-                    self.ise.object_modify_result(changed=False, result="Object already present, update was attempted but failed because of password")
-                    result = {'_changed_': True}
-                elif not change_password and "Password can't be set to one of the earlier" in e.details_str:
-                    self.ise.object_modify_result(changed=False, result="Object already present, update was attempted but failed because of password")
-                    result = {'_changed_': True}
+                if (
+                    not change_password
+                    and "Password can't be set to one of the earlier" in e.message
+                ):
+                    self.ise.object_modify_result(
+                        changed=False,
+                        result="Object already present, update was attempted but failed because of password",
+                    )
+                    result = {"_changed_": True}
+                elif (
+                    not change_password
+                    and "Password can't be set to one of the earlier" in e.details_str
+                ):
+                    self.ise.object_modify_result(
+                        changed=False,
+                        result="Object already present, update was attempted but failed because of password",
+                    )
+                    result = {"_changed_": True}
                 else:
                     raise e
         return result
@@ -243,13 +270,13 @@ class InternalUser(object):
             result = self.ise.exec(
                 family="internal_user",
                 function="delete_internal_user_by_id",
-                params=self.new_object
+                params=self.new_object,
             ).response
         elif name:
             result = self.ise.exec(
                 family="internal_user",
                 function="delete_internal_user_by_name",
-                params=self.new_object
+                params=self.new_object,
             ).response
         return result
 
@@ -257,7 +284,9 @@ class InternalUser(object):
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
+            raise AnsibleActionFail(
+                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
+            )
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = False
@@ -301,8 +330,10 @@ class ActionModule(ActionBase):
                     try:
                         response = obj.update()
                         ise_update_response = response
-                        self._result.update(dict(ise_update_response=ise_update_response))
-                        if response and response.get('_changed_'):
+                        self._result.update(
+                            dict(ise_update_response=ise_update_response)
+                        )
+                        if response and response.get("_changed_"):
                             response = prev_obj
                         else:
                             (obj_exists, updated_obj) = obj.exists()

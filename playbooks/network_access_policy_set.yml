@@ -1,5 +1,6 @@
 ---
-- hosts: ise_servers
+- name: Create or update a network policy set
+  hosts: ise_servers
   gather_facts: false
   tasks:
     # - name: Get all network policy set
@@ -43,7 +44,7 @@
         default: false
         description: Test Policy Set
         isProxy: false
-        rank: 00
+        rank: 0
         serviceName: Default Network Access
         name: Test Policy Set 2
       register: result

@@ -31,13 +31,15 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.exceptions import (
 # Get common arguments specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
-argument_spec.update(dict(
-    state=dict(type="str", default="present", choices=["present", "absent"]),
-    description=dict(type="str"),
-    deviceGroup=dict(type="str"),
-    imei=dict(type="str"),
-    userEquipmentId=dict(type="str"),
-))
+argument_spec.update(
+    dict(
+        state=dict(type="str", default="present", choices=["present", "absent"]),
+        description=dict(type="str"),
+        deviceGroup=dict(type="str"),
+        imei=dict(type="str"),
+        userEquipmentId=dict(type="str"),
+    )
+)
 
 required_if = [
     ("state", "present", ["userEquipmentId"], True),
@@ -62,13 +64,12 @@ class UserEquipment(object):
         # NOTICE: Get does not support/work for filter by name with EQ
         result = None
         gen_items_responses = self.ise.exec(
-            family="user_equipment",
-            function="get_user_equipments_generator"
+            family="user_equipment", function="get_user_equipments_generator"
         )
         try:
             for items_response in gen_items_responses:
-                items = items_response.response.get('response', [])
-                result = get_dict_result(items, 'name', name)
+                items = items_response.response.get("response", [])
+                result = get_dict_result(items, "name", name)
                 if result:
                     return result
         except (TypeError, AttributeError) as e:
@@ -92,8 +93,8 @@ class UserEquipment(object):
                 family="user_equipment",
                 function="get_user_equipment_by_id",
                 handle_func_exception=False,
-                params={"id": id}
-            ).response['response']
+                params={"id": id},
+            ).response["response"]
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(
                 msg=(
@@ -123,7 +124,9 @@ class UserEquipment(object):
         if name_exists:
             _id = prev_obj.get("id")
             if id_exists and name_exists and o_id != _id:
-                raise InconsistentParameters("The 'id' and 'name' params don't refer to the same object")
+                raise InconsistentParameters(
+                    "The 'id' and 'name' params don't refer to the same object"
+                )
             if _id:
                 prev_obj = self.get_object_by_id(_id)
         it_exists = prev_obj is not None and isinstance(prev_obj, dict)
@@ -140,9 +143,12 @@ class UserEquipment(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not ise_compare_equality(current_obj.get(ise_param),
-                                            requested_obj.get(ansible_param))
-                   for (ise_param, ansible_param) in obj_params)
+        return any(
+            not ise_compare_equality(
+                current_obj.get(ise_param), requested_obj.get(ansible_param)
+            )
+            for (ise_param, ansible_param) in obj_params
+        )
 
     def create(self):
         result = self.ise.exec(
@@ -162,7 +168,7 @@ class UserEquipment(object):
         result = self.ise.exec(
             family="user_equipment",
             function="update_user_equipment",
-            params=self.new_object
+            params=self.new_object,
         ).response
         return result
 
@@ -176,7 +182,7 @@ class UserEquipment(object):
         result = self.ise.exec(
             family="user_equipment",
             function="delete_user_equipment",
-            params=self.new_object
+            params=self.new_object,
         ).response
         return result
 
@@ -184,7 +190,9 @@ class UserEquipment(object):
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
+            raise AnsibleActionFail(
+                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
+            )
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = False

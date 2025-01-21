@@ -1,8 +1,9 @@
 ---
-- hosts: ise_servers
+- name: Manage BYOD Portal on ISE
+  hosts: ise_servers
   gather_facts: false
   tasks:
-    - name: byod_portal
+    - name: Byod portal
       cisco.ise.byod_portal:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"

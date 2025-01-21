@@ -5,14 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: network_access_dictionary_attribute
 short_description: Resource module for Network Access Dictionary Attribute
 description:
-- Manage operations create, update and delete of the resource Network Access Dictionary Attribute.
-- Create a new Dictionary Attribute for an existing Dictionary.
-- Delete a Dictionary Attribute.
-- Update a Dictionary Attribute.
+  - Manage operations create, update and delete of the resource Network Access Dictionary Attribute.
+  - Create a new Dictionary Attribute for an existing Dictionary.
+  - Delete a Dictionary Attribute.
+  - Update a Dictionary Attribute.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -23,8 +22,7 @@ options:
     elements: dict
     suboptions:
       isDefault:
-        description: True if this key value is the default between the allowed values
-          of the dictionary attribute.
+        description: True if this key value is the default between the allowed values of the dictionary attribute.
         type: bool
       key:
         description: Network Access Dictionary Attribute's key.
@@ -55,23 +53,21 @@ options:
     description: The dictionary attribute's name.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for Network Access - Dictionary Attribute
-  description: Complete reference of the Network Access - Dictionary Attribute API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
+  - name: Cisco ISE documentation for Network Access - Dictionary Attribute
+    description: Complete reference of the Network Access - Dictionary Attribute API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
   - SDK Method used are
     network_access_dictionary_attribute.NetworkAccessDictionaryAttribute.create_network_access_dictionary_attribute,
     network_access_dictionary_attribute.NetworkAccessDictionaryAttribute.delete_network_access_dictionary_attribute_by_name,
     network_access_dictionary_attribute.NetworkAccessDictionaryAttribute.update_network_access_dictionary_attribute_by_name,
-
   - Paths used are
     post /network-access/dictionaries/{dictionaryName}/attribute,
     delete /network-access/dictionaries/{dictionaryName}/attribute/{name},
     put /network-access/dictionaries/{dictionaryName}/attribute/{name},
-
 """
 
 EXAMPLES = r"""
@@ -83,9 +79,9 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     allowedValues:
-    - isDefault: true
-      key: string
-      value: string
+      - isDefault: true
+        key: string
+        value: string
     dataType: string
     description: string
     dictionaryName: string
@@ -93,7 +89,6 @@ EXAMPLES = r"""
     id: string
     internalName: string
     name: string
-
 - name: Update by name
   cisco.ise.network_access_dictionary_attribute:
     ise_hostname: "{{ise_hostname}}"
@@ -102,9 +97,9 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     allowedValues:
-    - isDefault: true
-      key: string
-      value: string
+      - isDefault: true
+        key: string
+        value: string
     dataType: string
     description: string
     dictionaryName: string
@@ -112,7 +107,6 @@ EXAMPLES = r"""
     id: string
     internalName: string
     name: string
-
 - name: Delete by name
   cisco.ise.network_access_dictionary_attribute:
     ise_hostname: "{{ise_hostname}}"
@@ -122,7 +116,6 @@ EXAMPLES = r"""
     state: absent
     dictionaryName: string
     name: string
-
 """
 
 RETURN = r"""
@@ -147,7 +140,6 @@ ise_response:
       "internalName": "string",
       "name": "string"
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

@@ -5,12 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: px_grid_direct_test_connector
 short_description: Resource module for Px Grid Direct Test Connector
 description:
-- Manage operation create of the resource Px Grid Direct Test Connector.
-- PxGrid Direct - test the Connector.
+  - Manage operation create of the resource Px Grid Direct Test Connector.
+  - PxGrid Direct - test the Connector.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -45,15 +44,13 @@ options:
     description: BulkUrl.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
   - SDK Method used are
     px_grid_direct.PxGridDirect.test_connector,
-
   - Paths used are
     post /api/v1/pxgrid-direct/test-connector,
-
 """
 
 EXAMPLES = r"""
@@ -72,7 +69,6 @@ EXAMPLES = r"""
     skipCertificateValidations: true
     uniqueID: string
     url: string
-
 """
 
 RETURN = r"""

@@ -5,14 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: filter_policy
 short_description: Resource module for Filter Policy
 description:
-- Manage operations create, update and delete of the resource Filter Policy.
-- This API creates a filter policy.
-- This API deletes a filter policy.
-- This API allows the client to update a filter policy.
+  - Manage operations create, update and delete of the resource Filter Policy.
+  - This API creates a filter policy.
+  - This API deletes a filter policy.
+  - This API allows the client to update a filter policy.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -28,26 +27,23 @@ options:
     description: SGT name or ID. At least one of subnet or sgt or vn should be defined.
     type: str
   subnet:
-    description: Subnet for filter policy (hostname is not supported). At least one
-      of subnet or sgt or vn should be defined.
+    description: Subnet for filter policy (hostname is not supported). At least one of subnet or sgt or vn should be defined.
     type: str
   vn:
     description: Virtual Network. At least one of subnet or sgt or vn should be defined.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
   - SDK Method used are
     filter_policy.FilterPolicy.create_filter_policy,
     filter_policy.FilterPolicy.delete_filter_policy_by_id,
     filter_policy.FilterPolicy.update_filter_policy_by_id,
-
   - Paths used are
     post /ers/config/filterpolicy,
     delete /ers/config/filterpolicy/{id},
     put /ers/config/filterpolicy/{id},
-
 """
 
 EXAMPLES = r"""
@@ -63,7 +59,6 @@ EXAMPLES = r"""
     sgt: string
     subnet: string
     vn: string
-
 - name: Delete by id
   cisco.ise.filter_policy:
     ise_hostname: "{{ise_hostname}}"
@@ -72,7 +67,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-
 - name: Create
   cisco.ise.filter_policy:
     ise_hostname: "{{ise_hostname}}"
@@ -84,7 +78,6 @@ EXAMPLES = r"""
     sgt: string
     subnet: string
     vn: string
-
 """
 
 RETURN = r"""
@@ -99,7 +92,6 @@ ise_response:
       "sgt": "string",
       "vn": "string"
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

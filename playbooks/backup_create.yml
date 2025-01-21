@@ -1,7 +1,7 @@
 ---
-- hosts: ise_servers
+- name: Backup configuration
+  hosts: ise_servers
   gather_facts: false
-  name: Backup configuration
   tasks:
     - name: Create a repository
       cisco.ise.repository:

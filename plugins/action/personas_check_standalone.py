@@ -71,11 +71,14 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-        node = Node(dict(ip=self._task.args.get("ip"),
-                         username=self._task.args.get("username"),
-                         password=self._task.args.get("password"),
-                         hostname=self._task.args.get("hostname")
-                         ))
+        node = Node(
+            dict(
+                ip=self._task.args.get("ip"),
+                username=self._task.args.get("username"),
+                password=self._task.args.get("password"),
+                hostname=self._task.args.get("hostname"),
+            )
+        )
 
         if not (node.is_standalone() and node.app_server_is_running()):
             raise AnsibleActionFail(
@@ -84,7 +87,9 @@ class ActionModule(ActionBase):
                 )
             )
 
-        response = "Node {hostname} is in STANDALONE mode".format(hostname=self._task.args.get("hostname"))
+        response = "Node {hostname} is in STANDALONE mode".format(
+            hostname=self._task.args.get("hostname")
+        )
 
         self._result.update(dict(ise_response=response))
         return self._result

@@ -31,14 +31,16 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.exceptions import (
 # Get common arguments specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
-argument_spec.update(dict(
-    state=dict(type="str", default="present", choices=["present", "absent"]),
-    isEnabled=dict(type="bool"),
-    primaryHealthCheckNode=dict(type="str"),
-    secondaryHealthCheckNode=dict(type="str"),
-    pollingInterval=dict(type="int"),
-    failedAttempts=dict(type="int"),
-))
+argument_spec.update(
+    dict(
+        state=dict(type="str", default="present", choices=["present", "absent"]),
+        isEnabled=dict(type="bool"),
+        primaryHealthCheckNode=dict(type="str"),
+        secondaryHealthCheckNode=dict(type="str"),
+        pollingInterval=dict(type="int"),
+        failedAttempts=dict(type="int"),
+    )
+)
 
 required_if = [
     ("state", "present", [], True),
@@ -63,11 +65,10 @@ class PanHa(object):
     def get_object_by_name(self, name):
         # NOTICE: Does not have a get by name method or it is in another action
         result = None
-        items = self.ise.exec(
-            family="pan_ha",
-            function="get_pan_ha_status"
-        ).response['response']
-        result = get_dict_result(items, 'name', name)
+        items = self.ise.exec(family="pan_ha", function="get_pan_ha_status").response[
+            "response"
+        ]
+        result = get_dict_result(items, "name", name)
         return result
 
     def get_object_by_id(self, id):
@@ -91,7 +92,8 @@ class PanHa(object):
             _id = prev_obj.get("id")
             if id_exists and name_exists and o_id != _id:
                 raise InconsistentParameters(
-                    "The 'id' and 'name' params don't refer to the same object")
+                    "The 'id' and 'name' params don't refer to the same object"
+                )
         it_exists = prev_obj is not None and isinstance(prev_obj, dict)
         return (it_exists, prev_obj)
 
@@ -107,9 +109,12 @@ class PanHa(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not ise_compare_equality(current_obj.get(ise_param),
-                                            requested_obj.get(ansible_param))
-                   for (ise_param, ansible_param) in obj_params)
+        return any(
+            not ise_compare_equality(
+                current_obj.get(ise_param), requested_obj.get(ansible_param)
+            )
+            for (ise_param, ansible_param) in obj_params
+        )
 
     def create(self):
         result = self.ise.exec(
@@ -124,9 +129,7 @@ class PanHa(object):
         name = self.new_object.get("name")
         result = None
         result = self.ise.exec(
-            family="pan_ha",
-            function="disable_pan_ha",
-            params=self.new_object
+            family="pan_ha", function="disable_pan_ha", params=self.new_object
         ).response
         return result
 
@@ -135,7 +138,8 @@ class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
             raise AnsibleActionFail(
-                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
+                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
+            )
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = False
@@ -176,16 +180,19 @@ class ActionModule(ActionBase):
             if obj_exists:
                 if obj.requires_update(prev_obj):
                     ise_update_response = obj.update()
-                    self._result.update(
-                        dict(ise_update_response=ise_update_response))
+                    self._result.update(dict(ise_update_response=ise_update_response))
                     (obj_exists, updated_obj) = obj.exists()
                     response = updated_obj
                     has_changed = None
-                    has_changed = ise_update_response.get(
-                        "UpdatedFieldsList").get("updatedField")
-                    if (len(has_changed) == 0 or
-                       has_changed[0].get("newValue") == "" and
-                       has_changed[0].get("newValue") == has_changed[0].get("oldValue")):
+                    has_changed = ise_update_response.get("UpdatedFieldsList").get(
+                        "updatedField"
+                    )
+                    if (
+                        len(has_changed) == 0
+                        or has_changed[0].get("newValue") == ""
+                        and has_changed[0].get("newValue")
+                        == has_changed[0].get("oldValue")
+                    ):
                         self._result.pop("ise_update_response", None)
                         ise.object_already_present()
                     else:

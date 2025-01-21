@@ -5,13 +5,12 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: guest_user_reinstate
 short_description: Resource module for Guest User Reinstate
 description:
-- Manage operation update of the resource Guest User Reinstate.
-- This API allows the client to reinstate a guest user by ID.
-- This API allows the client to reinstate a guest user by name.
+  - Manage operation update of the resource Guest User Reinstate.
+  - This API allows the client to reinstate a guest user by ID.
+  - This API allows the client to reinstate a guest user by name.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -24,17 +23,15 @@ options:
     description: Name path parameter.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 notes:
   - SDK Method used are
     guest_user.GuestUser.reinstate_guest_user_by_id,
     guest_user.GuestUser.reinstate_guest_user_by_name,
-
   - Paths used are
     put /ers/config/guestuser/reinstate/name/{name},
     put /ers/config/guestuser/reinstate/{id},
-
 """
 
 EXAMPLES = r"""
@@ -45,7 +42,6 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     name: string
-
 - name: Update by id
   cisco.ise.guest_user_reinstate:
     ise_hostname: "{{ise_hostname}}"
@@ -53,7 +49,6 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     id: string
-
 """
 
 RETURN = r"""

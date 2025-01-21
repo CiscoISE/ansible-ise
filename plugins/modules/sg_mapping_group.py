@@ -5,14 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
----
 module: sg_mapping_group
 short_description: Resource module for SG Mapping Group
 description:
-- Manage operations create, update and delete of the resource SG Mapping Group.
-- This API creates an IP to SGT mapping group.
-- This API deletes an IP to SGT mapping group.
-- This API allows the client to update an IP to SGT mapping group by ID.
+  - Manage operations create, update and delete of the resource SG Mapping Group.
+  - This API creates an IP to SGT mapping group.
+  - This API deletes an IP to SGT mapping group.
+  - This API allows the client to update an IP to SGT mapping group by ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -34,23 +33,21 @@ options:
     description: Mandatory unless mappingGroup is set.
     type: str
 requirements:
-- ciscoisesdk >= 2.2.3
-- python >= 3.5
+  - ciscoisesdk >= 2.2.3
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for IPToSGTMappingGroup
-  description: Complete reference of the IPToSGTMappingGroup API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgmappinggroup
+  - name: Cisco ISE documentation for IPToSGTMappingGroup
+    description: Complete reference of the IPToSGTMappingGroup API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgmappinggroup
 notes:
   - SDK Method used are
     ip_to_sgt_mapping_group.IpToSgtMappingGroup.create_ip_to_sgt_mapping_group,
     ip_to_sgt_mapping_group.IpToSgtMappingGroup.delete_ip_to_sgt_mapping_group_by_id,
     ip_to_sgt_mapping_group.IpToSgtMappingGroup.update_ip_to_sgt_mapping_group_by_id,
-
   - Paths used are
     post /ers/config/sgmappinggroup,
     delete /ers/config/sgmappinggroup/{id},
     put /ers/config/sgmappinggroup/{id},
-
 """
 
 EXAMPLES = r"""
@@ -66,7 +63,6 @@ EXAMPLES = r"""
     id: string
     name: string
     sgt: string
-
 - name: Delete by id
   cisco.ise.sg_mapping_group:
     ise_hostname: "{{ise_hostname}}"
@@ -75,7 +71,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-
 - name: Create
   cisco.ise.sg_mapping_group:
     ise_hostname: "{{ise_hostname}}"
@@ -87,7 +82,6 @@ EXAMPLES = r"""
     deployType: string
     name: string
     sgt: string
-
 """
 
 RETURN = r"""
@@ -107,7 +101,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
