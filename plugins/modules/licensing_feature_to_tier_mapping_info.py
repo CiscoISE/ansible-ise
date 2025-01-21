@@ -23,8 +23,10 @@ seealso:
     description: Complete reference of the Licensing API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!license-openapi
 notes:
-  - SDK Method used are licensing.Licensing.get_feature_to_tier_mapping,
-  - Paths used are get /api/v1/license/system/feature-to-tier-mapping,
+  - SDK Method used are
+    licensing.Licensing.get_feature_to_tier_mapping,
+  - Paths used are
+    get /api/v1/license/system/feature-to-tier-mapping,
 """
 
 EXAMPLES = r"""

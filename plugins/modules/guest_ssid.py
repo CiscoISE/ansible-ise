@@ -27,8 +27,14 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are guest_ssid.GuestSsid.create_guest_ssid, guest_ssid.GuestSsid.delete_guest_ssid_by_id, guest_ssid.GuestSsid.update_guest_ssid_by_id,
-  - Paths used are post /ers/config/guestssid, delete /ers/config/guestssid/{id}, put /ers/config/guestssid/{id},
+  - SDK Method used are
+    guest_ssid.GuestSsid.create_guest_ssid,
+    guest_ssid.GuestSsid.delete_guest_ssid_by_id,
+    guest_ssid.GuestSsid.update_guest_ssid_by_id,
+  - Paths used are
+    post /ers/config/guestssid,
+    delete /ers/config/guestssid/{id},
+    put /ers/config/guestssid/{id},
 """
 
 EXAMPLES = r"""

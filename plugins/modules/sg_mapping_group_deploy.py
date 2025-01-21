@@ -26,8 +26,10 @@ seealso:
     description: Complete reference of the IPToSGTMappingGroup API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgmappinggroup
 notes:
-  - SDK Method used are ip_to_sgt_mapping_group.IpToSgtMappingGroup.deploy_ip_to_sgt_mapping_group_by_id,
-  - Paths used are put /ers/config/sgmappinggroup/{id}/deploy,
+  - SDK Method used are
+    ip_to_sgt_mapping_group.IpToSgtMappingGroup.deploy_ip_to_sgt_mapping_group_by_id,
+  - Paths used are
+    put /ers/config/sgmappinggroup/{id}/deploy,
 """
 
 EXAMPLES = r"""

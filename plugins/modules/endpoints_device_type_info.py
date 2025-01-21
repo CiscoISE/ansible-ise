@@ -18,8 +18,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are endpoints.Endpoints.get_device_type_summary,
-  - Paths used are get /api/v1/endpoint/deviceType/summary,
+  - SDK Method used are
+    endpoints.Endpoints.get_device_type_summary,
+  - Paths used are
+    get /api/v1/endpoint/deviceType/summary,
 """
 
 EXAMPLES = r"""

@@ -33,8 +33,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are guest_type.GuestType.update_guest_type_email,
-  - Paths used are put /ers/config/guesttype/email/{id},
+  - SDK Method used are
+    guest_type.GuestType.update_guest_type_email,
+  - Paths used are
+    put /ers/config/guesttype/email/{id},
 """
 
 EXAMPLES = r"""

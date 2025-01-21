@@ -27,8 +27,12 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are customattributes.Customattributes.create_custom_attribute, customattributes.Customattributes.delete,
-  - Paths used are post /api/v1/endpoint-custom-attribute, delete /api/v1/endpoint-custom-attribute/{name},
+  - SDK Method used are
+    customattributes.Customattributes.create_custom_attribute,
+    customattributes.Customattributes.delete,
+  - Paths used are
+    post /api/v1/endpoint-custom-attribute,
+    delete /api/v1/endpoint-custom-attribute/{name},
 """
 
 EXAMPLES = r"""

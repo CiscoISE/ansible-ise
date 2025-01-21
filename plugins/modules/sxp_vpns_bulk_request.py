@@ -25,8 +25,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are sxp_vpns.SxpVpns.bulk_request_for_sxp_vpns,
-  - Paths used are put /ers/config/sxpvpns/bulk/submit,
+  - SDK Method used are
+    sxp_vpns.SxpVpns.bulk_request_for_sxp_vpns,
+  - Paths used are
+    put /ers/config/sxpvpns/bulk/submit,
 """
 
 EXAMPLES = r"""

@@ -18,8 +18,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are misc.Misc.get_failure_reasons,
-  - Paths used are get /FailureReasons,
+  - SDK Method used are
+    misc.Misc.get_failure_reasons,
+  - Paths used are
+    get /FailureReasons,
 """
 
 EXAMPLES = r"""

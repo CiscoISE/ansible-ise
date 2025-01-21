@@ -24,8 +24,10 @@ seealso:
     description: Complete reference of the telemetry API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!system-settings-openapi
 notes:
-  - SDK Method used are telemetry.Telemetry.get_transport_gateway,
-  - Paths used are get /api/v1/system-settings/telemetry/transport-gateway,
+  - SDK Method used are
+    telemetry.Telemetry.get_transport_gateway,
+  - Paths used are
+    get /api/v1/system-settings/telemetry/transport-gateway,
 """
 
 EXAMPLES = r"""

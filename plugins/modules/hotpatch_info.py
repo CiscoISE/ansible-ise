@@ -23,8 +23,10 @@ seealso:
     description: Complete reference of the Patching API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!patch-and-hot-patch-openapi
 notes:
-  - SDK Method used are patching.Patching.list_installed_hotpatches,
-  - Paths used are get /api/v1/hotpatch,
+  - SDK Method used are
+    patching.Patching.list_installed_hotpatches,
+  - Paths used are
+    get /api/v1/hotpatch,
 """
 
 EXAMPLES = r"""

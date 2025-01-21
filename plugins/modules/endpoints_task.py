@@ -84,8 +84,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are endpoints.Endpoints.create_end_point_task,
-  - Paths used are post /api/v1/endpointTask,
+  - SDK Method used are
+    endpoints.Endpoints.create_end_point_task,
+  - Paths used are
+    post /api/v1/endpointTask,
 """
 
 EXAMPLES = r"""

@@ -23,8 +23,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are ad_groups.ADGroups.get_adgroups,
-  - Paths used are get /api/v1/duo-identitysync/adgroups/{activeDirectory},
+  - SDK Method used are
+    ad_groups.ADGroups.get_adgroups,
+  - Paths used are
+    get /api/v1/duo-identitysync/adgroups/{activeDirectory},
 """
 
 EXAMPLES = r"""

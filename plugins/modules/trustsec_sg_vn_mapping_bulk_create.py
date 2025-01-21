@@ -45,8 +45,10 @@ seealso:
     description: Complete reference of the sgVnMapping API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!trustsec-openapi
 notes:
-  - SDK Method used are sg_vn_mapping.SgVnMapping.bulk_create_sg_vn_mappings,
-  - Paths used are post /api/v1/trustsec/sgvnmapping/bulk/create,
+  - SDK Method used are
+    sg_vn_mapping.SgVnMapping.bulk_create_sg_vn_mappings,
+  - Paths used are
+    post /api/v1/trustsec/sgvnmapping/bulk/create,
 """
 
 EXAMPLES = r"""

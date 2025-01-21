@@ -23,8 +23,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are anc_policy.AncPolicy.monitor_bulk_status_anc_policy,
-  - Paths used are get /ers/config/ancpolicy/bulk/{bulkid},
+  - SDK Method used are
+    anc_policy.AncPolicy.monitor_bulk_status_anc_policy,
+  - Paths used are
+    get /ers/config/ancpolicy/bulk/{bulkid},
 """
 
 EXAMPLES = r"""

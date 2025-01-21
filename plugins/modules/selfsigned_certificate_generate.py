@@ -122,8 +122,10 @@ seealso:
     description: Complete reference of the Certificates API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
 notes:
-  - SDK Method used are certificates.Certificates.generate_self_signed_certificate,
-  - Paths used are post /api/v1/certs/system-certificate/generate-selfsigned-certificate,
+  - SDK Method used are
+    certificates.Certificates.generate_self_signed_certificate,
+  - Paths used are
+    post /api/v1/certs/system-certificate/generate-selfsigned-certificate,
 """
 
 EXAMPLES = r"""

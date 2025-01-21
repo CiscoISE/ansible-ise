@@ -30,8 +30,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are misc.Misc.session_reauthentication_by_mac,
-  - Paths used are get /CoA/Reauth/{PSN_NAME}/{ENDPOINT_MAC}/{REAUTH_TYPE},
+  - SDK Method used are
+    misc.Misc.session_reauthentication_by_mac,
+  - Paths used are
+    get /CoA/Reauth/{PSN_NAME}/{ENDPOINT_MAC}/{REAUTH_TYPE},
 """
 
 EXAMPLES = r"""

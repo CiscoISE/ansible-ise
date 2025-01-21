@@ -50,8 +50,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are subscriber.Subscriber.bulk_subscriber_operation,
-  - Paths used are post /api/v1/fiveg/subscriber/bulk,
+  - SDK Method used are
+    subscriber.Subscriber.bulk_subscriber_operation,
+  - Paths used are
+    post /api/v1/fiveg/subscriber/bulk,
 """
 
 EXAMPLES = r"""

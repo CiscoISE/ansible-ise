@@ -19,8 +19,8 @@ author: Rafael Campos (@racampos)
 options:
   actions:
     description: '- QUARANTINE Allows you to use Exception policies (authorization policies) to limit or deny an endpoint access to the network.
-      - PORTBOUNCE Resets the port on the network device to which the endpoint is connected. - SHUTDOWN Shuts down the port on the network
-      device to which the endpoint is connected. - RE_AUTHENTICATE Re-authenticates the session from the endpoint.'
+      - PORTBOUNCE Resets the port on the network device to which the endpoint is connected. - SHUTDOWN Shuts down the port on the network device
+      to which the endpoint is connected. - RE_AUTHENTICATE Re-authenticates the session from the endpoint.'
     elements: str
     type: list
   id:
@@ -33,8 +33,14 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are anc_policy.AncPolicy.create_anc_policy, anc_policy.AncPolicy.delete_anc_policy_by_id, anc_policy.AncPolicy.update_anc_policy_by_id,
-  - Paths used are post /ers/config/ancpolicy, delete /ers/config/ancpolicy/{id}, put /ers/config/ancpolicy/{id},
+  - SDK Method used are
+    anc_policy.AncPolicy.create_anc_policy,
+    anc_policy.AncPolicy.delete_anc_policy_by_id,
+    anc_policy.AncPolicy.update_anc_policy_by_id,
+  - Paths used are
+    post /ers/config/ancpolicy,
+    delete /ers/config/ancpolicy/{id},
+    put /ers/config/ancpolicy/{id},
 """
 
 EXAMPLES = r"""

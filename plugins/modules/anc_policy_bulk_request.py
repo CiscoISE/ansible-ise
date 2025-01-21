@@ -25,8 +25,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are anc_policy.AncPolicy.bulk_request_for_anc_policy,
-  - Paths used are put /ers/config/ancpolicy/bulk/submit,
+  - SDK Method used are
+    anc_policy.AncPolicy.bulk_request_for_anc_policy,
+  - Paths used are
+    put /ers/config/ancpolicy/bulk/submit,
 """
 
 EXAMPLES = r"""

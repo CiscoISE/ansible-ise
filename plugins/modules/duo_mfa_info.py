@@ -25,8 +25,12 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are duo_mfa.DuoMfa.get_mfa, duo_mfa.DuoMfa.get_mfa_byconnection_name,
-  - Paths used are get /api/v1/duo-mfa/mfa, get /api/v1/duo-mfa/mfa/{connectionName},
+  - SDK Method used are
+    duo_mfa.DuoMfa.get_mfa,
+    duo_mfa.DuoMfa.get_mfa_byconnection_name,
+  - Paths used are
+    get /api/v1/duo-mfa/mfa,
+    get /api/v1/duo-mfa/mfa/{connectionName},
 """
 
 EXAMPLES = r"""

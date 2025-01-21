@@ -39,8 +39,14 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are px_grid_node.PxGridNode.get_px_grid_node_by_id, px_grid_node.PxGridNode.get_px_grid_node_by_name, px_grid_node.PxGridNode.get_px_grid_node_generator,
-  - Paths used are get /ers/config/pxgridnode, get /ers/config/pxgridnode/name/{name}, get /ers/config/pxgridnode/{id},
+  - SDK Method used are
+    px_grid_node.PxGridNode.get_px_grid_node_by_id,
+    px_grid_node.PxGridNode.get_px_grid_node_by_name,
+    px_grid_node.PxGridNode.get_px_grid_node_generator,
+  - Paths used are
+    get /ers/config/pxgridnode,
+    get /ers/config/pxgridnode/name/{name},
+    get /ers/config/pxgridnode/{id},
 """
 
 EXAMPLES = r"""

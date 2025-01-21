@@ -27,8 +27,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are native_ipsec.NativeIpsec.get_ipsec_node,
-  - Paths used are get /api/v1/ipsec/{hostName}/{nadIp},
+  - SDK Method used are
+    native_ipsec.NativeIpsec.get_ipsec_node,
+  - Paths used are
+    get /api/v1/ipsec/{hostName}/{nadIp},
 """
 
 EXAMPLES = r"""

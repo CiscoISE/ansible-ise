@@ -36,8 +36,12 @@ seealso:
     description: Complete reference of the IdentityGroups API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!identitygroup
 notes:
-  - SDK Method used are identity_groups.IdentityGroups.create_identity_group, identity_groups.IdentityGroups.update_identity_group_by_id,
-  - Paths used are post /ers/config/identitygroup, put /ers/config/identitygroup/{id},
+  - SDK Method used are
+    identity_groups.IdentityGroups.create_identity_group,
+    identity_groups.IdentityGroups.update_identity_group_by_id,
+  - Paths used are
+    post /ers/config/identitygroup,
+    put /ers/config/identitygroup/{id},
 """
 
 EXAMPLES = r"""

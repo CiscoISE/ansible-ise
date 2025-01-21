@@ -16,8 +16,8 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   failedAttempts:
-    description: Failover occurs if the primary PAN is down for the specified number of failure polls. Count (2 - 60).<br> The default value
-      is 5.
+    description: Failover occurs if the primary PAN is down for the specified number of failure polls. Count (2 - 60).<br> The default value is
+      5.
     type: int
   isEnabled:
     description: IsEnabled flag.
@@ -47,8 +47,10 @@ seealso:
     description: Complete reference of the PAN HA API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!deployment-openapi
 notes:
-  - SDK Method used are pan_ha.PanHa.update_pan_ha,
-  - Paths used are put /api/v1/deployment/pan-ha,
+  - SDK Method used are
+    pan_ha.PanHa.update_pan_ha,
+  - Paths used are
+    put /api/v1/deployment/pan-ha,
 """
 
 EXAMPLES = r"""

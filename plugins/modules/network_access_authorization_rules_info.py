@@ -33,8 +33,12 @@ seealso:
     description: Complete reference of the Network Access - Authorization Rules API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are network_access_authorization_rules.NetworkAccessAuthorizationRules.get_network_access_authorization_rule_by_id, network_access_authorization_rules.NetworkAccessAuthorizationRules.get_network_access_authorization_rules,
-  - Paths used are get /network-access/policy-set/{policyId}/authorization, get /network-access/policy-set/{policyId}/authorization/{id},
+  - SDK Method used are
+    network_access_authorization_rules.NetworkAccessAuthorizationRules.get_network_access_authorization_rule_by_id,
+    network_access_authorization_rules.NetworkAccessAuthorizationRules.get_network_access_authorization_rules,
+  - Paths used are
+    get /network-access/policy-set/{policyId}/authorization,
+    get /network-access/policy-set/{policyId}/authorization/{id},
 """
 
 EXAMPLES = r"""

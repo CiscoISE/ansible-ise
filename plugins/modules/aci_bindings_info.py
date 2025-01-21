@@ -45,8 +45,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are aci_bindings.AciBindings.get_aci_bindings_generator,
-  - Paths used are get /ers/config/acibindings/getall,
+  - SDK Method used are
+    aci_bindings.AciBindings.get_aci_bindings_generator,
+  - Paths used are
+    get /ers/config/acibindings/getall,
 """
 
 EXAMPLES = r"""

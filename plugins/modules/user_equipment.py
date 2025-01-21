@@ -30,8 +30,14 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are user_equipment.UserEquipment.create_user_equipment, user_equipment.UserEquipment.delete_user_equipment, user_equipment.UserEquipment.update_user_equipment,
-  - Paths used are post /api/v1/fiveg/user-equipment, delete /api/v1/fiveg/user-equipment/{userEquipmentId}, put /api/v1/fiveg/user-equipment/{userEquipmentId},
+  - SDK Method used are
+    user_equipment.UserEquipment.create_user_equipment,
+    user_equipment.UserEquipment.delete_user_equipment,
+    user_equipment.UserEquipment.update_user_equipment,
+  - Paths used are
+    post /api/v1/fiveg/user-equipment,
+    delete /api/v1/fiveg/user-equipment/{userEquipmentId},
+    put /api/v1/fiveg/user-equipment/{userEquipmentId},
 """
 
 EXAMPLES = r"""

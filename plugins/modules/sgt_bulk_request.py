@@ -29,8 +29,10 @@ seealso:
     description: Complete reference of the SecurityGroups API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgt
 notes:
-  - SDK Method used are security_groups.SecurityGroups.bulk_request_for_security_group,
-  - Paths used are put /ers/config/sgt/bulk/submit,
+  - SDK Method used are
+    security_groups.SecurityGroups.bulk_request_for_security_group,
+  - Paths used are
+    put /ers/config/sgt/bulk/submit,
 """
 
 EXAMPLES = r"""

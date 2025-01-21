@@ -23,8 +23,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are network_device.NetworkDevice.monitor_bulk_status_network_device,
-  - Paths used are get /ers/config/networkdevice/bulk/{bulkid},
+  - SDK Method used are
+    network_device.NetworkDevice.monitor_bulk_status_network_device,
+  - Paths used are
+    get /ers/config/networkdevice/bulk/{bulkid},
 """
 
 EXAMPLES = r"""

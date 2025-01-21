@@ -18,8 +18,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are trust_sec_configuration.TrustSecConfiguration.get_security_groups,
-  - Paths used are post /ise/config/trustsec/getSecurityGroups,
+  - SDK Method used are
+    trust_sec_configuration.TrustSecConfiguration.get_security_groups,
+  - Paths used are
+    post /ise/config/trustsec/getSecurityGroups,
 """
 
 EXAMPLES = r"""

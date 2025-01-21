@@ -18,8 +18,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are system_health.SystemHealth.get_performances,
-  - Paths used are post /ise/system/getPerformances,
+  - SDK Method used are
+    system_health.SystemHealth.get_performances,
+  - Paths used are
+    post /ise/system/getPerformances,
 """
 
 EXAMPLES = r"""

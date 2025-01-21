@@ -22,8 +22,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are subscriber.Subscriber.get_subscriber_by_i_m_s_i,
-  - Paths used are get /api/v1/fiveg/subscriber/imsi/{imsi},
+  - SDK Method used are
+    subscriber.Subscriber.get_subscriber_by_i_m_s_i,
+  - Paths used are
+    get /api/v1/fiveg/subscriber/imsi/{imsi},
 """
 
 EXAMPLES = r"""

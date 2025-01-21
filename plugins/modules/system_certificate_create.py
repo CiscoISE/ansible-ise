@@ -90,8 +90,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are system_certificate.SystemCertificate.create_system_certificate,
-  - Paths used are post /ers/config/systemcertificate,
+  - SDK Method used are
+    system_certificate.SystemCertificate.create_system_certificate,
+  - Paths used are
+    post /ers/config/systemcertificate,
 """
 
 EXAMPLES = r"""

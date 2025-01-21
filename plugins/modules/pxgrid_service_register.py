@@ -21,8 +21,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are provider.Provider.register_service,
-  - Paths used are post /control/ServiceRegister,
+  - SDK Method used are
+    provider.Provider.register_service,
+  - Paths used are
+    post /control/ServiceRegister,
 """
 
 EXAMPLES = r"""

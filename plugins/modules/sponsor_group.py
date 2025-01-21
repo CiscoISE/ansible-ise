@@ -122,8 +122,14 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are sponsor_group.SponsorGroup.create_sponsor_group, sponsor_group.SponsorGroup.delete_sponsor_group_by_id, sponsor_group.SponsorGroup.update_sponsor_group_by_id,
-  - Paths used are post /ers/config/sponsorgroup, delete /ers/config/sponsorgroup/{id}, put /ers/config/sponsorgroup/{id},
+  - SDK Method used are
+    sponsor_group.SponsorGroup.create_sponsor_group,
+    sponsor_group.SponsorGroup.delete_sponsor_group_by_id,
+    sponsor_group.SponsorGroup.update_sponsor_group_by_id,
+  - Paths used are
+    post /ers/config/sponsorgroup,
+    delete /ers/config/sponsorgroup/{id},
+    put /ers/config/sponsorgroup/{id},
 """
 
 EXAMPLES = r"""

@@ -101,9 +101,14 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are radius_server_sequence.RadiusServerSequence.create_radius_server_sequence, radius_server_sequence.RadiusServerSequence.delete_radius_server_sequence_by_id,
+  - SDK Method used are
+    radius_server_sequence.RadiusServerSequence.create_radius_server_sequence,
+    radius_server_sequence.RadiusServerSequence.delete_radius_server_sequence_by_id,
     radius_server_sequence.RadiusServerSequence.update_radius_server_sequence_by_id,
-  - Paths used are post /ers/config/radiusserversequence, delete /ers/config/radiusserversequence/{id}, put /ers/config/radiusserversequence/{id},
+  - Paths used are
+    post /ers/config/radiusserversequence,
+    delete /ers/config/radiusserversequence/{id},
+    put /ers/config/radiusserversequence/{id},
 """
 
 EXAMPLES = r"""

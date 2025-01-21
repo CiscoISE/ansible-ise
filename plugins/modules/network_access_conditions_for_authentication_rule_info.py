@@ -23,8 +23,10 @@ seealso:
     description: Complete reference of the Network Access - Conditions API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are network_access_conditions.NetworkAccessConditions.get_network_access_conditions_for_authentication_rules,
-  - Paths used are get /network-access/condition/authentication,
+  - SDK Method used are
+    network_access_conditions.NetworkAccessConditions.get_network_access_conditions_for_authentication_rules,
+  - Paths used are
+    get /network-access/condition/authentication,
 """
 
 EXAMPLES = r"""

@@ -33,8 +33,12 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are downloadable_acl.DownloadableAcl.get_downloadable_acl_by_id, downloadable_acl.DownloadableAcl.get_downloadable_acl_generator,
-  - Paths used are get /ers/config/downloadableacl, get /ers/config/downloadableacl/{id},
+  - SDK Method used are
+    downloadable_acl.DownloadableAcl.get_downloadable_acl_by_id,
+    downloadable_acl.DownloadableAcl.get_downloadable_acl_generator,
+  - Paths used are
+    get /ers/config/downloadableacl,
+    get /ers/config/downloadableacl/{id},
 """
 
 EXAMPLES = r"""

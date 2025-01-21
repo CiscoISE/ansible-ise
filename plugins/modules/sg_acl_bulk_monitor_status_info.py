@@ -27,8 +27,10 @@ seealso:
     description: Complete reference of the SecurityGroupsACLs API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgacl
 notes:
-  - SDK Method used are security_groups_acls.SecurityGroupsAcls.monitor_bulk_status_security_groups_acl,
-  - Paths used are get /ers/config/sgacl/bulk/{bulkid},
+  - SDK Method used are
+    security_groups_acls.SecurityGroupsAcls.monitor_bulk_status_security_groups_acl,
+  - Paths used are
+    get /ers/config/sgacl/bulk/{bulkid},
 """
 
 EXAMPLES = r"""

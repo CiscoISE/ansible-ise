@@ -19,8 +19,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are endpoint_stop_replication_service.EndpointStopReplicationService.get_stop_replication_status,
-  - Paths used are get /api/v1/stop-replication,
+  - SDK Method used are
+    endpoint_stop_replication_service.EndpointStopReplicationService.get_stop_replication_status,
+  - Paths used are
+    get /api/v1/stop-replication,
 """
 
 EXAMPLES = r"""

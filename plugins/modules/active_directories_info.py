@@ -19,8 +19,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are active_directories.ActiveDirectories.get_active_directories,
-  - Paths used are get /api/v1/duo-identitysync/activedirectories,
+  - SDK Method used are
+    active_directories.ActiveDirectories.get_active_directories,
+  - Paths used are
+    get /api/v1/duo-identitysync/activedirectories,
 """
 
 EXAMPLES = r"""

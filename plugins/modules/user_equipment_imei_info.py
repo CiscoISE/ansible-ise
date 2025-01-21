@@ -22,8 +22,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are user_equipment.UserEquipment.get_user_equipment_by_i_m_e_i,
-  - Paths used are get /api/v1/fiveg/user-equipment/imei/{imei},
+  - SDK Method used are
+    user_equipment.UserEquipment.get_user_equipment_by_i_m_e_i,
+  - Paths used are
+    get /api/v1/fiveg/user-equipment/imei/{imei},
 """
 
 EXAMPLES = r"""

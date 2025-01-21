@@ -39,9 +39,14 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are allowed_protocols.AllowedProtocols.get_allowed_protocol_by_id, allowed_protocols.AllowedProtocols.get_allowed_protocol_by_name,
+  - SDK Method used are
+    allowed_protocols.AllowedProtocols.get_allowed_protocol_by_id,
+    allowed_protocols.AllowedProtocols.get_allowed_protocol_by_name,
     allowed_protocols.AllowedProtocols.get_allowed_protocols_generator,
-  - Paths used are get /ers/config/allowedprotocols, get /ers/config/allowedprotocols/name/{name}, get /ers/config/allowedprotocols/{id},
+  - Paths used are
+    get /ers/config/allowedprotocols,
+    get /ers/config/allowedprotocols/name/{name},
+    get /ers/config/allowedprotocols/{id},
 """
 
 EXAMPLES = r"""

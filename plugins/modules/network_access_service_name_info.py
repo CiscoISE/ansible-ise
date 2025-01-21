@@ -23,8 +23,10 @@ seealso:
     description: Complete reference of the Network Access - Service Names API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are network_access_service_names.NetworkAccessServiceNames.get_network_access_service_names,
-  - Paths used are get /network-access/service-names,
+  - SDK Method used are
+    network_access_service_names.NetworkAccessServiceNames.get_network_access_service_names,
+  - Paths used are
+    get /network-access/service-names,
 """
 
 EXAMPLES = r"""

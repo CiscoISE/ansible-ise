@@ -18,8 +18,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are provider.Provider.reregister_service,
-  - Paths used are post /control/ServiceReregister,
+  - SDK Method used are
+    provider.Provider.reregister_service,
+  - Paths used are
+    post /control/ServiceReregister,
 """
 
 EXAMPLES = r"""

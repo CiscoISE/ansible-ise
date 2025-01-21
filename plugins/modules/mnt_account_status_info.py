@@ -26,8 +26,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are misc.Misc.get_account_status_by_mac,
-  - Paths used are get /AcctStatus/MACAddress/{mac}/{duration},
+  - SDK Method used are
+    misc.Misc.get_account_status_by_mac,
+  - Paths used are
+    get /AcctStatus/MACAddress/{mac}/{duration},
 """
 
 EXAMPLES = r"""

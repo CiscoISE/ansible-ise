@@ -19,8 +19,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are px_grid_direct.PxGridDirect.getpxgrid_direct_dictionary_references,
-  - Paths used are get /api/v1/pxgrid-direct/dictionary-references,
+  - SDK Method used are
+    px_grid_direct.PxGridDirect.getpxgrid_direct_dictionary_references,
+  - Paths used are
+    get /api/v1/pxgrid-direct/dictionary-references,
 """
 
 EXAMPLES = r"""

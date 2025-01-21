@@ -18,8 +18,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are session_directory.SessionDirectory.get_sessions,
-  - Paths used are post /ise/session/getSessions,
+  - SDK Method used are
+    session_directory.SessionDirectory.get_sessions,
+  - Paths used are
+    post /ise/session/getSessions,
 """
 
 EXAMPLES = r"""

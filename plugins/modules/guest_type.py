@@ -28,8 +28,8 @@ options:
         elements: dict
         suboptions:
           days:
-            description: List of Days Values should be one of Week day. Allowed values are - Sunday, - Monday, - Tuesday, - Wednesday, -
-              Thursday, - Friday, - Saturday.
+            description: List of Days Values should be one of Week day. Allowed values are - Sunday, - Monday, - Tuesday, - Wednesday, - Thursday,
+              - Friday, - Saturday.
             elements: str
             type: list
           endTime:
@@ -119,8 +119,14 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are guest_type.GuestType.create_guest_type, guest_type.GuestType.delete_guest_type_by_id, guest_type.GuestType.update_guest_type_by_id,
-  - Paths used are post /ers/config/guesttype, delete /ers/config/guesttype/{id}, put /ers/config/guesttype/{id},
+  - SDK Method used are
+    guest_type.GuestType.create_guest_type,
+    guest_type.GuestType.delete_guest_type_by_id,
+    guest_type.GuestType.update_guest_type_by_id,
+  - Paths used are
+    post /ers/config/guesttype,
+    delete /ers/config/guesttype/{id},
+    put /ers/config/guesttype/{id},
 """
 
 EXAMPLES = r"""

@@ -37,8 +37,12 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are guest_user.GuestUser.suspend_guest_user_by_id, guest_user.GuestUser.suspend_guest_user_by_name,
-  - Paths used are put /ers/config/guestuser/suspend/name/{name}, put /ers/config/guestuser/suspend/{id},
+  - SDK Method used are
+    guest_user.GuestUser.suspend_guest_user_by_id,
+    guest_user.GuestUser.suspend_guest_user_by_name,
+  - Paths used are
+    put /ers/config/guestuser/suspend/name/{name},
+    put /ers/config/guestuser/suspend/{id},
 """
 
 EXAMPLES = r"""

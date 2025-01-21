@@ -16,16 +16,18 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   password:
-    description: 'Password for dataconnect user. Password must satisfy the following criteria - Contains at least one uppercase letter A-Z,
-      Contains at least one lowercase letter a-z, Contains at least one digit 0-9, Contains at least one special character #$%&*+,-. ;=?^_~,
-      Has at least 12 characters, Has not more than 30 characters.'
+    description: 'Password for dataconnect user. Password must satisfy the following criteria - Contains at least one uppercase letter A-Z, Contains
+      at least one lowercase letter a-z, Contains at least one digit 0-9, Contains at least one special character #$%&*+,-. ;=?^_~, Has at least
+      12 characters, Has not more than 30 characters.'
     type: str
 requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are dataconnect_services.DataconnectServices.update_dataconnect_password,
-  - Paths used are put /api/v1/mnt/data-connect/settings/password,
+  - SDK Method used are
+    dataconnect_services.DataconnectServices.update_dataconnect_password,
+  - Paths used are
+    put /api/v1/mnt/data-connect/settings/password,
 """
 
 EXAMPLES = r"""

@@ -44,8 +44,14 @@ seealso:
     description: Complete reference of the nbarApp API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!trustsec-openapi
 notes:
-  - SDK Method used are nbar_app.NbarApp.create_nbar_app, nbar_app.NbarApp.delete_nbar_app_by_id, nbar_app.NbarApp.update_nbar_app_by_id,
-  - Paths used are post /api/v1/trustsec/sgacl/nbarapp, delete /api/v1/trustsec/sgacl/nbarapp/{id}, put /api/v1/trustsec/sgacl/nbarapp/{id},
+  - SDK Method used are
+    nbar_app.NbarApp.create_nbar_app,
+    nbar_app.NbarApp.delete_nbar_app_by_id,
+    nbar_app.NbarApp.update_nbar_app_by_id,
+  - Paths used are
+    post /api/v1/trustsec/sgacl/nbarapp,
+    delete /api/v1/trustsec/sgacl/nbarapp/{id},
+    put /api/v1/trustsec/sgacl/nbarapp/{id},
 """
 
 EXAMPLES = r"""

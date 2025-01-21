@@ -22,8 +22,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are px_grid_node.PxGridNode.approve_px_grid_node,
-  - Paths used are put /ers/config/pxgridnode/name/{name}/approve,
+  - SDK Method used are
+    px_grid_node.PxGridNode.approve_px_grid_node,
+  - Paths used are
+    put /ers/config/pxgridnode/name/{name}/approve,
 """
 
 EXAMPLES = r"""

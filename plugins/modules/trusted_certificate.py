@@ -96,8 +96,12 @@ seealso:
     description: Complete reference of the Certificates API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
 notes:
-  - SDK Method used are certificates.Certificates.delete_trusted_certificate_by_id, certificates.Certificates.update_trusted_certificate,
-  - Paths used are delete /api/v1/certs/trusted-certificate/{id}, put /api/v1/certs/trusted-certificate/{id},
+  - SDK Method used are
+    certificates.Certificates.delete_trusted_certificate_by_id,
+    certificates.Certificates.update_trusted_certificate,
+  - Paths used are
+    delete /api/v1/certs/trusted-certificate/{id},
+    put /api/v1/certs/trusted-certificate/{id},
 """
 
 EXAMPLES = r"""

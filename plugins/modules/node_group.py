@@ -10,8 +10,8 @@ short_description: Resource module for Node Group
 description:
   - Manage operations create, update and delete of the resource Node Group.
   - This API creates a node group in the cluster. A node group is a group of PSNs,.
-  - Delete an existing node group in the cluster. Deleting the node group does not delete the nodes, but failover is no longer carried out
-    among the nodes.
+  - Delete an existing node group in the cluster. Deleting the node group does not delete the nodes, but failover is no longer carried out among
+    the nodes.
   - Update an existing node group.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -54,8 +54,14 @@ seealso:
     description: Complete reference of the Node Group API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!deployment-openapi
 notes:
-  - SDK Method used are node_group.NodeGroup.create_node_group, node_group.NodeGroup.delete_node_group, node_group.NodeGroup.update_node_group,
-  - Paths used are post /api/v1/deployment/node-group, delete /api/v1/deployment/node-group/{nodeGroupName}, put /api/v1/deployment/node-group/{nodeGroupName},
+  - SDK Method used are
+    node_group.NodeGroup.create_node_group,
+    node_group.NodeGroup.delete_node_group,
+    node_group.NodeGroup.update_node_group,
+  - Paths used are
+    post /api/v1/deployment/node-group,
+    delete /api/v1/deployment/node-group/{nodeGroupName},
+    put /api/v1/deployment/node-group/{nodeGroupName},
 """
 
 EXAMPLES = r"""

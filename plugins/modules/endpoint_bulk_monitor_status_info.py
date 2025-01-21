@@ -23,8 +23,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are endpoint.Endpoint.monitor_bulk_status_endpoint,
-  - Paths used are get /ers/config/endpoint/bulk/{bulkid},
+  - SDK Method used are
+    endpoint.Endpoint.monitor_bulk_status_endpoint,
+  - Paths used are
+    get /ers/config/endpoint/bulk/{bulkid},
 """
 
 EXAMPLES = r"""

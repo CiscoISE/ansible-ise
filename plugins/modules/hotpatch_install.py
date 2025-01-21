@@ -10,10 +10,9 @@ short_description: Resource module for Hotpatch Install
 description:
   - Manage operation create of the resource Hotpatch Install.
   - >
-    Triggers hot patch installation on the Cisco ISE node. A task ID is returned which can be used to monitor the progress of the hot patch
-    installation process. As hot patch installation triggers the Cisco ISE to restart, the task API becomes unavailable for a certain period
-    of time. For installation of hotpatch on secondary nodes, request needs to be sent to individual node instead of the Primary Administration
-    Node.
+    Triggers hot patch installation on the Cisco ISE node. A task ID is returned which can be used to monitor the progress of the hot patch installation
+    process. As hot patch installation triggers the Cisco ISE to restart, the task API becomes unavailable for a certain period of time. For installation
+    of hotpatch on secondary nodes, request needs to be sent to individual node instead of the Primary Administration Node.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -36,8 +35,10 @@ seealso:
     description: Complete reference of the Patching API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!patch-and-hot-patch-openapi
 notes:
-  - SDK Method used are patching.Patching.install_hotpatch,
-  - Paths used are post /api/v1/hotpatch/install,
+  - SDK Method used are
+    patching.Patching.install_hotpatch,
+  - Paths used are
+    post /api/v1/hotpatch/install,
 """
 
 EXAMPLES = r"""

@@ -18,8 +18,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are misc.Misc.get_posture_count,
-  - Paths used are get /Session/PostureCount,
+  - SDK Method used are
+    misc.Misc.get_posture_count,
+  - Paths used are
+    get /Session/PostureCount,
 """
 
 EXAMPLES = r"""

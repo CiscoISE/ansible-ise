@@ -9,8 +9,8 @@ module: backup_restore
 short_description: Resource module for Backup RESTore
 description:
   - Manage operation create of the resource Backup RESTore.
-  - Triggers a configuration DB restore job on the ISE node. The API returns the task ID. Use the Task Service status API to get the status
-    of the backup job.
+  - Triggers a configuration DB restore job on the ISE node. The API returns the task ID. Use the Task Service status API to get the status of
+    the backup job.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -36,8 +36,10 @@ seealso:
     description: Complete reference of the Backup And Restore API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!backup-and-restore-open-api
 notes:
-  - SDK Method used are backup_and_restore.BackupAndRestore.restore_config_backup,
-  - Paths used are post /api/v1/backup-restore/config/restore,
+  - SDK Method used are
+    backup_and_restore.BackupAndRestore.restore_config_backup,
+  - Paths used are
+    post /api/v1/backup-restore/config/restore,
 """
 
 EXAMPLES = r"""

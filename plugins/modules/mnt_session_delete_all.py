@@ -18,8 +18,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are misc.Misc.delete_all_sessions,
-  - Paths used are delete /Session/Delete/All,
+  - SDK Method used are
+    misc.Misc.delete_all_sessions,
+  - Paths used are
+    delete /Session/Delete/All,
 """
 
 EXAMPLES = r"""

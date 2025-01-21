@@ -89,8 +89,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are aci_settings.AciSettings.update_aci_settings_by_id,
-  - Paths used are put /ers/config/acisettings/{id},
+  - SDK Method used are
+    aci_settings.AciSettings.update_aci_settings_by_id,
+  - Paths used are
+    put /ers/config/acisettings/{id},
 """
 
 EXAMPLES = r"""

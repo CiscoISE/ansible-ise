@@ -28,8 +28,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are support_bundle_download.SupportBundleDownload.download_support_bundle,
-  - Paths used are put /ers/config/supportbundledownload,
+  - SDK Method used are
+    support_bundle_download.SupportBundleDownload.download_support_bundle,
+  - Paths used are
+    put /ers/config/supportbundledownload,
 """
 
 EXAMPLES = r"""

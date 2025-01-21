@@ -23,8 +23,10 @@ seealso:
     description: Complete reference of the Network Access - Dictionary Attributes List API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are network_access_dictionary_attributes_list.NetworkAccessDictionaryAttributesList.get_network_access_dictionaries_authentication,
-  - Paths used are get /network-access/dictionaries/authentication,
+  - SDK Method used are
+    network_access_dictionary_attributes_list.NetworkAccessDictionaryAttributesList.get_network_access_dictionaries_authentication,
+  - Paths used are
+    get /network-access/dictionaries/authentication,
 """
 
 EXAMPLES = r"""

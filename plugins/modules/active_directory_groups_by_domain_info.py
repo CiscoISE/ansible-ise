@@ -34,8 +34,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are active_directory.ActiveDirectory.get_groups_by_domain,
-  - Paths used are put /ers/config/activedirectory/{id}/getGroupsByDomain,
+  - SDK Method used are
+    active_directory.ActiveDirectory.get_groups_by_domain,
+  - Paths used are
+    put /ers/config/activedirectory/{id}/getGroupsByDomain,
 """
 
 EXAMPLES = r"""

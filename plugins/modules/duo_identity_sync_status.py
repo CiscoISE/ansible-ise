@@ -64,8 +64,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are duo_identity_sync.DuoIdentitySync.update_status,
-  - Paths used are put /api/v1/duo-identitysync/identitysync/status/{syncName},
+  - SDK Method used are
+    duo_identity_sync.DuoIdentitySync.update_status,
+  - Paths used are
+    put /api/v1/duo-identitysync/identitysync/status/{syncName},
 """
 
 EXAMPLES = r"""

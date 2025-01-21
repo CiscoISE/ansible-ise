@@ -27,8 +27,10 @@ seealso:
     description: Complete reference of the Node Deployment API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!deployment-openapi
 notes:
-  - SDK Method used are node_deployment.NodeDeployment.make_primary,
-  - Paths used are post /api/v1/deployment/primary,
+  - SDK Method used are
+    node_deployment.NodeDeployment.make_primary,
+  - Paths used are
+    post /api/v1/deployment/primary,
 """
 
 EXAMPLES = r"""

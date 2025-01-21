@@ -33,8 +33,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are guest_user.GuestUser.change_sponsor_password,
-  - Paths used are put /ers/config/guestuser/changeSponsorPassword/{portalId},
+  - SDK Method used are
+    guest_user.GuestUser.change_sponsor_password,
+  - Paths used are
+    put /ers/config/guestuser/changeSponsorPassword/{portalId},
 """
 
 EXAMPLES = r"""

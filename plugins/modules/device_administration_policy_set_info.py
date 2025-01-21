@@ -29,8 +29,12 @@ seealso:
     description: Complete reference of the Device Administration - Policy Set API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are device_administration_policy_set.DeviceAdministrationPolicySet.get_device_admin_policy_set_by_id, device_administration_policy_set.DeviceAdministrationPolicySet.get_device_admin_policy_sets,
-  - Paths used are get /device-admin/policy-set, get /device-admin/policy-set/{id},
+  - SDK Method used are
+    device_administration_policy_set.DeviceAdministrationPolicySet.get_device_admin_policy_set_by_id,
+    device_administration_policy_set.DeviceAdministrationPolicySet.get_device_admin_policy_sets,
+  - Paths used are
+    get /device-admin/policy-set,
+    get /device-admin/policy-set/{id},
 """
 
 EXAMPLES = r"""

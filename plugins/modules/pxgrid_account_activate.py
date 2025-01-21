@@ -21,8 +21,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are consumer.Consumer.activate_account,
-  - Paths used are post /control/AccountActivate,
+  - SDK Method used are
+    consumer.Consumer.activate_account,
+  - Paths used are
+    post /control/AccountActivate,
 """
 
 EXAMPLES = r"""

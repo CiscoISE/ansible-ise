@@ -18,8 +18,7 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   cliDnisList:
-    description: <p>This field should contain a Caller ID (CLI), comma, and Called ID (DNIS).<br> Line format - Caller ID (CLI), Called ID
-      (DNIS)</p>.
+    description: <p>This field should contain a Caller ID (CLI), comma, and Called ID (DNIS).<br> Line format - Caller ID (CLI), Called ID (DNIS)</p>.
     elements: str
     type: list
   conditionType:
@@ -29,21 +28,21 @@ options:
     description: Network Access Network Condition's description.
     type: str
   deviceGroupList:
-    description: <p>This field should contain a tuple with NDG Root, comma, and an NDG (that it under the root).<br> Line format - NDG Root
-      Name, NDG, Port</p>.
+    description: <p>This field should contain a tuple with NDG Root, comma, and an NDG (that it under the root).<br> Line format - NDG Root Name,
+      NDG, Port</p>.
     elements: str
     type: list
   deviceList:
-    description: <p>This field should contain Device Name. The device name must be the same as the name field in a Network Device object.
-      Line format - Device Name</p>.
+    description: <p>This field should contain Device Name. The device name must be the same as the name field in a Network Device object. Line
+      format - Device Name</p>.
     elements: str
     type: list
   id:
     description: Network Access Network Condition's id.
     type: str
   ipAddrList:
-    description: <p>This field should contain IP address or subnet.<br> IP address can be IPV4 format (n.n.n.n) or IPV6 format (n n n n n
-      n n n).<br> IP subnet can be IPV4 format (n.n.n.n/m) or IPV6 format (n n n n n n n n/m).<br> Line format - IP Address or subnet</p>.
+    description: <p>This field should contain IP address or subnet.<br> IP address can be IPV4 format (n.n.n.n) or IPV6 format (n n n n n n n
+      n).<br> IP subnet can be IPV4 format (n.n.n.n/m) or IPV6 format (n n n n n n n n/m).<br> Line format - IP Address or subnet</p>.
     elements: str
     type: list
   link:
@@ -61,8 +60,8 @@ options:
     type: dict
   macAddrList:
     description: <p>This field should contain Endstation MAC address, comma, and Destination MAC addresses.<br> Each Max address must include
-      twelve hexadecimal digits using formats nn nn nn nn nn nn or nn-nn-nn-nn-nn-nn or nnnn.nnnn.nnnn or nnnnnnnnnnnn.<br> Line format -
-      Endstation MAC,Destination MAC </p>.
+      twelve hexadecimal digits using formats nn nn nn nn nn nn or nn-nn-nn-nn-nn-nn or nnnn.nnnn.nnnn or nnnnnnnnnnnn.<br> Line format - Endstation
+      MAC,Destination MAC </p>.
     elements: str
     type: list
   name:
@@ -76,9 +75,14 @@ seealso:
     description: Complete reference of the Network Access - Network Conditions API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are network_access_network_conditions.NetworkAccessNetworkConditions.create_network_access_network_condition, network_access_network_conditions.NetworkAccessNetworkConditions.delete_network_access_network_condition_by_id,
+  - SDK Method used are
+    network_access_network_conditions.NetworkAccessNetworkConditions.create_network_access_network_condition,
+    network_access_network_conditions.NetworkAccessNetworkConditions.delete_network_access_network_condition_by_id,
     network_access_network_conditions.NetworkAccessNetworkConditions.update_network_access_network_condition_by_id,
-  - Paths used are post /network-access/network-condition, delete /network-access/network-condition/{id}, put /network-access/network-condition/{id},
+  - Paths used are
+    post /network-access/network-condition,
+    delete /network-access/network-condition/{id},
+    put /network-access/network-condition/{id},
 """
 
 EXAMPLES = r"""

@@ -87,8 +87,14 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are endpoints.Endpoints.create_end_point, endpoints.Endpoints.delete_endpoint, endpoints.Endpoints.update_endpoint,
-  - Paths used are post /api/v1/endpoint, delete /api/v1/endpoint/{value}, put /api/v1/endpoint/{value},
+  - SDK Method used are
+    endpoints.Endpoints.create_end_point,
+    endpoints.Endpoints.delete_endpoint,
+    endpoints.Endpoints.update_endpoint,
+  - Paths used are
+    post /api/v1/endpoint,
+    delete /api/v1/endpoint/{value},
+    put /api/v1/endpoint/{value},
 """
 
 EXAMPLES = r"""

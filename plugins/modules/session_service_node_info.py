@@ -43,9 +43,14 @@ seealso:
     description: Complete reference of the PsnNodeDetailsWithRadiusService API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sessionservicenode
 notes:
-  - SDK Method used are psn_node_details_with_radius_service.PsnNodeDetailsWithRadiusService.get_session_service_node_by_id, psn_node_details_with_radius_service.PsnNodeDetailsWithRadiusService.get_session_service_node_by_name,
+  - SDK Method used are
+    psn_node_details_with_radius_service.PsnNodeDetailsWithRadiusService.get_session_service_node_by_id,
+    psn_node_details_with_radius_service.PsnNodeDetailsWithRadiusService.get_session_service_node_by_name,
     psn_node_details_with_radius_service.PsnNodeDetailsWithRadiusService.get_session_service_node_generator,
-  - Paths used are get /ers/config/sessionservicenode, get /ers/config/sessionservicenode/name/{name}, get /ers/config/sessionservicenode/{id},
+  - Paths used are
+    get /ers/config/sessionservicenode,
+    get /ers/config/sessionservicenode/name/{name},
+    get /ers/config/sessionservicenode/{id},
 """
 
 EXAMPLES = r"""

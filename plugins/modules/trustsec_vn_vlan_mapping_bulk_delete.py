@@ -26,8 +26,10 @@ seealso:
     description: Complete reference of the vnVlanMapping API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!trustsec-openapi
 notes:
-  - SDK Method used are vn_vlan_mapping.VnVlanMapping.bulk_delete_vn_vlan_mappings,
-  - Paths used are post /api/v1/trustsec/vnvlanmapping/bulk/delete,
+  - SDK Method used are
+    vn_vlan_mapping.VnVlanMapping.bulk_delete_vn_vlan_mappings,
+  - Paths used are
+    post /api/v1/trustsec/vnvlanmapping/bulk/delete,
 """
 
 EXAMPLES = r"""

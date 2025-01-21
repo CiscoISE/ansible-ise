@@ -51,9 +51,14 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are tacacs_command_sets.TacacsCommandSets.create_tacacs_command_sets, tacacs_command_sets.TacacsCommandSets.delete_tacacs_command_sets_by_id,
+  - SDK Method used are
+    tacacs_command_sets.TacacsCommandSets.create_tacacs_command_sets,
+    tacacs_command_sets.TacacsCommandSets.delete_tacacs_command_sets_by_id,
     tacacs_command_sets.TacacsCommandSets.update_tacacs_command_sets_by_id,
-  - Paths used are post /ers/config/tacacscommandsets, delete /ers/config/tacacscommandsets/{id}, put /ers/config/tacacscommandsets/{id},
+  - Paths used are
+    post /ers/config/tacacscommandsets,
+    delete /ers/config/tacacscommandsets/{id},
+    put /ers/config/tacacscommandsets/{id},
 """
 
 EXAMPLES = r"""

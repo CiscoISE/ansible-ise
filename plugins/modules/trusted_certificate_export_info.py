@@ -39,8 +39,10 @@ seealso:
     description: Complete reference of the Certificates API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
 notes:
-  - SDK Method used are certificates.Certificates.export_trusted_certificate,
-  - Paths used are get /api/v1/certs/trusted-certificate/export/{id},
+  - SDK Method used are
+    certificates.Certificates.export_trusted_certificate,
+  - Paths used are
+    get /api/v1/certs/trusted-certificate/export/{id},
 """
 
 EXAMPLES = r"""

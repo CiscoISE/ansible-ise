@@ -18,8 +18,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are misc.Misc.get_profiler_count,
-  - Paths used are get /Session/ProfilerCount,
+  - SDK Method used are
+    misc.Misc.get_profiler_count,
+  - Paths used are
+    get /Session/ProfilerCount,
 """
 
 EXAMPLES = r"""

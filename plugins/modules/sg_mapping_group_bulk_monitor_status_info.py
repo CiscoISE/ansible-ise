@@ -27,8 +27,10 @@ seealso:
     description: Complete reference of the IPToSGTMappingGroup API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgmappinggroup
 notes:
-  - SDK Method used are ip_to_sgt_mapping_group.IpToSgtMappingGroup.monitor_bulk_status_ip_to_sgt_mapping_group,
-  - Paths used are get /ers/config/sgmappinggroup/bulk/{bulkid},
+  - SDK Method used are
+    ip_to_sgt_mapping_group.IpToSgtMappingGroup.monitor_bulk_status_ip_to_sgt_mapping_group,
+  - Paths used are
+    get /ers/config/sgmappinggroup/bulk/{bulkid},
 """
 
 EXAMPLES = r"""

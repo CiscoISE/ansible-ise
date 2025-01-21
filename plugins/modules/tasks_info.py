@@ -27,8 +27,12 @@ seealso:
     description: Complete reference of the tasks API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!task-service-openapi
 notes:
-  - SDK Method used are tasks.Tasks.get_task_status, tasks.Tasks.get_task_status_by_id,
-  - Paths used are get /api/v1/task, get /api/v1/task/{taskId},
+  - SDK Method used are
+    tasks.Tasks.get_task_status,
+    tasks.Tasks.get_task_status_by_id,
+  - Paths used are
+    get /api/v1/task,
+    get /api/v1/task/{taskId},
 """
 
 EXAMPLES = r"""

@@ -29,9 +29,12 @@ seealso:
     description: Complete reference of the Network Access - Authorization Global Exception Rules API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are network_access_authorization_global_exception_rules.NetworkAccessAuthorizationGlobalExceptionRules.get_network_access_policy_set_global_exception_rule_by_id,
+  - SDK Method used are
+    network_access_authorization_global_exception_rules.NetworkAccessAuthorizationGlobalExceptionRules.get_network_access_policy_set_global_exception_rule_by_id,
     network_access_authorization_global_exception_rules.NetworkAccessAuthorizationGlobalExceptionRules.get_network_access_policy_set_global_exception_rules,
-  - Paths used are get /network-access/policy-set/global-exception, get /network-access/policy-set/global-exception/{id},
+  - Paths used are
+    get /network-access/policy-set/global-exception,
+    get /network-access/policy-set/global-exception/{id},
 """
 
 EXAMPLES = r"""

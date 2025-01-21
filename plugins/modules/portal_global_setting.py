@@ -25,8 +25,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are portal_global_setting.PortalGlobalSetting.update_portal_global_setting_by_id,
-  - Paths used are put /ers/config/portalglobalsetting/{id},
+  - SDK Method used are
+    portal_global_setting.PortalGlobalSetting.update_portal_global_setting_by_id,
+  - Paths used are
+    put /ers/config/portalglobalsetting/{id},
 """
 
 EXAMPLES = r"""

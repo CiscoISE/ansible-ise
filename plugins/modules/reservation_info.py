@@ -33,8 +33,12 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are sgt_range_reservation.SgtRangeReservation.get_sgt_reserved_range, sgt_range_reservation.SgtRangeReservation.get_sgt_reserved_ranges_generator,
-  - Paths used are get /api/v1/sgt/reservation, get /api/v1/sgt/reservation/{clientID},
+  - SDK Method used are
+    sgt_range_reservation.SgtRangeReservation.get_sgt_reserved_range,
+    sgt_range_reservation.SgtRangeReservation.get_sgt_reserved_ranges_generator,
+  - Paths used are
+    get /api/v1/sgt/reservation,
+    get /api/v1/sgt/reservation/{clientID},
 """
 
 EXAMPLES = r"""

@@ -28,8 +28,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are px_grid_direct.PxGridDirect.sync_now_connector,
-  - Paths used are post /api/v1/pxgrid-direct/syncnow,
+  - SDK Method used are
+    px_grid_direct.PxGridDirect.sync_now_connector,
+  - Paths used are
+    post /api/v1/pxgrid-direct/syncnow,
 """
 
 EXAMPLES = r"""

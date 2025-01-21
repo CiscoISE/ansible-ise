@@ -41,8 +41,10 @@ seealso:
     description: Complete reference of the proxy API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!system-settings-openapi
 notes:
-  - SDK Method used are proxy.Proxy.update_proxy_connection,
-  - Paths used are put /api/v1/system-settings/proxy,
+  - SDK Method used are
+    proxy.Proxy.update_proxy_connection,
+  - Paths used are
+    put /api/v1/system-settings/proxy,
 """
 
 EXAMPLES = r"""

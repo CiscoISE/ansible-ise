@@ -29,8 +29,10 @@ seealso:
     description: Complete reference of the Node Group API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!deployment-openapi
 notes:
-  - SDK Method used are node_group.NodeGroup.add_node,
-  - Paths used are post /api/v1/deployment/node-group/{nodeGroupName}/add-node,
+  - SDK Method used are
+    node_group.NodeGroup.add_node,
+  - Paths used are
+    post /api/v1/deployment/node-group/{nodeGroupName}/add-node,
 """
 
 EXAMPLES = r"""

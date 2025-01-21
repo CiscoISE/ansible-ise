@@ -30,8 +30,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are misc.Misc.get_authentication_status_by_mac,
-  - Paths used are get /AuthStatus/MACAddress/{MAC}/{SECONDS}/{RECORDS}/All,
+  - SDK Method used are
+    misc.Misc.get_authentication_status_by_mac,
+  - Paths used are
+    get /AuthStatus/MACAddress/{MAC}/{SECONDS}/{RECORDS}/All,
 """
 
 EXAMPLES = r"""

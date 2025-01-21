@@ -33,8 +33,12 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are support_bundle_status.SupportBundleStatus.get_support_bundle_status_by_id, support_bundle_status.SupportBundleStatus.get_support_bundle_status_generator,
-  - Paths used are get /ers/config/supportbundlestatus, get /ers/config/supportbundlestatus/{id},
+  - SDK Method used are
+    support_bundle_status.SupportBundleStatus.get_support_bundle_status_by_id,
+    support_bundle_status.SupportBundleStatus.get_support_bundle_status_generator,
+  - Paths used are
+    get /ers/config/supportbundlestatus,
+    get /ers/config/supportbundlestatus/{id},
 """
 
 EXAMPLES = r"""

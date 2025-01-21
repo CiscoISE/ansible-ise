@@ -25,8 +25,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are egress_matrix_cell.EgressMatrixCell.bulk_request_for_egress_matrix_cell,
-  - Paths used are put /ers/config/egressmatrixcell/bulk/submit,
+  - SDK Method used are
+    egress_matrix_cell.EgressMatrixCell.bulk_request_for_egress_matrix_cell,
+  - Paths used are
+    put /ers/config/egressmatrixcell/bulk/submit,
 """
 
 EXAMPLES = r"""

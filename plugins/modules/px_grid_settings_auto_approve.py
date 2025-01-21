@@ -25,8 +25,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are px_grid_settings.PxGridSettings.autoapprove_px_grid_settings,
-  - Paths used are put /ers/config/pxgridsettings/autoapprove,
+  - SDK Method used are
+    px_grid_settings.PxGridSettings.autoapprove_px_grid_settings,
+  - Paths used are
+    put /ers/config/pxgridsettings/autoapprove,
 """
 
 EXAMPLES = r"""

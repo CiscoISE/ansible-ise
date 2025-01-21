@@ -23,8 +23,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are egress_matrix_cell.EgressMatrixCell.monitor_bulk_status_egress_matrix_cell,
-  - Paths used are get /ers/config/egressmatrixcell/bulk/{bulkid},
+  - SDK Method used are
+    egress_matrix_cell.EgressMatrixCell.monitor_bulk_status_egress_matrix_cell,
+  - Paths used are
+    get /ers/config/egressmatrixcell/bulk/{bulkid},
 """
 
 EXAMPLES = r"""

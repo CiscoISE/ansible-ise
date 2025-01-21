@@ -34,8 +34,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are active_directory.ActiveDirectory.get_user_groups,
-  - Paths used are put /ers/config/activedirectory/{id}/getUserGroups,
+  - SDK Method used are
+    active_directory.ActiveDirectory.get_user_groups,
+  - Paths used are
+    put /ers/config/activedirectory/{id}/getUserGroups,
 """
 
 EXAMPLES = r"""

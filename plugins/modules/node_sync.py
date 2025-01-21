@@ -21,8 +21,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are sync_ise_node.SyncIseNode.sync_node,
-  - Paths used are post /api/v1/deployment/sync-node
+  - SDK Method used are
+    sync_ise_node.SyncIseNode.sync_node,
+  - Paths used are
+    post /api/v1/deployment/sync-node
 """
 
 EXAMPLES = r"""

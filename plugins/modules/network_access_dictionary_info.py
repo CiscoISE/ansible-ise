@@ -29,8 +29,12 @@ seealso:
     description: Complete reference of the Network Access - Dictionary API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are network_access_dictionary.NetworkAccessDictionary.get_network_access_dictionaries, network_access_dictionary.NetworkAccessDictionary.get_network_access_dictionary_by_name,
-  - Paths used are get /network-access/dictionaries, get /network-access/dictionaries/{name},
+  - SDK Method used are
+    network_access_dictionary.NetworkAccessDictionary.get_network_access_dictionaries,
+    network_access_dictionary.NetworkAccessDictionary.get_network_access_dictionary_by_name,
+  - Paths used are
+    get /network-access/dictionaries,
+    get /network-access/dictionaries/{name},
 """
 
 EXAMPLES = r"""

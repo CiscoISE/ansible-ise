@@ -54,9 +54,14 @@ seealso:
     description: Complete reference of the IdentitySequence API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!idstoresequence
 notes:
-  - SDK Method used are identity_sequence.IdentitySequence.create_identity_sequence, identity_sequence.IdentitySequence.delete_identity_sequence_by_id,
+  - SDK Method used are
+    identity_sequence.IdentitySequence.create_identity_sequence,
+    identity_sequence.IdentitySequence.delete_identity_sequence_by_id,
     identity_sequence.IdentitySequence.update_identity_sequence_by_id,
-  - Paths used are post /ers/config/idstoresequence, delete /ers/config/idstoresequence/{id}, put /ers/config/idstoresequence/{id},
+  - Paths used are
+    post /ers/config/idstoresequence,
+    delete /ers/config/idstoresequence/{id},
+    put /ers/config/idstoresequence/{id},
 """
 
 EXAMPLES = r"""

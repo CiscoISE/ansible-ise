@@ -60,8 +60,14 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are duo_mfa.DuoMfa.create_mfa, duo_mfa.DuoMfa.delete_mfa_by_connection_name, duo_mfa.DuoMfa.update_m_fa_by_connection_name,
-  - Paths used are post /api/v1/duo-mfa/mfa, delete /api/v1/duo-mfa/mfa/{connectionName}, put /api/v1/duo-mfa/mfa/{connectionName},
+  - SDK Method used are
+    duo_mfa.DuoMfa.create_mfa,
+    duo_mfa.DuoMfa.delete_mfa_by_connection_name,
+    duo_mfa.DuoMfa.update_m_fa_by_connection_name,
+  - Paths used are
+    post /api/v1/duo-mfa/mfa,
+    delete /api/v1/duo-mfa/mfa/{connectionName},
+    put /api/v1/duo-mfa/mfa/{connectionName},
 """
 
 EXAMPLES = r"""

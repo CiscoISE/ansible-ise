@@ -36,9 +36,14 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are sgt_range_reservation.SgtRangeReservation.delete_sgt_reserve_range, sgt_range_reservation.SgtRangeReservation.reserve_sgt_range,
+  - SDK Method used are
+    sgt_range_reservation.SgtRangeReservation.delete_sgt_reserve_range,
+    sgt_range_reservation.SgtRangeReservation.reserve_sgt_range,
     sgt_range_reservation.SgtRangeReservation.update_reserved_range,
-  - Paths used are post /api/v1/sgt/reservation/reserveRange, delete /api/v1/sgt/reservation/{clientID}, put /api/v1/sgt/reservation/{clientID},
+  - Paths used are
+    post /api/v1/sgt/reservation/reserveRange,
+    delete /api/v1/sgt/reservation/{clientID},
+    put /api/v1/sgt/reservation/{clientID},
 """
 
 EXAMPLES = r"""

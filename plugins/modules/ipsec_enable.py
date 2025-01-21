@@ -25,8 +25,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are native_ipsec.NativeIpsec.enable_ipsec_connection,
-  - Paths used are put /api/v1/ipsec/enable/{hostName}/{nadIp},
+  - SDK Method used are
+    native_ipsec.NativeIpsec.enable_ipsec_connection,
+  - Paths used are
+    put /api/v1/ipsec/enable/{hostName}/{nadIp},
 """
 
 EXAMPLES = r"""

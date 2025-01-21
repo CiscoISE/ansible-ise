@@ -19,8 +19,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are endpoint.Endpoint.get_rejected_endpoints,
-  - Paths used are get /ers/config/endpoint/getrejectedendpoints,
+  - SDK Method used are
+    endpoint.Endpoint.get_rejected_endpoints,
+  - Paths used are
+    get /ers/config/endpoint/getrejectedendpoints,
 """
 
 EXAMPLES = r"""

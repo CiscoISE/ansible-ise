@@ -18,8 +18,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are session_directory.SessionDirectory.get_sessions_for_recovery,
-  - Paths used are post /ise/session/getSessionsForRecovery,
+  - SDK Method used are
+    session_directory.SessionDirectory.get_sessions_for_recovery,
+  - Paths used are
+    post /ise/session/getSessionsForRecovery,
 """
 
 EXAMPLES = r"""

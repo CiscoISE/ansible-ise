@@ -19,8 +19,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are aci_settings.AciSettings.test_aci_connectivity,
-  - Paths used are put /ers/config/acisettings/testACIConnectivity,
+  - SDK Method used are
+    aci_settings.AciSettings.test_aci_connectivity,
+  - Paths used are
+    put /ers/config/acisettings/testACIConnectivity,
 """
 
 EXAMPLES = r"""

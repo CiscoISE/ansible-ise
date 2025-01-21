@@ -22,8 +22,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are endpoint.Endpoint.deregister_endpoint,
-  - Paths used are put /ers/config/endpoint/{id}/deregister,
+  - SDK Method used are
+    endpoint.Endpoint.deregister_endpoint,
+  - Paths used are
+    put /ers/config/endpoint/{id}/deregister,
 """
 
 EXAMPLES = r"""

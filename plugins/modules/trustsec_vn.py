@@ -36,9 +36,14 @@ seealso:
     description: Complete reference of the virtualNetwork API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!trustsec-openapi
 notes:
-  - SDK Method used are virtual_network.VirtualNetwork.create_virtual_network, virtual_network.VirtualNetwork.delete_virtual_network_by_id,
+  - SDK Method used are
+    virtual_network.VirtualNetwork.create_virtual_network,
+    virtual_network.VirtualNetwork.delete_virtual_network_by_id,
     virtual_network.VirtualNetwork.update_virtual_network_by_id,
-  - Paths used are post /api/v1/trustsec/virtualnetwork, delete /api/v1/trustsec/virtualnetwork/{id}, put /api/v1/trustsec/virtualnetwork/{id},
+  - Paths used are
+    post /api/v1/trustsec/virtualnetwork,
+    delete /api/v1/trustsec/virtualnetwork/{id},
+    put /api/v1/trustsec/virtualnetwork/{id},
 """
 
 EXAMPLES = r"""

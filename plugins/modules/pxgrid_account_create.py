@@ -21,8 +21,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are consumer.Consumer.create_account,
-  - Paths used are post /control/AccountCreate,
+  - SDK Method used are
+    consumer.Consumer.create_account,
+  - Paths used are
+    post /control/AccountCreate,
 """
 
 EXAMPLES = r"""

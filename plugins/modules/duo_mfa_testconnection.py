@@ -39,15 +39,17 @@ options:
         type: str
     type: dict
   connectionName:
-    description: ConnectionName path parameter. This name is used to retrieve secret keys for testing connection of the specified Duo-MFA
-      configuration in case none are specified.
+    description: ConnectionName path parameter. This name is used to retrieve secret keys for testing connection of the specified Duo-MFA configuration
+      in case none are specified.
     type: str
 requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are duo_mfa.DuoMfa.test_connection,
-  - Paths used are post /api/v1/duo-mfa/mfa/testconnection/{connectionName},
+  - SDK Method used are
+    duo_mfa.DuoMfa.test_connection,
+  - Paths used are
+    post /api/v1/duo-mfa/mfa/testconnection/{connectionName},
 """
 
 EXAMPLES = r"""

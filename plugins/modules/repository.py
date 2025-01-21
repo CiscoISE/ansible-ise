@@ -49,8 +49,14 @@ seealso:
     description: Complete reference of the Repository API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!repository-openapi
 notes:
-  - SDK Method used are repository.Repository.create_repository, repository.Repository.delete_repository, repository.Repository.update_repository,
-  - Paths used are post /api/v1/repository, delete /api/v1/repository/{repositoryName}, put /api/v1/repository/{repositoryName},
+  - SDK Method used are
+    repository.Repository.create_repository,
+    repository.Repository.delete_repository,
+    repository.Repository.update_repository,
+  - Paths used are
+    post /api/v1/repository,
+    delete /api/v1/repository/{repositoryName},
+    put /api/v1/repository/{repositoryName},
 """
 
 EXAMPLES = r"""

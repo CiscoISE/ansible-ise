@@ -22,8 +22,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are user_equipment.UserEquipment.get_user_equipments_by_subscriber_id,
-  - Paths used are get /api/v1/fiveg/user-equipment/subscriber/{subscriberId},
+  - SDK Method used are
+    user_equipment.UserEquipment.get_user_equipments_by_subscriber_id,
+  - Paths used are
+    get /api/v1/fiveg/user-equipment/subscriber/{subscriberId},
 """
 
 EXAMPLES = r"""

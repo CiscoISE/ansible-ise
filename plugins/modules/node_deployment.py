@@ -48,8 +48,14 @@ seealso:
     description: Complete reference of the Node Deployment API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!deployment-openapi
 notes:
-  - SDK Method used are node_deployment.NodeDeployment.delete_node, node_deployment.NodeDeployment.register_node, node_deployment.NodeDeployment.update_node,
-  - Paths used are post /api/v1/deployment/node, delete /api/v1/deployment/node/{hostname}, put /api/v1/deployment/node/{hostname},
+  - SDK Method used are
+    node_deployment.NodeDeployment.delete_node,
+    node_deployment.NodeDeployment.register_node,
+    node_deployment.NodeDeployment.update_node,
+  - Paths used are
+    post /api/v1/deployment/node,
+    delete /api/v1/deployment/node/{hostname},
+    put /api/v1/deployment/node/{hostname},
 """
 
 EXAMPLES = r"""

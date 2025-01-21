@@ -49,9 +49,14 @@ seealso:
     description: Complete reference of the SecurityGroupsACLs API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgacl
 notes:
-  - SDK Method used are security_groups_acls.SecurityGroupsAcls.create_security_groups_acl, security_groups_acls.SecurityGroupsAcls.delete_security_groups_acl_by_id,
+  - SDK Method used are
+    security_groups_acls.SecurityGroupsAcls.create_security_groups_acl,
+    security_groups_acls.SecurityGroupsAcls.delete_security_groups_acl_by_id,
     security_groups_acls.SecurityGroupsAcls.update_security_groups_acl_by_id,
-  - Paths used are post /ers/config/sgacl, delete /ers/config/sgacl/{id}, put /ers/config/sgacl/{id},
+  - Paths used are
+    post /ers/config/sgacl,
+    delete /ers/config/sgacl/{id},
+    put /ers/config/sgacl/{id},
 """
 
 EXAMPLES = r"""

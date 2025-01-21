@@ -25,8 +25,12 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are duo_identity_sync.DuoIdentitySync.get_identitysync, duo_identity_sync.DuoIdentitySync.get_identitysync_by_sync_name,
-  - Paths used are get /api/v1/duo-identitysync/identitysync, get /api/v1/duo-identitysync/identitysync/{syncName},
+  - SDK Method used are
+    duo_identity_sync.DuoIdentitySync.get_identitysync,
+    duo_identity_sync.DuoIdentitySync.get_identitysync_by_sync_name,
+  - Paths used are
+    get /api/v1/duo-identitysync/identitysync,
+    get /api/v1/duo-identitysync/identitysync/{syncName},
 """
 
 EXAMPLES = r"""

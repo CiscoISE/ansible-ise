@@ -33,9 +33,12 @@ seealso:
     description: Complete reference of the Device Administration - Authentication Rules API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are device_administration_authentication_rules.DeviceAdministrationAuthenticationRules.get_device_admin_authentication_rule_by_id,
+  - SDK Method used are
+    device_administration_authentication_rules.DeviceAdministrationAuthenticationRules.get_device_admin_authentication_rule_by_id,
     device_administration_authentication_rules.DeviceAdministrationAuthenticationRules.get_device_admin_authentication_rules,
-  - Paths used are get /device-admin/policy-set/{policyId}/authentication, get /device-admin/policy-set/{policyId}/authentication/{id},
+  - Paths used are
+    get /device-admin/policy-set/{policyId}/authentication,
+    get /device-admin/policy-set/{policyId}/authentication/{id},
 """
 
 EXAMPLES = r"""

@@ -19,8 +19,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are native_ipsec.NativeIpsec.get_ip_sec_certificates,
-  - Paths used are get /api/v1/ipsec/certificates,
+  - SDK Method used are
+    native_ipsec.NativeIpsec.get_ip_sec_certificates,
+  - Paths used are
+    get /api/v1/ipsec/certificates,
 """
 
 EXAMPLES = r"""

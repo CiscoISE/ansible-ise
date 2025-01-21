@@ -25,8 +25,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are configuration.Configuration.update_configuration,
-  - Paths used are put /api/v1/lsd/updateLsdSettings,
+  - SDK Method used are
+    configuration.Configuration.update_configuration,
+  - Paths used are
+    put /api/v1/lsd/updateLsdSettings,
 """
 
 EXAMPLES = r"""

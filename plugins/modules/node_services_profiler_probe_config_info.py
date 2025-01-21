@@ -27,8 +27,10 @@ seealso:
     description: Complete reference of the Node Services API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!deployment-openapi
 notes:
-  - SDK Method used are node_services.NodeServices.get_profiler_probe_config,
-  - Paths used are get /api/v1/profile/{hostname},
+  - SDK Method used are
+    node_services.NodeServices.get_profiler_probe_config,
+  - Paths used are
+    get /api/v1/profile/{hostname},
 """
 
 EXAMPLES = r"""

@@ -23,8 +23,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are px_grid_direct.PxGridDirect.get_connector_config_sync_now_status,
-  - Paths used are get /api/v1/pxgrid-direct/syncNowStatus/{connectorName},
+  - SDK Method used are
+    px_grid_direct.PxGridDirect.get_connector_config_sync_now_status,
+  - Paths used are
+    get /api/v1/pxgrid-direct/syncNowStatus/{connectorName},
 """
 
 EXAMPLES = r"""

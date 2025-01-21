@@ -25,8 +25,12 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are px_grid_direct.PxGridDirect.get_connector_config, px_grid_direct.PxGridDirect.get_connector_config_by_connector_name,
-  - Paths used are get /api/v1/pxgrid-direct/connector-config, get /api/v1/pxgrid-direct/connector-config/{connectorName},
+  - SDK Method used are
+    px_grid_direct.PxGridDirect.get_connector_config,
+    px_grid_direct.PxGridDirect.get_connector_config_by_connector_name,
+  - Paths used are
+    get /api/v1/pxgrid-direct/connector-config,
+    get /api/v1/pxgrid-direct/connector-config/{connectorName},
 """
 
 EXAMPLES = r"""

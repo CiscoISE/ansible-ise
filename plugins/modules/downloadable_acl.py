@@ -36,9 +36,14 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are downloadable_acl.DownloadableAcl.create_downloadable_acl, downloadable_acl.DownloadableAcl.delete_downloadable_acl_by_id,
+  - SDK Method used are
+    downloadable_acl.DownloadableAcl.create_downloadable_acl,
+    downloadable_acl.DownloadableAcl.delete_downloadable_acl_by_id,
     downloadable_acl.DownloadableAcl.update_downloadable_acl_by_id,
-  - Paths used are post /ers/config/downloadableacl, delete /ers/config/downloadableacl/{id}, put /ers/config/downloadableacl/{id},
+  - Paths used are
+    post /ers/config/downloadableacl,
+    delete /ers/config/downloadableacl/{id},
+    put /ers/config/downloadableacl/{id},
 """
 
 EXAMPLES = r"""

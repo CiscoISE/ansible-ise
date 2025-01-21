@@ -23,8 +23,10 @@ seealso:
     description: Complete reference of the Device Administration - Command Set API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are device_administration_command_set.DeviceAdministrationCommandSet.get_device_admin_command_sets,
-  - Paths used are get /device-admin/command-sets,
+  - SDK Method used are
+    device_administration_command_set.DeviceAdministrationCommandSet.get_device_admin_command_sets,
+  - Paths used are
+    get /device-admin/command-sets,
 """
 
 EXAMPLES = r"""

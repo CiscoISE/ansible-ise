@@ -21,8 +21,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are consumer.Consumer.lookup_service,
-  - Paths used are post /control/ServiceLookup,
+  - SDK Method used are
+    consumer.Consumer.lookup_service,
+  - Paths used are
+    post /control/ServiceLookup,
 """
 
 EXAMPLES = r"""

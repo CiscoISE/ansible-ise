@@ -33,8 +33,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are active_directory.ActiveDirectory.leave_domain_with_all_nodes,
-  - Paths used are put /ers/config/activedirectory/{id}/leaveAllNodes,
+  - SDK Method used are
+    active_directory.ActiveDirectory.leave_domain_with_all_nodes,
+  - Paths used are
+    put /ers/config/activedirectory/{id}/leaveAllNodes,
 """
 
 EXAMPLES = r"""

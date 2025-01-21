@@ -9,8 +9,7 @@ module: backup_schedule_config
 short_description: Resource module for Backup Schedule Config
 description:
   - Manage operation create of the resource Backup Schedule Config.
-  - Schedules the configuration backup on the ISE node as per the input parameters. This API helps in creating the schedule for the first
-    time.
+  - Schedules the configuration backup on the ISE node as per the input parameters. This API helps in creating the schedule for the first time.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -59,8 +58,10 @@ seealso:
     description: Complete reference of the Backup And Restore API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!backup-and-restore-open-api
 notes:
-  - SDK Method used are backup_and_restore.BackupAndRestore.create_scheduled_config_backup,
-  - Paths used are post /api/v1/backup-restore/config/schedule-config-backup,
+  - SDK Method used are
+    backup_and_restore.BackupAndRestore.create_scheduled_config_backup,
+  - Paths used are
+    post /api/v1/backup-restore/config/schedule-config-backup,
 """
 
 EXAMPLES = r"""

@@ -23,8 +23,10 @@ seealso:
     description: Complete reference of the Device Administration - Identity Stores API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are device_administration_identity_stores.DeviceAdministrationIdentityStores.get_device_admin_identity_stores,
-  - Paths used are get /device-admin/identity-stores,
+  - SDK Method used are
+    device_administration_identity_stores.DeviceAdministrationIdentityStores.get_device_admin_identity_stores,
+  - Paths used are
+    get /device-admin/identity-stores,
 """
 
 EXAMPLES = r"""

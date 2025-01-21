@@ -22,8 +22,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are dataconnect_services.DataconnectServices.set_data_connect_service,
-  - Paths used are put /api/v1/mnt/data-connect/settings/status,
+  - SDK Method used are
+    dataconnect_services.DataconnectServices.set_data_connect_service,
+  - Paths used are
+    put /api/v1/mnt/data-connect/settings/status,
 """
 
 EXAMPLES = r"""

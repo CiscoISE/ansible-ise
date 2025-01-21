@@ -60,9 +60,13 @@ seealso:
     description: Complete reference of the Network Access - Dictionary Attribute API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are network_access_dictionary_attribute.NetworkAccessDictionaryAttribute.create_network_access_dictionary_attribute,
-    network_access_dictionary_attribute.NetworkAccessDictionaryAttribute.delete_network_access_dictionary_attribute_by_name, network_access_dictionary_attribute.NetworkAccessDictionaryAttribute.update_network_access_dictionary_attribute_by_name,
-  - Paths used are post /network-access/dictionaries/{dictionaryName}/attribute, delete /network-access/dictionaries/{dictionaryName}/attribute/{name},
+  - SDK Method used are
+    network_access_dictionary_attribute.NetworkAccessDictionaryAttribute.create_network_access_dictionary_attribute,
+    network_access_dictionary_attribute.NetworkAccessDictionaryAttribute.delete_network_access_dictionary_attribute_by_name,
+    network_access_dictionary_attribute.NetworkAccessDictionaryAttribute.update_network_access_dictionary_attribute_by_name,
+  - Paths used are
+    post /network-access/dictionaries/{dictionaryName}/attribute,
+    delete /network-access/dictionaries/{dictionaryName}/attribute/{name},
     put /network-access/dictionaries/{dictionaryName}/attribute/{name},
 """
 

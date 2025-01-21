@@ -33,8 +33,12 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are radius_server_sequence.RadiusServerSequence.get_radius_server_sequence_by_id, radius_server_sequence.RadiusServerSequence.get_radius_server_sequence_generator,
-  - Paths used are get /ers/config/radiusserversequence, get /ers/config/radiusserversequence/{id},
+  - SDK Method used are
+    radius_server_sequence.RadiusServerSequence.get_radius_server_sequence_by_id,
+    radius_server_sequence.RadiusServerSequence.get_radius_server_sequence_generator,
+  - Paths used are
+    get /ers/config/radiusserversequence,
+    get /ers/config/radiusserversequence/{id},
 """
 
 EXAMPLES = r"""

@@ -38,8 +38,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are misc.Misc.session_disconnect,
-  - Paths used are get /CoA/Disconnect/{PSN_NAME}/{MAC}/{DISCONNECT_TYPE}/{NAS_IPV4}/{{ENDPOINT_IP}},
+  - SDK Method used are
+    misc.Misc.session_disconnect,
+  - Paths used are
+    get /CoA/Disconnect/{PSN_NAME}/{MAC}/{DISCONNECT_TYPE}/{NAS_IPV4}/{{ENDPOINT_IP}},
 """
 
 EXAMPLES = r"""

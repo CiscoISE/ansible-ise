@@ -11,8 +11,8 @@ description:
   - Manage operation create of the resource Hotpatch Rollback.
   - >
     Triggers hot patch rollback on the Cisco ISE node. A task ID is returned which can be used to monitor the progress of the hot patch rollback
-    process. As hot patch rollback triggers the Cisco ISE to restart, the task API becomes unavailable for a certain period of time. For
-    rollback of hotpatch on secondary nodes , request needs to be sent on individual node instead of the Primary Administration Node.
+    process. As hot patch rollback triggers the Cisco ISE to restart, the task API becomes unavailable for a certain period of time. For rollback
+    of hotpatch on secondary nodes , request needs to be sent on individual node instead of the Primary Administration Node.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -35,8 +35,10 @@ seealso:
     description: Complete reference of the Patching API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!patch-and-hot-patch-openapi
 notes:
-  - SDK Method used are patching.Patching.rollback_hotpatch,
-  - Paths used are post /api/v1/hotpatch/rollback,
+  - SDK Method used are
+    patching.Patching.rollback_hotpatch,
+  - Paths used are
+    post /api/v1/hotpatch/rollback,
 """
 
 EXAMPLES = r"""

@@ -29,8 +29,10 @@ seealso:
     description: Complete reference of the Certificates API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
 notes:
-  - SDK Method used are certificates.Certificates.delete_csr_by_id,
-  - Paths used are delete /api/v1/certs/certificate-signing-request/{hostName}/{id},
+  - SDK Method used are
+    certificates.Certificates.delete_csr_by_id,
+  - Paths used are
+    delete /api/v1/certs/certificate-signing-request/{hostName}/{id},
 """
 
 EXAMPLES = r"""

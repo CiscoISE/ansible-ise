@@ -26,8 +26,10 @@ seealso:
     description: Complete reference of the Node Deployment API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!deployment-openapi
 notes:
-  - SDK Method used are node_deployment.NodeDeployment.sync_node,
-  - Paths used are post /api/v1/deployment/sync-node/{hostname},
+  - SDK Method used are
+    node_deployment.NodeDeployment.sync_node,
+  - Paths used are
+    post /api/v1/deployment/sync-node/{hostname},
 """
 
 EXAMPLES = r"""

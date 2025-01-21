@@ -18,8 +18,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are profiler.Profiler.get_profiles,
-  - Paths used are post /ise/config/profiler/getProfiles,
+  - SDK Method used are
+    profiler.Profiler.get_profiles,
+  - Paths used are
+    post /ise/config/profiler/getProfiles,
 """
 
 EXAMPLES = r"""

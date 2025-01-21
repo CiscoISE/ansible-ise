@@ -48,9 +48,14 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are sxp_connections.SxpConnections.create_sxp_connections, sxp_connections.SxpConnections.delete_sxp_connections_by_id,
+  - SDK Method used are
+    sxp_connections.SxpConnections.create_sxp_connections,
+    sxp_connections.SxpConnections.delete_sxp_connections_by_id,
     sxp_connections.SxpConnections.update_sxp_connections_by_id,
-  - Paths used are post /ers/config/sxpconnections, delete /ers/config/sxpconnections/{id}, put /ers/config/sxpconnections/{id},
+  - Paths used are
+    post /ers/config/sxpconnections,
+    delete /ers/config/sxpconnections/{id},
+    put /ers/config/sxpconnections/{id},
 """
 
 EXAMPLES = r"""

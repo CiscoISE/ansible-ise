@@ -27,8 +27,10 @@ seealso:
     description: Complete reference of the SecurityGroupToVirtualNetwork API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgtvnvlan
 notes:
-  - SDK Method used are security_group_to_virtual_network.SecurityGroupToVirtualNetwork.monitor_bulk_status_security_groups_to_vn_to_vlan,
-  - Paths used are get /ers/config/sgtvnvlan/bulk/{bulkid},
+  - SDK Method used are
+    security_group_to_virtual_network.SecurityGroupToVirtualNetwork.monitor_bulk_status_security_groups_to_vn_to_vlan,
+  - Paths used are
+    get /ers/config/sgtvnvlan/bulk/{bulkid},
 """
 
 EXAMPLES = r"""

@@ -43,8 +43,10 @@ seealso:
     description: Complete reference of the Certificates API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
 notes:
-  - SDK Method used are certificates.Certificates.export_csr,
-  - Paths used are get /api/v1/certs/certificate-signing-request/export/{hostname}/{id},
+  - SDK Method used are
+    certificates.Certificates.export_csr,
+  - Paths used are
+    get /api/v1/certs/certificate-signing-request/export/{hostname}/{id},
 """
 
 EXAMPLES = r"""

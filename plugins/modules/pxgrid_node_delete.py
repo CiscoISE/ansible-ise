@@ -22,8 +22,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are px_grid_node.PxGridNode.delete_px_grid_node_by_name,
-  - Paths used are delete /ers/config/pxgridnode/name/{name},
+  - SDK Method used are
+    px_grid_node.PxGridNode.delete_px_grid_node_by_name,
+  - Paths used are
+    delete /ers/config/pxgridnode/name/{name},
 """
 
 EXAMPLES = r"""

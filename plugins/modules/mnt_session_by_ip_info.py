@@ -22,8 +22,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are misc.Misc.get_sessions_by_endpoint_ip,
-  - Paths used are get /Session/EndPointIPAddress/{endpoint_ipv4},
+  - SDK Method used are
+    misc.Misc.get_sessions_by_endpoint_ip,
+  - Paths used are
+    get /Session/EndPointIPAddress/{endpoint_ipv4},
 """
 
 EXAMPLES = r"""

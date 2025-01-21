@@ -41,8 +41,8 @@ options:
     description:
       - >
         Filter query parameter. **Simple filtering** should be available through the filter query string parameter. The structure of a filter
-        is a triplet of field operator and value separated with dots. More than one filter can be sent. The logical operator common to ALL
-        filter criteria will be by default AND, and can be changed by using the "filterType=or" query string parameter.
+        is a triplet of field operator and value separated with dots. More than one filter can be sent. The logical operator common to ALL filter
+        criteria will be by default AND, and can be changed by using the "filterType=or" query string parameter.
       - Each resource Data model description should specify if an attribute is a filtered field.
       - The 'EQ' operator describes 'Equals'.
       - The 'NEQ' operator describes 'Not Equals'.
@@ -59,15 +59,19 @@ options:
   filterType:
     description:
       - >
-        FilterType query parameter. The logical operator common to ALL filter criteria will be by default AND, and can be changed by using
-        the parameter.
+        FilterType query parameter. The logical operator common to ALL filter criteria will be by default AND, and can be changed by using the
+        parameter.
     type: str
 requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are guest_location.GuestLocation.get_guest_location_by_id, guest_location.GuestLocation.get_guest_location_generator,
-  - Paths used are get /ers/config/guestlocation, get /ers/config/guestlocation/{id},
+  - SDK Method used are
+    guest_location.GuestLocation.get_guest_location_by_id,
+    guest_location.GuestLocation.get_guest_location_generator,
+  - Paths used are
+    get /ers/config/guestlocation,
+    get /ers/config/guestlocation/{id},
 """
 
 EXAMPLES = r"""

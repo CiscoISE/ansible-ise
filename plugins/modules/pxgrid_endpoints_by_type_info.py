@@ -18,8 +18,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are mdm.Mdm.get_endpoints_by_type,
-  - Paths used are post /ise/mdm/getEndpointsByType,
+  - SDK Method used are
+    mdm.Mdm.get_endpoints_by_type,
+  - Paths used are
+    post /ise/mdm/getEndpointsByType,
 """
 
 EXAMPLES = r"""

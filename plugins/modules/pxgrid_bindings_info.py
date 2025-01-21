@@ -18,8 +18,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are trust_sec_sxp.TrustSecSxp.get_bindings,
-  - Paths used are post /ise/sxp/getBindings,
+  - SDK Method used are
+    trust_sec_sxp.TrustSecSxp.get_bindings,
+  - Paths used are
+    post /ise/sxp/getBindings,
 """
 
 EXAMPLES = r"""

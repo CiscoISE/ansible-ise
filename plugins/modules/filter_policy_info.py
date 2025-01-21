@@ -33,8 +33,12 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are filter_policy.FilterPolicy.get_filter_policy_by_id, filter_policy.FilterPolicy.get_filter_policy_generator,
-  - Paths used are get /ers/config/filterpolicy, get /ers/config/filterpolicy/{id},
+  - SDK Method used are
+    filter_policy.FilterPolicy.get_filter_policy_by_id,
+    filter_policy.FilterPolicy.get_filter_policy_generator,
+  - Paths used are
+    get /ers/config/filterpolicy,
+    get /ers/config/filterpolicy/{id},
 """
 
 EXAMPLES = r"""

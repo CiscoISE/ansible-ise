@@ -39,9 +39,14 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are certificate_profile.CertificateProfile.get_certificate_profile_by_id, certificate_profile.CertificateProfile.get_certificate_profile_by_name,
+  - SDK Method used are
+    certificate_profile.CertificateProfile.get_certificate_profile_by_id,
+    certificate_profile.CertificateProfile.get_certificate_profile_by_name,
     certificate_profile.CertificateProfile.get_certificate_profile_generator,
-  - Paths used are get /ers/config/certificateprofile, get /ers/config/certificateprofile/name/{name}, get /ers/config/certificateprofile/{id},
+  - Paths used are
+    get /ers/config/certificateprofile,
+    get /ers/config/certificateprofile/name/{name},
+    get /ers/config/certificateprofile/{id},
 """
 
 EXAMPLES = r"""

@@ -36,8 +36,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are guest_user.GuestUser.update_guest_user_email,
-  - Paths used are put /ers/config/guestuser/email/{id}/portalId/{portalId},
+  - SDK Method used are
+    guest_user.GuestUser.update_guest_user_email,
+  - Paths used are
+    put /ers/config/guestuser/email/{id}/portalId/{portalId},
 """
 
 EXAMPLES = r"""

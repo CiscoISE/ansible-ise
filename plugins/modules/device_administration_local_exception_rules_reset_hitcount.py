@@ -26,8 +26,10 @@ seealso:
     description: Complete reference of the Device Administration - Authorization Exception Rules API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are device_administration_authorization_exception_rules.DeviceAdministrationAuthorizationExceptionRules.reset_hit_counts_device_admin_local_exceptions,
-  - Paths used are post /device-admin/policy-set/{policyId}/exception/reset-hitcount,
+  - SDK Method used are
+    device_administration_authorization_exception_rules.DeviceAdministrationAuthorizationExceptionRules.reset_hit_counts_device_admin_local_exceptions,
+  - Paths used are
+    post /device-admin/policy-set/{policyId}/exception/reset-hitcount,
 """
 
 EXAMPLES = r"""

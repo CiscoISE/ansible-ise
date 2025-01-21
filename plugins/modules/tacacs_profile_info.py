@@ -39,8 +39,14 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are tacacs_profile.TacacsProfile.get_tacacs_profile_by_id, tacacs_profile.TacacsProfile.get_tacacs_profile_by_name, tacacs_profile.TacacsProfile.get_tacacs_profile_generator,
-  - Paths used are get /ers/config/tacacsprofile, get /ers/config/tacacsprofile/name/{name}, get /ers/config/tacacsprofile/{id},
+  - SDK Method used are
+    tacacs_profile.TacacsProfile.get_tacacs_profile_by_id,
+    tacacs_profile.TacacsProfile.get_tacacs_profile_by_name,
+    tacacs_profile.TacacsProfile.get_tacacs_profile_generator,
+  - Paths used are
+    get /ers/config/tacacsprofile,
+    get /ers/config/tacacsprofile/name/{name},
+    get /ers/config/tacacsprofile/{id},
 """
 
 EXAMPLES = r"""

@@ -18,8 +18,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are session_directory.SessionDirectory.get_session_by_mac_address,
-  - Paths used are post /ise/session/getSessionByMacAddress,
+  - SDK Method used are
+    session_directory.SessionDirectory.get_session_by_mac_address,
+  - Paths used are
+    post /ise/session/getSessionByMacAddress,
 """
 
 EXAMPLES = r"""

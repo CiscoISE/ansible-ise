@@ -48,8 +48,14 @@ seealso:
     description: Complete reference of the vnVlanMapping API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!trustsec-openapi
 notes:
-  - SDK Method used are vn_vlan_mapping.VnVlanMapping.create_vn_vlan_mapping, vn_vlan_mapping.VnVlanMapping.delete_vn_vlan_mapping, vn_vlan_mapping.VnVlanMapping.update_vn_vlan_mapping,
-  - Paths used are post /api/v1/trustsec/vnvlanmapping, delete /api/v1/trustsec/vnvlanmapping/{id}, put /api/v1/trustsec/vnvlanmapping/{id},
+  - SDK Method used are
+    vn_vlan_mapping.VnVlanMapping.create_vn_vlan_mapping,
+    vn_vlan_mapping.VnVlanMapping.delete_vn_vlan_mapping,
+    vn_vlan_mapping.VnVlanMapping.update_vn_vlan_mapping,
+  - Paths used are
+    post /api/v1/trustsec/vnvlanmapping,
+    delete /api/v1/trustsec/vnvlanmapping/{id},
+    put /api/v1/trustsec/vnvlanmapping/{id},
 """
 
 EXAMPLES = r"""

@@ -89,8 +89,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are native_ipsec.NativeIpsec.bulk_ip_sec_operation,
-  - Paths used are post /api/v1/ipsec/bulk,
+  - SDK Method used are
+    native_ipsec.NativeIpsec.bulk_ip_sec_operation,
+  - Paths used are
+    post /api/v1/ipsec/bulk,
 """
 
 EXAMPLES = r"""

@@ -23,8 +23,7 @@ options:
         elements: dict
         suboptions:
           defaultValue:
-            description: Required for each attribute in the attribute list. Can contain an empty string. All characters are allowed except
-              <%".
+            description: Required for each attribute in the attribute list. Can contain an empty string. All characters are allowed except <%".
             type: str
           internalName:
             description: Required for each attribute in the attribute list. All characters are allowed except <%".
@@ -50,12 +49,11 @@ options:
         elements: dict
         suboptions:
           name:
-            description: Required for each group in the group list with no duplication between groups. All characters are allowed except
-              %.
+            description: Required for each group in the group list with no duplication between groups. All characters are allowed except %.
             type: str
           sid:
-            description: Cisco ISE uses security identifiers (SIDs) for optimization of group membership evaluation. SIDs are useful for
-              efficiency (speed) when the groups are evaluated. All characters are allowed except %.
+            description: Cisco ISE uses security identifiers (SIDs) for optimization of group membership evaluation. SIDs are useful for efficiency
+              (speed) when the groups are evaluated. All characters are allowed except %.
             type: str
           type:
             description: No character restriction.
@@ -126,9 +124,9 @@ options:
         description: PlaintextAuth flag.
         type: bool
       rewriteRules:
-        description: Identity rewrite is an advanced feature that directs Cisco ISE to manipulate the identity before it is passed to the
-          external Active Directory system. You can create rules to change the identity to a desired format that includes or excludes a domain
-          prefix and/or suffix or other additional markup of your choice.
+        description: Identity rewrite is an advanced feature that directs Cisco ISE to manipulate the identity before it is passed to the external
+          Active Directory system. You can create rules to change the identity to a desired format that includes or excludes a domain prefix and/or
+          suffix or other additional markup of your choice.
         elements: dict
         suboptions:
           rewriteMatch:
@@ -142,9 +140,9 @@ options:
             type: int
         type: list
       schema:
-        description: Allowed values ACTIVE_DIRECTORY, CUSTOM. Choose ACTIVE_DIRECTORY schema when the AD attributes defined in AD can be
-          copied to relevant attributes in Cisco ISE. If customization is needed, choose CUSTOM schema. All User info attributes are always
-          set to default value if schema is ACTIVE_DIRECTORY. Values can be changed only for CUSTOM schema.
+        description: Allowed values ACTIVE_DIRECTORY, CUSTOM. Choose ACTIVE_DIRECTORY schema when the AD attributes defined in AD can be copied
+          to relevant attributes in Cisco ISE. If customization is needed, choose CUSTOM schema. All User info attributes are always set to default
+          value if schema is ACTIVE_DIRECTORY. Values can be changed only for CUSTOM schema.
         type: str
       stateOrProvince:
         description: User info attribute. All characters are allowed except %.
@@ -178,8 +176,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are active_directory.ActiveDirectory.load_groups_from_domain,
-  - Paths used are put /ers/config/activedirectory/{id}/addGroups,
+  - SDK Method used are
+    active_directory.ActiveDirectory.load_groups_from_domain,
+  - Paths used are
+    put /ers/config/activedirectory/{id}/addGroups,
 """
 
 EXAMPLES = r"""

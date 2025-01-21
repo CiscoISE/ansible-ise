@@ -21,8 +21,8 @@ options:
     type: bool
   certificateAttributeName:
     description: Attribute name of the Certificate Profile - used only when CERTIFICATE is chosen in usernameFrom. Allowed values - SUBJECT_COMMON_NAME
-      - SUBJECT_ALTERNATIVE_NAME - SUBJECT_SERIAL_NUMBER - SUBJECT - SUBJECT_ALTERNATIVE_NAME_OTHER_NAME - SUBJECT_ALTERNATIVE_NAME_EMAIL
-      - SUBJECT_ALTERNATIVE_NAME_DNS. - Additional internal value ALL_SUBJECT_AND_ALTERNATIVE_NAMES is used automatically when usernameFrom=UPN.
+      - SUBJECT_ALTERNATIVE_NAME - SUBJECT_SERIAL_NUMBER - SUBJECT - SUBJECT_ALTERNATIVE_NAME_OTHER_NAME - SUBJECT_ALTERNATIVE_NAME_EMAIL - SUBJECT_ALTERNATIVE_NAME_DNS.
+      - Additional internal value ALL_SUBJECT_AND_ALTERNATIVE_NAMES is used automatically when usernameFrom=UPN.
     type: str
   description:
     description: Certificate Profile's description.
@@ -40,16 +40,20 @@ options:
     description: Certificate Profile's name.
     type: str
   usernameFrom:
-    description: The attribute in the certificate where the user name should be taken from. Allowed values - CERTIFICATE (for a specific
-      attribute as defined in certificateAttributeName) - UPN (for using any Subject or Alternative Name Attributes in the Certificate -
-      an option only in AD).
+    description: The attribute in the certificate where the user name should be taken from. Allowed values - CERTIFICATE (for a specific attribute
+      as defined in certificateAttributeName) - UPN (for using any Subject or Alternative Name Attributes in the Certificate - an option only
+      in AD).
     type: str
 requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are certificate_profile.CertificateProfile.create_certificate_profile, certificate_profile.CertificateProfile.update_certificate_profile_by_id,
-  - Paths used are post /ers/config/certificateprofile, put /ers/config/certificateprofile/{id},
+  - SDK Method used are
+    certificate_profile.CertificateProfile.create_certificate_profile,
+    certificate_profile.CertificateProfile.update_certificate_profile_by_id,
+  - Paths used are
+    post /ers/config/certificateprofile,
+    put /ers/config/certificateprofile/{id},
 """
 
 EXAMPLES = r"""

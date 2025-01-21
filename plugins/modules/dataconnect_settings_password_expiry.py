@@ -22,8 +22,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are dataconnect_services.DataconnectServices.update_dataconnect_password_expiry,
-  - Paths used are put /api/v1/mnt/data-connect/settings/password/expiry,
+  - SDK Method used are
+    dataconnect_services.DataconnectServices.update_dataconnect_password_expiry,
+  - Paths used are
+    put /api/v1/mnt/data-connect/settings/password/expiry,
 """
 
 EXAMPLES = r"""

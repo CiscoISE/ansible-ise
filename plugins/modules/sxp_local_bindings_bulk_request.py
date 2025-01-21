@@ -25,8 +25,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are sxp_local_bindings.SxpLocalBindings.bulk_request_for_sxp_local_bindings,
-  - Paths used are put /ers/config/sxplocalbindings/bulk/submit,
+  - SDK Method used are
+    sxp_local_bindings.SxpLocalBindings.bulk_request_for_sxp_local_bindings,
+  - Paths used are
+    put /ers/config/sxplocalbindings/bulk/submit,
 """
 
 EXAMPLES = r"""

@@ -23,8 +23,10 @@ seealso:
     description: Complete reference of the Device Administration - Profiles API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are device_administration_profiles.DeviceAdministrationProfiles.get_device_admin_profiles,
-  - Paths used are get /device-admin/shell-profiles,
+  - SDK Method used are
+    device_administration_profiles.DeviceAdministrationProfiles.get_device_admin_profiles,
+  - Paths used are
+    get /device-admin/shell-profiles,
 """
 
 EXAMPLES = r"""

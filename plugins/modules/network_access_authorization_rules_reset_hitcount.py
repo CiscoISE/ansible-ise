@@ -26,8 +26,10 @@ seealso:
     description: Complete reference of the Network Access - Authorization Rules API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are network_access_authorization_rules.NetworkAccessAuthorizationRules.reset_hit_counts_network_access_authorization_rules,
-  - Paths used are post /network-access/policy-set/{policyId}/authorization/reset-hitcount,
+  - SDK Method used are
+    network_access_authorization_rules.NetworkAccessAuthorizationRules.reset_hit_counts_network_access_authorization_rules,
+  - Paths used are
+    post /network-access/policy-set/{policyId}/authorization/reset-hitcount,
 """
 
 EXAMPLES = r"""

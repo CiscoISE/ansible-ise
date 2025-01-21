@@ -33,8 +33,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are active_directory.ActiveDirectory.join_domain_with_all_nodes,
-  - Paths used are put /ers/config/activedirectory/{id}/joinAllNodes,
+  - SDK Method used are
+    active_directory.ActiveDirectory.join_domain_with_all_nodes,
+  - Paths used are
+    put /ers/config/activedirectory/{id}/joinAllNodes,
 """
 
 EXAMPLES = r"""

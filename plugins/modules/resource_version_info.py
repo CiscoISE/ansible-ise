@@ -23,8 +23,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are version_info.VersionInfo.get_version_info,
-  - Paths used are get /ers/config/{resource}/versioninfo,
+  - SDK Method used are
+    version_info.VersionInfo.get_version_info,
+  - Paths used are
+    get /ers/config/{resource}/versioninfo,
 """
 
 EXAMPLES = r"""

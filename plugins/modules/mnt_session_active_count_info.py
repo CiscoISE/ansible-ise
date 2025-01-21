@@ -18,8 +18,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are misc.Misc.get_active_count,
-  - Paths used are get /Session/ActiveCount,
+  - SDK Method used are
+    misc.Misc.get_active_count,
+  - Paths used are
+    get /Session/ActiveCount,
 """
 
 EXAMPLES = r"""

@@ -22,8 +22,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are egress_matrix_cell.EgressMatrixCell.set_all_cells_status,
-  - Paths used are put /ers/config/egressmatrixcell/status/{status},
+  - SDK Method used are
+    egress_matrix_cell.EgressMatrixCell.set_all_cells_status,
+  - Paths used are
+    put /ers/config/egressmatrixcell/status/{status},
 """
 
 EXAMPLES = r"""

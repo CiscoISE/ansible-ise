@@ -25,8 +25,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are sxp_connections.SxpConnections.bulk_request_for_sxp_connections,
-  - Paths used are put /ers/config/sxpconnections/bulk/submit,
+  - SDK Method used are
+    sxp_connections.SxpConnections.bulk_request_for_sxp_connections,
+  - Paths used are
+    put /ers/config/sxpconnections/bulk/submit,
 """
 
 EXAMPLES = r"""

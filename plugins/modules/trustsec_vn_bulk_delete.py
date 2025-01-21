@@ -26,8 +26,10 @@ seealso:
     description: Complete reference of the virtualNetwork API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!trustsec-openapi
 notes:
-  - SDK Method used are virtual_network.VirtualNetwork.bulk_delete_virtual_networks,
-  - Paths used are post /api/v1/trustsec/virtualnetwork/bulk/delete,
+  - SDK Method used are
+    virtual_network.VirtualNetwork.bulk_delete_virtual_networks,
+  - Paths used are
+    post /api/v1/trustsec/virtualnetwork/bulk/delete,
 """
 
 EXAMPLES = r"""

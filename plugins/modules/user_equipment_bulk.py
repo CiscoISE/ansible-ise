@@ -38,8 +38,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are user_equipment.UserEquipment.bulk_user_equipment_operation,
-  - Paths used are post /api/v1/fiveg/user-equipment/bulk,
+  - SDK Method used are
+    user_equipment.UserEquipment.bulk_user_equipment_operation,
+  - Paths used are
+    post /api/v1/fiveg/user-equipment/bulk,
 """
 
 EXAMPLES = r"""

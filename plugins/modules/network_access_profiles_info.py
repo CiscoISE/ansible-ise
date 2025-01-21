@@ -23,8 +23,10 @@ seealso:
     description: Complete reference of the Network Access - Profiles API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are network_access_profiles.NetworkAccessProfiles.get_network_access_profiles,
-  - Paths used are get /network-access/authorization-profiles,
+  - SDK Method used are
+    network_access_profiles.NetworkAccessProfiles.get_network_access_profiles,
+  - Paths used are
+    get /network-access/authorization-profiles,
 """
 
 EXAMPLES = r"""

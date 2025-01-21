@@ -83,8 +83,12 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are native_ipsec.NativeIpsec.create_ipsec_connection, native_ipsec.NativeIpsec.update_ipsec_connection_config,
-  - Paths used are post /api/v1/ipsec, put /api/v1/ipsec,
+  - SDK Method used are
+    native_ipsec.NativeIpsec.create_ipsec_connection,
+    native_ipsec.NativeIpsec.update_ipsec_connection_config,
+  - Paths used are
+    post /api/v1/ipsec,
+    put /api/v1/ipsec,
 """
 
 EXAMPLES = r"""

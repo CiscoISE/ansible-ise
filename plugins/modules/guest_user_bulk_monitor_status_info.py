@@ -23,8 +23,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are guest_user.GuestUser.monitor_bulk_status_guest_user,
-  - Paths used are get /ers/config/guestuser/bulk/{bulkid},
+  - SDK Method used are
+    guest_user.GuestUser.monitor_bulk_status_guest_user,
+  - Paths used are
+    get /ers/config/guestuser/bulk/{bulkid},
 """
 
 EXAMPLES = r"""

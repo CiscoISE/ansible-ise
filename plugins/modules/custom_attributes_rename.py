@@ -24,8 +24,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are customattributes.Customattributes.rename,
-  - Paths used are post /api/v1/endpoint-custom-attribute/rename,
+  - SDK Method used are
+    customattributes.Customattributes.rename,
+  - Paths used are
+    post /api/v1/endpoint-custom-attribute/rename,
 """
 
 EXAMPLES = r"""

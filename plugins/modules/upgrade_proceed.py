@@ -29,8 +29,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are fullupgrade.Fullupgrade.initiate_upgrade_on_p_p_a_n,
-  - Paths used are post /api/v1/upgrade/proceed/initiate-upgrade,
+  - SDK Method used are
+    fullupgrade.Fullupgrade.initiate_upgrade_on_p_p_a_n,
+  - Paths used are
+    post /api/v1/upgrade/proceed/initiate-upgrade,
 """
 
 EXAMPLES = r"""

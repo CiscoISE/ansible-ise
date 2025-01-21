@@ -25,8 +25,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are network_device.NetworkDevice.bulk_request_for_network_device,
-  - Paths used are put /ers/config/networkdevice/bulk/submit,
+  - SDK Method used are
+    network_device.NetworkDevice.bulk_request_for_network_device,
+  - Paths used are
+    put /ers/config/networkdevice/bulk/submit,
 """
 
 EXAMPLES = r"""

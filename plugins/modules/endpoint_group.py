@@ -40,9 +40,14 @@ seealso:
     description: Complete reference of the EndpointIdentityGroup API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!endpointgroup
 notes:
-  - SDK Method used are endpoint_identity_group.EndpointIdentityGroup.create_endpoint_group, endpoint_identity_group.EndpointIdentityGroup.delete_endpoint_group_by_id,
+  - SDK Method used are
+    endpoint_identity_group.EndpointIdentityGroup.create_endpoint_group,
+    endpoint_identity_group.EndpointIdentityGroup.delete_endpoint_group_by_id,
     endpoint_identity_group.EndpointIdentityGroup.update_endpoint_group_by_id,
-  - Paths used are post /ers/config/endpointgroup, delete /ers/config/endpointgroup/{id}, put /ers/config/endpointgroup/{id},
+  - Paths used are
+    post /ers/config/endpointgroup,
+    delete /ers/config/endpointgroup/{id},
+    put /ers/config/endpointgroup/{id},
 """
 
 EXAMPLES = r"""

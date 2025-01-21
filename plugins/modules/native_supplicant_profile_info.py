@@ -37,8 +37,12 @@ seealso:
     description: Complete reference of the NativeSupplicantProfile API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!nspprofile
 notes:
-  - SDK Method used are native_supplicant_profile.NativeSupplicantProfile.get_native_supplicant_profile_by_id, native_supplicant_profile.NativeSupplicantProfile.get_native_supplicant_profile_generator,
-  - Paths used are get /ers/config/nspprofile, get /ers/config/nspprofile/{id},
+  - SDK Method used are
+    native_supplicant_profile.NativeSupplicantProfile.get_native_supplicant_profile_by_id,
+    native_supplicant_profile.NativeSupplicantProfile.get_native_supplicant_profile_generator,
+  - Paths used are
+    get /ers/config/nspprofile,
+    get /ers/config/nspprofile/{id},
 """
 
 EXAMPLES = r"""

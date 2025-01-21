@@ -21,8 +21,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are node_deployment.NodeDeployment.promote_node,
-  - Paths used are put /api/v1/deployment/node-promotion/,
+  - SDK Method used are
+    node_deployment.NodeDeployment.promote_node,
+  - Paths used are
+    put /api/v1/deployment/node-promotion/,
 """
 
 EXAMPLES = r"""

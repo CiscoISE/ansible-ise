@@ -18,8 +18,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are user_equipment.UserEquipment.create_user_equipments_from_c_s_v,
-  - Paths used are post /api/v1/fiveg/user-equipment/csv,
+  - SDK Method used are
+    user_equipment.UserEquipment.create_user_equipments_from_c_s_v,
+  - Paths used are
+    post /api/v1/fiveg/user-equipment/csv,
 """
 
 EXAMPLES = r"""

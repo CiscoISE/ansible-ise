@@ -23,8 +23,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are anc_endpoint.AncEndpoint.monitor_bulk_status_anc_endpoint,
-  - Paths used are get /ers/config/ancendpoint/bulk/{bulkid},
+  - SDK Method used are
+    anc_endpoint.AncEndpoint.monitor_bulk_status_anc_endpoint,
+  - Paths used are
+    get /ers/config/ancendpoint/bulk/{bulkid},
 """
 
 EXAMPLES = r"""

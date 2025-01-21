@@ -23,8 +23,10 @@ seealso:
     description: Complete reference of the Network Access - Security Groups API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are network_access_security_groups.NetworkAccessSecurityGroups.get_network_access_security_groups,
-  - Paths used are get /network-access/security-groups,
+  - SDK Method used are
+    network_access_security_groups.NetworkAccessSecurityGroups.get_network_access_security_groups,
+  - Paths used are
+    get /network-access/security-groups,
 """
 
 EXAMPLES = r"""

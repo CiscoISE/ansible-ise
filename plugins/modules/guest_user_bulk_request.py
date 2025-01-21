@@ -25,8 +25,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are guest_user.GuestUser.bulk_request_for_guest_user,
-  - Paths used are put /ers/config/guestuser/bulk/submit,
+  - SDK Method used are
+    guest_user.GuestUser.bulk_request_for_guest_user,
+  - Paths used are
+    put /ers/config/guestuser/bulk/submit,
 """
 
 EXAMPLES = r"""

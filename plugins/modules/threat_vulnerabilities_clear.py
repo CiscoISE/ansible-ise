@@ -26,8 +26,10 @@ seealso:
     description: Complete reference of the ClearThreatsAndVulnerabilities API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!clearthreatsandvulneribilities
 notes:
-  - SDK Method used are clear_threats_and_vulnerabilities.ClearThreatsAndVulnerabilities.clear_threats_and_vulnerabilities,
-  - Paths used are put /ers/config/threat/clearThreatsAndVulneribilities,
+  - SDK Method used are
+    clear_threats_and_vulnerabilities.ClearThreatsAndVulnerabilities.clear_threats_and_vulnerabilities,
+  - Paths used are
+    put /ers/config/threat/clearThreatsAndVulneribilities,
 """
 
 EXAMPLES = r"""

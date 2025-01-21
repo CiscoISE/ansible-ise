@@ -19,8 +19,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are egress_matrix_cell.EgressMatrixCell.clear_all_matrix_cells,
-  - Paths used are put /ers/config/egressmatrixcell/clearallmatrixcells,
+  - SDK Method used are
+    egress_matrix_cell.EgressMatrixCell.clear_all_matrix_cells,
+  - Paths used are
+    put /ers/config/egressmatrixcell/clearallmatrixcells,
 """
 
 EXAMPLES = r"""

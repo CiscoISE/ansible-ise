@@ -47,8 +47,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are px_grid_direct.PxGridDirect.test_connector,
-  - Paths used are post /api/v1/pxgrid-direct/test-connector,
+  - SDK Method used are
+    px_grid_direct.PxGridDirect.test_connector,
+  - Paths used are
+    post /api/v1/pxgrid-direct/test-connector,
 """
 
 EXAMPLES = r"""

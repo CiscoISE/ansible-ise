@@ -23,8 +23,10 @@ seealso:
     description: Complete reference of the VersionAndPatch API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!iseversion
 notes:
-  - SDK Method used are version_and_patch.VersionAndPatch.get_ise_version_and_patch,
-  - Paths used are get /ers/config/op/systemconfig/iseversion,
+  - SDK Method used are
+    version_and_patch.VersionAndPatch.get_ise_version_and_patch,
+  - Paths used are
+    get /ers/config/op/systemconfig/iseversion,
 """
 
 EXAMPLES = r"""

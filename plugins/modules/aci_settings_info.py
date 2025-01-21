@@ -19,8 +19,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are aci_settings.AciSettings.get_aci_settings,
-  - Paths used are get /ers/config/acisettings,
+  - SDK Method used are
+    aci_settings.AciSettings.get_aci_settings,
+  - Paths used are
+    get /ers/config/acisettings,
 """
 
 EXAMPLES = r"""

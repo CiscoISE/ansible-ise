@@ -22,8 +22,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are guest_user.GuestUser.reset_guest_user_password_by_id,
-  - Paths used are put /ers/config/guestuser/resetpassword/{id},
+  - SDK Method used are
+    guest_user.GuestUser.reset_guest_user_password_by_id,
+  - Paths used are
+    put /ers/config/guestuser/resetpassword/{id},
 """
 
 EXAMPLES = r"""

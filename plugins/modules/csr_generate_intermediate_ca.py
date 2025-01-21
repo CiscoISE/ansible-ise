@@ -23,8 +23,10 @@ seealso:
     description: Complete reference of the Certificates API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
 notes:
-  - SDK Method used are certificates.Certificates.generate_intermediate_ca_csr,
-  - Paths used are post /api/v1/certs/certificate-signing-request/intermediate-ca,
+  - SDK Method used are
+    certificates.Certificates.generate_intermediate_ca_csr,
+  - Paths used are
+    post /api/v1/certs/certificate-signing-request/intermediate-ca,
 """
 
 EXAMPLES = r"""

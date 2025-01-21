@@ -21,8 +21,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are consumer.Consumer.access_secret,
-  - Paths used are post /control/AccessSecret,
+  - SDK Method used are
+    consumer.Consumer.access_secret,
+  - Paths used are
+    post /control/AccessSecret,
 """
 
 EXAMPLES = r"""

@@ -29,8 +29,8 @@ options:
     description: Allow transfer of roles for certificate with matching subject.
     type: bool
   allowWildcardDelete:
-    description: If the given certificate to be deleted is a wildcard certificate, corresponding certificate gets deleted on rest of the
-      nodes in the deployment as well.
+    description: If the given certificate to be deleted is a wildcard certificate, corresponding certificate gets deleted on rest of the nodes
+      in the deployment as well.
     type: bool
   description:
     description: Description of System Certificate.
@@ -82,8 +82,12 @@ seealso:
     description: Complete reference of the Certificates API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
 notes:
-  - SDK Method used are certificates.Certificates.delete_system_certificate_by_id, certificates.Certificates.update_system_certificate,
-  - Paths used are delete /api/v1/certs/system-certificate/{hostName}/{id}, put /api/v1/certs/system-certificate/{hostName}/{id},
+  - SDK Method used are
+    certificates.Certificates.delete_system_certificate_by_id,
+    certificates.Certificates.update_system_certificate,
+  - Paths used are
+    delete /api/v1/certs/system-certificate/{hostName}/{id},
+    put /api/v1/certs/system-certificate/{hostName}/{id},
 """
 
 EXAMPLES = r"""

@@ -43,8 +43,14 @@ seealso:
     description: Complete reference of the sgVnMapping API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!trustsec-openapi
 notes:
-  - SDK Method used are sg_vn_mapping.SgVnMapping.create_sg_vn_mapping, sg_vn_mapping.SgVnMapping.delete_sg_vn_mapping, sg_vn_mapping.SgVnMapping.update_sg_vn_mapping,
-  - Paths used are post /api/v1/trustsec/sgvnmapping, delete /api/v1/trustsec/sgvnmapping/{id}, put /api/v1/trustsec/sgvnmapping/{id},
+  - SDK Method used are
+    sg_vn_mapping.SgVnMapping.create_sg_vn_mapping,
+    sg_vn_mapping.SgVnMapping.delete_sg_vn_mapping,
+    sg_vn_mapping.SgVnMapping.update_sg_vn_mapping,
+  - Paths used are
+    post /api/v1/trustsec/sgvnmapping,
+    delete /api/v1/trustsec/sgvnmapping/{id},
+    put /api/v1/trustsec/sgvnmapping/{id},
 """
 
 EXAMPLES = r"""

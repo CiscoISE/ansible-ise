@@ -56,8 +56,8 @@ options:
             description: Dictionary attribute name.
             type: str
           attributeValue:
-            description: <ul><li>Attribute value for condition</li> <li>Value type is specified in dictionary object</li> <li>if multiple
-              values allowed is specified in dictionary object</li></ul>.
+            description: <ul><li>Attribute value for condition</li> <li>Value type is specified in dictionary object</li> <li>if multiple values
+              allowed is specified in dictionary object</li></ul>.
             type: str
           children:
             description: In case type is andBlock or orBlock addtional conditions will be aggregated under this logical (OR/AND) condition.
@@ -65,8 +65,8 @@ options:
             suboptions:
               conditionType:
                 description: <ul><li>Inidicates whether the record is the condition itself(data) or a logical(or,and) aggregation</li> <li>Data
-                  type enum(reference,single) indicates than "conditonId" OR "ConditionAttrs" fields should contain condition data but not
-                  both</li> <li>Logical aggreation(and,or) enum indicates that additional conditions are present under the children field</li></ul>.
+                  type enum(reference,single) indicates than "conditonId" OR "ConditionAttrs" fields should contain condition data but not both</li>
+                  <li>Logical aggreation(and,or) enum indicates that additional conditions are present under the children field</li></ul>.
                 type: str
               isNegate:
                 description: Indicates whereas this condition is in negate mode.
@@ -86,9 +86,9 @@ options:
                 type: dict
             type: list
           conditionType:
-            description: <ul><li>Inidicates whether the record is the condition itself(data) or a logical(or,and) aggregation</li> <li>Data
-              type enum(reference,single) indicates than "conditonId" OR "ConditionAttrs" fields should contain condition data but not both</li>
-              <li>Logical aggreation(and,or) enum indicates that additional conditions are present under the children field</li></ul>.
+            description: <ul><li>Inidicates whether the record is the condition itself(data) or a logical(or,and) aggregation</li> <li>Data type
+              enum(reference,single) indicates than "conditonId" OR "ConditionAttrs" fields should contain condition data but not both</li> <li>Logical
+              aggreation(and,or) enum indicates that additional conditions are present under the children field</li></ul>.
             type: str
           datesRange:
             description: <p>Defines for which date/s TimeAndDate condition will be matched or NOT matched if used in exceptionDates prooperty<br>
@@ -171,13 +171,13 @@ options:
             description: Equality operator.
             type: str
           weekDays:
-            description: <p>Defines for which days this condition will be matched<br> Days format - Arrays of WeekDay enums <br> Default
-              - List of All week days</p>.
+            description: <p>Defines for which days this condition will be matched<br> Days format - Arrays of WeekDay enums <br> Default - List
+              of All week days</p>.
             elements: str
             type: list
           weekDaysException:
-            description: <p>Defines for which days this condition will NOT be matched<br> Days format - Arrays of WeekDay enums <br> Default
-              - Not enabled</p>.
+            description: <p>Defines for which days this condition will NOT be matched<br> Days format - Arrays of WeekDay enums <br> Default -
+              Not enabled</p>.
             elements: str
             type: list
         type: dict
@@ -208,10 +208,14 @@ seealso:
     description: Complete reference of the Device Administration - Authorization Exception Rules API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are device_administration_authorization_exception_rules.DeviceAdministrationAuthorizationExceptionRules.create_device_admin_local_exception_rule,
+  - SDK Method used are
+    device_administration_authorization_exception_rules.DeviceAdministrationAuthorizationExceptionRules.create_device_admin_local_exception_rule,
     device_administration_authorization_exception_rules.DeviceAdministrationAuthorizationExceptionRules.delete_device_admin_local_exception_rule_by_id,
     device_administration_authorization_exception_rules.DeviceAdministrationAuthorizationExceptionRules.update_device_admin_local_exception_rule_by_id,
-  - Paths used are post /device-admin/policy-set/{policyId}/exception, delete /device-admin/policy-set/{policyId}/exception/{id}, put /device-admin/policy-set/{policyId}/exception/{id},
+  - Paths used are
+    post /device-admin/policy-set/{policyId}/exception,
+    delete /device-admin/policy-set/{policyId}/exception/{id},
+    put /device-admin/policy-set/{policyId}/exception/{id},
 """
 
 EXAMPLES = r"""

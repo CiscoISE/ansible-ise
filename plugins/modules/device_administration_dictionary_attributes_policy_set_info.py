@@ -23,8 +23,10 @@ seealso:
     description: Complete reference of the Device Administration - Dictionary Attributes List API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are device_administration_dictionary_attributes_list.DeviceAdministrationDictionaryAttributesList.get_device_admin_dictionaries_policy_set,
-  - Paths used are get /device-admin/dictionaries/policyset,
+  - SDK Method used are
+    device_administration_dictionary_attributes_list.DeviceAdministrationDictionaryAttributesList.get_device_admin_dictionaries_policy_set,
+  - Paths used are
+    get /device-admin/dictionaries/policyset,
 """
 
 EXAMPLES = r"""

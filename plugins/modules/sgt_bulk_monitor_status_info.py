@@ -27,8 +27,10 @@ seealso:
     description: Complete reference of the SecurityGroups API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgt
 notes:
-  - SDK Method used are security_groups.SecurityGroups.monitor_bulk_status_security_group,
-  - Paths used are get /ers/config/sgt/bulk/{bulkid},
+  - SDK Method used are
+    security_groups.SecurityGroups.monitor_bulk_status_security_group,
+  - Paths used are
+    get /ers/config/sgt/bulk/{bulkid},
 """
 
 EXAMPLES = r"""

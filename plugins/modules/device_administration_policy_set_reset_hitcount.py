@@ -23,8 +23,10 @@ seealso:
     description: Complete reference of the Device Administration - Policy Set API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are device_administration_policy_set.DeviceAdministrationPolicySet.reset_hit_counts_device_admin_policy_sets,
-  - Paths used are post /device-admin/policy-set/reset-hitcount,
+  - SDK Method used are
+    device_administration_policy_set.DeviceAdministrationPolicySet.reset_hit_counts_device_admin_policy_sets,
+  - Paths used are
+    post /device-admin/policy-set/reset-hitcount,
 """
 
 EXAMPLES = r"""

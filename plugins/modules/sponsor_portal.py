@@ -62,8 +62,8 @@ options:
             type: dict
         type: dict
       language:
-        description: This property is supported only for Read operation and it allows to show the customizations in English. Other languages
-          are not supported.
+        description: This property is supported only for Read operation and it allows to show the customizations in English. Other languages are
+          not supported.
         suboptions:
           viewLanguage:
             description: Sponsor Portal's viewLanguage.
@@ -98,9 +98,9 @@ options:
             type: str
         type: dict
       portalTweakSettings:
-        description: The Tweak Settings are a customization of the Portal Theme that has been selected for the portal. When the Portal Theme
-          selection is changed, the Tweak Settings are overwritten to match the values in the theme. The Tweak Settings can subsequently
-          be changed by the user.
+        description: The Tweak Settings are a customization of the Portal Theme that has been selected for the portal. When the Portal Theme selection
+          is changed, the Tweak Settings are overwritten to match the values in the theme. The Tweak Settings can subsequently be changed by the
+          user.
         suboptions:
           bannerColor:
             description: Hex value of color.
@@ -138,8 +138,8 @@ options:
         description: Sponsor Portal's aupSettings.
         suboptions:
           displayFrequency:
-            description: How the AUP should be displayed, either on page or as a link. Only valid if includeAup = true. Allowed Values -
-              FIRSTLOGIN, - EVERYLOGIN, - RECURRING.
+            description: How the AUP should be displayed, either on page or as a link. Only valid if includeAup = true. Allowed Values - FIRSTLOGIN,
+              - EVERYLOGIN, - RECURRING.
             type: str
           displayFrequencyIntervalDays:
             description: Number of days between AUP confirmations (when displayFrequency = recurring).
@@ -155,8 +155,8 @@ options:
         description: Portal Login Page settings groups follow.
         suboptions:
           aupDisplay:
-            description: How the AUP should be displayed, either on page or as a link. Only valid if includeAup = true. Allowed values -
-              ONPAGE, - ASLINK.
+            description: How the AUP should be displayed, either on page or as a link. Only valid if includeAup = true. Allowed values - ONPAGE,
+              - ASLINK.
             type: str
           includeAup:
             description: Include an Acceptable Use Policy (AUP) that should be displayed during login.
@@ -182,8 +182,8 @@ options:
         description: The port, interface, certificate, and other basic settings of a portal.
         suboptions:
           allowedInterfaces:
-            description: Interfaces that the portal will be reachable on. Allowed values - eth0, - eth1, - eth2, - eth3, - eth4, - eth5,
-              - bond0, - bond1, - bond2.
+            description: Interfaces that the portal will be reachable on. Allowed values - eth0, - eth1, - eth2, - eth3, - eth4, - eth5, - bond0,
+              - bond1, - bond2.
             elements: str
             type: list
           authenticationMethod:
@@ -267,8 +267,14 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are sponsor_portal.SponsorPortal.create_sponsor_portal, sponsor_portal.SponsorPortal.delete_sponsor_portal_by_id, sponsor_portal.SponsorPortal.update_sponsor_portal_by_id,
-  - Paths used are post /ers/config/sponsorportal, delete /ers/config/sponsorportal/{id}, put /ers/config/sponsorportal/{id},
+  - SDK Method used are
+    sponsor_portal.SponsorPortal.create_sponsor_portal,
+    sponsor_portal.SponsorPortal.delete_sponsor_portal_by_id,
+    sponsor_portal.SponsorPortal.update_sponsor_portal_by_id,
+  - Paths used are
+    post /ers/config/sponsorportal,
+    delete /ers/config/sponsorportal/{id},
+    put /ers/config/sponsorportal/{id},
 """
 
 EXAMPLES = r"""

@@ -44,7 +44,8 @@ seealso:
     description: Complete reference of the Certificates API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
 notes:
-  - SDK Method used are certificates.Certificates.export_system_certificate,
+  - SDK Method used are
+    certificates.Certificates.export_system_certificate,
   - Paths used are
 """
 

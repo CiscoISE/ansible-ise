@@ -23,8 +23,10 @@ seealso:
     description: Complete reference of the Device Administration - Service Names API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are device_administration_service_names.DeviceAdministrationServiceNames.get_device_admin_service_names,
-  - Paths used are get /device-admin/service-names,
+  - SDK Method used are
+    device_administration_service_names.DeviceAdministrationServiceNames.get_device_admin_service_names,
+  - Paths used are
+    get /device-admin/service-names,
 """
 
 EXAMPLES = r"""

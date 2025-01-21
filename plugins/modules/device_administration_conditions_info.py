@@ -35,9 +35,14 @@ seealso:
     description: Complete reference of the Device Administration - Conditions API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are device_administration_conditions.DeviceAdministrationConditions.get_device_admin_condition_by_id, device_administration_conditions.DeviceAdministrationConditions.get_device_admin_condition_by_name,
+  - SDK Method used are
+    device_administration_conditions.DeviceAdministrationConditions.get_device_admin_condition_by_id,
+    device_administration_conditions.DeviceAdministrationConditions.get_device_admin_condition_by_name,
     device_administration_conditions.DeviceAdministrationConditions.get_device_admin_conditions,
-  - Paths used are get /device-admin/condition, get /device-admin/condition/condition-by-name/{name}, get /device-admin/condition/{id},
+  - Paths used are
+    get /device-admin/condition,
+    get /device-admin/condition/condition-by-name/{name},
+    get /device-admin/condition/{id},
 """
 
 EXAMPLES = r"""

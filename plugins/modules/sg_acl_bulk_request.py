@@ -29,8 +29,10 @@ seealso:
     description: Complete reference of the SecurityGroupsACLs API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!sgacl
 notes:
-  - SDK Method used are security_groups_acls.SecurityGroupsAcls.bulk_request_for_security_groups_acl,
-  - Paths used are put /ers/config/sgacl/bulk/submit,
+  - SDK Method used are
+    security_groups_acls.SecurityGroupsAcls.bulk_request_for_security_groups_acl,
+  - Paths used are
+    put /ers/config/sgacl/bulk/submit,
 """
 
 EXAMPLES = r"""

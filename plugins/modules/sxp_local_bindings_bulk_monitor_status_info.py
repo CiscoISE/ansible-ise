@@ -23,8 +23,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are sxp_local_bindings.SxpLocalBindings.monitor_bulk_status_sxp_local_bindings,
-  - Paths used are get /ers/config/sxplocalbindings/bulk/{bulkid},
+  - SDK Method used are
+    sxp_local_bindings.SxpLocalBindings.monitor_bulk_status_sxp_local_bindings,
+  - Paths used are
+    get /ers/config/sxplocalbindings/bulk/{bulkid},
 """
 
 EXAMPLES = r"""

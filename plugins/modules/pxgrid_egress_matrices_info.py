@@ -18,8 +18,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are trust_sec_configuration.TrustSecConfiguration.get_egress_matrices,
-  - Paths used are post /ise/config/trustsec/getEgressMatrices,
+  - SDK Method used are
+    trust_sec_configuration.TrustSecConfiguration.get_egress_matrices,
+  - Paths used are
+    post /ise/config/trustsec/getEgressMatrices,
 """
 
 EXAMPLES = r"""

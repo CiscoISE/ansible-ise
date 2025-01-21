@@ -23,8 +23,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are active_directory.ActiveDirectory.get_trusted_domains,
-  - Paths used are put /ers/config/activedirectory/{id}/getTrustedDomains,
+  - SDK Method used are
+    active_directory.ActiveDirectory.get_trusted_domains,
+  - Paths used are
+    put /ers/config/activedirectory/{id}/getTrustedDomains,
 """
 
 EXAMPLES = r"""

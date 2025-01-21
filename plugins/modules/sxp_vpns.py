@@ -26,8 +26,12 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are sxp_vpns.SxpVpns.create_sxp_vpn, sxp_vpns.SxpVpns.delete_sxp_vpn_by_id,
-  - Paths used are post /ers/config/sxpvpns, delete /ers/config/sxpvpns/{id},
+  - SDK Method used are
+    sxp_vpns.SxpVpns.create_sxp_vpn,
+    sxp_vpns.SxpVpns.delete_sxp_vpn_by_id,
+  - Paths used are
+    post /ers/config/sxpvpns,
+    delete /ers/config/sxpvpns/{id},
 """
 
 EXAMPLES = r"""

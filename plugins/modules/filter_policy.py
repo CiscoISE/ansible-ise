@@ -36,8 +36,14 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are filter_policy.FilterPolicy.create_filter_policy, filter_policy.FilterPolicy.delete_filter_policy_by_id, filter_policy.FilterPolicy.update_filter_policy_by_id,
-  - Paths used are post /ers/config/filterpolicy, delete /ers/config/filterpolicy/{id}, put /ers/config/filterpolicy/{id},
+  - SDK Method used are
+    filter_policy.FilterPolicy.create_filter_policy,
+    filter_policy.FilterPolicy.delete_filter_policy_by_id,
+    filter_policy.FilterPolicy.update_filter_policy_by_id,
+  - Paths used are
+    post /ers/config/filterpolicy,
+    delete /ers/config/filterpolicy/{id},
+    put /ers/config/filterpolicy/{id},
 """
 
 EXAMPLES = r"""

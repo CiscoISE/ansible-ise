@@ -30,8 +30,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are anc_endpoint.AncEndpoint.apply_anc_endpoint,
-  - Paths used are put /ers/config/ancendpoint/apply,
+  - SDK Method used are
+    anc_endpoint.AncEndpoint.apply_anc_endpoint,
+  - Paths used are
+    put /ers/config/ancendpoint/apply,
 """
 
 EXAMPLES = r"""

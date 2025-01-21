@@ -64,9 +64,17 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are restid_store.RestidStore.create_rest_id_store, restid_store.RestidStore.delete_rest_id_store_by_id, restid_store.RestidStore.delete_rest_id_store_by_name,
-    restid_store.RestidStore.update_rest_id_store_by_id, restid_store.RestidStore.update_rest_id_store_by_name,
-  - Paths used are post /ers/config/restidstore, delete /ers/config/restidstore/name/{name}, delete /ers/config/restidstore/{id}, put /ers/config/restidstore/name/{name},
+  - SDK Method used are
+    restid_store.RestidStore.create_rest_id_store,
+    restid_store.RestidStore.delete_rest_id_store_by_id,
+    restid_store.RestidStore.delete_rest_id_store_by_name,
+    restid_store.RestidStore.update_rest_id_store_by_id,
+    restid_store.RestidStore.update_rest_id_store_by_name,
+  - Paths used are
+    post /ers/config/restidstore,
+    delete /ers/config/restidstore/name/{name},
+    delete /ers/config/restidstore/{id},
+    put /ers/config/restidstore/name/{name},
     put /ers/config/restidstore/{id},
 """
 

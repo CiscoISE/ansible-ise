@@ -48,8 +48,14 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are tacacs_profile.TacacsProfile.create_tacacs_profile, tacacs_profile.TacacsProfile.delete_tacacs_profile_by_id, tacacs_profile.TacacsProfile.update_tacacs_profile_by_id,
-  - Paths used are post /ers/config/tacacsprofile, delete /ers/config/tacacsprofile/{id}, put /ers/config/tacacsprofile/{id},
+  - SDK Method used are
+    tacacs_profile.TacacsProfile.create_tacacs_profile,
+    tacacs_profile.TacacsProfile.delete_tacacs_profile_by_id,
+    tacacs_profile.TacacsProfile.update_tacacs_profile_by_id,
+  - Paths used are
+    post /ers/config/tacacsprofile,
+    delete /ers/config/tacacsprofile/{id},
+    put /ers/config/tacacsprofile/{id},
 """
 
 EXAMPLES = r"""

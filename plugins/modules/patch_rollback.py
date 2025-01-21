@@ -10,9 +10,9 @@ short_description: Resource module for Patch Rollback
 description:
   - Manage operation create of the resource Patch Rollback.
   - >
-    Triggers patch rollback on the Cisco ISE node. A task ID is returned which can be used to monitor the progress of the patch rollback
-    process. As the patch rollback triggers the Cisco ISE to restart, the task API becomes unavailable for a certain period of time. For
-    rollback of patch on secondary nodes , request needs to sent on individual node instead of the Primary Administration Node.
+    Triggers patch rollback on the Cisco ISE node. A task ID is returned which can be used to monitor the progress of the patch rollback process.
+    As the patch rollback triggers the Cisco ISE to restart, the task API becomes unavailable for a certain period of time. For rollback of patch
+    on secondary nodes , request needs to sent on individual node instead of the Primary Administration Node.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -29,8 +29,10 @@ seealso:
     description: Complete reference of the Patching API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!patch-and-hot-patch-openapi
 notes:
-  - SDK Method used are patching.Patching.rollback_patch,
-  - Paths used are post /api/v1/patch/rollback,
+  - SDK Method used are
+    patching.Patching.rollback_patch,
+  - Paths used are
+    post /api/v1/patch/rollback,
 """
 
 EXAMPLES = r"""

@@ -18,8 +18,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are misc.Misc.get_session_auth_list,
-  - Paths used are get /Session/AuthList/null/null,
+  - SDK Method used are
+    misc.Misc.get_session_auth_list,
+  - Paths used are
+    get /Session/AuthList/null/null,
 """
 
 EXAMPLES = r"""

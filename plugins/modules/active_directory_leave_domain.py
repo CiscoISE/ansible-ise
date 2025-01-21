@@ -33,8 +33,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are active_directory.ActiveDirectory.leave_domain,
-  - Paths used are put /ers/config/activedirectory/{id}/leave,
+  - SDK Method used are
+    active_directory.ActiveDirectory.leave_domain,
+  - Paths used are
+    put /ers/config/activedirectory/{id}/leave,
 """
 
 EXAMPLES = r"""
@@ -50,8 +52,7 @@ EXAMPLES = r"""
       - name: password
         value: Required. The domain user's password
       - name: node
-        value: Required. The name of the ISE node to leave the domain. The node names can be retrieved with the "Node Details/Get All" ERS
-          operation
+        value: Required. The name of the ISE node to leave the domain. The node names can be retrieved with the "Node Details/Get All" ERS operation
       - name: orgunit
         value: Optional. The organizational unit in AD where the machine object for the joined ISE will be stored
     id: string

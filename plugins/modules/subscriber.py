@@ -42,8 +42,14 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are subscriber.Subscriber.create_subscriber, subscriber.Subscriber.delete_subscriber, subscriber.Subscriber.update_subscriber,
-  - Paths used are post /api/v1/fiveg/subscriber, delete /api/v1/fiveg/subscriber/{subscriberId}, put /api/v1/fiveg/subscriber/{subscriberId},
+  - SDK Method used are
+    subscriber.Subscriber.create_subscriber,
+    subscriber.Subscriber.delete_subscriber,
+    subscriber.Subscriber.update_subscriber,
+  - Paths used are
+    post /api/v1/fiveg/subscriber,
+    delete /api/v1/fiveg/subscriber/{subscriberId},
+    put /api/v1/fiveg/subscriber/{subscriberId},
 """
 
 EXAMPLES = r"""

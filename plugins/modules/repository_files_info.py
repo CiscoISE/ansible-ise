@@ -27,8 +27,10 @@ seealso:
     description: Complete reference of the Repository API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!repository-openapi
 notes:
-  - SDK Method used are repository.Repository.get_repository_files,
-  - Paths used are get /api/v1/repository/{repositoryName}/files,
+  - SDK Method used are
+    repository.Repository.get_repository_files,
+  - Paths used are
+    get /api/v1/repository/{repositoryName}/files,
 """
 
 EXAMPLES = r"""

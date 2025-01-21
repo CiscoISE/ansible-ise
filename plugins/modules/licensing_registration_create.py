@@ -22,8 +22,8 @@ options:
     description: Register, deregister, renew or update.
     type: str
   ssmOnPremServer:
-    description: If the connection type is selected as SSM_ONPREM_SERVER, then this field consists of IP address or the hostname (or FQDN)
-      of the SSM On-Prem server host.
+    description: If the connection type is selected as SSM_ONPREM_SERVER, then this field consists of IP address or the hostname (or FQDN) of
+      the SSM On-Prem server host.
     type: str
   tier:
     description: Licensing Registration Create's tier.
@@ -40,8 +40,10 @@ seealso:
     description: Complete reference of the Licensing API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!license-openapi
 notes:
-  - SDK Method used are licensing.Licensing.create_registration_info,
-  - Paths used are post /api/v1/license/system/register,
+  - SDK Method used are
+    licensing.Licensing.create_registration_info,
+  - Paths used are
+    post /api/v1/license/system/register,
 """
 
 EXAMPLES = r"""

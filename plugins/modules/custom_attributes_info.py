@@ -23,8 +23,12 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are customattributes.Customattributes.get, customattributes.Customattributes.list,
-  - Paths used are get /api/v1/endpoint-custom-attribute, get /api/v1/endpoint-custom-attribute/{name},
+  - SDK Method used are
+    customattributes.Customattributes.get,
+    customattributes.Customattributes.list,
+  - Paths used are
+    get /api/v1/endpoint-custom-attribute,
+    get /api/v1/endpoint-custom-attribute/{name},
 """
 
 EXAMPLES = r"""

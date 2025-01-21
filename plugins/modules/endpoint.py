@@ -104,8 +104,14 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are endpoint.Endpoint.create_endpoint, endpoint.Endpoint.delete_endpoint_by_id, endpoint.Endpoint.update_endpoint_by_id,
-  - Paths used are post /ers/config/endpoint, delete /ers/config/endpoint/{id}, put /ers/config/endpoint/{id},
+  - SDK Method used are
+    endpoint.Endpoint.create_endpoint,
+    endpoint.Endpoint.delete_endpoint_by_id,
+    endpoint.Endpoint.update_endpoint_by_id,
+  - Paths used are
+    post /ers/config/endpoint,
+    delete /ers/config/endpoint/{id},
+    put /ers/config/endpoint/{id},
 """
 
 EXAMPLES = r"""

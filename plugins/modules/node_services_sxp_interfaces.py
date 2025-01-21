@@ -29,8 +29,10 @@ seealso:
     description: Complete reference of the Node Services API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!deployment-openapi
 notes:
-  - SDK Method used are node_services.NodeServices.set_sxp_interface,
-  - Paths used are put /api/v1/node/{hostname}/sxp-interface,
+  - SDK Method used are
+    node_services.NodeServices.set_sxp_interface,
+  - Paths used are
+    put /api/v1/node/{hostname}/sxp-interface,
 """
 
 EXAMPLES = r"""

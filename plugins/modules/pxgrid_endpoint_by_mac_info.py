@@ -18,8 +18,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are mdm.Mdm.get_endpoint_by_mac_address,
-  - Paths used are post /ise/mdm/getEndpointByMacAddress,
+  - SDK Method used are
+    mdm.Mdm.get_endpoint_by_mac_address,
+  - Paths used are
+    post /ise/mdm/getEndpointByMacAddress,
 """
 
 EXAMPLES = r"""

@@ -23,8 +23,10 @@ seealso:
     description: Complete reference of the Network Access - Identity Stores API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are network_access_identity_stores.NetworkAccessIdentityStores.get_network_access_identity_stores,
-  - Paths used are get /network-access/identity-stores,
+  - SDK Method used are
+    network_access_identity_stores.NetworkAccessIdentityStores.get_network_access_identity_stores,
+  - Paths used are
+    get /network-access/identity-stores,
 """
 
 EXAMPLES = r"""

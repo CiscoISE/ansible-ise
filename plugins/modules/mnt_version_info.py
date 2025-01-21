@@ -18,8 +18,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are misc.Misc.get_mnt_version,
-  - Paths used are get /Version,
+  - SDK Method used are
+    misc.Misc.get_mnt_version,
+  - Paths used are
+    get /Version,
 """
 
 EXAMPLES = r"""

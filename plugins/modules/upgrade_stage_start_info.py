@@ -23,8 +23,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are fullupgrade.Fullupgrade.stage_status,
-  - Paths used are get /api/v1/upgrade/stage/get-status,
+  - SDK Method used are
+    fullupgrade.Fullupgrade.stage_status,
+  - Paths used are
+    get /api/v1/upgrade/stage/get-status,
 """
 
 EXAMPLES = r"""

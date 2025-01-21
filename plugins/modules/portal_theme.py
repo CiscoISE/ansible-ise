@@ -33,8 +33,14 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are portal_theme.PortalTheme.create_portal_theme, portal_theme.PortalTheme.delete_portal_theme_by_id, portal_theme.PortalTheme.update_portal_theme_by_id,
-  - Paths used are post /ers/config/portaltheme, delete /ers/config/portaltheme/{id}, put /ers/config/portaltheme/{id},
+  - SDK Method used are
+    portal_theme.PortalTheme.create_portal_theme,
+    portal_theme.PortalTheme.delete_portal_theme_by_id,
+    portal_theme.PortalTheme.update_portal_theme_by_id,
+  - Paths used are
+    post /ers/config/portaltheme,
+    delete /ers/config/portaltheme/{id},
+    put /ers/config/portaltheme/{id},
 """
 
 EXAMPLES = r"""

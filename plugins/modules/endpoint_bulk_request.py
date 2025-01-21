@@ -25,8 +25,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are endpoint.Endpoint.bulk_request_for_endpoint,
-  - Paths used are put /ers/config/endpoint/bulk/submit,
+  - SDK Method used are
+    endpoint.Endpoint.bulk_request_for_endpoint,
+  - Paths used are
+    put /ers/config/endpoint/bulk/submit,
 """
 
 EXAMPLES = r"""

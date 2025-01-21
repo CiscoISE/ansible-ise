@@ -23,8 +23,10 @@ seealso:
     description: Complete reference of the Backup And Restore API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!backup-and-restore-open-api
 notes:
-  - SDK Method used are backup_and_restore.BackupAndRestore.cancel_backup,
-  - Paths used are post /api/v1/backup-restore/config/cancel-backup,
+  - SDK Method used are
+    backup_and_restore.BackupAndRestore.cancel_backup,
+  - Paths used are
+    post /api/v1/backup-restore/config/cancel-backup,
 """
 
 EXAMPLES = r"""

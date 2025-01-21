@@ -23,8 +23,10 @@ seealso:
     description: Complete reference of the Licensing API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!license-openapi
 notes:
-  - SDK Method used are licensing.Licensing.get_connection_type,
-  - Paths used are get /api/v1/license/system/connection-type,
+  - SDK Method used are
+    licensing.Licensing.get_connection_type,
+  - Paths used are
+    get /api/v1/license/system/connection-type,
 """
 
 EXAMPLES = r"""

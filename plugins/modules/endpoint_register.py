@@ -102,8 +102,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are endpoint.Endpoint.register_endpoint,
-  - Paths used are put /ers/config/endpoint/register,
+  - SDK Method used are
+    endpoint.Endpoint.register_endpoint,
+  - Paths used are
+    put /ers/config/endpoint/register,
 """
 
 EXAMPLES = r"""

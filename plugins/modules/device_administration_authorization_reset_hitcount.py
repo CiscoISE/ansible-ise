@@ -26,8 +26,10 @@ seealso:
     description: Complete reference of the Device Administration - Authorization Rules API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!policy-openapi
 notes:
-  - SDK Method used are device_administration_authorization_rules.DeviceAdministrationAuthorizationRules.reset_hit_counts_device_admin_authorization_rules,
-  - Paths used are post /device-admin/policy-set/{policyId}/authorization/reset-hitcount,
+  - SDK Method used are
+    device_administration_authorization_rules.DeviceAdministrationAuthorizationRules.reset_hit_counts_device_admin_authorization_rules,
+  - Paths used are
+    post /device-admin/policy-set/{policyId}/authorization/reset-hitcount,
 """
 
 EXAMPLES = r"""

@@ -18,8 +18,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are session_directory.SessionDirectory.get_user_group_by_user_name,
-  - Paths used are post /ise/session/getUserGroupByUserName,
+  - SDK Method used are
+    session_directory.SessionDirectory.get_user_group_by_user_name,
+  - Paths used are
+    post /ise/session/getUserGroupByUserName,
 """
 
 EXAMPLES = r"""

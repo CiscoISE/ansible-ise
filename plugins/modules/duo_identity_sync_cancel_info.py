@@ -23,8 +23,10 @@ requirements:
   - ciscoisesdk >= 2.2.3
   - python >= 3.5
 notes:
-  - SDK Method used are duo_identity_sync.DuoIdentitySync.cancel_sync,
-  - Paths used are get /api/v1/duo-identitysync/identitysync/sync/cancel/{syncName},
+  - SDK Method used are
+    duo_identity_sync.DuoIdentitySync.cancel_sync,
+  - Paths used are
+    get /api/v1/duo-identitysync/identitysync/sync/cancel/{syncName},
 """
 
 EXAMPLES = r"""

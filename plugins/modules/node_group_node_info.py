@@ -27,8 +27,10 @@ seealso:
     description: Complete reference of the Node Group API.
     link: https://developer.cisco.com/docs/identity-services-engine/v1/#!deployment-openapi
 notes:
-  - SDK Method used are node_group.NodeGroup.get_nodes,
-  - Paths used are get /api/v1/deployment/node-group/{nodeGroupName}/node,
+  - SDK Method used are
+    node_group.NodeGroup.get_nodes,
+  - Paths used are
+    get /api/v1/deployment/node-group/{nodeGroupName}/node,
 """
 
 EXAMPLES = r"""
