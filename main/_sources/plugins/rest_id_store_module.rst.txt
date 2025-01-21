@@ -42,7 +42,7 @@ cisco.ise.rest_id_store module -- Resource module for REST Id Store
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.6).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -965,14 +965,13 @@ Examples
         description: string
         ersRestIDStoreAttributes:
           headers:
-          - key: string
-            value: string
+            - key: string
+              value: string
           predefined: string
           rootUrl: string
           usernameSuffix: string
         id: string
         name: string
-
     - name: Delete by name
       cisco.ise.rest_id_store:
         ise_hostname: "{{ise_hostname}}"
@@ -981,7 +980,6 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: absent
         name: string
-
     - name: Update by id
       cisco.ise.rest_id_store:
         ise_hostname: "{{ise_hostname}}"
@@ -992,14 +990,13 @@ Examples
         description: string
         ersRestIDStoreAttributes:
           headers:
-          - key: string
-            value: string
+            - key: string
+              value: string
           predefined: string
           rootUrl: string
           usernameSuffix: string
         id: string
         name: string
-
     - name: Delete by id
       cisco.ise.rest_id_store:
         ise_hostname: "{{ise_hostname}}"
@@ -1008,7 +1005,6 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: absent
         id: string
-
     - name: Create
       cisco.ise.rest_id_store:
         ise_hostname: "{{ise_hostname}}"
@@ -1019,16 +1015,15 @@ Examples
         description: string
         ersRestIDStoreAttributes:
           headers:
-          - key: string
-            value: string
+            - key: string
+              value: string
           predefined: string
           rootUrl: string
           usernameSuffix: string
         ersRestIDStoreUserAttributes:
           attributes:
-          - string
+            - string
         name: string
-
 
 
 

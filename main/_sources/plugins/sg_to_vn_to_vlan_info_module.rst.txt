@@ -42,7 +42,7 @@ cisco.ise.sg_to_vn_to_vlan_info module -- Information module for SG To VN To VLA
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.6).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -754,7 +754,6 @@ Examples
         filter: []
         filterType: AND
       register: result
-
     - name: Get SG To VN To VLAN by id
       cisco.ise.sg_to_vn_to_vlan_info:
         ise_hostname: "{{ise_hostname}}"
@@ -763,7 +762,6 @@ Examples
         ise_verify: "{{ise_verify}}"
         id: string
       register: result
-
 
 
 

@@ -42,7 +42,7 @@ cisco.ise.sponsored_guest_portal module -- Resource module for Sponsored Guest P
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.6).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -4300,8 +4300,8 @@ Examples
             viewLanguage: string
           pageCustomizations:
             data:
-            - key: string
-              value: string
+              - key: string
+                value: string
           portalTheme:
             id: string
             name: string
@@ -4360,12 +4360,12 @@ Examples
             requireAccessCode: true
             requireAupAcceptance: true
             socialConfigs:
-            - socialMediaType: string
-              socialMediaValue: string
+              - socialMediaType: string
+                socialMediaValue: string
             timeBetweenLoginsDuringRateLimit: 0
           portalSettings:
             allowedInterfaces:
-            - string
+              - string
             alwaysUsedLanguage: string
             assignedGuestTypeForEmployee: string
             authenticationMethod: string
@@ -4386,7 +4386,6 @@ Examples
             includeMacAddr: true
             includePolicyServer: true
             includeSupportInfoPage: true
-
     - name: Delete by id
       cisco.ise.sponsored_guest_portal:
         ise_hostname: "{{ise_hostname}}"
@@ -4395,7 +4394,6 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: absent
         id: string
-
     - name: Create
       cisco.ise.sponsored_guest_portal:
         ise_hostname: "{{ise_hostname}}"
@@ -4420,8 +4418,8 @@ Examples
             viewLanguage: string
           pageCustomizations:
             data:
-            - key: string
-              value: string
+              - key: string
+                value: string
           portalTheme:
             id: string
             name: string
@@ -4479,12 +4477,12 @@ Examples
             requireAccessCode: true
             requireAupAcceptance: true
             socialConfigs:
-            - socialMediaType: string
-              socialMediaValue: string
+              - socialMediaType: string
+                socialMediaValue: string
             timeBetweenLoginsDuringRateLimit: 0
           portalSettings:
             allowedInterfaces:
-            - string
+              - string
             alwaysUsedLanguage: string
             assignedGuestTypeForEmployee: string
             authenticationMethod: string
@@ -4505,7 +4503,6 @@ Examples
             includeMacAddr: true
             includePolicyServer: true
             includeSupportInfoPage: true
-
 
 
 

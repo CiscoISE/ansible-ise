@@ -42,7 +42,7 @@ cisco.ise.subscriber module -- Resource module for Subscriber
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.6).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -833,7 +833,6 @@ Examples
         imsi: string
         ki: string
         opc: string
-
     - name: Update by id
       cisco.ise.subscriber:
         ise_hostname: "{{ise_hostname}}"
@@ -848,7 +847,6 @@ Examples
         ki: string
         opc: string
         subscriberId: string
-
     - name: Delete by id
       cisco.ise.subscriber:
         ise_hostname: "{{ise_hostname}}"
@@ -857,7 +855,6 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: absent
         subscriberId: string
-
 
 
 

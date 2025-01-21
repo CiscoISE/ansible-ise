@@ -42,7 +42,7 @@ cisco.ise.tacacs_external_servers module -- Resource module for TACACS External 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.6).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -837,7 +837,6 @@ Examples
         sharedSecret: string
         singleConnect: true
         timeout: 0
-
     - name: Delete by id
       cisco.ise.tacacs_external_servers:
         ise_hostname: "{{ise_hostname}}"
@@ -846,7 +845,6 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: absent
         id: string
-
     - name: Create
       cisco.ise.tacacs_external_servers:
         ise_hostname: "{{ise_hostname}}"
@@ -861,7 +859,6 @@ Examples
         sharedSecret: string
         singleConnect: true
         timeout: 0
-
 
 
 

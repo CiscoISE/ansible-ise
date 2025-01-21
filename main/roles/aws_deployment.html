@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en">
 <head>
@@ -5,21 +7,16 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AWS Deployment Guide &mdash; ISEAnsibleActions  documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/ansible-basic-sphinx-ext.css" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=b3ba4146"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" /> 
@@ -122,21 +119,21 @@
 <h2>Variables<a class="headerlink" href="#variables" title="Permalink to this heading"></a></h2>
 <p>The role behavior can be changed using the following variables:</p>
 <ul class="simple">
-<li><p><strong>ise_base_hostname</strong>: Servers base hostname. Default: ISE</p></li>
-<li><p><strong>ise_username</strong>: Servers default username. Default: admin</p></li>
-<li><p><strong>ise_password</strong>: Servers default password. Default: C1sco12345</p></li>
-<li><p><strong>ise_ntp_server</strong>: NTP server. Default: 10.10.0.1</p></li>
-<li><p><strong>ise_dns_server</strong>: DNS Server. Default: 10.10.0.1</p></li>
-<li><p><strong>ise_domain</strong>: Domain name. Default: example.com</p></li>
-<li><p><strong>ise_timezone</strong>: Timezones based on RFC. Default: Etc/UTC</p></li>
-<li><p><strong>aws_ise_ami</strong>: Cisco ISE AWS AMI ID, for example, ami-0a8b4f863885c3372</p></li>
-<li><p><strong>aws_vpc_name</strong>: AWS VPC. Default: ISE VPC</p></li>
-<li><p><strong>aws_vpc_cidr</strong>: AWS VPC CIDR. Default: 10.10.0.0/16</p></li>
-<li><p><strong>aws_subnet_cidr</strong>: AWS Subnet CIDR. Default: 10.10.1.0/24</p></li>
-<li><p><strong>aws_region</strong>: AWS deployment region. Default: us-west-2</p></li>
-<li><p><strong>aws_public_access_cidr</strong>: Network from where public access will be available. Default: 0.0.0.0/0</p></li>
-<li><p><strong>aws_keypair_name</strong>: AWS SSH Key Pair name. Default: ISE-Deployment</p></li>
-<li><p><strong>aws_instance_type</strong>: AWS Instance type for ISE servers. Default: c5.4xlarge</p></li>
+<li><p><strong>aws_deployment_ise_base_hostname</strong>: Servers base hostname. Default: ISE</p></li>
+<li><p><strong>aws_deployment_ise_username</strong>: Servers default username. Default: admin</p></li>
+<li><p><strong>aws_deployment_ise_password</strong>: Servers default password. Default: C1sco12345</p></li>
+<li><p><strong>aws_deployment_ise_ntp_server</strong>: NTP server. Default: 10.10.0.1</p></li>
+<li><p><strong>aws_deployment_ise_dns_server</strong>: DNS Server. Default: 10.10.0.1</p></li>
+<li><p><strong>aws_deployment_ise_domain</strong>: Domain name. Default: example.com</p></li>
+<li><p><strong>aws_deployment_ise_timezone</strong>: Timezones based on RFC. Default: Etc/UTC</p></li>
+<li><p><strong>aws_deployment_aws_ise_ami</strong>: Cisco ISE AWS AMI ID, for example, ami-0a8b4f863885c3372</p></li>
+<li><p><strong>aws_deployment_aws_vpc_name</strong>: AWS VPC. Default: ISE VPC</p></li>
+<li><p><strong>aws_deployment_aws_vpc_cidr</strong>: AWS VPC CIDR. Default: 10.10.0.0/16</p></li>
+<li><p><strong>aws_deployment_aws_subnet_cidr</strong>: AWS Subnet CIDR. Default: 10.10.1.0/24</p></li>
+<li><p><strong>aws_deployment_aws_region</strong>: AWS deployment region. Default: us-west-2</p></li>
+<li><p><strong>aws_deployment_aws_public_access_cidr</strong>: Network from where public access will be available. Default: 0.0.0.0/0</p></li>
+<li><p><strong>aws_deployment_aws_keypair_name</strong>: AWS SSH Key Pair name. Default: ISE-Deployment</p></li>
+<li><p><strong>aws_deployment_aws_instance_type</strong>: AWS Instance type for ISE servers. Default: c5.4xlarge</p></li>
 </ul>
 <section id="using-variables-in-ansible">
 <h3>Using variables in Ansible<a class="headerlink" href="#using-variables-in-ansible" title="Permalink to this heading"></a></h3>
@@ -194,29 +191,29 @@
 </ol>
 <section id="single-deployment">
 <h3>Single deployment<a class="headerlink" href="#single-deployment" title="Permalink to this heading"></a></h3>
-<p>Set the <code class="docutils literal notranslate"><span class="pre">ise_deployment_type</span></code> variable to <code class="docutils literal notranslate"><span class="pre">single</span></code>. This deployment type creates one ISE server.</p>
-<div class="highlight-cli notranslate"><div class="highlight"><pre><span></span>ansible-playbook -i hosts playbooks/aws_deployment.yml -e &quot;ise_deployment_type=single&quot;
+<p>Set the <code class="docutils literal notranslate"><span class="pre">aws_deployment_ise_deployment_type</span></code> variable to <code class="docutils literal notranslate"><span class="pre">single</span></code>. This deployment type creates one ISE server.</p>
+<div class="highlight-cli notranslate"><div class="highlight"><pre><span></span>ansible-playbook -i hosts playbooks/aws_deployment.yml -e &quot;aws_deployment_ise_deployment_type=single&quot;
 </pre></div>
 </div>
 </section>
 <section id="small-deployment">
 <h3>Small deployment<a class="headerlink" href="#small-deployment" title="Permalink to this heading"></a></h3>
-<p>Set the <code class="docutils literal notranslate"><span class="pre">ise_deployment_type</span></code> variable to <code class="docutils literal notranslate"><span class="pre">small</span></code>. This deployment type creates two ISE servers.</p>
-<div class="highlight-cli notranslate"><div class="highlight"><pre><span></span>ansible-playbook -i hosts playbooks/aws_deployment.yml -e &quot;ise_deployment_type=small&quot;
+<p>Set the <code class="docutils literal notranslate"><span class="pre">aws_deployment_ise_deployment_type</span></code> variable to <code class="docutils literal notranslate"><span class="pre">small</span></code>. This deployment type creates two ISE servers.</p>
+<div class="highlight-cli notranslate"><div class="highlight"><pre><span></span>ansible-playbook -i hosts playbooks/aws_deployment.yml -e &quot;aws_deployment_ise_deployment_type=small&quot;
 </pre></div>
 </div>
 </section>
 <section id="medium-deployment">
 <h3>Medium deployment<a class="headerlink" href="#medium-deployment" title="Permalink to this heading"></a></h3>
-<p>Set the <code class="docutils literal notranslate"><span class="pre">ise_deployment_type</span></code> variable to <code class="docutils literal notranslate"><span class="pre">medium</span></code>. This deployment type creates two servers with the PAN and MNT roles and up to five servers with the PSN role. It takes the extra variable <code class="docutils literal notranslate"><span class="pre">ise_psn_instances</span></code> to specify how many PSN servers should be created . For example, this would be the command for a deployment with two PSN servers:</p>
-<div class="highlight-cli notranslate"><div class="highlight"><pre><span></span>ansible-playbook -i hosts playbooks/aws_deployment.yml -e &quot;ise_deployment_type=medium ise_psn_instances=2&quot;
+<p>Set the <code class="docutils literal notranslate"><span class="pre">aws_deployment_ise_deployment_type</span></code> variable to <code class="docutils literal notranslate"><span class="pre">medium</span></code>. This deployment type creates two servers with the PAN and MNT roles and up to five servers with the PSN role. It takes the extra variable <code class="docutils literal notranslate"><span class="pre">aws_deployment_ise_psn_instances</span></code> to specify how many PSN servers should be created . For example, this would be the command for a deployment with two PSN servers:</p>
+<div class="highlight-cli notranslate"><div class="highlight"><pre><span></span>ansible-playbook -i hosts playbooks/aws_deployment.yml -e &quot;aws_deployment_ise_deployment_type=medium aws_deployment_ise_psn_instances=2&quot;
 </pre></div>
 </div>
 </section>
 <section id="large-deployment">
 <h3>Large deployment<a class="headerlink" href="#large-deployment" title="Permalink to this heading"></a></h3>
-<p>Set the <code class="docutils literal notranslate"><span class="pre">ise_deployment_type</span></code> variable to <code class="docutils literal notranslate"><span class="pre">large</span></code>. This deployment type creates two servers with the PAN role, two servers with the MNT role and up to 50 servers with the PSN role. It takes the extra variable <code class="docutils literal notranslate"><span class="pre">ise_psn_instances</span></code> to specify how many PSN servers should be created . For example, this would be the command for a deployment with two PSN servers:</p>
-<div class="highlight-cli notranslate"><div class="highlight"><pre><span></span>ansible-playbook -i hosts playbooks/aws_deployment.yml -e &quot;ise_deployment_type=large ise_psn_instances=2&quot;
+<p>Set the <code class="docutils literal notranslate"><span class="pre">aws_deployment_ise_deployment_type</span></code> variable to <code class="docutils literal notranslate"><span class="pre">large</span></code>. This deployment type creates two servers with the PAN role, two servers with the MNT role and up to 50 servers with the PSN role. It takes the extra variable <code class="docutils literal notranslate"><span class="pre">aws_deployment_ise_psn_instances</span></code> to specify how many PSN servers should be created . For example, this would be the command for a deployment with two PSN servers:</p>
+<div class="highlight-cli notranslate"><div class="highlight"><pre><span></span>ansible-playbook -i hosts playbooks/aws_deployment.yml -e &quot;aws_deployment_ise_deployment_type=large aws_deployment_ise_psn_instances=2&quot;
 </pre></div>
 </div>
 </section>

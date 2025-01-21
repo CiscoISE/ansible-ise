@@ -42,7 +42,7 @@ cisco.ise.device_administration_global_exception_rules module -- Resource module
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.6).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -2325,7 +2325,7 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: present
         commands:
-        - string
+          - string
         link:
           href: string
           rel: string
@@ -2337,12 +2337,12 @@ Examples
             attributeName: string
             attributeValue: string
             children:
-            - conditionType: string
-              isNegate: true
-              link:
-                href: string
-                rel: string
-                type: string
+              - conditionType: string
+                isNegate: true
+                link:
+                  href: string
+                  rel: string
+                  type: string
             conditionType: string
             datesRange:
               endDate: string
@@ -2368,16 +2368,15 @@ Examples
             name: string
             operator: string
             weekDays:
-            - string
+              - string
             weekDaysException:
-            - string
+              - string
           default: true
           hitCounts: 0
           id: string
           name: string
           rank: 0
           state: string
-
     - name: Update by id
       cisco.ise.device_administration_global_exception_rules:
         ise_hostname: "{{ise_hostname}}"
@@ -2386,7 +2385,7 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: present
         commands:
-        - string
+          - string
         id: string
         link:
           href: string
@@ -2399,12 +2398,12 @@ Examples
             attributeName: string
             attributeValue: string
             children:
-            - conditionType: string
-              isNegate: true
-              link:
-                href: string
-                rel: string
-                type: string
+              - conditionType: string
+                isNegate: true
+                link:
+                  href: string
+                  rel: string
+                  type: string
             conditionType: string
             datesRange:
               endDate: string
@@ -2430,16 +2429,15 @@ Examples
             name: string
             operator: string
             weekDays:
-            - string
+              - string
             weekDaysException:
-            - string
+              - string
           default: true
           hitCounts: 0
           id: string
           name: string
           rank: 0
           state: string
-
     - name: Delete by id
       cisco.ise.device_administration_global_exception_rules:
         ise_hostname: "{{ise_hostname}}"
@@ -2448,7 +2446,6 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: absent
         id: string
-
 
 
 

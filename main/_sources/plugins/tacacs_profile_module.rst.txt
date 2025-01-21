@@ -42,7 +42,7 @@ cisco.ise.tacacs_profile module -- Resource module for TACACS Profile
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.6).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -828,10 +828,9 @@ Examples
         name: string
         sessionAttributes:
           sessionAttributeList:
-          - name: string
-            type: string
-            value: string
-
+            - name: string
+              type: string
+              value: string
     - name: Delete by id
       cisco.ise.tacacs_profile:
         ise_hostname: "{{ise_hostname}}"
@@ -840,7 +839,6 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: absent
         id: string
-
     - name: Create
       cisco.ise.tacacs_profile:
         ise_hostname: "{{ise_hostname}}"
@@ -852,10 +850,9 @@ Examples
         name: string
         sessionAttributes:
           sessionAttributeList:
-          - name: string
-            type: string
-            value: string
-
+            - name: string
+              type: string
+              value: string
 
 
 

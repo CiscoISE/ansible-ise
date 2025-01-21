@@ -42,7 +42,7 @@ cisco.ise.active_directory module -- Resource module for Active Directory
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.6).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -2225,7 +2225,6 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: absent
         id: string
-
     - name: Create
       cisco.ise.active_directory:
         ise_hostname: "{{ise_hostname}}"
@@ -2235,16 +2234,16 @@ Examples
         state: present
         adAttributes:
           attributes:
-          - defaultValue: string
-            internalName: string
-            name: string
-            type: string
+            - defaultValue: string
+              internalName: string
+              name: string
+              type: string
         adScopesNames: string
         adgroups:
           groups:
-          - name: string
-            sid: string
-            type: string
+            - name: string
+              sid: string
+              type: string
         advancedSettings:
           agingTime: 0
           authProtectionType: string
@@ -2267,9 +2266,9 @@ Examples
           organizationalUnit: string
           plaintextAuth: true
           rewriteRules:
-          - rewriteMatch: string
-            rewriteResult: string
-            rowId: 0
+            - rewriteMatch: string
+              rewriteResult: string
+              rowId: 0
           schema: string
           stateOrProvince: string
           streetAddress: string
@@ -2280,7 +2279,6 @@ Examples
         enableDomainWhiteList: true
         id: string
         name: string
-
 
 
 

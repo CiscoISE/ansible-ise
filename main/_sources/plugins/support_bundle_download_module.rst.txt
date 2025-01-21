@@ -42,7 +42,7 @@ cisco.ise.support_bundle_download module -- Resource module for Support Bundle D
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.6).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -659,7 +659,6 @@ Examples
         dirPath: /tmp/downloads/
         fileName: download_filename.extension
         saveFile: true
-
 
 
 

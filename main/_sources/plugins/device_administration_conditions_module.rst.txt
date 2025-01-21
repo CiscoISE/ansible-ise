@@ -42,7 +42,7 @@ cisco.ise.device_administration_conditions module -- Resource module for Device 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.6).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -275,7 +275,7 @@ Parameters
 
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
-      \<ul\>\<li\>Inidicates whether the record is the condition itself(data) or a logical(or,and) aggregation\</li\> \<li\>Data type enum(reference,single) indicates than "conditonId" OR "ConditionAttrs" fields should contain condition data but not both\</li\> \<li\>Logical aggreation(and,or) enum indicates that additional conditions are present under the children field\</li\>\</ul\>.
+      \<ul\>\<li\>Inidicates whether the record is the condition itself(data) or a logical(or,and) aggregation\</li\> \<li\>Data type num(reference,single) indicates than "conditonId" OR "ConditionAttrs" fields should contain condition data but not both\</li\> \<li\>Logical aggreation(and,or) enum indicates that additional conditions are present under the children field\</li\>\</ul\>.
 
 
       .. raw:: html
@@ -1809,12 +1809,12 @@ Examples
         attributeName: string
         attributeValue: string
         children:
-        - conditionType: string
-          isNegate: true
-          link:
-            href: string
-            rel: string
-            type: string
+          - conditionType: string
+            isNegate: true
+            link:
+              href: string
+              rel: string
+              type: string
         conditionType: string
         datesRange:
           endDate: string
@@ -1840,10 +1840,9 @@ Examples
         name: string
         operator: string
         weekDays:
-        - string
+          - string
         weekDaysException:
-        - string
-
+          - string
     - name: Update by name
       cisco.ise.device_administration_conditions:
         ise_hostname: "{{ise_hostname}}"
@@ -1855,12 +1854,12 @@ Examples
         attributeName: string
         attributeValue: string
         children:
-        - conditionType: string
-          isNegate: true
-          link:
-            href: string
-            rel: string
-            type: string
+          - conditionType: string
+            isNegate: true
+            link:
+              href: string
+              rel: string
+              type: string
         conditionType: string
         datesRange:
           endDate: string
@@ -1886,10 +1885,9 @@ Examples
         name: string
         operator: string
         weekDays:
-        - string
+          - string
         weekDaysException:
-        - string
-
+          - string
     - name: Delete by name
       cisco.ise.device_administration_conditions:
         ise_hostname: "{{ise_hostname}}"
@@ -1898,7 +1896,6 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: absent
         name: string
-
     - name: Update by id
       cisco.ise.device_administration_conditions:
         ise_hostname: "{{ise_hostname}}"
@@ -1910,12 +1907,12 @@ Examples
         attributeName: string
         attributeValue: string
         children:
-        - conditionType: string
-          isNegate: true
-          link:
-            href: string
-            rel: string
-            type: string
+          - conditionType: string
+            isNegate: true
+            link:
+              href: string
+              rel: string
+              type: string
         conditionType: string
         datesRange:
           endDate: string
@@ -1941,10 +1938,9 @@ Examples
         name: string
         operator: string
         weekDays:
-        - string
+          - string
         weekDaysException:
-        - string
-
+          - string
     - name: Delete by id
       cisco.ise.device_administration_conditions:
         ise_hostname: "{{ise_hostname}}"
@@ -1953,7 +1949,6 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: absent
         id: string
-
 
 
 

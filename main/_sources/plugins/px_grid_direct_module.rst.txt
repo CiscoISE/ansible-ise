@@ -42,7 +42,7 @@ cisco.ise.px_grid_direct module -- Resource module for Px Grid Direct
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.6).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -1601,9 +1601,9 @@ Examples
         additionalProperties: {}
         attributes:
           attributeMapping:
-          - dictionaryAttribute: string
-            includeInDictionary: true
-            jsonAttribute: string
+            - dictionaryAttribute: string
+              includeInDictionary: true
+              jsonAttribute: string
           correlationIdentifier: string
           topLevelObject: string
           uniqueIdentifier: string
@@ -1628,7 +1628,6 @@ Examples
           incrementalUrl: string
           password: string
           userName: string
-
     - name: Update by name
       cisco.ise.px_grid_direct:
         ise_hostname: "{{ise_hostname}}"
@@ -1639,9 +1638,9 @@ Examples
         additionalProperties: {}
         attributes:
           attributeMapping:
-          - dictionaryAttribute: string
-            includeInDictionary: true
-            jsonAttribute: string
+            - dictionaryAttribute: string
+              includeInDictionary: true
+              jsonAttribute: string
           correlationIdentifier: string
           topLevelObject: string
           uniqueIdentifier: string
@@ -1666,7 +1665,6 @@ Examples
           incrementalUrl: string
           password: string
           userName: string
-
     - name: Delete by name
       cisco.ise.px_grid_direct:
         ise_hostname: "{{ise_hostname}}"
@@ -1675,7 +1673,6 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: absent
         connectorName: string
-
 
 
 

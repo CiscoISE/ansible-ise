@@ -42,7 +42,7 @@ cisco.ise.node_services_profiler_probe_config module -- Resource module for Node
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.6).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -1675,38 +1675,37 @@ Examples
           daysBeforeRescan: 0
         dhcp:
           interfaces:
-          - interface: string
+            - interface: string
           port: 0
         dhcpSpan:
           interfaces:
-          - interface: string
+            - interface: string
         dns:
           timeout: 0
         hostname: string
         http:
           interfaces:
-          - interface: string
+            - interface: string
         netflow:
           interfaces:
-          - interface: string
+            - interface: string
           port: 0
         nmap:
-        - {}
+          - {}
         pxgrid:
-        - {}
+          - {}
         radius:
-        - {}
+          - {}
         snmpQuery:
           eventTimeout: 0
           retries: 0
           timeout: 0
         snmpTrap:
           interfaces:
-          - interface: string
+            - interface: string
           linkTrapQuery: true
           macTrapQuery: true
           port: 0
-
 
 
 

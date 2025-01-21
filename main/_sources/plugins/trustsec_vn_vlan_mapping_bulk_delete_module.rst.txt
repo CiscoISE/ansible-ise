@@ -42,7 +42,7 @@ cisco.ise.trustsec_vn_vlan_mapping_bulk_delete module -- Resource module for Tru
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.6).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -587,8 +587,7 @@ Examples
         ise_password: "{{ise_password}}"
         ise_verify: "{{ise_verify}}"
         payload:
-        - string
-
+          - string
 
 
 

@@ -42,7 +42,7 @@ cisco.ise.active_directory_is_user_member_of_group_info module -- Information mo
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.6).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -685,13 +685,11 @@ Examples
         ise_verify: "{{ise_verify}}"
         id: string
         additionalData:
-        - name: username
-          value: Required. Perform the check on this user
-        - name: groupsids
-          value: Required. Membership is looked for. The result will be a subset of this list
-            of the groups the user is a member of
+          - name: username
+            value: Required. Perform the check on this user
+          - name: groupsids
+            value: Required. Membership is looked for. The result will be a subset of this list of the groups the user is a member of
       register: result
-
 
 
 

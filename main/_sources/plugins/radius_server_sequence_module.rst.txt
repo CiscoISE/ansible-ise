@@ -42,7 +42,7 @@ cisco.ise.radius_server_sequence module -- Resource module for RADIUS Server Seq
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.6).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -1458,19 +1458,19 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: present
         BeforeAcceptAttrManipulatorsList:
-        - action: string
-          attributeName: string
-          changedVal: string
-          dictionaryName: string
-          value: string
+          - action: string
+            attributeName: string
+            changedVal: string
+            dictionaryName: string
+            value: string
         OnRequestAttrManipulatorList:
-        - action: string
-          attributeName: string
-          changedVal: string
-          dictionaryName: string
-          value: string
+          - action: string
+            attributeName: string
+            changedVal: string
+            dictionaryName: string
+            value: string
         RadiusServerList:
-        - string
+          - string
         continueAuthorzPolicy: true
         description: string
         id: string
@@ -1483,7 +1483,6 @@ Examples
         suffixSeparator: string
         useAttrSetBeforeAcc: true
         useAttrSetOnRequest: true
-
     - name: Delete by id
       cisco.ise.radius_server_sequence:
         ise_hostname: "{{ise_hostname}}"
@@ -1492,7 +1491,6 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: absent
         id: string
-
     - name: Create
       cisco.ise.radius_server_sequence:
         ise_hostname: "{{ise_hostname}}"
@@ -1501,19 +1499,19 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: present
         BeforeAcceptAttrManipulatorsList:
-        - action: string
-          attributeName: string
-          changedVal: string
-          dictionaryName: string
-          value: string
+          - action: string
+            attributeName: string
+            changedVal: string
+            dictionaryName: string
+            value: string
         OnRequestAttrManipulatorList:
-        - action: string
-          attributeName: string
-          changedVal: string
-          dictionaryName: string
-          value: string
+          - action: string
+            attributeName: string
+            changedVal: string
+            dictionaryName: string
+            value: string
         RadiusServerList:
-        - string
+          - string
         continueAuthorzPolicy: true
         description: string
         localAccounting: true
@@ -1525,7 +1523,6 @@ Examples
         suffixSeparator: string
         useAttrSetBeforeAcc: true
         useAttrSetOnRequest: true
-
 
 
 

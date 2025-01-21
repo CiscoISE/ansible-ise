@@ -42,7 +42,7 @@ cisco.ise.sponsor_group module -- Resource module for Sponsor Group
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.6).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -1803,15 +1803,15 @@ Examples
           startDateFutureLimitDays: 0
         description: string
         guestTypes:
-        - string
+          - string
         id: string
         isDefaultGroup: true
         isEnabled: true
         locations:
-        - string
+          - string
         managePermission: string
         memberGroups:
-        - string
+          - string
         name: string
         otherPermissions:
           canAccessViaRest: true
@@ -1826,7 +1826,6 @@ Examples
           canViewGuestPasswords: true
           limitApprovalToSponsorsGuests: true
           requireSuspensionReason: true
-
     - name: Delete by id
       cisco.ise.sponsor_group:
         ise_hostname: "{{ise_hostname}}"
@@ -1835,7 +1834,6 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: absent
         id: string
-
     - name: Create
       cisco.ise.sponsor_group:
         ise_hostname: "{{ise_hostname}}"
@@ -1855,14 +1853,14 @@ Examples
           startDateFutureLimitDays: 0
         description: string
         guestTypes:
-        - string
+          - string
         isDefaultGroup: true
         isEnabled: true
         locations:
-        - string
+          - string
         managePermission: string
         memberGroups:
-        - string
+          - string
         name: string
         otherPermissions:
           canAccessViaRest: true
@@ -1877,7 +1875,6 @@ Examples
           canViewGuestPasswords: true
           limitApprovalToSponsorsGuests: true
           requireSuspensionReason: true
-
 
 
 

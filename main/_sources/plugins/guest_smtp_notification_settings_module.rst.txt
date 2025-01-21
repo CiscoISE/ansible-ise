@@ -42,7 +42,7 @@ cisco.ise.guest_smtp_notification_settings module -- Resource module for Guest S
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.6).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -965,7 +965,6 @@ Examples
         usePasswordAuthentication: true
         useTLSorSSLEncryption: true
         userName: string
-
     - name: Create
       cisco.ise.guest_smtp_notification_settings:
         ise_hostname: "{{ise_hostname}}"
@@ -983,7 +982,6 @@ Examples
         usePasswordAuthentication: true
         useTLSorSSLEncryption: true
         userName: string
-
 
 
 

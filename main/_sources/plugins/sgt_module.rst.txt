@@ -42,7 +42,7 @@ cisco.ise.sgt module -- Resource module for SGt
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.6).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -845,7 +845,7 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: present
         defaultSGACLs:
-        - {}
+          - {}
         description: string
         generationId: string
         id: string
@@ -853,7 +853,6 @@ Examples
         name: string
         propogateToApic: true
         value: 0
-
     - name: Delete by id
       cisco.ise.sgt:
         ise_hostname: "{{ise_hostname}}"
@@ -862,7 +861,6 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: absent
         id: string
-
     - name: Create
       cisco.ise.sgt:
         ise_hostname: "{{ise_hostname}}"
@@ -871,14 +869,13 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: present
         defaultSGACLs:
-        - {}
+          - {}
         description: string
         generationId: string
         isReadOnly: true
         name: string
         propogateToApic: true
         value: 0
-
 
 
 

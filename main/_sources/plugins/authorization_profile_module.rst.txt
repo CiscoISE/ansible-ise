@@ -42,7 +42,7 @@ cisco.ise.authorization_profile module -- Resource module for Authorization Prof
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.6).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -2220,16 +2220,16 @@ Examples
         accessType: string
         acl: string
         advancedAttributes:
-        - leftHandSideDictionaryAttribue:
-            AdvancedAttributeValueType: string
-            attributeName: string
-            dictionaryName: string
-            value: string
-          rightHandSideAttribueValue:
-            AdvancedAttributeValueType: string
-            attributeName: string
-            dictionaryName: string
-            value: string
+          - leftHandSideDictionaryAttribue:
+              AdvancedAttributeValueType: string
+              attributeName: string
+              dictionaryName: string
+              value: string
+            rightHandSideAttribueValue:
+              AdvancedAttributeValueType: string
+              attributeName: string
+              dictionaryName: string
+              value: string
         agentlessPosture: true
         airespaceACL: string
         airespaceIPv6ACL: string
@@ -2264,7 +2264,6 @@ Examples
           displayCertificatesRenewalMessages: true
           portalName: string
           staticIPHostNameFQDN: string
-
     - name: Delete by id
       cisco.ise.authorization_profile:
         ise_hostname: "{{ise_hostname}}"
@@ -2273,7 +2272,6 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: absent
         id: string
-
     - name: Create
       cisco.ise.authorization_profile:
         ise_hostname: "{{ise_hostname}}"
@@ -2284,16 +2282,16 @@ Examples
         accessType: string
         acl: string
         advancedAttributes:
-        - leftHandSideDictionaryAttribue:
-            AdvancedAttributeValueType: string
-            attributeName: string
-            dictionaryName: string
-            value: string
-          rightHandSideAttribueValue:
-            AdvancedAttributeValueType: string
-            attributeName: string
-            dictionaryName: string
-            value: string
+          - leftHandSideDictionaryAttribue:
+              AdvancedAttributeValueType: string
+              attributeName: string
+              dictionaryName: string
+              value: string
+            rightHandSideAttribueValue:
+              AdvancedAttributeValueType: string
+              attributeName: string
+              dictionaryName: string
+              value: string
         agentlessPosture: true
         airespaceACL: string
         airespaceIPv6ACL: string
@@ -2328,7 +2326,6 @@ Examples
           displayCertificatesRenewalMessages: true
           portalName: string
           staticIPHostNameFQDN: string
-
 
 
 

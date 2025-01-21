@@ -42,7 +42,7 @@ cisco.ise.network_access_authorization_rules module -- Resource module for Netwo
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.6).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -2364,19 +2364,19 @@ Examples
           type: string
         policyId: string
         profile:
-        - string
+          - string
         rule:
           condition:
             attributeId: string
             attributeName: string
             attributeValue: string
             children:
-            - conditionType: string
-              isNegate: true
-              link:
-                href: string
-                rel: string
-                type: string
+              - conditionType: string
+                isNegate: true
+                link:
+                  href: string
+                  rel: string
+                  type: string
             conditionType: string
             datesRange:
               endDate: string
@@ -2402,9 +2402,9 @@ Examples
             name: string
             operator: string
             weekDays:
-            - string
+              - string
             weekDaysException:
-            - string
+              - string
           default: true
           hitCounts: 0
           id: string
@@ -2412,7 +2412,6 @@ Examples
           rank: 0
           state: string
         securityGroup: string
-
     - name: Update by id
       cisco.ise.network_access_authorization_rules:
         ise_hostname: "{{ise_hostname}}"
@@ -2427,19 +2426,19 @@ Examples
           type: string
         policyId: string
         profile:
-        - string
+          - string
         rule:
           condition:
             attributeId: string
             attributeName: string
             attributeValue: string
             children:
-            - conditionType: string
-              isNegate: true
-              link:
-                href: string
-                rel: string
-                type: string
+              - conditionType: string
+                isNegate: true
+                link:
+                  href: string
+                  rel: string
+                  type: string
             conditionType: string
             datesRange:
               endDate: string
@@ -2465,9 +2464,9 @@ Examples
             name: string
             operator: string
             weekDays:
-            - string
+              - string
             weekDaysException:
-            - string
+              - string
           default: true
           hitCounts: 0
           id: string
@@ -2475,7 +2474,6 @@ Examples
           rank: 0
           state: string
         securityGroup: string
-
     - name: Delete by id
       cisco.ise.network_access_authorization_rules:
         ise_hostname: "{{ise_hostname}}"
@@ -2485,7 +2483,6 @@ Examples
         state: absent
         id: string
         policyId: string
-
 
 
 

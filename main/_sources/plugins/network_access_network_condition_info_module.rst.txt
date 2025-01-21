@@ -42,7 +42,7 @@ cisco.ise.network_access_network_condition_info module -- Information module for
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.6).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -590,7 +590,6 @@ Examples
         ise_password: "{{ise_password}}"
         ise_verify: "{{ise_verify}}"
       register: result
-
     - name: Get Network Access Network Condition by id
       cisco.ise.network_access_network_condition_info:
         ise_hostname: "{{ise_hostname}}"
@@ -599,7 +598,6 @@ Examples
         ise_verify: "{{ise_verify}}"
         id: string
       register: result
-
 
 
 

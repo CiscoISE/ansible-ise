@@ -42,7 +42,7 @@ cisco.ise.sponsor_portal module -- Resource module for Sponsor Portal
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.6).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -3145,8 +3145,8 @@ Examples
             viewLanguage: string
           pageCustomizations:
             data:
-            - key: string
-              value: string
+              - key: string
+                value: string
           portalTheme:
             id: string
             name: string
@@ -3174,14 +3174,14 @@ Examples
             requireAupAcceptance: true
             requireAupScrolling: true
             socialConfigs:
-            - {}
+              - {}
             timeBetweenLoginsDuringRateLimit: 0
           portalSettings:
             allowedInterfaces:
-            - string
+              - string
             authenticationMethod: string
             availableSsids:
-            - string
+              - string
             certificateGroupTag: string
             displayLang: string
             fallbackLanguage: string
@@ -3203,7 +3203,6 @@ Examples
             includeMacAddr: true
             includePolicyServer: true
             includeSupportInfoPage: true
-
     - name: Delete by id
       cisco.ise.sponsor_portal:
         ise_hostname: "{{ise_hostname}}"
@@ -3212,7 +3211,6 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: absent
         id: string
-
     - name: Create
       cisco.ise.sponsor_portal:
         ise_hostname: "{{ise_hostname}}"
@@ -3237,8 +3235,8 @@ Examples
             viewLanguage: string
           pageCustomizations:
             data:
-            - key: string
-              value: string
+              - key: string
+                value: string
           portalTheme:
             id: string
             name: string
@@ -3265,14 +3263,14 @@ Examples
             requireAupAcceptance: true
             requireAupScrolling: true
             socialConfigs:
-            - {}
+              - {}
             timeBetweenLoginsDuringRateLimit: 0
           portalSettings:
             allowedInterfaces:
-            - string
+              - string
             authenticationMethod: string
             availableSsids:
-            - string
+              - string
             certificateGroupTag: string
             displayLang: string
             fallbackLanguage: string
@@ -3294,7 +3292,6 @@ Examples
             includeMacAddr: true
             includePolicyServer: true
             includeSupportInfoPage: true
-
 
 
 

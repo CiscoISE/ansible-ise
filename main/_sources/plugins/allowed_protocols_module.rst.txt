@@ -42,7 +42,7 @@ cisco.ise.allowed_protocols module -- Resource module for Allowed Protocols
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.6).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -3837,7 +3837,6 @@ Examples
           allowTeapEapTls: true
           allowTeapEapTlsAuthOfExpiredCerts: true
           enableEapChaining: true
-
     - name: Delete by id
       cisco.ise.allowed_protocols:
         ise_hostname: "{{ise_hostname}}"
@@ -3846,7 +3845,6 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: absent
         id: string
-
     - name: Create
       cisco.ise.allowed_protocols:
         ise_hostname: "{{ise_hostname}}"
@@ -3934,7 +3932,6 @@ Examples
           allowTeapEapTls: true
           allowTeapEapTlsAuthOfExpiredCerts: true
           enableEapChaining: true
-
 
 
 

@@ -42,7 +42,7 @@ cisco.ise.device_administration_authentication_rules_info module -- Information 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.6).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -625,7 +625,6 @@ Examples
         ise_verify: "{{ise_verify}}"
         policyId: string
       register: result
-
     - name: Get Device Administration Authentication Rules by id
       cisco.ise.device_administration_authentication_rules_info:
         ise_hostname: "{{ise_hostname}}"
@@ -635,7 +634,6 @@ Examples
         policyId: string
         id: string
       register: result
-
 
 
 

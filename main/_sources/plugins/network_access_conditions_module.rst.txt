@@ -42,7 +42,7 @@ cisco.ise.network_access_conditions module -- Resource module for Network Access
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.6).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -1809,12 +1809,12 @@ Examples
         attributeName: string
         attributeValue: string
         children:
-        - conditionType: string
-          isNegate: true
-          link:
-            href: string
-            rel: string
-            type: string
+          - conditionType: string
+            isNegate: true
+            link:
+              href: string
+              rel: string
+              type: string
         conditionType: string
         datesRange:
           endDate: string
@@ -1840,10 +1840,9 @@ Examples
         name: string
         operator: string
         weekDays:
-        - string
+          - string
         weekDaysException:
-        - string
-
+          - string
     - name: Update by name
       cisco.ise.network_access_conditions:
         ise_hostname: "{{ise_hostname}}"
@@ -1855,12 +1854,12 @@ Examples
         attributeName: string
         attributeValue: string
         children:
-        - conditionType: string
-          isNegate: true
-          link:
-            href: string
-            rel: string
-            type: string
+          - conditionType: string
+            isNegate: true
+            link:
+              href: string
+              rel: string
+              type: string
         conditionType: string
         datesRange:
           endDate: string
@@ -1886,10 +1885,9 @@ Examples
         name: string
         operator: string
         weekDays:
-        - string
+          - string
         weekDaysException:
-        - string
-
+          - string
     - name: Delete by name
       cisco.ise.network_access_conditions:
         ise_hostname: "{{ise_hostname}}"
@@ -1898,7 +1896,6 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: absent
         name: string
-
     - name: Update by id
       cisco.ise.network_access_conditions:
         ise_hostname: "{{ise_hostname}}"
@@ -1910,12 +1907,12 @@ Examples
         attributeName: string
         attributeValue: string
         children:
-        - conditionType: string
-          isNegate: true
-          link:
-            href: string
-            rel: string
-            type: string
+          - conditionType: string
+            isNegate: true
+            link:
+              href: string
+              rel: string
+              type: string
         conditionType: string
         datesRange:
           endDate: string
@@ -1941,10 +1938,9 @@ Examples
         name: string
         operator: string
         weekDays:
-        - string
+          - string
         weekDaysException:
-        - string
-
+          - string
     - name: Delete by id
       cisco.ise.network_access_conditions:
         ise_hostname: "{{ise_hostname}}"
@@ -1953,7 +1949,6 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: absent
         id: string
-
 
 
 

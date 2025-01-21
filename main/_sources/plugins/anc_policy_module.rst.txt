@@ -42,7 +42,7 @@ cisco.ise.anc_policy module -- Resource module for ANC Policy
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.6).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -652,10 +652,9 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: present
         actions:
-        - string
+          - string
         id: string
         name: string
-
     - name: Delete by id
       cisco.ise.anc_policy:
         ise_hostname: "{{ise_hostname}}"
@@ -664,7 +663,6 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: absent
         id: string
-
     - name: Create
       cisco.ise.anc_policy:
         ise_hostname: "{{ise_hostname}}"
@@ -673,9 +671,8 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: present
         actions:
-        - string
+          - string
         name: string
-
 
 
 

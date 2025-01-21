@@ -42,7 +42,7 @@ cisco.ise.guest_type module -- Resource module for Guest Type
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.9.6).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -1640,10 +1640,10 @@ Examples
         accessTime:
           allowAccessOnSpecificDaysTimes: true
           dayTimeLimits:
-          - days:
-            - string
-            endTime: string
-            startTime: string
+            - days:
+                - string
+              endTime: string
+              startTime: string
           defaultDuration: 0
           durationTimeUnit: string
           fromFirstLogin: true
@@ -1668,8 +1668,7 @@ Examples
           maxSimultaneousLogins: 0
         name: string
         sponsorGroups:
-        - string
-
+          - string
     - name: Delete by id
       cisco.ise.guest_type:
         ise_hostname: "{{ise_hostname}}"
@@ -1678,7 +1677,6 @@ Examples
         ise_verify: "{{ise_verify}}"
         state: absent
         id: string
-
     - name: Create
       cisco.ise.guest_type:
         ise_hostname: "{{ise_hostname}}"
@@ -1689,10 +1687,10 @@ Examples
         accessTime:
           allowAccessOnSpecificDaysTimes: true
           dayTimeLimits:
-          - days:
-            - string
-            endTime: string
-            startTime: string
+            - days:
+                - string
+              endTime: string
+              startTime: string
           defaultDuration: 0
           durationTimeUnit: string
           fromFirstLogin: true
@@ -1716,8 +1714,7 @@ Examples
           maxSimultaneousLogins: 0
         name: string
         sponsorGroups:
-        - string
-
+          - string
 
 
 
