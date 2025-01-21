@@ -21,8 +21,8 @@ options:
     type: bool
   certificateAttributeName:
     description: Attribute name of the Certificate Profile - used only when CERTIFICATE is chosen in usernameFrom. Allowed values - SUBJECT_COMMON_NAME
-      - SUBJECT_ALTERNATIVE_NAME - SUBJECT_SERIAL_NUMBER - SUBJECT - SUBJECT_ALTERNATIVE_NAME_OTHER_NAME - SUBJECT_ALTERNATIVE_NAME_EMAIL - SUBJECT_ALTERNATIVE_NAME_DNS.
-      - Additional internal value ALL_SUBJECT_AND_ALTERNATIVE_NAMES is used automatically when usernameFrom=UPN.
+      - SUBJECT_ALTERNATIVE_NAME - SUBJECT_SERIAL_NUMBER - SUBJECT - SUBJECT_ALTERNATIVE_NAME_OTHER_NAME - SUBJECT_ALTERNATIVE_NAME_EMAIL 
+      - SUBJECT_ALTERNATIVE_NAME_DNS. - Additional internal value ALL_SUBJECT_AND_ALTERNATIVE_NAMES is used automatically when usernameFrom=UPN.
     type: str
   description:
     description: Certificate Profile's description.

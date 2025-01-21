@@ -57,9 +57,10 @@ options:
             type: dict
         type: list
       conditionType:
-        description: <ul><li>Inidicates whether the record is the condition itself(data) or a logical(or,and) aggregation</li> <li>Data type enum(reference,single)
-          indicates than "conditonId" OR "ConditionAttrs" fields should contain condition data but not both</li> <li>Logical aggreation(and,or)
-          enum indicates that additional conditions are present under the children field</li></ul>.
+        description: <ul><li>Inidicates whether the record is the condition itself(data) or a logical(or,and) aggregation</li>
+          <li>Data type enum(reference,single) indicates than "conditonId" OR "ConditionAttrs" fields should contain condition
+          data but not both</li> <li>Logical aggreation(and,or) enum indicates that additional conditions are present under the
+          children field</li></ul>.
         type: str
       datesRange:
         description: <p>Defines for which date/s TimeAndDate condition will be matched or NOT matched if used in exceptionDates prooperty<br>
