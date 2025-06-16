@@ -16,8 +16,7 @@ tags:
   - collection
   - networking
   - sdn
-dependencies:
-  ansible.utils: ">=2.0.0,<6.0"
+dependencies: {}
 repository: https://github.com/CiscoISE/ansible-ise
 documentation: https://ciscoise.github.io/ansible-ise/
 homepage: https://github.com/CiscoISE/ansible-ise
