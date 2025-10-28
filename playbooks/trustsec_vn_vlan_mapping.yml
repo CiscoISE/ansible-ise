@@ -1,6 +1,8 @@
 ---
 - name: ISE Trustsec VN VLAN Mapping Playbook
   hosts: ise_servers
+  vars_files:
+    - credentials.yml
   gather_facts: false
   vars:
     ise_login: &ise_login

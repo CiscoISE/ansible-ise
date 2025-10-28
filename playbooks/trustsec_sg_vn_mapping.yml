@@ -1,6 +1,8 @@
 ---
 - name: ISE TrustSec SG_VN Mapping Playbook
   hosts: ise_servers
+  vars_files:
+    - credentials.yml
   gather_facts: false
 
   vars:

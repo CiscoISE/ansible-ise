@@ -1,0 +1,41 @@
+---
+- name: Manage Active Directory Configuration
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get Active Directory by name
+      cisco.ise.activedirectory_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        name: example.com
+      register: ad_info
+
+    - name: Print Active Directory Information
+      ansible.builtin.debug:
+        var: ad_info.ise_response
+
+    - name: Create or update Active Directory
+      cisco.ise.activedirectory:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        state: present
+        name: example.com
+        description: Example Active Directory
+        domain: example.com
+        adAttributes:
+          attributes:
+            - name: userPrincipalName
+              type: STRING
+              internalName: userName
+      register: result
+
+    - name: Print Result
+      ansible.builtin.debug:
+        var: result
+

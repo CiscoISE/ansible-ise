@@ -5,12 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: system_certificate
 short_description: Resource module for System Certificate
 description:
-  - Manage operations update and delete of the resource System Certificate.
-  - This API deletes a System Certificate of a particular node based on given HostName and ID.
-  - Update a System Certificate.
+- Manage operations update and delete of the resource System Certificate.
+- This API deletes a system certificate of a particular node based on the given hostname and ID.
+- Update a System Certificate.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -20,17 +21,14 @@ options:
     description: Use certificate to authenticate the Cisco ISE Admin Portal.
     type: bool
   allowPortalTagTransferForSameSubject:
-    description: Allow overwriting the portal tag from matching certificate of same subject.
+    description: Allow overwriting the portal tag from matching certificate of same
+      subject.
     type: bool
   allowReplacementOfPortalGroupTag:
-    description: Allow Replacement of Portal Group Tag (required).
+    description: Allow Replacement of Portal Group Tag.
     type: bool
   allowRoleTransferForSameSubject:
     description: Allow transfer of roles for certificate with matching subject.
-    type: bool
-  allowWildcardDelete:
-    description: If the given certificate to be deleted is a wildcard certificate, corresponding certificate gets deleted on rest of the nodes
-      in the deployment as well.
     type: bool
   description:
     description: Description of System Certificate.
@@ -45,7 +43,8 @@ options:
     description: System Certificate's expirationTTLUnits.
     type: str
   hostName:
-    description: HostName path parameter. Name of Host whose certificate needs to be updated.
+    description: HostName path parameter. Name of host whose certificate needs to be
+      updated.
     type: str
   id:
     description: Id path parameter. ID of the System Certificate to be updated.
@@ -75,19 +74,21 @@ options:
     description: Use certificate for SAML Signing.
     type: bool
 requirements:
-  - ciscoisesdk >= 2.2.3
-  - python >= 3.5
+- ciscoisesdk >= 2.0.1
+- python >= 3.5
 seealso:
-  - name: Cisco ISE documentation for Certificates
-    description: Complete reference of the Certificates API.
-    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
+- name: Cisco ISE documentation for Certificates
+  description: Complete reference of the Certificates API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
 notes:
   - SDK Method used are
     certificates.Certificates.delete_system_certificate_by_id,
     certificates.Certificates.update_system_certificate,
+
   - Paths used are
     delete /api/v1/certs/system-certificate/{hostName}/{id},
     put /api/v1/certs/system-certificate/{hostName}/{id},
+
 """
 
 EXAMPLES = r"""
@@ -116,6 +117,7 @@ EXAMPLES = r"""
     radius: true
     renewSelfSignedCertificate: true
     saml: true
+
 - name: Delete by id
   cisco.ise.system_certificate:
     ise_hostname: "{{ise_hostname}}"
@@ -123,9 +125,9 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: absent
-    allowWildcardDelete: true
     hostName: string
     id: string
+
 """
 
 RETURN = r"""
@@ -155,6 +157,7 @@ ise_response:
       "usedBy": "string",
       "validFrom": "string"
     }
+
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

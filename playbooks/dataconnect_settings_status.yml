@@ -1,0 +1,20 @@
+---
+- name: Update Data Connect Settings Status
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Enable or disable Data Connect
+      cisco.ise.dataconnect_settings_status:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        enabled: true
+      register: result
+
+    - name: Print Result
+      ansible.builtin.debug:
+        var: result
+

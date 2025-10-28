@@ -5,10 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: pan_ha
 short_description: Resource module for Pan Ha
 description:
-  - Manage operations create and delete of the resource Pan Ha.
+- Manage operations create and delete of the resource Pan Ha.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -30,11 +31,12 @@ options:
     description: Pan Ha's secondaryHealthCheckNode.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
-  - python >= 3.5
+- ciscoisesdk >= 2.0.1
+- python >= 3.5
 notes:
   - SDK Method used are
     sync_ise_node.ReplicationStatus.get_node_replication_status,
+
   - Paths used are
     get /api/v1/replication-status/{node}
 """
@@ -52,6 +54,7 @@ EXAMPLES = r"""
     pollingInterval: 0
     primaryHealthCheckNode: string
     secondaryHealthCheckNode: string
+
 - name: Delete all
   cisco.ise.pan_ha:
     ise_hostname: "{{ise_hostname}}"
@@ -59,6 +62,7 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     state: absent
+
 """
 
 RETURN = r"""

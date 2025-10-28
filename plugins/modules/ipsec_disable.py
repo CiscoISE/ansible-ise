@@ -5,11 +5,12 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: ipsec_disable
 short_description: Resource module for Ipsec Disable
 description:
-  - Manage operation update of the resource Ipsec Disable.
-  - Disables an enabled IPsec node connection.
+- Manage operation update of the resource Ipsec Disable.
+- Disables an enabled IPsec node connection.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -22,13 +23,15 @@ options:
     description: NadIp path parameter. IP address of the NAD.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
-  - python >= 3.5
+- ciscoisesdk >= 2.0.1
+- python >= 3.5
 notes:
   - SDK Method used are
     native_ipsec.NativeIpsec.disable_ipsec_connection,
+
   - Paths used are
     put /api/v1/ipsec/disable/{hostName}/{nadIp},
+
 """
 
 EXAMPLES = r"""
@@ -41,6 +44,7 @@ EXAMPLES = r"""
     state: present
     hostName: string
     nadIp: string
+
 """
 
 RETURN = r"""
@@ -81,6 +85,7 @@ ise_response:
       "status": "string",
       "updateTime": "string"
     }
+
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

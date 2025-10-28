@@ -1,0 +1,33 @@
+---
+- name: Get System Certificate Information
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get all System Certificates
+      cisco.ise.system_certificate_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        ise_version: "{{ ise_version }}"
+      register: result
+
+    - name: Print System Certificates
+      ansible.builtin.debug:
+        var: result.ise_response
+
+    - name: Get System Certificate by hostname
+      cisco.ise.system_certificate_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        hostName: "{{ ise_hostname }}"
+      register: result_by_hostname
+
+    - name: Print System Certificate by Hostname
+      ansible.builtin.debug:
+        var: result_by_hostname.ise_response
+

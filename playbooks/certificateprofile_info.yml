@@ -1,0 +1,35 @@
+---
+- name: Get Certificate Profile Information
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get all Certificate Profiles
+      cisco.ise.certificateprofile_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        ise_version: "{{ ise_version }}"
+      register: result
+
+    - name: Print Certificate Profiles
+      ansible.builtin.debug:
+        var: result.ise_response
+
+    - name: Get Certificate Profile by ID
+      cisco.ise.certificateprofile_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        id: "{{ cert_profile_id }}"
+      when: cert_profile_id is defined
+      register: result_by_id
+
+    - name: Print Certificate Profile by ID
+      ansible.builtin.debug:
+        var: result_by_id.ise_response
+      when: cert_profile_id is defined
+

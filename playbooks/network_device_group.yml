@@ -1,6 +1,8 @@
 ---
 - name: Network Device Group
   hosts: ise_servers
+  vars_files:
+    - credentials.yml
   gather_facts: false
   tasks:
     # - name: Get all network device groups

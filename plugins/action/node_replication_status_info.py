@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Copyright (c) 2024, Cisco Systems
+# Copyright (c) 2021, Cisco Systems
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
@@ -26,11 +26,9 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
 # Get common arguements specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
-argument_spec.update(
-    dict(
-        node=dict(type="str"),
-    )
-)
+argument_spec.update(dict(
+    node=dict(type="str"),
+))
 
 required_if = []
 required_one_of = []
@@ -41,9 +39,7 @@ required_together = []
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail(
-                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
-            )
+            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = True
@@ -88,9 +84,9 @@ class ActionModule(ActionBase):
         if id:
             response = ise.exec(
                 family="replication_status",
-                function="get_node_replication_status",
-                params=self.get_object(self._task.args),
-            ).response["NodeStatus"]
+                function='get_node_replication_status',
+                params=self.get_object(self._task.args)
+            ).response['NodeStatus']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

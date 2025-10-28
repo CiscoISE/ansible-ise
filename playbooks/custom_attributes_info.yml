@@ -1,0 +1,20 @@
+---
+- name: Get Custom Attributes Information
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get all Custom Attributes
+      cisco.ise.custom_attributes_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        ise_version: "{{ ise_version }}"
+      register: result
+
+    - name: Print Custom Attributes
+      ansible.builtin.debug:
+        var: result.ise_response
+

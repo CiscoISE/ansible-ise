@@ -5,10 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: custom_attributes
 short_description: Resource module for Custom Attributes
 description:
-  - Manage operations create and delete of the resource Custom Attributes.
+- Manage operations create and delete of the resource Custom Attributes.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -24,15 +25,17 @@ options:
     description: Name path parameter. The name of the custom attribute.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
-  - python >= 3.5
+- ciscoisesdk >= 2.0.1
+- python >= 3.5
 notes:
   - SDK Method used are
     customattributes.Customattributes.create_custom_attribute,
     customattributes.Customattributes.delete,
+
   - Paths used are
     post /api/v1/endpoint-custom-attribute,
     delete /api/v1/endpoint-custom-attribute/{name},
+
 """
 
 EXAMPLES = r"""
@@ -45,6 +48,7 @@ EXAMPLES = r"""
     state: present
     attributeName: string
     attributeType: string
+
 - name: Delete by name
   cisco.ise.custom_attributes:
     ise_hostname: "{{ise_hostname}}"
@@ -53,6 +57,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     name: string
+
 """
 
 RETURN = r"""

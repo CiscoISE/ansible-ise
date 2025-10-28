@@ -1,0 +1,39 @@
+---
+- name: Manage LDAP Configuration
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get LDAP configurations
+      cisco.ise.ldap_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+      register: ldap_configs
+
+    - name: Print LDAP Configurations
+      ansible.builtin.debug:
+        var: ldap_configs.ise_response
+
+    - name: Create LDAP configuration
+      cisco.ise.ldap:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        state: present
+        name: Corporate_LDAP
+        description: Corporate LDAP server
+        serverName: ldap.example.com
+        port: 389
+        adminDN: cn=admin,dc=example,dc=com
+        adminPassword: "{{ ldap_admin_password }}"
+        baseDN: dc=example,dc=com
+      register: result
+
+    - name: Print Result
+      ansible.builtin.debug:
+        var: result
+

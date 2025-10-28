@@ -1,0 +1,39 @@
+---
+- name: Manage Guest SMTP Notification Settings
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get Guest SMTP Notification Settings
+      cisco.ise.guestsmtpnotificationsettings_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+      register: smtp_settings
+
+    - name: Print SMTP Settings
+      ansible.builtin.debug:
+        var: smtp_settings.ise_response
+
+    - name: Update Guest SMTP Notification Settings
+      cisco.ise.guestsmtpnotificationsettings:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        state: present
+        smtpServer: smtp.example.com
+        smtpPort: 25
+        connectionSecurity: NONE
+        userName: smtp_user
+        password: "{{ smtp_password }}"
+        defaultFromAddress: noreply@example.com
+        notificationEnabled: true
+      register: result
+
+    - name: Print Result
+      ansible.builtin.debug:
+        var: result
+

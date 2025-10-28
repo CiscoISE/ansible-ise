@@ -1,0 +1,36 @@
+---
+- name: Manage Certificate Profile
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get Certificate Profiles
+      cisco.ise.certificateprofile_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+      register: cert_profiles
+
+    - name: Print Certificate Profiles
+      ansible.builtin.debug:
+        var: cert_profiles.ise_response
+
+    - name: Create Certificate Profile
+      cisco.ise.certificateprofile:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        state: present
+        name: Corporate_Certificate_Profile
+        description: Certificate profile for corporate devices
+        externalIdentityStoreName: "[not applicable]"
+        certificateAttributeName: SUBJECT_COMMON_NAME
+      register: result
+
+    - name: Print Result
+      ansible.builtin.debug:
+        var: result
+

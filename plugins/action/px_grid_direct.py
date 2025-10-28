@@ -31,22 +31,23 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.exceptions import (
 # Get common arguments specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
-argument_spec.update(
-    dict(
-        state=dict(type="str", default="present", choices=["present", "absent"]),
-        additionalProperties=dict(type="dict"),
-        attributes=dict(type="dict"),
-        connectorName=dict(type="str"),
-        connectorType=dict(type="str"),
-        deltasyncSchedule=dict(type="dict"),
-        description=dict(type="str"),
-        enabled=dict(type="bool"),
-        fullsyncSchedule=dict(type="dict"),
-        protocol=dict(type="str"),
-        skipCertificateValidations=dict(type="bool"),
-        url=dict(type="dict"),
-    )
-)
+argument_spec.update(dict(
+    state=dict(type="str", default="present", choices=["present", "absent"]),
+    additionalProperties=dict(type="dict"),
+    attributes=dict(type="dict"),
+    coaType=dict(type="str"),
+    connectorName=dict(type="str"),
+    connectorType=dict(type="str"),
+    deltasyncSchedule=dict(type="dict"),
+    description=dict(type="str"),
+    enabled=dict(type="bool"),
+    flexibleUrl=dict(type="dict"),
+    fullsyncSchedule=dict(type="dict"),
+    groupArray=dict(type="list"),
+    protocol=dict(type="str"),
+    skipCertificateValidations=dict(type="bool"),
+    url=dict(type="dict"),
+))
 
 required_if = [
     ("state", "present", ["connectorName"], True),
@@ -63,12 +64,15 @@ class PxGridDirect(object):
         self.new_object = dict(
             additional_properties=params.get("additionalProperties"),
             attributes=params.get("attributes"),
+            coa_type=params.get("coaType"),
             connector_name=params.get("connectorName"),
             connector_type=params.get("connectorType"),
             deltasync_schedule=params.get("deltasyncSchedule"),
             description=params.get("description"),
             enabled=params.get("enabled"),
+            flexible_url=params.get("flexibleUrl"),
             fullsync_schedule=params.get("fullsyncSchedule"),
+            group_array=params.get("groupArray"),
             protocol=params.get("protocol"),
             skip_certificate_validations=params.get("skipCertificateValidations"),
             url=params.get("url"),
@@ -81,8 +85,8 @@ class PxGridDirect(object):
                 function="get_connector_config_by_connector_name",
                 params={"name": name},
                 handle_func_exception=False,
-            ).response["response"]
-            result = get_dict_result(result, "name", name)
+            ).response['response']
+            result = get_dict_result(result, 'name', name)
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(
                 msg=(
@@ -117,9 +121,7 @@ class PxGridDirect(object):
         if name_exists:
             _id = prev_obj.get("id")
             if id_exists and name_exists and o_id != _id:
-                raise InconsistentParameters(
-                    "The 'id' and 'name' params don't refer to the same object"
-                )
+                raise InconsistentParameters("The 'id' and 'name' params don't refer to the same object")
         it_exists = prev_obj is not None and isinstance(prev_obj, dict)
         return (it_exists, prev_obj)
 
@@ -129,24 +131,24 @@ class PxGridDirect(object):
         obj_params = [
             ("additionalProperties", "additional_properties"),
             ("attributes", "attributes"),
+            ("coaType", "coa_type"),
             ("connectorName", "connector_name"),
             ("connectorType", "connector_type"),
             ("deltasyncSchedule", "deltasync_schedule"),
             ("description", "description"),
             ("enabled", "enabled"),
+            ("flexibleUrl", "flexible_url"),
             ("fullsyncSchedule", "fullsync_schedule"),
+            ("groupArray", "group_array"),
             ("protocol", "protocol"),
             ("skipCertificateValidations", "skip_certificate_validations"),
             ("url", "url"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(
-            not ise_compare_equality(
-                current_obj.get(ise_param), requested_obj.get(ansible_param)
-            )
-            for (ise_param, ansible_param) in obj_params
-        )
+        return any(not ise_compare_equality(current_obj.get(ise_param),
+                                            requested_obj.get(ansible_param))
+                   for (ise_param, ansible_param) in obj_params)
 
     def create(self):
         result = self.ise.exec(
@@ -166,7 +168,7 @@ class PxGridDirect(object):
         result = self.ise.exec(
             family="px_grid_direct",
             function="update_connector_config_by_connector_name",
-            params=self.new_object,
+            params=self.new_object
         ).response
         return result
 
@@ -180,7 +182,7 @@ class PxGridDirect(object):
         result = self.ise.exec(
             family="px_grid_direct",
             function="delete_connector_config_by_connector_name",
-            params=self.new_object,
+            params=self.new_object
         ).response
         return result
 
@@ -188,9 +190,7 @@ class PxGridDirect(object):
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail(
-                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
-            )
+            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = False

@@ -5,10 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: node_promotion
 short_description: Resource module for Node Promotion
 description:
-  - Manage operation update of the resource Node Promotion.
+- Manage operation update of the resource Node Promotion.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -18,11 +19,12 @@ options:
     description: Node Promotion's promotionType.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
-  - python >= 3.5
+- ciscoisesdk >= 2.0.1
+- python >= 3.5
 notes:
   - SDK Method used are
     node_deployment.NodeDeployment.promote_node,
+
   - Paths used are
     put /api/v1/deployment/node-promotion/,
 """
@@ -35,6 +37,7 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     promotionType: string
+
 """
 
 RETURN = r"""

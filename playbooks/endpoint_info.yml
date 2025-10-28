@@ -1,0 +1,35 @@
+---
+- name: Get Endpoint Information
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get all Endpoints
+      cisco.ise.endpoint_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        ise_version: "{{ ise_version }}"
+      register: result
+
+    - name: Print Endpoints
+      ansible.builtin.debug:
+        var: result.ise_response
+
+    - name: Get Endpoint by ID
+      cisco.ise.endpoint_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        id: "{{ endpoint_id }}"
+      when: endpoint_id is defined
+      register: result_by_id
+
+    - name: Print Endpoint by ID
+      ansible.builtin.debug:
+        var: result_by_id.ise_response
+      when: endpoint_id is defined
+

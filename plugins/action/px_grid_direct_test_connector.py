@@ -26,17 +26,17 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
 # Get common arguements specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
-argument_spec.update(
-    dict(
-        authType=dict(type="str"),
-        authValues=dict(type="dict"),
-        connectorName=dict(type="str"),
-        responseParsing=dict(type="str"),
-        skipCertificateValidations=dict(type="bool"),
-        uniqueID=dict(type="str"),
-        url=dict(type="str"),
-    )
-)
+argument_spec.update(dict(
+    authType=dict(type="str"),
+    authValues=dict(type="dict"),
+    connectorName=dict(type="str"),
+    flexibleUrl=dict(type="dict"),
+    incrementalUrl=dict(type="str"),
+    responseParsing=dict(type="str"),
+    skipCertificateValidations=dict(type="bool"),
+    uniqueID=dict(type="str"),
+    url=dict(type="str"),
+))
 
 required_if = []
 required_one_of = []
@@ -47,9 +47,7 @@ required_together = []
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail(
-                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
-            )
+            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = False
@@ -78,6 +76,8 @@ class ActionModule(ActionBase):
             auth_type=params.get("authType"),
             auth_values=params.get("authValues"),
             connector_name=params.get("connectorName"),
+            flexible_url=params.get("flexibleUrl"),
+            incremental_url=params.get("incrementalUrl"),
             response_parsing=params.get("responseParsing"),
             skip_certificate_validations=params.get("skipCertificateValidations"),
             unique_id=params.get("uniqueID"),

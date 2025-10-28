@@ -5,23 +5,26 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: configuration_info
 short_description: Information module for Configuration
 description:
-  - Get all Configuration.
-version_added: '2.8.0'
+- Get all Configuration.
+version_added: '3.2_beta'
 extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-  - ciscoisesdk >= 2.2.3
-  - python >= 3.5
+- ciscoisesdk >= 2.0.1
+- python >= 3.5
 notes:
   - SDK Method used are
     configuration.Configuration.get_configuration,
+
   - Paths used are
     get /api/v1/lsd/updateLsdSettings,
+
 """
 
 EXAMPLES = r"""
@@ -32,6 +35,7 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
   register: result
+
 """
 
 RETURN = r"""

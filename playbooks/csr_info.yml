@@ -1,0 +1,35 @@
+---
+- name: Get Certificate Signing Request Information
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get all CSRs
+      cisco.ise.csr_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        ise_version: "{{ ise_version }}"
+      register: result
+
+    - name: Print CSR List
+      ansible.builtin.debug:
+        var: result.ise_response
+
+    - name: Get CSR by hostname
+      cisco.ise.csr_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        hostName: "{{ target_hostname }}"
+      when: target_hostname is defined
+      register: result_by_hostname
+
+    - name: Print CSR by Hostname
+      ansible.builtin.debug:
+        var: result_by_hostname.ise_response
+      when: target_hostname is defined
+

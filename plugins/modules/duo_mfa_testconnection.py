@@ -5,11 +5,12 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: duo_mfa_testconnection
 short_description: Resource module for Duo Mfa Testconnection
 description:
-  - Manage operation create of the resource Duo Mfa Testconnection.
-  - Duo-MFA - Verify the Auth and Admin API keys of the Duo Host.
+- Manage operation create of the resource Duo Mfa Testconnection.
+- Duo-MFA - Verify the Auth and Admin API keys of the Duo Host.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -39,17 +40,20 @@ options:
         type: str
     type: dict
   connectionName:
-    description: ConnectionName path parameter. This name is used to retrieve secret keys for testing connection of the specified Duo-MFA configuration
-      in case none are specified.
+    description: ConnectionName path parameter. This name is used to retrieve secret
+      keys for testing connection of the specified Duo-MFA configuration in case none
+      are specified.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
-  - python >= 3.5
+- ciscoisesdk >= 2.0.1
+- python >= 3.5
 notes:
   - SDK Method used are
     duo_mfa.DuoMfa.test_connection,
+
   - Paths used are
     post /api/v1/duo-mfa/mfa/testconnection/{connectionName},
+
 """
 
 EXAMPLES = r"""
@@ -67,6 +71,7 @@ EXAMPLES = r"""
       ikey: string
       sKey: string
     connectionName: string
+
 """
 
 RETURN = r"""

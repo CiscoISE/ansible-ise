@@ -26,17 +26,15 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
 # Get common arguements specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
-argument_spec.update(
-    dict(
-        export=dict(type="str"),
-        hostName=dict(type="str"),
-        id=dict(type="str"),
-        password=dict(type="str", no_log=True),
-        dirPath=dict(type="str"),
-        saveFile=dict(type="bool"),
-        filename=dict(type="str"),
-    )
-)
+argument_spec.update(dict(
+    export=dict(type="str"),
+    hostName=dict(type="str"),
+    id=dict(type="str"),
+    password=dict(type="str", no_log=True),
+    dirPath=dict(type="str"),
+    saveFile=dict(type="bool"),
+    filename=dict(type="str"),
+))
 
 required_if = []
 required_one_of = []
@@ -47,9 +45,7 @@ required_together = []
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail(
-                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
-            )
+            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = True
@@ -101,7 +97,7 @@ class ActionModule(ActionBase):
             params=self.get_object(self._task.args),
         )
         response = dict(
-            data=download_response.data.decode(encoding="utf-8"),
+            data=download_response.data.decode(encoding='utf-8'),
             filename=download_response.filename,
             dirpath=download_response.dirpath,
             path=download_response.path,

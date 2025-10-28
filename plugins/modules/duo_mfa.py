@@ -5,13 +5,14 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: duo_mfa
 short_description: Resource module for Duo Mfa
 description:
-  - Manage operations create, update and delete of the resource Duo Mfa.
-  - Duo-MFA - Create a new Duo-MFA configuration.
-  - Duo-MFA - Delete the Duo-MFA configuration specified in the connectionName.
-  - Duo-MFA - Update the Duo-MFA configuration specified in the connectionName.
+- Manage operations create, update and delete of the resource Duo Mfa.
+- Duo-MFA - Create a new Duo-MFA configuration.
+- Duo-MFA - Delete the Duo-MFA configuration specified in the connectionName.
+- Duo-MFA - Update the Duo-MFA configuration specified in the connectionName.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -57,17 +58,19 @@ options:
     description: Protocol type for which this Duo-MFA can be used.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
-  - python >= 3.5
+- ciscoisesdk >= 2.0.1
+- python >= 3.5
 notes:
   - SDK Method used are
     duo_mfa.DuoMfa.create_mfa,
     duo_mfa.DuoMfa.delete_mfa_by_connection_name,
     duo_mfa.DuoMfa.update_m_fa_by_connection_name,
+
   - Paths used are
     post /api/v1/duo-mfa/mfa,
     delete /api/v1/duo-mfa/mfa/{connectionName},
     put /api/v1/duo-mfa/mfa/{connectionName},
+
 """
 
 EXAMPLES = r"""
@@ -90,6 +93,7 @@ EXAMPLES = r"""
     description: string
     identitySync: string
     type: string
+
 - name: Update by name
   cisco.ise.duo_mfa:
     ise_hostname: "{{ise_hostname}}"
@@ -109,6 +113,7 @@ EXAMPLES = r"""
     description: string
     identitySync: string
     type: string
+
 - name: Delete by name
   cisco.ise.duo_mfa:
     ise_hostname: "{{ise_hostname}}"
@@ -117,6 +122,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     connectionName: string
+
 """
 
 RETURN = r"""
@@ -144,6 +150,7 @@ ise_response:
         "type": "string"
       }
     }
+
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

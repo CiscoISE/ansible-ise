@@ -5,13 +5,14 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: repository_info
 short_description: Information module for Repository
 description:
-  - Get all Repository.
-  - Get Repository by name.
-  - Get a specific repository identified by the name passed in the URL.
-  - This will get the full list of repository definitions on the system.
+- Get all Repository.
+- Get Repository by name.
+- Get a specific repository identified by the name passed in the URL.
+- This will get the full list of repository definitions on the system.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -19,22 +20,24 @@ author: Rafael Campos (@racampos)
 options:
   repositoryName:
     description:
-      - RepositoryName path parameter. Unique name for a repository.
+    - RepositoryName path parameter. Unique name for a repository.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
-  - python >= 3.5
+- ciscoisesdk >= 2.0.1
+- python >= 3.5
 seealso:
-  - name: Cisco ISE documentation for Repository
-    description: Complete reference of the Repository API.
-    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!repository-openapi
+- name: Cisco ISE documentation for Repository
+  description: Complete reference of the Repository API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!repository-openapi
 notes:
   - SDK Method used are
     repository.Repository.get_repositories,
     repository.Repository.get_repository,
+
   - Paths used are
     get /api/v1/repository,
     get /api/v1/repository/{repositoryName},
+
 """
 
 EXAMPLES = r"""
@@ -45,6 +48,7 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
   register: result
+
 - name: Get Repository by name
   cisco.ise.repository_info:
     ise_hostname: "{{ise_hostname}}"
@@ -53,6 +57,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     repositoryName: string
   register: result
+
 """
 
 RETURN = r"""
@@ -63,11 +68,6 @@ ise_response:
   sample: >
     {
       "name": "string",
-      "protocol": "string",
-      "path": "string",
-      "password": "string",
-      "serverName": "string",
-      "userName": "string",
-      "enablePki": true
+      "protocol": "string"
     }
 """

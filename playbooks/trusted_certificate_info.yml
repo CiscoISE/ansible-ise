@@ -1,0 +1,35 @@
+---
+- name: Get Trusted Certificate Information
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get all Trusted Certificates
+      cisco.ise.trusted_certificate_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        ise_version: "{{ ise_version }}"
+      register: result
+
+    - name: Print Trusted Certificates
+      ansible.builtin.debug:
+        var: result.ise_response
+
+    - name: Get Trusted Certificate by ID
+      cisco.ise.trusted_certificate_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        id: "{{ certificate_id }}"
+      when: certificate_id is defined
+      register: result_by_id
+
+    - name: Print Trusted Certificate by ID
+      ansible.builtin.debug:
+        var: result_by_id.ise_response
+      when: certificate_id is defined
+

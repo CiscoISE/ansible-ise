@@ -26,15 +26,13 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
 # Get common arguements specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
-argument_spec.update(
-    dict(
-        token=dict(type="str"),
-        tier=dict(type="list"),
-        connectionType=dict(type="str"),
-        registrationType=dict(type="str"),
-        ssmOnPremServer=dict(type="str"),
-    )
-)
+argument_spec.update(dict(
+    connectionType=dict(type="str"),
+    registrationType=dict(type="str"),
+    ssmOnPremServer=dict(type="str"),
+    tier=dict(type="list"),
+    token=dict(type="str"),
+))
 
 required_if = []
 required_one_of = []
@@ -45,9 +43,7 @@ required_together = []
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail(
-                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
-            )
+            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = False
@@ -73,11 +69,11 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            token=params.get("token"),
-            tier=params.get("tier"),
             connection_type=params.get("connectionType"),
             registration_type=params.get("registrationType"),
             ssm_on_prem_server=params.get("ssmOnPremServer"),
+            tier=params.get("tier"),
+            token=params.get("token"),
         )
         return new_object
 

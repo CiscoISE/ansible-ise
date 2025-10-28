@@ -1,0 +1,20 @@
+---
+- name: Test pxGrid Direct Connector
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Test connector connection
+      cisco.ise.px_grid_direct_test_connector:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        connectorName: External_Connector
+      register: result
+
+    - name: Print Test Result
+      ansible.builtin.debug:
+        var: result
+

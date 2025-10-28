@@ -5,11 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: duo_identity_sync_cancel_info
 short_description: Information module for Duo Identity Sync Cancel Info
 description:
   - Get Duo Identity Sync Cancel Info by name.
-  - Cancel the sync between the Active Directory and the corresponding Mfa provider associated with this Identitysync config.
+  - Cancel the sync between the Active Directory and the corresponding Mfa provider
+    associated with this Identitysync config.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -17,10 +19,11 @@ author: Rafael Campos (@racampos)
 options:
   syncName:
     description:
-      - SyncName path parameter. Name of the Identitysync configuration used to cancel sync.
+      - SyncName path parameter. Name of the Identitysync configuration used to cancel
+        sync.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 notes:
   - SDK Method used are
@@ -30,6 +33,7 @@ notes:
 """
 
 EXAMPLES = r"""
+---
 - name: Get Duo Identity Sync Cancel Info by name
   cisco.ise.duo_identity_sync_cancel_info:
     ise_hostname: "{{ise_hostname}}"

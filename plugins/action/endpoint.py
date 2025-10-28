@@ -18,39 +18,40 @@ except ImportError:
 else:
     ANSIBLE_UTILS_IS_INSTALLED = True
 from ansible.errors import AnsibleActionFail
-import re
 from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
     ISESDK,
     ise_argument_spec,
     ise_compare_equality,
     get_dict_result,
 )
+from ansible_collections.cisco.ise.plugins.plugin_utils.exceptions import (
+    InconsistentParameters,
+)
 
 # Get common arguments specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
-argument_spec.update(
-    dict(
-        state=dict(type="str", default="present", choices=["present", "absent"]),
-        name=dict(type="str"),
-        description=dict(type="str"),
-        mac=dict(type="str"),
-        profileId=dict(type="str"),
-        staticProfileAssignment=dict(type="bool"),
-        groupId=dict(type="str"),
-        staticGroupAssignment=dict(type="bool"),
-        portalUser=dict(type="str"),
-        identityStore=dict(type="str"),
-        identityStoreId=dict(type="str"),
-        mdmAttributes=dict(type="dict"),
-        customAttributes=dict(type="dict"),
-        id=dict(type="str"),
-    )
-)
+argument_spec.update(dict(
+    state=dict(type="str", default="present", choices=["present"]),
+    customAttributes=dict(type="dict"),
+    groupId=dict(type="str"),
+    identityStore=dict(type="str"),
+    identityStoreId=dict(type="str"),
+    mac=dict(type="str"),
+    portalUser=dict(type="str"),
+    profileId=dict(type="str"),
+    staticGroupAssignment=dict(type="bool"),
+    staticGroupAssignmentDefined=dict(type="bool"),
+    staticProfileAssignment=dict(type="bool"),
+    staticProfileAssignmentDefined=dict(type="bool"),
+    mdmAttributes=dict(type="dict"),
+    name=dict(type="str"),
+    id=dict(type="str"),
+    description=dict(type="str"),
+))
 
 required_if = [
-    ("state", "present", ["id", "name"], True),
-    ("state", "absent", ["id", "name"], True),
+    ("state", "present", ["name"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -61,32 +62,36 @@ class Endpoint(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            name=params.get("name"),
-            description=params.get("description"),
-            mac=params.get("mac"),
-            profile_id=params.get("profileId"),
-            static_profile_assignment=params.get("staticProfileAssignment"),
+            custom_attributes=params.get("customAttributes"),
             group_id=params.get("groupId"),
-            static_group_assignment=params.get("staticGroupAssignment"),
-            portal_user=params.get("portalUser"),
             identity_store=params.get("identityStore"),
             identity_store_id=params.get("identityStoreId"),
+            mac=params.get("mac"),
+            portal_user=params.get("portalUser"),
+            profile_id=params.get("profileId"),
+            static_group_assignment=params.get("staticGroupAssignment"),
+            static_group_assignment_defined=params.get("staticGroupAssignmentDefined"),
+            static_profile_assignment=params.get("staticProfileAssignment"),
+            static_profile_assignment_defined=params.get("staticProfileAssignmentDefined"),
             mdm_attributes=params.get("mdmAttributes"),
-            custom_attributes=params.get("customAttributes"),
+            name=params.get("name"),
             id=params.get("id"),
+            description=params.get("description"),
         )
 
     def get_object_by_name(self, name):
+        # NOTICE: Get does not support/work for filter by name with EQ
+        result = None
+        gen_items_responses = self.ise.exec(
+            family="endpoint",
+            function="get_endpoint_generator"
+        )
         try:
-            result = self.ise.exec(
-                family="endpoint",
-                function="get_endpoint_by_name",
-                params={"name": name},
-                handle_func_exception=False,
-            ).response["ERSEndPoint"]
-            result["name"] = re.sub("[-:.]", "", result.get("name")).lower()
-            result["mac"] = re.sub("[-:.]", "", result.get("mac")).lower()
-            result = get_dict_result(result, "name", name)
+            for items_response in gen_items_responses:
+                items = items_response.response['SearchResult']['resources']
+                result = get_dict_result(items, 'name', name)
+                if result:
+                    return result
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(
                 msg=(
@@ -99,69 +104,58 @@ class Endpoint(object):
             )
         except Exception:
             result = None
+            return result
         return result
 
     def get_object_by_id(self, id):
-        try:
-            result = self.ise.exec(
-                family="endpoint",
-                function="get_endpoint_by_id",
-                handle_func_exception=False,
-                params={"id": id},
-            ).response["ERSEndPoint"]
-        except (TypeError, AttributeError) as e:
-            self.ise.fail_json(
-                msg=(
-                    "An error occured when executing operation."
-                    " Check the configuration of your API Settings and API Gateway settings on your ISE server."
-                    " This collection assumes that the API Gateway, the ERS APIs and OpenAPIs are enabled."
-                    " You may want to enable the (ise_debug: True) argument."
-                    " The error was: {error}"
-                ).format(error=e)
-            )
-        except Exception:
-            result = None
+        # NOTICE: Does not have a get by id method or it is in another action
+        result = None
         return result
 
     def exists(self):
-        result = False
         prev_obj = None
-        id = self.new_object.get("id")
+        id_exists = False
+        name_exists = False
+        o_id = self.new_object.get("id")
         name = self.new_object.get("name")
-        if id:
-            prev_obj = self.get_object_by_id(id)
-            result = prev_obj is not None and isinstance(prev_obj, dict)
-        elif name:
+        if o_id:
+            prev_obj = self.get_object_by_id(o_id)
+            id_exists = prev_obj is not None and isinstance(prev_obj, dict)
+        if not id_exists and name:
             prev_obj = self.get_object_by_name(name)
-            result = prev_obj is not None and isinstance(prev_obj, dict)
-        return (result, prev_obj)
+            name_exists = prev_obj is not None and isinstance(prev_obj, dict)
+        if name_exists:
+            _id = prev_obj.get("id")
+            if id_exists and name_exists and o_id != _id:
+                raise InconsistentParameters("The 'id' and 'name' params don't refer to the same object")
+        it_exists = prev_obj is not None and isinstance(prev_obj, dict)
+        return (it_exists, prev_obj)
 
     def requires_update(self, current_obj):
         requested_obj = self.new_object
 
         obj_params = [
-            ("name", "name"),
-            ("description", "description"),
-            ("mac", "mac"),
-            ("profileId", "profile_id"),
-            ("staticProfileAssignment", "static_profile_assignment"),
+            ("customAttributes", "custom_attributes"),
             ("groupId", "group_id"),
-            ("staticGroupAssignment", "static_group_assignment"),
-            ("portalUser", "portal_user"),
             ("identityStore", "identity_store"),
             ("identityStoreId", "identity_store_id"),
+            ("mac", "mac"),
+            ("portalUser", "portal_user"),
+            ("profileId", "profile_id"),
+            ("staticGroupAssignment", "static_group_assignment"),
+            ("staticGroupAssignmentDefined", "static_group_assignment_defined"),
+            ("staticProfileAssignment", "static_profile_assignment"),
+            ("staticProfileAssignmentDefined", "static_profile_assignment_defined"),
             ("mdmAttributes", "mdm_attributes"),
-            ("customAttributes", "custom_attributes"),
+            ("name", "name"),
             ("id", "id"),
+            ("description", "description"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(
-            not ise_compare_equality(
-                current_obj.get(ise_param), requested_obj.get(ansible_param)
-            )
-            for (ise_param, ansible_param) in obj_params
-        )
+        return any(not ise_compare_equality(current_obj.get(ise_param),
+                                            requested_obj.get(ansible_param))
+                   for (ise_param, ansible_param) in obj_params)
 
     def create(self):
         result = self.ise.exec(
@@ -171,37 +165,11 @@ class Endpoint(object):
         ).response
         return result
 
-    def update(self):
-        id = self.new_object.get("id")
-        name = self.new_object.get("name")
-        result = None
-        if not id:
-            id_ = self.get_object_by_name(name).get("id")
-            self.new_object.update(dict(id=id_))
-        result = self.ise.exec(
-            family="endpoint", function="update_endpoint_by_id", params=self.new_object
-        ).response
-        return result
-
-    def delete(self):
-        id = self.new_object.get("id")
-        name = self.new_object.get("name")
-        result = None
-        if not id:
-            id_ = self.get_object_by_name(name).get("id")
-            self.new_object.update(dict(id=id_))
-        result = self.ise.exec(
-            family="endpoint", function="delete_endpoint_by_id", params=self.new_object
-        ).response
-        return result
-
 
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail(
-                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
-            )
+            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = False
@@ -237,29 +205,12 @@ class ActionModule(ActionBase):
         state = self._task.args.get("state")
 
         response = None
-
         if state == "present":
             (obj_exists, prev_obj) = obj.exists()
             if obj_exists:
                 if obj.requires_update(prev_obj):
-                    ise_update_response = obj.update()
-                    self._result.update(dict(ise_update_response=ise_update_response))
-                    (obj_exists, updated_obj) = obj.exists()
-                    response = updated_obj
-                    has_changed = None
-                    has_changed = ise_update_response.get("UpdatedFieldsList").get(
-                        "updatedField"
-                    )
-                    if (
-                        len(has_changed) == 0
-                        or has_changed[0].get("newValue") == ""
-                        and has_changed[0].get("newValue")
-                        == has_changed[0].get("oldValue")
-                    ):
-                        self._result.pop("ise_update_response", None)
-                        ise.object_already_present()
-                    else:
-                        ise.object_updated()
+                    response = prev_obj
+                    ise.object_present_and_different()
                 else:
                     response = prev_obj
                     ise.object_already_present()
@@ -268,15 +219,6 @@ class ActionModule(ActionBase):
                 (obj_exists, created_obj) = obj.exists()
                 response = created_obj
                 ise.object_created()
-
-        elif state == "absent":
-            (obj_exists, prev_obj) = obj.exists()
-            if obj_exists:
-                obj.delete()
-                response = prev_obj
-                ise.object_deleted()
-            else:
-                ise.object_already_absent()
 
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())

@@ -1,6 +1,8 @@
 ---
 - name: Restore configuration backup
   hosts: ise_servers
+  vars_files:
+    - credentials.yml
   gather_facts: false
   tasks:
     - name: Restore backup

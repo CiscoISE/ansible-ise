@@ -1,0 +1,21 @@
+---
+- name: Install Patch
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Install patch from repository
+      cisco.ise.patch_install:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        repositoryName: patch-repo
+        patchName: "{{ patch_name }}"
+      register: result
+
+    - name: Print Installation Result
+      ansible.builtin.debug:
+        var: result
+

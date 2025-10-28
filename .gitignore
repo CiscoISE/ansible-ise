@@ -19,3 +19,6 @@ docs/_build/
 changelogs/.plugin-cache.yaml
 .DS_Store 
 *.txt
+
+.yamlfmt
+lint.py

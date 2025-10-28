@@ -1,0 +1,34 @@
+---
+- name: Manage AD Resource Reservation
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get AD Resource Reservations
+      cisco.ise.adresourcereservation_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+      register: ad_reservations
+
+    - name: Print AD Resource Reservations
+      ansible.builtin.debug:
+        var: ad_reservations.ise_response
+
+    - name: Create AD Resource Reservation
+      cisco.ise.adresourcereservation_:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        state: present
+        name: AD_Reservation
+        description: AD resource reservation
+      register: result
+
+    - name: Print Result
+      ansible.builtin.debug:
+        var: result
+

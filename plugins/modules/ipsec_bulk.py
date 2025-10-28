@@ -5,10 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: ipsec_bulk
 short_description: Resource module for Ipsec Bulk
 description:
-  - Manage operation create of the resource Ipsec Bulk.
+- Manage operation create of the resource Ipsec Bulk.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -86,13 +87,15 @@ options:
     description: Ipsec Bulk's operation.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
-  - python >= 3.5
+- ciscoisesdk >= 2.0.1
+- python >= 3.5
 notes:
   - SDK Method used are
     native_ipsec.NativeIpsec.bulk_ip_sec_operation,
+
   - Paths used are
     post /api/v1/ipsec/bulk,
+
 """
 
 EXAMPLES = r"""
@@ -103,28 +106,29 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     ItemList:
-      - authType: string
-        certId: string
-        configureVti: true
-        espAhProtocol: string
-        hostName: string
-        iface: string
-        ikeReAuthTime: 0
-        ikeVersion: string
-        localInternalIp: string
-        modeOption: string
-        nadIp: string
-        phaseOneDHGroup: string
-        phaseOneEncryptionAlgo: string
-        phaseOneHashAlgo: string
-        phaseOneLifeTime: 0
-        phaseTwoDHGroup: string
-        phaseTwoEncryptionAlgo: string
-        phaseTwoHashAlgo: string
-        phaseTwoLifeTime: 0
-        psk: string
-        remotePeerInternalIp: string
+    - authType: string
+      certId: string
+      configureVti: true
+      espAhProtocol: string
+      hostName: string
+      iface: string
+      ikeReAuthTime: 0
+      ikeVersion: string
+      localInternalIp: string
+      modeOption: string
+      nadIp: string
+      phaseOneDHGroup: string
+      phaseOneEncryptionAlgo: string
+      phaseOneHashAlgo: string
+      phaseOneLifeTime: 0
+      phaseTwoDHGroup: string
+      phaseTwoEncryptionAlgo: string
+      phaseTwoHashAlgo: string
+      phaseTwoLifeTime: 0
+      psk: string
+      remotePeerInternalIp: string
     operation: string
+
 """
 
 RETURN = r"""

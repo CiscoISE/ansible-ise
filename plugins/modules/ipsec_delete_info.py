@@ -5,11 +5,12 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: ipsec_delete_info
 short_description: Information module for Ipsec Delete
 description:
-  - Get Ipsec Delete by id.
-  - Returns the IPsec configuration details of a given node with the hostname and the NAD IP.
+- Get Ipsec Delete by id.
+- Returns the IPsec configuration details of a given node with the hostname and the NAD IP.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -17,20 +18,22 @@ author: Rafael Campos (@racampos)
 options:
   hostName:
     description:
-      - HostName path parameter. Hostname of the deployed node.
+    - HostName path parameter. Hostname of the deployed node.
     type: str
   nadIp:
     description:
-      - NadIp path parameter. IP address of the NAD.
+    - NadIp path parameter. IP address of the NAD.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
-  - python >= 3.5
+- ciscoisesdk >= 2.0.1
+- python >= 3.5
 notes:
   - SDK Method used are
     native_ipsec.NativeIpsec.get_ipsec_node,
+
   - Paths used are
     get /api/v1/ipsec/{hostName}/{nadIp},
+
 """
 
 EXAMPLES = r"""
@@ -43,6 +46,7 @@ EXAMPLES = r"""
     hostName: string
     nadIp: string
   register: result
+
 """
 
 RETURN = r"""

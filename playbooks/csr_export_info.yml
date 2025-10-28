@@ -1,0 +1,20 @@
+---
+- name: Export Certificate Signing Request
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Export CSR
+      cisco.ise.csr_export_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        hostName: "{{ target_hostname }}"
+      register: result
+
+    - name: Print CSR
+      ansible.builtin.debug:
+        var: result.ise_response
+

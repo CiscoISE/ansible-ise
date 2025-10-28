@@ -5,11 +5,12 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: duo_identity_sync_status
 short_description: Resource module for Duo Identity Sync Status
 description:
-  - Manage operation update of the resource Duo Identity Sync Status.
-  - Duo-identitysync - update sync status.
+- Manage operation update of the resource Duo Identity Sync Status.
+- Duo-identitysync - update sync status.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -61,13 +62,15 @@ options:
     description: SyncName path parameter. Sync connection to be updated.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
-  - python >= 3.5
+- ciscoisesdk >= 2.0.1
+- python >= 3.5
 notes:
   - SDK Method used are
     duo_identity_sync.DuoIdentitySync.update_status,
+
   - Paths used are
     put /api/v1/duo-identitysync/identitysync/status/{syncName},
+
 """
 
 EXAMPLES = r"""
@@ -78,19 +81,20 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     errorList:
-      - reason: string
-        user:
-          directoryname: string
-          email: string
-          firstname: string
-          groupname: string
-          lastname: string
-          notes: string
-          realname: string
-          status: string
-          username: string
+    - reason: string
+      user:
+        directoryname: string
+        email: string
+        firstname: string
+        groupname: string
+        lastname: string
+        notes: string
+        realname: string
+        status: string
+        username: string
     status: string
     syncName: string
+
 """
 
 RETURN = r"""

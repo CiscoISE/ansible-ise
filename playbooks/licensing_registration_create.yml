@@ -1,0 +1,21 @@
+---
+- name: Create Licensing Registration
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Register ISE with Cisco Smart Licensing
+      cisco.ise.licensing_registration_create:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        registrationType: REGISTRATION_TOKEN
+        token: "{{ smart_licensing_token }}"
+      register: result
+
+    - name: Print Registration Result
+      ansible.builtin.debug:
+        var: result
+

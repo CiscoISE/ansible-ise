@@ -1,0 +1,20 @@
+---
+- name: Get Licensing Connection Type Information
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get licensing connection type
+      cisco.ise.licensing_connection_type_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        ise_version: "{{ ise_version }}"
+      register: result
+
+    - name: Print Licensing Connection Type
+      ansible.builtin.debug:
+        var: result.ise_response
+

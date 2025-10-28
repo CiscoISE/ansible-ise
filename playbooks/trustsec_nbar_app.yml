@@ -1,0 +1,35 @@
+---
+- name: Manage TrustSec NBAR Application
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get TrustSec NBAR Applications
+      cisco.ise.trustsec_nbar_app_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+      register: nbar_apps
+
+    - name: Print TrustSec NBAR Applications
+      ansible.builtin.debug:
+        var: nbar_apps.ise_response
+
+    - name: Create TrustSec NBAR Application
+      cisco.ise.trustsec_nbar_app:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        state: present
+        name: Custom_NBAR_App
+        description: Custom NBAR application
+        ports: "8080,8443"
+      register: result
+
+    - name: Print Result
+      ansible.builtin.debug:
+        var: result
+

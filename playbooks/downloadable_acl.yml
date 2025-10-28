@@ -1,6 +1,8 @@
 ---
 - name: Downloadable ACL
   hosts: ise_servers
+  vars_files:
+    - credentials.yml
   gather_facts: false
   tasks:
     - name: Get all
@@ -9,6 +11,7 @@
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
         ise_verify: "{{ ise_verify }}"
+        ise_version: "{{ ise_version }}"
       register: result
 
     - name: Print all

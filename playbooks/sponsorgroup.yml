@@ -1,0 +1,36 @@
+---
+- name: Manage Sponsor Group
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get Sponsor Groups
+      cisco.ise.sponsorgroup_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+      register: sponsor_groups
+
+    - name: Print Sponsor Groups
+      ansible.builtin.debug:
+        var: sponsor_groups.ise_response
+
+    - name: Create Sponsor Group
+      cisco.ise.sponsorgroup:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        state: present
+        name: Guest_Sponsors
+        description: Group for guest sponsors
+        isEnabled: true
+        isDefaultGroup: false
+      register: result
+
+    - name: Print Result
+      ansible.builtin.debug:
+        var: result
+

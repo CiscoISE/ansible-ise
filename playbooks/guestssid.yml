@@ -1,0 +1,34 @@
+---
+- name: Manage Guest SSID
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get Guest SSIDs
+      cisco.ise.guestssid_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+      register: guest_ssids
+
+    - name: Print Guest SSIDs
+      ansible.builtin.debug:
+        var: guest_ssids.ise_response
+
+    - name: Create Guest SSID
+      cisco.ise.guestssid:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        state: present
+        name: Guest_WiFi
+        description: Guest wireless network
+      register: result
+
+    - name: Print Result
+      ansible.builtin.debug:
+        var: result
+

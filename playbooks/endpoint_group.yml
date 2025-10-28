@@ -1,6 +1,8 @@
 ---
 - name: Manage endpoint groups on ISE
   hosts: ise_servers
+  vars_files:
+    - credentials.yml
   gather_facts: false
   tasks:
     - name: Create endpoint group

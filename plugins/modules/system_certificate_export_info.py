@@ -5,11 +5,12 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: system_certificate_export_info
 short_description: Information module for System Certificate Export Info
 description:
-  - Get System Certificate Export Info.
-  - Export System Certificate.
+- Get System Certificate Export Info.
+- Export System Certificate.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -25,7 +26,8 @@ options:
     description: The filename used to save the download file.
     type: str
   hostName:
-    description: Hostname of the Cisco ISE node in which self-signed certificate should be generated.
+    description: Hostname of the Cisco ISE node in which self-signed certificate should
+      be generated.
     type: str
   id:
     description: System Certificate Export Info's id.
@@ -37,16 +39,18 @@ options:
     description: Enable or disable automatic file creation of raw response.
     type: bool
 requirements:
-  - ciscoisesdk >= 2.2.3
-  - python >= 3.5
+- ciscoisesdk >= 2.0.1
+- python >= 3.5
 seealso:
-  - name: Cisco ISE documentation for Certificates
-    description: Complete reference of the Certificates API.
-    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
+- name: Cisco ISE documentation for Certificates
+  description: Complete reference of the Certificates API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
 notes:
   - SDK Method used are
     certificates.Certificates.export_system_certificate,
+
   - Paths used are
+
 """
 
 EXAMPLES = r"""
@@ -63,6 +67,7 @@ EXAMPLES = r"""
     id: string
     password: string
     saveFile: true
+
 """
 
 RETURN = r"""

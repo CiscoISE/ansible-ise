@@ -5,14 +5,16 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: patch_rollback
 short_description: Resource module for Patch Rollback
 description:
-  - Manage operation create of the resource Patch Rollback.
-  - >
-    Triggers patch rollback on the Cisco ISE node. A task ID is returned which can be used to monitor the progress of the patch rollback process.
-    As the patch rollback triggers the Cisco ISE to restart, the task API becomes unavailable for a certain period of time. For rollback of patch
-    on secondary nodes , request needs to sent on individual node instead of the Primary Administration Node.
+  - Manage operation create of the resource Patch Rollback. - > Triggers patch rollback
+    on the Cisco ISE node. A task ID is returned which can be used to monitor the
+    progress of the patch rollback process. As the patch rollback triggers the Cisco
+    ISE to restart, the task API becomes unavailable for a certain period of time.
+    For rollback of patch on secondary nodes , request needs to sent on individual
+    node instead of the Primary Administration Node.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -22,7 +24,7 @@ options:
     description: Patch Rollback's patchNumber.
     type: int
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 seealso:
   - name: Cisco ISE documentation for Patching
@@ -36,6 +38,7 @@ notes:
 """
 
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.patch_rollback:
     ise_hostname: "{{ise_hostname}}"

@@ -5,10 +5,11 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: trustsec_vn_bulk_create
 short_description: Resource module for Trustsec VN Bulk Create
 description:
-  - Manage operation create of the resource Trustsec VN Bulk Create.
+- Manage operation create of the resource Trustsec VN Bulk Create.
 version_added: '2.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -25,24 +26,26 @@ options:
         description: Identifier of the Virtual Network.
         type: str
       lastUpdate:
-        description: Timestamp for the last update of the Virtual Network.
+        description: Last update timestamp of the Virtual Network.
         type: str
       name:
         description: Name of the Virtual Network.
         type: str
     type: list
 requirements:
-  - ciscoisesdk >= 2.2.3
-  - python >= 3.5
+- ciscoisesdk >= 2.0.1
+- python >= 3.5
 seealso:
-  - name: Cisco ISE documentation for virtualNetwork
-    description: Complete reference of the virtualNetwork API.
-    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!trustsec-openapi
+- name: Cisco ISE documentation for virtualNetwork
+  description: Complete reference of the virtualNetwork API.
+  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!trustsec-openapi
 notes:
   - SDK Method used are
     virtual_network.VirtualNetwork.bulk_create_virtual_networks,
+
   - Paths used are
     post /api/v1/trustsec/virtualnetwork/bulk/create,
+
 """
 
 EXAMPLES = r"""
@@ -53,10 +56,11 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     payload:
-      - additionalAttributes: string
-        id: string
-        lastUpdate: string
-        name: string
+    - additionalAttributes: string
+      id: string
+      lastUpdate: string
+      name: string
+
 """
 
 RETURN = r"""

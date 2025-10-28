@@ -1,6 +1,8 @@
 ---
 - name: Create or update an egress_matrix_cell
   hosts: ise_servers
+  vars_files:
+    - credentials.yml
   gather_facts: false
   tasks:
     - name: Get sgt src

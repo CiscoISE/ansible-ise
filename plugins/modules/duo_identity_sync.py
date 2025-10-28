@@ -5,13 +5,14 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: duo_identity_sync
 short_description: Resource module for Duo Identity Sync
 description:
-  - Manage operations create, update and delete of the resource Duo Identity Sync.
-  - Duo-IdentitySync - Create a new IdentitySync configuration.
-  - Duo-Identitysync - Delete the Identitysync configuration specified in the syncName.
-  - Duo-Identitysync - Update the Identitysync configuration specified in the syncName.
+- Manage operations create, update and delete of the resource Duo Identity Sync.
+- Duo-IdentitySync - Create a new IdentitySync configuration.
+- Duo-Identitysync - Delete the Identitysync configuration specified in the syncName.
+- Duo-Identitysync - Update the Identitysync configuration specified in the syncName.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -62,7 +63,8 @@ options:
         description: Unit of the time interval.
         type: str
       schedulerSync:
-        description: Type of Sync Schedule - If "Recurring", please specify schedule details.
+        description: Type of Sync Schedule - If "Recurring", please specify schedule
+          details.
         type: str
       startDate:
         description: Start date and start time of the sync schedule.
@@ -72,17 +74,19 @@ options:
     description: Duo Identity Sync's syncStatus.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
-  - python >= 3.5
+- ciscoisesdk >= 2.0.1
+- python >= 3.5
 notes:
   - SDK Method used are
     duo_identity_sync.DuoIdentitySync.create_identitysync,
     duo_identity_sync.DuoIdentitySync.delete_identity_sync_by_sync_name,
     duo_identity_sync.DuoIdentitySync.update_identitysync_by_sync_name,
+
   - Paths used are
     post /api/v1/duo-identitysync/identitysync,
     delete /api/v1/duo-identitysync/identitysync/{syncName},
     put /api/v1/duo-identitysync/identitysync/{syncName},
+
 """
 
 EXAMPLES = r"""
@@ -94,13 +98,13 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     adGroups:
-      - name: string
-        source: string
+    - name: string
+      source: string
     configurations:
       activeDirectories:
-        - directoryID: string
-          domain: string
-          name: string
+      - directoryID: string
+        domain: string
+        name: string
     lastSync: string
     syncName: string
     syncSchedule:
@@ -109,6 +113,7 @@ EXAMPLES = r"""
       schedulerSync: string
       startDate: string
     syncStatus: string
+
 - name: Update by name
   cisco.ise.duo_identity_sync:
     ise_hostname: "{{ise_hostname}}"
@@ -117,13 +122,13 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     adGroups:
-      - name: string
-        source: string
+    - name: string
+      source: string
     configurations:
       activeDirectories:
-        - directoryID: string
-          domain: string
-          name: string
+      - directoryID: string
+        domain: string
+        name: string
     lastSync: string
     syncName: string
     syncSchedule:
@@ -132,6 +137,7 @@ EXAMPLES = r"""
       schedulerSync: string
       startDate: string
     syncStatus: string
+
 - name: Delete by name
   cisco.ise.duo_identity_sync:
     ise_hostname: "{{ise_hostname}}"
@@ -140,6 +146,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     syncName: string
+
 """
 
 RETURN = r"""
@@ -177,6 +184,7 @@ ise_response:
         "syncStatus": "string"
       }
     }
+
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

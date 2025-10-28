@@ -1,0 +1,35 @@
+---
+- name: Manage SGT VN VLAN Mapping
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get SGT VN VLAN Mappings
+      cisco.ise.sgtvnvlan_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+      register: sgt_vn_vlans
+
+    - name: Print SGT VN VLAN Mappings
+      ansible.builtin.debug:
+        var: sgt_vn_vlans.ise_response
+
+    - name: Create SGT VN VLAN Mapping
+      cisco.ise.sgtvnvlan:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        state: present
+        sgtName: Employees
+        virtualnetworkName: Employee_VN
+        vlanId: 100
+      register: result
+
+    - name: Print Result
+      ansible.builtin.debug:
+        var: result
+

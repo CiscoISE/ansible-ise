@@ -1,0 +1,29 @@
+---
+- name: Import System Certificate
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Import system certificate
+      cisco.ise.system_certificate_import:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        admin: true
+        eap: true
+        portal: true
+        allowPortalTagTransferForSameSubject: false
+        allowReplacementOfPortalGroupTag: false
+        allowRoleTransferForSameSubject: false
+        data: "{{ certificate_data }}"
+        name: Imported_Certificate
+        password: "{{ cert_password }}"
+        privateKeyData: "{{ private_key_data }}"
+      register: result
+
+    - name: Print Import Result
+      ansible.builtin.debug:
+        var: result
+

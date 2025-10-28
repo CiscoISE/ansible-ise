@@ -1,0 +1,36 @@
+---
+- name: Manage Proxy Connection Settings
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get Proxy Connection Settings
+      cisco.ise.proxy_connection_settings_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+      register: proxy_settings
+
+    - name: Print Proxy Settings
+      ansible.builtin.debug:
+        var: proxy_settings.ise_response
+
+    - name: Update Proxy Connection Settings
+      cisco.ise.proxy_connection_settings:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        bypassHosts: localhost,127.0.0.1
+        fqdn: proxy.example.com
+        passwordRequired: false
+        port: 8080
+        userName: proxy_user
+      register: result
+
+    - name: Print Result
+      ansible.builtin.debug:
+        var: result
+

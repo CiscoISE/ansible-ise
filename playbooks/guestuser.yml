@@ -1,0 +1,42 @@
+---
+- name: Manage Guest User
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get Guest Users
+      cisco.ise.guestuser_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+      register: guest_users
+
+    - name: Print Guest Users
+      ansible.builtin.debug:
+        var: guest_users.ise_response
+
+    - name: Create Guest User
+      cisco.ise.guestuser:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        state: present
+        name: guest_user_001
+        guestType: Contractor
+        guestInfo:
+          userName: guest_user_001
+          password: "{{ guest_password }}"
+          emailAddress: guest@example.com
+          enabled: true
+        guestAccessInfo:
+          validDays: 1
+          fromDate: "{{ ansible_date_time.iso8601 }}"
+      register: result
+
+    - name: Print Result
+      ansible.builtin.debug:
+        var: result
+

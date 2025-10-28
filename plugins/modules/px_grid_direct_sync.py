@@ -5,11 +5,12 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: px_grid_direct_sync
 short_description: Resource module for Px Grid Direct Sync
 description:
-  - Manage operation create of the resource Px Grid Direct Sync.
-  - This syncNow is used on demand on a URLFetch Type connector only.
+- Manage operation create of the resource Px Grid Direct Sync.
+- PxGrid Direct - test the Connector.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -25,13 +26,15 @@ options:
     description: Description.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
-  - python >= 3.5
+- ciscoisesdk >= 2.0.1
+- python >= 3.5
 notes:
   - SDK Method used are
     px_grid_direct.PxGridDirect.sync_now_connector,
+
   - Paths used are
     post /api/v1/pxgrid-direct/syncnow,
+
 """
 
 EXAMPLES = r"""
@@ -45,6 +48,7 @@ EXAMPLES = r"""
     SyncType: string
     connectorName: string
     description: string
+
 """
 
 RETURN = r"""

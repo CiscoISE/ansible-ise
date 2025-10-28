@@ -5,13 +5,14 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: reservation_info
 short_description: Information module for Reservation Info
 description:
-  - Get all Reservation Info.
-  - Get Reservation Info by id.
-  - Get all the reserved Security Group tag ranges in ISE.
-  - Get the reserved range of SGT for the specific client which is passed in the URL.
+- Get all Reservation Info.
+- Get Reservation Info by id.
+- Get all the reserved Security Group tag ranges in ISE.
+- Get the reserved range of SGT for the specific client which is passed in the URL.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -19,26 +20,28 @@ author: Rafael Campos (@racampos)
 options:
   page:
     description:
-      - Page query parameter. Page number.
+    - Page query parameter. Page number.
     type: int
   size:
     description:
-      - Size query parameter. Number of objects returned per page.
+    - Size query parameter. Number of objects returned per page.
     type: int
   clientID:
     description:
-      - ClientID path parameter. Unique name for a Client.
+    - ClientID path parameter. Unique name for a Client.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
-  - python >= 3.5
+- ciscoisesdk >= 2.0.1
+- python >= 3.5
 notes:
   - SDK Method used are
     sgt_range_reservation.SgtRangeReservation.get_sgt_reserved_range,
     sgt_range_reservation.SgtRangeReservation.get_sgt_reserved_ranges_generator,
+
   - Paths used are
     get /api/v1/sgt/reservation,
     get /api/v1/sgt/reservation/{clientID},
+
 """
 
 EXAMPLES = r"""
@@ -51,6 +54,7 @@ EXAMPLES = r"""
     page: 0
     size: 0
   register: result
+
 - name: Get Reservation Info by id
   cisco.ise.reservation_info:
     ise_hostname: "{{ise_hostname}}"
@@ -59,6 +63,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     clientID: string
   register: result
+
 """
 
 RETURN = r"""
@@ -73,6 +78,7 @@ ise_response:
       "endIndex": 0,
       "startIndex": 0
     }
+
 ise_responses:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

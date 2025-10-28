@@ -1,0 +1,33 @@
+---
+- name: Get Endpoint Group Information
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get all Endpoint Groups
+      cisco.ise.endpointgroup_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        ise_version: "{{ ise_version }}"
+      register: result
+
+    - name: Print Endpoint Groups
+      ansible.builtin.debug:
+        var: result.ise_response
+
+    - name: Get Endpoint Group by name
+      cisco.ise.endpointgroup_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        name: Corporate_Devices
+      register: result_by_name
+
+    - name: Print Endpoint Group by Name
+      ansible.builtin.debug:
+        var: result_by_name.ise_response
+

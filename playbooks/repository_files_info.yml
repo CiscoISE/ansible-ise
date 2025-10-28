@@ -1,0 +1,20 @@
+---
+- name: Get Repository Files Information
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get files in repository
+      cisco.ise.repository_files_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        repositoryName: backup-repo
+      register: result
+
+    - name: Print Repository Files
+      ansible.builtin.debug:
+        var: result.ise_response
+

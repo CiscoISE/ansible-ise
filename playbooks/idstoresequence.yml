@@ -1,0 +1,37 @@
+---
+- name: Manage Identity Store Sequence
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get ID Store Sequences
+      cisco.ise.idstoresequence_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+      register: idstore_sequences
+
+    - name: Print ID Store Sequences
+      ansible.builtin.debug:
+        var: idstore_sequences.ise_response
+
+    - name: Create ID Store Sequence
+      cisco.ise.idstoresequence:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_verify: "{{ ise_verify }}"
+        state: present
+        name: Corporate_Auth_Sequence
+        description: Authentication sequence for corporate users
+        idSeqItem:
+          - idstore: Internal Users
+            order: 1
+      register: result
+
+    - name: Print Result
+      ansible.builtin.debug:
+        var: result
+
