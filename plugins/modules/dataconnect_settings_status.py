@@ -11,7 +11,7 @@ short_description: Resource module for Dataconnect Settings Status
 description:
   - Manage operation update of the resource Dataconnect Settings Status.
   - This API updates the DataConnect feature status.
-version_added: '3.2_beta'
+version_added: '3.2.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)

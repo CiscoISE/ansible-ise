@@ -40,6 +40,7 @@ options:
     type: str
   sgacls:
     description: Egressmatrixcell's sgacls.
+    elements: str
     type: list
   sourceSGtId:
     description: Egressmatrixcell's sourceSGtId.

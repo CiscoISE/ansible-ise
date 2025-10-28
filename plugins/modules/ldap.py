@@ -20,6 +20,7 @@ options:
     suboptions:
       attributes:
         description: List of Attributes.
+        elements: dict
         type: list
     type: dict
   connectionSettings:
@@ -232,6 +233,7 @@ options:
     suboptions:
       groupsNames:
         description: List of groups.
+        elements: str
         type: list
     type: dict
   id:

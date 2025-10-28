@@ -11,7 +11,7 @@ short_description: Information module for Dataconnect Info
 description:
   - Get all Dataconnect Info.
   - This API retrieves the Dataconnect ODBC details.
-version_added: '3.2_beta'
+version_added: '3.2.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)

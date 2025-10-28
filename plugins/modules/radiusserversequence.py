@@ -28,6 +28,7 @@ options:
   RADIUSServerList:
     description: List with names of external radius server. The order of the names
       in the list is the order of servers that will be used during authentication.
+    elements: str
     type: list
   continueAuthorzPolicy:
     description: ContinueAuthorzPolicy flag.

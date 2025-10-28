@@ -6,7 +6,7 @@
 
 DOCUMENTATION = r"""
 ---
-module: duo_mfa_info
+module: duo_mfainfo_info
 short_description: Information module for Duo Mfa Info
 description:
   - Get all Duo Mfa Info.

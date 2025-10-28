@@ -162,10 +162,12 @@ options:
           directoryNames:
             description: List of DirectoryNames to be used for validating the Subject
               Alternative Name extension.
+            elements: str
             type: list
           dnsNames:
             description: List of dnsNames to be used for validating the Subject Alternative
               Name extension.
+            elements: str
             type: list
         type: dict
     type: dict

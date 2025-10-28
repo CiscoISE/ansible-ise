@@ -10,7 +10,7 @@ module: configuration_info
 short_description: Information module for Configuration
 description:
   - Get all Configuration.
-version_added: '3.2_beta'
+version_added: '3.2.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)
