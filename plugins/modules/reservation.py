@@ -22,9 +22,6 @@ options:
   clientID:
     description: ClientID path parameter. Unique name for a Client.
     type: str
-  clientId:
-    description: Unique ID of the given client.
-    type: str
   clientName:
     description: Name of the given client.
     type: str
@@ -69,7 +66,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     clientID: string
-    clientId: string
     endIndex: 0
     startIndex: 0
 - name: Delete by id
