@@ -284,14 +284,14 @@ EXAMPLES = r"""
       enableForceReconnect: false
       enableSecureConnection: false
       enableServerIdentityCheck: false
-        forceReconnectTime: 20
-        hostName: ''
-        issuerCACertificate: ''
-        maxConnections: 20
-        port: 389
-        serverTimeout: 10
-        trustCertificate: ''
-        useAdminAccess: true
+      forceReconnectTime: 20
+      hostName: ''
+      issuerCACertificate: ''
+      maxConnections: 20
+      port: 389
+      serverTimeout: 10
+      trustCertificate: ''
+      useAdminAccess: true
       secondaryServer:
         adminDN: cn=administrator,cn=users,dc=ise,dc=com
         adminPassword: Lab@123

@@ -69,7 +69,7 @@ EXAMPLES = r"""
     name: string
     networkIdentities:
       - ports: string
-      protocol: string
+        protocol: string
 
 - name: Update by id
   cisco.ise.trustsec_nbar_app:
@@ -83,7 +83,7 @@ EXAMPLES = r"""
     name: string
     networkIdentities:
       - ports: string
-      protocol: string
+        protocol: string
 
 - name: Delete by id
   cisco.ise.trustsec_nbar_app:
@@ -93,7 +93,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-
 """
 RETURN = r"""
 ise_response:

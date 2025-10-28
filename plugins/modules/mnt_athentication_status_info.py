@@ -35,7 +35,7 @@ notes:
     misc.Misc.get_authentication_status_by_mac,
   - Paths used are
     get /AuthStatus/MACAddress/{MAC}/{SECONDS}/{RECORDS}/All,
-    seealso:
+seealso:
   # Reference by module name
   - module: cisco.ise.mnt_authentication_status_info
 """
