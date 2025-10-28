@@ -1,12 +1,10 @@
 name: CI
 on:
   push:
-    branches: ["main"]
+    branches: [main]
   pull_request:
-    branches: ["main", "stable", "release/v*"]
   schedule:
     - cron: '0 6 * * *'
-  workflow_dispatch:
 env:
   NAMESPACE: cisco
   COLLECTION_NAME: ise
@@ -16,24 +14,24 @@ jobs:
     strategy:
       matrix:
         ansible:
-          - stable-2.15
-          - stable-2.16
           - stable-2.17
+          - stable-2.18
+          - stable-2.19
           - devel
     runs-on: ubuntu-22.04
     steps:
       - name: Check out code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
         with:
           path: CiscoISE/ansible-ise
       - name: Create directory
         run: mkdir -p ./ansible_collections/${{env.NAMESPACE}}
       - name: Move repository
-        run: mv ./CiscoISE/ansible-ise ./ansible_collections/${{env.NAMESPACE}}/${{env.COLLECTION_NAME}}
+        run: mv ./meraki/dashboard-api-ansible ./ansible_collections/${{env.NAMESPACE}}/${{env.COLLECTION_NAME}}
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v3
         with:
-          python-version: '3.11'
+          python-version: '3.12'
       - name: Install ansible-base (${{ matrix.ansible }})
         run: pip install https://github.com/ansible/ansible/archive/${{ matrix.ansible }}.tar.gz --disable-pip-version-check
       - name: Run sanity tests
