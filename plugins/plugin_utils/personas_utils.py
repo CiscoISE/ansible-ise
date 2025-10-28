@@ -231,7 +231,7 @@ class ISEDeployment(object):
             raise AnsibleActionFail("Primary node must be set before exporting certificates")
         if not self.nodes:
             raise AnsibleActionFail("At least one secondary node must be added before exporting certificates")
-        
+
         for node in self.nodes:
             node.import_certificate_into_primary(self.primary)
 
@@ -239,6 +239,6 @@ class ISEDeployment(object):
         """Promote the primary node."""
         if not self.primary:
             raise AnsibleActionFail("Primary node must be set before promoting")
-        
+
         timeout = 300
         return self.primary.promote_to_primary(timeout)
