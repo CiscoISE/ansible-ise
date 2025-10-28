@@ -17,4 +17,3 @@
     - name: Print External RADIUS Servers
       ansible.builtin.debug:
         var: result.ise_response
-

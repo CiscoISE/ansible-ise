@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: endpoint
 short_description: Resource module for Endpoint
 description:
-- Manage operation create of the resource Endpoint.
+  - Manage operation create of the resource Endpoint.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -61,18 +61,16 @@ options:
     description: StaticProfileAssignmentDefined flag.
     type: bool
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     endpoint.Endpoint.create_endpoint,
-
   - Paths used are
     post /endpoint/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.endpoint:
     ise_hostname: "{{ise_hostname}}"
@@ -111,9 +109,7 @@ EXAMPLES = r"""
     staticGroupAssignmentDefined: true
     staticProfileAssignment: false
     staticProfileAssignmentDefined: true
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

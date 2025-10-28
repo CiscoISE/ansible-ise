@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: portaltheme
 short_description: Resource module for Portaltheme
 description:
-- Manage operation create of the resource Portaltheme.
+  - Manage operation create of the resource Portaltheme.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -28,18 +28,16 @@ options:
     description: Portal Theme for all portals.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     portaltheme.Portaltheme.create_portaltheme,
-
   - Paths used are
     post /portaltheme/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.portaltheme:
     ise_hostname: "{{ise_hostname}}"
@@ -50,9 +48,7 @@ EXAMPLES = r"""
     id: f75760e7-a4f9-40ef-93bb-88a97e9fb171
     name: name
     themeData: Base 64 encoded string of CSS file
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

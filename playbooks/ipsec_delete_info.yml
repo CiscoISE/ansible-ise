@@ -17,4 +17,3 @@
     - name: Print Delete Status
       ansible.builtin.debug:
         var: result.ise_response
-

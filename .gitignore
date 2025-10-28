@@ -22,3 +22,8 @@ changelogs/.plugin-cache.yaml
 
 .yamlfmt
 lint.py
+
+# Variables de entorno con credenciales
+.env
+playbooks/credentials.yml
+a.log

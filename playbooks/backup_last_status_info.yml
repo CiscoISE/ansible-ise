@@ -17,4 +17,3 @@
     - name: Print Last Backup Status
       ansible.builtin.debug:
         var: result.ise_response
-

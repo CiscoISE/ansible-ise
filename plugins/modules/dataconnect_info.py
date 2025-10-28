@@ -9,26 +9,24 @@ DOCUMENTATION = r"""
 module: dataconnect_info
 short_description: Information module for Dataconnect Info
 description:
-- Get all Dataconnect Info.
-- This API retrieves the Dataconnect ODBC details.
+  - Get all Dataconnect Info.
+  - This API retrieves the Dataconnect ODBC details.
 version_added: '3.2_beta'
 extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     dataconnect_services.DataconnectServices.get_odbc_detail,
-
   - Paths used are
     get /api/v1/mnt/data-connect/details,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Get all Dataconnect Info
   cisco.ise.dataconnect_info:
     ise_hostname: "{{ise_hostname}}"
@@ -36,9 +34,7 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
   register: result
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

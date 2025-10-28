@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: endpoints_task
 short_description: Resource module for Endpoints Task
 description:
-- Manage operation create of the resource Endpoints Task.
+  - Manage operation create of the resource Endpoints Task.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -82,18 +82,16 @@ options:
     description: Endpoints Task's vendor.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     endpoints.Endpoints.create_end_point_task,
-
   - Paths used are
     post /api/v1/endpointTask,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.endpoints_task:
     ise_hostname: "{{ise_hostname}}"
@@ -122,9 +120,7 @@ EXAMPLES = r"""
     staticGroupAssignment: true
     staticProfileAssignment: true
     vendor: string
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

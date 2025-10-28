@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: downloadableacl
 short_description: Resource module for Downloadableacl
 description:
-- Manage operation create of the resource Downloadableacl.
+  - Manage operation create of the resource Downloadableacl.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -31,18 +31,16 @@ options:
     description: Name.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     downloadableacl.Downloadableacl.create_downloadableacl,
-
   - Paths used are
     post /downloadableacl/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.downloadableacl:
     ise_hostname: "{{ise_hostname}}"
@@ -55,9 +53,7 @@ EXAMPLES = r"""
     description: description
     id: f75760e7-a4f9-40ef-93bb-88a97e9fb171
     name: name
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

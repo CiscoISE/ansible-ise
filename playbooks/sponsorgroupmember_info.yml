@@ -17,4 +17,3 @@
     - name: Print Sponsor Group Members
       ansible.builtin.debug:
         var: result.ise_response
-

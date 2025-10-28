@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: sxpconnections_info
 short_description: Information module for SXPconnections
 description:
-- Get all SXPconnections.
+  - Get all SXPconnections.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -17,48 +17,47 @@ author: Rafael Campos (@racampos)
 options:
   filter:
     description:
-    - Filter query parameter. Filter Supported Fields name, description.
-    - Each resource Data model description should specify if an attribute is a filtered field.
-    - The 'EQ' operator describes 'Equals'.
-    - The 'NEQ' operator describes 'Not Equals'.
-    - The 'GT' operator describes 'Greater Than'.
-    - The 'LT' operator describes 'Less Than'.
-    - The 'STARTSW' operator describes 'Starts With'.
-    - The 'NSTARTSW' operator describes 'Not Starts With'.
-    - The 'ENDSW' operator describes 'Ends With'.
-    - The 'NENDSW' operator describes 'Not Ends With'.
-    - The 'CONTAINS' operator describes 'Contains'.
-    - The 'NCONTAINS' operator describes 'Not Contains'.
+      - Filter query parameter. Filter Supported Fields name, description.
+      - Each resource Data model description should specify if an attribute is a filtered
+        field.
+      - The 'EQ' operator describes 'Equals'.
+      - The 'NEQ' operator describes 'Not Equals'.
+      - The 'GT' operator describes 'Greater Than'.
+      - The 'LT' operator describes 'Less Than'.
+      - The 'STARTSW' operator describes 'Starts With'.
+      - The 'NSTARTSW' operator describes 'Not Starts With'.
+      - The 'ENDSW' operator describes 'Ends With'.
+      - The 'NENDSW' operator describes 'Not Ends With'.
+      - The 'CONTAINS' operator describes 'Contains'.
+      - The 'NCONTAINS' operator describes 'Not Contains'.
     type: str
   page:
     description:
-    - Page query parameter. Page Number (0...N).
+      - Page query parameter. Page Number (0...N).
     type: int
   size:
     description:
-    - Size query parameter. Items by Page.
+      - Size query parameter. Items by Page.
     type: int
   sortdsc:
     description:
-    - Sortdsc query parameter. Sorting Supported Fields name, description.
+      - Sortdsc query parameter. Sorting Supported Fields name, description.
     type: str
   sortasc:
     description:
-    - Sortasc query parameter. Sorting Supported Fields name, description.
+      - Sortasc query parameter. Sorting Supported Fields name, description.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     sxpconnections.Sxpconnections.get_sxpconnections_generator,
-
   - Paths used are
     get /sxpconnections/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Get all SXPconnections
   cisco.ise.sxpconnections_info:
     ise_hostname: "{{ise_hostname}}"
@@ -71,9 +70,7 @@ EXAMPLES = r"""
     sortdsc: string
     sortasc: string
   register: result
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
@@ -93,7 +90,6 @@ ise_response:
         }
       }
     ]
-
 ise_responses:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

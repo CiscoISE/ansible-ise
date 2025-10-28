@@ -44,7 +44,6 @@ notes:
   - Paths used are
     post /api/v1/backup-restore/config/backup,
 """
-
 EXAMPLES = r"""
 ---
 - name: Create
@@ -57,7 +56,6 @@ EXAMPLES = r"""
     backupName: string
     repositoryName: string
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

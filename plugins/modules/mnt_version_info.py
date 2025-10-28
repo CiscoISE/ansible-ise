@@ -9,26 +9,24 @@ DOCUMENTATION = r"""
 module: mnt_version_info
 short_description: Information module for MNT Version
 description:
-- Get all MNT Version.
-- Returns the version information for the product.
+  - Get all MNT Version.
+  - Returns the version information for the product.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     misc.Misc.get_product_version,
-
   - Paths used are
     get /Version,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Get all MNT Version
   cisco.ise.mnt_version_info:
     ise_hostname: "{{ise_hostname}}"
@@ -36,9 +34,7 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
   register: result
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

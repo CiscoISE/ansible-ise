@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: endpointgroup
 short_description: Resource module for Endpointgroup
 description:
-- Manage operation create of the resource Endpointgroup.
+  - Manage operation create of the resource Endpointgroup.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -31,18 +31,16 @@ options:
     description: SystemDefined flag.
     type: bool
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     endpointgroup.Endpointgroup.create_endpointgroup,
-
   - Paths used are
     post /endpointgroup/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.endpointgroup:
     ise_hostname: "{{ise_hostname}}"
@@ -55,9 +53,7 @@ EXAMPLES = r"""
     name: name
     parentId: parentId
     systemDefined: false
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

@@ -9,26 +9,24 @@ DOCUMENTATION = r"""
 module: dataconnect_settings_info
 short_description: Information module for Dataconnect Settings
 description:
-- Get all Dataconnect Settings.
-- This API retrieves the status of the Dataconnect feature.
+  - Get all Dataconnect Settings.
+  - This API retrieves the status of the Dataconnect feature.
 version_added: '3.2_beta'
 extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     dataconnect_services.DataconnectServices.get_dataconnect_service,
-
   - Paths used are
     get /api/v1/mnt/data-connect/settings,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Get all Dataconnect Settings
   cisco.ise.dataconnect_settings_info:
     ise_hostname: "{{ise_hostname}}"
@@ -36,9 +34,7 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
   register: result
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

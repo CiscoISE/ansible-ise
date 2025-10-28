@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: duo_mfa_testconnection
 short_description: Resource module for Duo Mfa Testconnection
 description:
-- Manage operation create of the resource Duo Mfa Testconnection.
-- Duo-MFA - Verify the Auth and Admin API keys of the Duo Host.
+  - Manage operation create of the resource Duo Mfa Testconnection.
+  - Duo-MFA - Verify the Auth and Admin API keys of the Duo Host.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -45,18 +45,16 @@ options:
       are specified.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     duo_mfa.DuoMfa.test_connection,
-
   - Paths used are
     post /api/v1/duo-mfa/mfa/testconnection/{connectionName},
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.duo_mfa_testconnection:
     ise_hostname: "{{ise_hostname}}"
@@ -71,9 +69,7 @@ EXAMPLES = r"""
       ikey: string
       sKey: string
     connectionName: string
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

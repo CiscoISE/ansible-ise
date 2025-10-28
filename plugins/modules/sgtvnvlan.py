@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: sgtvnvlan
 short_description: Resource module for SGtvnvlan
 description:
-- Manage operation create of the resource SGtvnvlan.
+  - Manage operation create of the resource SGtvnvlan.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -32,18 +32,16 @@ options:
     elements: dict
     type: list
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     sgtvnvlan.Sgtvnvlan.create_sgtvnvlan,
-
   - Paths used are
     post /sgtvnvlan/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.sgtvnvlan:
     ise_hostname: "{{ise_hostname}}"
@@ -56,17 +54,17 @@ EXAMPLES = r"""
     name: name
     sgtId: sgt_id
     virtualnetworklist:
-    - defaultVirtualNetwork: false
-      description: description
-      id: f75760e7-a4f9-40ef-93bb-88a97e9fb171
-      name: virtual1
-      vlans:
-      - data: true
-        defaultVlan: true
-        description: description1
+      - defaultVirtualNetwork: false
+        description: description
         id: f75760e7-a4f9-40ef-93bb-88a97e9fb171
-        maxValue: 279060040
-        name: vlan1
+        name: virtual1
+        vlans:
+          - data: true
+            defaultVlan: true
+            description: description1
+            id: f75760e7-a4f9-40ef-93bb-88a97e9fb171
+            maxValue: 279060040
+            name: vlan1
       - data: false
         defaultVlan: false
         description: description
@@ -79,18 +77,16 @@ EXAMPLES = r"""
         id: f75760e7-a4f9-40ef-93bb-88a97e9fb171
         maxValue: 0
         name: vlan3
-    - defaultVirtualNetwork: true
-      description: description
-      id: f75760e7-a4f9-40ef-93bb-88a97e9fb171
-      name: virtual2
-      vlans:
-      - data: false
-        defaultVlan: false
-        maxValue: 1453775043
-        name: vlan4
-
+      - defaultVirtualNetwork: true
+        description: description
+        id: f75760e7-a4f9-40ef-93bb-88a97e9fb171
+        name: virtual2
+        vlans:
+          - data: false
+            defaultVlan: false
+            maxValue: 1453775043
+            name: vlan4
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: mnt_session_by_username_info
 short_description: Information module for MNT Session By Username
 description:
-- Get MNT Session By Username by name.
-- Returns detailed information for a given username.
+  - Get MNT Session By Username by name.
+  - Returns detailed information for a given username.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -18,21 +18,19 @@ author: Rafael Campos (@racampos)
 options:
   username:
     description:
-    - Username path parameter. The username to retrieve information for.
+      - Username path parameter. The username to retrieve information for.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     misc.Misc.get_full_s_d_username_info,
-
   - Paths used are
     get /Session/UserName/{username},
-
 """
-
 EXAMPLES = r"""
+---
 - name: Get MNT Session By Username by name
   cisco.ise.mnt_session_by_username_info:
     ise_hostname: "{{ise_hostname}}"
@@ -41,9 +39,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     username: usernamE
   register: result
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

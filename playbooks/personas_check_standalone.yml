@@ -17,4 +17,3 @@
     - name: Print Standalone Status
       ansible.builtin.debug:
         var: result
-

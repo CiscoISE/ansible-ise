@@ -17,7 +17,6 @@
     - name: Print Egress Matrix Cells
       ansible.builtin.debug:
         var: result.ise_response
-
     - name: Get Egress Matrix Cell by ID
       cisco.ise.egressmatrixcell_info:
         ise_hostname: "{{ ise_hostname }}"
@@ -32,4 +31,3 @@
       ansible.builtin.debug:
         var: result_by_id.ise_response
       when: cell_id is defined
-

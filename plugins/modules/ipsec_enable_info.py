@@ -9,8 +9,9 @@ DOCUMENTATION = r"""
 module: ipsec_enable_info
 short_description: Information module for Ipsec Enable
 description:
-- Get Ipsec Enable by id.
-- Returns the IPsec configuration details of a given node with the hostname and the NAD IP.
+  - Get Ipsec Enable by id.
+  - Returns the IPsec configuration details of a given node with the hostname and
+    the NAD IP.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -18,25 +19,23 @@ author: Rafael Campos (@racampos)
 options:
   hostName:
     description:
-    - HostName path parameter. Hostname of the deployed node.
+      - HostName path parameter. Hostname of the deployed node.
     type: str
   nadIp:
     description:
-    - NadIp path parameter. IP address of the NAD.
+      - NadIp path parameter. IP address of the NAD.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     native_ipsec.NativeIpsec.get_ipsec_node,
-
   - Paths used are
     get /api/v1/ipsec/{hostName}/{nadIp},
-
 """
-
 EXAMPLES = r"""
+---
 - name: Get Ipsec Enable by id
   cisco.ise.ipsec_enable_info:
     ise_hostname: "{{ise_hostname}}"
@@ -46,9 +45,7 @@ EXAMPLES = r"""
     hostName: string
     nadIp: string
   register: result
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

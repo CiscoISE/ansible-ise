@@ -56,7 +56,6 @@ notes:
     put /api/v1/trustsec/sgacl/nbarapp/{id},
 
 """
-
 EXAMPLES = r"""
 - name: Create
   cisco.ise.trustsec_nbar_app:
@@ -69,7 +68,7 @@ EXAMPLES = r"""
     id: string
     name: string
     networkIdentities:
-    - ports: string
+      - ports: string
       protocol: string
 
 - name: Update by id
@@ -83,7 +82,7 @@ EXAMPLES = r"""
     id: string
     name: string
     networkIdentities:
-    - ports: string
+      - ports: string
       protocol: string
 
 - name: Delete by id
@@ -96,7 +95,6 @@ EXAMPLES = r"""
     id: string
 
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

@@ -16,7 +16,6 @@
     # - name: Print all
     #   ansible.builtin.debug:
     #     var: result
-
     # - name: Get by id
     #   cisco.ise.system_certificate_info:
     #     ise_hostname: "{{ ise_hostname }}"
@@ -39,7 +38,6 @@
     - name: Print result
       ansible.builtin.debug:
         var: result
-
   # - name: Update a system_certificate
   #   cisco.ise.system_certificate:
   #     ise_hostname: "{{ ise_hostname }}"

@@ -17,4 +17,3 @@
     - name: Print Stop Replication Status
       ansible.builtin.debug:
         var: result.ise_response
-

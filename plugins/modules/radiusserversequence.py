@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: radiusserversequence
 short_description: Resource module for RADIUSserversequence
 description:
-- Manage operation create of the resource RADIUSserversequence.
+  - Manage operation create of the resource RADIUSserversequence.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -26,8 +26,8 @@ options:
     elements: dict
     type: list
   RADIUSServerList:
-    description: List with names of external radius server. The order of the names in
-      the list is the order of servers that will be used during authentication.
+    description: List with names of external radius server. The order of the names
+      in the list is the order of servers that will be used during authentication.
     type: list
   continueAuthorzPolicy:
     description: ContinueAuthorzPolicy flag.
@@ -45,8 +45,8 @@ options:
     description: Name.
     type: str
   prefixSeparator:
-    description: The prefixSeparator is required only if stripPrefix is true. The maximum
-      length is 1 character.
+    description: The prefixSeparator is required only if stripPrefix is true. The
+      maximum length is 1 character.
     type: str
   remoteAccounting:
     description: RemoteAccounting flag.
@@ -58,8 +58,8 @@ options:
     description: StripSuffix flag.
     type: bool
   suffixSeparator:
-    description: The suffixSeparator is required only if stripSuffix is true. The maximum
-      length is 1 character.
+    description: The suffixSeparator is required only if stripSuffix is true. The
+      maximum length is 1 character.
     type: str
   useAttrSetBeforeAcc:
     description: UseAttrSetBeforeAcc flag.
@@ -68,18 +68,16 @@ options:
     description: UseAttrSetOnRequest flag.
     type: bool
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     radiusserversequence.Radiusserversequence.create_radiusserversequence,
-
   - Paths used are
     post /radiusserversequence/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.radiusserversequence:
     ise_hostname: "{{ise_hostname}}"
@@ -88,30 +86,30 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     BeforeAcceptAttrManipulatorsList:
-    - action: ADD
-      attributeName: cisco-prev-hop-ip
-      changedVal: test2
-      dictionaryName: Cisco
-      value: test1
-    - action: UPDATE
-      attributeName: Cisco:cisco-ppp-vj-slot-comp
-      changedVal: '13'
-      dictionaryName: Cisco
-      value: '12'
+      - action: ADD
+        attributeName: cisco-prev-hop-ip
+        changedVal: test2
+        dictionaryName: Cisco
+        value: test1
+      - action: UPDATE
+        attributeName: Cisco:cisco-ppp-vj-slot-comp
+        changedVal: '13'
+        dictionaryName: Cisco
+        value: '12'
     OnRequestAttrManipulatorList:
-    - action: ADD
-      attributeName: cisco-prev-hop-ip
-      changedVal: test2
-      dictionaryName: Cisco
-      value: test1
-    - action: UPDATE
-      attributeName: Cisco:cisco-ppp-vj-slot-comp
-      changedVal: '13'
-      dictionaryName: Cisco
-      value: '12'
+      - action: ADD
+        attributeName: cisco-prev-hop-ip
+        changedVal: test2
+        dictionaryName: Cisco
+        value: test1
+      - action: UPDATE
+        attributeName: Cisco:cisco-ppp-vj-slot-comp
+        changedVal: '13'
+        dictionaryName: Cisco
+        value: '12'
     RadiusServerList:
-    - externalRadiusServer1
-    - externalRadiusServer2
+      - externalRadiusServer1
+      - externalRadiusServer2
     continueAuthorzPolicy: false
     description: description
     id: f75760e7-a4f9-40ef-93bb-88a97e9fb171
@@ -124,9 +122,7 @@ EXAMPLES = r"""
     suffixSeparator: '@'
     useAttrSetBeforeAcc: false
     useAttrSetOnRequest: false
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

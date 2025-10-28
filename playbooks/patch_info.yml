@@ -17,4 +17,3 @@
     - name: Print Patches
       ansible.builtin.debug:
         var: result.ise_response
-

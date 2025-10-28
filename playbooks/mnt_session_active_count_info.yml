@@ -17,4 +17,3 @@
     - name: Print Active Session Count
       ansible.builtin.debug:
         var: result.ise_response
-

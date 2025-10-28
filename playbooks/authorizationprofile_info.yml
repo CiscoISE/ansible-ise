@@ -17,7 +17,6 @@
     - name: Print Authorization Profiles
       ansible.builtin.debug:
         var: result.ise_response
-
     - name: Get Authorization Profile by name
       cisco.ise.authorizationprofile_info:
         ise_hostname: "{{ ise_hostname }}"
@@ -30,4 +29,3 @@
     - name: Print Authorization Profile by Name
       ansible.builtin.debug:
         var: result_by_name.ise_response
-

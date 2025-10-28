@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: reportconfig
 short_description: Resource module for Reportconfig
 description:
-- Manage operation create of the resource Reportconfig.
+  - Manage operation create of the resource Reportconfig.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -45,18 +45,16 @@ options:
     description: Reportconfig's validationResult.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     reportconfig.Reportconfig.create_reportconfig,
-
   - Paths used are
     post /reportconfig/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.reportconfig:
     ise_hostname: "{{ise_hostname}}"
@@ -70,15 +68,13 @@ EXAMPLES = r"""
     reportData:
       ctsMatrix:
         policyType: steering
-        sgtArr:
+      sgtArr:
         - 0E
-        sgts:
+      sgts:
         - genID: '0'
           sgtNumber: '9'
     reportType: DELTA_WITH_GEN_ID
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

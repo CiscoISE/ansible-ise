@@ -17,4 +17,3 @@
     - name: Print Active Directories Information
       ansible.builtin.debug:
         var: result.ise_response
-

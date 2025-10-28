@@ -17,4 +17,3 @@
     - name: Print Certificate Templates
       ansible.builtin.debug:
         var: result.ise_response
-

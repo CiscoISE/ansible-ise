@@ -17,4 +17,3 @@
     - name: Print SNF Predefined Regex
       ansible.builtin.debug:
         var: result.ise_response
-

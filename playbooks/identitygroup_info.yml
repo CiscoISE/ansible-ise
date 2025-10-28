@@ -17,7 +17,6 @@
     - name: Print Identity Groups
       ansible.builtin.debug:
         var: result.ise_response
-
     - name: Get Identity Group by name
       cisco.ise.identitygroup_info:
         ise_hostname: "{{ ise_hostname }}"
@@ -30,4 +29,3 @@
     - name: Print Identity Group by Name
       ansible.builtin.debug:
         var: result_by_name.ise_response
-

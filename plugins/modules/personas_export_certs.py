@@ -9,61 +9,61 @@ DOCUMENTATION = r"""
 module: personas_export_certs
 short_description: Export certificate into primary node
 description:
-- Export certificate into primary node
+  - Export certificate into primary node
 version_added: '0.0.8'
 author: Rafael Campos (@racampos)
 options:
   primary_ip:
     description:
-    - The public IP address of the primary node.
+      - The public IP address of the primary node.
     type: str
   primary_username:
     description:
-    - The username for the primary node.
+      - The username for the primary node.
     type: str
   primary_password:
     description:
-    - The password for the primary node.
+      - The password for the primary node.
     type: str
   name:
     description:
-    - The name of the node for which the certificate will be exported.
+      - The name of the node for which the certificate will be exported.
     type: str
   ip:
     description:
-    - The public IP address of the node for which the certificate will be exported.
+      - The public IP address of the node for which the certificate will be exported.
     type: str
   username:
     description:
-    - The username for the node for which the certificate will be exported.
+      - The username for the node for which the certificate will be exported.
     type: str
   password:
     description:
-    - The password for the node for which the certificate will be exported.
+      - The password for the node for which the certificate will be exported.
     type: str
   ise_verify:
     description:
-    - Whether or not to verify the identity of the node.
+      - Whether or not to verify the identity of the node.
     type: bool
   ise_version:
     description:
-    - The version of the ISE node.
+      - The version of the ISE node.
     type: str
   ise_wait_on_rate_limit:
     description:
-    - Whether or not to wait on rate limit
+      - Whether or not to wait on rate limit
     type: bool
 requirements:
-- requests >= 2.25.1
-- python >= 3.5
+  - requests >= 2.25.1
+  - python >= 3.5
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.modules.personas_export_certs
+  # Reference by module name
+  - module: cisco.ise.plugins.modules.personas_export_certs
 notes:
-    - "Does not support C(check_mode)"
+  - "Does not support C(check_mode)"
 """
-
 EXAMPLES = r"""
+---
 - name: Export trusted certificates into primary node
   cisco.ise.personas_export_certs:
     primary_ip: 10.1.1.1
@@ -85,7 +85,6 @@ EXAMPLES = r"""
       ip: 10.1.1.4
       hostname: ise-psn-server-2
 """
-
 RETURN = r"""
 ise_response:
   description: A text string stating that the certificate was exported successfully.

@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: tacacsexternalservers
 short_description: Resource module for TACACSexternalservers
 description:
-- Manage operation create of the resource TACACSexternalservers.
+  - Manage operation create of the resource TACACSexternalservers.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -40,18 +40,16 @@ options:
     description: The server timeout.
     type: float
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     tacacsexternalservers.Tacacsexternalservers.create_tacacsexternalservers,
-
   - Paths used are
     post /tacacsexternalservers/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.tacacsexternalservers:
     ise_hostname: "{{ise_hostname}}"
@@ -67,9 +65,7 @@ EXAMPLES = r"""
     sharedSecret: SharedSecret
     singleConnect: true
     timeout: 20
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

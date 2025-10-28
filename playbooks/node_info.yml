@@ -17,7 +17,6 @@
     - name: Print Nodes
       ansible.builtin.debug:
         var: result.ise_response
-
     - name: Get node by name
       cisco.ise.node_info:
         ise_hostname: "{{ ise_hostname }}"
@@ -30,4 +29,3 @@
     - name: Print Node by Name
       ansible.builtin.debug:
         var: result_by_name.ise_response
-

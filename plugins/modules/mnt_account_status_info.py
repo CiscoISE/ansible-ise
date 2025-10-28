@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: mnt_account_status_info
 short_description: Information module for MNT Account Status
 description:
-- Get MNT Account Status by id.
+  - Get MNT Account Status by id.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -17,25 +17,23 @@ author: Rafael Campos (@racampos)
 options:
   mac:
     description:
-    - Mac path parameter. The MAC address to retrieve account status for.
+      - Mac path parameter. The MAC address to retrieve account status for.
     type: str
   duration:
     description:
-    - Duration path parameter. The duration parameter for the account status.
+      - Duration path parameter. The duration parameter for the account status.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     misc.Misc.get_acct_status,
-
   - Paths used are
     get /AcctStatus/MACAddress/{mac}/{duration},
-
 """
-
 EXAMPLES = r"""
+---
 - name: Get MNT Account Status by id
   cisco.ise.mnt_account_status_info:
     ise_hostname: "{{ise_hostname}}"
@@ -45,9 +43,7 @@ EXAMPLES = r"""
     mac: string
     duration: string
   register: result
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

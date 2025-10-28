@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: activedirectory
 short_description: Resource module for Activedirectory
 description:
-- Manage operation create of the resource Activedirectory.
+  - Manage operation create of the resource Activedirectory.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -143,18 +143,16 @@ options:
     description: Name.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     activedirectory.Activedirectory.create_activedirectory,
-
   - Paths used are
     post /activedirectory/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.activedirectory:
     ise_hostname: "{{ise_hostname}}"
@@ -164,35 +162,35 @@ EXAMPLES = r"""
     state: present
     adAttributes:
       attributes:
-      - defaultValue: defaultString
-        internalName: internalName1
-        name: name1
-        type: STRING
-      - defaultValue: 1.1.1.1
-        internalName: internalName2
-        name: name2
-        type: IP
-      - defaultValue: 'true'
-        internalName: internalName3
-        name: name3
-        type: BOOLEAN
-      - defaultValue: '5'
-        internalName: internalName4
-        name: name4
-        type: INT
-      - defaultValue: defaultOctetString
-        internalName: internalName5
-        name: name5
-        type: OCTET_STRING
+        - defaultValue: defaultString
+          internalName: internalName1
+          name: name1
+          type: STRING
+        - defaultValue: 1.1.1.1
+          internalName: internalName2
+          name: name2
+          type: IP
+        - defaultValue: 'true'
+          internalName: internalName3
+          name: name3
+          type: BOOLEAN
+        - defaultValue: '5'
+          internalName: internalName4
+          name: name4
+          type: INT
+        - defaultValue: defaultOctetString
+          internalName: internalName5
+          name: name5
+          type: OCTET_STRING
     adScopesNames: Default_Scope
     adgroups:
       groups:
-      - name: cisco.com/operators
-        sid: S-1-5-32-548
-        type: GLOBAL
-      - name: cisco.com/office users
-        sid: S-1-5-33-326
-        type: DOMAIN LOCAL
+        - name: cisco.com/operators
+          sid: S-1-5-32-548
+          type: GLOBAL
+        - name: cisco.com/office users
+          sid: S-1-5-33-326
+          type: DOMAIN LOCAL
     advancedSettings:
       agingTime: 5
       authProtectionType: WIRELESS
@@ -217,18 +215,18 @@ EXAMPLES = r"""
       organizationalUnit: company
       plaintextAuth: false
       rewriteRules:
-      - rewriteMatch: exampleMatch0
-        rewriteResult: exampleResult0
-        rowId: 0
-      - rewriteMatch: exampleMatch1
-        rewriteResult: exampleResult1
-        rowId: 1
-      - rewriteMatch: exampleMatch2
-        rewriteResult: exampleResult2
-        rowId: 2
-      - rewriteMatch: exampleMatch3
-        rewriteResult: exampleResult3
-        rowId: 3
+        - rewriteMatch: exampleMatch0
+          rewriteResult: exampleResult0
+          rowId: 0
+        - rewriteMatch: exampleMatch1
+          rewriteResult: exampleResult1
+          rowId: 1
+        - rewriteMatch: exampleMatch2
+          rewriteResult: exampleResult2
+          rowId: 2
+        - rewriteMatch: exampleMatch3
+          rewriteResult: exampleResult3
+          rowId: 3
       schema: ACTIVE_DIRECTORY
       stateOrProvince: st
       streetAddress: streetAddress
@@ -239,9 +237,7 @@ EXAMPLES = r"""
     enableDomainAllowedList: true
     id: f75760e7-a4f9-40ef-93bb-88a97e9fb171
     name: Company_users
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

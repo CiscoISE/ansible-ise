@@ -9,9 +9,10 @@ DOCUMENTATION = r"""
 module: system_certificate
 short_description: Resource module for System Certificate
 description:
-- Manage operations update and delete of the resource System Certificate.
-- This API deletes a system certificate of a particular node based on the given hostname and ID.
-- Update a System Certificate.
+  - Manage operations update and delete of the resource System Certificate.
+  - This API deletes a system certificate of a particular node based on the given
+    hostname and ID.
+  - Update a System Certificate.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -43,8 +44,8 @@ options:
     description: System Certificate's expirationTTLUnits.
     type: str
   hostName:
-    description: HostName path parameter. Name of host whose certificate needs to be
-      updated.
+    description: HostName path parameter. Name of host whose certificate needs to
+      be updated.
     type: str
   id:
     description: Id path parameter. ID of the System Certificate to be updated.
@@ -74,24 +75,22 @@ options:
     description: Use certificate for SAML Signing.
     type: bool
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for Certificates
-  description: Complete reference of the Certificates API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
+  - name: Cisco ISE documentation for Certificates
+    description: Complete reference of the Certificates API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
 notes:
   - SDK Method used are
     certificates.Certificates.delete_system_certificate_by_id,
     certificates.Certificates.update_system_certificate,
-
   - Paths used are
     delete /api/v1/certs/system-certificate/{hostName}/{id},
     put /api/v1/certs/system-certificate/{hostName}/{id},
-
 """
-
 EXAMPLES = r"""
+---
 - name: Update by id
   cisco.ise.system_certificate:
     ise_hostname: "{{ise_hostname}}"
@@ -117,7 +116,6 @@ EXAMPLES = r"""
     radius: true
     renewSelfSignedCertificate: true
     saml: true
-
 - name: Delete by id
   cisco.ise.system_certificate:
     ise_hostname: "{{ise_hostname}}"
@@ -127,9 +125,7 @@ EXAMPLES = r"""
     state: absent
     hostName: string
     id: string
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
@@ -157,7 +153,6 @@ ise_response:
       "usedBy": "string",
       "validFrom": "string"
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

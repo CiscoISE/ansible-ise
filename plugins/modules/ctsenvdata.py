@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: ctsenvdata
 short_description: Resource module for Ctsenvdata
 description:
-- Manage operation create of the resource Ctsenvdata.
+  - Manage operation create of the resource Ctsenvdata.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -77,18 +77,16 @@ options:
         type: str
     type: dict
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     ctsenvdata.Ctsenvdata.create_ctsenvdata,
-
   - Paths used are
     post /ctsenvdata/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.ctsenvdata:
     ise_hostname: "{{ise_hostname}}"
@@ -96,14 +94,12 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     capability:
-    - SGTAGS
-    - ENV_DATA_BASIC
-    - SG_TABLES
-    - SERVERS
+      - SGTAGS
+      - ENV_DATA_BASIC
+      - SG_TABLES
+      - SERVERS
     deviceName: tnad
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

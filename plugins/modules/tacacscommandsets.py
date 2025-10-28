@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: tacacscommandsets
 short_description: Resource module for TACACScommandsets
 description:
-- Manage operation create of the resource TACACScommandsets.
+  - Manage operation create of the resource TACACScommandsets.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -36,18 +36,16 @@ options:
     description: PermitUnmatched flag.
     type: bool
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     tacacscommandsets.Tacacscommandsets.create_tacacscommandsets,
-
   - Paths used are
     post /tacacscommandsets/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.tacacscommandsets:
     ise_hostname: "{{ise_hostname}}"
@@ -56,7 +54,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     commands:
-      commandList:
       - arguments: value
         command: create
         grant: PERMIT
@@ -67,9 +64,7 @@ EXAMPLES = r"""
     id: f75760e7-a4f9-40ef-93bb-88a97e9fb171
     name: name
     permitUnmatched: false
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

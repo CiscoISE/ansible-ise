@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: sgmappinggroup
 short_description: Resource module for SGmappinggroup
 description:
-- Manage operation create of the resource SGmappinggroup.
+  - Manage operation create of the resource SGmappinggroup.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -37,18 +37,16 @@ options:
     description: SGmappinggroup's sgtDomain.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     sgmappinggroup.Sgmappinggroup.create_sgmappinggroup,
-
   - Paths used are
     post /sgmappinggroup/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.sgmappinggroup:
     ise_hostname: "{{ise_hostname}}"
@@ -61,10 +59,8 @@ EXAMPLES = r"""
     name: groupA
     sgt: sgt_id
     sgtDomain:
-    - sgt_domain
-
+      - sgt_domain
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

@@ -17,4 +17,3 @@
     - name: Print Registration Info
       ansible.builtin.debug:
         var: result.ise_response
-

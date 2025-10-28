@@ -17,4 +17,3 @@
     - name: Print Hotpatches
       ansible.builtin.debug:
         var: result.ise_response
-

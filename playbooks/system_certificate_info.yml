@@ -17,7 +17,6 @@
     - name: Print System Certificates
       ansible.builtin.debug:
         var: result.ise_response
-
     - name: Get System Certificate by hostname
       cisco.ise.system_certificate_info:
         ise_hostname: "{{ ise_hostname }}"
@@ -30,4 +29,3 @@
     - name: Print System Certificate by Hostname
       ansible.builtin.debug:
         var: result_by_hostname.ise_response
-

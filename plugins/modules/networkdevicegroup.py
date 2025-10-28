@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: networkdevicegroup
 short_description: Resource module for Networkdevicegroup
 description:
-- Manage operation create of the resource Networkdevicegroup.
+  - Manage operation create of the resource Networkdevicegroup.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -28,18 +28,16 @@ options:
     description: This field holds the Network Device Group Hierarchy (A.K.A NDG Type).
     type: str
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     networkdevicegroup.Networkdevicegroup.create_networkdevicegroup,
-
   - Paths used are
     post /networkdevicegroup/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.networkdevicegroup:
     ise_hostname: "{{ise_hostname}}"
@@ -51,9 +49,7 @@ EXAMPLES = r"""
     id: f75760e7-a4f9-40ef-93bb-88a97e9fb171
     name: Location#Group name
     othername: Location
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

@@ -17,4 +17,3 @@
     - name: Print Transport Gateway Settings
       ansible.builtin.debug:
         var: result.ise_response
-

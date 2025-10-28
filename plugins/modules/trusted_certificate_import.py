@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: trusted_certificate_import
 short_description: Resource module for Trusted Certificate Import
 description:
-- Manage operation create of the resource Trusted Certificate Import.
-- Import an X509 certificate as a trust certificate.
+  - Manage operation create of the resource Trusted Certificate Import.
+  - Import an X509 certificate as a trust certificate.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -50,22 +50,20 @@ options:
     description: Validate trust certificate extension.
     type: bool
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for Certificates
-  description: Complete reference of the Certificates API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
+  - name: Cisco ISE documentation for Certificates
+    description: Complete reference of the Certificates API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
 notes:
   - SDK Method used are
     certificates.Certificates.import_trust_certificate,
-
   - Paths used are
     post /api/v1/certs/trusted-certificate/import,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.trusted_certificate_import:
     ise_hostname: "{{ise_hostname}}"
@@ -83,9 +81,7 @@ EXAMPLES = r"""
     trustForClientAuth: true
     trustForIseAuth: true
     validateCertificateExtensions: true
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

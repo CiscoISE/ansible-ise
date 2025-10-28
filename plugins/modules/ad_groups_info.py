@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: ad_groups_info
 short_description: Information module for Ad Groups Info
 description:
-- Get Ad Groups Info by id.
-- Duo-IdentitySync - Get the list of all AD groups for the specified Active Directory.
+  - Get Ad Groups Info by id.
+  - Duo-IdentitySync - Get the list of all AD groups for the specified Active Directory.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -18,21 +18,20 @@ author: Rafael Campos (@racampos)
 options:
   activeDirectory:
     description:
-    - ActiveDirectory path parameter. List of AD groups for the specified Active Directory.
+      - ActiveDirectory path parameter. List of AD groups for the specified Active
+        Directory.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     a_d_groups.ADGroups.get_adgroups,
-
   - Paths used are
     get /api/v1/duo-identitysync/adgroups/{activeDirectory},
-
 """
-
 EXAMPLES = r"""
+---
 - name: Get Ad Groups Info by id
   cisco.ise.ad_groups_info:
     ise_hostname: "{{ise_hostname}}"
@@ -41,9 +40,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     activeDirectory: string
   register: result
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

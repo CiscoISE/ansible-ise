@@ -17,4 +17,3 @@
     - name: Print Duo MFA Configurations
       ansible.builtin.debug:
         var: result.ise_response
-

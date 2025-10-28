@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: internaluser
 short_description: Resource module for Internaluser
 description:
-- Manage operation create of the resource Internaluser.
+  - Manage operation create of the resource Internaluser.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -50,8 +50,8 @@ options:
       'ERSObjectURL?filter=enabled.EQ.Enabled'.
     type: bool
   expiryDate:
-    description: To store the internal user's expiry date information. It's format is
-      = 'YYYY-MM-DD'.
+    description: To store the internal user's expiry date information. It's format
+      is = 'YYYY-MM-DD'.
     type: str
   expiryDateEnabled:
     description: ExpiryDateEnabled flag.
@@ -82,18 +82,16 @@ options:
       apply to Users who are also ISE Admins.
     type: bool
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     internaluser.Internaluser.create_internaluser,
-
   - Paths used are
     post /internaluser/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.internaluser:
     ise_hostname: "{{ise_hostname}}"
@@ -123,9 +121,7 @@ EXAMPLES = r"""
     password: password
     passwordIDStore: Internal Users
     passwordNeverExpires: false
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

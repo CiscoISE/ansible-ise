@@ -17,5 +17,3 @@
     - name: Print Active Directory List
       ansible.builtin.debug:
         var: result.ise_response
-
-

@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: certificateprofile
 short_description: Resource module for Certificateprofile
 description:
-- Manage operation create of the resource Certificateprofile.
+  - Manage operation create of the resource Certificateprofile.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -45,22 +45,20 @@ options:
   usernameFrom:
     description: The attribute in the certificate where the user name should be taken
       from. Allowed values CERTIFICATE (for a specific attribute as defined in certificateAttributeName),
-      UPN (for using any Subject or Alternative Name Attributes in the Certificate -
-      an option only in AD).
+      UPN (for using any Subject or Alternative Name Attributes in the Certificate
+      - an option only in AD).
     type: dict
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     certificateprofile.Certificateprofile.create_certificateprofile,
-
   - Paths used are
     post /certificateprofile/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.certificateprofile:
     ise_hostname: "{{ise_hostname}}"
@@ -76,9 +74,7 @@ EXAMPLES = r"""
     matchMode: NEVER
     name: name
     usernameFrom: CERTIFICATE
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: sxpconnections
 short_description: Resource module for SXPconnections
 description:
-- Manage operation create of the resource SXPconnections.
+  - Manage operation create of the resource SXPconnections.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -46,18 +46,16 @@ options:
     description: SXPconnections's sxpVpn.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     sxpconnections.Sxpconnections.create_sxpconnections,
-
   - Paths used are
     post /sxpconnections/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.sxpconnections:
     ise_hostname: "{{ise_hostname}}"
@@ -73,9 +71,7 @@ EXAMPLES = r"""
     sxpPeer: Sxp Peer Name
     sxpVersion: Sxp Version
     sxpVpn: Sxp VPN Name
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

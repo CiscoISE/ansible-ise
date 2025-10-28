@@ -17,7 +17,6 @@
     - name: Print Endpoints
       ansible.builtin.debug:
         var: result.ise_response
-
     - name: Get Endpoint by ID
       cisco.ise.endpoint_info:
         ise_hostname: "{{ ise_hostname }}"
@@ -32,4 +31,3 @@
       ansible.builtin.debug:
         var: result_by_id.ise_response
       when: endpoint_id is defined
-

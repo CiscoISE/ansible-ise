@@ -17,7 +17,6 @@
     - name: Print Repositories
       ansible.builtin.debug:
         var: result.ise_response
-
     - name: Get Repository by name
       cisco.ise.repository_info:
         ise_hostname: "{{ ise_hostname }}"
@@ -30,4 +29,3 @@
     - name: Print Repository by Name
       ansible.builtin.debug:
         var: result_by_name.ise_response
-

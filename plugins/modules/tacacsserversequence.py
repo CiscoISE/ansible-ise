@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: tacacsserversequence
 short_description: Resource module for TACACSserversequence
 description:
-- Manage operation create of the resource TACACSserversequence.
+  - Manage operation create of the resource TACACSserversequence.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -38,7 +38,8 @@ options:
     type: bool
   serverList:
     description: The names of TACACS external servers separated by commas. The order
-      of the names in the string is the order of servers that will be used during authentication.
+      of the names in the string is the order of servers that will be used during
+      authentication.
     type: str
   suffixDelimiter:
     description: The delimiter that will be used for suffix strip.
@@ -47,18 +48,16 @@ options:
     description: Define if a delimiter will be used for suffix strip.
     type: bool
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     tacacsserversequence.Tacacsserversequence.create_tacacsserversequence,
-
   - Paths used are
     post /tacacsserversequence/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.tacacsserversequence:
     ise_hostname: "{{ise_hostname}}"
@@ -76,9 +75,7 @@ EXAMPLES = r"""
     serverList: TacacsExternalServer1,TacacsExternalServer2
     suffixDelimiter: '@'
     suffixStrip: false
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

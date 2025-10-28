@@ -17,4 +17,3 @@
     - name: Print LDAP Configurations
       ansible.builtin.debug:
         var: result.ise_response
-

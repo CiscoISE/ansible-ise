@@ -17,7 +17,6 @@
     - name: Print CSR List
       ansible.builtin.debug:
         var: result.ise_response
-
     - name: Get CSR by hostname
       cisco.ise.csr_info:
         ise_hostname: "{{ ise_hostname }}"
@@ -32,4 +31,3 @@
       ansible.builtin.debug:
         var: result_by_hostname.ise_response
       when: target_hostname is defined
-

@@ -17,4 +17,3 @@
     - name: Print Disable Status
       ansible.builtin.debug:
         var: result.ise_response
-

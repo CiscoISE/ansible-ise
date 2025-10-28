@@ -17,4 +17,3 @@
     - name: Print SMTP Notification Settings
       ansible.builtin.debug:
         var: result.ise_response
-

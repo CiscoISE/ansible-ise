@@ -17,4 +17,3 @@
     - name: Print AD Resource Reservation
       ansible.builtin.debug:
         var: result.ise_response
-

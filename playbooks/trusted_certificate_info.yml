@@ -17,7 +17,6 @@
     - name: Print Trusted Certificates
       ansible.builtin.debug:
         var: result.ise_response
-
     - name: Get Trusted Certificate by ID
       cisco.ise.trusted_certificate_info:
         ise_hostname: "{{ ise_hostname }}"
@@ -32,4 +31,3 @@
       ansible.builtin.debug:
         var: result_by_id.ise_response
       when: certificate_id is defined
-

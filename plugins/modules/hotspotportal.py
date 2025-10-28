@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: hotspotportal
 short_description: Resource module for Hotspotportal
 description:
-- Manage operation create of the resource Hotspotportal.
+  - Manage operation create of the resource Hotspotportal.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -120,8 +120,8 @@ options:
         description: Hotspotportal's aupSettings.
         suboptions:
           accessCode:
-            description: Access code that must be entered by the portal user (only valid
-              if requireAccessCode = true).
+            description: Access code that must be entered by the portal user (only
+              valid if requireAccessCode = true).
             type: str
           includeAup:
             description: Require the portal user to read and accept an AUP.
@@ -131,8 +131,8 @@ options:
               in Hotspot portal.
             type: bool
           requireAupScrolling:
-            description: Require the portal user to scroll to the end of the AUP. Only
-              valid if requireAupAcceptance = true.
+            description: Require the portal user to scroll to the end of the AUP.
+              Only valid if requireAupAcceptance = true.
             type: bool
         type: dict
       authSuccessSettings:
@@ -150,15 +150,15 @@ options:
         description: Hotspotportal's portalSettings.
         suboptions:
           allowedInterfaces:
-            description: Interfaces that the portal will be reachable on. Allowed values
-              eth0, eth1, eth2, eth3, eth4, eth5, bond0, bond1 and bond2.
+            description: Interfaces that the portal will be reachable on. Allowed
+              values eth0, eth1, eth2, eth3, eth4, eth5, bond0, bond1 and bond2.
             type: str
           alwaysUsedLanguage:
             description: Used when displayLang = alwaysUse.
             type: str
           certificateGroupTag:
-            description: Logical name of the x.509 server certificate that will be used
-              for the portal.
+            description: Logical name of the x.509 server certificate that will be
+              used for the portal.
             type: str
           coaType:
             description: Allowed Values coaReauthenticate and coaTerminate.
@@ -189,8 +189,8 @@ options:
         description: Hotspotportal's supportInfoSettings.
         suboptions:
           defaultEmptyFieldValue:
-            description: The default value displayed for an empty field Only valid when
-              emptyFieldDisplay = displayWithDefaultValue.
+            description: The default value displayed for an empty field Only valid
+              when emptyFieldDisplay = displayWithDefaultValue.
             type: str
           emptyFieldDisplay:
             description: Specifies how empty fields are handled on the Support Information
@@ -217,18 +217,16 @@ options:
         type: dict
     type: dict
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     hotspotportal.Hotspotportal.create_hotspotportal,
-
   - Paths used are
     post /hotspotportal/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.hotspotportal:
     ise_hostname: "{{ise_hostname}}"
@@ -251,8 +249,8 @@ EXAMPLES = r"""
         viewLanguage: English
       pageCustomizations:
         data:
-        - key: ui_contact_link
-          value: Contact Support
+          - key: ui_contact_link
+            value: Contact Support
       portalTheme:
         id: themeId
         name: ThemeName
@@ -279,8 +277,8 @@ EXAMPLES = r"""
         successRedirect: AUTHSUCCESSPAGE
       portalSettings:
         allowedInterfaces:
-        - eth0
-        - bond0
+          - eth0
+          - bond0
         alwaysUsedLanguage: English
         availableSsids: []
         certificateGroupTag: Default Portal Certificate Group
@@ -299,9 +297,7 @@ EXAMPLES = r"""
         includeMacAddr: true
         includePolicyServer: true
         includeSupportInfoPage: false
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

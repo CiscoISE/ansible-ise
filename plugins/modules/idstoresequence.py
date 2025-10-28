@@ -9,15 +9,15 @@ DOCUMENTATION = r"""
 module: idstoresequence
 short_description: Resource module for Idstoresequence
 description:
-- Manage operation create of the resource Idstoresequence.
+  - Manage operation create of the resource Idstoresequence.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   breakOnStoreFail:
-    description: Do not access other stores in the sequence If a selected identity store
-      cannot be accessed for authentication.
+    description: Do not access other stores in the sequence If a selected identity
+      store cannot be accessed for authentication.
     type: bool
   certificateAuthenticationProfile:
     description: Certificate Authentication Profile, empty if doesn't exist.
@@ -35,18 +35,16 @@ options:
     description: Name.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     idstoresequence.Idstoresequence.create_idstoresequence,
-
   - Paths used are
     post /idstoresequence/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.idstoresequence:
     ise_hostname: "{{ise_hostname}}"
@@ -59,14 +57,12 @@ EXAMPLES = r"""
     description: 'ERS Example Id sequence '
     id: f75760e7-a4f9-40ef-93bb-88a97e9fb171
     idSeqItem:
-    - idstore: Internal Users
-      order: 1
-    - idstore: Guest Users
-      order: 2
+      - idstore: Internal Users
+        order: 1
+      - idstore: Guest Users
+        order: 2
     name: idSeq1
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

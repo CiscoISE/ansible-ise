@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: filterpolicy
 short_description: Resource module for Filterpolicy
 description:
-- Manage operation create of the resource Filterpolicy.
+  - Manage operation create of the resource Filterpolicy.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -38,18 +38,16 @@ options:
     description: Virtual Network. At least one of subnet or sgt or vn should be defined.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     filterpolicy.Filterpolicy.create_filterpolicy,
-
   - Paths used are
     post /filterpolicy/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.filterpolicy:
     ise_hostname: "{{ise_hostname}}"
@@ -61,9 +59,7 @@ EXAMPLES = r"""
     sgt: sgt
     subnet: subnetAddress
     vn: virtualNetwork
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

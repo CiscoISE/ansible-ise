@@ -17,4 +17,3 @@
     - name: Print Device Types
       ansible.builtin.debug:
         var: result.ise_response
-

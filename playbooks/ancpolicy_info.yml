@@ -17,7 +17,6 @@
     - name: Print ANC Policies
       ansible.builtin.debug:
         var: result.ise_response
-
     - name: Get ANC Policy by name
       cisco.ise.ancpolicy_info:
         ise_hostname: "{{ ise_hostname }}"
@@ -30,4 +29,3 @@
     - name: Print ANC Policy by Name
       ansible.builtin.debug:
         var: result_by_name.ise_response
-

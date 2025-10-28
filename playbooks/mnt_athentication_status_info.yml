@@ -17,4 +17,3 @@
     - name: Print Authentication Status
       ansible.builtin.debug:
         var: result.ise_response
-

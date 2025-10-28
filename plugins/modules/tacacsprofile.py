@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: tacacsprofile
 short_description: Resource module for TACACSprofile
 description:
-- Manage operation create of the resource TACACSprofile.
+  - Manage operation create of the resource TACACSprofile.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -33,18 +33,16 @@ options:
         type: list
     type: dict
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     tacacsprofile.Tacacsprofile.create_tacacsprofile,
-
   - Paths used are
     post /tacacsprofile/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.tacacsprofile:
     ise_hostname: "{{ise_hostname}}"
@@ -57,12 +55,10 @@ EXAMPLES = r"""
     name: name
     sessionAttributes:
       sessionAttributeList:
-      - name: attr1
-        type: MANDATORY
-        value: value
-
+        - name: attr1
+          type: MANDATORY
+          value: value
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

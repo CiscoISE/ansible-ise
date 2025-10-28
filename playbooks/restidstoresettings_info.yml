@@ -17,4 +17,3 @@
     - name: Print REST ID Store Settings
       ansible.builtin.debug:
         var: result.ise_response
-

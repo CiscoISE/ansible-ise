@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: ipsec_enable
 short_description: Resource module for Ipsec Enable
 description:
-- Manage operation update of the resource Ipsec Enable.
-- Enables an disabled IPsec node connection.
+  - Manage operation update of the resource Ipsec Enable.
+  - Enables an disabled IPsec node connection.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -23,18 +23,16 @@ options:
     description: NadIp path parameter. IP address of the NAD.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     native_ipsec.NativeIpsec.enable_ipsec_connection,
-
   - Paths used are
     put /api/v1/ipsec/enable/{hostName}/{nadIp},
-
 """
-
 EXAMPLES = r"""
+---
 - name: Update by id
   cisco.ise.ipsec_enable:
     ise_hostname: "{{ise_hostname}}"
@@ -44,9 +42,7 @@ EXAMPLES = r"""
     state: present
     hostName: string
     nadIp: string
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
@@ -85,7 +81,6 @@ ise_response:
       "status": "string",
       "updateTime": "string"
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

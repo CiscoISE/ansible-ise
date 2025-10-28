@@ -17,4 +17,3 @@
     - name: Print SXP Connections
       ansible.builtin.debug:
         var: result.ise_response
-

@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: egressmatrixcell
 short_description: Resource module for Egressmatrixcell
 description:
-- Manage operation create of the resource Egressmatrixcell.
+  - Manage operation create of the resource Egressmatrixcell.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -31,9 +31,9 @@ options:
     description: Allowed values DISABLED,ENABLED,MONITOR.
     type: str
   matrixId:
-    description: Default value is Production Matrix Id, when no value is provided during
-      creation.To use it as filter, the values should be an UUID of a Matrix. The values
-      are case sensitive.For example, 'ERSObjectURL?filter=matrixId.eq.ccf9a6ea-153b-4056-b8f4-0dc17eca4d30'.
+    description: Default value is Production Matrix Id, when no value is provided
+      during creation.To use it as filter, the values should be an UUID of a Matrix.
+      The values are case sensitive.For example, 'ERSObjectURL?filter=matrixId.eq.ccf9a6ea-153b-4056-b8f4-0dc17eca4d30'.
     type: str
   name:
     description: Name.
@@ -45,18 +45,16 @@ options:
     description: Egressmatrixcell's sourceSGtId.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     egressmatrixcell.Egressmatrixcell.create_egressmatrixcell,
-
   - Paths used are
     post /egressmatrixcell/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.egressmatrixcell:
     ise_hostname: "{{ise_hostname}}"
@@ -70,12 +68,10 @@ EXAMPLES = r"""
     matrixCellStatus: MONITOR
     matrixId: f47ac10b-58cc-4372-a567-0e02b2c3d479
     sgacls:
-    - 1ebbc100-7a26-11e4-bc43-000c29ed7428
-    - 2ebbc100-7a26-11e4-bc43-000c29ed7428
+      - 1ebbc100-7a26-11e4-bc43-000c29ed7428
+      - 2ebbc100-7a26-11e4-bc43-000c29ed7428
     sourceSgtId: 2ebbc200-7a26-11e4-bc43-000c29ed7428
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

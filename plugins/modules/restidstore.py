@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: restidstore
 short_description: Resource module for RESTidstore
 description:
-- Manage operation create of the resource RESTidstore.
+  - Manage operation create of the resource RESTidstore.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -82,18 +82,16 @@ options:
     description: Name.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     restidstore.Restidstore.create_restidstore,
-
   - Paths used are
     post /restidstore/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.restidstore:
     ise_hostname: "{{ise_hostname}}"
@@ -112,27 +110,25 @@ EXAMPLES = r"""
       subjectNameFormat: ''
     ersRestIDStoreAttributes:
       headers:
-      - key: tenantID
-        value: tenantID_value
-      - key: clientID
-        value: clientID_value
-      - key: clientSecret
-        value: clientSecret_value
+        - key: tenantID
+          value: tenantID_value
+        - key: clientID
+          value: clientID_value
+        - key: clientSecret
+          value: clientSecret_value
       rootUrl: rootUrl
       usernameSuffix: '@place.com'
     ersRestIDStoreDeviceAttributes:
       attributes:
-      - name: ''
-        type: ''
+        - name: ''
+          type: ''
     ersRestIDStoreUserAttributes:
       attributes:
-      - name: AttributeName1
-        type: String
+        - name: AttributeName1
+          type: String
     id: f75760e7-a4f9-40ef-93bb-88a97e9fb171
     name: RestIdStore1
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

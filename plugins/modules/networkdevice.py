@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: networkdevice
 short_description: Resource module for Networkdevice
 description:
-- Manage operation create of the resource Networkdevice.
+  - Manage operation create of the resource Networkdevice.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -64,8 +64,8 @@ options:
     description: Description.
     type: str
   dtlsDnsName:
-    description: This value is used to verify the client identity contained in the X.509
-      RADIUS/DTLS client certificate.
+    description: This value is used to verify the client identity contained in the
+      X.509 RADIUS/DTLS client certificate.
     type: str
   id:
     description: Id.
@@ -83,8 +83,8 @@ options:
     description: Networkdevice's snmpsettings.
     suboptions:
       authPassword:
-        description: SNMP Authentication password. Required for snmp version 3 and securityLevel
-          AUTH,PRIV.
+        description: SNMP Authentication password. Required for snmp version 3 and
+          securityLevel AUTH,PRIV.
         type: str
       authProtocol:
         description: SNMP Authentication protocol. Allowed values MD5,SHA,SHA2. Required
@@ -235,18 +235,16 @@ options:
         type: dict
     type: dict
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     networkdevice.Networkdevice.create_networkdevice,
-
   - Paths used are
     post /networkdevice/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.networkdevice:
     ise_hostname: "{{ise_hostname}}"
@@ -255,11 +253,11 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     NetworkDeviceGroupList:
-    - Location#All Locations
-    - Device Type#All Device Types
+      - Location#All Locations
+      - Device Type#All Device Types
     NetworkDeviceIPList:
-    - ipaddress: 1.1.1.1
-      mask: 32
+      - ipaddress: 1.1.1.1
+        mask: 32
     authenticationSettings:
       dtlsRequired: true
       enableKeyWrap: true
@@ -309,9 +307,7 @@ EXAMPLES = r"""
         reAuthenticationEveryXSeconds: 86400
         sendConfigurationToDevice: false
         sendConfigurationToDeviceUsing: ENABLE_USING_COA
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: custom_attributes_rename
 short_description: Resource module for Custom Attributes Rename
 description:
-- Manage operation create of the resource Custom Attributes Rename.
+  - Manage operation create of the resource Custom Attributes Rename.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -22,18 +22,16 @@ options:
     description: Custom Attributes Rename's newName.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     customattributes.Customattributes.rename,
-
   - Paths used are
     post /api/v1/endpoint-custom-attribute/rename,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.custom_attributes_rename:
     ise_hostname: "{{ise_hostname}}"
@@ -42,9 +40,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     currentName: string
     newName: string
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

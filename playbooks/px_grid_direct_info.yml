@@ -17,4 +17,3 @@
     - name: Print pxGrid Direct Configurations
       ansible.builtin.debug:
         var: result.ise_response
-

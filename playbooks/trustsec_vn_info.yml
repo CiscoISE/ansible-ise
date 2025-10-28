@@ -17,7 +17,6 @@
     - name: Print TrustSec Virtual Networks
       ansible.builtin.debug:
         var: result.ise_response
-
     - name: Get TrustSec Virtual Network by name
       cisco.ise.trustsec_vn_info:
         ise_hostname: "{{ ise_hostname }}"
@@ -30,4 +29,3 @@
     - name: Print TrustSec Virtual Network by Name
       ansible.builtin.debug:
         var: result_by_name.ise_response
-

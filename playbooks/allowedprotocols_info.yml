@@ -17,7 +17,6 @@
     - name: Print Allowed Protocols
       ansible.builtin.debug:
         var: result.ise_response
-
     - name: Get Allowed Protocol by name
       cisco.ise.allowedprotocols_info:
         ise_hostname: "{{ ise_hostname }}"
@@ -30,4 +29,3 @@
     - name: Print Allowed Protocol by Name
       ansible.builtin.debug:
         var: result_by_name.ise_response
-

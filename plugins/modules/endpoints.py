@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: endpoints
 short_description: Resource module for Endpoints
 description:
-- Manage operations create, update and delete of the resource Endpoints.
+  - Manage operations create, update and delete of the resource Endpoints.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -85,22 +85,20 @@ options:
     description: Endpoints's vendor.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     endpoints.Endpoints.create_end_point,
     endpoints.Endpoints.delete_endpoint,
     endpoints.Endpoints.update_endpoint,
-
   - Paths used are
     post /api/v1/endpoint,
     delete /api/v1/endpoint/{value},
     put /api/v1/endpoint/{value},
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.endpoints:
     ise_hostname: "{{ise_hostname}}"
@@ -130,7 +128,6 @@ EXAMPLES = r"""
     staticGroupAssignment: true
     staticProfileAssignment: true
     vendor: string
-
 - name: Update by id
   cisco.ise.endpoints:
     ise_hostname: "{{ise_hostname}}"
@@ -161,7 +158,6 @@ EXAMPLES = r"""
     staticProfileAssignment: true
     value: string
     vendor: string
-
 - name: Delete by id
   cisco.ise.endpoints:
     ise_hostname: "{{ise_hostname}}"
@@ -170,9 +166,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     value: string
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
@@ -203,7 +197,6 @@ ise_response:
       "staticProfileAssignment": true,
       "vendor": "string"
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

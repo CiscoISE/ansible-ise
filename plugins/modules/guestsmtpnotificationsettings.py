@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: guestsmtpnotificationsettings
 short_description: Resource module for Guestsmtpnotificationsettings
 description:
-- Manage operation create of the resource Guestsmtpnotificationsettings.
+  - Manage operation create of the resource Guestsmtpnotificationsettings.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -58,18 +58,16 @@ options:
     description: Username of Secure SMTP server.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     guestsmtpnotificationsettings.Guestsmtpnotificationsettings.create_guestsmtpnotificationsettings,
-
   - Paths used are
     post /guestsmtpnotificationsettings/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.guestsmtpnotificationsettings:
     ise_hostname: "{{ise_hostname}}"
@@ -87,9 +85,7 @@ EXAMPLES = r"""
     usePasswordAuthentication: false
     useTLSorSSLEncryption: false
     userName: ''
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

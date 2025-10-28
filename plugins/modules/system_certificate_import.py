@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: system_certificate_import
 short_description: Resource module for System Certificate Import
 description:
-- Manage operation create of the resource System Certificate Import.
-- Import an X509 certificate as a system certificate.
+  - Manage operation create of the resource System Certificate Import.
+  - Import an X509 certificate as a system certificate.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -81,22 +81,20 @@ options:
     description: Validate certificate extensions.
     type: bool
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for Certificates
-  description: Complete reference of the Certificates API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
+  - name: Cisco ISE documentation for Certificates
+    description: Complete reference of the Certificates API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
 notes:
   - SDK Method used are
     certificates.Certificates.import_system_certificate,
-
   - Paths used are
     post /api/v1/certs/system-certificate/import,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.system_certificate_import:
     ise_hostname: "{{ise_hostname}}"
@@ -124,9 +122,7 @@ EXAMPLES = r"""
     radius: true
     saml: true
     validateCertificateExtensions: true
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

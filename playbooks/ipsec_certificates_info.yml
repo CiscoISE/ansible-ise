@@ -17,4 +17,3 @@
     - name: Print IPsec Certificates
       ansible.builtin.debug:
         var: result.ise_response
-

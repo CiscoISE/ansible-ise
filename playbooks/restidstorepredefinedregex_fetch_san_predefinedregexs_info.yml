@@ -17,4 +17,3 @@
     - name: Print SAN Predefined Regex
       ansible.builtin.debug:
         var: result.ise_response
-

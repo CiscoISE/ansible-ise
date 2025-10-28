@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: sxplocalbindings
 short_description: Resource module for SXPlocalbindings
 description:
-- Manage operation create of the resource SXPlocalbindings.
+  - Manage operation create of the resource SXPlocalbindings.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -34,26 +34,24 @@ options:
     description: SGT name or ID.
     type: str
   sxpVpn:
-    description: List of SXP Domains, separated with comma. At least one of sxpVpn or
-      vns should be defined.
+    description: List of SXP Domains, separated with comma. At least one of sxpVpn
+      or vns should be defined.
     type: str
   vns:
     description: List of Virtual Networks, separated with comma. At least one of sxpVpn
       or vns should be defined.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     sxplocalbindings.Sxplocalbindings.create_sxplocalbindings,
-
   - Paths used are
     post /sxplocalbindings/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.sxplocalbindings:
     ise_hostname: "{{ise_hostname}}"
@@ -65,9 +63,7 @@ EXAMPLES = r"""
     sgt: sgt_id
     sxpVpn: Sxp Vpn Name
     vns: virtualNetwork
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

@@ -17,7 +17,6 @@
     - name: Print Admin Users
       ansible.builtin.debug:
         var: result.ise_response
-
     - name: Get Admin User by ID
       cisco.ise.adminuser_info:
         ise_hostname: "{{ ise_hostname }}"
@@ -32,4 +31,3 @@
       ansible.builtin.debug:
         var: result_by_id.ise_response
       when: admin_user_id is defined
-

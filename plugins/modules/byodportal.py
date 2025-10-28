@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: byodportal
 short_description: Resource module for BYODportal
 description:
-- Manage operation create of the resource BYODportal.
+  - Manage operation create of the resource BYODportal.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -133,8 +133,8 @@ options:
             description: BYODportal's byodRegistrationSuccessSettings.
             suboptions:
               redirectUrl:
-                description: Target URL for redirection, used when successRedirect =
-                  url.
+                description: Target URL for redirection, used when successRedirect
+                  = url.
                 type: str
               successRedirect:
                 description: After an Authentication Success where should device be
@@ -145,8 +145,8 @@ options:
             description: BYODportal's byodWelcomeSettings.
             suboptions:
               aupDisplay:
-                description: How the AUP should be displayed, either on page or as a
-                  link. Only valid if includeAup = true. AllowedValues onPage, asLink.
+                description: How the AUP should be displayed, either on page or as
+                  a link. Only valid if includeAup = true. AllowedValues onPage, asLink.
                 type: str
               enableBYOD:
                 description: EnableBYOD flag.
@@ -164,8 +164,8 @@ options:
                 description: RequireMDM flag.
                 type: bool
               requireScrolling:
-                description: Require BYOD devices to scroll down to the bottom of the
-                  AUP, Only valid if includeAup = true.
+                description: Require BYOD devices to scroll down to the bottom of
+                  the AUP, Only valid if includeAup = true.
                 type: bool
             type: dict
         type: dict
@@ -173,15 +173,15 @@ options:
         description: BYODportal's portalSettings.
         suboptions:
           allowedInterfaces:
-            description: Interfaces that the portal will be reachable on. Allowed values
-              eth0, eth1, eth2, eth3, eth4, eth5, bond0, bond1 and bond2.
+            description: Interfaces that the portal will be reachable on. Allowed
+              values eth0, eth1, eth2, eth3, eth4, eth5, bond0, bond1 and bond2.
             type: str
           alwaysUsedLanguage:
             description: Used when displayLang = alwaysUse.
             type: str
           certificateGroupTag:
-            description: Logical name of the x.509 server certificate that will be used
-              for the portal.
+            description: Logical name of the x.509 server certificate that will be
+              used for the portal.
             type: str
           displayLang:
             description: Allowed values useBrowserLocale and alwaysUse.
@@ -202,8 +202,8 @@ options:
         description: BYODportal's supportInfoSettings.
         suboptions:
           defaultEmptyFieldValue:
-            description: The default value displayed for an empty field Only valid when
-              emptyFieldDisplay = displayWithDefaultValue.
+            description: The default value displayed for an empty field Only valid
+              when emptyFieldDisplay = displayWithDefaultValue.
             type: str
           emptyFieldDisplay:
             description: Specifies how empty fields are handled on the Support Information
@@ -230,18 +230,16 @@ options:
         type: dict
     type: dict
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     byodportal.Byodportal.create_byodportal,
-
   - Paths used are
     post /byodportal/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.byodportal:
     ise_hostname: "{{ise_hostname}}"
@@ -264,8 +262,8 @@ EXAMPLES = r"""
         viewLanguage: English
       pageCustomizations:
         data:
-        - key: ui_contact_link
-          value: Contact Support
+          - key: ui_contact_link
+            value: Contact Support
       portalTheme:
         id: themeId
         name: ThemeName
@@ -297,8 +295,8 @@ EXAMPLES = r"""
           requireScrolling: false
       portalSettings:
         allowedInterfaces:
-        - eth0
-        - bond0
+          - eth0
+          - bond0
         alwaysUsedLanguage: English
         availableSsids: []
         certificateGroupTag: Default Portal Certificate Group
@@ -313,9 +311,7 @@ EXAMPLES = r"""
         includeMacAddr: true
         includePolicyServer: true
         includeSupportInfoPage: false
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

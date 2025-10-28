@@ -17,4 +17,3 @@
     - name: Print Promotion Result
       ansible.builtin.debug:
         var: result
-

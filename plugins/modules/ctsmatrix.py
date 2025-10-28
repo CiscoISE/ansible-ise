@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: ctsmatrix
 short_description: Resource module for Ctsmatrix
 description:
-- Manage operation create of the resource Ctsmatrix.
+  - Manage operation create of the resource Ctsmatrix.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -87,18 +87,16 @@ options:
     elements: str
     type: list
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     ctsmatrix.Ctsmatrix.create_ctsmatrix,
-
   - Paths used are
     post /ctsmatrix/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.ctsmatrix:
     ise_hostname: "{{ise_hostname}}"
@@ -106,14 +104,12 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     dstSgtArr:
-    - 0C
+      - 0C
     limit: 500
     offset: 0
     pushId: '123456'
     srcSgtArr: []
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

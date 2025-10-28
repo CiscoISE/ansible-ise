@@ -17,4 +17,3 @@
     - name: Print Sync Status
       ansible.builtin.debug:
         var: result.ise_response
-

@@ -17,7 +17,6 @@
     - name: Print Downloadable ACLs
       ansible.builtin.debug:
         var: result.ise_response
-
     - name: Get Downloadable ACL by name
       cisco.ise.downloadableacl_info:
         ise_hostname: "{{ ise_hostname }}"
@@ -30,4 +29,3 @@
     - name: Print Downloadable ACL by Name
       ansible.builtin.debug:
         var: result_by_name.ise_response
-

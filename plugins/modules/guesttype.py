@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: guesttype
 short_description: Resource module for Guesttype
 description:
-- Manage operation create of the resource Guesttype.
+  - Manage operation create of the resource Guesttype.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -52,8 +52,8 @@ options:
     description: Guesttype's expirationNotification.
     suboptions:
       advanceNotificationDuration:
-        description: Send Account Expiration Notification Duration before ( Days, Hours,
-          Minutes ).
+        description: Send Account Expiration Notification Duration before ( Days,
+          Hours, Minutes ).
         type: float
       advanceNotificationUnits:
         description: Allowed values are Days, Hours, Minutes.
@@ -78,8 +78,8 @@ options:
         description: AllowGuestPortalBypass flag.
         type: bool
       failureAction:
-        description: When Guest Exceeds limit this action will be invoked, Allowed values
-          are Disconnect_Oldest_Connection or Disconnect_Newest_Connection.
+        description: When Guest Exceeds limit this action will be invoked, Allowed
+          values are Disconnect_Oldest_Connection or Disconnect_Newest_Connection.
         type: str
       identityGroupId:
         description: ID of Guest Identity Group.
@@ -102,18 +102,16 @@ options:
     elements: str
     type: list
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     guesttype.Guesttype.create_guesttype,
-
   - Paths used are
     post /guesttype/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.guesttype:
     ise_hostname: "{{ise_hostname}}"
@@ -124,11 +122,11 @@ EXAMPLES = r"""
     accessTime:
       allowAccessOnSpecificDaysTimes: false
       dayTimeLimits:
-      - days:
-        - Sunday
-        - Tuesday
-        endTime: '16:00'
-        startTime: '12:00'
+        - days:
+            - Sunday
+            - Tuesday
+          endTime: '16:00'
+          startTime: '12:00'
       defaultDuration: 90
       durationTimeUnit: DAYS
       fromFirstLogin: true
@@ -136,8 +134,8 @@ EXAMPLES = r"""
     allowDynamicIdentityGroups: true
     description: Description
     dynamicGroups:
-    - endpointIdentityGroupId: generatedID
-      externalGroupName: ExternalServerName:GroupName
+      - endpointIdentityGroupId: generatedID
+        externalGroupName: ExternalServerName:GroupName
     expirationNotification:
       advanceNotificationDuration: 3
       advanceNotificationUnits: DAYS
@@ -156,11 +154,9 @@ EXAMPLES = r"""
       maxSimultaneousLogins: 3
     name: Name
     sponsorGroups:
-    - Group1
-    - Group2
-
+      - Group1
+      - Group2
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

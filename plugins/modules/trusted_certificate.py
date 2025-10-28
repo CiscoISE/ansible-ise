@@ -9,9 +9,10 @@ DOCUMENTATION = r"""
 module: trusted_certificate
 short_description: Resource module for Trusted Certificate
 description:
-- Manage operations update and delete of the resource Trusted Certificate.
-- This API deletes a Trust Certificate from Trusted Certificate Store based on a given ID.
-- Update a trusted certificate present in Cisco ISE trust store.
+  - Manage operations update and delete of the resource Trusted Certificate.
+  - This API deletes a Trust Certificate from Trusted Certificate Store based on a
+    given ID.
+  - Update a trusted certificate present in Cisco ISE trust store.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -48,8 +49,8 @@ options:
     description: Switch to enable or disable OCSP Validation.
     type: bool
   enableServerIdentityCheck:
-    description: Switch to enable or disable verification if HTTPS or LDAP server certificate
-      name fits the configured server URL.
+    description: Switch to enable or disable verification if HTTPS or LDAP server
+      certificate name fits the configured server URL.
     type: bool
   id:
     description: Id path parameter. ID of the trust certificate.
@@ -91,24 +92,22 @@ options:
     description: Trust for authentication within Cisco ISE.
     type: bool
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for Certificates
-  description: Complete reference of the Certificates API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
+  - name: Cisco ISE documentation for Certificates
+    description: Complete reference of the Certificates API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
 notes:
   - SDK Method used are
     certificates.Certificates.delete_trusted_certificate_by_id,
     certificates.Certificates.update_trusted_certificate,
-
   - Paths used are
     delete /api/v1/certs/trusted-certificate/{id},
     put /api/v1/certs/trusted-certificate/{id},
-
 """
-
 EXAMPLES = r"""
+---
 - name: Update by id
   cisco.ise.trusted_certificate:
     ise_hostname: "{{ise_hostname}}"
@@ -140,7 +139,6 @@ EXAMPLES = r"""
     trustForCiscoServicesAuth: true
     trustForClientAuth: true
     trustForIseAuth: true
-
 - name: Delete by id
   cisco.ise.trusted_certificate:
     ise_hostname: "{{ise_hostname}}"
@@ -149,9 +147,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     id: string
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
@@ -197,7 +193,6 @@ ise_response:
       "trustedFor": "string",
       "validFrom": "string"
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

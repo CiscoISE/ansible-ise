@@ -9,10 +9,10 @@ DOCUMENTATION = r"""
 module: px_grid_direct
 short_description: Resource module for Px Grid Direct
 description:
-- Manage operations create, update and delete of the resource Px Grid Direct.
-- PxGrid Direct - Configure connectorconfig information.
-- PxGrid Direct - Delete Configure connectorConfig information based on ConnectorName.
-- PxGrid Direct - update Configure connectorConfig information based on ConnectorName.
+  - Manage operations create, update and delete of the resource Px Grid Direct.
+  - PxGrid Direct - Configure connectorconfig information.
+  - PxGrid Direct - Delete Configure connectorConfig information based on ConnectorName.
+  - PxGrid Direct - update Configure connectorConfig information based on ConnectorName.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -298,22 +298,20 @@ options:
         type: str
     type: dict
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     px_grid_direct.PxGridDirect.create_connector_config,
     px_grid_direct.PxGridDirect.delete_connector_config_by_connector_name,
     px_grid_direct.PxGridDirect.update_connector_config_by_connector_name,
-
   - Paths used are
     post /api/v1/pxgrid-direct/connector-config,
     delete /api/v1/pxgrid-direct/connector-config/{connectorName},
     put /api/v1/pxgrid-direct/connector-config/{connectorName},
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.px_grid_direct:
     ise_hostname: "{{ise_hostname}}"
@@ -324,10 +322,10 @@ EXAMPLES = r"""
     additionalProperties: {}
     attributes:
       attributeMapping:
-      - coaSignificance: true
-        dictionaryAttribute: string
-        includeInDictionary: true
-        jsonAttribute: string
+        - coaSignificance: true
+          dictionaryAttribute: string
+          includeInDictionary: true
+          jsonAttribute: string
       correlationIdentifier: string
       topLevelObject: string
       uniqueIdentifier: string
@@ -344,8 +342,8 @@ EXAMPLES = r"""
     flexibleUrl:
       bulk:
         additionalHeaders:
-        - name: string
-          value: string
+          - name: string
+            value: string
         apiKeyProperties:
           headerName: string
           key: string
@@ -369,8 +367,8 @@ EXAMPLES = r"""
         url: string
       incremental:
         additionalHeaders:
-        - name: string
-          value: string
+          - name: string
+            value: string
         apiKeyProperties:
           headerName: string
           key: string
@@ -397,8 +395,8 @@ EXAMPLES = r"""
       intervalUnit: string
       startDate: string
     groupArray:
-    - GroupName: string
-      GroupPermission: string
+      - GroupName: string
+    GroupPermission: string
     protocol: string
     skipCertificateValidations: true
     url:
@@ -407,7 +405,6 @@ EXAMPLES = r"""
       incrementalUrl: string
       password: string
       userName: string
-
 - name: Update by name
   cisco.ise.px_grid_direct:
     ise_hostname: "{{ise_hostname}}"
@@ -418,10 +415,10 @@ EXAMPLES = r"""
     additionalProperties: {}
     attributes:
       attributeMapping:
-      - coaSignificance: true
-        dictionaryAttribute: string
-        includeInDictionary: true
-        jsonAttribute: string
+        - coaSignificance: true
+          dictionaryAttribute: string
+          includeInDictionary: true
+          jsonAttribute: string
       correlationIdentifier: string
       topLevelObject: string
       uniqueIdentifier: string
@@ -438,8 +435,8 @@ EXAMPLES = r"""
     flexibleUrl:
       bulk:
         additionalHeaders:
-        - name: string
-          value: string
+          - name: string
+            value: string
         apiKeyProperties:
           headerName: string
           key: string
@@ -463,8 +460,8 @@ EXAMPLES = r"""
         url: string
       incremental:
         additionalHeaders:
-        - name: string
-          value: string
+          - name: string
+            value: string
         apiKeyProperties:
           headerName: string
           key: string
@@ -491,8 +488,8 @@ EXAMPLES = r"""
       intervalUnit: string
       startDate: string
     groupArray:
-    - GroupName: string
-      GroupPermission: string
+      - GroupName: string
+    GroupPermission: string
     protocol: string
     skipCertificateValidations: true
     url:
@@ -501,7 +498,6 @@ EXAMPLES = r"""
       incrementalUrl: string
       password: string
       userName: string
-
 - name: Delete by name
   cisco.ise.px_grid_direct:
     ise_hostname: "{{ise_hostname}}"
@@ -510,9 +506,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: absent
     connectorName: string
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
@@ -634,7 +628,6 @@ ise_response:
         }
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

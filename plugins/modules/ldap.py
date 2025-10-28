@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: ldap
 short_description: Resource module for Ldap
 description:
-- Manage operation create of the resource Ldap.
+  - Manage operation create of the resource Ldap.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -241,17 +241,14 @@ options:
     description: Name.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     ldap.Ldap.create_ldap,
-
   - Paths used are
     post /ldap/,
-
 """
-
 EXAMPLES = r"""
 - name: Create
   cisco.ise.ldap:
@@ -262,31 +259,31 @@ EXAMPLES = r"""
     state: present
     attributes:
       attributes:
-      - defaultValue: ' '
-        internalName: whenChanged
-        name: whenChanged
-        type: STRING
+        - defaultValue: ' '
+          internalName: whenChanged
+          name: whenChanged
+          type: STRING
     connectionSettings:
       alwaysAccessPrimaryFirst: true
       failbackRetryDelay: 5
       failoverToSecondary: true
       ldapNodeData:
-      - name: ise222
-        primaryHostname: ipAddress
-        primaryPort: 389
-        secondaryHostname: ipAddress
-        secondaryPort: 389
-      - name: ise223
-        primaryHostname: ipAddress
-        primaryPort: 389
-        secondaryHostname: ipAddress
-        secondaryPort: 389
-      primaryServer:
-        adminDN: cn=administrator,cn=users,dc=ise,dc=com
-        adminPassword: Lab@123
-        enableForceReconnect: false
-        enableSecureConnection: false
-        enableServerIdentityCheck: false
+        - name: ise222
+          primaryHostname: ipAddress
+          primaryPort: 389
+          secondaryHostname: ipAddress
+          secondaryPort: 389
+        - name: ise223
+          primaryHostname: ipAddress
+          primaryPort: 389
+          secondaryHostname: ipAddress
+          secondaryPort: 389
+    primaryServer:
+      adminDN: cn=administrator,cn=users,dc=ise,dc=com
+      adminPassword: Lab@123
+      enableForceReconnect: false
+      enableSecureConnection: false
+      enableServerIdentityCheck: false
         forceReconnectTime: 20
         hostName: ''
         issuerCACertificate: ''
@@ -343,11 +340,9 @@ EXAMPLES = r"""
       userObjectClass: Person
     groups:
       groupsNames:
-      - CN=TestLDAP,CN=Users,DC=ISE,DC=COM
-    name: sample
-
+        - CN=TestLDAP,CN=Users,DC=ISE,DC=COM
+      name: sample
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

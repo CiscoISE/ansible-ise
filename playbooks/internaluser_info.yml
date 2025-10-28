@@ -17,7 +17,6 @@
     - name: Print Internal Users
       ansible.builtin.debug:
         var: result.ise_response
-
     - name: Get Internal User by name
       cisco.ise.internaluser_info:
         ise_hostname: "{{ ise_hostname }}"
@@ -30,4 +29,3 @@
     - name: Print Internal User by Name
       ansible.builtin.debug:
         var: result_by_name.ise_response
-

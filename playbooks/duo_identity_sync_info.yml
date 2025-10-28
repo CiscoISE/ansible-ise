@@ -17,4 +17,3 @@
     - name: Print Duo Identity Sync Information
       ansible.builtin.debug:
         var: result.ise_response
-

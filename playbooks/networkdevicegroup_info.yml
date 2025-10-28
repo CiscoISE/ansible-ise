@@ -17,4 +17,3 @@
     - name: Print Network Device Groups
       ansible.builtin.debug:
         var: result.ise_response
-

@@ -17,4 +17,3 @@
     - name: Print ID Store Sequences
       ansible.builtin.debug:
         var: result.ise_response
-

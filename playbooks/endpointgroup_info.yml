@@ -17,7 +17,6 @@
     - name: Print Endpoint Groups
       ansible.builtin.debug:
         var: result.ise_response
-
     - name: Get Endpoint Group by name
       cisco.ise.endpointgroup_info:
         ise_hostname: "{{ ise_hostname }}"
@@ -30,4 +29,3 @@
     - name: Print Endpoint Group by Name
       ansible.builtin.debug:
         var: result_by_name.ise_response
-

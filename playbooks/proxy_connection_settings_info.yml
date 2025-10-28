@@ -17,4 +17,3 @@
     - name: Print Proxy Connection Settings
       ansible.builtin.debug:
         var: result.ise_response
-

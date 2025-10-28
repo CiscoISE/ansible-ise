@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: stop_replication
 short_description: Resource module for Stop Replication
 description:
-- Manage operation update of the resource Stop Replication.
-- This API updates the status of Endpoint stop replication Service.
+  - Manage operation update of the resource Stop Replication.
+  - This API updates the status of Endpoint stop replication Service.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -20,18 +20,16 @@ options:
     description: IsEnabled flag.
     type: bool
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     endpoint_stop_replication_service.EndpointStopReplicationService.set_stop_replication_service,
-
   - Paths used are
     put /api/v1/stop-replication,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Update all
   cisco.ise.stop_replication:
     ise_hostname: "{{ise_hostname}}"
@@ -40,9 +38,7 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     state: present
     isEnabled: true
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
@@ -52,7 +48,6 @@ ise_response:
     {
       "isEnabled": true
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

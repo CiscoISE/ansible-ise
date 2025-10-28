@@ -17,4 +17,3 @@
     - name: Print Sponsor Portals
       ansible.builtin.debug:
         var: result.ise_response
-

@@ -175,6 +175,7 @@ class ActionModule(ActionBase):
 
         response = None
         if state == "present":
+            pass
         elif state == "absent":
             (obj_exists, prev_obj) = obj.exists()
             if obj_exists:

@@ -26,4 +26,3 @@
     - name: Print Import Result
       ansible.builtin.debug:
         var: result
-

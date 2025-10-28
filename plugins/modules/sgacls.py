@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: sgacls
 short_description: Resource module for SGacls
 description:
-- Manage operation create of the resource SGacls.
+  - Manage operation create of the resource SGacls.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -57,18 +57,16 @@ options:
         type: str
     type: dict
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     sgacls.Sgacls.create_sgacls,
-
   - Paths used are
     post /sgacls/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.sgacls:
     ise_hostname: "{{ise_hostname}}"
@@ -78,13 +76,11 @@ EXAMPLES = r"""
     limit: 1
     max: 1
     names:
-    - Permit_IP_Log
+      - Permit_IP_Log
     offset: 0
     policyVerId: 12-0-1968919659f
     pushId: '1'
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: licensing_registration_create
 short_description: Resource module for Licensing Registration Create
 description:
-- Manage operation create of the resource Licensing Registration Create.
-- License - Configure registration information.
+  - Manage operation create of the resource Licensing Registration Create.
+  - License - Configure registration information.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -34,22 +34,20 @@ options:
     description: Token.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for Licensing
-  description: Complete reference of the Licensing API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!license-openapi
+  - name: Cisco ISE documentation for Licensing
+    description: Complete reference of the Licensing API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!license-openapi
 notes:
   - SDK Method used are
     licensing.Licensing.create_registration_info,
-
   - Paths used are
     post /api/v1/license/system/register,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.licensing_registration_create:
     ise_hostname: "{{ise_hostname}}"
@@ -60,11 +58,9 @@ EXAMPLES = r"""
     registrationType: string
     ssmOnPremServer: string
     tier:
-    - string
+      - string
     token: string
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

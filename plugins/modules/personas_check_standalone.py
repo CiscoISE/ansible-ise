@@ -9,49 +9,49 @@ DOCUMENTATION = r"""
 module: personas_check_standalone
 short_description: Ensure the node is in standalone mode
 description:
-- Ensure the mode is in standalone mode
+  - Ensure the mode is in standalone mode
 version_added: '0.0.8'
 author: Rafael Campos (@racampos)
 options:
   name:
     description:
-    - The name of the node.
+      - The name of the node.
     type: str
   ip:
     description:
-    - The public IP address of the node
+      - The public IP address of the node
     type: str
   username:
     description:
-    - The username for the node.
+      - The username for the node.
     type: str
   password:
     description:
-    - The password for the node.
+      - The password for the node.
     type: str
   ise_verify:
     description:
-    - Whether or not to verify the identity of the node.
+      - Whether or not to verify the identity of the node.
     type: bool
   ise_version:
     description:
-    - The version of the ISE node.
+      - The version of the ISE node.
     type: str
   ise_wait_on_rate_limit:
     description:
-    - Whether or not to wait on rate limit
+      - Whether or not to wait on rate limit
     type: bool
 requirements:
-- requests >= 2.25.1
-- python >= 3.5
+  - requests >= 2.25.1
+  - python >= 3.5
 seealso:
-# Reference by module name
-- module: cisco.ise.plugins.modules.personas_check_standalone
+  # Reference by module name
+  - module: cisco.ise.plugins.modules.personas_check_standalone
 notes:
-    - "Does not support C(check_mode)"
+  - "Does not support C(check_mode)"
 """
-
 EXAMPLES = r"""
+---
 - name: Check if all nodes are in STANDALONE state
   cisco.ise.personas_check_standalone:
     name: "{{ item.name }}"
@@ -68,7 +68,6 @@ EXAMPLES = r"""
     - name: ISE PSN Server 2
       ip: 10.1.1.4
 """
-
 RETURN = r"""
 ise_response:
   description: A string stating that the node is in standalone mode

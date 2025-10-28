@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: px_grid_direct_test_connector
 short_description: Resource module for Px Grid Direct Test Connector
 description:
-- Manage operation create of the resource Px Grid Direct Test Connector.
-- PxGrid Direct - test the Connector.
+  - Manage operation create of the resource Px Grid Direct Test Connector.
+  - PxGrid Direct - test the Connector.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -244,18 +244,16 @@ options:
     description: BulkUrl.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     px_grid_direct.PxGridDirect.test_connector,
-
   - Paths used are
     post /api/v1/pxgrid-direct/test-connector,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.px_grid_direct_test_connector:
     ise_hostname: "{{ise_hostname}}"
@@ -280,8 +278,8 @@ EXAMPLES = r"""
     flexibleUrl:
       bulk:
         additionalHeaders:
-        - name: string
-          value: string
+          - name: string
+            value: string
         apiKeyProperties:
           headerName: string
           key: string
@@ -305,8 +303,8 @@ EXAMPLES = r"""
         url: string
       incremental:
         additionalHeaders:
-        - name: string
-          value: string
+          - name: string
+            value: string
         apiKeyProperties:
           headerName: string
           key: string
@@ -333,9 +331,7 @@ EXAMPLES = r"""
     skipCertificateValidations: true
     uniqueID: string
     url: string
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

@@ -18,4 +18,3 @@
     - name: Print Installation Result
       ansible.builtin.debug:
         var: result
-

@@ -70,7 +70,6 @@ notes:
   - Paths used are
     post /api/v1/backup-restore/config/schedule-config-backup,
 """
-
 EXAMPLES = r"""
 ---
 - name: Create
@@ -91,7 +90,6 @@ EXAMPLES = r"""
     time: string
     weekDay: string
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

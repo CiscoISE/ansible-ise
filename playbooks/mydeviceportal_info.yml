@@ -17,4 +17,3 @@
     - name: Print My Device Portals
       ansible.builtin.debug:
         var: result.ise_response
-

@@ -17,4 +17,3 @@
     - name: Print Licensing Connection Type
       ansible.builtin.debug:
         var: result.ise_response
-

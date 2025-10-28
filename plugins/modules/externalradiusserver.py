@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: externalradiusserver
 short_description: Resource module for Externalradiusserver
 description:
-- Manage operation create of the resource Externalradiusserver.
+  - Manage operation create of the resource Externalradiusserver.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -23,8 +23,8 @@ options:
     type: dict
   authenticatorKey:
     description: The authenticatorKey is required only if enableKeyWrap is true, otherwise
-      it must be ignored or empty. The maximum length is 20 ASCII characters or 40 HEXADECIMAL
-      characters (depend on selection in field 'keyInputFormat').
+      it must be ignored or empty. The maximum length is 20 ASCII characters or 40
+      HEXADECIMAL characters (depend on selection in field 'keyInputFormat').
     type: str
   description:
     description: Description.
@@ -35,8 +35,8 @@ options:
     type: bool
   encryptionKey:
     description: The encryptionKey is required only if enableKeyWrap is true, otherwise
-      it must be ignored or empty. The maximum length is 16 ASCII characters or 32 HEXADECIMAL
-      characters (depend on selection in field 'keyInputFormat').
+      it must be ignored or empty. The maximum length is 16 ASCII characters or 32
+      HEXADECIMAL characters (depend on selection in field 'keyInputFormat').
     type: str
   hostIP:
     description: The IP of the host - must be a valid IPV4 address.
@@ -45,8 +45,8 @@ options:
     description: Id.
     type: str
   keyInputFormat:
-    description: Specifies the format of the input for fields 'encryptionKey' and 'authenticatorKey'.
-      Allowed Values ASCII or HEXADECIMAL.
+    description: Specifies the format of the input for fields 'encryptionKey' and
+      'authenticatorKey'. Allowed Values ASCII or HEXADECIMAL.
     type: str
   msgAuthIsRequiredOnResponse:
     description: Should ISE validate the existence of Message-Authenticator on responses
@@ -68,18 +68,16 @@ options:
     description: Valid Range 1 to 120.
     type: dict
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     externalradiusserver.Externalradiusserver.create_externalradiusserver,
-
   - Paths used are
     post /externalradiusserver/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.externalradiusserver:
     ise_hostname: "{{ise_hostname}}"
@@ -102,9 +100,7 @@ EXAMPLES = r"""
     retries: 3
     sharedSecret: sharedSecret
     timeout: 5
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

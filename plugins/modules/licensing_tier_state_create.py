@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: licensing_tier_state_create
 short_description: Resource module for Licensing Tier State Create
 description:
-- Manage operation create of the resource Licensing Tier State Create.
-- Applicable values for **name** & **status** parameters.
+  - Manage operation create of the resource Licensing Tier State Create.
+  - Applicable values for **name** & **status** parameters.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -28,22 +28,20 @@ options:
         type: str
     type: list
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for Licensing
-  description: Complete reference of the Licensing API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!license-openapi
+  - name: Cisco ISE documentation for Licensing
+    description: Complete reference of the Licensing API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!license-openapi
 notes:
   - SDK Method used are
     licensing.Licensing.update_tier_state_info,
-
   - Paths used are
     post /api/v1/license/system/tier-state,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.licensing_tier_state_create:
     ise_hostname: "{{ise_hostname}}"
@@ -51,11 +49,9 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     payload:
-    - name: string
-      status: string
-
+      - name: string
+        status: string
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

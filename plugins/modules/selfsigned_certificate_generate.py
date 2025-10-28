@@ -9,8 +9,8 @@ DOCUMENTATION = r"""
 module: selfsigned_certificate_generate
 short_description: Resource module for Selfsigned Certificate Generate
 description:
-- Manage operation create of the resource Selfsigned Certificate Generate.
-- Generate Self-signed Certificate.
+  - Manage operation create of the resource Selfsigned Certificate Generate.
+  - Generate Self-signed Certificate.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -20,8 +20,8 @@ options:
     description: Use certificate to authenticate the Cisco ISE Admin Portal.
     type: bool
   allowExtendedValidity:
-    description: Allow generation of self-signed certificate with validity greater than
-      398 days.
+    description: Allow generation of self-signed certificate with validity greater
+      than 398 days.
     type: bool
   allowPortalTagTransferForSameSubject:
     description: Allow overwriting the portal tag from matching certificate of same
@@ -119,22 +119,20 @@ options:
     description: Certificate state (ST).
     type: str
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 seealso:
-- name: Cisco ISE documentation for Certificates
-  description: Complete reference of the Certificates API.
-  link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
+  - name: Cisco ISE documentation for Certificates
+    description: Complete reference of the Certificates API.
+    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
 notes:
   - SDK Method used are
     certificates.Certificates.generate_self_signed_certificate,
-
   - Paths used are
     post /api/v1/certs/system-certificate/generate-selfsigned-certificate,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.selfsigned_certificate_generate:
     ise_hostname: "{{ise_hostname}}"
@@ -165,20 +163,18 @@ EXAMPLES = r"""
     radius: true
     saml: true
     sanDNS:
-    - string
+      - string
     sanIP:
-    - string
+      - string
     sanURI:
-    - string
+      - string
     subjectCity: string
     subjectCommonName: string
     subjectCountry: string
     subjectOrg: string
     subjectOrgUnit: string
     subjectState: string
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

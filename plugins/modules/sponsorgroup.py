@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: sponsorgroup
 short_description: Resource module for Sponsorgroup
 description:
-- Manage operation create of the resource Sponsorgroup.
+  - Manage operation create of the resource Sponsorgroup.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -117,18 +117,16 @@ options:
         type: bool
     type: dict
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     sponsorgroup.Sponsorgroup.create_sponsorgroup,
-
   - Paths used are
     post /sponsorgroup/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.sponsorgroup:
     ise_hostname: "{{ise_hostname}}"
@@ -148,17 +146,17 @@ EXAMPLES = r"""
       startDateFutureLimitDays: 10
     description: description
     guestTypes:
-    - Contractor (default)
-    - Daily (default)
-    - Weekly (default)
+      - Contractor (default)
+      - Daily (default)
+      - Weekly (default)
     id: f75760e7-a4f9-40ef-93bb-88a97e9fb171
     isDefaultGroup: false
     isEnabled: true
     locations:
-    - San Jose
+      - San Jose
     managePermission: ALLACCOUNTS
     memberGroups:
-    - ALL_ACCOUNTS (default)
+      - ALL_ACCOUNTS (default)
     name: name
     otherPermissions:
       canAccessViaRest: false
@@ -173,9 +171,7 @@ EXAMPLES = r"""
       canViewGuestPasswords: false
       limitApprovalToSponsorsGuests: false
       requireSuspensionReason: false
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

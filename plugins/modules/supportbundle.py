@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: supportbundle
 short_description: Resource module for Supportbundle
 description:
-- Manage operation create of the resource Supportbundle.
+  - Manage operation create of the resource Supportbundle.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -49,7 +49,8 @@ options:
         description: Set to include System logs in Support Bundle.
         type: bool
       mntLogs:
-        description: Set to include Monitoring and troublshooting logs in Support Bundle.
+        description: Set to include Monitoring and troublshooting logs in Support
+          Bundle.
         type: bool
       policyXml:
         description: Set to include Policy XML in Support Bundle.
@@ -59,18 +60,16 @@ options:
         type: dict
     type: dict
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     supportbundle.Supportbundle.create_supportbundle,
-
   - Paths used are
     post /supportbundle/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.supportbundle:
     ise_hostname: "{{ise_hostname}}"
@@ -91,9 +90,7 @@ EXAMPLES = r"""
       mntLogs: true
       policyXml: true
       toDate: 04/22/2019
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

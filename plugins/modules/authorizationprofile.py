@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: authorizationprofile
 short_description: Resource module for Authorizationprofile
 description:
-- Manage operation create of the resource Authorizationprofile.
+  - Manage operation create of the resource Authorizationprofile.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -36,10 +36,10 @@ options:
         type: dict
       rightHandSideAttribueValue:
         description: Attribute value can be of type AttributeValue or AdvancedDictionaryAttribute.
-          For AttributeValue the value is String, For AdvancedDictionaryAttribute the
-          value is dictionaryName and attributeName properties, for RADIUS Dictionary
-          with attribute name starting with 'Tunnel-' there is also tagID property which
-          is a number between 0-31.
+          For AttributeValue the value is String, For AdvancedDictionaryAttribute
+          the value is dictionaryName and attributeName properties, for RADIUS Dictionary
+          with attribute name starting with 'Tunnel-' there is also tagID property
+          which is a number between 0-31.
         type: dict
     type: dict
   agentlessPosture:
@@ -102,8 +102,8 @@ options:
     suboptions:
       attributeName:
         description: The name of the attribute within the dictionary containing the
-          value. Value should be date based in ISO 8601 form with timezone offset. For
-          example, 2035-12-31T23 59 59-08 00.
+          value. Value should be date based in ISO 8601 form with timezone offset.
+          For example, 2035-12-31T23 59 59-08 00.
         type: str
       connectivity:
         description: Allowed Values DEFAULT, RADIUS_REQUEST.
@@ -112,13 +112,13 @@ options:
         description: The name of the dictionary containing the attribute.
         type: str
       reauthType:
-        description: Allowed Values TIMER, EXPIRATION_DATE. Specifies the type of reauthentication.
-          TIMER is used for time-based reauthentication, while EXPIRATION_DATE is used
-          for dynamic date-based reauthentication.
+        description: Allowed Values TIMER, EXPIRATION_DATE. Specifies the type of
+          reauthentication. TIMER is used for time-based reauthentication, while EXPIRATION_DATE
+          is used for dynamic date-based reauthentication.
         type: str
       timer:
-        description: Specifies the reauthentication timer in seconds. Valid range is
-          1-1073741823.
+        description: Specifies the reauthentication timer in seconds. Valid range
+          is 1-1073741823.
         type: dict
     type: dict
   serviceTemplate:
@@ -154,13 +154,13 @@ options:
         type: str
       WebRedirectionType:
         description: Value MUST be one of the following CentralizedWebAuth, HotSpot,
-          NativeSupplicanProvisioning, ClientProvisioning. The WebRedirectionType must
-          fit the portalName.
+          NativeSupplicanProvisioning, ClientProvisioning. The WebRedirectionType
+          must fit the portalName.
         type: str
       displayCertificatesRenewalMessages:
         description: The displayCertificatesRenewalMessages is mandatory when 'WebRedirectionType'
-          value is 'CentralizedWebAuth'. For all other 'WebRedirectionType' values the
-          field must be ignored.
+          value is 'CentralizedWebAuth'. For all other 'WebRedirectionType' values
+          the field must be ignored.
         type: bool
       portalName:
         description: A portal that exist in the DB and fits the WebRedirectionType.
@@ -170,18 +170,16 @@ options:
         type: str
     type: dict
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     authorizationprofile.Authorizationprofile.create_authorizationprofile,
-
   - Paths used are
     post /authorizationprofile/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.authorizationprofile:
     ise_hostname: "{{ise_hostname}}"
@@ -192,13 +190,13 @@ EXAMPLES = r"""
     accessType: ACCESS_ACCEPT
     acl: aclfilter
     advancedAttributes:
-    - leftHandSideDictionaryAttribue:
-        AdvancedAttributeValueType: AdvancedDictionaryAttribute
-        attributeName: cisco-call-filter
-        dictionaryName: Cisco
-      rightHandSideAttribueValue:
-        AdvancedAttributeValueType: AttributeValue
-        value: '23'
+      - leftHandSideDictionaryAttribue:
+          AdvancedAttributeValueType: AdvancedDictionaryAttribute
+          attributeName: cisco-call-filter
+          dictionaryName: Cisco
+        rightHandSideAttribueValue:
+          AdvancedAttributeValueType: AttributeValue
+          value: '23'
     agentlessPosture: false
     airespaceACL: ACL
     airespaceIPv6ACL: ACL6
@@ -235,9 +233,7 @@ EXAMPLES = r"""
       displayCertificatesRenewalMessages: true
       portalName: Sponsored Guest Portal (default)
       staticIPHostNameFQDN: 10.56.54.200
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

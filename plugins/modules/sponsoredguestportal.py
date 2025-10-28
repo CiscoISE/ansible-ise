@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: sponsoredguestportal
 short_description: Resource module for Sponsoredguestportal
 description:
-- Manage operation create of the resource Sponsoredguestportal.
+  - Manage operation create of the resource Sponsoredguestportal.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -132,8 +132,8 @@ options:
             description: Require the portal user to read and accept an AUP.
             type: bool
           requireAupScrolling:
-            description: Require the portal user to scroll to the end of the AUP. Only
-              valid if requireAupAcceptance = true.
+            description: Require the portal user to scroll to the end of the AUP.
+              Only valid if requireAupAcceptance = true.
             type: bool
           skipAupForEmployees:
             description: Only valid if requireAupAcceptance = true.
@@ -170,8 +170,8 @@ options:
             description: Sponsoredguestportal's byodRegistrationSuccessSettings.
             suboptions:
               redirectUrl:
-                description: Target URL for redirection, used when successRedirect =
-                  url.
+                description: Target URL for redirection, used when successRedirect
+                  = url.
                 type: str
               successRedirect:
                 description: After an Authentication Success where should device be
@@ -182,8 +182,8 @@ options:
             description: Sponsoredguestportal's byodWelcomeSettings.
             suboptions:
               aupDisplay:
-                description: How the AUP should be displayed, either on page or as a
-                  link. Only valid if includeAup = true. AllowedValues onPage, asLink.
+                description: How the AUP should be displayed, either on page or as
+                  a link. Only valid if includeAup = true. AllowedValues onPage, asLink.
                 type: str
               enableBYOD:
                 description: EnableBYOD flag.
@@ -201,8 +201,8 @@ options:
                 description: RequireMDM flag.
                 type: bool
               requireScrolling:
-                description: Require BYOD devices to scroll down to the bottom of the
-                  AUP, Only valid if includeAup = true.
+                description: Require BYOD devices to scroll down to the bottom of
+                  the AUP, Only valid if includeAup = true.
                 type: bool
             type: dict
         type: dict
@@ -227,8 +227,8 @@ options:
         description: Sponsoredguestportal's loginPageSettings.
         suboptions:
           accessCode:
-            description: Access code that must be entered by the portal user (only valid
-              if requireAccessCode = true).
+            description: Access code that must be entered by the portal user (only
+              valid if requireAccessCode = true).
             type: str
           allowGuestToChangePassword:
             description: Require the portal user to enter an access code.
@@ -251,8 +251,8 @@ options:
             description: Require the portal user to enter an access code.
             type: bool
           requireAupAcceptance:
-            description: Require the portal user to accept the AUP. Only valid if includeAup
-              = true.
+            description: Require the portal user to accept the AUP. Only valid if
+              includeAup = true.
             type: bool
           timeBetweenLoginsDuringRateLimit:
             description: Time between login attempts when rate limiting.
@@ -262,22 +262,22 @@ options:
         description: Sponsoredguestportal's portalSettings.
         suboptions:
           allowedInterfaces:
-            description: Interfaces that the portal will be reachable on. Allowed values
-              eth0, eth1, eth2, eth3, eth4, eth5, bond0, bond1 and bond2.
+            description: Interfaces that the portal will be reachable on. Allowed
+              values eth0, eth1, eth2, eth3, eth4, eth5, bond0, bond1 and bond2.
             type: str
           alwaysUsedLanguage:
             description: Used when displayLang = alwaysUse.
             type: str
           assignedGuestTypeForEmployee:
-            description: Unique Id of a guest type. Employees using this portal as a
-              guest inherit login options from the guest type.
+            description: Unique Id of a guest type. Employees using this portal as
+              a guest inherit login options from the guest type.
             type: str
           authenticationMethod:
             description: Unique Id of the identity source sequence .
             type: str
           certificateGroupTag:
-            description: Logical name of the x.509 server certificate that will be used
-              for the portal.
+            description: Logical name of the x.509 server certificate that will be
+              used for the portal.
             type: str
           displayLang:
             description: Allowed values useBrowserLocale and alwaysUse.
@@ -301,8 +301,8 @@ options:
         description: Sponsoredguestportal's supportInfoSettings.
         suboptions:
           defaultEmptyFieldValue:
-            description: The default value displayed for an empty field Only valid when
-              emptyFieldDisplay = displayWithDefaultValue.
+            description: The default value displayed for an empty field Only valid
+              when emptyFieldDisplay = displayWithDefaultValue.
             type: str
           emptyFieldDisplay:
             description: Specifies how empty fields are handled on the Support Information
@@ -329,18 +329,16 @@ options:
         type: dict
     type: dict
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     sponsoredguestportal.Sponsoredguestportal.create_sponsoredguestportal,
-
   - Paths used are
     post /sponsoredguestportal/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.sponsoredguestportal:
     ise_hostname: "{{ise_hostname}}"
@@ -363,8 +361,8 @@ EXAMPLES = r"""
         viewLanguage: English
       pageCustomizations:
         data:
-        - key: ui_contact_link
-          value: Contact Support
+          - key: ui_contact_link
+            value: Contact Support
       portalTheme:
         id: themeId
         name: ThemeName
@@ -412,8 +410,8 @@ EXAMPLES = r"""
         timeBetweenLoginsDuringRateLimit: 2
       portalSettings:
         allowedInterfaces:
-        - eth0
-        - bond0
+          - eth0
+          - bond0
         alwaysUsedLanguage: English
         assignedGuestTypeForEmployee: Guest Type
         authenticationMethod: Identity Source
@@ -432,9 +430,7 @@ EXAMPLES = r"""
         includeMacAddr: true
         includePolicyServer: true
         includeSupportInfoPage: false
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

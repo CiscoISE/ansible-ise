@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: node_sync
 short_description: Resource module for Node Sync
 description:
-- Manage operation create of the resource Node Sync.
+  - Manage operation create of the resource Node Sync.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -19,17 +19,16 @@ options:
     description: Node Sync's hostname.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     sync_ise_node.SyncIseNode.sync_node,
-
   - Paths used are
     post /api/v1/deployment/sync-node
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.node_sync:
     ise_hostname: "{{ise_hostname}}"
@@ -37,9 +36,7 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
     hostname: string
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

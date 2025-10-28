@@ -7,9 +7,9 @@
 DOCUMENTATION = r"""
 ---
 module: adresourcereservation_
-short_description: Resource module for Adresourcereservation 
+short_description: Resource module for Adresourcereservation
 description:
-- Manage operation update of the resource Adresourcereservation .
+  - Manage operation update of the resource Adresourcereservation .
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -31,18 +31,16 @@ options:
     description: PSN name.
     type: str
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     adresourcereservation.Adresourcereservation.update_adresourcereservation_by_id,
-
   - Paths used are
     put /adresourcereservation/{id},
-
 """
-
 EXAMPLES = r"""
+---
 - name: Update by id
   cisco.ise.adresourcereservation_:
     ise_hostname: "{{ise_hostname}}"
@@ -53,9 +51,7 @@ EXAMPLES = r"""
     id: string
     joinPointNames: jp1,jp2,jp3
     node: node1.com
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
@@ -74,7 +70,6 @@ ise_response:
         "type": "string"
       }
     }
-
 ise_update_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always

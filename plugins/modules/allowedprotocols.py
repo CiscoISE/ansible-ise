@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: allowedprotocols
 short_description: Resource module for Allowedprotocols
 description:
-- Manage operation create of the resource Allowedprotocols.
+  - Manage operation create of the resource Allowedprotocols.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -82,23 +82,24 @@ options:
           is true, otherwise it must be ignored.
         type: bool
       allowEapFastEapMsChapV2PwdChangeRetries:
-        description: The allowEapFastEapMsChapV2PwdChangeRetries is required only if
-          eapTtlsEapMsChapV2 is true, otherwise it must be ignored. Valid range is 0-3.
+        description: The allowEapFastEapMsChapV2PwdChangeRetries is required only
+          if eapTtlsEapMsChapV2 is true, otherwise it must be ignored. Valid range
+          is 0-3.
         type: dict
       allowEapFastEapTls:
         description: AllowEapFastEapTls flag.
         type: bool
       allowEapFastEapTlsAuthOfExpiredCerts:
-        description: The allowEapFastEapTlsAuthOfExpiredCerts is required only if allowEapFastEapTls
-          is true, otherwise it must be ignored.
+        description: The allowEapFastEapTlsAuthOfExpiredCerts is required only if
+          allowEapFastEapTls is true, otherwise it must be ignored.
         type: bool
       eapFastDontUsePacsAcceptClientCert:
         description: The eapFastDontUsePacsAcceptClientCert is required only if eapFastUsePacs
           is FALSE, otherwise it must be ignored.
         type: bool
       eapFastDontUsePacsAllowMachineAuthentication:
-        description: The eapFastDontUsePacsAllowMachineAuthentication is required only
-          if eapFastUsePacs is FALSE, otherwise it must be ignored.
+        description: The eapFastDontUsePacsAllowMachineAuthentication is required
+          only if eapFastUsePacs is FALSE, otherwise it must be ignored.
         type: bool
       eapFastEnableEAPChaining:
         description: EapFastEnableEAPChaining flag.
@@ -111,16 +112,16 @@ options:
           is true, otherwise it must be ignored.
         type: bool
       eapFastUsePacsAllowAnonymProvisioning:
-        description: The eapFastUsePacsAllowAnonymProvisioning is required only if eapFastUsePacs
-          is true, otherwise it must be ignored.
+        description: The eapFastUsePacsAllowAnonymProvisioning is required only if
+          eapFastUsePacs is true, otherwise it must be ignored.
         type: bool
       eapFastUsePacsAllowAuthenProvisioning:
-        description: The eapFastUsePacsAllowAuthenProvisioning is required only if eapFastUsePacs
-          is true, otherwise it must be ignored.
+        description: The eapFastUsePacsAllowAuthenProvisioning is required only if
+          eapFastUsePacs is true, otherwise it must be ignored.
         type: bool
       eapFastUsePacsAllowMachineAuthentication:
-        description: The eapFastUsePacsAllowMachineAuthentication is required only if
-          eapFastUsePacs is true, otherwise it must be ignored.
+        description: The eapFastUsePacsAllowMachineAuthentication is required only
+          if eapFastUsePacs is true, otherwise it must be ignored.
         type: bool
       eapFastUsePacsAuthorizationPacTtl:
         description: The eapFastUsePacsAuthorizationPacTtl is required only if eapFastUsePacsStatelessSessionResume
@@ -137,16 +138,16 @@ options:
         type: dict
       eapFastUsePacsMachinePacTtlUnits:
         description: The eapFastUsePacsMachinePacTtlUnits is required only if eapFastUsePacsAllowMachineAuthentication
-          is true, otherwise it must be ignored. Allowed Values SECONDS, MINUTES, HOURS,
-          DAYS, WEEKS.
+          is true, otherwise it must be ignored. Allowed Values SECONDS, MINUTES,
+          HOURS, DAYS, WEEKS.
         type: str
       eapFastUsePacsServerReturns:
         description: The eapFastUsePacsServerReturns is required only if eapFastUsePacsAllowAuthenProvisioning
           is true, otherwise it must be ignored.
         type: bool
       eapFastUsePacsStatelessSessionResume:
-        description: The eapFastUsePacsStatelessSessionResume is required only if eapFastUsePacs
-          is true, otherwise it must be ignored.
+        description: The eapFastUsePacsStatelessSessionResume is required only if
+          eapFastUsePacs is true, otherwise it must be ignored.
         type: bool
       eapFastUsePacsTunnelPacTtl:
         description: The eapFastUsePacsTunnelPacTtl is required only if eapFastUsePacs
@@ -154,12 +155,12 @@ options:
         type: dict
       eapFastUsePacsTunnelPacTtlUnits:
         description: The eapFastUsePacsTunnelPacTtlUnits is required only if eapFastUsePacs
-          is true, otherwise it must be ignored. Allowed Values SECONDS, MINUTES, HOURS,
-          DAYS, WEEKS.
+          is true, otherwise it must be ignored. Allowed Values SECONDS, MINUTES,
+          HOURS, DAYS, WEEKS.
         type: str
       eapFastUsePacsUseProactivePacUpdatePrecentage:
-        description: The eapFastUsePacsUseProactivePacUpdatePrecentage is required only
-          if eapFastUsePacs is true, otherwise it must be ignored.
+        description: The eapFastUsePacsUseProactivePacUpdatePrecentage is required
+          only if eapFastUsePacs is true, otherwise it must be ignored.
         type: dict
     type: dict
   eapTls:
@@ -176,13 +177,13 @@ options:
           is true, otherwise it must be ignored.
         type: dict
       eapTlsSessionTicketTtl:
-        description: Time to live. The eapTlsSessionTicketTtl is required only if eapTlsEnableStatelessSessionResume
-          is true, otherwise it must be ignored.
+        description: Time to live. The eapTlsSessionTicketTtl is required only if
+          eapTlsEnableStatelessSessionResume is true, otherwise it must be ignored.
         type: dict
       eapTlsSessionTicketTtlUnits:
         description: Time to live time units. The eapTlsSessionTicketTtlUnits is required
-          only if eapTlsEnableStatelessSessionResume is true, otherwise it must be ignored.
-          Allowed Values SECONDS, MINUTES, HOURS, DAYS, WEEKS.
+          only if eapTlsEnableStatelessSessionResume is true, otherwise it must be
+          ignored. Allowed Values SECONDS, MINUTES, HOURS, DAYS, WEEKS.
         type: dict
     type: dict
   eapTlsLBit:
@@ -249,8 +250,9 @@ options:
           is true, otherwise it must be ignored.
         type: bool
       allowPeapEapMsChapV2PwdChangeRetries:
-        description: The allowPeapEapMsChapV2PwdChangeRetries is required only if allowPeapEapMsChapV2
-          is true, otherwise it must be ignored. Valid range is 0-3.
+        description: The allowPeapEapMsChapV2PwdChangeRetries is required only if
+          allowPeapEapMsChapV2 is true, otherwise it must be ignored. Valid range
+          is 0-3.
         type: dict
       allowPeapEapTls:
         description: AllowPeapEapTls flag.
@@ -268,8 +270,8 @@ options:
     type: dict
   preferredEapProtocol:
     description: The preferredEapProtocol is required only if allowPreferredEapProtocol
-      is true, otherwise it must be ignored. Allowed Values EAP_FAST, PEAP, LEAP, EAP_MD5,
-      EAP_TLS, EAP_TTLS, TEAP.
+      is true, otherwise it must be ignored. Allowed Values EAP_FAST, PEAP, LEAP,
+      EAP_MD5, EAP_TLS, EAP_TTLS, TEAP.
     type: str
   processHostLookup:
     description: ProcessHostLookup flag.
@@ -297,8 +299,9 @@ options:
           is true, otherwise it must be ignored.
         type: bool
       allowTeapEapMsChapV2PwdChangeRetries:
-        description: The allowTeapEapMsChapV2PwdChangeRetries is required only if allowTeapEapMsChapV2
-          is true, otherwise it must be ignored. Valid range is 0-3.
+        description: The allowTeapEapMsChapV2PwdChangeRetries is required only if
+          allowTeapEapMsChapV2 is true, otherwise it must be ignored. Valid range
+          is 0-3.
         type: dict
       allowTeapEapTls:
         description: AllowTeapEapTls flag.
@@ -312,18 +315,16 @@ options:
         type: bool
     type: dict
 requirements:
-- ciscoisesdk >= 2.0.1
-- python >= 3.5
+  - ciscoisesdk >= 2.0.1
+  - python >= 3.5
 notes:
   - SDK Method used are
     allowedprotocols.Allowedprotocols.create_allowedprotocols,
-
   - Paths used are
     post /allowedprotocols/,
-
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.allowedprotocols:
     ise_hostname: "{{ise_hostname}}"
@@ -402,9 +403,7 @@ EXAMPLES = r"""
       allowTeapEapTls: true
       allowTeapEapTlsAuthOfExpiredCerts: false
       enableEapChaining: false
-
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

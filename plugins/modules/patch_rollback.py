@@ -36,7 +36,6 @@ notes:
   - Paths used are
     post /api/v1/patch/rollback,
 """
-
 EXAMPLES = r"""
 ---
 - name: Create
@@ -47,7 +46,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
     patchNumber: 0
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

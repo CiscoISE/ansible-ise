@@ -17,7 +17,6 @@
     - name: Print Network Devices
       ansible.builtin.debug:
         var: result.ise_response
-
     - name: Get Network Device by name
       cisco.ise.networkdevice_info:
         ise_hostname: "{{ ise_hostname }}"
@@ -30,4 +29,3 @@
     - name: Print Network Device by Name
       ansible.builtin.debug:
         var: result_by_name.ise_response
-

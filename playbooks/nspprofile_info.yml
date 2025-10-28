@@ -17,4 +17,3 @@
     - name: Print NSP Profiles
       ansible.builtin.debug:
         var: result.ise_response
-
