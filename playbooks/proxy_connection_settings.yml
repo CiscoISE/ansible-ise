@@ -10,6 +10,7 @@
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
         ise_verify: "{{ ise_verify }}"
       register: proxy_settings
 
@@ -22,6 +23,7 @@
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
         ise_verify: "{{ ise_verify }}"
         bypassHosts: localhost,127.0.0.1
         fqdn: proxy.example.com

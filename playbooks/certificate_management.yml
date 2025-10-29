@@ -10,7 +10,8 @@
     #     ise_hostname: "{{ ise_hostname }}"
     #     ise_username: "{{ ise_username }}"
     #     ise_password: "{{ ise_password }}"
-    #     ise_verify: "{{ ise_verify }}"
+    #     ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
     #     data: "{{ lookup('file', item) }}"
     #     description: Root CA public certificate
     #     name: RootCert
@@ -30,6 +31,7 @@
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
         ise_verify: "{{ ise_verify }}"
         allowWildCardCert: true
         subjectCommonName: ise.securitydemo.net
@@ -57,6 +59,7 @@
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
         ise_verify: "{{ ise_verify }}"
         admin: true
         allowExtendedValidity: true

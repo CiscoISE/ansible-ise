@@ -10,8 +10,8 @@
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
-        ise_verify: "{{ ise_verify }}"
         ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
       register: result
 
     - name: Print Network Devices
@@ -22,8 +22,8 @@
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
         ise_verify: "{{ ise_verify }}"
-        name: Switch_01
       register: result_by_name
 
     - name: Print Network Device by Name

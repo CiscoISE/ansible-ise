@@ -1,0 +1,22 @@
+# Ejemplo de archivo de inventario para ISE
+# Copia este archivo como 'hosts' y actualiza con tus datos
+
+[iseservers]
+ise-pan ansible_host=10.0.0.1
+ise-psn1 ansible_host=10.0.0.2
+ise-psn2 ansible_host=10.0.0.3
+
+[iseservers:vars]
+ansible_user=admin
+ansible_password=your_password_here
+ansible_connection=local
+ansible_python_interpreter=/usr/bin/python3
+
+# Variables para la conexión ISE
+ise_hostname={{ ansible_host }}
+ise_username={{ ansible_user }}
+ise_password={{ ansible_password }}
+ise_verify=False
+ise_debug=False
+ise_use_csrf_token=False
+

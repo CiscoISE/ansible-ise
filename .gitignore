@@ -27,3 +27,10 @@ lint.py
 .env
 playbooks/credentials.yml
 a.log
+run_all_playbooks.sh
+run_all_playbooks.py
+PLAYBOOK_RUNNER_README.md
+RESUMEN_EJECUTOR_PLAYBOOKS.md
+reports/
+verificar_requisitos.sh
+run_playbooks_help.sh

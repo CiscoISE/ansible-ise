@@ -10,8 +10,8 @@
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
-        ise_verify: "{{ ise_verify }}"
         ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
       register: result
 
     - name: Print Admin Users
@@ -22,6 +22,7 @@
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
         ise_verify: "{{ ise_verify }}"
         id: "{{ admin_user_id }}"
       when: admin_user_id is defined

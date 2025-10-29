@@ -10,8 +10,8 @@
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
         ise_verify: "{{ ise_verify }}"
-        macAddress: "11:22:33:44:55:66"
       register: result
 
     - name: Print Session Info
