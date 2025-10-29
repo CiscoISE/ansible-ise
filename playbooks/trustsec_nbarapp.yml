@@ -11,7 +11,7 @@
       ise_username: "{{ ise_username }}"
       ise_password: "{{ ise_password }}"
       ise_version: "{{ ise_version }}"
-        ise_verify: "{{ ise_verify }}"
+      ise_verify: "{{ ise_verify }}"
       ise_debug: "{{ ise_debug }}"
 
   tasks:

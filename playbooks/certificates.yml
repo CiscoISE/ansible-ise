@@ -11,7 +11,7 @@
     #     ise_username: "{{ ise_username }}"
     #     ise_password: "{{ ise_password }}"
     #     ise_version: "{{ ise_version }}"
-        ise_verify: "{{ ise_verify }}"
+    #     ise_verify: "{{ ise_verify }}"
     #     page: 1
     #     size: 1
     #     # id: 7865ac6a-64c6-4e65-865e-d1b093ee0b10
@@ -27,7 +27,7 @@
     #     ise_username: "{{ ise_username }}"
     #     ise_password: "{{ ise_password }}"
     #     ise_version: "{{ ise_version }}"
-        ise_verify: "{{ ise_verify }}"
+    #     ise_verify: "{{ ise_verify }}"
     #     page: 1
     #     size: 1
     #     hostName: ise
