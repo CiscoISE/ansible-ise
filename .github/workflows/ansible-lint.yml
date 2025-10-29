@@ -14,5 +14,6 @@ jobs:
         with:
           args: ""
           setup_python: "true"
+          python_version: "3.13"
           working_directory: ""
           requirements_file: ""
