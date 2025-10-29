@@ -3,22 +3,17 @@ name: ansible-lint
 on:
   pull_request:
     branches: ["main", "stable", "release/v*"]
-
 jobs:
   build:
+    name: Ansible Lint # Naming the build is important to use it as a status check
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
-
-      - name: Set up Python 3.14
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.14"
-
-      - name: Upgrade ansible-core for Python 3.14
-        run: pip install --upgrade "ansible-core>=2.20.0"
-
       - name: Run ansible-lint
-        uses: ansible/ansible-lint@main
+        uses: ansible/ansible-lint@main # or vX.X.X version
+        # optional (see below):
         with:
-          setup_python: "false"  # 👈 importante
+          args: ""
+          setup_python: "true"
+          working_directory: ""
+          requirements_file: ""
