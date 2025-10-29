@@ -5,15 +5,25 @@ on:
     branches: ["main", "stable", "release/v*"]
 jobs:
   build:
-    name: Ansible Lint # Naming the build is important to use it as a status check
+    name: Ansible Lint
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.13'
+
+      - name: Install ansible-core and ansible-lint
+        run: |
+          python -m pip install --upgrade pip
+          pip install "ansible-core>=2.20.0" ansible-lint
+
       - name: Run ansible-lint
-        uses: ansible/ansible-lint@main # or vX.X.X version
-        # optional (see below):
+        uses: ansible/ansible-lint@main
         with:
           args: ""
-          setup_python: "true"
+          setup_python: "false"
           working_directory: ""
           requirements_file: ""
