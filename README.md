@@ -53,6 +53,7 @@ The following table shows the supported versions.
 | 3.1_Patch_1       | 2.5.16                       | 2.0.10                       |
 | 3.2_beta          | 2.8.0                        | 2.1.1                        |
 | 3.3_patch_1       | 2.10.0                       | 2.2.3                        |
+| 3.5.0             | 3.0.0                        | 2.4.0                        |
 
 If your Ansible collection is older please consider updating it first.
 *Notes*:
@@ -62,11 +63,11 @@ If your Ansible collection is older please consider updating it first.
 
 ## Installing according to Compatibility Matrix
 
-For example, for Cisco ISE 3.1.0, it is recommended to use Ansible "cisco.ise" v2.0.0 and Python "ciscoisesdk" v1.2.0.
+For example, for Cisco ISE 3.1.0, it is recommended to use Ansible "cisco.ise" v2.0.0 and Python "ciscoisesdk" v2.4.0.
 
-To get the Python Cisco ISE SDK v1.2.0 in a fresh development environment:
+To get the Python Cisco ISE SDK v2.4.0 in a fresh development environment:
 ```
-sudo pip install ciscoisesdk==1.2.0
+sudo pip install ciscoisesdk==2.4.0
 ```
 
 To get the Ansible collection v2.0.0 in a fresh development environment:
