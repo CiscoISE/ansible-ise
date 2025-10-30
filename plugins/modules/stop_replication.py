@@ -5,6 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: stop_replication
 short_description: Resource module for Stop Replication
 description:
@@ -19,7 +20,7 @@ options:
     description: IsEnabled flag.
     type: bool
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 notes:
   - SDK Method used are
@@ -27,8 +28,8 @@ notes:
   - Paths used are
     put /api/v1/stop-replication,
 """
-
 EXAMPLES = r"""
+---
 - name: Update all
   cisco.ise.stop_replication:
     ise_hostname: "{{ise_hostname}}"
@@ -38,7 +39,6 @@ EXAMPLES = r"""
     state: present
     isEnabled: true
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

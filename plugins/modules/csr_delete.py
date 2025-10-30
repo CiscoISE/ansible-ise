@@ -5,24 +5,27 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: csr_delete
 short_description: Resource module for CSR Delete
 description:
   - Manage operation delete of the resource CSR Delete.
-  - This API deletes the certificate signing request of a particular node based on a given hostname and ID.
+  - This API deletes the certificate signing request of a particular node based on
+    a given hostname and ID.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
   hostName:
-    description: HostName path parameter. Name of the host of which CSR's should be deleted.
+    description: HostName path parameter. Name of the host of which CSR's should be
+      deleted.
     type: str
   id:
     description: Id path parameter. ID of the Certificate Signing Request to be deleted.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 seealso:
   - name: Cisco ISE documentation for Certificates
@@ -34,8 +37,8 @@ notes:
   - Paths used are
     delete /api/v1/certs/certificate-signing-request/{hostName}/{id},
 """
-
 EXAMPLES = r"""
+---
 - name: Delete by id
   cisco.ise.csr_delete:
     ise_hostname: "{{ise_hostname}}"
@@ -45,7 +48,6 @@ EXAMPLES = r"""
     hostName: string
     id: string
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

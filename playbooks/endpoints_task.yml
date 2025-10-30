@@ -1,0 +1,20 @@
+---
+- name: Manage Endpoints Task
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Execute endpoint task
+      cisco.ise.endpoints_task:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+        taskOperation: CLEAR_THREATS
+      register: result
+
+    - name: Print Task Result
+      ansible.builtin.debug:
+        var: result

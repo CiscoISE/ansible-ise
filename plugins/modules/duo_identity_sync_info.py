@@ -5,6 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: duo_identity_sync_info
 short_description: Information module for Duo Identity Sync Info
 description:
@@ -19,10 +20,11 @@ author: Rafael Campos (@racampos)
 options:
   syncName:
     description:
-      - SyncName path parameter. This name is used to update, delete or retrieve the specific Identitysync config.
+      - SyncName path parameter. This name is used to update, delete or retrieve the
+        specific Identitysync config.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 notes:
   - SDK Method used are
@@ -32,8 +34,8 @@ notes:
     get /api/v1/duo-identitysync/identitysync,
     get /api/v1/duo-identitysync/identitysync/{syncName},
 """
-
 EXAMPLES = r"""
+---
 - name: Get all Duo Identity Sync Info
   cisco.ise.duo_identity_sync_info:
     ise_hostname: "{{ise_hostname}}"
@@ -50,7 +52,6 @@ EXAMPLES = r"""
     syncName: string
   register: result
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

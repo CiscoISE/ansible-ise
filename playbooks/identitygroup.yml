@@ -1,0 +1,35 @@
+---
+- name: Manage Identity Group
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get Identity Groups
+      cisco.ise.identitygroup_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+      register: identity_groups
+
+    - name: Print Identity Groups
+      ansible.builtin.debug:
+        var: identity_groups.ise_response
+
+    - name: Create Identity Group
+      cisco.ise.identitygroup:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+        state: present
+        name: Corporate_Users
+        description: Corporate user identity group
+      register: result
+
+    - name: Print Result
+      ansible.builtin.debug:
+        var: result

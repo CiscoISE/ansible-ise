@@ -31,18 +31,17 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.exceptions import (
 # Get common arguments specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
-argument_spec.update(
-    dict(
-        state=dict(type="str", default="present", choices=["present", "absent"]),
-        clientName=dict(type="str"),
-        numberOfTags=dict(type="int"),
-        clientID=dict(type="str"),
-        endIndex=dict(type="int"),
-        startIndex=dict(type="int"),
-    )
-)
+argument_spec.update(dict(
+    state=dict(type="str", default="present", choices=["present", "absent"]),
+    clientName=dict(type="str"),
+    numberOfTags=dict(type="int"),
+    clientID=dict(type="str"),
+    endIndex=dict(type="int"),
+    startIndex=dict(type="int"),
+))
 
 required_if = [
+    ("state", "present", ["clientID"], True),
     ("state", "absent", ["clientID"], True),
 ]
 required_one_of = []
@@ -56,7 +55,7 @@ class Reservation(object):
         self.new_object = dict(
             client_name=params.get("clientName"),
             number_of_tags=params.get("numberOfTags"),
-            client_id=params.get("clientID") or params.get("clientId"),
+            client_id=params.get("clientID"),
             end_index=params.get("endIndex"),
             start_index=params.get("startIndex"),
         )
@@ -65,12 +64,13 @@ class Reservation(object):
         # NOTICE: Does not have a get by name method or it is in another action
         result = None
         gen_items_responses = self.ise.exec(
-            family="sgt_range_reservation", function="get_sgt_reserved_ranges_generator"
+            family="sgt_range_reservation",
+            function="get_sgt_reserved_ranges_generator"
         )
         try:
             for items_response in gen_items_responses:
-                items = items_response.response.get("response", [])
-                result = get_dict_result(items, "name", name)
+                items = items_response.response.get('response', [])
+                result = get_dict_result(items, 'name', name)
                 if result:
                     return result
         except (TypeError, AttributeError) as e:
@@ -94,8 +94,8 @@ class Reservation(object):
                 family="sgt_range_reservation",
                 function="get_sgt_reserved_range",
                 handle_func_exception=False,
-                params={"client_id": id},
-            ).response["response"]
+                params={"id": id}
+            ).response['response']
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(
                 msg=(
@@ -114,8 +114,8 @@ class Reservation(object):
         id_exists = False
         name_exists = False
         prev_obj = None
-        o_id = self.new_object.get("client_id")
-        name = self.new_object.get("client_name")
+        o_id = self.new_object.get("id")
+        name = self.new_object.get("name")
         if o_id:
             prev_obj = self.get_object_by_id(o_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
@@ -125,9 +125,7 @@ class Reservation(object):
         if name_exists:
             _id = prev_obj.get("id")
             if id_exists and name_exists and o_id != _id:
-                raise InconsistentParameters(
-                    "The 'id' and 'name' params don't refer to the same object"
-                )
+                raise InconsistentParameters("The 'id' and 'name' params don't refer to the same object")
             if _id:
                 prev_obj = self.get_object_by_id(_id)
         it_exists = prev_obj is not None and isinstance(prev_obj, dict)
@@ -145,12 +143,9 @@ class Reservation(object):
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(
-            not ise_compare_equality(
-                current_obj.get(ise_param), requested_obj.get(ansible_param)
-            )
-            for (ise_param, ansible_param) in obj_params
-        )
+        return any(not ise_compare_equality(current_obj.get(ise_param),
+                                            requested_obj.get(ansible_param))
+                   for (ise_param, ansible_param) in obj_params)
 
     def create(self):
         result = self.ise.exec(
@@ -170,7 +165,7 @@ class Reservation(object):
         result = self.ise.exec(
             family="sgt_range_reservation",
             function="update_reserved_range",
-            params=self.new_object,
+            params=self.new_object
         ).response
         return result
 
@@ -184,7 +179,7 @@ class Reservation(object):
         result = self.ise.exec(
             family="sgt_range_reservation",
             function="delete_sgt_reserve_range",
-            params=self.new_object,
+            params=self.new_object
         ).response
         return result
 
@@ -192,9 +187,7 @@ class Reservation(object):
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail(
-                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
-            )
+            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = False

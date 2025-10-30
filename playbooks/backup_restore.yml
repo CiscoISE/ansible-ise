@@ -1,6 +1,8 @@
 ---
 - name: Restore configuration backup
   hosts: ise_servers
+  vars_files:
+    - credentials.yml
   gather_facts: false
   tasks:
     - name: Restore backup
@@ -8,6 +10,7 @@
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
         ise_verify: "{{ ise_verify }}"
         backupEncryptionKey: My3ncryptionkey
         restoreFile: myBackup-CFG10-210806-2232.tar.gpg

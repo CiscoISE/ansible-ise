@@ -5,6 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: proxy_connection_settings
 short_description: Resource module for Proxy Connection Settings
 description:
@@ -34,7 +35,7 @@ options:
     description: User name for the proxy connection.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 seealso:
   - name: Cisco ISE documentation for proxy
@@ -46,8 +47,8 @@ notes:
   - Paths used are
     put /api/v1/system-settings/proxy,
 """
-
 EXAMPLES = r"""
+---
 - name: Update all
   cisco.ise.proxy_connection_settings:
     ise_hostname: "{{ise_hostname}}"
@@ -62,7 +63,6 @@ EXAMPLES = r"""
     port: 0
     userName: string
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

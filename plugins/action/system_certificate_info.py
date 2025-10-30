@@ -26,18 +26,16 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
 # Get common arguements specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
-argument_spec.update(
-    dict(
-        hostName=dict(type="str"),
-        page=dict(type="int"),
-        size=dict(type="int"),
-        sort=dict(type="str"),
-        sortBy=dict(type="str"),
-        filter=dict(type="str"),
-        filterType=dict(type="str"),
-        id=dict(type="str"),
-    )
-)
+argument_spec.update(dict(
+    hostName=dict(type="str"),
+    page=dict(type="int"),
+    size=dict(type="int"),
+    sort=dict(type="str"),
+    sortBy=dict(type="str"),
+    filter=dict(type="str"),
+    filterType=dict(type="str"),
+    id=dict(type="str"),
+))
 
 required_if = []
 required_one_of = []
@@ -48,9 +46,7 @@ required_together = []
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail(
-                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
-            )
+            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = True
@@ -102,18 +98,18 @@ class ActionModule(ActionBase):
         if id:
             response = ise.exec(
                 family="certificates",
-                function="get_system_certificate_by_id",
-                params=self.get_object(self._task.args),
-            ).response["response"]
+                function='get_system_certificate_by_id',
+                params=self.get_object(self._task.args)
+            ).response['response']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result
         if name:
             response = ise.exec(
                 family="certificates",
-                function="get_system_certificates",
-                params=self.get_object(self._task.args),
-            ).response["response"]
+                function='get_system_certificates',
+                params=self.get_object(self._task.args)
+            ).response['response']
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result
@@ -121,12 +117,12 @@ class ActionModule(ActionBase):
             responses = []
             generator = ise.exec(
                 family="certificates",
-                function="get_system_certificates_generator",
+                function='get_system_certificates_generator',
                 params=self.get_object(self._task.args),
             )
             try:
                 for item in generator:
-                    tmp_response = item.response["response"]
+                    tmp_response = item.response['response']
                     if isinstance(tmp_response, list):
                         responses += tmp_response
                     else:

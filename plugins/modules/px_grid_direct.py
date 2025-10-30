@@ -5,6 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: px_grid_direct
 short_description: Resource module for Px Grid Direct
 description:
@@ -27,6 +28,9 @@ options:
         description: <p>List of feature names</p>.
         elements: dict
         suboptions:
+          coaSignificance:
+            description: CoaSignificance flag.
+            type: bool
           dictionaryAttribute:
             description: Px Grid Direct's dictionaryAttribute.
             type: str
@@ -50,6 +54,9 @@ options:
         description: Version uniqueness to identify.
         type: str
     type: dict
+  coaType:
+    description: Enable coa for connector.
+    type: str
   connectorName:
     description: ConnectorName.
     type: str
@@ -75,6 +82,172 @@ options:
   enabled:
     description: Enabled flag.
     type: bool
+  flexibleUrl:
+    description: Px Grid Direct's flexibleUrl.
+    suboptions:
+      bulk:
+        description: Px Grid Direct's bulk.
+        suboptions:
+          additionalHeaders:
+            description: Px Grid Direct's additionalHeaders.
+            elements: dict
+            suboptions:
+              name:
+                description: Px Grid Direct's name.
+                type: str
+              value:
+                description: Px Grid Direct's value.
+                type: str
+            type: list
+          apiKeyProperties:
+            description: Api key auth properties.
+            suboptions:
+              headerName:
+                description: Header name.
+                type: str
+              key:
+                description: Key.
+                type: str
+              keyType:
+                description: Key type.
+                type: str
+              paramName:
+                description: Param name.
+                type: str
+              requestBody:
+                description: Request body that will be templated.
+                type: str
+            type: dict
+          authenticationType:
+            description: Authentication Type list.
+            type: str
+          basicAuthProperties:
+            description: Basic auth properties.
+            suboptions:
+              password:
+                description: Password.
+                type: str
+              requestBody:
+                description: Request body that will be templated.
+                type: str
+              userName:
+                description: UserName.
+                type: str
+            type: dict
+          method:
+            description: Px Grid Direct's method.
+            type: str
+          oauthProperties:
+            description: OAuth properties.
+            suboptions:
+              clientId:
+                description: Client id for oauth.
+                type: str
+              clientSecret:
+                description: Client secret for oauth.
+                type: str
+              flow:
+                description: Oauth flow type.
+                type: str
+              password:
+                description: Password for the password flow.
+                type: str
+              scope:
+                description: The scope of the oauth token.
+                type: str
+              tokenIssuingUrl:
+                description: The url that will issue the bearer token.
+                type: str
+              userName:
+                description: Username for the password flow.
+                type: str
+            type: dict
+          url:
+            description: The url to fetch.
+            type: str
+        type: dict
+      incremental:
+        description: Px Grid Direct's incremental.
+        suboptions:
+          additionalHeaders:
+            description: Px Grid Direct's additionalHeaders.
+            elements: dict
+            suboptions:
+              name:
+                description: Px Grid Direct's name.
+                type: str
+              value:
+                description: Px Grid Direct's value.
+                type: str
+            type: list
+          apiKeyProperties:
+            description: Api key auth properties.
+            suboptions:
+              headerName:
+                description: Header name.
+                type: str
+              key:
+                description: Key.
+                type: str
+              keyType:
+                description: Key type.
+                type: str
+              paramName:
+                description: Param name.
+                type: str
+              requestBody:
+                description: Request body that will be templated.
+                type: str
+            type: dict
+          authenticationType:
+            description: Authentication Type list.
+            type: str
+          basicAuthProperties:
+            description: Basic auth properties.
+            suboptions:
+              password:
+                description: Password.
+                type: str
+              requestBody:
+                description: Request body that will be templated.
+                type: str
+              userName:
+                description: UserName.
+                type: str
+            type: dict
+          method:
+            description: Px Grid Direct's method.
+            type: str
+          oauthProperties:
+            description: OAuth properties.
+            suboptions:
+              clientId:
+                description: Client id for oauth.
+                type: str
+              clientSecret:
+                description: Client secret for oauth.
+                type: str
+              flow:
+                description: Oauth flow type.
+                type: str
+              password:
+                description: Password for the password flow.
+                type: str
+              scope:
+                description: The scope of the oauth token.
+                type: str
+              tokenIssuingUrl:
+                description: The url that will issue the bearer token.
+                type: str
+              userName:
+                description: Username for the password flow.
+                type: str
+            type: dict
+          url:
+            description: The url to fetch.
+            type: str
+        type: dict
+    type: dict
   fullsyncSchedule:
     description: Px Grid Direct's fullsyncSchedule.
     suboptions:
@@ -88,6 +261,17 @@ options:
         description: Start date and Time.
         type: str
     type: dict
+  groupArray:
+    description: <p>List of Group names</p>.
+    elements: dict
+    suboptions:
+      GroupName:
+        description: Px Grid Direct's GroupName.
+        type: str
+      GroupPermission:
+        description: Px Grid Direct's GroupPermission.
+        type: str
+    type: list
   protocol:
     description: Protocol.
     type: str
@@ -114,7 +298,7 @@ options:
         type: str
     type: dict
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 notes:
   - SDK Method used are
@@ -126,8 +310,8 @@ notes:
     delete /api/v1/pxgrid-direct/connector-config/{connectorName},
     put /api/v1/pxgrid-direct/connector-config/{connectorName},
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.px_grid_direct:
     ise_hostname: "{{ise_hostname}}"
@@ -138,13 +322,15 @@ EXAMPLES = r"""
     additionalProperties: {}
     attributes:
       attributeMapping:
-        - dictionaryAttribute: string
+        - coaSignificance: true
+          dictionaryAttribute: string
           includeInDictionary: true
           jsonAttribute: string
       correlationIdentifier: string
       topLevelObject: string
       uniqueIdentifier: string
       versionIdentifier: string
+    coaType: string
     connectorName: string
     connectorType: string
     deltasyncSchedule:
@@ -153,10 +339,64 @@ EXAMPLES = r"""
       startDate: string
     description: string
     enabled: true
+    flexibleUrl:
+      bulk:
+        additionalHeaders:
+          - name: string
+            value: string
+        apiKeyProperties:
+          headerName: string
+          key: string
+          keyType: string
+          paramName: string
+          requestBody: string
+        authenticationType: string
+        basicAuthProperties:
+          password: string
+          requestBody: string
+          userName: string
+        method: string
+        oauthProperties:
+          clientId: string
+          clientSecret: string
+          flow: string
+          password: string
+          scope: string
+          tokenIssuingUrl: string
+          userName: string
+        url: string
+      incremental:
+        additionalHeaders:
+          - name: string
+            value: string
+        apiKeyProperties:
+          headerName: string
+          key: string
+          keyType: string
+          paramName: string
+          requestBody: string
+        authenticationType: string
+        basicAuthProperties:
+          password: string
+          requestBody: string
+          userName: string
+        method: string
+        oauthProperties:
+          clientId: string
+          clientSecret: string
+          flow: string
+          password: string
+          scope: string
+          tokenIssuingUrl: string
+          userName: string
+        url: string
     fullsyncSchedule:
       interval: 0
       intervalUnit: string
       startDate: string
+    groupArray:
+      - GroupName: string
+    GroupPermission: string
     protocol: string
     skipCertificateValidations: true
     url:
@@ -175,13 +415,15 @@ EXAMPLES = r"""
     additionalProperties: {}
     attributes:
       attributeMapping:
-        - dictionaryAttribute: string
+        - coaSignificance: true
+          dictionaryAttribute: string
           includeInDictionary: true
           jsonAttribute: string
       correlationIdentifier: string
       topLevelObject: string
       uniqueIdentifier: string
       versionIdentifier: string
+    coaType: string
     connectorName: string
     connectorType: string
     deltasyncSchedule:
@@ -190,10 +432,64 @@ EXAMPLES = r"""
       startDate: string
     description: string
     enabled: true
+    flexibleUrl:
+      bulk:
+        additionalHeaders:
+          - name: string
+            value: string
+        apiKeyProperties:
+          headerName: string
+          key: string
+          keyType: string
+          paramName: string
+          requestBody: string
+        authenticationType: string
+        basicAuthProperties:
+          password: string
+          requestBody: string
+          userName: string
+        method: string
+        oauthProperties:
+          clientId: string
+          clientSecret: string
+          flow: string
+          password: string
+          scope: string
+          tokenIssuingUrl: string
+          userName: string
+        url: string
+      incremental:
+        additionalHeaders:
+          - name: string
+            value: string
+        apiKeyProperties:
+          headerName: string
+          key: string
+          keyType: string
+          paramName: string
+          requestBody: string
+        authenticationType: string
+        basicAuthProperties:
+          password: string
+          requestBody: string
+          userName: string
+        method: string
+        oauthProperties:
+          clientId: string
+          clientSecret: string
+          flow: string
+          password: string
+          scope: string
+          tokenIssuingUrl: string
+          userName: string
+        url: string
     fullsyncSchedule:
       interval: 0
       intervalUnit: string
       startDate: string
+    groupArray:
+      - GroupName: string
+    GroupPermission: string
     protocol: string
     skipCertificateValidations: true
     url:
@@ -211,7 +507,6 @@ EXAMPLES = r"""
     state: absent
     connectorName: string
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
@@ -224,6 +519,7 @@ ise_response:
         "attributes": {
           "attributeMapping": [
             {
+              "coaSignificance": true,
               "dictionaryAttribute": "string",
               "includeInDictionary": true,
               "jsonAttribute": "string"
@@ -234,6 +530,7 @@ ise_response:
           "uniqueIdentifier": "string",
           "versionIdentifier": "string"
         },
+        "coaType": "string",
         "connectorName": "string",
         "connectorType": "string",
         "deltasyncSchedule": {
@@ -243,11 +540,83 @@ ise_response:
         },
         "description": "string",
         "enabled": true,
+        "flexibleUrl": {
+          "bulk": {
+            "additionalHeaders": [
+              {
+                "name": "string",
+                "value": "string"
+              }
+            ],
+            "apiKeyProperties": {
+              "headerName": "string",
+              "key": "string",
+              "keyType": "string",
+              "paramName": "string",
+              "requestBody": "string"
+            },
+            "authenticationType": "string",
+            "basicAuthProperties": {
+              "password": "string",
+              "requestBody": "string",
+              "userName": "string"
+            },
+            "method": "string",
+            "oauthProperties": {
+              "clientId": "string",
+              "clientSecret": "string",
+              "flow": "string",
+              "password": "string",
+              "scope": "string",
+              "tokenIssuingUrl": "string",
+              "userName": "string"
+            },
+            "url": "string"
+          },
+          "incremental": {
+            "additionalHeaders": [
+              {
+                "name": "string",
+                "value": "string"
+              }
+            ],
+            "apiKeyProperties": {
+              "headerName": "string",
+              "key": "string",
+              "keyType": "string",
+              "paramName": "string",
+              "requestBody": "string"
+            },
+            "authenticationType": "string",
+            "basicAuthProperties": {
+              "password": "string",
+              "requestBody": "string",
+              "userName": "string"
+            },
+            "method": "string",
+            "oauthProperties": {
+              "clientId": "string",
+              "clientSecret": "string",
+              "flow": "string",
+              "password": "string",
+              "scope": "string",
+              "tokenIssuingUrl": "string",
+              "userName": "string"
+            },
+            "url": "string"
+          }
+        },
         "fullsyncSchedule": {
           "interval": 0,
           "intervalUnit": "string",
           "startDate": "string"
         },
+        "groupArray": [
+          {
+            "GroupName": "string",
+            "GroupPermission": "string"
+          }
+        ],
         "protocol": "string",
         "skipCertificateValidations": true,
         "url": {

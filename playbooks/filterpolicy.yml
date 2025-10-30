@@ -1,0 +1,36 @@
+---
+- name: Manage Filter Policy
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get Filter Policies
+      cisco.ise.filterpolicy_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+      register: filter_policies
+
+    - name: Print Filter Policies
+      ansible.builtin.debug:
+        var: filter_policies.ise_response
+
+    - name: Create Filter Policy
+      cisco.ise.filterpolicy:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+        state: present
+        name: Corporate_Filter
+        description: Filter policy for corporate network
+        domains: example.com
+      register: result
+
+    - name: Print Result
+      ansible.builtin.debug:
+        var: result

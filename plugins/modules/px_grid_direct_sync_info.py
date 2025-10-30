@@ -5,11 +5,12 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: px_grid_direct_sync_info
 short_description: Information module for Px Grid Direct Sync
 description:
   - Get Px Grid Direct Sync by name.
-  - This API is used to get the status for SyncNow Status.
+  - PxGrid Direct - Get connectorConfig information based on ConnectorName.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -20,7 +21,7 @@ options:
       - ConnectorName path parameter. Retrieve the connector syncnow status.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 notes:
   - SDK Method used are
@@ -28,8 +29,8 @@ notes:
   - Paths used are
     get /api/v1/pxgrid-direct/syncNowStatus/{connectorName},
 """
-
 EXAMPLES = r"""
+---
 - name: Get Px Grid Direct Sync by name
   cisco.ise.px_grid_direct_sync_info:
     ise_hostname: "{{ise_hostname}}"
@@ -39,7 +40,6 @@ EXAMPLES = r"""
     connectorName: string
   register: result
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

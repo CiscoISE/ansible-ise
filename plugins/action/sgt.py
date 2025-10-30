@@ -31,23 +31,19 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.exceptions import (
 # Get common arguments specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
-argument_spec.update(
-    dict(
-        state=dict(type="str", default="present", choices=["present", "absent"]),
-        name=dict(type="str"),
-        description=dict(type="str"),
-        value=dict(type="int"),
-        generationId=dict(type="str"),
-        isReadOnly=dict(type="bool"),
-        propogateToApic=dict(type="bool"),
-        defaultSGACLs=dict(type="list"),
-        id=dict(type="str"),
-    )
-)
+argument_spec.update(dict(
+    state=dict(type="str", default="present", choices=["present"]),
+    value=dict(type="dict"),
+    propogateToApic=dict(type="bool"),
+    isReadOnly=dict(type="bool"),
+    defaultSGACLs=dict(type="list"),
+    name=dict(type="str"),
+    id=dict(type="str"),
+    description=dict(type="str"),
+))
 
 required_if = [
-    ("state", "present", ["id", "name"], True),
-    ("state", "absent", ["id", "name"], True),
+    ("state", "present", ["name"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -58,26 +54,26 @@ class Sgt(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            name=params.get("name"),
-            description=params.get("description"),
             value=params.get("value"),
-            generation_id=params.get("generationId"),
-            is_read_only=params.get("isReadOnly"),
             propogate_to_apic=params.get("propogateToApic"),
+            is_read_only=params.get("isReadOnly"),
             default_sgacls=params.get("defaultSGACLs"),
+            name=params.get("name"),
             id=params.get("id"),
+            description=params.get("description"),
         )
 
     def get_object_by_name(self, name):
         # NOTICE: Get does not support/work for filter by name with EQ
         result = None
         gen_items_responses = self.ise.exec(
-            family="security_groups", function="get_security_groups_generator"
+            family="sgt",
+            function="get_sgt_generator"
         )
         try:
             for items_response in gen_items_responses:
-                items = items_response.response["SearchResult"]["resources"]
-                result = get_dict_result(items, "name", name)
+                items = items_response.response['SearchResult']['resources']
+                result = get_dict_result(items, 'name', name)
                 if result:
                     return result
         except (TypeError, AttributeError) as e:
@@ -96,31 +92,14 @@ class Sgt(object):
         return result
 
     def get_object_by_id(self, id):
-        try:
-            result = self.ise.exec(
-                family="security_groups",
-                function="get_security_group_by_id",
-                handle_func_exception=False,
-                params={"id": id},
-            ).response["Sgt"]
-        except (TypeError, AttributeError) as e:
-            self.ise.fail_json(
-                msg=(
-                    "An error occured when executing operation."
-                    " Check the configuration of your API Settings and API Gateway settings on your ISE server."
-                    " This collection assumes that the API Gateway, the ERS APIs and OpenAPIs are enabled."
-                    " You may want to enable the (ise_debug: True) argument."
-                    " The error was: {error}"
-                ).format(error=e)
-            )
-        except Exception:
-            result = None
+        # NOTICE: Does not have a get by id method or it is in another action
+        result = None
         return result
 
     def exists(self):
+        prev_obj = None
         id_exists = False
         name_exists = False
-        prev_obj = None
         o_id = self.new_object.get("id")
         name = self.new_object.get("name")
         if o_id:
@@ -132,69 +111,32 @@ class Sgt(object):
         if name_exists:
             _id = prev_obj.get("id")
             if id_exists and name_exists and o_id != _id:
-                raise InconsistentParameters(
-                    "The 'id' and 'name' params don't refer to the same object"
-                )
-            if _id:
-                prev_obj = self.get_object_by_id(_id)
+                raise InconsistentParameters("The 'id' and 'name' params don't refer to the same object")
         it_exists = prev_obj is not None and isinstance(prev_obj, dict)
         return (it_exists, prev_obj)
 
     def requires_update(self, current_obj):
         requested_obj = self.new_object
-        if requested_obj.get("value") and requested_obj.get("value") == -1:
-            requested_obj["value"] = current_obj.get("value")
+
         obj_params = [
-            ("name", "name"),
-            ("description", "description"),
             ("value", "value"),
-            ("generationId", "generation_id"),
-            ("isReadOnly", "is_read_only"),
             ("propogateToApic", "propogate_to_apic"),
+            ("isReadOnly", "is_read_only"),
             ("defaultSGACLs", "default_sgacls"),
+            ("name", "name"),
             ("id", "id"),
+            ("description", "description"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(
-            not ise_compare_equality(
-                current_obj.get(ise_param), requested_obj.get(ansible_param)
-            )
-            for (ise_param, ansible_param) in obj_params
-        )
+        return any(not ise_compare_equality(current_obj.get(ise_param),
+                                            requested_obj.get(ansible_param))
+                   for (ise_param, ansible_param) in obj_params)
 
     def create(self):
         result = self.ise.exec(
-            family="security_groups",
-            function="create_security_group",
-            params=self.new_object,
-        ).response
-        return result
-
-    def update(self):
-        id = self.new_object.get("id")
-        name = self.new_object.get("name")
-        result = None
-        if not id:
-            id_ = self.get_object_by_name(name).get("id")
-            self.new_object.update(dict(id=id_))
-        result = self.ise.exec(
-            family="security_groups",
-            function="update_security_group_by_id",
-            params=self.new_object,
-        ).response
-        return result
-
-    def delete(self):
-        id = self.new_object.get("id")
-        name = self.new_object.get("name")
-        result = None
-        if not id:
-            id_ = self.get_object_by_name(name).get("id")
-            self.new_object.update(dict(id=id_))
-        result = self.ise.exec(
-            family="security_groups",
-            function="delete_security_group_by_id",
+            family="sgt",
+            function="create_sgt",
             params=self.new_object,
         ).response
         return result
@@ -203,9 +145,7 @@ class Sgt(object):
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail(
-                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
-            )
+            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = False
@@ -241,29 +181,12 @@ class ActionModule(ActionBase):
         state = self._task.args.get("state")
 
         response = None
-
         if state == "present":
             (obj_exists, prev_obj) = obj.exists()
             if obj_exists:
                 if obj.requires_update(prev_obj):
-                    ise_update_response = obj.update()
-                    self._result.update(dict(ise_update_response=ise_update_response))
-                    (obj_exists, updated_obj) = obj.exists()
-                    response = updated_obj
-                    has_changed = None
-                    has_changed = ise_update_response.get("UpdatedFieldsList").get(
-                        "updatedField"
-                    )
-                    if (
-                        len(has_changed) == 0
-                        or has_changed[0].get("newValue") == ""
-                        and has_changed[0].get("newValue")
-                        == has_changed[0].get("oldValue")
-                    ):
-                        self._result.pop("ise_update_response", None)
-                        ise.object_already_present()
-                    else:
-                        ise.object_updated()
+                    response = prev_obj
+                    ise.object_present_and_different()
                 else:
                     response = prev_obj
                     ise.object_already_present()
@@ -272,15 +195,6 @@ class ActionModule(ActionBase):
                 (obj_exists, created_obj) = obj.exists()
                 response = created_obj
                 ise.object_created()
-
-        elif state == "absent":
-            (obj_exists, prev_obj) = obj.exists()
-            if obj_exists:
-                obj.delete()
-                response = prev_obj
-                ise.object_deleted()
-            else:
-                ise.object_already_absent()
 
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())

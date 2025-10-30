@@ -5,6 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: duo_mfa
 short_description: Resource module for Duo Mfa
 description:
@@ -57,7 +58,7 @@ options:
     description: Protocol type for which this Duo-MFA can be used.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 notes:
   - SDK Method used are
@@ -69,8 +70,8 @@ notes:
     delete /api/v1/duo-mfa/mfa/{connectionName},
     put /api/v1/duo-mfa/mfa/{connectionName},
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.duo_mfa:
     ise_hostname: "{{ise_hostname}}"
@@ -118,7 +119,6 @@ EXAMPLES = r"""
     state: absent
     connectionName: string
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

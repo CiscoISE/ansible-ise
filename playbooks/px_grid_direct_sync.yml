@@ -1,0 +1,22 @@
+---
+- name: Manage pxGrid Direct Sync
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Trigger pxGrid Direct sync
+      cisco.ise.px_grid_direct_sync:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+        connectorName: External_Connector
+        description: Sync external connector data
+        syncType: INCREMENTAL
+      register: result
+
+    - name: Print Sync Result
+      ansible.builtin.debug:
+        var: result

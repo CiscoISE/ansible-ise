@@ -5,6 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: proxy_connection_settings_info
 short_description: Information module for Proxy Connection Settings
 description:
@@ -16,7 +17,7 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 seealso:
   - name: Cisco ISE documentation for proxy
@@ -28,8 +29,8 @@ notes:
   - Paths used are
     get /api/v1/system-settings/proxy,
 """
-
 EXAMPLES = r"""
+---
 - name: Get all Proxy Connection Settings
   cisco.ise.proxy_connection_settings_info:
     ise_hostname: "{{ise_hostname}}"
@@ -38,7 +39,6 @@ EXAMPLES = r"""
     ise_verify: "{{ise_verify}}"
   register: result
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

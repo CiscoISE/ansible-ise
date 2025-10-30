@@ -1,0 +1,19 @@
+---
+- name: Get MNT Failure Reasons Information
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get authentication failure reasons
+      cisco.ise.mnt_failure_reasons_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+      register: result
+
+    - name: Print Failure Reasons
+      ansible.builtin.debug:
+        var: result.ise_response

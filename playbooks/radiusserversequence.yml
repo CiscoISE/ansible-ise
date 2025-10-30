@@ -1,0 +1,37 @@
+---
+- name: Manage RADIUS Server Sequence
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get RADIUS Server Sequences
+      cisco.ise.radiusserversequence_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+      register: radius_sequences
+
+    - name: Print RADIUS Server Sequences
+      ansible.builtin.debug:
+        var: radius_sequences.ise_response
+
+    - name: Create RADIUS Server Sequence
+      cisco.ise.radiusserversequence:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+        state: present
+        name: External_RADIUS_Sequence
+        description: Sequence for external RADIUS servers
+        stripPrefix: false
+        stripSuffix: false
+      register: result
+
+    - name: Print Result
+      ansible.builtin.debug:
+        var: result

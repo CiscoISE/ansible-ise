@@ -5,6 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: csr_generate
 short_description: Resource module for CSR Generate
 description:
@@ -75,7 +76,7 @@ options:
     description: CSR Generate's usedFor.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 seealso:
   - name: Cisco ISE documentation for Certificates
@@ -87,8 +88,8 @@ notes:
   - Paths used are
     post /api/v1/certs/certificate-signing-request,
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.csr_generate:
     ise_hostname: "{{ise_hostname}}"
@@ -119,7 +120,6 @@ EXAMPLES = r"""
     subjectState: string
     usedFor: string
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

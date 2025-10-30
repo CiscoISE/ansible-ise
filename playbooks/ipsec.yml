@@ -1,0 +1,40 @@
+---
+- name: Manage IPsec Configuration
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get IPsec configuration
+      cisco.ise.ipsec_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+      register: ipsec_config
+
+    - name: Print IPsec Configuration
+      ansible.builtin.debug:
+        var: ipsec_config.ise_response
+
+    - name: Configure IPsec
+      cisco.ise.ipsec:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+        state: present
+        hostName: "{{ ise_hostname }}"
+        authType: PSK
+        ikeVersion: IKEv2
+        psk: "{{ ipsec_psk }}"
+        phase1EncryptionAlgorithm: AES256
+        phase1IntegrityAlgorithm: SHA256
+        phase1DHGroup: GROUP_14
+      register: result
+
+    - name: Print Result
+      ansible.builtin.debug:
+        var: result

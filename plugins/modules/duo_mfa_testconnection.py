@@ -5,6 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: duo_mfa_testconnection
 short_description: Resource module for Duo Mfa Testconnection
 description:
@@ -39,11 +40,12 @@ options:
         type: str
     type: dict
   connectionName:
-    description: ConnectionName path parameter. This name is used to retrieve secret keys for testing connection of the specified Duo-MFA configuration
-      in case none are specified.
+    description: ConnectionName path parameter. This name is used to retrieve secret
+      keys for testing connection of the specified Duo-MFA configuration in case none
+      are specified.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 notes:
   - SDK Method used are
@@ -51,8 +53,8 @@ notes:
   - Paths used are
     post /api/v1/duo-mfa/mfa/testconnection/{connectionName},
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.duo_mfa_testconnection:
     ise_hostname: "{{ise_hostname}}"
@@ -68,7 +70,6 @@ EXAMPLES = r"""
       sKey: string
     connectionName: string
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

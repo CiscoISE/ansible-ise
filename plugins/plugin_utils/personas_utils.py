@@ -206,3 +206,39 @@ class Node(object):
             return False
         except Exception as e:
             raise AnsibleActionFail(e)
+
+    def register_node(self, primary):
+        """Alias for register_to_primary for backward compatibility."""
+        return self.register_to_primary(primary)
+
+
+class ISEDeployment(object):
+    def __init__(self):
+        self.primary = None
+        self.nodes = []
+
+    def add_primary(self, primary_node):
+        """Add a primary node to the deployment."""
+        self.primary = Node(primary_node)
+
+    def add_node(self, node):
+        """Add a secondary node to the deployment."""
+        self.nodes.append(Node(node))
+
+    def export_import_default_self_signed_server_cert(self):
+        """Export certificate from secondary node and import it into primary."""
+        if not self.primary:
+            raise AnsibleActionFail("Primary node must be set before exporting certificates")
+        if not self.nodes:
+            raise AnsibleActionFail("At least one secondary node must be added before exporting certificates")
+
+        for node in self.nodes:
+            node.import_certificate_into_primary(self.primary)
+
+    def promote_primary_node(self):
+        """Promote the primary node."""
+        if not self.primary:
+            raise AnsibleActionFail("Primary node must be set before promoting")
+
+        timeout = 300
+        return self.primary.promote_to_primary(timeout)

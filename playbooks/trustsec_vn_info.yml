@@ -1,0 +1,32 @@
+---
+- name: Get TrustSec Virtual Network Information
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get all TrustSec Virtual Networks
+      cisco.ise.trustsec_vn_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+      register: result
+
+    - name: Print TrustSec Virtual Networks
+      ansible.builtin.debug:
+        var: result.ise_response
+    - name: Get TrustSec Virtual Network by name
+      cisco.ise.trustsec_vn_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+        name: Employee_VN
+      register: result_by_name
+
+    - name: Print TrustSec Virtual Network by Name
+      ansible.builtin.debug:
+        var: result_by_name.ise_response

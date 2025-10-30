@@ -5,6 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: mnt_session_delete_all
 short_description: Resource module for MNT Session Delete All
 description:
@@ -15,16 +16,16 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 notes:
   - SDK Method used are
-    misc.Misc.delete_all_sessions,
+    misc.Misc.delete_all_session_records,
   - Paths used are
     delete /Session/Delete/All,
 """
-
 EXAMPLES = r"""
+---
 - name: Delete all
   cisco.ise.mnt_session_delete_all:
     ise_hostname: "{{ise_hostname}}"
@@ -32,12 +33,22 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
   type: dict
   sample: >
-    {}
+    {
+      "http-code": 0,
+      "cpm-code": 0,
+      "description": "string",
+      "module-name": "string",
+      "internal-error-info": "string",
+      "requested-operation": "string",
+      "resource-id": "string",
+      "resource-name": "string",
+      "resource-type": "string",
+      "status": "string"
+    }
 """

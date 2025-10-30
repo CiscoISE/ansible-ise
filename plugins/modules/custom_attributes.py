@@ -5,6 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: custom_attributes
 short_description: Resource module for Custom Attributes
 description:
@@ -24,7 +25,7 @@ options:
     description: Name path parameter. The name of the custom attribute.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 notes:
   - SDK Method used are
@@ -34,8 +35,8 @@ notes:
     post /api/v1/endpoint-custom-attribute,
     delete /api/v1/endpoint-custom-attribute/{name},
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.custom_attributes:
     ise_hostname: "{{ise_hostname}}"
@@ -54,7 +55,6 @@ EXAMPLES = r"""
     state: absent
     name: string
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

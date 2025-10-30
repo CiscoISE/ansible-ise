@@ -5,6 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: csr_export_info
 short_description: Information module for CSR Export
 description:
@@ -36,7 +37,7 @@ options:
       - The filename used to save the download file.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 seealso:
   - name: Cisco ISE documentation for Certificates
@@ -48,8 +49,8 @@ notes:
   - Paths used are
     get /api/v1/certs/certificate-signing-request/export/{hostname}/{id},
 """
-
 EXAMPLES = r"""
+---
 - name: Get CSR Export by id
   cisco.ise.csr_export_info:
     ise_hostname: "{{ise_hostname}}"
@@ -60,7 +61,6 @@ EXAMPLES = r"""
     id: string
   register: result
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

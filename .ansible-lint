@@ -1,2 +1,14 @@
+---
+# Configuración de ansible-lint para el proyecto ISE
+
 exclude_paths:
   - roles/aws_deployment/tasks/aws/aws.yml
+  - playbooks/credentials.yml  # Archivo de variables, no es un playbook
+  - .cache/
+  - .git/
+  - .github/
+  - .ansible/
+  - cisco-ise-*.tar.gz
+  - a.log
+
+skip_list: []

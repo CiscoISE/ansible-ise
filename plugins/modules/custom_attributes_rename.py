@@ -5,6 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: custom_attributes_rename
 short_description: Resource module for Custom Attributes Rename
 description:
@@ -21,7 +22,7 @@ options:
     description: Custom Attributes Rename's newName.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 notes:
   - SDK Method used are
@@ -29,8 +30,8 @@ notes:
   - Paths used are
     post /api/v1/endpoint-custom-attribute/rename,
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.custom_attributes_rename:
     ise_hostname: "{{ise_hostname}}"
@@ -40,7 +41,6 @@ EXAMPLES = r"""
     currentName: string
     newName: string
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

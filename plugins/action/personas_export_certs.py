@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Copyright (c) 2024, Cisco Systems
+# Copyright (c) 2021, Cisco Systems
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
@@ -18,7 +18,9 @@ except ImportError:
 else:
     ANSIBLE_UTILS_IS_INSTALLED = True
 from ansible.errors import AnsibleActionFail
-from ansible_collections.cisco.ise.plugins.plugin_utils.personas_utils import Node
+from ansible_collections.cisco.ise.plugins.plugin_utils.personas_utils import (
+    ISEDeployment,
+)
 
 argument_spec = dict(
     primary_ip=dict(type="str", required=True),
@@ -75,28 +77,28 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-        primary_node = Node(
-            dict(
-                ip=self._task.args.get("primary_ip"),
-                username=self._task.args.get("primary_username"),
-                password=self._task.args.get("primary_password"),
-            )
+        primary_node = dict(
+            ip=self._task.args.get("primary_ip"),
+            username=self._task.args.get("primary_username"),
+            password=self._task.args.get("primary_password"),
         )
 
-        this_node = Node(
-            dict(
-                name=self._task.args.get("name"),
-                ip=self._task.args.get("ip"),
-                hostname=self._task.args.get("hostname"),
-                username=self._task.args.get("username"),
-                password=self._task.args.get("password"),
-            )
+        other_node = dict(
+            name=self._task.args.get("name"),
+            ip=self._task.args.get("ip"),
+            hostname=self._task.args.get("hostname"),
+            username=self._task.args.get("username"),
+            password=self._task.args.get("password"),
         )
 
-        this_node.import_certificate_into_primary(primary_node)
+        ise_deployment = ISEDeployment()
+        ise_deployment.add_primary(primary_node)
+        ise_deployment.add_node(other_node)
 
-        response = "The certificate for {hostname} was exported successfully to the primary node".format(
-            hostname=this_node.hostname
+        ise_deployment.export_import_default_self_signed_server_cert()
+
+        response = "The certificate for {name} was exported successfully to the primary node".format(
+            name=self._task.args.get("name")
         )
 
         self._result.update(dict(ise_response=response))

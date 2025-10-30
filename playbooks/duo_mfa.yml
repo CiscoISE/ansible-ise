@@ -1,0 +1,39 @@
+---
+- name: Manage Duo MFA Configuration
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get Duo MFA configuration
+      cisco.ise.duo_mfa_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+      register: duo_config
+
+    - name: Print Duo MFA Configuration
+      ansible.builtin.debug:
+        var: duo_config.ise_response
+
+    - name: Create or update Duo MFA
+      cisco.ise.duo_mfa:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+        state: present
+        connectionName: Duo_Connection
+        description: Duo MFA Integration
+        accountConfigurations:
+          apiHostName: api-xxxxxxxx.duosecurity.com
+          integrationKey: "{{ duo_integration_key }}"
+          secretKey: "{{ duo_secret_key }}"
+      register: result
+
+    - name: Print Result
+      ansible.builtin.debug:
+        var: result

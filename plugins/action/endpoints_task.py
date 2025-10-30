@@ -26,32 +26,30 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
 # Get common arguements specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
-argument_spec.update(
-    dict(
-        connectedLinks=dict(type="dict"),
-        customAttributes=dict(type="dict"),
-        description=dict(type="str"),
-        deviceType=dict(type="str"),
-        groupId=dict(type="str"),
-        hardwareRevision=dict(type="str"),
-        id=dict(type="str"),
-        identityStore=dict(type="str"),
-        identityStoreId=dict(type="str"),
-        ipAddress=dict(type="str"),
-        mac=dict(type="str"),
-        mdmAttributes=dict(type="dict"),
-        name=dict(type="str"),
-        portalUser=dict(type="str"),
-        productId=dict(type="str"),
-        profileId=dict(type="str"),
-        protocol=dict(type="str"),
-        serialNumber=dict(type="str"),
-        softwareRevision=dict(type="str"),
-        staticGroupAssignment=dict(type="bool"),
-        staticProfileAssignment=dict(type="bool"),
-        vendor=dict(type="str"),
-    )
-)
+argument_spec.update(dict(
+    connectedLinks=dict(type="dict"),
+    customAttributes=dict(type="dict"),
+    description=dict(type="str"),
+    deviceType=dict(type="str"),
+    groupId=dict(type="str"),
+    hardwareRevision=dict(type="str"),
+    id=dict(type="str"),
+    identityStore=dict(type="str"),
+    identityStoreId=dict(type="str"),
+    ipAddress=dict(type="str"),
+    mac=dict(type="str"),
+    mdmAttributes=dict(type="dict"),
+    name=dict(type="str"),
+    portalUser=dict(type="str"),
+    productId=dict(type="str"),
+    profileId=dict(type="str"),
+    protocol=dict(type="str"),
+    serialNumber=dict(type="str"),
+    softwareRevision=dict(type="str"),
+    staticGroupAssignment=dict(type="bool"),
+    staticProfileAssignment=dict(type="bool"),
+    vendor=dict(type="str"),
+))
 
 required_if = []
 required_one_of = []
@@ -62,9 +60,7 @@ required_together = []
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail(
-                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
-            )
+            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = False

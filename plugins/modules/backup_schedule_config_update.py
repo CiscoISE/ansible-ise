@@ -5,11 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: backup_schedule_config_update
 short_description: Resource module for Backup Schedule Config Update
 description:
   - Manage operation update of the resource Backup Schedule Config Update.
-  - Update the Schedule of the configuration backup on the ISE node as per the input parameters. This API only helps in editing the schedule.
+  - Update the Schedule of the configuration backup on the ISE node as per the input
+    parameters. This API only helps in editing the schedule.
 version_added: '2.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -19,24 +21,29 @@ options:
     description: Description of the backup.
     type: str
   backupEncryptionKey:
-    description: The encyption key for the backed up file. Encryption key must satisfy the following criteria - Contains at least one uppercase
-      letter A-Z, Contains at least one lowercase letter a-z, Contains at least one digit 0-9, Contain only A-Za-z0-9_#, Has at least 8 characters,
-      Has not more than 15 characters, Must not contain 'CcIiSsCco', Must not begin with.
+    description: The encyption key for the backed up file. Encryption key must satisfy
+      the following criteria - Contains at least one uppercase letter A-Z, Contains
+      at least one lowercase letter a-z, Contains at least one digit 0-9, Contain
+      only A-Za-z0-9_#, Has at least 8 characters, Has not more than 15 characters,
+      Must not contain 'CcIiSsCco', Must not begin with.
     type: str
   backupName:
     description: The backup file will get saved with this name.
     type: str
   endDate:
-    description: End date of the scheduled backup job. Allowed format MM/DD/YYYY. End date is not required in case of ONE_TIME frequency.
+    description: End date of the scheduled backup job. Allowed format MM/DD/YYYY.
+      End date is not required in case of ONE_TIME frequency.
     type: str
   frequency:
     description: Backup Schedule Config Update's frequency.
     type: str
   monthDay:
-    description: Day of month you want backup to be performed on when scheduled frequency is MONTHLY. Allowed values - from 1 to 28.
+    description: Day of month you want backup to be performed on when scheduled frequency
+      is MONTHLY. Allowed values - from 1 to 28.
     type: str
   repositoryName:
-    description: Name of the configured repository where the generated backup file will get copied.
+    description: Name of the configured repository where the generated backup file
+      will get copied.
     type: str
   startDate:
     description: Start date for scheduling the backup job. Allowed format MM/DD/YYYY.
@@ -51,7 +58,7 @@ options:
     description: Backup Schedule Config Update's weekDay.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 seealso:
   - name: Cisco ISE documentation for Backup And Restore
@@ -63,8 +70,8 @@ notes:
   - Paths used are
     put /api/v1/backup-restore/config/schedule-config-backup,
 """
-
 EXAMPLES = r"""
+---
 - name: Update all
   cisco.ise.backup_schedule_config_update:
     ise_hostname: "{{ise_hostname}}"
@@ -83,7 +90,6 @@ EXAMPLES = r"""
     time: string
     weekDay: string
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
@@ -92,12 +98,7 @@ ise_response:
   sample: >
     {
       "response": {
-        "message": "string",
-        "link": {
-          "rel": "string",
-          "href": "string",
-          "type": "string"
-        }
+        "message": "string"
       },
       "version": "string"
     }

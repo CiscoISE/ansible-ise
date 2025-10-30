@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Copyright (c) 2024, Cisco Systems
+# Copyright (c) 2021, Cisco Systems
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
@@ -18,13 +18,15 @@ except ImportError:
 else:
     ANSIBLE_UTILS_IS_INSTALLED = True
 from ansible.errors import AnsibleActionFail
-from ansible_collections.cisco.ise.plugins.plugin_utils.personas_utils import Node
+from ansible_collections.cisco.ise.plugins.plugin_utils.personas_utils import (
+    Node,
+)
 
 argument_spec = dict(
+    name=dict(type="str", required=True),
     ip=dict(type="str", required=True),
     username=dict(type="str", required=True),
     password=dict(type="str", required=True),
-    hostname=dict(type="str", required=True),
     ise_verify=dict(type="bool", default=True),
     ise_version=dict(type="str", default="3.1.0"),
     ise_wait_on_rate_limit=dict(type="bool", default=True),
@@ -73,10 +75,10 @@ class ActionModule(ActionBase):
 
         node = Node(
             dict(
+                name=self._task.args.get("name"),
                 ip=self._task.args.get("ip"),
                 username=self._task.args.get("username"),
                 password=self._task.args.get("password"),
-                hostname=self._task.args.get("hostname"),
             )
         )
 
@@ -87,8 +89,8 @@ class ActionModule(ActionBase):
                 )
             )
 
-        response = "Node {hostname} is in STANDALONE mode".format(
-            hostname=self._task.args.get("hostname")
+        response = "Node {name} is in STANDALONE mode".format(
+            name=self._task.args.get("name")
         )
 
         self._result.update(dict(ise_response=response))

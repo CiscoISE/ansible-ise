@@ -5,6 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: selfsigned_certificate_generate
 short_description: Resource module for Selfsigned Certificate Generate
 description:
@@ -19,10 +20,12 @@ options:
     description: Use certificate to authenticate the Cisco ISE Admin Portal.
     type: bool
   allowExtendedValidity:
-    description: Allow generation of self-signed certificate with validity greater than 398 days.
+    description: Allow generation of self-signed certificate with validity greater
+      than 398 days.
     type: bool
   allowPortalTagTransferForSameSubject:
-    description: Allow overwriting the portal tag from matching certificate of same subject.
+    description: Allow overwriting the portal tag from matching certificate of same
+      subject.
     type: bool
   allowReplacementOfCertificates:
     description: Allow Replacement of certificates.
@@ -58,7 +61,8 @@ options:
     description: Certificate expiration unit.
     type: str
   hostName:
-    description: Hostname of the Cisco ISE node in which self-signed certificate should be generated.
+    description: Hostname of the Cisco ISE node in which self-signed certificate should
+      be generated.
     type: str
   keyLength:
     description: Bit size of public key.
@@ -115,7 +119,7 @@ options:
     description: Certificate state (ST).
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 seealso:
   - name: Cisco ISE documentation for Certificates
@@ -127,8 +131,8 @@ notes:
   - Paths used are
     post /api/v1/certs/system-certificate/generate-selfsigned-certificate,
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.selfsigned_certificate_generate:
     ise_hostname: "{{ise_hostname}}"
@@ -171,7 +175,6 @@ EXAMPLES = r"""
     subjectOrgUnit: string
     subjectState: string
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

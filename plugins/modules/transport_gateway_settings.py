@@ -5,12 +5,12 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: transport_gateway_settings
 short_description: Resource module for Transport Gateway Settings
 description:
   - Manage operation update of the resource Transport Gateway Settings.
-  - Transport Gateway acts a proxy for the communication between the ISE servers in your network and the telemetry servers in case of air-gapped
-    network.
+  - Transport Gateway acts a proxy for the communication between the ISE servers.
 version_added: '2.1.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -23,7 +23,7 @@ options:
     description: URL of transport gateway.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 seealso:
   - name: Cisco ISE documentation for telemetry
@@ -35,8 +35,8 @@ notes:
   - Paths used are
     put /api/v1/system-settings/telemetry/transport-gateway,
 """
-
 EXAMPLES = r"""
+---
 - name: Update all
   cisco.ise.transport_gateway_settings:
     ise_hostname: "{{ise_hostname}}"
@@ -47,7 +47,6 @@ EXAMPLES = r"""
     enableTransportGateway: true
     url: string
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

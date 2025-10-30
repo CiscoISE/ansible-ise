@@ -5,6 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: endpoints_bulk
 short_description: Resource module for Endpoints Bulk
 description:
@@ -155,7 +156,7 @@ options:
     description: Endpoints Bulk's vendor.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 notes:
   - SDK Method used are
@@ -171,8 +172,8 @@ notes:
     put /api/v1/endpoint/bulk,
     put /api/v1/endpoint/{value},
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.endpoints_bulk:
     ise_hostname: "{{ise_hostname}}"
@@ -279,7 +280,6 @@ EXAMPLES = r"""
     state: absent
     value: string
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

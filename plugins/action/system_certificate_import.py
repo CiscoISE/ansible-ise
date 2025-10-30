@@ -26,31 +26,29 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
 # Get common arguements specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
-argument_spec.update(
-    dict(
-        admin=dict(type="bool"),
-        allowExtendedValidity=dict(type="bool"),
-        allowOutOfDateCert=dict(type="bool"),
-        allowPortalTagTransferForSameSubject=dict(type="bool"),
-        allowReplacementOfCertificates=dict(type="bool"),
-        allowReplacementOfPortalGroupTag=dict(type="bool"),
-        allowRoleTransferForSameSubject=dict(type="bool"),
-        allowSHA1Certificates=dict(type="bool"),
-        allowWildCardCertificates=dict(type="bool"),
-        data=dict(type="str"),
-        eap=dict(type="bool"),
-        ims=dict(type="bool"),
-        name=dict(type="str"),
-        password=dict(type="str", no_log=True),
-        portal=dict(type="bool"),
-        portalGroupTag=dict(type="str"),
-        privateKeyData=dict(type="str"),
-        pxgrid=dict(type="bool"),
-        radius=dict(type="bool"),
-        saml=dict(type="bool"),
-        validateCertificateExtensions=dict(type="bool"),
-    )
-)
+argument_spec.update(dict(
+    admin=dict(type="bool"),
+    allowExtendedValidity=dict(type="bool"),
+    allowOutOfDateCert=dict(type="bool"),
+    allowPortalTagTransferForSameSubject=dict(type="bool"),
+    allowReplacementOfCertificates=dict(type="bool"),
+    allowReplacementOfPortalGroupTag=dict(type="bool"),
+    allowRoleTransferForSameSubject=dict(type="bool"),
+    allowSHA1Certificates=dict(type="bool"),
+    allowWildCardCertificates=dict(type="bool"),
+    data=dict(type="str"),
+    eap=dict(type="bool"),
+    ims=dict(type="bool"),
+    name=dict(type="str"),
+    password=dict(type="str", no_log=True),
+    portal=dict(type="bool"),
+    portalGroupTag=dict(type="str"),
+    privateKeyData=dict(type="str"),
+    pxgrid=dict(type="bool"),
+    radius=dict(type="bool"),
+    saml=dict(type="bool"),
+    validateCertificateExtensions=dict(type="bool"),
+))
 
 required_if = []
 required_one_of = []
@@ -61,9 +59,7 @@ required_together = []
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail(
-                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
-            )
+            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = False
@@ -92,18 +88,10 @@ class ActionModule(ActionBase):
             admin=params.get("admin"),
             allow_extended_validity=params.get("allowExtendedValidity"),
             allow_out_of_date_cert=params.get("allowOutOfDateCert"),
-            allow_portal_tag_transfer_for_same_subject=params.get(
-                "allowPortalTagTransferForSameSubject"
-            ),
-            allow_replacement_of_certificates=params.get(
-                "allowReplacementOfCertificates"
-            ),
-            allow_replacement_of_portal_group_tag=params.get(
-                "allowReplacementOfPortalGroupTag"
-            ),
-            allow_role_transfer_for_same_subject=params.get(
-                "allowRoleTransferForSameSubject"
-            ),
+            allow_portal_tag_transfer_for_same_subject=params.get("allowPortalTagTransferForSameSubject"),
+            allow_replacement_of_certificates=params.get("allowReplacementOfCertificates"),
+            allow_replacement_of_portal_group_tag=params.get("allowReplacementOfPortalGroupTag"),
+            allow_role_transfer_for_same_subject=params.get("allowRoleTransferForSameSubject"),
             allow_sha1_certificates=params.get("allowSHA1Certificates"),
             allow_wild_card_certificates=params.get("allowWildCardCertificates"),
             data=params.get("data"),

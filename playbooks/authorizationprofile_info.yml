@@ -1,0 +1,31 @@
+---
+- name: Get Authorization Profile Information
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get all Authorization Profiles
+      cisco.ise.authorizationprofile_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+      register: result
+
+    - name: Print Authorization Profiles
+      ansible.builtin.debug:
+        var: result.ise_response
+    - name: Get Authorization Profile by name
+      cisco.ise.authorizationprofile_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+      register: result_by_name
+
+    - name: Print Authorization Profile by Name
+      ansible.builtin.debug:
+        var: result_by_name.ise_response

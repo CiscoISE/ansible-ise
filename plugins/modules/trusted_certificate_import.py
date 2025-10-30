@@ -5,6 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: trusted_certificate_import
 short_description: Resource module for Trusted Certificate Import
 description:
@@ -16,16 +17,16 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options:
   allowBasicConstraintCAFalse:
-    description: Allow certificates with Basic Constraints CA Field as False (required).
+    description: Allow certificates with Basic Constraints CA Field as False.
     type: bool
   allowOutOfDateCert:
-    description: Allow out of date certificates (required).
+    description: Allow out of date certificates.
     type: bool
   allowSHA1Certificates:
-    description: Allow SHA1 based certificates (required).
+    description: Allow SHA1 based certificates.
     type: bool
   data:
-    description: Certificate content (required).
+    description: Certificate content.
     type: str
   description:
     description: Description of the certificate.
@@ -49,7 +50,7 @@ options:
     description: Validate trust certificate extension.
     type: bool
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 seealso:
   - name: Cisco ISE documentation for Certificates
@@ -61,8 +62,8 @@ notes:
   - Paths used are
     post /api/v1/certs/trusted-certificate/import,
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.trusted_certificate_import:
     ise_hostname: "{{ise_hostname}}"
@@ -81,7 +82,6 @@ EXAMPLES = r"""
     trustForIseAuth: true
     validateCertificateExtensions: true
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

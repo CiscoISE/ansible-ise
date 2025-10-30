@@ -5,6 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: trustsec_vn_bulk_update
 short_description: Resource module for Trustsec VN Bulk Update
 description:
@@ -24,15 +25,12 @@ options:
       id:
         description: Identifier of the Virtual Network.
         type: str
-      lastUpdate:
-        description: Timestamp for the last update of the Virtual Network.
-        type: str
       name:
         description: Name of the Virtual Network.
         type: str
     type: list
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 seealso:
   - name: Cisco ISE documentation for virtualNetwork
@@ -44,8 +42,8 @@ notes:
   - Paths used are
     post /api/v1/trustsec/virtualnetwork/bulk/update,
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.trustsec_vn_bulk_update:
     ise_hostname: "{{ise_hostname}}"
@@ -55,10 +53,8 @@ EXAMPLES = r"""
     payload:
       - additionalAttributes: string
         id: string
-        lastUpdate: string
         name: string
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

@@ -5,6 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: repository_info
 short_description: Information module for Repository
 description:
@@ -22,7 +23,7 @@ options:
       - RepositoryName path parameter. Unique name for a repository.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 seealso:
   - name: Cisco ISE documentation for Repository
@@ -36,8 +37,8 @@ notes:
     get /api/v1/repository,
     get /api/v1/repository/{repositoryName},
 """
-
 EXAMPLES = r"""
+---
 - name: Get all Repository
   cisco.ise.repository_info:
     ise_hostname: "{{ise_hostname}}"
@@ -54,7 +55,6 @@ EXAMPLES = r"""
     repositoryName: string
   register: result
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
@@ -63,11 +63,6 @@ ise_response:
   sample: >
     {
       "name": "string",
-      "protocol": "string",
-      "path": "string",
-      "password": "string",
-      "serverName": "string",
-      "userName": "string",
-      "enablePki": true
+      "protocol": "string"
     }
 """

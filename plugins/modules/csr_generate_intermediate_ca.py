@@ -5,6 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: csr_generate_intermediate_ca
 short_description: Resource module for CSR Generate Intermediate CA
 description:
@@ -16,7 +17,7 @@ extends_documentation_fragment:
 author: Rafael Campos (@racampos)
 options: {}
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 seealso:
   - name: Cisco ISE documentation for Certificates
@@ -28,8 +29,8 @@ notes:
   - Paths used are
     post /api/v1/certs/certificate-signing-request/intermediate-ca,
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.csr_generate_intermediate_ca:
     ise_hostname: "{{ise_hostname}}"
@@ -37,7 +38,6 @@ EXAMPLES = r"""
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

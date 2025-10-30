@@ -26,27 +26,25 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
 # Get common arguements specification
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
-argument_spec.update(
-    dict(
-        admin=dict(type="bool"),
-        allowExtendedValidity=dict(type="bool"),
-        allowOutOfDateCert=dict(type="bool"),
-        allowReplacementOfCertificates=dict(type="bool"),
-        allowReplacementOfPortalGroupTag=dict(type="bool"),
-        data=dict(type="str"),
-        eap=dict(type="bool"),
-        hostName=dict(type="str"),
-        id=dict(type="str"),
-        ims=dict(type="bool"),
-        name=dict(type="str"),
-        portal=dict(type="bool"),
-        portalGroupTag=dict(type="str"),
-        pxgrid=dict(type="bool"),
-        radius=dict(type="bool"),
-        saml=dict(type="bool"),
-        validateCertificateExtensions=dict(type="bool"),
-    )
-)
+argument_spec.update(dict(
+    admin=dict(type="bool"),
+    allowExtendedValidity=dict(type="bool"),
+    allowOutOfDateCert=dict(type="bool"),
+    allowReplacementOfCertificates=dict(type="bool"),
+    allowReplacementOfPortalGroupTag=dict(type="bool"),
+    data=dict(type="str"),
+    eap=dict(type="bool"),
+    hostName=dict(type="str"),
+    id=dict(type="str"),
+    ims=dict(type="bool"),
+    name=dict(type="str"),
+    portal=dict(type="bool"),
+    portalGroupTag=dict(type="str"),
+    pxgrid=dict(type="bool"),
+    radius=dict(type="bool"),
+    saml=dict(type="bool"),
+    validateCertificateExtensions=dict(type="bool"),
+))
 
 required_if = []
 required_one_of = []
@@ -57,9 +55,7 @@ required_together = []
 class ActionModule(ActionBase):
     def __init__(self, *args, **kwargs):
         if not ANSIBLE_UTILS_IS_INSTALLED:
-            raise AnsibleActionFail(
-                "ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'"
-            )
+            raise AnsibleActionFail("ansible.utils is not installed. Execute 'ansible-galaxy collection install ansible.utils'")
         super(ActionModule, self).__init__(*args, **kwargs)
         self._supports_async = False
         self._supports_check_mode = False
@@ -88,12 +84,8 @@ class ActionModule(ActionBase):
             admin=params.get("admin"),
             allow_extended_validity=params.get("allowExtendedValidity"),
             allow_out_of_date_cert=params.get("allowOutOfDateCert"),
-            allow_replacement_of_certificates=params.get(
-                "allowReplacementOfCertificates"
-            ),
-            allow_replacement_of_portal_group_tag=params.get(
-                "allowReplacementOfPortalGroupTag"
-            ),
+            allow_replacement_of_certificates=params.get("allowReplacementOfCertificates"),
+            allow_replacement_of_portal_group_tag=params.get("allowReplacementOfPortalGroupTag"),
             data=params.get("data"),
             eap=params.get("eap"),
             host_name=params.get("hostName"),

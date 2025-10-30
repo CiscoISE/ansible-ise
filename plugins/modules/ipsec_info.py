@@ -5,13 +5,15 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: ipsec_info
 short_description: Information module for Ipsec Info
 description:
   - Get all Ipsec Info.
   - Get Ipsec Info by id.
   - Returns all the IPsec enabled nodes with configuration details.
-  - Returns the IPsec configuration details of a given node with the hostname and the NAD IP.
+  - Returns the IPsec configuration details of a given node with the hostname and
+    the NAD IP.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -28,10 +30,14 @@ options:
   filter:
     description:
       - >
-        Filter query parameter. .. Container **Simple filtering** should be available through the filter query string parameter. The structure
-        of a filter is a triplet of field operator and value separated with dots. More than one filter can be sent. The logical operator common
-        to ALL filter criteria will be by default AND, and can be changed by using the *"filterType=or"* query string parameter.
-      - Each resource Data model description should specify if an attribute is a filtered field.
+        Filter query parameter. .. Container **Simple filtering** should be available
+        through the filter query string parameter. The structure of a filter is a
+        triplet of field operator and value separated with dots. More than one filter
+        can be sent. The logical operator common to ALL filter criteria will be by
+        default AND, and can be changed by using the *"filterType=or"* query string
+        parameter.
+      - Each resource Data model description should specify if an attribute is a filtered
+        field.
       - The 'EQ' operator describes 'Equals'.
       - The 'NEQ' operator describes 'Not Equals'.
       - The 'GT' operator describes 'Greater Than'.
@@ -46,8 +52,8 @@ options:
   filterType:
     description:
       - >
-        FilterType query parameter. The logical operator common to ALL filter criteria will be by default AND, and can be changed by using the
-        parameter.
+        FilterType query parameter. The logical operator common to ALL filter criteria
+        will be by default AND, and can be changed by using the parameter.
     type: str
   sort:
     description:
@@ -56,7 +62,8 @@ options:
   sortBy:
     description:
       - >
-        SortBy query parameter. Sort column - The IPsec enabled nodes are sorted based on the columns. This is applicable for the field - hostName.
+        SortBy query parameter. Sort column - The IPsec enabled nodes are sorted based
+        on the columns. This is applicable for the field - hostName.
     type: str
   hostName:
     description:
@@ -67,7 +74,7 @@ options:
       - NadIp path parameter. IP address of the NAD.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 notes:
   - SDK Method used are
@@ -77,8 +84,8 @@ notes:
     get /api/v1/ipsec,
     get /api/v1/ipsec/{hostName}/{nadIp},
 """
-
 EXAMPLES = r"""
+---
 - name: Get all Ipsec Info
   cisco.ise.ipsec_info:
     ise_hostname: "{{ise_hostname}}"
@@ -102,7 +109,6 @@ EXAMPLES = r"""
     nadIp: string
   register: result
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

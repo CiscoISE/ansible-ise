@@ -1,0 +1,19 @@
+---
+- name: Get TrustSec NBAR Application Information
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get all TrustSec NBAR Applications
+      cisco.ise.trustsec_nbar_app_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+      register: result
+
+    - name: Print TrustSec NBAR Applications
+      ansible.builtin.debug:
+        var: result.ise_response

@@ -1,0 +1,31 @@
+---
+- name: Get Downloadable ACL Information
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get all Downloadable ACLs
+      cisco.ise.downloadableacl_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+      register: result
+
+    - name: Print Downloadable ACLs
+      ansible.builtin.debug:
+        var: result.ise_response
+    - name: Get Downloadable ACL by name
+      cisco.ise.downloadableacl_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+      register: result_by_name
+
+    - name: Print Downloadable ACL by Name
+      ansible.builtin.debug:
+        var: result_by_name.ise_response

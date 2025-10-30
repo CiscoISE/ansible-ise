@@ -1,0 +1,31 @@
+---
+- name: Get Identity Group Information
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get all Identity Groups
+      cisco.ise.identitygroup_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+      register: result
+
+    - name: Print Identity Groups
+      ansible.builtin.debug:
+        var: result.ise_response
+    - name: Get Identity Group by name
+      cisco.ise.identitygroup_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+      register: result_by_name
+
+    - name: Print Identity Group by Name
+      ansible.builtin.debug:
+        var: result_by_name.ise_response

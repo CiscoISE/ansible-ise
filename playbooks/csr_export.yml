@@ -1,6 +1,8 @@
 ---
 - name: Export CSR from ISE
   hosts: ise_servers
+  vars_files:
+    - credentials.yml
   gather_facts: false
   tasks:
     # - name: CSR Generate
@@ -8,6 +10,7 @@
     #     ise_hostname: "{{ ise_hostname }}"
     #     ise_username: "{{ ise_username }}"
     #     ise_password: "{{ ise_password }}"
+    #     ise_version: "{{ ise_version }}"
     #     ise_verify: "{{ ise_verify }}"
     #     ise_debug: "{{ ise_debug }}"
     #   register: csr_generate_result
@@ -17,6 +20,7 @@
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
         ise_verify: "{{ ise_verify }}"
         ise_debug: "{{ ise_debug }}"
       register: csr_info_result
@@ -26,6 +30,7 @@
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
         ise_verify: "{{ ise_verify }}"
         ise_debug: "{{ ise_debug }}"
         hostname: ise
@@ -46,6 +51,7 @@
     #     ise_hostname: "{{ ise_hostname }}"
     #     ise_username: "{{ ise_username }}"
     #     ise_password: "{{ ise_password }}"
+    #     ise_version: "{{ ise_version }}"
     #     ise_verify: "{{ ise_verify }}"
     #     ise_debug: "{{ ise_debug }}"
     #     id: "{{ csr_info_result['ise_response'][0]['response'][0]['id'] }}"

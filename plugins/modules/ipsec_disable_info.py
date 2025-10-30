@@ -5,11 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: ipsec_disable_info
 short_description: Information module for Ipsec Disable
 description:
   - Get Ipsec Disable by id.
-  - Returns the IPsec configuration details of a given node with the hostname and the NAD IP.
+  - Returns the IPsec configuration details of a given node with the hostname and
+    the NAD IP.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
@@ -24,7 +26,7 @@ options:
       - NadIp path parameter. IP address of the NAD.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 notes:
   - SDK Method used are
@@ -32,8 +34,8 @@ notes:
   - Paths used are
     get /api/v1/ipsec/{hostName}/{nadIp},
 """
-
 EXAMPLES = r"""
+---
 - name: Get Ipsec Disable by id
   cisco.ise.ipsec_disable_info:
     ise_hostname: "{{ise_hostname}}"
@@ -44,7 +46,6 @@ EXAMPLES = r"""
     nadIp: string
   register: result
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

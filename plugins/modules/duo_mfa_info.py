@@ -5,11 +5,12 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: duo_mfa_info
-short_description: Information module for Duo Mfa Info
+short_description: Information module for Duo Mfa
 description:
-  - Get all Duo Mfa Info.
-  - Get Duo Mfa Info by name.
+  - Get all Duo Mfa.
+  - Get Duo Mfa by name.
   - Duo-MFA - Get the Duo-MFA configuration specified in the connectionName.
   - Duo-MFA - List of Duo-MFA configurations.
 version_added: '1.0.0'
@@ -19,10 +20,11 @@ author: Rafael Campos (@racampos)
 options:
   connectionName:
     description:
-      - ConnectionName path parameter. This name is used to update, delete or retrieve the specific Duo-MFA configuration.
+      - ConnectionName path parameter. This name is used to update, delete or retrieve
+        the specific Duo-MFA configuration.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 notes:
   - SDK Method used are
@@ -32,16 +34,16 @@ notes:
     get /api/v1/duo-mfa/mfa,
     get /api/v1/duo-mfa/mfa/{connectionName},
 """
-
 EXAMPLES = r"""
-- name: Get all Duo Mfa Info
+---
+- name: Get all Duo Mfa
   cisco.ise.duo_mfa_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
   register: result
-- name: Get Duo Mfa Info by name
+- name: Get Duo Mfa by name
   cisco.ise.duo_mfa_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -50,7 +52,6 @@ EXAMPLES = r"""
     connectionName: string
   register: result
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

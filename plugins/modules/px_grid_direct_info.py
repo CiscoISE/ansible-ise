@@ -5,6 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: px_grid_direct_info
 short_description: Information module for Px Grid Direct Info
 description:
@@ -22,7 +23,7 @@ options:
       - ConnectorName path parameter. Update or delete or retrieve the connector config.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 notes:
   - SDK Method used are
@@ -32,8 +33,8 @@ notes:
     get /api/v1/pxgrid-direct/connector-config,
     get /api/v1/pxgrid-direct/connector-config/{connectorName},
 """
-
 EXAMPLES = r"""
+---
 - name: Get all Px Grid Direct Info
   cisco.ise.px_grid_direct_info:
     ise_hostname: "{{ise_hostname}}"
@@ -50,7 +51,6 @@ EXAMPLES = r"""
     connectorName: string
   register: result
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
@@ -63,6 +63,7 @@ ise_response:
         "attributes": {
           "attributeMapping": [
             {
+              "coaSignificance": true,
               "dictionaryAttribute": "string",
               "includeInDictionary": true,
               "jsonAttribute": "string"
@@ -73,6 +74,7 @@ ise_response:
           "uniqueIdentifier": "string",
           "versionIdentifier": "string"
         },
+        "coaType": "string",
         "connectorName": "string",
         "connectorType": "string",
         "deltasyncSchedule": {
@@ -82,11 +84,83 @@ ise_response:
         },
         "description": "string",
         "enabled": true,
+        "flexibleUrl": {
+          "bulk": {
+            "additionalHeaders": [
+              {
+                "name": "string",
+                "value": "string"
+              }
+            ],
+            "apiKeyProperties": {
+              "headerName": "string",
+              "key": "string",
+              "keyType": "string",
+              "paramName": "string",
+              "requestBody": "string"
+            },
+            "authenticationType": "string",
+            "basicAuthProperties": {
+              "password": "string",
+              "requestBody": "string",
+              "userName": "string"
+            },
+            "method": "string",
+            "oauthProperties": {
+              "clientId": "string",
+              "clientSecret": "string",
+              "flow": "string",
+              "password": "string",
+              "scope": "string",
+              "tokenIssuingUrl": "string",
+              "userName": "string"
+            },
+            "url": "string"
+          },
+          "incremental": {
+            "additionalHeaders": [
+              {
+                "name": "string",
+                "value": "string"
+              }
+            ],
+            "apiKeyProperties": {
+              "headerName": "string",
+              "key": "string",
+              "keyType": "string",
+              "paramName": "string",
+              "requestBody": "string"
+            },
+            "authenticationType": "string",
+            "basicAuthProperties": {
+              "password": "string",
+              "requestBody": "string",
+              "userName": "string"
+            },
+            "method": "string",
+            "oauthProperties": {
+              "clientId": "string",
+              "clientSecret": "string",
+              "flow": "string",
+              "password": "string",
+              "scope": "string",
+              "tokenIssuingUrl": "string",
+              "userName": "string"
+            },
+            "url": "string"
+          }
+        },
         "fullsyncSchedule": {
           "interval": 0,
           "intervalUnit": "string",
           "startDate": "string"
         },
+        "groupArray": [
+          {
+            "GroupName": "string",
+            "GroupPermission": "string"
+          }
+        ],
         "protocol": "string",
         "skipCertificateValidations": true,
         "url": {

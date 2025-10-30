@@ -1,0 +1,19 @@
+---
+- name: Get TACACS Profile Information
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get all TACACS Profiles
+      cisco.ise.tacacsprofile_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+      register: result
+
+    - name: Print TACACS Profiles
+      ansible.builtin.debug:
+        var: result.ise_response

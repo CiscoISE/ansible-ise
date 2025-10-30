@@ -1,0 +1,40 @@
+---
+- name: Manage Guest Type
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get Guest Types
+      cisco.ise.guesttype_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+      register: guest_types
+
+    - name: Print Guest Types
+      ansible.builtin.debug:
+        var: guest_types.ise_response
+
+    - name: Create Guest Type
+      cisco.ise.guesttype:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+        state: present
+        name: Contractor
+        description: Contractor guest type
+        accessTime:
+          defaultDuration: 1
+          durationTimeUnit: DAYS
+          fromFirstLogin: true
+          maxAccountDuration: 30
+      register: result
+
+    - name: Print Result
+      ansible.builtin.debug:
+        var: result

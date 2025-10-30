@@ -5,6 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: duo_identity_sync
 short_description: Resource module for Duo Identity Sync
 description:
@@ -62,7 +63,8 @@ options:
         description: Unit of the time interval.
         type: str
       schedulerSync:
-        description: Type of Sync Schedule - If "Recurring", please specify schedule details.
+        description: Type of Sync Schedule - If "Recurring", please specify schedule
+          details.
         type: str
       startDate:
         description: Start date and start time of the sync schedule.
@@ -72,7 +74,7 @@ options:
     description: Duo Identity Sync's syncStatus.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 notes:
   - SDK Method used are
@@ -84,8 +86,8 @@ notes:
     delete /api/v1/duo-identitysync/identitysync/{syncName},
     put /api/v1/duo-identitysync/identitysync/{syncName},
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.duo_identity_sync:
     ise_hostname: "{{ise_hostname}}"
@@ -141,7 +143,6 @@ EXAMPLES = r"""
     state: absent
     syncName: string
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

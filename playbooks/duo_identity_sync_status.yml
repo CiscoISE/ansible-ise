@@ -1,0 +1,20 @@
+---
+- name: Get Duo Identity Sync Status
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get sync status
+      cisco.ise.duo_identity_sync_status:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+        syncName: DuoSync
+      register: result
+
+    - name: Print Sync Status
+      ansible.builtin.debug:
+        var: result

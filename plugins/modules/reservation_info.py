@@ -5,6 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: reservation_info
 short_description: Information module for Reservation Info
 description:
@@ -30,7 +31,7 @@ options:
       - ClientID path parameter. Unique name for a Client.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 notes:
   - SDK Method used are
@@ -40,8 +41,8 @@ notes:
     get /api/v1/sgt/reservation,
     get /api/v1/sgt/reservation/{clientID},
 """
-
 EXAMPLES = r"""
+---
 - name: Get all Reservation Info
   cisco.ise.reservation_info:
     ise_hostname: "{{ise_hostname}}"
@@ -60,7 +61,6 @@ EXAMPLES = r"""
     clientID: string
   register: result
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

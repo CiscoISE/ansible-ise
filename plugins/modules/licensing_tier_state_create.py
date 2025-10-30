@@ -5,6 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: licensing_tier_state_create
 short_description: Resource module for Licensing Tier State Create
 description:
@@ -20,14 +21,14 @@ options:
     elements: dict
     suboptions:
       name:
-        description: License tier list.
+        description: Licensing Tier State Create's name.
         type: str
       status:
-        description: Current Smart Licensing State.
+        description: Licensing Tier State Create's status.
         type: str
     type: list
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 seealso:
   - name: Cisco ISE documentation for Licensing
@@ -39,9 +40,9 @@ notes:
   - Paths used are
     post /api/v1/license/system/tier-state,
 """
-
 EXAMPLES = r"""
-- name: Update all
+---
+- name: Create
   cisco.ise.licensing_tier_state_create:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
@@ -51,7 +52,6 @@ EXAMPLES = r"""
       - name: string
         status: string
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
@@ -59,13 +59,13 @@ ise_response:
   type: dict
   sample: >
     {
-      "version": "string",
       "response": [
         {
+          "message": "string",
           "name": "string",
-          "status": "string",
-          "message": "string"
+          "status": "string"
         }
-      ]
+      ],
+      "version": "string"
     }
 """

@@ -1,6 +1,8 @@
 ---
 - name: Backup configuration
   hosts: ise_servers
+  vars_files:
+    - credentials.yml
   gather_facts: false
   tasks:
     - name: Create a repository
@@ -8,6 +10,7 @@
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
         ise_verify: "{{ ise_verify }}"
         state: present
         name: myRepo
@@ -20,6 +23,7 @@
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
         ise_verify: "{{ ise_verify }}"
         backupEncryptionKey: My3ncryptionkey
         backupName: myBackup
@@ -31,6 +35,7 @@
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
         ise_verify: "{{ ise_verify }}"
         taskId: "{{ result.ise_response.response.id }}"
       when:

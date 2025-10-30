@@ -1,0 +1,24 @@
+---
+- name: Bulk Create TrustSec Virtual Networks
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Create multiple Virtual Networks in bulk
+      cisco.ise.trustsec_vn_bulk_create:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+        virtualNetworks:
+          - name: Employee_VN
+            description: Employee virtual network
+          - name: Guest_VN
+            description: Guest virtual network
+      register: result
+
+    - name: Print Result
+      ansible.builtin.debug:
+        var: result

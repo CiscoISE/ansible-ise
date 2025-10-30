@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# Copyright (c) 2024, Cisco Systems
+# Copyright (c) 2021, Cisco Systems
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 from __future__ import absolute_import, division, print_function
@@ -18,7 +18,9 @@ except ImportError:
 else:
     ANSIBLE_UTILS_IS_INSTALLED = True
 from ansible.errors import AnsibleActionFail
-from ansible_collections.cisco.ise.plugins.plugin_utils.personas_utils import Node
+from ansible_collections.cisco.ise.plugins.plugin_utils.personas_utils import (
+    ISEDeployment,
+)
 
 argument_spec = dict(
     ip=dict(type="str", required=True),
@@ -29,7 +31,6 @@ argument_spec = dict(
     ise_verify=dict(type="bool", default=True),
     ise_version=dict(type="str", default="3.1.0"),
     ise_wait_on_rate_limit=dict(type="bool", default=True),
-    timeout=dict(type="int", default=60),
 )
 
 required_if = []
@@ -73,23 +74,23 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-        node = Node(
-            dict(
-                ip=self._task.args.get("ip"),
-                hostname=self._task.args.get("hostname"),
-                username=self._task.args.get("username"),
-                password=self._task.args.get("password"),
-                roles=self._task.args.get("roles"),
-            )
+        primary_node = dict(
+            ip=self._task.args.get("ip"),
+            hostname=self._task.args.get("hostname"),
+            username=self._task.args.get("username"),
+            password=self._task.args.get("password"),
+            roles=self._task.args.get("roles"),
         )
 
-        timeout = self._task.args.get("timeout")
-        if node.is_primary(timeout=timeout):
-            response = "Node is already primary"
-            self._result.update(dict(result="Object already present"))
-        else:
-            node.promote_to_primary(timeout=timeout)
-            response = "Primary node was successfully updated"
+        if "PPAN" not in primary_node.get("roles"):
+            raise AnsibleActionFail("Primary node must have at least the 'PPAN' role")
+
+        ise_deployment = ISEDeployment()
+        ise_deployment.add_primary(primary_node)
+
+        ise_deployment.promote_primary_node()
+
+        response = "Primary node was successfully updated"
 
         self._result.update(dict(ise_response=response))
         return self._result

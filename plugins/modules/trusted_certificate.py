@@ -5,11 +5,13 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: trusted_certificate
 short_description: Resource module for Trusted Certificate
 description:
   - Manage operations update and delete of the resource Trusted Certificate.
-  - This API deletes a Trust Certificate from Trusted Certificate Store based on a given ID.
+  - This API deletes a Trust Certificate from Trusted Certificate Store based on a
+    given ID.
   - Update a trusted certificate present in Cisco ISE trust store.
 version_added: '1.0.0'
 extends_documentation_fragment:
@@ -47,7 +49,8 @@ options:
     description: Switch to enable or disable OCSP Validation.
     type: bool
   enableServerIdentityCheck:
-    description: Switch to enable or disable verification if HTTPS or LDAP server certificate name fits the configured server URL.
+    description: Switch to enable or disable verification if HTTPS or LDAP server
+      certificate name fits the configured server URL.
     type: bool
   id:
     description: Id path parameter. ID of the trust certificate.
@@ -89,7 +92,7 @@ options:
     description: Trust for authentication within Cisco ISE.
     type: bool
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 seealso:
   - name: Cisco ISE documentation for Certificates
@@ -103,8 +106,8 @@ notes:
     delete /api/v1/certs/trusted-certificate/{id},
     put /api/v1/certs/trusted-certificate/{id},
 """
-
 EXAMPLES = r"""
+---
 - name: Update by id
   cisco.ise.trusted_certificate:
     ise_hostname: "{{ise_hostname}}"
@@ -145,7 +148,6 @@ EXAMPLES = r"""
     state: absent
     id: string
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

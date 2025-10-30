@@ -5,6 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: personas_export_certs
 short_description: Export certificate into primary node
 description:
@@ -14,7 +15,7 @@ author: Rafael Campos (@racampos)
 options:
   primary_ip:
     description:
-      - The IP address of the primary node.
+      - The public IP address of the primary node.
     type: str
   primary_username:
     description:
@@ -30,11 +31,7 @@ options:
     type: str
   ip:
     description:
-      - The IP address of the node for which the certificate will be exported.
-    type: str
-  hostname:
-    description:
-      - The hostname for the node for which the certificate will be exported.
+      - The public IP address of the node for which the certificate will be exported.
     type: str
   username:
     description:
@@ -65,8 +62,8 @@ seealso:
 notes:
   - "Does not support C(check_mode)"
 """
-
 EXAMPLES = r"""
+---
 - name: Export trusted certificates into primary node
   cisco.ise.personas_export_certs:
     primary_ip: 10.1.1.1
@@ -88,7 +85,6 @@ EXAMPLES = r"""
       ip: 10.1.1.4
       hostname: ise-psn-server-2
 """
-
 RETURN = r"""
 ise_response:
   description: A text string stating that the certificate was exported successfully.

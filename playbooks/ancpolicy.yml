@@ -1,0 +1,37 @@
+---
+- name: Manage ANC Policy
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get ANC Policies
+      cisco.ise.ancpolicy_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+      register: anc_policies
+
+    - name: Print ANC Policies
+      ansible.builtin.debug:
+        var: anc_policies.ise_response
+
+    - name: Create ANC Policy
+      cisco.ise.ancpolicy:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+        state: present
+        name: Quarantine_Policy
+        description: Quarantine policy for suspicious endpoints
+        actions:
+          - QUARANTINE
+      register: result
+
+    - name: Print Result
+      ansible.builtin.debug:
+        var: result

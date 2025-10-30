@@ -5,6 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: endpoints_bulk_info
 short_description: Information module for Endpoints Bulk
 description:
@@ -34,10 +35,14 @@ options:
   filter:
     description:
       - >
-        Filter query parameter. .. Container **Simple filtering** should be available through the filter query string parameter. The structure
-        of a filter is a triplet of field operator and value separated with dots. More than one filter can be sent. The logical operator common
-        to ALL filter criteria will be by default AND, and can be changed by using the *'filterType=or'* query string parameter.
-      - Each resource Data model description should specify if an attribute is a filtered field.
+        Filter query parameter. .. Container **Simple filtering** should be available
+        through the filter query string parameter. The structure of a filter is a
+        triplet of field operator and value separated with dots. More than one filter
+        can be sent. The logical operator common to ALL filter criteria will be by
+        default AND, and can be changed by using the *"filterType=or"* query string
+        parameter.
+      - Each resource Data model description should specify if an attribute is a filtered
+        field.
       - The 'EQ' operator describes 'Equals'.
       - The 'NEQ' operator describes 'Not Equals'.
       - The 'GT' operator describes 'Greater Than'.
@@ -52,15 +57,15 @@ options:
   filterType:
     description:
       - >
-        FilterType query parameter. The logical operator common to ALL filter criteria will be by default AND, and can be changed by using the
-        parameter.
+        FilterType query parameter. The logical operator common to ALL filter criteria
+        will be by default AND, and can be changed by using the parameter.
     type: str
   value:
     description:
       - Value path parameter. The id or MAC of the endpoint.
     type: str
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 notes:
   - SDK Method used are
@@ -70,8 +75,8 @@ notes:
     get /api/v1/endpoint,
     get /api/v1/endpoint/{value},
 """
-
 EXAMPLES = r"""
+---
 - name: Get all Endpoints Bulk
   cisco.ise.endpoints_bulk_info:
     ise_hostname: "{{ise_hostname}}"
@@ -94,7 +99,6 @@ EXAMPLES = r"""
     value: string
   register: result
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK

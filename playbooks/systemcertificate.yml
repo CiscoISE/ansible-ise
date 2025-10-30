@@ -1,0 +1,33 @@
+---
+- name: Manage System Certificate
+  hosts: ise_servers
+  vars_files:
+    - credentials.yml
+  gather_facts: false
+  tasks:
+    - name: Get System Certificates
+      cisco.ise.system_certificate_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+      register: system_certs
+
+    - name: Print System Certificates
+      ansible.builtin.debug:
+        var: system_certs.ise_response
+
+    - name: Manage System Certificate
+      cisco.ise.systemcertificate:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+        state: present
+      register: result
+
+    - name: Print Result
+      ansible.builtin.debug:
+        var: result

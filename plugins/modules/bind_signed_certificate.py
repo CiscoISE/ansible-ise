@@ -5,6 +5,7 @@
 # GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 DOCUMENTATION = r"""
+---
 module: bind_signed_certificate
 short_description: Resource module for Bind Signed Certificate
 description:
@@ -19,28 +20,28 @@ options:
     description: Use certificate to authenticate the Cisco ISE Admin Portal.
     type: bool
   allowExtendedValidity:
-    description: Allow import of certificates with validity greater than 398 days (required).
+    description: Allow import of certificates with validity greater than 398 days.
     type: bool
   allowOutOfDateCert:
-    description: Allow out of date certificates (required).
+    description: Allow out of date certificates.
     type: bool
   allowReplacementOfCertificates:
-    description: Allow Replacement of certificates (required).
+    description: Allow Replacement of certificates.
     type: bool
   allowReplacementOfPortalGroupTag:
-    description: Allow Replacement of Portal Group Tag (required).
+    description: Allow Replacement of Portal Group Tag.
     type: bool
   data:
-    description: Signed certificate data (required).
+    description: Signed certificate data.
     type: str
   eap:
     description: Use certificate for EAP protocols that use SSL/TLS tunneling.
     type: bool
   hostName:
-    description: Name of Host whose CSR ID has been provided (required).
+    description: Name of Host whose CSR ID has been provided.
     type: str
   id:
-    description: ID of the generated CSR (required).
+    description: ID of the generated CSR.
     type: str
   ims:
     description: Use certificate for the Cisco ISE Messaging Service.
@@ -67,7 +68,7 @@ options:
     description: Validate Certificate Extensions.
     type: bool
 requirements:
-  - ciscoisesdk >= 2.2.3
+  - ciscoisesdk >= 2.0.1
   - python >= 3.5
 seealso:
   - name: Cisco ISE documentation for Certificates
@@ -79,8 +80,8 @@ notes:
   - Paths used are
     post /api/v1/certs/signed-certificate/bind,
 """
-
 EXAMPLES = r"""
+---
 - name: Create
   cisco.ise.bind_signed_certificate:
     ise_hostname: "{{ise_hostname}}"
@@ -105,7 +106,6 @@ EXAMPLES = r"""
     saml: true
     validateCertificateExtensions: true
 """
-
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
