@@ -27,8 +27,7 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    page=dict(type="int"),
-    size=dict(type="int"),
+    id=dict(type="str"),
 ))
 
 required_if = []
@@ -66,8 +65,7 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            page=params.get("page"),
-            size=params.get("size"),
+            id=params.get("id"),
         )
         return new_object
 
@@ -77,46 +75,24 @@ class ActionModule(ActionBase):
         self._result["changed"] = False
         self._check_argspec()
 
-        self._result.update(dict(ise_response=[]))
+        self._result.update(dict(ise_response={}))
 
         ise = ISESDK(params=self._task.args)
 
         id = self._task.args.get("id")
         name = self._task.args.get("name")
-        if not name and not id:
-            responses = []
-            generator = ise.exec(
+        if id:
+            response = ise.exec(
                 family="adresourcereservation",
-                function='get_adresourcereservation_generator',
-                params=self.get_object(self._task.args),
-            )
-            try:
-                for item in generator:
-                    tmp_response = item.response['SearchResult']['resources']
-                    if isinstance(tmp_response, list):
-                        responses += tmp_response
-                    else:
-                        responses.append(tmp_response)
-                response = responses
-            except (TypeError, AttributeError) as e:
-                ise.fail_json(
-                    msg=(
-                        "An error occured when executing operation."
-                        " Check the configuration of your API Settings and API Gateway settings on your ISE server."
-                        " This collection assumes that the API Gateway, the ERS APIs and OpenAPIs are enabled."
-                        " You may want to enable the (ise_debug: True) argument."
-                        " The error was: {error}"
-                    ).format(error=e)
-                )
-            except Exception as e:
-                ise.fail_json(
-                    msg=(
-                        "An error occured when executing operation."
-                        " The error was: {error}"
-                        " You may want to enable the (ise_debug: True) argument."
-                    ).format(error=e)
-                )
-
+                function='get_adresourcereservation_by_id',
+                params=self.get_object(self._task.args)
+            ).response['ERSADResourceReservation']
+            self._result.update(dict(ise_response=response))
+            self._result.update(ise.exit_json())
+            return self._result
+        if not name and not id:
+            # NOTICE: Does not have a get all method or it is in another action
+            response = None
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

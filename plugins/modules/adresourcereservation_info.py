@@ -9,77 +9,52 @@ DOCUMENTATION = r"""
 module: adresourcereservation_info
 short_description: Information module for Adresourcereservation
 description:
-  - Get all Adresourcereservation.
+  - Get Adresourcereservation  by id.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options:
-  page:
+  id:
     description:
-      - Page query parameter. Page Number (0...N).
-    type: int
-  size:
-    description:
-      - Size query parameter. Items by Page.
-    type: int
+      - Id path parameter.
+    type: str
 requirements:
   - ciscoisesdk >= 2.0.1
   - python >= 3.5
 notes:
   - SDK Method used are
-    adresourcereservation.Adresourcereservation.get_adresourcereservation_generator,
+    adresourcereservation.Adresourcereservation.get_adresourcereservation_by_id,
   - Paths used are
-    get /adresourcereservation/,
+    get /adresourcereservation/{id},
 """
 EXAMPLES = r"""
 ---
-- name: Get all Adresourcereservation
+- name: Get Adresourcereservation  by id
   cisco.ise.adresourcereservation_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
-    page: 0
-    size: 0
+    id: string
   register: result
 """
 RETURN = r"""
 ise_response:
   description: A dictionary or list with the response returned by the Cisco ISE Python SDK
   returned: always
-  type: list
-  elements: dict
+  type: dict
   sample: >
-    [
-      {
-        "id": "string",
-        "name": "string",
-        "description": "string",
-        "link": {
-          "rel": "string",
-          "href": "string",
-          "type": "string"
-        }
+    {
+      "node": "string",
+      "joinPointNames": "string",
+      "name": "string",
+      "id": "string",
+      "description": "string",
+      "link": {
+        "rel": "string",
+        "href": "string",
+        "type": "string"
       }
-    ]
-ise_responses:
-  description: A dictionary or list with the response returned by the Cisco ISE Python SDK
-  returned: always
-  version_added: '1.1.0'
-  type: list
-  elements: dict
-  sample: >
-    [
-      {
-        "id": "string",
-        "name": "string",
-        "description": "string",
-        "link": {
-          "rel": "string",
-          "href": "string",
-          "type": "string"
-        }
-      }
-    ]
+    }
 """
