@@ -26,7 +26,7 @@
 
 .. Anchors
 
-.. _ansible_collections.cisco.ise.adresourcereservation__info_module:
+.. _ansible_collections.cisco.ise.adresourcereservation_name_info_module:
 
 .. Anchors: short name for ansible.builtin
 
@@ -36,8 +36,8 @@
 
 .. Title
 
-cisco.ise.adresourcereservation__info module -- Information module for Adresourcereservation
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.ise.adresourcereservation_name_info module -- Information module for Adresourcereservation Name
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
@@ -46,9 +46,9 @@ cisco.ise.adresourcereservation__info module -- Information module for Adresourc
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
-    see :ref:`Requirements <ansible_collections.cisco.ise.adresourcereservation__info_module_requirements>` for details.
+    see :ref:`Requirements <ansible_collections.cisco.ise.adresourcereservation_name_info_module_requirements>` for details.
 
-    To use it in a playbook, specify: :code:`cisco.ise.adresourcereservation__info`.
+    To use it in a playbook, specify: :code:`cisco.ise.adresourcereservation_name_info`.
 
 .. version_added
 
@@ -68,7 +68,7 @@ Synopsis
 
 .. Description
 
-- Get Adresourcereservation  by id.
+- Get Adresourcereservation Name  by name.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -78,7 +78,7 @@ Synopsis
 
 .. Requirements
 
-.. _ansible_collections.cisco.ise.adresourcereservation__info_module_requirements:
+.. _ansible_collections.cisco.ise.adresourcereservation_name_info_module_requirements:
 
 Requirements
 ------------
@@ -110,43 +110,9 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-id"></div>
-
-      .. _ansible_collections.cisco.ise.adresourcereservation__info_module__parameter-id:
-
-      .. rst-class:: ansible-option-title
-
-      **id**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-id" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      Id path parameter.
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ise_debug"></div>
 
-      .. _ansible_collections.cisco.ise.adresourcereservation__info_module__parameter-ise_debug:
+      .. _ansible_collections.cisco.ise.adresourcereservation_name_info_module__parameter-ise_debug:
 
       .. rst-class:: ansible-option-title
 
@@ -188,7 +154,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ise_hostname"></div>
 
-      .. _ansible_collections.cisco.ise.adresourcereservation__info_module__parameter-ise_hostname:
+      .. _ansible_collections.cisco.ise.adresourcereservation_name_info_module__parameter-ise_hostname:
 
       .. rst-class:: ansible-option-title
 
@@ -222,7 +188,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ise_password"></div>
 
-      .. _ansible_collections.cisco.ise.adresourcereservation__info_module__parameter-ise_password:
+      .. _ansible_collections.cisco.ise.adresourcereservation_name_info_module__parameter-ise_password:
 
       .. rst-class:: ansible-option-title
 
@@ -256,7 +222,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ise_single_request_timeout"></div>
 
-      .. _ansible_collections.cisco.ise.adresourcereservation__info_module__parameter-ise_single_request_timeout:
+      .. _ansible_collections.cisco.ise.adresourcereservation_name_info_module__parameter-ise_single_request_timeout:
 
       .. rst-class:: ansible-option-title
 
@@ -297,7 +263,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ise_username"></div>
 
-      .. _ansible_collections.cisco.ise.adresourcereservation__info_module__parameter-ise_username:
+      .. _ansible_collections.cisco.ise.adresourcereservation_name_info_module__parameter-ise_username:
 
       .. rst-class:: ansible-option-title
 
@@ -331,7 +297,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ise_uses_api_gateway"></div>
 
-      .. _ansible_collections.cisco.ise.adresourcereservation__info_module__parameter-ise_uses_api_gateway:
+      .. _ansible_collections.cisco.ise.adresourcereservation_name_info_module__parameter-ise_uses_api_gateway:
 
       .. rst-class:: ansible-option-title
 
@@ -380,7 +346,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ise_uses_csrf_token"></div>
 
-      .. _ansible_collections.cisco.ise.adresourcereservation__info_module__parameter-ise_uses_csrf_token:
+      .. _ansible_collections.cisco.ise.adresourcereservation_name_info_module__parameter-ise_uses_csrf_token:
 
       .. rst-class:: ansible-option-title
 
@@ -429,7 +395,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ise_verify"></div>
 
-      .. _ansible_collections.cisco.ise.adresourcereservation__info_module__parameter-ise_verify:
+      .. _ansible_collections.cisco.ise.adresourcereservation_name_info_module__parameter-ise_verify:
 
       .. rst-class:: ansible-option-title
 
@@ -471,7 +437,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ise_version"></div>
 
-      .. _ansible_collections.cisco.ise.adresourcereservation__info_module__parameter-ise_version:
+      .. _ansible_collections.cisco.ise.adresourcereservation_name_info_module__parameter-ise_version:
 
       .. rst-class:: ansible-option-title
 
@@ -509,7 +475,7 @@ Parameters
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ise_wait_on_rate_limit"></div>
 
-      .. _ansible_collections.cisco.ise.adresourcereservation__info_module__parameter-ise_wait_on_rate_limit:
+      .. _ansible_collections.cisco.ise.adresourcereservation_name_info_module__parameter-ise_wait_on_rate_limit:
 
       .. rst-class:: ansible-option-title
 
@@ -546,6 +512,40 @@ Parameters
 
         </div>
 
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-name"></div>
+
+      .. _ansible_collections.cisco.ise.adresourcereservation_name_info_module__parameter-name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Name path parameter.
+
+
+      .. raw:: html
+
+        </div>
+
 
 .. Attributes
 
@@ -556,8 +556,8 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are adresourcereservation.Adresourcereservation.get\_adresourcereservation\_by\_id,
-   - Paths used are get /adresourcereservation/{id},
+   - SDK Method used are adresourcereservation.Adresourcereservation.get\_adresourcereservation\_name\_by\_name,
+   - Paths used are get /adresourcereservation/name/{name},
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
    - The parameters starting with ise\_ are used by the Cisco ISE Python SDK to establish the connection
@@ -574,13 +574,13 @@ Examples
 
     
     ---
-    - name: Get Adresourcereservation  by id
-      cisco.ise.adresourcereservation__info:
+    - name: Get Adresourcereservation Name  by name
+      cisco.ise.adresourcereservation_name_info:
         ise_hostname: "{{ise_hostname}}"
         ise_username: "{{ise_username}}"
         ise_password: "{{ise_password}}"
         ise_verify: "{{ise_verify}}"
-        id: string
+        name: string
       register: result
 
 
@@ -610,7 +610,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
         <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="return-ise_response"></div>
 
-      .. _ansible_collections.cisco.ise.adresourcereservation__info_module__return-ise_response:
+      .. _ansible_collections.cisco.ise.adresourcereservation_name_info_module__return-ise_response:
 
       .. rst-class:: ansible-option-title
 
