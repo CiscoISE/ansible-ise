@@ -5,7 +5,7 @@
     - credentials.yml
   gather_facts: false
   tasks:
-    - name: Get all AD Resource Reservations
+    - name: Get AD Resource Reservation details
       cisco.ise.adresourcereservation_info:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
@@ -14,6 +14,6 @@
         ise_verify: "{{ ise_verify }}"
       register: result
 
-    - name: Print AD Resource Reservations
+    - name: Print AD Resource Reservation Info
       ansible.builtin.debug:
         var: result.ise_response

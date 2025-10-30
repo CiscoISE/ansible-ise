@@ -6,7 +6,7 @@
 
 DOCUMENTATION = r"""
 ---
-module: adresourcereservation_name__info
+module: adresourcereservation_name_info
 short_description: Information module for Adresourcereservation Name
 description:
   - Get Adresourcereservation Name  by name.
@@ -31,7 +31,7 @@ notes:
 EXAMPLES = r"""
 ---
 - name: Get Adresourcereservation Name  by name
-  cisco.ise.adresourcereservation_name__info:
+  cisco.ise.adresourcereservation_name_info:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
