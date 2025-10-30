@@ -42,7 +42,7 @@ cisco.ise.repository module -- Resource module for Repository
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 3.0.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -87,7 +87,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk \>= 2.2.3
+- ciscoisesdk \>= 2.0.1
 - python \>= 3.5
 
 
@@ -109,48 +109,6 @@ Parameters
 
   * - Parameter
     - Comments
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-enablePki"></div>
-
-      .. _ansible_collections.cisco.ise.repository_module__parameter-enablepki:
-
-      .. rst-class:: ansible-option-title
-
-      **enablePki**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-enablePki" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`boolean`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      EnablePki flag.
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-choices:`Choices:`
-
-      - :ansible-option-choices-entry:`false`
-      - :ansible-option-choices-entry:`true`
-
-
-      .. raw:: html
-
-        </div>
 
   * - .. raw:: html
 
@@ -594,74 +552,6 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-password"></div>
-
-      .. _ansible_collections.cisco.ise.repository_module__parameter-password:
-
-      .. rst-class:: ansible-option-title
-
-      **password**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-password" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      Password can contain alphanumeric and/or special characters.
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-path"></div>
-
-      .. _ansible_collections.cisco.ise.repository_module__parameter-path:
-
-      .. rst-class:: ansible-option-title
-
-      **path**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-path" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      Path should always start with "/" and can contain alphanumeric, underscore, hyphen and dot characters.
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-protocol"></div>
 
       .. _ansible_collections.cisco.ise.repository_module__parameter-protocol:
@@ -727,74 +617,6 @@ Parameters
 
         </div>
 
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-serverName"></div>
-
-      .. _ansible_collections.cisco.ise.repository_module__parameter-servername:
-
-      .. rst-class:: ansible-option-title
-
-      **serverName**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-serverName" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      Repository's serverName.
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-userName"></div>
-
-      .. _ansible_collections.cisco.ise.repository_module__parameter-username:
-
-      .. rst-class:: ansible-option-title
-
-      **userName**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-userName" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      Username may contain alphanumeric and \_-./@\\\\$ characters.
-
-
-      .. raw:: html
-
-        </div>
-
 
 .. Attributes
 
@@ -829,6 +651,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
+    ---
     - name: Create
       cisco.ise.repository:
         ise_hostname: "{{ise_hostname}}"
@@ -836,13 +659,8 @@ Examples
         ise_password: "{{ise_password}}"
         ise_verify: "{{ise_verify}}"
         state: present
-        enablePki: true
         name: string
-        password: string
-        path: string
         protocol: string
-        serverName: string
-        userName: string
     - name: Update by name
       cisco.ise.repository:
         ise_hostname: "{{ise_hostname}}"
@@ -850,14 +668,9 @@ Examples
         ise_password: "{{ise_password}}"
         ise_verify: "{{ise_verify}}"
         state: present
-        enablePki: true
         name: string
-        password: string
-        path: string
         protocol: string
         repositoryName: string
-        serverName: string
-        userName: string
     - name: Delete by name
       cisco.ise.repository:
         ise_hostname: "{{ise_hostname}}"
@@ -926,7 +739,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"enablePki": true, "name": "string", "password": "string", "path": "string", "protocol": "string", "serverName": "string", "userName": "string"}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"name": "string", "protocol": "string"}`
 
 
       .. raw:: html

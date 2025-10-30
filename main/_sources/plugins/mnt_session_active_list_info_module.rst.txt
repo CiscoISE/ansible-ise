@@ -42,7 +42,7 @@ cisco.ise.mnt_session_active_list_info module -- Information module for MNT Sess
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 3.0.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -69,6 +69,7 @@ Synopsis
 .. Description
 
 - Get all MNT Session Active List.
+- Returns a list of active sessions.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -84,7 +85,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk \>= 2.2.3
+- ciscoisesdk \>= 2.0.1
 - python \>= 3.5
 
 
@@ -522,7 +523,7 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are misc.Misc.get\_active\_list,
+   - SDK Method used are misc.Misc.get\_active\_session\_list,
    - Paths used are get /Session/ActiveList,
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
@@ -539,6 +540,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
+    ---
     - name: Get all MNT Session Active List
       cisco.ise.mnt_session_active_list_info:
         ise_hostname: "{{ise_hostname}}"
@@ -606,7 +608,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"noOfActiveSession": 0}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"activeSession": [{"acct\_session\_id": "string", "audit\_session\_id": "string", "calling\_station\_id": "string", "cpmsession\_id": "string", "device\_ip\_address": "string", "framed\_ip\_address": "string", "framed\_ipv6\_address": {"ipv6\_address": ["string"]}, "nas\_ip\_address": "string", "nas\_ipv6\_address": "string", "orig\_calling\_station\_id": "string", "server": "string", "user\_name": "string"}], "noOfActiveSession": 0}`
 
 
       .. raw:: html

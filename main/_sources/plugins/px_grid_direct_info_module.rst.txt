@@ -42,7 +42,7 @@ cisco.ise.px_grid_direct_info module -- Information module for Px Grid Direct In
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 3.0.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -87,7 +87,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk \>= 2.2.3
+- ciscoisesdk \>= 2.0.1
 - python \>= 3.5
 
 
@@ -576,6 +576,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
+    ---
     - name: Get all Px Grid Direct Info
       cisco.ise.px_grid_direct_info:
         ise_hostname: "{{ise_hostname}}"
@@ -651,7 +652,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"connector": {"additionalProperties": {}, "attributes": {"attributeMapping": [{"dictionaryAttribute": "string", "includeInDictionary": true, "jsonAttribute": "string"}], "correlationIdentifier": "string", "topLevelObject": "string", "uniqueIdentifier": "string", "versionIdentifier": "string"}, "connectorName": "string", "connectorType": "string", "deltasyncSchedule": {"interval": 0, "intervalUnit": "string", "startDate": "string"}, "description": "string", "enabled": true, "fullsyncSchedule": {"interval": 0, "intervalUnit": "string", "startDate": "string"}, "protocol": "string", "skipCertificateValidations": true, "url": {"authenticationType": "string", "bulkUrl": "string", "incrementalUrl": "string", "password": "string", "userName": "string"}}}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"connector": {"additionalProperties": {}, "attributes": {"attributeMapping": [{"coaSignificance": true, "dictionaryAttribute": "string", "includeInDictionary": true, "jsonAttribute": "string"}], "correlationIdentifier": "string", "topLevelObject": "string", "uniqueIdentifier": "string", "versionIdentifier": "string"}, "coaType": "string", "connectorName": "string", "connectorType": "string", "deltasyncSchedule": {"interval": 0, "intervalUnit": "string", "startDate": "string"}, "description": "string", "enabled": true, "flexibleUrl": {"bulk": {"additionalHeaders": [{"name": "string", "value": "string"}], "apiKeyProperties": {"headerName": "string", "key": "string", "keyType": "string", "paramName": "string", "requestBody": "string"}, "authenticationType": "string", "basicAuthProperties": {"password": "string", "requestBody": "string", "userName": "string"}, "method": "string", "oauthProperties": {"clientId": "string", "clientSecret": "string", "flow": "string", "password": "string", "scope": "string", "tokenIssuingUrl": "string", "userName": "string"}, "url": "string"}, "incremental": {"additionalHeaders": [{"name": "string", "value": "string"}], "apiKeyProperties": {"headerName": "string", "key": "string", "keyType": "string", "paramName": "string", "requestBody": "string"}, "authenticationType": "string", "basicAuthProperties": {"password": "string", "requestBody": "string", "userName": "string"}, "method": "string", "oauthProperties": {"clientId": "string", "clientSecret": "string", "flow": "string", "password": "string", "scope": "string", "tokenIssuingUrl": "string", "userName": "string"}, "url": "string"}}, "fullsyncSchedule": {"interval": 0, "intervalUnit": "string", "startDate": "string"}, "groupArray": [{"GroupName": "string", "GroupPermission": "string"}], "protocol": "string", "skipCertificateValidations": true, "url": {"authenticationType": "string", "bulkUrl": "string", "incrementalUrl": "string", "password": "string", "userName": "string"}}}`
 
 
       .. raw:: html

@@ -42,7 +42,7 @@ cisco.ise.mnt_account_status_info module -- Information module for MNT Account S
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 3.0.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -84,7 +84,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk \>= 2.2.3
+- ciscoisesdk \>= 2.0.1
 - python \>= 3.5
 
 
@@ -134,7 +134,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Duration path parameter.
+      Duration path parameter. The duration parameter for the account status.
 
 
       .. raw:: html
@@ -573,7 +573,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Mac path parameter.
+      Mac path parameter. The MAC address to retrieve account status for.
 
 
       .. raw:: html
@@ -590,7 +590,7 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are misc.Misc.get\_account\_status\_by\_mac,
+   - SDK Method used are misc.Misc.get\_acct\_status,
    - Paths used are get /AcctStatus/MACAddress/{mac}/{duration},
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
@@ -607,6 +607,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
+    ---
     - name: Get MNT Account Status by id
       cisco.ise.mnt_account_status_info:
         ise_hostname: "{{ise_hostname}}"
@@ -656,7 +657,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`dictionary`
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
 
       .. raw:: html
 
@@ -676,7 +677,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"macAddress\\": \\"string\\",\\n    \\"acctStatusElements\\": [\\n      {\\n        \\"calling\_station\_id\\": \\"string\\",\\n        \\"paks\_in\\": 0,\\n        \\"paks\_out\\": 0,\\n        \\"bytes\_in\\": 0,\\n        \\"bytes\_out\\": 0,\\n        \\"session\_time\\": 0,\\n        \\"server\\": \\"string\\"\\n      }\\n    ]\\n  }\\n]\\n"`
 
 
       .. raw:: html

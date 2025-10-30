@@ -42,7 +42,7 @@ cisco.ise.px_grid_direct module -- Resource module for Px Grid Direct
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 3.0.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -87,7 +87,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk \>= 2.2.3
+- ciscoisesdk \>= 2.0.1
 - python \>= 3.5
 
 
@@ -212,6 +212,48 @@ Parameters
 
         </div>
     
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-attributes/attributeMapping/coaSignificance"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-attributes/attributemapping/coasignificance:
+
+      .. rst-class:: ansible-option-title
+
+      **coaSignificance**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-attributes/attributeMapping/coaSignificance" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      CoaSignificance flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
   * - .. raw:: html
 
         <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
@@ -459,6 +501,40 @@ Parameters
 
         </div>
 
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-coaType"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-coatype:
+
+      .. rst-class:: ansible-option-title
+
+      **coaType**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-coaType" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Enable coa for connector.
+
+
+      .. raw:: html
+
+        </div>
 
   * - .. raw:: html
 
@@ -744,6 +820,1751 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl:
+
+      .. rst-class:: ansible-option-title
+
+      **flexibleUrl**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Px Grid Direct's flexibleUrl.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/bulk"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/bulk:
+
+      .. rst-class:: ansible-option-title
+
+      **bulk**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/bulk" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Px Grid Direct's bulk.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/bulk/additionalHeaders"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/bulk/additionalheaders:
+
+      .. rst-class:: ansible-option-title
+
+      **additionalHeaders**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/bulk/additionalHeaders" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Px Grid Direct's additionalHeaders.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/bulk/additionalHeaders/name"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/bulk/additionalheaders/name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/bulk/additionalHeaders/name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Px Grid Direct's name.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/bulk/additionalHeaders/value"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/bulk/additionalheaders/value:
+
+      .. rst-class:: ansible-option-title
+
+      **value**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/bulk/additionalHeaders/value" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Px Grid Direct's value.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/bulk/apiKeyProperties"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/bulk/apikeyproperties:
+
+      .. rst-class:: ansible-option-title
+
+      **apiKeyProperties**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/bulk/apiKeyProperties" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Api key auth properties.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/bulk/apiKeyProperties/headerName"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/bulk/apikeyproperties/headername:
+
+      .. rst-class:: ansible-option-title
+
+      **headerName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/bulk/apiKeyProperties/headerName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Header name.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/bulk/apiKeyProperties/key"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/bulk/apikeyproperties/key:
+
+      .. rst-class:: ansible-option-title
+
+      **key**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/bulk/apiKeyProperties/key" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Key.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/bulk/apiKeyProperties/keyType"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/bulk/apikeyproperties/keytype:
+
+      .. rst-class:: ansible-option-title
+
+      **keyType**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/bulk/apiKeyProperties/keyType" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Key type.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/bulk/apiKeyProperties/paramName"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/bulk/apikeyproperties/paramname:
+
+      .. rst-class:: ansible-option-title
+
+      **paramName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/bulk/apiKeyProperties/paramName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Param name.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/bulk/apiKeyProperties/requestBody"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/bulk/apikeyproperties/requestbody:
+
+      .. rst-class:: ansible-option-title
+
+      **requestBody**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/bulk/apiKeyProperties/requestBody" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Request body that will be templated.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/bulk/authenticationType"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/bulk/authenticationtype:
+
+      .. rst-class:: ansible-option-title
+
+      **authenticationType**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/bulk/authenticationType" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Authentication Type list.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/bulk/basicAuthProperties"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/bulk/basicauthproperties:
+
+      .. rst-class:: ansible-option-title
+
+      **basicAuthProperties**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/bulk/basicAuthProperties" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Basic auth properties.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/bulk/basicAuthProperties/password"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/bulk/basicauthproperties/password:
+
+      .. rst-class:: ansible-option-title
+
+      **password**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/bulk/basicAuthProperties/password" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Password.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/bulk/basicAuthProperties/requestBody"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/bulk/basicauthproperties/requestbody:
+
+      .. rst-class:: ansible-option-title
+
+      **requestBody**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/bulk/basicAuthProperties/requestBody" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Request body that will be templated.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/bulk/basicAuthProperties/userName"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/bulk/basicauthproperties/username:
+
+      .. rst-class:: ansible-option-title
+
+      **userName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/bulk/basicAuthProperties/userName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      UserName.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/bulk/method"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/bulk/method:
+
+      .. rst-class:: ansible-option-title
+
+      **method**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/bulk/method" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Px Grid Direct's method.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/bulk/oauthProperties"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/bulk/oauthproperties:
+
+      .. rst-class:: ansible-option-title
+
+      **oauthProperties**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/bulk/oauthProperties" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      OAuth properties.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/bulk/oauthProperties/clientId"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/bulk/oauthproperties/clientid:
+
+      .. rst-class:: ansible-option-title
+
+      **clientId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/bulk/oauthProperties/clientId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Client id for oauth.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/bulk/oauthProperties/clientSecret"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/bulk/oauthproperties/clientsecret:
+
+      .. rst-class:: ansible-option-title
+
+      **clientSecret**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/bulk/oauthProperties/clientSecret" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Client secret for oauth.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/bulk/oauthProperties/flow"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/bulk/oauthproperties/flow:
+
+      .. rst-class:: ansible-option-title
+
+      **flow**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/bulk/oauthProperties/flow" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Oauth flow type.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/bulk/oauthProperties/password"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/bulk/oauthproperties/password:
+
+      .. rst-class:: ansible-option-title
+
+      **password**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/bulk/oauthProperties/password" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Password for the password flow.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/bulk/oauthProperties/scope"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/bulk/oauthproperties/scope:
+
+      .. rst-class:: ansible-option-title
+
+      **scope**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/bulk/oauthProperties/scope" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The scope of the oauth token.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/bulk/oauthProperties/tokenIssuingUrl"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/bulk/oauthproperties/tokenissuingurl:
+
+      .. rst-class:: ansible-option-title
+
+      **tokenIssuingUrl**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/bulk/oauthProperties/tokenIssuingUrl" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The url that will issue the bearer token.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/bulk/oauthProperties/userName"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/bulk/oauthproperties/username:
+
+      .. rst-class:: ansible-option-title
+
+      **userName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/bulk/oauthProperties/userName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Username for the password flow.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/bulk/url"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/bulk/url:
+
+      .. rst-class:: ansible-option-title
+
+      **url**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/bulk/url" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The url to fetch.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/incremental"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/incremental:
+
+      .. rst-class:: ansible-option-title
+
+      **incremental**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/incremental" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Px Grid Direct's incremental.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/incremental/additionalHeaders"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/incremental/additionalheaders:
+
+      .. rst-class:: ansible-option-title
+
+      **additionalHeaders**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/incremental/additionalHeaders" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Px Grid Direct's additionalHeaders.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/incremental/additionalHeaders/name"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/incremental/additionalheaders/name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/incremental/additionalHeaders/name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Px Grid Direct's name.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/incremental/additionalHeaders/value"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/incremental/additionalheaders/value:
+
+      .. rst-class:: ansible-option-title
+
+      **value**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/incremental/additionalHeaders/value" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Px Grid Direct's value.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/incremental/apiKeyProperties"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/incremental/apikeyproperties:
+
+      .. rst-class:: ansible-option-title
+
+      **apiKeyProperties**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/incremental/apiKeyProperties" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Api key auth properties.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/incremental/apiKeyProperties/headerName"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/incremental/apikeyproperties/headername:
+
+      .. rst-class:: ansible-option-title
+
+      **headerName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/incremental/apiKeyProperties/headerName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Header name.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/incremental/apiKeyProperties/key"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/incremental/apikeyproperties/key:
+
+      .. rst-class:: ansible-option-title
+
+      **key**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/incremental/apiKeyProperties/key" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Key.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/incremental/apiKeyProperties/keyType"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/incremental/apikeyproperties/keytype:
+
+      .. rst-class:: ansible-option-title
+
+      **keyType**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/incremental/apiKeyProperties/keyType" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Key type.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/incremental/apiKeyProperties/paramName"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/incremental/apikeyproperties/paramname:
+
+      .. rst-class:: ansible-option-title
+
+      **paramName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/incremental/apiKeyProperties/paramName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Param name.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/incremental/apiKeyProperties/requestBody"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/incremental/apikeyproperties/requestbody:
+
+      .. rst-class:: ansible-option-title
+
+      **requestBody**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/incremental/apiKeyProperties/requestBody" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Request body that will be templated.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/incremental/authenticationType"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/incremental/authenticationtype:
+
+      .. rst-class:: ansible-option-title
+
+      **authenticationType**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/incremental/authenticationType" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Authentication Type list.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/incremental/basicAuthProperties"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/incremental/basicauthproperties:
+
+      .. rst-class:: ansible-option-title
+
+      **basicAuthProperties**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/incremental/basicAuthProperties" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Basic auth properties.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/incremental/basicAuthProperties/password"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/incremental/basicauthproperties/password:
+
+      .. rst-class:: ansible-option-title
+
+      **password**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/incremental/basicAuthProperties/password" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Password.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/incremental/basicAuthProperties/requestBody"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/incremental/basicauthproperties/requestbody:
+
+      .. rst-class:: ansible-option-title
+
+      **requestBody**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/incremental/basicAuthProperties/requestBody" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Request body that will be templated.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/incremental/basicAuthProperties/userName"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/incremental/basicauthproperties/username:
+
+      .. rst-class:: ansible-option-title
+
+      **userName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/incremental/basicAuthProperties/userName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      UserName.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/incremental/method"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/incremental/method:
+
+      .. rst-class:: ansible-option-title
+
+      **method**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/incremental/method" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Px Grid Direct's method.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/incremental/oauthProperties"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/incremental/oauthproperties:
+
+      .. rst-class:: ansible-option-title
+
+      **oauthProperties**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/incremental/oauthProperties" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      OAuth properties.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/incremental/oauthProperties/clientId"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/incremental/oauthproperties/clientid:
+
+      .. rst-class:: ansible-option-title
+
+      **clientId**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/incremental/oauthProperties/clientId" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Client id for oauth.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/incremental/oauthProperties/clientSecret"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/incremental/oauthproperties/clientsecret:
+
+      .. rst-class:: ansible-option-title
+
+      **clientSecret**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/incremental/oauthProperties/clientSecret" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Client secret for oauth.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/incremental/oauthProperties/flow"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/incremental/oauthproperties/flow:
+
+      .. rst-class:: ansible-option-title
+
+      **flow**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/incremental/oauthProperties/flow" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Oauth flow type.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/incremental/oauthProperties/password"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/incremental/oauthproperties/password:
+
+      .. rst-class:: ansible-option-title
+
+      **password**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/incremental/oauthProperties/password" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Password for the password flow.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/incremental/oauthProperties/scope"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/incremental/oauthproperties/scope:
+
+      .. rst-class:: ansible-option-title
+
+      **scope**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/incremental/oauthProperties/scope" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The scope of the oauth token.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/incremental/oauthProperties/tokenIssuingUrl"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/incremental/oauthproperties/tokenissuingurl:
+
+      .. rst-class:: ansible-option-title
+
+      **tokenIssuingUrl**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/incremental/oauthProperties/tokenIssuingUrl" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The url that will issue the bearer token.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/incremental/oauthProperties/userName"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/incremental/oauthproperties/username:
+
+      .. rst-class:: ansible-option-title
+
+      **userName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/incremental/oauthProperties/userName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Username for the password flow.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-flexibleUrl/incremental/url"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-flexibleurl/incremental/url:
+
+      .. rst-class:: ansible-option-title
+
+      **url**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-flexibleUrl/incremental/url" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      The url to fetch.
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-fullsyncSchedule"></div>
 
       .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-fullsyncschedule:
@@ -871,6 +2692,109 @@ Parameters
         <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
 
       Start date and Time.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-groupArray"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-grouparray:
+
+      .. rst-class:: ansible-option-title
+
+      **groupArray**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-groupArray" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      \<p\>List of Group names\</p\>.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-groupArray/GroupName"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-grouparray/groupname:
+
+      .. rst-class:: ansible-option-title
+
+      **GroupName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-groupArray/GroupName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Px Grid Direct's GroupName.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-groupArray/GroupPermission"></div>
+
+      .. _ansible_collections.cisco.ise.px_grid_direct_module__parameter-grouparray/grouppermission:
+
+      .. rst-class:: ansible-option-title
+
+      **GroupPermission**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-groupArray/GroupPermission" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Px Grid Direct's GroupPermission.
 
 
       .. raw:: html
@@ -1591,6 +3515,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
+    ---
     - name: Create
       cisco.ise.px_grid_direct:
         ise_hostname: "{{ise_hostname}}"
@@ -1601,13 +3526,15 @@ Examples
         additionalProperties: {}
         attributes:
           attributeMapping:
-            - dictionaryAttribute: string
+            - coaSignificance: true
+              dictionaryAttribute: string
               includeInDictionary: true
               jsonAttribute: string
           correlationIdentifier: string
           topLevelObject: string
           uniqueIdentifier: string
           versionIdentifier: string
+        coaType: string
         connectorName: string
         connectorType: string
         deltasyncSchedule:
@@ -1616,10 +3543,64 @@ Examples
           startDate: string
         description: string
         enabled: true
+        flexibleUrl:
+          bulk:
+            additionalHeaders:
+              - name: string
+                value: string
+            apiKeyProperties:
+              headerName: string
+              key: string
+              keyType: string
+              paramName: string
+              requestBody: string
+            authenticationType: string
+            basicAuthProperties:
+              password: string
+              requestBody: string
+              userName: string
+            method: string
+            oauthProperties:
+              clientId: string
+              clientSecret: string
+              flow: string
+              password: string
+              scope: string
+              tokenIssuingUrl: string
+              userName: string
+            url: string
+          incremental:
+            additionalHeaders:
+              - name: string
+                value: string
+            apiKeyProperties:
+              headerName: string
+              key: string
+              keyType: string
+              paramName: string
+              requestBody: string
+            authenticationType: string
+            basicAuthProperties:
+              password: string
+              requestBody: string
+              userName: string
+            method: string
+            oauthProperties:
+              clientId: string
+              clientSecret: string
+              flow: string
+              password: string
+              scope: string
+              tokenIssuingUrl: string
+              userName: string
+            url: string
         fullsyncSchedule:
           interval: 0
           intervalUnit: string
           startDate: string
+        groupArray:
+          - GroupName: string
+        GroupPermission: string
         protocol: string
         skipCertificateValidations: true
         url:
@@ -1638,13 +3619,15 @@ Examples
         additionalProperties: {}
         attributes:
           attributeMapping:
-            - dictionaryAttribute: string
+            - coaSignificance: true
+              dictionaryAttribute: string
               includeInDictionary: true
               jsonAttribute: string
           correlationIdentifier: string
           topLevelObject: string
           uniqueIdentifier: string
           versionIdentifier: string
+        coaType: string
         connectorName: string
         connectorType: string
         deltasyncSchedule:
@@ -1653,10 +3636,64 @@ Examples
           startDate: string
         description: string
         enabled: true
+        flexibleUrl:
+          bulk:
+            additionalHeaders:
+              - name: string
+                value: string
+            apiKeyProperties:
+              headerName: string
+              key: string
+              keyType: string
+              paramName: string
+              requestBody: string
+            authenticationType: string
+            basicAuthProperties:
+              password: string
+              requestBody: string
+              userName: string
+            method: string
+            oauthProperties:
+              clientId: string
+              clientSecret: string
+              flow: string
+              password: string
+              scope: string
+              tokenIssuingUrl: string
+              userName: string
+            url: string
+          incremental:
+            additionalHeaders:
+              - name: string
+                value: string
+            apiKeyProperties:
+              headerName: string
+              key: string
+              keyType: string
+              paramName: string
+              requestBody: string
+            authenticationType: string
+            basicAuthProperties:
+              password: string
+              requestBody: string
+              userName: string
+            method: string
+            oauthProperties:
+              clientId: string
+              clientSecret: string
+              flow: string
+              password: string
+              scope: string
+              tokenIssuingUrl: string
+              userName: string
+            url: string
         fullsyncSchedule:
           interval: 0
           intervalUnit: string
           startDate: string
+        groupArray:
+          - GroupName: string
+        GroupPermission: string
         protocol: string
         skipCertificateValidations: true
         url:
@@ -1733,7 +3770,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"connector": {"additionalProperties": {}, "attributes": {"attributeMapping": [{"dictionaryAttribute": "string", "includeInDictionary": true, "jsonAttribute": "string"}], "correlationIdentifier": "string", "topLevelObject": "string", "uniqueIdentifier": "string", "versionIdentifier": "string"}, "connectorName": "string", "connectorType": "string", "deltasyncSchedule": {"interval": 0, "intervalUnit": "string", "startDate": "string"}, "description": "string", "enabled": true, "fullsyncSchedule": {"interval": 0, "intervalUnit": "string", "startDate": "string"}, "protocol": "string", "skipCertificateValidations": true, "url": {"authenticationType": "string", "bulkUrl": "string", "incrementalUrl": "string", "password": "string", "userName": "string"}}}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"connector": {"additionalProperties": {}, "attributes": {"attributeMapping": [{"coaSignificance": true, "dictionaryAttribute": "string", "includeInDictionary": true, "jsonAttribute": "string"}], "correlationIdentifier": "string", "topLevelObject": "string", "uniqueIdentifier": "string", "versionIdentifier": "string"}, "coaType": "string", "connectorName": "string", "connectorType": "string", "deltasyncSchedule": {"interval": 0, "intervalUnit": "string", "startDate": "string"}, "description": "string", "enabled": true, "flexibleUrl": {"bulk": {"additionalHeaders": [{"name": "string", "value": "string"}], "apiKeyProperties": {"headerName": "string", "key": "string", "keyType": "string", "paramName": "string", "requestBody": "string"}, "authenticationType": "string", "basicAuthProperties": {"password": "string", "requestBody": "string", "userName": "string"}, "method": "string", "oauthProperties": {"clientId": "string", "clientSecret": "string", "flow": "string", "password": "string", "scope": "string", "tokenIssuingUrl": "string", "userName": "string"}, "url": "string"}, "incremental": {"additionalHeaders": [{"name": "string", "value": "string"}], "apiKeyProperties": {"headerName": "string", "key": "string", "keyType": "string", "paramName": "string", "requestBody": "string"}, "authenticationType": "string", "basicAuthProperties": {"password": "string", "requestBody": "string", "userName": "string"}, "method": "string", "oauthProperties": {"clientId": "string", "clientSecret": "string", "flow": "string", "password": "string", "scope": "string", "tokenIssuingUrl": "string", "userName": "string"}, "url": "string"}}, "fullsyncSchedule": {"interval": 0, "intervalUnit": "string", "startDate": "string"}, "groupArray": [{"GroupName": "string", "GroupPermission": "string"}], "protocol": "string", "skipCertificateValidations": true, "url": {"authenticationType": "string", "bulkUrl": "string", "incrementalUrl": "string", "password": "string", "userName": "string"}}}`
 
 
       .. raw:: html

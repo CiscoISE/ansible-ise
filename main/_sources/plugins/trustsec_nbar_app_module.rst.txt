@@ -42,7 +42,7 @@ cisco.ise.trustsec_nbar_app module -- Resource module for Trustsec NBAR App
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 3.0.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -86,7 +86,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk \>= 2.2.3
+- ciscoisesdk \>= 2.0.1
 - python \>= 3.5
 
 
@@ -766,6 +766,7 @@ Examples
         networkIdentities:
           - ports: string
             protocol: string
+
     - name: Update by id
       cisco.ise.trustsec_nbar_app:
         ise_hostname: "{{ise_hostname}}"
@@ -779,6 +780,7 @@ Examples
         networkIdentities:
           - ports: string
             protocol: string
+
     - name: Delete by id
       cisco.ise.trustsec_nbar_app:
         ise_hostname: "{{ise_hostname}}"
@@ -872,7 +874,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`dictionary`
+      :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -892,7 +894,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"response": [{"description": "string", "id": "string", "name": "string", "networkIdentities": [{"ports": "string", "protocol": "string"}]}]}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"\\"'string'\\"\\n"`
 
 
       .. raw:: html

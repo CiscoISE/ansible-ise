@@ -42,7 +42,7 @@ cisco.ise.mnt_session_by_mac_info module -- Information module for MNT Session B
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 3.0.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -69,6 +69,7 @@ Synopsis
 .. Description
 
 - Get MNT Session By Mac by id.
+- Returns detailed information for a given MAC address.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -84,7 +85,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk \>= 2.2.3
+- ciscoisesdk \>= 2.0.1
 - python \>= 3.5
 
 
@@ -539,7 +540,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Mac path parameter.
+      Mac path parameter. The MAC address to retrieve information for.
 
 
       .. raw:: html
@@ -556,7 +557,7 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are misc.Misc.get\_sessions\_by\_mac,
+   - SDK Method used are misc.Misc.get\_full\_s\_d\_mac\_info,
    - Paths used are get /Session/MACAddress/{mac},
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
@@ -573,13 +574,14 @@ Examples
 .. code-block:: yaml+jinja
 
     
+    ---
     - name: Get MNT Session By Mac by id
       cisco.ise.mnt_session_by_mac_info:
         ise_hostname: "{{ise_hostname}}"
         ise_username: "{{ise_username}}"
         ise_password: "{{ise_password}}"
         ise_verify: "{{ise_verify}}"
-        mac: string
+        mac: 00:14:22:01:23:45
       register: result
 
 
@@ -641,7 +643,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"acct\_acs\_timestamp": "string", "acct\_acsview\_timestamp": "string", "acct\_authentic": "string", "acct\_class": "string", "acct\_delay\_time": "string", "acct\_id": 0, "acct\_input\_octets": "string", "acct\_input\_packets": 0, "acct\_interim\_interval": "string", "acct\_multi\_session\_id": "string", "acct\_output\_octets": "string", "acct\_output\_packets": 0, "acct\_session\_id": "string", "acct\_session\_time": 0, "acct\_status\_type": "string", "acct\_terminate\_cause": "string", "acct\_tunnel\_connection": "string", "acct\_tunnel\_packet\_lost": "string", "acs\_server": "string", "audit\_session\_id": "string", "auth\_acs\_timestamp": "string", "auth\_acsview\_timestamp": "string", "auth\_id": 0, "authentication\_method": "string", "authentication\_protocol": "string", "authentication\_type": "string", "calling\_station\_id": "string", "cisco\_h323\_connect\_time": "string", "cisco\_h323\_disconnect\_time": "string", "cisco\_h323\_setup\_time": "string", "ckpt\_id": 0, "cpmsession\_id": "string", "cts\_security\_group": "string", "dacl": "string", "destination\_ip\_address": "string", "device\_ip\_address": "string", "device\_type": "string", "endpoint\_policy": "string", "event\_timestamp": "string", "execution\_steps": "string", "failed": {}, "failure\_reason": "string", "framed\_ip\_address": "string", "framed\_ipv6\_address": {"ipv6\_address": ["string"]}, "framed\_protocol": "string", "identity\_group": "string", "identity\_store": "string", "idle\_timeout": "string", "interface\_name": "string", "location": "string", "message\_code": "string", "nad\_acsview\_timestamp": "string", "nas\_ip\_address": "string", "nas\_ipv6\_address": "string", "nas\_port\_id": "string", "network\_device\_name": "string", "orig\_calling\_station\_id": "string", "other\_attr\_string": "string", "passed": {}, "posture\_status": "string", "reason": "string", "response": "string", "response\_time": 0, "security\_group": "string", "selected\_azn\_profiles": "string", "service\_type": "string", "session\_timeout": "string", "started": {}, "stopped": {}, "termination\_action": "string", "type": 0, "user\_name": "string", "vlan": "string", "vn": "string"}`
 
 
       .. raw:: html

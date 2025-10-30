@@ -42,7 +42,7 @@ cisco.ise.mnt_session_delete_all module -- Resource module for MNT Session Delet
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 3.0.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -84,7 +84,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk \>= 2.2.3
+- ciscoisesdk \>= 2.0.1
 - python \>= 3.5
 
 
@@ -522,7 +522,7 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are misc.Misc.delete\_all\_sessions,
+   - SDK Method used are misc.Misc.delete\_all\_session\_records,
    - Paths used are delete /Session/Delete/All,
    - Does not support \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
@@ -539,6 +539,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
+    ---
     - name: Delete all
       cisco.ise.mnt_session_delete_all:
         ise_hostname: "{{ise_hostname}}"
@@ -605,7 +606,7 @@ Common return values are documented :ref:`here <common_return_values>`, the foll
       .. rst-class:: ansible-option-line
       .. rst-class:: ansible-option-sample
 
-      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{}`
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"cpm-code": 0, "description": "string", "http-code": 0, "internal-error-info": "string", "module-name": "string", "requested-operation": "string", "resource-id": "string", "resource-name": "string", "resource-type": "string", "status": "string"}`
 
 
       .. raw:: html

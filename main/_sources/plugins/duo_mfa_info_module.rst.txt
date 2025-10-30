@@ -36,13 +36,13 @@
 
 .. Title
 
-cisco.ise.duo_mfa_info module -- Information module for Duo Mfa Info
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+cisco.ise.duo_mfa_info module -- Information module for Duo Mfa
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 3.0.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -68,8 +68,8 @@ Synopsis
 
 .. Description
 
-- Get all Duo Mfa Info.
-- Get Duo Mfa Info by name.
+- Get all Duo Mfa.
+- Get Duo Mfa by name.
 - Duo-MFA - Get the Duo-MFA configuration specified in the connectionName.
 - Duo-MFA - List of Duo-MFA configurations.
 
@@ -87,7 +87,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk \>= 2.2.3
+- ciscoisesdk \>= 2.0.1
 - python \>= 3.5
 
 
@@ -576,14 +576,15 @@ Examples
 .. code-block:: yaml+jinja
 
     
-    - name: Get all Duo Mfa Info
+    ---
+    - name: Get all Duo Mfa
       cisco.ise.duo_mfa_info:
         ise_hostname: "{{ise_hostname}}"
         ise_username: "{{ise_username}}"
         ise_password: "{{ise_password}}"
         ise_verify: "{{ise_verify}}"
       register: result
-    - name: Get Duo Mfa Info by name
+    - name: Get Duo Mfa by name
       cisco.ise.duo_mfa_info:
         ise_hostname: "{{ise_hostname}}"
         ise_username: "{{ise_username}}"

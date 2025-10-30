@@ -42,7 +42,7 @@ cisco.ise.ad_groups_info module -- Information module for Ad Groups Info
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 3.0.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -85,7 +85,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk \>= 2.2.3
+- ciscoisesdk \>= 2.0.1
 - python \>= 3.5
 
 
@@ -557,7 +557,7 @@ Notes
 -----
 
 .. note::
-   - SDK Method used are ad\_groups.ADGroups.get\_adgroups,
+   - SDK Method used are a\_d\_groups.ADGroups.get\_adgroups,
    - Paths used are get /api/v1/duo-identitysync/adgroups/{activeDirectory},
    - Supports \ :literal:`check\_mode`\ 
    - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
@@ -574,6 +574,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
+    ---
     - name: Get Ad Groups Info by id
       cisco.ise.ad_groups_info:
         ise_hostname: "{{ise_hostname}}"

@@ -42,7 +42,7 @@ cisco.ise.transport_gateway_settings module -- Resource module for Transport Gat
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 3.0.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -69,7 +69,7 @@ Synopsis
 .. Description
 
 - Manage operation update of the resource Transport Gateway Settings.
-- Transport Gateway acts a proxy for the communication between the ISE servers in your network and the telemetry servers in case of air-gapped network.
+- Transport Gateway acts a proxy for the communication between the ISE servers.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -85,7 +85,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk \>= 2.2.3
+- ciscoisesdk \>= 2.0.1
 - python \>= 3.5
 
 
@@ -623,6 +623,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
+    ---
     - name: Update all
       cisco.ise.transport_gateway_settings:
         ise_hostname: "{{ise_hostname}}"

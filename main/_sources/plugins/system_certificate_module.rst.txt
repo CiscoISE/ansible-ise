@@ -42,7 +42,7 @@ cisco.ise.system_certificate module -- Resource module for System Certificate
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 3.0.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -69,7 +69,7 @@ Synopsis
 .. Description
 
 - Manage operations update and delete of the resource System Certificate.
-- This API deletes a System Certificate of a particular node based on given HostName and ID.
+- This API deletes a system certificate of a particular node based on the given hostname and ID.
 - Update a System Certificate.
 
 .. note::
@@ -86,7 +86,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk \>= 2.2.3
+- ciscoisesdk \>= 2.0.1
 - python \>= 3.5
 
 
@@ -220,7 +220,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Allow Replacement of Portal Group Tag (required).
+      Allow Replacement of Portal Group Tag.
 
 
       .. rst-class:: ansible-option-line
@@ -263,48 +263,6 @@ Parameters
         <div class="ansible-option-cell">
 
       Allow transfer of roles for certificate with matching subject.
-
-
-      .. rst-class:: ansible-option-line
-
-      :ansible-option-choices:`Choices:`
-
-      - :ansible-option-choices-entry:`false`
-      - :ansible-option-choices-entry:`true`
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-allowWildcardDelete"></div>
-
-      .. _ansible_collections.cisco.ise.system_certificate_module__parameter-allowwildcarddelete:
-
-      .. rst-class:: ansible-option-title
-
-      **allowWildcardDelete**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-allowWildcardDelete" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`boolean`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      If the given certificate to be deleted is a wildcard certificate, corresponding certificate gets deleted on rest of the nodes in the deployment as well.
 
 
       .. rst-class:: ansible-option-line
@@ -490,7 +448,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      HostName path parameter. Name of Host whose certificate needs to be updated.
+      HostName path parameter. Name of host whose certificate needs to be updated.
 
 
       .. raw:: html
@@ -1290,6 +1248,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
+    ---
     - name: Update by id
       cisco.ise.system_certificate:
         ise_hostname: "{{ise_hostname}}"
@@ -1322,7 +1281,6 @@ Examples
         ise_password: "{{ise_password}}"
         ise_verify: "{{ise_verify}}"
         state: absent
-        allowWildcardDelete: true
         hostName: string
         id: string
 

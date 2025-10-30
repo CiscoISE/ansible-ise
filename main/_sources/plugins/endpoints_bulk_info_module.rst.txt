@@ -42,7 +42,7 @@ cisco.ise.endpoints_bulk_info module -- Information module for Endpoints Bulk
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 3.0.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -85,7 +85,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk \>= 2.2.3
+- ciscoisesdk \>= 2.0.1
 - python \>= 3.5
 
 
@@ -135,7 +135,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Filter query parameter. .. Container \*\*Simple filtering\*\* should be available through the filter query string parameter. The structure of a filter is a triplet of field operator and value separated with dots. More than one filter can be sent. The logical operator common to ALL filter criteria will be by default AND, and can be changed by using the \*'filterType=or'\* query string parameter.
+      Filter query parameter. .. Container \*\*Simple filtering\*\* should be available through the filter query string parameter. The structure of a filter is a triplet of field operator and value separated with dots. More than one filter can be sent. The logical operator common to ALL filter criteria will be by default AND, and can be changed by using the \*"filterType=or"\* query string parameter.
           
 
       Each resource Data model description should specify if an attribute is a filtered field.
@@ -802,6 +802,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
+    ---
     - name: Get all Endpoints Bulk
       cisco.ise.endpoints_bulk_info:
         ise_hostname: "{{ise_hostname}}"

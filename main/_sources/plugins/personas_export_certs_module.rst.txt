@@ -42,7 +42,7 @@ cisco.ise.personas_export_certs module -- Export certificate into primary node
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 3.0.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -110,40 +110,6 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
-        <div class="ansibleOptionAnchor" id="parameter-hostname"></div>
-
-      .. _ansible_collections.cisco.ise.personas_export_certs_module__parameter-hostname:
-
-      .. rst-class:: ansible-option-title
-
-      **hostname**
-
-      .. raw:: html
-
-        <a class="ansibleOptionLink" href="#parameter-hostname" title="Permalink to this option"></a>
-
-      .. rst-class:: ansible-option-type-line
-
-      :ansible-option-type:`string`
-
-      .. raw:: html
-
-        </div>
-
-    - .. raw:: html
-
-        <div class="ansible-option-cell">
-
-      The hostname for the node for which the certificate will be exported.
-
-
-      .. raw:: html
-
-        </div>
-
-  * - .. raw:: html
-
-        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ip"></div>
 
       .. _ansible_collections.cisco.ise.personas_export_certs_module__parameter-ip:
@@ -168,7 +134,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The IP address of the node for which the certificate will be exported.
+      The public IP address of the node for which the certificate will be exported.
 
 
       .. raw:: html
@@ -388,7 +354,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      The IP address of the primary node.
+      The public IP address of the primary node.
 
 
       .. raw:: html
@@ -527,6 +493,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
+    ---
     - name: Export trusted certificates into primary node
       cisco.ise.personas_export_certs:
         primary_ip: 10.1.1.1

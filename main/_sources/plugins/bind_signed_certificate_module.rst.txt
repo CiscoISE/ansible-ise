@@ -42,7 +42,7 @@ cisco.ise.bind_signed_certificate module -- Resource module for Bind Signed Cert
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 3.0.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -85,7 +85,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk \>= 2.2.3
+- ciscoisesdk \>= 2.0.1
 - python \>= 3.5
 
 
@@ -177,7 +177,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Allow import of certificates with validity greater than 398 days (required).
+      Allow import of certificates with validity greater than 398 days.
 
 
       .. rst-class:: ansible-option-line
@@ -219,7 +219,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Allow out of date certificates (required).
+      Allow out of date certificates.
 
 
       .. rst-class:: ansible-option-line
@@ -261,7 +261,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Allow Replacement of certificates (required).
+      Allow Replacement of certificates.
 
 
       .. rst-class:: ansible-option-line
@@ -303,7 +303,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Allow Replacement of Portal Group Tag (required).
+      Allow Replacement of Portal Group Tag.
 
 
       .. rst-class:: ansible-option-line
@@ -345,7 +345,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Signed certificate data (required).
+      Signed certificate data.
 
 
       .. raw:: html
@@ -421,7 +421,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      Name of Host whose CSR ID has been provided (required).
+      Name of Host whose CSR ID has been provided.
 
 
       .. raw:: html
@@ -455,7 +455,7 @@ Parameters
 
         <div class="ansible-option-cell">
 
-      ID of the generated CSR (required).
+      ID of the generated CSR.
 
 
       .. raw:: html
@@ -1221,6 +1221,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
+    ---
     - name: Create
       cisco.ise.bind_signed_certificate:
         ise_hostname: "{{ise_hostname}}"

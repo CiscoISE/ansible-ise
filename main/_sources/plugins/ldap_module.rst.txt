@@ -1,0 +1,3288 @@
+
+.. Document meta
+
+:orphan:
+
+.. |antsibull-internal-nbsp| unicode:: 0xA0
+    :trim:
+
+.. role:: ansible-attribute-support-label
+.. role:: ansible-attribute-support-property
+.. role:: ansible-attribute-support-full
+.. role:: ansible-attribute-support-partial
+.. role:: ansible-attribute-support-none
+.. role:: ansible-attribute-support-na
+.. role:: ansible-option-type
+.. role:: ansible-option-elements
+.. role:: ansible-option-required
+.. role:: ansible-option-versionadded
+.. role:: ansible-option-aliases
+.. role:: ansible-option-choices
+.. role:: ansible-option-choices-default-mark
+.. role:: ansible-option-default-bold
+.. role:: ansible-option-configuration
+.. role:: ansible-option-returned-bold
+.. role:: ansible-option-sample-bold
+
+.. Anchors
+
+.. _ansible_collections.cisco.ise.ldap_module:
+
+.. Anchors: short name for ansible.builtin
+
+.. Anchors: aliases
+
+
+
+.. Title
+
+cisco.ise.ldap module -- Resource module for Ldap
++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. Collection note
+
+.. note::
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 3.0.0).
+
+    To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.ise.ldap_module_requirements>` for details.
+
+    To use it in a playbook, specify: :code:`cisco.ise.ldap`.
+
+.. version_added
+
+.. rst-class:: ansible-version-added
+
+New in cisco.ise 1.0.0
+
+.. contents::
+   :local:
+   :depth: 1
+
+.. Deprecated
+
+
+Synopsis
+--------
+
+.. Description
+
+- Manage operation create of the resource Ldap.
+
+.. note::
+    This module has a corresponding :ref:`action plugin <action_plugins>`.
+
+.. Aliases
+
+
+.. Requirements
+
+.. _ansible_collections.cisco.ise.ldap_module_requirements:
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- ciscoisesdk \>= 2.0.1
+- python \>= 3.5
+
+
+
+
+
+
+.. Options
+
+Parameters
+----------
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Parameter
+    - Comments
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-attributes"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-attributes:
+
+      .. rst-class:: ansible-option-title
+
+      **attributes**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-attributes" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Ldap's attributes.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-attributes/attributes"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-attributes/attributes:
+
+      .. rst-class:: ansible-option-title
+
+      **attributes**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-attributes/attributes" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      List of Attributes.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings:
+
+      .. rst-class:: ansible-option-title
+
+      **connectionSettings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Ldap's connectionSettings.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/alwaysAccessPrimaryFirst"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/alwaysaccessprimaryfirst:
+
+      .. rst-class:: ansible-option-title
+
+      **alwaysAccessPrimaryFirst**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/alwaysAccessPrimaryFirst" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      AlwaysAccessPrimaryFirst.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/failbackRetryDelay"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/failbackretrydelay:
+
+      .. rst-class:: ansible-option-title
+
+      **failbackRetryDelay**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/failbackRetryDelay" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`float`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      FailbackRetryDelay.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/failoverToSecondary"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/failovertosecondary:
+
+      .. rst-class:: ansible-option-title
+
+      **failoverToSecondary**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/failoverToSecondary" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      FailoverToSecondary.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/ldapNodeData"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/ldapnodedata:
+
+      .. rst-class:: ansible-option-title
+
+      **ldapNodeData**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/ldapNodeData" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      LdapNodeData.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/primaryServer"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/primaryserver:
+
+      .. rst-class:: ansible-option-title
+
+      **primaryServer**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/primaryServer" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Ldap's primaryServer.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/primaryServer/adminDN"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/primaryserver/admindn:
+
+      .. rst-class:: ansible-option-title
+
+      **adminDN**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/primaryServer/adminDN" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      AdminDN.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/primaryServer/adminPassword"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/primaryserver/adminpassword:
+
+      .. rst-class:: ansible-option-title
+
+      **adminPassword**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/primaryServer/adminPassword" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      AdminPassword.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/primaryServer/enableForceReconnect"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/primaryserver/enableforcereconnect:
+
+      .. rst-class:: ansible-option-title
+
+      **enableForceReconnect**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/primaryServer/enableForceReconnect" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EnableForceReconnect.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/primaryServer/enableSecureConnection"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/primaryserver/enablesecureconnection:
+
+      .. rst-class:: ansible-option-title
+
+      **enableSecureConnection**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/primaryServer/enableSecureConnection" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EnableSecureConnection.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/primaryServer/enableServerIdentityCheck"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/primaryserver/enableserveridentitycheck:
+
+      .. rst-class:: ansible-option-title
+
+      **enableServerIdentityCheck**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/primaryServer/enableServerIdentityCheck" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EnableServerIdentityCheck.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/primaryServer/forceReconnectTime"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/primaryserver/forcereconnecttime:
+
+      .. rst-class:: ansible-option-title
+
+      **forceReconnectTime**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/primaryServer/forceReconnectTime" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`float`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      ForceReconnectTime.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/primaryServer/hostName"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/primaryserver/hostname:
+
+      .. rst-class:: ansible-option-title
+
+      **hostName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/primaryServer/hostName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      HostName.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/primaryServer/issuerCACertificate"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/primaryserver/issuercacertificate:
+
+      .. rst-class:: ansible-option-title
+
+      **issuerCACertificate**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/primaryServer/issuerCACertificate" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IssuerCACertificate.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/primaryServer/maxConnections"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/primaryserver/maxconnections:
+
+      .. rst-class:: ansible-option-title
+
+      **maxConnections**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/primaryServer/maxConnections" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`float`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      MaxConnections.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/primaryServer/port"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/primaryserver/port:
+
+      .. rst-class:: ansible-option-title
+
+      **port**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/primaryServer/port" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`float`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Port.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/primaryServer/serverTimeout"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/primaryserver/servertimeout:
+
+      .. rst-class:: ansible-option-title
+
+      **serverTimeout**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/primaryServer/serverTimeout" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`float`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      ServerTimeout.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/primaryServer/trustCertificate"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/primaryserver/trustcertificate:
+
+      .. rst-class:: ansible-option-title
+
+      **trustCertificate**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/primaryServer/trustCertificate" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      TrustCertificate.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/primaryServer/useAdminAccess"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/primaryserver/useadminaccess:
+
+      .. rst-class:: ansible-option-title
+
+      **useAdminAccess**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/primaryServer/useAdminAccess" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      UseAdminAccess.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/secondaryServer"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/secondaryserver:
+
+      .. rst-class:: ansible-option-title
+
+      **secondaryServer**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/secondaryServer" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Ldap's secondaryServer.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/secondaryServer/adminDN"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/secondaryserver/admindn:
+
+      .. rst-class:: ansible-option-title
+
+      **adminDN**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/secondaryServer/adminDN" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      AdminDN.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/secondaryServer/adminPassword"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/secondaryserver/adminpassword:
+
+      .. rst-class:: ansible-option-title
+
+      **adminPassword**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/secondaryServer/adminPassword" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      AdminPassword.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/secondaryServer/enableForceReconnect"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/secondaryserver/enableforcereconnect:
+
+      .. rst-class:: ansible-option-title
+
+      **enableForceReconnect**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/secondaryServer/enableForceReconnect" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EnableForceReconnect.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/secondaryServer/enableSecureConnection"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/secondaryserver/enablesecureconnection:
+
+      .. rst-class:: ansible-option-title
+
+      **enableSecureConnection**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/secondaryServer/enableSecureConnection" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EnableSecureConnection.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/secondaryServer/enableServerIdentityCheck"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/secondaryserver/enableserveridentitycheck:
+
+      .. rst-class:: ansible-option-title
+
+      **enableServerIdentityCheck**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/secondaryServer/enableServerIdentityCheck" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EnableServerIdentityCheck.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/secondaryServer/forceReconnectTime"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/secondaryserver/forcereconnecttime:
+
+      .. rst-class:: ansible-option-title
+
+      **forceReconnectTime**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/secondaryServer/forceReconnectTime" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`float`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      ForceReconnectTime.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/secondaryServer/hostName"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/secondaryserver/hostname:
+
+      .. rst-class:: ansible-option-title
+
+      **hostName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/secondaryServer/hostName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      HostName.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/secondaryServer/issuerCACertificate"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/secondaryserver/issuercacertificate:
+
+      .. rst-class:: ansible-option-title
+
+      **issuerCACertificate**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/secondaryServer/issuerCACertificate" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      IssuerCACertificate.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/secondaryServer/maxConnections"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/secondaryserver/maxconnections:
+
+      .. rst-class:: ansible-option-title
+
+      **maxConnections**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/secondaryServer/maxConnections" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`float`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      MaxConnections.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/secondaryServer/port"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/secondaryserver/port:
+
+      .. rst-class:: ansible-option-title
+
+      **port**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/secondaryServer/port" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`float`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Port.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/secondaryServer/serverTimeout"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/secondaryserver/servertimeout:
+
+      .. rst-class:: ansible-option-title
+
+      **serverTimeout**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/secondaryServer/serverTimeout" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`float`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      ServerTimeout.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/secondaryServer/trustCertificate"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/secondaryserver/trustcertificate:
+
+      .. rst-class:: ansible-option-title
+
+      **trustCertificate**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/secondaryServer/trustCertificate" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      TrustCertificate.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/secondaryServer/useAdminAccess"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/secondaryserver/useadminaccess:
+
+      .. rst-class:: ansible-option-title
+
+      **useAdminAccess**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/secondaryServer/useAdminAccess" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      UseAdminAccess.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-connectionSettings/specifyServerForEachISENode"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-connectionsettings/specifyserverforeachisenode:
+
+      .. rst-class:: ansible-option-title
+
+      **specifyServerForEachISENode**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-connectionSettings/specifyServerForEachISENode" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      SpecifyServerForEachISENode.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-description"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-description:
+
+      .. rst-class:: ansible-option-title
+
+      **description**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-description" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Description.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-directoryOrganization"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-directoryorganization:
+
+      .. rst-class:: ansible-option-title
+
+      **directoryOrganization**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-directoryOrganization" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Ldap's directoryOrganization.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-directoryOrganization/groupDirectorySubtree"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-directoryorganization/groupdirectorysubtree:
+
+      .. rst-class:: ansible-option-title
+
+      **groupDirectorySubtree**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-directoryOrganization/groupDirectorySubtree" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      GroupDirectorySubtree.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-directoryOrganization/macFormat"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-directoryorganization/macformat:
+
+      .. rst-class:: ansible-option-title
+
+      **macFormat**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-directoryOrganization/macFormat" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      MacFormat.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-directoryOrganization/prefixSeparator"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-directoryorganization/prefixseparator:
+
+      .. rst-class:: ansible-option-title
+
+      **prefixSeparator**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-directoryOrganization/prefixSeparator" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      PrefixSeparator.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-directoryOrganization/stripPrefix"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-directoryorganization/stripprefix:
+
+      .. rst-class:: ansible-option-title
+
+      **stripPrefix**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-directoryOrganization/stripPrefix" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      StripPrefix.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-directoryOrganization/stripSuffix"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-directoryorganization/stripsuffix:
+
+      .. rst-class:: ansible-option-title
+
+      **stripSuffix**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-directoryOrganization/stripSuffix" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      StripSuffix.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-directoryOrganization/suffixSeparator"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-directoryorganization/suffixseparator:
+
+      .. rst-class:: ansible-option-title
+
+      **suffixSeparator**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-directoryOrganization/suffixSeparator" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      SuffixSeparator.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-directoryOrganization/userDirectorySubtree"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-directoryorganization/userdirectorysubtree:
+
+      .. rst-class:: ansible-option-title
+
+      **userDirectorySubtree**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-directoryOrganization/userDirectorySubtree" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      UserDirectorySubtree.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-enablePasswordChangeLDAP"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-enablepasswordchangeldap:
+
+      .. rst-class:: ansible-option-title
+
+      **enablePasswordChangeLDAP**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-enablePasswordChangeLDAP" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      EnablePasswordChangeLDAP.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-generalSettings"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-generalsettings:
+
+      .. rst-class:: ansible-option-title
+
+      **generalSettings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-generalSettings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Ldap's generalSettings.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-generalSettings/certificate"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-generalsettings/certificate:
+
+      .. rst-class:: ansible-option-title
+
+      **certificate**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-generalSettings/certificate" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Certificate.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-generalSettings/groupMapAttributeName"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-generalsettings/groupmapattributename:
+
+      .. rst-class:: ansible-option-title
+
+      **groupMapAttributeName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-generalSettings/groupMapAttributeName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      GroupMapAttributeName.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-generalSettings/groupMemberReference"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-generalsettings/groupmemberreference:
+
+      .. rst-class:: ansible-option-title
+
+      **groupMemberReference**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-generalSettings/groupMemberReference" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      GroupMemberReference.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-generalSettings/groupNameAttribute"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-generalsettings/groupnameattribute:
+
+      .. rst-class:: ansible-option-title
+
+      **groupNameAttribute**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-generalSettings/groupNameAttribute" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      GroupNameAttribute.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-generalSettings/groupObjectClass"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-generalsettings/groupobjectclass:
+
+      .. rst-class:: ansible-option-title
+
+      **groupObjectClass**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-generalSettings/groupObjectClass" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      GroupObjectClass.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-generalSettings/schema"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-generalsettings/schema:
+
+      .. rst-class:: ansible-option-title
+
+      **schema**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-generalSettings/schema" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Schema.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-generalSettings/userInfoAttributes"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-generalsettings/userinfoattributes:
+
+      .. rst-class:: ansible-option-title
+
+      **userInfoAttributes**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-generalSettings/userInfoAttributes" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Ldap's userInfoAttributes.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-generalSettings/userInfoAttributes/additionalAttribute"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-generalsettings/userinfoattributes/additionalattribute:
+
+      .. rst-class:: ansible-option-title
+
+      **additionalAttribute**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-generalSettings/userInfoAttributes/additionalAttribute" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      AdditionalAttribute.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-generalSettings/userInfoAttributes/country"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-generalsettings/userinfoattributes/country:
+
+      .. rst-class:: ansible-option-title
+
+      **country**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-generalSettings/userInfoAttributes/country" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Country.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-generalSettings/userInfoAttributes/department"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-generalsettings/userinfoattributes/department:
+
+      .. rst-class:: ansible-option-title
+
+      **department**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-generalSettings/userInfoAttributes/department" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Department.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-generalSettings/userInfoAttributes/email"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-generalsettings/userinfoattributes/email:
+
+      .. rst-class:: ansible-option-title
+
+      **email**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-generalSettings/userInfoAttributes/email" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Email.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-generalSettings/userInfoAttributes/firstName"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-generalsettings/userinfoattributes/firstname:
+
+      .. rst-class:: ansible-option-title
+
+      **firstName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-generalSettings/userInfoAttributes/firstName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      FirstName.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-generalSettings/userInfoAttributes/jobTitle"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-generalsettings/userinfoattributes/jobtitle:
+
+      .. rst-class:: ansible-option-title
+
+      **jobTitle**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-generalSettings/userInfoAttributes/jobTitle" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      JobTitle.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-generalSettings/userInfoAttributes/lastName"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-generalsettings/userinfoattributes/lastname:
+
+      .. rst-class:: ansible-option-title
+
+      **lastName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-generalSettings/userInfoAttributes/lastName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      LastName.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-generalSettings/userInfoAttributes/locality"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-generalsettings/userinfoattributes/locality:
+
+      .. rst-class:: ansible-option-title
+
+      **locality**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-generalSettings/userInfoAttributes/locality" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Locality.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-generalSettings/userInfoAttributes/organizationalUnit"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-generalsettings/userinfoattributes/organizationalunit:
+
+      .. rst-class:: ansible-option-title
+
+      **organizationalUnit**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-generalSettings/userInfoAttributes/organizationalUnit" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      OrganizationalUnit.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-generalSettings/userInfoAttributes/stateOrProvince"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-generalsettings/userinfoattributes/stateorprovince:
+
+      .. rst-class:: ansible-option-title
+
+      **stateOrProvince**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-generalSettings/userInfoAttributes/stateOrProvince" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      StateOrProvince.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-generalSettings/userInfoAttributes/streetAddress"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-generalsettings/userinfoattributes/streetaddress:
+
+      .. rst-class:: ansible-option-title
+
+      **streetAddress**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-generalSettings/userInfoAttributes/streetAddress" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      StreetAddress.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-generalSettings/userInfoAttributes/telephone"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-generalsettings/userinfoattributes/telephone:
+
+      .. rst-class:: ansible-option-title
+
+      **telephone**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-generalSettings/userInfoAttributes/telephone" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Telephone.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-generalSettings/userNameAttribute"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-generalsettings/usernameattribute:
+
+      .. rst-class:: ansible-option-title
+
+      **userNameAttribute**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-generalSettings/userNameAttribute" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      UserNameAttribute.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-generalSettings/userObjectClass"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-generalsettings/userobjectclass:
+
+      .. rst-class:: ansible-option-title
+
+      **userObjectClass**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-generalSettings/userObjectClass" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      UserObjectClass.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-groups"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-groups:
+
+      .. rst-class:: ansible-option-title
+
+      **groups**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-groups" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Ldap's groups.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-groups/groupsNames"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-groups/groupsnames:
+
+      .. rst-class:: ansible-option-title
+
+      **groupsNames**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-groups/groupsNames" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      List of groups.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-id"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Id.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_debug"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-ise_debug:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_debug**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_debug" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag for Identity Services Engine SDK to enable debugging.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_hostname"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-ise_hostname:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_hostname**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_hostname" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Identity Services Engine hostname.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_password"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-ise_password:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_password**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_password" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Identity Services Engine password to authenticate.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_single_request_timeout"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-ise_single_request_timeout:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_single_request_timeout**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_single_request_timeout" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      :ansible-option-versionadded:`added in cisco.ise 3.0.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Timeout (in seconds) for RESTful HTTP requests.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_username"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-ise_username:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_username**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_username" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Identity Services Engine username to authenticate.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_uses_api_gateway"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-ise_uses_api_gateway:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_uses_api_gateway**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_uses_api_gateway" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      :ansible-option-versionadded:`added in cisco.ise 1.1.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag that informs the SDK whether to use the Identity Services Engine's API Gateway to send requests.
+
+      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise\_hostname}}.
+
+      If it is false, it sends the requests to https://{{ise\_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_uses_csrf_token"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-ise_uses_csrf_token:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_uses_csrf_token**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_uses_csrf_token" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      :ansible-option-versionadded:`added in cisco.ise 3.0.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag that informs the SDK whether we send the CSRF token to ISE's ERS APIs.
+
+      If it is True, the SDK assumes that your ISE CSRF Check is enabled.
+
+      If it is True, it assumes you need the SDK to manage the CSRF token automatically for you.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_verify"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-ise_verify:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_verify**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_verify" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag to enable or disable SSL certificate verification.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_version"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-ise_version:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_version**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_version" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Informs the SDK which version of Identity Services Engine to use.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"3.1\_Patch\_1"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_wait_on_rate_limit"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-ise_wait_on_rate_limit:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_wait_on_rate_limit**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_wait_on_rate_limit" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag for Identity Services Engine SDK to enable automatic rate-limit handling.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-name"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__parameter-name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Name.
+
+
+      .. raw:: html
+
+        </div>
+
+
+.. Attributes
+
+
+.. Notes
+
+Notes
+-----
+
+.. note::
+   - SDK Method used are ldap.Ldap.create\_ldap,
+   - Paths used are post /ldap/,
+   - Does not support \ :literal:`check\_mode`\ 
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
+   - The parameters starting with ise\_ are used by the Cisco ISE Python SDK to establish the connection
+
+.. Seealso
+
+
+.. Examples
+
+Examples
+--------
+
+.. code-block:: yaml+jinja
+
+    
+    - name: Create
+      cisco.ise.ldap:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: present
+        attributes:
+          attributes:
+            - defaultValue: ' '
+              internalName: whenChanged
+              name: whenChanged
+              type: STRING
+        connectionSettings:
+          alwaysAccessPrimaryFirst: true
+          failbackRetryDelay: 5
+          failoverToSecondary: true
+          ldapNodeData:
+            - name: ise222
+              primaryHostname: ipAddress
+              primaryPort: 389
+              secondaryHostname: ipAddress
+              secondaryPort: 389
+            - name: ise223
+              primaryHostname: ipAddress
+              primaryPort: 389
+              secondaryHostname: ipAddress
+              secondaryPort: 389
+        primaryServer:
+          adminDN: cn=administrator,cn=users,dc=ise,dc=com
+          adminPassword: Lab@123
+          enableForceReconnect: false
+          enableSecureConnection: false
+          enableServerIdentityCheck: false
+          forceReconnectTime: 20
+          hostName: ''
+          issuerCACertificate: ''
+          maxConnections: 20
+          port: 389
+          serverTimeout: 10
+          trustCertificate: ''
+          useAdminAccess: true
+          secondaryServer:
+            adminDN: cn=administrator,cn=users,dc=ise,dc=com
+            adminPassword: Lab@123
+            enableForceReconnect: false
+            enableSecureConnection: false
+            enableServerIdentityCheck: false
+            forceReconnectTime: 20
+            hostName: ''
+            issuerCACertificate: ''
+            maxConnections: 20
+            port: 389
+            serverTimeout: 10
+            trustCertificate: ''
+            useAdminAccess: true
+          specifyServerForEachISENode: true
+        description: Description
+        directoryOrganization:
+          groupDirectorySubtree: groupDirectorySubtree
+          macFormat: DASH
+          prefixSeparator: \
+          stripPrefix: false
+          stripSuffix: false
+          suffixSeparator: ' '
+          userDirectorySubtree: userDirectorySubtree
+        enablePasswordChangeLDAP: false
+        generalSettings:
+          certificate: userCertificate
+          groupMapAttributeName: memberOf
+          groupMemberReference: USERNAME
+          groupNameAttribute: dn
+          groupObjectClass: Group
+          groupReference: GROUP_TO_USER
+          schema: ACTIVE_DIRECTORY
+          userInfoAttributes:
+            country: co
+            department: department
+            email: email
+            firstName: givenName
+            lastName: sn
+            locality: l
+            organizationalUnit: company
+            stateOrProvince: st
+            streetAddress: streetAddress
+            telephone: telephoneNumber
+          userNameAttribute: userPrincipalName
+          userObjectClass: Person
+        groups:
+          groupsNames:
+            - CN=TestLDAP,CN=Users,DC=ISE,DC=COM
+          name: sample
+
+
+
+
+.. Facts
+
+
+.. Return values
+
+Return Values
+-------------
+Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Key
+    - Description
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-ise_response"></div>
+
+      .. _ansible_collections.cisco.ise.ldap_module__return-ise_response:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_response**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-ise_response" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      A dictionary or list with the response returned by the Cisco ISE Python SDK
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"id\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"description\\": \\"string\\",\\n    \\"link\\": {\\n      \\"rel\\": \\"string\\",\\n      \\"href\\": \\"string\\",\\n      \\"type\\": \\"string\\"\\n    }\\n  }\\n]\\n"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+..  Status (Presently only deprecated)
+
+
+.. Authors
+
+Authors
+~~~~~~~
+
+- Rafael Campos (@racampos)
+
+
+
+.. Extra links
+
+Collection links
+~~~~~~~~~~~~~~~~
+
+.. raw:: html
+
+  <p class="ansible-links">
+    <a href="https://github.com/CiscoISE/ansible-ise/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
+    <a href="https://github.com/CiscoISE/ansible-ise" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
+  </p>
+
+.. Parsing errors
+

@@ -42,7 +42,7 @@ cisco.ise.hotpatch_rollback module -- Resource module for Hotpatch Rollback
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 2.10.0).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 3.0.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -68,9 +68,7 @@ Synopsis
 
 .. Description
 
-- Manage operation create of the resource Hotpatch Rollback.
-- Triggers hot patch rollback on the Cisco ISE node. A task ID is returned which can be used to monitor the progress of the hot patch rollback process. As hot patch rollback triggers the Cisco ISE to restart, the task API becomes unavailable for a certain period of time. For rollback of hotpatch on secondary nodes , request needs to be sent on individual node instead of the Primary Administration Node.
-
+- Manage operation create of the resource Hotpatch Rollback. - \> Triggers hot patch rollback on the Cisco ISE node. A task ID is returned which can be used to monitor the progress of the hot patch rollback process. As hot patch rollback triggers the Cisco ISE to restart, the task API becomes unavailable for a certain period of time. For rollback of hotpatch on secondary nodes , request needs to be sent on individual node instead of the Primary Administration Node.
 
 .. note::
     This module has a corresponding :ref:`action plugin <action_plugins>`.
@@ -86,7 +84,7 @@ Requirements
 ------------
 The below requirements are needed on the host that executes this module.
 
-- ciscoisesdk \>= 2.2.3
+- ciscoisesdk \>= 2.0.1
 - python \>= 3.5
 
 
@@ -658,6 +656,7 @@ Examples
 .. code-block:: yaml+jinja
 
     
+    ---
     - name: Create
       cisco.ise.hotpatch_rollback:
         ise_hostname: "{{ise_hostname}}"
