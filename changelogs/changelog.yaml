@@ -1621,3 +1621,10 @@ releases:
         - Updated .gitignore with additional exclusion patterns.
         - Fixed galaxy.yml metadata for compatibility
           with newer Ansible versions.
+3.0.1:
+    release_date: "2025-11-17"
+    changes:
+      release_summary: Update ISE version to 3.5.0
+      bugfixes:
+        - networkdevice add support for 'absent' state, implement update and delete methods 
+        - update ISE version to 3.5.0 for improved functionality.
