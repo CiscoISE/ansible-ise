@@ -1621,7 +1621,7 @@ releases:
         - Updated .gitignore with additional exclusion patterns.
         - Fixed galaxy.yml metadata for compatibility
           with newer Ansible versions.
-3.0.1:
+  3.0.1:
     release_date: "2025-11-20"
     changes:
       release_summary: Update ISE version to 3.5.0
