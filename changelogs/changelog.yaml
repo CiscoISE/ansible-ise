@@ -1626,5 +1626,5 @@ releases:
     changes:
       release_summary: Update ISE version to 3.5.0
       bugfixes:
-        - networkdevice add support for 'absent' state, implement update and delete methods 
+        - networkdevice add support for 'absent' state, implement update and delete methods
         - update ISE version to 3.5.0 for improved functionality.
