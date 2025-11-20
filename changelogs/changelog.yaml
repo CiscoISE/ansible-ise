@@ -1622,7 +1622,7 @@ releases:
         - Fixed galaxy.yml metadata for compatibility
           with newer Ansible versions.
 3.0.1:
-    release_date: "2025-11-17"
+    release_date: "2025-11-20"
     changes:
       release_summary: Update ISE version to 3.5.0
       bugfixes:
