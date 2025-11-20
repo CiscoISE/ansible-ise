@@ -133,7 +133,7 @@ def ise_argument_spec():
         ise_username=dict(type="str", fallback=(env_fallback, ['ISE_USERNAME']), required=True),
         ise_password=dict(type="str", fallback=(env_fallback, ['ISE_PASSWORD']), required=True, no_log=True),
         ise_verify=dict(type="bool", default=True, fallback=(env_fallback, ['ISE_VERIFY'])),
-        ise_version=dict(type="str", default="3.3_patch_1", fallback=(env_fallback, ['ISE_VERSION'])),
+        ise_version=dict(type="str", default="3.5.0", fallback=(env_fallback, ['ISE_VERSION'])),
         ise_wait_on_rate_limit=dict(type="bool", default=True, fallback=(env_fallback, ['ISE_WAIT_ON_RATE_LIMIT'])),
         ise_uses_api_gateway=dict(type="bool", default=True, fallback=(env_fallback, ['ISE_USES_API_GATEWAY'])),
         ise_uses_csrf_token=dict(type="bool", default=False, fallback=(env_fallback, ['ISE_USES_CSRF_TOKEN'])),

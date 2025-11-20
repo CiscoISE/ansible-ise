@@ -32,7 +32,7 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.exceptions import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    state=dict(type="str", default="present", choices=["present"]),
+    state=dict(type="str", default="present", choices=["present", "absent"]),
     authenticationSettings=dict(type="dict"),
     coaPort=dict(type="float"),
     dtlsDnsName=dict(type="str"),
@@ -51,7 +51,8 @@ argument_spec.update(dict(
 ))
 
 required_if = [
-    ("state", "present", ["name"], True),
+    ("state", "present", ["id", "name"], True),
+    ("state", "absent", ["id", "name"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -108,14 +109,31 @@ class Networkdevice(object):
         return result
 
     def get_object_by_id(self, id):
-        # NOTICE: Does not have a get by id method or it is in another action
-        result = None
+        try:
+            result = self.ise.exec(
+                family="networkdevice",
+                function="get_networkdevice_by_id",
+                handle_func_exception=False,
+                params={"id": id}
+            ).response['NetworkDevice']
+        except (TypeError, AttributeError) as e:
+            self.ise.fail_json(
+                msg=(
+                    "An error occured when executing operation."
+                    " Check the configuration of your API Settings and API Gateway settings on your ISE server."
+                    " This collection assumes that the API Gateway, the ERS APIs and OpenAPIs are enabled."
+                    " You may want to enable the (ise_debug: True) argument."
+                    " The error was: {error}"
+                ).format(error=e)
+            )
+        except Exception:
+            result = None
         return result
 
     def exists(self):
-        prev_obj = None
         id_exists = False
         name_exists = False
+        prev_obj = None
         o_id = self.new_object.get("id")
         name = self.new_object.get("name")
         if o_id:
@@ -128,6 +146,8 @@ class Networkdevice(object):
             _id = prev_obj.get("id")
             if id_exists and name_exists and o_id != _id:
                 raise InconsistentParameters("The 'id' and 'name' params don't refer to the same object")
+            if _id:
+                prev_obj = self.get_object_by_id(_id)
         it_exists = prev_obj is not None and isinstance(prev_obj, dict)
         return (it_exists, prev_obj)
 
@@ -162,6 +182,34 @@ class Networkdevice(object):
             family="networkdevice",
             function="create_networkdevice",
             params=self.new_object,
+        ).response
+        return result
+
+    def update(self):
+        id = self.new_object.get("id")
+        name = self.new_object.get("name")
+        result = None
+        if not id:
+            id_ = self.get_object_by_name(name).get("id")
+            self.new_object.update(dict(id=id_))
+        result = self.ise.exec(
+            family="networkdevice",
+            function="update_networkdevice_by_id",
+            params=self.new_object
+        ).response
+        return result
+
+    def delete(self):
+        id = self.new_object.get("id")
+        name = self.new_object.get("name")
+        result = None
+        if not id:
+            id_ = self.get_object_by_name(name).get("id")
+            self.new_object.update(dict(id=id_))
+        result = self.ise.exec(
+            family="networkdevice",
+            function="delete_networkdevice_by_id",
+            params=self.new_object
         ).response
         return result
 
@@ -205,12 +253,16 @@ class ActionModule(ActionBase):
         state = self._task.args.get("state")
 
         response = None
+
         if state == "present":
             (obj_exists, prev_obj) = obj.exists()
             if obj_exists:
                 if obj.requires_update(prev_obj):
-                    response = prev_obj
-                    ise.object_present_and_different()
+                    ise_update_response = obj.update()
+                    self._result.update(dict(ise_update_response=ise_update_response))
+                    (obj_exists, updated_obj) = obj.exists()
+                    response = updated_obj
+                    ise.object_updated()
                 else:
                     response = prev_obj
                     ise.object_already_present()
@@ -219,6 +271,15 @@ class ActionModule(ActionBase):
                 (obj_exists, created_obj) = obj.exists()
                 response = created_obj
                 ise.object_created()
+
+        elif state == "absent":
+            (obj_exists, prev_obj) = obj.exists()
+            if obj_exists:
+                obj.delete()
+                response = prev_obj
+                ise.object_deleted()
+            else:
+                ise.object_already_absent()
 
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
