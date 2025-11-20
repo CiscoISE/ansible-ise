@@ -1,0 +1,1514 @@
+
+.. Document meta
+
+:orphan:
+
+.. |antsibull-internal-nbsp| unicode:: 0xA0
+    :trim:
+
+.. role:: ansible-attribute-support-label
+.. role:: ansible-attribute-support-property
+.. role:: ansible-attribute-support-full
+.. role:: ansible-attribute-support-partial
+.. role:: ansible-attribute-support-none
+.. role:: ansible-attribute-support-na
+.. role:: ansible-option-type
+.. role:: ansible-option-elements
+.. role:: ansible-option-required
+.. role:: ansible-option-versionadded
+.. role:: ansible-option-aliases
+.. role:: ansible-option-choices
+.. role:: ansible-option-choices-default-mark
+.. role:: ansible-option-default-bold
+.. role:: ansible-option-configuration
+.. role:: ansible-option-returned-bold
+.. role:: ansible-option-sample-bold
+
+.. Anchors
+
+.. _ansible_collections.cisco.ise.system_certificate_import_module:
+
+.. Anchors: short name for ansible.builtin
+
+.. Anchors: aliases
+
+
+
+.. Title
+
+cisco.ise.system_certificate_import module -- Resource module for System Certificate Import
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. Collection note
+
+.. note::
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 3.0.1).
+
+    To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.ise.system_certificate_import_module_requirements>` for details.
+
+    To use it in a playbook, specify: :code:`cisco.ise.system_certificate_import`.
+
+.. version_added
+
+.. rst-class:: ansible-version-added
+
+New in cisco.ise 1.0.0
+
+.. contents::
+   :local:
+   :depth: 1
+
+.. Deprecated
+
+
+Synopsis
+--------
+
+.. Description
+
+- Manage operation create of the resource System Certificate Import.
+- Import an X509 certificate as a system certificate.
+
+.. note::
+    This module has a corresponding :ref:`action plugin <action_plugins>`.
+
+.. Aliases
+
+
+.. Requirements
+
+.. _ansible_collections.cisco.ise.system_certificate_import_module_requirements:
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- ciscoisesdk \>= 2.0.1
+- python \>= 3.5
+
+
+
+
+
+
+.. Options
+
+Parameters
+----------
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Parameter
+    - Comments
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-admin"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-admin:
+
+      .. rst-class:: ansible-option-title
+
+      **admin**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-admin" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Use certificate to authenticate the Cisco ISE Admin Portal.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-allowExtendedValidity"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-allowextendedvalidity:
+
+      .. rst-class:: ansible-option-title
+
+      **allowExtendedValidity**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-allowExtendedValidity" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Allow import of certificates with validity greater than 398 days.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-allowOutOfDateCert"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-allowoutofdatecert:
+
+      .. rst-class:: ansible-option-title
+
+      **allowOutOfDateCert**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-allowOutOfDateCert" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Allow out of date certificates.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-allowPortalTagTransferForSameSubject"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-allowportaltagtransferforsamesubject:
+
+      .. rst-class:: ansible-option-title
+
+      **allowPortalTagTransferForSameSubject**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-allowPortalTagTransferForSameSubject" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Allow overwriting the portal tag from matching certificate of same subject.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-allowReplacementOfCertificates"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-allowreplacementofcertificates:
+
+      .. rst-class:: ansible-option-title
+
+      **allowReplacementOfCertificates**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-allowReplacementOfCertificates" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Allow Replacement of certificates.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-allowReplacementOfPortalGroupTag"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-allowreplacementofportalgrouptag:
+
+      .. rst-class:: ansible-option-title
+
+      **allowReplacementOfPortalGroupTag**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-allowReplacementOfPortalGroupTag" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Allow Replacement of Portal Group Tag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-allowRoleTransferForSameSubject"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-allowroletransferforsamesubject:
+
+      .. rst-class:: ansible-option-title
+
+      **allowRoleTransferForSameSubject**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-allowRoleTransferForSameSubject" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Allow transfer of roles for certificate with matching subject.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-allowSHA1Certificates"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-allowsha1certificates:
+
+      .. rst-class:: ansible-option-title
+
+      **allowSHA1Certificates**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-allowSHA1Certificates" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Allow SHA1 based certificates.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-allowWildCardCertificates"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-allowwildcardcertificates:
+
+      .. rst-class:: ansible-option-title
+
+      **allowWildCardCertificates**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-allowWildCardCertificates" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Allow Wildcard certificates.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-data"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-data:
+
+      .. rst-class:: ansible-option-title
+
+      **data**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-data" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Certificate Content.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-eap"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-eap:
+
+      .. rst-class:: ansible-option-title
+
+      **eap**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-eap" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Use certificate for EAP protocols that use SSL/TLS tunneling.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ims"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-ims:
+
+      .. rst-class:: ansible-option-title
+
+      **ims**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ims" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Use certificate for the Cisco ISE Messaging Service.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_debug"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-ise_debug:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_debug**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_debug" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag for Identity Services Engine SDK to enable debugging.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_hostname"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-ise_hostname:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_hostname**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_hostname" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Identity Services Engine hostname.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_password"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-ise_password:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_password**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_password" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Identity Services Engine password to authenticate.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_single_request_timeout"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-ise_single_request_timeout:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_single_request_timeout**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_single_request_timeout" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      :ansible-option-versionadded:`added in cisco.ise 3.0.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Timeout (in seconds) for RESTful HTTP requests.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_username"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-ise_username:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_username**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_username" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Identity Services Engine username to authenticate.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_uses_api_gateway"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-ise_uses_api_gateway:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_uses_api_gateway**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_uses_api_gateway" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      :ansible-option-versionadded:`added in cisco.ise 1.1.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag that informs the SDK whether to use the Identity Services Engine's API Gateway to send requests.
+
+      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise\_hostname}}.
+
+      If it is false, it sends the requests to https://{{ise\_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_uses_csrf_token"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-ise_uses_csrf_token:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_uses_csrf_token**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_uses_csrf_token" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      :ansible-option-versionadded:`added in cisco.ise 3.0.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag that informs the SDK whether we send the CSRF token to ISE's ERS APIs.
+
+      If it is True, the SDK assumes that your ISE CSRF Check is enabled.
+
+      If it is True, it assumes you need the SDK to manage the CSRF token automatically for you.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_verify"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-ise_verify:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_verify**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_verify" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag to enable or disable SSL certificate verification.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_version"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-ise_version:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_version**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_version" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Informs the SDK which version of Identity Services Engine to use.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"3.1\_Patch\_1"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_wait_on_rate_limit"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-ise_wait_on_rate_limit:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_wait_on_rate_limit**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_wait_on_rate_limit" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag for Identity Services Engine SDK to enable automatic rate-limit handling.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-name"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Name of the certificate.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-password"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-password:
+
+      .. rst-class:: ansible-option-title
+
+      **password**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-password" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Certificate Password .
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-portal"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-portal:
+
+      .. rst-class:: ansible-option-title
+
+      **portal**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-portal" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Use for portal.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-portalGroupTag"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-portalgrouptag:
+
+      .. rst-class:: ansible-option-title
+
+      **portalGroupTag**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-portalGroupTag" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Set Group tag.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-privateKeyData"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-privatekeydata:
+
+      .. rst-class:: ansible-option-title
+
+      **privateKeyData**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-privateKeyData" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Private Key data.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-pxgrid"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-pxgrid:
+
+      .. rst-class:: ansible-option-title
+
+      **pxgrid**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-pxgrid" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Use certificate for the pxGrid Controller.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-radius"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-radius:
+
+      .. rst-class:: ansible-option-title
+
+      **radius**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-radius" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Use certificate for the RADSec server.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-saml"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-saml:
+
+      .. rst-class:: ansible-option-title
+
+      **saml**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-saml" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Use certificate for SAML Signing.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-validateCertificateExtensions"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__parameter-validatecertificateextensions:
+
+      .. rst-class:: ansible-option-title
+
+      **validateCertificateExtensions**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-validateCertificateExtensions" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Validate certificate extensions.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+
+.. Attributes
+
+
+.. Notes
+
+Notes
+-----
+
+.. note::
+   - SDK Method used are certificates.Certificates.import\_system\_certificate,
+   - Paths used are post /api/v1/certs/system-certificate/import,
+   - Does not support \ :literal:`check\_mode`\ 
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
+   - The parameters starting with ise\_ are used by the Cisco ISE Python SDK to establish the connection
+
+.. Seealso
+
+See Also
+--------
+
+.. seealso::
+
+   `Cisco ISE documentation for Certificates <https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi>`_
+       Complete reference of the Certificates API.
+
+.. Examples
+
+Examples
+--------
+
+.. code-block:: yaml+jinja
+
+    
+    ---
+    - name: Create
+      cisco.ise.system_certificate_import:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        admin: true
+        allowExtendedValidity: true
+        allowOutOfDateCert: true
+        allowPortalTagTransferForSameSubject: true
+        allowReplacementOfCertificates: true
+        allowReplacementOfPortalGroupTag: true
+        allowRoleTransferForSameSubject: true
+        allowSHA1Certificates: true
+        allowWildCardCertificates: true
+        data: string
+        eap: true
+        ims: true
+        name: string
+        password: string
+        portal: true
+        portalGroupTag: string
+        privateKeyData: string
+        pxgrid: true
+        radius: true
+        saml: true
+        validateCertificateExtensions: true
+
+
+
+
+.. Facts
+
+
+.. Return values
+
+Return Values
+-------------
+Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Key
+    - Description
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-ise_response"></div>
+
+      .. _ansible_collections.cisco.ise.system_certificate_import_module__return-ise_response:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_response**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-ise_response" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      A dictionary or list with the response returned by the Cisco ISE Python SDK
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`{"response": {"id": "string", "message": "string", "status": "string"}, "version": "string"}`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+..  Status (Presently only deprecated)
+
+
+.. Authors
+
+Authors
+~~~~~~~
+
+- Rafael Campos (@racampos)
+
+
+
+.. Extra links
+
+Collection links
+~~~~~~~~~~~~~~~~
+
+.. raw:: html
+
+  <p class="ansible-links">
+    <a href="https://github.com/CiscoISE/ansible-ise/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
+    <a href="https://github.com/CiscoISE/ansible-ise" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
+  </p>
+
+.. Parsing errors
+

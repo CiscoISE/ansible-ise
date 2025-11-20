@@ -1,0 +1,2123 @@
+
+.. Document meta
+
+:orphan:
+
+.. |antsibull-internal-nbsp| unicode:: 0xA0
+    :trim:
+
+.. role:: ansible-attribute-support-label
+.. role:: ansible-attribute-support-property
+.. role:: ansible-attribute-support-full
+.. role:: ansible-attribute-support-partial
+.. role:: ansible-attribute-support-none
+.. role:: ansible-attribute-support-na
+.. role:: ansible-option-type
+.. role:: ansible-option-elements
+.. role:: ansible-option-required
+.. role:: ansible-option-versionadded
+.. role:: ansible-option-aliases
+.. role:: ansible-option-choices
+.. role:: ansible-option-choices-default-mark
+.. role:: ansible-option-default-bold
+.. role:: ansible-option-configuration
+.. role:: ansible-option-returned-bold
+.. role:: ansible-option-sample-bold
+
+.. Anchors
+
+.. _ansible_collections.cisco.ise.activedirectory_module:
+
+.. Anchors: short name for ansible.builtin
+
+.. Anchors: aliases
+
+
+
+.. Title
+
+cisco.ise.activedirectory module -- Resource module for Activedirectory
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.. Collection note
+
+.. note::
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 3.0.1).
+
+    To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
+    You need further requirements to be able to use this module,
+    see :ref:`Requirements <ansible_collections.cisco.ise.activedirectory_module_requirements>` for details.
+
+    To use it in a playbook, specify: :code:`cisco.ise.activedirectory`.
+
+.. version_added
+
+.. rst-class:: ansible-version-added
+
+New in cisco.ise 1.0.0
+
+.. contents::
+   :local:
+   :depth: 1
+
+.. Deprecated
+
+
+Synopsis
+--------
+
+.. Description
+
+- Manage operation create of the resource Activedirectory.
+
+.. note::
+    This module has a corresponding :ref:`action plugin <action_plugins>`.
+
+.. Aliases
+
+
+.. Requirements
+
+.. _ansible_collections.cisco.ise.activedirectory_module_requirements:
+
+Requirements
+------------
+The below requirements are needed on the host that executes this module.
+
+- ciscoisesdk \>= 2.0.1
+- python \>= 3.5
+
+
+
+
+
+
+.. Options
+
+Parameters
+----------
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Parameter
+    - Comments
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-adAttributes"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-adattributes:
+
+      .. rst-class:: ansible-option-title
+
+      **adAttributes**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-adAttributes" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Activedirectory's adAttributes.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-adAttributes/attributes"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-adattributes/attributes:
+
+      .. rst-class:: ansible-option-title
+
+      **attributes**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-adAttributes/attributes" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      List of Attributes.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-adgroups"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-adgroups:
+
+      .. rst-class:: ansible-option-title
+
+      **adgroups**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-adgroups" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Activedirectory's adgroups.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-adgroups/groups"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-adgroups/groups:
+
+      .. rst-class:: ansible-option-title
+
+      **groups**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-adgroups/groups" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      List of Groups.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-adScopesNames"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-adscopesnames:
+
+      .. rst-class:: ansible-option-title
+
+      **adScopesNames**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-adScopesNames" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      String that contains the names of the scopes that the active directory belongs to. Names are separated by comma.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedSettings"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-advancedsettings:
+
+      .. rst-class:: ansible-option-title
+
+      **advancedSettings**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedSettings" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Activedirectory's advancedSettings.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedSettings/agingTime"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-advancedsettings/agingtime:
+
+      .. rst-class:: ansible-option-title
+
+      **agingTime**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedSettings/agingTime" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`float`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Activedirectory's agingTime.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedSettings/authProtectionType"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-advancedsettings/authprotectiontype:
+
+      .. rst-class:: ansible-option-title
+
+      **authProtectionType**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedSettings/authProtectionType" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Enable prevent AD account lockout for WIRELESS/WIRED/BOTH.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedSettings/country"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-advancedsettings/country:
+
+      .. rst-class:: ansible-option-title
+
+      **country**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedSettings/country" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      User info attribute.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedSettings/department"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-advancedsettings/department:
+
+      .. rst-class:: ansible-option-title
+
+      **department**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedSettings/department" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      User info attribute.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedSettings/email"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-advancedsettings/email:
+
+      .. rst-class:: ansible-option-title
+
+      **email**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedSettings/email" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      User info attribute.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedSettings/enableCallbackForDialinClient"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-advancedsettings/enablecallbackfordialinclient:
+
+      .. rst-class:: ansible-option-title
+
+      **enableCallbackForDialinClient**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedSettings/enableCallbackForDialinClient" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EnableCallbackForDialinClient flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedSettings/enableDialinPermissionCheck"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-advancedsettings/enabledialinpermissioncheck:
+
+      .. rst-class:: ansible-option-title
+
+      **enableDialinPermissionCheck**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedSettings/enableDialinPermissionCheck" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EnableDialinPermissionCheck flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedSettings/enableFailedAuthProtection"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-advancedsettings/enablefailedauthprotection:
+
+      .. rst-class:: ansible-option-title
+
+      **enableFailedAuthProtection**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedSettings/enableFailedAuthProtection" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Enable prevent AD account lockout due to too many bad password attempts.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedSettings/enableMachineAccess"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-advancedsettings/enablemachineaccess:
+
+      .. rst-class:: ansible-option-title
+
+      **enableMachineAccess**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedSettings/enableMachineAccess" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EnableMachineAccess flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedSettings/enableMachineAuth"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-advancedsettings/enablemachineauth:
+
+      .. rst-class:: ansible-option-title
+
+      **enableMachineAuth**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedSettings/enableMachineAuth" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EnableMachineAuth flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedSettings/enablePassChange"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-advancedsettings/enablepasschange:
+
+      .. rst-class:: ansible-option-title
+
+      **enablePassChange**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedSettings/enablePassChange" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EnablePassChange flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedSettings/enableRewrites"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-advancedsettings/enablerewrites:
+
+      .. rst-class:: ansible-option-title
+
+      **enableRewrites**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedSettings/enableRewrites" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      EnableRewrites flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedSettings/failedAuthThreshold"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-advancedsettings/failedauththreshold:
+
+      .. rst-class:: ansible-option-title
+
+      **failedAuthThreshold**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedSettings/failedAuthThreshold" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`float`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Number of bad password attempts.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedSettings/firstName"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-advancedsettings/firstname:
+
+      .. rst-class:: ansible-option-title
+
+      **firstName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedSettings/firstName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      User info attribute.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedSettings/identityNotInAdBehaviour"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-advancedsettings/identitynotinadbehaviour:
+
+      .. rst-class:: ansible-option-title
+
+      **identityNotInAdBehaviour**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedSettings/identityNotInAdBehaviour" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Allowed values REJECT, SEARCH\_JOINED\_FOREST, SEARCH\_ALL.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedSettings/jobTitle"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-advancedsettings/jobtitle:
+
+      .. rst-class:: ansible-option-title
+
+      **jobTitle**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedSettings/jobTitle" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      User info attribute.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedSettings/lastName"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-advancedsettings/lastname:
+
+      .. rst-class:: ansible-option-title
+
+      **lastName**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedSettings/lastName" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      User info attribute.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedSettings/locality"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-advancedsettings/locality:
+
+      .. rst-class:: ansible-option-title
+
+      **locality**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedSettings/locality" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      User info attribute.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedSettings/organizationalUnit"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-advancedsettings/organizationalunit:
+
+      .. rst-class:: ansible-option-title
+
+      **organizationalUnit**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedSettings/organizationalUnit" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      User info attribute.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedSettings/plaintextAuth"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-advancedsettings/plaintextauth:
+
+      .. rst-class:: ansible-option-title
+
+      **plaintextAuth**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedSettings/plaintextAuth" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      PlaintextAuth flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedSettings/rewriteRules"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-advancedsettings/rewriterules:
+
+      .. rst-class:: ansible-option-title
+
+      **rewriteRules**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedSettings/rewriteRules" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      List of Rewrite rules.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedSettings/schema"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-advancedsettings/schema:
+
+      .. rst-class:: ansible-option-title
+
+      **schema**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedSettings/schema" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Allowed values ACTIVE\_DIRECTORY, CUSTOM.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedSettings/stateOrProvince"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-advancedsettings/stateorprovince:
+
+      .. rst-class:: ansible-option-title
+
+      **stateOrProvince**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedSettings/stateOrProvince" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      User info attribute.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedSettings/streetAddress"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-advancedsettings/streetaddress:
+
+      .. rst-class:: ansible-option-title
+
+      **streetAddress**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedSettings/streetAddress" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      User info attribute.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedSettings/telephone"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-advancedsettings/telephone:
+
+      .. rst-class:: ansible-option-title
+
+      **telephone**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedSettings/telephone" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      User info attribute.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-advancedSettings/unreachableDomainsBehaviour"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-advancedsettings/unreachabledomainsbehaviour:
+
+      .. rst-class:: ansible-option-title
+
+      **unreachableDomainsBehaviour**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-advancedSettings/unreachableDomainsBehaviour" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      Allowed values PROCEED, DROP.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-description"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-description:
+
+      .. rst-class:: ansible-option-title
+
+      **description**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-description" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Description.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-domain"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-domain:
+
+      .. rst-class:: ansible-option-title
+
+      **domain**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-domain" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The AD domain.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-enableDomainAllowedList"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-enabledomainallowedlist:
+
+      .. rst-class:: ansible-option-title
+
+      **enableDomainAllowedList**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-enableDomainAllowedList" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      EnableDomainAllowedList flag.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ERSActiveDirectoryDomains"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-ersactivedirectorydomains:
+
+      .. rst-class:: ansible-option-title
+
+      **ERSActiveDirectoryDomains**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ERSActiveDirectoryDomains" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Activedirectory's ERSActiveDirectoryDomains.
+
+
+      .. raw:: html
+
+        </div>
+    
+  * - .. raw:: html
+
+        <div class="ansible-option-indent"></div><div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ERSActiveDirectoryDomains/domains"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-ersactivedirectorydomains/domains:
+
+      .. rst-class:: ansible-option-title
+
+      **domains**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ERSActiveDirectoryDomains/domains" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-indent-desc"></div><div class="ansible-option-cell">
+
+      List of Domains.
+
+
+      .. raw:: html
+
+        </div>
+
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-id"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-id:
+
+      .. rst-class:: ansible-option-title
+
+      **id**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-id" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Id.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_debug"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-ise_debug:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_debug**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_debug" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag for Identity Services Engine SDK to enable debugging.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_hostname"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-ise_hostname:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_hostname**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_hostname" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Identity Services Engine hostname.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_password"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-ise_password:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_password**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_password" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Identity Services Engine password to authenticate.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_single_request_timeout"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-ise_single_request_timeout:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_single_request_timeout**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_single_request_timeout" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`integer`
+
+      :ansible-option-versionadded:`added in cisco.ise 3.0.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Timeout (in seconds) for RESTful HTTP requests.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`60`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_username"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-ise_username:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_username**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_username" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string` / :ansible-option-required:`required`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      The Identity Services Engine username to authenticate.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_uses_api_gateway"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-ise_uses_api_gateway:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_uses_api_gateway**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_uses_api_gateway" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      :ansible-option-versionadded:`added in cisco.ise 1.1.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag that informs the SDK whether to use the Identity Services Engine's API Gateway to send requests.
+
+      If it is true, it uses the ISE's API Gateway and sends requests to https://{{ise\_hostname}}.
+
+      If it is false, it sends the requests to https://{{ise\_hostname}}:{{port}}, where the port value depends on the Service used (ERS, Mnt, UI, PxGrid).
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_uses_csrf_token"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-ise_uses_csrf_token:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_uses_csrf_token**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_uses_csrf_token" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      :ansible-option-versionadded:`added in cisco.ise 3.0.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag that informs the SDK whether we send the CSRF token to ISE's ERS APIs.
+
+      If it is True, the SDK assumes that your ISE CSRF Check is enabled.
+
+      If it is True, it assumes you need the SDK to manage the CSRF token automatically for you.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry-default:`false` :ansible-option-choices-default-mark:`← (default)`
+      - :ansible-option-choices-entry:`true`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_verify"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-ise_verify:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_verify**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_verify" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag to enable or disable SSL certificate verification.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_version"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-ise_version:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_version**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_version" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Informs the SDK which version of Identity Services Engine to use.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"3.1\_Patch\_1"`
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_wait_on_rate_limit"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-ise_wait_on_rate_limit:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_wait_on_rate_limit**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_wait_on_rate_limit" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`boolean`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Flag for Identity Services Engine SDK to enable automatic rate-limit handling.
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-choices:`Choices:`
+
+      - :ansible-option-choices-entry:`false`
+      - :ansible-option-choices-entry-default:`true` :ansible-option-choices-default-mark:`← (default)`
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-name"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__parameter-name:
+
+      .. rst-class:: ansible-option-title
+
+      **name**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-name" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`string`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Name.
+
+
+      .. raw:: html
+
+        </div>
+
+
+.. Attributes
+
+
+.. Notes
+
+Notes
+-----
+
+.. note::
+   - SDK Method used are activedirectory.Activedirectory.create\_activedirectory,
+   - Paths used are post /activedirectory/,
+   - Does not support \ :literal:`check\_mode`\ 
+   - The plugin runs on the control node and does not use any ansible connection plugins, but instead the embedded connection manager from Cisco ISE SDK
+   - The parameters starting with ise\_ are used by the Cisco ISE Python SDK to establish the connection
+
+.. Seealso
+
+
+.. Examples
+
+Examples
+--------
+
+.. code-block:: yaml+jinja
+
+    
+    ---
+    - name: Create
+      cisco.ise.activedirectory:
+        ise_hostname: "{{ise_hostname}}"
+        ise_username: "{{ise_username}}"
+        ise_password: "{{ise_password}}"
+        ise_verify: "{{ise_verify}}"
+        state: present
+        adAttributes:
+          attributes:
+            - defaultValue: defaultString
+              internalName: internalName1
+              name: name1
+              type: STRING
+            - defaultValue: 1.1.1.1
+              internalName: internalName2
+              name: name2
+              type: IP
+            - defaultValue: 'true'
+              internalName: internalName3
+              name: name3
+              type: BOOLEAN
+            - defaultValue: '5'
+              internalName: internalName4
+              name: name4
+              type: INT
+            - defaultValue: defaultOctetString
+              internalName: internalName5
+              name: name5
+              type: OCTET_STRING
+        adScopesNames: Default_Scope
+        adgroups:
+          groups:
+            - name: cisco.com/operators
+              sid: S-1-5-32-548
+              type: GLOBAL
+            - name: cisco.com/office users
+              sid: S-1-5-33-326
+              type: DOMAIN LOCAL
+        advancedSettings:
+          agingTime: 5
+          authProtectionType: WIRELESS
+          country: co
+          department: department
+          email: mail
+          enableAuthorizationFlow: false
+          enableCallbackForDialinClient: false
+          enableDialinPermissionCheck: false
+          enableFailedAuthProtection: false
+          enableMachineAccess: true
+          enableMachineAuth: true
+          enablePassChange: true
+          enableRewrites: false
+          enableSessionStitching: false
+          failedAuthThreshold: 5
+          firstName: givenName
+          identityNotInAdBehaviour: SEARCH_JOINED_FOREST
+          jobTitle: title
+          lastName: sn
+          locality: l
+          organizationalUnit: company
+          plaintextAuth: false
+          rewriteRules:
+            - rewriteMatch: exampleMatch0
+              rewriteResult: exampleResult0
+              rowId: 0
+            - rewriteMatch: exampleMatch1
+              rewriteResult: exampleResult1
+              rowId: 1
+            - rewriteMatch: exampleMatch2
+              rewriteResult: exampleResult2
+              rowId: 2
+            - rewriteMatch: exampleMatch3
+              rewriteResult: exampleResult3
+              rowId: 3
+          schema: ACTIVE_DIRECTORY
+          stateOrProvince: st
+          streetAddress: streetAddress
+          telephone: telephoneNumber
+          unreachableDomainsBehaviour: PROCEED
+        description: Group of Active company users
+        domain: cisco.com
+        enableDomainAllowedList: true
+        id: f75760e7-a4f9-40ef-93bb-88a97e9fb171
+        name: Company_users
+
+
+
+
+.. Facts
+
+
+.. Return values
+
+Return Values
+-------------
+Common return values are documented :ref:`here <common_return_values>`, the following are the fields unique to this module:
+
+.. rst-class:: ansible-option-table
+
+.. list-table::
+  :width: 100%
+  :widths: auto
+  :header-rows: 1
+
+  * - Key
+    - Description
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="return-ise_response"></div>
+
+      .. _ansible_collections.cisco.ise.activedirectory_module__return-ise_response:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_response**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#return-ise_response" title="Permalink to this return value"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`list` / :ansible-option-elements:`elements=dictionary`
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      A dictionary or list with the response returned by the Cisco ISE Python SDK
+
+
+      .. rst-class:: ansible-option-line
+
+      :ansible-option-returned-bold:`Returned:` always
+
+      .. rst-class:: ansible-option-line
+      .. rst-class:: ansible-option-sample
+
+      :ansible-option-sample-bold:`Sample:` :ansible-rv-sample-value:`"[\\n  {\\n    \\"id\\": \\"string\\",\\n    \\"name\\": \\"string\\",\\n    \\"description\\": \\"string\\",\\n    \\"link\\": {\\n      \\"rel\\": \\"string\\",\\n      \\"href\\": \\"string\\",\\n      \\"type\\": \\"string\\"\\n    }\\n  }\\n]\\n"`
+
+
+      .. raw:: html
+
+        </div>
+
+
+
+..  Status (Presently only deprecated)
+
+
+.. Authors
+
+Authors
+~~~~~~~
+
+- Rafael Campos (@racampos)
+
+
+
+.. Extra links
+
+Collection links
+~~~~~~~~~~~~~~~~
+
+.. raw:: html
+
+  <p class="ansible-links">
+    <a href="https://github.com/CiscoISE/ansible-ise/issues" aria-role="button" target="_blank" rel="noopener external">Issue Tracker</a>
+    <a href="https://github.com/CiscoISE/ansible-ise" aria-role="button" target="_blank" rel="noopener external">Repository (Sources)</a>
+  </p>
+
+.. Parsing errors
+
