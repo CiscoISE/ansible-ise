@@ -6,7 +6,7 @@
   gather_facts: false
   tasks:
     - name: Get all Authorization Profiles
-      cisco.ise.authorizationprofile_info:
+      cisco.ise.authorization_profile_info:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
@@ -18,7 +18,7 @@
       ansible.builtin.debug:
         var: result.ise_response
     - name: Get Authorization Profile by name
-      cisco.ise.authorizationprofile_info:
+      cisco.ise.authorization_profile_info:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"

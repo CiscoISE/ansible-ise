@@ -83,7 +83,7 @@ class ActionModule(ActionBase):
         name = self._task.args.get("name")
         if id:
             response = ise.exec(
-                family="a_d_groups",
+                family="ad_groups",
                 function='get_adgroups',
                 params=self.get_object(self._task.args)
             ).response

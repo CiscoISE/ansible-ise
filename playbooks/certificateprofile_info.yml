@@ -6,7 +6,7 @@
   gather_facts: false
   tasks:
     - name: Get all Certificate Profiles
-      cisco.ise.certificateprofile_info:
+      cisco.ise.certificate_profile_info:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
@@ -18,7 +18,7 @@
       ansible.builtin.debug:
         var: result.ise_response
     - name: Get Certificate Profile by ID
-      cisco.ise.certificateprofile_info:
+      cisco.ise.certificate_profile_info:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"

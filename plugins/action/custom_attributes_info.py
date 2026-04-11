@@ -83,7 +83,7 @@ class ActionModule(ActionBase):
         name = self._task.args.get("name")
         if name:
             response = ise.exec(
-                family="customattributes",
+                family="custom_attributes",
                 function='get',
                 params=self.get_object(self._task.args)
             ).response
@@ -92,7 +92,7 @@ class ActionModule(ActionBase):
             return self._result
         if not name and not id:
             response = ise.exec(
-                family="customattributes",
+                family="custom_attributes",
                 function='list',
                 params=self.get_object(self._task.args)
             ).response

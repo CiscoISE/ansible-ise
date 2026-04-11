@@ -6,7 +6,7 @@
   gather_facts: false
   tasks:
     - name: Get all pxGrid nodes
-      cisco.ise.pxgridnode_info:
+      cisco.ise.px_grid_node_info:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"

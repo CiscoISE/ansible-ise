@@ -6,7 +6,7 @@
   gather_facts: false
   tasks:
     - name: Get Downloadable ACLs
-      cisco.ise.downloadableacl_info:
+      cisco.ise.downloadable_acl_info:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
@@ -19,7 +19,7 @@
         var: dacl_list.ise_response
 
     - name: Create Downloadable ACL
-      cisco.ise.downloadableacl:
+      cisco.ise.downloadable_acl:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"

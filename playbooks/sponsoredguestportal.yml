@@ -6,7 +6,7 @@
   gather_facts: false
   tasks:
     - name: Get Sponsored Guest Portals
-      cisco.ise.sponsoredguestportal_info:
+      cisco.ise.sponsored_guest_portal_info:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
@@ -19,7 +19,7 @@
         var: sponsored_portals.ise_response
 
     - name: Create or update Sponsored Guest Portal
-      cisco.ise.sponsoredguestportal:
+      cisco.ise.sponsored_guest_portal:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"

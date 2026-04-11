@@ -27,11 +27,14 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    filter=dict(type="str"),
+    name=dict(type="str"),
+    id=dict(type="str"),
     page=dict(type="int"),
     size=dict(type="int"),
-    sortdsc=dict(type="str"),
+    filter=dict(type="list"),
+    filterType=dict(type="str"),
     sortasc=dict(type="str"),
+    sortdsc=dict(type="str"),
 ))
 
 required_if = []
@@ -69,11 +72,14 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            filter=params.get("filter"),
+            name=params.get("name"),
+            id=params.get("id"),
             page=params.get("page"),
             size=params.get("size"),
-            sortdsc=params.get("sortdsc"),
+            filter=params.get("filter"),
+            filter_type=params.get("filterType"),
             sortasc=params.get("sortasc"),
+            sortdsc=params.get("sortdsc"),
         )
         return new_object
 
@@ -89,6 +95,16 @@ class ActionModule(ActionBase):
 
         id = self._task.args.get("id")
         name = self._task.args.get("name")
+
+        if id:
+            response = ise.exec(
+                family="sgmapping",
+                function="get_sgmapping_by_id",
+                params=self.get_object(self._task.args),
+            ).response["SGMapping"]
+            self._result.update(dict(ise_response=response))
+            self._result.update(ise.exit_json())
+            return self._result
         if not name and not id:
             responses = []
             generator = ise.exec(

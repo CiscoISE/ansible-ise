@@ -6,7 +6,7 @@
   gather_facts: false
   tasks:
     - name: Get portal global settings
-      cisco.ise.portalglobalsetting_info:
+      cisco.ise.portal_global_setting_info:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"

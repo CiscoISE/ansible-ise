@@ -7,124 +7,134 @@
 DOCUMENTATION = r"""
 ---
 module: system_certificate
-short_description: Resource module for System Certificate
+short_description: Resource module for Systemcertificate
 description:
-  - Manage operations update and delete of the resource System Certificate.
-  - This API deletes a system certificate of a particular node based on the given
-    hostname and ID.
-  - Update a System Certificate.
+  - Manage operation create of the resource Systemcertificate.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
 author: Rafael Campos (@racampos)
 options:
-  admin:
-    description: Use certificate to authenticate the Cisco ISE Admin Portal.
-    type: bool
-  allowPortalTagTransferForSameSubject:
-    description: Allow overwriting the portal tag from matching certificate of same
-      subject.
-    type: bool
-  allowReplacementOfPortalGroupTag:
-    description: Allow Replacement of Portal Group Tag.
-    type: bool
-  allowRoleTransferForSameSubject:
-    description: Allow transfer of roles for certificate with matching subject.
-    type: bool
   description:
-    description: Description of System Certificate.
+    description: Description.
     type: str
-  eap:
-    description: Use certificate for EAP protocols that use SSL/TLS tunneling.
-    type: bool
-  expirationTTLPeriod:
-    description: System Certificate's expirationTTLPeriod.
-    type: int
-  expirationTTLUnits:
-    description: System Certificate's expirationTTLUnits.
-    type: str
-  hostName:
-    description: HostName path parameter. Name of host whose certificate needs to
-      be updated.
-    type: str
+  ersLocalCertStub:
+    description: Systemcertificate's ersLocalCertStub.
+    suboptions:
+      allowWildcardCerts:
+        description: AllowWildcardCerts.
+        type: str
+      certificatePolicies:
+        description: CertificatePolicies.
+        type: str
+      certificateSanDns:
+        description: CertificateSanDns.
+        type: str
+      certificateSanIp:
+        description: CertificateSanIp.
+        type: str
+      certificateSanUri:
+        description: CertificateSanUri.
+        type: str
+      digest:
+        description: Digest.
+        type: str
+      expirationTTL:
+        description: ExpirationTTL.
+        type: str
+      friendlyName:
+        description: FriendlyName.
+        type: str
+      groupTagDD:
+        description: GroupTagDD.
+        type: str
+      keyLength:
+        description: KeyLength.
+        type: str
+      keyType:
+        description: KeyType.
+        type: str
+      samlCertificate:
+        description: SamlCertificate.
+        type: str
+      selectedExpirationTTLUnit:
+        description: SelectedExpirationTTLUnit.
+        type: str
+      subjectStub:
+        description: Systemcertificate's subjectStub.
+        suboptions:
+          commonName:
+            description: Common name.
+            type: str
+          countryName:
+            description: CountryName.
+            type: str
+          localityName:
+            description: LocalityName.
+            type: str
+          organizationName:
+            description: OrganizationName.
+            type: str
+          organizationalUnitName:
+            description: Organizational UnitName.
+            type: str
+          stateOrProvinceName:
+            description: StateOrProvinceName.
+            type: str
+        type: dict
+      xgridCertificate:
+        description: XgridCertificate.
+        type: str
+    type: dict
   id:
-    description: Id path parameter. ID of the System Certificate to be updated.
+    description: Id.
     type: str
-  ims:
-    description: Use certificate for the Cisco ISE Messaging Service.
-    type: bool
   name:
-    description: Name of the certificate.
+    description: Name.
     type: str
-  portal:
-    description: Use for portal.
-    type: bool
-  portalGroupTag:
-    description: Set Group tag.
+  nodeId:
+    description: NodeId of ISE application.
     type: str
-  pxgrid:
-    description: Use certificate for the pxGrid Controller.
-    type: bool
-  radius:
-    description: Use certificate for the RADSec server.
-    type: bool
-  renewSelfSignedCertificate:
-    description: Renew Self-signed Certificate.
-    type: bool
-  saml:
-    description: Use certificate for SAML Signing.
-    type: bool
 requirements:
   - ciscoisesdk >= 2.0.1
   - python >= 3.5
-seealso:
-  - name: Cisco ISE documentation for Certificates
-    description: Complete reference of the Certificates API.
-    link: https://developer.cisco.com/docs/identity-services-engine/v1/#!certificate-openapi
 notes:
   - SDK Method used are
-    certificates.Certificates.delete_system_certificate_by_id,
-    certificates.Certificates.update_system_certificate,
+    systemcertificate.Systemcertificate.create_system_certificate,
   - Paths used are
-    delete /api/v1/certs/system-certificate/{hostName}/{id},
-    put /api/v1/certs/system-certificate/{hostName}/{id},
+    post /systemcertificate/,
 """
 EXAMPLES = r"""
 ---
-- name: Update by id
+- name: Create
   cisco.ise.system_certificate:
     ise_hostname: "{{ise_hostname}}"
     ise_username: "{{ise_username}}"
     ise_password: "{{ise_password}}"
     ise_verify: "{{ise_verify}}"
-    state: present
-    admin: true
-    allowPortalTagTransferForSameSubject: true
-    allowReplacementOfPortalGroupTag: true
-    allowRoleTransferForSameSubject: true
-    description: string
-    eap: true
-    expirationTTLPeriod: 0
-    expirationTTLUnits: string
-    hostName: string
-    id: string
-    ims: true
-    name: string
-    portal: true
-    portalGroupTag: string
-    pxgrid: true
-    radius: true
-    renewSelfSignedCertificate: true
-    saml: true
-- name: Delete by id
-  cisco.ise.system_certificate:
-    ise_hostname: "{{ise_hostname}}"
-    ise_username: "{{ise_username}}"
-    ise_password: "{{ise_password}}"
-    ise_verify: "{{ise_verify}}"
-    state: absent
-    hostName: string
-    id: string
+    ersLocalCertStub:
+      allowWildcardCerts: on OR off
+      certificatePolicies: certificate policies
+      certificateSanDns: cisco.com
+      certificateSanIp: <<IP-ADDRESS>>
+      certificateSanUri: <<URI>>
+      digest: SHA-256 OR SHA-384 OR SHA-512
+      ersSubjectStub:
+        commonName: $FQDN$
+        countryName: Country
+        localityName: City
+        organizationName: HCL
+        organizationalUnitName: HCL-SAMLCert
+        stateOrProvinceName: State
+      expirationTTL: '2'
+      friendlyName: HCL
+      groupTagDD: add-group-tag
+      keyLength: 512 OR 1024 OR 2048 OR 4096
+      keyType: RSA OR ECDSA
+      samlCertificate: on OR off
+      selectedExpirationTTLUnit: days OR weeks OR months OR years
+      xgridCertificate: on OR off
+    nodeId: ISE-01
 """
 RETURN = r"""
 ise_response:
@@ -133,43 +143,13 @@ ise_response:
   type: dict
   sample: >
     {
-      "expirationDate": "string",
-      "friendlyName": "string",
-      "groupTag": "string",
-      "id": "string",
-      "issuedBy": "string",
-      "issuedTo": "string",
-      "keySize": 0,
-      "link": {
-        "href": "string",
-        "rel": "string",
-        "type": "string"
-      },
-      "portalsUsingTheTag": "string",
-      "selfSigned": true,
-      "serialNumberDecimalFormat": "string",
-      "sha256Fingerprint": "string",
-      "signatureAlgorithm": "string",
-      "usedBy": "string",
-      "validFrom": "string"
-    }
-ise_update_response:
-  description: A dictionary or list with the response returned by the Cisco ISE Python SDK
-  returned: always
-  version_added: '1.1.0'
-  type: dict
-  sample: >
-    {
-      "response": {
-        "id": "string",
-        "link": {
-          "href": "string",
-          "rel": "string",
-          "type": "string"
-        },
-        "message": "string",
-        "status": "string"
-      },
-      "version": "string"
+      "operation": "string",
+      "messages": [
+        {
+          "title": "string",
+          "type": "string",
+          "code": "string"
+        }
+      ]
     }
 """

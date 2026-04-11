@@ -6,7 +6,7 @@
   gather_facts: false
   tasks:
     - name: Get BYOD Portals
-      cisco.ise.byodportal_info:
+      cisco.ise.byod_portal_info:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
@@ -19,7 +19,7 @@
         var: byod_portals.ise_response
 
     - name: Create or update BYOD Portal
-      cisco.ise.byodportal:
+      cisco.ise.byod_portal:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"

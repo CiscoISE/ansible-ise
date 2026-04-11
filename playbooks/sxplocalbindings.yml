@@ -6,7 +6,7 @@
   gather_facts: false
   tasks:
     - name: Get SXP Local Bindings
-      cisco.ise.sxplocalbindings_info:
+      cisco.ise.sxp_local_bindings_info:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
@@ -19,7 +19,7 @@
         var: sxp_bindings.ise_response
 
     - name: Create SXP Local Binding
-      cisco.ise.sxplocalbindings:
+      cisco.ise.sxp_local_bindings:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"

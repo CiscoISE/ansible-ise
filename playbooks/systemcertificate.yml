@@ -19,7 +19,7 @@
         var: system_certs.ise_response
 
     - name: Manage System Certificate
-      cisco.ise.systemcertificate:
+      cisco.ise.system_certificate:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"

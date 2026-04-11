@@ -6,7 +6,7 @@
   gather_facts: false
   tasks:
     - name: Get all Network Device Groups
-      cisco.ise.networkdevicegroup_info:
+      cisco.ise.network_device_group_info:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"

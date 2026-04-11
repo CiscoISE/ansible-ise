@@ -6,7 +6,7 @@
   gather_facts: false
   tasks:
     - name: Get Active Directory by name
-      cisco.ise.activedirectory_info:
+      cisco.ise.active_directory_info:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
@@ -19,7 +19,7 @@
         var: ad_info.ise_response
 
     - name: Create or update Active Directory
-      cisco.ise.activedirectory:
+      cisco.ise.active_directory:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"

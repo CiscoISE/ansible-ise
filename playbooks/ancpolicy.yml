@@ -6,7 +6,7 @@
   gather_facts: false
   tasks:
     - name: Get ANC Policies
-      cisco.ise.ancpolicy_info:
+      cisco.ise.anc_policy_info:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
@@ -19,7 +19,7 @@
         var: anc_policies.ise_response
 
     - name: Create ANC Policy
-      cisco.ise.ancpolicy:
+      cisco.ise.anc_policy:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"

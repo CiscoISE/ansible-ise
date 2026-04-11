@@ -6,7 +6,7 @@
   gather_facts: false
   tasks:
     - name: Get all TACACS Command Sets
-      cisco.ise.tacacscommandsets_info:
+      cisco.ise.tacacs_command_sets_info:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"

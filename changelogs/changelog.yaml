@@ -1628,3 +1628,12 @@ releases:
       bugfixes:
         - networkdevice add support for 'absent' state, implement update and delete methods
         - update ISE version to 3.5.0 for improved functionality.
+  3.0.2:
+    release_date: "2026-04-10"
+    changes:
+      release_summary: Fix naming compatibility between ISE 3.3 and 3.5 modules.
+      bugfixes:
+        - Restored snake_case names for 51 renamed modules with backward-compat aliases.
+        - Fixed _info modules to accept id parameter for get-by-id lookups.
+        - Fixed generator function names in network_device_group, restid_store, sponsor_group_member, authorization_profile, guest_user, portal_theme, sponsored_guest_portal, portal_global_setting, profiler_profile, and admin_user.
+        - Added nbar_app and virtual_network family aliases.

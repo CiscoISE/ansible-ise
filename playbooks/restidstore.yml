@@ -6,7 +6,7 @@
   gather_facts: false
   tasks:
     - name: Get REST ID Stores
-      cisco.ise.restidstore_info:
+      cisco.ise.restid_store_info:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
@@ -19,7 +19,7 @@
         var: rest_idstores.ise_response
 
     - name: Create REST ID Store
-      cisco.ise.restidstore:
+      cisco.ise.restid_store:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"

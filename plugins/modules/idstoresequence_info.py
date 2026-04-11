@@ -23,6 +23,10 @@ options:
     description:
       - Size query parameter. Items by Page.
     type: int
+  filterType:
+    description:
+      - FilterType query parameter.
+    type: str
 requirements:
   - ciscoisesdk >= 2.0.1
   - python >= 3.5
