@@ -1,3 +1,4 @@
+---
 - name: Provision ISE PAN Servers
   amazon.aws.ec2:
     key_name: "{{ aws_deployment_aws_keypair_name }}"
