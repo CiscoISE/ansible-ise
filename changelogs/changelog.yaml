@@ -1628,7 +1628,7 @@ releases:
       bugfixes:
         - networkdevice add support for 'absent' state, implement update and delete methods
         - update ISE version to 3.5.0 for improved functionality.
-  3.0.2:
+  3.1.0:
     release_date: "2026-04-10"
     changes:
       release_summary: Fix naming compatibility between ISE 3.3 and 3.5 modules.
