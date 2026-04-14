@@ -6,7 +6,7 @@
 Cisco.Ise
 =========
 
-Collection version 3.0.1
+Collection version 3.1.0
 
 .. contents::
    :local:
@@ -19,7 +19,6 @@ Ansible Modules for Cisco ISE
 
 **Authors:**
 
-* William Astorga <wastorga@cloverhound.cr>
 * Jose Bogarin <jbogarin@cloverhound.cr>
 * Francisco Munoz <fmunoz@cloverhound.cr>
 * Bryan Vargas <bvasquez@cloverhound.cr>
@@ -50,23 +49,23 @@ These are the plugins in the cisco.ise collection:
 Modules
 ~~~~~~~
 
-* :ref:`acisettings_info module <ansible_collections.cisco.ise.acisettings_info_module>` -- Information module for ACIsettings
+* :ref:`aci_settings_info module <ansible_collections.cisco.ise.aci_settings_info_module>` -- Information module for ACIsettings
 * :ref:`active_directories_info module <ansible_collections.cisco.ise.active_directories_info_module>` -- Information module for Active Directories Info
-* :ref:`activedirectory module <ansible_collections.cisco.ise.activedirectory_module>` -- Resource module for Activedirectory
-* :ref:`activedirectory_info module <ansible_collections.cisco.ise.activedirectory_info_module>` -- Information module for Activedirectory
+* :ref:`active_directory module <ansible_collections.cisco.ise.active_directory_module>` -- Resource module for Activedirectory
+* :ref:`active_directory_info module <ansible_collections.cisco.ise.active_directory_info_module>` -- Information module for Activedirectory
 * :ref:`ad_groups_info module <ansible_collections.cisco.ise.ad_groups_info_module>` -- Information module for Ad Groups Info
-* :ref:`adminuser_info module <ansible_collections.cisco.ise.adminuser_info_module>` -- Information module for Adminuser
+* :ref:`admin_user_info module <ansible_collections.cisco.ise.admin_user_info_module>` -- Information module for Adminuser
 * :ref:`adresourcereservation_ module <ansible_collections.cisco.ise.adresourcereservation__module>` -- Resource module for Adresourcereservation
 * :ref:`adresourcereservation_info module <ansible_collections.cisco.ise.adresourcereservation_info_module>` -- Information module for Adresourcereservation
 * :ref:`adresourcereservation_name_info module <ansible_collections.cisco.ise.adresourcereservation_name_info_module>` -- Information module for Adresourcereservation Name
-* :ref:`allowedprotocols module <ansible_collections.cisco.ise.allowedprotocols_module>` -- Resource module for Allowedprotocols
-* :ref:`allowedprotocols_info module <ansible_collections.cisco.ise.allowedprotocols_info_module>` -- Information module for Allowedprotocols
-* :ref:`ancendpoint_clear module <ansible_collections.cisco.ise.ancendpoint_clear_module>` -- Resource module for ANCendpoint Clear
-* :ref:`ancendpoint_info module <ansible_collections.cisco.ise.ancendpoint_info_module>` -- Information module for ANCendpoint
-* :ref:`ancpolicy module <ansible_collections.cisco.ise.ancpolicy_module>` -- Resource module for ANCpolicy
-* :ref:`ancpolicy_info module <ansible_collections.cisco.ise.ancpolicy_info_module>` -- Information module for ANCpolicy
-* :ref:`authorizationprofile module <ansible_collections.cisco.ise.authorizationprofile_module>` -- Resource module for Authorizationprofile
-* :ref:`authorizationprofile_info module <ansible_collections.cisco.ise.authorizationprofile_info_module>` -- Information module for Authorizationprofile
+* :ref:`allowed_protocols module <ansible_collections.cisco.ise.allowed_protocols_module>` -- Resource module for Allowedprotocols
+* :ref:`allowed_protocols_info module <ansible_collections.cisco.ise.allowed_protocols_info_module>` -- Information module for Allowedprotocols
+* :ref:`anc_endpoint_clear module <ansible_collections.cisco.ise.anc_endpoint_clear_module>` -- Resource module for ANCendpoint Clear
+* :ref:`anc_endpoint_info module <ansible_collections.cisco.ise.anc_endpoint_info_module>` -- Information module for ANCendpoint
+* :ref:`anc_policy module <ansible_collections.cisco.ise.anc_policy_module>` -- Resource module for ANCpolicy
+* :ref:`anc_policy_info module <ansible_collections.cisco.ise.anc_policy_info_module>` -- Information module for ANCpolicy
+* :ref:`authorization_profile module <ansible_collections.cisco.ise.authorization_profile_module>` -- Resource module for Authorizationprofile
+* :ref:`authorization_profile_info module <ansible_collections.cisco.ise.authorization_profile_info_module>` -- Information module for Authorizationprofile
 * :ref:`backup_cancel module <ansible_collections.cisco.ise.backup_cancel_module>` -- Resource module for Backup Cancel
 * :ref:`backup_config module <ansible_collections.cisco.ise.backup_config_module>` -- Resource module for Backup Config
 * :ref:`backup_last_status_info module <ansible_collections.cisco.ise.backup_last_status_info_module>` -- Information module for Backup Last Status
@@ -74,11 +73,11 @@ Modules
 * :ref:`backup_schedule_config module <ansible_collections.cisco.ise.backup_schedule_config_module>` -- Resource module for Backup Schedule Config
 * :ref:`backup_schedule_config_update module <ansible_collections.cisco.ise.backup_schedule_config_update_module>` -- Resource module for Backup Schedule Config Update
 * :ref:`bind_signed_certificate module <ansible_collections.cisco.ise.bind_signed_certificate_module>` -- Resource module for Bind Signed Certificate
-* :ref:`byodportal module <ansible_collections.cisco.ise.byodportal_module>` -- Resource module for BYODportal
-* :ref:`byodportal_info module <ansible_collections.cisco.ise.byodportal_info_module>` -- Information module for BYODportal
-* :ref:`certificateprofile module <ansible_collections.cisco.ise.certificateprofile_module>` -- Resource module for Certificateprofile
-* :ref:`certificateprofile_info module <ansible_collections.cisco.ise.certificateprofile_info_module>` -- Information module for Certificateprofile
-* :ref:`certificatetemplate_info module <ansible_collections.cisco.ise.certificatetemplate_info_module>` -- Information module for Certificatetemplate
+* :ref:`byod_portal module <ansible_collections.cisco.ise.byod_portal_module>` -- Resource module for BYODportal
+* :ref:`byod_portal_info module <ansible_collections.cisco.ise.byod_portal_info_module>` -- Information module for BYODportal
+* :ref:`certificate_profile module <ansible_collections.cisco.ise.certificate_profile_module>` -- Resource module for Certificateprofile
+* :ref:`certificate_profile_info module <ansible_collections.cisco.ise.certificate_profile_info_module>` -- Information module for Certificateprofile
+* :ref:`certificate_template_info module <ansible_collections.cisco.ise.certificate_template_info_module>` -- Information module for Certificatetemplate
 * :ref:`configuration module <ansible_collections.cisco.ise.configuration_module>` -- Resource module for Configuration
 * :ref:`configuration_info module <ansible_collections.cisco.ise.configuration_info_module>` -- Information module for Configuration
 * :ref:`csr_delete module <ansible_collections.cisco.ise.csr_delete_module>` -- Resource module for CSR Delete
@@ -96,8 +95,8 @@ Modules
 * :ref:`dataconnect_settings_password module <ansible_collections.cisco.ise.dataconnect_settings_password_module>` -- Resource module for Dataconnect Settings Password
 * :ref:`dataconnect_settings_password_expiry module <ansible_collections.cisco.ise.dataconnect_settings_password_expiry_module>` -- Resource module for Dataconnect Settings Password Expiry
 * :ref:`dataconnect_settings_status module <ansible_collections.cisco.ise.dataconnect_settings_status_module>` -- Resource module for Dataconnect Settings Status
-* :ref:`downloadableacl module <ansible_collections.cisco.ise.downloadableacl_module>` -- Resource module for Downloadableacl
-* :ref:`downloadableacl_info module <ansible_collections.cisco.ise.downloadableacl_info_module>` -- Information module for Downloadableacl
+* :ref:`downloadable_acl module <ansible_collections.cisco.ise.downloadable_acl_module>` -- Resource module for Downloadableacl
+* :ref:`downloadable_acl_info module <ansible_collections.cisco.ise.downloadable_acl_info_module>` -- Information module for Downloadableacl
 * :ref:`duo_identity_sync module <ansible_collections.cisco.ise.duo_identity_sync_module>` -- Resource module for Duo Identity Sync
 * :ref:`duo_identity_sync_cancel_info module <ansible_collections.cisco.ise.duo_identity_sync_cancel_info_module>` -- Information module for Duo Identity Sync Cancel Info
 * :ref:`duo_identity_sync_info module <ansible_collections.cisco.ise.duo_identity_sync_info_module>` -- Information module for Duo Identity Sync Info
@@ -107,8 +106,8 @@ Modules
 * :ref:`duo_mfa_info module <ansible_collections.cisco.ise.duo_mfa_info_module>` -- Information module for Duo Mfa
 * :ref:`duo_mfa_testconnection module <ansible_collections.cisco.ise.duo_mfa_testconnection_module>` -- Resource module for Duo Mfa Testconnection
 * :ref:`duo_mfainfo_info module <ansible_collections.cisco.ise.duo_mfainfo_info_module>` -- Information module for Duo Mfa Info
-* :ref:`egressmatrixcell module <ansible_collections.cisco.ise.egressmatrixcell_module>` -- Resource module for Egressmatrixcell
-* :ref:`egressmatrixcell_info module <ansible_collections.cisco.ise.egressmatrixcell_info_module>` -- Information module for Egressmatrixcell
+* :ref:`egress_matrix_cell module <ansible_collections.cisco.ise.egress_matrix_cell_module>` -- Resource module for Egressmatrixcell
+* :ref:`egress_matrix_cell_info module <ansible_collections.cisco.ise.egress_matrix_cell_info_module>` -- Information module for Egressmatrixcell
 * :ref:`endpoint module <ansible_collections.cisco.ise.endpoint_module>` -- Resource module for Endpoint
 * :ref:`endpoint_info module <ansible_collections.cisco.ise.endpoint_info_module>` -- Information module for Endpoint
 * :ref:`endpointgroup module <ansible_collections.cisco.ise.endpointgroup_module>` -- Resource module for Endpointgroup
@@ -119,30 +118,30 @@ Modules
 * :ref:`endpoints_device_type_info module <ansible_collections.cisco.ise.endpoints_device_type_info_module>` -- Information module for Endpoints Device Type Info
 * :ref:`endpoints_info module <ansible_collections.cisco.ise.endpoints_info_module>` -- Information module for Endpoints Info
 * :ref:`endpoints_task module <ansible_collections.cisco.ise.endpoints_task_module>` -- Resource module for Endpoints Task
-* :ref:`externalradiusserver module <ansible_collections.cisco.ise.externalradiusserver_module>` -- Resource module for Externalradiusserver
-* :ref:`externalradiusserver_info module <ansible_collections.cisco.ise.externalradiusserver_info_module>` -- Information module for Externalradiusserver
-* :ref:`filterpolicy module <ansible_collections.cisco.ise.filterpolicy_module>` -- Resource module for Filterpolicy
-* :ref:`filterpolicy_info module <ansible_collections.cisco.ise.filterpolicy_info_module>` -- Information module for Filterpolicy
-* :ref:`guestlocation_info module <ansible_collections.cisco.ise.guestlocation_info_module>` -- Information module for Guestlocation
+* :ref:`external_radius_server module <ansible_collections.cisco.ise.external_radius_server_module>` -- Resource module for Externalradiusserver
+* :ref:`external_radius_server_info module <ansible_collections.cisco.ise.external_radius_server_info_module>` -- Information module for Externalradiusserver
+* :ref:`filter_policy module <ansible_collections.cisco.ise.filter_policy_module>` -- Resource module for Filterpolicy
+* :ref:`filter_policy_info module <ansible_collections.cisco.ise.filter_policy_info_module>` -- Information module for Filterpolicy
+* :ref:`guest_location_info module <ansible_collections.cisco.ise.guest_location_info_module>` -- Information module for Guestlocation
+* :ref:`guest_ssid module <ansible_collections.cisco.ise.guest_ssid_module>` -- Resource module for Guestssid
+* :ref:`guest_ssid_info module <ansible_collections.cisco.ise.guest_ssid_info_module>` -- Information module for Guestssid
+* :ref:`guest_type module <ansible_collections.cisco.ise.guest_type_module>` -- Resource module for Guesttype
+* :ref:`guest_type_info module <ansible_collections.cisco.ise.guest_type_info_module>` -- Information module for Guesttype
+* :ref:`guest_user module <ansible_collections.cisco.ise.guest_user_module>` -- Resource module for Guestuser
+* :ref:`guest_user_info module <ansible_collections.cisco.ise.guest_user_info_module>` -- Information module for Guestuser
 * :ref:`guestsmtpnotificationsettings module <ansible_collections.cisco.ise.guestsmtpnotificationsettings_module>` -- Resource module for Guestsmtpnotificationsettings
 * :ref:`guestsmtpnotificationsettings_info module <ansible_collections.cisco.ise.guestsmtpnotificationsettings_info_module>` -- Information module for Guestsmtpnotificationsettings
-* :ref:`guestssid module <ansible_collections.cisco.ise.guestssid_module>` -- Resource module for Guestssid
-* :ref:`guestssid_info module <ansible_collections.cisco.ise.guestssid_info_module>` -- Information module for Guestssid
-* :ref:`guesttype module <ansible_collections.cisco.ise.guesttype_module>` -- Resource module for Guesttype
-* :ref:`guesttype_info module <ansible_collections.cisco.ise.guesttype_info_module>` -- Information module for Guesttype
-* :ref:`guestuser module <ansible_collections.cisco.ise.guestuser_module>` -- Resource module for Guestuser
-* :ref:`guestuser_info module <ansible_collections.cisco.ise.guestuser_info_module>` -- Information module for Guestuser
 * :ref:`hotpatch_info module <ansible_collections.cisco.ise.hotpatch_info_module>` -- Information module for Hotpatch
 * :ref:`hotpatch_install module <ansible_collections.cisco.ise.hotpatch_install_module>` -- Resource module for Hotpatch Install
 * :ref:`hotpatch_rollback module <ansible_collections.cisco.ise.hotpatch_rollback_module>` -- Resource module for Hotpatch Rollback
-* :ref:`hotspotportal module <ansible_collections.cisco.ise.hotspotportal_module>` -- Resource module for Hotspotportal
-* :ref:`hotspotportal_info module <ansible_collections.cisco.ise.hotspotportal_info_module>` -- Information module for Hotspotportal
+* :ref:`hotspot_portal module <ansible_collections.cisco.ise.hotspot_portal_module>` -- Resource module for Hotspotportal
+* :ref:`hotspot_portal_info module <ansible_collections.cisco.ise.hotspot_portal_info_module>` -- Information module for Hotspotportal
 * :ref:`identitygroup module <ansible_collections.cisco.ise.identitygroup_module>` -- Resource module for Identitygroup
 * :ref:`identitygroup_info module <ansible_collections.cisco.ise.identitygroup_info_module>` -- Information module for Identitygroup
 * :ref:`idstoresequence module <ansible_collections.cisco.ise.idstoresequence_module>` -- Resource module for Idstoresequence
 * :ref:`idstoresequence_info module <ansible_collections.cisco.ise.idstoresequence_info_module>` -- Information module for Idstoresequence
-* :ref:`internaluser module <ansible_collections.cisco.ise.internaluser_module>` -- Resource module for Internaluser
-* :ref:`internaluser_info module <ansible_collections.cisco.ise.internaluser_info_module>` -- Information module for Internaluser
+* :ref:`internal_user module <ansible_collections.cisco.ise.internal_user_module>` -- Resource module for Internaluser
+* :ref:`internal_user_info module <ansible_collections.cisco.ise.internal_user_info_module>` -- Information module for Internaluser
 * :ref:`ipsec module <ansible_collections.cisco.ise.ipsec_module>` -- Resource module for Ipsec
 * :ref:`ipsec_bulk module <ansible_collections.cisco.ise.ipsec_bulk_module>` -- Resource module for Ipsec Bulk
 * :ref:`ipsec_certificates_info module <ansible_collections.cisco.ise.ipsec_certificates_info_module>` -- Information module for Ipsec Certificates Info
@@ -176,12 +175,12 @@ Modules
 * :ref:`mnt_session_posture_count_info module <ansible_collections.cisco.ise.mnt_session_posture_count_info_module>` -- Information module for MNT Session Posture Count
 * :ref:`mnt_session_profiler_count_info module <ansible_collections.cisco.ise.mnt_session_profiler_count_info_module>` -- Information module for MNT Session Profiler Count
 * :ref:`mnt_version_info module <ansible_collections.cisco.ise.mnt_version_info_module>` -- Information module for MNT Version
-* :ref:`mydeviceportal module <ansible_collections.cisco.ise.mydeviceportal_module>` -- Resource module for Mydeviceportal
-* :ref:`mydeviceportal_info module <ansible_collections.cisco.ise.mydeviceportal_info_module>` -- Information module for Mydeviceportal
-* :ref:`networkdevice module <ansible_collections.cisco.ise.networkdevice_module>` -- Resource module for Networkdevice
-* :ref:`networkdevice_info module <ansible_collections.cisco.ise.networkdevice_info_module>` -- Information module for Networkdevice
-* :ref:`networkdevicegroup module <ansible_collections.cisco.ise.networkdevicegroup_module>` -- Resource module for Networkdevicegroup
-* :ref:`networkdevicegroup_info module <ansible_collections.cisco.ise.networkdevicegroup_info_module>` -- Information module for Networkdevicegroup
+* :ref:`my_device_portal module <ansible_collections.cisco.ise.my_device_portal_module>` -- Resource module for Mydeviceportal
+* :ref:`my_device_portal_info module <ansible_collections.cisco.ise.my_device_portal_info_module>` -- Information module for Mydeviceportal
+* :ref:`network_device module <ansible_collections.cisco.ise.network_device_module>` -- Resource module for Networkdevice
+* :ref:`network_device_group module <ansible_collections.cisco.ise.network_device_group_module>` -- Resource module for Networkdevicegroup
+* :ref:`network_device_group_info module <ansible_collections.cisco.ise.network_device_group_info_module>` -- Information module for Networkdevicegroup
+* :ref:`network_device_info module <ansible_collections.cisco.ise.network_device_info_module>` -- Information module for Networkdevice
 * :ref:`node_info module <ansible_collections.cisco.ise.node_info_module>` -- Information module for Node
 * :ref:`node_promotion module <ansible_collections.cisco.ise.node_promotion_module>` -- Resource module for Node Promotion
 * :ref:`node_replication_status_info module <ansible_collections.cisco.ise.node_replication_status_info_module>` -- Information module for Node Replication Status
@@ -195,11 +194,11 @@ Modules
 * :ref:`personas_export_certs module <ansible_collections.cisco.ise.personas_export_certs_module>` -- Export certificate into primary node
 * :ref:`personas_promote_primary module <ansible_collections.cisco.ise.personas_promote_primary_module>` -- Promote a node as the primary node
 * :ref:`personas_update_roles module <ansible_collections.cisco.ise.personas_update_roles_module>` -- Update the roles of a node
+* :ref:`portal_global_setting_info module <ansible_collections.cisco.ise.portal_global_setting_info_module>` -- Information module for Portalglobalsetting
 * :ref:`portal_info module <ansible_collections.cisco.ise.portal_info_module>` -- Information module for Portal
-* :ref:`portalglobalsetting_info module <ansible_collections.cisco.ise.portalglobalsetting_info_module>` -- Information module for Portalglobalsetting
-* :ref:`portaltheme module <ansible_collections.cisco.ise.portaltheme_module>` -- Resource module for Portaltheme
-* :ref:`portaltheme_info module <ansible_collections.cisco.ise.portaltheme_info_module>` -- Information module for Portaltheme
-* :ref:`profilerprofile_info module <ansible_collections.cisco.ise.profilerprofile_info_module>` -- Information module for Profilerprofile
+* :ref:`portal_theme module <ansible_collections.cisco.ise.portal_theme_module>` -- Resource module for Portaltheme
+* :ref:`portal_theme_info module <ansible_collections.cisco.ise.portal_theme_info_module>` -- Information module for Portaltheme
+* :ref:`profiler_profile_info module <ansible_collections.cisco.ise.profiler_profile_info_module>` -- Information module for Profilerprofile
 * :ref:`proxy_connection_settings module <ansible_collections.cisco.ise.proxy_connection_settings_module>` -- Resource module for Proxy Connection Settings
 * :ref:`proxy_connection_settings_info module <ansible_collections.cisco.ise.proxy_connection_settings_info_module>` -- Information module for Proxy Connection Settings
 * :ref:`px_grid_direct module <ansible_collections.cisco.ise.px_grid_direct_module>` -- Resource module for Px Grid Direct
@@ -208,9 +207,9 @@ Modules
 * :ref:`px_grid_direct_sync module <ansible_collections.cisco.ise.px_grid_direct_sync_module>` -- Resource module for Px Grid Direct Sync
 * :ref:`px_grid_direct_sync_info module <ansible_collections.cisco.ise.px_grid_direct_sync_info_module>` -- Information module for Px Grid Direct Sync
 * :ref:`px_grid_direct_test_connector module <ansible_collections.cisco.ise.px_grid_direct_test_connector_module>` -- Resource module for Px Grid Direct Test Connector
-* :ref:`pxgridnode_info module <ansible_collections.cisco.ise.pxgridnode_info_module>` -- Information module for pxGridnode
-* :ref:`radiusserversequence module <ansible_collections.cisco.ise.radiusserversequence_module>` -- Resource module for RADIUSserversequence
-* :ref:`radiusserversequence_info module <ansible_collections.cisco.ise.radiusserversequence_info_module>` -- Information module for RADIUSserversequence
+* :ref:`px_grid_node_info module <ansible_collections.cisco.ise.px_grid_node_info_module>` -- Information module for pxGridnode
+* :ref:`radius_server_sequence module <ansible_collections.cisco.ise.radius_server_sequence_module>` -- Resource module for RADIUSserversequence
+* :ref:`radius_server_sequence_info module <ansible_collections.cisco.ise.radius_server_sequence_info_module>` -- Information module for RADIUSserversequence
 * :ref:`renew_certificate module <ansible_collections.cisco.ise.renew_certificate_module>` -- Resource module for Renew Certificate
 * :ref:`reportconfig module <ansible_collections.cisco.ise.reportconfig_module>` -- Resource module for Reportconfig
 * :ref:`repository module <ansible_collections.cisco.ise.repository_module>` -- Resource module for Repository
@@ -218,8 +217,8 @@ Modules
 * :ref:`repository_info module <ansible_collections.cisco.ise.repository_info_module>` -- Information module for Repository
 * :ref:`reservation module <ansible_collections.cisco.ise.reservation_module>` -- Resource module for Reservation
 * :ref:`reservation_info module <ansible_collections.cisco.ise.reservation_info_module>` -- Information module for Reservation Info
-* :ref:`restidstore module <ansible_collections.cisco.ise.restidstore_module>` -- Resource module for RESTidstore
-* :ref:`restidstore_info module <ansible_collections.cisco.ise.restidstore_info_module>` -- Information module for RESTidstore
+* :ref:`restid_store module <ansible_collections.cisco.ise.restid_store_module>` -- Resource module for RESTidstore
+* :ref:`restid_store_info module <ansible_collections.cisco.ise.restid_store_info_module>` -- Information module for RESTidstore
 * :ref:`restidstorepredefinedregex_fetch_san_predefinedregexs_info module <ansible_collections.cisco.ise.restidstorepredefinedregex_fetch_san_predefinedregexs_info_module>` -- Information module for RESTidstorepredefinedregex Fetch San Predefinedregexs
 * :ref:`restidstorepredefinedregex_fetch_snf_predefinedregexs_info module <ansible_collections.cisco.ise.restidstorepredefinedregex_fetch_snf_predefinedregexs_info_module>` -- Information module for RESTidstorepredefinedregex Fetch Snf Predefinedregexs
 * :ref:`restidstoresettings_info module <ansible_collections.cisco.ise.restidstoresettings_info_module>` -- Information module for RESTidstoresettings
@@ -239,38 +238,37 @@ Modules
 * :ref:`sgt_info module <ansible_collections.cisco.ise.sgt_info_module>` -- Information module for SGt
 * :ref:`sgtvnvlan module <ansible_collections.cisco.ise.sgtvnvlan_module>` -- Resource module for SGtvnvlan
 * :ref:`sgtvnvlan_info module <ansible_collections.cisco.ise.sgtvnvlan_info_module>` -- Information module for SGtvnvlan
-* :ref:`smsprovider_info module <ansible_collections.cisco.ise.smsprovider_info_module>` -- Information module for SMSprovider
-* :ref:`sponsoredguestportal module <ansible_collections.cisco.ise.sponsoredguestportal_module>` -- Resource module for Sponsoredguestportal
-* :ref:`sponsoredguestportal_info module <ansible_collections.cisco.ise.sponsoredguestportal_info_module>` -- Information module for Sponsoredguestportal
-* :ref:`sponsorgroup module <ansible_collections.cisco.ise.sponsorgroup_module>` -- Resource module for Sponsorgroup
-* :ref:`sponsorgroup_info module <ansible_collections.cisco.ise.sponsorgroup_info_module>` -- Information module for Sponsorgroup
-* :ref:`sponsorgroupmember_info module <ansible_collections.cisco.ise.sponsorgroupmember_info_module>` -- Information module for Sponsorgroupmember
-* :ref:`sponsorportal module <ansible_collections.cisco.ise.sponsorportal_module>` -- Resource module for Sponsorportal
-* :ref:`sponsorportal_info module <ansible_collections.cisco.ise.sponsorportal_info_module>` -- Information module for Sponsorportal
+* :ref:`sms_provider_info module <ansible_collections.cisco.ise.sms_provider_info_module>` -- Information module for SMSprovider
+* :ref:`sponsor_group module <ansible_collections.cisco.ise.sponsor_group_module>` -- Resource module for Sponsorgroup
+* :ref:`sponsor_group_info module <ansible_collections.cisco.ise.sponsor_group_info_module>` -- Information module for Sponsorgroup
+* :ref:`sponsor_group_member_info module <ansible_collections.cisco.ise.sponsor_group_member_info_module>` -- Information module for Sponsorgroupmember
+* :ref:`sponsor_portal module <ansible_collections.cisco.ise.sponsor_portal_module>` -- Resource module for Sponsorportal
+* :ref:`sponsor_portal_info module <ansible_collections.cisco.ise.sponsor_portal_info_module>` -- Information module for Sponsorportal
+* :ref:`sponsored_guest_portal module <ansible_collections.cisco.ise.sponsored_guest_portal_module>` -- Resource module for Sponsoredguestportal
+* :ref:`sponsored_guest_portal_info module <ansible_collections.cisco.ise.sponsored_guest_portal_info_module>` -- Information module for Sponsoredguestportal
 * :ref:`stop_replication module <ansible_collections.cisco.ise.stop_replication_module>` -- Resource module for Stop Replication
 * :ref:`stop_replication_info module <ansible_collections.cisco.ise.stop_replication_info_module>` -- Information module for Stop Replication Info
+* :ref:`support_bundle_download module <ansible_collections.cisco.ise.support_bundle_download_module>` -- Resource module for Supportbundledownload
+* :ref:`support_bundle_status_info module <ansible_collections.cisco.ise.support_bundle_status_info_module>` -- Information module for Supportbundlestatus
 * :ref:`supportbundle module <ansible_collections.cisco.ise.supportbundle_module>` -- Resource module for Supportbundle
-* :ref:`supportbundledownload module <ansible_collections.cisco.ise.supportbundledownload_module>` -- Resource module for Supportbundledownload
-* :ref:`supportbundlestatus_info module <ansible_collections.cisco.ise.supportbundlestatus_info_module>` -- Information module for Supportbundlestatus
-* :ref:`sxpconnections module <ansible_collections.cisco.ise.sxpconnections_module>` -- Resource module for SXPconnections
-* :ref:`sxpconnections_info module <ansible_collections.cisco.ise.sxpconnections_info_module>` -- Information module for SXPconnections
-* :ref:`sxplocalbindings module <ansible_collections.cisco.ise.sxplocalbindings_module>` -- Resource module for SXPlocalbindings
-* :ref:`sxplocalbindings_info module <ansible_collections.cisco.ise.sxplocalbindings_info_module>` -- Information module for SXPlocalbindings
-* :ref:`sxpvpns module <ansible_collections.cisco.ise.sxpvpns_module>` -- Resource module for SXPvpns
-* :ref:`sxpvpns_info module <ansible_collections.cisco.ise.sxpvpns_info_module>` -- Information module for SXPvpns
-* :ref:`system_certificate module <ansible_collections.cisco.ise.system_certificate_module>` -- Resource module for System Certificate
+* :ref:`sxp_connections module <ansible_collections.cisco.ise.sxp_connections_module>` -- Resource module for SXPconnections
+* :ref:`sxp_connections_info module <ansible_collections.cisco.ise.sxp_connections_info_module>` -- Information module for SXPconnections
+* :ref:`sxp_local_bindings module <ansible_collections.cisco.ise.sxp_local_bindings_module>` -- Resource module for SXPlocalbindings
+* :ref:`sxp_local_bindings_info module <ansible_collections.cisco.ise.sxp_local_bindings_info_module>` -- Information module for SXPlocalbindings
+* :ref:`sxp_vpns module <ansible_collections.cisco.ise.sxp_vpns_module>` -- Resource module for SXPvpns
+* :ref:`sxp_vpns_info module <ansible_collections.cisco.ise.sxp_vpns_info_module>` -- Information module for SXPvpns
+* :ref:`system_certificate module <ansible_collections.cisco.ise.system_certificate_module>` -- Resource module for Systemcertificate
 * :ref:`system_certificate_export_info module <ansible_collections.cisco.ise.system_certificate_export_info_module>` -- Information module for System Certificate Export Info
 * :ref:`system_certificate_import module <ansible_collections.cisco.ise.system_certificate_import_module>` -- Resource module for System Certificate Import
 * :ref:`system_certificate_info module <ansible_collections.cisco.ise.system_certificate_info_module>` -- Information module for System Certificate
-* :ref:`systemcertificate module <ansible_collections.cisco.ise.systemcertificate_module>` -- Resource module for Systemcertificate
-* :ref:`tacacscommandsets module <ansible_collections.cisco.ise.tacacscommandsets_module>` -- Resource module for TACACScommandsets
-* :ref:`tacacscommandsets_info module <ansible_collections.cisco.ise.tacacscommandsets_info_module>` -- Information module for TACACScommandsets
-* :ref:`tacacsexternalservers module <ansible_collections.cisco.ise.tacacsexternalservers_module>` -- Resource module for TACACSexternalservers
-* :ref:`tacacsexternalservers_info module <ansible_collections.cisco.ise.tacacsexternalservers_info_module>` -- Information module for TACACSexternalservers
-* :ref:`tacacsprofile module <ansible_collections.cisco.ise.tacacsprofile_module>` -- Resource module for TACACSprofile
-* :ref:`tacacsprofile_info module <ansible_collections.cisco.ise.tacacsprofile_info_module>` -- Information module for TACACSprofile
-* :ref:`tacacsserversequence module <ansible_collections.cisco.ise.tacacsserversequence_module>` -- Resource module for TACACSserversequence
-* :ref:`tacacsserversequence_info module <ansible_collections.cisco.ise.tacacsserversequence_info_module>` -- Information module for TACACSserversequence
+* :ref:`tacacs_command_sets module <ansible_collections.cisco.ise.tacacs_command_sets_module>` -- Resource module for TACACScommandsets
+* :ref:`tacacs_command_sets_info module <ansible_collections.cisco.ise.tacacs_command_sets_info_module>` -- Information module for TACACScommandsets
+* :ref:`tacacs_external_servers module <ansible_collections.cisco.ise.tacacs_external_servers_module>` -- Resource module for TACACSexternalservers
+* :ref:`tacacs_external_servers_info module <ansible_collections.cisco.ise.tacacs_external_servers_info_module>` -- Information module for TACACSexternalservers
+* :ref:`tacacs_profile module <ansible_collections.cisco.ise.tacacs_profile_module>` -- Resource module for TACACSprofile
+* :ref:`tacacs_profile_info module <ansible_collections.cisco.ise.tacacs_profile_info_module>` -- Information module for TACACSprofile
+* :ref:`tacacs_server_sequence module <ansible_collections.cisco.ise.tacacs_server_sequence_module>` -- Resource module for TACACSserversequence
+* :ref:`tacacs_server_sequence_info module <ansible_collections.cisco.ise.tacacs_server_sequence_info_module>` -- Information module for TACACSserversequence
 * :ref:`tasks_info module <ansible_collections.cisco.ise.tasks_info_module>` -- Information module for Tasks
 * :ref:`telemetryinfo_info module <ansible_collections.cisco.ise.telemetryinfo_info_module>` -- Information module for Telemetryinfo
 * :ref:`transport_gateway_settings module <ansible_collections.cisco.ise.transport_gateway_settings_module>` -- Resource module for Transport Gateway Settings
@@ -291,23 +289,23 @@ Modules
     :maxdepth: 1
     :hidden:
 
-    acisettings_info_module
+    aci_settings_info_module
     active_directories_info_module
-    activedirectory_module
-    activedirectory_info_module
+    active_directory_module
+    active_directory_info_module
     ad_groups_info_module
-    adminuser_info_module
+    admin_user_info_module
     adresourcereservation__module
     adresourcereservation_info_module
     adresourcereservation_name_info_module
-    allowedprotocols_module
-    allowedprotocols_info_module
-    ancendpoint_clear_module
-    ancendpoint_info_module
-    ancpolicy_module
-    ancpolicy_info_module
-    authorizationprofile_module
-    authorizationprofile_info_module
+    allowed_protocols_module
+    allowed_protocols_info_module
+    anc_endpoint_clear_module
+    anc_endpoint_info_module
+    anc_policy_module
+    anc_policy_info_module
+    authorization_profile_module
+    authorization_profile_info_module
     backup_cancel_module
     backup_config_module
     backup_last_status_info_module
@@ -315,11 +313,11 @@ Modules
     backup_schedule_config_module
     backup_schedule_config_update_module
     bind_signed_certificate_module
-    byodportal_module
-    byodportal_info_module
-    certificateprofile_module
-    certificateprofile_info_module
-    certificatetemplate_info_module
+    byod_portal_module
+    byod_portal_info_module
+    certificate_profile_module
+    certificate_profile_info_module
+    certificate_template_info_module
     configuration_module
     configuration_info_module
     csr_delete_module
@@ -337,8 +335,8 @@ Modules
     dataconnect_settings_password_module
     dataconnect_settings_password_expiry_module
     dataconnect_settings_status_module
-    downloadableacl_module
-    downloadableacl_info_module
+    downloadable_acl_module
+    downloadable_acl_info_module
     duo_identity_sync_module
     duo_identity_sync_cancel_info_module
     duo_identity_sync_info_module
@@ -348,8 +346,8 @@ Modules
     duo_mfa_info_module
     duo_mfa_testconnection_module
     duo_mfainfo_info_module
-    egressmatrixcell_module
-    egressmatrixcell_info_module
+    egress_matrix_cell_module
+    egress_matrix_cell_info_module
     endpoint_module
     endpoint_info_module
     endpointgroup_module
@@ -360,30 +358,30 @@ Modules
     endpoints_device_type_info_module
     endpoints_info_module
     endpoints_task_module
-    externalradiusserver_module
-    externalradiusserver_info_module
-    filterpolicy_module
-    filterpolicy_info_module
-    guestlocation_info_module
+    external_radius_server_module
+    external_radius_server_info_module
+    filter_policy_module
+    filter_policy_info_module
+    guest_location_info_module
+    guest_ssid_module
+    guest_ssid_info_module
+    guest_type_module
+    guest_type_info_module
+    guest_user_module
+    guest_user_info_module
     guestsmtpnotificationsettings_module
     guestsmtpnotificationsettings_info_module
-    guestssid_module
-    guestssid_info_module
-    guesttype_module
-    guesttype_info_module
-    guestuser_module
-    guestuser_info_module
     hotpatch_info_module
     hotpatch_install_module
     hotpatch_rollback_module
-    hotspotportal_module
-    hotspotportal_info_module
+    hotspot_portal_module
+    hotspot_portal_info_module
     identitygroup_module
     identitygroup_info_module
     idstoresequence_module
     idstoresequence_info_module
-    internaluser_module
-    internaluser_info_module
+    internal_user_module
+    internal_user_info_module
     ipsec_module
     ipsec_bulk_module
     ipsec_certificates_info_module
@@ -417,12 +415,12 @@ Modules
     mnt_session_posture_count_info_module
     mnt_session_profiler_count_info_module
     mnt_version_info_module
-    mydeviceportal_module
-    mydeviceportal_info_module
-    networkdevice_module
-    networkdevice_info_module
-    networkdevicegroup_module
-    networkdevicegroup_info_module
+    my_device_portal_module
+    my_device_portal_info_module
+    network_device_module
+    network_device_group_module
+    network_device_group_info_module
+    network_device_info_module
     node_info_module
     node_promotion_module
     node_replication_status_info_module
@@ -436,11 +434,11 @@ Modules
     personas_export_certs_module
     personas_promote_primary_module
     personas_update_roles_module
+    portal_global_setting_info_module
     portal_info_module
-    portalglobalsetting_info_module
-    portaltheme_module
-    portaltheme_info_module
-    profilerprofile_info_module
+    portal_theme_module
+    portal_theme_info_module
+    profiler_profile_info_module
     proxy_connection_settings_module
     proxy_connection_settings_info_module
     px_grid_direct_module
@@ -449,9 +447,9 @@ Modules
     px_grid_direct_sync_module
     px_grid_direct_sync_info_module
     px_grid_direct_test_connector_module
-    pxgridnode_info_module
-    radiusserversequence_module
-    radiusserversequence_info_module
+    px_grid_node_info_module
+    radius_server_sequence_module
+    radius_server_sequence_info_module
     renew_certificate_module
     reportconfig_module
     repository_module
@@ -459,8 +457,8 @@ Modules
     repository_info_module
     reservation_module
     reservation_info_module
-    restidstore_module
-    restidstore_info_module
+    restid_store_module
+    restid_store_info_module
     restidstorepredefinedregex_fetch_san_predefinedregexs_info_module
     restidstorepredefinedregex_fetch_snf_predefinedregexs_info_module
     restidstoresettings_info_module
@@ -480,38 +478,37 @@ Modules
     sgt_info_module
     sgtvnvlan_module
     sgtvnvlan_info_module
-    smsprovider_info_module
-    sponsoredguestportal_module
-    sponsoredguestportal_info_module
-    sponsorgroup_module
-    sponsorgroup_info_module
-    sponsorgroupmember_info_module
-    sponsorportal_module
-    sponsorportal_info_module
+    sms_provider_info_module
+    sponsor_group_module
+    sponsor_group_info_module
+    sponsor_group_member_info_module
+    sponsor_portal_module
+    sponsor_portal_info_module
+    sponsored_guest_portal_module
+    sponsored_guest_portal_info_module
     stop_replication_module
     stop_replication_info_module
+    support_bundle_download_module
+    support_bundle_status_info_module
     supportbundle_module
-    supportbundledownload_module
-    supportbundlestatus_info_module
-    sxpconnections_module
-    sxpconnections_info_module
-    sxplocalbindings_module
-    sxplocalbindings_info_module
-    sxpvpns_module
-    sxpvpns_info_module
+    sxp_connections_module
+    sxp_connections_info_module
+    sxp_local_bindings_module
+    sxp_local_bindings_info_module
+    sxp_vpns_module
+    sxp_vpns_info_module
     system_certificate_module
     system_certificate_export_info_module
     system_certificate_import_module
     system_certificate_info_module
-    systemcertificate_module
-    tacacscommandsets_module
-    tacacscommandsets_info_module
-    tacacsexternalservers_module
-    tacacsexternalservers_info_module
-    tacacsprofile_module
-    tacacsprofile_info_module
-    tacacsserversequence_module
-    tacacsserversequence_info_module
+    tacacs_command_sets_module
+    tacacs_command_sets_info_module
+    tacacs_external_servers_module
+    tacacs_external_servers_info_module
+    tacacs_profile_module
+    tacacs_profile_info_module
+    tacacs_server_sequence_module
+    tacacs_server_sequence_info_module
     tasks_info_module
     telemetryinfo_info_module
     transport_gateway_settings_module
