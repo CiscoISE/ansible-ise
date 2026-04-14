@@ -6,7 +6,7 @@
   gather_facts: false
   tasks:
     - name: Get all SXP Local Bindings
-      cisco.ise.sxplocalbindings_info:
+      cisco.ise.sxp_local_bindings_info:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"

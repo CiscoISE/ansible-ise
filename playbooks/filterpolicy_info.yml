@@ -6,7 +6,7 @@
   gather_facts: false
   tasks:
     - name: Get all Filter Policies
-      cisco.ise.filterpolicy_info:
+      cisco.ise.filter_policy_info:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"

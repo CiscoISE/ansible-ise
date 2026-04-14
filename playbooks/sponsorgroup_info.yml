@@ -6,7 +6,7 @@
   gather_facts: false
   tasks:
     - name: Get all Sponsor Groups
-      cisco.ise.sponsorgroup_info:
+      cisco.ise.sponsor_group_info:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"

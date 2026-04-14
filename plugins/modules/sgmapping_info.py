@@ -15,6 +15,14 @@ extends_documentation_fragment:
   - cisco.ise.module_info
 author: Rafael Campos (@racampos)
 options:
+  id:
+    description:
+      - Id path parameter.
+    type: str
+  name:
+    description:
+      - Name path parameter.
+    type: str
   filter:
     description:
       - Filter query parameter. Filter Supported Fields hostName, groupName, ip, sgtName.
@@ -48,6 +56,10 @@ options:
     description:
       - Sortasc query parameter. Sorting Supported Fields hostName, groupName, ip,
         sgtName.
+    type: str
+  filterType:
+    description:
+      - FilterType query parameter.
     type: str
 requirements:
   - ciscoisesdk >= 2.0.1

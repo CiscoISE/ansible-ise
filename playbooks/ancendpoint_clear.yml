@@ -6,7 +6,7 @@
   gather_facts: false
   tasks:
     - name: Clear ANC policy from endpoint by MAC address
-      cisco.ise.ancendpoint_clear:
+      cisco.ise.anc_endpoint_clear:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"

@@ -6,7 +6,7 @@
   gather_facts: false
   tasks:
     - name: Get Guest Types
-      cisco.ise.guesttype_info:
+      cisco.ise.guest_type_info:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
@@ -19,7 +19,7 @@
         var: guest_types.ise_response
 
     - name: Create Guest Type
-      cisco.ise.guesttype:
+      cisco.ise.guest_type:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"

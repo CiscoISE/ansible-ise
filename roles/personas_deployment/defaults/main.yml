@@ -1,3 +1,4 @@
+---
 # Variables common to all deployment types
 personas_deployment_ise_deployment_type: small
 personas_deployment_ise_base_hostname: ISE

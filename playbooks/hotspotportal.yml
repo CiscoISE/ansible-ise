@@ -6,7 +6,7 @@
   gather_facts: false
   tasks:
     - name: Get Hotspot Portals
-      cisco.ise.hotspotportal_info:
+      cisco.ise.hotspot_portal_info:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
@@ -19,7 +19,7 @@
         var: hotspot_portals.ise_response
 
     - name: Create or update Hotspot Portal
-      cisco.ise.hotspotportal:
+      cisco.ise.hotspot_portal:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"

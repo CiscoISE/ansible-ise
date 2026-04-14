@@ -6,7 +6,7 @@
   gather_facts: false
   tasks:
     - name: Get TACACS Server Sequences
-      cisco.ise.tacacsserversequence_info:
+      cisco.ise.tacacs_server_sequence_info:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
@@ -19,7 +19,7 @@
         var: tacacs_sequences.ise_response
 
     - name: Create TACACS Server Sequence
-      cisco.ise.tacacsserversequence:
+      cisco.ise.tacacs_server_sequence:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"

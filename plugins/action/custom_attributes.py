@@ -59,7 +59,7 @@ class CustomAttributes(object):
     def get_object_by_name(self, name):
         try:
             result = self.ise.exec(
-                family="customattributes",
+                family="custom_attributes",
                 function="get",
                 params={"name": name},
                 handle_func_exception=False,
@@ -119,7 +119,7 @@ class CustomAttributes(object):
 
     def create(self):
         result = self.ise.exec(
-            family="customattributes",
+            family="custom_attributes",
             function="create_custom_attribute",
             params=self.new_object,
         ).response
@@ -133,7 +133,7 @@ class CustomAttributes(object):
             name_ = self.get_object_by_id(id).get("name")
             self.new_object.update(dict(name=name_))
         result = self.ise.exec(
-            family="customattributes",
+            family="custom_attributes",
             function="delete",
             params=self.new_object
         ).response

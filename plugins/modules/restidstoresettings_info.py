@@ -20,7 +20,7 @@ requirements:
   - python >= 3.5
 notes:
   - SDK Method used are
-    restidstoresettings.Restidstoresettings.get_restidstoresettings,
+    restidstoresettings.Restidstoresettings.get_restid_storesettings,
   - Paths used are
     get /restidstoresettings/,
 """

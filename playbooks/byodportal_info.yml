@@ -6,7 +6,7 @@
   gather_facts: false
   tasks:
     - name: Get all BYOD Portals
-      cisco.ise.byodportal_info:
+      cisco.ise.byod_portal_info:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
@@ -18,7 +18,7 @@
       ansible.builtin.debug:
         var: result.ise_response
     - name: Get BYOD Portal by ID
-      cisco.ise.byodportal_info:
+      cisco.ise.byod_portal_info:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"

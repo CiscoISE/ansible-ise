@@ -1,44 +1,78 @@
+---
 name: docs
 
 on:
   push:
     tags:
-      - v[0-9]+.[0-9]+.[0-9]+
+      - ^v[0-9]+\.[0-9]+\.[0-9]+$
     branches:
       - main
+
+env:
+  KEEP_VERSIONS: 15
 
 jobs:
   docs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: configure git
+      - uses: actions/checkout@v4
+
+      - name: Configure git
         run: |
           git config user.name "${GITHUB_ACTOR}"
           git config user.email "${GITHUB_ACTOR}@bots.github.com"
           git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/*
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.8"
+          cache: pip
+
       - name: Install dependencies
         run: |
           pip install antsibull-docs
           make doc-setup
+
       - name: Build docs
         run: make doc
-      - name: commit docs
+
+      - name: Commit docs
         run: |
-          git checkout gh-pages || git checkout -b gh-pages
-          rm -rf $(basename ${GITHUB_REF})
-          mv docs/_build/html $(basename ${GITHUB_REF})
+          VERSION=$(basename "${GITHUB_REF}")
+
+          git checkout gh-pages || git checkout --orphan gh-pages
+
+          if [ -d "$VERSION" ]; then
+            rm -rf "$VERSION"
+          fi
+
+          mv docs/_build/html "$VERSION"
+
+          echo "Cleaning old documentation versions (keeping last ${{ env.KEEP_VERSIONS }})..."
+          versions_to_delete=$(find . -maxdepth 1 -type d -name 'v*' -printf '%f\n' 2>/dev/null \
+            | grep -v "^${VERSION}$" \
+            | sort --version-sort --reverse \
+            | tail -n +${{ env.KEEP_VERSIONS }})
+
+          if [ -n "$versions_to_delete" ]; then
+            echo "$versions_to_delete" | xargs -r rm -rf
+          fi
+
           git show origin/main:docs/_gh_include/header.inc > index.html
-          (echo main; dirname v*/index.html | sort --version-sort --reverse) \
+          (echo main; find . -maxdepth 1 -type d -name 'v*' -printf '%f\n' 2>/dev/null \
+            | sort --version-sort --reverse) \
             | xargs -I@@ \
-            -n1 echo '<div class="col-md-4 center"><a href="@@/" class="btn-doc btn">' \
-            '<i class="fa fa-newspaper-o"></i><p>@@</p></a></div>' >> index.html
+            -n1 echo '<div class="col-md-4 center"><a href="@@/" class="btn-doc btn"><i class="fa fa-newspaper-o"></i><p>@@</p></a></div>' >> index.html
           git show origin/main:docs/_gh_include/footer.inc >> index.html
-          git add $(basename ${GITHUB_REF}) index.html
-          git commit -m "update docs for $(basename ${GITHUB_REF})" || true
-      - name: push docs
+
+          git add -A
+
+          if ! git diff --cached --quiet; then
+            git commit -m "update docs for ${VERSION}"
+          else
+            echo "No documentation changes to commit"
+          fi
+
+      - name: Push docs
         run: git push origin gh-pages

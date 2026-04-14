@@ -1,2 +1,183 @@
 ---
 requires_ansible: '>=2.15.0'
+
+action_groups:
+  nbar_app:
+    - trustsec_nbar_app
+    - trustsec_nbar_app_info
+  virtual_network:
+    - trustsec_vn
+    - trustsec_vn_bulk_create
+    - trustsec_vn_bulk_delete
+    - trustsec_vn_bulk_update
+    - trustsec_vn_info
+
+plugin_routing:
+  modules:
+    # --- A ---
+    acisettings_info:
+      redirect: cisco.ise.aci_settings_info
+    activedirectory:
+      redirect: cisco.ise.active_directory
+    activedirectory_info:
+      redirect: cisco.ise.active_directory_info
+    adminuser_info:
+      redirect: cisco.ise.admin_user_info
+    allowedprotocols:
+      redirect: cisco.ise.allowed_protocols
+    allowedprotocols_info:
+      redirect: cisco.ise.allowed_protocols_info
+    ancendpoint_clear:
+      redirect: cisco.ise.anc_endpoint_clear
+    ancendpoint_info:
+      redirect: cisco.ise.anc_endpoint_info
+    ancpolicy:
+      redirect: cisco.ise.anc_policy
+    ancpolicy_info:
+      redirect: cisco.ise.anc_policy_info
+    authorizationprofile:
+      redirect: cisco.ise.authorization_profile
+    authorizationprofile_info:
+      redirect: cisco.ise.authorization_profile_info
+    # --- B ---
+    byodportal:
+      redirect: cisco.ise.byod_portal
+    byodportal_info:
+      redirect: cisco.ise.byod_portal_info
+    # --- C ---
+    certificateprofile:
+      redirect: cisco.ise.certificate_profile
+    certificateprofile_info:
+      redirect: cisco.ise.certificate_profile_info
+    certificatetemplate_info:
+      redirect: cisco.ise.certificate_template_info
+    # --- D ---
+    downloadableacl:
+      redirect: cisco.ise.downloadable_acl
+    downloadableacl_info:
+      redirect: cisco.ise.downloadable_acl_info
+    # --- E ---
+    egressmatrixcell:
+      redirect: cisco.ise.egress_matrix_cell
+    egressmatrixcell_info:
+      redirect: cisco.ise.egress_matrix_cell_info
+    externalradiusserver:
+      redirect: cisco.ise.external_radius_server
+    externalradiusserver_info:
+      redirect: cisco.ise.external_radius_server_info
+    # --- F ---
+    filterpolicy:
+      redirect: cisco.ise.filter_policy
+    filterpolicy_info:
+      redirect: cisco.ise.filter_policy_info
+    # --- G ---
+    guestlocation_info:
+      redirect: cisco.ise.guest_location_info
+    guestssid:
+      redirect: cisco.ise.guest_ssid
+    guestssid_info:
+      redirect: cisco.ise.guest_ssid_info
+    guesttype:
+      redirect: cisco.ise.guest_type
+    guesttype_info:
+      redirect: cisco.ise.guest_type_info
+    guestuser:
+      redirect: cisco.ise.guest_user
+    guestuser_info:
+      redirect: cisco.ise.guest_user_info
+    # --- H ---
+    hotspotportal:
+      redirect: cisco.ise.hotspot_portal
+    hotspotportal_info:
+      redirect: cisco.ise.hotspot_portal_info
+    # --- I ---
+    internaluser:
+      redirect: cisco.ise.internal_user
+    internaluser_info:
+      redirect: cisco.ise.internal_user_info
+    # --- M ---
+    mydeviceportal:
+      redirect: cisco.ise.my_device_portal
+    mydeviceportal_info:
+      redirect: cisco.ise.my_device_portal_info
+    # --- N ---
+    networkdevice:
+      redirect: cisco.ise.network_device
+    networkdevice_info:
+      redirect: cisco.ise.network_device_info
+    networkdevicegroup:
+      redirect: cisco.ise.network_device_group
+    networkdevicegroup_info:
+      redirect: cisco.ise.network_device_group_info
+    # --- P ---
+    portalglobalsetting_info:
+      redirect: cisco.ise.portal_global_setting_info
+    portaltheme:
+      redirect: cisco.ise.portal_theme
+    portaltheme_info:
+      redirect: cisco.ise.portal_theme_info
+    profilerprofile_info:
+      redirect: cisco.ise.profiler_profile_info
+    pxgridnode_info:
+      redirect: cisco.ise.px_grid_node_info
+    # --- R ---
+    radiusserversequence:
+      redirect: cisco.ise.radius_server_sequence
+    radiusserversequence_info:
+      redirect: cisco.ise.radius_server_sequence_info
+    restidstore:
+      redirect: cisco.ise.restid_store
+    restidstore_info:
+      redirect: cisco.ise.restid_store_info
+    # --- S ---
+    smsprovider_info:
+      redirect: cisco.ise.sms_provider_info
+    sponsoredguestportal:
+      redirect: cisco.ise.sponsored_guest_portal
+    sponsoredguestportal_info:
+      redirect: cisco.ise.sponsored_guest_portal_info
+    sponsorgroup:
+      redirect: cisco.ise.sponsor_group
+    sponsorgroup_info:
+      redirect: cisco.ise.sponsor_group_info
+    sponsorgroupmember_info:
+      redirect: cisco.ise.sponsor_group_member_info
+    sponsorportal:
+      redirect: cisco.ise.sponsor_portal
+    sponsorportal_info:
+      redirect: cisco.ise.sponsor_portal_info
+    supportbundledownload:
+      redirect: cisco.ise.support_bundle_download
+    supportbundlestatus_info:
+      redirect: cisco.ise.support_bundle_status_info
+    sxpconnections:
+      redirect: cisco.ise.sxp_connections
+    sxpconnections_info:
+      redirect: cisco.ise.sxp_connections_info
+    sxplocalbindings:
+      redirect: cisco.ise.sxp_local_bindings
+    sxplocalbindings_info:
+      redirect: cisco.ise.sxp_local_bindings_info
+    sxpvpns:
+      redirect: cisco.ise.sxp_vpns
+    sxpvpns_info:
+      redirect: cisco.ise.sxp_vpns_info
+    systemcertificate:
+      redirect: cisco.ise.system_certificate
+    # --- T ---
+    tacacscommandsets:
+      redirect: cisco.ise.tacacs_command_sets
+    tacacscommandsets_info:
+      redirect: cisco.ise.tacacs_command_sets_info
+    tacacsexternalservers:
+      redirect: cisco.ise.tacacs_external_servers
+    tacacsexternalservers_info:
+      redirect: cisco.ise.tacacs_external_servers_info
+    tacacsprofile:
+      redirect: cisco.ise.tacacs_profile
+    tacacsprofile_info:
+      redirect: cisco.ise.tacacs_profile_info
+    tacacsserversequence:
+      redirect: cisco.ise.tacacs_server_sequence
+    tacacsserversequence_info:
+      redirect: cisco.ise.tacacs_server_sequence_info

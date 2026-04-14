@@ -6,7 +6,7 @@
   gather_facts: false
   tasks:
     - name: Get Certificate Profiles
-      cisco.ise.certificateprofile_info:
+      cisco.ise.certificate_profile_info:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
@@ -19,7 +19,7 @@
         var: cert_profiles.ise_response
 
     - name: Create Certificate Profile
-      cisco.ise.certificateprofile:
+      cisco.ise.certificate_profile:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"

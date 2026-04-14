@@ -20,7 +20,7 @@ requirements:
   - python >= 3.5
 notes:
   - SDK Method used are
-    restidstorepredefinedregex.Restidstorepredefinedregex.get_restidstorepredefinedregex_fetchsanpredefinedregexs,
+    restidstorepredefinedregex.Restidstorepredefinedregex.get_restid_storepredefinedregex_fetchsanpredefinedregexs,
   - Paths used are
     get /restidstorepredefinedregex/fetchSanPredefinedregexs,
 """

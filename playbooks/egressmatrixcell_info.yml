@@ -6,7 +6,7 @@
   gather_facts: false
   tasks:
     - name: Get all Egress Matrix Cells
-      cisco.ise.egressmatrixcell_info:
+      cisco.ise.egress_matrix_cell_info:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
@@ -18,7 +18,7 @@
       ansible.builtin.debug:
         var: result.ise_response
     - name: Get Egress Matrix Cell by ID
-      cisco.ise.egressmatrixcell_info:
+      cisco.ise.egress_matrix_cell_info:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"

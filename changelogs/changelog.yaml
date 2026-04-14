@@ -1628,3 +1628,19 @@ releases:
       bugfixes:
         - networkdevice add support for 'absent' state, implement update and delete methods
         - update ISE version to 3.5.0 for improved functionality.
+  3.1.0:
+    release_date: "2026-04-14"
+    changes:
+      release_summary: Restore snake_case module names and add backward-compatibility routing for 3.0.x playbooks.
+      bugfixes:
+        - Added 76 plugin_routing.modules redirects in meta/runtime.yml mapping 3.0.x camelCase
+          module names (e.g. networkdevice, byodportal) to their snake_case equivalents
+          (e.g. network_device, byod_portal), enabling backward compatibility for existing playbooks.
+        - Added action_groups in meta/runtime.yml for nbar_app (trustsec_nbar_app,
+          trustsec_nbar_app_info) and virtual_network (trustsec_vn, trustsec_vn_bulk_create,
+          trustsec_vn_bulk_delete, trustsec_vn_bulk_update, trustsec_vn_info), enabling
+          module_defaults grouping for TrustSec modules.
+        - Fixed _info modules to accept id parameter for get-by-id lookups.
+        - Fixed generator function names in network_device_group, restid_store, sponsor_group_member,
+          authorization_profile, guest_user, portal_theme, sponsored_guest_portal,
+          portal_global_setting, profiler_profile, and admin_user.

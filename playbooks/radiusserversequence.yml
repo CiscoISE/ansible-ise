@@ -6,7 +6,7 @@
   gather_facts: false
   tasks:
     - name: Get RADIUS Server Sequences
-      cisco.ise.radiusserversequence_info:
+      cisco.ise.radius_server_sequence_info:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
@@ -19,7 +19,7 @@
         var: radius_sequences.ise_response
 
     - name: Create RADIUS Server Sequence
-      cisco.ise.radiusserversequence:
+      cisco.ise.radius_server_sequence:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"

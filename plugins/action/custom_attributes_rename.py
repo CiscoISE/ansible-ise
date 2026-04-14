@@ -80,7 +80,7 @@ class ActionModule(ActionBase):
         ise = ISESDK(params=self._task.args)
 
         response = ise.exec(
-            family="customattributes",
+            family="custom_attributes",
             function="rename",
             params=self.get_object(self._task.args),
         ).response

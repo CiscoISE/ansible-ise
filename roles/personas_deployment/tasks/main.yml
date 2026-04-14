@@ -1,3 +1,4 @@
+---
 - name: Include small deployment tasks
   ansible.builtin.include_tasks: small_deployment.yml
   when: personas_deployment_ise_deployment_type == "small"

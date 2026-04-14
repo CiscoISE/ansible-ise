@@ -6,7 +6,7 @@
   gather_facts: false
   tasks:
     - name: Get SXP VPNs
-      cisco.ise.sxpvpns_info:
+      cisco.ise.sxp_vpns_info:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
@@ -19,7 +19,7 @@
         var: sxp_vpns.ise_response
 
     - name: Create SXP VPN
-      cisco.ise.sxpvpns:
+      cisco.ise.sxp_vpns:
         ise_hostname: "{{ ise_hostname }}"
         ise_username: "{{ ise_username }}"
         ise_password: "{{ ise_password }}"
