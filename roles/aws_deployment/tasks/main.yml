@@ -1,3 +1,4 @@
+---
 - name: Execute AWS tasks
   ansible.builtin.import_tasks: aws/aws.yml
   when: cloud_provider | lower == 'aws'

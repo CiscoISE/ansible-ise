@@ -27,20 +27,6 @@
     #     id: d704e911-a916-11eb-8830-2ec507028ea8
     #   register: result
 
-    - name: Get System Certificate by name
-      cisco.ise.system_certificate_info:
-        ise_hostname: "{{ ise_hostname }}"
-        ise_username: "{{ ise_username }}"
-        ise_password: "{{ ise_password }}"
-        ise_version: "{{ ise_version }}"
-        ise_verify: "{{ ise_verify }}"
-        ise_debug: "{{ ise_debug }}"
-        hostName: ise
-      register: result
-
-    - name: Print result
-      ansible.builtin.debug:
-        var: result
     # - name: Update a system_certificate
     #   cisco.ise.system_certificate:
     #     ise_hostname: "{{ ise_hostname }}"
@@ -70,3 +56,18 @@
     # - name: Print result
     #   ansible.builtin.debug:
     #     var: result
+
+    - name: Get System Certificate by name
+      cisco.ise.system_certificate_info:
+        ise_hostname: "{{ ise_hostname }}"
+        ise_username: "{{ ise_username }}"
+        ise_password: "{{ ise_password }}"
+        ise_version: "{{ ise_version }}"
+        ise_verify: "{{ ise_verify }}"
+        ise_debug: "{{ ise_debug }}"
+        hostName: ise
+      register: result
+
+    - name: Print result
+      ansible.builtin.debug:
+        var: result

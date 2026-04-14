@@ -1,3 +1,4 @@
+---
 - name: Check if all nodes are in STANDALONE state
   cisco.ise.personas_check_standalone:
     ip: "{{ item.ip }}"

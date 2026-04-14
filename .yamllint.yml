@@ -8,6 +8,13 @@ ignore:
 level: warning
 
 rules:
+  braces:
+    max-spaces-inside: 1
+    level: warning
+  comments:
+    min-spaces-from-content: 1
+    level: warning
+  comments-indentation: false
   line-length:
     max: 160
     level: warning
@@ -19,3 +26,6 @@ rules:
     level: warning
   key-duplicates:
     level: warning
+  octal-values:
+    forbid-implicit-octal: true
+    forbid-explicit-octal: true
