@@ -1644,3 +1644,22 @@ releases:
         - Fixed generator function names in network_device_group, restid_store, sponsor_group_member,
           authorization_profile, guest_user, portal_theme, sponsored_guest_portal,
           portal_global_setting, profiler_profile, and admin_user.
+  3.2.0:
+    release_date: "2026-05-07"
+    changes:
+      release_summary: >
+        Restore 16 critical modules removed in v3.0.0. All deployment,
+        node group, node services profiler, and active directory
+        sub-operation modules are back.
+      major_changes:
+        - Restored node_deployment and node_deployment_info modules.
+        - Restored node_deployment_sync module.
+        - Restored node_secondary_to_primary module.
+        - Restored node_standalone_to_primary module.
+        - Restored node_group and node_group_info modules.
+        - Restored node_group_node_info, node_group_node_create, node_group_node_delete modules.
+        - Restored node_services_profiler_probe_config and node_services_profiler_probe_config_info modules.
+        - Restored active_directory_join_domain module.
+        - Restored active_directory_leave_domain module.
+        - Restored active_directory_groups_by_domain_info module.
+        - Restored active_directory_add_groups module.

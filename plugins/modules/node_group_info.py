@@ -1,0 +1,70 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# Copyright (c) 2021, Cisco Systems
+# GNU General Public License v3.0+ (see LICENSE or https://www.gnu.org/licenses/gpl-3.0.txt)
+
+DOCUMENTATION = r"""
+---
+module: node_group_info
+short_description: Information module for Node Group
+description:
+  - Get all Node Groups.
+  - Get Node Group by name.
+version_added: '1.0.0'
+extends_documentation_fragment:
+  - cisco.ise.module_info
+author: Rafael Campos (@racampos)
+options:
+  nodeGroupName:
+    description:
+      - NodeGroupName path parameter. Name of the node group.
+    type: str
+requirements:
+  - ciscoisesdk >= 2.2.1
+  - python >= 3.5
+notes:
+  - SDK Method used are
+    node_group.NodeGroup.get_node_groups,
+    node_group.NodeGroup.get_node_group,
+  - Paths used are
+    get /api/v1/deployment/node-group,
+    get /api/v1/deployment/node-group/{nodeGroupName},
+"""
+
+EXAMPLES = r"""
+---
+- name: Get all Node Groups
+  cisco.ise.node_group_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+  register: result
+
+- name: Get Node Group by name
+  cisco.ise.node_group_info:
+    ise_hostname: "{{ise_hostname}}"
+    ise_username: "{{ise_username}}"
+    ise_password: "{{ise_password}}"
+    ise_verify: "{{ise_verify}}"
+    nodeGroupName: mygroup
+  register: result
+"""
+
+RETURN = r"""
+ise_response:
+  description: A dictionary or list with the response returned by the Cisco ISE Python SDK
+  returned: always
+  type: dict
+  sample: >
+    {
+      "description": "string",
+      "marCache": {
+        "query-attempts": 0,
+        "query-timeout": 0,
+        "replication-attempts": 0,
+        "replication-timeout": 0
+      },
+      "name": "string"
+    }
+"""
