@@ -76,7 +76,7 @@ class ActionModule(ActionBase):
                 id=params.get("id"),
                 additional_data=params.get("additionalData"),
             ),
-        ).response
+        ).response["ERSActiveDirectoryGroups"]
 
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())

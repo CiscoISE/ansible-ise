@@ -73,7 +73,7 @@ class ActionModule(ActionBase):
             params=dict(
                 hostname=self._task.args.get("hostname"),
             ),
-        ).response
+        ).response["response"]
 
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())

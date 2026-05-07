@@ -23,7 +23,7 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
 argument_spec = ise_argument_spec()
 argument_spec.update(dict(
     hostname=dict(type="str"),
-    filter=dict(type="str"),
+    filter=dict(type="list"),
     filterType=dict(type="str"),
 ))
 
@@ -82,13 +82,13 @@ class ActionModule(ActionBase):
                 family="node_deployment",
                 function="get_node_details",
                 params=self.get_object(self._task.args),
-            ).response
+            ).response["response"]
         else:
             response = ise.exec(
                 family="node_deployment",
                 function="get_deployment_nodes",
                 params=self.get_object(self._task.args),
-            ).response
+            ).response["response"]
 
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())

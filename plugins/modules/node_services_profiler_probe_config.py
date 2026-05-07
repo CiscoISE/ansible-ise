@@ -56,12 +56,14 @@ options:
     elements: dict
   pxgrid:
     description:
-      - Enable or disable pxGrid probe.
-    type: bool
+      - PxGrid probe configuration list.
+    type: list
+    elements: dict
   radius:
     description:
-      - RADIUS probe configuration.
-    type: dict
+      - RADIUS probe configuration list.
+    type: list
+    elements: dict
   snmpQuery:
     description:
       - SNMP query probe configuration.

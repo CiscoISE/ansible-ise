@@ -78,13 +78,13 @@ class ActionModule(ActionBase):
                 family="node_group",
                 function="get_node_group",
                 params=self.get_object(self._task.args),
-            ).response
+            ).response["response"]
         else:
             response = ise.exec(
                 family="node_group",
                 function="get_node_groups",
                 params={},
-            ).response
+            ).response["response"]
 
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())

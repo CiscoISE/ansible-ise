@@ -76,7 +76,7 @@ class ActionModule(ActionBase):
             family="node_group",
             function="get_nodes",
             params=self.get_object(self._task.args),
-        ).response
+        ).response["response"]
 
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())
