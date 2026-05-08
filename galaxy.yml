@@ -34,3 +34,4 @@ build_ignore:
   - Makefile
   - requirements.txt
   - cisco-ise-*.tar.gz
+  - .claude
