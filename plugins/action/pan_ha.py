@@ -113,19 +113,18 @@ class PanHa(object):
     def create(self):
         result = self.ise.exec(
             family="pan_ha",
-            function="enable_pan_ha",
+            function="update_pan_ha",
             params=self.new_object,
         ).response
         return result
 
     def delete(self):
-        id = self.new_object.get("id")
-        name = self.new_object.get("name")
-        result = None
+        params = dict(self.new_object)
+        params['is_enabled'] = False
         result = self.ise.exec(
             family="pan_ha",
-            function="disable_pan_ha",
-            params=self.new_object
+            function="update_pan_ha",
+            params=params,
         ).response
         return result
 
