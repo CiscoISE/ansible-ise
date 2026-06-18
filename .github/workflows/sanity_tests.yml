@@ -17,10 +17,19 @@ jobs:
     strategy:
       matrix:
         ansible:
-          - stable-2.17
-          - stable-2.18
           - stable-2.19
+          - stable-2.20
+          - stable-2.21
           - devel
+        include:
+          - ansible: stable-2.19
+            python: '3.12'
+          - ansible: stable-2.20
+            python: '3.12'
+          - ansible: stable-2.21
+            python: '3.12'
+          - ansible: devel
+            python: '3.13'
     runs-on: ubuntu-22.04
     steps:
       - name: Check out code
@@ -32,9 +41,9 @@ jobs:
       - name: Move repository
         run: mv ./CiscoISE/ansible-ise ./ansible_collections/${{env.NAMESPACE}}/${{env.COLLECTION_NAME}}
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
-          python-version: '3.12'
+          python-version: ${{ matrix.python }}
       - name: Install ansible-base (${{ matrix.ansible }})
         run: pip install https://github.com/ansible/ansible/archive/${{ matrix.ansible }}.tar.gz --disable-pip-version-check
       - name: Ensure swap space (2 GB)
