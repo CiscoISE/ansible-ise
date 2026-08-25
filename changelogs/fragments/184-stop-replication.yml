@@ -1,0 +1,12 @@
+---
+bugfixes:
+  - >-
+    ``stop_replication`` - the module no longer fails with ``Object does not
+    exists, plugin only has update``. Endpoint stop replication is a single
+    deployment wide switch, so the module now reads its current status and sets
+    it when it differs, instead of looking for an object by ``id`` or ``name``
+    that it never populated (https://github.com/CiscoISE/ansible-ise/issues/184).
+minor_changes:
+  - >-
+    ``stop_replication`` - ``isEnabled`` is now required when ``state`` is
+    ``present`` (https://github.com/CiscoISE/ansible-ise/issues/184).

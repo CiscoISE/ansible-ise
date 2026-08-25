@@ -216,6 +216,22 @@ In the `playbooks` [directory](https://github.com/CiscoISE/ansible-ise/tree/main
 
 **Note**: The examples found on the `playbooks` directory use the `group_vars` variables. Consider using `ansible-vault` to encrypt the file that has the `ise_username` and `ise_password`.
 
+### Certificate-based authentication (mTLS)
+
+As an alternative to `ise_username`/`ise_password`, Cisco ISE 3.3+ supports
+certificate-based (mTLS) API authentication. Provide the path to a client
+certificate (and optionally a separate private key) instead of a
+username/password:
+```
+ise_hostname: <A.B.C.D>
+ise_client_cert: /path/to/client.pem   # or ISE_CLIENT_CERT env var
+ise_client_key: /path/to/client.key    # optional; omit if key is bundled in the cert
+ise_verify: True
+```
+When `ise_client_cert` is set, `ise_username` and `ise_password` are not
+required. This requires `ciscoisesdk >= 2.4.2` and certificate-based API access
+enabled on the ISE deployment.
+
 
 ## Update
 Getting the latest/nightly collection build

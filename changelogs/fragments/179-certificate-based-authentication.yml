@@ -1,0 +1,9 @@
+---
+minor_changes:
+  - >-
+    All modules now support certificate-based (mTLS) authentication to Cisco ISE
+    via the new ``ise_client_cert`` and ``ise_client_key`` connection options
+    (environment variables ``ISE_CLIENT_CERT`` / ``ISE_CLIENT_KEY``). When a
+    client certificate is provided, ``ise_username`` and ``ise_password`` are no
+    longer required. Requires ciscoisesdk >= 2.4.2 and Cisco ISE 3.3 or later
+    with certificate-based API access enabled (https://github.com/CiscoISE/ansible-ise/issues/179).

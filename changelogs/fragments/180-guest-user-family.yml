@@ -1,0 +1,14 @@
+---
+bugfixes:
+  - >-
+    ``guest_user`` and the other modules that map to a renamed SDK API family no
+    longer fail with ``'IdentityServicesEngineAPI' object has no attribute
+    'guest_user'`` when ``ise_version`` is ``3.5.0``. The family was published as
+    ``guestuser`` in ciscoisesdk 2.4.2 and earlier, so the collection now requires
+    ciscoisesdk >= 2.4.5, which exposes both names
+    (https://github.com/CiscoISE/ansible-ise/issues/180).
+  - >-
+    Modules now fail with a message naming the API family and the configured
+    ``ise_version`` when the installed ciscoisesdk does not provide that family,
+    instead of failing later with a ``NoneType`` attribute error
+    (https://github.com/CiscoISE/ansible-ise/issues/180).

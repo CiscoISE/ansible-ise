@@ -1,2 +1,2 @@
-ciscoisesdk >= 2.2.1
+ciscoisesdk >= 2.4.5
 requests >= 2.25.1

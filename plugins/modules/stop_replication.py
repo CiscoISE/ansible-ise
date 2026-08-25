@@ -24,9 +24,14 @@ requirements:
   - python >= 3.5
 notes:
   - SDK Method used are
+    endpoint_stop_replication_service.EndpointStopReplicationService.get_stop_replication_status,
     endpoint_stop_replication_service.EndpointStopReplicationService.set_stop_replication_service,
   - Paths used are
+    get /api/v1/stop-replication,
     put /api/v1/stop-replication,
+  - Endpoint stop replication is a single deployment wide switch, so there is no
+    object to create or delete. C(isEnabled) is required and the current status
+    is read first to keep the module idempotent.
 """
 EXAMPLES = r"""
 ---

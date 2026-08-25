@@ -22,13 +22,26 @@ options:
     ise_username:
         description:
           - The Identity Services Engine username to authenticate.
+          - Required unless ise_client_cert is provided for certificate-based authentication.
         type: str
-        required: true
     ise_password:
         description:
           - The Identity Services Engine password to authenticate.
+          - Required unless ise_client_cert is provided for certificate-based authentication.
         type: str
-        required: true
+    ise_client_cert:
+        description:
+          - Absolute path to the client certificate file (.pem/.crt) used for certificate-based (mTLS) authentication.
+          - When provided, ise_username and ise_password are not required.
+          - Requires Cisco ISE 3.3 or later with certificate-based API access enabled.
+        type: path
+        version_added: '3.3.0'
+    ise_client_key:
+        description:
+          - Absolute path to the client private key file (.key) that pairs with ise_client_cert.
+          - Omit when the private key is bundled together with the certificate in ise_client_cert.
+        type: path
+        version_added: '3.3.0'
     ise_verify:
         description:
           - Flag to enable or disable SSL certificate verification.

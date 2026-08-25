@@ -1,0 +1,13 @@
+---
+bugfixes:
+  - >-
+    ``endpoint`` - the module now updates an existing endpoint instead of
+    reporting ``Object already present, but it has different values to the
+    requested`` and leaving the endpoint untouched, restoring the create/update
+    behaviour the module had before 3.0.0
+    (https://github.com/CiscoISE/ansible-ise/issues/181).
+  - >-
+    ``endpoint`` - the lookup by ``name`` now matches the MAC address regardless
+    of the separators used and returns the full endpoint, so an existing endpoint
+    written as ``AA-BB-CC-DD-EE-FF`` is no longer reported as missing and created
+    again (https://github.com/CiscoISE/ansible-ise/issues/181).

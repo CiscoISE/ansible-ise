@@ -1,0 +1,13 @@
+---
+bugfixes:
+  - >-
+    ``*_info`` modules - 56 information modules accepted a ``name`` parameter but
+    had no code path that used it, so a task that supplied ``name`` made no
+    request to Cisco ISE and returned ``None``, which is indistinguishable from
+    "the object does not exist". These modules now look the object up by name and
+    return it, or return nothing when there is no match
+    (https://github.com/CiscoISE/ansible-ise/issues/185).
+  - >-
+    ``tasks_info`` - removed the undocumented and unused ``name`` parameter, which
+    silently produced an empty result. Task status is retrieved with ``taskId`` or
+    for all tasks (https://github.com/CiscoISE/ansible-ise/issues/185).
