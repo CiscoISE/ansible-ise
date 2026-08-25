@@ -41,7 +41,7 @@ jobs:
       - name: Move repository
         run: mv ./CiscoISE/ansible-ise ./ansible_collections/${{env.NAMESPACE}}/${{env.COLLECTION_NAME}}
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python }}
       - name: Install ansible-base (${{ matrix.ansible }})
