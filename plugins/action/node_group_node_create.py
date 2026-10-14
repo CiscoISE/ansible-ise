@@ -78,6 +78,6 @@ class ActionModule(ActionBase):
         ).response
 
         self._result.update(dict(ise_response=response))
-        self._result["changed"] = True
+        ise.changed()
         self._result.update(ise.exit_json())
         return self._result

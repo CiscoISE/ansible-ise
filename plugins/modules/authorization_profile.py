@@ -44,7 +44,7 @@ options:
     type: dict
   agentlessPosture:
     description: Authorizationprofile's agentlessPosture.
-    type: dict
+    type: bool
   airespaceACL:
     description: Authorizationprofile's airespaceACL.
     type: str
@@ -72,7 +72,7 @@ options:
     type: str
   easywiredSessionCandidate:
     description: Authorizationprofile's easywiredSessionCandidate.
-    type: dict
+    type: bool
   id:
     description: Id.
     type: str
@@ -93,7 +93,7 @@ options:
     type: str
   neat:
     description: Authorizationprofile's neat.
-    type: dict
+    type: bool
   profileName:
     description: Value needs to be an existing Network Device Profile.
     type: str
@@ -123,10 +123,10 @@ options:
     type: dict
   serviceTemplate:
     description: Authorizationprofile's serviceTemplate.
-    type: dict
+    type: bool
   trackMovement:
     description: Authorizationprofile's trackMovement.
-    type: dict
+    type: bool
   uniqueIdentifier:
     description: Authorizationprofile's uniqueIdentifier.
     type: str
@@ -142,10 +142,10 @@ options:
     type: dict
   voiceDomainPermission:
     description: Authorizationprofile's voiceDomainPermission.
-    type: dict
+    type: bool
   webAuth:
     description: Authorizationprofile's webAuth.
-    type: dict
+    type: bool
   webRedirection:
     description: Authorizationprofile's webRedirection.
     suboptions:

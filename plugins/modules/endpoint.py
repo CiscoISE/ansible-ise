@@ -9,7 +9,7 @@ DOCUMENTATION = r"""
 module: endpoint
 short_description: Resource module for Endpoint
 description:
-  - Manage operation create of the resource Endpoint.
+  - Manage operations create and update of the resource Endpoint.
 version_added: '1.0.0'
 extends_documentation_fragment:
   - cisco.ise.module
@@ -66,8 +66,15 @@ requirements:
 notes:
   - SDK Method used are
     endpoint.Endpoint.create_endpoint,
+    endpoint.Endpoint.update_endpoint_by_id,
   - Paths used are
     post /endpoint/,
+    put /endpoint/{id},
+  - Either C(name) or C(id) is required when C(state) is C(present).
+    The endpoint is looked up first, then created when it is missing and
+    updated when it exists with different values.
+  - This module uses the ERS API. Use C(cisco.ise.endpoints) for the OpenAPI
+    based endpoint resource, which also supports C(state) C(absent).
 """
 EXAMPLES = r"""
 ---

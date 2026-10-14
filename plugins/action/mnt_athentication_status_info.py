@@ -68,8 +68,9 @@ class ActionModule(ActionBase):
     def get_object(self, params):
         new_object = dict(
             mac=params.get("MAC"),
-            sec_ond_s=params.get("SECONDS"),
-            rec_ord_s=params.get("RECORDS"),
+            duration=params.get("SECONDS"),
+            number=params.get("RECORDS"),
+            parameter="All",
         )
         return new_object
 
@@ -88,7 +89,7 @@ class ActionModule(ActionBase):
         if not name and not id:
             response = ise.exec(
                 family="misc",
-                function='get_authentication_status_by_mac',
+                function='get_auth_status',
                 params=self.get_object(self._task.args),
             ).response
             self._result.update(dict(ise_response=response))

@@ -22,10 +22,6 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
     ISESDK,
     ise_argument_spec,
     ise_compare_equality,
-    get_dict_result,
-)
-from ansible_collections.cisco.ise.plugins.plugin_utils.exceptions import (
-    InconsistentParameters,
 )
 
 # Get common arguments specification
@@ -37,7 +33,7 @@ argument_spec.update(dict(
 ))
 
 required_if = [
-    ("state", "present", [], True),
+    ("state", "present", ["isEnabled"], True),
 ]
 required_one_of = []
 mutually_exclusive = []
@@ -51,39 +47,16 @@ class StopReplication(object):
             is_enabled=params.get("isEnabled"),
         )
 
-    def get_object_by_name(self, name):
-        # NOTICE: Does not have a get by name method or it is in another action
-        result = None
-        items = self.ise.exec(
+    def get_object(self):
+        # NOTICE: Endpoint stop replication is a single deployment wide switch,
+        # so there is no id or name to look it up by, only its current status.
+        response = self.ise.exec(
             family="endpoint_stop_replication_service",
             function="get_stop_replication_status"
-        ).response['response']
-        result = get_dict_result(items, 'name', name)
-        return result
-
-    def get_object_by_id(self, id):
-        # NOTICE: Does not have a get by id method or it is in another action
-        result = None
-        return result
-
-    def exists(self):
-        prev_obj = None
-        id_exists = False
-        name_exists = False
-        o_id = self.new_object.get("id")
-        name = self.new_object.get("name")
-        if o_id:
-            prev_obj = self.get_object_by_id(o_id)
-            id_exists = prev_obj is not None and isinstance(prev_obj, dict)
-        if not id_exists and name:
-            prev_obj = self.get_object_by_name(name)
-            name_exists = prev_obj is not None and isinstance(prev_obj, dict)
-        if name_exists:
-            _id = prev_obj.get("id")
-            if id_exists and name_exists and o_id != _id:
-                raise InconsistentParameters("The 'id' and 'name' params don't refer to the same object")
-        it_exists = prev_obj is not None and isinstance(prev_obj, dict)
-        return (it_exists, prev_obj)
+        ).response
+        if isinstance(response, dict):
+            return response.get('response')
+        return None
 
     def requires_update(self, current_obj):
         requested_obj = self.new_object
@@ -98,9 +71,6 @@ class StopReplication(object):
                    for (ise_param, ansible_param) in obj_params)
 
     def update(self):
-        id = self.new_object.get("id")
-        name = self.new_object.get("name")
-        result = None
         result = self.ise.exec(
             family="endpoint_stop_replication_service",
             function="set_stop_replication_service",
@@ -149,19 +119,15 @@ class ActionModule(ActionBase):
 
         response = None
         if state == "present":
-            (obj_exists, prev_obj) = obj.exists()
-            if obj_exists:
-                if obj.requires_update(prev_obj):
-                    ise_update_response = obj.update()
-                    self._result.update(dict(ise_update_response=ise_update_response))
-                    (obj_exists, updated_obj) = obj.exists()
-                    response = updated_obj
-                    ise.object_updated()
-                else:
-                    response = prev_obj
-                    ise.object_already_present()
+            prev_obj = obj.get_object()
+            if prev_obj is None or obj.requires_update(prev_obj):
+                ise_update_response = obj.update()
+                self._result.update(dict(ise_update_response=ise_update_response))
+                response = obj.get_object()
+                ise.object_updated()
             else:
-                ise.fail_json("Object does not exists, plugin only has update")
+                response = prev_obj
+                ise.object_already_present()
 
         self._result.update(dict(ise_response=response))
         self._result.update(ise.exit_json())

@@ -17,10 +17,10 @@ author: Rafael Campos (@racampos)
 options:
   accountingPort:
     description: Valid Range 1 to 65535.
-    type: dict
+    type: int
   authenticationPort:
     description: Valid Range 1 to 65535.
-    type: dict
+    type: int
   authenticatorKey:
     description: The authenticatorKey is required only if enableKeyWrap is true, otherwise
       it must be ignored or empty. The maximum length is 20 ASCII characters or 40
@@ -57,16 +57,16 @@ options:
     type: str
   proxyTimeout:
     description: Valid Range 1 to 600.
-    type: dict
+    type: int
   retries:
     description: Valid Range 1 to 9.
-    type: dict
+    type: int
   sharedSecret:
     description: Shared secret maximum length is 128 characters.
     type: str
   timeout:
     description: Valid Range 1 to 120.
-    type: dict
+    type: int
 requirements:
   - ciscoisesdk >= 2.0.1
   - python >= 3.5

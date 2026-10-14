@@ -20,6 +20,7 @@ options:
     description:
       - RepositoryName path parameter. Unique name for a repository.
     type: str
+    required: true
 requirements:
   - ciscoisesdk >= 2.0.1
   - python >= 3.5

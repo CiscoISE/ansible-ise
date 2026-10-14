@@ -151,31 +151,33 @@ class NetworkDevice(object):
         it_exists = prev_obj is not None and isinstance(prev_obj, dict)
         return (it_exists, prev_obj)
 
+    obj_params = [
+        ("authenticationSettings", "authentication_settings"),
+        ("coaPort", "coa_port"),
+        ("dtlsDnsName", "dtls_dns_name"),
+        ("NetworkDeviceIPList", "network_device_iplist"),
+        ("NetworkDeviceGroupList", "network_device_group_list"),
+        ("modelName", "model_name"),
+        ("softwareVersion", "software_version"),
+        ("profileName", "profile_name"),
+        ("snmpsettings", "snmpsettings"),
+        ("tacacsSettings", "tacacs_settings"),
+        ("tacacsTlsSettings", "tacacs_tls_settings"),
+        ("trustsecsettings", "trustsecsettings"),
+        ("name", "name"),
+        ("id", "id"),
+        ("description", "description"),
+    ]
+
     def requires_update(self, current_obj):
         requested_obj = self.new_object
 
-        obj_params = [
-            ("authenticationSettings", "authentication_settings"),
-            ("coaPort", "coa_port"),
-            ("dtlsDnsName", "dtls_dns_name"),
-            ("NetworkDeviceIPList", "network_device_iplist"),
-            ("NetworkDeviceGroupList", "network_device_group_list"),
-            ("modelName", "model_name"),
-            ("softwareVersion", "software_version"),
-            ("profileName", "profile_name"),
-            ("snmpsettings", "snmpsettings"),
-            ("tacacsSettings", "tacacs_settings"),
-            ("tacacsTlsSettings", "tacacs_tls_settings"),
-            ("trustsecsettings", "trustsecsettings"),
-            ("name", "name"),
-            ("id", "id"),
-            ("description", "description"),
-        ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
-        return any(not ise_compare_equality(current_obj.get(ise_param),
-                                            requested_obj.get(ansible_param))
-                   for (ise_param, ansible_param) in obj_params)
+        return any((current_obj.get(ise_param) is None and requested_obj.get(ansible_param) is not None)
+                   or not ise_compare_equality(current_obj.get(ise_param),
+                                               requested_obj.get(ansible_param))
+                   for (ise_param, ansible_param) in self.obj_params)
 
     def create(self):
         result = self.ise.exec(
@@ -192,10 +194,14 @@ class NetworkDevice(object):
         if not id:
             id_ = self.get_object_by_name(name).get("id")
             self.new_object.update(dict(id=id_))
+        current_obj = self.get_object_by_id(self.new_object.get("id")) or {}
+        for (ise_param, ansible_param) in self.obj_params:
+            if self.new_object.get(ansible_param) is None:
+                self.new_object[ansible_param] = current_obj.get(ise_param)
         result = self.ise.exec(
             family="network_device",
             function="update_network_device_by_id",
-            params=self.new_object
+            params=dict(self.new_object, active_validation=False)
         ).response
         return result
 

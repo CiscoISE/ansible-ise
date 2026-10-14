@@ -24,7 +24,7 @@ options:
       SUBJECT_SERIAL_NUMBER, SUBJECT, SUBJECT_ALTERNATIVE_NAME_OTHER_NAME, SUBJECT_ALTERNATIVE_NAME_EMAIL,
       SUBJECT_ALTERNATIVE_NAME_DNS. Additional internal value ALL_SUBJECT_AND_ALTERNATIVE_NAMES
       is used automatically when usernameFrom=UPN.
-    type: dict
+    type: str
   description:
     description: Description.
     type: str
@@ -38,7 +38,7 @@ options:
   matchMode:
     description: Match mode of the Certificate Profile. Allowed values NEVER, RESOLVE_IDENTITY_AMBIGUITY,
       BINARY_COMPARISON.
-    type: dict
+    type: str
   name:
     description: Name.
     type: str
@@ -47,7 +47,7 @@ options:
       from. Allowed values CERTIFICATE (for a specific attribute as defined in certificateAttributeName),
       UPN (for using any Subject or Alternative Name Attributes in the Certificate
       - an option only in AD).
-    type: dict
+    type: str
 requirements:
   - ciscoisesdk >= 2.0.1
   - python >= 3.5

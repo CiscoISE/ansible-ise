@@ -27,8 +27,7 @@ from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
 argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
-    name=dict(type="str"),
-    id=dict(type="str"),
+    taskId=dict(type="str"),
     page=dict(type="int"),
     size=dict(type="int"),
     filter=dict(type="list"),
@@ -72,8 +71,7 @@ class ActionModule(ActionBase):
 
     def get_object(self, params):
         new_object = dict(
-            name=params.get("name"),
-            id=params.get("id"),
+            task_id=params.get("taskId"),
             page=params.get("page"),
             size=params.get("size"),
             filter=params.get("filter"),
@@ -94,20 +92,19 @@ class ActionModule(ActionBase):
         ise = ISESDK(params=self._task.args)
 
         id = self._task.args.get("taskId")
-        name = self._task.args.get("name")
         if id:
             response = ise.exec(
                 family="tasks",
-                function='get_task_status_by_id',
+                function='get_task_status',
                 params=self.get_object(self._task.args)
             ).response
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result
-        if not name and not id:
+        if not id:
             response = ise.exec(
                 family="tasks",
-                function='get_task_status',
+                function='get_all_task_status',
                 params=self.get_object(self._task.args)
             ).response
             self._result.update(dict(ise_response=response))

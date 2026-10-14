@@ -82,7 +82,7 @@ class ActionModule(ActionBase):
         if not name and not id:
             response = ise.exec(
                 family="restidstoresettings",
-                function='get_restid_storesettings',
+                function='get_restidstoresettings',
                 params=self.get_object(self._task.args)
             ).response['ERSRestIDStoreSettings']
             self._result.update(dict(ise_response=response))

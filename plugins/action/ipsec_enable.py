@@ -21,11 +21,6 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
     ISESDK,
     ise_argument_spec,
-    ise_compare_equality,
-    get_dict_result,
-)
-from ansible_collections.cisco.ise.plugins.plugin_utils.exceptions import (
-    InconsistentParameters,
 )
 
 # Get common arguments specification
@@ -53,22 +48,12 @@ class IpsecEnable(object):
             nad_ip=params.get("nadIp"),
         )
 
-    def get_object_by_name(self, name):
-        # NOTICE: Does not have a get by name method or it is in another action
-        result = None
-        items = self.ise.exec(
-            family="native_ipsec",
-            function=""
-        ).response.get('response', [])
-        result = get_dict_result(items, 'name', name)
-        return result
-
-    def get_object_by_id(self, id):
+    def get_object(self):
         try:
             result = self.ise.exec(
                 family="native_ipsec",
                 function="get_ipsec_node",
-                params={"id": id},
+                params=self.new_object,
                 handle_func_exception=False,
             ).response['response']
         except (TypeError, AttributeError) as e:
@@ -86,46 +71,11 @@ class IpsecEnable(object):
         return result
 
     def exists(self):
-        prev_obj = None
-        id_exists = False
-        name_exists = False
-        o_id = self.new_object.get("id")
-        name = self.new_object.get("name")
-        if o_id:
-            prev_obj = self.get_object_by_id(o_id)
-            id_exists = prev_obj is not None and isinstance(prev_obj, dict)
-        if not id_exists and name:
-            prev_obj = self.get_object_by_name(name)
-            name_exists = prev_obj is not None and isinstance(prev_obj, dict)
-        if name_exists:
-            _id = prev_obj.get("id")
-            if id_exists and name_exists and o_id != _id:
-                raise InconsistentParameters("The 'id' and 'name' params don't refer to the same object")
-            if _id:
-                prev_obj = self.get_object_by_id(_id)
+        prev_obj = self.get_object()
         it_exists = prev_obj is not None and isinstance(prev_obj, dict)
         return (it_exists, prev_obj)
 
-    def requires_update(self, current_obj):
-        requested_obj = self.new_object
-
-        obj_params = [
-            ("hostName", "host_name"),
-            ("nadIp", "nad_ip"),
-        ]
-        # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
-        # If any does not have eq params, it requires update
-        return any(not ise_compare_equality(current_obj.get(ise_param),
-                                            requested_obj.get(ansible_param))
-                   for (ise_param, ansible_param) in obj_params)
-
     def update(self):
-        id = self.new_object.get("id")
-        name = self.new_object.get("name")
-        result = None
-        if not id:
-            id_ = self.get_object_by_name(name).get("id")
-            self.new_object.update(dict(id=id_))
         result = self.ise.exec(
             family="native_ipsec",
             function="enable_ipsec_connection",
@@ -176,15 +126,11 @@ class ActionModule(ActionBase):
         if state == "present":
             (obj_exists, prev_obj) = obj.exists()
             if obj_exists:
-                if obj.requires_update(prev_obj):
-                    ise_update_response = obj.update()
-                    self._result.update(dict(ise_update_response=ise_update_response))
-                    (obj_exists, updated_obj) = obj.exists()
-                    response = updated_obj
-                    ise.object_updated()
-                else:
-                    response = prev_obj
-                    ise.object_already_present()
+                ise_update_response = obj.update()
+                self._result.update(dict(ise_update_response=ise_update_response))
+                (obj_exists, updated_obj) = obj.exists()
+                response = updated_obj
+                ise.object_updated()
             else:
                 ise.fail_json("Object does not exists, plugin only has update")
 

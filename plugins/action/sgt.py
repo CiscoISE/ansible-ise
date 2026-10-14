@@ -33,7 +33,7 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    value=dict(type="dict"),
+    value=dict(type="int"),
     propogateToApic=dict(type="bool"),
     isReadOnly=dict(type="bool"),
     defaultSGACLs=dict(type="list"),

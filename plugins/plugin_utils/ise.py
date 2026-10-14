@@ -14,6 +14,7 @@ except ImportError:
 else:
     ISE_SDK_IS_INSTALLED = True
 from ansible.module_utils.basic import env_fallback
+from ansible.utils.display import Display
 
 try:
     from ansible.errors import AnsibleActionFail
@@ -27,6 +28,11 @@ except ImportError:
     LOGGING_IN_STANDARD = False
 else:
     LOGGING_IN_STANDARD = True
+
+
+class DisplayHandler(logging.Handler):
+    def emit(self, record):
+        Display().display(self.format(record))
 
 
 def is_list_complex(x):
@@ -130,8 +136,10 @@ def get_dict_result(result, key, value):
 def ise_argument_spec():
     argument_spec = dict(
         ise_hostname=dict(type="str", fallback=(env_fallback, ['ISE_HOSTNAME']), required=True),
-        ise_username=dict(type="str", fallback=(env_fallback, ['ISE_USERNAME']), required=True),
-        ise_password=dict(type="str", fallback=(env_fallback, ['ISE_PASSWORD']), required=True, no_log=True),
+        ise_username=dict(type="str", fallback=(env_fallback, ['ISE_USERNAME'])),
+        ise_password=dict(type="str", fallback=(env_fallback, ['ISE_PASSWORD']), no_log=True),
+        ise_client_cert=dict(type="path", fallback=(env_fallback, ['ISE_CLIENT_CERT']), no_log=False),
+        ise_client_key=dict(type="path", fallback=(env_fallback, ['ISE_CLIENT_KEY']), no_log=False),
         ise_verify=dict(type="bool", default=True, fallback=(env_fallback, ['ISE_VERIFY'])),
         ise_version=dict(type="str", default="3.5.0", fallback=(env_fallback, ['ISE_VERSION'])),
         ise_wait_on_rate_limit=dict(type="bool", default=True, fallback=(env_fallback, ['ISE_WAIT_ON_RATE_LIMIT'])),
@@ -154,6 +162,17 @@ class ISESDK(object):
     def __init__(self, params):
         self.result = dict(changed=False, result="")
         if ISE_SDK_IS_INSTALLED:
+            ise_client_cert = params.get("ise_client_cert")
+            if not ise_client_cert and (
+                not params.get("ise_username") or not params.get("ise_password")
+            ):
+                self.fail_json(
+                    msg=(
+                        "Cisco ISE authentication requires either 'ise_username'"
+                        " and 'ise_password', or 'ise_client_cert' (with optional"
+                        " 'ise_client_key') for certificate-based authentication."
+                    )
+                )
             ise_uses_api_gateway = params.get("ise_uses_api_gateway")
             ui_base_url = None
             ers_base_url = None
@@ -175,6 +194,8 @@ class ISESDK(object):
                 px_grid_base_url=px_grid_base_url,
                 single_request_timeout=params.get("ise_single_request_timeout"),
                 verify=params.get("ise_verify"),
+                client_cert=ise_client_cert,
+                client_key=params.get("ise_client_key"),
                 version=params.get("ise_version"),
                 wait_on_rate_limit=params.get("ise_wait_on_rate_limit"),
                 uses_api_gateway=ise_uses_api_gateway,
@@ -182,7 +203,7 @@ class ISESDK(object):
                 debug=params.get("ise_debug"),
             )
             if params.get("ise_debug") and LOGGING_IN_STANDARD:
-                logging.getLogger('ciscoisesdk').addHandler(logging.StreamHandler())
+                logging.getLogger('ciscoisesdk').addHandler(DisplayHandler())
         else:
             self.fail_json(msg="Cisco ISE Python SDK is not installed. Execute 'pip install ciscoisesdk'")
 
@@ -217,6 +238,16 @@ class ISESDK(object):
             self.changed()
 
     def exec(self, family, function, params=None, handle_func_exception=True):
+        # A family that is not published for the configured ISE version resolves to None
+        # in the SDK, so report it instead of failing later on a NoneType attribute.
+        if getattr(self.api, family, None) is None:
+            self.fail_json(
+                msg=(
+                    "The Cisco ISE Python SDK does not provide the '{family}' API family"
+                    " for ISE version {version}."
+                    " Check the ise_version argument and the installed ciscoisesdk version."
+                ).format(family=family, version=self.api.version)
+            )
         try:
             family = getattr(self.api, family)
             func = getattr(family, function)

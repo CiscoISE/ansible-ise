@@ -33,9 +33,9 @@ argument_spec = ise_argument_spec()
 # Add arguments specific for this module
 argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present"]),
-    deployTo=dict(type="dict"),
+    deployTo=dict(type="str"),
     deployType=dict(type="str"),
-    sgt=dict(type="dict"),
+    sgt=dict(type="str"),
     sgtDomain=dict(type="str"),
     name=dict(type="str"),
     id=dict(type="str"),

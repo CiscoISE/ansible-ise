@@ -35,6 +35,11 @@ argument_spec.update(dict(
     state=dict(type="str", default="present", choices=["present", "absent"]),
     name=dict(type="str"),
     protocol=dict(type="str"),
+    path=dict(type="str"),
+    password=dict(type="str", no_log=True),
+    serverName=dict(type="str"),
+    userName=dict(type="str"),
+    enablePki=dict(type="bool"),
     repositoryName=dict(type="str"),
 ))
 
@@ -51,9 +56,27 @@ class Repository(object):
     def __init__(self, params, ise):
         self.ise = ise
         self.new_object = dict(
-            name=params.get("name"),
+            name=params.get("name") or params.get("repositoryName"),
             protocol=params.get("protocol"),
-            repository_name=params.get("repositoryName"),
+            path=params.get("path"),
+            password=params.get("password"),
+            server_name=params.get("serverName"),
+            user_name=params.get("userName"),
+            enable_pki=params.get("enablePki"),
+            repository_name=params.get("repositoryName") or params.get("name"),
+        )
+
+    def get_sdk_params(self):
+        return dict(
+            name=self.new_object.get("name"),
+            protocol=self.new_object.get("protocol"),
+            payload=dict(
+                path=self.new_object.get("path"),
+                password=self.new_object.get("password"),
+                serverName=self.new_object.get("server_name"),
+                userName=self.new_object.get("user_name"),
+                enablePki=self.new_object.get("enable_pki"),
+            ),
         )
 
     def get_object_by_name(self, name):
@@ -61,7 +84,7 @@ class Repository(object):
             result = self.ise.exec(
                 family="repository",
                 function="get_repository",
-                params={"name": name},
+                params={"repository_name": name},
                 handle_func_exception=False,
             ).response['response']
             result = get_dict_result(result, 'name', name)
@@ -89,7 +112,7 @@ class Repository(object):
         name_exists = False
         prev_obj = None
         o_id = self.new_object.get("id")
-        name = self.new_object.get("name")
+        name = self.new_object.get("repository_name")
         if o_id:
             prev_obj = self.get_object_by_id(o_id)
             id_exists = prev_obj is not None and isinstance(prev_obj, dict)
@@ -109,6 +132,10 @@ class Repository(object):
         obj_params = [
             ("name", "name"),
             ("protocol", "protocol"),
+            ("path", "path"),
+            ("serverName", "server_name"),
+            ("userName", "user_name"),
+            ("enablePki", "enable_pki"),
             ("repositoryName", "repository_name"),
         ]
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
@@ -121,35 +148,25 @@ class Repository(object):
         result = self.ise.exec(
             family="repository",
             function="create_repository",
-            params=self.new_object,
+            params=self.get_sdk_params(),
         ).response
         return result
 
     def update(self):
-        id = self.new_object.get("id")
-        name = self.new_object.get("name")
-        result = None
-        if not name:
-            name_ = self.get_object_by_id(id).get("name")
-            self.new_object.update(dict(name=name_))
+        params = self.get_sdk_params()
+        params.update(repository_name=self.new_object.get("repository_name"))
         result = self.ise.exec(
             family="repository",
             function="update_repository",
-            params=self.new_object
+            params=params
         ).response
         return result
 
     def delete(self):
-        id = self.new_object.get("id")
-        name = self.new_object.get("name")
-        result = None
-        if not name:
-            name_ = self.get_object_by_id(id).get("name")
-            self.new_object.update(dict(name=name_))
         result = self.ise.exec(
             family="repository",
             function="delete_repository",
-            params=self.new_object
+            params=dict(repository_name=self.new_object.get("repository_name"))
         ).response
         return result
 

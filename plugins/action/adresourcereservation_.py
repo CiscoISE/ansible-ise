@@ -60,13 +60,26 @@ class Adresourcereservation(object):
         )
 
     def get_object_by_name(self, name):
-        # NOTICE: Does not have a get by name method or it is in another action
-        result = None
-        items = self.ise.exec(
-            family="adresourcereservation",
-            function=""
-        ).response.get('response', [])
-        result = get_dict_result(items, 'name', name)
+        try:
+            result = self.ise.exec(
+                family="adresourcereservation",
+                function="get_adresourcereservation_name_by_name",
+                params={"name": name},
+                handle_func_exception=False,
+            ).response['ERSADResourceReservation']
+            result = get_dict_result(result, 'name', name)
+        except (TypeError, AttributeError) as e:
+            self.ise.fail_json(
+                msg=(
+                    "An error occured when executing operation."
+                    " Check the configuration of your API Settings and API Gateway settings on your ISE server."
+                    " This collection assumes that the API Gateway, the ERS APIs and OpenAPIs are enabled."
+                    " You may want to enable the (ise_debug: True) argument."
+                    " The error was: {error}"
+                ).format(error=e)
+            )
+        except Exception:
+            result = None
         return result
 
     def get_object_by_id(self, id):

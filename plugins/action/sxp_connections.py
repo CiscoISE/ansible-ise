@@ -39,7 +39,7 @@ argument_spec.update(dict(
     ipAddress=dict(type="str"),
     sxpMode=dict(type="str"),
     sxpVersion=dict(type="str"),
-    enabled=dict(type="dict"),
+    enabled=dict(type="bool"),
     name=dict(type="str"),
     id=dict(type="str"),
     description=dict(type="str"),

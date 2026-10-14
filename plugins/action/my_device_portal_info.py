@@ -21,6 +21,7 @@ from ansible.errors import AnsibleActionFail
 from ansible_collections.cisco.ise.plugins.plugin_utils.ise import (
     ISESDK,
     ise_argument_spec,
+    get_dict_result,
 )
 
 # Get common arguements specification
@@ -73,7 +74,7 @@ class ActionModule(ActionBase):
     def get_object(self, params):
         new_object = dict(
             name=params.get("name"),
-            id=params.get("id"),
+            portal_id=params.get("id"),
             page=params.get("page"),
             size=params.get("size"),
             filter=params.get("filter"),
@@ -82,6 +83,38 @@ class ActionModule(ActionBase):
             sortdsc=params.get("sortdsc"),
         )
         return new_object
+
+    def get_object_by_name(self, ise, name):
+        # NOTICE: Get does not support/work for filter by name with EQ, so page
+        # through the resources and read the full object once the name matches.
+        result = None
+        gen_items_responses = ise.exec(
+            family="my_device_portal",
+            function='get_my_device_portal_generator',
+        )
+        try:
+            for items_response in gen_items_responses:
+                items = items_response.response['SearchResult']['resources']
+                result = get_dict_result(items, 'name', name)
+                if result:
+                    return ise.exec(
+                        family="my_device_portal",
+                        function="get_my_device_portal_by_id",
+                        params={"portal_id": result.get("id")},
+                    ).response["MyDevicePortal"]
+        except (TypeError, AttributeError) as e:
+            ise.fail_json(
+                msg=(
+                    "An error occured when executing operation."
+                    " Check the configuration of your API Settings and API Gateway settings on your ISE server."
+                    " This collection assumes that the API Gateway, the ERS APIs and OpenAPIs are enabled."
+                    " You may want to enable the (ise_debug: True) argument."
+                    " The error was: {error}"
+                ).format(error=e)
+            )
+        except Exception:
+            result = None
+        return result
 
     def run(self, tmp=None, task_vars=None):
         self._task.diff = False
@@ -102,6 +135,11 @@ class ActionModule(ActionBase):
                 function="get_my_device_portal_by_id",
                 params=self.get_object(self._task.args),
             ).response["MyDevicePortal"]
+            self._result.update(dict(ise_response=response))
+            self._result.update(ise.exit_json())
+            return self._result
+        if name:
+            response = self.get_object_by_name(ise, name)
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result

@@ -17,7 +17,7 @@ author: Rafael Campos (@racampos)
 options:
   deployTo:
     description: SGmapping's deployTo.
-    type: dict
+    type: str
   deployType:
     description: Allowed values ALL,ND,NDG.
     type: str
@@ -35,13 +35,13 @@ options:
     type: str
   mappingGroup:
     description: SGmapping's mappingGroup.
-    type: dict
+    type: str
   name:
     description: Name.
     type: str
   sgt:
     description: SGmapping's sgt.
-    type: dict
+    type: str
   sgtDomain:
     description: SGmapping's sgtDomain.
     type: str

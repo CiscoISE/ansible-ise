@@ -23,9 +23,9 @@ requirements:
   - python >= 3.5
 notes:
   - SDK Method used are
-    sync_ise_node.SyncIseNode.sync_node,
+    node_deployment.NodeDeployment.sync_node,
   - Paths used are
-    post /api/v1/deployment/sync-node
+    post /api/v1/deployment/sync-node/{hostname}
 """
 EXAMPLES = r"""
 ---

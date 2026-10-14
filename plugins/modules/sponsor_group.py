@@ -68,7 +68,7 @@ options:
     type: list
   managePermission:
     description: Allowed values allAccounts, groupAccounts, ownAccounts.
-    type: dict
+    type: str
   memberGroups:
     description: Sponsorgroup's memberGroups.
     elements: str

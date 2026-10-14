@@ -7,6 +7,8 @@
 from __future__ import absolute_import, division, print_function
 
 __metaclass__ = type
+import re
+
 from ansible.plugins.action import ActionBase
 
 try:
@@ -58,6 +60,10 @@ mutually_exclusive = []
 required_together = []
 
 
+def normalize_mac(value):
+    return re.sub("[-:.]", "", value or "").lower()
+
+
 class Endpoint(object):
     def __init__(self, params, ise):
         self.ise = ise
@@ -80,8 +86,12 @@ class Endpoint(object):
         )
 
     def get_object_by_name(self, name):
-        # NOTICE: Get does not support/work for filter by name with EQ
+        # NOTICE: Get does not support/work for filter by name with EQ.
+        # ISE stores the endpoint name as the MAC address with its own separators,
+        # so compare both sides without them, and return the full object so that
+        # requires_update() sees the current values and not only the search summary.
         result = None
+        keys = {normalize_mac(name), normalize_mac(self.new_object.get("mac"))} - {""}
         gen_items_responses = self.ise.exec(
             family="endpoint",
             function="get_endpoint_generator"
@@ -90,8 +100,11 @@ class Endpoint(object):
             for items_response in gen_items_responses:
                 items = items_response.response['SearchResult']['resources']
                 result = get_dict_result(items, 'name', name)
+                if not result:
+                    result = next((item for item in items
+                                   if normalize_mac(item.get('name')) in keys), None)
                 if result:
-                    return result
+                    return self.get_object_by_id(result.get("id")) or result
         except (TypeError, AttributeError) as e:
             self.ise.fail_json(
                 msg=(
@@ -108,8 +121,25 @@ class Endpoint(object):
         return result
 
     def get_object_by_id(self, id):
-        # NOTICE: Does not have a get by id method or it is in another action
-        result = None
+        try:
+            result = self.ise.exec(
+                family="endpoint",
+                function="get_endpoint_by_id",
+                handle_func_exception=False,
+                params={"id": id}
+            ).response['ERSEndPoint']
+        except (TypeError, AttributeError) as e:
+            self.ise.fail_json(
+                msg=(
+                    "An error occured when executing operation."
+                    " Check the configuration of your API Settings and API Gateway settings on your ISE server."
+                    " This collection assumes that the API Gateway, the ERS APIs and OpenAPIs are enabled."
+                    " You may want to enable the (ise_debug: True) argument."
+                    " The error was: {error}"
+                ).format(error=e)
+            )
+        except Exception:
+            result = None
         return result
 
     def exists(self):
@@ -139,7 +169,6 @@ class Endpoint(object):
             ("groupId", "group_id"),
             ("identityStore", "identity_store"),
             ("identityStoreId", "identity_store_id"),
-            ("mac", "mac"),
             ("portalUser", "portal_user"),
             ("profileId", "profile_id"),
             ("staticGroupAssignment", "static_group_assignment"),
@@ -147,10 +176,12 @@ class Endpoint(object):
             ("staticProfileAssignment", "static_profile_assignment"),
             ("staticProfileAssignmentDefined", "static_profile_assignment_defined"),
             ("mdmAttributes", "mdm_attributes"),
-            ("name", "name"),
             ("id", "id"),
             ("description", "description"),
         ]
+        requested_mac = requested_obj.get("mac")
+        if requested_mac and normalize_mac(requested_mac) != normalize_mac(current_obj.get("mac")):
+            return True
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(not ise_compare_equality(current_obj.get(ise_param),
@@ -162,6 +193,19 @@ class Endpoint(object):
             family="endpoint",
             function="create_endpoint",
             params=self.new_object,
+        ).response
+        return result
+
+    def update(self):
+        id = self.new_object.get("id")
+        name = self.new_object.get("name")
+        if not id:
+            id = self.get_object_by_name(name).get("id")
+            self.new_object.update(dict(id=id))
+        result = self.ise.exec(
+            family="endpoint",
+            function="update_endpoint_by_id",
+            params=self.new_object
         ).response
         return result
 
@@ -209,8 +253,11 @@ class ActionModule(ActionBase):
             (obj_exists, prev_obj) = obj.exists()
             if obj_exists:
                 if obj.requires_update(prev_obj):
-                    response = prev_obj
-                    ise.object_present_and_different()
+                    ise_update_response = obj.update()
+                    self._result.update(dict(ise_update_response=ise_update_response))
+                    (obj_exists, updated_obj) = obj.exists()
+                    response = updated_obj
+                    ise.object_updated()
                 else:
                     response = prev_obj
                     ise.object_already_present()

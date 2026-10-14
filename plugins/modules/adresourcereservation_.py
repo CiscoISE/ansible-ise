@@ -35,9 +35,13 @@ requirements:
   - python >= 3.5
 notes:
   - SDK Method used are
+    adresourcereservation.Adresourcereservation.get_adresourcereservation_by_id,
+    adresourcereservation.Adresourcereservation.get_adresourcereservation_name_by_name,
     adresourcereservation.Adresourcereservation.update_adresourcereservation_by_id,
   - Paths used are
-    put /adresourcereservation/{id},
+    get /ers/config/adresourcereservation/{id},
+    get /ers/config/adresourcereservation/name/{name},
+    put /ers/config/adresourcereservation/{id},
 """
 EXAMPLES = r"""
 ---
