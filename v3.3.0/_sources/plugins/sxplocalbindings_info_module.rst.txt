@@ -1,0 +1,23 @@
+
+.. Document meta
+
+:orphan:
+
+.. Anchors
+
+.. _ansible_collections.cisco.ise.sxplocalbindings_info_module:
+
+.. Title
+
+cisco.ise.sxplocalbindings_info module
+++++++++++++++++++++++++++++++++++++++
+
+.. Collection note
+
+.. note::
+    This redirect is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 3.3.0).
+
+    To use it in a playbook, specify: :code:`cisco.ise.sxplocalbindings_info`.
+
+- This is a redirect to the :ref:`cisco.ise.sxp_local_bindings_info module <ansible_collections.cisco.ise.sxp_local_bindings_info_module>`.
+- This redirect does **not** work with Ansible 2.9.
