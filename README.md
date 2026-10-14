@@ -18,12 +18,9 @@ Other versions of this collection have support for previous Cisco ISE versions. 
 - [Cisco ISE SDK](https://github.com/CiscoISE/ciscoisesdk) v2.4.7 or newer
 - requests >= 2.25.1, for the personas modules and personas_deployment role.
 
-## Install
-Ansible must be installed ([Install guide](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html))
-```
-sudo pip install ansible
-```
+> **Note:** ansible-core is provided through Red Hat Ansible Automation Platform Execution Environments or can be installed via standard enterprise channels. Manual installation is not required for certified environments.
 
+## Install
 Cisco ISE SDK must be installed
 ```
 sudo pip install ciscoisesdk
