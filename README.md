@@ -4,18 +4,18 @@
 
 The ise-ansible project provides an Ansible collection for managing and automating your Cisco Identity Services Engine (ISE) environment. It consists of a set of modules and roles for performing tasks related to Cisco ISE.
 
-This collection has been validated with Cisco ISE 3.1 + Patch 1.
+The 3.x releases of this collection are built for the Cisco ISE 3.5 API (`ise_version: 3.5.0`, the default).
 
 These Ansible modules will work with any version of ISE that supports the underlying REST API resources you want to configure. Please see the [ISE API Versioning](https://developer.cisco.com/docs/identity-services-engine/v1/#!versioning) reference for which REST Resources were first supported in which Cisco ISE Version.
 
-*Note: This collection is not compatible with versions of Ansible before v2.9.*
+*Note: This collection requires ansible-core 2.16 or later.*
 
 Other versions of this collection have support for previous Cisco ISE versions. The recommended versions are listed on the [Compatibility matrix](https://github.com/CiscoISE/ansible-ise#compatibility-matrix).
 
 ## Requirements
-- Ansible >= 2.9
-- [Cisco ISE SDK](https://github.com/CiscoISE/ciscoisesdk) v1.4.0 or newer
-- Python >= 3.6, as the Cisco ISE SDK doesn't support Python version 2.x
+- ansible-core >= 2.16
+- Python >= 3.12, required by the Cisco ISE SDK 2.4.x
+- [Cisco ISE SDK](https://github.com/CiscoISE/ciscoisesdk) v2.4.7 or newer
 - requests >= 2.25.1, for the personas modules and personas_deployment role.
 
 ## Install
@@ -29,7 +29,7 @@ Cisco ISE SDK must be installed
 sudo pip install ciscoisesdk
 ```
 
-Install the collection ([Galaxy link](https://galaxy.ansible.com/cisco/ise))
+Install the certified collection from [Red Hat Ansible Automation Hub](https://console.redhat.com/ansible/automation-hub/repo/published/cisco/ise) or the community version from [Ansible Galaxy](https://galaxy.ansible.com/cisco/ise)
 ```
 ansible-galaxy collection install cisco.ise
 ```
@@ -39,9 +39,9 @@ This collection assumes that the API Gateway, the ERS APIs and OpenAPIs are enab
 
 ### Using the collection on previous Cisco ISE versions 
 
-As stated before, the collection has been tested and supports Cisco ISE 3.2_beta.
+The 3.x releases of the collection implement the Cisco ISE 3.5.0 API only. Most modules call operations that do not exist for other `ise_version` values.
 
-It may work with Cisco ISE version 3.0, but it is not officially supported.
+For older Cisco ISE releases use the collection version listed in the compatibility matrix.
 
 The recommended versions are listed below on the [Compatibility matrix](https://github.com/CiscoISE/ansible-ise#compatibility-matrix).
 
@@ -53,7 +53,7 @@ The following table shows the supported versions.
 | 3.1_Patch_1       | 2.5.16                       | 2.0.10                       |
 | 3.2_beta          | 2.8.0                        | 2.1.1                        |
 | 3.3_patch_1       | 2.10.0                       | 2.2.3                        |
-| 3.5.0             | 3.0.1                        | 2.4.0                        |
+| 3.5.0             | 3.3.0                        | 2.4.7                        |
 
 If your Ansible collection is older please consider updating it first.
 *Notes*:
@@ -94,7 +94,7 @@ export ISE_VERSION=3.5.0 # optional, defaults to 3.5.0
 export ISE_WAIT_ON_RATE_LIMIT=True # optional, defaults to True
 export ISE_USES_API_GATEWAY=True # optional, defaults to True
 export ISE_DEBUG=False # optional, defaults to False
-export ISE_SINGLE_REQUEST_TIMEOUT:60 # optional, defaults to 60
+export ISE_SINGLE_REQUEST_TIMEOUT=60 # optional, defaults to 60
 ```
 
 Create a `hosts` ([example](https://github.com/CiscoISE/ansible-ise/blob/main/playbooks/hosts)) file that uses `[ise_servers]` with your Cisco ISE Settings:
@@ -127,7 +127,7 @@ ise_hostname: <A.B.C.D>
 ise_username: <username>
 ise_password: <password>
 ise_verify: False # optional, defaults to True
-ise_version: 3.3_patch_1 # optional, defaults to 3.3_patch_1
+ise_version: 3.5.0 # optional, defaults to 3.5.0
 ise_wait_on_rate_limit: True # optional, defaults to True
 ise_debug: False # optional, defaults to False
 ise_uses_api_gateway: True # optional, defaults to True
@@ -177,7 +177,7 @@ ise_hostname: <A.B.C.D>
 ise_username: <username>
 ise_password: <password>
 ise_verify: False # optional, defaults to True
-ise_version: 3.3_patch_1 # optional, defaults to 3.3_patch_1
+ise_version: 3.5.0 # optional, defaults to 3.5.0
 ise_wait_on_rate_limit: True # optional, defaults to True
 ise_debug: False # optional, defaults to False
 ise_uses_api_gateway: True # optional, defaults to True
@@ -246,9 +246,9 @@ Go to the ansible-ise directory
 cd ansible-ise
 ```
 
-Pull the latest master from the repo
+Pull the latest main from the repo
 ```
-git pull origin master
+git pull origin main
 ```
 
 Build and install a collection from source
@@ -277,6 +277,10 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 export no_proxy=*
 ```
 
+## Release notes
+
+See the [changelog](https://github.com/CiscoISE/ansible-ise/blob/main/changelogs/CHANGELOG.rst) for the changes in each release.
+
 ## Contributing to this collection
 
 Ongoing development efforts and contributions to this collection are tracked as issues in this repository.
@@ -293,3 +297,7 @@ Please read and familiarize yourself with this document.
 This collection follows [Semantic Versioning](https://semver.org/). More details on versioning can be found [in the Ansible docs](https://docs.ansible.com/ansible/latest/dev_guide/developing_collections.html#collection-versions).
 
 New minor and major releases as well as deprecations will follow new releases and deprecations of the Cisco ISE product, its REST API and the corresponding Python SDK, which this project relies on. 
+
+## License
+
+GNU General Public License v3.0 or later. See [LICENSE](https://github.com/CiscoISE/ansible-ise/blob/main/LICENSE) for the full text.

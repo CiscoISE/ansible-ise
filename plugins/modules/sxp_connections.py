@@ -20,7 +20,7 @@ options:
     type: str
   enabled:
     description: SXPconnections's enabled.
-    type: dict
+    type: bool
   id:
     description: Id.
     type: str

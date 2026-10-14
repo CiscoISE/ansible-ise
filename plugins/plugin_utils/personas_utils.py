@@ -138,7 +138,7 @@ class Node(object):
 
     def import_certificate_into_primary(self, primary_node):
         cert_id = self.return_id_of_certificate()
-        data = json.dumps({"id": cert_id, "export": "CERTIFICATE"})
+        data = json.dumps({"id": cert_id, "export": "CERTIFICATE", "hostName": self.hostname})
         url = "https://{ip}/api/v1/certs/system-certificate/export".format(ip=self.ip)
         headers = {'Content-Type': 'application/json', 'Accept': 'application/json'}
         try:
@@ -170,7 +170,7 @@ class Node(object):
                                      timeout=15,
                                      data=data,
                                      headers=headers,
-                                     auth=(self.primary_node.username, self.primary_node.password),
+                                     auth=(primary_node.username, primary_node.password),
                                      verify=False
                                      )
             return_message = json.loads(response.text)["response"]["message"]

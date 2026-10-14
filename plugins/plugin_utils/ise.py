@@ -14,6 +14,7 @@ except ImportError:
 else:
     ISE_SDK_IS_INSTALLED = True
 from ansible.module_utils.basic import env_fallback
+from ansible.utils.display import Display
 
 try:
     from ansible.errors import AnsibleActionFail
@@ -27,6 +28,11 @@ except ImportError:
     LOGGING_IN_STANDARD = False
 else:
     LOGGING_IN_STANDARD = True
+
+
+class DisplayHandler(logging.Handler):
+    def emit(self, record):
+        Display().display(self.format(record))
 
 
 def is_list_complex(x):
@@ -197,7 +203,7 @@ class ISESDK(object):
                 debug=params.get("ise_debug"),
             )
             if params.get("ise_debug") and LOGGING_IN_STANDARD:
-                logging.getLogger('ciscoisesdk').addHandler(logging.StreamHandler())
+                logging.getLogger('ciscoisesdk').addHandler(DisplayHandler())
         else:
             self.fail_json(msg="Cisco ISE Python SDK is not installed. Execute 'pip install ciscoisesdk'")
 

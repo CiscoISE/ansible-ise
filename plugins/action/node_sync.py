@@ -78,11 +78,12 @@ class ActionModule(ActionBase):
         ise = ISESDK(params=self._task.args)
 
         response = ise.exec(
-            family="sync_ise_node",
+            family="node_deployment",
             function='sync_node',
             params=self.get_object(self._task.args),
         ).response
 
         self._result.update(dict(ise_response=response))
+        ise.changed()
         self._result.update(ise.exit_json())
         return self._result

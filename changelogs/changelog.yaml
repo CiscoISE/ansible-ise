@@ -263,7 +263,7 @@ releases:
   0.0.5:
     release_date: "2021-06-11"
     changes:
-      release_summary: Update sorting params for info_ modules.
+      release_summary: Update sorting params for ``info_`` modules.
       bugfixes:
         - Changes sortdec to sortdsc query param for _info modules.
   0.0.6:
@@ -1404,7 +1404,7 @@ releases:
           system_certificate_create, system_config_version_info,
           and threat_vulnerabilities_clear.
         - Module renamed aci_settings_info to acisettings_info.
-        - Module renamed portal_global_setting to adresourcereservation_.
+        - Module renamed portal_global_setting to ``adresourcereservation_``.
         - Module renamed subscriber_imsi_info
           to adresourcereservation__info.
         - Module renamed active_directory_trusted_domains_info
@@ -1663,3 +1663,35 @@ releases:
         - Restored active_directory_leave_domain module.
         - Restored active_directory_groups_by_domain_info module.
         - Restored active_directory_add_groups module.
+  3.3.0:
+    release_date: "2026-10-13"
+    changes:
+      release_summary: >
+        Bug fixes for open issues, certificate-based authentication and the
+        restored anc_endpoint_apply module. Requires ciscoisesdk 2.4.7.
+      minor_changes:
+        - Added certificate-based (mTLS) authentication with ise_client_cert and ise_client_key (#179).
+        - Restored the anc_endpoint_apply module (#190).
+        - The collection requires ansible-core 2.16 or later and ciscoisesdk 2.4.7 or later.
+        - requirements.txt is included in the collection for execution environments.
+        - stop_replication - isEnabled is required when state is present (#184).
+      bugfixes:
+        - "endpoint - updates an existing endpoint and finds it by MAC address regardless of separators or name (#163, #181)."
+        - "network_device - applies settings missing on the device and keeps the values that are not given on update (#157, #160)."
+        - personas_export_certs - sends hostName on export and uses the primary node credentials on import (#162).
+        - repository - restored path, password, serverName, userName and enablePki, and fixed the lookup and delete (#188).
+        - repository_files_info - lists the files when repositoryName is given. repositoryName is required (#192).
+        - sgt - value is an integer (#48).
+        - stop_replication - reads and sets the deployment status instead of failing (#184).
+        - guest_user and the modules of renamed SDK families work with ise_version 3.5.0 (#180).
+        - info modules return the object when name is given instead of None (#185).
+        - csr_export_info, trusted_certificate_export_info - fail with a clear message when filename is given without id (#185).
+        - tasks_info - uses taskId and the existing SDK methods (#185).
+        - authorization_profile, certificate_profile, external_radius_server, sgmapping, sgmappinggroup, sponsor_group,
+          sxp_connections - parameters declared as dict use bool, int or str.
+        - ipsec_enable, ipsec_disable, ipsec_delete, ``adresourcereservation_``, mnt_athentication_status_info,
+          restidstoresettings_info, node_sync - fixed calls to SDK methods that do not exist for ISE 3.5.0.
+        - active_directory_add_groups, active_directory_join_domain, active_directory_leave_domain,
+          node_deployment_sync, node_group_node_create, node_group_node_delete - report changed after the operation.
+        - ise_debug - the debug output is complete on ansible-core 2.19 and later.
+        - The documented default of ise_version is 3.5.0.

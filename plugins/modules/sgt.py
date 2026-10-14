@@ -36,7 +36,7 @@ options:
     type: bool
   value:
     description: Value range 2 ot 65519 or -1 to auto-generate.
-    type: dict
+    type: int
 requirements:
   - ciscoisesdk >= 2.0.1
   - python >= 3.5

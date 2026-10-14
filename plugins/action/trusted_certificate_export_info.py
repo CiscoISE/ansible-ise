@@ -108,3 +108,4 @@ class ActionModule(ActionBase):
             self._result.update(dict(ise_response=response))
             self._result.update(ise.exit_json())
             return self._result
+        ise.fail_json(msg="The id parameter is required to export the trusted certificate.")

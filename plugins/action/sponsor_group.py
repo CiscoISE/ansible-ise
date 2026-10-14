@@ -39,7 +39,7 @@ argument_spec.update(dict(
     guestTypes=dict(type="list"),
     locations=dict(type="list"),
     autoNotification=dict(type="bool"),
-    managePermission=dict(type="dict"),
+    managePermission=dict(type="str"),
     createPermissions=dict(type="dict"),
     otherPermissions=dict(type="dict"),
     name=dict(type="str"),

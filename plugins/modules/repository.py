@@ -27,6 +27,22 @@ options:
   protocol:
     description: Repository's protocol.
     type: str
+  path:
+    description: Path should always start with "/" and can contain alphanumeric, underscore,
+      hyphen and dot characters.
+    type: str
+  password:
+    description: Password can contain alphanumeric and/or special characters.
+    type: str
+  serverName:
+    description: Repository's serverName.
+    type: str
+  userName:
+    description: Username may contain alphanumeric and _-./@\\$ characters.
+    type: str
+  enablePki:
+    description: EnablePki flag.
+    type: bool
   repositoryName:
     description: RepositoryName path parameter. Unique name for a repository.
     type: str
@@ -58,6 +74,11 @@ EXAMPLES = r"""
     state: present
     name: string
     protocol: string
+    path: string
+    password: string
+    serverName: string
+    userName: string
+    enablePki: true
 - name: Update by name
   cisco.ise.repository:
     ise_hostname: "{{ise_hostname}}"
@@ -67,6 +88,11 @@ EXAMPLES = r"""
     state: present
     name: string
     protocol: string
+    path: string
+    password: string
+    serverName: string
+    userName: string
+    enablePki: true
     repositoryName: string
 - name: Delete by name
   cisco.ise.repository:

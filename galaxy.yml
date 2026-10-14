@@ -1,7 +1,7 @@
 ---
 namespace: cisco
 name: ise
-version: 3.2.0
+version: 3.3.0
 readme: README.md
 authors:
   - Jose Bogarin <jbogarin@cloverhound.cr>
@@ -32,6 +32,9 @@ build_ignore:
   - .yamlfmt
   - .yamllint.yml
   - Makefile
-  - requirements.txt
   - cisco-ise-*.tar.gz
   - .claude
+  - "**/__pycache__"
+  - "**/*.pyc"
+  - .DS_Store
+  - "**/.DS_Store"

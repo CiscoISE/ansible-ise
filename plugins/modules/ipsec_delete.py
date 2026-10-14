@@ -27,8 +27,10 @@ requirements:
   - python >= 3.5
 notes:
   - SDK Method used are
+    native_ipsec.NativeIpsec.get_ipsec_node,
     native_ipsec.NativeIpsec.remove_ipsec_connection,
   - Paths used are
+    get /api/v1/ipsec/{hostName}/{nadIp},
     delete /api/v1/ipsec/{hostName}/{nadIp},
 """
 EXAMPLES = r"""

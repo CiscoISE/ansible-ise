@@ -91,6 +91,7 @@ class Endpoint(object):
         # so compare both sides without them, and return the full object so that
         # requires_update() sees the current values and not only the search summary.
         result = None
+        keys = {normalize_mac(name), normalize_mac(self.new_object.get("mac"))} - {""}
         gen_items_responses = self.ise.exec(
             family="endpoint",
             function="get_endpoint_generator"
@@ -101,7 +102,7 @@ class Endpoint(object):
                 result = get_dict_result(items, 'name', name)
                 if not result:
                     result = next((item for item in items
-                                   if normalize_mac(item.get('name')) == normalize_mac(name)), None)
+                                   if normalize_mac(item.get('name')) in keys), None)
                 if result:
                     return self.get_object_by_id(result.get("id")) or result
         except (TypeError, AttributeError) as e:
@@ -168,7 +169,6 @@ class Endpoint(object):
             ("groupId", "group_id"),
             ("identityStore", "identity_store"),
             ("identityStoreId", "identity_store_id"),
-            ("mac", "mac"),
             ("portalUser", "portal_user"),
             ("profileId", "profile_id"),
             ("staticGroupAssignment", "static_group_assignment"),
@@ -176,10 +176,12 @@ class Endpoint(object):
             ("staticProfileAssignment", "static_profile_assignment"),
             ("staticProfileAssignmentDefined", "static_profile_assignment_defined"),
             ("mdmAttributes", "mdm_attributes"),
-            ("name", "name"),
             ("id", "id"),
             ("description", "description"),
         ]
+        requested_mac = requested_obj.get("mac")
+        if requested_mac and normalize_mac(requested_mac) != normalize_mac(current_obj.get("mac")):
+            return True
         # Method 1. Params present in request (Ansible) obj are the same as the current (ISE) params
         # If any does not have eq params, it requires update
         return any(not ise_compare_equality(current_obj.get(ise_param),

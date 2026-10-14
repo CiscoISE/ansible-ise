@@ -51,7 +51,7 @@ options:
         description:
           - Informs the SDK which version of Identity Services Engine to use.
         type: str
-        default: 3.1_Patch_1
+        default: 3.5.0
     ise_wait_on_rate_limit:
         description:
           - Flag for Identity Services Engine SDK to enable automatic rate-limit handling.
