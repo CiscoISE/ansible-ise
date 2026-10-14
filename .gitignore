@@ -15,6 +15,7 @@ __pycache__
 venv/
 /build/
 docs/plugins/
+docs/roles/
 docs/_build/
 changelogs/.plugin-cache.yaml
 .DS_Store 
