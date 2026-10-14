@@ -6,7 +6,7 @@
 Cisco.Ise
 =========
 
-Collection version 3.1.0
+Collection version 3.3.0
 
 .. contents::
    :local:
@@ -25,7 +25,7 @@ Ansible Modules for Cisco ISE
 
 **Supported ansible-core versions:**
 
-* 2.15.0 or newer
+* 2.16.0 or newer
 
 .. raw:: html
 
@@ -52,7 +52,11 @@ Modules
 * :ref:`aci_settings_info module <ansible_collections.cisco.ise.aci_settings_info_module>` -- Information module for ACIsettings
 * :ref:`active_directories_info module <ansible_collections.cisco.ise.active_directories_info_module>` -- Information module for Active Directories Info
 * :ref:`active_directory module <ansible_collections.cisco.ise.active_directory_module>` -- Resource module for Activedirectory
+* :ref:`active_directory_add_groups module <ansible_collections.cisco.ise.active_directory_add_groups_module>` -- Resource module for Active Directory Add Groups
+* :ref:`active_directory_groups_by_domain_info module <ansible_collections.cisco.ise.active_directory_groups_by_domain_info_module>` -- Information module for Active Directory Groups By Domain
 * :ref:`active_directory_info module <ansible_collections.cisco.ise.active_directory_info_module>` -- Information module for Activedirectory
+* :ref:`active_directory_join_domain module <ansible_collections.cisco.ise.active_directory_join_domain_module>` -- Resource module for Active Directory Join Domain
+* :ref:`active_directory_leave_domain module <ansible_collections.cisco.ise.active_directory_leave_domain_module>` -- Resource module for Active Directory Leave Domain
 * :ref:`ad_groups_info module <ansible_collections.cisco.ise.ad_groups_info_module>` -- Information module for Ad Groups Info
 * :ref:`admin_user_info module <ansible_collections.cisco.ise.admin_user_info_module>` -- Information module for Adminuser
 * :ref:`adresourcereservation_ module <ansible_collections.cisco.ise.adresourcereservation__module>` -- Resource module for Adresourcereservation
@@ -60,6 +64,7 @@ Modules
 * :ref:`adresourcereservation_name_info module <ansible_collections.cisco.ise.adresourcereservation_name_info_module>` -- Information module for Adresourcereservation Name
 * :ref:`allowed_protocols module <ansible_collections.cisco.ise.allowed_protocols_module>` -- Resource module for Allowedprotocols
 * :ref:`allowed_protocols_info module <ansible_collections.cisco.ise.allowed_protocols_info_module>` -- Information module for Allowedprotocols
+* :ref:`anc_endpoint_apply module <ansible_collections.cisco.ise.anc_endpoint_apply_module>` -- Resource module for ANCendpoint Apply
 * :ref:`anc_endpoint_clear module <ansible_collections.cisco.ise.anc_endpoint_clear_module>` -- Resource module for ANCendpoint Clear
 * :ref:`anc_endpoint_info module <ansible_collections.cisco.ise.anc_endpoint_info_module>` -- Information module for ANCendpoint
 * :ref:`anc_policy module <ansible_collections.cisco.ise.anc_policy_module>` -- Resource module for ANCpolicy
@@ -181,9 +186,21 @@ Modules
 * :ref:`network_device_group module <ansible_collections.cisco.ise.network_device_group_module>` -- Resource module for Networkdevicegroup
 * :ref:`network_device_group_info module <ansible_collections.cisco.ise.network_device_group_info_module>` -- Information module for Networkdevicegroup
 * :ref:`network_device_info module <ansible_collections.cisco.ise.network_device_info_module>` -- Information module for Networkdevice
+* :ref:`node_deployment module <ansible_collections.cisco.ise.node_deployment_module>` -- Resource module for Node Deployment
+* :ref:`node_deployment_info module <ansible_collections.cisco.ise.node_deployment_info_module>` -- Information module for Node Deployment
+* :ref:`node_deployment_sync module <ansible_collections.cisco.ise.node_deployment_sync_module>` -- Resource module for Node Deployment Sync
+* :ref:`node_group module <ansible_collections.cisco.ise.node_group_module>` -- Resource module for Node Group
+* :ref:`node_group_info module <ansible_collections.cisco.ise.node_group_info_module>` -- Information module for Node Group
+* :ref:`node_group_node_create module <ansible_collections.cisco.ise.node_group_node_create_module>` -- Resource module for Node Group Node Create
+* :ref:`node_group_node_delete module <ansible_collections.cisco.ise.node_group_node_delete_module>` -- Resource module for Node Group Node Delete
+* :ref:`node_group_node_info module <ansible_collections.cisco.ise.node_group_node_info_module>` -- Information module for Node Group Node
 * :ref:`node_info module <ansible_collections.cisco.ise.node_info_module>` -- Information module for Node
 * :ref:`node_promotion module <ansible_collections.cisco.ise.node_promotion_module>` -- Resource module for Node Promotion
 * :ref:`node_replication_status_info module <ansible_collections.cisco.ise.node_replication_status_info_module>` -- Information module for Node Replication Status
+* :ref:`node_secondary_to_primary module <ansible_collections.cisco.ise.node_secondary_to_primary_module>` -- Resource module for Node Secondary To Primary
+* :ref:`node_services_profiler_probe_config module <ansible_collections.cisco.ise.node_services_profiler_probe_config_module>` -- Resource module for Node Services Profiler Probe Config
+* :ref:`node_services_profiler_probe_config_info module <ansible_collections.cisco.ise.node_services_profiler_probe_config_info_module>` -- Information module for Node Services Profiler Probe Config
+* :ref:`node_standalone_to_primary module <ansible_collections.cisco.ise.node_standalone_to_primary_module>` -- Resource module for Node Standalone To Primary
 * :ref:`node_sync module <ansible_collections.cisco.ise.node_sync_module>` -- Resource module for Node Sync
 * :ref:`nspprofile_info module <ansible_collections.cisco.ise.nspprofile_info_module>` -- Information module for Nspprofile
 * :ref:`pan_ha module <ansible_collections.cisco.ise.pan_ha_module>` -- Resource module for Pan Ha
@@ -292,7 +309,11 @@ Modules
     aci_settings_info_module
     active_directories_info_module
     active_directory_module
+    active_directory_add_groups_module
+    active_directory_groups_by_domain_info_module
     active_directory_info_module
+    active_directory_join_domain_module
+    active_directory_leave_domain_module
     ad_groups_info_module
     admin_user_info_module
     adresourcereservation__module
@@ -300,6 +321,7 @@ Modules
     adresourcereservation_name_info_module
     allowed_protocols_module
     allowed_protocols_info_module
+    anc_endpoint_apply_module
     anc_endpoint_clear_module
     anc_endpoint_info_module
     anc_policy_module
@@ -421,9 +443,21 @@ Modules
     network_device_group_module
     network_device_group_info_module
     network_device_info_module
+    node_deployment_module
+    node_deployment_info_module
+    node_deployment_sync_module
+    node_group_module
+    node_group_info_module
+    node_group_node_create_module
+    node_group_node_delete_module
+    node_group_node_info_module
     node_info_module
     node_promotion_module
     node_replication_status_info_module
+    node_secondary_to_primary_module
+    node_services_profiler_probe_config_module
+    node_services_profiler_probe_config_info_module
+    node_standalone_to_primary_module
     node_sync_module
     nspprofile_info_module
     pan_ha_module

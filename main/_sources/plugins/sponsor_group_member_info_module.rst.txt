@@ -42,7 +42,7 @@ cisco.ise.sponsor_group_member_info module -- Information module for Sponsorgrou
 .. Collection note
 
 .. note::
-    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 3.1.0).
+    This module is part of the `cisco.ise collection <https://galaxy.ansible.com/cisco/ise>`_ (version 3.3.0).
 
     To install it, use: :code:`ansible-galaxy collection install cisco.ise`.
     You need further requirements to be able to use this module,
@@ -234,6 +234,86 @@ Parameters
   * - .. raw:: html
 
         <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_client_cert"></div>
+
+      .. _ansible_collections.cisco.ise.sponsor_group_member_info_module__parameter-ise_client_cert:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_client_cert**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_client_cert" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`path`
+
+      :ansible-option-versionadded:`added in cisco.ise 3.3.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Absolute path to the client certificate file (.pem/.crt) used for certificate-based (mTLS) authentication.
+
+      When provided, ise\_username and ise\_password are not required.
+
+      Requires Cisco ISE 3.3 or later with certificate-based API access enabled.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
+        <div class="ansibleOptionAnchor" id="parameter-ise_client_key"></div>
+
+      .. _ansible_collections.cisco.ise.sponsor_group_member_info_module__parameter-ise_client_key:
+
+      .. rst-class:: ansible-option-title
+
+      **ise_client_key**
+
+      .. raw:: html
+
+        <a class="ansibleOptionLink" href="#parameter-ise_client_key" title="Permalink to this option"></a>
+
+      .. rst-class:: ansible-option-type-line
+
+      :ansible-option-type:`path`
+
+      :ansible-option-versionadded:`added in cisco.ise 3.3.0`
+
+
+      .. raw:: html
+
+        </div>
+
+    - .. raw:: html
+
+        <div class="ansible-option-cell">
+
+      Absolute path to the client private key file (.key) that pairs with ise\_client\_cert.
+
+      Omit when the private key is bundled together with the certificate in ise\_client\_cert.
+
+
+      .. raw:: html
+
+        </div>
+
+  * - .. raw:: html
+
+        <div class="ansible-option-cell">
         <div class="ansibleOptionAnchor" id="parameter-ise_debug"></div>
 
       .. _ansible_collections.cisco.ise.sponsor_group_member_info_module__parameter-ise_debug:
@@ -324,7 +404,7 @@ Parameters
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`string` / :ansible-option-required:`required`
+      :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -335,6 +415,8 @@ Parameters
         <div class="ansible-option-cell">
 
       The Identity Services Engine password to authenticate.
+
+      Required unless ise\_client\_cert is provided for certificate-based authentication.
 
 
       .. raw:: html
@@ -399,7 +481,7 @@ Parameters
 
       .. rst-class:: ansible-option-type-line
 
-      :ansible-option-type:`string` / :ansible-option-required:`required`
+      :ansible-option-type:`string`
 
       .. raw:: html
 
@@ -410,6 +492,8 @@ Parameters
         <div class="ansible-option-cell">
 
       The Identity Services Engine username to authenticate.
+
+      Required unless ise\_client\_cert is provided for certificate-based authentication.
 
 
       .. raw:: html
@@ -588,7 +672,7 @@ Parameters
 
       .. rst-class:: ansible-option-line
 
-      :ansible-option-default-bold:`Default:` :ansible-option-default:`"3.1\_Patch\_1"`
+      :ansible-option-default-bold:`Default:` :ansible-option-default:`"3.5.0"`
 
       .. raw:: html
 
